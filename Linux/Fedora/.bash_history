@@ -1,210 +1,3 @@
-cd test
-ls
-ll
-ls
-lv
-l
-ls
-cd ..
-ls
-lv
-./sync.sh 
-lv
-./sync.sh 
-lv
-./sync.sh 
-ls test
-ll test
-ls
-cd
-ll
-ls
-mkdir scripts
-mv ./Git/sync.sh ./scripts/
-lv
-lvbash
-sbash
-cd
-sync.sh
-lv
-sync.sh
-fm
-sync.sh
-fm
-sync.sh
-fm
-lv
-sync.sh
-lv
-sync.sh
-lv
-sync.sh
-lv
-sync.sh
-lv
-sync.sh
-ls
-cd scripts/
-ls
-mv `
-mv sync.sh syncos
-ls
-diff --help
-dif --help
-cd
-cd Git
-ls
-cd dotfiles/
-git stage --help
-git add -a
-git add .
-git commit -m "Replacing linux/general/ by linux/Fedora"
-git push
-git pull
-git push
-syncos
-ls
-cd Linux/Fedora/
-syncos
-cd
-mkdir GitBAK
-cp Git GitBAK/
-cd Git
-ls
-cd dotfiles/
-git rm -r
-git rm -r .
-git commit -m "Remove all files"
-git push origin master
-git push origin dotfiles
-git push origin main
-git rm -r .
-git commit --allow-empty -m "Initial empty commit"
-git checkout -b master
-git checkout -b dotfiles
-ls
-ll
-git init
-cd ..
-ls
-git clone https://github.com/DACDParis/dotfiles.git
-ls
-lvr
-lv
-ls
-lv
-ls
-cd dotfiles/
-ls
-ls Linux/
-ls
-cd Fedora
-ls
-cd Linux/
-ls
-cd Fedora/
-ls
-ll
-ls
-ll
-rm .profile_1 
-ls
-sync
-sync.sh
-fm
-rsync --help
-z Fedorq
-z Fedora
-z dot Linu gen
-ls
-ll
-cd ..
-ls
-rm -fr Fedora/
-fm
-mkdir Fedora
-mkdir Fedora/.config
-fm
-lv
-update
-sddm --version
-sddm -v
-sddm --help
-update
-reboot
-update
-flatpak update
-update
-search atuin
-update
-search tldr
-install tldr
-tldr mkdir
-tldr find
-reboot
-update
-flatpak update
-exit
-update
-reboot
-cd .config
-cd waybayr
-ls
-cd waybar
-ls
-lv config.jsonc 
-kitty -detach waybar &
-kitty --detach waybar &
-nohup waybar &
-cd ..
-cd kitty
-ls
-lv kitty.conf 
-exit
-killall waybar
-waybar
-flatpak update
-lvbash
-exit
-lv
-exit
-ls
-cd .config/kitty
-ls
-lv Kitty_Theme_vscode-dark.conf 
-reboot
-ll
-cd Git/
-ls
-cd Obsidian/
-ks
-ls
-ls notes
-ls Notes/
-cd Cheet-Sheets/
-ls
-cat my_vim_cheets.md 
-search mdcat
-lvim +LvimCacheReset
-lv
-ll
-ls
-cd
-ls
-ll
-sbash
-ls
-exit
-ranger
-fm
-ranger
-z config ranger
-z config
-ls
-z ranger
-ls
-lv rc.conf 
-ranger
 fm
 ls
 ll
@@ -998,3 +791,210 @@ cd .ssh/
 ls
 cat Github_id_ed25519.pub 
 cat Github_id_ed25519
+g git obsi
+g chee
+ls
+ll
+xdg-open ssh/ssh_config.md 
+git pull
+ls
+z dot
+ls
+ll
+rm -fr .git
+git init
+ls
+cd ..
+ls
+mv dotfiles/ dots
+ls
+git clone git@github.com:DACDParis/dotfiles.git
+ls
+gh auth
+gh auth login
+git clone git@github.com:DACDParis/dotfiles.git
+ls
+ls dotfiles/
+ll dotfiles/
+ls
+cd dots
+ls
+ll
+rm -fr .git
+rm README.md 
+rm LICENSE 
+l
+ll
+mv . ../dotfiles/
+cd ..
+ls
+cd dots
+cp . ../dotfiles/
+cp -r . ../dotfiles/
+cd ../dotfiles/
+ls
+ls Linux/
+ls Linux/Fedora/
+ll
+cd ..
+cd dotfiles/
+ls
+git add -A
+git rm --cached Linux/Fedora/.config/emacs
+git rm --cached Linux/Fedora/.config/emacs -f
+cd Linux/Fedora/.config/emacs/
+ll
+cd ..
+ls
+rm -fr emacs
+cd ../../..
+s
+ls
+git commit -m "First one"
+ls
+cd Linux
+ls
+cd Fedora
+ls
+cd .config
+ls
+cd hexchat/
+ls
+cd ..
+cd .
+cd ..
+ls
+cd ..
+ls
+cd dots
+ls
+lv
+cd ..
+ls
+rm -fr dot*
+ls
+rm -fr dotfiles/
+ls
+g scrip
+ls
+lv syncos 
+g git
+ls
+lv .gitignore
+syncos
+mv .gitignore dotfiles/
+ls
+ll dotfiles/
+mv .gitignore 
+mv .gitignore dotfiles/
+syncos
+ls
+cd dotfiles/
+ls
+git add -A
+git help submodule
+git add -A
+git commit -m "2"
+git push
+gh auth login
+git push
+systemctl restart sshd
+git push
+gh auth login
+git push
+ls
+syncos
+ls
+ll
+git checkout
+cd .config
+g
+cd .config
+cd qBittorrent/
+ls
+cat qBittorrent.conf 
+g git
+ld
+ls
+rm -fr dotfiles/
+ls
+syncos
+ls
+cd dotfiles
+ls
+gh auth login
+git merge --help
+git pull
+git pull origin main
+git pull main origin
+git remote --help
+git remote add -t main
+git remote add -f main
+ls
+ll
+git init
+ll
+git add .
+git rm --cached Linux/Fedora/.config/nvim/pack/plugins/start/nvim-dap
+git rm --cached Linux/Fedora/.config/nvim/pack/plugins/start/nvim-dap -f
+git commit -m "Initial commit v2"
+git remote add origin https://github.com/DACDParis/dotfiles.git
+git push -u origin main
+git push -u origin master
+git config --global init.defaultBranch main
+git push -u origin main
+cd ..
+ls
+rm -fr dotfiles/
+ls
+git clone https://github.com/DACDParis/dotfiles.git
+cd dotfiles/
+ls
+syncos
+ls
+lv .gitignore
+git add -A
+lv
+ls
+ll
+git rm --cached Linux/Fedora/.config/nvim/pack/plugins/start/nvim-dap
+git rm --cached Linux/Fedora/.config/nvim/pack/plugins/start/nvim-dap -f
+git commit -m "2"
+git push
+lv
+git add -A
+git commit -m "3"
+git push
+ls
+mkdir NixOS
+lv
+install fzf
+search junegunn/fzf.vim
+search the_silver_searcher
+install the_silver_searcher
+lv
+touch .fzf_history
+sbash
+fd
+ls
+ll
+z che
+ls
+lv .ignore
+lv my_vim_cheets.md 
+ls
+ll
+exit
+sbash
+lv
+tmux
+lv
+tmux
+exit
+t
+exit
+lv
+lv
+vl
+lv
+syncos

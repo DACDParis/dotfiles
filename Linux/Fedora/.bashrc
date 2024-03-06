@@ -83,3 +83,6 @@ eval "$(zoxide init bash)"
 eval $(thefuck --alias fck)
 
 source /home/david/.bash_completion/alacritty.bash
+
+export FZF_DEFAULT_OPTS="--history=$HOME/.fzf_history"
+

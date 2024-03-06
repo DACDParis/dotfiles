@@ -5466,3 +5466,75 @@ Mar 06 08:35:58 <daviwil>	start from an Org file, export plain HTML with simple 
 Mar 06 08:43:26 <trev>	so you have to opt in to html or it somehow sends both?
 Mar 06 08:43:53 <daviwil>	it will send both via separate MIME types, the e-mail client can choose which one to view
 Mar 06 08:52:39 <glenneth>	hey trev o/
+Mar 06 08:57:19 <trev>	hi glenneth 
+Mar 06 09:16:48 <glenneth>	daviwil: so you can have an email client determine which version of an email to open?
+Mar 06 09:18:08 <daviwil>	yep
+Mar 06 09:18:34 <daviwil>	Discourse sends both HTML and plain text versions of its notification e-mails, you can set up mu4e or Notmuch to view the plain text version
+Mar 06 09:18:50 <daviwil>	There was a discussion on the forum about it recently: https://forum.systemcrafters.net/t/plaintext-summary/222/8
+Mar 06 09:18:56 <Marvin2>	[ http://outrider.deepsky.com:5808/xNfEd ]::[ No title found ]
+Mar 06 09:19:21 <glenneth>	I did not know that.  I always assumed it was the sender that made that decision
+Mar 06 09:19:26 <Marvin2>	I did make an effort to make money from home an they sold their house and toronto and got a working study on all the acronyms, bsc, msc, hlr, scp, they all means something to fix first, have a risc v board but I struggled with existential dread so I curled it to someone getting started on the seq abstraction, it makes it approachable
+Mar 06 09:20:12 <daviwil>	In most cases, the sender just sends one type of content in an e-mail, but the e-mail protocol is flexible enough to contain different kinds of content if you know how to send it
+Mar 06 09:20:13 <glenneth>	wow,  Marvin2 
+Mar 06 09:21:11 <daviwil>	also, the Org publishing system is really flexible, but it's also really confusing until you understand the model
+Mar 06 09:21:40 <glenneth>	cool.  I will read that post on the forum.  Haven't looked in a couple of days
+Mar 06 09:47:36 <glenneth>	I just realised that HUGO sets an rss feed lol
+Mar 06 10:07:14 <alternateved>	Good morning
+Mar 06 10:09:36 <trev>	hi alternateved 
+Mar 06 10:09:49 <trev>	glenneth: yeah you get that for free
+Mar 06 10:10:20 <trev>	i hate web stuff
+Mar 06 10:17:14 <daviwil>	i'm going back to old-school HTML to make this e-mail template :)
+Mar 06 10:17:18 <daviwil>	gotta use tables
+Mar 06 11:04:18 <glenneth>	hey alternateved 
+Mar 06 11:11:54 <daviwil>	wanna get spammed for a bit while I test out the new newsletter format?  sign up for the "test-news" list here: https://lists.systemcrafters.net
+Mar 06 11:11:56 <Marvin2>	[ http://outrider.deepsky.com:5808/TRBWo ]::[ List information - lists.systemcrafters.net - Simplelists ]
+Mar 06 11:12:42 <glenneth>	sure :)
+Mar 06 11:12:54 <alternateved>	Go for it
+Mar 06 11:17:54 <glenneth>	request confirmed.  spam away
+Mar 06 11:18:57 <daviwil>	thanks!  will try in a sec
+Mar 06 11:18:59 <Marvin2>	thanks! will try in a BEGIN {} block
+Mar 06 11:20:27 <alternateved>	you're welcome Marvin2 
+Mar 06 11:20:55 <trev>	someone was talking awk i guess
+Mar 06 11:31:45 <daviwil>	sent a first test email. it's clear I need to bump down the font size a little bit
+Mar 06 11:31:58 <daviwil>	also, this is a newsletter from last year :)
+Mar 06 11:35:17 <alternateved>	Text format hasn't been added yet!
+Mar 06 11:35:34 <alternateved>	:D
+Mar 06 11:35:54 <alternateved>	"This e-mail also provides text/plain content if you prefer it to HTML!""
+Mar 06 11:35:56 <alternateved>	Lies!
+Mar 06 11:42:09 <glenneth>	haha
+Mar 06 11:42:56 <daviwil>	Lies for the moment :) 
+Mar 06 11:43:05 <daviwil>	Need to write a custom text exporter 
+Mar 06 11:49:23 <trev>	custom text exporter sounds like some fake tech
+Mar 06 11:50:15 <trev>	i'm going to use that next time i have to explain something to a project manager 
+Mar 06 11:59:58 <glenneth_>	Hey!! I'm a project manager! 
+Mar 06 12:00:22 <glenneth_>	I think I killed my emacs session running listen.el
+Mar 06 12:00:26 <alternateved>	Nice! Congratulations!
+Mar 06 12:04:20 <glenneth_>	it may be updating the library. hard to tell. I'll give it ten minutes or so before I kill it
+Mar 06 12:08:14 <trev>	glenneth_: hey, it turns out we can't use the default text exporter so i will need to write a custom one
+Mar 06 12:08:41 <glenneth_>	sounds legit 🤣
+Mar 06 12:11:17 <trev>	the bad news is that it's going to take me a few months
+Mar 06 12:18:14 <daviwil>	trev: that is actually a good excuse, I mean who can argue with that?
+Mar 06 12:19:23 <daviwil>	and if they ask further just say "have you ever dealt with grapheme clusters across Unicode byte widths?  trust me, this is a time consuming job"
+Mar 06 12:21:23 <trev>	daviwil: "i found a bug in the unicode spec and i'm waiting for it to be resolved upstream"
+Mar 06 12:29:37 <sahil_>	Doom emacs is way more smoother, compared to my own custom configured one.
+Mar 06 12:32:47 <alternateved>	sahil_: What do you mean by way more smoother?
+Mar 06 12:33:30 <sahil_>	alternateved: I opened a 10k lines file, and it was more responsive
+Mar 06 12:33:40 <sahil_>	typing at 5000th line
+Mar 06 12:34:35 <alternateved>	Most likely so-long-mode
+Mar 06 12:35:01 <alternateved>	https://github.com/doomemacs/doomemacs/blob/bea81278fd2ecb65db6a63dbcd6db2f52921ee41/lisp/doom-editor.el#L673
+Mar 06 12:35:04 <Marvin2>	[ http://outrider.deepsky.com:5808/msKFQ ]::[ No title found ]
+Mar 06 12:36:06 <alternateved>	Did you try treesit btw?
+Mar 06 12:36:58 <sahil_>	alternateved: I installed treesitter :) don't know if that's same as treesit.
+Mar 06 12:38:21 <alternateved>	treesit is built-in
+Mar 06 12:38:29 <alternateved>	tree-sitter is an external package
+Mar 06 12:38:59 <alternateved>	More info here: https://www.masteringemacs.org/article/how-to-get-started-tree-sitter
+Mar 06 12:39:01 <Marvin2>	[ http://outrider.deepsky.com:5808/bpQvq ]::[ How to Get Started with Tree-Sitter - Mastering Emacs ]
+Mar 06 12:39:20 <alternateved>	I recommend treesit-auto package that automates all of that 
+Mar 06 12:39:51 <alternateved>	But you would need to have Emacs compiled with tree-sitter support
+Mar 06 12:40:15 <sahil_>	yes I found that when I searched treesit. Also doom actually seems better to get started with emacs, than custom config (I am using native-comp)
+Mar 06 12:40:15 <alternateved>	treesit could help with your performance issues
+Mar 06 12:40:57 <sahil_>	I will try to move my dev workflow to doom, if that works, I would be blessed 
+Mar 06 12:41:05 <alternateved>	Yeah, if you don't know much about Emacs then Doom can be a good starting point (at the same time it could make things harder)
+Mar 06 12:41:07 <Marvin2>	Yeah, if you are trying harder than I do not also do IT"
+Mar 06 12:48:06 <trev>	why would treesitter help? is the lag most likely from the major-mode?
+Mar 06 12:50:59 <alternateved>	I'm guessing that it might be caused by font-lock

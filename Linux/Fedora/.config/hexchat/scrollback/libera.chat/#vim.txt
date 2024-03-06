@@ -1428,3 +1428,8 @@ T 1709696558 18<26absinthium18>	Oh, I was able to get it with `:cd ~/.vi
 T 1709705791 19*	Now talking on 22#vim
 T 1709705791 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
 T 1709705791 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709712004 18<26Viking66718>	'llo again, long time no see - and I happen to have moved too (for those that aren't in #emacs and didn't see my news from 5 weeks ago)
+T 1709712050 18<27igemnace18>	o/
+T 1709712467 18<26Viking66718>	huh. mzscheme support is proving trickier than I thought.
+T 1709712992 18<26Viking66718>	... not that I'm likely to ever write a vim plugin anyhow, let alone one written in mzscheme.
+T 1709718268 18*	26Viking667 waves goodnight again...

@@ -1368,3 +1368,6 @@ Mar 06 07:16:31 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Su
 Mar 06 08:47:39 <iz>	xorAxAx: yeah, cuz shor's
 Mar 06 08:49:32 <iz>	also rsa keys have to be so big, b/c factoring is a relatively easy problem and the spacing of primes, esp when the numbers get big doesn't make for efficient bit sizes
 Mar 06 08:51:33 <iz>	also, as mk-fg said, pcq is like a hedge against future breakthroughs in quantum computing and also good algorithms aren't gonna appear instantly -- it will take cycles of research and peer review
+Mar 06 11:11:35 <dnosng>	so, is im in sequrity?
+Mar 06 11:12:32 <calmclam>	sir this is a wendys
+Mar 06 11:26:35 <dnosng>	calmclam: very funy, did u know some port-chaker for my phone anrdoid, root free

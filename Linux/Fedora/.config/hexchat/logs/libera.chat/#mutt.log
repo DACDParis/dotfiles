@@ -647,3 +647,19 @@ Mar 06 01:51:37 *	Topic for #mutt set by kevin8t8 (Sat Sep  9 09:51:05 2023)
 Mar 06 07:16:31 *	Now talking on #mutt
 Mar 06 07:16:31 *	Topic for #mutt is: latest mutt: 2.2.12 (2023-09-09) https://gitlab.com/muttmua/mutt/wikis/MuttChannel before posting | wiki: https://gitlab.com/muttmua/mutt/wikis/home | channel statistics and excerpts are logged use a paste service such as http://termbin.com/ | remember pdmef (Rocco)
 Mar 06 07:16:31 *	Topic for #mutt set by kevin8t8 (Sat Sep  9 09:51:05 2023)
+Mar 06 09:53:14 <snoriman>	Hi! What do you use to read/parse html messages?  I normally use `lynx -dump`but somehow links are spread over multiple lines when they are very long which means I can't open. 
+Mar 06 09:56:49 <ch>	cant your terminal deal with the line break in the url?
+Mar 06 09:57:12 <jindraj>	snoriman: use urlview https://superuser.com/a/333866/996550
+Mar 06 09:58:13 <snoriman>	jindraj: thanks!
+Mar 06 09:58:23 <snoriman>	ch: no it's broken into several lines
+Mar 06 09:58:25 <rkta>	Few days ago absinthium had the same problem, IIRC he got it solved somehow.
+Mar 06 09:59:07 <snoriman>	rkta: what that with urlview?
+Mar 06 09:59:39 <absinthium>	snoriman: I installed `urlscan` and I invoke it with Alt+u.
+Mar 06 10:00:14 <absinthium>	macro index \033u |"urlscan -c -d -H -s"\n
+Mar 06 10:00:16 <absinthium>	macro pager \033u |"urlscan -c -d -H -s"\n
+Mar 06 10:00:46 <snoriman>	absinthium: ah thanks, urlscan is part of the base packages of Arch. Going to try that!
+Mar 06 10:03:10 <snoriman>	nice, that works perfectly!
+Mar 06 10:03:12 <absinthium>	Directly clicking the links doesn't work in Alacritty and kitty if they're too long and break. It did work in urxvt, but it's a really ugly terminal emulator. :P
+Mar 06 10:05:21 <absinthium>	One more thing, if not done already `unset wait_key` so you'll automatically return to your message after opening a link.
+Mar 06 10:08:53 <rkta>	Without wait_key you also won't see errors/output when piping a mail.
+Mar 06 10:25:00 <snoriman>	thanks

@@ -1100,3 +1100,6 @@ T 1709705791 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/
 T 1709711259 18<22iz18>	xorAxAx: yeah, cuz shor's
 T 1709711372 18<22iz18>	also rsa keys have to be so big, b/c factoring is a relatively easy problem and the spacing of primes, esp when the numbers get big doesn't make for efficient bit sizes
 T 1709711493 18<22iz18>	also, as mk-fg said, pcq is like a hedge against future breakthroughs in quantum computing and also good algorithms aren't gonna appear instantly -- it will take cycles of research and peer review
+T 1709719895 18<20dnosng18>	so, is im in sequrity?
+T 1709719952 18<28calmclam18>	sir this is a wendys
+T 1709720795 18<20dnosng18>	calmclam: very funy, did u know some port-chaker for my phone anrdoid, root free

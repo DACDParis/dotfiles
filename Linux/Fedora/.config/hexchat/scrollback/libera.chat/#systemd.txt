@@ -558,3 +558,7 @@ T 1709686297 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:
 T 1709705791 19*	Now talking on 22#systemd
 T 1709705791 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
 T 1709705791 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709720367 18<22plundra18>	So a preference/tast or maybe even philosophical question... I have a timer with OnCalendar; I want the service to be ran on boot, too ("cache" of sorts, timer refreshes). I can either add OnBootSec=0 to the timer, or add WantedBy=multi-user.target and enable the service directly, too.
+T 1709720410 18<22plundra18>	Question being, any input in the matter? :) What would be more obvious in function if you stumbled upon it?
+T 1709720461 18<22plundra18>	I like not having to enable an additional unit, and not needing an [Install] section etc, as well as not needing to disable two units to disable the "function"
+T 1709720489 18<22plundra18>	Although having it as a "regular" standalone service might look more explicit.

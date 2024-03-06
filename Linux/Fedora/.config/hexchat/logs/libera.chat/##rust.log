@@ -2447,3 +2447,140 @@ Mar 06 04:39:40 <Widdershins>	mhm
 Mar 06 07:16:31 *	Now talking on ##rust
 Mar 06 07:16:31 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
 Mar 06 07:16:31 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 06 08:56:53 <shamelessshill>	Hello, good folks. I have a rather simple but strange question.
+Mar 06 08:57:19 <shamelessshill>	So in my project, I have a bunch of crates... and I have a script that bumps up versions.
+Mar 06 08:57:58 <osse>	So far so good
+Mar 06 08:58:08 <shamelessshill>	So, my question is this - if my script bumps up the version in the Cargo.toml files for each of my crates, it should be fine if the same script bumps up the versions in Cargo.lock as well, yes?
+Mar 06 08:58:33 <shamelessshill>	We check in Cargo.lock into version control, and the version update step is done as a separate commit (no dependencies added, etc.)
+Mar 06 08:58:54 <shamelessshill>	I thought of running a build and the adding the generated Cargo.lock, but that seems like overkill?
+Mar 06 08:59:47 <shamelessshill>	Otherwise right now I observe that the crate versions (my own crates) in the lockfile are falling behind the toml versions because people keep forgetting to check in the lock file (nor should they have to, imho).
+Mar 06 09:00:44 <shamelessshill>	and overkill since all the changes are for my own crates (not deps) and only the version string would change to match that in the TOML file... I'm not adding any dependencies during this version bumping step.
+Mar 06 09:00:48 <shamelessshill>	Thoughts?
+Mar 06 09:01:18 <shamelessshill>	I thought of checksum issues, but we don't track checksums in the lock file for our own crates, do we? Only for external dependencies.
+Mar 06 09:01:45 <shamelessshill>	Any other issues that come to mind?
+Mar 06 09:08:54 <polychromata{J}>	shamelessshill: simplistic editing of the lockfile sounds like a good way to break things
+Mar 06 09:09:33 <polychromata{J}>	do you know what happens if the lockfile specifies a crate with a version that has a dependency, but doesn't say anything about that dependency?
+Mar 06 09:09:35 <polychromata{J}>	(I don't.)
+Mar 06 09:09:49 <polychromata{J}>	how about `cargo generate-lockfile`?
+Mar 06 09:11:03 <shamelessshill>	Hmmm
+Mar 06 09:11:23 <polychromata{J}>	actually…isn't the overall thing you're trying to do just `cargo update`?
+Mar 06 09:11:49 <shamelessshill>	It is true that right now the script is run as a separate independent "version change only" step, but that __requires__ developer discpline. You're right - I don't like the idea myself.
+Mar 06 09:12:12 <shamelessshill>	polychromata{J}: Wouldn't `cargo update` update the dependencies as well?
+Mar 06 09:12:21 <shamelessshill>	Even minor/patch versions, I mean.
+Mar 06 09:12:29 <bertptrs>	correct, so you don't want that
+Mar 06 09:12:31 <shamelessshill>	I think cago generate lockfile looks promising... polychromata{J} ... TIL
+Mar 06 09:13:14 <shamelessshill>	bertptrs: Yes, indeed. Let me experiment with generate lockfile and see...
+Mar 06 09:14:15 <shamelessshill>	Oops... looks like generate-lockfile also updates
+Mar 06 09:14:17 <shamelessshill>	:(
+Mar 06 09:18:34 <bertptrs>	so it does, that's annoying
+Mar 06 09:18:49 <bertptrs>	I guess you could get awaym with `cargo check` instead of a full build?
+Mar 06 09:20:07 <shamelessshill>	Actually, I found something that does appears to work: `cargo update --workspace`
+Mar 06 09:20:19 <bertptrs>	that should still update deps if I read the docs?
+Mar 06 09:20:24 <shamelessshill>	"--workspace Attempt to update only packages defined in the workspace. Other packages are updated only if they don’t already exist in the lockfile. This option is useful for updating Cargo.lock after you’ve changed version numbers in Cargo.toml.
+Mar 06 09:20:28 <shamelessshill>	"
+Mar 06 09:20:31 <bertptrs>	ooooh
+Mar 06 09:20:32 <shamelessshill>	__Seems__ to work
+Mar 06 09:20:33 <bertptrs>	that's brilliant
+Mar 06 09:20:39 <shamelessshill>	Let me double-check! :)
+Mar 06 09:20:45 <bertptrs>	somewhat misnamed but w/e
+Mar 06 09:20:47 <shamelessshill>	bertptrs: Yeah... beautiful indeed!
+Mar 06 09:20:59 <shamelessshill>	Yeah, I would never have guessed with that flag name.
+Mar 06 09:21:39 <shamelessshill>	Yup... appears to work! So polychromata{J} was right after all. Hehehe.
+Mar 06 09:22:13 <polychromata{J}>	…that's a really bad name for that flag.
+Mar 06 09:22:18 <polychromata{J}>	Good find though.
+Mar 06 09:22:44 <shamelessshill>	Indeed... I only happened to even go to that doc page because the generate-lockfile docs said that `update` had more options... so pure luck!
+Mar 06 09:41:33 <gastus>	I want to experiment with non utf-8 fast csv parsing and wanted to create ffi bindings to zsv now bindgen fails to find some definitions. Is it best to manually convert or is bindgen supposed to understand all header files and my configuration is incomplete ?
+Mar 06 09:42:25 <bertptrs>	bindgen doesn't understand all header files, and you usually have to make it ignore things
+Mar 06 09:59:53 <rendar>	in your experience, do you think exist one crate which abstracts Box<&str> and adds useful traits (e.g. From, etc) ?
+Mar 06 10:00:11 <rendar>	i mean, Box<Rc<&str>>
+Mar 06 10:01:04 <rendar>	i want to create |1 ptr size poiting to| --->  |ref_count|my string data|
+Mar 06 10:01:50 <Mutabah>	`Rc<str>` is a fat pointer to counts and string data
+Mar 06 10:01:54 <bertptrs>	That's just Rc<str>
+Mar 06 10:02:00 <Mutabah>	although, maybe you'd want a string interning crate
+Mar 06 10:03:06 <bertptrs>	nvm, Rc<str> is two pointer size because of the fat pointer
+Mar 06 10:09:49 <rendar>	Mutabah, no, i don't want a global state to check
+Mar 06 10:10:38 <rendar>	i wish to get only 1 pointer size, like a Box, but also a ref counter for cheap cloning
+Mar 06 10:10:50 <rendar>	can i combine the 2 things?
+Mar 06 10:11:08 <rendar>	having only 1 heap allocation that contains both ref counter and string data
+Mar 06 10:12:30 <bertptrs>	Not right now, there is no nice way to create DSTs from rust
+Mar 06 10:13:06 <bertptrs>	your allocation would have to store |len|rc|data|
+Mar 06 10:15:29 <rendar>	bertptrs, yes sorry, i meant just that one
+Mar 06 10:15:37 <rendar>	rc+len+data
+Mar 06 10:15:44 <rendar>	in one unique block, isn't that possible?
+Mar 06 10:16:07 <bertptrs>	Creating dsts yourself is annoying but it's not impossible I guess
+Mar 06 10:16:17 <bertptrs>	You have to basically do it without language support
+Mar 06 10:16:38 <rendar>	what you mean with DSTs?
+Mar 06 10:16:45 <bertptrs>	dynamically sized types
+Mar 06 10:16:50 <rendar>	i see
+Mar 06 10:16:52 <bertptrs>	types that do not have a fixed size\
+Mar 06 10:16:54 <bertptrs>	such as str
+Mar 06 10:17:38 <bertptrs>	or slices
+Mar 06 10:18:00 <rendar>	bertptrs, well, Box<str> is not dinamically sized type, because sizeof(Box<str>) is 8 (1 pointer size), then it allocates N bytes on heap, just like Vec<u8> which is 24 in sizeof, but then it allocates N bytes on heap, am i wrong?
+Mar 06 10:18:24 <bertptrs>	wrong, sizeof Box<str> is 16
+Mar 06 10:18:35 <bertptrs>	because str is a DST
+Mar 06 10:18:35 <rendar>	because of the fat pointer?
+Mar 06 10:18:38 <bertptrs>	Correct
+Mar 06 10:18:41 <rendar>	yeah
+Mar 06 10:18:46 <rendar>	what about Box<&str> ?
+Mar 06 10:18:54 <bertptrs>	That one is indeed size 8
+Mar 06 10:19:12 <rendar>	indeed, but Box<&str> is a pointer pointing to |len|data..| ?!
+Mar 06 10:19:17 <rendar>	or just data?
+Mar 06 10:19:54 <rendar>	or is a pointer pointing to |len|ptr_to_data|    which in turn points to |data..| ?
+Mar 06 10:19:54 <bertptrs>	Box<&str> is pointing to an &str which is contains a length and a pointer to the data
+Mar 06 10:20:12 <rendar>	so with Box<&str> i get 2 heap allocations per string?
+Mar 06 10:20:30 <bertptrs>	not necessarily heap allocations (can use a static str after all) but yes two indirections
+Mar 06 10:20:45 <rendar>	oh gosh :| i see
+Mar 06 10:23:48 <rendar>	now i get the purpose of a crate that tried to fix this problem, and had strings of 2 pointer size
+Mar 06 10:26:53 <rendar>	https://crates.io/crates/tendril
+Mar 06 10:27:08 <rendar>	that's is! i found it, doesn't this crate does what i need?
+Mar 06 10:28:48 <Mutabah>	Maybe it is
+Mar 06 10:28:58 <Mutabah>	Depends on why you want those single-pointer strings
+Mar 06 10:29:16 <Mutabah>	What you were asking for reminds me of the `RcString` type I have in mrustc (... in C++, but same idea)
+Mar 06 10:29:30 <Mutabah>	A pointer to a refcount, length, and then string data
+Mar 06 10:31:49 <rendar>	Mutabah, that's simple: consider a very large hasmap with strings as keys, i don't need them to be mutable, still i will spare a lot of memory not having 24 bytes for each string
+Mar 06 10:32:02 <rendar>	what is mrust?
+Mar 06 10:33:06 <bertptrs>	Mutabah's Rust Compiler
+Mar 06 10:35:28 <rendar>	really?
+Mar 06 10:40:47 <synapse>	I have a colleague who uses Result<(), ()> instead of bool. in a way, I kinda get why 'return Err(());' is more readable than 'return false;' :P
+Mar 06 10:41:05 <Mutabah>	`Result` carries more semantic information than a `bool`
+Mar 06 10:41:25 <Mutabah>	is `false` "operation failed" or is it "don't worry about me"?
+Mar 06 10:41:36 <synapse>	yeah, it's answering a generic question
+Mar 06 10:41:46 <synapse>	whereas Result<(), ()> is always whether some operation went well
+Mar 06 10:56:02 <mkoncek1>	and allows ? shortcut
+Mar 06 11:00:16 <Affliction>	Caller probably still needs to map_err it into something sane, but yeah, I might start using that pattern
+Mar 06 11:00:37 <bertptrs>	nothing matches! can't fix
+Mar 06 11:00:45 <Affliction>	true
+Mar 06 11:00:45 <bertptrs>	Or just is_ok()
+Mar 06 11:29:44 <kpcyrd>	I'd still use anyhow::Result<T>, then provide a simple message for bail!. the few bytes in the binary for a &'static str shouldn't hurt.
+Mar 06 11:30:19 <kpcyrd>	I use anyhow::Result<()> quite often
+Mar 06 12:00:02 <mkoncek1>	no method named `poll` found for mutable reference `&mut (dyn Future<Output = ()> + 'static)` in the current scope
+Mar 06 12:00:29 <mkoncek1>	i have a vector of Box<dyn Future>
+Mar 06 12:01:04 <mkoncek1>	also, should i be using PollFn instead?
+Mar 06 12:01:14 <dav1d>	Is there a nice way to just take the first item from a &mut [T]?
+Mar 06 12:01:58 <dav1d>	`take_first` is of course nightly
+Mar 06 12:02:18 <bertptrs>	split_at_mut can kind of do it but it's not perfect
+Mar 06 12:02:19 <dav1d>	guess I'll just have to do split_first :(
+Mar 06 12:02:28 <bertptrs>	oh split_first too
+Mar 06 12:03:52 <dav1d>	aight thanks
+Mar 06 12:03:54 <bertptrs>	mkoncek1: is the Future trait in scope? Not sure if it's part of the prelude
+Mar 06 12:07:08 <mkoncek1>	oh right, poll is not a member function
+Mar 06 12:07:17 <mkoncek1>	fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output>;
+Mar 06 12:07:25 <mkoncek1>	the first arg is not a reference to self
+Mar 06 12:25:41 <bertptrs>	No it's a pin, because the requirements for Future are slightly stronger. poll is a member though
+Mar 06 12:26:17 <bertptrs>	Members are allowed to take Pin, Arc, Rc, Box, or any combination of them as their self
+Mar 06 12:42:01 <mkoncek1>	really? didn't know about that
+Mar 06 12:42:23 <Widdershins>	and don't forget native references that counts too
+Mar 06 12:42:45 <Widdershins>	altho idk how much you can layer it actually
+Mar 06 12:44:19 <Widdershins>	&&self isn't allowed, but self: &Box<Self> is
+Mar 06 12:44:41 <Widdershins>	i guess that's 'cause && just decays to &
+Mar 06 12:44:42 <spb>	https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=90eec5e4a7a77b0663fd3db944c5a929
+Mar 06 12:44:59 <spb>	`a.foo()` doesn't compile in that case
+Mar 06 12:45:26 <Widdershins>	ah you can do it then it just doesn't let you implicitly type it like &self
+Mar 06 12:46:24 <spb>	i'm not sure in what situation this would be useful, mind
+Mar 06 12:46:40 <Widdershins>	ok yeah even deranged types like &Rc<&Box<&&Self>> are allowable for method receivers. but yeah not very useful, you won't see it much
+Mar 06 12:47:10 <Widdershins>	usually it is like `self: Box<Self>` so that you can take ownership of the value via a box instead of the value itself
+Mar 06 12:47:41 <Widdershins>	otherwise anything that would receive &Box<Self> you can just let it decay to &self by dereferencing
+Mar 06 12:51:54 <bertptrs>	There's the Wake trait that takes Arc<Self> and &Arc<Self>
+Mar 06 12:52:51 <Widdershins>	&arc so you don't have to mess with the count by cloning it
+Mar 06 12:53:10 <bertptrs>	Exactly
+Mar 06 12:55:14 <bertptrs>	but rather than making an arbitrary decision on what makes sense, the standard just allows all combinations

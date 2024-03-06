@@ -2312,3 +2312,140 @@ T 1709696380 18<25Widdershins18>	mhm
 T 1709705791 19*	Now talking on 22##rust
 T 1709705791 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
 T 1709705791 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1709711813 18<22shamelessshill18>	Hello, good folks. I have a rather simple but strange question.
+T 1709711839 18<22shamelessshill18>	So in my project, I have a bunch of crates... and I have a script that bumps up versions.
+T 1709711878 18<20osse18>	So far so good
+T 1709711888 18<22shamelessshill18>	So, my question is this - if my script bumps up the version in the Cargo.toml files for each of my crates, it should be fine if the same script bumps up the versions in Cargo.lock as well, yes?
+T 1709711913 18<22shamelessshill18>	We check in Cargo.lock into version control, and the version update step is done as a separate commit (no dependencies added, etc.)
+T 1709711934 18<22shamelessshill18>	I thought of running a build and the adding the generated Cargo.lock, but that seems like overkill?
+T 1709711987 18<22shamelessshill18>	Otherwise right now I observe that the crate versions (my own crates) in the lockfile are falling behind the toml versions because people keep forgetting to check in the lock file (nor should they have to, imho).
+T 1709712044 18<22shamelessshill18>	and overkill since all the changes are for my own crates (not deps) and only the version string would change to match that in the TOML file... I'm not adding any dependencies during this version bumping step.
+T 1709712048 18<22shamelessshill18>	Thoughts?
+T 1709712078 18<22shamelessshill18>	I thought of checksum issues, but we don't track checksums in the lock file for our own crates, do we? Only for external dependencies.
+T 1709712105 18<22shamelessshill18>	Any other issues that come to mind?
+T 1709712534 18<20polychromata{J}18>	shamelessshill: simplistic editing of the lockfile sounds like a good way to break things
+T 1709712573 18<20polychromata{J}18>	do you know what happens if the lockfile specifies a crate with a version that has a dependency, but doesn't say anything about that dependency?
+T 1709712575 18<20polychromata{J}18>	(I don't.)
+T 1709712589 18<20polychromata{J}18>	how about `cargo generate-lockfile`?
+T 1709712663 18<22shamelessshill18>	Hmmm
+T 1709712683 18<20polychromata{J}18>	actually…isn't the overall thing you're trying to do just `cargo update`?
+T 1709712709 18<22shamelessshill18>	It is true that right now the script is run as a separate independent "version change only" step, but that __requires__ developer discpline. You're right - I don't like the idea myself.
+T 1709712732 18<22shamelessshill18>	polychromata{J}: Wouldn't `cargo update` update the dependencies as well?
+T 1709712741 18<22shamelessshill18>	Even minor/patch versions, I mean.
+T 1709712749 18<25bertptrs18>	correct, so you don't want that
+T 1709712751 18<22shamelessshill18>	I think cago generate lockfile looks promising... polychromata{J} ... TIL
+T 1709712794 18<22shamelessshill18>	bertptrs: Yes, indeed. Let me experiment with generate lockfile and see...
+T 1709712855 18<22shamelessshill18>	Oops... looks like generate-lockfile also updates
+T 1709712857 18<22shamelessshill18>	:(
+T 1709713114 18<25bertptrs18>	so it does, that's annoying
+T 1709713129 18<25bertptrs18>	I guess you could get awaym with `cargo check` instead of a full build?
+T 1709713207 18<22shamelessshill18>	Actually, I found something that does appears to work: `cargo update --workspace`
+T 1709713219 18<25bertptrs18>	that should still update deps if I read the docs?
+T 1709713224 18<22shamelessshill18>	"--workspace Attempt to update only packages defined in the workspace. Other packages are updated only if they don’t already exist in the lockfile. This option is useful for updating Cargo.lock after you’ve changed version numbers in Cargo.toml.
+T 1709713228 18<22shamelessshill18>	"
+T 1709713231 18<25bertptrs18>	ooooh
+T 1709713232 18<22shamelessshill18>	__Seems__ to work
+T 1709713233 18<25bertptrs18>	that's brilliant
+T 1709713239 18<22shamelessshill18>	Let me double-check! :)
+T 1709713245 18<25bertptrs18>	somewhat misnamed but w/e
+T 1709713247 18<22shamelessshill18>	bertptrs: Yeah... beautiful indeed!
+T 1709713259 18<22shamelessshill18>	Yeah, I would never have guessed with that flag name.
+T 1709713299 18<22shamelessshill18>	Yup... appears to work! So polychromata{J} was right after all. Hehehe.
+T 1709713333 18<20polychromata{J}18>	…that's a really bad name for that flag.
+T 1709713338 18<20polychromata{J}18>	Good find though.
+T 1709713364 18<22shamelessshill18>	Indeed... I only happened to even go to that doc page because the generate-lockfile docs said that `update` had more options... so pure luck!
+T 1709714493 18<27gastus18>	I want to experiment with non utf-8 fast csv parsing and wanted to create ffi bindings to zsv now bindgen fails to find some definitions. Is it best to manually convert or is bindgen supposed to understand all header files and my configuration is incomplete ?
+T 1709714545 18<25bertptrs18>	bindgen doesn't understand all header files, and you usually have to make it ignore things
+T 1709715593 18<27rendar18>	in your experience, do you think exist one crate which abstracts Box<&str> and adds useful traits (e.g. From, etc) ?
+T 1709715611 18<27rendar18>	i mean, Box<Rc<&str>>
+T 1709715664 18<27rendar18>	i want to create |1 ptr size poiting to| --->  |ref_count|my string data|
+T 1709715710 18<25Mutabah18>	`Rc<str>` is a fat pointer to counts and string data
+T 1709715714 18<25bertptrs18>	That's just Rc<str>
+T 1709715720 18<25Mutabah18>	although, maybe you'd want a string interning crate
+T 1709715786 18<25bertptrs18>	nvm, Rc<str> is two pointer size because of the fat pointer
+T 1709716189 18<27rendar18>	Mutabah, no, i don't want a global state to check
+T 1709716238 18<27rendar18>	i wish to get only 1 pointer size, like a Box, but also a ref counter for cheap cloning
+T 1709716250 18<27rendar18>	can i combine the 2 things?
+T 1709716268 18<27rendar18>	having only 1 heap allocation that contains both ref counter and string data
+T 1709716350 18<25bertptrs18>	Not right now, there is no nice way to create DSTs from rust
+T 1709716386 18<25bertptrs18>	your allocation would have to store |len|rc|data|
+T 1709716529 18<27rendar18>	bertptrs, yes sorry, i meant just that one
+T 1709716537 18<27rendar18>	rc+len+data
+T 1709716544 18<27rendar18>	in one unique block, isn't that possible?
+T 1709716567 18<25bertptrs18>	Creating dsts yourself is annoying but it's not impossible I guess
+T 1709716577 18<25bertptrs18>	You have to basically do it without language support
+T 1709716598 18<27rendar18>	what you mean with DSTs?
+T 1709716605 18<25bertptrs18>	dynamically sized types
+T 1709716610 18<27rendar18>	i see
+T 1709716612 18<25bertptrs18>	types that do not have a fixed size\
+T 1709716614 18<25bertptrs18>	such as str
+T 1709716658 18<25bertptrs18>	or slices
+T 1709716680 18<27rendar18>	bertptrs, well, Box<str> is not dinamically sized type, because sizeof(Box<str>) is 8 (1 pointer size), then it allocates N bytes on heap, just like Vec<u8> which is 24 in sizeof, but then it allocates N bytes on heap, am i wrong?
+T 1709716704 18<25bertptrs18>	wrong, sizeof Box<str> is 16
+T 1709716715 18<25bertptrs18>	because str is a DST
+T 1709716715 18<27rendar18>	because of the fat pointer?
+T 1709716718 18<25bertptrs18>	Correct
+T 1709716721 18<27rendar18>	yeah
+T 1709716726 18<27rendar18>	what about Box<&str> ?
+T 1709716734 18<25bertptrs18>	That one is indeed size 8
+T 1709716752 18<27rendar18>	indeed, but Box<&str> is a pointer pointing to |len|data..| ?!
+T 1709716757 18<27rendar18>	or just data?
+T 1709716794 18<27rendar18>	or is a pointer pointing to |len|ptr_to_data|    which in turn points to |data..| ?
+T 1709716794 18<25bertptrs18>	Box<&str> is pointing to an &str which is contains a length and a pointer to the data
+T 1709716812 18<27rendar18>	so with Box<&str> i get 2 heap allocations per string?
+T 1709716830 18<25bertptrs18>	not necessarily heap allocations (can use a static str after all) but yes two indirections
+T 1709716845 18<27rendar18>	oh gosh :| i see
+T 1709717028 18<27rendar18>	now i get the purpose of a crate that tried to fix this problem, and had strings of 2 pointer size
+T 1709717213 18<27rendar18>	https://crates.io/crates/tendril
+T 1709717228 18<27rendar18>	that's is! i found it, doesn't this crate does what i need?
+T 1709717328 18<25Mutabah18>	Maybe it is
+T 1709717338 18<25Mutabah18>	Depends on why you want those single-pointer strings
+T 1709717356 18<25Mutabah18>	What you were asking for reminds me of the `RcString` type I have in mrustc (... in C++, but same idea)
+T 1709717370 18<25Mutabah18>	A pointer to a refcount, length, and then string data
+T 1709717509 18<27rendar18>	Mutabah, that's simple: consider a very large hasmap with strings as keys, i don't need them to be mutable, still i will spare a lot of memory not having 24 bytes for each string
+T 1709717522 18<27rendar18>	what is mrust?
+T 1709717586 18<25bertptrs18>	Mutabah's Rust Compiler
+T 1709717728 18<27rendar18>	really?
+T 1709718047 18<27synapse18>	I have a colleague who uses Result<(), ()> instead of bool. in a way, I kinda get why 'return Err(());' is more readable than 'return false;' :P
+T 1709718065 18<25Mutabah18>	`Result` carries more semantic information than a `bool`
+T 1709718085 18<25Mutabah18>	is `false` "operation failed" or is it "don't worry about me"?
+T 1709718096 18<27synapse18>	yeah, it's answering a generic question
+T 1709718106 18<27synapse18>	whereas Result<(), ()> is always whether some operation went well
+T 1709718962 18<20mkoncek118>	and allows ? shortcut
+T 1709719216 18<27Affliction18>	Caller probably still needs to map_err it into something sane, but yeah, I might start using that pattern
+T 1709719237 18<25bertptrs18>	nothing matches! can't fix
+T 1709719245 18<27Affliction18>	true
+T 1709719245 18<25bertptrs18>	Or just is_ok()
+T 1709720984 18<26kpcyrd18>	I'd still use anyhow::Result<T>, then provide a simple message for bail!. the few bytes in the binary for a &'static str shouldn't hurt.
+T 1709721019 18<26kpcyrd18>	I use anyhow::Result<()> quite often
+T 1709722802 18<20mkoncek118>	no method named `poll` found for mutable reference `&mut (dyn Future<Output = ()> + 'static)` in the current scope
+T 1709722829 18<20mkoncek118>	i have a vector of Box<dyn Future>
+T 1709722864 18<20mkoncek118>	also, should i be using PollFn instead?
+T 1709722874 18<26dav1d18>	Is there a nice way to just take the first item from a &mut [T]?
+T 1709722918 18<26dav1d18>	`take_first` is of course nightly
+T 1709722938 18<25bertptrs18>	split_at_mut can kind of do it but it's not perfect
+T 1709722939 18<26dav1d18>	guess I'll just have to do split_first :(
+T 1709722948 18<25bertptrs18>	oh split_first too
+T 1709723032 18<26dav1d18>	aight thanks
+T 1709723034 18<25bertptrs18>	mkoncek1: is the Future trait in scope? Not sure if it's part of the prelude
+T 1709723228 18<20mkoncek118>	oh right, poll is not a member function
+T 1709723237 18<20mkoncek118>	fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output>;
+T 1709723245 18<20mkoncek118>	the first arg is not a reference to self
+T 1709724341 18<25bertptrs18>	No it's a pin, because the requirements for Future are slightly stronger. poll is a member though
+T 1709724377 18<25bertptrs18>	Members are allowed to take Pin, Arc, Rc, Box, or any combination of them as their self
+T 1709725321 18<20mkoncek118>	really? didn't know about that
+T 1709725343 18<25Widdershins18>	and don't forget native references that counts too
+T 1709725365 18<25Widdershins18>	altho idk how much you can layer it actually
+T 1709725459 18<25Widdershins18>	&&self isn't allowed, but self: &Box<Self> is
+T 1709725481 18<25Widdershins18>	i guess that's 'cause && just decays to &
+T 1709725482 18<20spb18>	https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=90eec5e4a7a77b0663fd3db944c5a929
+T 1709725499 18<20spb18>	`a.foo()` doesn't compile in that case
+T 1709725526 18<25Widdershins18>	ah you can do it then it just doesn't let you implicitly type it like &self
+T 1709725584 18<20spb18>	i'm not sure in what situation this would be useful, mind
+T 1709725600 18<25Widdershins18>	ok yeah even deranged types like &Rc<&Box<&&Self>> are allowable for method receivers. but yeah not very useful, you won't see it much
+T 1709725630 18<25Widdershins18>	usually it is like `self: Box<Self>` so that you can take ownership of the value via a box instead of the value itself
+T 1709725661 18<25Widdershins18>	otherwise anything that would receive &Box<Self> you can just let it decay to &self by dereferencing
+T 1709725914 18<25bertptrs18>	There's the Wake trait that takes Arc<Self> and &Arc<Self>
+T 1709725971 18<25Widdershins18>	&arc so you don't have to mess with the count by cloning it
+T 1709725990 18<25bertptrs18>	Exactly
+T 1709726114 18<25bertptrs18>	but rather than making an arbitrary decision on what makes sense, the standard just allows all combinations

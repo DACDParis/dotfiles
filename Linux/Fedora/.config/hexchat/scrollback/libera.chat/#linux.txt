@@ -5090,3 +5090,286 @@ T 1709711767 18<27xx18>	s/now/not/
 T 1709711789 18<19Sparkles18>	bombastick, what if it is a web client?
 T 1709711793 18<19Sparkles18>	HTTP supports https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer
 T 1709711809 18<19Sparkles18>	Your referrer may contain your ID in the link.
+T 1709711821 18<22bombastick18>	Firefox for a couple of years now hides the full referrer, it only gives the base domain (eg myirc.com)
+T 1709711831 18<22bombastick18>	(everyone is using Firefox, right?)
+T 1709711835 18<27xx18>	Disconsented: so it's a terrible name only due to having bad SEO (for now)?
+T 1709711857 18<19Disconsented18>	Terrible is a hyperbole but essentially yes
+T 1709711870 18<22bombastick18>	I for one will no longer be using using discontented.com's pastebin services
+T 1709711880 18<27xx18>	Disconsented: got it, thanks, I was worried it was something else
+T 1709711881 18<19Disconsented18>	ohno
+T 1709711890 18<19Sparkles18>	Is "terrible" worse than "horrible"?
+T 1709711904 18<27xx18>	it's interchangeable as I understand it
+T 1709711917 18<19Sparkles18>	You said "horrible" and this is not a hyperbole?
+T 1709711920 18<22bombastick18>	I think they meant different tihngs back in the days of boomers
+T 1709711923 18<25marcopolo118>	Disconsented: your site doesnt work on mobile
+T 1709711941 18<27xx18>	bombastick: are you maybe thinking of "terrific"?
+T 1709711960 18<19Disconsented18>	works fine for me
+T 1709711961 18<19Disconsented18>	  ¯\_(ツ)_/¯
+T 1709711998 18<22bombastick18>	xx: probably that too, alongside "awesome"
+T 1709712018 18<22bombastick18>	but guys, we are drifting off-topic by #linux standards, let's get back to American politics
+T 1709712027 18<19Disconsented18>	lol
+T 1709712035 18<25n4dir18>	lol
+T 1709712211 18<19Sparkles18>	stenno: it is awesome to see you here around, too. I see it an great channel to lurk but I rarely speak here. I have always felt unsafe to be in this channel.
+T 1709712218 18<27xx18>	I'd vote for linux for president
+T 1709712232 18<19Sparkles18>	s/an/a
+T 1709713044 18<26lockywolf18>	Thawte used to have a Web of Trust?
+T 1709713088 18<25marcopolo118>	I installed lightdm but it still boots in tty? Do i need something else?
+T 1709713098 18<22ssm_18>	Sparkles: /ignore goes a long way
+T 1709713114 18<22NauovT18>	allo
+T 1709713251 18<22NauovT18>	hi
+T 1709713481 18<22madmax18>	marcopolo1, did you enable lightdm.service ?
+T 1709713684 18<25marcopolo118>	madmax: oh , service doesnt enable itself?
+T 1709713721 18<26jim18>	NauovT, hi
+T 1709713881 18<26jim18>	marcopolo1, maybe if you install a package containing lightdm, the code in the package that runs when the package is installed, will enable the service. that said, it should tell you wheter it will, in its docs
+T 1709713911 18<22madmax18>	marcopolo1,no sudo systemctl enable lightdm
+T 1709713970 18<26jim18>	some packages will display it as a choice, do you want to enable the service, and then it will follow through on that afterwards
+T 1709713997 18<24hackinghorn18>	hi
+T 1709714001 18<25marcopolo118>	So if i want to autostart i go to .config/autostart or is there another directory?
+T 1709714019 18<25n4dir18>	did anyone speak about .config/autostart?
+T 1709714073 18<24hackinghorn18>	how do I ran a nodejs script with ../[..]/script-name.js . How do I kill it with the script name? I'm also editing the file with 'vim script-name.js' and I dont want to kill the vim process
+T 1709714086 18<24hackinghorn18>	*I ran
+T 1709714222 18<25n4dir18>	perhaps add a grep -v vim;
+T 1709714374 18<26lockywolf18>	Where can I authenticate with a gnupg key?
+T 1709714702 22*	26ChanServ gives channel operator status to 18litharge
+T 1709714703 22*	26litharge removes ban on 18*!*@79.139.205.252
+T 1709714703 22*	26litharge removes channel operator status from 18litharge
+T 1709715315 22*	26ChanServ gives channel operator status to 18litharge
+T 1709715315 22*	26litharge removes ban on 18*!~outlokin2@185.220.103.*
+T 1709715315 22*	26litharge removes channel operator status from 18litharge
+T 1709715727 18<28livingbeef18>	hackinghorn: have the process create a pidfile and kill the pid
+T 1709715743 18<22bombastick18>	hackinghorn: https://i.imgur.com/zqgrUUw.png
+T 1709715803 18<28livingbeef18>	either in /run/script-name.pid or in ~/.local/tmp/... or something like that
+T 1709715833 18<22bombastick18>	we totally need a GPT bot in here. I'm just too lazy to contribute.
+T 1709715867 18<22bombastick18>	teenagers on Discord have GPT bots up the wazoo and a tech-oriented channel doesn't? Come on!
+T 1709715894 18<28livingbeef18>	as a bonus you can refuse to start if you see that the process is already running
+T 1709716127 18<25n4dir18>	we need a bot who slaps everyone who mentiones chat-dinges with a trout
+T 1709716138 18<28livingbeef18>	I didn't sign up to feed some corpo's AI, you can go back to discord any time you want
+T 1709716188 18<28livingbeef18>	tech enthusiasts =/= tech people
+T 1709716323 18<22bombastick18>	you will train ze AI, you will eat ze bugs
+T 1709716354 18<22bombastick18>	you vill promote international capitalism and varfare
+T 1709716400 18<19Trasp18>	n4dir: A large trout, mind you.
+T 1709716432 18<22bombastick18>	was large trout an mIRC-only thing?
+T 1709716450 18<25n4dir18>	Trasp: exactly
+T 1709716457 18<19Trasp18>	a default /alias
+T 1709716460 18<19Trasp18>	yes
+T 1709716632 18<19katia18>	yziquel, lol, the hp kernel supports zfs?
+T 1709716736 18<25yziquel18>	katia zfs and kernel and cpu is fine. what is NOT fine is Sapphire Rapids + ZFS + virtualisation. -> hardware cpu-level bug.
+T 1709716767 18<19katia18>	the hp kernel supports zfs?
+T 1709716772 18<19katia18>	just wondering :)
+T 1709716816 18<25yziquel18>	katia the hash compute function for the merkle-like tree structure of the zfs filesystem uses an avx512f instruction, which has a hardware bug when dancing around in/out virtualisation. This triggers page faults and in the end zombies with ppid 1.
+T 1709716832 18<19katia18>	fascinating :P
+T 1709716835 18<25yziquel18>	katia only on Sapphire Rapids.
+T 1709716849 18<19katia18>	only on Sapphire Rapids the hp kernel supports zfs?
+T 1709716886 18<25yziquel18>	katia I haven't yet tried it. it seems like this is the kernel with which hp tests compliance of the hardware. that's all.
+T 1709716896 18<19katia18>	ah
+T 1709716904 18<19katia18>	but it doesn't support zfs does it yziquel ?
+T 1709716917 18<25yziquel18>	katia it's a Sapphire Rapids + zfs + virtualisation issue.
+T 1709716932 18<19katia18>	yziquel, does hp kernel support zfs?
+T 1709716939 18<25yziquel18>	katia that hp kernel should be fine with zfs. haven't tested.
+T 1709716949 18<25yziquel18>	katia but why the obsession ?
+T 1709716959 18<19katia18>	i'm just curious
+T 1709716965 18<19katia18>	it's a new variable you did not mention ;)
+T 1709716966 18<25yziquel18>	katia haven't tested.
+T 1709716984 18<25yziquel18>	katia I now know I face a CPU bug.
+T 1709716996 18<25yziquel18>	not a kernel issue.
+T 1709717065 18<28livingbeef18>	shouldn't be hard to compile to module without the offending instruction set
+T 1709717570 18<28kms18>	exit
+T 1709717575 18<24bolovanos_18>	Hithere, anyone into gsm modules? I would like to Command (call, send / receive sms) some over USB. Any cheap usb GSM module compatible with linxu and wider user base?
+T 1709717815 18<25yziquel18>	livingbeef yeah. right.
+T 1709718008 18<22dust_mite18>	I'm new to Linux. I'm using Mint Cinnamon 21.2 and I really like it. I have a really stupid question...what are the first commands knowledgeable uses type into the terminal after restarting a computer? i like Htop, system monitor then vpn connect.
+T 1709718046 18<22dust_mite18>	im currious what other people type in to the terminal after a restart
+T 1709718051 18<26lopid18>	if it was restarted from an update: uname -a
+T 1709718234 18<29fb`18>	systemctl / journalctl if using systemd
+T 1709718773 18<28livingbeef18>	...nothing? The system startup should do everything for me
+T 1709719010 18<27suid_dumpable18>	dust_mite: first thing i do after restart and login is adding my private ssh keys to ssh-agent
+T 1709719099 18<24hackinghorn18>	bombastick: lol, thanks a lot!
+T 1709719518 18<22dust_mite18>	i seem to be having problems with firefox. sometimes the search feature doesnt work. right now the search freature on firefox on mint cinnamon is working fine. but firefox on a seperate windows 11 computer isnt working. im pretty sure im doing something wring but i dont know what. is anyone else having weird interminitnet problems witht the search feature on firefox?
+T 1709719563 18<22dust_mite18>	i use duckduckgo on firefox on windows 11 to look up terms i see here
+T 1709719660 18<29djph18>	dust_mite: "search feature" ?
+T 1709719694 18<29djph18>	dust_mite: like just typing a query into the address bar?
+T 1709719796 18<22dust_mite18>	djph, the basic thing. type in something and it brings up diffrent results it thinks you are lookinng for. the search bar thing.
+T 1709719842 18<29djph18>	dust_mite: I just use the address bar, but hte other one -- check that the search provider is properly set
+T 1709719853 18<22dust_mite18>	im not a troll. novice uses get on here and learn stuff from listening
+T 1709719924 18<29djph18>	dust_mite: ... i never said you were?
+T 1709719945 18<20hudo__18>	how can I see the actual cpu frequency on console ?
+T 1709719964 18<29djph18>	hudo__: cat /proc/cpuinfo
+T 1709719979 18<24om3ga18>	disable cpu governor :)
+T 1709720012 18<29djph18>	hudo__: er ... grep "cpu MHz" /proc/cpuinfo
+T 1709720019 18<27suid_dumpable18>	grep . /sys/devices/system/cpu/cpufreq/policy*/scaling_cur_freq
+T 1709720036 18<22dust_mite18>	if i click on the amazon or expedia or twitter x, it loads up instantly. if i type in the whole URL (im pretty surwe thats what its called) it will load the page. but the search feature somehow gets stuck and a little ball bounces back and fourth on the tab at the top of the page. it just gets stuck
+T 1709720059 18<24om3ga18>	there is also lscpu command
+T 1709720076 18<29djph18>	dust_mite: huh, that sounds like the search-provider is stuck/down
+T 1709720112 18<22dust_mite18>	om3ga, if my windows computer was working i would look up that commands heh heh
+T 1709720140 18<24om3ga18>	actual frequency depends on current load. you can install htop, it displays current frequency
+T 1709720206 18<26stwange18>	Morning. I'm trying to use a raspberry pi 4 as a wireless hotspot using two wifis (inbuilt as the AP, dongle as the gateway). Using hostacpd. It works, but it's unstable. I'm going < 10ms ping time to the AP, < 10ms from the pi to 8.8.8.8, but pinging 8.8.8.8 using the hostspot is taking 400-500ms. Any ideas why?
+T 1709720219 18<24om3ga18>	hwinfo --cpu | grep Hz
+T 1709720231 18<24om3ga18>	dmidecode -t processor | grep Hz
+T 1709720241 18<24om3ga18>	dmesg | grep Hz
+T 1709720288 18<24om3ga18>	stwange: rpi has slow fsb
+T 1709720293 18<22dust_mite18>	i like htop. the pause button freezes it for several seconds to help people keep up
+T 1709720326 18<24om3ga18>	don't expect fast wifi network using it, 10MBps max
+T 1709720353 18<29djph18>	stwange: CPU load / overheating / etc
+T 1709720367 18<20hudo__18>	I cant see with htop the actual frequency
+T 1709720388 18<24om3ga18>	djph: use good thermal paste, one with gold in it has highest thermal conductivity
+T 1709720393 18<29djph18>	stwange: also, choice of frequencies for each link
+T 1709720394 18<26stwange18>	I could probably accept 5-10MBps if the latency wasn't a killer. I'll try using a Pi5 see if it's any better, but if not, do any of you have better devices you recommend? I'd prefer something with Linux so I could eg. install tailscale or firewalling if I wanted to later
+T 1709720413 18<29djph18>	om3ga: I'm no the one with the pi-as-hotspot with problems :)
+T 1709720416 18<24om3ga18>	hudo__: upgrade htop, or check if this option is enabled in settings
+T 1709720442 18<29djph18>	om3ga: huh, thought silver was the goto (but it's been /ages/ since i've read up on thermal pastes)
+T 1709720461 18<24om3ga18>	djph: I understand, rpi is weak, I mean first models and zeroW
+T 1709720474 18<22dust_mite18>	it updades every 2 seconds on mint. prob all linux distros do that?
+T 1709720482 18<29djph18>	dust_mite: "what" updates?
+T 1709720493 18<24om3ga18>	dust_mite: it can update more fast, check settings
+T 1709720550 18<24om3ga18>	only there's no reason to update htop that fast, it will load cpu
+T 1709720556 18<22dust_mite18>	i think lithium paste is also good. its poisonous. not the litium that supposedly makes you feel good
+T 1709720580 18<22dust_mite18>	that white paste i think has litium in it
+T 1709720593 18<24om3ga18>	I bought HY610, paste, works well
+T 1709720630 18<24om3ga18>	dust_mite: not litium, probably chalk
+T 1709720654 18<24om3ga18>	btw chalk is not the best thermal conductor
+T 1709720717 18<24om3ga18>	anyway, who has here rare cpus? And time for the unique benchmarks?
+T 1709720724 18<22dust_mite18>	audio amplifiers use the same paste to connect things to heat sinks. but there is no liquid cooled amps to my knowledge.
+T 1709720757 18<24om3ga18>	here is my comparison chart: http://46.49.41.80/hint/comparison/INT.html
+T 1709720775 18<24om3ga18>	recent apple cpus missing, but I will add m2 soon
+T 1709720780 18<29Gurkenglas18>	top fragments %MEM between firefox and a lot of 'Isolated Web Component's. What OS-level top-variant do I want here? I'm imagining pstree, with every node annotated with the %MEM of its subtree, and showing only the nodes that have at least x% and at least x% less than their closest visible parent, with x chosen to make stdout as high as the
+T 1709720781 18<29Gurkenglas18>	terminal
+T 1709720799 18<24om3ga18>	amd anyone?
+T 1709720818 18<24om3ga18>	I'm curious how good their 3nm cpus will be
+T 1709720893 18<22dust_mite18>	AMD? or Intel?
+T 1709720904 18<24om3ga18>	amd
+T 1709720919 18<24om3ga18>	they will release, or maybe released already 3nm cpu
+T 1709720935 18<28livingbeef18>	thermal paste will do very little, you need to get a proper cooler
+T 1709720938 18<24om3ga18>	intel unfortunately not moves anywhere
+T 1709720966 18<24om3ga18>	livingbeef: not true, of course if cooler is not strong enough to cool down this chip
+T 1709721014 18<24om3ga18>	I have water cooling, with this hy610 paste I have 23c degree temperature here
+T 1709721022 18<28livingbeef18>	good thermal paste will subtract 1-2 C over average one, it's not something that will save you
+T 1709721051 18<24om3ga18>	livingbeef: well, while I agree with you, there's also speed of transmission
+T 1709721065 18<27paprika18>	I am a bit depressed. I had a colloquium yesterday about Programming an application and i did failed a lot and said stupid things. cheer me up.
+T 1709721069 18<22dust_mite18>	they will prob be really good. i have amd ryzen 7 4000 radeon graphics on a windows computer and i like it. its prob almost 3 yrs old and it loads in less than 1 second. the little wait a second wheel cant make a full rotation
+T 1709721074 18<24om3ga18>	good paste helps to transmit and get rid of thermal energy fast
+T 1709721099 18<22dust_mite18>	its build for video games.
+T 1709721144 18<24om3ga18>	dust_mite: only hint benchmark can tell how good cpu is, it calculates quality improvements per second, for atomic data types
+T 1709721158 18<28livingbeef18>	and I'm not saying that 2C is bad, but if the device is severely overheating, it's really not enough
+T 1709721228 18<24om3ga18>	livingbeef: sure, but I had issue with thermal conductor, based on chalk. It acted as a thermal resistor actually :)
+T 1709721234 18<24om3ga18>	on the laptop
+T 1709721244 18<22dust_mite18>	heat sink. its almost hard to believe that a liquid cooled attachment on top of a cpu can beat the standard heat sink that has tons of aluminum pins sticking off it
+T 1709721276 18<28livingbeef18>	well, sure, 2C is over average paste. If the paste is utter trash, than the benefit can be much higher
+T 1709721280 18<24om3ga18>	dust_mite: well, with air cooler I don't had 23c degree cpu temp
+T 1709721451 18<22dust_mite18>	my msi windows 11 laptop says the cpu is at 28C.
+T 1709721486 18<24om3ga18>	on idle? I mean 23C with load
+T 1709721504 18<29djph18>	dust_mite: air is a TERRIBLE thermal conductor.
+T 1709721559 18<22dust_mite18>	on idle doing noting. CPU is at 0 to 1% and GPU is at 0%
+T 1709721593 18<22dust_mite18>	fan 1 is 2711 rpms, fan 2 0 rpms
+T 1709721648 18<24om3ga18>	with my recent 12 gen intel, I have more than 40C degree on idle :)
+T 1709721766 18<22dust_mite18>	om3ga, thats prob will within tollerances. kinda makes you wonder what temp is overheating.
+T 1709721772 18<29djph18>	dust_mite: IIRC, water is 20 or 25 times as effective of a thermal conductor as air ... so yeah, bitty heat block used in water-cooling will be better at sinking heat away from the CPU (and then huge radiator to dump as much heat as possible into the air
+T 1709721894 18<22dust_mite18>	water is a good coolant. theres lots of variables. i think water expands by like 800 times when it becomes steam vapor.
+T 1709721953 18<29djph18>	1600
+T 1709721960 18<22bombastick18>	what's the "prosumer" coolant of choice?
+T 1709721969 18<29djph18>	but if you're *boiling* your coolant off, you have other problems
+T 1709721978 18<22dust_mite18>	if water is good enough to cool a nuclear reactor its good enough for your desktop pc
+T 1709722042 18<29djph18>	last time I did water-cooled, it was basically antifreeze -- water + propylene glycol
+T 1709722051 18<26d3vil18>	dust_mite: question, why car manufactures uses special liquid as well as data centers
+T 1709722105 18<29djph18>	d3vil: cars have this fun problem of "need to work outside, in the cold"
+T 1709722187 18<26d3vil18>	djph: not in every place on earth there is cold... correct answer is rust
+T 1709722232 18<22bombastick18>	AI is being used to scan every minor thing now. Two brothers were visiting me, I lent one of them 1k in local currency (so he wouldn't get hit with ATM/conversion fees), saying that they can send it to me via Wise. The other brother sends me the money, and as an (optional) note writes "For Dave's debt/loan in <city>". Transfer immediately frozen, they receive an email demanding to know who Dave is,
+T 1709722233 18<22bombastick18>	his address, and birthdate. The money is in limbo and now he has to deal with tech support.
+T 1709722271 18<22bombastick18>	He's sent money before without issues using the same company/bank (Wise), just didnt use no-no keywords I guess
+T 1709722414 18<22bombastick18>	I guess even before AI they might have done it with regexes
+T 1709722521 18<28livingbeef18>	Is this a US issue? I've never heard anyone I know have an issue like this.
+T 1709722567 18<28livingbeef18>	but I did here several americans talk about their issues with sending or withdrawing money
+T 1709722578 18<28livingbeef18>	*hear
+T 1709722585 18<19xiaomiao18>	KYC, it's tedious
+T 1709722591 18<22dust_mite18>	without the optional note, there prob would have been no problem
+T 1709722598 18<19xiaomiao18>	banks tend to overcorrect now to even avoid potential maybe future problems
+T 1709722598 18<27stenno18>	just write 'for sexual favors' instead
+T 1709722644 18<22bombastick18>	stenno: funny but I wouldnt want this on my social credit record
+T 1709722645 18<22dust_mite18>	that note made the AI think you were a bookie loan shark or a drug dealer heh heh
+T 1709722685 18<19wantyapps18>	Hallo everyone
+T 1709722688 18<27stenno18>	social credit?
+T 1709722699 18<27stenno18>	you in china?
+T 1709722707 18<19wantyapps18>	Does anyone know why spamhaus keeps flagging my mail server?
+T 1709722712 18<22bombastick18>	western countries have social credit, it's just in its starting stages
+T 1709722716 18<22bombastick18>	(compared to China)
+T 1709722719 18<19wantyapps18>	This is the second time this will
+T 1709722740 18<22bombastick18>	wantyapps: listen to this : DONT SELFHOST EMAIL
+T 1709722746 18<22bombastick18>	this is one thing you dont self-host
+T 1709722748 18<19wantyapps18>	s/will/week
+T 1709722754 18<22dust_mite18>	the main question is will Dave pay you back? maybe that AI isnt that stupid, looking out for you heh heh
+T 1709722759 18<28livingbeef18>	do you have all the signature / safeguarding stuff set up?
+T 1709722777 18<28livingbeef18>	it's not hard to do
+T 1709722784 18<19wantyapps18>	bombastick: my server worked perfectly for quite some time now.
+T 1709722792 18<19wantyapps18>	livingbeef: yup yup
+T 1709722797 18<28livingbeef18>	google even has a page that scans your mail server for you and tells you whether something is wrong
+T 1709722816 18<19wantyapps18>	They even removed me from the blacklist after I requested
+T 1709722832 18<19wantyapps18>	livingbeef: it said everything was fine
+T 1709722941 18<22dust_mite18>	anything that that goes through gmail is safe. but if its an email saying that dog is cool you will get dog food ads for months
+T 1709722966 18<19wantyapps18>	dust_mite: absolutely
+T 1709723035 18<22dust_mite18>	i removed every trace of google and chrome and facebook and meta from my windows computer
+T 1709723043 18<22dust_mite18>	best i could
+T 1709723045 18<19wantyapps18>	Wow!
+T 1709723068 18<22dust_mite18>	wasnt that hard
+T 1709723105 18<22dust_mite18>	kinda funny how im having intermittent problems with duckduckgo on firefox......weird heh heh
+T 1709723114 18<24Aryan18>	Hi, I'm planing this partitioning setup, https://paste.rs/DyvrA.txt, would you take a look, please?
+T 1709723146 18<19wantyapps18>	dust_mite: I don't. Describe them?
+T 1709723294 18<22dust_mite18>	wantyapps: problems with duckduckgo on firefox? sometimes the search bar gets stuck and the tab on the top of the screen shows a little ball bouncing back and fouth like its busy. and it just does nothing. gets stuck somehow
+T 1709723322 18<19wantyapps18>	Huh. Doesn't happen to me on arch
+T 1709723347 18<19wantyapps18>	Try opening Firefox with debug enabled
+T 1709723423 18<28c4lvin18>	Aah, the interwebz, where you die a hero or live long enough to be listed under an APT <random_digit>
+T 1709723443 18<19wantyapps18>	:)
+T 1709723445 18<28c4lvin18>	Scratch the dying part
+T 1709723519 18<22dust_mite18>	microsoft and alphabet and meta aren't known for playing fair with free open source software. mega corps kinda like to control stuff. they dont like firefox or linux or something they cant control
+T 1709723583 18<28c4lvin18>	Let me rephrase that “Aah,the interwebz..where you are killed as a skritkittie or live long enough to be named an APT ;P
+T 1709723585 18<22dust_mite18>	they say your ISP prob knows more about you that any other company you deal with
+T 1709723610 18<28c4lvin18>	One plural ISP…pffttt
+T 1709723610 18<26luna_18>	ah APT as APT groups and not the package manager
+T 1709723614 18<26luna_18>	my sick brain can't keep up :p
+T 1709723635 18<28c4lvin18>	Heh, innocent luna_
+T 1709723657 18<26luna_18>	c4lvin: nah more being sick and working at the same time so not keeping up
+T 1709723699 18<19wantyapps18>	Do you think the problem with my mail server is that rDNS doesn't list the hostname?
+T 1709723700 18<28c4lvin18>	What did u think luna that we ended up as packaging….oh gws on the not well thing too
+T 1709723707 18<28c4lvin18>	lol
+T 1709723753 18<28c4lvin18>	Although turning me self into a c4lvin.tar.gz sounds nice too
+T 1709723802 18<28c4lvin18>	My apologies i dont know what format apt pulls files from or is it just source files
+T 1709723810 18<26luna_18>	.deb :p
+T 1709723833 18<22phogg18>	c4lvin: a .deb file is an ar archive that in turn contains compressed tarballs
+T 1709723840 18<28c4lvin18>	Aah ok then c4lvin.deb when i pass on tht settlesit
+T 1709723993 18<28c4lvin18>	phogg: i always wondered how the app named alien was able to convert .deb to rpm and rpm to .deb on the fly so easily…that explains it
+T 1709724019 18<28c4lvin18>	Excuse me trying to fit in callin proggys a
+T 1709724028 18<28c4lvin18>	*apps
+T 1709724053 18<28c4lvin18>	I think i dont need to change :P
+T 1709724191 18<28c4lvin18>	Im bored, nothing fun ever happens when im around…*sigh*
+T 1709724302 18<28c4lvin18>	Oii, those of you lot from here, yess you is…stop packeteering at my connections…jeebuzzcrippes
+T 1709724341 18<28c4lvin18>	Its like hunting season in here with any nekkid IP
+T 1709724449 18<19irc_standardnick18>	Strawberry randomnly adds {Disc 1} to certain albums when I browse through it's hierarchy even though the real folders don't bear the name. I went manually through "easy tag" and updated tags to proper values, yet this problem persists. From where is the music player sourcing, this {Disc 1} extra thing in the first place; there isn't even a cue file inside to muck things up
+T 1709724797 18<22phogg18>	irc_standardnick: many music players can interact with a cddb service. Check your configuration and/or manual.
+T 1709725052 18<19irc_standardnick18>	phogg, I see, I scoured the whole settings panel but couldn't find anything. If nothing else, I can always find help at github
+T 1709725534 18<25yziquel18>	How may I list the versions of the various linux modules of the running kernel ?
+T 1709725574 18<20ananke18>	yziquel: modinfo <module>
+T 1709725599 18<25yziquel18>	ananke and for the list of all modules and all versions ?
+T 1709725616 18<22phogg18>	lsmod
+T 1709725623 18<22phogg18>	to combine the two would take a little scripting
+T 1709725675 18<25yziquel18>	phogg sigh. a TUI tool like aptitude to select a kernel based on version constraints would be cool.
+T 1709725683 18<22phogg18>	in fact this much: lsmod | awk '{ print $1 }' | xargs modinfo
+T 1709725715 18<22phogg18>	yziquel: why would you need to?
+T 1709725728 18<22phogg18>	kernels ship with modules, you don't need to work backward from a module to find a kernel version
+T 1709725752 18<25yziquel18>	phogg. yeah. I do. Because I hit a CPU bug.
+T 1709725768 18<22phogg18>	how do you know which versions are non-buggy?
+T 1709725835 18<25yziquel18>	phogg I require zfs >= 2.2 because zfs < 2.1.x hits a Sapphire Rapids specific bug on avx512f+vmexit page fault, which hits people having Sapphire Rapids + virtualisation + zfs < 2.2.
+T 1709725866 18<25yziquel18>	phogg fix is in 2.2.x. 2.1.x is unpatched.
+T 1709725889 18<22phogg18>	sounds like what you need is to look at zfs release documentation for kernels which zfs 2.2 can be applied to, then find the highest such kernel available from your package repo
+T 1709725918 18<22phogg18>	this is not something modinfo is going to tell you
+T 1709725944 18<25yziquel18>	phogg this is indeed something a TUI tool like aptitude should give me.
+T 1709725966 18<22phogg18>	there's no reason to expect such a thing to exist
+T 1709725971 18<22phogg18>	this is by far not a common problem
+T 1709725995 18<22phogg18>	the most you would need is a dkms package for zfs
+T 1709726017 18<22phogg18>	and, lo, I see there is one
+T 1709726040 18<22phogg18>	but even then it would not constrain your kernel version
+T 1709726084 18<22phogg18>	there's just no way to know which kernel version range is compatible with a module *just* by looking at the module. You have to be a developer of that module, or read enough of it and the kernel source to understand when compatibility breaks
+T 1709726129 18<22phogg18>	given that most modules are in-kernel and the compatible version is "the current one only", there's not much call for attempting to sort this out generically
+T 1709726136 18<22phogg18>	so, again, check zfs docs
+T 1709726141 18<28livingbeef18>	The module should complain during compilation if the version isn't compatible
+T 1709726383 18<25mdogg18>	yziquel: I think '/usr/lib/modules/<kernel_number>/' has an index of available modules.
+T 1709726435 18<25yziquel18>	mdogg interesting
+T 1709726445 18<24swift110-mobile18>	Good morning
+T 1709726462 18<25mdogg18>	Woops - just /lib/modules/<kernel_numb3r>/
+T 1709726981 18<26lockywolf18>	How to download tarballs on phabricator?

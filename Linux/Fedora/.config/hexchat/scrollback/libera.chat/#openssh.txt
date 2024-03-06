@@ -343,3 +343,26 @@ T 1709686297 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon F
 T 1709705791 19*	Now talking on 22#openssh
 T 1709705791 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
 T 1709705791 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709721044 18<25Guest1818>	Hi All
+T 1709721045 18<25Guest1818>	I am trying to cross compile openssh for my linux-arm. I have executed following steps
+T 1709721045 18<25Guest1818>	source /opt/wayland-xlplus/2.7/environment-setup-cortexa9t2hf-neon-fslc-linux-gnueabi
+T 1709721046 18<25Guest1818>	./configure --target=arm-linux --prefix=/home/openssh/openssh_install/ --sysconfdir=/home/openssh/openssh_install/etc/ssh --host=i386
+T 1709721046 18<25Guest1818>	make
+T 1709721047 18<25Guest1818>	make install
+T 1709721047 18<25Guest1818>	but i am getting following errors
+T 1709721049 18<25Guest1818>	Makefile:388: recipe for target 'install-files' failed
+T 1709721049 18<25Guest1818>	make: *** [install-files] Error 1
+T 1709721050 18<25Guest1818>	and
+T 1709721051 18<25Guest1818>	strip: Unable to recognise the format of the input file `/home/openssh/openssh_install/bin/ssh'
+T 1709721052 18<25Guest1818>	Makefile:388: recipe for target 'install-files' failed
+T 1709721053 18<25Guest1818>	make: *** [install-files] Error 1
+T 1709721198 18<25Guest1818>	sorry something went wrong and couldnt post error properly
+T 1709721200 18<25Guest1818>	strip: Unable to recognise the format of the input file `/home/openssh/openssh_install/bin/ssh'
+T 1709721201 18<25Guest1818>	Makefile:388: recipe for target 'install-files' failed
+T 1709721201 18<25Guest1818>	make: *** [install-files] Error 1
+T 1709721216 18<29henk18>	you are supposed to use a pastebin anyway …
+T 1709721556 18<25Guest1818>	ok
+T 1709721601 18<29henk18>	I’d think when cross-compiling a plain `make install` might not be the right command. but that’s a wild guess, I don’t cross-compile that often …
+T 1709721802 18<25Guest1818>	I have tried with make DESTDIR=/media/sf_Workspace/openssh/openssh_install install too
+T 1709722016 18<29henk18>	yeah, but the install target seems to be trying to run `strip` and that seems to be architecture depenent. STFW gave me among other https://stackoverflow.com/questions/29236378/cross-compilation-of-openssh-for-arm which suggests having to set LD=
+T 1709723148 18<25Guest1818>	in environment-setup-cortexa9t2hf-neon-fslc-linux-gnueabi my LD is already set to arm-fslc-linux-gnueabi-ld

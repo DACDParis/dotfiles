@@ -611,3 +611,26 @@ Mar 06 01:51:37 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:
 Mar 06 07:16:31 *	Now talking on #openssh
 Mar 06 07:16:31 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
 Mar 06 07:16:31 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+Mar 06 11:30:44 <Guest18>	Hi All
+Mar 06 11:30:45 <Guest18>	I am trying to cross compile openssh for my linux-arm. I have executed following steps
+Mar 06 11:30:45 <Guest18>	source /opt/wayland-xlplus/2.7/environment-setup-cortexa9t2hf-neon-fslc-linux-gnueabi
+Mar 06 11:30:46 <Guest18>	./configure --target=arm-linux --prefix=/home/openssh/openssh_install/ --sysconfdir=/home/openssh/openssh_install/etc/ssh --host=i386
+Mar 06 11:30:46 <Guest18>	make
+Mar 06 11:30:47 <Guest18>	make install
+Mar 06 11:30:47 <Guest18>	but i am getting following errors
+Mar 06 11:30:49 <Guest18>	Makefile:388: recipe for target 'install-files' failed
+Mar 06 11:30:49 <Guest18>	make: *** [install-files] Error 1
+Mar 06 11:30:50 <Guest18>	and
+Mar 06 11:30:51 <Guest18>	strip: Unable to recognise the format of the input file `/home/openssh/openssh_install/bin/ssh'
+Mar 06 11:30:52 <Guest18>	Makefile:388: recipe for target 'install-files' failed
+Mar 06 11:30:53 <Guest18>	make: *** [install-files] Error 1
+Mar 06 11:33:18 <Guest18>	sorry something went wrong and couldnt post error properly
+Mar 06 11:33:20 <Guest18>	strip: Unable to recognise the format of the input file `/home/openssh/openssh_install/bin/ssh'
+Mar 06 11:33:21 <Guest18>	Makefile:388: recipe for target 'install-files' failed
+Mar 06 11:33:21 <Guest18>	make: *** [install-files] Error 1
+Mar 06 11:33:36 <henk>	you are supposed to use a pastebin anyway …
+Mar 06 11:39:16 <Guest18>	ok
+Mar 06 11:40:01 <henk>	I’d think when cross-compiling a plain `make install` might not be the right command. but that’s a wild guess, I don’t cross-compile that often …
+Mar 06 11:43:22 <Guest18>	I have tried with make DESTDIR=/media/sf_Workspace/openssh/openssh_install install too
+Mar 06 11:46:56 <henk>	yeah, but the install target seems to be trying to run `strip` and that seems to be architecture depenent. STFW gave me among other https://stackoverflow.com/questions/29236378/cross-compilation-of-openssh-for-arm which suggests having to set LD=
+Mar 06 12:05:48 <Guest18>	in environment-setup-cortexa9t2hf-neon-fslc-linux-gnueabi my LD is already set to arm-fslc-linux-gnueabi-ld

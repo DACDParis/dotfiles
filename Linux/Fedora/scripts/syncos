@@ -31,7 +31,7 @@ rsync -avr --delete-during --mkpath $HOME/.config/wofi $HOME/Git/dotfiles/Linux/
 rsync -avr --delete-during --mkpath $HOME/.config/xsettingsd $HOME/Git/dotfiles/Linux/Fedora/.config/
 rsync -avr --delete-during --mkpath $HOME/.config/yazi $HOME/Git/dotfiles/Linux/Fedora/.config/
 rsync -avr --delete-during --mkpath $HOME/scripts $HOME/Git/dotfiles/Linux/Fedora/
-
+rsync -avr --delete-during --mkpath $HOME/.local/share/lunarvim/lvim/lua/lvim/core/which-key.lua $HOME/Git/dotfiles/Linux/Fedora/.local/share/lunarvim/lvim/lua/lvim/core/
 rsync -avr --delete-during --mkpath $HOME/.bash_history $HOME/Git/dotfiles/Linux/Fedora/
 rsync -avr --delete-during --mkpath $HOME/.bash_logout $HOME/Git/dotfiles/Linux/Fedora/
 rsync -avr --delete-during --mkpath $HOME/.bash_profile $HOME/Git/dotfiles/Linux/Fedora/

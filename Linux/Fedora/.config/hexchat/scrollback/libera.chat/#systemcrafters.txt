@@ -5013,3 +5013,75 @@ T 1709710558 18<26daviwil18>	start from an Org file, export plain HTML w
 T 1709711006 18<29trev18>	so you have to opt in to html or it somehow sends both?
 T 1709711033 18<26daviwil18>	it will send both via separate MIME types, the e-mail client can choose which one to view
 T 1709711559 18<28glenneth18>	hey trev o/
+T 1709711839 18<29trev18>	hi glenneth 
+T 1709713008 18<28glenneth18>	daviwil: so you can have an email client determine which version of an email to open?
+T 1709713088 18<26daviwil18>	yep
+T 1709713114 18<26daviwil18>	Discourse sends both HTML and plain text versions of its notification e-mails, you can set up mu4e or Notmuch to view the plain text version
+T 1709713130 18<26daviwil18>	There was a discussion on the forum about it recently: https://forum.systemcrafters.net/t/plaintext-summary/222/8
+T 1709713136 18<26Marvin218>	[ http://outrider.deepsky.com:5808/xNfEd ]::[ No title found ]
+T 1709713161 18<28glenneth18>	I did not know that.  I always assumed it was the sender that made that decision
+T 1709713166 18<26Marvin218>	I did make an effort to make money from home an they sold their house and toronto and got a working study on all the acronyms, bsc, msc, hlr, scp, they all means something to fix first, have a risc v board but I struggled with existential dread so I curled it to someone getting started on the seq abstraction, it makes it approachable
+T 1709713212 18<26daviwil18>	In most cases, the sender just sends one type of content in an e-mail, but the e-mail protocol is flexible enough to contain different kinds of content if you know how to send it
+T 1709713213 18<28glenneth18>	wow,  Marvin2 
+T 1709713271 18<26daviwil18>	also, the Org publishing system is really flexible, but it's also really confusing until you understand the model
+T 1709713300 18<28glenneth18>	cool.  I will read that post on the forum.  Haven't looked in a couple of days
+T 1709714856 18<28glenneth18>	I just realised that HUGO sets an rss feed lol
+T 1709716034 18<20alternateved18>	Good morning
+T 1709716176 18<29trev18>	hi alternateved 
+T 1709716189 18<29trev18>	glenneth: yeah you get that for free
+T 1709716220 18<29trev18>	i hate web stuff
+T 1709716634 18<26daviwil18>	i'm going back to old-school HTML to make this e-mail template :)
+T 1709716638 18<26daviwil18>	gotta use tables
+T 1709719458 18<28glenneth18>	hey alternateved 
+T 1709719914 18<26daviwil18>	wanna get spammed for a bit while I test out the new newsletter format?  sign up for the "test-news" list here: https://lists.systemcrafters.net
+T 1709719916 18<26Marvin218>	[ http://outrider.deepsky.com:5808/TRBWo ]::[ List information - lists.systemcrafters.net - Simplelists ]
+T 1709719962 18<28glenneth18>	sure :)
+T 1709719974 18<20alternateved18>	Go for it
+T 1709720274 18<28glenneth18>	request confirmed.  spam away
+T 1709720337 18<26daviwil18>	thanks!  will try in a sec
+T 1709720339 18<26Marvin218>	thanks! will try in a BEGIN {} block
+T 1709720427 18<20alternateved18>	you're welcome Marvin2 
+T 1709720455 18<29trev18>	someone was talking awk i guess
+T 1709721105 18<26daviwil18>	sent a first test email. it's clear I need to bump down the font size a little bit
+T 1709721118 18<26daviwil18>	also, this is a newsletter from last year :)
+T 1709721317 18<20alternateved18>	Text format hasn't been added yet!
+T 1709721334 18<20alternateved18>	:D
+T 1709721354 18<20alternateved18>	"This e-mail also provides text/plain content if you prefer it to HTML!""
+T 1709721356 18<20alternateved18>	Lies!
+T 1709721729 18<28glenneth18>	haha
+T 1709721776 18<26daviwil18>	Lies for the moment :) 
+T 1709721785 18<26daviwil18>	Need to write a custom text exporter 
+T 1709722163 18<29trev18>	custom text exporter sounds like some fake tech
+T 1709722215 18<29trev18>	i'm going to use that next time i have to explain something to a project manager 
+T 1709722798 18<24glenneth_18>	Hey!! I'm a project manager! 
+T 1709722822 18<24glenneth_18>	I think I killed my emacs session running listen.el
+T 1709722826 18<20alternateved18>	Nice! Congratulations!
+T 1709723060 18<24glenneth_18>	it may be updating the library. hard to tell. I'll give it ten minutes or so before I kill it
+T 1709723294 18<29trev18>	glenneth_: hey, it turns out we can't use the default text exporter so i will need to write a custom one
+T 1709723321 18<24glenneth_18>	sounds legit 🤣
+T 1709723477 18<29trev18>	the bad news is that it's going to take me a few months
+T 1709723894 18<26daviwil18>	trev: that is actually a good excuse, I mean who can argue with that?
+T 1709723963 18<26daviwil18>	and if they ask further just say "have you ever dealt with grapheme clusters across Unicode byte widths?  trust me, this is a time consuming job"
+T 1709724083 18<29trev18>	daviwil: "i found a bug in the unicode spec and i'm waiting for it to be resolved upstream"
+T 1709724577 18<24sahil_18>	Doom emacs is way more smoother, compared to my own custom configured one.
+T 1709724767 18<20alternateved18>	sahil_: What do you mean by way more smoother?
+T 1709724810 18<24sahil_18>	alternateved: I opened a 10k lines file, and it was more responsive
+T 1709724820 18<24sahil_18>	typing at 5000th line
+T 1709724875 18<20alternateved18>	Most likely so-long-mode
+T 1709724901 18<20alternateved18>	https://github.com/doomemacs/doomemacs/blob/bea81278fd2ecb65db6a63dbcd6db2f52921ee41/lisp/doom-editor.el#L673
+T 1709724904 18<26Marvin218>	[ http://outrider.deepsky.com:5808/msKFQ ]::[ No title found ]
+T 1709724966 18<20alternateved18>	Did you try treesit btw?
+T 1709725018 18<24sahil_18>	alternateved: I installed treesitter :) don't know if that's same as treesit.
+T 1709725101 18<20alternateved18>	treesit is built-in
+T 1709725109 18<20alternateved18>	tree-sitter is an external package
+T 1709725139 18<20alternateved18>	More info here: https://www.masteringemacs.org/article/how-to-get-started-tree-sitter
+T 1709725141 18<26Marvin218>	[ http://outrider.deepsky.com:5808/bpQvq ]::[ How to Get Started with Tree-Sitter - Mastering Emacs ]
+T 1709725160 18<20alternateved18>	I recommend treesit-auto package that automates all of that 
+T 1709725191 18<20alternateved18>	But you would need to have Emacs compiled with tree-sitter support
+T 1709725215 18<24sahil_18>	yes I found that when I searched treesit. Also doom actually seems better to get started with emacs, than custom config (I am using native-comp)
+T 1709725215 18<20alternateved18>	treesit could help with your performance issues
+T 1709725257 18<24sahil_18>	I will try to move my dev workflow to doom, if that works, I would be blessed 
+T 1709725265 18<20alternateved18>	Yeah, if you don't know much about Emacs then Doom can be a good starting point (at the same time it could make things harder)
+T 1709725267 18<26Marvin218>	Yeah, if you are trying harder than I do not also do IT"
+T 1709725686 18<29trev18>	why would treesitter help? is the lag most likely from the major-mode?
+T 1709725859 18<20alternateved18>	I'm guessing that it might be caused by font-lock

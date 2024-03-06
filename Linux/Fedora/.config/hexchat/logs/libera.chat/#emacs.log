@@ -8961,3 +8961,32 @@ Mar 06 08:19:20 <RickAstley>	I wonder if someone sent me weird unicode if the wr
 Mar 06 08:24:12 <bkhl>	Certainly stuff like this can happen with bugs in UTF-8 parsing: https://www.mozilla.org/en-US/security/advisories/mfsa2008-37/
 Mar 06 08:44:17 <Viking667>	pffft. No luck searching for an oil painter called Minteer. I can see pictures, but no biographical data on them whatsoever aside from their having painted in the 1940s and '50s.
 Mar 06 08:49:12 <Viking667>	 I'm also not having much luck with another artist simply titled H. Carter.
+Mar 06 09:50:44 <philipp_>	When I use M-x compile, why does the command run in some other directory, but not in the directory of the current file or in default-directory?
+Mar 06 09:51:13 <philipp_>	Nevermind, I was using recompile instead of compile.
+Mar 06 10:03:32 <Viking667>	And here was I thinking that compile actually compiled emacs. It doesn't, but I guess it could be taught how - I went the bash script route, but there's no reason I couldn't have figured out how to do it from within Emacs itself - the only problem being replacing the running binary.
+Mar 06 10:34:39 <APic>	Moin
+Mar 06 10:34:40 <APic>	,BotSnack
+Mar 06 10:34:41 *	fsbot beams
+Mar 06 10:45:58 *	Viking667 splits like bananas
+Mar 06 10:46:52 <jbe>	why don't you make like a banana and leaf
+Mar 06 11:07:51 <jbe>	,yow
+Mar 06 11:07:51 <fsbot>	I haven't been married in over six years, but we had sexual counseling every day from Oral Roberts!!
+Mar 06 11:53:09 <RickAstley>	based fsbot
+Mar 06 11:54:22 <xum>	Hello
+Mar 06 11:54:28 <RickAstley>	hello xum :D
+Mar 06 11:54:53 <xum>	im just trying out circe, so please be kind to me
+Mar 06 11:55:09 <RickAstley>	I am also using circe
+Mar 06 11:55:27 <RickAstley>	the dev wasamasa is here
+Mar 06 11:55:33 <xum>	oooooo
+Mar 06 11:56:04 <xum>	i need to write my config, i just adhocced this connection lol
+Mar 06 11:56:14 <xum>	why does the window flicker so much
+Mar 06 11:58:45 <RickAstley>	my window doesn't flicker
+Mar 06 12:00:00 <xum>	strange, anyways, ill figure something out
+Mar 06 12:02:12 <RickAstley>	are you using a CRT
+Mar 06 12:03:39 <bremner>	paper printing terminals are the best for flicker, but the framerate is meh
+Mar 06 12:05:26 <yax__>	hello hello I am back with my proper nick now
+Mar 06 12:06:26 <RickAstley>	bremner: lawl
+Mar 06 12:15:38 <codingquark>	our biggest problem is emacs
+Mar 06 12:16:39 <yax__>	a very hard problem to solve imo
+Mar 06 12:19:15 <wasamasa>	RickAstley: wiki makes it a lot easier to just change the community docs whenever needed
+Mar 06 12:19:43 <wasamasa>	I see you've found it already

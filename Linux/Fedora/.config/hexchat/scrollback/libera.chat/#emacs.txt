@@ -5043,3 +5043,32 @@ T 1709709560 18<22RickAstley18>	I wonder if someone sent me weird unicod
 T 1709709852 18<24bkhl18>	Certainly stuff like this can happen with bugs in UTF-8 parsing: https://www.mozilla.org/en-US/security/advisories/mfsa2008-37/
 T 1709711057 18<26Viking66718>	pffft. No luck searching for an oil painter called Minteer. I can see pictures, but no biographical data on them whatsoever aside from their having painted in the 1940s and '50s.
 T 1709711352 18<26Viking66718>	 I'm also not having much luck with another artist simply titled H. Carter.
+T 1709715044 18<28philipp_18>	When I use M-x compile, why does the command run in some other directory, but not in the directory of the current file or in default-directory?
+T 1709715073 18<28philipp_18>	Nevermind, I was using recompile instead of compile.
+T 1709715812 18<26Viking66718>	And here was I thinking that compile actually compiled emacs. It doesn't, but I guess it could be taught how - I went the bash script route, but there's no reason I couldn't have figured out how to do it from within Emacs itself - the only problem being replacing the running binary.
+T 1709717679 18<28APic18>	Moin
+T 1709717680 18<28APic18>	,BotSnack
+T 1709717681 18*	22fsbot beams
+T 1709718358 18*	26Viking667 splits like bananas
+T 1709718412 18<29jbe18>	why don't you make like a banana and leaf
+T 1709719671 18<29jbe18>	,yow
+T 1709719671 18<22fsbot18>	I haven't been married in over six years, but we had sexual counseling every day from Oral Roberts!!
+T 1709722389 18<22RickAstley18>	based fsbot
+T 1709722462 18<25xum18>	Hello
+T 1709722468 18<22RickAstley18>	hello xum :D
+T 1709722493 18<25xum18>	im just trying out circe, so please be kind to me
+T 1709722509 18<22RickAstley18>	I am also using circe
+T 1709722527 18<22RickAstley18>	the dev wasamasa is here
+T 1709722533 18<25xum18>	oooooo
+T 1709722564 18<25xum18>	i need to write my config, i just adhocced this connection lol
+T 1709722574 18<25xum18>	why does the window flicker so much
+T 1709722725 18<22RickAstley18>	my window doesn't flicker
+T 1709722800 18<25xum18>	strange, anyways, ill figure something out
+T 1709722932 18<22RickAstley18>	are you using a CRT
+T 1709723019 18<19bremner18>	paper printing terminals are the best for flicker, but the framerate is meh
+T 1709723126 18<27yax__18>	hello hello I am back with my proper nick now
+T 1709723186 18<22RickAstley18>	bremner: lawl
+T 1709723738 18<27codingquark18>	our biggest problem is emacs
+T 1709723799 18<27yax__18>	a very hard problem to solve imo
+T 1709723955 18<19wasamasa18>	RickAstley: wiki makes it a lot easier to just change the community docs whenever needed
+T 1709723983 18<19wasamasa18>	I see you've found it already

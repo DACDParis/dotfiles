@@ -5034,3 +5034,312 @@ T 1709710620 18<24xmb18>	0 1 2 , = 3
 T 1709710634 18<27JAA18>	Yeah, but the discussion above was about sparse arrays.
 T 1709710642 18<24xmb18>	ah k
 T 1709710890 18<28emanuele618>	ack
+T 1709712593 18<29andre144k18>	hello, how to "pgrep -f" for process "foo" or "bar" ?
+T 1709712620 18<29andre144k18>	so when both is running once i get two process ids
+T 1709712759 18<22pj18>	# ar=(); ar[1]=a ar[5]=b; ari=("${!ar[@]}"); echo "${ari[-1]}"
+T 1709712761 18<25shbot18>	pj: 5
+T 1709712773 18<22pj18>	JAA: This is the best way I can think of ^^^^^
+T 1709712799 18<29andre144k18>	hopefully not for me ^^
+T 1709712804 18<27JAA18>	Yeah
+T 1709712817 18<22pj18>	basically copying the indexes into another array
+T 1709712825 18<22pj18>	and then accessing the last element of that array
+T 1709712873 18<22pj18>	oh, I see ormaaj came up with that earlier.
+T 1709715092 18<24xmb18>	andre $( pgrep -f foo ; pgrep -f bar )
+T 1709715125 18<24xmb18>	since it says only one pattern
+T 1709715636 18<28emanuele618>	you can use  pgrep -f 'foo|bar'   i think
+T 1709715676 18<28emanuele618>	yes
+T 1709715746 18<29andre144k18>	thx
+T 1709715748 18<27JAA18>	It's an ERE according to the man page.
+T 1709715754 18<28emanuele618>	>:(
+T 1709715781 18<27JAA18>	I completely missed it at first as it's tucked away near the bottom for some reason.
+T 1709715857 18<28emanuele618>	did you know that "JAA" is a regular expression? :o
+T 1709715872 18<27JAA18>	Whoa
+T 1709715891 18<28emanuele618>	# printf 'Hello, %s\n' JAA emanuele6 | grep JAA
+T 1709715892 18<25shbot18>	emanuele6: Hello, JAA
+T 1709715921 18<27JAA18>	Amazing!
+T 1709715933 18<28emanuele618>	JAAmazing!
+T 1709715941 18<27JAA18>	:-)
+T 1709718283 18<28nphard18>	is it posible a loop with two different values? cut -f1, cut -f2
+T 1709718350 18<24xmb18>	u can save to two data structures
+T 1709718351 18<28nphard18>	a yes with a variable perhaps?
+T 1709718369 18<24xmb18>	whats the cut output look like
+T 1709718406 18<28nphard18>	let's say the loop it's only for two iterations, how to tell the second time has to use 'cut -f2'?
+T 1709718429 18<24xmb18>	show cut output plz ?
+T 1709718441 18<28nphard18>	alright
+T 1709718450 18<28nphard18>	it's kinda simple
+T 1709718505 18<28nphard18>	https://dpaste.com/BLMFQKH44
+T 1709718535 18<24xmb18>	u load -f1 into an arr , and -f2 to another
+T 1709718547 18<24xmb18>	then u use those diff arrs for values
+T 1709718658 18<28nphard18>	an array?
+T 1709718689 18<20osse18>	while read -r num1 num2 num3; do blabla "$num1" "$num2" "$num3"; done
+T 1709718702 18<20osse18>	no cut needed
+T 1709718752 18<28nphard18>	osse: I need the columns
+T 1709718773 18<28nphard18>	wow, so many ways, arrays, 'read -r'
+T 1709718782 18<24xmb18>	v1=( 1 1 1 ) v2=( 2 2 2 ) v3=( 3 3 3 ) i=-1 ; while (( ++i <= ${#a[@]} )) ; do declare -n d1=a[i] d2=b[i] ; printf %s\\n "$i : $d1 / $d2" ; exit ; done
+T 1709718799 18<28nphard18>	darn1!
+T 1709718812 18<28nphard18>	that felt like a punch in the face.
+T 1709718817 18<20osse18>	If the number of columns in known I would add num1, num2 and num3 to as many different arrays and process the arrays after the loop is done
+T 1709718965 18<28nphard18>	alright, this is interesting, i'll be back to put all this into practice.
+T 1709718965 18<24xmb18>	# v1=( 1 1 1 ) v2=( 2 2 2 ) v3=( 3 3 3 ) i=-1 ; while (( ++i <= ${#a[@]} )) ; do declare -n d1=v1[i] d2=v2[i] ; printf %s\\n "$i : $d1 / $d2" ; exit ; done
+T 1709718968 18<25shbot18>	xmb: 0 : 1 / 2
+T 1709718968 18<25shbot18>	xmb: logout
+T 1709718968 18<25shbot18>	xmb: (shell exited with 0)
+T 1709718970 18<28nphard18>	thanks all.
+T 1709718978 18<24xmb18>	that one works
+T 1709719024 18<28emanuele618>	# printf '1\t2\t3\na\tb\tc\nX\tY\tZ\n'
+T 1709719026 18<25shbot18>	emanuele6: 1       2       3
+T 1709719026 18<25shbot18>	emanuele6: a       b       c
+T 1709719026 18<25shbot18>	emanuele6: X       Y       Z
+T 1709719031 18<28emanuele618>	# printf '1\t2\t3\na\tb\tc\nX\tY\tZ\n' | jq -rnR '[ inputs / "\t" ] | transpose[] | join("\t")'
+T 1709719033 18<25shbot18>	emanuele6: 1       a       X
+T 1709719033 18<25shbot18>	emanuele6: 2       b       Y
+T 1709719033 18<25shbot18>	emanuele6: 3       c       Z
+T 1709719034 18<28nphard18>	xmb: but, declaring the variables with each column can become unwieldy with large numbers of files and unknown data fields.
+T 1709719063 18<28nphard18>	xmb: does your solution need to put manually the data into the arrays manually for each file?
+T 1709719075 18<24xmb18>	# v1=( 1 1 1 ) v2=( 2 2 2 ) v3=( 3 3 3 ) i=-1 ; while (( ++i <= ${#a[@]} )) ; do  printf %s\\n "$i : ${v1[i]} / ${v2[i]}" ; exit ; done
+T 1709719077 18<25shbot18>	xmb: 0 : 1 / 2
+T 1709719077 18<25shbot18>	xmb: logout
+T 1709719077 18<25shbot18>	xmb: (shell exited with 0)
+T 1709719096 18<24xmb18>	nphard it depends only on ur request
+T 1709719103 18<28nphard18>	ths --> v1=( 1 1 1 ) v2=( 2 2 2 ) v3=( 3 3 3 )
+T 1709719128 18<28nphard18>	*this
+T 1709719147 18<28nphard18>	xmb: that's why I was using 'cut -fN'
+T 1709719166 18<27Soliton18>	cut is very rarely useful.
+T 1709719175 18<27Soliton18>	what is the goal?
+T 1709719178 18<28nphard18>	pre-populating the arrays seems like hell of an extra work!!
+T 1709719208 18<28nphard18>	Soliton: somthing like this --> https://dpaste.com/BLMFQKH44
+T 1709719236 18<27Soliton18>	that is the input or output you want or what?
+T 1709719255 18<28nphard18>	I was gonna use 'for in' but then realized is not that simple to change the values of '-fN' in the middle of the loop.
+T 1709719279 18<28nphard18>	Soliton: 'cut -f1 file_with_cols'
+T 1709719294 18<27Soliton18>	alright so there is no goal. nevermind.
+T 1709719309 18<24xmb18>	awk ' { print $1 } '
+T 1709719315 18<24xmb18>	this ur cut tries ?
+T 1709719323 18<24xmb18>	print first col , then second
+T 1709719325 18<28nphard18>	Soliton: separate the columns is the goal.
+T 1709719330 18<24xmb18>	$1 only first
+T 1709719345 18<28nphard18>	Soliton: in a loop
+T 1709719345 18<27Soliton18>	and what does separate the columns mean?
+T 1709719361 18<28nphard18>	filaA, fileB, fileC.
+T 1709719367 18<27Soliton18>	!faq1
+T 1709719367 18<29greybot18>	https://mywiki.wooledge.org/BashFAQ/001 -- How can I read a file (data stream, variable) line-by-line (and/or field-by-field)?
+T 1709719432 18<28nphard18>	xmb: use it directly with the files? --> awk ' { print $1 } ' file_with_colums
+T 1709719443 18<27Soliton18>	so far no idea how cut would do anything useful.
+T 1709719463 18<28nphard18>	Soliton: that's why I am asking.
+T 1709719479 18<27Soliton18>	but you're asking about cut and we have no idea what the actual goal is.
+T 1709719481 18<28nphard18>	if I had the solution I would no be asking.
+T 1709719494 18<24xmb18>	awk to print eleme
+T 1709719502 18<28nphard18>	xmb: thanks, i'll try that
+T 1709719508 18<24xmb18>	cut my tries failed , so awk
+T 1709719517 18<24xmb18>	the point was , hold ..
+T 1709719521 18<28nphard18>	xmb: can it be use in a loop?
+T 1709719533 18<24geirha18>	while IFS=$'\t' read -r f1 f2 f3 ; do a+=( "$f1" ) b+=( "$f2" ) c+=( "$f3" ) ; done < file_with_cols
+T 1709719539 18<24geirha18>	now you have three arrays
+T 1709719554 18<28nphard18>	geirha: dope
+T 1709719593 18<27Soliton18>	always amazes me a bit why people make it so hard to help them.
+T 1709719594 18<28nphard18>	Soliton: why isn't 'cut' reccomended? Manually it was working quite well.
+T 1709719595 18<24xmb18>	# dat=$'1 2 3\n1 2 3\n1 2 3' v1=( $( awk ' { print $2 } ' <<<"$dat" ) ) v2=( $( awk ' { print $2 } ' <<<"$dat" ) ) ; declare -p v2 v1
+T 1709719597 18<25shbot18>	xmb: declare -a v2=([0]="2" [1]="2" [2]="2")
+T 1709719597 18<25shbot18>	xmb: declare -a v1=([0]="2" [1]="2" [2]="2")
+T 1709719603 18<24xmb18>	oo
+T 1709719603 18<27Soliton18>	for what?
+T 1709719614 18<24xmb18>	# dat=$'1 2 3\n1 2 3\n1 2 3' v1=( $( awk ' { print $1 } ' <<<"$dat" ) ) v2=( $( awk ' { print $2 } ' <<<"$dat" ) ) ; declare -p v2 v1
+T 1709719615 18<25shbot18>	xmb: declare -a v2=([0]="2" [1]="2" [2]="2")
+T 1709719615 18<25shbot18>	xmb: declare -a v1=([0]="1" [1]="1" [2]="1")
+T 1709719622 18<27Soliton18>	if you want to do exactly what cut does then use it. you almost never do though.
+T 1709719637 18<24geirha18>	don't do v1=( $(anything )   that's just broken
+T 1709719640 18<24xmb18>	in this u make dat=.. away and both <<<"$dat" and replace em with ur file/s
+T 1709719652 18<24xmb18>	awk ' code ' files
+T 1709719713 18<27Soliton18>	i don't understand why you can't explain a goal. like "i have tab delimited input and i want to iterate it column by column" or whatever.
+T 1709719730 18<24xmb18>	# printf $'1 2 3\n1 2 3\n1 2 3\n' >f1 ; v1=( $( awk ' { print $1 } ' f1 ) ) v2=( $( awk ' { print $2 } ' f1 ) ) ; declare -p v2 v1
+T 1709719731 18<27Soliton18>	afaict it's just a big guessing game so far.
+T 1709719733 18<25shbot18>	xmb: declare -a v2=([0]="2" [1]="2" [2]="2")
+T 1709719733 18<25shbot18>	xmb: declare -a v1=([0]="1" [1]="1" [2]="1")
+T 1709719742 18<29djph18>	Soliton: there's a bashphorism about that.
+T 1709719839 18<27Soliton18>	(the only input shown so far wasn't tab delimited, btw.)
+T 1709719875 18<24geirha18>	I'm just assuming the tabs got expanded into spaces either through copy/pasting or the pastebin itself
+T 1709719903 18<24geirha18>	given that cut -f2 apparently works on the real data
+T 1709719919 18<24xmb18>	the pastebin web looks like tabs
+T 1709719954 18<27Soliton18>	i wonder how something not containing tabs looks like tabs.
+T 1709719956 18<24xmb18>	# printf $'1\t2\t3\n1\t2\t3\n1\t2\t3\n' >f1 ; v1=( $( awk ' { print $1 } ' f1 ) ) v2=( $( awk ' { print $2 } ' f1 ) ) ; declare -p v2 v1
+T 1709719958 18<25shbot18>	xmb: declare -a v2=([0]="2" [1]="2" [2]="2")
+T 1709719958 18<25shbot18>	xmb: declare -a v1=([0]="1" [1]="1" [2]="1")
+T 1709719986 18<24xmb18>	soli , there is much space between 1 and 2 and 3
+T 1709719997 18<24xmb18>	im his web link , andro chrome client
+T 1709720000 18<27Soliton18>	3 spaces in fact, yes. no tab in sight.
+T 1709720005 18<24geirha18>	anyway, running cut or awk for each column is wasteful and you risk ending up with broken data. Especially bad when you use $() instead of reading it line by line
+T 1709720006 18<24xmb18>	k
+T 1709720043 18<24xmb18>	the $( is only format safe-format , he used 1 2 3 thats simple
+T 1709720094 18<24geirha18>	That's obviously dummy data
+T 1709720133 18<24xmb18>	ye well
+T 1709720142 18<28emanuele618>	we yell
+T 1709720149 18<24geirha18>	Consider what happens if you read column1 into array v1, then some process comes along and updates the tsv file, then you read column2 into array v2. Now v1 and v2 do not correspond to each other. Better to read the file once
+T 1709720162 18<27Soliton18>	!using > nphard
+T 1709720162 18<29greybot18>	nphard: "How can I do X using Y?" NEVER ask a question of that form. Y may not be the best way to do X. All you should ask is, "How do I do X?"
+T 1709720209 18<24xmb18>	dude deliver code that uses [[ updated_file ]] then
+T 1709720233 18<24geirha18>	wat?
+T 1709720328 18<24xmb18>	erm i tried simple on topic
+T 1709720362 18<24xmb18>	file read once , ye
+T 1709720418 18<24xmb18>	# printf $'1\t2\t3\n1\t2\t3\n1\t2\t3\n' >f1 ; f=$( < f1 ) v1=( $( awk ' { print $1 } ' <<<"$f" ) ) v2=( $( awk ' { print $2 } ' <<<"$f" ) ) ; declare -p v2 v1
+T 1709720420 18<25shbot18>	xmb: declare -a v2=([0]="2" [1]="2" [2]="2")
+T 1709720420 18<25shbot18>	xmb: declare -a v1=([0]="1" [1]="1" [2]="1")
+T 1709720479 18<27Soliton18>	!pf 50
+T 1709720479 18<29greybot18>	https://mywiki.wooledge.org/BashPitfalls#pf50 -- Don't do this! -- hosts=( $(aws …) )
+T 1709720550 18<27Soliton18>	why do you write code like that? do you think you're actually helping anyone?
+T 1709721173 18<29netmonk18>	is there a good ressource explaining bash name expension regular expression
+T 1709721175 18<29netmonk18>	?
+T 1709721207 18<28llua18>	eh
+T 1709721230 18<28emanuele618>	bash is a regular expression
+T 1709721258 18<29netmonk18>	for instance, i do ls *foobar* which expand to 12_foobar and 12_foobar_1 but i would like to exclude the second one
+T 1709721268 18<27Soliton18>	!glob
+T 1709721268 18<29greybot18>	Globs are shell patterns that can be used for matching strings or expanding pathnames: [[ $name = Bob* ]]; rm -- *.txt; see http://mywiki.wooledge.org/glob
+T 1709721277 18<27Soliton18>	!extblog
+T 1709721281 18<27Soliton18>	!extglob
+T 1709721281 18<29greybot18>	"Extended globs" (shopt -s extglob) allow you to say things like "all files that do not end in .jpg". See http://mywiki.wooledge.org/glob#extglob
+T 1709721300 18<27Soliton18>	those are not regular expressions.
+T 1709721338 18<29netmonk18>	ok i understand, is it possible just using blob to exlude 12_foobar_1 ?
+T 1709721365 18<28llua18>	see the second link
+T 1709721366 18<27Soliton18>	if you want the file to end with foobar then just don't put a * at the end.
+T 1709721409 18<27Soliton18>	# touch 12_foobar 12_foobar_1; printf %s\\n *foobar
+T 1709721411 18<25shbot18>	Soliton: 12_foobar
+T 1709721462 18<29nvz18>	if you just want to exclude one file in particular you prob need to read the results of expansion and test
+T 1709721478 18<27Soliton18>	or use an extglob.
+T 1709721497 18<29netmonk18>	ok in this case yes, but this is not my exact current case. ls *foobar* -> 12_foobar_009_1 and 12_foobar_009 and 11_foobar_010_1 and 11_foobar_010
+T 1709721514 18<29netmonk18>	i just want to keep the one not ending with _1
+T 1709721527 18<27Soliton18>	# touch 12_foobar 12_foobar_1; printf %s\\n *foobar!(_1)
+T 1709721529 18<25shbot18>	Soliton: 12_foobar
+T 1709721543 18<27Soliton18>	(shbot has extglob enabled by default.)
+T 1709721676 18<29netmonk18>	ok
+T 1709721719 18<27Soliton18>	ah, you actually have more stuff in between.
+T 1709721728 18<27Soliton18>	# touch 12_foobar_009_1 12_foobar_009 11_foobar_010_1 11_foobar_010; printf %s\\n *foobar!(*_1)
+T 1709721729 18<25shbot18>	Soliton: 11_foobar_010
+T 1709721729 18<25shbot18>	Soliton: 12_foobar_009
+T 1709721732 18<29netmonk18>	and next issue, this doesnt work when the blob is an argument of a bash function
+T 1709721792 18<27Soliton18>	# touch 12_foobar_009_1 12_foobar_009 11_foobar_010_1 11_foobar_010; f() { printf %s\\n "$@"; }; f *foobar!(*_1)
+T 1709721794 18<25shbot18>	Soliton: 11_foobar_010
+T 1709721794 18<25shbot18>	Soliton: 12_foobar_009
+T 1709721802 18<27Soliton18>	not sure what you mean.
+T 1709721836 18<27Soliton18>	you need to enable extglob (shopt -s extglob) in your shell to use extended globs.
+T 1709721872 18<29netmonk18>	got a syntax error near token (
+T 1709721878 18<27Soliton18>	you need to enable extglob (shopt -s extglob) in your shell to use extended globs.
+T 1709721932 18<29netmonk18>	ok, this was the issue sorry im slow reader :)
+T 1709721935 18<29netmonk18>	thanks solitonm
+T 1709721942 18<29netmonk18>	s/nm/n/
+T 1709721943 18<27Soliton18>	you're welcome.
+T 1709721959 18<29nvz18>	that is a regular expression
+T 1709722000 18<27Soliton18>	# [[ foo =~ *foobar!(*_1) ]]; echo $?
+T 1709722001 18<25shbot18>	Soliton: 2
+T 1709722017 18<27Soliton18>	nope, not a valid regular expression.
+T 1709722039 18<29nvz18>	no i mean the search and replace
+T 1709722095 18<29nvz18>	where they mispelled your nick
+T 1709722487 18<29netmonk18>	that's right
+T 1709722507 18<29netmonk18>	an old habit from #unix@ircnet to correct mispell by regexo
+T 1709722553 18<28emanuele618>	+# [[ foo =~ *foobar!(*_1) ]]
+T 1709722555 18<25shbot18>	emanuele6: bash: [[: invalid regular expression `*foobar!(*_1)': Invalid preceding regular expression
+T 1709722564 18<28emanuele618>	nope; not a valid regular expression. :D
+T 1709722629 18<28emanuele618>	because invalid preceding regular expression before *foobar!(*_1)
+T 1709722662 18<28emanuele618>	no, actually it just prints the entire pattern for every error
+T 1709722683 18<28emanuele618>	anyway, it prints the regex error from lib c in bash devel
+T 1709722689 18<19Artfaith18>	Is it possible to change type of variable from array to string without any intermediary variable?
+T 1709722715 18<19Artfaith18>	# declare a=( 0 1 ); declare a="${a[0]}"; declare -p a;
+T 1709722717 18<25shbot18>	Artfaith: declare -a a=([0]="0" [1]="1")
+T 1709722722 18<19Artfaith18>	# declare a=( 0 1 ); declare a="${a[1]}"; declare -p a;
+T 1709722724 18<25shbot18>	Artfaith: declare -a a=([0]="1" [1]="1")
+T 1709722782 18<19Artfaith18>	# declare a=( 0 1 ); declare _a="${a[1]}"; unset a; declare a="$_a"; declare -p a;
+T 1709722784 18<25shbot18>	Artfaith: declare -- a="1"
+T 1709722829 18<28emanuele618>	# eval 'unset -v a; a='"${a[1]@Q}"
+T 1709722831 18<25shbot18>	emanuele6: no output
+T 1709722861 18<19Artfaith18>	emanuele6, thank you, but is there any normal way?
+T 1709722926 18<28emanuele618>	using declare with an assignment is not going remove attributes. to remove attributes you use  declare +a  (where a is the attribute letter). it is only legal to use +a on unset variables.
+T 1709722963 18<28nphard18>	geirha: while IFS=$'\t' read -r f1 f2 f3 ; do a+=( "$f1" ) b+=( "$f2" ) c+=( "$f3" ) ; done < file_with_cols <--- this command, when reading back the variable 'echo $a' it only prints one character, not the actual column.
+T 1709723003 18<27Soliton18>	!faq 5
+T 1709723003 18<29greybot18>	https://mywiki.wooledge.org/BashFAQ/005 -- How can I use array variables?
+T 1709723007 18<28emanuele618>	nphard:   printf %s\\n "${a[@]}"    not   echo $a
+T 1709723057 18<28emanuele618>	note that if there are empty fields  IFS=$'\t'   will not work as you expect; empty fields are skipped
+T 1709723080 18<28emanuele618>	a\t\tb   is the same as  a\tb\t    and  \t\tx   is the same as  x\t\t
+T 1709723262 18<28nphard18>	interesting, had to clear the variable first after typing so many randomn commands.
+T 1709723327 18<25ormaaj18>	I skip empty fields. Go to strawberry fields
+T 1709723354 18<28nphard18>	mm.. this is quite interesting. So the columns have been split without any loop or awk or 'cut'.
+T 1709723377 18<28nphard18>	somewhat wild.
+T 1709723442 18<25ormaaj18>	woh
+T 1709723470 18*	28nphard staring into the distance in state of shock
+T 1709723478 18<25imi18>	hi, is there a better (quicker) way to check if given variable is an integer number than grep?
+T 1709723513 18<28emanuele618>	!faq number
+T 1709723513 18<29greybot18>	https://mywiki.wooledge.org/BashFAQ/018 -- How can I use numbers with leading zeros in a loop, e.g. 01, 02?
+T 1709723518 18<28emanuele618>	hmm, not that
+T 1709723553 18<28emanuele618>	anyway, you can use    case $x in ''|*[!0123456789]*) echo no;; *) echo yes; esac
+T 1709723573 18<28emanuele618>	if it is empty, or contains a character that is not 0123456789 you could say it is not a number
+T 1709723578 18<25imi18>	when I have leading zeroes I prefix it with 1 and then subtract 100. now the leading zeroes are gone
+T 1709723593 18<19Artfaith18>	emanuele6, to clarify, remove attributes from unset variable?
+T 1709723596 18<25imi18>	ok thanks
+T 1709723603 18<19Artfaith18>	What is the reason to remove an attribute from anything unset?
+T 1709723620 18<19Artfaith18>	Like, in case of local variable?
+T 1709723634 18<28emanuele618>	you can only remove +a and +A from unset variables; if they have a value you cannot remove those attributes
+T 1709723665 18<28nphard18>	emanuele6: so... when to use these? --> a\t\tb , a\tb\t , \t\tx , x\t\t
+T 1709723666 18<28emanuele618>	other attributes e.g. l, x, u, i, can be removed whenever.
+T 1709723666 18<19Artfaith18>	Other attributes can be remove but these two?
+T 1709723682 18<19Artfaith18>	I see...
+T 1709723689 18<19Artfaith18>	Thank you, emanuele6!
+T 1709723713 18<28emanuele618>	# printf 'a\t\tb\n\ta\tb\n'
+T 1709723714 18<25shbot18>	emanuele6: a               b
+T 1709723715 18<25shbot18>	emanuele6:         a       b
+T 1709723756 18<28emanuele618>	# printf 'a\t\tb\n\ta\tb\n' | while IFS=$'\t' read -r f1 f2 f3; do printf 'f1=%q f2=%q f3=%q\n' "$f1" "$f2" "$f3"; done
+T 1709723758 18<25shbot18>	emanuele6: f1=a f2=b f3=''
+T 1709723758 18<25shbot18>	emanuele6: f1=a f2=b f3=''
+T 1709723786 18<28emanuele618>	nphard: i was saying that for   IFS=$'\t' read -r f1 f2 f3    those sets of two lines are the same
+T 1709723815 18<28emanuele618>	if you have an hole in one of the columns
+T 1709723840 18<28nphard18>	ah, yes, sometimes there'll be holes.
+T 1709723861 18<25imi18>	emanuele6: what about negative numbers?
+T 1709723880 18<28emanuele618>	you can use   case ${x#-} in ...
+T 1709723889 18<25imi18>	ok thanks
+T 1709723897 18<28emanuele618>	that way if there is a - at the start, and it still matches, it is allowed
+T 1709723924 18<28emanuele618>	#- removes a - from the start of $x; so it checks the patterns on the value of $x with - removed
+T 1709723976 18<25ormaaj18>	x<<1,x>>1
+T 1709723986 18<28emanuele618>	!faq valid
+T 1709723986 18<29greybot18>	https://mywiki.wooledge.org/BashFAQ/054 -- How can I tell whether a variable contains a valid number?
+T 1709723994 18<28emanuele618>	that was the faq i was looking for :D
+T 1709724017 18<25ormaaj18>	><
+T 1709724020 18<28emanuele618>	ormaaj: x<<=1,x>>=1 ?
+T 1709724031 18<25ormaaj18>	ya!
+T 1709724194 18<28emanuele618>	nphard: then you cannot use  IFS=$'\t' read -r f1 f2 f3    you could use   while read -r; do a+=( "${REPLY%%$'\t'*}" ) REPLY=${REPLY#*$'\t'} b+=( "${REPLY%%$'\t'*}" ) REPLY=${REPLY#*$'\t'} c+=( "$REPLY" ); done
+T 1709724274 18<28emanuele618>	# printf 'a\t\tb\n\ta\tb\n' | while read -r; do f1=${REPLY%%$'\t'*} REPLY=${REPLY#*$'\t'} f2=${REPLY%%$'\t'*} REPLY=${REPLY#*$'\t'} f3=$REPLY; printf 'f1=%q f2=%q f3=%q\n' "$f1" "$f2" "$f3"; done
+T 1709724276 18<25shbot18>	emanuele6: f1=a f2='' f3=b
+T 1709724276 18<25shbot18>	emanuele6: f1='' f2=a f3=b
+T 1709724778 18<25ormaaj18>	shifty eyes <<
+T 1709724800 18<25ormaaj18>	shifty numbers
+T 1709724849 18<25ormaaj18>	there should be rotate operators :(
+T 1709725054 18<28emanuele618>	x<<=1,x&=!!(x^x>>1)
+T 1709725084 18<28emanuele618>	err |=
+T 1709725108 18<28emanuele618>	hmm, i am not sure
+T 1709725142 18<28emanuele618>	is bash's >> signed? if it is signed, it does not work
+T 1709725158 18<28emanuele618>	# echo "$(( -2 >> 1 ))"
+T 1709725159 18<25shbot18>	emanuele6: -1
+T 1709725162 18<28emanuele618>	:\
+T 1709725316 18<28emanuele618>	need to assume 64bit and use  x&(1<<63)     x=x<<1|!!(x&1<<63)
+T 1709725334 18<25OMGOMG18>	emanuele6: what was that supposed to demonstrate?
+T 1709725352 18<28emanuele618>	that -2 >> 1  is signed?
+T 1709725408 18<25OMGOMG18>	what would the unsigned equivalent look like
+T 1709725412 18<28emanuele618>	-2 is    1111111111111111111111111111111111111111111111111111111111111110
+T 1709725426 18<28emanuele618>	if it is signed >>1 results in   1111111111111111111111111111111111111111111111111111111111111111
+T 1709725430 18<28emanuele618>	so -1
+T 1709725443 18<28emanuele618>	if it is not signed, it results in   0111111111111111111111111111111111111111111111111111111111111111
+T 1709725459 18<28emanuele618>	that is 9223372036854775807
+T 1709725470 18<25OMGOMG18>	ok
+T 1709725473 18<25OMGOMG18>	thanks
+T 1709725509 18<28emanuele618>	signed >> duplicates the top bit, so it adds a 0 if the top bit is 0, otherwise it adds a 1 if the top bit is 1
+T 1709725518 18<28emanuele618>	while unsigned >> always adds 0s
+T 1709725612 18<28nphard18>	darn! bash makes you think harder every step :/
+T 1709725645 18<25OMGOMG18>	do you often encounter unsigned >> ?
+T 1709725799 18<28emanuele618>	?
+T 1709726060 18<24ano18>	what's the best way to strip trailing char?
+T 1709726096 18<28emanuele618>	%%+([chars])  ?
+T 1709726211 18<24ano18>	what about portable way, ${#... ${...%%[chars] loop?
+T 1709726515 18<24ano18>	# char=/; var=/path/to//////////////; until (( "${#var}" == "${var_len=0}" )); do var_len=${#var}; var=${var%%${char}}; done; echo $var
+T 1709726517 18<25shbot18>	ano: /path/to
+T 1709726574 18<28emanuele618>	so busybox has (( but not +()?
+T 1709726593 18<28emanuele618>	"$char" not $char
+T 1709726656 18<28emanuele618>	also   ""  in  (( or $((  is a big no no in most shells
+T 1709726657 18<24ano18>	hmm no it doesn't
+T 1709726675 18<28emanuele618>	d# echo "$(( "${#PWD}" * 2 ))"
+T 1709726676 18<25shbot18>	emanuele6: dash: 1: arithmetic expression: expecting primary: " "5" * 2 "
+T 1709726717 18<28emanuele618>	anyway, if you want to remove just one characters; easiest way is probably  var=${var%"${var##*[!/]}"
+T 1709726728 18<28emanuele618>	missing a }

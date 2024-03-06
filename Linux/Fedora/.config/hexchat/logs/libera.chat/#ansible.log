@@ -1071,3 +1071,51 @@ Mar 06 07:16:31 *	Topic for #ansible is: https://docs.ansible.com * latest relea
 Mar 06 07:16:31 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
 Mar 06 07:16:31 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
 Mar 06 08:56:22 <cla>	awb: Correct.
+Mar 06 09:20:20 <ygk_12345>	Hi all. I want to use the template module to generate a config file using a jinja template file , but dont want to save it onto a destination but simply display the final file. How can it be done ?
+Mar 06 09:29:12 <endre>	you don't need template module for that
+Mar 06 09:29:27 <endre>	use debug with a lookup
+Mar 06 09:29:50 <ygk_12345>	endre how to do that ? can you show me a sample ?
+Mar 06 09:32:08 <endre>	https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_lookup.html
+Mar 06 09:32:14 <ygk_12345>	but I need the final generated file content from jinja
+Mar 06 09:32:29 <endre>	yeah, that's the whole point
+Mar 06 09:32:31 <endre>	  ansible.builtin.debug:
+Mar 06 09:32:33 <endre>	    msg: "{{ lookup('ansible.builtin.template', './some_template.j2') }}"
+Mar 06 09:33:02 <ygk_12345>	oh ok let me try
+Mar 06 09:36:22 <ygk_12345>	endre but how can it generate the content without this task first ?
+Mar 06 09:36:22 <ygk_12345>	- name: Create haproxy service config files
+Mar 06 09:36:23 <ygk_12345>	  template:
+Mar 06 09:36:23 <ygk_12345>	    src: service.j2
+Mar 06 09:36:24 <sivel>	ygk_12345: Please slow down, or use a pastebin if you need to paste multiple lines. If you are using matrix, please do not send multi line messages. This is an automated message.
+Mar 06 09:36:24 <ygk_12345>	    dest: "/etc/haproxy/conf.d/{{ service.haproxy_service_name }}"
+Mar 06 09:36:52 <ygk_12345>	so that ,means it needs destination to copy first ?
+Mar 06 09:37:31 <endre>	wat
+Mar 06 09:37:38 <endre>	just dont use this task step then?
+Mar 06 09:37:49 <endre>	or use ansible directly without ansible-playbook?
+Mar 06 09:38:06 <ygk_12345>	ok let me check if that works
+Mar 06 09:38:51 <endre>	ansible -m debug -a "msg={{lookup('ansible.builtin.template', 'service.j2')}}" prod_edge_lb0
+Mar 06 09:44:57 <ygk_12345>	endre is it possible to specify dest on the localhost instead of remote host for the template module ?
+Mar 06 09:46:28 <endre>	well yes, but i'm not sure how discovered facts will with in that case
+Mar 06 09:46:34 <endre>	well yes, but i'm not sure how discovered facts will work* in that case
+Mar 06 09:47:08 <endre>	what if you generate this file on the target host on a temp directory, let's say
+Mar 06 09:47:09 <ygk_12345>	endre how to specify localhost as destination ?
+Mar 06 09:47:23 <endre>	delegate_to: localhost
+Mar 06 09:48:10 <ygk_12345>	endre cant we see how the final file contents would like after generation without storing the file anywhere ?
+Mar 06 09:48:29 <endre>	that's what the debug is for
+Mar 06 09:49:09 <ygk_12345>	can I use delegate_to in the place of dest: for the template module ?
+Mar 06 09:49:36 <ygk_12345>	what I am collecting here is for the remote hosts but want the results to be displayed on localhost
+Mar 06 09:51:49 <endre>	that's what the debug is for
+Mar 06 09:52:05 <endre>	it gets rendered on the remote host and sent back to 'localhost'
+Mar 06 09:52:23 <endre>	and.. sent to the display plugin in use
+Mar 06 10:29:10 <oblikoamorale>	endre: huh? all templating work is done locally
+Mar 06 10:30:54 <endre>	ok, then facts are sent back?
+Mar 06 10:30:59 <endre>	til
+Mar 06 10:38:33 <ygk_12345>	endre can I not use vars to declare variables to be replaced when using template module ?  It is giving me conflicting statements error
+Mar 06 10:46:20 <endre>	you can
+Mar 06 10:47:24 <ygk_12345>	endre it is not letting me do it
+Mar 06 10:48:47 <endre>	pasteben something so that we can check
+Mar 06 10:48:52 <endre>	pastebin*
+Mar 06 10:49:01 <endre>	(read: do not paste here)
+Mar 06 10:56:07 <ygk_12345>	endre please check this https://paste.opendev.org/show/bN39iS3uHf0RiJ4P1aPK/. . It is failing even though I have defined the variable in vars section above
+Mar 06 11:00:12 <endre>	haproxy_bind_internal_lb_vip_interface vs
+Mar 06 11:00:14 <endre>	haproxy_bind_internal_lb_vip_address
+Mar 06 11:02:10 <ygk_12345>	ohh

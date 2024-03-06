@@ -6123,3 +6123,312 @@ Mar 06 08:37:00 <xmb>	0 1 2 , = 3
 Mar 06 08:37:14 <JAA>	Yeah, but the discussion above was about sparse arrays.
 Mar 06 08:37:22 <xmb>	ah k
 Mar 06 08:41:30 <emanuele6>	ack
+Mar 06 09:09:53 <andre144k>	hello, how to "pgrep -f" for process "foo" or "bar" ?
+Mar 06 09:10:20 <andre144k>	so when both is running once i get two process ids
+Mar 06 09:12:39 <pj>	# ar=(); ar[1]=a ar[5]=b; ari=("${!ar[@]}"); echo "${ari[-1]}"
+Mar 06 09:12:41 <shbot>	pj: 5
+Mar 06 09:12:53 <pj>	JAA: This is the best way I can think of ^^^^^
+Mar 06 09:13:19 <andre144k>	hopefully not for me ^^
+Mar 06 09:13:24 <JAA>	Yeah
+Mar 06 09:13:37 <pj>	basically copying the indexes into another array
+Mar 06 09:13:45 <pj>	and then accessing the last element of that array
+Mar 06 09:14:33 <pj>	oh, I see ormaaj came up with that earlier.
+Mar 06 09:51:32 <xmb>	andre $( pgrep -f foo ; pgrep -f bar )
+Mar 06 09:52:05 <xmb>	since it says only one pattern
+Mar 06 10:00:36 <emanuele6>	you can use  pgrep -f 'foo|bar'   i think
+Mar 06 10:01:16 <emanuele6>	yes
+Mar 06 10:02:26 <andre144k>	thx
+Mar 06 10:02:28 <JAA>	It's an ERE according to the man page.
+Mar 06 10:02:34 <emanuele6>	>:(
+Mar 06 10:03:01 <JAA>	I completely missed it at first as it's tucked away near the bottom for some reason.
+Mar 06 10:04:17 <emanuele6>	did you know that "JAA" is a regular expression? :o
+Mar 06 10:04:32 <JAA>	Whoa
+Mar 06 10:04:51 <emanuele6>	# printf 'Hello, %s\n' JAA emanuele6 | grep JAA
+Mar 06 10:04:52 <shbot>	emanuele6: Hello, JAA
+Mar 06 10:05:21 <JAA>	Amazing!
+Mar 06 10:05:33 <emanuele6>	JAAmazing!
+Mar 06 10:05:41 <JAA>	:-)
+Mar 06 10:44:43 <nphard>	is it posible a loop with two different values? cut -f1, cut -f2
+Mar 06 10:45:50 <xmb>	u can save to two data structures
+Mar 06 10:45:51 <nphard>	a yes with a variable perhaps?
+Mar 06 10:46:09 <xmb>	whats the cut output look like
+Mar 06 10:46:46 <nphard>	let's say the loop it's only for two iterations, how to tell the second time has to use 'cut -f2'?
+Mar 06 10:47:09 <xmb>	show cut output plz ?
+Mar 06 10:47:21 <nphard>	alright
+Mar 06 10:47:30 <nphard>	it's kinda simple
+Mar 06 10:48:25 <nphard>	https://dpaste.com/BLMFQKH44
+Mar 06 10:48:55 <xmb>	u load -f1 into an arr , and -f2 to another
+Mar 06 10:49:07 <xmb>	then u use those diff arrs for values
+Mar 06 10:50:58 <nphard>	an array?
+Mar 06 10:51:29 <osse>	while read -r num1 num2 num3; do blabla "$num1" "$num2" "$num3"; done
+Mar 06 10:51:42 <osse>	no cut needed
+Mar 06 10:52:32 <nphard>	osse: I need the columns
+Mar 06 10:52:53 <nphard>	wow, so many ways, arrays, 'read -r'
+Mar 06 10:53:02 <xmb>	v1=( 1 1 1 ) v2=( 2 2 2 ) v3=( 3 3 3 ) i=-1 ; while (( ++i <= ${#a[@]} )) ; do declare -n d1=a[i] d2=b[i] ; printf %s\\n "$i : $d1 / $d2" ; exit ; done
+Mar 06 10:53:19 <nphard>	darn1!
+Mar 06 10:53:32 <nphard>	that felt like a punch in the face.
+Mar 06 10:53:37 <osse>	If the number of columns in known I would add num1, num2 and num3 to as many different arrays and process the arrays after the loop is done
+Mar 06 10:56:05 <nphard>	alright, this is interesting, i'll be back to put all this into practice.
+Mar 06 10:56:05 <xmb>	# v1=( 1 1 1 ) v2=( 2 2 2 ) v3=( 3 3 3 ) i=-1 ; while (( ++i <= ${#a[@]} )) ; do declare -n d1=v1[i] d2=v2[i] ; printf %s\\n "$i : $d1 / $d2" ; exit ; done
+Mar 06 10:56:08 <shbot>	xmb: 0 : 1 / 2
+Mar 06 10:56:08 <shbot>	xmb: logout
+Mar 06 10:56:08 <shbot>	xmb: (shell exited with 0)
+Mar 06 10:56:10 <nphard>	thanks all.
+Mar 06 10:56:18 <xmb>	that one works
+Mar 06 10:57:04 <emanuele6>	# printf '1\t2\t3\na\tb\tc\nX\tY\tZ\n'
+Mar 06 10:57:06 <shbot>	emanuele6: 1       2       3
+Mar 06 10:57:06 <shbot>	emanuele6: a       b       c
+Mar 06 10:57:06 <shbot>	emanuele6: X       Y       Z
+Mar 06 10:57:11 <emanuele6>	# printf '1\t2\t3\na\tb\tc\nX\tY\tZ\n' | jq -rnR '[ inputs / "\t" ] | transpose[] | join("\t")'
+Mar 06 10:57:13 <shbot>	emanuele6: 1       a       X
+Mar 06 10:57:13 <shbot>	emanuele6: 2       b       Y
+Mar 06 10:57:13 <shbot>	emanuele6: 3       c       Z
+Mar 06 10:57:14 <nphard>	xmb: but, declaring the variables with each column can become unwieldy with large numbers of files and unknown data fields.
+Mar 06 10:57:43 <nphard>	xmb: does your solution need to put manually the data into the arrays manually for each file?
+Mar 06 10:57:55 <xmb>	# v1=( 1 1 1 ) v2=( 2 2 2 ) v3=( 3 3 3 ) i=-1 ; while (( ++i <= ${#a[@]} )) ; do  printf %s\\n "$i : ${v1[i]} / ${v2[i]}" ; exit ; done
+Mar 06 10:57:57 <shbot>	xmb: 0 : 1 / 2
+Mar 06 10:57:57 <shbot>	xmb: logout
+Mar 06 10:57:57 <shbot>	xmb: (shell exited with 0)
+Mar 06 10:58:16 <xmb>	nphard it depends only on ur request
+Mar 06 10:58:23 <nphard>	ths --> v1=( 1 1 1 ) v2=( 2 2 2 ) v3=( 3 3 3 )
+Mar 06 10:58:48 <nphard>	*this
+Mar 06 10:59:07 <nphard>	xmb: that's why I was using 'cut -fN'
+Mar 06 10:59:26 <Soliton>	cut is very rarely useful.
+Mar 06 10:59:35 <Soliton>	what is the goal?
+Mar 06 10:59:38 <nphard>	pre-populating the arrays seems like hell of an extra work!!
+Mar 06 11:00:08 <nphard>	Soliton: somthing like this --> https://dpaste.com/BLMFQKH44
+Mar 06 11:00:36 <Soliton>	that is the input or output you want or what?
+Mar 06 11:00:55 <nphard>	I was gonna use 'for in' but then realized is not that simple to change the values of '-fN' in the middle of the loop.
+Mar 06 11:01:19 <nphard>	Soliton: 'cut -f1 file_with_cols'
+Mar 06 11:01:34 <Soliton>	alright so there is no goal. nevermind.
+Mar 06 11:01:49 <xmb>	awk ' { print $1 } '
+Mar 06 11:01:55 <xmb>	this ur cut tries ?
+Mar 06 11:02:03 <xmb>	print first col , then second
+Mar 06 11:02:05 <nphard>	Soliton: separate the columns is the goal.
+Mar 06 11:02:10 <xmb>	$1 only first
+Mar 06 11:02:25 <nphard>	Soliton: in a loop
+Mar 06 11:02:25 <Soliton>	and what does separate the columns mean?
+Mar 06 11:02:41 <nphard>	filaA, fileB, fileC.
+Mar 06 11:02:47 <Soliton>	!faq1
+Mar 06 11:02:47 <greybot>	https://mywiki.wooledge.org/BashFAQ/001 -- How can I read a file (data stream, variable) line-by-line (and/or field-by-field)?
+Mar 06 11:03:52 <nphard>	xmb: use it directly with the files? --> awk ' { print $1 } ' file_with_colums
+Mar 06 11:04:03 <Soliton>	so far no idea how cut would do anything useful.
+Mar 06 11:04:23 <nphard>	Soliton: that's why I am asking.
+Mar 06 11:04:39 <Soliton>	but you're asking about cut and we have no idea what the actual goal is.
+Mar 06 11:04:41 <nphard>	if I had the solution I would no be asking.
+Mar 06 11:04:54 <xmb>	awk to print eleme
+Mar 06 11:05:02 <nphard>	xmb: thanks, i'll try that
+Mar 06 11:05:08 <xmb>	cut my tries failed , so awk
+Mar 06 11:05:17 <xmb>	the point was , hold ..
+Mar 06 11:05:21 <nphard>	xmb: can it be use in a loop?
+Mar 06 11:05:33 <geirha>	while IFS=$'\t' read -r f1 f2 f3 ; do a+=( "$f1" ) b+=( "$f2" ) c+=( "$f3" ) ; done < file_with_cols
+Mar 06 11:05:39 <geirha>	now you have three arrays
+Mar 06 11:05:54 <nphard>	geirha: dope
+Mar 06 11:06:33 <Soliton>	always amazes me a bit why people make it so hard to help them.
+Mar 06 11:06:34 <nphard>	Soliton: why isn't 'cut' reccomended? Manually it was working quite well.
+Mar 06 11:06:35 <xmb>	# dat=$'1 2 3\n1 2 3\n1 2 3' v1=( $( awk ' { print $2 } ' <<<"$dat" ) ) v2=( $( awk ' { print $2 } ' <<<"$dat" ) ) ; declare -p v2 v1
+Mar 06 11:06:37 <shbot>	xmb: declare -a v2=([0]="2" [1]="2" [2]="2")
+Mar 06 11:06:37 <shbot>	xmb: declare -a v1=([0]="2" [1]="2" [2]="2")
+Mar 06 11:06:43 <xmb>	oo
+Mar 06 11:06:43 <Soliton>	for what?
+Mar 06 11:06:54 <xmb>	# dat=$'1 2 3\n1 2 3\n1 2 3' v1=( $( awk ' { print $1 } ' <<<"$dat" ) ) v2=( $( awk ' { print $2 } ' <<<"$dat" ) ) ; declare -p v2 v1
+Mar 06 11:06:55 <shbot>	xmb: declare -a v2=([0]="2" [1]="2" [2]="2")
+Mar 06 11:06:55 <shbot>	xmb: declare -a v1=([0]="1" [1]="1" [2]="1")
+Mar 06 11:07:02 <Soliton>	if you want to do exactly what cut does then use it. you almost never do though.
+Mar 06 11:07:17 <geirha>	don't do v1=( $(anything )   that's just broken
+Mar 06 11:07:20 <xmb>	in this u make dat=.. away and both <<<"$dat" and replace em with ur file/s
+Mar 06 11:07:32 <xmb>	awk ' code ' files
+Mar 06 11:08:33 <Soliton>	i don't understand why you can't explain a goal. like "i have tab delimited input and i want to iterate it column by column" or whatever.
+Mar 06 11:08:50 <xmb>	# printf $'1 2 3\n1 2 3\n1 2 3\n' >f1 ; v1=( $( awk ' { print $1 } ' f1 ) ) v2=( $( awk ' { print $2 } ' f1 ) ) ; declare -p v2 v1
+Mar 06 11:08:51 <Soliton>	afaict it's just a big guessing game so far.
+Mar 06 11:08:53 <shbot>	xmb: declare -a v2=([0]="2" [1]="2" [2]="2")
+Mar 06 11:08:53 <shbot>	xmb: declare -a v1=([0]="1" [1]="1" [2]="1")
+Mar 06 11:09:02 <djph>	Soliton: there's a bashphorism about that.
+Mar 06 11:10:39 <Soliton>	(the only input shown so far wasn't tab delimited, btw.)
+Mar 06 11:11:15 <geirha>	I'm just assuming the tabs got expanded into spaces either through copy/pasting or the pastebin itself
+Mar 06 11:11:43 <geirha>	given that cut -f2 apparently works on the real data
+Mar 06 11:11:59 <xmb>	the pastebin web looks like tabs
+Mar 06 11:12:34 <Soliton>	i wonder how something not containing tabs looks like tabs.
+Mar 06 11:12:36 <xmb>	# printf $'1\t2\t3\n1\t2\t3\n1\t2\t3\n' >f1 ; v1=( $( awk ' { print $1 } ' f1 ) ) v2=( $( awk ' { print $2 } ' f1 ) ) ; declare -p v2 v1
+Mar 06 11:12:38 <shbot>	xmb: declare -a v2=([0]="2" [1]="2" [2]="2")
+Mar 06 11:12:38 <shbot>	xmb: declare -a v1=([0]="1" [1]="1" [2]="1")
+Mar 06 11:13:06 <xmb>	soli , there is much space between 1 and 2 and 3
+Mar 06 11:13:17 <xmb>	im his web link , andro chrome client
+Mar 06 11:13:20 <Soliton>	3 spaces in fact, yes. no tab in sight.
+Mar 06 11:13:25 <geirha>	anyway, running cut or awk for each column is wasteful and you risk ending up with broken data. Especially bad when you use $() instead of reading it line by line
+Mar 06 11:13:26 <xmb>	k
+Mar 06 11:14:03 <xmb>	the $( is only format safe-format , he used 1 2 3 thats simple
+Mar 06 11:14:54 <geirha>	That's obviously dummy data
+Mar 06 11:15:33 <xmb>	ye well
+Mar 06 11:15:42 <emanuele6>	we yell
+Mar 06 11:15:49 <geirha>	Consider what happens if you read column1 into array v1, then some process comes along and updates the tsv file, then you read column2 into array v2. Now v1 and v2 do not correspond to each other. Better to read the file once
+Mar 06 11:16:02 <Soliton>	!using > nphard
+Mar 06 11:16:02 <greybot>	nphard: "How can I do X using Y?" NEVER ask a question of that form. Y may not be the best way to do X. All you should ask is, "How do I do X?"
+Mar 06 11:16:49 <xmb>	dude deliver code that uses [[ updated_file ]] then
+Mar 06 11:17:13 <geirha>	wat?
+Mar 06 11:18:48 <xmb>	erm i tried simple on topic
+Mar 06 11:19:22 <xmb>	file read once , ye
+Mar 06 11:20:18 <xmb>	# printf $'1\t2\t3\n1\t2\t3\n1\t2\t3\n' >f1 ; f=$( < f1 ) v1=( $( awk ' { print $1 } ' <<<"$f" ) ) v2=( $( awk ' { print $2 } ' <<<"$f" ) ) ; declare -p v2 v1
+Mar 06 11:20:20 <shbot>	xmb: declare -a v2=([0]="2" [1]="2" [2]="2")
+Mar 06 11:20:20 <shbot>	xmb: declare -a v1=([0]="1" [1]="1" [2]="1")
+Mar 06 11:21:19 <Soliton>	!pf 50
+Mar 06 11:21:19 <greybot>	https://mywiki.wooledge.org/BashPitfalls#pf50 -- Don't do this! -- hosts=( $(aws …) )
+Mar 06 11:22:30 <Soliton>	why do you write code like that? do you think you're actually helping anyone?
+Mar 06 11:32:53 <netmonk>	is there a good ressource explaining bash name expension regular expression
+Mar 06 11:32:55 <netmonk>	?
+Mar 06 11:33:27 <llua>	eh
+Mar 06 11:33:50 <emanuele6>	bash is a regular expression
+Mar 06 11:34:18 <netmonk>	for instance, i do ls *foobar* which expand to 12_foobar and 12_foobar_1 but i would like to exclude the second one
+Mar 06 11:34:28 <Soliton>	!glob
+Mar 06 11:34:28 <greybot>	Globs are shell patterns that can be used for matching strings or expanding pathnames: [[ $name = Bob* ]]; rm -- *.txt; see http://mywiki.wooledge.org/glob
+Mar 06 11:34:37 <Soliton>	!extblog
+Mar 06 11:34:41 <Soliton>	!extglob
+Mar 06 11:34:41 <greybot>	"Extended globs" (shopt -s extglob) allow you to say things like "all files that do not end in .jpg". See http://mywiki.wooledge.org/glob#extglob
+Mar 06 11:35:00 <Soliton>	those are not regular expressions.
+Mar 06 11:35:38 <netmonk>	ok i understand, is it possible just using blob to exlude 12_foobar_1 ?
+Mar 06 11:36:05 <llua>	see the second link
+Mar 06 11:36:06 <Soliton>	if you want the file to end with foobar then just don't put a * at the end.
+Mar 06 11:36:49 <Soliton>	# touch 12_foobar 12_foobar_1; printf %s\\n *foobar
+Mar 06 11:36:51 <shbot>	Soliton: 12_foobar
+Mar 06 11:37:42 <nvz>	if you just want to exclude one file in particular you prob need to read the results of expansion and test
+Mar 06 11:37:58 <Soliton>	or use an extglob.
+Mar 06 11:38:17 <netmonk>	ok in this case yes, but this is not my exact current case. ls *foobar* -> 12_foobar_009_1 and 12_foobar_009 and 11_foobar_010_1 and 11_foobar_010
+Mar 06 11:38:34 <netmonk>	i just want to keep the one not ending with _1
+Mar 06 11:38:47 <Soliton>	# touch 12_foobar 12_foobar_1; printf %s\\n *foobar!(_1)
+Mar 06 11:38:49 <shbot>	Soliton: 12_foobar
+Mar 06 11:39:03 <Soliton>	(shbot has extglob enabled by default.)
+Mar 06 11:41:16 <netmonk>	ok
+Mar 06 11:41:59 <Soliton>	ah, you actually have more stuff in between.
+Mar 06 11:42:08 <Soliton>	# touch 12_foobar_009_1 12_foobar_009 11_foobar_010_1 11_foobar_010; printf %s\\n *foobar!(*_1)
+Mar 06 11:42:09 <shbot>	Soliton: 11_foobar_010
+Mar 06 11:42:09 <shbot>	Soliton: 12_foobar_009
+Mar 06 11:42:12 <netmonk>	and next issue, this doesnt work when the blob is an argument of a bash function
+Mar 06 11:43:12 <Soliton>	# touch 12_foobar_009_1 12_foobar_009 11_foobar_010_1 11_foobar_010; f() { printf %s\\n "$@"; }; f *foobar!(*_1)
+Mar 06 11:43:14 <shbot>	Soliton: 11_foobar_010
+Mar 06 11:43:14 <shbot>	Soliton: 12_foobar_009
+Mar 06 11:43:22 <Soliton>	not sure what you mean.
+Mar 06 11:43:56 <Soliton>	you need to enable extglob (shopt -s extglob) in your shell to use extended globs.
+Mar 06 11:44:32 <netmonk>	got a syntax error near token (
+Mar 06 11:44:38 <Soliton>	you need to enable extglob (shopt -s extglob) in your shell to use extended globs.
+Mar 06 11:45:32 <netmonk>	ok, this was the issue sorry im slow reader :)
+Mar 06 11:45:35 <netmonk>	thanks solitonm
+Mar 06 11:45:42 <netmonk>	s/nm/n/
+Mar 06 11:45:43 <Soliton>	you're welcome.
+Mar 06 11:45:59 <nvz>	that is a regular expression
+Mar 06 11:46:40 <Soliton>	# [[ foo =~ *foobar!(*_1) ]]; echo $?
+Mar 06 11:46:41 <shbot>	Soliton: 2
+Mar 06 11:46:57 <Soliton>	nope, not a valid regular expression.
+Mar 06 11:47:19 <nvz>	no i mean the search and replace
+Mar 06 11:48:15 <nvz>	where they mispelled your nick
+Mar 06 11:54:47 <netmonk>	that's right
+Mar 06 11:55:07 <netmonk>	an old habit from #unix@ircnet to correct mispell by regexo
+Mar 06 11:55:53 <emanuele6>	+# [[ foo =~ *foobar!(*_1) ]]
+Mar 06 11:55:55 <shbot>	emanuele6: bash: [[: invalid regular expression `*foobar!(*_1)': Invalid preceding regular expression
+Mar 06 11:56:04 <emanuele6>	nope; not a valid regular expression. :D
+Mar 06 11:57:09 <emanuele6>	because invalid preceding regular expression before *foobar!(*_1)
+Mar 06 11:57:42 <emanuele6>	no, actually it just prints the entire pattern for every error
+Mar 06 11:58:03 <emanuele6>	anyway, it prints the regex error from lib c in bash devel
+Mar 06 11:58:09 <Artfaith>	Is it possible to change type of variable from array to string without any intermediary variable?
+Mar 06 11:58:35 <Artfaith>	# declare a=( 0 1 ); declare a="${a[0]}"; declare -p a;
+Mar 06 11:58:37 <shbot>	Artfaith: declare -a a=([0]="0" [1]="1")
+Mar 06 11:58:42 <Artfaith>	# declare a=( 0 1 ); declare a="${a[1]}"; declare -p a;
+Mar 06 11:58:44 <shbot>	Artfaith: declare -a a=([0]="1" [1]="1")
+Mar 06 11:59:42 <Artfaith>	# declare a=( 0 1 ); declare _a="${a[1]}"; unset a; declare a="$_a"; declare -p a;
+Mar 06 11:59:44 <shbot>	Artfaith: declare -- a="1"
+Mar 06 12:00:29 <emanuele6>	# eval 'unset -v a; a='"${a[1]@Q}"
+Mar 06 12:00:31 <shbot>	emanuele6: no output
+Mar 06 12:01:01 <Artfaith>	emanuele6, thank you, but is there any normal way?
+Mar 06 12:02:06 <emanuele6>	using declare with an assignment is not going remove attributes. to remove attributes you use  declare +a  (where a is the attribute letter). it is only legal to use +a on unset variables.
+Mar 06 12:02:43 <nphard>	geirha: while IFS=$'\t' read -r f1 f2 f3 ; do a+=( "$f1" ) b+=( "$f2" ) c+=( "$f3" ) ; done < file_with_cols <--- this command, when reading back the variable 'echo $a' it only prints one character, not the actual column.
+Mar 06 12:03:23 <Soliton>	!faq 5
+Mar 06 12:03:23 <greybot>	https://mywiki.wooledge.org/BashFAQ/005 -- How can I use array variables?
+Mar 06 12:03:27 <emanuele6>	nphard:   printf %s\\n "${a[@]}"    not   echo $a
+Mar 06 12:04:17 <emanuele6>	note that if there are empty fields  IFS=$'\t'   will not work as you expect; empty fields are skipped
+Mar 06 12:04:40 <emanuele6>	a\t\tb   is the same as  a\tb\t    and  \t\tx   is the same as  x\t\t
+Mar 06 12:07:42 <nphard>	interesting, had to clear the variable first after typing so many randomn commands.
+Mar 06 12:08:47 <ormaaj>	I skip empty fields. Go to strawberry fields
+Mar 06 12:09:14 <nphard>	mm.. this is quite interesting. So the columns have been split without any loop or awk or 'cut'.
+Mar 06 12:09:37 <nphard>	somewhat wild.
+Mar 06 12:10:42 <ormaaj>	woh
+Mar 06 12:11:10 *	nphard staring into the distance in state of shock
+Mar 06 12:11:18 <imi>	hi, is there a better (quicker) way to check if given variable is an integer number than grep?
+Mar 06 12:11:53 <emanuele6>	!faq number
+Mar 06 12:11:53 <greybot>	https://mywiki.wooledge.org/BashFAQ/018 -- How can I use numbers with leading zeros in a loop, e.g. 01, 02?
+Mar 06 12:11:58 <emanuele6>	hmm, not that
+Mar 06 12:12:33 <emanuele6>	anyway, you can use    case $x in ''|*[!0123456789]*) echo no;; *) echo yes; esac
+Mar 06 12:12:53 <emanuele6>	if it is empty, or contains a character that is not 0123456789 you could say it is not a number
+Mar 06 12:12:58 <imi>	when I have leading zeroes I prefix it with 1 and then subtract 100. now the leading zeroes are gone
+Mar 06 12:13:13 <Artfaith>	emanuele6, to clarify, remove attributes from unset variable?
+Mar 06 12:13:16 <imi>	ok thanks
+Mar 06 12:13:23 <Artfaith>	What is the reason to remove an attribute from anything unset?
+Mar 06 12:13:40 <Artfaith>	Like, in case of local variable?
+Mar 06 12:13:54 <emanuele6>	you can only remove +a and +A from unset variables; if they have a value you cannot remove those attributes
+Mar 06 12:14:25 <nphard>	emanuele6: so... when to use these? --> a\t\tb , a\tb\t , \t\tx , x\t\t
+Mar 06 12:14:26 <emanuele6>	other attributes e.g. l, x, u, i, can be removed whenever.
+Mar 06 12:14:26 <Artfaith>	Other attributes can be remove but these two?
+Mar 06 12:14:42 <Artfaith>	I see...
+Mar 06 12:14:49 <Artfaith>	Thank you, emanuele6!
+Mar 06 12:15:13 <emanuele6>	# printf 'a\t\tb\n\ta\tb\n'
+Mar 06 12:15:14 <shbot>	emanuele6: a               b
+Mar 06 12:15:15 <shbot>	emanuele6:         a       b
+Mar 06 12:15:56 <emanuele6>	# printf 'a\t\tb\n\ta\tb\n' | while IFS=$'\t' read -r f1 f2 f3; do printf 'f1=%q f2=%q f3=%q\n' "$f1" "$f2" "$f3"; done
+Mar 06 12:15:58 <shbot>	emanuele6: f1=a f2=b f3=''
+Mar 06 12:15:58 <shbot>	emanuele6: f1=a f2=b f3=''
+Mar 06 12:16:26 <emanuele6>	nphard: i was saying that for   IFS=$'\t' read -r f1 f2 f3    those sets of two lines are the same
+Mar 06 12:16:55 <emanuele6>	if you have an hole in one of the columns
+Mar 06 12:17:20 <nphard>	ah, yes, sometimes there'll be holes.
+Mar 06 12:17:41 <imi>	emanuele6: what about negative numbers?
+Mar 06 12:18:00 <emanuele6>	you can use   case ${x#-} in ...
+Mar 06 12:18:09 <imi>	ok thanks
+Mar 06 12:18:17 <emanuele6>	that way if there is a - at the start, and it still matches, it is allowed
+Mar 06 12:18:44 <emanuele6>	#- removes a - from the start of $x; so it checks the patterns on the value of $x with - removed
+Mar 06 12:19:36 <ormaaj>	x<<1,x>>1
+Mar 06 12:19:46 <emanuele6>	!faq valid
+Mar 06 12:19:46 <greybot>	https://mywiki.wooledge.org/BashFAQ/054 -- How can I tell whether a variable contains a valid number?
+Mar 06 12:19:54 <emanuele6>	that was the faq i was looking for :D
+Mar 06 12:20:17 <ormaaj>	><
+Mar 06 12:20:20 <emanuele6>	ormaaj: x<<=1,x>>=1 ?
+Mar 06 12:20:31 <ormaaj>	ya!
+Mar 06 12:23:14 <emanuele6>	nphard: then you cannot use  IFS=$'\t' read -r f1 f2 f3    you could use   while read -r; do a+=( "${REPLY%%$'\t'*}" ) REPLY=${REPLY#*$'\t'} b+=( "${REPLY%%$'\t'*}" ) REPLY=${REPLY#*$'\t'} c+=( "$REPLY" ); done
+Mar 06 12:24:34 <emanuele6>	# printf 'a\t\tb\n\ta\tb\n' | while read -r; do f1=${REPLY%%$'\t'*} REPLY=${REPLY#*$'\t'} f2=${REPLY%%$'\t'*} REPLY=${REPLY#*$'\t'} f3=$REPLY; printf 'f1=%q f2=%q f3=%q\n' "$f1" "$f2" "$f3"; done
+Mar 06 12:24:36 <shbot>	emanuele6: f1=a f2='' f3=b
+Mar 06 12:24:36 <shbot>	emanuele6: f1='' f2=a f3=b
+Mar 06 12:32:58 <ormaaj>	shifty eyes <<
+Mar 06 12:33:20 <ormaaj>	shifty numbers
+Mar 06 12:34:09 <ormaaj>	there should be rotate operators :(
+Mar 06 12:37:34 <emanuele6>	x<<=1,x&=!!(x^x>>1)
+Mar 06 12:38:04 <emanuele6>	err |=
+Mar 06 12:38:28 <emanuele6>	hmm, i am not sure
+Mar 06 12:39:02 <emanuele6>	is bash's >> signed? if it is signed, it does not work
+Mar 06 12:39:18 <emanuele6>	# echo "$(( -2 >> 1 ))"
+Mar 06 12:39:19 <shbot>	emanuele6: -1
+Mar 06 12:39:22 <emanuele6>	:\
+Mar 06 12:41:56 <emanuele6>	need to assume 64bit and use  x&(1<<63)     x=x<<1|!!(x&1<<63)
+Mar 06 12:42:14 <OMGOMG>	emanuele6: what was that supposed to demonstrate?
+Mar 06 12:42:32 <emanuele6>	that -2 >> 1  is signed?
+Mar 06 12:43:28 <OMGOMG>	what would the unsigned equivalent look like
+Mar 06 12:43:32 <emanuele6>	-2 is    1111111111111111111111111111111111111111111111111111111111111110
+Mar 06 12:43:46 <emanuele6>	if it is signed >>1 results in   1111111111111111111111111111111111111111111111111111111111111111
+Mar 06 12:43:50 <emanuele6>	so -1
+Mar 06 12:44:03 <emanuele6>	if it is not signed, it results in   0111111111111111111111111111111111111111111111111111111111111111
+Mar 06 12:44:19 <emanuele6>	that is 9223372036854775807
+Mar 06 12:44:30 <OMGOMG>	ok
+Mar 06 12:44:33 <OMGOMG>	thanks
+Mar 06 12:45:09 <emanuele6>	signed >> duplicates the top bit, so it adds a 0 if the top bit is 0, otherwise it adds a 1 if the top bit is 1
+Mar 06 12:45:18 <emanuele6>	while unsigned >> always adds 0s
+Mar 06 12:46:52 <nphard>	darn! bash makes you think harder every step :/
+Mar 06 12:47:25 <OMGOMG>	do you often encounter unsigned >> ?
+Mar 06 12:49:59 <emanuele6>	?
+Mar 06 12:54:20 <ano>	what's the best way to strip trailing char?
+Mar 06 12:54:56 <emanuele6>	%%+([chars])  ?
+Mar 06 12:56:51 <ano>	what about portable way, ${#... ${...%%[chars] loop?
+Mar 06 13:01:55 <ano>	# char=/; var=/path/to//////////////; until (( "${#var}" == "${var_len=0}" )); do var_len=${#var}; var=${var%%${char}}; done; echo $var
+Mar 06 13:01:57 <shbot>	ano: /path/to
+Mar 06 13:02:54 <emanuele6>	so busybox has (( but not +()?
+Mar 06 13:03:13 <emanuele6>	"$char" not $char
+Mar 06 13:04:16 <emanuele6>	also   ""  in  (( or $((  is a big no no in most shells
+Mar 06 13:04:17 <ano>	hmm no it doesn't
+Mar 06 13:04:35 <emanuele6>	d# echo "$(( "${#PWD}" * 2 ))"
+Mar 06 13:04:36 <shbot>	emanuele6: dash: 1: arithmetic expression: expecting primary: " "5" * 2 "
+Mar 06 13:05:17 <emanuele6>	anyway, if you want to remove just one characters; easiest way is probably  var=${var%"${var##*[!/]}"
+Mar 06 13:05:28 <emanuele6>	missing a }

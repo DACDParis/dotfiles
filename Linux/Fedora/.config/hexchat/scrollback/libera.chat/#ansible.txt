@@ -803,3 +803,51 @@ T 1709705791 22*	Topic for 22#ansible is: https://docs.ansible.com * latest 
 T 1709705791 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
 T 1709705791 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
 T 1709711782 18<28cla18>	awb: Correct.
+T 1709713220 18<27ygk_1234518>	Hi all. I want to use the template module to generate a config file using a jinja template file , but dont want to save it onto a destination but simply display the final file. How can it be done ?
+T 1709713752 18<25endre18>	you don't need template module for that
+T 1709713767 18<25endre18>	use debug with a lookup
+T 1709713790 18<27ygk_1234518>	endre how to do that ? can you show me a sample ?
+T 1709713928 18<25endre18>	https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_lookup.html
+T 1709713934 18<27ygk_1234518>	but I need the final generated file content from jinja
+T 1709713949 18<25endre18>	yeah, that's the whole point
+T 1709713951 18<25endre18>	  ansible.builtin.debug:
+T 1709713953 18<25endre18>	    msg: "{{ lookup('ansible.builtin.template', './some_template.j2') }}"
+T 1709713982 18<27ygk_1234518>	oh ok let me try
+T 1709714182 18<27ygk_1234518>	endre but how can it generate the content without this task first ?
+T 1709714182 18<27ygk_1234518>	- name: Create haproxy service config files
+T 1709714183 18<27ygk_1234518>	  template:
+T 1709714183 18<27ygk_1234518>	    src: service.j2
+T 1709714184 18<28sivel18>	ygk_12345: Please slow down, or use a pastebin if you need to paste multiple lines. If you are using matrix, please do not send multi line messages. This is an automated message.
+T 1709714184 18<27ygk_1234518>	    dest: "/etc/haproxy/conf.d/{{ service.haproxy_service_name }}"
+T 1709714212 18<27ygk_1234518>	so that ,means it needs destination to copy first ?
+T 1709714251 18<25endre18>	wat
+T 1709714258 18<25endre18>	just dont use this task step then?
+T 1709714269 18<25endre18>	or use ansible directly without ansible-playbook?
+T 1709714286 18<27ygk_1234518>	ok let me check if that works
+T 1709714331 18<25endre18>	ansible -m debug -a "msg={{lookup('ansible.builtin.template', 'service.j2')}}" prod_edge_lb0
+T 1709714697 18<27ygk_1234518>	endre is it possible to specify dest on the localhost instead of remote host for the template module ?
+T 1709714788 18<25endre18>	well yes, but i'm not sure how discovered facts will with in that case
+T 1709714794 18<25endre18>	well yes, but i'm not sure how discovered facts will work* in that case
+T 1709714828 18<25endre18>	what if you generate this file on the target host on a temp directory, let's say
+T 1709714829 18<27ygk_1234518>	endre how to specify localhost as destination ?
+T 1709714843 18<25endre18>	delegate_to: localhost
+T 1709714890 18<27ygk_1234518>	endre cant we see how the final file contents would like after generation without storing the file anywhere ?
+T 1709714909 18<25endre18>	that's what the debug is for
+T 1709714949 18<27ygk_1234518>	can I use delegate_to in the place of dest: for the template module ?
+T 1709714976 18<27ygk_1234518>	what I am collecting here is for the remote hosts but want the results to be displayed on localhost
+T 1709715109 18<25endre18>	that's what the debug is for
+T 1709715125 18<25endre18>	it gets rendered on the remote host and sent back to 'localhost'
+T 1709715143 18<25endre18>	and.. sent to the display plugin in use
+T 1709717350 18<19oblikoamorale18>	endre: huh? all templating work is done locally
+T 1709717454 18<25endre18>	ok, then facts are sent back?
+T 1709717459 18<25endre18>	til
+T 1709717913 18<27ygk_1234518>	endre can I not use vars to declare variables to be replaced when using template module ?  It is giving me conflicting statements error
+T 1709718380 18<25endre18>	you can
+T 1709718444 18<27ygk_1234518>	endre it is not letting me do it
+T 1709718527 18<25endre18>	pasteben something so that we can check
+T 1709718532 18<25endre18>	pastebin*
+T 1709718541 18<25endre18>	(read: do not paste here)
+T 1709718967 18<27ygk_1234518>	endre please check this https://paste.opendev.org/show/bN39iS3uHf0RiJ4P1aPK/. . It is failing even though I have defined the variable in vars section above
+T 1709719212 18<25endre18>	haproxy_bind_internal_lb_vip_interface vs
+T 1709719214 18<25endre18>	haproxy_bind_internal_lb_vip_address
+T 1709719330 18<27ygk_1234518>	ohh

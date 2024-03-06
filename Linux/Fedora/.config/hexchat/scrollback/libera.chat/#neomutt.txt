@@ -530,3 +530,4 @@ T 1709705791 22*	Topic for 22#neomutt is: Version: 2024-02-01 | "Teaching an
 T 1709705791 22*	Topic for 22#neomutt set by 26flatcap!~flatcap@neomutt/flatcap (24Thu Feb  1 15:12:37 2024)
 T 1709705791 -18ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
 T 1709705791 22*	Channel 22#neomutt url: 24https://neomutt.org
+T 1709726840 18<29rbmarliere18>	hi everyone! is there a way to ignore mailcap when inserting text in a reply? for example, replying inline to patches that goes through something like diff-so-fancy or delta?

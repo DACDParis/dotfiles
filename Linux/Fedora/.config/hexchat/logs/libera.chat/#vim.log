@@ -1696,3 +1696,8 @@ Mar 06 04:42:38 <absinthium>	Oh, I was able to get it with `:cd ~/.vim`. Sorry, 
 Mar 06 07:16:31 *	Now talking on #vim
 Mar 06 07:16:31 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
 Mar 06 07:16:31 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+Mar 06 09:00:04 <Viking667>	'llo again, long time no see - and I happen to have moved too (for those that aren't in #emacs and didn't see my news from 5 weeks ago)
+Mar 06 09:00:50 <igemnace>	o/
+Mar 06 09:07:47 <Viking667>	huh. mzscheme support is proving trickier than I thought.
+Mar 06 09:16:32 <Viking667>	... not that I'm likely to ever write a vim plugin anyhow, let alone one written in mzscheme.
+Mar 06 10:44:28 *	Viking667 waves goodnight again...

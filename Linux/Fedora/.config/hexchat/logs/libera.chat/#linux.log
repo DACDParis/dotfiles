@@ -20507,3 +20507,287 @@ Mar 06 08:56:02 <xx>	it's not only about tracing, tor browser also has other hel
 Mar 06 08:56:07 <xx>	s/now/not/
 Mar 06 08:56:29 <Sparkles>	bombastick, what if it is a web client?
 Mar 06 08:56:33 <Sparkles>	HTTP supports https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer
+Mar 06 08:56:49 <Sparkles>	Your referrer may contain your ID in the link.
+Mar 06 08:57:01 <bombastick>	Firefox for a couple of years now hides the full referrer, it only gives the base domain (eg myirc.com)
+Mar 06 08:57:11 <bombastick>	(everyone is using Firefox, right?)
+Mar 06 08:57:15 <xx>	Disconsented: so it's a terrible name only due to having bad SEO (for now)?
+Mar 06 08:57:37 <Disconsented>	Terrible is a hyperbole but essentially yes
+Mar 06 08:57:50 <bombastick>	I for one will no longer be using using discontented.com's pastebin services
+Mar 06 08:58:00 <xx>	Disconsented: got it, thanks, I was worried it was something else
+Mar 06 08:58:01 <Disconsented>	ohno
+Mar 06 08:58:10 <Sparkles>	Is "terrible" worse than "horrible"?
+Mar 06 08:58:24 <xx>	it's interchangeable as I understand it
+Mar 06 08:58:37 <Sparkles>	You said "horrible" and this is not a hyperbole?
+Mar 06 08:58:40 <bombastick>	I think they meant different tihngs back in the days of boomers
+Mar 06 08:58:43 <marcopolo1>	Disconsented: your site doesnt work on mobile
+Mar 06 08:59:01 <xx>	bombastick: are you maybe thinking of "terrific"?
+Mar 06 08:59:20 <Disconsented>	works fine for me
+Mar 06 08:59:21 <Disconsented>	  ¯\_(ツ)_/¯
+Mar 06 08:59:58 <bombastick>	xx: probably that too, alongside "awesome"
+Mar 06 09:00:18 <bombastick>	but guys, we are drifting off-topic by #linux standards, let's get back to American politics
+Mar 06 09:00:27 <Disconsented>	lol
+Mar 06 09:00:35 <n4dir>	lol
+Mar 06 09:03:31 <Sparkles>	stenno: it is awesome to see you here around, too. I see it an great channel to lurk but I rarely speak here. I have always felt unsafe to be in this channel.
+Mar 06 09:03:38 <xx>	I'd vote for linux for president
+Mar 06 09:03:52 <Sparkles>	s/an/a
+Mar 06 09:17:24 <lockywolf>	Thawte used to have a Web of Trust?
+Mar 06 09:18:08 <marcopolo1>	I installed lightdm but it still boots in tty? Do i need something else?
+Mar 06 09:18:18 <ssm_>	Sparkles: /ignore goes a long way
+Mar 06 09:18:34 <NauovT>	allo
+Mar 06 09:20:51 <NauovT>	hi
+Mar 06 09:24:41 <madmax>	marcopolo1, did you enable lightdm.service ?
+Mar 06 09:28:04 <marcopolo1>	madmax: oh , service doesnt enable itself?
+Mar 06 09:28:41 <jim>	NauovT, hi
+Mar 06 09:31:21 <jim>	marcopolo1, maybe if you install a package containing lightdm, the code in the package that runs when the package is installed, will enable the service. that said, it should tell you wheter it will, in its docs
+Mar 06 09:31:51 <madmax>	marcopolo1,no sudo systemctl enable lightdm
+Mar 06 09:32:50 <jim>	some packages will display it as a choice, do you want to enable the service, and then it will follow through on that afterwards
+Mar 06 09:33:17 <hackinghorn>	hi
+Mar 06 09:33:21 <marcopolo1>	So if i want to autostart i go to .config/autostart or is there another directory?
+Mar 06 09:33:39 <n4dir>	did anyone speak about .config/autostart?
+Mar 06 09:34:33 <hackinghorn>	how do I ran a nodejs script with ../[..]/script-name.js . How do I kill it with the script name? I'm also editing the file with 'vim script-name.js' and I dont want to kill the vim process
+Mar 06 09:34:46 <hackinghorn>	*I ran
+Mar 06 09:37:02 <n4dir>	perhaps add a grep -v vim;
+Mar 06 09:39:34 <lockywolf>	Where can I authenticate with a gnupg key?
+Mar 06 09:45:02 *	ChanServ gives channel operator status to litharge
+Mar 06 09:45:03 *	litharge removes ban on *!*@79.139.205.252
+Mar 06 09:45:03 *	litharge removes channel operator status from litharge
+Mar 06 09:55:15 *	ChanServ gives channel operator status to litharge
+Mar 06 09:55:15 *	litharge removes ban on *!~outlokin2@185.220.103.*
+Mar 06 09:55:15 *	litharge removes channel operator status from litharge
+Mar 06 10:02:07 <livingbeef>	hackinghorn: have the process create a pidfile and kill the pid
+Mar 06 10:02:23 <bombastick>	hackinghorn: https://i.imgur.com/zqgrUUw.png
+Mar 06 10:03:23 <livingbeef>	either in /run/script-name.pid or in ~/.local/tmp/... or something like that
+Mar 06 10:03:53 <bombastick>	we totally need a GPT bot in here. I'm just too lazy to contribute.
+Mar 06 10:04:27 <bombastick>	teenagers on Discord have GPT bots up the wazoo and a tech-oriented channel doesn't? Come on!
+Mar 06 10:04:54 <livingbeef>	as a bonus you can refuse to start if you see that the process is already running
+Mar 06 10:08:47 <n4dir>	we need a bot who slaps everyone who mentiones chat-dinges with a trout
+Mar 06 10:08:58 <livingbeef>	I didn't sign up to feed some corpo's AI, you can go back to discord any time you want
+Mar 06 10:09:48 <livingbeef>	tech enthusiasts =/= tech people
+Mar 06 10:12:03 <bombastick>	you will train ze AI, you will eat ze bugs
+Mar 06 10:12:34 <bombastick>	you vill promote international capitalism and varfare
+Mar 06 10:13:20 <Trasp>	n4dir: A large trout, mind you.
+Mar 06 10:13:52 <bombastick>	was large trout an mIRC-only thing?
+Mar 06 10:14:10 <n4dir>	Trasp: exactly
+Mar 06 10:14:17 <Trasp>	a default /alias
+Mar 06 10:14:20 <Trasp>	yes
+Mar 06 10:17:12 <katia>	yziquel, lol, the hp kernel supports zfs?
+Mar 06 10:18:56 <yziquel>	katia zfs and kernel and cpu is fine. what is NOT fine is Sapphire Rapids + ZFS + virtualisation. -> hardware cpu-level bug.
+Mar 06 10:19:27 <katia>	the hp kernel supports zfs?
+Mar 06 10:19:32 <katia>	just wondering :)
+Mar 06 10:20:16 <yziquel>	katia the hash compute function for the merkle-like tree structure of the zfs filesystem uses an avx512f instruction, which has a hardware bug when dancing around in/out virtualisation. This triggers page faults and in the end zombies with ppid 1.
+Mar 06 10:20:32 <katia>	fascinating :P
+Mar 06 10:20:35 <yziquel>	katia only on Sapphire Rapids.
+Mar 06 10:20:49 <katia>	only on Sapphire Rapids the hp kernel supports zfs?
+Mar 06 10:21:26 <yziquel>	katia I haven't yet tried it. it seems like this is the kernel with which hp tests compliance of the hardware. that's all.
+Mar 06 10:21:36 <katia>	ah
+Mar 06 10:21:44 <katia>	but it doesn't support zfs does it yziquel ?
+Mar 06 10:21:57 <yziquel>	katia it's a Sapphire Rapids + zfs + virtualisation issue.
+Mar 06 10:22:12 <katia>	yziquel, does hp kernel support zfs?
+Mar 06 10:22:19 <yziquel>	katia that hp kernel should be fine with zfs. haven't tested.
+Mar 06 10:22:29 <yziquel>	katia but why the obsession ?
+Mar 06 10:22:39 <katia>	i'm just curious
+Mar 06 10:22:45 <katia>	it's a new variable you did not mention ;)
+Mar 06 10:22:46 <yziquel>	katia haven't tested.
+Mar 06 10:23:04 <yziquel>	katia I now know I face a CPU bug.
+Mar 06 10:23:16 <yziquel>	not a kernel issue.
+Mar 06 10:24:25 <livingbeef>	shouldn't be hard to compile to module without the offending instruction set
+Mar 06 10:32:50 <kms>	exit
+Mar 06 10:32:55 <bolovanos_>	Hithere, anyone into gsm modules? I would like to Command (call, send / receive sms) some over USB. Any cheap usb GSM module compatible with linxu and wider user base?
+Mar 06 10:36:55 <yziquel>	livingbeef yeah. right.
+Mar 06 10:40:08 <dust_mite>	I'm new to Linux. I'm using Mint Cinnamon 21.2 and I really like it. I have a really stupid question...what are the first commands knowledgeable uses type into the terminal after restarting a computer? i like Htop, system monitor then vpn connect.
+Mar 06 10:40:46 <dust_mite>	im currious what other people type in to the terminal after a restart
+Mar 06 10:40:51 <lopid>	if it was restarted from an update: uname -a
+Mar 06 10:43:54 <fb`>	systemctl / journalctl if using systemd
+Mar 06 10:52:53 <livingbeef>	...nothing? The system startup should do everything for me
+Mar 06 10:56:50 <suid_dumpable>	dust_mite: first thing i do after restart and login is adding my private ssh keys to ssh-agent
+Mar 06 10:58:19 <hackinghorn>	bombastick: lol, thanks a lot!
+Mar 06 11:05:18 <dust_mite>	i seem to be having problems with firefox. sometimes the search feature doesnt work. right now the search freature on firefox on mint cinnamon is working fine. but firefox on a seperate windows 11 computer isnt working. im pretty sure im doing something wring but i dont know what. is anyone else having weird interminitnet problems witht the search feature on firefox?
+Mar 06 11:06:03 <dust_mite>	i use duckduckgo on firefox on windows 11 to look up terms i see here
+Mar 06 11:07:40 <djph>	dust_mite: "search feature" ?
+Mar 06 11:08:14 <djph>	dust_mite: like just typing a query into the address bar?
+Mar 06 11:09:56 <dust_mite>	djph, the basic thing. type in something and it brings up diffrent results it thinks you are lookinng for. the search bar thing.
+Mar 06 11:10:42 <djph>	dust_mite: I just use the address bar, but hte other one -- check that the search provider is properly set
+Mar 06 11:10:53 <dust_mite>	im not a troll. novice uses get on here and learn stuff from listening
+Mar 06 11:12:04 <djph>	dust_mite: ... i never said you were?
+Mar 06 11:12:25 <hudo__>	how can I see the actual cpu frequency on console ?
+Mar 06 11:12:44 <djph>	hudo__: cat /proc/cpuinfo
+Mar 06 11:12:59 <om3ga>	disable cpu governor :)
+Mar 06 11:13:32 <djph>	hudo__: er ... grep "cpu MHz" /proc/cpuinfo
+Mar 06 11:13:39 <suid_dumpable>	grep . /sys/devices/system/cpu/cpufreq/policy*/scaling_cur_freq
+Mar 06 11:13:56 <dust_mite>	if i click on the amazon or expedia or twitter x, it loads up instantly. if i type in the whole URL (im pretty surwe thats what its called) it will load the page. but the search feature somehow gets stuck and a little ball bounces back and fourth on the tab at the top of the page. it just gets stuck
+Mar 06 11:14:19 <om3ga>	there is also lscpu command
+Mar 06 11:14:36 <djph>	dust_mite: huh, that sounds like the search-provider is stuck/down
+Mar 06 11:15:12 <dust_mite>	om3ga, if my windows computer was working i would look up that commands heh heh
+Mar 06 11:15:40 <om3ga>	actual frequency depends on current load. you can install htop, it displays current frequency
+Mar 06 11:16:46 <stwange>	Morning. I'm trying to use a raspberry pi 4 as a wireless hotspot using two wifis (inbuilt as the AP, dongle as the gateway). Using hostacpd. It works, but it's unstable. I'm going < 10ms ping time to the AP, < 10ms from the pi to 8.8.8.8, but pinging 8.8.8.8 using the hostspot is taking 400-500ms. Any ideas why?
+Mar 06 11:16:59 <om3ga>	hwinfo --cpu | grep Hz
+Mar 06 11:17:11 <om3ga>	dmidecode -t processor | grep Hz
+Mar 06 11:17:21 <om3ga>	dmesg | grep Hz
+Mar 06 11:18:08 <om3ga>	stwange: rpi has slow fsb
+Mar 06 11:18:13 <dust_mite>	i like htop. the pause button freezes it for several seconds to help people keep up
+Mar 06 11:18:46 <om3ga>	don't expect fast wifi network using it, 10MBps max
+Mar 06 11:19:13 <djph>	stwange: CPU load / overheating / etc
+Mar 06 11:19:27 <hudo__>	I cant see with htop the actual frequency
+Mar 06 11:19:48 <om3ga>	djph: use good thermal paste, one with gold in it has highest thermal conductivity
+Mar 06 11:19:53 <djph>	stwange: also, choice of frequencies for each link
+Mar 06 11:19:54 <stwange>	I could probably accept 5-10MBps if the latency wasn't a killer. I'll try using a Pi5 see if it's any better, but if not, do any of you have better devices you recommend? I'd prefer something with Linux so I could eg. install tailscale or firewalling if I wanted to later
+Mar 06 11:20:13 <djph>	om3ga: I'm no the one with the pi-as-hotspot with problems :)
+Mar 06 11:20:16 <om3ga>	hudo__: upgrade htop, or check if this option is enabled in settings
+Mar 06 11:20:42 <djph>	om3ga: huh, thought silver was the goto (but it's been /ages/ since i've read up on thermal pastes)
+Mar 06 11:21:01 <om3ga>	djph: I understand, rpi is weak, I mean first models and zeroW
+Mar 06 11:21:14 <dust_mite>	it updades every 2 seconds on mint. prob all linux distros do that?
+Mar 06 11:21:22 <djph>	dust_mite: "what" updates?
+Mar 06 11:21:33 <om3ga>	dust_mite: it can update more fast, check settings
+Mar 06 11:22:30 <om3ga>	only there's no reason to update htop that fast, it will load cpu
+Mar 06 11:22:36 <dust_mite>	i think lithium paste is also good. its poisonous. not the litium that supposedly makes you feel good
+Mar 06 11:23:00 <dust_mite>	that white paste i think has litium in it
+Mar 06 11:23:13 <om3ga>	I bought HY610, paste, works well
+Mar 06 11:23:50 <om3ga>	dust_mite: not litium, probably chalk
+Mar 06 11:24:14 <om3ga>	btw chalk is not the best thermal conductor
+Mar 06 11:25:17 <om3ga>	anyway, who has here rare cpus? And time for the unique benchmarks?
+Mar 06 11:25:24 <dust_mite>	audio amplifiers use the same paste to connect things to heat sinks. but there is no liquid cooled amps to my knowledge.
+Mar 06 11:25:57 <om3ga>	here is my comparison chart: http://46.49.41.80/hint/comparison/INT.html
+Mar 06 11:26:15 <om3ga>	recent apple cpus missing, but I will add m2 soon
+Mar 06 11:26:20 <Gurkenglas>	top fragments %MEM between firefox and a lot of 'Isolated Web Component's. What OS-level top-variant do I want here? I'm imagining pstree, with every node annotated with the %MEM of its subtree, and showing only the nodes that have at least x% and at least x% less than their closest visible parent, with x chosen to make stdout as high as the
+Mar 06 11:26:21 <Gurkenglas>	terminal
+Mar 06 11:26:39 <om3ga>	amd anyone?
+Mar 06 11:26:58 <om3ga>	I'm curious how good their 3nm cpus will be
+Mar 06 11:28:13 <dust_mite>	AMD? or Intel?
+Mar 06 11:28:24 <om3ga>	amd
+Mar 06 11:28:39 <om3ga>	they will release, or maybe released already 3nm cpu
+Mar 06 11:28:55 <livingbeef>	thermal paste will do very little, you need to get a proper cooler
+Mar 06 11:28:58 <om3ga>	intel unfortunately not moves anywhere
+Mar 06 11:29:26 <om3ga>	livingbeef: not true, of course if cooler is not strong enough to cool down this chip
+Mar 06 11:30:14 <om3ga>	I have water cooling, with this hy610 paste I have 23c degree temperature here
+Mar 06 11:30:22 <livingbeef>	good thermal paste will subtract 1-2 C over average one, it's not something that will save you
+Mar 06 11:30:51 <om3ga>	livingbeef: well, while I agree with you, there's also speed of transmission
+Mar 06 11:31:05 <paprika>	I am a bit depressed. I had a colloquium yesterday about Programming an application and i did failed a lot and said stupid things. cheer me up.
+Mar 06 11:31:09 <dust_mite>	they will prob be really good. i have amd ryzen 7 4000 radeon graphics on a windows computer and i like it. its prob almost 3 yrs old and it loads in less than 1 second. the little wait a second wheel cant make a full rotation
+Mar 06 11:31:14 <om3ga>	good paste helps to transmit and get rid of thermal energy fast
+Mar 06 11:31:39 <dust_mite>	its build for video games.
+Mar 06 11:32:24 <om3ga>	dust_mite: only hint benchmark can tell how good cpu is, it calculates quality improvements per second, for atomic data types
+Mar 06 11:32:38 <livingbeef>	and I'm not saying that 2C is bad, but if the device is severely overheating, it's really not enough
+Mar 06 11:33:48 <om3ga>	livingbeef: sure, but I had issue with thermal conductor, based on chalk. It acted as a thermal resistor actually :)
+Mar 06 11:33:54 <om3ga>	on the laptop
+Mar 06 11:34:04 <dust_mite>	heat sink. its almost hard to believe that a liquid cooled attachment on top of a cpu can beat the standard heat sink that has tons of aluminum pins sticking off it
+Mar 06 11:34:36 <livingbeef>	well, sure, 2C is over average paste. If the paste is utter trash, than the benefit can be much higher
+Mar 06 11:34:40 <om3ga>	dust_mite: well, with air cooler I don't had 23c degree cpu temp
+Mar 06 11:37:31 <dust_mite>	my msi windows 11 laptop says the cpu is at 28C.
+Mar 06 11:38:06 <om3ga>	on idle? I mean 23C with load
+Mar 06 11:38:24 <djph>	dust_mite: air is a TERRIBLE thermal conductor.
+Mar 06 11:39:19 <dust_mite>	on idle doing noting. CPU is at 0 to 1% and GPU is at 0%
+Mar 06 11:39:53 <dust_mite>	fan 1 is 2711 rpms, fan 2 0 rpms
+Mar 06 11:40:48 <om3ga>	with my recent 12 gen intel, I have more than 40C degree on idle :)
+Mar 06 11:42:46 <dust_mite>	om3ga, thats prob will within tollerances. kinda makes you wonder what temp is overheating.
+Mar 06 11:42:52 <djph>	dust_mite: IIRC, water is 20 or 25 times as effective of a thermal conductor as air ... so yeah, bitty heat block used in water-cooling will be better at sinking heat away from the CPU (and then huge radiator to dump as much heat as possible into the air
+Mar 06 11:44:54 <dust_mite>	water is a good coolant. theres lots of variables. i think water expands by like 800 times when it becomes steam vapor.
+Mar 06 11:45:53 <djph>	1600
+Mar 06 11:46:00 <bombastick>	what's the "prosumer" coolant of choice?
+Mar 06 11:46:09 <djph>	but if you're *boiling* your coolant off, you have other problems
+Mar 06 11:46:18 <dust_mite>	if water is good enough to cool a nuclear reactor its good enough for your desktop pc
+Mar 06 11:47:22 <djph>	last time I did water-cooled, it was basically antifreeze -- water + propylene glycol
+Mar 06 11:47:31 <d3vil>	dust_mite: question, why car manufactures uses special liquid as well as data centers
+Mar 06 11:48:25 <djph>	d3vil: cars have this fun problem of "need to work outside, in the cold"
+Mar 06 11:49:47 <d3vil>	djph: not in every place on earth there is cold... correct answer is rust
+Mar 06 11:50:32 <bombastick>	AI is being used to scan every minor thing now. Two brothers were visiting me, I lent one of them 1k in local currency (so he wouldn't get hit with ATM/conversion fees), saying that they can send it to me via Wise. The other brother sends me the money, and as an (optional) note writes "For Dave's debt/loan in <city>". Transfer immediately frozen, they receive an email demanding to know who Dave is,
+Mar 06 11:50:33 <bombastick>	his address, and birthdate. The money is in limbo and now he has to deal with tech support.
+Mar 06 11:51:11 <bombastick>	He's sent money before without issues using the same company/bank (Wise), just didnt use no-no keywords I guess
+Mar 06 11:53:34 <bombastick>	I guess even before AI they might have done it with regexes
+Mar 06 11:55:21 <livingbeef>	Is this a US issue? I've never heard anyone I know have an issue like this.
+Mar 06 11:56:07 <livingbeef>	but I did here several americans talk about their issues with sending or withdrawing money
+Mar 06 11:56:18 <livingbeef>	*hear
+Mar 06 11:56:25 <xiaomiao>	KYC, it's tedious
+Mar 06 11:56:31 <dust_mite>	without the optional note, there prob would have been no problem
+Mar 06 11:56:38 <xiaomiao>	banks tend to overcorrect now to even avoid potential maybe future problems
+Mar 06 11:56:38 <stenno>	just write 'for sexual favors' instead
+Mar 06 11:57:24 <bombastick>	stenno: funny but I wouldnt want this on my social credit record
+Mar 06 11:57:25 <dust_mite>	that note made the AI think you were a bookie loan shark or a drug dealer heh heh
+Mar 06 11:58:05 <wantyapps>	Hallo everyone
+Mar 06 11:58:08 <stenno>	social credit?
+Mar 06 11:58:19 <stenno>	you in china?
+Mar 06 11:58:27 <wantyapps>	Does anyone know why spamhaus keeps flagging my mail server?
+Mar 06 11:58:32 <bombastick>	western countries have social credit, it's just in its starting stages
+Mar 06 11:58:36 <bombastick>	(compared to China)
+Mar 06 11:58:39 <wantyapps>	This is the second time this will
+Mar 06 11:59:00 <bombastick>	wantyapps: listen to this : DONT SELFHOST EMAIL
+Mar 06 11:59:06 <bombastick>	this is one thing you dont self-host
+Mar 06 11:59:08 <wantyapps>	s/will/week
+Mar 06 11:59:14 <dust_mite>	the main question is will Dave pay you back? maybe that AI isnt that stupid, looking out for you heh heh
+Mar 06 11:59:19 <livingbeef>	do you have all the signature / safeguarding stuff set up?
+Mar 06 11:59:37 <livingbeef>	it's not hard to do
+Mar 06 11:59:44 <wantyapps>	bombastick: my server worked perfectly for quite some time now.
+Mar 06 11:59:52 <wantyapps>	livingbeef: yup yup
+Mar 06 11:59:57 <livingbeef>	google even has a page that scans your mail server for you and tells you whether something is wrong
+Mar 06 12:00:16 <wantyapps>	They even removed me from the blacklist after I requested
+Mar 06 12:00:32 <wantyapps>	livingbeef: it said everything was fine
+Mar 06 12:02:21 <dust_mite>	anything that that goes through gmail is safe. but if its an email saying that dog is cool you will get dog food ads for months
+Mar 06 12:02:46 <wantyapps>	dust_mite: absolutely
+Mar 06 12:03:55 <dust_mite>	i removed every trace of google and chrome and facebook and meta from my windows computer
+Mar 06 12:04:03 <dust_mite>	best i could
+Mar 06 12:04:05 <wantyapps>	Wow!
+Mar 06 12:04:28 <dust_mite>	wasnt that hard
+Mar 06 12:05:05 <dust_mite>	kinda funny how im having intermittent problems with duckduckgo on firefox......weird heh heh
+Mar 06 12:05:14 <Aryan>	Hi, I'm planing this partitioning setup, https://paste.rs/DyvrA.txt, would you take a look, please?
+Mar 06 12:05:46 <wantyapps>	dust_mite: I don't. Describe them?
+Mar 06 12:08:14 <dust_mite>	wantyapps: problems with duckduckgo on firefox? sometimes the search bar gets stuck and the tab on the top of the screen shows a little ball bouncing back and fouth like its busy. and it just does nothing. gets stuck somehow
+Mar 06 12:08:42 <wantyapps>	Huh. Doesn't happen to me on arch
+Mar 06 12:09:07 <wantyapps>	Try opening Firefox with debug enabled
+Mar 06 12:10:23 <c4lvin>	Aah, the interwebz, where you die a hero or live long enough to be listed under an APT <random_digit>
+Mar 06 12:10:43 <wantyapps>	:)
+Mar 06 12:10:45 <c4lvin>	Scratch the dying part
+Mar 06 12:11:59 <dust_mite>	microsoft and alphabet and meta aren't known for playing fair with free open source software. mega corps kinda like to control stuff. they dont like firefox or linux or something they cant control
+Mar 06 12:13:03 <c4lvin>	Let me rephrase that “Aah,the interwebz..where you are killed as a skritkittie or live long enough to be named an APT ;P
+Mar 06 12:13:05 <dust_mite>	they say your ISP prob knows more about you that any other company you deal with
+Mar 06 12:13:30 <c4lvin>	One plural ISP…pffttt
+Mar 06 12:13:30 <luna_>	ah APT as APT groups and not the package manager
+Mar 06 12:13:34 <luna_>	my sick brain can't keep up :p
+Mar 06 12:13:55 <c4lvin>	Heh, innocent luna_
+Mar 06 12:14:17 <luna_>	c4lvin: nah more being sick and working at the same time so not keeping up
+Mar 06 12:14:59 <wantyapps>	Do you think the problem with my mail server is that rDNS doesn't list the hostname?
+Mar 06 12:15:00 <c4lvin>	What did u think luna that we ended up as packaging….oh gws on the not well thing too
+Mar 06 12:15:07 <c4lvin>	lol
+Mar 06 12:15:53 <c4lvin>	Although turning me self into a c4lvin.tar.gz sounds nice too
+Mar 06 12:16:42 <c4lvin>	My apologies i dont know what format apt pulls files from or is it just source files
+Mar 06 12:16:50 <luna_>	.deb :p
+Mar 06 12:17:13 <phogg>	c4lvin: a .deb file is an ar archive that in turn contains compressed tarballs
+Mar 06 12:17:20 <c4lvin>	Aah ok then c4lvin.deb when i pass on tht settlesit
+Mar 06 12:19:53 <c4lvin>	phogg: i always wondered how the app named alien was able to convert .deb to rpm and rpm to .deb on the fly so easily…that explains it
+Mar 06 12:20:19 <c4lvin>	Excuse me trying to fit in callin proggys a
+Mar 06 12:20:28 <c4lvin>	*apps
+Mar 06 12:20:53 <c4lvin>	I think i dont need to change :P
+Mar 06 12:23:11 <c4lvin>	Im bored, nothing fun ever happens when im around…*sigh*
+Mar 06 12:25:02 <c4lvin>	Oii, those of you lot from here, yess you is…stop packeteering at my connections…jeebuzzcrippes
+Mar 06 12:25:41 <c4lvin>	Its like hunting season in here with any nekkid IP
+Mar 06 12:27:29 <irc_standardnick>	Strawberry randomnly adds {Disc 1} to certain albums when I browse through it's hierarchy even though the real folders don't bear the name. I went manually through "easy tag" and updated tags to proper values, yet this problem persists. From where is the music player sourcing, this {Disc 1} extra thing in the first place; there isn't even a cue file inside to muck things up
+Mar 06 12:33:17 <phogg>	irc_standardnick: many music players can interact with a cddb service. Check your configuration and/or manual.
+Mar 06 12:37:32 <irc_standardnick>	phogg, I see, I scoured the whole settings panel but couldn't find anything. If nothing else, I can always find help at github
+Mar 06 12:45:34 <yziquel>	How may I list the versions of the various linux modules of the running kernel ?
+Mar 06 12:46:14 <ananke>	yziquel: modinfo <module>
+Mar 06 12:46:39 <yziquel>	ananke and for the list of all modules and all versions ?
+Mar 06 12:46:56 <phogg>	lsmod
+Mar 06 12:47:03 <phogg>	to combine the two would take a little scripting
+Mar 06 12:47:55 <yziquel>	phogg sigh. a TUI tool like aptitude to select a kernel based on version constraints would be cool.
+Mar 06 12:48:03 <phogg>	in fact this much: lsmod | awk '{ print $1 }' | xargs modinfo
+Mar 06 12:48:35 <phogg>	yziquel: why would you need to?
+Mar 06 12:48:48 <phogg>	kernels ship with modules, you don't need to work backward from a module to find a kernel version
+Mar 06 12:49:12 <yziquel>	phogg. yeah. I do. Because I hit a CPU bug.
+Mar 06 12:49:28 <phogg>	how do you know which versions are non-buggy?
+Mar 06 12:50:35 <yziquel>	phogg I require zfs >= 2.2 because zfs < 2.1.x hits a Sapphire Rapids specific bug on avx512f+vmexit page fault, which hits people having Sapphire Rapids + virtualisation + zfs < 2.2.
+Mar 06 12:51:06 <yziquel>	phogg fix is in 2.2.x. 2.1.x is unpatched.
+Mar 06 12:51:29 <phogg>	sounds like what you need is to look at zfs release documentation for kernels which zfs 2.2 can be applied to, then find the highest such kernel available from your package repo
+Mar 06 12:51:58 <phogg>	this is not something modinfo is going to tell you
+Mar 06 12:52:24 <yziquel>	phogg this is indeed something a TUI tool like aptitude should give me.
+Mar 06 12:52:46 <phogg>	there's no reason to expect such a thing to exist
+Mar 06 12:52:51 <phogg>	this is by far not a common problem
+Mar 06 12:53:15 <phogg>	the most you would need is a dkms package for zfs
+Mar 06 12:53:37 <phogg>	and, lo, I see there is one
+Mar 06 12:54:00 <phogg>	but even then it would not constrain your kernel version
+Mar 06 12:54:44 <phogg>	there's just no way to know which kernel version range is compatible with a module *just* by looking at the module. You have to be a developer of that module, or read enough of it and the kernel source to understand when compatibility breaks
+Mar 06 12:55:29 <phogg>	given that most modules are in-kernel and the compatible version is "the current one only", there's not much call for attempting to sort this out generically
+Mar 06 12:55:36 <phogg>	so, again, check zfs docs
+Mar 06 12:55:41 <livingbeef>	The module should complain during compilation if the version isn't compatible
+Mar 06 12:59:43 <mdogg>	yziquel: I think '/usr/lib/modules/<kernel_number>/' has an index of available modules.
+Mar 06 13:00:35 <yziquel>	mdogg interesting
+Mar 06 13:00:45 <swift110-mobile>	Good morning
+Mar 06 13:01:02 <mdogg>	Woops - just /lib/modules/<kernel_numb3r>/
+Mar 06 13:09:41 <lockywolf>	How to download tarballs on phabricator?

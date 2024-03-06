@@ -991,3 +991,9 @@ T 1709705791 19*	Now talking on 22#fedora
 T 1709705791 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
 T 1709705791 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
 T 1709705791 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1709712034 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1709714152 18<25marcopolo118>	Does typing for an example gdm in terminal starts gdm service on systemctl
+T 1709719235 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1709721485 18<24squarebracket18>	i can't seem to install both qemu and podman, why is that?
+T 1709721511 18<24squarebracket18>	the static and non-static qemu conflict with each other
+T 1709726435 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***

@@ -2999,3 +2999,33 @@ Mar 06 07:34:01 <yziquel75>	Hi. What upgrade path is there from jammy to mantic 
 Mar 06 07:35:33 <lotuspsychje>	yziquel75: you always need to jump to the next release first, 22.04==>22.10
 Mar 06 07:35:50 <lotuspsychje>	but 22.10 is eol
 Mar 06 07:36:18 <lotuspsychje>	yziquel75: so if you want 23.10, best to fresh install
+Mar 06 09:13:27 <NauovT>	allo
+Mar 06 09:22:38 <NauovT>	hi
+Mar 06 09:54:31 <fweht>	!next
+Mar 06 09:54:31 <ubottu>	Noble Numbat is the codename for Ubuntu 24.04. For technical support, see #ubuntu-next. For testing and QA feedback and help, see #ubuntu-quality.
+Mar 06 09:54:38 <fweht>	sorry i forgot the channel name
+Mar 06 09:54:43 <fweht>	join #ubuntu-quality
+Mar 06 09:59:04 <geirha>	:w
+Mar 06 10:11:05 <yziquel>	lotuspsychje thanks. I guess I'll follow the 22.04 -> 22.10 -> 23.04 -> 23.10 path.
+Mar 06 10:37:49 <yziquel>	Is managed upgrade jammy -> lunar possible ? or must I do jammy -> kinetic -> lunar in two steps ?
+Mar 06 10:48:08 <geirha>	why not wait until 24.04 is released? You can go straight from 22.04 to 24.04
+Mar 06 10:55:06 <CosmicDJ>	or, you know, just run do-release-upgrade and try the 23.04 noble beta?
+Mar 06 11:04:27 <ahh_>	g
+Mar 06 11:23:55 <lotuspsychje>	CosmicDJ: 23.04 is not noble
+Mar 06 11:24:36 <DocMors>	and it's alömost eol
+Mar 06 11:25:09 <lotuspsychje>	DocMors: 23.04 is already eol
+Mar 06 11:25:40 <DocMors>	lotuspsychje, mea culpa of course it is
+Mar 06 11:25:45 <yziquel>	geirha because there is only ONE thing I need: zfs 2.2. so I go for mantic.
+Mar 06 11:26:08 <yziquel>	geirha because there is only ONE thing I need: zfs 2.2. so I go for mantic.
+Mar 06 11:28:13 <yziquel>	I'm wondering. When one has a ubuntu pro account, how does one make dist-upgrades and get the account synced with the upgrade ?
+Mar 06 11:33:29 <supesdupes>	I'm a bit confused on the difference between a gnome-shell theme and a GTK4 theme. How does the default theme for ubuntu, yaru, manage to look consistent across 4 different GTK toolkits (4 if we were to count libadwaita)?
+Mar 06 11:39:34 <yziquel>	and the dist-upgrade did not update my kernel, because if oem repos. I need help.
+Mar 06 11:43:16 <watson>	Hello, I'm new, and wanted to ask What's the purpose of this chat ?
+Mar 06 11:45:02 <jeremy31>	watson: Official Ubuntu Support Channel
+Mar 06 11:45:24 <watson>	Ok thanks
+Mar 06 11:46:46 <DocMors>	does anyone know whether 24.04 will hatch with FDE?
+Mar 06 11:47:39 <yziquel>	how do you ensure ubuntu pro is kept up to date with jammy -> lunar -> mantic upgrades ?
+Mar 06 11:48:08 <yziquel>	Because the apt sources of ubuntu pro are not changing, and I don't know where I should find info as to how to amend them.
+Mar 06 12:32:47 <david_>	hello
+Mar 06 12:34:19 <whiskey76>	\o
+Mar 06 12:41:37 <yziquel>	Is there a way for apt to show which kernel image provides a given version of the zfs kernel module ?
