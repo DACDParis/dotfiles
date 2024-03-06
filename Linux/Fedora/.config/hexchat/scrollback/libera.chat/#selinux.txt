@@ -1,0 +1,478 @@
+T 1702193179 19*	Now talking on 22#selinux
+T 1702193179 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1702193179 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1702194034 20*	Disconnected (20)
+T 1702194061 19*	Now talking on 22#selinux
+T 1702194061 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1702194061 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1702194196 24*	dacd has quit (Ping timeout: 245 seconds)
+T 1702195289 19*	Now talking on 22#selinux
+T 1702195289 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1702195289 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1702198993 20*	Disconnected (20)
+T 1702201366 19*	Now talking on 22#selinux
+T 1702201366 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1702201366 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1702208540 19*	Now talking on 22#selinux
+T 1702208540 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1702208540 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1702214434 20*	Disconnected (20)
+T 1702214614 19*	Now talking on 22#selinux
+T 1702214614 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1702214614 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1702219834 20*	Disconnected (20)
+T 1702219889 19*	Now talking on 22#selinux
+T 1702219889 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1702219889 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1702220524 20*	Disconnected (20)
+T 1702220570 19*	Now talking on 22#selinux
+T 1702220570 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1702220570 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1702281887 19*	Now talking on 22#selinux
+T 1702281887 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1702281887 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1702282236 20*	Disconnected (20)
+T 1702282251 19*	Now talking on 22#selinux
+T 1702282251 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1702282251 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1702282262 20*	Disconnected (20)
+T 1702282282 19*	Now talking on 22#selinux
+T 1702282282 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1702282282 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1702285561 20*	Disconnected (20)
+T 1702314577 19*	Now talking on 22#selinux
+T 1702314577 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1702314577 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1702322572 20*	Disconnected (20)
+T 1702322852 19*	Now talking on 22#selinux
+T 1702322852 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1702322852 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1702812797 19*	Now talking on 22#selinux
+T 1702812797 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1702812797 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1705506304 19*	Now talking on 22#selinux
+T 1705506304 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1705506304 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1705524970 19*	Now talking on 22#selinux
+T 1705524970 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1705524970 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1705525535 19*	Now talking on 22#selinux
+T 1705525535 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1705525535 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1705525647 19*	Now talking on 22#selinux
+T 1705525647 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1705525647 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1705525767 19*	Now talking on 22#selinux
+T 1705525767 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1705525767 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1705526737 19*	Now talking on 22#selinux
+T 1705526737 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1705526737 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1705559182 19*	Now talking on 22#selinux
+T 1705559182 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1705559182 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1705562767 20*	Disconnected (20)
+T 1705562791 19*	Now talking on 22#selinux
+T 1705562791 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1705562791 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1705568249 19*	Now talking on 22#selinux
+T 1705568249 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1705568249 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1707739632 19*	Now talking on 22#selinux
+T 1707739632 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1707739632 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1707742868 19*	Now talking on 22#selinux
+T 1707742868 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1707742868 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708186109 19*	Now talking on 22#selinux
+T 1708186109 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708186109 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708438062 19*	Now talking on 22#selinux
+T 1708438062 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708438062 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708439546 19*	Now talking on 22#selinux
+T 1708439546 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708439546 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708439876 19*	Now talking on 22#selinux
+T 1708439876 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708439876 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708473217 19*	Now talking on 22#selinux
+T 1708473217 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708473217 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708474226 22*	26ChanServ gives channel operator status to 18pcmoore
+T 1708507893 19*	Now talking on 22#selinux
+T 1708507893 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708507893 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708508320 19*	Now talking on 22#selinux
+T 1708508320 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708508320 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708530419 19*	Now talking on 22#selinux
+T 1708530419 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708530419 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708542089 18<19uuuuu18>	Lets say I wanted unprivileged users to bind to ports below port 1024. I also want to control them binding to important services (before they start or after dos) running sub 1024 (or any port really). Authbind doesn't look like it has been updated since 2017. I see its possible to have semanage port. Questions: I imagine to make all port unprivileged ports I would need to set sysctl net.ipv4.ip_unprivileged_port_start to a low value 
+T 1708542089 18<19uuuuu18>	before doing this via selinux. Does selinux prevent applications from listening on ports not defined and allowed by default? I ask this because I run php -S localhost:9999 and I am able to see content served, but when I look in semanage port -l output I see jboss_management_port_t allows 9999. With sudo sesearch --allow | grep -i jboss I was able to see application rule associated with port label were httpd_t tomcat_domain and some 
+T 1708542089 18<19uuuuu18>	others. Why is php able to listen on port 9999? How can I see rules associated with php?
+T 1708542212 18<19uuuuu18>	I see allow httpd_php_t httpd_t:fd use;
+T 1708542213 18<19uuuuu18>	allow httpd_php_t httpd_t:fifo_file { append getattr ioctl lock read write };
+T 1708542213 18<19uuuuu18>	allow httpd_php_t httpd_t:process sigchld; when grepping output of allow are these rules why?
+T 1708543091 18<19grift18>	uuuuu: use the setools analysis suite for that
+T 1708543143 18<19grift18>	uuuuu: selinux does not care about uid/gid so you can give any user access to any port from that perspective
+T 1708543194 18<19grift18>	but for a unprivileged user to bind sockets to ports below 1024, that use must have access to CAP_NET_BIND_SERVICE capability
+T 1708543217 18<19uuuuu18>	grift: there is no way to do it via command line?  Why can't I use sysctl net.ipv4.ip_unprivileged_port_start
+T 1708543266 18<19grift18>	maybe you can i wasnt aware of that sysctl
+T 1708543337 18<19uuuuu18>	grift: can you elaborate on what you mean with "selinux does not care about uid/gid so you can give any user access to any port from that perspective" What perspective are you referring to? 
+T 1708543339 18<19grift18>	but you can probably for example associate ambient capabilities with the user@UID.service but if that works then I suppose the whole session will have that access
+T 1708543352 18<19grift18>	would be better than that sysctl though if that works
+T 1708543369 18<19uuuuu18>	why would it be better than sysctl
+T 1708543393 18<19uuuuu18>	because it would just give that user the privileges/capability?
+T 1708543432 18<19grift18>	because the sysctl is "global" where using the user-UID.service is per user
+T 1708543482 18<19grift18>	UID/GID are "DAC" attributes and SELinux does not know about that (generally speaking(
+T 1708543501 18<19grift18>	so SELinux generally is not aware of UID/GID
+T 1708543519 18<19grift18>	so it does not care whether your uid is 0 or 1000
+T 1708543539 18<19grift18>	selinux enforces types, not uid/gid
+T 1708543573 18<19uuuuu18>	grift: so for this case it would only be able process allow rules associated with programs that run?
+T 1708543593 18<19grift18>	depends
+T 1708543611 18<19grift18>	but generally you can allow access with allow rules yes
+T 1708543670 18<19grift18>	use sesearch (part of setools) to determine what ports processes associated with a given type can access in what way
+T 1708543678 18<19grift18>	then go from there
+T 1708543691 18<19grift18>	if there are no allow rules for what you need then add some
+T 1708543772 18<19grift18>	but it would make sense that the policy does for example not allow a type that is supposed to be associated with an unprivilged user login shell access to a type that is supposed to be associated with a port below 1024
+T 1708543799 18<19grift18>	because without fiddling with capabilities or sysctls that wouldnt work anyway
+T 1708543812 18<19grift18>	so in that case just add a rule, easy enough
+T 1708543843 18<19grift18>	you see ambient capabilities are fairly new, theyre newer than selinux for sure
+T 1708543860 18<19uuuuu18>	jboss_management_port_t is a label and httpd_t is a type right?
+T 1708543878 18<19grift18>	both are types 
+T 1708543892 18<19grift18>	_t suffix indicates its a type
+T 1708543966 18<19grift18>	try something like:
+T 1708543993 18<19uuuuu18>	so I know I can use sesearch to search type but how can I see process associated 
+T 1708543998 18<19uuuuu18>	with that type
+T 1708544005 18<19uuuuu18>	*process -> program
+T 1708544007 18<19grift18>	systemctl set-property AmbientCapabilities=CAP_NET_BIND_SERVICE user-1000.slice
+T 1708544040 18<19grift18>	thats a bit harder
+T 1708544089 18<19grift18>	you have to use sesearch to determine where and how those types can be entered and then see which processes have permissions to enter those types
+T 1708544127 18<19grift18>	in practice though it shouldnt be hard
+T 1708544142 18<19grift18>	you just produce the issue and selinux will log when it blocks
+T 1708544155 18<19grift18>	then you interpret the log message and add the rule
+T 1708544172 18<19uuuuu18>	"you have to use sesearch to determine where and how those types can be entered and then see which processes have permissions to enter those types" how do I do this
+T 1708544281 19*	Now talking on 22#selinux
+T 1708544281 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708544281 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708544307 18<19grift18>	you would: sesearch -A -t httpd_t -c file -p entrypoint
+T 1708544334 18<19grift18>	that will tell you that httpd_t can be entered via files associated with httpd_exec_t
+T 1708544381 18<19grift18>	then you can use setools to ask selinux who can execute files with that httpd_exec_t type because type transition happen on execve
+T 1708544428 18<19grift18>	and then you can use that infomation to ask selinux which of those types that can execute files associated  with httpd_exec_t are allowed to transition to type httpd-t
+T 1708544495 18<19grift18>	and then you know that for example httpd_t can be entered through httpd_exec_t which would be /usr/bin/httpd or something, by specified processes associated with specified types
+T 1708544514 18<19grift18>	but again in practice it doesnt have to be this complicated
+T 1708544543 18<19grift18>	you just try something, selinux blocks, you look at what selinux logs and determine what rule you need to add to make it happen
+T 1708544603 18<19grift18>	but aside, setools allows you to read selinux' mind
+T 1708544628 18<19uuuuu18>	grift: when I do sudo sesearch -A -t httpd_php_t -c file -p entrypoint or sudo sesearch -A -t httpd_t -c file -p entrypoint I get no output
+T 1708544698 18<19grift18>	oops -t is -s
+T 1708544725 18<19grift18>	sesearch -A -s httpd_t -c file -p entrypoint
+T 1708544749 18<19grift18>	but the -t variant is also interesting:
+T 1708544763 18<19grift18>	sesearch -A -t httpd_exec_t -c file -p entrypoint
+T 1708545075 18<19uuuuu18>	so that -t variaant does the "and then you can use that infomation to ask selinux which of those types that can execute files associated  with httpd_exec_t are allowed to transition to type httpd-t" part?
+T 1708545104 18<19grift18>	the -s one
+T 1708545126 18<19grift18>	but the output of the -t and -s one are probably mostly the same
+T 1708545150 18<19grift18>	although it does not have to be
+T 1708545189 18<19grift18>	look if you know what you want to allow then you probably don't have to go into analysis this deep
+T 1708545199 18<19grift18>	you just produce the event and then add the rule
+T 1708545208 18<19uuuuu18>	I don't know yet
+T 1708545215 18<19uuuuu18>	I just want to know this indepth
+T 1708545220 18<19grift18>	ok
+T 1708545232 18<19grift18>	well setools and matchpathcon
+T 1708545247 18<19grift18>	they will tell you everything selinux knows
+T 1708545269 18<19grift18>	you just have to know how to ask the right questions
+T 1708545294 18<19grift18>	and that gets into the topic of labeling
+T 1708545302 18<19grift18>	one of selinux core topics
+T 1708545319 18<19grift18>	how do labels get associated with all this stuff
+T 1708545320 18<19uuuuu18>	how would you find that httpd_exec_t is associated with  /usr/bin/httpd (I'm looking for the path to be in the output of command run)
+T 1708545330 18<19grift18>	like process files, filesystems ,network objects etc etc
+T 1708545348 18<19grift18>	one ugly way would be:
+T 1708545360 18<19grift18>	. /etc/selinux/config
+T 1708545402 18<19grift18>	grep httpd_exec_t /etc/selinux/${SELINUXTYPE}/contexts/files/file_contexts
+T 1708545432 18<19grift18>	or semanage fcontext -l | grep httpd_exec_t
+T 1708545537 18<19grift18>	point is that to be able to transition from one type to another there are certain rule needed
+T 1708545554 18<19grift18>	it depends on the type of transition
+T 1708545574 18<19grift18>	there are three kinds manual, automatic and dymanic
+T 1708545637 18<19grift18>	with a manual transition to need access to "process setexec" and then be allow the "transition" permission on the type you want to transition to
+T 1708545663 18<19grift18>	and you also need to be able the execute the entryfile
+T 1708545688 18<19grift18>	and that type of file needs to be allowed entrypoint to the target process type
+T 1708545704 18<19grift18>	allow foo foo:process setexec
+T 1708545719 18<19grift18>	allow foo bar:process transition
+T 1708545751 18<19grift18>	allow foo bar_exec:file { execute read ... }
+T 1708545769 18<19grift18>	allow bar bar_exec:file entrypoint
+T 1708545792 18<19grift18>	that example not quite complete but those are some of the core permissions
+T 1708545827 18<19grift18>	and then for an automatic transition you dont need the setexec but you do need a type_transition statement to tell selinux what to do
+T 1708545852 18<19grift18>	type_transition foo bar_exec:process bar;
+T 1708545914 18<19grift18>	so quite a bit of stuff involved
+T 1708546014 18<19grift18>	the upside  is that you have a log of flexibility
+T 1708546019 18<19grift18>	lot
+T 1708546067 18<19uuuuu18>	yeah
+T 1708546070 18<19uuuuu18>	thanks
+T 1708546500 18<19uuuuu18>	grift: so how can I find what types are using the  jboss_management_port_t  type?
+T 1708546523 18<19uuuuu18>	because I do sudo sesearch -A -s jboss_management_port_t and there is no output
+T 1708546537 18<19grift18>	seinfo --portcon | grep jboss
+T 1708546570 18<19grift18>	its a type associated with a network port address/protocol
+T 1708546587 18<19grift18>	you see everything has a type not just processes
+T 1708546612 18<19grift18>	file, filesystems, device nodes, network objects you name it everything needs to have a label
+T 1708546654 18<19grift18>	you can group types to give them meaning
+T 1708546657 18<19grift18>	like tagging
+T 1708546672 18<19grift18>	but the tags used depends on the policy obviously
+T 1708546702 18<19grift18>	but you can query tags (typeattributes) associated with types and vice versa
+T 1708546718 18<19grift18>	example: seinfo -xthttp_port_t
+T 1708546731 18<19grift18>	or seinfo -xaport_type
+T 1708546779 18<19grift18>	once you know how to ask all these questions you can start a meaningful conversation with selinux
+T 1708546793 18<19grift18>	see the seinfo --help and sesearch --help
+T 1708546802 18<19grift18>	youll notice theres a lot of stuff to quert
+T 1708546805 18<19grift18>	query
+T 1708546905 18<19grift18>	if you want to enforce a sophisticated access control then you need a sophisticated way to express your requirements
+T 1708547322 18<19uuuuu18>	so I see from sudo  semanage fcontext -l | grep httpd_exec_t that /usr/sbin/php-fpm is one of the executables being used and I know that php -S is spawning that process. I set localhost:9999 and I am able to access it with no issue. Since php-fpm is httpd_exec_t I am trying to find what allows it to listen on port 9999 when semanage ports -l | grep jboss (as well as seinfo --portcon | grep jboss) shows jboss_management_port_t is the type 
+T 1708547322 18<19uuuuu18>	using it?
+T 1708547329 18<19uuuuu18>	grift
+T 1708547422 18<19grift18>	you have to consider that just because /usr/sbin/php-fpm is type httpd_exec_t and httpd_exec_T is an entrypoint to httpd_t does not automatically mean that everything that executes that file transitions to httpd_t per se
+T 1708547429 18<19grift18>	for example:
+T 1708547447 18<19grift18>	if you operate from a shell with type unconfined_t (id -Z)
+T 1708547482 18<19grift18>	then when you run /usr/sbin/php-fpm , the process will still run with type unconfined_t and it will not transition from unconfined_t to httpd_t
+T 1708547493 18<19grift18>	and unconfined_t has full unconfined network access
+T 1708547516 18<19grift18>	and thus in that case php-fpm would be able to bind sockets to any port anyway
+T 1708547530 18<19grift18>	whether a transition happens or not needs to be specified
+T 1708547589 18<19grift18>	and even then there could be conditionals telling selinux that httpd_t may in certain circumstances do things it might noe be allowed in other circumstances
+T 1708547597 18<19grift18>	with boolean conditionals
+T 1708547607 18<19grift18>	seinfo --boolean
+T 1708547617 18<19grift18>	sesearch -A -b ...
+T 1708547697 18<19grift18>	again lots of flexibility and that requires that you are specific when you express your policy
+T 1708547718 18<19uuuuu18>	seinfo --boolean yields unrecognized argument
+T 1708547744 18<19grift18>	--bool
+T 1708547768 18<19grift18>	seinfo -x -bool
+T 1708547859 18<19grift18>	or -xb i guess
+T 1708547863 18<19grift18>	seinfo -xb
+T 1708547879 18<19grift18>	but the beef is in sesearch -A -b ...
+T 1708547898 18<19grift18>	then you see the rules associated with a given boolean identifier
+T 1708547927 18<19grift18>	there might be a boolean that when set to true allow broad network access
+T 1708547929 18<19grift18>	i dont know
+T 1708547939 18<19grift18>	policy is just configuration
+T 1708547950 18<19grift18>	thats why its so important to use seinfo and sesearch
+T 1708547977 18<19grift18>	so that you can get answers to question no matter what policy configuration youre dealing with
+T 1708548010 18<19uuuuu18>	thanks
+T 1708548260 18<19grift18>	but:
+T 1708548276 18<19grift18>	seinfo --portcon 9999
+T 1708548283 18<19grift18>	that would return a type
+T 1708548303 18<19grift18>	so lets for the sake of argument say it returns unreserved_port_t
+T 1708548307 18<19grift18>	then you can :
+T 1708548330 18<19grift18>	sesearch -A -t unreserved_port_t -c tcp_socket -p name_bind
+T 1708548355 18<19grift18>	that will then return all the rules that allow name_bind access to tcp/9999
+T 1708548733 18<19grift18>	but the main thing to understand is that selinux doesnt know about uid/gid permissions bits etc (DAC)
+T 1708548777 18<19grift18>	a policy writer can gives types meaning but that is just a meaning given by the policy writer
+T 1708548795 18<19grift18>	selinux doesnt care, its all just types
+T 1708548859 18<19uuuuu18>	grift: when I do sesearch -A -t jboss_management_port_t -c tcp_socket -p name_bind | grep -i http I see allow httpd_t jboss_management_port_t:tcp_socket name_bind; so if I was using a confined user, this rule would allow httpd_t type to use httpd_exec_t, but this is different from httpd_php_t so a confined user wouldn't allow php to run right?
+T 1708548907 18<19grift18>	youd have to more specific "confined user" does not mean anything
+T 1708548918 18<19grift18>	you have to think in terms of contexts (types)
+T 1708548971 18<19uuuuu18>	I mean as confined user vs unconfined as defined like in https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/using_selinux/managing-confined-and-unconfined-users_using-selinux
+T 1708548977 18<19grift18>	would the type associated with the confined user be allowd to run httpd_exec_t associated files with a type transition to httpd_t in the first place?
+T 1708548983 18<19grift18>	that depends on the policy
+T 1708549009 18<19grift18>	user might not even be allowed to access that file or it might be allowed to execute it without a transition but not with a transition
+T 1708549018 18<19grift18>	those are details that are important
+T 1708549074 18<19grift18>	its all about types
+T 1708549089 18<19grift18>	"confined user" is meaning less
+T 1708549099 18<19grift18>	selinux does not know what that is
+T 1708549798 18<19uuuuu18>	so how can I view raw default policy semanage export documentation looks like it just gives modification. From https://serverfault.com/questions/746179/view-custom-selinux-policies I see that it is located https://github.com/fedora-selinux/selinux-policy/tree/rawhide what directory should I look in?
+T 1708549874 18<19grift18>	that policy at github is not "raw" policy but its "source" policy
+T 1708549901 18<19grift18>	if you want to see what source is installed then youd do like with any package source
+T 1708549922 18<19grift18>	you enable the source repository and download the src package
+T 1708549932 18<19grift18>	that will install the exact src
+T 1708549948 18<19grift18>	if you want to see the raw policy (but think twice)
+T 1708549958 18<19uuuuu18>	but would it be all one file or would it be spread across different directories like in the github
+T 1708549980 18<19grift18>	for module in $(semodule -l) ; do semodule --cil -E $module; done
+T 1708549984 18<19grift18>	ls *.cil
+T 1708550037 18<19grift18>	but that is pretty much the same as what you see with seinfo/sesearch etc
+T 1708550049 18<19grift18>	different files
+T 1708550055 18<19grift18>	its a "modular" policy
+T 1708550072 18<19grift18>	ie you can disable/remove parts of it
+T 1708550211 18<19uuuuu18>	interesting how --cil is not in man page
+T 1708550226 18<19uuuuu18>	nevermind
+T 1708550310 18<19grift18>	going to sleep, bye
+T 1708550318 18<19uuuuu18>	thanks
+T 1708553966 19*	Now talking on 22#selinux
+T 1708553966 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708553966 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708554077 19*	Now talking on 22#selinux
+T 1708554077 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708554077 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708554755 18<19uuuuu18>	does system need to be restarted after changing selinux boolean with -P
+T 1708554775 18<19uuuuu18>	the change would be immediate?
+T 1708554796 18<19uuuuu18>	(setsebool)
+T 1708588643 18<19grift18>	uuuuu: no
+T 1708606547 19*	Now talking on 22#selinux
+T 1708606547 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708606547 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708606631 19*	Now talking on 22#selinux
+T 1708606631 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708606631 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708613661 18<26bigon18>	https://lore.kernel.org/selinux/Zc6tzKPsYZRICHya@homer.dodds.net/T/#t  << somebody see this (debian and time_t moving to 64bit)
+T 1708623317 19*	Now talking on 22#selinux
+T 1708623317 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708623317 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708629565 18<27orionp18>	I'm working on policy for fail2ban.  Currently we use logging_read_all_logs(fail2ban_t), but we need an equivalent for watch permissions.   I see logging_watch_all_log_dirs_path, but nothing that gives watch to the actual files.
+T 1708629589 18<27orionp18>	I'm also not sure what things have the "logfile" attribute - not familiar with attributes yet.
+T 1708629742 18<27orionp18>	I'm think of just doing this: https://paste.centos.org/view/173ccc89
+T 1708629850 18<25bleve18>	orionp: sounds like it would be better idea to enhance that interface
+T 1708629866 18<25bleve18>	orionp: or more correct.
+T 1708629969 18<27orionp18>	bleve: Okay, I'll make an issue here then I guess https://github.com/fedora-selinux/selinux-policy/
+T 1708630000 18<25bleve18>	likely nobody even thaught that would be needed to actually follow the logs.
+T 1708630039 18<27orionp18>	I guess I'm not sure it's absolutely needed - but it is requested
+T 1708630056 18<25bleve18>	does it work without?
+T 1708630077 18<25bleve18>	it could also just need dontaudit.
+T 1708630178 18<27orionp18>	Well - it still produces: fail2ban.filterpyinotify[39079]: ERROR   add_watch: cannot watch /var/log/httpd/ssl_access_log WD=-1, Errno=Permission denied (EACCES)
+T 1708630217 18<27orionp18>	Again, I don't know much about "watch" - there are other interfaces that do grant watch permissions for files, so it seems like a thing
+T 1708630243 18<25bleve18>	indeed- looks like it is really needed.
+T 1708630546 19*	Now talking on 22#selinux
+T 1708630546 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708630546 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708630625 18<27orionp18>	I've filed https://github.com/fedora-selinux/selinux-policy/issues/2048   In any case, I'm going to need to implement this on EL8/9 now - so I'll need my interim solution.
+T 1708630992 18<22concord_18>	if youre writing a local policy module just for the local system you dont *need* to use an interface (but its nice if it exists)
+T 1708631024 18<22concord_18>	you can bring in the required types in a require/gen_require block, then write raw rules to allow the access you need
+T 1708631074 18<22concord_18>	that does seem like a bug in fedora-selinux though
+T 1708631263 19*	Now talking on 22#selinux
+T 1708631263 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708631263 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708631661 18<25bleve18>	orionp: that is likely something like your own per packet policy you load.
+T 1708631688 18<25bleve18>	orionp: just like you do for zabbix.
+T 1708631697 18<25bleve18>	btw. I'd have some improvements for zabbix one :D
+T 1708631930 19*	Now talking on 22#selinux
+T 1708631930 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708631930 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708632783 19*	Now talking on 22#selinux
+T 1708632783 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708632783 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708632966 19*	Now talking on 22#selinux
+T 1708632966 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708632966 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708635434 18<27orionp18>	bleve: PRs welcome :)
+T 1708696020 19*	Now talking on 22#selinux
+T 1708696020 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708696020 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708696321 19*	Now talking on 22#selinux
+T 1708696321 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708696321 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708696349 18<19grift18>	unclear to me to
+T 1708696367 18<19grift18>	if its possible then i couldnt get it to work
+T 1708696382 18<19grift18>	i recall trying it for /proc/self/mounts
+T 1708696527 18<19grift18>	i guess the magic word is "could"
+T 1708696660 18<19grift18>	i guess maybe genfscon somehow
+T 1708696685 18<19grift18>	not sure how you would express that
+T 1708697611 18<19grift18>	i think there was a patch recently for simple globbing in genfscon but i might be wrong
+T 1708705051 18<26bauen118>	guess I'd have to look at the kernel code
+T 1708705065 18<26bauen118>	could be useful for a few things (/proc/self/mounts and /proc/self/mem e.g.)
+T 1708707515 18<19grift18>	bigon: I would ping and cc james carter on mailinglist but that is just me
+T 1708716832 22*	26ChanServ gives channel operator status to 18pcmoore
+T 1708717598 22*	26ChanServ gives channel operator status to 18pebenito
+T 1708718683 18<19grift18>	i would bet this is libselinux: https://github.com/SELinuxProject/refpolicy/commit/b8ad74030f6b90d701895906e30d955ded5465a9
+T 1708718711 18<19grift18>	if libselinux cannot do its think then it reads /proc/filesystems
+T 1708718723 18<19grift18>	the avc denial has permissive=0
+T 1708718749 18<19grift18>	so i suspect instead it needs seutils_libselinux_linked()
+T 1708718762 18<19grift18>	mkdir obviously links with libselinux
+T 1708718998 18<19grift18>	on the one hand mkdir probably does not need selinux awareness in this scenario but on the other hand its kind of weird to block libselinux on a selinux system
+T 1708720189 19*	Now talking on 22#selinux
+T 1708720189 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708720189 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708772561 19*	Now talking on 22#selinux
+T 1708772561 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708772561 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708788546 19*	Now talking on 22#selinux
+T 1708788546 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708788546 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708788723 19*	Now talking on 22#selinux
+T 1708788723 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708788723 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708792087 19*	Now talking on 22#selinux
+T 1708792087 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708792087 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708823390 19*	Now talking on 22#selinux
+T 1708823390 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708823390 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1708882893 19*	Now talking on 22#selinux
+T 1708882893 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1708882893 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709072158 19*	Now talking on 22#selinux
+T 1709072158 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709072158 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709082580 19*	Now talking on 22#selinux
+T 1709082580 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709082580 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709164962 19*	Now talking on 22#selinux
+T 1709164962 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709164962 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709165582 20*	Disconnected (20)
+T 1709165736 19*	Now talking on 22#selinux
+T 1709165736 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709165736 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709212532 20*	Disconnected (20)
+T 1709212551 19*	Now talking on 22#selinux
+T 1709212551 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709212551 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709213993 19*	Now talking on 22#selinux
+T 1709213993 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709213993 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709216163 19*	Now talking on 22#selinux
+T 1709216163 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709216163 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709254781 19*	Now talking on 22#selinux
+T 1709254781 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709254781 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709298076 19*	Now talking on 22#selinux
+T 1709298076 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709298076 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709305277 19*	Now talking on 22#selinux
+T 1709305277 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709305277 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709312939 19*	Now talking on 22#selinux
+T 1709312939 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709312939 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709316253 19*	Now talking on 22#selinux
+T 1709316253 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709316253 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709345126 19*	Now talking on 22#selinux
+T 1709345126 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709345126 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709356535 19*	Now talking on 22#selinux
+T 1709356535 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709356535 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709356629 19*	Now talking on 22#selinux
+T 1709356629 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709356629 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709366923 18<19grift18>	finally got virtiofsd to work with context mapping in Debian. Documented what i did here. its pretty need tech: mpv https://www.defensec.nl/webvirtiofs/webvirtiofs.mkv
+T 1709402548 19*	Now talking on 22#selinux
+T 1709402548 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709402548 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709451377 19*	Now talking on 22#selinux
+T 1709451377 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709451377 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709523463 19*	Now talking on 22#selinux
+T 1709523463 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709523463 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709523581 19*	Now talking on 22#selinux
+T 1709523581 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709523581 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709562346 18<22concord_18>	grift: cool. glad to hear you got it working!
+T 1709620790 19*	Now talking on 22#selinux
+T 1709620790 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709620790 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709658822 19*	Now talking on 22#selinux
+T 1709658822 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709658822 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709661930 19*	Now talking on 22#selinux
+T 1709661930 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709661930 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709663559 22*	26ChanServ gives channel operator status to 18pebenito
+T 1709667679 19*	Now talking on 22#selinux
+T 1709667679 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709667679 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709674383 19*	Now talking on 22#selinux
+T 1709674383 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709674383 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709686297 19*	Now talking on 22#selinux
+T 1709686297 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709686297 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)
+T 1709705791 19*	Now talking on 22#selinux
+T 1709705791 22*	Topic for 22#selinux is: Security Enhanced Linux: flexible Mandatory Access Control for Linux | Please be patient, we're not always here, but we do like to chat so hang around | SELinux Notebook: https://github.com/SELinuxProject/selinux-notebook/blob/main/src/toc.md
+T 1709705791 22*	Topic for 22#selinux set by 26perfinion!perfinion@gentoo/developer/perfinion (24Sun May 30 22:23:40 2021)

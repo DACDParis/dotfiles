@@ -1,0 +1,744 @@
+T 1702191426 19*	Now talking on 22#hexchat
+T 1702191426 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1702191426 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1702191629 19*	Now talking on 22#hexchat
+T 1702191629 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1702191629 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1702191729 24*	LionEagle has quit (Quit: Leaving)
+T 1702192262 23*	bodiccea (~bodiccea@user/bodiccea23) has joined
+T 1702192271 24*	Andy_Flatline has quit (Quit: Leaving)
+T 1702192364 23*	two_oes (~two_oes@bzq-82-81-161-51.red.bezeqint.net23) has joined
+T 1702192584 23*	ooichman (~two_oes@bzq-82-81-161-50.red.bezeqint.net23) has joined
+T 1702192740 24*	two_oes has quit (Ping timeout: 256 seconds)
+T 1702192971 24*	Colti has quit (Excess Flood)
+T 1702193072 23*	Colti (Miramar-FL@user/host-pond23) has joined
+T 1702193179 19*	Now talking on 22#hexchat
+T 1702193179 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1702193179 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1702194034 20*	Disconnected (20)
+T 1702194061 19*	Now talking on 22#hexchat
+T 1702194061 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1702194061 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1702194095 23*	bitoff (~bitoff@109.186.198.20623) has joined
+T 1702194196 24*	dacd has quit (Ping timeout: 245 seconds)
+T 1702195289 19*	Now talking on 22#hexchat
+T 1702195289 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1702195289 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1702198993 20*	Disconnected (20)
+T 1702201366 19*	Now talking on 22#hexchat
+T 1702201366 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1702201366 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1702208540 19*	Now talking on 22#hexchat
+T 1702208540 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1702208540 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1702210514 18<26windows18>	hello
+T 1702210673 18<19deacon42618>	morg
+T 1702210695 18<19deacon42618>	morn*
+T 1702214434 20*	Disconnected (20)
+T 1702214614 19*	Now talking on 22#hexchat
+T 1702214614 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1702214614 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1702219834 20*	Disconnected (20)
+T 1702219889 19*	Now talking on 22#hexchat
+T 1702219889 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1702219889 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1702220524 20*	Disconnected (20)
+T 1702220571 19*	Now talking on 22#hexchat
+T 1702220571 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1702220571 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1702281887 19*	Now talking on 22#hexchat
+T 1702281887 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1702281887 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1702282236 20*	Disconnected (20)
+T 1702282251 19*	Now talking on 22#hexchat
+T 1702282251 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1702282251 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1702282262 20*	Disconnected (20)
+T 1702282282 19*	Now talking on 22#hexchat
+T 1702282282 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1702282282 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1702285561 20*	Disconnected (20)
+T 1702314577 19*	Now talking on 22#hexchat
+T 1702314577 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1702314577 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1702315169 18<19sovtware18>	https://i.postimg.cc/P5FyjvM5/Przechwycenie-obrazu-ekranu-2023-12-11-18-18-54.png
+T 1702315211 18<19sovtware18>	sorry I made a mistake
+T 1702322572 20*	Disconnected (20)
+T 1702322852 19*	Now talking on 22#hexchat
+T 1702322852 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1702322852 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1702812797 19*	Now talking on 22#hexchat
+T 1702812797 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1702812797 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1702815495 18<20nooob18>	Hi everyone! Do you know if it's possible to `from script import function` in a hexchat plugin? I want to write some functions I use in several plugins in a separate script to access them with just an import. But This import gives an error (I have all plugins and this script in ~/.config/hexchat/addons
+T 1705506304 19*	Now talking on 22#hexchat
+T 1705506304 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1705506304 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1705524970 19*	Now talking on 22#hexchat
+T 1705524970 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1705524970 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1705525535 19*	Now talking on 22#hexchat
+T 1705525535 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1705525535 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1705525647 19*	Now talking on 22#hexchat
+T 1705525647 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1705525647 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1705525767 19*	Now talking on 22#hexchat
+T 1705525767 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1705525767 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1705526737 19*	Now talking on 22#hexchat
+T 1705526737 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1705526737 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1705559182 19*	Now talking on 22#hexchat
+T 1705559182 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1705559182 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1705562767 20*	Disconnected (20)
+T 1705562791 19*	Now talking on 22#hexchat
+T 1705562791 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1705562791 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1705563394 18<22fedora-test18>	hello
+T 1705568249 19*	Now talking on 22#hexchat
+T 1705568249 22*	Topic for 22#hexchat is: 2.16.1 | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1705568249 22*	Topic for 22#hexchat set by 26MetaNova!~zero-one@znc/supporter/metanova (24Sat Jun  4 22:32:10 2022)
+T 1705570397 18<26nasmConnoisseur18>	o/
+T 1707739632 19*	Now talking on 22#hexchat
+T 1707739632 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1707739632 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1707741399 18<22buf18>	it means removing the colors
+T 1707741710 18<19slidercrank18>	buf, he left :)
+T 1707741736 18<27Jobe18>	maybe somebody else wanted to know but was too embaressed to ask?
+T 1707741738 18<27Jobe18>	:P
+T 1707741778 18<22buf18>	ah, i have joins/parts hidden )
+T 1707741861 18<19slidercrank18>	I pmed him. Now he knows what it means
+T 1707742868 19*	Now talking on 22#hexchat
+T 1707742868 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1707742868 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1707749058 18<28hsp18>	I hope that someone makes a fork of hexchat, I have no idea about such things
+T 1707749134 18<19slidercrank18>	hsp, why do you want a fork?
+T 1707749179 18<28hsp18>	slidercrank, read the topic
+T 1707749220 18<19slidercrank18>	I see
+T 1708186109 19*	Now talking on 22#hexchat
+T 1708186109 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708186109 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708438062 19*	Now talking on 22#hexchat
+T 1708438062 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708438062 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708439546 19*	Now talking on 22#hexchat
+T 1708439546 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708439546 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708439605 18<19TheDcoder18>	I'm sure they meant toot
+T 1708439876 19*	Now talking on 22#hexchat
+T 1708439876 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708439876 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708444524 18<27Eustachy_Kapusta18>	@korn3r i might be wrong but i think theme manager is windows only
+T 1708445250 18<25korn3r18>	Eustachy_Kapusta: thats a shame. Was quite surprised to see windows-related errors when enabled option that is not marked as windows only.
+T 1708445498 18<27sney18>	korn3r: theme manager is a .net/mono application, I'm fairly sure it will work on linuxbut it will still produce an .exe because that's just the format
+T 1708445558 18<25korn3r18>	sney: i complains it cant find some windows stuff 
+T 1708445571 18<25korn3r18>	i tried to build it having mono installed
+T 1708445627 18<27sney18>	I'm not sure what it requires honestly 
+T 1708445656 18<27sney18>	also fwiw all it does is unpack .zip archives of text color schemes, it doesn't set window decorations or anything
+T 1708445834 18<25korn3r18>	its actually some metadata files. "error CS0006: Metadata file `WindowsBase' could not be found", also System.Data, System.Drawing and System.Windows.Forms
+T 1708445847 18<25korn3r18>	but well... if its just unpacker, not a big issue probably
+T 1708445921 18<25korn3r18>	im happy with 3.3mb portable app that i got after compiling that meson-thing :)
+T 1708446357 18<25korn3r18>	hm... i wonder if it would build if i cut that part that compiles thememan.exe
+T 1708446380 18<27sney18>	thememan.exe is the application, like I said it will be .exe regardless 
+T 1708456109 18<27JanC18>	korn3r: those are missing libraries for .NET (or Mono)
+T 1708456281 18<27JanC18>	on Debian/Ubuntu you probably need 'libmono-system-data4.0-cil', 'libmono-system-drawing4.0-cil' & 'libmono-system-windows-forms4.0-cil'
+T 1708456414 18<25korn3r18>	that is too much for something that just unpacks skins. i already spend some time on some undescribed error that turned out to be missing perl embed or something.
+T 1708456449 18<27incog18>	https://www.youtube.com/watch?v=eVd2TivlVxk
+T 1708456458 18<25korn3r18>	most of dependencies tell you what this meson thingy wants, but with that "go dig logs, brah"
+T 1708456556 18<27JanC18>	on what distro are you?
+T 1708456619 18<25korn3r18>	Rocky Linux (main issue with totally separate rhel-Embed<something> package) and now on MX Linux (here i figured out faster that its perl-modules)
+T 1708456633 18<25korn3r18>	perl-embed<something> *
+T 1708456814 18<27JanC18>	the documentation says to install 'libperl-dev' (and some other packages unrelated to Perl) on Debian/Ubuntu, I wonder if that is in there...
+T 1708457007 18<25korn3r18>	no
+T 1708457043 18<25korn3r18>	without that module it gave me just "error" on rhel and "uncompatible perl found" on mx or something like that
+T 1708457105 18<25korn3r18>	perl-ExtUtils-Depends on rhel it is
+T 1708457118 18<25korn3r18>	perl-ExtUtils-Embed 
+T 1708457126 18<25korn3r18>	sorry, copied wrong. perl-ExtUtils-Embed
+T 1708457239 18<25korn3r18>	and it was during dependency checking, like A-ok, B-ok, C-ok, ERROR
+T 1708457314 18<22shuffle18>	hello
+T 1708458817 18<27Cihan18>	Joel: yea sure
+T 1708473217 19*	Now talking on 22#hexchat
+T 1708473217 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708473217 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708478920 18<26pabs318>	yay, my save-marker-line patch is starting to take shape
+T 1708492196 18*	26pabs3 adds another minor bug fix to his fork
+T 1708492244 18<26pabs318>	(scrollback loading with colour inserts an extra space before each line, a simple patch fixes it)
+T 1708504157 18<24juliuco_nikel18>	hola
+T 1708507893 19*	Now talking on 22#hexchat
+T 1708507893 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708507893 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708508320 19*	Now talking on 22#hexchat
+T 1708508320 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708508320 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708512241 18<27darwin18>	when I type words like first, HexChat changes the first two letters' font... can you see this?
+T 1708512308 18<27darwin18>	it changes it from monospace to some other font... is this because of some plugin language checking for the term 'fi'?
+T 1708521979 18<27Guest5618>	HEXCHAT IS FINISHED & BANKRUPT
+T 1708521980 18<27Guest5618>	IT'S HABBENING
+T 1708522276 18<19aaabbb18>	bankrupt?
+T 1708522291 18<25korn3r18>	JanC: if you are interested, on rhel-based distro error on meson setup says "ERROR: Problem encountered: perl: Failed to get cflags" if i dont have perl-ExtUtils-Embed installed (got bacj to pc with rocky only now)
+T 1708522510 18<27darwin18>	i rsynced ~/.config/hexchat from my desktop to laptop, but now the menu fonts seem too big
+T 1708524441 18<26badsektor18>	guys, i enabled timestamps, but now the timestamp and the nicks are jumbled into each other
+T 1708524480 18<25korn3r18>	badsektor: make nickname filed wider
+T 1708524483 18<25korn3r18>	with a mouse
+T 1708524488 18<27darwin18>	you can move the line after the nickname
+T 1708524491 18<27JanC18>	darwin: I suppose you didn't backup the old config with the "fi issue"?
+T 1708524500 18<27darwin18>	no
+T 1708524509 18<27darwin18>	maybe
+T 1708524528 18<27darwin18>	but I don't think it has anything to do with configuration--didn't change
+T 1708524548 18<26badsektor18>	korn3r, for each channel separately? i got 20 channels?
+T 1708524575 18<27darwin18>	i see fi in a different font in your statement also
+T 1708524656 18<27JanC18>	seems like a font issue then, but weird
+T 1708524826 18<27JanC18>	badsektor: the text_max_indent setting would be useful too
+T 1708524880 18<27JanC18>	also, I configured my timestamps to be in grey, so in case of overlap it looks more like they are in the background...
+T 1708524981 18<27JanC18>	darwin: are there other combinations with that problem (e.g. "fl" or "ff"), or only "fi"?
+T 1708525035 18<27JanC18>	also, maybe try changing the font used (which one?) & see if the problem remains then
+T 1708525106 18<27JanC18>	darwin: also, on what OS is this?
+T 1708525213 18<27darwin18>	just fi
+T 1708525223 18<27darwin18>	GNU/Linux
+T 1708525240 18<27darwin18>	actually FreeBSD UNIX
+T 1708525266 18<26badsektor18>	JanC, thanks
+T 1708525282 18<26badsektor18>	JanC, i access that with /set ?
+T 1708525497 18<27JanC18>	badsektor: yes, see https://hexchat.readthedocs.io/en/latest/settings.html#list-of-settings
+T 1708525575 18<27JanC18>	darwin: do you have a screenshot of what happens?
+T 1708525812 18<27JanC18>	(for those who are not familiar with it: above the list of settings on that page there is also an explanation of how to use set)
+T 1708526000 18<27darwin18>	i use default font and am not going to change it
+T 1708526033 18<27darwin18>	i doubt I can get a screenshot as I'm doing other things and won't use this computer long
+T 1708526046 18<27darwin18>	when you typed fl I saw it in a different font and now when I typed it
+T 1708526281 18<27JanC18>	you can probably make a screenshot using PrtScr or Alt+PrtScr, crop out what is private if needed, & upload it to an image site (e.g. Imgur or whatever)
+T 1708526292 18<27JanC18>	but it sounds like a ligature thing
+T 1708526309 18<27JanC18>	probably a font that tries to do automatic ligatures
+T 1708526335 18<27JanC18>	unless you have a script that does that
+T 1708526398 18<27JanC18>	when a script replaces characters with ligatures but the default font doesn't support them, fontconfig will fall back to another font for them...
+T 1708526921 18<27darwin18>	i don't have a script that does that.  It's just monospace that came with FreeBSD
+T 1708530419 19*	Now talking on 22#hexchat
+T 1708530419 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708530419 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708541029 18<20cappy18>	Is there a way to quickly copy/paste a nick from the online log rather than manually enter the nick, some of which are "complex", for a reply?
+T 1708541054 18<20cappy18>	I'm using HexChat 2.14.3
+T 1708541102 18<20cappy18>	Right-clicking the nick gives no "copy" function.
+T 1708541125 18<27sney18>	type the first couple letters and then press tab to autocomplete
+T 1708541154 18<20cappy18>	sney: Thank you that works. Man, you saved me a headache!
+T 1708541169 18<27sney18>	there are a couple options in preferences->input box to tweak this behaviour as well
+T 1708541169 18<27sney18>	np
+T 1708541217 18<20cappy18>	sney: See it now. Appreciate the help.
+T 1708541227 18<27sney18>	np :)
+T 1708542895 18<20cappy18>	If I set a client ignore-list on nick*@* for "channel", that ignores the nick for all channels. Is there a way to ignore the nick for a specified channel?
+T 1708542923 18<20cappy18>	The client is HexChat 2.14.3
+T 1708542997 18<20cappy18>	The only setting I see is in Window->Ignore List->Channel
+T 1708543037 18<27sney18>	not by default, there might be some addon that handles ignores in a more granular way 
+T 1708543166 18<20cappy18>	sney: I'll look through https://github.com/TingPing/plugins/tree/master/HexChat for starters. Tks.
+T 1708543341 18<27sney18>	np
+T 1708544281 19*	Now talking on 22#hexchat
+T 1708544281 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708544281 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708544979 18<20cappy18>	It's possible that this construct might work (got it from a WeeChatter): nick*!*@* libera #foochannel
+T 1708545882 18<27JanC18>	cappy: also, Shift+Ctrl+C copies selected text (might be useful when you want to copy something other than a nickname)
+T 1708545982 18<20cappy18>	JanC: Yeah, question already asked and found out that just dragging the mouse across text auto-copies; convenient.
+T 1708546001 18<27JanC18>	well, that depends on a setting
+T 1708546036 18<27sney18>	get to learn about the 2 different clipboards too :D
+T 1708546110 18<27JanC18>	sney: it doesn't use 2 different clipboards correctly unfortunately
+T 1708546111 18<20cappy18>	JanC: Hmm, that I didn't know. I've only been using IRC w/ HexChat for a few weeks, like the client, look great, then I read it's being dropped.
+T 1708546292 18<20cappy18>	Built a nicely robust script to review the HexChat logs, picking out conversations, past days, etc., so I've already invested time in the client. Would hate to see it go dormant.
+T 1708546324 18<27JanC18>	it's been mostly dormant for a couple years already
+T 1708546340 18<27sney18>	if you're using it in linux with normal pixel density there's no reason you can't keep doing that for quite a while longer 
+T 1708546368 18<20cappy18>	sney: Yes and yes.
+T 1708546438 18<27sney18>	I have no plans to switch to anything else either
+T 1708553966 19*	Now talking on 22#hexchat
+T 1708553966 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708553966 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708554077 19*	Now talking on 22#hexchat
+T 1708554077 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708554077 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708561334 18<22aqsd18>	"Ditto", says a member of the peanut gallery.  All in all not much has actually changed, which is nice because it means not much has actually changed.
+T 1708568715 18<27darwin18>	capacitor popped off my system-/logic-/main-/mother-board :(
+T 1708568781 18<27darwin18>	never mind that.  What about the font size or changing issue?  I don't have a screenshot program for XFCE FreeBSD (don't know what package it's in) but I think I described these enough
+T 1708569220 18<22pj18>	depending on the capacitor and what it's for loosing one actually may not have much or any effect on the operation of the board.
+T 1708578328 18<27JanC18>	darwin: https://cgit.freebsd.org/ports/tree/x11/xfce4-screenshooter-plugin ?
+T 1708578770 18<27darwin18>	i want a normal program, not plugin
+T 1708578880 18<27JanC18>	it is a normal program
+T 1708578885 18<27JanC18>	(too)
+T 1708579380 18<27JanC18>	FWIW: in most linux distros and on the XFCE website it's called xfce4-screenshooter
+T 1708580452 18<27incog18>	💩
+T 1708581088 18<27darwin18>	i guess you mean GNU distros, which I'm not using
+T 1708581762 18<27JanC18>	I mean linux distros (not all of them are GNU-based)
+T 1708581788 18<27darwin18>	the Linux kernel itself is GNU GPL
+T 1708581802 18<27JanC18>	but what I meant to say is that the FreeBSD naming of that package is unusual
+T 1708581813 18<27JanC18>	that doesn't make it "GNU"
+T 1708585167 18<19Alexsis18>	http://global.net.ru/art/
+T 1708586665 18<19Alexsis18>	https://vk.com/nasa.club
+T 1708589189 18<29Mo18>	Hi, how do I underline a word? Adding an underline control character before and a normal control character after, I get is underlined. But now on Hexchat, my own text is grey, but continues in white after the 'normal' char.
+T 1708590406 18<26skydrome18>	use underline code at the end instead of reset
+T 1708591094 18<19Alexsis18>	http://explorer.net.ru:8080/temp/the.mahine.mp4
+T 1708606547 19*	Now talking on 22#hexchat
+T 1708606547 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708606547 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708606631 19*	Now talking on 22#hexchat
+T 1708606631 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708606631 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708623317 19*	Now talking on 22#hexchat
+T 1708623317 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708623317 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708624351 18<27manjaro18>	hello
+T 1708624357 18<27manjaro18>	 am new
+T 1708624389 18<27JanC18>	welcome
+T 1708624408 18<25korn3r18>	hi
+T 1708626175 18<28Lukius18>	a
+T 1708626340 18<28Lukius18>	msg NickServ info Lukius
+T 1708630546 19*	Now talking on 22#hexchat
+T 1708630546 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708630546 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708631107 18<26Alexsis_18>	http://global.net.ru:8080/temp/TIME.txt
+T 1708631108 18<26Alexsis_18>	Arabic International irc://irc.azirc.net/#main
+T 1708631123 22*	26ChanServ gives channel operator status to 18sney
+T 1708631133 22*	26sney sets ban on 18*!*@95.165.146.89
+T 1708631148 18<27sney18>	Alexsis_: your spam is not welcome in this channel. 
+T 1708631151 22*	26sney has kicked 18Alexsis_ from 22#hexchat (24Alexsis_)
+T 1708631168 22*	26ChanServ removes channel operator status from 18sney
+T 1708631263 19*	Now talking on 22#hexchat
+T 1708631263 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708631263 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708631930 19*	Now talking on 22#hexchat
+T 1708631930 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708631930 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708632783 19*	Now talking on 22#hexchat
+T 1708632783 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708632783 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708632966 19*	Now talking on 22#hexchat
+T 1708632966 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708632966 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708633734 18<27JanC18>	sney: I think this is related to that Russian HexChat fork (they renamed it to RubIRC or something like that, but apparently forgot to change the default/support channel name)
+T 1708633847 18<27sney18>	yeah, that default being compiled in was a big problem for oftc #debian for years too 
+T 1708633869 18<27JanC18>	oh?
+T 1708633921 18<27sney18>	xchat on ubuntu pointed to there, and then when I fixed it with the first hexchat upload, every non-ubuntu debian derivative pointed there as well 
+T 1708633948 18<27incog18>	just make the default efnet we'll play with them
+T 1708634031 18<25korn3r18>	i wonder what exactly that RubIRC has different from the original Hexchat :)
+T 1708634068 18<27sney18>	probably just default dark mode or something 
+T 1708634136 18<27JanC18>	based on the screenshot it seems like they changed the default server list
+T 1708634150 18<27sney18>	impressive that they still connect here, then 
+T 1708634189 18<27JanC18>	also, the source is available as a .tar.xz
+T 1708634202 18<27incog18>	it looks like this http://global.net.ru/rubirc/win/win-1.png
+T 1708634219 18<27incog18>	so just like hexchat
+T 1708634229 18<27sney18>	I don't read cyrillic but what I can see doesn't look any different 
+T 1708634287 18<27incog18>	i would die to see an irc client specifically made for the art scene, we like to pump ascii scrolls on efnet
+T 1708634301 18<27incog18>	and well, hexchat cant pump, no nice /play function
+T 1708634314 18<27incog18>	so you gotta grab irssi or pirate mirc
+T 1708634316 18<27JanC18>	the server list seems to have names like "International" & "Portuguese" & such instead of the networks
+T 1708634373 18<27sney18>	incog: have you checked for a script with a different name that does a similar job as /play ? someone in here mentioned something like that a few days ago 
+T 1708634395 18<27incog18>	https://mircart.org/ you all missing out, thinkin its just spam
+T 1708634403 18<27JanC18>	I remember something like that, but don't remember the details
+T 1708634439 18<27JanC18>	probably saw it when looking through someone's hexchat scripts repo  :)
+T 1708634447 18<27JanC18>	or maybe xchat even
+T 1708634479 18<27sney18>	incog: I don't know where you get the idea that people in this channel are "against" something just because hexchat doesn't have this function built in
+T 1708634494 18<27sney18>	nobody here made that decision, and hexchat is popular because it supports loads of addons. do the math.
+T 1708634517 18<27incog18>	nah libera is just like freenode in that respect, ascii art is seen as spam
+T 1708634529 18<27JanC18>	it depends on the channel
+T 1708634539 18<27sney18>	?? nobody in this channel makes those decisions for libera either 
+T 1708634555 18<27sney18>	I'm on a private network that used to have weekly flood fridays lol
+T 1708634555 18<27incog18>	im talking as a culture sney not individuals
+T 1708634565 18<27JanC18>	if you want to start ##incogsasciiart please do  :)
+T 1708634655 18<27JanC18>	there already also are channels where it is *encouraged* to spam what music you are listening to for example, even if most other channels don't like that
+T 1708635023 18<27JanC18>	hm, seems like it shouldn't auto-join this channel...
+T 1708635118 18<27sney18>	it probably has the joind.c default that suggests it when you connect to libera 
+T 1708635125 18<27JanC18>	it auto-joins #rubirc now
+T 1708635137 18<27sney18>	there's no "auto join" but it only requires pressing enter on a dialog without reading it 
+T 1708635138 18<27JanC18>	but maybe an earlier version didn't
+T 1708635155 18<27sney18>	https://github.com/hexchat/hexchat/blob/master/src/fe-gtk/joind.c#L250
+T 1708635200 18<27JanC18>	it says « gtk_entry_set_text (GTK_ENTRY (entry1), "#rubirc"); » now
+T 1708635258 18<27sney18>	well, hopefully that change proliferates 
+T 1708635414 18<25korn3r18>	JanC: looks like some student project. also guy release 2.16.3 version on 1st january.
+T 1708635457 18<27JanC18>	korn3r: on February 11th
+T 1708635476 18<27JanC18>	don't trust the times in the archive
+T 1708635555 18<25korn3r18>	JanC: VK.com page of this thing has rubirc-2.16.3-1-rosa2021.1.x86_64.rpm posted a 1th of january )
+T 1708635597 18<25korn3r18>	2.16.3-2 on 8th january and so on.. probably he just added +2 to original build
+T 1708635604 18<27JanC18>	so do the internal date/time inside the archive, but Apache directories say differently  :)
+T 1708635614 18<27JanC18>	oh
+T 1708635695 18<27JanC18>	right, first influx of Russians with RubIRC was on January 1st indeed
+T 1708635776 18<25korn3r18>	well.. there is not much russians, that VK.com community have only one member (developer). and almost no other mentiones over the internet
+T 1708635824 18<27JanC18>	probably school friends  :)
+T 1708641232 18<28DasBrain^Hex18>	/set net_throttle off
+T 1708641264 18<28DasBrain^Hex18>	And /play is a 4 line script.
+T 1708641312 18<27JanC18>	a bit more than that I'm sure
+T 1708641370 18<27JanC18>	you don't want to block everything while posting 1 line per second from a 50-line file   :)
+T 1708641643 18<28DasBrain^Hex18>	/play has a delay? I thought it just dumps a text file into the channel. Until you are disconnected for MaxQ exceeded.
+T 1708641677 18<27sney18>	aiui it is a bit more involved than just /exec -o cat homeanusbleach.txt 
+T 1708641710 18<27sney18>	yeah, this has a whole bunch of switches and options https://www.mirc.com/help/html/index.html?playing_files.html
+T 1708641826 18<27JanC18>	I thought the example given a couple days ago involved a delay between lines?  I might be wrong though...
+T 1708641845 18<28DasBrain^Hex18>	"If you have flood protection turned on, /play sends all lines through the flood protection feature to prevent you from flooding yourself off the server."
+T 1708641879 18<27JanC18>	"""This plays the file poem.txt to the current window, which must be a query or channel window, with a default delay of 1000 milliseconds, ie. 1 second. """
+T 1708641903 18<27JanC18>	so 1sec is the default, it seems
+T 1708641930 18<27JanC18>	maybe with flood protection on there is no such delay?
+T 1708641962 18<27JanC18>	it's not exactly clear from that documentation  :)
+T 1708642406 18<27sney18>	1sec between lines is a great way to get your art interrupted with a lot of (✂ﾟ∀ﾟ)✂ CUTTO
+T 1708642656 18<27incog18>	<DasBrain^Hex> /play has a delay?
+T 1708642661 18<27incog18>	it has a delay you can config
+T 1708642673 18<27incog18>	to get around sill flood protection serverside
+T 1708642681 18<27incog18>	or so u dont sendq
+T 1708643616 18<26nightfrog18>	This is still being typed about?
+T 1708644408 18<27incog18>	as it should be
+T 1708644463 18<27incog18>	right now i have a much weirder problem however, do you see these rainbow bands on my latest art? https://pastebin.com/raw/eYYYrT1K
+T 1708644477 18<27incog18>	they shouldnt be there, its like bizarre bleed-thru
+T 1708644489 18<27incog18>	i have no idea how to mitigate it
+T 1708644509 18<25Tum18>	it's due to subpixel rendering 
+T 1708644519 18<25Tum18>	or scaling 
+T 1708644555 18<25Tum18>	you can use subpixels to render greyscale content resulting in sharper lines since each pixel is actually 3 pixels, one for each color 
+T 1708644562 18<25Tum18>	depends on the software displaying it though
+T 1708644571 18<27incog18>	irc clients
+T 1708644613 18<25Tum18>	Depends on the platform then. macOS does not use subpixel rendering but Windows does, and most Linux distros do.
+T 1708644647 18<25Tum18>	in all cases it can be disabled if need be but keep in mind most people will see it WITH subpixel rendering, since it's still default on Windows
+T 1708644673 18<25Tum18>	If you screenshot some text on Windows and zoom into it, you will see red and blue on the edges of the text
+T 1708644689 18<25Tum18>	when displayed at 1x you won't normally see the colors, it just looks like crisper text rendering
+T 1708644734 18<25Tum18>	HexChat uses GTK so it depends how your GTK is configured also
+T 1708645036 18<27JanC18>	just don't use subpixel rendering, it's broken by design
+T 1708645103 18<27JanC18>	I've never used that because when it's enabled I see colour fringes on all text, which gives me a headache...
+T 1708645273 18<27JanC18>	Tum: unfortunately some people (like me) *do* see those colour fringes
+T 1708645294 18<27JanC18>	it really sucks when I have to use someone else's computer...
+T 1708645329 18<25Tum18>	JanC, I see them on glossy displays, so I do not use glossy displays
+T 1708645349 18<25Tum18>	just thinkpads and business monitors for me plz
+T 1708645354 18<25Tum18>	gloss is the devil
+T 1708645368 18<25Tum18>	I quite like subpixel rendering on matte displays
+T 1708645394 18<27JanC18>	I've never had any glossy displays (those come with even more headaches like turning into a mirror under the wrong lighting) & still see them
+T 1708645450 18<25Tum18>	aww, sad
+T 1708645575 18<27JanC18>	it's no problem most of the time (I have grayscale rendering enabled instead on all systems I use frequently)
+T 1708645610 18<27JanC18>	and for 5 minutes on someone else's computer it's just annoying/distracting
+T 1708645678 18<27JanC18>	I think most linux DEs/OSs are planning to switch to grayscale by default too, or already did
+T 1708645706 18<27JanC18>	dunno about Windows, but I barely ever use that anyway  :)
+T 1708657175 18<25jwang18>	Hello, i am new to this chat. 
+T 1708658012 18<26pabs318>	welcome jwang :)
+T 1708658097 18<26pabs318>	this chat channel is for the HexChat IRC program. there are other channels on this IRC server, mostly for other open source programs
+T 1708696020 19*	Now talking on 22#hexchat
+T 1708696020 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708696020 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708696321 19*	Now talking on 22#hexchat
+T 1708696321 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708696321 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708705310 18<22usuario18>	hi
+T 1708705335 18<25korn3r18>	hi
+T 1708705771 18<22usuario18>	hi
+T 1708705785 18<22usuario18>	is there someone here?
+T 1708705795 18<22usuario18>	dead chat
+T 1708705798 18<22usuario18>	lol
+T 1708716755 18<29MiloTilo18>	speaking of compiling hexchat
+T 1708716790 18<29MiloTilo18>	why are there like three separate theme managers upon compile
+T 1708720189 19*	Now talking on 22#hexchat
+T 1708720189 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708720189 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708725681 18<27JanC18>	it was failing because they were missing dependencies
+T 1708725702 18<27JanC18>	the error message was quite obvious
+T 1708725777 18<27JanC18>	unlikely to happen on Windows as .NET would always include everyrhing & the kitchen sink, while Debian & co. have libraries for web development, GUI development, networking, etc. etc. packaged separately
+T 1708725795 18<27JanC18>	for Mono
+T 1708725986 18<27JanC18>	MiloTilo: what do you mean by "three separate theme managers"?  there is only one...
+T 1708726082 18<29MiloTilo18>	JanC, well that's not the case for me
+T 1708726111 18<29MiloTilo18>	three of them, all in different directories
+T 1708726244 18<27JanC18>	there might be build artifacts (parts of HTM that are later assembled) maybe?
+T 1708726281 18<27JanC18>	assembled = linked or whatever .NET calls it  :)
+T 1708726418 18<27JanC18>	well, I guess in theory it's possible that Mono creates multiple builds (with & without debug symbols or whatever)
+T 1708726544 18<27JanC18>	or optimised builds (to machine code, like what Android does when you install some apps)
+T 1708772561 19*	Now talking on 22#hexchat
+T 1708772561 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708772561 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708782332 18<20sem18>	Tony_Harrison: also try /list
+T 1708782343 18<19bree18>	http://google.com
+T 1708788546 19*	Now talking on 22#hexchat
+T 1708788546 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708788546 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708788723 19*	Now talking on 22#hexchat
+T 1708788723 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708788723 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708790516 18<19SamSepi0l18>	Hello
+T 1708790526 18<19SamSepi0l18>	Any One Here ??
+T 1708791378 18<22rawhide18>	it amazes me that people ask "Any One Here" in a channel with 280+ users in it...
+T 1708791459 18<28DasBrain^Hex18>	To be fair, many of them are away.
+T 1708791537 18<27sney18>	most of the people who do that are clicking a thing labeled "chat" that they've never seen before 
+T 1708791558 18<27sney18>	they don't know irc or where to look in the gui to know that anyone is here, they just know nobody else is saying anything 
+T 1708791567 18<27sney18>	and then they close it before they can find out otherwise lol
+T 1708791620 18<28DasBrain^Hex18>	Well, 157 nicks in the list are not away, while 84 are.
+T 1708792087 19*	Now talking on 22#hexchat
+T 1708792087 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708792087 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708792254 18<27JanC18>	not everyone who is away is marked as such
+T 1708792263 18<27JanC18>	or vice versa
+T 1708792305 18<27sney18>	yeah I think my znc is set up to mark me away when I disconnect from it, but I've just been leaving my computer on lately 
+T 1708792360 18<27JanC18>	and some people never use it, and then others use it to mean "I'd prefer if you don't bother me right now" even while they are busy on their computer  :)
+T 1708792451 18<27JanC18>	and not using it can be because someone is "lazy", or because of privacy/security reasons
+T 1708792491 18<27sney18>	or even "irc has away statuses? where?" 
+T 1708792498 18<27JanC18>	hehe
+T 1708792602 18<28DasBrain^Hex18>	I have the aliases AAWAY (ALLSERV AWAY &2) and ABACK (ALLSERV BACK).
+T 1708792603 18<27JanC18>	some clients make it more obvious than others (e.g. multi-protocol IM clients tend to link it to their common status selection widget)
+T 1708823390 19*	Now talking on 22#hexchat
+T 1708823390 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708823390 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1708826182 18<26nightfrog18>	"push %%ecx;" "pushfl;"
+T 1708826995 18<24MetaNova18>	k
+T 1708829271 18<26nightfrog18>	Sorry for the disruption. Wasn't intended for here.
+T 1708829489 18<27JanC18>	that seemed obvious, unless you were proposing to rewrite HexChat in assembly or something  :)
+T 1708829573 18<28DasBrain^Hex18>	lol
+T 1708832776 18<19Boredasfdude18>	hi
+T 1708832919 18<28DasBrain^Hex18>	hey
+T 1708832926 18<24MetaNova18>	hello
+T 1708832944 18<19Boredasfdude18>	wheres the party at lol
+T 1708832963 18<24MetaNova18>	not here
+T 1708832976 18<19Boredasfdude18>	lets one goin then
+T 1708832981 18<24MetaNova18>	Boredasfdude: how do you like ProtonVPN?
+T 1708832993 18<19Boredasfdude18>	its iight but not all that
+T 1708833054 18<19Boredasfdude18>	proton though is quick back vpn though that i use
+T 1708833058 18<19Boredasfdude18>	for like gaming
+T 1708833128 18<19Boredasfdude18>	I mean is a quick connect back up vpn i use for fun gaming
+T 1708833136 18<24MetaNova18>	I've not tried gaming through my VPN, but I can confirm that I experience full bandwidth (500/500Mbps) through it
+T 1708833182 18<19Boredasfdude18>	yes the speed is great
+T 1708833198 18<24MetaNova18>	the only reason I don't keep it on all the time is to avoid an endless gallery of CAPTCHAS
+T 1708833217 18<24MetaNova18>	I don't use Proton, which is why I was curious
+T 1708833270 18<19Boredasfdude18>	I mean thats what comes with security at some point right
+T 1708833287 18<24MetaNova18>	the greater the security the greater the inconvenience, yes
+T 1708833294 18<24MetaNova18>	it does seem so sometimes
+T 1708833334 18<19Boredasfdude18>	what games do you play if you dont mind me asking
+T 1708833347 18<24MetaNova18>	I don't really play games any longer
+T 1708833356 18<24MetaNova18>	which is the leading reason why I haven't tried gaming through my VPN :P
+T 1708833391 18<19Boredasfdude18>	i been thinking about live streaming on cod mobile but also want to make a video to though soo i do not know
+T 1708833413 18<19Boredasfdude18>	what made you quit
+T 1708833435 18<19Boredasfdude18>	or just taking a break from it
+T 1708833481 18<24MetaNova18>	I was able to achieve satisfactory downtime with less-involved activities
+T 1708833508 18<24MetaNova18>	energy and interest become resources you have to allocate, and gaming was too high a cost
+T 1708833531 18<19Boredasfdude18>	ok gotch you, so like meditation and spiritual kind of stuff
+T 1708833547 18<24MetaNova18>	that and my crippling youtube addiction :P
+T 1708833566 18<24MetaNova18>	I unfortunately discovered there is an _endless_ amount of stuff I'm interested in
+T 1708833573 18<24MetaNova18>	and how to find it
+T 1708833585 18<24MetaNova18>	(I'm its slave, help me)
+T 1708833612 18<19Boredasfdude18>	I agree technology takes alot of energy, I also do not spend as much time on these thing anymore
+T 1708833628 18<24MetaNova18>	what was/were the last game(s) you played?
+T 1708833630 18<19Boredasfdude18>	only as a side thing now
+T 1708833638 18<24MetaNova18>	because I basically played nothing after HL2
+T 1708833676 18<19Boredasfdude18>	but yeah that is awesome that you was able to channel that into something more fitting and productive
+T 1708833689 18<24MetaNova18>	>productive
+T 1708833693 18<19Boredasfdude18>	ahh yes the good days
+T 1708833697 18<24MetaNova18>	you flatter me
+T 1708833731 18<24MetaNova18>	I'm simply squeezing the same amount of pointless distraction with less effort
+T 1708833736 18<24MetaNova18>	maximizing the laziness
+T 1708833751 18<19Boredasfdude18>	how long you been into LOA
+T 1708833767 18<24MetaNova18>	sorry, LOA?
+T 1708833777 18<19Boredasfdude18>	Law of Attraction
+T 1708833786 18<24MetaNova18>	I'm unfamiliar with this
+T 1708833807 18<19Boredasfdude18>	Hold on right quick
+T 1708833815 18<24MetaNova18>	+ddg law of attraction
+T 1708833819 18<24MetaNova18>	bot
+T 1708833821 18<24MetaNova18>	!ddg law of attraction
+T 1708833822 18<22chat18>	What Is the Law of Attraction? - Verywell Mind -  <https://www.verywellmind.com/understanding-and-using-the-law-of-attraction-3144808>
+T 1708833846 18<24MetaNova18>	>"Your thoughts really can have an impact on how things turn out"
+T 1708833861 18<24MetaNova18>	so basically a rebranding of "perception is reality"
+T 1708833902 18<19Boredasfdude18>	check out R.J banks {the power of I am} and Esther and jerry hicks {law of attraction}
+T 1708833927 18<24MetaNova18>	noted, thanks
+T 1708833930 18<19Boredasfdude18>	you will be very interested in that i know for sure
+T 1708833935 18<19Boredasfdude18>	for sure
+T 1708833964 18<19Boredasfdude18>	welp time for me to move around see ya
+T 1708833967 18<24MetaNova18>	are you familiar with The Moral Animal by Robert Wright?
+T 1708833983 18<24MetaNova18>	+ddg The Moral Animal
+T 1708833990 18<24MetaNova18>	!ddg The Moral Animal
+T 1708833995 18<22chat18>	The Moral Animal - Wikipedia -  <https://en.wikipedia.org/wiki/The_Moral_Animal>
+T 1708834002 18<24MetaNova18>	I think you might like it
+T 1708834033 18<19Boredasfdude18>	I will be sure to give the book a check
+T 1708834059 18<24MetaNova18>	that was nice
+T 1708834067 18<24MetaNova18>	<o/
+T 1708882893 19*	Now talking on 22#hexchat
+T 1708882893 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1708882893 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709072158 19*	Now talking on 22#hexchat
+T 1709072158 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709072158 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709073386 18<27JanC18>	I assume you can use weechat with WSL2 also
+T 1709073422 18<27PantelicGR18>	JanC: I don't know. I haven't tried it with WSL.
+T 1709073434 18<27PantelicGR18>	only with Cygwin.
+T 1709073488 18<27PantelicGR18>	It wasn't hard.
+T 1709073496 18<28gothkat18>	Most stuff works on wsl well enough. 
+T 1709082580 19*	Now talking on 22#hexchat
+T 1709082580 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709082580 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709164962 19*	Now talking on 22#hexchat
+T 1709164962 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709164962 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709165582 20*	Disconnected (20)
+T 1709165736 19*	Now talking on 22#hexchat
+T 1709165736 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709165736 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709172977 18<28warsoul18>	im trying to connect to my znc for some reason is saying ssl handshake timed out
+T 1709174033 18<27de-facto18>	6697?
+T 1709174134 18<27sney18>	ssl is default on in 2.16.2 so you may need to change your settings 
+T 1709174730 18<28warsoul18>	how do i set up username/passwd of my znc in the network list?
+T 1709178279 18<19Liver_K18>	:O
+T 1709178288 18<19Liver_K18>	HexChat got archived!!
+T 1709178291 18<19Liver_K18>	Wtf!
+T 1709179700 18<27Jaxx18>	Liver_K: what you mean?
+T 1709179992 18<19Liver_K18>	"This repository has been archived by the owner on Feb 9, 2024. It is now read-only. "
+T 1709180191 18<27sney18>	yes Liver_K the news link in the topic says what happened 
+T 1709180207 18<27sney18>	nothing really changed but now it is official
+T 1709180652 18<19Liver_K18>	RIP HexChat indeed :(
+T 1709180987 18<27Jaxx18>	Liver_K: i know its sad for everyone who use hexchat. but someone has to take ever if its going to continue
+T 1709212532 20*	Disconnected (20)
+T 1709212551 19*	Now talking on 22#hexchat
+T 1709212551 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709212551 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709213993 19*	Now talking on 22#hexchat
+T 1709213993 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709213993 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709216163 19*	Now talking on 22#hexchat
+T 1709216163 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709216163 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709220423 18<27nikolaj18>	,
+T 1709254781 19*	Now talking on 22#hexchat
+T 1709254781 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709254781 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709257559 18<28warsoul18>	hello
+T 1709257578 18<28warsoul18>	i change all my colors in settings-preference-colors
+T 1709257618 18<28warsoul18>	for some reason the text on channels, timestamp, the writting box are still in dark gray and i dont have nothing dark gray
+T 1709258098 18<26pabs318>	warsoul: hmm, changing the colours works fine for me. does it work if you restart hexchat?
+T 1709258339 18<28warsoul18>	pabs3 no i have done everything
+T 1709258345 18<28warsoul18>	will still keep this colors
+T 1709258353 18<28warsoul18>	i change my background to black
+T 1709258359 18<26pabs318>	is this on Windows or Linux?
+T 1709258367 18<28warsoul18>	and letters keep staying dark gray
+T 1709258369 18<28warsoul18>	unix
+T 1709258370 18<28warsoul18>	freebsd
+T 1709258450 18<26pabs318>	hmm. can you try with a new user account or try when you set your HOME environment variable to an empty directory?
+T 1709258542 18<26pabs318>	and which version of hexchat are you using? from FreeBSD or self-built?
+T 1709258640 18<28warsoul18>	HexChat 2.16.2
+T 1709258661 18<28warsoul18>	i think it is freebsd
+T 1709258852 18<28warsoul18>	is weird
+T 1709258862 18<28warsoul18>	it should be change once i change it in preferences
+T 1709259323 18<26pabs318>	definitely weird
+T 1709259373 18<26pabs318>	maybe try in a Linux live image on the same machine to start with, confirm that it works somewhere for you at least
+T 1709259446 18<27JanC18>	you have to look up in Text Events what colours are used for that particular type of text
+T 1709259466 18<27JanC18>	or just use (or at least start from) an existing theme
+T 1709259521 18<27JanC18>	like I explained 5 days ago...
+T 1709259791 18<28warsoul18>	JanC i have change this colors before in another OS like debian etc...
+T 1709259795 18<28warsoul18>	never seen this before
+T 1709260259 18<26pabs318>	it works for me in prefs without changing the text events
+T 1709260603 18<28warsoul18>	JanC can you explain again how to load the theme please?
+T 1709260666 18<27JanC18>	pabs3: but in the Text Events you can see what colour is used, and thus which one to replace
+T 1709260797 18<26pabs318>	hmm, ok
+T 1709260865 18<27JanC18>	warsoul: https://hexchat.github.io/themes.html & https://hexchat.readthedocs.io/en/latest/appearance.html#theme-files
+T 1709260998 18<27JanC18>	e.g. the example I gave last time, for me the "Your Message" template is "%C20%H<%H$4$1%H>%H%O%C30$t$2%O"
+T 1709261029 18<27JanC18>	there colour #20 is used for my nick, and colour #30 for the rest of the line
+T 1709261039 18<28warsoul18>	theme worked
+T 1709261142 18<28warsoul18>	thanks JanC
+T 1709261174 18<27JanC18>	BTW: if you have a HexChat configuration that works well on any of your computers, you can just copy it over to another one, and it will work the same there...
+T 1709261189 18<28warsoul18>	i thought about that
+T 1709262104 18<26pabs318>	foo
+T 1709262124 18<26pabs318>	hmm, '/doat #foo say bar' does not add to the up-arrow message history
+T 1709262619 18<27JanC18>	it adds the whole line to where you entered it I presume
+T 1709262652 18<26pabs318>	yep
+T 1709262656 18<27JanC18>	but not '/say bar' to #foo?
+T 1709262663 18<27JanC18>	probably for the best?
+T 1709262666 18<26pabs318>	right
+T 1709262707 18*	26pabs3 not sure
+T 1709262721 18*	26pabs3 kind of thinking having both would be best
+T 1709262819 18<27JanC18>	it could be used in a script or from a keyboard shortcut or as part of a /timer command, etc., and do you really want it added to your history in all of those cases?
+T 1709262839 18<26pabs318>	guessing no
+T 1709265227 18<25ParkerMa18>	Hello
+T 1709265257 18<25korn3r18>	hi
+T 1709265355 18<25ParkerMa18>	How are you korn3r?
+T 1709265364 18<25korn3r18>	Fine, thank you
+T 1709265382 18<25korn3r18>	ParkerMa: and how are you? 
+T 1709265462 18<25ParkerMa18>	Fine. This weather. I am just waiting for Spring to get here.
+T 1709265497 18<25korn3r18>	Spring is inevitable :)
+T 1709265519 18<25ParkerMa18>	I am actually impressed. This is the first time successfully talking on an IRC. Most that I visit are dormant.
+T 1709265586 18<25korn3r18>	check channel list for more chatty channels, this one is about irc client and there are channels with 1k+ users
+T 1709265605 18<25ParkerMa18>	Wow, thank you!
+T 1709266437 18<29WayneM18>	Greetings all
+T 1709266444 18<25korn3r18>	Hi
+T 1709266469 18<29WayneM18>	Hi Korn3r!
+T 1709266590 18<27CoderHawk18>	Well, Goodnight all. Work awaits tomorrow!
+T 1709288499 18<27Usuario18>	Hi
+T 1709294604 18<20zeamp18>	Is this the end of HexChat?
+T 1709294621 18<20zeamp18>	https://hexchat.github.io/news/2.16.2.html
+T 1709294830 18<27tripstah18>	zeamp: someone will probably take the project i think
+T 1709298076 19*	Now talking on 22#hexchat
+T 1709298076 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709298076 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709299928 18<27Spring18>	Oh snap. Bless up for all the hard work from TP and others.
+T 1709301441 18<20zeamp18>	HexChat 2.16.2 Microsoft Windows 11 Home (x64) [AMD Ryzen 5 3600 6-Core Processor (3.59GHz)]
+T 1709301445 18<20zeamp18>	Rest now, Chat Kings.
+T 1709301451 18<20zeamp18>	R.I.P.
+T 1709301475 18<20zeamp18>	I will still randomly check for updates, just in case you get bored in 10 years.
+T 1709301477 18<20zeamp18>	<3
+T 1709305277 19*	Now talking on 22#hexchat
+T 1709305277 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709305277 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709312939 19*	Now talking on 22#hexchat
+T 1709312939 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709312939 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709316253 19*	Now talking on 22#hexchat
+T 1709316253 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709316253 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709316508 18<28DasBrain^Hex18>	Well, I did update/rewrite the Tcl plugin. Mostly for personal use, but it is on Github: https://github.com/DasBrain/hexchat-addons/tree/master/c/tcl
+T 1709316598 18<28DasBrain^Hex18>	The good news: It works with 64-bit. Before, it would just crash on windows. (pointers were cast to int, which is 32-bit on win64)
+T 1709316616 18<28DasBrain^Hex18>	The bad news: It breaks all existing Tcl scripts.
+T 1709316654 18<28DasBrain^Hex18>	(Because the new API is closer to the plugin API.)
+T 1709316767 18<27JanC18>	how bad is the breakage though?
+T 1709316794 18<28DasBrain^Hex18>	New API.
+T 1709316878 18<28DasBrain^Hex18>	I think I wrote some compat script, which provides the old API: https://github.com/DasBrain/hexchat-addons/blob/master/c/tcl/compat.tcl - but no idea how complete it is.
+T 1709316883 18<28DasBrain^Hex18>	I forgot.
+T 1709316900 18<27JanC18>	that sounds like it would be useful
+T 1709316921 18<27JanC18>	even when it's not complete, it would mean less changes are needed
+T 1709316981 18<27JanC18>	and maybe it can be improved
+T 1709345126 19*	Now talking on 22#hexchat
+T 1709345126 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709345126 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709346520 18<27JanC18>	in that case the Windows installer is probably not really needed...
+T 1709356535 19*	Now talking on 22#hexchat
+T 1709356535 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709356535 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709356629 19*	Now talking on 22#hexchat
+T 1709356629 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709356629 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709366213 18<27Jaxx18>	There isnt any new forked version of hexchat that is from either at the end of 2023 or beginning of 2024 or something,like something new and fully finished? one for windows 10 home 64bit (installer .exe)
+T 1709366435 18<25korn3r18>	Jaxx: official website has hexchat  version 2.16.2 from 2024
+T 1709366485 18<27Jaxx18>	i know,but i dont use a irc client that has last update based on the news.. thats y im thinking of a forked version.. one that still being developed
+T 1709366865 18<28gothkat18>	It’s not even a month old. Sheesh. 
+T 1709366971 18<27Jaxx18>	I know. but remember,he has been doing this if im not wrong since 2009
+T 1709367064 18<28gothkat18>	If you find a fork that is doing something better, by all means, go for it. But short of hiring someone, you’re not getting hourly builds here. 
+T 1709367095 18<27Jaxx18>	i understand. i hope it continues,because its really good client
+T 1709367129 18<25korn3r18>	why would you prefer frequently updated client over good client?
+T 1709367781 18<27Jaxx18>	dont u think sooner or later any programme or even a irc client can get bad if its not getting updated. cuz u never know if it have bugs etc. and nobody will use a buggy client..
+T 1709368353 18<28gothkat18>	When/if something better appears, I’ll switch. Whether anyone is actively planning on making changes makes zero difference to how it performs today and tomorrow. 
+T 1709368564 18<28DasBrain^Hex18>	Correct. The only thing this means for me now is: There will be no new features.
+T 1709368652 18<28DasBrain^Hex18>	And if some exploit/crash or other stuff is found, maybe someone will step up and fix it. Maybe I am the person who will fix it (mostly for myself, and then figure out how to distribute the fix - not looking forward to that)
+T 1709368694 18<28DasBrain^Hex18>	But currently - I do not see a need to change anything for myself, so... why bother.
+T 1709368727 18<27Jaxx18>	i just switched until further notice
+T 1709368847 18<28gothkat18>	You do you Jaxx, but if HexChat was the best client for your needs last month, it still is today and still will be tomorrow too. 
+T 1709368903 18<27Jaxx18>	yeah :)
+T 1709402548 19*	Now talking on 22#hexchat
+T 1709402548 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709402548 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709451377 19*	Now talking on 22#hexchat
+T 1709451377 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709451377 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709523463 19*	Now talking on 22#hexchat
+T 1709523463 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709523463 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709523581 19*	Now talking on 22#hexchat
+T 1709523581 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709523581 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709620790 19*	Now talking on 22#hexchat
+T 1709620790 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709620790 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709647672 18<25jeanaipas18>	hi
+T 1709658822 19*	Now talking on 22#hexchat
+T 1709658822 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709658822 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709661930 19*	Now talking on 22#hexchat
+T 1709661930 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709661930 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709665532 18<22tau_18>	yo
+T 1709667679 19*	Now talking on 22#hexchat
+T 1709667679 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709667679 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709674383 19*	Now talking on 22#hexchat
+T 1709674383 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709674383 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709686297 19*	Now talking on 22#hexchat
+T 1709686297 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709686297 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1709693043 18<20zeamp18>	If you say Starbucks in the mirror 3 times, a girl in yoga pants will appear, steal your hoodie and tell you the best things about Fall.
+T 1709705791 19*	Now talking on 22#hexchat
+T 1709705791 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1709705791 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)

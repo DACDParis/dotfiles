@@ -1,0 +1,58 @@
+[2024-02-29 14:58:57.422] [info] Using configuration file /home/david/.config/waybar/config.jsonc
+[2024-02-29 14:58:57.425] [info] Discovered appearance 'dark'
+[2024-02-29 14:58:57.425] [info] Using CSS file /home/david/.config/waybar/style.css
+
+(waybar:5225): Gtk-WARNING **: 14:58:57.425: Theme parsing error: style.css:3:20: Not using units is deprecated. Assuming 'px'.
+[2024-02-29 14:58:57.429] [info] Hyprland IPC starting
+[2024-02-29 14:58:57.430] [info] Loading persistent workspaces from Hyprland workspace rules
+[2024-02-29 14:58:57.433] [warning] No batteries.
+[2024-02-29 14:58:57.433] [warning] module backlight: Disabling module "backlight", No backlight found
+[2024-02-29 14:58:57.455] [info] Loading persistent workspaces from Hyprland workspace rules
+[2024-02-29 14:58:57.458] [warning] No batteries.
+[2024-02-29 14:58:57.458] [warning] module backlight: Disabling module "backlight", No backlight found
+
+** (waybar:5225): WARNING **: 14:58:57.481: Status Notifier Item with bus name ':1.12' and object path '/org/ayatana/NotificationItem/nm_applet' is already registered
+[2024-02-29 14:58:57.496] [warning] Requested height: 12 is less than the minimum height: 26 required by the modules
+[2024-02-29 14:58:57.496] [info] Bar configured (width: 1920, height: 26) for output: DP-2
+[2024-02-29 14:58:57.496] [warning] Requested height: 12 is less than the minimum height: 26 required by the modules
+[2024-02-29 14:58:57.496] [info] Bar configured (width: 2560, height: 26) for output: DP-3
+
+(waybar:5225): Gtk-CRITICAL **: 14:58:57.504: gtk_widget_set_accel_path: assertion 'GTK_IS_ACCEL_GROUP (accel_group)' failed
+
+(waybar:5225): Gtk-CRITICAL **: 14:58:57.504: gtk_widget_add_accelerator: assertion 'GTK_IS_ACCEL_GROUP (accel_group)' failed
+
+(waybar:5225): Gtk-CRITICAL **: 14:58:57.505: gtk_widget_set_accel_path: assertion 'GTK_IS_ACCEL_GROUP (accel_group)' failed
+
+(waybar:5225): Gtk-CRITICAL **: 14:58:57.505: gtk_widget_add_accelerator: assertion 'GTK_IS_ACCEL_GROUP (accel_group)' failed
+
+(waybar:5225): Gtk-CRITICAL **: 14:58:57.506: gtk_widget_set_accel_path: assertion 'GTK_IS_ACCEL_GROUP (accel_group)' failed
+
+(waybar:5225): Gtk-CRITICAL **: 14:58:57.506: gtk_widget_add_accelerator: assertion 'GTK_IS_ACCEL_GROUP (accel_group)' failed
+
+(waybar:5225): Gtk-CRITICAL **: 14:58:57.507: gtk_widget_set_accel_path: assertion 'GTK_IS_ACCEL_GROUP (accel_group)' failed
+
+(waybar:5225): Gtk-CRITICAL **: 14:58:57.507: gtk_widget_add_accelerator: assertion 'GTK_IS_ACCEL_GROUP (accel_group)' failed
+
+(waybar:5225): Gtk-CRITICAL **: 14:58:57.508: gtk_widget_set_accel_path: assertion 'GTK_IS_ACCEL_GROUP (accel_group)' failed
+
+(waybar:5225): Gtk-CRITICAL **: 14:58:57.508: gtk_widget_add_accelerator: assertion 'GTK_IS_ACCEL_GROUP (accel_group)' failed
+
+(waybar:5225): Gtk-CRITICAL **: 14:58:57.508: gtk_widget_set_accel_path: assertion 'GTK_IS_ACCEL_GROUP (accel_group)' failed
+
+(waybar:5225): Gtk-CRITICAL **: 14:58:57.508: gtk_widget_add_accelerator: assertion 'GTK_IS_ACCEL_GROUP (accel_group)' failed
+
+(waybar:5225): Gtk-CRITICAL **: 14:58:57.508: gtk_widget_set_accel_path: assertion 'GTK_IS_ACCEL_GROUP (accel_group)' failed
+
+(waybar:5225): Gtk-CRITICAL **: 14:58:57.508: gtk_widget_add_accelerator: assertion 'GTK_IS_ACCEL_GROUP (accel_group)' failed
+
+(waybar:5225): Gtk-CRITICAL **: 14:58:57.509: gtk_widget_set_accel_path: assertion 'GTK_IS_ACCEL_GROUP (accel_group)' failed
+
+(waybar:5225): Gtk-CRITICAL **: 14:58:57.509: gtk_widget_add_accelerator: assertion 'GTK_IS_ACCEL_GROUP (accel_group)' failed
+
+(waybar:5225): Gtk-CRITICAL **: 14:58:57.510: gtk_widget_set_accel_path: assertion 'GTK_IS_ACCEL_GROUP (accel_group)' failed
+
+(waybar:5225): Gtk-CRITICAL **: 14:58:57.510: gtk_widget_add_accelerator: assertion 'GTK_IS_ACCEL_GROUP (accel_group)' failed
+
+(waybar:5225): Gtk-CRITICAL **: 14:58:57.510: gtk_widget_set_accel_path: assertion 'GTK_IS_ACCEL_GROUP (accel_group)' failed
+
+(waybar:5225): Gtk-CRITICAL **: 14:58:57.510: gtk_widget_add_accelerator: assertion 'GTK_IS_ACCEL_GROUP (accel_group)' failed

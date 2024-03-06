@@ -1,0 +1,18 @@
+Device Index: 0
+  Selected: true
+  Device Name: gfx1031
+  Device Vendor: Advanced Micro Devices, Inc.
+  Device Version: OpenCL 2.0 
+  Driver Version: 3590.0 (HSA1.1,LC)
+  Device Type: gpu 
+  Device Extensions: cl_khr_fp64 cl_khr_global_int32_base_atomics cl_khr_global_int32_extended_atomics cl_khr_local_int32_base_atomics cl_khr_local_int32_extended_atomics cl_khr_int64_base_atomics cl_khr_int64_extended_atomics cl_khr_3d_image_writes cl_khr_byte_addressable_store cl_khr_fp16 cl_khr_gl_sharing cl_amd_device_attribute_query cl_amd_media_ops cl_amd_media_ops2 cl_khr_image2d_from_buffer cl_khr_subgroups cl_khr_depth_images cl_amd_copy_buffer_p2p cl_amd_assembly_program 
+  Device OpenCL C Version: OpenCL C 2.0 
+  Device Available: true
+  Device Compiler Available: true
+  Device Linker Available: true
+  Platform Name: AMD Accelerated Parallel Processing
+  Platform Vendor: Advanced Micro Devices, Inc.
+  Platform Version: OpenCL 2.1 AMD-APP (3590.0)
+  Platform Profile: FULL_PROFILE
+  Platform Extensions: cl_khr_icd cl_amd_event_callback 
+

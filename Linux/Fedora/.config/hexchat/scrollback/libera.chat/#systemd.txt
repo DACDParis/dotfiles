@@ -1,0 +1,560 @@
+T 1702193179 19*	Now talking on 22#systemd
+T 1702193179 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1702193179 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1702194034 20*	Disconnected (20)
+T 1702194061 19*	Now talking on 22#systemd
+T 1702194061 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1702194061 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1702194159 23*	ss (~~@user/ss23) has joined
+T 1702194196 24*	dacd has quit (Ping timeout: 245 seconds)
+T 1702195289 19*	Now talking on 22#systemd
+T 1702195289 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1702195289 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1702195327 23*	colemickens_irc (uid214@id-214.uxbridge.irccloud.com23) has joined
+T 1702198993 20*	Disconnected (20)
+T 1702201366 19*	Now talking on 22#systemd
+T 1702201366 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1702201366 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1702208540 19*	Now talking on 22#systemd
+T 1702208540 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1702208540 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1702214434 20*	Disconnected (20)
+T 1702214614 19*	Now talking on 22#systemd
+T 1702214614 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1702214614 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1702219834 20*	Disconnected (20)
+T 1702219889 19*	Now talking on 22#systemd
+T 1702219889 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1702219889 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1702220524 20*	Disconnected (20)
+T 1702220571 19*	Now talking on 22#systemd
+T 1702220571 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1702220571 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1702281887 19*	Now talking on 22#systemd
+T 1702281887 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1702281887 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1702282236 20*	Disconnected (20)
+T 1702282251 19*	Now talking on 22#systemd
+T 1702282251 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1702282251 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1702282262 20*	Disconnected (20)
+T 1702282282 19*	Now talking on 22#systemd
+T 1702282282 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1702282282 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1702285561 20*	Disconnected (20)
+T 1702314577 19*	Now talking on 22#systemd
+T 1702314577 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1702314577 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1702318811 18<26volga62918>	Hello Everyone, how to use LD_PRELOAD in service file. I set Environment, but seems like it ignored
+T 1702318868 18<26volga62918>	Should I use  in ExecStart line ?
+T 1702318890 18<20dminuoso_18>	volga629: If its ignored, you should perhaps describe/share the unit file.
+T 1702318899 18<22gdamjan18>	IMHO it should work in Environment=
+T 1702318967 18<26volga62918>	I set Environment=LD_PRELOAD=/usr/lib64/mylib.so
+T 1702319003 18<26volga62918>	Is it require any quotes ?
+T 1702319026 18<22gdamjan18>	no
+T 1702319041 18<22gdamjan18>	paste the whole unit
+T 1702320258 18<26volga62918>	https://www.irccloud.com/pastebin/P2MT0CV7
+T 1702320267 18<26volga62918>	Sorry distracted.
+T 1702320548 18<22gdamjan18>	make sure the opensips is not suid, other than that, I don't know
+T 1702320588 18<22gdamjan18>	the opensips executable*
+T 1702320683 18<26volga62918>	Ok thanks
+T 1702322572 20*	Disconnected (20)
+T 1702322852 19*	Now talking on 22#systemd
+T 1702322852 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1702322852 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1702812797 19*	Now talking on 22#systemd
+T 1702812797 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1702812797 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1705506304 19*	Now talking on 22#systemd
+T 1705506304 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1705506304 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1705524970 19*	Now talking on 22#systemd
+T 1705524970 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1705524970 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1705525535 19*	Now talking on 22#systemd
+T 1705525535 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1705525535 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1705525647 19*	Now talking on 22#systemd
+T 1705525647 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1705525647 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1705525767 19*	Now talking on 22#systemd
+T 1705525767 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1705525767 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1705526737 19*	Now talking on 22#systemd
+T 1705526737 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1705526737 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1705559182 19*	Now talking on 22#systemd
+T 1705559182 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1705559182 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1705560741 18<24Xogium18>	grawity: oh dear. What a mess :O
+T 1705562767 20*	Disconnected (20)
+T 1705562791 19*	Now talking on 22#systemd
+T 1705562791 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1705562791 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1705568249 19*	Now talking on 22#systemd
+T 1705568249 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1705568249 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1707739632 19*	Now talking on 22#systemd
+T 1707739632 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1707739632 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1707742868 19*	Now talking on 22#systemd
+T 1707742868 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1707742868 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1707743353 18<22phpn00b18>	Why is it so hard to harden a service? :-) I think about writing a brute-force tool to get a high hardening ratio
+T 1707743384 18<22phpn00b18>	Oh, someone else did: https://awesomeopensource.com/project/alegrey91/systemd-service-hardening
+T 1707743423 18<22gdamjan18>	phpn00b: because no two services are alike, and developers don't document what their programs need
+T 1707743706 18<22phpn00b18>	gdamjan: So actually the same problem, the AppArmor community has?
+T 1707743730 18<22gdamjan18>	most probably
+T 1707743808 18<22gdamjan18>	you can start with a copy of /usr/lib/systemd/portable/profile/strict/service.conf and then remove directives ¯\_(ツ)_/¯
+T 1707743833 18<22phpn00b18>	Debian doesn't have this file, but maybe I can find it in git. thanks
+T 1707743845 18<22phpn00b18>	https://github.com/systemd/systemd/blob/main/src/portable/profile/strict/service.conf
+T 1707743865 18<22phpn00b18>	uh, but this seems like a subset only, doesn't it?
+T 1707743977 18<22gdamjan18>	subset of?
+T 1707745479 18<26grift_18>	Yes.That is why I mostly prefer SELinux over most of the systemd features. SELinux logs what it blocks and SElinux is more flexible
+T 1707745773 18<26grift_18>	but as with everything combining strenghts is even better
+T 1707745947 18<22gdamjan18>	SElinux is not bad, I wish there was some better "UI" and tooling
+T 1707746063 18<26grift_18>	essentially all you need is your favorite text editor, setools for analysis and semodule for a module store
+T 1707746080 18<26grift_18>	extra tooling just complicates things because the implies yet more abstraction
+T 1707746083 18<26Jannik209918>	and three years of understanding the ref policy
+T 1707746100 18<26Jannik209918>	and two more to realize that redhat uses a fucked up mutation of it, so all your experimentation on fedora does not apply
+T 1707746124 18<26grift_18>	policy is configuration. you dont need refpolicy and you dont need redhat policy
+T 1707746146 18<26grift_18>	but yes you need to know the basic policy language and you need to know how to interpret what selinux is telling you
+T 1707746160 18<29Foxboron18>	Jannik2099: Frankly, most ILM/security stuff is heavily patched on enterprise distros
+T 1707746162 18<26Jannik209918>	yes but you'll probably want to develop against refpol if you don't want to first reinvent the universe
+T 1707746168 18<26grift_18>	but that is not a matter of years provided that you write your own policy
+T 1707746223 18<26grift_18>	thats the thing, there is no reinvention because every environment is unique and every one has unique preferences
+T 1707746303 18<26grift_18>	the best security policy is one that is tailored
+T 1707746328 18<26grift_18>	because the less allow rules the easier it is to maintain
+T 1707746364 18<26grift_18>	and the more secure obviously
+T 1707746446 18<26grift_18>	but i can imagine that its hard to see the value
+T 1707746466 18<26grift_18>	first thing one should do is to not look at refpolicy and module policy
+T 1707746470 18<26grift_18>	that is legacy
+T 1707746486 18<26grift_18>	new cil policy makes a world of difference
+T 1707746524 18<26grift_18>	you can edit everything at runtime most of the time and maintain a human readable policy in the module store
+T 1707746554 18<26grift_18>	you dont have to go through a build process to build a module or disassemble one
+T 1707746560 18<26grift_18>	its just plain text
+T 1707746584 18<26grift_18>	that makes it a quick turnaround, need a change. only takes a second
+T 1707746610 18<26grift_18>	becomes part of the workflow
+T 1707746687 18<26grift_18>	and then you basically get to the point where you want to be. selinux is your enforcement robot in the kernel and your shell is the partyline
+T 1707746997 18<26grift_18>	for me its essentially like keeping a diary and my policy tells a lot about my habits
+T 1707747112 18<26grift_18>	i embed config recipes dotfiles etc as comments in the policy. combine it with mkosi configs for the various different systems in my network
+T 1707747225 18<26grift_18>	https://git.defensec.nl/?p=dssp5.git;a=tree;h=refs/heads/dssp5-debian;hb=refs/heads/dssp5-debian
+T 1708186109 19*	Now talking on 22#systemd
+T 1708186109 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708186109 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708438062 19*	Now talking on 22#systemd
+T 1708438062 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708438062 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708439546 19*	Now talking on 22#systemd
+T 1708439546 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708439546 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708439876 19*	Now talking on 22#systemd
+T 1708439876 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708439876 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708448397 18<25trilogy18>	Hello, I am dealing with wanting to determine the status of individual Tomcat applications. I believe the best approach is to have each application write a PID file, and then make a unit for each component that determines status off of that PID file. The trouble is that I'd also like to implement a watchdog functionality, so that the status of each application can be determined as 'failed' or otherwise 
+T 1708448403 18<25trilogy18>	down during an exception situation. I'm wondering if there's a way to do this without doing any dbus calls or something too complicated from the application side. Ideas?
+T 1708453437 18<22tlund18>	uuh, something weird is going on. during apt upgrade, systemct is restarting a service, the "systemctl --quiet --system restart" process has launched a child "/bin/systemd-tty-ask-password-agent --watch" and it is now blocking, no output on the terminal
+T 1708453453 18<22tlund18>	there is no reason to ask for a password, since everything is running as root?
+T 1708453459 18<22tlund18>	what did I do wrong? :)
+T 1708453532 18<27colo18>	trilogy: tomcat is just another java app. I recommend ripping out the shitfest that the SysV-startup-script is most probably gonna be, and just figure out which `/usr/bin/java ...` argument vector you need in the end, and then start that as a "simple" service. for proper reloading and stuff, you will need to make some other things tick (differs according to tomcat config), but in the long run, the other crap is unsustainable.
+T 1708453538 18<27colo18>	(in my opinion and experience)
+T 1708454021 18<22tlund18>	hmmm, my issue was relatred to some option to the daemon it was trying to restart, don't know which, but after removing override.conf that issue went away...
+T 1708454813 18<25trilogy18>	Thanks colo! I need to do some reading up on Tomcat for sure. Just so I have a list of options, do you have any other ideas that don't change Tomcat? I assume touching Tomcat is going to be an instant veto, though what you say makes total sense to me
+T 1708455700 18<27colo18>	trilogy: in my experience, you can adapt a systemd unit to pretty much any given tomcat config, without relying on the long forsaken shellscripts that they ship to manage the daemon on any sort of UNIX-like OS.
+T 1708455767 18<27colo18>	you will have to learn a bit more about what the given application/tomcat distribution has set up to interact with its init script, and then try to find systemd-native equivalents for that. for instance, there used to be a mechanism where, when tomcat received a special ASCII string in a TCP stream on a given port, it will initiate graceful shutdown.
+T 1708455789 18<27colo18>	(it's kinda stupid, but back then, the JVM just didn't offer better primitives, I guess)
+T 1708455806 18<27colo18>	you could adapt to that by having an ExecStop that does that using netcat or socat, for instance
+T 1708455836 18<25trilogy18>	Interesting...
+T 1708455851 18<27colo18>	you will probably have to get a bit creative in more "extreme" assumptions/setups, but in my opinion, it's worth it. you will know what drives the daemon, what stops it, how/where exactly it logs, and so on.
+T 1708455904 18<27colo18>	there's many layers of history and re-invented wheels in any given application server, and how it's configured and operated these days. it really sucks hard imnsho. but it can be beaten into shape, and I think it should.
+T 1708455920 18<25trilogy18>	For sure. That makes sense. Just need to do some convincing to others that it's worth it. Do you happen to know of any resources for what you describe? Even for that example
+T 1708455967 18<25trilogy18>	Yeah. I need to learn more about how tomcat works for sure. It's not sustainable, what we do now
+T 1708461312 18<27colo18>	trilogy: well, once you have tomcat started via your current means, look at the resulting process in the process table. look at the command line arguments, the environment ( /proc/PID/environ ) and see if you can re-create the parts that make sense for your deployment in a systemd unit file. (I'd use a throaway VM/container copy for that purpose)
+T 1708461341 18<27colo18>	then, check what the init/startup script does on shutdown and reload, and try to recreate that in your service unit
+T 1708461372 18<27colo18>	once you got that nailed down, migrate to your proper unit file in prod, and get rid of the init/startup script
+T 1708461581 18<27colo18>	logging would be the next step, but that requires messing with the tomcat config (and probably some logging framework's config), and I am not even sure you can get proper journal integration with any kind of JRE these days yet
+T 1708461608 18<27colo18>	but knowing what is happening in the logging department, because of which part of the configuration, is priceless anyway
+T 1708473217 19*	Now talking on 22#systemd
+T 1708473217 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708473217 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708507893 19*	Now talking on 22#systemd
+T 1708507893 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708507893 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708508320 19*	Now talking on 22#systemd
+T 1708508320 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708508320 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708520205 18<29ph88^18>	I'm trying to make a systemd timer these are the files i have created https://bpa.st/ZIHA i have put the systemd .service and .timer file in /etc/systemd/system  I don't see the timer show up when i do systemctl list-timers   how can i install the timer correctly so that it shows up and runs? ubuntu 22.04
+T 1708522776 18<22gdamjan18>	you need to enable and/or start the timer unit
+T 1708522794 18<22gdamjan18>	`systemctl enable --now xyz.timer` does both
+T 1708522815 18<22gdamjan18>	also, the timer should really be WantedBy=timers.target
+T 1708530419 19*	Now talking on 22#systemd
+T 1708530419 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708530419 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708544281 19*	Now talking on 22#systemd
+T 1708544281 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708544281 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708553966 19*	Now talking on 22#systemd
+T 1708553966 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708553966 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708554077 19*	Now talking on 22#systemd
+T 1708554077 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708554077 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708606547 19*	Now talking on 22#systemd
+T 1708606547 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708606547 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708606631 19*	Now talking on 22#systemd
+T 1708606631 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708606631 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708606873 18<29ph88^18>	I'm trying to make a systemd timer these are the files i have created https://bpa.st/ZIHA i have put the systemd .service and .timer file in /etc/systemd/system  I don't see the timer show up when i do systemctl list-timers   how can i install the timer correctly so that it shows up and runs? ubuntu 22.04
+T 1708606885 18<20grawity18>	you need to `systemctl start` the timer
+T 1708606909 18<20grawity18>	and/or to `systemctl enable` it to start on boot
+T 1708606918 18<28rlikon18>	greets
+T 1708606918 18<20grawity18>	same as yesterday's answer
+T 1708606963 18<28rlikon18>	greets
+T 1708606966 18<28rlikon18>	test
+T 1708606972 18<28rlikon18>	hello?
+T 1708606980 18<29ph88^18>	grawity, i got disconnected yesterday i think, i didn't see your answer
+T 1708606989 18<29ph88^18>	hello rlikon 
+T 1708606993 18<20grawity18>	it was someone else's but anyway
+T 1708606998 18<28rlikon18>	ph88^: ha ha, you're here as well
+T 1708607004 18<20grawity18>	every type of unit needs to be started to actually do its thing
+T 1708607021 18<20grawity18>	timers get scheduled when they're "started", path units are armed when they're "started", etc
+T 1708607021 18<28rlikon18>	I was trynig to check if the channel neede some sort of registration
+T 1708607025 18<28rlikon18>	bye
+T 1708607083 18<29ph88^18>	grawity, thanks :) i see it listed in list-timers now
+T 1708607096 18<29ph88^18>	let's see till tomorrow if it has actually ran too without problems
+T 1708608710 18<29TuxJobs18>	Problem which appears to be with systemd: If I execute the command `/usr/bin/MyCustomApp-xterm -class MyCustomApp -e /usr/bin/php "/path/to/kickstarter.php"` in a terminal, it opens (as expected) an XTerm window which belongs to the "MyCustomApp" taskbar group in Plasma. However, if that *exact* command is set as the value for `ExecStart` under `[Service]` in `MyCustomApp.service`, it (upon boot) instead becomes part of the standard "XTerm" class/taskbar 
+T 1708608710 18<29TuxJobs18>	group. What could possibly explain this? By the way, `/usr/bin/MyCustomApp-xterm` is just a symlink/alias to "xterm", just so it's a different binary which is for some reason required to get different "groups" (simply specifying the -class is not enough).
+T 1708608872 18<28Norkle18>	hi
+T 1708609190 18<22gdamjan18>	TuxJobs: how does Plasma group tasks? (maybe check /proc/<pid of xterm>/cmd and exe in both cases. I'd guess systemd follows symlinks
+T 1708609231 18<22gdamjan18>	also see https://www.freedesktop.org/software/systemd/man/latest/systemd.service.html#Command%20lines especially @
+T 1708609235 18<20grawity18>	hold up, why are you running Xterm as a service...
+T 1708609258 18<22gdamjan18>	heh :)
+T 1708609276 18<22gdamjan18>	I hope it's a user service
+T 1708609462 18<22gdamjan18>	also why use xterm on Plasma :P
+T 1708609487 18<20grawity18>	tbh it's definitely more of a "where does KDE get app grouping info from" question than a systemd question either way
+T 1708609498 18<20grawity18>	it *could* be slightly cgroup-related
+T 1708611876 18<29TuxJobs18>	Huh?
+T 1708611917 18<29TuxJobs18>	The question is: why does it not execute the command correctly when run from the .service when it does execute the command correctly when I manually paste it into a terminal?
+T 1708611952 18<29TuxJobs18>	"why use xterm on Plasma" <-- 1. What? 2. Relevant in what way? 3. Because it doesn't take up a million gigabytes of RAM per instance?
+T 1708611971 18<29TuxJobs18>	XTerm is the only reasonable non-RAM-eating terminal.
+T 1708611981 18<29TuxJobs18>	And thus the only possible program to use for any non-trivial terminaling.
+T 1708612333 18<29TuxJobs18>	Why does `/usr/bin/MyCustomApp-xterm -class MyCustomApp -e blablabla` work if I run it in a terminal as a human, but not if it's set as the value for `ExecStart` under `[Service]` in `MyCustomApp.service`? Only by running it manually does it make the XTerm window go into the "MyCustomApp" taskbar group, as instructed. If run from the .service file, it instead becomes part of the "XTerm" group. What could be causing this?
+T 1708614619 18<22gdamjan18>	as I said, probably following symlinks
+T 1708614868 18<29TuxJobs18>	gdamjan: Is that for me?
+T 1708614890 18<22gdamjan18>	14:39:50 <gdamjan> TuxJobs: how does Plasma group tasks? (maybe check /proc/<pid of xterm>/cmd and exe in both cases. I'd guess systemd follows symlinks
+T 1708615215 18<22gdamjan18>	exe and comm actually, where exe is a symlink, and comm a readable pseudo-file - I'm too lazy to search for the exact definition of each
+T 1708617198 18<29TuxJobs18>	gdamjan: I don't understand what that response means.
+T 1708617778 18<22gdamjan18>	what part don't you understand?
+T 1708623317 19*	Now talking on 22#systemd
+T 1708623317 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708623317 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708625638 18<20zzywysm18>	could someone review pull request 31446?  it's pure documentation and a no-brainer
+T 1708629281 18<19mjt0k18>	my system is reported as "degraded",  and that's due to the following services (a few of them):
+T 1708629284 18<19mjt0k18>	● svnserve@121-192.168.177.2:3690-192.168.177.25:59687.service  loaded failed failed SVN Per-Connection Server
+T 1708629287 18<19mjt0k18>	● svnserve@2076-192.168.177.2:3690-192.168.177.25:60625.service loaded failed failed SVN Per-Connection Server
+T 1708629299 18<19mjt0k18>	how to tell systemd to "forget" about these?
+T 1708629940 18<22edu4rdshl18>	Fixing them
+T 1708629961 18<19mjt0k18>	it's fixed long ago
+T 1708629975 18<22edu4rdshl18>	systemctl reset-failed ?
+T 1708629995 18<19mjt0k18>	that works
+T 1708630020 18<19mjt0k18>	I tried systemctl clean --what=state 'svnserve@*'
+T 1708630040 18<19mjt0k18>	thanks!
+T 1708630109 18<22edu4rdshl18>	yw!
+T 1708630546 19*	Now talking on 22#systemd
+T 1708630546 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708630546 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708631263 19*	Now talking on 22#systemd
+T 1708631263 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708631263 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708631930 19*	Now talking on 22#systemd
+T 1708631930 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708631930 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708632783 19*	Now talking on 22#systemd
+T 1708632783 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708632783 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708632966 19*	Now talking on 22#systemd
+T 1708632966 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708632966 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708642718 18<19uuuuu18>	I am experiencing a watchdog did not stop error on shut down and the system requires hard shut down. If I do system reboot -i I still get this issue (reboot=acpi or reboot=bios in grub doesn't fix the issue). What does it mean if systemctl reboot -i isn't able to remove the inhibitor that I am encountering here
+T 1708666374 18<20grawity18>	uuuuu: it means that it's not an inhibitor of the sort that -i deals with
+T 1708666386 18<20grawity18>	uuuuu: if it were, systemd would refuse to begin the shutdown process in the first place
+T 1708674641 18<19mjt0k18>	adding some filesystem maintenance jobs (like btrfs scrub), using OnCalendar=weekly (or monthly) timer with RandomizedDelaySec.  How to prevent this task to run at the same time as fstrim.service?
+T 1708678897 18<29TuxJobs18>	systemd problem: I have a user .service file which, if I run it with `systemctl --user start MyCustomApp.service` from a terminal, behaves correctly and thus opens an XTerm window in the right taskbar group. BUT if I let it start at boot, it opens the XTerm window in the default "XTerm" taskbar group, seemingly ignoring the actual command. I've tried so many things and each attempt requires a full reboot of the whole system. I have no idea what to try at 
+T 1708678897 18<29TuxJobs18>	this point. The ~/.config/systemd/user/MyCustomApp.service file: https://pastebin.com/raw/Gn47L1xx ... I've tried with and without "WantedBy=multi-user.target", and with and without "After=graphical-session.target".
+T 1708696020 19*	Now talking on 22#systemd
+T 1708696020 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708696020 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708696321 19*	Now talking on 22#systemd
+T 1708696321 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708696321 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708704057 18<20Bert18>	I'm struggling a bit to get something seemingly basic working. I have a pdns (powerdns) service and a mariadb service. When MariaDB fails or goes down, I want pdns to go down. That I got working with BindsTo. However, I noticed that during package updates, MariaDB gets stopped and then started again, leaving pdns down. I tried fixes with PartOf and with bidirectional Requires but nothing seems to work. 
+T 1708704063 18<20Bert18>	Anyone got any suggestions or ideas where I might be going wrong?
+T 1708709146 18<22edu4rdshl18>	>  during package updates, MariaDB gets stopped and then started again
+T 1708709154 18<22edu4rdshl18>	That's where it should be fixed
+T 1708709187 18<22edu4rdshl18>	Anyways, PartOf should do the trick (if put on the right unit)
+T 1708720189 19*	Now talking on 22#systemd
+T 1708720189 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708720189 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708727444 18<20Bert18>	edu4rdshl: yeah, I don't think Debian is going to take up my case :/ PartOf inside pdns to mariadb I tried, is the direction wrong?
+T 1708772561 19*	Now talking on 22#systemd
+T 1708772561 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708772561 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708788546 19*	Now talking on 22#systemd
+T 1708788546 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708788546 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708788723 19*	Now talking on 22#systemd
+T 1708788723 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708788723 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708792087 19*	Now talking on 22#systemd
+T 1708792087 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708792087 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708823390 19*	Now talking on 22#systemd
+T 1708823390 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708823390 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1708882893 19*	Now talking on 22#systemd
+T 1708882893 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1708882893 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709072158 19*	Now talking on 22#systemd
+T 1709072158 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709072158 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709082580 19*	Now talking on 22#systemd
+T 1709082580 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709082580 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709164962 19*	Now talking on 22#systemd
+T 1709164962 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709164962 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709165582 20*	Disconnected (20)
+T 1709165736 19*	Now talking on 22#systemd
+T 1709165736 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709165736 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709168794 18<22ajak18>	with an image generated by mkosi installing itself to a target system (ie via systemd-repart with ESP/root `CopyBlocks=auto`'d to the target), how do i then deal with those newly created filesystems being unmountable because they have duplicate UUIDs from the source media?
+T 1709168977 18<22ajak18>	my first thought was to hackily find the roots dynamically in my install script through dissection.. but i can't even dissect with the duplicate UUIDs
+T 1709168991 18*	22ajak tries ext4 instead
+T 1709169403 18<19twb18>	I thought there was a setting somewhere to "re-roll" new UUIDs, but I may have imagined it
+T 1709169452 18<19twb18>	Are these random UUIDs, or are they the hard-coded UUIDs that systemd uses for partition auto-discovery?
+T 1709169480 18<19twb18>	I mean these: https://uapi-group.org/specifications/specs/discoverable_partitions_specification/
+T 1709169576 18<22ajak18>	you can seed the *partition* UUID generation via `Seed=` or `--seed` (or even set directly via `UUID=`) but i haven't found a way to do the same for *filesystem* UUIDs
+T 1709170020 18<22ajak18>	hrm, though ext4 is more amenable to duplicate UUIDs, interesting
+T 1709170883 18<19twb18>	Ah I didn't understand it was the filesystem UUID
+T 1709170950 18<19twb18>	Re "amenable", I think it'll ultimately depend on whether you're doing mounts via UUID=, PARTUUID=, LABEL=, or path.
+T 1709171276 18<22ajak18>	mounting xfs will error even if you try to mount by block device name, in xfs_mount.c (of the kernel): xfs_warn(mp, "Filesystem has duplicate UUID %pU - can't mount", uuid); return -EINVAL;
+T 1709171336 18<22ajak18>	though the rationale for preventing duplicate UUID'd filesystems from being mounted isn't clear to me based on that file alone, xfs seems pretty unique in this restriction
+T 1709171399 18<22ajak18>	... but, ext4 seems to work, at least the resulting disk is dissectable, now i have to dig into why this physical hardware isn't letting me mount the resulting root while a qemu installation will, with the same image..
+T 1709173936 18<27MacGyver18>	twb: It's not the filesystem UUID, it's the GPT partition type.
+T 1709183132 18<22ajak18>	but it *is* the filesystem uuid i'm talking about, see the xfs code i pasted^
+T 1709198380 18<24Aryan18>	Hi, I'm trying to limit IOReadBandwidthMax using systemd+unified cgroup, but it seems like not working...
+T 1709198444 18<24Aryan18>	here's user-1000.slice: https://termbin.com/nty2
+T 1709198502 18<24Aryan18>	ubuntu 22.04
+T 1709198556 18<24Aryan18>	here's systemctl show user-1000.slice: https://termbin.com/fql1
+T 1709202937 18<19ThiefMaster18>	what's usually causing "System is tainted: cgroupsv1"? is this a kernel setting? userspace doing something particular? (i'm on gentoo so it's a manually configured kernel)
+T 1709203041 18<19twb18>	ThiefMaster: it's a kernel-to-userspace interface but I don't remember where it's actually set up
+T 1709203083 18<19twb18>	ThiefMaster: I thought it was, like, whether you did "mount none -t cgroups /sys/cgroups" with like "-o old_mode"
+T 1709203206 18<19twb18>	https://www.kernel.org/doc/html/latest/admin-guide/cgroup-v2.html#mounting  "mount -t cgroup2" apparently, vs "mount -t cgroup -o foo"
+T 1709203704 18<19ThiefMaster18>	ah, so i guess it's it's this useflag for my systemd that's causing it
+T 1709203705 18<19ThiefMaster18>	 + + cgroup-hybrid                   : Default to hybrid (legacy) cgroup hierarchy instead of unified (modern).
+T 1709203759 18<19ThiefMaster18>	not sure why i set that at some point...
+T 1709204062 18<19ThiefMaster18>	yep removeing that fixed the taint
+T 1709204066 18<19ThiefMaster18>	*removing
+T 1709212532 20*	Disconnected (20)
+T 1709212551 19*	Now talking on 22#systemd
+T 1709212551 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709212551 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709213993 19*	Now talking on 22#systemd
+T 1709213993 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709213993 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709216163 19*	Now talking on 22#systemd
+T 1709216163 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709216163 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709225995 18<25arkanoid18>	hello! I am using "User=myuser" service property to run unit as non-root user. It works, but it seems that HOME env within the executed process is still /root instead og /home/myuser
+T 1709229473 18<24chrisawi18>	arkanoid: you should use a systemd user instance to run units as a real (non-system) user
+T 1709229552 18<25arkanoid18>	chrisawi: are scheduled user systemd timers going to fire if the user is not logged in?
+T 1709229605 18<25arkanoid18>	what I'm doing here is setting up systemd timer+unit to perform backup of each user folder AS that user and write to repo AS that user
+T 1709229624 18<25arkanoid18>	but the unit has to run every night no matter if the user has or is logged in
+T 1709229687 18<24chrisawi18>	you can `loginctl enable-linger`
+T 1709229789 18<25arkanoid18>	oh
+T 1709231397 18<25arkanoid18>	thanks! I was not aware of linger. This seems the proper solution to my issue.
+T 1709254781 19*	Now talking on 22#systemd
+T 1709254781 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709254781 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709264289 18<27Dolapevich18>	Hello, I am on an amazon linux 2 box, and I am trying to use systemctl --user . As far as I understand, when a user logs in my ubuntu machine a process /lib/systemd/systemd --user is forked, and my systemctl --user talks with it. However I don't find the same process in amzn linux, which leads me to belive logging with a standard user does not starts it. ¿Where should I look?
+T 1709264327 18<27Dolapevich18>	The error I am getting is "Failed to get D-Bus connection: No such file or directory".
+T 1709264373 18<27Dolapevich18>	systemctl seems to be looking for: connect(3, {sa_family=AF_UNIX, sun_path="/run/user/549606008/bus"}, 25) = -1 ENOENT (No such file or directory)
+T 1709264532 18<27Dolapevich18>	and before that, it is trying to connect to: connect(3, {sa_family=AF_UNIX, sun_path="/run/user/549606008/systemd/private"}, 37) = -1 ENOENT (No such file or directory)
+T 1709265205 18<28Kelsar18>	Dolapevich: how did you login?
+T 1709265255 18<27Dolapevich18>	@Kelsar, over ssh, it didn't work, then sudo -u user -i
+T 1709265275 18<28Kelsar18>	Dolapevich: sudo will not work
+T 1709265277 18<27Dolapevich18>	in neither of the sessions I got a --user systemd process
+T 1709265286 18<27Dolapevich18>	yeah, that's why I went back to my ssh session
+T 1709265294 18<28Kelsar18>	try loginctl
+T 1709265317 18<27Dolapevich18>	but I am reading that /lib/systemd/systemd --user is forked from pam_systemd, which is nowhere to be found
+T 1709265326 18<27Dolapevich18>	loginctl linger?
+T 1709265384 18<28Kelsar18>	no, linger keeps a session running, but loginctl should be able to list sessions, if there are any
+T 1709265391 18<28Kelsar18>	to be fair, no idea what amazon linux is
+T 1709265396 18<27Dolapevich18>	yes, I can see mine and some other users
+T 1709265417 18<28Kelsar18>	then likely just XDG variables are not set
+T 1709265418 18<27Dolapevich18>	amazon linux is a fedora adapted to run on AWS EC2 linux.
+T 1709265483 18<27Dolapevich18>	XDG_RUNTIME_DIR and XDG_SESSION_ID are present in my ssh session
+T 1709265514 18<27Dolapevich18>	XDG_RUNTIME_DIR="/run/user/549606008" and XDG_SESSION_ID="743"
+T 1709265518 18<28Kelsar18>	well, no idea then
+T 1709265529 18<28Kelsar18>	but looks like you got a session
+T 1709265534 18<27Dolapevich18>	yep
+T 1709265569 18<27Dolapevich18>	but I think that in my ubuntu machine that session forks a /lib/systemd/systemd --user under my id when I get authenticated via PAM.
+T 1709265606 18<27Dolapevich18>	I wanted to make a user timer instead of cron, but I'll go with cron :-P
+T 1709270712 18<20grawity18>	Dolapevich: /lib/systemd/systemd --user has never been forked from pam_systemd; it is a system service forked by pid1 whose start is triggered by pam_systemd
+T 1709270729 18<20grawity18>	Dolapevich: check the status of user@549606008.service and the general output of loginctl
+T 1709298076 19*	Now talking on 22#systemd
+T 1709298076 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709298076 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709305277 19*	Now talking on 22#systemd
+T 1709305277 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709305277 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709312939 19*	Now talking on 22#systemd
+T 1709312939 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709312939 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709316253 19*	Now talking on 22#systemd
+T 1709316253 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709316253 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709316348 18<20grawity18>	we already have /proc loginuid for the sudo auditability problem, unfortunately it's not retrievable through a socket the way normal UID/GID is
+T 1709345126 19*	Now talking on 22#systemd
+T 1709345126 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709345126 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709353959 18<19twb18>	Speaking as an end user, what resolved solves is 1) don't directly load a DNS client into every process (libnss-dns.so); and 2) send different DNS requests to different servers -- so if I have 3 VPNs at once, DNS goes to the "right" one
+T 1709354030 18<19twb18>	Also obviously libnss-dns.so can't cache between processes, and glibc nscd can't cache dns records *correctly* (honoring SOA and TTL) because it's too dumb
+T 1709354061 18<19twb18>	So it directly reduces the amount of DNS traffic by three orders of magnitude
+T 1709356535 19*	Now talking on 22#systemd
+T 1709356535 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709356535 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709356629 19*	Now talking on 22#systemd
+T 1709356629 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709356629 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709376236 18<20birkoff18>	how can I run a program/service upon coredump ? 
+T 1709388874 18<24kjetilho18>	birkoff: while keeping systemd's handling of it (systemd-coredump)?
+T 1709388891 18<24kjetilho18>	I think you need to replace it, TBH.
+T 1709388897 18<20birkoff18>	kjetilho: yes
+T 1709388909 18<20birkoff18>	is there no other mechanism ? 
+T 1709389640 18<22gdamjan18>	add a systemd-coredump@.service.wants/ and symlinks to your own services
+T 1709389646 18<22gdamjan18>	not sure if it'll work, but you can try
+T 1709395178 18<20birkoff18>	i'm not sure .wants is what is needed
+T 1709402548 19*	Now talking on 22#systemd
+T 1709402548 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709402548 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709403092 18<20grawity18>	it'd do the job
+T 1709451377 19*	Now talking on 22#systemd
+T 1709451377 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709451377 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709523463 19*	Now talking on 22#systemd
+T 1709523463 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709523463 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709523580 19*	Now talking on 22#systemd
+T 1709523580 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709523580 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709543006 18<19kalken18>	hmm i have a rather exotic problem. i force an ip in dropbear (on my raspberry), but that makes systemd-networkd ignore to reconfigure the interface
+T 1709543016 18<19kalken18>	does anybody know a way to override that?
+T 1709543065 18<19kalken18>	i had to delete /run/systemd/network/ files manually now to force it to reconfigure
+T 1709546279 18<19twb18>	I don't understand the problem description
+T 1709546304 18<19twb18>	What does "force an ip in dropbear" mean?
+T 1709546402 18<19kalken18>	in cmdline.txt i force ip=
+T 1709546410 18<19kalken18>	because i dont have a dhcp-server
+T 1709546453 18<19kalken18>	it seems systemd-networkd does not touch the interface if an ip is forced with dropbear
+T 1709546497 18<19twb18>	That depends on what ramdisk you're using and some other factors.
+T 1709546499 18<19kalken18>	so i need to either tell systemd-networkd to force it or "reset" the link before systemd-networkd starts
+T 1709546527 18<19twb18>	Have you considered just using link-local addresses and mdns/dns-sd (avahi) to access that host?
+T 1709546542 18<19kalken18>	well i kind of did an ugly solution now in /etc/rc.local
+T 1709546544 18<19kalken18>	/sbin/ip addr flush dev eth0
+T 1709546546 18<19kalken18>	/sbin/ip link set dev eth0 down
+T 1709546548 18<19kalken18>	rm /run/systemd/network/90-eth0.network
+T 1709546550 18<19kalken18>	/bin/networkctl reload
+T 1709546559 18<19kalken18>	it works but its kind of horrible
+T 1709546559 18<19twb18>	That sounds like a terrible idea
+T 1709546570 18<19kalken18>	:D
+T 1709546572 18<19twb18>	Have you considered doing static networking in the .network itself?
+T 1709546611 18<19kalken18>	my problem is that systemd-networkd does not touch a link that is already setup by dropbear (initramfs)
+T 1709546625 18<19kalken18>	so i cant really configure anything in systemd from what i understand
+T 1709546629 18<19twb18>	https://www.freedesktop.org/software/systemd/man/latest/systemd.network.html#id-1.58.2
+T 1709546649 18<19twb18>	kalken: dropbear is an SSH server, I don't think it has anything to do with your ramdisk
+T 1709546713 18<19kalken18>	twb: i configure ip to be able to unlock my drives in cmdline.txt with: ip=192.168.0.2:::255.255.255.0:case:eth0:off
+T 1709546738 18<19kalken18>	but it makes systemd-networkd totally ignore anything i have there
+T 1709546783 18<19kalken18>	if i remove that line and get a dhcp adress with initramfs it works
+T 1709546802 18<19kalken18>	but if i set a static one on boot systemd-networkd ignores the link completely
+T 1709546825 18<19kalken18>	and i'm wondering if it can be overriden or something
+T 1709546840 18<19kalken18>	through an option in systemd-networkd settings preferably
+T 1709546842 18<19twb18>	Is this archlinux, or what
+T 1709546859 18<19kalken18>	its my own bootstraped debian
+T 1709546876 18<19kalken18>	but i dont think the distribution has anything to do with this
+T 1709546898 18<19kalken18>	people seem to have the same problems with netplan etc, if initramfs configures an ip
+T 1709546903 18<19kalken18>	the link is ignored
+T 1709546905 18<19twb18>	Well, Debian is still using a Debian-specific ramdisk by default, which isn't based on systemd, so doesn't integrate properly with post-ramdisk systemd
+T 1709546976 18<19twb18>	When you set ip= on the kernel command line, do you want that IP to be kept forever, or do you want it to be used only during the ramdisk stage?
+T 1709546976 18<19kalken18>	twb: that might be true. But still the question remains. Can i force systemd-networkd to reconfigure a link that is already configured
+T 1709547010 18<19twb18>	It does that by default unless the .network adds something like MissionCritical=yes.  I forget what the option is
+T 1709547019 18<19kalken18>	obviously systemd-networkd interacts in some way cause it creates a /run/systemd/network/90-eth0.network
+T 1709547027 18<19kalken18>	which overrides everything else
+T 1709547092 18<19kalken18>	twb: i only want that static ip to unlock drives, when that happens i want to forget it and boot normally
+T 1709547095 18<19twb18>	https://www.freedesktop.org/software/systemd/man/latest/systemd.network.html#KeepConfiguration=  this one
+T 1709547154 18<19kalken18>	hmm. i think the problem is this file that is some how created: /run/systemd/network/90-eth0.network
+T 1709547183 18<19twb18>	Well, what makes it?
+T 1709547198 18<19twb18>	Also: what's in it, exactly?
+T 1709547229 18<19kalken18>	im guessing initramfs, cause it happens when im putting ip= in cmdline.txt as a kernel boot parameter
+T 1709547239 18<19twb18>	I don't see anything making that file in https://sources.debian.org/src/initramfs-tools/0.142/
+T 1709547340 18<19kalken18>	it seems to be a common problem though. people set a static ip for boot sequence, but want to "flush" it and boot normally
+T 1709547391 18<19kalken18>	maybe its not even systemd's fault, maybe its udev or something
+T 1709547416 18<19twb18>	Personally I just have a separate network interface on a network that *does* have DHCPv4
+T 1709547441 18<19kalken18>	yeah everything worked fine until my router decided to die this morning :D
+T 1709547445 18<19twb18>	This is the code in Debian 12 that handles ip= in the initrd: https://sources.debian.org/src/klibc/2.0.13-4/usr/kinit/ipconfig/
+T 1709547466 18<19twb18>	I don't think it has changed for like 15 years, and I doubt it has systemd knowledge.
+T 1709547486 18<19twb18>	If you're running a *derivative* of Debian (not Debian itself), then I have no idea
+T 1709547496 18<19kalken18>	yeah, but still systemd-networkd manage to understand that it was already configured
+T 1709547525 18<19kalken18>	which might be a good thing in some situations :D
+T 1709547607 18<19kalken18>	well, ty for the help. I might go and buy a new router instead of trying to figure this out... It seems like a bit of a mess
+T 1709547636 18<19twb18>	On my Debian 12 system, using initramfs-tools and dropbear-initramfs to SSH in and run "zfsunlock" and then continue booting, I definitely do not have any /run/systemd/network directory at all, and the interface that was used during the ramdisk is now marked "7 br-lan bridge off unmanaged"
+T 1709547676 18<19twb18>	It sounds to me like whatever is writing /run/systemd/network/ on your system is something I don't have installed
+T 1709547742 18<19kalken18>	ok! i'll check if there is something with the raspi-firmwarestuff from debian then
+T 1709547752 18<19kalken18>	there might be some hooks or something there
+T 1709547789 18<19twb18>	Can you pastebin "dpkg-query --show" output?
+T 1709547827 18<19kalken18>	for systemd?
+T 1709547870 18<19twb18>	Run it without further arguments, so it lists all installed packages and their installed versions.
+T 1709547896 18<19kalken18>	i know what it does, but there is nothing strange there
+T 1709547949 18<19kalken18>	im pretty sure something triggers systemd-networkd to understand that a link is already configured
+T 1709547962 18<19kalken18>	and i was just looking for a way to override that
+T 1709548002 18<19kalken18>	but not many people are running networkd yet, so there is not much info
+T 1709548094 18<19kalken18>	maybe it would work if i just booted initramfs with systemd, idk. 
+T 1709548198 18<19twb18>	systemd-based ramdisks aren't well supported by Debian, but you're welcome to try it.
+T 1709548227 18<19twb18>	I recommend you try it on a host you don't care about losing, though :-)
+T 1709548252 18<19twb18>	Step 1 would be to "apt install dracut", which will break your existing ramdisks.  Then configure dracut to be systemd-based (if it's not already)
+T 1709548497 18<19kalken18>	twb: ty. It seems a bit overkill just to get systemd-networkd working, but ill check if i can figure something out here
+T 1709548500 18<19kalken18>	ty for the help!
+T 1709557473 18<26NetSysFire18>	i need to build an OS image with mkosi to contain some software which has dependencies that are so old an OS that is not eol can not handle them. however, my attempts all fail before actual building is done with https://bpa.st/RK7A - whether as root or nonroot. this is on arch. actual arch, not a derivative
+T 1709564994 18<19twb18>	Did you try just "mkdir newroot/dev" and "touch newroot/dev/random"
+T 1709565029 18<19twb18>	You can't make device files without being root, so you can't actually make a "real" dev/random
+T 1709565051 18<26NetSysFire18>	i am root in that example. but i already moved on to another solution
+T 1709620790 19*	Now talking on 22#systemd
+T 1709620790 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709620790 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709627089 18<28luc418>	Hello! I'm using systemd in a poky system created with Yocto. I'm experiencing a weird situation with systemd-networkd: https://pastebin.com/fsc436E0. Apparently the system has two different IP addresses, but the configuration I set only includes one. I guess one IP was acquired through dhcp, but even disabling it explicitly is not fixing the problem. Any idea where that IP comes from? Thanks!
+T 1709630308 18<29hgb18>	Hmm, I have a service that has 'After=storage.mount', but it's being run at the same time as the fsck for /storage.  Shouldn't 'After=foo.mount' make sure it runs after the file system is actually mounted?
+T 1709630421 18<29hgb18>	Maybe 'RequireMountsFor=/storage' is better
+T 1709640168 18<19twb18>	hgb: RequiresMountsFor is DEFINITELY better
+T 1709643288 18<29hgb18>	twb: Thanks, I'll switch to that.
+T 1709651015 18<27qsx18>	can i use variables such as ${STATE_DIRECTORY} and others set in an `EnvironmentFile` in a `ConditionPathExists=!${STATE_DIRECTORY}/foo/${BAR}`?
+T 1709651125 18<27qsx18>	i’m writing a set of units for a service that needs to do some initialisation only once, but there may be various @-instances that can depend on the same initialisation, hence i’d like to have foo@.service depend on foo-init@.service which will only run if the initialisation has not been done yet
+T 1709651258 18<27qsx18>	huh.  TIL `ExecCondition=`, if the variable expansion as above does not work i could just put `test ! -d ${STATE_DIRECTORY}/...` in there
+T 1709653153 18<22gdamjan18>	qsx: no
+T 1709658822 19*	Now talking on 22#systemd
+T 1709658822 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709658822 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709661930 19*	Now talking on 22#systemd
+T 1709661930 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709661930 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709667679 19*	Now talking on 22#systemd
+T 1709667679 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709667679 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709674383 19*	Now talking on 22#systemd
+T 1709674383 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709674383 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709686297 19*	Now talking on 22#systemd
+T 1709686297 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709686297 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709705791 19*	Now talking on 22#systemd
+T 1709705791 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709705791 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)

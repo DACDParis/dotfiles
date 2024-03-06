@@ -1,0 +1,123 @@
+T 1702193179 19*	Now talking on 22#grafana
+T 1702194034 20*	Disconnected (20)
+T 1702194061 19*	Now talking on 22#grafana
+T 1702194196 24*	dacd has quit (Ping timeout: 245 seconds)
+T 1702195289 19*	Now talking on 22#grafana
+T 1702198993 20*	Disconnected (20)
+T 1702201366 19*	Now talking on 22#grafana
+T 1702208540 19*	Now talking on 22#grafana
+T 1702214434 20*	Disconnected (20)
+T 1702214614 19*	Now talking on 22#grafana
+T 1702219834 20*	Disconnected (20)
+T 1702219889 19*	Now talking on 22#grafana
+T 1702220524 20*	Disconnected (20)
+T 1702220570 19*	Now talking on 22#grafana
+T 1702281887 19*	Now talking on 22#grafana
+T 1702282236 20*	Disconnected (20)
+T 1702282251 19*	Now talking on 22#grafana
+T 1702282262 20*	Disconnected (20)
+T 1702282282 19*	Now talking on 22#grafana
+T 1702285561 20*	Disconnected (20)
+T 1702314577 19*	Now talking on 22#grafana
+T 1702322572 20*	Disconnected (20)
+T 1702322852 19*	Now talking on 22#grafana
+T 1702812797 19*	Now talking on 22#grafana
+T 1705506304 19*	Now talking on 22#grafana
+T 1705524970 19*	Now talking on 22#grafana
+T 1705525535 19*	Now talking on 22#grafana
+T 1705525647 19*	Now talking on 22#grafana
+T 1705525767 19*	Now talking on 22#grafana
+T 1705526737 19*	Now talking on 22#grafana
+T 1705559182 19*	Now talking on 22#grafana
+T 1705562767 20*	Disconnected (20)
+T 1705562791 19*	Now talking on 22#grafana
+T 1705568249 19*	Now talking on 22#grafana
+T 1707739632 19*	Now talking on 22#grafana
+T 1707742868 19*	Now talking on 22#grafana
+T 1708186109 19*	Now talking on 22#grafana
+T 1708438062 19*	Now talking on 22#grafana
+T 1708439546 19*	Now talking on 22#grafana
+T 1708439876 19*	Now talking on 22#grafana
+T 1708450980 18<19kryl18>	hi, is is possible to add a "link" in a logql request ? 
+T 1708451040 18<19kryl18>	I have an id value in my logql and I want to "create a new request" to match a regex from this "id" by clicking on it.
+T 1708451125 18<19kryl18>	https://stackoverflow.com/questions/76266921/how-can-i-improve-loki-line-format-output-to-include-an-embedded-html-link
+T 1708473217 19*	Now talking on 22#grafana
+T 1708507893 19*	Now talking on 22#grafana
+T 1708508320 19*	Now talking on 22#grafana
+T 1708530419 19*	Now talking on 22#grafana
+T 1708530612 18<29Razzberry18>	Does anyone here have experience with Grafana and Prometheus?
+T 1708530641 18<29Razzberry18>	I recently purchased a sonicwall firewall and want to build a dashboard in grafana
+T 1708530653 18<29Razzberry18>	I set up snmp exporter
+T 1708530672 18<29Razzberry18>	The generator couldn't figure out the OID'
+T 1708530700 18<29Razzberry18>	The generator couldn't figure out the OID's for the loaded sonicwall mibs so I had to use the OID Alias names
+T 1708530733 18<29Razzberry18>	They are       - sonicCurrentRAMUtil
+T 1708530733 18<29Razzberry18>	      - sonicMaxConnCacheEntries
+T 1708530733 18<29Razzberry18>	      - sonicCurrentConnCacheEntries
+T 1708530733 18<29Razzberry18>	      - sonicCurrentCPUUtil
+T 1708530733 18<29Razzberry18>	      - sonicNatTranslationCount
+T 1708530734 18<29Razzberry18>	      - sonicCurrentManagementCPUUtil
+T 1708530736 18<29Razzberry18>	      - sonicCurrentFwdAndInspectCPUUtil
+T 1708530738 18<29Razzberry18>	      - snwlSysModel
+T 1708530740 18<29Razzberry18>	      - snwlSysSerialNumber
+T 1708530742 18<29Razzberry18>	      - snwlSysFirmwareVersion
+T 1708530744 18<29Razzberry18>	      - snwlSysROMVersion
+T 1708530746 18<29Razzberry18>	      - snwlSysAssetNumber
+T 1708530783 18<29Razzberry18>	can someone help me setup a dashboard?
+T 1708544281 19*	Now talking on 22#grafana
+T 1708553966 19*	Now talking on 22#grafana
+T 1708554077 19*	Now talking on 22#grafana
+T 1708591069 18<29Foxboron18>	74
+T 1708606547 19*	Now talking on 22#grafana
+T 1708606631 19*	Now talking on 22#grafana
+T 1708623317 19*	Now talking on 22#grafana
+T 1708630546 19*	Now talking on 22#grafana
+T 1708631263 19*	Now talking on 22#grafana
+T 1708631930 19*	Now talking on 22#grafana
+T 1708632783 19*	Now talking on 22#grafana
+T 1708632966 19*	Now talking on 22#grafana
+T 1708635034 18<24Razzberry118>	Does anyone talk on irc?
+T 1708635140 18<28selckin18>	nobody stays around
+T 1708635158 18<24Razzberry118>	That sucks... what are you up to?
+T 1708635224 18<28selckin18>	codin
+T 1708635242 18<24Razzberry118>	are you farmiliar with Grafana?
+T 1708635295 18<28selckin18>	a bit but not used it in years
+T 1708635304 18<24Razzberry118>	what about Prometheus
+T 1708696020 19*	Now talking on 22#grafana
+T 1708696321 19*	Now talking on 22#grafana
+T 1708702063 18<25StyXman18>	I have an issue with the state timeline visualization. I take one series, which calculates the time before a certificate expires. I graph it with the time series visualization and it's what I expect, almost 5 weeks. https://i.imgur.com/MvKsfZw.png but if I use the stat timeline, I get values flipping between ~5w to ~1.99w https://i.imgur.com/QD49Sjw.png you will have to believe me it's the same query (I ocludded the domain), and you can see 
+T 1708702064 18<25StyXman18>	it's the same timespan. can someone help me explain this? doing the graph with prometheus matches what I see with the time series
+T 1708720189 19*	Now talking on 22#grafana
+T 1708772561 19*	Now talking on 22#grafana
+T 1708788546 19*	Now talking on 22#grafana
+T 1708788723 19*	Now talking on 22#grafana
+T 1708792087 19*	Now talking on 22#grafana
+T 1708823390 19*	Now talking on 22#grafana
+T 1708882893 19*	Now talking on 22#grafana
+T 1709072158 19*	Now talking on 22#grafana
+T 1709082580 19*	Now talking on 22#grafana
+T 1709164962 19*	Now talking on 22#grafana
+T 1709165582 20*	Disconnected (20)
+T 1709165736 19*	Now talking on 22#grafana
+T 1709212532 20*	Disconnected (20)
+T 1709212551 19*	Now talking on 22#grafana
+T 1709213993 19*	Now talking on 22#grafana
+T 1709216163 19*	Now talking on 22#grafana
+T 1709254781 19*	Now talking on 22#grafana
+T 1709298076 19*	Now talking on 22#grafana
+T 1709305277 19*	Now talking on 22#grafana
+T 1709312939 19*	Now talking on 22#grafana
+T 1709316253 19*	Now talking on 22#grafana
+T 1709345126 19*	Now talking on 22#grafana
+T 1709356535 19*	Now talking on 22#grafana
+T 1709356629 19*	Now talking on 22#grafana
+T 1709402548 19*	Now talking on 22#grafana
+T 1709451377 19*	Now talking on 22#grafana
+T 1709523463 19*	Now talking on 22#grafana
+T 1709523581 19*	Now talking on 22#grafana
+T 1709620790 19*	Now talking on 22#grafana
+T 1709658822 19*	Now talking on 22#grafana
+T 1709661930 19*	Now talking on 22#grafana
+T 1709667679 19*	Now talking on 22#grafana
+T 1709674383 19*	Now talking on 22#grafana
+T 1709686297 19*	Now talking on 22#grafana
+T 1709705791 19*	Now talking on 22#grafana

@@ -1,0 +1,1370 @@
+**** BEGIN LOGGING AT Sun Dec 10 08:26:20 2023
+
+Dec 10 08:26:19 *	Now talking on #security
+Dec 10 08:26:19 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Dec 10 08:26:19 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Dec 10 08:26:31 <EdFletcher>	hot damn you must be special to have someone spend Pegasus money on you!
+Dec 10 08:28:08 *	BootLayer (~BootLayer@user/BootLayer) has joined
+Dec 10 08:34:55 *	ano has quit (Ping timeout: 240 seconds)
+Dec 10 08:35:53 *	ano (~ano@user/ano) has joined
+Dec 10 08:39:01 *	mvee has quit (Ping timeout: 255 seconds)
+**** ENDING LOGGING AT Sun Dec 10 08:40:12 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 08:40:12 2023
+
+Dec 10 08:40:34 *	Disconnected ()
+**** ENDING LOGGING AT Sun Dec 10 08:40:34 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 08:41:01 2023
+
+Dec 10 08:41:01 *	Now talking on #security
+Dec 10 08:41:01 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Dec 10 08:41:01 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Dec 10 08:41:35 *	bitoff (~bitoff@109.186.198.206) has joined
+**** ENDING LOGGING AT Sun Dec 10 08:42:24 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 08:42:24 2023
+
+Dec 10 08:42:56 *	Bergerag (~Bergerag@2001:999:48c:ab99:b897:141b:4f7f:4c59) has joined
+Dec 10 08:43:16 *	dacd has quit (Ping timeout: 245 seconds)
+Dec 10 08:49:02 <Psil0>	Exactly
+Dec 10 08:49:05 <Psil0>	EdFletcher,
+Dec 10 08:49:12 *	Reign has quit (Quit: Going offline, see ya! (www.adiirc.com))
+Dec 10 08:49:14 <Psil0>	now question is i do not want to format my phone although i should
+Dec 10 08:53:59 *	birdynam (~birdynam@lfbn-ren-1-471-182.w2-10.abo.wanadoo.fr) has joined
+Dec 10 08:59:05 *	f4stpath has quit (Remote host closed the connection)
+**** ENDING LOGGING AT Sun Dec 10 09:00:31 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 09:00:31 2023
+
+**** ENDING LOGGING AT Sun Dec 10 09:00:42 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 09:01:29 2023
+
+Dec 10 09:01:29 *	Now talking on #security
+Dec 10 09:01:29 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Dec 10 09:01:29 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** ENDING LOGGING AT Sun Dec 10 09:03:11 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 09:03:11 2023
+
+Dec 10 09:03:43 *	CatCow has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+**** ENDING LOGGING AT Sun Dec 10 09:03:53 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 09:03:53 2023
+
+**** ENDING LOGGING AT Sun Dec 10 09:06:12 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 09:06:12 2023
+
+**** ENDING LOGGING AT Sun Dec 10 09:11:36 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 09:11:36 2023
+
+Dec 10 10:03:13 *	Disconnected ()
+**** ENDING LOGGING AT Sun Dec 10 10:03:13 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 10:42:46 2023
+
+Dec 10 10:42:46 *	Now talking on #security
+Dec 10 10:42:46 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Dec 10 10:42:46 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Dec 10 10:50:39 <Psil0>	prob the second option polyex
+Dec 10 10:50:59 <Psil0>	giving the applciation access to the system config + dir is bad , hmmm
+Dec 10 10:52:09 <polyex>	ya
+Dec 10 10:53:22 <polyex>	i'm thinking like make a system dir that each bin like this has a dir in that it has write privs to. like /shared/mybin/... then maybe even skip the symlink part and have the system configs include directly from /shared/mybin/
+Dec 10 10:53:39 <polyex>	and if anything doesn't work that way then but only then i'll add a symlink in
+Dec 10 10:53:42 <polyex>	that sound good?
+Dec 10 10:55:33 <Psil0>	question i am looking @ flatpak vs snapd
+Dec 10 10:55:39 <Psil0>	does your app have that option ^^
+Dec 10 10:56:25 <Psil0>	first two options >> /opt is a good folder for apps by bins you mean appfiles or what?
+Dec 10 10:56:30 <polyex>	not sure. do those give apps a place to write files shared to the system config?
+Dec 10 11:00:55 <mnemon>	polyex: should give it permissions to write to the config file(s) (likely in /etc ?) that it needs to write and nothing else. Symlinking might be nice to prevent accidental overwrites of the config on upgrade but can't really think of any other advantages
+Dec 10 11:04:30 <polyex>	ok what about this 1. i set up the symlinks then throw system into immutable, now i an still update that shared file because it's outside of a system config dir?
+Dec 10 11:58:44 <nasmConnoisseur>	https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html but how does that make any sense, given that these multiple users would all have to know a disk encryption password that unlocks the whole thing during the FDE step, and thus they have access to every user's data anyway if they make an offline copy of the harddisk?
+Dec 10 11:59:01 <nasmConnoisseur>	It does. systemd-homed which allows for home directory encryption
+Dec 10 12:01:11 <nasmConnoisseur>	"the user's home (missing so far)." again... No. We do have this: systemd-homed does allow for home directory encryption.
+Dec 10 12:02:45 <nasmConnoisseur>	Oh ok. That's actually addressed below.
+**** ENDING LOGGING AT Sun Dec 10 12:03:10 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 12:42:20 2023
+
+Dec 10 12:42:20 *	Now talking on #security
+Dec 10 12:42:20 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Dec 10 12:42:20 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Dec 10 14:20:34 *	Disconnected ()
+**** ENDING LOGGING AT Sun Dec 10 14:20:34 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 14:23:35 2023
+
+Dec 10 14:23:34 *	Now talking on #security
+Dec 10 14:23:34 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Dec 10 14:23:34 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Dec 10 15:50:34 *	Disconnected ()
+**** ENDING LOGGING AT Sun Dec 10 15:50:34 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 15:51:30 2023
+
+Dec 10 15:51:29 *	Now talking on #security
+Dec 10 15:51:29 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Dec 10 15:51:29 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Dec 10 16:02:04 *	Disconnected ()
+**** ENDING LOGGING AT Sun Dec 10 16:02:04 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 16:02:54 2023
+
+Dec 10 16:02:51 *	Now talking on #security
+Dec 10 16:02:51 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Dec 10 16:02:51 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** ENDING LOGGING AT Sun Dec 10 16:03:39 2023
+
+**** BEGIN LOGGING AT Mon Dec 11 09:04:48 2023
+
+Dec 11 09:04:47 *	Now talking on #security
+Dec 11 09:04:47 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Dec 11 09:04:47 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Dec 11 09:10:36 *	Disconnected ()
+**** ENDING LOGGING AT Mon Dec 11 09:10:36 2023
+
+**** BEGIN LOGGING AT Mon Dec 11 09:10:52 2023
+
+Dec 11 09:10:51 *	Now talking on #security
+Dec 11 09:10:51 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Dec 11 09:10:51 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Dec 11 09:11:02 *	Disconnected ()
+**** ENDING LOGGING AT Mon Dec 11 09:11:02 2023
+
+**** BEGIN LOGGING AT Mon Dec 11 09:11:23 2023
+
+Dec 11 09:11:22 *	Now talking on #security
+Dec 11 09:11:22 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Dec 11 09:11:22 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Dec 11 10:06:01 *	Disconnected ()
+**** ENDING LOGGING AT Mon Dec 11 10:06:01 2023
+
+**** BEGIN LOGGING AT Mon Dec 11 18:09:39 2023
+
+Dec 11 18:09:37 *	Now talking on #security
+Dec 11 18:09:37 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Dec 11 18:09:37 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** ENDING LOGGING AT Mon Dec 11 18:14:11 2023
+
+**** BEGIN LOGGING AT Mon Dec 11 18:14:11 2023
+
+Dec 11 18:48:56 <nsh>	oh wow we've a whole shire?!?
+Dec 11 18:50:10 <nsh>	who's the sheriff?
+Dec 11 20:22:52 *	Disconnected ()
+**** ENDING LOGGING AT Mon Dec 11 20:22:52 2023
+
+**** BEGIN LOGGING AT Mon Dec 11 20:27:35 2023
+
+Dec 11 20:27:32 *	Now talking on #security
+Dec 11 20:27:32 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Dec 11 20:27:32 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Dec 11 20:59:20 *	calmclam pins a badge on nsh
+**** ENDING LOGGING AT Mon Dec 11 21:00:19 2023
+
+**** BEGIN LOGGING AT Sun Dec 17 12:33:17 2023
+
+Dec 17 12:33:17 *	Now talking on #security
+Dec 17 12:33:17 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Dec 17 12:33:17 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** ENDING LOGGING AT Sun Dec 17 14:12:03 2023
+
+**** BEGIN LOGGING AT Wed Jan 17 16:45:04 2024
+
+janv. 17 16:45:04 *	Now talking on #security
+janv. 17 16:45:04 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+janv. 17 16:45:04 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** ENDING LOGGING AT Wed Jan 17 16:46:04 2024
+
+**** BEGIN LOGGING AT Wed Jan 17 21:56:10 2024
+
+janv. 17 21:56:10 *	Now talking on #security
+janv. 17 21:56:10 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+janv. 17 21:56:10 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Wed Jan 17 22:05:35 2024
+
+janv. 17 22:05:35 *	Now talking on #security
+janv. 17 22:05:35 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+janv. 17 22:05:35 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** ENDING LOGGING AT Wed Jan 17 22:07:05 2024
+
+**** BEGIN LOGGING AT Wed Jan 17 22:07:05 2024
+
+**** ENDING LOGGING AT Wed Jan 17 22:07:11 2024
+
+**** BEGIN LOGGING AT Wed Jan 17 22:07:27 2024
+
+janv. 17 22:07:27 *	Now talking on #security
+janv. 17 22:07:27 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+janv. 17 22:07:27 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** ENDING LOGGING AT Wed Jan 17 22:07:51 2024
+
+**** BEGIN LOGGING AT Wed Jan 17 22:09:27 2024
+
+janv. 17 22:09:27 *	Now talking on #security
+janv. 17 22:09:27 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+janv. 17 22:09:27 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Wed Jan 17 22:25:37 2024
+
+janv. 17 22:25:37 *	Now talking on #security
+janv. 17 22:25:37 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+janv. 17 22:25:37 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** ENDING LOGGING AT Wed Jan 17 22:37:34 2024
+
+**** BEGIN LOGGING AT Thu Jan 18 07:26:22 2024
+
+janv. 18 07:26:22 *	Now talking on #security
+janv. 18 07:26:22 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+janv. 18 07:26:22 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+janv. 18 08:26:07 *	Disconnected ()
+**** ENDING LOGGING AT Thu Jan 18 08:26:07 2024
+
+**** BEGIN LOGGING AT Thu Jan 18 08:26:31 2024
+
+janv. 18 08:26:31 *	Now talking on #security
+janv. 18 08:26:31 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+janv. 18 08:26:31 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+janv. 18 09:11:54 <gnrp>	ghostbuster: I wouldn't worry about low-level criminals getting into printers. I'd worry about the copy shop and its employees.
+janv. 18 09:12:58 <gnrp>	ah, ahdasdas
+janv. 18 09:13:02 <gnrp>	ups
+janv. 18 09:13:38 <synaps3>	lol
+janv. 18 09:13:58 <gnrp>	ah, yeah, what hussein1 said. Emplyoees of such shops are lowest-wage. Motives and effort change in that perspective. Doesn't even have to be that they use the passport and sell it. I could imagine to use it just for your own or joke purposes
+janv. 18 09:15:03 <gnrp>	I wouldn't suspect an organized heist. Just some individuals seeing a chance
+**** ENDING LOGGING AT Thu Jan 18 09:20:36 2024
+
+**** BEGIN LOGGING AT Thu Jan 18 09:57:29 2024
+
+janv. 18 09:57:29 *	Now talking on #security
+janv. 18 09:57:29 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+janv. 18 09:57:29 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+janv. 18 10:30:04 <nasmConnoisseur>	Yo!
+janv. 18 10:48:07 <gnrp>	nasmConnoisseur: You were asking yesterday and I replied when oyu were gone
+janv. 18 10:48:09 <gnrp>	16:13 <gnrp> re Debian: I really disliked the practice they had some time ago (or still have?), where they would just activate any service you install
+janv. 18 10:48:11 <gnrp>	16:13 <gnrp> "You install something that drags along an Apache? Well, then let's start it and make it open to the world!"
+janv. 18 11:42:07 <nasmConnoisseur>	gnrp, 1) that behvior of apt can be disabled if you want 2) I find it useful, for example Iinstal fwupd? It gets auto started
+janv. 18 11:42:32 <nasmConnoisseur>	And Debian is well recognized to be one of the best overall Linux distros.
+janv. 18 11:42:47 <gnrp>	lol, ok
+janv. 18 11:44:14 <gnrp>	so all is fine and it must be very secure. Why the question, then?
+janv. 18 11:45:18 <nasmConnoisseur>	I didn't said that; I said I find it a useful feature (for me) and that Debian is well recognized to be one ofthe best Linux distros, which is factua.
+janv. 18 11:45:31 <nasmConnoisseur>	s/factua/factual/
+janv. 18 11:46:00 <gnrp>	and I don't care what is well-recognized or so and didn't even mention that
+janv. 18 11:46:07 <nasmConnoisseur>	k
+janv. 18 11:46:39 <gnrp>	you ask "how is it concerning security" and I say "there's this one feature that is a rather big risk". The answer "it is one of the best overall!!!11" and "but I LOVE that feature" is just fanboy comments
+janv. 18 11:48:46 *	gnrp dislikes Debian's attitude of patching everything. While they seem to be handling security incidents quite well, this still adds a lot of risk
+janv. 18 11:49:02 <gnrp>	wasn't there this thing with the compromised SSH keys several years ago which only affected Debian?
+janv. 18 11:50:43 <gnrp>	I prefer a policy that uses widespread tools, rather than creating an individual version with its own problems that just waits for zero days to happen
+janv. 18 11:50:57 <nasmConnoisseur>	Several years ago, so it's fixed now? And I guess you dislike the stable release model and prefer the rolling releases one? Then we have a different view on how securiy should be handled
+janv. 18 11:51:44 <gnrp>	nasmConnoisseur: Where do you want to get with that question, or generally? You ask about security, and I point ot security incidents Debian had.
+janv. 18 11:51:55 <nasmConnoisseur>	And source for that? "<gnrp> wasn't there this thing with the compromised SSH keys several years ago which only affected Debian?"
+janv. 18 11:52:00 <gnrp>	and this doesn't have a shit to do with release models. I didn't even mention that.
+janv. 18 11:52:19 <gnrp>	nasmConnoisseur: Google for debian openssl incident
+janv. 18 11:55:10 <gnrp>	am I wrong with how that conversation felt? Somebody asks for "thoughts on security of X" and when you point out things then they get super defensive about it and answer to things you didn't even say?
+janv. 18 11:55:48 <gnrp>	feels like talking to Apple users
+janv. 18 12:21:30 <supakeen>	the question is just weird anyhow; it's so wide in scope
+**** BEGIN LOGGING AT Mon Feb 12 13:07:12 2024
+
+févr. 12 13:07:12 *	Now talking on #security
+févr. 12 13:07:12 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+févr. 12 13:07:12 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Mon Feb 12 14:01:08 2024
+
+févr. 12 14:01:08 *	Now talking on #security
+févr. 12 14:01:08 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+févr. 12 14:01:08 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+févr. 12 14:36:10 <godSend23>	hey all
+févr. 12 14:39:23 <Gurkenglas>	The attack of listening in on a transmission is ordinarily addressed using encryption which makes hardness assumptions. I see a simple mechanism to stack over or under that encryption when slight increases in latency are fine and the transmission is tiny: Generate a one time pad, use it to encrypt the payload, send the payload and the pad over
+févr. 12 14:39:23 <Gurkenglas>	different router paths. Now an adversary has to listen in on the payload-path and (if the RNG is adequate) they also have to listen in on the pad-path. Does any project or paper use this?
+**** BEGIN LOGGING AT Sat Feb 17 17:08:29 2024
+
+Feb 17 17:08:29 *	Now talking on #security
+Feb 17 17:08:29 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 17 17:08:29 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Tue Feb 20 15:07:42 2024
+
+Feb 20 15:07:41 *	Now talking on #security
+Feb 20 15:07:41 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 20 15:07:41 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Feb 20 15:23:00 <shtrb>	nullvalue, electron apps normally require network traffic to work :)
+**** BEGIN LOGGING AT Tue Feb 20 15:32:26 2024
+
+Feb 20 15:32:26 *	Now talking on #security
+Feb 20 15:32:26 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 20 15:32:26 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Feb 20 15:32:38 <nullvalue>	im watching that video you linked shtrb , its quite interesting
+Feb 20 15:33:09 <shtrb>	the question is flatpak would help to mitigate it or not
+**** BEGIN LOGGING AT Tue Feb 20 15:37:56 2024
+
+Feb 20 15:37:56 *	Now talking on #security
+Feb 20 15:37:56 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 20 15:37:56 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Feb 20 15:40:06 <nullvalue>	flatpak is a package manager, ? is does it test what they offer (will vulnerable code be distributed via flatpak). There is a possibility that using flatpak might not mitigate vulnerabilites which already exist in the underlying code. this is my opinion but have to look into it further
+Feb 20 16:15:26 <shtrb>	nullvalue, I hoped that as the electrons apps would be running under flatpak isolation even if they vulnarable code can escape the browser it would attack a nodejs copy runninging under the same flatpak isolation (or am I wrong to assume that there would be a node running isolated within the same flatpak runtime) ?
+Feb 20 16:16:52 <shtrb>	the very idea that sending a victim a well crafted message that could trigger the victim pc to run any arbitrary code feel quite frightening
+Feb 20 16:18:33 <KURWAMAC>	well, sure but the possiblility is always present
+Feb 20 16:18:47 <KURWAMAC>	just need to have mitigations
+Feb 20 16:19:20 <shtrb>	hence my question if flatpak is a mitigation for similar attacks that had been described in that link
+Feb 20 16:19:23 <KURWAMAC>	one possible mitigation is to shave your head and fly off to china with no electronics and a suitcase to become a monk
+Feb 20 16:20:28 <KURWAMAC>	"Warning: Running untrusted code is never safe, sandboxing cannot change this."
+Feb 20 16:20:49 <KURWAMAC>	so just make sure arbitrary code execution isnt possible in the first place
+Feb 20 16:21:35 <shtrb>	Well thank you , I guess I should say that to Microsoft to stop using Javascript and Typescript
+Feb 20 16:22:53 <nullvalue>	heh, when you mention electrons app makes me think of a friend named electron
+Feb 20 16:23:10 <nullvalue>	that was before all this existed :P
+Feb 20 16:25:39 <KURWAMAC>	shtrb: the problem isnt using javascript or typescript, the problem is bad implementations, etc.
+Feb 20 20:13:59 <incog>	https://www.youtube.com/watch?v=eVd2TivlVxk
+Feb 20 21:48:41 <ttys000>	Anyone familiar with google api keys being used clientside? I have a key restricted to website domain, and restricted to specific APIs, but this key is still displayed publicly in the page source. How do I prevent an attacker from using the key on their local machine for mass lookup queries, they could spoof the domain via host file, and load whatever javascript they want on their fake version of my website.
+Feb 20 21:52:04 <rocks>	If the key is for doing lookups, you can't prevent people using it to do lookups
+Feb 20 21:54:55 *	rocks assumes this is some "serverless" bs
+Feb 20 22:13:29 <ttys000>	no, just your typical client side google api implementation. e.g. google places auto complete address field. start typing a few characters and it suggests what address it could be.
+Feb 20 22:51:35 <Poeticode>	you can lock down your API key to whitelist referrers / ips, but in general it's best to use their server-side libraries and feed the results to the client.
+Feb 20 23:56:47 <uf>	i have like 5~10 servers spread out geographically. i want to centralize logging for them, preferably with some useful alerts or something. any tips where to begin? it's a mixture of proxmox, debian, ubuntu, and freenas
+Feb 20 23:57:36 <uf>	ideally i'd like to also make some useful grafana interface for some statistics, but i really don't like the way prometheus exporters work when they're open-for-all and bs like that
+Feb 20 23:58:17 <uf>	ps it has to be a self-hosted solution, no third party services
+Feb 20 23:58:51 <rocks>	Have you tried asking in a relevant channel?
+Feb 20 23:59:07 <uf>	i thought this is one :|
+Feb 20 23:59:44 <rocks>	You could try one of those websites where people in developing countries undercut each other to do tech work
+Feb 21 00:00:24 <uf>	uh
+Feb 21 00:01:19 <rocks>	unless you already work for one of those and that's why you're asking how to do it
+Feb 21 00:14:11 <uf>	are you this arrogant in real life as well or just behind a keyboard?
+Feb 21 00:15:50 <rocks>	This is my sock account with which I troll people asking for professional services in IRC channels they picked at random
+Feb 21 00:15:56 <rocks>	I'm quite nice irl
+**** BEGIN LOGGING AT Wed Feb 21 00:53:37 2024
+
+Feb 21 00:53:37 *	Now talking on #security
+Feb 21 00:53:37 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 21 00:53:37 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Feb 21 04:56:21 <hays>	im running services on a public server with docker, have firewall blocking ports, and using nginx as reverse proxy with http basic auth... any structural issues with that?
+Feb 21 05:00:59 <hays>	each one with their own subdomain
+Feb 21 05:25:54 <ajak>	bind docker to your local interfaces
+Feb 21 05:27:43 <ajak>	http basic authentication can be ok but it has some problems: https://security.stackexchange.com/questions/988/is-basic-auth-secure-if-done-over-https
+Feb 21 08:10:55 <user1__>	imagine a tool that just scans the Target for CVE's I wonder how many lines of source code that would take
+Feb 21 08:11:50 <user1__>	and with the updates and stuff : o
+Feb 21 08:15:04 <user1__>	I mean there are many but they're usually small and really specific about the threat model
+Feb 21 08:22:55 <Affliction>	Doing it generally, for any possible input on any possible program involves solving the halting problem.
+Feb 21 08:54:21 <user1__>	Afflictioin for the halting problem to occur there has to be an infinite number of CVE's so that the scanner scanns for ever or at least that's what I think
+Feb 21 09:06:08 <user1__>	Affliction
+Feb 21 09:08:42 <user1__>	or the testers have to find new cve really fast like lightning fast like 1 new cve per minute
+Feb 21 10:02:56 <calmclam>	it's greased lightnin'!
+**** BEGIN LOGGING AT Wed Feb 21 10:31:33 2024
+
+Feb 21 10:31:33 *	Now talking on #security
+Feb 21 10:31:33 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 21 10:31:33 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Wed Feb 21 10:38:41 2024
+
+Feb 21 10:38:40 *	Now talking on #security
+Feb 21 10:38:40 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 21 10:38:40 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Feb 21 16:23:03 <likogan>	user1__: https://nmap.org/nsedoc/scripts/vulners.html
+Feb 21 16:23:27 <likogan>	an nmap script that scans for known vulnerabilities on application ports
+Feb 21 16:23:48 <likogan>	It's usually 99% false positives, but it's cool to think about
+Feb 21 16:24:56 <BlueyHealer>	Wouldn't that be very notieable for the victim?
+Feb 21 16:28:24 <binaryhermit>	not necessarily given the internet background radiation
+Feb 21 16:31:16 <likogan>	BlueyHealer: from my understanding it would look like a normal nmap scan
+Feb 21 16:31:53 <BlueyHealer>	Are nmap scans common enough to not be noticeable?
+Feb 21 16:32:02 <BlueyHealer>	(sorry for stupid question)
+Feb 21 16:32:09 <likogan>	Nmap scans are very loud, but they happen all the time
+Feb 21 16:32:43 <likogan>	It's noticeable, but it's very unlikely someone will care unless it's a private IP (like 192.168.1.17)
+Feb 21 16:33:16 <BlueyHealer>	ah okay
+**** BEGIN LOGGING AT Wed Feb 21 16:46:59 2024
+
+Feb 21 16:46:59 *	Now talking on #security
+Feb 21 16:46:59 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 21 16:46:59 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Feb 21 17:14:07 <technonerd>	https://security.apple.com/blog/imessage-pq3/
+Feb 21 17:16:03 <calmclam>	.t
+Feb 21 17:16:04 <EmmyNoether>	Blog - iMessage with PQ3: The new state of the art in quantum-secure messaging at scale - Apple Security Research
+Feb 21 17:43:10 <zato>	https://www.youtube.com/watch?v=Vkf-d7CZscw
+Feb 21 17:43:33 <zato>	Ennio Morricone-Allonsanfan       very unlikely
+**** BEGIN LOGGING AT Wed Feb 21 20:38:01 2024
+
+Feb 21 20:38:01 *	Now talking on #security
+Feb 21 20:38:01 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 21 20:38:01 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Wed Feb 21 23:19:26 2024
+
+Feb 21 23:19:26 *	Now talking on #security
+Feb 21 23:19:26 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 21 23:19:26 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** ENDING LOGGING AT Wed Feb 21 23:20:04 2024
+
+**** BEGIN LOGGING AT Wed Feb 21 23:21:17 2024
+
+Feb 21 23:21:17 *	Now talking on #security
+Feb 21 23:21:17 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 21 23:21:17 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** ENDING LOGGING AT Wed Feb 21 23:50:23 2024
+
+**** BEGIN LOGGING AT Wed Feb 21 23:50:23 2024
+
+**** ENDING LOGGING AT Wed Feb 21 23:52:21 2024
+
+**** BEGIN LOGGING AT Wed Feb 21 23:52:21 2024
+
+**** ENDING LOGGING AT Wed Feb 21 23:53:41 2024
+
+**** BEGIN LOGGING AT Wed Feb 21 23:53:41 2024
+
+**** ENDING LOGGING AT Wed Feb 21 23:57:59 2024
+
+**** BEGIN LOGGING AT Wed Feb 21 23:57:59 2024
+
+Feb 22 06:41:00 <incog>	💩
+Feb 22 08:44:09 *	calmclam gasps
+Feb 22 09:09:50 <incog>	snails have an anus above their heads, they shit on their own heads
+Feb 22 09:19:02 <khaaaaaaaaan>	Incog you're looking at it the wrong way: Snails manufacture their own hats
+Feb 22 09:52:34 *	calmclam gasps
+**** ENDING LOGGING AT Thu Feb 22 13:52:24 2024
+
+**** BEGIN LOGGING AT Thu Feb 22 13:55:48 2024
+
+Feb 22 13:55:47 *	Now talking on #security
+Feb 22 13:55:47 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 22 13:55:47 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Thu Feb 22 13:57:11 2024
+
+Feb 22 13:57:11 *	Now talking on #security
+Feb 22 13:57:11 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 22 13:57:11 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Feb 22 15:41:45 <godSend23>	hey all
+**** ENDING LOGGING AT Thu Feb 22 17:51:49 2024
+
+**** BEGIN LOGGING AT Thu Feb 22 18:35:17 2024
+
+Feb 22 18:35:17 *	Now talking on #security
+Feb 22 18:35:17 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 22 18:35:17 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Thu Feb 22 20:35:46 2024
+
+Feb 22 20:35:46 *	Now talking on #security
+Feb 22 20:35:46 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 22 20:35:46 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Thu Feb 22 20:47:44 2024
+
+Feb 22 20:47:43 *	Now talking on #security
+Feb 22 20:47:43 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 22 20:47:43 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Thu Feb 22 20:58:51 2024
+
+Feb 22 20:58:50 *	Now talking on #security
+Feb 22 20:58:50 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 22 20:58:50 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Thu Feb 22 21:13:03 2024
+
+Feb 22 21:13:03 *	Now talking on #security
+Feb 22 21:13:03 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 22 21:13:03 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Thu Feb 22 21:16:06 2024
+
+Feb 22 21:16:06 *	Now talking on #security
+Feb 22 21:16:06 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 22 21:16:06 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Feb 23 03:05:40 <godSend23>	hey all
+Feb 23 03:25:07 <nshire>	anyone else get really curious when they see weird requests in their webserver logs? I see things like "/__1975.php" and just wonder what could possibly be hosted on that php file
+Feb 23 03:27:20 <nshire>	well this is strange, one request, "4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbRyFTLRNyDmT1a1boZV", is the EXACT same string that was posted in this reddit post??? https://www.reddit.com/r/Windows10/comments/mdjsoa/windows_10_copying_gibberish/
+Feb 23 03:28:43 <thumbs>	nshire: I recommend not bothering with every single guess the attackers make.
+Feb 23 03:29:00 <thumbs>	On the other hand, do secure and update the applications you are hosting.
+Feb 23 03:29:45 <nshire>	I mean most of the requests at least make sense. `/admin/` seems like a logical place to look if you're trying to breach someone
+Feb 23 03:30:32 <thumbs>	nshire: Don't try to make sense out of the scripts they run, honestly.
+Feb 23 03:31:15 <nshire>	too late I already made sense of it
+Feb 23 03:31:22 <nshire>	it's someone's monero deposit address
+Feb 23 03:31:52 <nshire>	trying to get some fail2ban scripts to auto ban the weird requests
+Feb 23 03:32:15 <nshire>	the shellcode ones seem to be hard to escape
+Feb 23 03:32:43 <thumbs>	Weird thing to focus on, but it's your time, go ahead.
+Feb 23 12:42:49 <calmclam>	Requests for weird php files makes me think they're looking for a webshell
+**** BEGIN LOGGING AT Fri Feb 23 14:47:00 2024
+
+Feb 23 14:47:00 *	Now talking on #security
+Feb 23 14:47:00 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 23 14:47:00 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Fri Feb 23 14:52:01 2024
+
+Feb 23 14:52:01 *	Now talking on #security
+Feb 23 14:52:01 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 23 14:52:01 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Feb 23 16:47:58 <maccampus>	Should you give copies of your ID, Bank & driving papers to companies who ask them but has no reason for needing them ?
+Feb 23 16:48:17 <gnrp>	maccampus: Yes, you should always hand out all your data to every company that asks you for it
+Feb 23 16:48:32 <gnrp>	maccampus: You should also send me your credit card data, including CVV, via PM
+Feb 23 16:49:16 <kkawg>	encrypted with base64?
+Feb 23 16:49:43 <gnrp>	kkawg: Yes, please. You can also give to me in cleartext, though. I am trustworthy.
+Feb 23 16:50:05 <gnrp>	maccampus: What I want to say... please elaborate ;)
+Feb 23 16:51:17 <maccampus>	Well i send thel a picture of my banc card with the number covered, i did the same with my ID covering all; security codes & numbers. On my driving license i couldn'd find much to cover. I also lowered the quality of the image to a point where they become worthless
+Feb 23 16:52:07 <maccampus>	but, this is a form of social engineering they do , right ?
+Feb 23 16:52:23 <kkawg>	it also somewhat depends on the law in your country
+Feb 23 16:52:30 <kkawg>	yea you can check maybe trustpilot
+Feb 23 16:52:52 <gnrp>	maccampus: Why are you doing this? I mean, the qeustion is, what company does want this, and why? I'd just refuse it, to begin with
+Feb 23 16:53:06 <JakLareo>	You said that they have no reason for needing them, so why are you giving them anything in the first place?
+Feb 23 16:53:22 <gnrp>	but as kkawg says, some legislations require it. Some European countries e.g. require *always* a scan of the ID when you want to stay somewhere overnight. When you want to rent a car, well...
+Feb 23 16:54:11 <BlueyHealer>	I usually don't do so, if it's not unavoidable.
+Feb 23 16:54:25 <BlueyHealer>	That's why if it's a server, you keep a backup of your stuff at home.
+Feb 23 16:54:28 <maccampus>	ok , they seem to be trusted on that list, but that doesn't make them secure
+Feb 23 16:55:12 <gnrp>	maccampus: What is the company? Or what services are they offering, and what legislation?
+Feb 23 16:56:36 <maccampus>	And as the servers of the garbage disposal company of the department of Limburg was hacked, the hacker stole all clients personal information including Soicial govermental numbers & banking  & they asked money to not put the data online
+Feb 23 16:58:03 <maccampus>	Well they offer jobs & if i get a job through them they would need some of the data anyway, but as log as i am only listed, why should they need it ?
+Feb 23 16:58:56 <maccampus>	luckely atleast my driving licence is pre digital
+Feb 23 17:00:22 <maccampus>	you know they only need 1 gnrp in their service to steal all the personal data
+Feb 23 17:00:31 <MadCamel>	so this place leaked everyones data and they want more data? I'd tell them to go stick their head in a bucket.
+Feb 23 17:02:07 <maccampus>	yeah, but even the Police servers leak there data over here
+Feb 23 18:53:54 <eson123>	there is something i don't understand, some people said this code is vulnerable to SSTI https://hatebin.com/issqjfqkjo, but it's being passed through render_template so it's safe from that iirc, so what do people mean ?
+Feb 23 18:53:57 <eson123>	or it's a troll or something ?
+Feb 23 19:00:22 <rocks>	Does render_template sanitize the variables which are passed to it, which in this case comes directly from the request?
+Feb 23 19:16:48 <jabberwock>	https://python.plainenglish.io/the-best-security-practice-of-your-flask-application-api-691a21e37c27
+Feb 23 19:16:49 <jabberwock>	.t
+Feb 23 19:16:52 <EmmyNoether>	The Best Security Practice of your Flask Application/API | by chloewu2037 | Python in Plain English
+Feb 23 20:24:40 <Kaliroot>	She: nice
+Feb 23 20:33:09 <Kaliroot>	Hi
+Feb 23 20:35:53 <aog>	is there a way (a program maybe) that can verify that all mods installed in the kernel (lsmod) are legit and not a rootkit of some sort?
+Feb 23 20:39:55 <abraxas>	I think rkhunter looks for kernel module rootkits as part of its scan
+Feb 23 20:41:28 <Kaliroot>	Should have mod it your self a rootkit is so power
+Feb 23 20:43:55 <Kaliroot>	Please has there being any latest record of rce against port 53
+Feb 23 20:46:56 <rocks>	Only against people who IRC as root
+Feb 23 20:47:39 <Kaliroot>	What?
+Feb 23 20:47:57 <Kaliroot>	I don't understand
+Feb 23 20:50:49 <Kaliroot>	Root is good for everything you become all powerfull
+Feb 23 21:18:33 <Kaliroot>	Please in name of opensource tools made by nsa
+**** BEGIN LOGGING AT Fri Feb 23 21:29:50 2024
+
+Feb 23 21:29:49 *	Now talking on #security
+Feb 23 21:29:49 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 23 21:29:49 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Feb 23 21:29:50 <thumbs>	Cripes, be patient.
+Feb 23 21:30:01 <rocks>	Soz, too busy googling for things that I need to find out based on some search terms
+Feb 23 21:30:22 <danieldg>	if you want instant responses, ask an AI
+Feb 23 21:31:13 *	calmclam picks up mouse
+Feb 23 21:31:15 <calmclam>	hello computer
+Feb 23 21:31:28 <Kalilinux>	And ai will answer such question well
+Feb 23 21:31:28 *	rocks hands the handset to Dog
+Feb 23 21:31:42 <danieldg>	I never said they'd be good answers, but they will be instant
+Feb 23 21:32:13 <rocks>	AI will make up some bullshit but you may find it reassuring to get instant answers
+Feb 23 21:32:27 <calmclam>	i think cia tools are more open source than nsa tools
+Feb 23 21:32:31 <Kalilinux>	They are use when you need real time info
+Feb 23 21:33:18 <Kalilinux>	You don't need
+Feb 23 21:34:08 <Kalilinux>	Please example of cia tools you know
+Feb 23 21:38:05 <Kaliroot>	Am finaly back
+Feb 23 21:39:28 <Kaliroot>	Cia and nsa tools
+Feb 23 21:40:09 <Kaliroot>	NickServ IDENTIFY Kaliroot slokli.llolal
+Feb 23 21:41:55 <velix>	Kaliroot: why not BSI ?
+Feb 23 21:42:08 <velix>	The German BSI is so good, nobody knwos it.
+Feb 23 21:42:27 <velix>	oh wait, it's the BND
+Feb 23 21:42:51 <Kaliroot>	Good? Please who are they
+Feb 23 21:43:02 <danieldg>	the best spies are the ones you don't know exist
+Feb 23 21:43:21 <danieldg>	if they've even hidden their name from you, they're clearly good
+Feb 23 21:43:22 <Kaliroot>	True
+Feb 23 21:43:34 <Kaliroot>	Yep
+Feb 23 21:44:21 <calmclam>	I thought they had to go out of business after a failed migration to SAP
+Feb 23 21:44:57 <dvb>	rofl
+Feb 23 21:45:37 <Kaliroot>	I just need there open source tool
+Feb 23 21:45:56 <dvb>	i need a pizza
+Feb 23 21:46:09 <rocks>	That will be 25000 Bitcoins please
+Feb 23 21:46:26 <Kaliroot>	Hmmh
+Feb 23 21:46:34 <calmclam>	damn I left my wallet in my other laptop
+Feb 23 21:46:51 <Kaliroot>	Oh
+Feb 23 21:49:11 <velix>	Ethan Hunt and Chuck Norris don't need a wallet. They can remember the complete blockchain
+Feb 23 22:48:44 <gnrp>	ok, I have a question about blockchain currencies so I can finally become a cryptobro: What is the whole point of the proof-of-something? In principle, all a blockchain needs is a public entry that two parties agree on a transaction. Why is there a proof of something involved, why is it not cryptographic operations that are easy enough to be carried out by the wallet software?
+Feb 23 22:49:29 <wasamasa>	have you read the bitcoin paper?
+Feb 23 22:50:03 <gnrp>	wasamasa: I've roughly gone through it, yeah
+Feb 23 22:50:42 <wasamasa>	it's been a while since I've read it myself, but it's surprisingly simple all things considered
+Feb 23 22:52:01 <gnrp>	yeah, it'S like nine pages or so
+Feb 23 22:54:03 <wasamasa>	bitcoin seeks to eliminate the idea of a trusted entity that can be relied on to verify that a transaction indeed happened, so instead you have a pool of entities that do not trust each other (how cryptopunk/libertarian) and you verify that it would take an overwhelming amount of CPU power to fake the transaction
+Feb 23 22:54:17 <wasamasa>	double-spending specifically is mentioned as motivation for doing that verification
+Feb 23 22:54:19 <gnrp>	well, I guess I have to dig deeper into it. The main problem that shall be solved with the proof-of-xxx is to prevent double spending
+Feb 23 22:54:22 <gnrp>	yeah
+Feb 23 22:54:47 <wasamasa>	otherwise it would be possible for people to spend a bitcoin more than once, thereby subverting its integrity
+Feb 23 22:54:50 <gnrp>	however, as far as I understood, a transaction is just two parties agreeing (signing) a transaction and making that public
+Feb 23 22:55:22 <wasamasa>	yes, but what prevents someone else to make another transaction and pretending that's the canonical one?
+Feb 23 22:55:37 <wasamasa>	you need some way to ensure that does not happen, so you have this blockchain hashing thing
+Feb 23 22:55:44 <gnrp>	there would be no proper history of that money having been generated and spent before
+Feb 23 22:56:01 <gnrp>	the blockchain ensures that all former transactions are verifiably in the current state
+Feb 23 22:56:06 <wasamasa>	but only because you spend time and effort generating a chain of hashes
+Feb 23 22:57:00 <gnrp>	I mean, I get why in bitcoin it is required. I think. I just don't get why one couldn't make a blockchain that only consists of a fixed amount of moneys and then there would be a "backtrace" of that money values spent and where it flows, with the blockchain agreeing on the current state
+Feb 23 23:03:48 <gnrp>	so as far as I understood, the proof-of-xxx works as a majority vote. It means that the majority of the participants agree that something happened, by having invested certain resources and building up on the previous blocks. But why is there a majority vote required? Wouldn't a blockchain as "just" a public register of transactions also fulfil its purpose?
+Feb 23 23:06:06 <gnrp>	my understanding is that the proof-of-xxx's purpose is to not have to centrally issue a currency.
+Feb 23 23:08:52 <gnrp>	hm, ok. So slowly I start to get it. The main problem seems to be the bootstrapping. If one would have one universally trusted state, it would be easy. But since this doesn't work, and there is a constant "onboarding" happening both of money and wallets, there must be a majority vote (proof-of-xxx) against malicious influences
+Feb 23 23:14:18 <mk-fg>	Yeah, problem is how to get multiple parties agree on same state, without any kind of trusted party, which afaiu is continuous majority vote with some kind of stakes (work, space, etc)
+Feb 23 23:16:51 <wasamasa>	there are some alternative designs that sacrifice this "trust no entity on the network" concept
+Feb 23 23:23:19 <rocks>	The bootstrapping is easy, you just create a new block which has no parent and then start chaining more blocks to it. There's a reason that about 5% of the Bitcoin blocks ended up belonging to the original authors. Anyone can start their own blockchain, and many shitcoins have
+Feb 23 23:24:20 <gnrp>	my impression is anyway that at the current state of bitcoin and many crypto currencies, a central authority to issue the coins to begin with is welcome or even assumed by the users. All that bs with initial coin offerings
+Feb 23 23:24:34 <rocks>	Keyword: premine
+Feb 23 23:24:50 <gnrp>	rocks: Well, yes. Ok, bootstrapping isn't the problem in that sense. The onboarding is.
+Feb 23 23:25:48 <rocks>	Bitcoin was the product of a small but increasing number of cryptoanarchists who were all in on it. It's not like it really got anywhere for a number of years after its inception except by word of mouth
+Feb 23 23:26:30 <rocks>	and faith of a bunch of what weren't yet called HODLers that this was somehow the future
+Feb 23 23:29:26 <rocks>	It still serves no purpose except crime and speculation, so it has also failed at that initial goal as well
+Feb 23 23:30:14 <ttys000_>	I have captured a signal from my car remote using an RTL SDR. and rx_tools. I open this signal in Audacity and look at it, it does not look like ASK, so maybe it is PSK or FSK or some other thing like BPSK, QPSK, DQPSK, etc. is there some tool I can use to detect what type of keying is being used?
+Feb 23 23:31:13 <rocks>	Yuo'd have to be Chuck Norris to be able to spot anything except AM in a time-domain representation of a signal
+Feb 23 23:32:02 <ttys000_>	are you saying i need to do a FFT on the signal first?
+Feb 23 23:32:31 <mk-fg>	Afaik most people who object to "serves no purpose" with "but I use btc to pay for ..." tend to actually use exchanges for that, where "btc" stands for just a shared exchange rate number, not any kind of distributed system
+Feb 23 23:32:59 <rocks>	That would be a start. There must be radio tools you can feed a baseband signal into and try decoding it as various modulation schemes to see if something comes out that looks viable
+Feb 23 23:34:28 <rocks>	The problem is you may need the raw I and Q signals. I don't know if you can get that from RTL-SDR, or if you've effectively already demodulated it by receiving it with a demodulation scheme  specified at the time of reception
+Feb 23 23:37:00 <ttys000_>	yeah, i guess this is possible with rx_tools as well, the rx_sdr command. "emits raw I/Q data"
+Feb 23 23:37:03 <ttys000_>	https://github.com/rxseger/rx_tools?tab=readme-ov-file
+Feb 23 23:37:09 <ttys000_>	but what do i view that data with?
+Feb 23 23:37:43 <ttys000_>	it also says it can do  FFT logger. again, not sure how to view the output graphically.
+Feb 23 23:39:32 <ttys000_>	oh, neat, just found https://github.com/jopohl/urh
+Feb 23 23:39:34 <ttys000_>	thanks rocks
+Feb 23 23:45:58 <ttys000_>	cool. it seems urh automatically detected it as FSK.
+Feb 23 23:47:31 <rocks>	Now you just get to deal with the rolling code stuff
+Feb 23 23:51:17 <ttys000_>	From what i've read this particular fob has a sequential rolling code, so it seemed like a good starting place for learning.
+Feb 24 02:35:11 <on0bi>	i'm home alone hehe 😈
+Feb 24 03:15:36 <Stopher>	Good evening, everyone.  It has been about ... oh ... 26 years since I've been on IRC.  This is an awesome blast from the past!  I am a Cyber Security professional, now.  Did a /list and picked this channel as my first reunion experience.  :D
+**** BEGIN LOGGING AT Sat Feb 24 12:02:42 2024
+
+Feb 24 12:02:41 *	Now talking on #security
+Feb 24 12:02:41 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 24 12:02:41 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Feb 24 14:50:28 <antetokounmpo>	hi
+Feb 24 14:50:31 <antetokounmpo>	hello
+Feb 24 14:52:47 <antetokounmpo>	anyone here to exchange ideas
+Feb 24 14:53:30 <wasamasa>	I challenge you to start a discussion by putting such an idea into the channel
+Feb 24 14:53:45 <wasamasa>	otherwise you'll have to lurk
+Feb 24 14:55:28 *	xFCFFDFFFFEFFFAF opens idea receiver socket ... done
+Feb 24 14:58:08 <antetokounmpo>	hacking an external network with its own security protocols and encryption of network protocols requires good study and preparation because when security measures begin to be faced it is necessary to know how to analyze code in real time, know how to program in the language that can hack that code be a simple xml html5 php python extension file
+Feb 24 14:58:41 <wasamasa>	that's very close to gibberish
+Feb 24 14:59:22 <wasamasa>	wtf does even "analyze code in real time" even mean
+Feb 24 14:59:38 <wasamasa>	you're not the chosen one making sense of the matrix and punching agent smith
+Feb 24 15:00:45 <antetokounmpo>	wasamasa what do you want say
+Feb 24 15:01:06 <wasamasa>	I'm allergic to bullshit, that's all
+Feb 24 15:02:08 <antetokounmpo>	ok
+Feb 24 15:11:16 *	calmclam dereferences xFCFFDFFFFEFFFAF 
+Feb 24 15:11:52 <xorAxAx>	looks negative
+Feb 24 15:12:19 <calmclam>	just a little bit
+Feb 24 15:18:11 <xorAxAx>	actually, its a string after all
+Feb 24 15:25:35 <antetokounmpo>	calmclam i send mensage for you
+Feb 24 15:32:08 <xFCFFDFFFFEFFFAF>	how much i should pay to view calmclam clamav signatures?
+Feb 24 15:52:27 <Kaliroot>	What are product of locks you can recommend for high security (unpickable locks)
+Feb 24 15:58:56 <xx>	no such thing
+Feb 24 16:04:10 <TheAppleFox>	Kaliroot unpickable? simple, fill the keyhole with cement on any cheap lock
+Feb 24 16:07:04 <Kaliroot>	TheAppleFox: the keyway will be blocked and my key won't even open the lock
+Feb 24 16:07:20 <TheAppleFox>	yes, but it will be unpickable LOL
+Feb 24 16:08:28 <Kaliroot>	Okay locks with security pin (anti-pick pins)
+**** BEGIN LOGGING AT Sat Feb 24 16:29:06 2024
+
+Feb 24 16:29:06 *	Now talking on #security
+Feb 24 16:29:06 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 24 16:29:06 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Sat Feb 24 16:32:03 2024
+
+Feb 24 16:32:03 *	Now talking on #security
+Feb 24 16:32:03 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 24 16:32:03 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Feb 24 16:40:21 <busch>	Does somebody know if the common ransomware (by lockbit, royal, blacksuit, ..) attacks are human operated or automated attacks?
+Feb 24 16:40:39 <busch>	(or both maybe)
+Feb 24 16:45:05 <aesthetics>	Hello, i've got some kiddie trying to make my webserver download some binaries; any hint about a "good tutorial" to try to "reverse" it ?
+Feb 24 16:45:21 <aesthetics>	the binary, to understand what it's supposed to do
+Feb 24 16:46:21 <Kaliroot>	How can i bypass this security feature add by my isp in there cellular network. When i use trace route command i don't see the routers' ip (i see "* * * *"), but i do see the  ip/hostname of routers that are close to my destination and the routes ip that i see is not for my isp. Please can it be bypassed or what else can cause the problem.
+Feb 24 16:47:56 <Kaliroot>	You have the binary right?
+Feb 24 16:49:05 <aesthetics>	Kaliroot: yes
+Feb 24 16:50:43 <Kaliroot>	Use a reserve engineering tool to extract the source code and read
+Feb 24 16:51:46 <aesthetics>	yup, but i guess some RE tools are better than others ? ;p
+Feb 24 16:51:58 <aesthetics>	noob friendly, i mean
+Feb 24 16:54:33 <tpr>	ghidra?
+Feb 24 16:55:34 <aesthetics>	oh yeah, i remember that name. Ok, thanks i'll take a look
+Feb 24 16:56:04 <calmclam>	sounds like they were successful in making you download it hehe
+Feb 24 16:56:44 <aesthetics>	:)
+Feb 24 16:57:05 <aesthetics>	now let's try to not execute it
+Feb 24 16:58:14 <Kaliroot>	You execute the bin in a vm
+Feb 24 17:01:10 <aesthetics>	yea well, maybe later ;P
+Feb 24 17:01:54 <Kaliroot>	How can i bypass this security feature add by my isp in there cellular network. When i use trace route command i don't see the routers' ip (i see "* * * *"), but i do see the  ip/hostname of routers that are close to my destination and the routes ip that i see is not for my isp. Please can it be bypassed or what else can cause the problem.
+Feb 24 17:05:08 <calmclam>	Maybe if you call them and keep asking them over and over they will become annoyed and just tell you
+Feb 24 17:06:01 <Kaliroot>	Maybe
+Feb 24 17:07:09 <Kaliroot>	I have never seen such a security or whatever before
+Feb 24 17:08:35 <KURWAMAC>	Kaliroot: that is not a security feature
+Feb 24 17:09:18 <KURWAMAC>	its something to do with the nodes not responding to UDP probes
+Feb 24 17:09:35 <KURWAMAC>	or whatever the default protocol is
+Feb 24 17:09:36 <KURWAMAC>	https://askubuntu.com/questions/1113815/traceroute-is-not-showing-ips-instead-it-showing-stars
+**** BEGIN LOGGING AT Sat Feb 24 17:28:08 2024
+
+Feb 24 17:28:07 *	Now talking on #security
+Feb 24 17:28:07 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 24 17:28:07 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Feb 24 19:04:07 <Kaliroot>	Which tool do you think is better  for dir enumeration (the one am using can not differentiate if a dir exist or not, the WAF always display a web page which confuse it into believing the page or dir exist) any tool that can allow me to set conditions  like, {if page not found is present in webpage given as a respond- that means the page of dir does}. I know this problem of automation .
+Feb 24 19:11:18 <Kaliroot>	�[18:43:09] -all-
+Feb 24 19:12:09 <Kaliroot>	�
+**** ENDING LOGGING AT Sat Feb 24 19:15:17 2024
+
+**** BEGIN LOGGING AT Sun Feb 25 02:09:51 2024
+
+Feb 25 02:09:50 *	Now talking on #security
+Feb 25 02:09:50 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 25 02:09:50 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Feb 25 02:45:04 <ghostbusters2>	does anyone actually understand how NFS permissions are supposed to work
+Feb 25 02:45:28 <ghostbusters2>	does the threat model not include "attacker has root on his own box" ?
+Feb 25 02:45:36 <danieldg>	not usually, no
+Feb 25 02:45:47 <ghostbusters2>	lmao
+Feb 25 02:46:21 <danieldg>	originally it was meant for a LAN where all systems were centrally administered, with common UIDs (say, via LDAP or such)
+Feb 25 02:46:35 <danieldg>	so no, you did not get root
+Feb 25 02:47:50 <ghostbusters2>	understandable, but not ideal in 2024
+Feb 25 02:48:32 <danieldg>	it's still reasonable in 2024 if your NFS clients are things like web servers
+Feb 25 02:49:07 <danieldg>	but no, not for BYOD or "I need root on my box to run curl | sudo sh, like everyone cool does"
+Feb 25 03:11:22 <ghostbusters2>	because no attacker could ever get root on a web server lol
+Feb 25 06:53:07 <kurahaupo>	ghostbusters2: if you have nfs under web servers, you'd still want to remap uid 0
+Feb 25 06:55:40 <kurahaupo>	But it "doesn't matter" in the sense that the web servers are interchangeable anyway. An attacker doesn't gain anything by being able to compromise  a second one.
+Feb 25 07:19:14 <truthr>	wheres my hot goth hacker chick
+Feb 25 08:51:04 <lolok>	you didnt invest in gothacoin early enuf now its like $20,000 just to have one be in the same room as you
+Feb 25 10:09:58 <eson123>	so i have been doing some CTF and boxes so far but i didn't learn much of some common security terms and my friends have been speaking to each other lately on terms such as "attack vectors" and "Attack surface", even though i completed without knowing what those words mean, i feel like i should for the sake of blending in. But based on online definitions, i am a bit confused at the difference between the two so maybe i will give an example and someone
+Feb 25 10:09:58 <eson123>	please tell me if i am correct or not, so say a route of a website has a parameter ?post=2 and another route of it i can post a comment as <script>alert(1)</script> and it actually runs the script, so that's two attack vectors ? And if i scan an IP and it shows port 80 and 8000, that's two attack surfaces ? or maybe a website with multiple domains or sth
+Feb 25 10:25:05 <gnrp>	ghostbusters2: with NFS I would *always* assume that all participants are cooperative and trusted. Not only from the security point of view, but also safety. I've seen so many fuckups, especially when different kernel or even OS versions are at work...
+Feb 25 10:26:08 <gnrp>	eson123: Do you know a bit about geometry? Visualizing what surface and vector means really helps understanding
+Feb 25 10:27:17 <gnrp>	eson123: Imagine the surface really as the surface some service or whatever provides. The attack surface is then the area where it can be attacked potentially
+Feb 25 10:27:34 <gnrp>	an attack vector is one path, one vector to reach that surface
+Feb 25 10:28:30 <gnrp>	eson123: Imagine a castle. You have two gates, thick walls, maybe a bridge or a water moat. This is the attack surface. The places where attackers could potentially come in
+Feb 25 10:28:50 <eson123>	oh so like if a machine has 4 ports, it has 4 surfaces ?
+Feb 25 10:29:08 <eson123>	i mean in term of computer, all i can think of when "potentially come in" are ports
+Feb 25 10:29:14 <eson123>	each port can run a service or sth
+Feb 25 10:29:18 <gnrp>	eson123: Now the attack vectors is *anything* that can bring you inside. Catapulting soldiers inside the castle is one vector, running at the gate another, trying to ram down the gate is one, trying to attack the walls and then getting in is one, etc.
+Feb 25 10:29:35 <gnrp>	in terms of IP, yes, you can see ports as attack surface
+Feb 25 10:29:49 <gnrp>	one doesn'T talk about surfaceS in plural though
+Feb 25 10:30:36 <gnrp>	eson123: But really anything that is exposed is an attack surface. So don't only think of IP ports, but also what runs on these ports
+Feb 25 10:31:18 <eson123>	wait hold on, say port 80 runs a website which has a sus route such as ?id=1 which *might* be vulnerable to SQLi, is that an attack vector or an attack surface ?
+Feb 25 10:32:54 <gnrp>	anything that is interpreted is attack surfaces
+Feb 25 10:33:17 <gnrp>	what you as an attacker do with it is the vector, or rather, is putting the vector into reality
+Feb 25 10:34:14 <gnrp>	you have to not try to map these terms to very specific technicalities. They're abstract terms.
+Feb 25 10:34:41 <gnrp>	the attack surface provided in this case wold e.g. be the web server running on multiple ports, the scripts which interpret some routes, the libraries that are also used in that script for interpreting
+Feb 25 10:34:44 <eson123>	ok so in term of website.com/route?id=1... that route alone is the surface and me putting weird SQLi payloads into that id is the vector ?
+Feb 25 10:35:19 <gnrp>	the vectors would be *any* way to get into the system. SQL injections are one attack vector
+Feb 25 10:37:25 <gnrp>	eson123: Do you know mathematics? Vector geometry, 3D stuff? Because there are really great analogies there
+Feb 25 10:37:47 <eson123>	ok the "surface" is already kinda clear already but why do i feel like "attack vectors" can only be  limited to the existing CVEs and CWEs that reseachers have discovered until now ?
+Feb 25 10:38:13 <eson123>	gnrp: iirc Vector is a line which points to something, it has two coordinates and a direction
+Feb 25 10:38:45 <gnrp>	eson123: Hm, not really (definition of a vector)
+Feb 25 10:39:00 <gnrp>	attack vectors are *any* potential way to get into the system
+Feb 25 10:39:21 <eson123>	oh yea that makes more sense
+Feb 25 10:39:22 <gnrp>	when there is an existing CVE, that is an obvious problem, but it is one "implementation" of an attack vector
+Feb 25 10:39:35 <gnrp>	e.g., SQL injections are one attack vector
+Feb 25 10:39:44 <gnrp>	security vulnerabilities in the webserver are an attack vector
+Feb 25 10:39:53 <gnrp>	lousy passwords and password logins via ssh are an attack vector
+Feb 25 10:40:04 <gnrp>	some other weirdnesses in the website are an attack vector
+Feb 25 10:40:25 <gnrp>	a CVE would make use of one attack vector, or implement that attack vector
+Feb 25 10:40:28 <eson123>	awh ok
+Feb 25 10:40:29 <gnrp>	but you have to see it mor eabstract
+Feb 25 10:41:09 <gnrp>	attack surface is anything that is exposed to a potential attacker. Attack vectors are probable ways to penetrate through that surface
+Feb 25 10:41:10 <eson123>	i thikn i am starting to imagine the whole picture now
+Feb 25 10:42:39 <eson123>	but if that is the case, does this make sense ? so if an IP address is one surface, that has two ports running, which means it has 2 sub-surfaces, port 80 has 5 routes so that means another 5 sub-surfaces ?
+Feb 25 10:43:10 <eson123>	honestly i don't even know if "sub-surface" is an accurate term
+Feb 25 10:43:18 <eson123>	i don't see my friends speak like that :P
+Feb 25 10:44:35 <gnrp>	as I said, one doesn't count surfaces. Again, mathematic interpretation helps. You rather talk about how big a surface is
+Feb 25 10:44:53 <gnrp>	being reachable by IP is attack surface, having open potrs is attack surface, interpreting web stuff behing is attack surface...
+Feb 25 10:46:02 <eson123>	also in term of math, which is a good analogy for the "surface" we are talking about ?
+Feb 25 10:46:15 <gnrp>	imagine you cover your floor at home with a rug. And somebody wants to step on that rug, that is the protective goal. The rug is the surface. The bigger the rug, the bigger the attack surface. A vector is any path that will bring somebody to put a foot on the rug
+Feb 25 10:46:20 <gnrp>	eson123: surface ;)
+Feb 25 10:48:05 <eson123>	Hm ok i think i get the full picture now
+Feb 25 10:48:57 <gnrp>	(note that this path can include hitting you with a wrench until you agree to let somebody step on the rug, or throwing a bomb on your house and hten coming in through the roof)
+Feb 25 10:49:04 <eson123>	so i guess interviewer of pentesting firm won't ask you things like "how many attack surfaces this host has" but maybe "what does the attack surface of this host contains" ?
+Feb 25 10:49:09 <eson123>	idk i never been to one interview :P
+Feb 25 10:49:32 <gnrp>	that question makes mor esense than the other
+Feb 25 10:49:42 <eson123>	the last one ?
+Feb 25 10:49:47 <gnrp>	yes
+Feb 25 10:49:49 <gnrp>	one owuld rather ask "What attack surfaces do you see in this and that scenario?"
+Feb 25 10:49:52 <eson123>	awh ok got it
+Feb 25 10:52:18 <eson123>	gnrp: but anyway i don't quite get the using wrench to hit me analogy, like brute forcing ?
+Feb 25 10:52:31 <eson123>	or i am actually gonna be hit with a wrench :D
+Feb 25 10:53:16 <gnrp>	eson123: Reference to https://xkcd.com/538/ ;)
+Feb 25 10:53:24 <gnrp>	probably not so relevant in a CTF context
+Feb 25 10:53:27 <gnrp>	hopefully*
+Feb 25 10:53:31 <eson123>	oh that one
+Feb 25 10:53:36 <eson123>	boiz i wonder if that actually happens in real life
+Feb 25 10:54:41 <gnrp>	in real life people might use other blunt items than wrenches
+Feb 25 10:58:14 <eson123>	lol wut
+Feb 25 11:08:00 <gnrp>	I mean, the general idea is extortion
+Feb 25 11:08:36 <gnrp>	and jailing people until they give you the password... well, that is extortion, and that's what the USA and the UK do by law
+Feb 25 11:23:52 <eson123>	gnrp: yea speaking of that, i always wonder what if they jail the wrong dude who knows nothing about the password
+**** BEGIN LOGGING AT Sun Feb 25 18:41:34 2024
+
+Feb 25 18:41:33 *	Now talking on #security
+Feb 25 18:41:33 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 25 18:41:33 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** ENDING LOGGING AT Sun Feb 25 18:41:52 2024
+
+**** BEGIN LOGGING AT Tue Feb 27 23:15:59 2024
+
+Feb 27 23:15:58 *	Now talking on #security
+Feb 27 23:15:58 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 27 23:15:58 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Wed Feb 28 02:09:40 2024
+
+Feb 28 02:09:40 *	Now talking on #security
+Feb 28 02:09:40 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 28 02:09:40 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** ENDING LOGGING AT Wed Feb 28 02:32:44 2024
+
+**** BEGIN LOGGING AT Thu Feb 29 01:02:42 2024
+
+Feb 29 01:02:42 *	Now talking on #security
+Feb 29 01:02:42 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 29 01:02:42 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Feb 29 01:13:02 *	Disconnected ()
+**** ENDING LOGGING AT Thu Feb 29 01:13:02 2024
+
+**** BEGIN LOGGING AT Thu Feb 29 01:15:36 2024
+
+Feb 29 01:15:36 *	Now talking on #security
+Feb 29 01:15:36 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 29 01:15:36 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Feb 29 01:43:38 <mats1>	hello my fellow catamites
+Feb 29 01:43:45 <mats1>	i am returned
+Feb 29 02:10:55 <calmclam>	the prophecy is fulfilled
+Feb 29 02:13:08 <mats1>	the clamster is here
+Feb 29 02:13:29 <mats1>	did you inhabit the freenode for a while or whut
+Feb 29 02:14:11 <mats1>	dun remember you being here before i was disappeared by the +o van
+Feb 29 02:14:53 <calmclam>	yes
+Feb 29 02:15:18 *	ajak feels dirty
+Feb 29 02:20:15 *	calmclam peeks out the curtains looking for vans
+Feb 29 02:22:09 <mats1>	ajak: don't worry i have many contributions to offer
+Feb 29 02:22:20 <mats1>	i am the same qt as b4
+Feb 29 02:26:12 <calmclam>	what do you like to talk about mats1
+Feb 29 02:26:39 <mats1>	calmclam: tell me about your relationship with your parents
+Feb 29 02:27:08 <calmclam>	not good
+Feb 29 02:27:09 <calmclam>	u?
+Feb 29 02:28:51 <mats1>	i call your mom every day
+Feb 29 02:28:59 <calmclam>	oh, what do you talk about
+Feb 29 02:29:06 <mats1>	u
+Feb 29 02:29:43 <calmclam>	I see. That is a very interesting subject, I can't blame you.
+Feb 29 02:31:22 <calmclam>	It's also quite an impressive feat of technology considering my parents are dead.
+Feb 29 02:31:50 <mats1>	no technology, all black magic
+Feb 29 02:32:19 <calmclam>	That's a very inclusive form of magic.
+Feb 29 02:36:03 <mats1>	anyway, hope there's a titlebot, link dump inc
+Feb 29 02:37:03 <mats1>	p sick 365/azure ir course, 5% discount code MEDIUM-FRIENDS https://academy.invictus-ir.com/advanced-incident-response-in-the-microsoft-cloud
+Feb 29 02:37:51 <calmclam>	heh, microsoft cloud should have a lot of experience with incident response
+Feb 29 02:37:56 <mats1>	good application of blue team skills, APT exfils memory dumps and extracts privkey https://www.youtube.com/watch?app=desktop&v=ggTDxrtxWyM , related msft blag post https://msrc.microsoft.com/blog/2023/09/results-of-major-technical-investigations-for-storm-0558-key-acquisition
+Feb 29 02:38:33 <mats1>	relatedly, extensive windbg series with lots of samples/case studies https://github.com/DebugPrivilege/InsightEngineering/tree/main
+Feb 29 02:39:05 <mats1>	completely unrelatedly, rigol-style software unlocking of flir thermal cam https://hackaday.com/2013/11/04/manufacturer-crippled-flir-e4-thermal-camera-hacked-to-perform-as-high-end-model
+Feb 29 02:39:28 <mats1>	structured diff thing, pretty neat https://difftastic.wilfred.me.uk
+Feb 29 02:39:59 <mats1>	latest post in big tim's 'writing debugger from scratch' series https://www.timdbg.com/posts/writing-a-debugger-from-scratch-part-7
+Feb 29 02:40:54 <mats1>	exploits continuing to be big biz, and geopolitical weapon against all rivals https://apnews.com/article/poland-government-pegasus-spyware-tusk-duda-78420fc7099401926d28b5be98669192
+Feb 29 02:40:59 <calmclam>	i wonder if the different irc networks are kind of like geographic areas where people pick up a certain kind of slang/dialect if they hang out in one for a long time
+Feb 29 02:41:50 <mats1>	in osint crap, old but reasonably useful searchable mega-combolist breach db https://search.0t.rocks
+Feb 29 02:42:43 <mats1>	similarly old dbs-of-dbs with search, https://www.predictasearch.com
+Feb 29 02:43:10 <mats1>	hard lessons on the perils of nick reuse for interesting folks, https://whatsmyname.app
+Feb 29 02:44:16 <mats1>	ajak: dun send me back to the gulag
+Feb 29 02:47:30 <calmclam>	:O
+Feb 29 02:57:42 <mats1>	they only serve boiled lobster there
+Feb 29 03:00:27 <calmclam>	they must have known you can do butter
+Feb 29 03:12:01 <mats1>	look at us gals memeing it up
+Feb 29 03:12:05 <mats1>	like old times
+Feb 29 04:21:13 *	calmclam purrs
+Feb 29 04:23:20 <electroB>	what’s new calcmandan
+Feb 29 04:23:28 <electroB>	calmclam ?
+Feb 29 04:25:06 <calmclam>	not much, u
+Feb 29 07:57:45 <incog>	would anybody like a debate over the flaws of ethical disclosure
+Feb 29 08:21:03 <gnrp>	incog: Then start one ;)
+Feb 29 08:22:50 <incog>	i prefered how we used to do it, blast it out on the FD mailing list and shame the vendor into patching, it was faster and the public were alerted to their data hanging out
+Feb 29 08:23:03 <incog>	ethical disclosure feels like embarrassment management
+Feb 29 08:23:43 <incog>	make u sign an NDA and then dont patch, pay you off with a few grand and a refurbed pebble watch
+Feb 29 08:24:46 <gnrp>	welcome to business
+Feb 29 08:24:53 <gnrp>	it is unethical preventing others to make money
+Feb 29 08:24:54 <incog>	makes me feel dirty
+Feb 29 08:25:22 <gnrp>	poor MS investors cannot take it that their products reveal "early" vulnerabilities
+Feb 29 08:38:09 <xorAxAx>	yeah, can somebody write to FD telling that all CPU/MCU masks are b0rked?
+Feb 29 08:38:37 <xorAxAx>	.oO(maybe because the belgium pope wants a last minute kill switch for each person)
+Feb 29 09:01:20 <Gurkenglas>	What are the pareto-optimal protocols for establishing evidence that someone is a human while bounding the evidence on which human it is?
+Feb 29 09:02:14 <xorAxAx>	Gurkenglas: define human
+Feb 29 09:02:22 <xorAxAx>	and the comms interface
+Feb 29 09:03:39 <Gurkenglas>	xorAxAx: perhaps it helps to state that, if I had defined it formally, it would be easy to prove that one can't get *only* bits of evidence that someone is a human, because then they could automate interacting with the protocol many times, claiming to be a new human each time
+Feb 29 09:04:22 <Gurkenglas>	the purpose is to get as close as possible to both letting people be anonymous and not letting in bots
+Feb 29 09:05:08 <xorAxAx>	still, whats the comm protocol. it heavily depends on which attributes are transmitted/readable on the channel
+Feb 29 09:05:33 <xorAxAx>	is it a phone call, a text chat, a tv show
+Feb 29 09:08:26 <Gurkenglas>	the channel i'm imagining makes no distinction between signal formats, treating it all as bits. does it work if i say, it's the internet, plus everyone has as many proxies as they like?
+Feb 29 09:08:58 <Gurkenglas>	you're a webserver and you want to let people make accounts, but you don't want to let one person make a million accounts.
+Feb 29 09:11:59 <Gurkenglas>	(if your answer ends up relying on establishing that x must be within 300 km of mount everest because they were able to answer a challenge from your server at mount everest within the time it takes light to travel 600 km, that's fair enough, i suppose! but i will also allow impossibility proofs that rely on assuming that lightspeed delays are not a
+Feb 29 09:11:59 <Gurkenglas>	thing.)
+Feb 29 09:13:45 <xorAxAx>	Gurkenglas: how about allowing bots and using signatures?
+Feb 29 09:14:00 <xorAxAx>	Gurkenglas: and then trying to verify each key holder separately
+Feb 29 09:14:17 <xorAxAx>	each key holder may have 1 bot/user
+Feb 29 09:15:07 <Gurkenglas>	xorAxAx: how do you verify that Gurkenglas and Hurkenglas are totally different people?
+Feb 29 09:15:46 <Gurkenglas>	(especially if you're not supposed to learn their real identities)
+Feb 29 09:19:05 <Gurkenglas>	(you don't necessarily have to *prove* they're different people, even bits of evidence would help in incentive design)
+Feb 29 09:31:07 <mk-fg>	Mandate fido2 auth and check its attestation signatures
+Feb 29 09:31:40 <mk-fg>	CloudFlare wanted to add that to captchas, but dunno if they rolled it out somewhere yet
+Feb 29 09:32:14 <mk-fg>	Would allow humans to somewhat-cheaply buy new identities though
+Feb 29 09:51:40 <xorAxAx>	Gurkenglas: thats impossible
+Feb 29 09:52:23 <Gurkenglas>	xorAxAx: Plausible! Is that a theorem that I can go read the proof of?
+Feb 29 09:53:40 <xorAxAx>	Gurkenglas: it is remotely related to https://en.wikipedia.org/wiki/Zooko%27s_triangle - but i dont know anybody who has formalized this, maybe there is some research. it really depends on what you are allowed to do as part of identification
+Feb 29 09:53:56 <xorAxAx>	if you say "i may not learn anything about the person" , the whole question sounds weird
+Feb 29 09:54:36 <xorAxAx>	you need to issue signatures on their public keys somehow, so you need to be able to know when to sign. if they are totally anonymous, something is broken in your model maybe
+Feb 29 09:54:43 <Gurkenglas>	xorAxAx, what i originally stated is "bounding the evidence on which human it is"
+Feb 29 09:55:00 <xorAxAx>	bounding means exactly what?
+Feb 29 09:55:07 <xorAxAx>	that you can only pinpoint a group of < 5?
+Feb 29 09:55:37 <xorAxAx>	did you get my last message?
+Feb 29 09:55:51 <Gurkenglas>	connection issue, i received two lines since my last message
+Feb 29 09:55:51 <Gurkenglas>	three now
+Feb 29 09:56:00 <xorAxAx>	thats correct
+Feb 29 09:57:30 <Gurkenglas>	(bounding means exactl what?, that you can only pinpoint a group of < 5 ?, did you get my last message?) i'm talking about the number of bits of evidence you can use to update your original information on which human it is, eg "a uniformly random human on Earth". as in https://gwern.net/death-note-anonymity
+Feb 29 10:00:22 <xorAxAx>	Gurkenglas: well, your goal is to achieve that each human can impersonate exactly one key, right? thats impossible i think
+Feb 29 10:00:37 <xorAxAx>	if you do not want to contact the human on secure channels
+Feb 29 10:00:49 <xorAxAx>	i.e. meet him somewhere
+Feb 29 10:00:57 <xorAxAx>	s/him/them/
+Feb 29 10:01:39 <Gurkenglas>	xorAxAx: suppose that, as in my original question, we could make do with a number of bits of evidence about my following the multiaccounting rules instead of proof
+Feb 29 10:03:16 <xorAxAx>	what do you mean by multiaccounting?
+Feb 29 10:03:34 <Gurkenglas>	youre supposed to make sure that i dont control multiple accounts
+Feb 29 10:03:36 <xorAxAx>	and what by "my following of"?
+Feb 29 10:03:44 <xorAxAx>	ah
+Feb 29 10:03:57 <Gurkenglas>	s/make sure/make any amount of sure/
+Feb 29 10:04:54 <xorAxAx>	what do you mean by bits of evidence? you could use the secret key of the person, but that would rule out uninstalled subjects. also, it would confuse you as well given that all keys you are seeing are valid
+Feb 29 10:05:11 <xorAxAx>	s/key/signature/
+Feb 29 10:05:38 <xorAxAx>	so, please define your foundational data model if you talk about a "number of bits"
+Feb 29 10:06:38 <Gurkenglas>	as an example: sample two users, tell them at the same time to send a message to the server under your control that is nearest to them, check whether lightspeed delay proves that they can't have been one person manually processing both challenges
+Feb 29 10:09:35 <xorAxAx>	ah, how do you know the signal path?
+Feb 29 10:09:38 <xorAxAx>	is it RF?
+Feb 29 10:09:49 <xorAxAx>	the internet is much more complex and has a lot of jitter
+Feb 29 10:10:05 <Gurkenglas>	even if I don't know the signal path, lightspeed delay still gets me an upper bound
+Feb 29 10:10:10 <xorAxAx>	on RF, you can have reflections as well, but even if you take the shortest path, somebody could impersonate you
+Feb 29 10:10:29 <xorAxAx>	no, a lower bound
+Feb 29 10:10:54 <xorAxAx>	so if somebody submits the data item too early, he was probably impersonated
+Feb 29 10:10:54 <Gurkenglas>	an upper bound: if you receive a reply within a second, they can't be further away than a lightsecond.
+Feb 29 10:11:13 <Gurkenglas>	so if the servers are three lightseconds apart, etc etc
+Feb 29 10:11:24 <xorAxAx>	a reply? then you are adding something to the protocol again
+Feb 29 10:11:41 <Gurkenglas>	a reply to the challenge they received at the same time...
+Feb 29 10:11:43 <xorAxAx>	so what if somebody impersonates the reply
+Feb 29 10:11:51 <xorAxAx>	by controlling the senders
+Feb 29 10:11:59 <xorAxAx>	in a concerted and well planned fashion
+Feb 29 10:12:05 <Gurkenglas>	yes, if there are separate people controlling each account, the test is passed
+Feb 29 10:12:28 <xorAxAx>	so somebody controls the challenge apparently as well
+Feb 29 10:12:39 <Gurkenglas>	O_o
+Feb 29 10:12:50 <xorAxAx>	thats why you need post quantum randomness
+Feb 29 10:12:54 <Gurkenglas>	you control the servers, you made the challenge
+Feb 29 10:13:12 <xorAxAx>	no, the servers can exhibit adversary randomness, thats a feature of the intel CPU
+Feb 29 10:13:26 <xorAxAx>	you dont need to use RDRAND to have that
+Feb 29 10:13:34 <Gurkenglas>	i would bet that one can make an intel cpu behave deterministically if one tries
+Feb 29 10:13:41 <xorAxAx>	impossible
+Feb 29 10:14:17 <Gurkenglas>	(with error bounds low enough to never trigger for the lifetime of the universe, setting aside software bugs)
+Feb 29 10:14:30 <xorAxAx>	ever heard of TCB? an intel cpu is so complex
+Feb 29 10:14:41 <Gurkenglas>	you just do your calculations redundantly
+Feb 29 10:14:50 <xorAxAx>	you need to reflash the exposure machines first to be sure
+Feb 29 10:15:08 <xorAxAx>	but careful, dont get a firmware file with "random ware" on them
+Feb 29 10:15:24 <xorAxAx>	ah, and use byzantine agreement?
+Feb 29 10:15:46 <Gurkenglas>	i think we're digressing. suppose for the sake of argument that you have trusted servers.
+Feb 29 10:15:48 <xorAxAx>	so if you have 10 agencies messing with your masks, how many challenges need to agree and how would they do so randomly?
+Feb 29 10:16:31 <Gurkenglas>	what do you mean by "challenges need to agree" and where did randomness come in anyway
+Feb 29 10:16:41 <xorAxAx>	well, how do you issue a challenge?
+Feb 29 10:16:41 <Gurkenglas>	in the "sample two users"?
+Feb 29 10:16:45 <xorAxAx>	is it from a rachett?
+Feb 29 10:16:51 <xorAxAx>	you mentioned challenge
+Feb 29 10:17:13 <xorAxAx>	ratchet even
+Feb 29 10:17:29 <xorAxAx>	maybe you dont use any crypto at all
+Feb 29 10:17:39 <xorAxAx>	and its just blind buzz lightyear trust
+Feb 29 10:17:58 <xorAxAx>	then lets go back to "this needs to be fast and EWT secure"
+Feb 29 10:18:04 <Gurkenglas>	oh, i see. suppose you can generate trusted RNG at home and included a hard drive full of stored random bits with each of the servers you shipped to locations of your choice (though the protocol that relies on physical location is just an example)
+Feb 29 10:18:16 <xorAxAx>	ah, thats called an OTP
+Feb 29 10:18:29 <xorAxAx>	what if your disk mcu messes up?
+Feb 29 10:18:49 <xorAxAx>	and reads sectors incorrectly
+Feb 29 10:19:00 <xorAxAx>	ok, then you resort to tapes
+Feb 29 10:19:12 <Gurkenglas>	setting aside that we're assuming that you have trusted servers, you can store the random bits redundantly.
+Feb 29 10:19:14 <xorAxAx>	but what if the ADC is somehow too modern?
+Feb 29 10:19:18 <xorAxAx>	yes, I agree
+Feb 29 10:19:26 <xorAxAx>	but i wouldnt trust my servers, thats the wrong assumption
+Feb 29 10:20:11 <Gurkenglas>	as far as i understand error correction is a solved problem if we don't care for constant factors
+Feb 29 10:21:10 <xorAxAx>	i wouldnt trust hitachi, they have known backdoors
+Feb 29 10:21:52 <xorAxAx>	just a matter of modulating the grid
+Feb 29 10:21:55 <Gurkenglas>	take all your not fully trusted rng sources and xor them up, now you're at least as secure as the best of them
+Feb 29 10:22:14 <xorAxAx>	you usually do that for a seed, not for the random value out of the PRNG
+Feb 29 10:22:37 <xorAxAx>	and sometimes, rng sources cancel out each other as well :)
+Feb 29 10:22:54 <Gurkenglas>	only the insecure ones
+Feb 29 10:23:21 <xorAxAx>	every RNG is insecure as many sources of randomness can be controlled
+Feb 29 10:23:57 <Gurkenglas>	i'm a layman but it seems pretty difficult to control the sound from a geiger counter
+Feb 29 10:24:23 <xorAxAx>	lol
+Feb 29 10:24:36 <xorAxAx>	just a matter of a bit of soft xray
+Feb 29 10:24:50 <Gurkenglas>	that lets you add blips, not subtract em
+Feb 29 10:25:41 <xorAxAx>	Gurkenglas: how is that a boundedly safe situation?
+Feb 29 10:26:44 <xorAxAx>	if you induce the same amount of ionizing radiation, you will ensure that the rate is modulated correctly and then you can control the RNG
+Feb 29 10:26:55 <xorAxAx>	same for simple open loop HRNG
+Feb 29 10:27:08 <Gurkenglas>	as a proof of concept, you can say "if there are fewer than 100 blips out of the geiger counter this second, it's a 0" and then an adversary can at most cause a 1
+Feb 29 10:27:09 <xorAxAx>	just a bit of modelling and trial and error, et voila
+Feb 29 10:27:42 <xorAxAx>	if all counters generate a 1, thats a solid value, except if you manchester decode them
+Feb 29 10:28:06 <xorAxAx>	but even then, you model the relaxation time of the circuit and can pulse accordingly
+Feb 29 10:28:22 <Gurkenglas>	if all the bits are 1, i get to make a nice presentation at the next hacker meetup ^^
+Feb 29 10:28:32 <xorAxAx>	enjoy
+Feb 29 10:29:01 <Gurkenglas>	surely we're assuming the adversary wants to *secretly* interfere, otherwise they can just cut your network cables
+Feb 29 10:32:57 <xorAxAx>	yeah, otherwise they could just break into the libraries and steal books
+Feb 29 10:33:05 <xorAxAx>	the secret
+Feb 29 10:33:07 <xorAxAx>	ones
+Feb 29 10:33:13 <xorAxAx>	which document the architecture
+Feb 29 10:34:33 <Gurkenglas>	i'm not assuming they don't know the architecture
+Feb 29 10:50:35 <Gurkenglas>	ah: xorAxAx, supposing that the geiger counter has electrical signal as an output instead of audio, the adversary can't actually see the blips i naturally get without read access to my machine, so i can take the timestamps of all blips i get in a second, and use whether their sum is even or odd as a trusted random bit, assuming that every second
+Feb 29 10:50:36 <Gurkenglas>	contains at least one natural blip
+Feb 29 10:52:05 <xorAxAx>	Gurkenglas: that gives you a randomness source at one location
+Feb 29 10:52:14 <xorAxAx>	didnt you say you need multiple locations?
+Feb 29 10:52:20 <xorAxAx>	that agree
+Feb 29 10:52:36 <Gurkenglas>	i also said that i get to ship a harddrive of stored random bits along with my servers, but at this point shipping a usb geiger counter sounds cheaper
+Feb 29 10:52:52 <Gurkenglas>	(i didn't assume the random bits need to agree)
+Feb 29 10:53:48 <xorAxAx>	ah, so you generate only a single sided stream of randomness to issue challenges?
+Feb 29 10:54:01 <Gurkenglas>	yep
+Feb 29 10:54:36 <xorAxAx>	then you can influence the geiger counter with any source of ionizing radiation
+Feb 29 10:54:58 <Gurkenglas>	that adds blips, right?
+Feb 29 10:55:13 <Gurkenglas>	if there is at least one natural blip, the rng is still perfect
+Feb 29 10:58:50 <Gurkenglas>	(btw: while i have asked questions that arose in this conversation in other channels, i generated my idea before getting any responses)
+Feb 29 11:01:18 <xorAxAx>	Gurkenglas: can you explain why?
+Feb 29 11:01:35 <xorAxAx>	... this is fine
+Feb 29 11:02:02 <Gurkenglas>	xorAxAx: why what
+Feb 29 11:02:11 <Gurkenglas>	why the rng is perfect?
+Feb 29 11:02:17 <xorAxAx>	yes
+Feb 29 11:02:36 <xorAxAx>	either i dont understand why the "just adds blips" is fine or you dont
+Feb 29 11:03:02 <Gurkenglas>	every blip has an even or an odd timestamp, so we can imagine that i get one bit per blip and xor them together
+Feb 29 11:03:38 <Gurkenglas>	xor is commutative/associative, so we can imagine that i xor together the natural blip-bits and the adversary's blip-bits separately and then xor them together
+Feb 29 11:03:58 <Gurkenglas>	so there's one perfectly random bit that the adversary doesn't control or know, and one bit the adversary gets to pick
+Feb 29 11:04:12 <xorAxAx>	that sounds totally sound, thanks for demonstrating the logic behind it
+Feb 29 11:04:13 <Gurkenglas>	the xor of those two is perfectly random, uncontrolled by the adversary, and unknown to the adversary
+Feb 29 11:07:12 <Gurkenglas>	you're welcome! i'm glad that i got to show you any truth that was in question today.
+Feb 29 14:15:32 *	Disconnected ()
+**** ENDING LOGGING AT Thu Feb 29 14:15:32 2024
+
+**** BEGIN LOGGING AT Thu Feb 29 14:15:51 2024
+
+Feb 29 14:15:51 *	Now talking on #security
+Feb 29 14:15:51 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 29 14:15:51 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Thu Feb 29 14:39:53 2024
+
+Feb 29 14:39:52 *	Now talking on #security
+Feb 29 14:39:52 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 29 14:39:52 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Thu Feb 29 15:16:03 2024
+
+Feb 29 15:16:03 *	Now talking on #security
+Feb 29 15:16:03 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Feb 29 15:16:03 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Feb 29 16:41:32 <frenchboy[m]>	Is opensearch much different from elastic stack?
+Feb 29 16:41:32 <frenchboy[m]>	I see some books have been published on elastic but none on opensearch, is the knowledge gained from reading those transferrable?
+Feb 29 16:42:49 <frenchboy[m]>	Anyone have any experience with either for implementing a siem?
+Feb 29 16:48:06 <Pilate>	its aws fork of elasticsearch, i dont imagine its diverged too far
+Feb 29 19:15:30 <Kaliroot>	Can a malware be injected into a txt file
+Feb 29 19:15:39 <Kaliroot>	?
+Feb 29 19:16:27 <calmclam>	to infect humans? god i hope not
+Feb 29 19:16:45 <kurahaupo>	Kaliroot: do you know what's normally in a text file?
+Feb 29 19:17:00 <xorAxAx>	Kaliroot: yes
+Feb 29 19:17:50 <xorAxAx>	this is a textvirus: X5O!P%@AP[4\PZX54(P^)7CC)7}$E ICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*
+Feb 29 19:18:10 <kurahaupo>	Kaliroot: malware is software, and like any software, it doesn't d do anything until it's run
+Feb 29 19:18:12 <xorAxAx>	it is executable code after removing the space character
+Feb 29 19:18:32 <calmclam>	omg someone is hacking my irc logs brb
+Feb 29 19:18:34 <kurahaupo>	xorAxAx: stop trolling the newbie
+Feb 29 19:18:43 <xorAxAx>	kurahaupo: why is that trolling?
+Feb 29 19:19:02 <xorAxAx>	kurahaupo: i am explaining how virus scanners work
+Feb 29 19:19:19 <kurahaupo>	xorAxAx: do you really not know the difference between a virus, and a virus signature?
+Feb 29 19:19:20 <xorAxAx>	kurahaupo: and i dont see where i am wrong
+Feb 29 19:19:53 <xorAxAx>	kurahaupo: thats not a signature, it is code, it doesnt propagate itself, not all virii do so necessarily, otherwise they are a worm
+Feb 29 19:20:00 <Kaliroot>	Okay
+Feb 29 19:20:34 <Kaliroot>	Thanks
+Feb 29 19:20:42 <kurahaupo>	It's not a virus (is not runnable code) but it is a byte sequence that will be detected by virus scanners
+Feb 29 19:21:12 <kurahaupo>	xorAxAx: not everything that's detected by a virus scanner is actually a virus
+Feb 29 19:21:17 <xorAxAx>	kurahaupo: thats wrong, it is runnable code using the MSDOS interrupt
+Feb 29 19:21:30 <xorAxAx>	runnable x86 code
+Feb 29 19:21:37 <kurahaupo>	And what does it do?
+Feb 29 19:21:37 <xorAxAx>	runnable from 8086 on, until windows 7
+Feb 29 19:21:43 <calmclam>	it goes in a .com file
+Feb 29 19:21:56 <kurahaupo>	Yes, and what does it do?
+Feb 29 19:21:56 <calmclam>	microsoft was using .com's before they were cool
+Feb 29 19:21:59 <xorAxAx>	kurahaupo: find it out, start it in dosbox
+Feb 29 19:22:03 <Kaliroot>	What of if i there is vulnerability in a text editor that a virus has txt can exploit
+Feb 29 19:22:07 <xorAxAx>	but do not name it NUL:
+Feb 29 19:22:10 <kurahaupo>	I don't have windows at all
+Feb 29 19:22:18 <xorAxAx>	kurahaupo: you dont need windows, just dosbox
+Feb 29 19:22:41 <kurahaupo>	Dosbox for Android?
+Feb 29 19:23:03 <xorAxAx>	kurahaupo: you only have an android? whats your age?
+Feb 29 19:23:14 <xorAxAx>	kurahaupo: tell your parents to call me, i will send them a notebook
+Feb 29 19:23:15 <calmclam>	a/s/l
+Feb 29 19:24:00 <kurahaupo>	xorAxAx: you're making several foolish assumptions. Right now I only have an Android because my computers are elsewhere
+Feb 29 19:24:12 <xorAxAx>	kurahaupo: what happened?
+Feb 29 19:24:16 <calmclam>	Kaliroot: irc is kind of like a text editor and there have been exploits for it
+Feb 29 19:24:57 <calmclam>	There are lots and lots of office exploits
+Feb 29 19:25:02 <kurahaupo>	xorAxAx: I am not in the building where my computers are. I might be shopping in a mall, or on a bus, or whatever
+Feb 29 19:25:17 <xorAxAx>	kurahaupo: good point, but you can run dosbox also in an android browser
+Feb 29 19:25:20 <xorAxAx>	just more clunky
+Feb 29 19:25:31 <APic>	xorAxAx: You inserted a surplus Space between „$E“ and „ICAR“
+Feb 29 19:25:32 <xorAxAx>	depends on your actual android device
+Feb 29 19:25:44 <xorAxAx>	APic: yeah, because of a libera wide virus scanner
+Feb 29 19:25:48 <APic>	ic
+Feb 29 19:25:55 <xorAxAx>	APic: it rejected my message first
+Feb 29 19:26:04 <calmclam>	lol
+Feb 29 19:26:28 <xorAxAx>	try yourself and report, would help to understand whether its libera or the network
+Feb 29 19:26:45 <calmclam>	staff must have gotten tired of people asking them about viruses in their irc logs
+Feb 29 19:27:45 <kurahaupo>	ICAR is widely used as a test for virus scanners precisely because it's innocuous, but "looks like" a DOS executable.
+Feb 29 19:28:13 <xorAxAx>	calmclam: lol
+Feb 29 19:28:29 <xorAxAx>	its a sport i have never seen anywhere before i made it one
+Feb 29 19:29:02 <APic>	240229 19:28:55 -!- #security Cannot send to nick/channel
+Feb 29 19:29:09 <calmclam>	i remember it working in the past and people being salty about losing their logs because their av automatically deleted it
+Feb 29 19:29:31 <APic>	(When trying to paste the Test-File without the Space)
+Feb 29 19:30:24 *	APic also cannot MSG it to myself. So yes, Libera.Chat blocks it
+Feb 29 19:30:53 <kurahaupo>	Technically you're correct, it is executable as a COM file, but that still doesn't qualify it as a virus, since it does not install itself anywhere or otherwise act as malware.
+Feb 29 19:30:56 <Kaliroot>	Wow!
+Feb 29 19:31:11 <calmclam>	and now we play the waf bypass game and get k-lined
+Feb 29 19:31:51 <xorAxAx>	calmclam: really? thats not conformant
+Feb 29 19:32:06 <xorAxAx>	kurahaupo: as i said, virus != worm
+Feb 29 19:32:35 <xorAxAx>	calmclam: WAF? is this running on a http microservices arch? wow
+Feb 29 19:33:03 <kurahaupo>	The original question wasn't about "virus detection", it was "can malware be injected into a txt file".
+Feb 29 19:34:30 <calmclam>	the use of injected seems like they had a specific scenario in mind though
+Feb 29 19:35:07 <xorAxAx>	kurahaupo: certainly it can: 8238 ‮ Right-to-left override
+Feb 29 19:35:27 <kurahaupo>	calmclam: indeed. Or they're just panicking based on fragmented knowledge
+Feb 29 19:35:28 <xorAxAx>	kurahaupo: its a codepoint that tricks your client into the RTL-attack if it works
+Feb 29 19:36:03 <xorAxAx>	the RTL attack is basically soothing your mind with wrong information for the full day, making you feel smart and part of the world by letting you eat stupid tv shows
+Feb 29 19:37:56 <Kaliroot>	Am sorry i mean virus. (i have had of micro virus and RAT that are embeded into .doc .docx .xls .pdf but i want to ask can it be embed into a .txt so when you just cat it or open it with nano or vim the text present it self normal and does it work
+Feb 29 19:38:44 <xorAxAx>	Kaliroot: a text file is usually interpreted with an encoding
+Feb 29 19:38:59 <xorAxAx>	Kaliroot: and if the decoder is broken, it can exploit the editor
+Feb 29 19:39:10 <xorAxAx>	Kaliroot: there are editors that autodetect encodings
+Feb 29 19:39:19 <xorAxAx>	Kaliroot: and there are quite complex encodings around
+Feb 29 19:39:31 <xorAxAx>	not just UTF-32, but also Shift-JIS
+Feb 29 19:39:39 <Kaliroot>	Encoding like utf 8
+Feb 29 19:39:44 <xorAxAx>	yes
+Feb 29 19:40:15 <Kaliroot>	Complex hacks
+Feb 29 19:41:00 <Kaliroot>	Thank you
+Feb 29 19:41:11 <xorAxAx>	good hacks are always complex and require deep understanding of your architecture
+Feb 29 19:41:39 <Kaliroot>	Yes
+Feb 29 19:41:41 <kurahaupo>	Kaliroot: the kinds of things that can do weird things to a text editor are not the same as macro viruses in Word docs. That's not to say that a terminal can't be confused but there's no overlap
+Feb 29 19:42:15 <kurahaupo>	It helps to leave ENQ turned off in your terminal
+Feb 29 19:42:28 <xorAxAx>	what is ENQ, kurahaupo?
+Feb 29 19:43:39 <kurahaupo>	When enabled, sending the ENQ byte to the terminal causes it to respond by sending back its identification string. And if the identification string is programmable, you can basically send anything as input to the shell
+Feb 29 19:44:31 <xorAxAx>	kurahaupo: ah, whats the encoded byte look like?
+Feb 29 19:44:40 <kurahaupo>	So either disable the response to ENQ, or disable setting the identification string
+Feb 29 19:45:01 <kurahaupo>	Literally the single byte ASCII ENQ
+Feb 29 19:45:25 <xorAxAx>	there is no such control character
+Feb 29 19:45:28 <xorAxAx>	in ASCII
+Feb 29 19:46:10 <kurahaupo>	xorAxAx: what is ASCII byte 5 ?
+Feb 29 19:46:32 <Kaliroot>	So you mean this is what program like python uses for running system command for task automating.
+Feb 29 19:46:57 <Kaliroot>	?
+Feb 29 19:47:17 <xorAxAx>	kurahaupo: thanks for answering my question
+Feb 29 19:47:27 <kurahaupo>	No. It's a feature of hardware terminals that almost nobody uses these days
+Feb 29 19:48:36 <Kaliroot>	Hardware terminals! Please what are they?
+Feb 29 19:48:42 <kurahaupo>	Terminal emulators have code to implement it, for historical compatibility, but for at least 30 years it's been disabled most of the time
+Feb 29 19:49:08 <kurahaupo>	Kaliroot: things that aren't emulators
+Feb 29 19:50:05 <kurahaupo>	Kaliroot: anyone born after 1990 has probably never seen one outside a museum.
+Feb 29 19:50:30 <Kaliroot>	You mean the terminal that are for cli only system of something like the linux virtual console?
+Feb 29 19:50:46 <Kaliroot>	Of == or
+Feb 29 19:51:56 <kurahaupo>	Once upon a time computers did not have screens and keyboards; there were separate devices called terminals that you could plug into a computer
+Feb 29 19:52:19 <kurahaupo>	And yes, they only did text, not graphics
+Feb 29 19:52:29 <Kaliroot>	Don't worry
+Feb 29 19:52:38 <kurahaupo>	(*footnote exceptions existed)
+Feb 29 19:53:34 <Kaliroot>	Boring old life
+Feb 29 19:53:36 <kurahaupo>	Basically yes, cli access only
+Feb 29 19:54:31 <Kaliroot>	Cli system are so go they manage resource like crazy
+Feb 29 19:54:59 <Kaliroot>	Go== GOOd
+**** BEGIN LOGGING AT Fri Mar  1 01:59:41 2024
+
+Mar 01 01:59:40 *	Now talking on #security
+Mar 01 01:59:40 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 01 01:59:40 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 01 10:45:03 <gnrp>	man, fuck these coaches and retreats
+Mar 01 10:45:11 <gnrp>	sorry, wrong channel
+Mar 01 10:49:36 <BlueyHealer>	Forced to go to some teambuilding?
+Mar 01 10:51:10 <gnrp>	nah, just looking at hotels. And they all offer some esoteric stuff like that. Coach and retreat seem to be two words that have a very specific meaning in these circles
+Mar 01 10:57:38 <incog>	I will never forgive hillary clinton for giving eazy-e AIDs
+**** BEGIN LOGGING AT Fri Mar  1 14:01:16 2024
+
+Mar 01 14:01:16 *	Now talking on #security
+Mar 01 14:01:16 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 01 14:01:16 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Fri Mar  1 16:01:17 2024
+
+Mar 01 16:01:17 *	Now talking on #security
+Mar 01 16:01:17 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 01 16:01:17 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Fri Mar  1 18:08:59 2024
+
+Mar 01 18:08:59 *	Now talking on #security
+Mar 01 18:08:59 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 01 18:08:59 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** ENDING LOGGING AT Fri Mar  1 18:10:30 2024
+
+**** BEGIN LOGGING AT Fri Mar  1 19:04:13 2024
+
+Mar 01 19:04:13 *	Now talking on #security
+Mar 01 19:04:13 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 01 19:04:13 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 01 19:14:31 <calmclam>	not hiv but full blown aids?
+**** BEGIN LOGGING AT Sat Mar  2 03:05:27 2024
+
+Mar 02 03:05:26 *	Now talking on #security
+Mar 02 03:05:26 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 02 03:05:26 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 02 04:00:20 <incog>	the l0de radio hour is now live: https://www.youtube.com/watch?v=z5aQkeeaJLs
+Mar 02 04:02:39 *	calmclam grooves
+Mar 02 05:43:58 <fef>	should need to worry about my VPN provider? or i can choose any
+Mar 02 06:08:46 <mats1>	l0de still doesn't have a real job
+Mar 02 06:10:53 <TheAppleFox>	fef first, why do you want a VPN?
+**** BEGIN LOGGING AT Sat Mar  2 06:15:35 2024
+
+Mar 02 06:15:35 *	Now talking on #security
+Mar 02 06:15:35 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 02 06:15:35 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 02 06:15:42 <fef>	to encrypt my data from plain internet TheAppleFox
+Mar 02 06:15:56 <TheAppleFox>	 data is already encrypted with HTTPS
+**** BEGIN LOGGING AT Sat Mar  2 06:17:09 2024
+
+Mar 02 06:17:09 *	Now talking on #security
+Mar 02 06:17:09 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 02 06:17:09 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 02 06:49:14 <ajak>	data is encrypted with https... if it's encrypted with https
+Mar 02 06:49:59 <ajak>	if you care about "encrypting your data" think about *all* routes the data takes and what you're actually protecting against, and it's visible to that attacker already
+Mar 02 06:51:12 <ajak>	commercial VPN providers really just make your traffic less informative to your ISP
+Mar 02 07:06:33 <fef>	TheAppleFox, at each intermediate hop the data is decrypted
+Mar 02 07:07:41 <fef>	its encrypted between browser and server but not for the hop
+Mar 02 07:08:16 <iz>	wut
+Mar 02 07:10:40 <fef>	ajak, how do the attacker know what possible route any data will take place it would change over time right?
+Mar 02 07:11:47 <fef>	for example traceroute of google.com wont be same right?
+Mar 02 07:23:35 <fef>	from some more google intermediate hop not possible once https done but in some cases  network admin can configure the router to do so for termination.
+Mar 02 07:24:13 <iz>	if it's encrypted end-to-end, from server to browser, it doesn't matter what route it takes
+Mar 02 07:26:41 <fef>	during the https handshake are we still protected?
+Mar 02 07:29:22 <iz>	from what?
+Mar 02 07:29:42 <fef>	from the attacker
+Mar 02 07:30:43 <iz>	it doesn't matter if an attacker eavesdrops on the connection starting, that's the whole point
+Mar 02 07:33:24 <fef>	:?
+Mar 02 07:48:55 <fef>	how it doesnt matter iz
+Mar 02 07:55:11 <iz>	because the protocol lets both ends decide on a session key to use, without ever sending the key.. and the information it does send isn't enough to figure out the key by itself
+Mar 02 08:08:39 <fef>	this is what i got from google : If an attacker possesses information about the encryption algorithm and the exchanged parameters used during the SSL/TLS handshake, and they also manage to capture the pre-master secret (or any equivalent secret), then theoretically, they could derive the session key and potentially decrypt the data.
+Mar 02 08:10:15 <iz>	lol, google about how the protocol works, the secrets aren't transmitted
+Mar 02 08:12:19 <fef>	why lol bro? iz
+Mar 02 08:14:34 <iz>	it basically reads like "if the attacker manages to get all the secret information that isn't transmitted, along with the information that is transmitted, then in theory they could derive the same key the endpoints do -- but they can't"
+Mar 02 08:15:07 <fef>	my question to google was even an attacker act as intermediate hop can he come up with session key.
+Mar 02 08:15:36 <iz>	you are super confused about what end-to-end encryption is
+Mar 02 08:19:03 <fef>	:/
+Mar 02 08:22:15 <iz>	google for something that explains how SSL works instead of trying to google for the answer you think it is, because you are way off in thinking intermediate hops matter somehow
+Mar 02 09:06:26 <TheAppleFox>	fef yes, VPNs are extra, not a requirement
+Mar 02 09:30:49 <fef>	somehow iz
+Mar 02 09:51:24 <iz>	fef: do you understand public/private key asymmetric encryption?  basically ssl uses that to exchange a session key which is used to encrypt the rest of the connection, b/c symmetric encryption is way faster
+Mar 02 10:52:21 <BlueyHealer>	Commercial VPNs are mostly for censorship evasion.
+Mar 02 15:37:45 <eson123>	i am a bit curious, say doing brute forcing on login forms or SSH to see if the user has any poor passwords and usernames, is that counted as pentesting ?
+Mar 02 15:37:50 <eson123>	like i mean in real project
+Mar 02 15:41:01 <jgowdy>	eson123 I would say no, outside of making sure that brute force attacks are obstructed by rate limiting / tar pitting / account disabling / some mechanism
+Mar 02 15:41:52 <jgowdy>	So actually attacking a user account to look for bad passwords, no, making sure attempts are limited by some mechanism, yes.
+Mar 02 15:41:59 <jgowdy>	IMO
+Mar 02 15:42:14 <wasamasa>	I don't see what a particular attack would have anything to do whether you're doing a penetration test or not
+Mar 02 15:42:15 <eson123>	yea i thought so as well but was not sure
+Mar 02 15:43:48 <wasamasa>	if you're contracted to perform an authorized security test of a computer system and have signed a legal agreement nailing down what you're allowed to attack and how, then the question makes a lot more sense
+Mar 02 15:43:53 <wasamasa>	but in general, not really
+Mar 02 15:45:17 <eson123>	so if in the agreement they say nothing about forbidding us to do brute forcing, then once a brute force succeeds, that's still counted ?
+Mar 02 15:45:18 <jgowdy>	I may have been missing some context from the topic.  If you're brute forcing a user on a system that you aren't authorized to do so, that may or may not be considered part of a proper pen test, but either way what you're doing is in the same class of actions.
+Mar 02 15:45:23 <eson123>	even though i doubt they won't forbid that
+Mar 02 15:46:46 <wasamasa>	to give you a specific example: the nessus scanner does have a number of checks for default passwords seen in embedded appliances (and more)
+Mar 02 15:47:22 <wasamasa>	if your test were to overlook these default passwords because you thought brute-force attacks against devices exposing SSH services are not worth it, I'd very much doubt the overall quality of your test
+Mar 02 15:47:47 <jgowdy>	Spot on wasamasa
+Mar 02 15:49:40 <wasamasa>	but I've also encountered tests were I had to specifically exclude some testing activity because it was considered too much of a risk for the tested system
+Mar 02 15:50:42 <wasamasa>	for example performing a brute-force attack against a system locking out user accounts indefinitely can lead to disruption
+Mar 02 15:52:33 <wasamasa>	overall, brute-force is often a valid approach
+Mar 02 15:52:45 <wasamasa>	sometimes it needs to be done in a smarter way
+Mar 02 15:53:50 <jgowdy>	Or systems that have weak performance / scale that fall over if you brute force too quickly, which is its own denial of service finding.
+Mar 02 15:56:16 <eson123>	ok so overall, checking default passwords or maybe the first few thousand ones inside rockyou.txt and bypassing brute forcing filter is valid
+Mar 02 15:56:24 <eson123>	but i guess a full-scale brute force is def a no then
+Mar 02 15:58:02 <eson123>	jgowdy: and yes speaking of that, i also wonder will people pay for a pentesting session if it's a ddos
+Mar 02 15:58:15 <eson123>	or it's just the company does not have enough money to pay for extra hardware
+**** BEGIN LOGGING AT Sat Mar  2 19:02:28 2024
+
+Mar 02 19:02:28 *	Now talking on #security
+Mar 02 19:02:28 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 02 19:02:28 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Sun Mar  3 08:36:18 2024
+
+Mar 03 08:36:17 *	Now talking on #security
+Mar 03 08:36:17 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 03 08:36:17 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 03 10:25:55 <wasamasa>	mats1: I have no idea who you are
+Mar 03 15:58:21 <eson123>	guys a little tip please, is there any faster way to do UNION SELECT in SQLi instead of manually increasing the columns ? i think i can write a Python script to check this but well if someone has already built a tool for this i can just use it to save some time :P
+Mar 03 16:02:21 <mwebsec>	but SQLMap would do that automatically
+Mar 03 16:05:02 <eson123>	well sqlmap is a good tool but i don't feel like it will detect all endpoints which are vulnerable to SQLi, i used to try it on some endpoints and challenges which were clearly vulnerable to SQli but it didn't seem to pick it up for some reasons :/
+Mar 03 16:06:01 <mwebsec>	aha
+Mar 03 16:06:20 <mwebsec>	maybe increase --level 5 --risk 3
+Mar 03 16:06:21 <Gurkenglas>	.oO("if endpoint in paid_protection_money: pass")
+Mar 03 16:06:37 <mwebsec>	it will do more checks :)
+Mar 03 16:07:32 <eson123>	yea ok, for now it's either try again as you said, or i built a python script
+Mar 03 16:07:38 <eson123>	or maybe someone here knew something else :P
+Mar 03 16:07:53 <eson123>	Gurkenglas: and sorry i didn't get the joke
+Mar 03 16:09:22 <Gurkenglas>	...but you got that it's a joke? the joke would be that sqlmap didn't detect the vulnerability because the vulnerable party bribed the author of sqlmap.
+Mar 03 16:10:00 <eson123>	i mean it's easy to identify jokes but understand them is another thing
+Mar 03 16:10:05 <eson123>	and lol ok got it
+Mar 03 16:14:57 <mwebsec>	lol
+Mar 03 16:15:50 <mwebsec>	i dont like the fact that 90% of bug bounty programs are being some sort of protection such as Cloudfront, Cloudflare. it significantly reduces attack surface
+Mar 03 16:17:48 <eson123>	speaking of which, i really need to do one or two programs, i feel like it's very much different from CTF and HTB stuffs
+**** BEGIN LOGGING AT Mon Mar  4 04:37:43 2024
+
+Mar 04 04:37:43 *	Now talking on #security
+Mar 04 04:37:43 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 04 04:37:43 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Mon Mar  4 04:39:41 2024
+
+Mar 04 04:39:40 *	Now talking on #security
+Mar 04 04:39:40 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 04 04:39:40 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 04 05:58:40 <goonmorning>	Hello. Can you recommend any direct brute-force tool? Something that works repeatedly on prompt would be perfect. I forgot my password for an encrypted data. I am sad.
+Mar 04 06:36:01 <calmclam>	goonentag
+Mar 04 06:36:15 <MadCamel>	hola
+Mar 04 10:53:45 <mwebsec>	morning
+Mar 04 13:56:47 <godSend23>	hey all
+Mar 04 14:35:53 <mwebsec>	hey
+Mar 04 15:10:18 <mwebsec>	hows it going
+Mar 04 16:04:21 <godSend23>	good u
+Mar 04 16:07:28 <mwebsec>	not bad not bad
+Mar 04 16:07:45 <kkawg>	comsee comsa
+Mar 04 16:09:58 <mwebsec>	:D
+**** BEGIN LOGGING AT Tue Mar  5 07:39:51 2024
+
+Mar 05 07:39:50 *	Now talking on #security
+Mar 05 07:39:50 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 05 07:39:50 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 05 10:39:29 <mwebsec>	morning
+Mar 05 11:56:03 <wyclif>	Good morning
+Mar 05 14:24:45 <mwebsec>	hows it going
+Mar 05 14:24:49 <APic>	Fine, fine
+Mar 05 14:24:51 <APic>	Thanks
+Mar 05 14:25:00 <APic>	Exercizing Piano
+Mar 05 14:25:11 <mwebsec>	nice
+Mar 05 14:39:25 <mwebsec>	yo
+Mar 05 14:44:41 <APic>	Y0
+Mar 05 15:19:48 <mwebsec>	y0y0
+Mar 05 15:20:07 <ornx_>	does the job market suck, or do i suck
+Mar 05 15:20:14 *	ornx_ ask the magic 8-ball
+Mar 05 15:39:41 <mwebsec>	it does suck
+Mar 05 15:39:45 <mwebsec>	:D
+**** BEGIN LOGGING AT Tue Mar  5 18:13:42 2024
+
+Mar 05 18:13:42 *	Now talking on #security
+Mar 05 18:13:42 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 05 18:13:42 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Tue Mar  5 19:05:31 2024
+
+Mar 05 19:05:30 *	Now talking on #security
+Mar 05 19:05:30 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 05 19:05:30 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Tue Mar  5 20:41:19 2024
+
+Mar 05 20:41:19 *	Now talking on #security
+Mar 05 20:41:19 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 05 20:41:19 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Tue Mar  5 22:33:03 2024
+
+Mar 05 22:33:02 *	Now talking on #security
+Mar 05 22:33:02 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 05 22:33:02 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Wed Mar  6 01:51:37 2024
+
+Mar 06 01:51:37 *	Now talking on #security
+Mar 06 01:51:37 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 06 01:51:37 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 06 05:38:25 <c4lvin>	Evening
+Mar 06 05:50:34 *	calmclam nods
+Mar 06 05:54:41 <xorAxAx>	hrm, i always wonder, how can PQC work if the entropy of the privkey is much shorter than the one of an RSA key
+Mar 06 05:56:45 <mk-fg>	It's not just about the entropy, bruteforcing even 256b is unfeasible, whether it's quantum computers or earthful or regular ones
+Mar 06 05:57:19 <calmclam>	Magic
+Mar 06 05:57:56 <xorAxAx>	and PQC is necessary because of shors algorithm?
+Mar 06 05:58:14 <xorAxAx>	maybe shors algorithm and QC are just ex falso quod libet?
+Mar 06 06:00:31 <mk-fg>	A conspiracy of cryptographers to ensure demand for their quantum snakeoil
+Mar 06 06:00:49 <xorAxAx>	i am not claiming its a conspiracy
+Mar 06 06:01:00 <xorAxAx>	just want to understand the claims for its needs
+Mar 06 06:02:06 <mk-fg>	As I understand it, it's just a hedge against possible near-future breakthrough
+Mar 06 06:02:30 <xorAxAx>	i know, but what i wonder is: what if shors algorithm wouldnt feasible in the real world after all?
+Mar 06 06:02:36 <xorAxAx>	+be
+Mar 06 06:02:40 <mk-fg>	So that if someone stores your traffic, in 10y if this short thing and quantum-ecc ends up working, it won't decrypt everyone's secrets
+Mar 06 06:03:02 <mk-fg>	No problem then, pqc can be dropped, nothing is broken
+Mar 06 06:03:25 <xorAxAx>	is that foundationally proven?
+Mar 06 06:03:32 <xorAxAx>	that PQC is secure enough
+Mar 06 06:04:56 <mk-fg>	As far as no one else can break it aiui, and based on known primitives like lattices or worst-case even hashes
+Mar 06 06:05:08 <xorAxAx>	that sounds like a "no" :D
+Mar 06 06:05:33 <xorAxAx>	foundational cryptography doesnt consider single attacks, it allows to basically come up with a rigid proof of security by itself
+Mar 06 06:06:14 <mk-fg>	You're always reducing the thing to some math problem like prime number factorization or discrete log
+Mar 06 06:06:30 <mk-fg>	And aiui that's same for pqc
+Mar 06 06:06:50 <mk-fg>	But all those math problems can potentially be solved, we just don't know how
+Mar 06 06:07:04 <mk-fg>	Well, except for quantum computers and that shor's algo
+Mar 06 06:11:41 <calmclam>	With modern systems blasting out secrets through the aether through innumerable side channels I look forward to the day when crypto can meaningfully provide security at their theoretical level
+Mar 06 06:13:08 <xorAxAx>	calmclam: well, thats another issue and might also explain why PQC is so useful: less key material to extract via side channels
+**** BEGIN LOGGING AT Wed Mar  6 07:16:31 2024
+
+Mar 06 07:16:31 *	Now talking on #security
+Mar 06 07:16:31 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 06 07:16:31 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 06 08:47:39 <iz>	xorAxAx: yeah, cuz shor's
+Mar 06 08:49:32 <iz>	also rsa keys have to be so big, b/c factoring is a relatively easy problem and the spacing of primes, esp when the numbers get big doesn't make for efficient bit sizes
+Mar 06 08:51:33 <iz>	also, as mk-fg said, pcq is like a hedge against future breakthroughs in quantum computing and also good algorithms aren't gonna appear instantly -- it will take cycles of research and peer review

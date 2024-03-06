@@ -1,0 +1,454 @@
+T 1702193179 19*	Now talking on 22#tmux
+T 1702193179 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1702193179 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1702193695 24*	ano has quit (Ping timeout: 240 seconds)
+T 1702193744 23*	ano (~ano@user/ano23) has joined
+T 1702193868 23*	jklfds (~jklfds@user/jklfds23) has joined
+T 1702194034 20*	Disconnected (20)
+T 1702194061 19*	Now talking on 22#tmux
+T 1702194061 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1702194061 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1702194168 24*	jklfds has quit (Ping timeout: 268 seconds)
+T 1702194196 24*	dacd has quit (Ping timeout: 245 seconds)
+T 1702194525 24*	m1dnight has quit (Quit: WeeChat 4.1.1)
+T 1702195289 19*	Now talking on 22#tmux
+T 1702195289 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1702195289 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1702198993 20*	Disconnected (20)
+T 1702201366 19*	Now talking on 22#tmux
+T 1702201366 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1702201366 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1702208540 19*	Now talking on 22#tmux
+T 1702208540 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1702208540 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1702214434 20*	Disconnected (20)
+T 1702214614 19*	Now talking on 22#tmux
+T 1702214614 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1702214614 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1702219834 20*	Disconnected (20)
+T 1702219889 19*	Now talking on 22#tmux
+T 1702219889 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1702219889 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1702220524 20*	Disconnected (20)
+T 1702220571 19*	Now talking on 22#tmux
+T 1702220571 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1702220571 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1702281887 19*	Now talking on 22#tmux
+T 1702281887 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1702281887 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1702282236 20*	Disconnected (20)
+T 1702282251 19*	Now talking on 22#tmux
+T 1702282251 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1702282251 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1702282262 20*	Disconnected (20)
+T 1702282282 19*	Now talking on 22#tmux
+T 1702282282 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1702282282 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1702285561 20*	Disconnected (20)
+T 1702314577 19*	Now talking on 22#tmux
+T 1702314577 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1702314577 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1702322572 20*	Disconnected (20)
+T 1702322852 19*	Now talking on 22#tmux
+T 1702322852 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1702322852 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1702323566 18<25genevino18>	ta='tmux attach || tmux'
+T 1702323588 18<25genevino18>	So I got an alias like this and it happens to work every 2nd try or so, could someone point me to the right direction?
+T 1702324327 18<27mingdao18>	What are the two pipes then tmux again for?
+T 1702324355 18<27mingdao18>	tmux a = tmux attach, but does not specify a session if multiples are running.
+T 1702324365 18<27mingdao18>	I don't understand "tmux attach || tmux"
+T 1702812797 19*	Now talking on 22#tmux
+T 1702812797 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1702812797 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1705506304 19*	Now talking on 22#tmux
+T 1705506304 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1705506304 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1705524970 19*	Now talking on 22#tmux
+T 1705524970 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1705524970 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1705525535 19*	Now talking on 22#tmux
+T 1705525535 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1705525535 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1705525647 19*	Now talking on 22#tmux
+T 1705525647 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1705525647 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1705525767 19*	Now talking on 22#tmux
+T 1705525767 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1705525767 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1705526737 19*	Now talking on 22#tmux
+T 1705526737 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1705526737 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1705559182 19*	Now talking on 22#tmux
+T 1705559182 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1705559182 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1705562767 20*	Disconnected (20)
+T 1705562791 19*	Now talking on 22#tmux
+T 1705562791 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1705562791 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1705568249 19*	Now talking on 22#tmux
+T 1705568249 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1705568249 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1707739632 19*	Now talking on 22#tmux
+T 1707739632 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1707739632 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1707742868 19*	Now talking on 22#tmux
+T 1707742868 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1707742868 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708186109 19*	Now talking on 22#tmux
+T 1708186109 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708186109 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708438062 19*	Now talking on 22#tmux
+T 1708438062 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708438062 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708439546 19*	Now talking on 22#tmux
+T 1708439546 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708439546 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708439876 19*	Now talking on 22#tmux
+T 1708439876 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708439876 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708451385 18<20birkoff18>	is there a simple way to get a list of all available key-tables ? 
+T 1708451766 18<26slim18>	birkoff: list-keys or customize-mode
+T 1708454493 18<19voldial18>	How do I `list-sessions -f` for only attached sessions? I have https://bpa.st/EG3A but it's listing them all. So... -f "#{m:session_attached,#{attached}}" must be incorrect...?
+T 1708455035 18<19voldial18>	hm. I think I had that backwards... but it's still not matching with -f "#{m:attached,#{session_attached}}"
+T 1708455117 18<24depesz18>	voldial: tbh, i'
+T 1708455123 18<24depesz18>	i'd probably just grep :)
+T 1708455182 18<26slim18>	just use #{session_attached}
+T 1708455199 18<26slim18>	voldial: :ls -f '#{session_attached}'
+T 1708455336 18<19voldial18>	slim: thx, maybe I'm still doing something wrong... it still lists both the attached and not attached sessions: https://bpa.st/BRMQ
+T 1708455483 18<26slim18>	something in the -F format i assume, does ls -f '#{session_attached}' show only the attached sessions?
+T 1708455633 18<19voldial18>	slim: aaah. yes. and now it works, I got rid of the single quote escaping
+T 1708455641 18<19voldial18>	TY
+T 1708455677 18<26slim18>	cheers
+T 1708457039 18<27ikke18>	I'm using alacritty as terminal, and I'm trying to get hyperlinks to work. They are already working outside of tmux. set -g terminal-overrides ",alacritty:RGB"
+T 1708457044 18<27ikke18>	Oops
+T 1708457056 18<27ikke18>	From an issue I found the previous configuration option, but that does not help
+T 1708457091 18<27ikke18>	I have set -g default-terminal tmux-256color (previously screen-256color)
+T 1708457101 18<27ikke18>	Any idea what I might be missing to get it to work?
+T 1708457834 18<26slim18>	ikke: do you have mouse enabled in tmux?
+T 1708457861 18<19voldial18>	How do I do the opposite of `ls: -f '#{session_attached}'`? I tried inserting !, and read the FORMATS secion in the manpage... negation isnt mentioned afict
+T 1708457900 18<27ikke18>	slim: hmm, apparently not
+T 1708458023 18<26slim18>	ikke: with mouse enabled, usually need to Shift-click urls in alacritty... should work as usual with mouse not enabled
+T 1708458068 18<27ikke18>	slim: for the record, regular urls are recognized (by alacritty), without tmux support 
+T 1708458080 18<27ikke18>	But not hyperlink hints
+T 1708458936 18<26slim18>	ikke: ahh ok, hints
+T 1708458951 18<26slim18>	ikke: did you restart the tmux server after adding that terminal-overrides to your tmux conf?
+T 1708459067 18<26slim18>	may need to be killed and started again at the server level
+T 1708459173 18<19voldial18>	ah. got it -f "#{==:#{session_attached},0}" (from https://stackoverflow.com/a/75040601)
+T 1708459538 18<27ikke18>	slim: yes
+T 1708459921 18<26slim18>	ikke: hrmm, not sure... hints seem to work out of the box with default configs for both tmux/alacritty on my side
+T 1708459927 18<26slim18>	not sure what to suggest, sorry
+T 1708460689 18<27ikke18>	Maybe I should look at what tcell (the terminal library) does
+T 1708460919 18<26slim18>	maybe the #alacritty folks can help, or stick around and someone else may chime in eventually... i can't even break hints functionality
+T 1708460945 18<26slim18>	ikke: just out of curiosity, what versions of tmux/alacritty ?
+T 1708460966 18<27ikke18>	tmux 3.3a
+T 1708460974 18<27ikke18>	alacritty 0.13.1 (fe2a3c56)
+T 1708460996 18<27ikke18>	using `echo -e '\e]8;;http://example.com\aThis is a link\e]8;;\a'` confirms it's not just the library
+T 1708461060 18<24UndeadLeech18>	If tmux emits the escapes, Alacritty will work. If Alacritty doesn't work, tmux probably isn't emitting the escapes.
+T 1708461139 18<26slim18>	ooh THE alacritty folk ;)
+T 1708461141 18<24UndeadLeech18>	Might need to manually enable it, maybe https://github.com/tmux/tmux/pull/3240 can help with that.
+T 1708461164 18<24UndeadLeech18>	I don't use tmux so I'm not sure if it's enabled by default.
+T 1708461245 18<27ikke18>	Someone  suggested 'set-option -ga terminal-features ",alacritty:hyperlinks"' in both the alacritty project as in the tmux project, but no dice
+T 1708461274 18<24UndeadLeech18>	Is your TERM `alacritty`?
+T 1708461285 18<24UndeadLeech18>	That does match https://gist.github.com/egmontkob/eb114294efbcd5adb1944c9f3cb5feda?permalink_comment_id=4412251#gistcomment-4412251 though.
+T 1708461326 18<27ikke18>	UndeadLeech: Yes, outside of tmux
+T 1708461334 18<27ikke18>	inside of tmux it's tmux-256color
+T 1708461343 18<27ikke18>	(I did try it inside tmux as well, without result)
+T 1708461393 18<27ikke18>	Let me use that one with a wildcard
+T 1708461475 18<27ikke18>	no difference
+T 1708461567 18<27ikke18>	I reduced my tmux config to a minimum to check if that fixed it, but no
+T 1708461911 18<27ikke18>	https://tpaste.us/xyqv 
+T 1708461932 18<27ikke18>	Seems like no escape characters are emitted
+T 1708462684 18<27ikke18>	In the tmux-server log, I see: removing term alacritty
+T 1708462716 18<27ikke18>	That seems to indicate some error happened
+T 1708462744 18<27ikke18>	"unknown terminal feature: hyperlinks"
+T 1708463400 18<27ikke18>	Oh, apparently 3.3a does not have it yet :/
+T 1708463405 18<27ikke18>	https://github.com/tmux/tmux/issues/3660#issuecomment-1670744886
+T 1708463516 18<27ikke18>	(I was under the assumption I had the latest version installed already)
+T 1708463987 18<20birkoff18>	running 'tmux -C' and typing inside 'refresh-client -C' causes tmux to crash down
+T 1708464088 18<27ikke18>	slim: UndeadLeech upgrading tmux fixed it, thanks for the help!
+T 1708466814 18<28thomas_adam18>	birkoff: Does it?  Is there a corefile?
+T 1708466893 18<20birkoff18>	yes but it probably contains private stuff
+T 1708467276 18<26slim18>	ikke: good stuff!
+T 1708467830 18<20birkoff18>	here's the repeatable stack trace: https://dpaste.com/DH9VRYJRU 
+T 1708467969 18<28thomas_adam18>	birkoff: Without debug symbols, that's useless.
+T 1708468023 18<20birkoff18>	maybe you can instruct me how to debug it ?
+T 1708468048 18<28thomas_adam18>	I can't reproduce the problem you're having though.
+T 1708468714 18<19voldial18>	is there a way to have a indicator of what tmux process you are "on" when hitting ctrl-b? I ask because sometimes I'm nested 2 or 3 deep, and I can always hit "ctrl-b" 2x to command the 2nd nested tmux, but I cant seem to get that to work the 3rd time in the odd case that i'm nested 3 deep.
+T 1708468831 18<19VSpike18>	I had a nice setup where the names of my panes in the status bar updated with current directory. This was using  a PROMPT_COMMAND in bash. It has stopped working and I can't figure out why. It works outside tmux still. Inside tmux, even just using printf directly to send the escape chars doesn't work .. I have `allow-rename on` and
+T 1708468832 18<19VSpike18>	`automatic-rename off`. What could I be missing?
+T 1708468917 18<19VSpike18>	Also, tmux config has always confused me. Are `setw`, `set-window-option` and `set -w` all equivalent?
+T 1708468986 18<28thomas_adam18>	VSpike: Yeah -- the options table knows the context, so "set" is fine to use for all of them.
+T 1708469008 18<20birkoff18>	thomas_adam: can I do anything with the coredump file myself ? 
+T 1708469009 18<19VSpike18>	The docs seem to say to set a window option at the global level you do `set -wg <option>` but I often see the same option as `set -g <option>` so ... the `-w` is optional?
+T 1708469026 18<28thomas_adam18>	birkoff: bt
+T 1708469031 18<19VSpike18>	thomas_adam ahh that explains it! it's very confusing
+T 1708469071 18<19VSpike18>	thomas_adam does that mean that `set` and `set -g` should be the only forms you need?
+T 1708469246 18<28thomas_adam18>	VSpike: In most cases, yes.
+T 1708469262 18<19VSpike18>	thanks!
+T 1708470641 18<26slim18>	voldial: nesting is considered somewhat of a faux pas, but i find using the client_prefix variable handy to add an indicator to the status bar to show when you're in the prefix key-table... as for 3-deep nests you would need to press prefix 4 times, or look into using prefix2 perhaps?
+T 1708470723 18<26slim18>	tmuxception
+T 1708470979 18<19voldial18>	slim: ah, thanks, client_prefix should work, I'll readup on prefix2
+T 1708471032 18<26slim18>	voldial: #{?client_prefix,#[reverse]:#[noreverse] ,} <- i use that in my status as an example
+T 1708471702 18<26slim18>	the noreverse would probably conform better as default, now that i'm looking at it but you get the idea
+T 1708473217 19*	Now talking on 22#tmux
+T 1708473217 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708473217 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708474708 18<19voldial18>	that works nice!
+T 1708496387 18<20birkoff18>	what are #{pane_tabs} ? 
+T 1708497326 18<20birkoff18>	is it possible to restore automatic window renaming after a manual change ? 
+T 1708499077 18<20birkoff18>	just hit ':select-layout main-tiled' by mistake and tmux crushed again, this time leaving many of my programs running in the background with no controller for them
+T 1708507893 19*	Now talking on 22#tmux
+T 1708507893 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708507893 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708508320 19*	Now talking on 22#tmux
+T 1708508320 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708508320 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708518258 18<26slim18>	birkoff: :set -w automatic-rename on (from affected window, add -t flag and target window if its not from active window/from the shell)
+T 1708518271 18<26slim18>	tmux is great at inferring option types, so the -w is probably unnecessary as well fwiw
+T 1708518851 18<27wyclif18>	n00b question: let's say I'm running something that can get disconnected and reconnect inside tmux. For instance, an IRC client, say irssi. If I detach my tmux session, will the IRC client go to sleep and keep timing out and reconnecting, or will it simply keep running?
+T 1708519148 18<27ikke18>	wyclif: it will just continue to run
+T 1708520218 18<27wyclif18>	ikke: reason I ask is because I got some complaints the other day when I left irssi running by accident cos I fell asleep. I got kicked from a couple of channels because I kept reconnecting after my laptop fell asleep and woke up
+T 1708520241 18<27wyclif18>	Maybe running it inside a tmux session is the solution to the problem
+T 1708520257 18<27ikke18>	Not if tmux runs on you laptop 
+T 1708520261 18<27ikke18>	your*
+T 1708520287 18<27ikke18>	If your laptop goes to sleep, so does every application 
+T 1708520336 18<27wyclif18>	yes
+T 1708520357 18<27wyclif18>	no way to prevent that other than turning off sleep mode, which seems like a bad idea 
+T 1708520424 18<27wyclif18>	Of course, I could run ZNC or some other kind of IRC network bouncer as a workaround
+T 1708530419 19*	Now talking on 22#tmux
+T 1708530419 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708530419 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708539210 18<19wwalker18>	I've tried quite a few things, but I'm not getting the magic together.  When I'm in scrollback, in vi or emacs mode, I want Escape to quit just like `q` does.  Anyone have that mapping working?
+T 1708539721 18<24demure18>	wwalker: are you using a bind option on the copy-mode in your config?
+T 1708540128 18<19wwalker18>	demure: yes, and I tried addding it to vi mode, etc.  This is what seems like it should work:  tmux bind-key -T copy-mode escape                 send-keys -X cancel
+T 1708540320 18<24demure18>	I maybe wrong, but I think bind-key has been depreciated for just `bind`
+T 1708540320 18<19wwalker18>	that succeeds (it shows up in the output of `tmux list-keys -T copy-mode` but it doesn't work
+T 1708540330 18<26slim18>	-T copy-mode-vi  <- need the vi to add it to the vi mode-keys
+T 1708540535 18<19wwalker18>	slim: Thanks!  I just figured that out and was going to post the fix.  (I swear I tried that earlier, but apparently I typoed something when I tried.
+T 1708540558 18<26slim18>	np, and bind is just an alias for bind-key demure
+T 1708540579 18<24demure18>	*nod*
+T 1708540911 18<19wwalker18>	Thank you both!
+T 1708544281 19*	Now talking on 22#tmux
+T 1708544281 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708544281 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708553966 19*	Now talking on 22#tmux
+T 1708553966 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708553966 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708554077 19*	Now talking on 22#tmux
+T 1708554077 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708554077 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708606547 19*	Now talking on 22#tmux
+T 1708606547 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708606547 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708606631 19*	Now talking on 22#tmux
+T 1708606631 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708606631 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708623317 19*	Now talking on 22#tmux
+T 1708623317 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708623317 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708630546 19*	Now talking on 22#tmux
+T 1708630546 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708630546 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708631263 19*	Now talking on 22#tmux
+T 1708631263 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708631263 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708631930 19*	Now talking on 22#tmux
+T 1708631930 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708631930 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708632783 19*	Now talking on 22#tmux
+T 1708632783 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708632783 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708632966 19*	Now talking on 22#tmux
+T 1708632966 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708632966 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708696020 19*	Now talking on 22#tmux
+T 1708696020 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708696020 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708696321 19*	Now talking on 22#tmux
+T 1708696321 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708696321 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708720189 19*	Now talking on 22#tmux
+T 1708720189 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708720189 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708772561 19*	Now talking on 22#tmux
+T 1708772561 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708772561 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708774828 18<29henk18>	stsp: thanks for testing! I guess that means it might have to do with my config or plugins … I’ll try to isolate it.
+T 1708775757 18<28thomas_adam18>	henk: Is there a core file? Check ulimit. You could try tmux with -v in case we’re calling fatal() somewhere instead.
+T 1708775930 18<29henk18>	thomas_adam: yes, I have core files.
+T 1708778422 18<28thomas_adam18>	henk: Can you get a stack trace?
+T 1708778801 18<29henk18>	thomas_adam: TBH: I have no idea. whenever I worked with core files I was following some guide. I’m not proficient with programming in C or running gdb. how would I do that?
+T 1708779654 18<26Nei18>	you can try "gdb /path/to/tmux /path/to/corefile" then "bt full"
+T 1708781537 18<29henk18>	http://pastie.org/p/7dXs68ZbbmRor7uTs7ZluF I guess that’s not very useful, just a lot of »No symbol table info available.« I guess that means I’m missing something but I’m not sure yet what.
+T 1708781892 18<22ore18>	running Debian? you need to get debug symbols separately, see https://wiki.debian.org/HowToGetABacktrace
+T 1708781925 18<29henk18>	yeah, just set that up and it seems to help (:
+T 1708781940 18<29henk18>	now I just need to disable the pager in gdb so that I can be sure the output is not garbled
+T 1708781960 18<29henk18>	thanksp
+T 1708781966 18<29henk18>	s/p/!/
+T 1708782153 18<29henk18>	hm, didn’t quickly find a way to do that so now the prompt for paging is in there with it on line 120. hope that’s no problem. output seems awfully short, is that to be expected or did I do anything wrong? http://pastie.org/p/69YB6uStLxMRfg9UxG6QRT
+T 1708782185 18<29henk18>	thomas_adam: is that usable?
+T 1708782678 18<22ore18>	seems to point at this fix: https://github.com/tmux/tmux/commit/c6e7568471f35f7a22e199b444adf17c685e86f3
+T 1708782737 18<22ore18>	which I can confirm is not in Debian stable's version of tmux (3.3a-3)
+T 1708782856 18<29henk18>	oh, yeah, that sounds plausible from the title (: thank you very much
+T 1708783048 18<22ore18>	if you hit this crash regularly you can file a bug in the Debian bug tracker and the tmux maintainer (me) can arrange for a stable update, but be warned that it's a process that can take weeks
+T 1708783355 18<29henk18>	ore: first time yesterday, I think. I’ll see and probably just try not to produce such a big ass load of debug output :D as long as it’s already fixed upstream and will be fixed in the next stable, it’s good enough for me for now. thank you (:
+T 1708783525 18<29henk18>	and, while I’m at it, thanks to everyone involved with creating tmux and maintaining its packages! I appreciate it very much and my digital life would be way worse without it.
+T 1708788546 19*	Now talking on 22#tmux
+T 1708788546 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708788546 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708788723 19*	Now talking on 22#tmux
+T 1708788723 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708788723 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708792087 19*	Now talking on 22#tmux
+T 1708792087 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708792087 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708823390 19*	Now talking on 22#tmux
+T 1708823390 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708823390 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1708826624 18<20birkoff18>	does tmux copy mode pattern search supposed to match non visible ASCII control characters  ? 
+T 1708847124 18<25topcat00118>	I don't think that will work because internally the text is stored along with attributes for each cell. Search only searches the text.
+T 1708847171 18<25topcat00118>	(might be misunderstanding the q though)
+T 1708882893 19*	Now talking on 22#tmux
+T 1708882893 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1708882893 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709072158 19*	Now talking on 22#tmux
+T 1709072158 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709072158 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709082580 19*	Now talking on 22#tmux
+T 1709082580 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709082580 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709164962 19*	Now talking on 22#tmux
+T 1709164962 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709164962 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709165582 20*	Disconnected (20)
+T 1709165736 19*	Now talking on 22#tmux
+T 1709165736 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709165736 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709212532 20*	Disconnected (20)
+T 1709212551 19*	Now talking on 22#tmux
+T 1709212551 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709212551 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709213993 19*	Now talking on 22#tmux
+T 1709213993 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709213993 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709216163 19*	Now talking on 22#tmux
+T 1709216163 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709216163 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709234528 18<27mahboubine18>	hello everyone
+T 1709234564 18<27mahboubine18>	do you prefer your tmux statusbar on top or bottom?
+T 1709234597 18<27mahboubine18>	at the moment, I have the vim status bar + my window manager's bar + tmux's
+T 1709234609 18<27mahboubine18>	that felt a bit much so i moved the tmux one to the top
+T 1709234758 18<24demure18>	mahboubine: my view is that the OS bar on top makes more sense as I don't need it often, and then, in your scenario, both the terminal bars are near the bottom where my input is likely to be anyway
+T 1709235409 18<27mingdao18>	I don't like to look ↑ when I'm typing ↓ , so all of mine are on the bottom.
+T 1709235430 18<27mingdao18>	https://imgur.com/EI2P31H.png
+T 1709235524 18<27mingdao18>	That didn't show my wm bar, so this is another screenshot https://imgur.com/X17WDco.png
+T 1709235869 18<27mahboubine18>	mingdao: I am quite new to tmux, are each of "mutt" "cisco" etc.. sessions or windows?
+T 1709235928 18<27mingdao18>	1:router* 2:mutt- 3:Cisco  4:workstation  5:MacBook  6:server# 7:fileserver# 8:headache  9:main# 10:workstation       are names of sessions.
+T 1709235942 18<27ikke18>	windows
+T 1709235982 18<27mingdao18>	When I start this computer, urxvt starts.  Then I run $HOME/bin/starttmux.sh to start those 10 windows.
+T 1709236000 18<27mingdao18>	Yes, ikke is correct, I used sessions but they are windows.
+T 1709236060 18<27mingdao18>	On workstation (the bottom tmux status bar) I have 10 windows created in one session:  home: 10 windows (created Wed Feb 28 17:28:18 2024) (attached)
+T 1709236201 18<27mahboubine18>	interesting
+T 1709236209 18<27mahboubine18>	I prefer sessions for unrelated tasks
+T 1709236227 18<27mahboubine18>	so I can switch between them quickly
+T 1709236257 18<27mahboubine18>	mod+<workspace number> is far quicker than <tmux prefix> C-n
+T 1709236262 18<27mingdao18>	In the top status bar, (1:router*) router is window where I ssh to host router, my Linux based router for this LAN, where irssi runs in tmux, (2:mutt) mutt runs on workstation, (3:Cisco) is a window on workstation where minicom is running to access a console port on a Cisco router; (4:workstation) is a window on workstation; ( 5:MacBook) is a window where I ssh from workstation to my MacBook; (6:server#) is 
+T 1709236268 18<27mingdao18>	a window on workstation where I ssh to host server, etc.
+T 1709236302 18<27mingdao18>	mahboubine: I use sessions, also.  I am on host router now, chatting in irssi.
+T 1709236336 18<27mahboubine18>	cool
+T 1709236344 18<27mahboubine18>	well I need to go now, nice chatting!
+T 1709236402 18<27mingdao18>	In that window where I am on router, I issue ctrl+bb then d to detach and then `tmux ls` on router to show it's 4 sessions https://imgur.com/OiXAztr.png
+T 1709236417 18<27mingdao18>	mahboubine: bye
+T 1709254781 19*	Now talking on 22#tmux
+T 1709254781 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709254781 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709298076 19*	Now talking on 22#tmux
+T 1709298076 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709298076 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709305277 19*	Now talking on 22#tmux
+T 1709305277 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709305277 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709312939 19*	Now talking on 22#tmux
+T 1709312939 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709312939 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709316253 19*	Now talking on 22#tmux
+T 1709316253 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709316253 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709345126 19*	Now talking on 22#tmux
+T 1709345126 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709345126 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709356535 19*	Now talking on 22#tmux
+T 1709356535 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709356535 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709356629 19*	Now talking on 22#tmux
+T 1709356629 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709356629 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709360433 18<20birkoff18>	In command 'command-prompt' a template which one command is "save-buffer '%1'" does not show a visible error when path is invalid run from a terminal in which case it goes to stdout 
+T 1709360455 18<20birkoff18>	is there a reason why not getting normal display-message like messages when path is invalid ?
+T 1709367641 18<27guardian18>	hello, shoud the following print to stdout? tmux display -p '#(echo foo)'
+T 1709373359 18<20birkoff18>	guardian: yes but #() only displays one line and usually it is "loaded" on the second inovcation 
+T 1709394061 18<20birkoff18>	why is it not possible to use copy-mode to scroll beyond view 'watch' output of more than a screenful ? 
+T 1709394079 18<20birkoff18>	when watch is running in its own pane 
+T 1709395008 18<27mingdao18>	birkoff: I don't understand "copy-mode to scroll beyond view 'watch'", but to scroll up a screen in tmux I use prefix+[, and tmux inside tmux, prefix+prefix+[, then PgUp and PgDn, or ↑ or ↓
+T 1709395045 18<20birkoff18>	I mean for the command 'watch'
+T 1709395048 18<20birkoff18>	aka 'watch find /'
+T 1709395064 18<20birkoff18>	it is not possible to scroll beyond it even in copy-mode
+T 1709395772 18<29henk18>	it 'clear's the screen, I guess
+T 1709396310 18<26slim18>	birkoff: watch doesn't having paging capabilites, afaik
+T 1709396744 18<20birkoff18>	slim: but tmux do
+T 1709396780 18<27ikke18>	Not if watch limits the amount of output to prevent it from scrolling
+T 1709397106 18<26slim18>	as ikke said, and your output wouldn't update in copy-mode anyhow negating the point of watch'ing it, kinda sorta maybe?  i'm sure there are other tools around that do what watch does with paging
+T 1709397122 18<26slim18>	man watch specifically says it only outputs a screenful
+T 1709397135 18<29henk18>	XYProblem? what’s the actual goal here?
+T 1709401380 18<29monty_hall18>	just upgraded from 3.0 to  3.4, I get this message"size missing" when I issue "tmux split-window -t "$BLAH" -v -p 10 -d 'some_command.bash'"   most likely to do w/ the -p, but the $COLUMNS and $LINES exist in my enivoronment.  Anybody know how to resolve?
+T 1709401584 18<29monty_hall18>	hold on.  maybe it's not tmux.  it's possible what I'm launching "some_command.bash" that's complaining (odd because I didn't see this in the past w/ 3.0)
+T 1709401596 18<29monty_hall18>	cd
+T 1709402239 18<29monty_hall18>	does seem so.  I tried others by hand like /usr/bash or /usr/zsh still get a size error.
+T 1709402245 18<29monty_hall18>	does->doesn't
+T 1709402281 18<26slim18>	monty_hall: it's the -p flag, its deprecated, use -l
+T 1709402307 18<29monty_hall18>	thanks
+T 1709402318 18<26slim18>	may need to add a % if you were using it as a percentage of the screen
+T 1709402351 18<26slim18>	-l assumes lines/columns unless you add the % nowadays, i believe
+T 1709402548 19*	Now talking on 22#tmux
+T 1709402548 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709402548 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709402635 18<26slim18>	could be a few reasons, size of your default-size when creating windows/layouts with the script compared to your terminal after you attach is one that comes to mind
+T 1709451377 19*	Now talking on 22#tmux
+T 1709451377 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709451377 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709523463 19*	Now talking on 22#tmux
+T 1709523463 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709523463 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709523581 19*	Now talking on 22#tmux
+T 1709523581 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709523581 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709543733 18<20birkoff18>	is it possible to run choose-tree/client when detached from any session ? 
+T 1709544865 18<26slim18>	birkoff: yes, though unless you have another client attached, i assume choose-client would be empty if it ran at all
+T 1709547728 18<20birkoff18>	slim: couldn't get it to show up without attaching first
+T 1709547747 18<20birkoff18>	is client-session-changed the proper hook to use for hooking session in/out ?
+T 1709549766 18<28thomas_adam18>	birkoff: What is it you're trying to do?  Calling choose-{tree,client} outside of tmux will use the best session which is attached.  With no sessions attached, it won't do anything.
+T 1709579805 18<29skered18>	has tmux ever had any form on online help?  `tmux command --help, -h, or help` ?
+T 1709579843 18<29skered18>	Or is just some select commands that have help?
+T 1709580079 18<28thomas_adam18>	skered: Hmm?
+T 1709580142 18<29skered18>	For some reason I was thinking tmux had help... I think I was just confusing that with bash-completion.
+T 1709620790 19*	Now talking on 22#tmux
+T 1709620790 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709620790 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709658822 19*	Now talking on 22#tmux
+T 1709658822 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709658822 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709661930 19*	Now talking on 22#tmux
+T 1709661930 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709661930 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709667679 19*	Now talking on 22#tmux
+T 1709667679 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709667679 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709674383 19*	Now talking on 22#tmux
+T 1709674383 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709674383 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709686297 19*	Now talking on 22#tmux
+T 1709686297 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709686297 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709705791 19*	Now talking on 22#tmux
+T 1709705791 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709705791 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)

@@ -1,0 +1,38 @@
+[pyprland]
+plugins = [
+  "scratchpads",
+]
+
+[workspaces_follow_focus]
+max_workspaces = 9
+
+[expose]
+include_special = false
+
+#[scratchpads.term]
+#animation = "fromTop"
+#command = "kitty --class kitty-dropterm"
+#class = "kitty-dropterm"
+#size = "50% 50%"
+
+[scratchpads.term]
+animation = "fromTop"
+#animation = ""
+command = "warp-terminal --class dev.warp.Warp"
+class = "dev.warp.Warp"
+size = "50% 50%"
+max_size = "2560px 100%"
+
+[scratchpads.file]
+animation = "fromTop"
+command = "kitty --class yazi -e yazi ~/"
+class = "yazi"
+size = "50% 50%"
+
+#[scratchpads.dolphin]
+#animation = "fromTop"
+#command = "dolphin"
+#class = "org.kde.dolphin"
+#size = "40% 60%"
+
+

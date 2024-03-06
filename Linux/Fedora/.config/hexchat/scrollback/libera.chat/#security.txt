@@ -1,0 +1,1102 @@
+T 1702193179 19*	Now talking on 22#security
+T 1702193179 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1702193179 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1702193191 18<EdFletcher18>	hot damn you must be special to have someone spend Pegasus money on you!
+T 1702193288 23*	BootLayer (~BootLayer@user/BootLayer23) has joined
+T 1702193695 24*	ano has quit (Ping timeout: 240 seconds)
+T 1702193753 23*	ano (~ano@user/ano23) has joined
+T 1702193941 24*	mvee has quit (Ping timeout: 255 seconds)
+T 1702194034 20*	Disconnected (20)
+T 1702194061 19*	Now talking on 22#security
+T 1702194061 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1702194061 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1702194095 23*	bitoff (~bitoff@109.186.198.20623) has joined
+T 1702194176 23*	Bergerag (~Bergerag@2001:999:48c:ab99:b897:141b:4f7f:4c5923) has joined
+T 1702194196 24*	dacd has quit (Ping timeout: 245 seconds)
+T 1702194542 18<27Psil018>	Exactly
+T 1702194545 18<27Psil018>	EdFletcher,
+T 1702194552 24*	Reign has quit (Quit: Going offline, see ya! (www.adiirc.com))
+T 1702194554 18<27Psil018>	now question is i do not want to format my phone although i should
+T 1702194839 23*	birdynam (~birdynam@lfbn-ren-1-471-182.w2-10.abo.wanadoo.fr23) has joined
+T 1702195145 24*	f4stpath has quit (Remote host closed the connection)
+T 1702195289 19*	Now talking on 22#security
+T 1702195289 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1702195289 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1702195423 24*	CatCow has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+T 1702198993 20*	Disconnected (20)
+T 1702201366 19*	Now talking on 22#security
+T 1702201366 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1702201366 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1702201839 18<27Psil018>	prob the second option polyex
+T 1702201859 18<27Psil018>	giving the applciation access to the system config + dir is bad , hmmm
+T 1702201929 18<28polyex18>	ya
+T 1702202002 18<28polyex18>	i'm thinking like make a system dir that each bin like this has a dir in that it has write privs to. like /shared/mybin/... then maybe even skip the symlink part and have the system configs include directly from /shared/mybin/
+T 1702202019 18<28polyex18>	and if anything doesn't work that way then but only then i'll add a symlink in
+T 1702202022 18<28polyex18>	that sound good?
+T 1702202133 18<27Psil018>	question i am looking @ flatpak vs snapd
+T 1702202139 18<27Psil018>	does your app have that option ^^
+T 1702202185 18<27Psil018>	first two options >> /opt is a good folder for apps by bins you mean appfiles or what?
+T 1702202190 18<28polyex18>	not sure. do those give apps a place to write files shared to the system config?
+T 1702202455 18<22mnemon18>	polyex: should give it permissions to write to the config file(s) (likely in /etc ?) that it needs to write and nothing else. Symlinking might be nice to prevent accidental overwrites of the config on upgrade but can't really think of any other advantages
+T 1702202670 18<28polyex18>	ok what about this 1. i set up the symlinks then throw system into immutable, now i an still update that shared file because it's outside of a system config dir?
+T 1702205924 18<26nasmConnoisseur18>	https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html but how does that make any sense, given that these multiple users would all have to know a disk encryption password that unlocks the whole thing during the FDE step, and thus they have access to every user's data anyway if they make an offline copy of the harddisk?
+T 1702205941 18<26nasmConnoisseur18>	It does. systemd-homed which allows for home directory encryption
+T 1702206071 18<26nasmConnoisseur18>	"the user's home (missing so far)." again... No. We do have this: systemd-homed does allow for home directory encryption.
+T 1702206165 18<26nasmConnoisseur18>	Oh ok. That's actually addressed below.
+T 1702208540 19*	Now talking on 22#security
+T 1702208540 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1702208540 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1702214434 20*	Disconnected (20)
+T 1702214614 19*	Now talking on 22#security
+T 1702214614 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1702214614 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1702219834 20*	Disconnected (20)
+T 1702219889 19*	Now talking on 22#security
+T 1702219889 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1702219889 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1702220524 20*	Disconnected (20)
+T 1702220571 19*	Now talking on 22#security
+T 1702220571 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1702220571 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1702281887 19*	Now talking on 22#security
+T 1702281887 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1702281887 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1702282236 20*	Disconnected (20)
+T 1702282251 19*	Now talking on 22#security
+T 1702282251 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1702282251 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1702282262 20*	Disconnected (20)
+T 1702282282 19*	Now talking on 22#security
+T 1702282282 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1702282282 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1702285561 20*	Disconnected (20)
+T 1702314577 19*	Now talking on 22#security
+T 1702314577 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1702314577 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1702316936 18<26nsh18>	oh wow we've a whole shire?!?
+T 1702317010 18<26nsh18>	who's the sheriff?
+T 1702322572 20*	Disconnected (20)
+T 1702322852 19*	Now talking on 22#security
+T 1702322852 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1702322852 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1702324760 18*	28calmclam pins a badge on nsh
+T 1702812797 19*	Now talking on 22#security
+T 1702812797 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1702812797 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1705506304 19*	Now talking on 22#security
+T 1705506304 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1705506304 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1705524970 19*	Now talking on 22#security
+T 1705524970 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1705524970 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1705525535 19*	Now talking on 22#security
+T 1705525535 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1705525535 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1705525647 19*	Now talking on 22#security
+T 1705525647 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1705525647 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1705525767 19*	Now talking on 22#security
+T 1705525767 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1705525767 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1705526737 19*	Now talking on 22#security
+T 1705526737 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1705526737 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1705559182 19*	Now talking on 22#security
+T 1705559182 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1705559182 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1705562767 20*	Disconnected (20)
+T 1705562791 19*	Now talking on 22#security
+T 1705562791 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1705562791 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1705565514 18<28gnrp18>	ghostbuster: I wouldn't worry about low-level criminals getting into printers. I'd worry about the copy shop and its employees.
+T 1705565578 18<28gnrp18>	ah, ahdasdas
+T 1705565582 18<28gnrp18>	ups
+T 1705565618 18<20synaps318>	lol
+T 1705565638 18<28gnrp18>	ah, yeah, what hussein1 said. Emplyoees of such shops are lowest-wage. Motives and effort change in that perspective. Doesn't even have to be that they use the passport and sell it. I could imagine to use it just for your own or joke purposes
+T 1705565703 18<28gnrp18>	I wouldn't suspect an organized heist. Just some individuals seeing a chance
+T 1705568249 19*	Now talking on 22#security
+T 1705568249 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1705568249 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1705570204 18<26nasmConnoisseur18>	Yo!
+T 1705571287 18<28gnrp18>	nasmConnoisseur: You were asking yesterday and I replied when oyu were gone
+T 1705571289 18<28gnrp18>	16:13 <gnrp> re Debian: I really disliked the practice they had some time ago (or still have?), where they would just activate any service you install
+T 1705571291 18<28gnrp18>	16:13 <gnrp> "You install something that drags along an Apache? Well, then let's start it and make it open to the world!"
+T 1705574527 18<26nasmConnoisseur18>	gnrp, 1) that behvior of apt can be disabled if you want 2) I find it useful, for example Iinstal fwupd? It gets auto started
+T 1705574552 18<26nasmConnoisseur18>	And Debian is well recognized to be one of the best overall Linux distros.
+T 1705574567 18<28gnrp18>	lol, ok
+T 1705574654 18<28gnrp18>	so all is fine and it must be very secure. Why the question, then?
+T 1705574718 18<26nasmConnoisseur18>	I didn't said that; I said I find it a useful feature (for me) and that Debian is well recognized to be one ofthe best Linux distros, which is factua.
+T 1705574731 18<26nasmConnoisseur18>	s/factua/factual/
+T 1705574760 18<28gnrp18>	and I don't care what is well-recognized or so and didn't even mention that
+T 1705574767 18<26nasmConnoisseur18>	k
+T 1705574799 18<28gnrp18>	you ask "how is it concerning security" and I say "there's this one feature that is a rather big risk". The answer "it is one of the best overall!!!11" and "but I LOVE that feature" is just fanboy comments
+T 1705574926 18*	28gnrp dislikes Debian's attitude of patching everything. While they seem to be handling security incidents quite well, this still adds a lot of risk
+T 1705574942 18<28gnrp18>	wasn't there this thing with the compromised SSH keys several years ago which only affected Debian?
+T 1705575043 18<28gnrp18>	I prefer a policy that uses widespread tools, rather than creating an individual version with its own problems that just waits for zero days to happen
+T 1705575057 18<26nasmConnoisseur18>	Several years ago, so it's fixed now? And I guess you dislike the stable release model and prefer the rolling releases one? Then we have a different view on how securiy should be handled
+T 1705575104 18<28gnrp18>	nasmConnoisseur: Where do you want to get with that question, or generally? You ask about security, and I point ot security incidents Debian had.
+T 1705575115 18<26nasmConnoisseur18>	And source for that? "<gnrp> wasn't there this thing with the compromised SSH keys several years ago which only affected Debian?"
+T 1705575120 18<28gnrp18>	and this doesn't have a shit to do with release models. I didn't even mention that.
+T 1705575139 18<28gnrp18>	nasmConnoisseur: Google for debian openssl incident
+T 1705575310 18<28gnrp18>	am I wrong with how that conversation felt? Somebody asks for "thoughts on security of X" and when you point out things then they get super defensive about it and answer to things you didn't even say?
+T 1705575348 18<28gnrp18>	feels like talking to Apple users
+T 1705576890 18<26supakeen18>	the question is just weird anyhow; it's so wide in scope
+T 1707739632 19*	Now talking on 22#security
+T 1707739632 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1707739632 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1707742868 19*	Now talking on 22#security
+T 1707742868 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1707742868 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1707744970 18<29godSend2318>	hey all
+T 1707745163 18<29Gurkenglas18>	The attack of listening in on a transmission is ordinarily addressed using encryption which makes hardness assumptions. I see a simple mechanism to stack over or under that encryption when slight increases in latency are fine and the transmission is tiny: Generate a one time pad, use it to encrypt the payload, send the payload and the pad over
+T 1707745163 18<29Gurkenglas18>	different router paths. Now an adversary has to listen in on the payload-path and (if the RNG is adequate) they also have to listen in on the pad-path. Does any project or paper use this?
+T 1708186109 19*	Now talking on 22#security
+T 1708186109 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708186109 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708438061 19*	Now talking on 22#security
+T 1708438061 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708438061 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708438980 18<28shtrb18>	nullvalue, electron apps normally require network traffic to work :)
+T 1708439546 19*	Now talking on 22#security
+T 1708439546 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708439546 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708439558 18<24nullvalue18>	im watching that video you linked shtrb , its quite interesting
+T 1708439589 18<28shtrb18>	the question is flatpak would help to mitigate it or not
+T 1708439876 19*	Now talking on 22#security
+T 1708439876 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708439876 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708440006 18<24nullvalue18>	flatpak is a package manager, ? is does it test what they offer (will vulnerable code be distributed via flatpak). There is a possibility that using flatpak might not mitigate vulnerabilites which already exist in the underlying code. this is my opinion but have to look into it further
+T 1708442126 18<28shtrb18>	nullvalue, I hoped that as the electrons apps would be running under flatpak isolation even if they vulnarable code can escape the browser it would attack a nodejs copy runninging under the same flatpak isolation (or am I wrong to assume that there would be a node running isolated within the same flatpak runtime) ?
+T 1708442212 18<28shtrb18>	the very idea that sending a victim a well crafted message that could trigger the victim pc to run any arbitrary code feel quite frightening
+T 1708442313 18<19KURWAMAC18>	well, sure but the possiblility is always present
+T 1708442327 18<19KURWAMAC18>	just need to have mitigations
+T 1708442360 18<28shtrb18>	hence my question if flatpak is a mitigation for similar attacks that had been described in that link
+T 1708442363 18<19KURWAMAC18>	one possible mitigation is to shave your head and fly off to china with no electronics and a suitcase to become a monk
+T 1708442428 18<19KURWAMAC18>	"Warning: Running untrusted code is never safe, sandboxing cannot change this."
+T 1708442449 18<19KURWAMAC18>	so just make sure arbitrary code execution isnt possible in the first place
+T 1708442495 18<28shtrb18>	Well thank you , I guess I should say that to Microsoft to stop using Javascript and Typescript
+T 1708442573 18<24nullvalue18>	heh, when you mention electrons app makes me think of a friend named electron
+T 1708442590 18<24nullvalue18>	that was before all this existed :P
+T 1708442739 18<19KURWAMAC18>	shtrb: the problem isnt using javascript or typescript, the problem is bad implementations, etc.
+T 1708456439 18<27incog18>	https://www.youtube.com/watch?v=eVd2TivlVxk
+T 1708462121 18<19ttys00018>	Anyone familiar with google api keys being used clientside? I have a key restricted to website domain, and restricted to specific APIs, but this key is still displayed publicly in the page source. How do I prevent an attacker from using the key on their local machine for mass lookup queries, they could spoof the domain via host file, and load whatever javascript they want on their fake version of my website.
+T 1708462324 18<27rocks18>	If the key is for doing lookups, you can't prevent people using it to do lookups
+T 1708462495 18*	27rocks assumes this is some "serverless" bs
+T 1708463609 18<19ttys00018>	no, just your typical client side google api implementation. e.g. google places auto complete address field. start typing a few characters and it suggests what address it could be.
+T 1708465895 18<27Poeticode18>	you can lock down your API key to whitelist referrers / ips, but in general it's best to use their server-side libraries and feed the results to the client.
+T 1708469807 18<24uf18>	i have like 5~10 servers spread out geographically. i want to centralize logging for them, preferably with some useful alerts or something. any tips where to begin? it's a mixture of proxmox, debian, ubuntu, and freenas
+T 1708469856 18<24uf18>	ideally i'd like to also make some useful grafana interface for some statistics, but i really don't like the way prometheus exporters work when they're open-for-all and bs like that
+T 1708469897 18<24uf18>	ps it has to be a self-hosted solution, no third party services
+T 1708469931 18<27rocks18>	Have you tried asking in a relevant channel?
+T 1708469947 18<24uf18>	i thought this is one :|
+T 1708469984 18<27rocks18>	You could try one of those websites where people in developing countries undercut each other to do tech work
+T 1708470024 18<24uf18>	uh
+T 1708470079 18<27rocks18>	unless you already work for one of those and that's why you're asking how to do it
+T 1708470851 18<24uf18>	are you this arrogant in real life as well or just behind a keyboard?
+T 1708470950 18<27rocks18>	This is my sock account with which I troll people asking for professional services in IRC channels they picked at random
+T 1708470956 18<27rocks18>	I'm quite nice irl
+T 1708473217 19*	Now talking on 22#security
+T 1708473217 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708473217 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708487781 18<26hays18>	im running services on a public server with docker, have firewall blocking ports, and using nginx as reverse proxy with http basic auth... any structural issues with that?
+T 1708488059 18<26hays18>	each one with their own subdomain
+T 1708489554 18<22ajak18>	bind docker to your local interfaces
+T 1708489663 18<22ajak18>	http basic authentication can be ok but it has some problems: https://security.stackexchange.com/questions/988/is-basic-auth-secure-if-done-over-https
+T 1708499455 18<22user1__18>	imagine a tool that just scans the Target for CVE's I wonder how many lines of source code that would take
+T 1708499510 18<22user1__18>	and with the updates and stuff : o
+T 1708499704 18<22user1__18>	I mean there are many but they're usually small and really specific about the threat model
+T 1708500175 18<27Affliction18>	Doing it generally, for any possible input on any possible program involves solving the halting problem.
+T 1708502061 18<22user1__18>	Afflictioin for the halting problem to occur there has to be an infinite number of CVE's so that the scanner scanns for ever or at least that's what I think
+T 1708502768 18<22user1__18>	Affliction
+T 1708502922 18<22user1__18>	or the testers have to find new cve really fast like lightning fast like 1 new cve per minute
+T 1708506176 18<28calmclam18>	it's greased lightnin'!
+T 1708507893 19*	Now talking on 22#security
+T 1708507893 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708507893 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708508320 19*	Now talking on 22#security
+T 1708508320 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708508320 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708528983 18<24likogan18>	user1__: https://nmap.org/nsedoc/scripts/vulners.html
+T 1708529007 18<24likogan18>	an nmap script that scans for known vulnerabilities on application ports
+T 1708529028 18<24likogan18>	It's usually 99% false positives, but it's cool to think about
+T 1708529096 18<29BlueyHealer18>	Wouldn't that be very notieable for the victim?
+T 1708529304 18<28binaryhermit18>	not necessarily given the internet background radiation
+T 1708529476 18<24likogan18>	BlueyHealer: from my understanding it would look like a normal nmap scan
+T 1708529513 18<29BlueyHealer18>	Are nmap scans common enough to not be noticeable?
+T 1708529522 18<29BlueyHealer18>	(sorry for stupid question)
+T 1708529529 18<24likogan18>	Nmap scans are very loud, but they happen all the time
+T 1708529563 18<24likogan18>	It's noticeable, but it's very unlikely someone will care unless it's a private IP (like 192.168.1.17)
+T 1708529596 18<29BlueyHealer18>	ah okay
+T 1708530419 19*	Now talking on 22#security
+T 1708530419 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708530419 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708532047 18<25technonerd18>	https://security.apple.com/blog/imessage-pq3/
+T 1708532163 18<28calmclam18>	.t
+T 1708532164 18<29EmmyNoether18>	Blog - iMessage with PQ3: The new state of the art in quantum-secure messaging at scale - Apple Security Research
+T 1708533790 18<26zato18>	https://www.youtube.com/watch?v=Vkf-d7CZscw
+T 1708533813 18<26zato18>	Ennio Morricone-Allonsanfan       very unlikely
+T 1708544281 19*	Now talking on 22#security
+T 1708544281 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708544281 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708553966 19*	Now talking on 22#security
+T 1708553966 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708553966 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708554077 19*	Now talking on 22#security
+T 1708554077 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708554077 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708580460 18<27incog18>	💩
+T 1708587849 18*	28calmclam gasps
+T 1708589390 18<27incog18>	snails have an anus above their heads, they shit on their own heads
+T 1708589942 18<27khaaaaaaaaan18>	Incog you're looking at it the wrong way: Snails manufacture their own hats
+T 1708591954 18*	28calmclam gasps
+T 1708606547 19*	Now talking on 22#security
+T 1708606547 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708606547 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708606631 19*	Now talking on 22#security
+T 1708606631 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708606631 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708612905 18<29godSend2318>	hey all
+T 1708623317 19*	Now talking on 22#security
+T 1708623317 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708623317 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708630546 19*	Now talking on 22#security
+T 1708630546 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708630546 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708631263 19*	Now talking on 22#security
+T 1708631263 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708631263 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708631930 19*	Now talking on 22#security
+T 1708631930 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708631930 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708632783 19*	Now talking on 22#security
+T 1708632783 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708632783 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708632966 19*	Now talking on 22#security
+T 1708632966 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708632966 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708653940 18<29godSend2318>	hey all
+T 1708655107 18<20nshire18>	anyone else get really curious when they see weird requests in their webserver logs? I see things like "/__1975.php" and just wonder what could possibly be hosted on that php file
+T 1708655240 18<20nshire18>	well this is strange, one request, "4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbRyFTLRNyDmT1a1boZV", is the EXACT same string that was posted in this reddit post??? https://www.reddit.com/r/Windows10/comments/mdjsoa/windows_10_copying_gibberish/
+T 1708655323 18<22thumbs18>	nshire: I recommend not bothering with every single guess the attackers make.
+T 1708655340 18<22thumbs18>	On the other hand, do secure and update the applications you are hosting.
+T 1708655385 18<20nshire18>	I mean most of the requests at least make sense. `/admin/` seems like a logical place to look if you're trying to breach someone
+T 1708655432 18<22thumbs18>	nshire: Don't try to make sense out of the scripts they run, honestly.
+T 1708655475 18<20nshire18>	too late I already made sense of it
+T 1708655482 18<20nshire18>	it's someone's monero deposit address
+T 1708655512 18<20nshire18>	trying to get some fail2ban scripts to auto ban the weird requests
+T 1708655535 18<20nshire18>	the shellcode ones seem to be hard to escape
+T 1708655563 18<22thumbs18>	Weird thing to focus on, but it's your time, go ahead.
+T 1708688569 18<28calmclam18>	Requests for weird php files makes me think they're looking for a webshell
+T 1708696020 19*	Now talking on 22#security
+T 1708696020 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708696020 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708696321 19*	Now talking on 22#security
+T 1708696321 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708696321 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708703278 18<19maccampus18>	Should you give copies of your ID, Bank & driving papers to companies who ask them but has no reason for needing them ?
+T 1708703297 18<28gnrp18>	maccampus: Yes, you should always hand out all your data to every company that asks you for it
+T 1708703312 18<28gnrp18>	maccampus: You should also send me your credit card data, including CVV, via PM
+T 1708703356 18<22kkawg18>	encrypted with base64?
+T 1708703383 18<28gnrp18>	kkawg: Yes, please. You can also give to me in cleartext, though. I am trustworthy.
+T 1708703405 18<28gnrp18>	maccampus: What I want to say... please elaborate ;)
+T 1708703477 18<19maccampus18>	Well i send thel a picture of my banc card with the number covered, i did the same with my ID covering all; security codes & numbers. On my driving license i couldn'd find much to cover. I also lowered the quality of the image to a point where they become worthless
+T 1708703527 18<19maccampus18>	but, this is a form of social engineering they do , right ?
+T 1708703543 18<22kkawg18>	it also somewhat depends on the law in your country
+T 1708703550 18<22kkawg18>	yea you can check maybe trustpilot
+T 1708703572 18<28gnrp18>	maccampus: Why are you doing this? I mean, the qeustion is, what company does want this, and why? I'd just refuse it, to begin with
+T 1708703586 18<24JakLareo18>	You said that they have no reason for needing them, so why are you giving them anything in the first place?
+T 1708703602 18<28gnrp18>	but as kkawg says, some legislations require it. Some European countries e.g. require *always* a scan of the ID when you want to stay somewhere overnight. When you want to rent a car, well...
+T 1708703651 18<29BlueyHealer18>	I usually don't do so, if it's not unavoidable.
+T 1708703665 18<29BlueyHealer18>	That's why if it's a server, you keep a backup of your stuff at home.
+T 1708703668 18<19maccampus18>	ok , they seem to be trusted on that list, but that doesn't make them secure
+T 1708703712 18<28gnrp18>	maccampus: What is the company? Or what services are they offering, and what legislation?
+T 1708703796 18<19maccampus18>	And as the servers of the garbage disposal company of the department of Limburg was hacked, the hacker stole all clients personal information including Soicial govermental numbers & banking  & they asked money to not put the data online
+T 1708703883 18<19maccampus18>	Well they offer jobs & if i get a job through them they would need some of the data anyway, but as log as i am only listed, why should they need it ?
+T 1708703936 18<19maccampus18>	luckely atleast my driving licence is pre digital
+T 1708704022 18<19maccampus18>	you know they only need 1 gnrp in their service to steal all the personal data
+T 1708704031 18<19MadCamel18>	so this place leaked everyones data and they want more data? I'd tell them to go stick their head in a bucket.
+T 1708704127 18<19maccampus18>	yeah, but even the Police servers leak there data over here
+T 1708710834 18<22eson12318>	there is something i don't understand, some people said this code is vulnerable to SSTI https://hatebin.com/issqjfqkjo, but it's being passed through render_template so it's safe from that iirc, so what do people mean ?
+T 1708710837 18<22eson12318>	or it's a troll or something ?
+T 1708711222 18<27rocks18>	Does render_template sanitize the variables which are passed to it, which in this case comes directly from the request?
+T 1708712208 18<27jabberwock18>	https://python.plainenglish.io/the-best-security-practice-of-your-flask-application-api-691a21e37c27
+T 1708712209 18<27jabberwock18>	.t
+T 1708712212 18<29EmmyNoether18>	The Best Security Practice of your Flask Application/API | by chloewu2037 | Python in Plain English
+T 1708716280 18<19Kaliroot18>	She: nice
+T 1708716789 18<19Kaliroot18>	Hi
+T 1708716953 18<26aog18>	is there a way (a program maybe) that can verify that all mods installed in the kernel (lsmod) are legit and not a rootkit of some sort?
+T 1708717195 18<19abraxas18>	I think rkhunter looks for kernel module rootkits as part of its scan
+T 1708717288 18<19Kaliroot18>	Should have mod it your self a rootkit is so power
+T 1708717435 18<19Kaliroot18>	Please has there being any latest record of rce against port 53
+T 1708717616 18<27rocks18>	Only against people who IRC as root
+T 1708717659 18<19Kaliroot18>	What?
+T 1708717677 18<19Kaliroot18>	I don't understand
+T 1708717849 18<19Kaliroot18>	Root is good for everything you become all powerfull
+T 1708719513 18<19Kaliroot18>	Please in name of opensource tools made by nsa
+T 1708720189 19*	Now talking on 22#security
+T 1708720189 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708720189 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708720190 18<22thumbs18>	Cripes, be patient.
+T 1708720201 18<27rocks18>	Soz, too busy googling for things that I need to find out based on some search terms
+T 1708720222 18<26danieldg18>	if you want instant responses, ask an AI
+T 1708720273 18*	28calmclam picks up mouse
+T 1708720275 18<28calmclam18>	hello computer
+T 1708720288 18<19Kalilinux18>	And ai will answer such question well
+T 1708720288 18*	27rocks hands the handset to Dog
+T 1708720302 18<26danieldg18>	I never said they'd be good answers, but they will be instant
+T 1708720333 18<27rocks18>	AI will make up some bullshit but you may find it reassuring to get instant answers
+T 1708720347 18<28calmclam18>	i think cia tools are more open source than nsa tools
+T 1708720351 18<19Kalilinux18>	They are use when you need real time info
+T 1708720398 18<19Kalilinux18>	You don't need
+T 1708720448 18<19Kalilinux18>	Please example of cia tools you know
+T 1708720685 18<19Kaliroot18>	Am finaly back
+T 1708720768 18<19Kaliroot18>	Cia and nsa tools
+T 1708720809 18<19Kaliroot18>	NickServ IDENTIFY Kaliroot slokli.llolal
+T 1708720915 18<24velix18>	Kaliroot: why not BSI ?
+T 1708720928 18<24velix18>	The German BSI is so good, nobody knwos it.
+T 1708720947 18<24velix18>	oh wait, it's the BND
+T 1708720971 18<19Kaliroot18>	Good? Please who are they
+T 1708720982 18<26danieldg18>	the best spies are the ones you don't know exist
+T 1708721001 18<26danieldg18>	if they've even hidden their name from you, they're clearly good
+T 1708721002 18<19Kaliroot18>	True
+T 1708721014 18<19Kaliroot18>	Yep
+T 1708721061 18<28calmclam18>	I thought they had to go out of business after a failed migration to SAP
+T 1708721097 18<20dvb18>	rofl
+T 1708721137 18<19Kaliroot18>	I just need there open source tool
+T 1708721156 18<20dvb18>	i need a pizza
+T 1708721169 18<27rocks18>	That will be 25000 Bitcoins please
+T 1708721186 18<19Kaliroot18>	Hmmh
+T 1708721194 18<28calmclam18>	damn I left my wallet in my other laptop
+T 1708721211 18<19Kaliroot18>	Oh
+T 1708721351 18<24velix18>	Ethan Hunt and Chuck Norris don't need a wallet. They can remember the complete blockchain
+T 1708724924 18<28gnrp18>	ok, I have a question about blockchain currencies so I can finally become a cryptobro: What is the whole point of the proof-of-something? In principle, all a blockchain needs is a public entry that two parties agree on a transaction. Why is there a proof of something involved, why is it not cryptographic operations that are easy enough to be carried out by the wallet software?
+T 1708724969 18<19wasamasa18>	have you read the bitcoin paper?
+T 1708725003 18<28gnrp18>	wasamasa: I've roughly gone through it, yeah
+T 1708725042 18<19wasamasa18>	it's been a while since I've read it myself, but it's surprisingly simple all things considered
+T 1708725121 18<28gnrp18>	yeah, it'S like nine pages or so
+T 1708725243 18<19wasamasa18>	bitcoin seeks to eliminate the idea of a trusted entity that can be relied on to verify that a transaction indeed happened, so instead you have a pool of entities that do not trust each other (how cryptopunk/libertarian) and you verify that it would take an overwhelming amount of CPU power to fake the transaction
+T 1708725257 18<19wasamasa18>	double-spending specifically is mentioned as motivation for doing that verification
+T 1708725259 18<28gnrp18>	well, I guess I have to dig deeper into it. The main problem that shall be solved with the proof-of-xxx is to prevent double spending
+T 1708725262 18<28gnrp18>	yeah
+T 1708725287 18<19wasamasa18>	otherwise it would be possible for people to spend a bitcoin more than once, thereby subverting its integrity
+T 1708725290 18<28gnrp18>	however, as far as I understood, a transaction is just two parties agreeing (signing) a transaction and making that public
+T 1708725322 18<19wasamasa18>	yes, but what prevents someone else to make another transaction and pretending that's the canonical one?
+T 1708725337 18<19wasamasa18>	you need some way to ensure that does not happen, so you have this blockchain hashing thing
+T 1708725344 18<28gnrp18>	there would be no proper history of that money having been generated and spent before
+T 1708725361 18<28gnrp18>	the blockchain ensures that all former transactions are verifiably in the current state
+T 1708725366 18<19wasamasa18>	but only because you spend time and effort generating a chain of hashes
+T 1708725420 18<28gnrp18>	I mean, I get why in bitcoin it is required. I think. I just don't get why one couldn't make a blockchain that only consists of a fixed amount of moneys and then there would be a "backtrace" of that money values spent and where it flows, with the blockchain agreeing on the current state
+T 1708725828 18<28gnrp18>	so as far as I understood, the proof-of-xxx works as a majority vote. It means that the majority of the participants agree that something happened, by having invested certain resources and building up on the previous blocks. But why is there a majority vote required? Wouldn't a blockchain as "just" a public register of transactions also fulfil its purpose?
+T 1708725966 18<28gnrp18>	my understanding is that the proof-of-xxx's purpose is to not have to centrally issue a currency.
+T 1708726132 18<28gnrp18>	hm, ok. So slowly I start to get it. The main problem seems to be the bootstrapping. If one would have one universally trusted state, it would be easy. But since this doesn't work, and there is a constant "onboarding" happening both of money and wallets, there must be a majority vote (proof-of-xxx) against malicious influences
+T 1708726458 18<28mk-fg18>	Yeah, problem is how to get multiple parties agree on same state, without any kind of trusted party, which afaiu is continuous majority vote with some kind of stakes (work, space, etc)
+T 1708726611 18<19wasamasa18>	there are some alternative designs that sacrifice this "trust no entity on the network" concept
+T 1708726999 18<27rocks18>	The bootstrapping is easy, you just create a new block which has no parent and then start chaining more blocks to it. There's a reason that about 5% of the Bitcoin blocks ended up belonging to the original authors. Anyone can start their own blockchain, and many shitcoins have
+T 1708727060 18<28gnrp18>	my impression is anyway that at the current state of bitcoin and many crypto currencies, a central authority to issue the coins to begin with is welcome or even assumed by the users. All that bs with initial coin offerings
+T 1708727074 18<27rocks18>	Keyword: premine
+T 1708727090 18<28gnrp18>	rocks: Well, yes. Ok, bootstrapping isn't the problem in that sense. The onboarding is.
+T 1708727148 18<27rocks18>	Bitcoin was the product of a small but increasing number of cryptoanarchists who were all in on it. It's not like it really got anywhere for a number of years after its inception except by word of mouth
+T 1708727190 18<27rocks18>	and faith of a bunch of what weren't yet called HODLers that this was somehow the future
+T 1708727366 18<27rocks18>	It still serves no purpose except crime and speculation, so it has also failed at that initial goal as well
+T 1708727414 18<26ttys000_18>	I have captured a signal from my car remote using an RTL SDR. and rx_tools. I open this signal in Audacity and look at it, it does not look like ASK, so maybe it is PSK or FSK or some other thing like BPSK, QPSK, DQPSK, etc. is there some tool I can use to detect what type of keying is being used?
+T 1708727473 18<27rocks18>	Yuo'd have to be Chuck Norris to be able to spot anything except AM in a time-domain representation of a signal
+T 1708727522 18<26ttys000_18>	are you saying i need to do a FFT on the signal first?
+T 1708727551 18<28mk-fg18>	Afaik most people who object to "serves no purpose" with "but I use btc to pay for ..." tend to actually use exchanges for that, where "btc" stands for just a shared exchange rate number, not any kind of distributed system
+T 1708727579 18<27rocks18>	That would be a start. There must be radio tools you can feed a baseband signal into and try decoding it as various modulation schemes to see if something comes out that looks viable
+T 1708727668 18<27rocks18>	The problem is you may need the raw I and Q signals. I don't know if you can get that from RTL-SDR, or if you've effectively already demodulated it by receiving it with a demodulation scheme  specified at the time of reception
+T 1708727820 18<26ttys000_18>	yeah, i guess this is possible with rx_tools as well, the rx_sdr command. "emits raw I/Q data"
+T 1708727823 18<26ttys000_18>	https://github.com/rxseger/rx_tools?tab=readme-ov-file
+T 1708727829 18<26ttys000_18>	but what do i view that data with?
+T 1708727863 18<26ttys000_18>	it also says it can do  FFT logger. again, not sure how to view the output graphically.
+T 1708727972 18<26ttys000_18>	oh, neat, just found https://github.com/jopohl/urh
+T 1708727974 18<26ttys000_18>	thanks rocks
+T 1708728358 18<26ttys000_18>	cool. it seems urh automatically detected it as FSK.
+T 1708728451 18<27rocks18>	Now you just get to deal with the rolling code stuff
+T 1708728677 18<26ttys000_18>	From what i've read this particular fob has a sequential rolling code, so it seemed like a good starting place for learning.
+T 1708738511 18<25on0bi18>	i'm home alone hehe 😈
+T 1708740936 18<24Stopher18>	Good evening, everyone.  It has been about ... oh ... 26 years since I've been on IRC.  This is an awesome blast from the past!  I am a Cyber Security professional, now.  Did a /list and picked this channel as my first reunion experience.  :D
+T 1708772561 19*	Now talking on 22#security
+T 1708772561 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708772561 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708782628 18<27antetokounmpo18>	hi
+T 1708782631 18<27antetokounmpo18>	hello
+T 1708782767 18<27antetokounmpo18>	anyone here to exchange ideas
+T 1708782810 18<19wasamasa18>	I challenge you to start a discussion by putting such an idea into the channel
+T 1708782825 18<19wasamasa18>	otherwise you'll have to lurk
+T 1708782928 18*	28xFCFFDFFFFEFFFAF opens idea receiver socket ... done
+T 1708783088 18<27antetokounmpo18>	hacking an external network with its own security protocols and encryption of network protocols requires good study and preparation because when security measures begin to be faced it is necessary to know how to analyze code in real time, know how to program in the language that can hack that code be a simple xml html5 php python extension file
+T 1708783121 18<19wasamasa18>	that's very close to gibberish
+T 1708783162 18<19wasamasa18>	wtf does even "analyze code in real time" even mean
+T 1708783178 18<19wasamasa18>	you're not the chosen one making sense of the matrix and punching agent smith
+T 1708783245 18<27antetokounmpo18>	wasamasa what do you want say
+T 1708783266 18<19wasamasa18>	I'm allergic to bullshit, that's all
+T 1708783328 18<27antetokounmpo18>	ok
+T 1708783876 18*	28calmclam dereferences xFCFFDFFFFEFFFAF 
+T 1708783912 18<25xorAxAx18>	looks negative
+T 1708783939 18<28calmclam18>	just a little bit
+T 1708784291 18<25xorAxAx18>	actually, its a string after all
+T 1708784735 18<27antetokounmpo18>	calmclam i send mensage for you
+T 1708785128 18<28xFCFFDFFFFEFFFAF18>	how much i should pay to view calmclam clamav signatures?
+T 1708786347 18<19Kaliroot18>	What are product of locks you can recommend for high security (unpickable locks)
+T 1708786736 18<27xx18>	no such thing
+T 1708787050 18<29TheAppleFox18>	Kaliroot unpickable? simple, fill the keyhole with cement on any cheap lock
+T 1708787224 18<19Kaliroot18>	TheAppleFox: the keyway will be blocked and my key won't even open the lock
+T 1708787240 18<29TheAppleFox18>	yes, but it will be unpickable LOL
+T 1708787308 18<19Kaliroot18>	Okay locks with security pin (anti-pick pins)
+T 1708788546 19*	Now talking on 22#security
+T 1708788546 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708788546 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708788723 19*	Now talking on 22#security
+T 1708788723 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708788723 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708789221 18<22busch18>	Does somebody know if the common ransomware (by lockbit, royal, blacksuit, ..) attacks are human operated or automated attacks?
+T 1708789239 18<22busch18>	(or both maybe)
+T 1708789505 18<28aesthetics18>	Hello, i've got some kiddie trying to make my webserver download some binaries; any hint about a "good tutorial" to try to "reverse" it ?
+T 1708789521 18<28aesthetics18>	the binary, to understand what it's supposed to do
+T 1708789581 18<19Kaliroot18>	How can i bypass this security feature add by my isp in there cellular network. When i use trace route command i don't see the routers' ip (i see "* * * *"), but i do see the  ip/hostname of routers that are close to my destination and the routes ip that i see is not for my isp. Please can it be bypassed or what else can cause the problem.
+T 1708789676 18<19Kaliroot18>	You have the binary right?
+T 1708789745 18<28aesthetics18>	Kaliroot: yes
+T 1708789843 18<19Kaliroot18>	Use a reserve engineering tool to extract the source code and read
+T 1708789906 18<28aesthetics18>	yup, but i guess some RE tools are better than others ? ;p
+T 1708789918 18<28aesthetics18>	noob friendly, i mean
+T 1708790073 18<19tpr18>	ghidra?
+T 1708790134 18<28aesthetics18>	oh yeah, i remember that name. Ok, thanks i'll take a look
+T 1708790164 18<28calmclam18>	sounds like they were successful in making you download it hehe
+T 1708790204 18<28aesthetics18>	:)
+T 1708790225 18<28aesthetics18>	now let's try to not execute it
+T 1708790294 18<19Kaliroot18>	You execute the bin in a vm
+T 1708790470 18<28aesthetics18>	yea well, maybe later ;P
+T 1708790514 18<19Kaliroot18>	How can i bypass this security feature add by my isp in there cellular network. When i use trace route command i don't see the routers' ip (i see "* * * *"), but i do see the  ip/hostname of routers that are close to my destination and the routes ip that i see is not for my isp. Please can it be bypassed or what else can cause the problem.
+T 1708790708 18<28calmclam18>	Maybe if you call them and keep asking them over and over they will become annoyed and just tell you
+T 1708790761 18<19Kaliroot18>	Maybe
+T 1708790829 18<19Kaliroot18>	I have never seen such a security or whatever before
+T 1708790915 18<19KURWAMAC18>	Kaliroot: that is not a security feature
+T 1708790958 18<19KURWAMAC18>	its something to do with the nodes not responding to UDP probes
+T 1708790975 18<19KURWAMAC18>	or whatever the default protocol is
+T 1708790976 18<19KURWAMAC18>	https://askubuntu.com/questions/1113815/traceroute-is-not-showing-ips-instead-it-showing-stars
+T 1708792087 19*	Now talking on 22#security
+T 1708792087 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708792087 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708797847 18<19Kaliroot18>	Which tool do you think is better  for dir enumeration (the one am using can not differentiate if a dir exist or not, the WAF always display a web page which confuse it into believing the page or dir exist) any tool that can allow me to set conditions  like, {if page not found is present in webpage given as a respond- that means the page of dir does}. I know this problem of automation .
+T 1708798278 18<19Kaliroot18>	�[18:43:09] -all-
+T 1708798329 18<19Kaliroot18>	�
+T 1708823390 19*	Now talking on 22#security
+T 1708823390 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708823390 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1708825504 18<28ghostbusters218>	does anyone actually understand how NFS permissions are supposed to work
+T 1708825528 18<28ghostbusters218>	does the threat model not include "attacker has root on his own box" ?
+T 1708825536 18<26danieldg18>	not usually, no
+T 1708825547 18<28ghostbusters218>	lmao
+T 1708825581 18<26danieldg18>	originally it was meant for a LAN where all systems were centrally administered, with common UIDs (say, via LDAP or such)
+T 1708825595 18<26danieldg18>	so no, you did not get root
+T 1708825670 18<28ghostbusters218>	understandable, but not ideal in 2024
+T 1708825712 18<26danieldg18>	it's still reasonable in 2024 if your NFS clients are things like web servers
+T 1708825747 18<26danieldg18>	but no, not for BYOD or "I need root on my box to run curl | sudo sh, like everyone cool does"
+T 1708827082 18<28ghostbusters218>	because no attacker could ever get root on a web server lol
+T 1708840387 18<25kurahaupo18>	ghostbusters2: if you have nfs under web servers, you'd still want to remap uid 0
+T 1708840540 18<25kurahaupo18>	But it "doesn't matter" in the sense that the web servers are interchangeable anyway. An attacker doesn't gain anything by being able to compromise  a second one.
+T 1708841954 18<27truthr18>	wheres my hot goth hacker chick
+T 1708847464 18<26lolok18>	you didnt invest in gothacoin early enuf now its like $20,000 just to have one be in the same room as you
+T 1708852198 18<22eson12318>	so i have been doing some CTF and boxes so far but i didn't learn much of some common security terms and my friends have been speaking to each other lately on terms such as "attack vectors" and "Attack surface", even though i completed without knowing what those words mean, i feel like i should for the sake of blending in. But based on online definitions, i am a bit confused at the difference between the two so maybe i will give an example and someone
+T 1708852198 18<22eson12318>	please tell me if i am correct or not, so say a route of a website has a parameter ?post=2 and another route of it i can post a comment as <script>alert(1)</script> and it actually runs the script, so that's two attack vectors ? And if i scan an IP and it shows port 80 and 8000, that's two attack surfaces ? or maybe a website with multiple domains or sth
+T 1708853105 18<28gnrp18>	ghostbusters2: with NFS I would *always* assume that all participants are cooperative and trusted. Not only from the security point of view, but also safety. I've seen so many fuckups, especially when different kernel or even OS versions are at work...
+T 1708853168 18<28gnrp18>	eson123: Do you know a bit about geometry? Visualizing what surface and vector means really helps understanding
+T 1708853237 18<28gnrp18>	eson123: Imagine the surface really as the surface some service or whatever provides. The attack surface is then the area where it can be attacked potentially
+T 1708853254 18<28gnrp18>	an attack vector is one path, one vector to reach that surface
+T 1708853310 18<28gnrp18>	eson123: Imagine a castle. You have two gates, thick walls, maybe a bridge or a water moat. This is the attack surface. The places where attackers could potentially come in
+T 1708853330 18<22eson12318>	oh so like if a machine has 4 ports, it has 4 surfaces ?
+T 1708853348 18<22eson12318>	i mean in term of computer, all i can think of when "potentially come in" are ports
+T 1708853354 18<22eson12318>	each port can run a service or sth
+T 1708853358 18<28gnrp18>	eson123: Now the attack vectors is *anything* that can bring you inside. Catapulting soldiers inside the castle is one vector, running at the gate another, trying to ram down the gate is one, trying to attack the walls and then getting in is one, etc.
+T 1708853375 18<28gnrp18>	in terms of IP, yes, you can see ports as attack surface
+T 1708853389 18<28gnrp18>	one doesn'T talk about surfaceS in plural though
+T 1708853436 18<28gnrp18>	eson123: But really anything that is exposed is an attack surface. So don't only think of IP ports, but also what runs on these ports
+T 1708853478 18<22eson12318>	wait hold on, say port 80 runs a website which has a sus route such as ?id=1 which *might* be vulnerable to SQLi, is that an attack vector or an attack surface ?
+T 1708853574 18<28gnrp18>	anything that is interpreted is attack surfaces
+T 1708853597 18<28gnrp18>	what you as an attacker do with it is the vector, or rather, is putting the vector into reality
+T 1708853654 18<28gnrp18>	you have to not try to map these terms to very specific technicalities. They're abstract terms.
+T 1708853681 18<28gnrp18>	the attack surface provided in this case wold e.g. be the web server running on multiple ports, the scripts which interpret some routes, the libraries that are also used in that script for interpreting
+T 1708853684 18<22eson12318>	ok so in term of website.com/route?id=1... that route alone is the surface and me putting weird SQLi payloads into that id is the vector ?
+T 1708853719 18<28gnrp18>	the vectors would be *any* way to get into the system. SQL injections are one attack vector
+T 1708853845 18<28gnrp18>	eson123: Do you know mathematics? Vector geometry, 3D stuff? Because there are really great analogies there
+T 1708853867 18<22eson12318>	ok the "surface" is already kinda clear already but why do i feel like "attack vectors" can only be  limited to the existing CVEs and CWEs that reseachers have discovered until now ?
+T 1708853893 18<22eson12318>	gnrp: iirc Vector is a line which points to something, it has two coordinates and a direction
+T 1708853925 18<28gnrp18>	eson123: Hm, not really (definition of a vector)
+T 1708853940 18<28gnrp18>	attack vectors are *any* potential way to get into the system
+T 1708853961 18<22eson12318>	oh yea that makes more sense
+T 1708853962 18<28gnrp18>	when there is an existing CVE, that is an obvious problem, but it is one "implementation" of an attack vector
+T 1708853975 18<28gnrp18>	e.g., SQL injections are one attack vector
+T 1708853984 18<28gnrp18>	security vulnerabilities in the webserver are an attack vector
+T 1708853993 18<28gnrp18>	lousy passwords and password logins via ssh are an attack vector
+T 1708854004 18<28gnrp18>	some other weirdnesses in the website are an attack vector
+T 1708854025 18<28gnrp18>	a CVE would make use of one attack vector, or implement that attack vector
+T 1708854028 18<22eson12318>	awh ok
+T 1708854029 18<28gnrp18>	but you have to see it mor eabstract
+T 1708854069 18<28gnrp18>	attack surface is anything that is exposed to a potential attacker. Attack vectors are probable ways to penetrate through that surface
+T 1708854070 18<22eson12318>	i thikn i am starting to imagine the whole picture now
+T 1708854159 18<22eson12318>	but if that is the case, does this make sense ? so if an IP address is one surface, that has two ports running, which means it has 2 sub-surfaces, port 80 has 5 routes so that means another 5 sub-surfaces ?
+T 1708854190 18<22eson12318>	honestly i don't even know if "sub-surface" is an accurate term
+T 1708854198 18<22eson12318>	i don't see my friends speak like that :P
+T 1708854275 18<28gnrp18>	as I said, one doesn't count surfaces. Again, mathematic interpretation helps. You rather talk about how big a surface is
+T 1708854293 18<28gnrp18>	being reachable by IP is attack surface, having open potrs is attack surface, interpreting web stuff behing is attack surface...
+T 1708854362 18<22eson12318>	also in term of math, which is a good analogy for the "surface" we are talking about ?
+T 1708854375 18<28gnrp18>	imagine you cover your floor at home with a rug. And somebody wants to step on that rug, that is the protective goal. The rug is the surface. The bigger the rug, the bigger the attack surface. A vector is any path that will bring somebody to put a foot on the rug
+T 1708854380 18<28gnrp18>	eson123: surface ;)
+T 1708854485 18<22eson12318>	Hm ok i think i get the full picture now
+T 1708854537 18<28gnrp18>	(note that this path can include hitting you with a wrench until you agree to let somebody step on the rug, or throwing a bomb on your house and hten coming in through the roof)
+T 1708854544 18<22eson12318>	so i guess interviewer of pentesting firm won't ask you things like "how many attack surfaces this host has" but maybe "what does the attack surface of this host contains" ?
+T 1708854549 18<22eson12318>	idk i never been to one interview :P
+T 1708854572 18<28gnrp18>	that question makes mor esense than the other
+T 1708854582 18<22eson12318>	the last one ?
+T 1708854587 18<28gnrp18>	yes
+T 1708854589 18<28gnrp18>	one owuld rather ask "What attack surfaces do you see in this and that scenario?"
+T 1708854592 18<22eson12318>	awh ok got it
+T 1708854738 18<22eson12318>	gnrp: but anyway i don't quite get the using wrench to hit me analogy, like brute forcing ?
+T 1708854751 18<22eson12318>	or i am actually gonna be hit with a wrench :D
+T 1708854796 18<28gnrp18>	eson123: Reference to https://xkcd.com/538/ ;)
+T 1708854804 18<28gnrp18>	probably not so relevant in a CTF context
+T 1708854807 18<28gnrp18>	hopefully*
+T 1708854811 18<22eson12318>	oh that one
+T 1708854816 18<22eson12318>	boiz i wonder if that actually happens in real life
+T 1708854881 18<28gnrp18>	in real life people might use other blunt items than wrenches
+T 1708855094 18<22eson12318>	lol wut
+T 1708855680 18<28gnrp18>	I mean, the general idea is extortion
+T 1708855716 18<28gnrp18>	and jailing people until they give you the password... well, that is extortion, and that's what the USA and the UK do by law
+T 1708856632 18<22eson12318>	gnrp: yea speaking of that, i always wonder what if they jail the wrong dude who knows nothing about the password
+T 1708882893 19*	Now talking on 22#security
+T 1708882893 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1708882893 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709072158 19*	Now talking on 22#security
+T 1709072158 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709072158 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709082580 19*	Now talking on 22#security
+T 1709082580 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709082580 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709164962 19*	Now talking on 22#security
+T 1709164962 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709164962 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709165582 20*	Disconnected (20)
+T 1709165736 19*	Now talking on 22#security
+T 1709165736 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709165736 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709167418 18<19mats118>	hello my fellow catamites
+T 1709167425 18<19mats118>	i am returned
+T 1709169055 18<28calmclam18>	the prophecy is fulfilled
+T 1709169188 18<19mats118>	the clamster is here
+T 1709169209 18<19mats118>	did you inhabit the freenode for a while or whut
+T 1709169251 18<19mats118>	dun remember you being here before i was disappeared by the +o van
+T 1709169293 18<28calmclam18>	yes
+T 1709169318 18*	22ajak feels dirty
+T 1709169615 18*	28calmclam peeks out the curtains looking for vans
+T 1709169729 18<19mats118>	ajak: don't worry i have many contributions to offer
+T 1709169740 18<19mats118>	i am the same qt as b4
+T 1709169972 18<28calmclam18>	what do you like to talk about mats1
+T 1709169999 18<19mats118>	calmclam: tell me about your relationship with your parents
+T 1709170028 18<28calmclam18>	not good
+T 1709170029 18<28calmclam18>	u?
+T 1709170131 18<19mats118>	i call your mom every day
+T 1709170139 18<28calmclam18>	oh, what do you talk about
+T 1709170146 18<19mats118>	u
+T 1709170183 18<28calmclam18>	I see. That is a very interesting subject, I can't blame you.
+T 1709170282 18<28calmclam18>	It's also quite an impressive feat of technology considering my parents are dead.
+T 1709170310 18<19mats118>	no technology, all black magic
+T 1709170339 18<28calmclam18>	That's a very inclusive form of magic.
+T 1709170563 18<19mats118>	anyway, hope there's a titlebot, link dump inc
+T 1709170623 18<19mats118>	p sick 365/azure ir course, 5% discount code MEDIUM-FRIENDS https://academy.invictus-ir.com/advanced-incident-response-in-the-microsoft-cloud
+T 1709170671 18<28calmclam18>	heh, microsoft cloud should have a lot of experience with incident response
+T 1709170676 18<19mats118>	good application of blue team skills, APT exfils memory dumps and extracts privkey https://www.youtube.com/watch?app=desktop&v=ggTDxrtxWyM , related msft blag post https://msrc.microsoft.com/blog/2023/09/results-of-major-technical-investigations-for-storm-0558-key-acquisition
+T 1709170713 18<19mats118>	relatedly, extensive windbg series with lots of samples/case studies https://github.com/DebugPrivilege/InsightEngineering/tree/main
+T 1709170745 18<19mats118>	completely unrelatedly, rigol-style software unlocking of flir thermal cam https://hackaday.com/2013/11/04/manufacturer-crippled-flir-e4-thermal-camera-hacked-to-perform-as-high-end-model
+T 1709170768 18<19mats118>	structured diff thing, pretty neat https://difftastic.wilfred.me.uk
+T 1709170799 18<19mats118>	latest post in big tim's 'writing debugger from scratch' series https://www.timdbg.com/posts/writing-a-debugger-from-scratch-part-7
+T 1709170854 18<19mats118>	exploits continuing to be big biz, and geopolitical weapon against all rivals https://apnews.com/article/poland-government-pegasus-spyware-tusk-duda-78420fc7099401926d28b5be98669192
+T 1709170859 18<28calmclam18>	i wonder if the different irc networks are kind of like geographic areas where people pick up a certain kind of slang/dialect if they hang out in one for a long time
+T 1709170910 18<19mats118>	in osint crap, old but reasonably useful searchable mega-combolist breach db https://search.0t.rocks
+T 1709170963 18<19mats118>	similarly old dbs-of-dbs with search, https://www.predictasearch.com
+T 1709170990 18<19mats118>	hard lessons on the perils of nick reuse for interesting folks, https://whatsmyname.app
+T 1709171056 18<19mats118>	ajak: dun send me back to the gulag
+T 1709171250 18<28calmclam18>	:O
+T 1709171862 18<19mats118>	they only serve boiled lobster there
+T 1709172027 18<28calmclam18>	they must have known you can do butter
+T 1709172721 18<19mats118>	look at us gals memeing it up
+T 1709172725 18<19mats118>	like old times
+T 1709176873 18*	28calmclam purrs
+T 1709177000 18<27electroB18>	what’s new calcmandan
+T 1709177008 18<27electroB18>	calmclam ?
+T 1709177106 18<28calmclam18>	not much, u
+T 1709189865 18<27incog18>	would anybody like a debate over the flaws of ethical disclosure
+T 1709191263 18<28gnrp18>	incog: Then start one ;)
+T 1709191370 18<27incog18>	i prefered how we used to do it, blast it out on the FD mailing list and shame the vendor into patching, it was faster and the public were alerted to their data hanging out
+T 1709191383 18<27incog18>	ethical disclosure feels like embarrassment management
+T 1709191423 18<27incog18>	make u sign an NDA and then dont patch, pay you off with a few grand and a refurbed pebble watch
+T 1709191486 18<28gnrp18>	welcome to business
+T 1709191493 18<28gnrp18>	it is unethical preventing others to make money
+T 1709191494 18<27incog18>	makes me feel dirty
+T 1709191522 18<28gnrp18>	poor MS investors cannot take it that their products reveal "early" vulnerabilities
+T 1709192289 18<25xorAxAx18>	yeah, can somebody write to FD telling that all CPU/MCU masks are b0rked?
+T 1709192317 18<25xorAxAx18>	.oO(maybe because the belgium pope wants a last minute kill switch for each person)
+T 1709193680 18<29Gurkenglas18>	What are the pareto-optimal protocols for establishing evidence that someone is a human while bounding the evidence on which human it is?
+T 1709193734 18<25xorAxAx18>	Gurkenglas: define human
+T 1709193742 18<25xorAxAx18>	and the comms interface
+T 1709193819 18<29Gurkenglas18>	xorAxAx: perhaps it helps to state that, if I had defined it formally, it would be easy to prove that one can't get *only* bits of evidence that someone is a human, because then they could automate interacting with the protocol many times, claiming to be a new human each time
+T 1709193862 18<29Gurkenglas18>	the purpose is to get as close as possible to both letting people be anonymous and not letting in bots
+T 1709193908 18<25xorAxAx18>	still, whats the comm protocol. it heavily depends on which attributes are transmitted/readable on the channel
+T 1709193933 18<25xorAxAx18>	is it a phone call, a text chat, a tv show
+T 1709194106 18<29Gurkenglas18>	the channel i'm imagining makes no distinction between signal formats, treating it all as bits. does it work if i say, it's the internet, plus everyone has as many proxies as they like?
+T 1709194138 18<29Gurkenglas18>	you're a webserver and you want to let people make accounts, but you don't want to let one person make a million accounts.
+T 1709194319 18<29Gurkenglas18>	(if your answer ends up relying on establishing that x must be within 300 km of mount everest because they were able to answer a challenge from your server at mount everest within the time it takes light to travel 600 km, that's fair enough, i suppose! but i will also allow impossibility proofs that rely on assuming that lightspeed delays are not a
+T 1709194319 18<29Gurkenglas18>	thing.)
+T 1709194425 18<25xorAxAx18>	Gurkenglas: how about allowing bots and using signatures?
+T 1709194440 18<25xorAxAx18>	Gurkenglas: and then trying to verify each key holder separately
+T 1709194457 18<25xorAxAx18>	each key holder may have 1 bot/user
+T 1709194507 18<29Gurkenglas18>	xorAxAx: how do you verify that Gurkenglas and Hurkenglas are totally different people?
+T 1709194546 18<29Gurkenglas18>	(especially if you're not supposed to learn their real identities)
+T 1709194745 18<29Gurkenglas18>	(you don't necessarily have to *prove* they're different people, even bits of evidence would help in incentive design)
+T 1709195467 18<28mk-fg18>	Mandate fido2 auth and check its attestation signatures
+T 1709195500 18<28mk-fg18>	CloudFlare wanted to add that to captchas, but dunno if they rolled it out somewhere yet
+T 1709195534 18<28mk-fg18>	Would allow humans to somewhat-cheaply buy new identities though
+T 1709196700 18<25xorAxAx18>	Gurkenglas: thats impossible
+T 1709196743 18<29Gurkenglas18>	xorAxAx: Plausible! Is that a theorem that I can go read the proof of?
+T 1709196820 18<25xorAxAx18>	Gurkenglas: it is remotely related to https://en.wikipedia.org/wiki/Zooko%27s_triangle - but i dont know anybody who has formalized this, maybe there is some research. it really depends on what you are allowed to do as part of identification
+T 1709196836 18<25xorAxAx18>	if you say "i may not learn anything about the person" , the whole question sounds weird
+T 1709196876 18<25xorAxAx18>	you need to issue signatures on their public keys somehow, so you need to be able to know when to sign. if they are totally anonymous, something is broken in your model maybe
+T 1709196883 18<29Gurkenglas18>	xorAxAx, what i originally stated is "bounding the evidence on which human it is"
+T 1709196900 18<25xorAxAx18>	bounding means exactly what?
+T 1709196907 18<25xorAxAx18>	that you can only pinpoint a group of < 5?
+T 1709196937 18<25xorAxAx18>	did you get my last message?
+T 1709196951 18<29Gurkenglas18>	connection issue, i received two lines since my last message
+T 1709196951 18<29Gurkenglas18>	three now
+T 1709196960 18<25xorAxAx18>	thats correct
+T 1709197050 18<29Gurkenglas18>	(bounding means exactl what?, that you can only pinpoint a group of < 5 ?, did you get my last message?) i'm talking about the number of bits of evidence you can use to update your original information on which human it is, eg "a uniformly random human on Earth". as in https://gwern.net/death-note-anonymity
+T 1709197222 18<25xorAxAx18>	Gurkenglas: well, your goal is to achieve that each human can impersonate exactly one key, right? thats impossible i think
+T 1709197237 18<25xorAxAx18>	if you do not want to contact the human on secure channels
+T 1709197249 18<25xorAxAx18>	i.e. meet him somewhere
+T 1709197257 18<25xorAxAx18>	s/him/them/
+T 1709197299 18<29Gurkenglas18>	xorAxAx: suppose that, as in my original question, we could make do with a number of bits of evidence about my following the multiaccounting rules instead of proof
+T 1709197396 18<25xorAxAx18>	what do you mean by multiaccounting?
+T 1709197414 18<29Gurkenglas18>	youre supposed to make sure that i dont control multiple accounts
+T 1709197416 18<25xorAxAx18>	and what by "my following of"?
+T 1709197424 18<25xorAxAx18>	ah
+T 1709197437 18<29Gurkenglas18>	s/make sure/make any amount of sure/
+T 1709197494 18<25xorAxAx18>	what do you mean by bits of evidence? you could use the secret key of the person, but that would rule out uninstalled subjects. also, it would confuse you as well given that all keys you are seeing are valid
+T 1709197511 18<25xorAxAx18>	s/key/signature/
+T 1709197538 18<25xorAxAx18>	so, please define your foundational data model if you talk about a "number of bits"
+T 1709197598 18<29Gurkenglas18>	as an example: sample two users, tell them at the same time to send a message to the server under your control that is nearest to them, check whether lightspeed delay proves that they can't have been one person manually processing both challenges
+T 1709197775 18<25xorAxAx18>	ah, how do you know the signal path?
+T 1709197778 18<25xorAxAx18>	is it RF?
+T 1709197789 18<25xorAxAx18>	the internet is much more complex and has a lot of jitter
+T 1709197805 18<29Gurkenglas18>	even if I don't know the signal path, lightspeed delay still gets me an upper bound
+T 1709197810 18<25xorAxAx18>	on RF, you can have reflections as well, but even if you take the shortest path, somebody could impersonate you
+T 1709197829 18<25xorAxAx18>	no, a lower bound
+T 1709197854 18<25xorAxAx18>	so if somebody submits the data item too early, he was probably impersonated
+T 1709197854 18<29Gurkenglas18>	an upper bound: if you receive a reply within a second, they can't be further away than a lightsecond.
+T 1709197873 18<29Gurkenglas18>	so if the servers are three lightseconds apart, etc etc
+T 1709197884 18<25xorAxAx18>	a reply? then you are adding something to the protocol again
+T 1709197901 18<29Gurkenglas18>	a reply to the challenge they received at the same time...
+T 1709197903 18<25xorAxAx18>	so what if somebody impersonates the reply
+T 1709197911 18<25xorAxAx18>	by controlling the senders
+T 1709197919 18<25xorAxAx18>	in a concerted and well planned fashion
+T 1709197925 18<29Gurkenglas18>	yes, if there are separate people controlling each account, the test is passed
+T 1709197948 18<25xorAxAx18>	so somebody controls the challenge apparently as well
+T 1709197959 18<29Gurkenglas18>	O_o
+T 1709197970 18<25xorAxAx18>	thats why you need post quantum randomness
+T 1709197974 18<29Gurkenglas18>	you control the servers, you made the challenge
+T 1709197992 18<25xorAxAx18>	no, the servers can exhibit adversary randomness, thats a feature of the intel CPU
+T 1709198006 18<25xorAxAx18>	you dont need to use RDRAND to have that
+T 1709198014 18<29Gurkenglas18>	i would bet that one can make an intel cpu behave deterministically if one tries
+T 1709198021 18<25xorAxAx18>	impossible
+T 1709198057 18<29Gurkenglas18>	(with error bounds low enough to never trigger for the lifetime of the universe, setting aside software bugs)
+T 1709198070 18<25xorAxAx18>	ever heard of TCB? an intel cpu is so complex
+T 1709198081 18<29Gurkenglas18>	you just do your calculations redundantly
+T 1709198090 18<25xorAxAx18>	you need to reflash the exposure machines first to be sure
+T 1709198108 18<25xorAxAx18>	but careful, dont get a firmware file with "random ware" on them
+T 1709198124 18<25xorAxAx18>	ah, and use byzantine agreement?
+T 1709198146 18<29Gurkenglas18>	i think we're digressing. suppose for the sake of argument that you have trusted servers.
+T 1709198148 18<25xorAxAx18>	so if you have 10 agencies messing with your masks, how many challenges need to agree and how would they do so randomly?
+T 1709198191 18<29Gurkenglas18>	what do you mean by "challenges need to agree" and where did randomness come in anyway
+T 1709198201 18<25xorAxAx18>	well, how do you issue a challenge?
+T 1709198201 18<29Gurkenglas18>	in the "sample two users"?
+T 1709198205 18<25xorAxAx18>	is it from a rachett?
+T 1709198211 18<25xorAxAx18>	you mentioned challenge
+T 1709198233 18<25xorAxAx18>	ratchet even
+T 1709198249 18<25xorAxAx18>	maybe you dont use any crypto at all
+T 1709198259 18<25xorAxAx18>	and its just blind buzz lightyear trust
+T 1709198278 18<25xorAxAx18>	then lets go back to "this needs to be fast and EWT secure"
+T 1709198284 18<29Gurkenglas18>	oh, i see. suppose you can generate trusted RNG at home and included a hard drive full of stored random bits with each of the servers you shipped to locations of your choice (though the protocol that relies on physical location is just an example)
+T 1709198296 18<25xorAxAx18>	ah, thats called an OTP
+T 1709198309 18<25xorAxAx18>	what if your disk mcu messes up?
+T 1709198329 18<25xorAxAx18>	and reads sectors incorrectly
+T 1709198340 18<25xorAxAx18>	ok, then you resort to tapes
+T 1709198352 18<29Gurkenglas18>	setting aside that we're assuming that you have trusted servers, you can store the random bits redundantly.
+T 1709198354 18<25xorAxAx18>	but what if the ADC is somehow too modern?
+T 1709198358 18<25xorAxAx18>	yes, I agree
+T 1709198366 18<25xorAxAx18>	but i wouldnt trust my servers, thats the wrong assumption
+T 1709198411 18<29Gurkenglas18>	as far as i understand error correction is a solved problem if we don't care for constant factors
+T 1709198470 18<25xorAxAx18>	i wouldnt trust hitachi, they have known backdoors
+T 1709198512 18<25xorAxAx18>	just a matter of modulating the grid
+T 1709198515 18<29Gurkenglas18>	take all your not fully trusted rng sources and xor them up, now you're at least as secure as the best of them
+T 1709198534 18<25xorAxAx18>	you usually do that for a seed, not for the random value out of the PRNG
+T 1709198557 18<25xorAxAx18>	and sometimes, rng sources cancel out each other as well :)
+T 1709198574 18<29Gurkenglas18>	only the insecure ones
+T 1709198601 18<25xorAxAx18>	every RNG is insecure as many sources of randomness can be controlled
+T 1709198637 18<29Gurkenglas18>	i'm a layman but it seems pretty difficult to control the sound from a geiger counter
+T 1709198663 18<25xorAxAx18>	lol
+T 1709198676 18<25xorAxAx18>	just a matter of a bit of soft xray
+T 1709198690 18<29Gurkenglas18>	that lets you add blips, not subtract em
+T 1709198741 18<25xorAxAx18>	Gurkenglas: how is that a boundedly safe situation?
+T 1709198804 18<25xorAxAx18>	if you induce the same amount of ionizing radiation, you will ensure that the rate is modulated correctly and then you can control the RNG
+T 1709198815 18<25xorAxAx18>	same for simple open loop HRNG
+T 1709198828 18<29Gurkenglas18>	as a proof of concept, you can say "if there are fewer than 100 blips out of the geiger counter this second, it's a 0" and then an adversary can at most cause a 1
+T 1709198829 18<25xorAxAx18>	just a bit of modelling and trial and error, et voila
+T 1709198862 18<25xorAxAx18>	if all counters generate a 1, thats a solid value, except if you manchester decode them
+T 1709198886 18<25xorAxAx18>	but even then, you model the relaxation time of the circuit and can pulse accordingly
+T 1709198902 18<29Gurkenglas18>	if all the bits are 1, i get to make a nice presentation at the next hacker meetup ^^
+T 1709198912 18<25xorAxAx18>	enjoy
+T 1709198941 18<29Gurkenglas18>	surely we're assuming the adversary wants to *secretly* interfere, otherwise they can just cut your network cables
+T 1709199177 18<25xorAxAx18>	yeah, otherwise they could just break into the libraries and steal books
+T 1709199185 18<25xorAxAx18>	the secret
+T 1709199187 18<25xorAxAx18>	ones
+T 1709199193 18<25xorAxAx18>	which document the architecture
+T 1709199273 18<29Gurkenglas18>	i'm not assuming they don't know the architecture
+T 1709200235 18<29Gurkenglas18>	ah: xorAxAx, supposing that the geiger counter has electrical signal as an output instead of audio, the adversary can't actually see the blips i naturally get without read access to my machine, so i can take the timestamps of all blips i get in a second, and use whether their sum is even or odd as a trusted random bit, assuming that every second
+T 1709200236 18<29Gurkenglas18>	contains at least one natural blip
+T 1709200325 18<25xorAxAx18>	Gurkenglas: that gives you a randomness source at one location
+T 1709200334 18<25xorAxAx18>	didnt you say you need multiple locations?
+T 1709200340 18<25xorAxAx18>	that agree
+T 1709200356 18<29Gurkenglas18>	i also said that i get to ship a harddrive of stored random bits along with my servers, but at this point shipping a usb geiger counter sounds cheaper
+T 1709200372 18<29Gurkenglas18>	(i didn't assume the random bits need to agree)
+T 1709200428 18<25xorAxAx18>	ah, so you generate only a single sided stream of randomness to issue challenges?
+T 1709200441 18<29Gurkenglas18>	yep
+T 1709200476 18<25xorAxAx18>	then you can influence the geiger counter with any source of ionizing radiation
+T 1709200498 18<29Gurkenglas18>	that adds blips, right?
+T 1709200513 18<29Gurkenglas18>	if there is at least one natural blip, the rng is still perfect
+T 1709200730 18<29Gurkenglas18>	(btw: while i have asked questions that arose in this conversation in other channels, i generated my idea before getting any responses)
+T 1709200878 18<25xorAxAx18>	Gurkenglas: can you explain why?
+T 1709200895 18<25xorAxAx18>	... this is fine
+T 1709200922 18<29Gurkenglas18>	xorAxAx: why what
+T 1709200931 18<29Gurkenglas18>	why the rng is perfect?
+T 1709200937 18<25xorAxAx18>	yes
+T 1709200956 18<25xorAxAx18>	either i dont understand why the "just adds blips" is fine or you dont
+T 1709200982 18<29Gurkenglas18>	every blip has an even or an odd timestamp, so we can imagine that i get one bit per blip and xor them together
+T 1709201018 18<29Gurkenglas18>	xor is commutative/associative, so we can imagine that i xor together the natural blip-bits and the adversary's blip-bits separately and then xor them together
+T 1709201038 18<29Gurkenglas18>	so there's one perfectly random bit that the adversary doesn't control or know, and one bit the adversary gets to pick
+T 1709201052 18<25xorAxAx18>	that sounds totally sound, thanks for demonstrating the logic behind it
+T 1709201053 18<29Gurkenglas18>	the xor of those two is perfectly random, uncontrolled by the adversary, and unknown to the adversary
+T 1709201232 18<29Gurkenglas18>	you're welcome! i'm glad that i got to show you any truth that was in question today.
+T 1709212532 20*	Disconnected (20)
+T 1709212551 19*	Now talking on 22#security
+T 1709212551 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709212551 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709213992 19*	Now talking on 22#security
+T 1709213992 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709213992 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709216163 19*	Now talking on 22#security
+T 1709216163 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709216163 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709221292 18<22frenchboy[m]18>	Is opensearch much different from elastic stack?
+T 1709221292 18<22frenchboy[m]18>	I see some books have been published on elastic but none on opensearch, is the knowledge gained from reading those transferrable?
+T 1709221369 18<22frenchboy[m]18>	Anyone have any experience with either for implementing a siem?
+T 1709221686 18<25Pilate18>	its aws fork of elasticsearch, i dont imagine its diverged too far
+T 1709230530 18<19Kaliroot18>	Can a malware be injected into a txt file
+T 1709230539 18<19Kaliroot18>	?
+T 1709230587 18<28calmclam18>	to infect humans? god i hope not
+T 1709230605 18<25kurahaupo18>	Kaliroot: do you know what's normally in a text file?
+T 1709230620 18<25xorAxAx18>	Kaliroot: yes
+T 1709230670 18<25xorAxAx18>	this is a textvirus: X5O!P%@AP[4\PZX54(P^)7CC)7}$E ICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*
+T 1709230690 18<25kurahaupo18>	Kaliroot: malware is software, and like any software, it doesn't d do anything until it's run
+T 1709230692 18<25xorAxAx18>	it is executable code after removing the space character
+T 1709230712 18<28calmclam18>	omg someone is hacking my irc logs brb
+T 1709230714 18<25kurahaupo18>	xorAxAx: stop trolling the newbie
+T 1709230723 18<25xorAxAx18>	kurahaupo: why is that trolling?
+T 1709230742 18<25xorAxAx18>	kurahaupo: i am explaining how virus scanners work
+T 1709230759 18<25kurahaupo18>	xorAxAx: do you really not know the difference between a virus, and a virus signature?
+T 1709230760 18<25xorAxAx18>	kurahaupo: and i dont see where i am wrong
+T 1709230793 18<25xorAxAx18>	kurahaupo: thats not a signature, it is code, it doesnt propagate itself, not all virii do so necessarily, otherwise they are a worm
+T 1709230800 18<19Kaliroot18>	Okay
+T 1709230834 18<19Kaliroot18>	Thanks
+T 1709230842 18<25kurahaupo18>	It's not a virus (is not runnable code) but it is a byte sequence that will be detected by virus scanners
+T 1709230872 18<25kurahaupo18>	xorAxAx: not everything that's detected by a virus scanner is actually a virus
+T 1709230877 18<25xorAxAx18>	kurahaupo: thats wrong, it is runnable code using the MSDOS interrupt
+T 1709230890 18<25xorAxAx18>	runnable x86 code
+T 1709230897 18<25kurahaupo18>	And what does it do?
+T 1709230897 18<25xorAxAx18>	runnable from 8086 on, until windows 7
+T 1709230903 18<28calmclam18>	it goes in a .com file
+T 1709230916 18<25kurahaupo18>	Yes, and what does it do?
+T 1709230916 18<28calmclam18>	microsoft was using .com's before they were cool
+T 1709230919 18<25xorAxAx18>	kurahaupo: find it out, start it in dosbox
+T 1709230923 18<19Kaliroot18>	What of if i there is vulnerability in a text editor that a virus has txt can exploit
+T 1709230927 18<25xorAxAx18>	but do not name it NUL:
+T 1709230930 18<25kurahaupo18>	I don't have windows at all
+T 1709230938 18<25xorAxAx18>	kurahaupo: you dont need windows, just dosbox
+T 1709230961 18<25kurahaupo18>	Dosbox for Android?
+T 1709230983 18<25xorAxAx18>	kurahaupo: you only have an android? whats your age?
+T 1709230994 18<25xorAxAx18>	kurahaupo: tell your parents to call me, i will send them a notebook
+T 1709230995 18<28calmclam18>	a/s/l
+T 1709231040 18<25kurahaupo18>	xorAxAx: you're making several foolish assumptions. Right now I only have an Android because my computers are elsewhere
+T 1709231052 18<25xorAxAx18>	kurahaupo: what happened?
+T 1709231056 18<28calmclam18>	Kaliroot: irc is kind of like a text editor and there have been exploits for it
+T 1709231097 18<28calmclam18>	There are lots and lots of office exploits
+T 1709231102 18<25kurahaupo18>	xorAxAx: I am not in the building where my computers are. I might be shopping in a mall, or on a bus, or whatever
+T 1709231117 18<25xorAxAx18>	kurahaupo: good point, but you can run dosbox also in an android browser
+T 1709231120 18<25xorAxAx18>	just more clunky
+T 1709231131 18<28APic18>	xorAxAx: You inserted a surplus Space between „$E“ and „ICAR“
+T 1709231132 18<25xorAxAx18>	depends on your actual android device
+T 1709231144 18<25xorAxAx18>	APic: yeah, because of a libera wide virus scanner
+T 1709231148 18<28APic18>	ic
+T 1709231155 18<25xorAxAx18>	APic: it rejected my message first
+T 1709231164 18<28calmclam18>	lol
+T 1709231188 18<25xorAxAx18>	try yourself and report, would help to understand whether its libera or the network
+T 1709231205 18<28calmclam18>	staff must have gotten tired of people asking them about viruses in their irc logs
+T 1709231265 18<25kurahaupo18>	ICAR is widely used as a test for virus scanners precisely because it's innocuous, but "looks like" a DOS executable.
+T 1709231293 18<25xorAxAx18>	calmclam: lol
+T 1709231309 18<25xorAxAx18>	its a sport i have never seen anywhere before i made it one
+T 1709231342 18<28APic18>	240229 19:28:55 -!- #security Cannot send to nick/channel
+T 1709231349 18<28calmclam18>	i remember it working in the past and people being salty about losing their logs because their av automatically deleted it
+T 1709231371 18<28APic18>	(When trying to paste the Test-File without the Space)
+T 1709231424 18*	28APic also cannot MSG it to myself. So yes, Libera.Chat blocks it
+T 1709231453 18<25kurahaupo18>	Technically you're correct, it is executable as a COM file, but that still doesn't qualify it as a virus, since it does not install itself anywhere or otherwise act as malware.
+T 1709231456 18<19Kaliroot18>	Wow!
+T 1709231471 18<28calmclam18>	and now we play the waf bypass game and get k-lined
+T 1709231511 18<25xorAxAx18>	calmclam: really? thats not conformant
+T 1709231526 18<25xorAxAx18>	kurahaupo: as i said, virus != worm
+T 1709231555 18<25xorAxAx18>	calmclam: WAF? is this running on a http microservices arch? wow
+T 1709231583 18<25kurahaupo18>	The original question wasn't about "virus detection", it was "can malware be injected into a txt file".
+T 1709231670 18<28calmclam18>	the use of injected seems like they had a specific scenario in mind though
+T 1709231707 18<25xorAxAx18>	kurahaupo: certainly it can: 8238 ‮ Right-to-left override
+T 1709231727 18<25kurahaupo18>	calmclam: indeed. Or they're just panicking based on fragmented knowledge
+T 1709231728 18<25xorAxAx18>	kurahaupo: its a codepoint that tricks your client into the RTL-attack if it works
+T 1709231763 18<25xorAxAx18>	the RTL attack is basically soothing your mind with wrong information for the full day, making you feel smart and part of the world by letting you eat stupid tv shows
+T 1709231876 18<19Kaliroot18>	Am sorry i mean virus. (i have had of micro virus and RAT that are embeded into .doc .docx .xls .pdf but i want to ask can it be embed into a .txt so when you just cat it or open it with nano or vim the text present it self normal and does it work
+T 1709231924 18<25xorAxAx18>	Kaliroot: a text file is usually interpreted with an encoding
+T 1709231939 18<25xorAxAx18>	Kaliroot: and if the decoder is broken, it can exploit the editor
+T 1709231950 18<25xorAxAx18>	Kaliroot: there are editors that autodetect encodings
+T 1709231959 18<25xorAxAx18>	Kaliroot: and there are quite complex encodings around
+T 1709231971 18<25xorAxAx18>	not just UTF-32, but also Shift-JIS
+T 1709231979 18<19Kaliroot18>	Encoding like utf 8
+T 1709231984 18<25xorAxAx18>	yes
+T 1709232015 18<19Kaliroot18>	Complex hacks
+T 1709232060 18<19Kaliroot18>	Thank you
+T 1709232071 18<25xorAxAx18>	good hacks are always complex and require deep understanding of your architecture
+T 1709232099 18<19Kaliroot18>	Yes
+T 1709232101 18<25kurahaupo18>	Kaliroot: the kinds of things that can do weird things to a text editor are not the same as macro viruses in Word docs. That's not to say that a terminal can't be confused but there's no overlap
+T 1709232135 18<25kurahaupo18>	It helps to leave ENQ turned off in your terminal
+T 1709232148 18<25xorAxAx18>	what is ENQ, kurahaupo?
+T 1709232219 18<25kurahaupo18>	When enabled, sending the ENQ byte to the terminal causes it to respond by sending back its identification string. And if the identification string is programmable, you can basically send anything as input to the shell
+T 1709232271 18<25xorAxAx18>	kurahaupo: ah, whats the encoded byte look like?
+T 1709232280 18<25kurahaupo18>	So either disable the response to ENQ, or disable setting the identification string
+T 1709232301 18<25kurahaupo18>	Literally the single byte ASCII ENQ
+T 1709232325 18<25xorAxAx18>	there is no such control character
+T 1709232328 18<25xorAxAx18>	in ASCII
+T 1709232370 18<25kurahaupo18>	xorAxAx: what is ASCII byte 5 ?
+T 1709232392 18<19Kaliroot18>	So you mean this is what program like python uses for running system command for task automating.
+T 1709232417 18<19Kaliroot18>	?
+T 1709232437 18<25xorAxAx18>	kurahaupo: thanks for answering my question
+T 1709232447 18<25kurahaupo18>	No. It's a feature of hardware terminals that almost nobody uses these days
+T 1709232516 18<19Kaliroot18>	Hardware terminals! Please what are they?
+T 1709232522 18<25kurahaupo18>	Terminal emulators have code to implement it, for historical compatibility, but for at least 30 years it's been disabled most of the time
+T 1709232548 18<25kurahaupo18>	Kaliroot: things that aren't emulators
+T 1709232605 18<25kurahaupo18>	Kaliroot: anyone born after 1990 has probably never seen one outside a museum.
+T 1709232630 18<19Kaliroot18>	You mean the terminal that are for cli only system of something like the linux virtual console?
+T 1709232646 18<19Kaliroot18>	Of == or
+T 1709232716 18<25kurahaupo18>	Once upon a time computers did not have screens and keyboards; there were separate devices called terminals that you could plug into a computer
+T 1709232739 18<25kurahaupo18>	And yes, they only did text, not graphics
+T 1709232749 18<19Kaliroot18>	Don't worry
+T 1709232758 18<25kurahaupo18>	(*footnote exceptions existed)
+T 1709232814 18<19Kaliroot18>	Boring old life
+T 1709232816 18<25kurahaupo18>	Basically yes, cli access only
+T 1709232871 18<19Kaliroot18>	Cli system are so go they manage resource like crazy
+T 1709232899 18<19Kaliroot18>	Go== GOOd
+T 1709254780 19*	Now talking on 22#security
+T 1709254780 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709254780 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709286303 18<28gnrp18>	man, fuck these coaches and retreats
+T 1709286311 18<28gnrp18>	sorry, wrong channel
+T 1709286576 18<29BlueyHealer18>	Forced to go to some teambuilding?
+T 1709286670 18<28gnrp18>	nah, just looking at hotels. And they all offer some esoteric stuff like that. Coach and retreat seem to be two words that have a very specific meaning in these circles
+T 1709287058 18<27incog18>	I will never forgive hillary clinton for giving eazy-e AIDs
+T 1709298076 19*	Now talking on 22#security
+T 1709298076 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709298076 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709305277 19*	Now talking on 22#security
+T 1709305277 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709305277 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709312939 19*	Now talking on 22#security
+T 1709312939 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709312939 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709316253 19*	Now talking on 22#security
+T 1709316253 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709316253 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709316871 18<28calmclam18>	not hiv but full blown aids?
+T 1709345126 19*	Now talking on 22#security
+T 1709345126 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709345126 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709348420 18<27incog18>	the l0de radio hour is now live: https://www.youtube.com/watch?v=z5aQkeeaJLs
+T 1709348559 18*	28calmclam grooves
+T 1709354638 18<29fef18>	should need to worry about my VPN provider? or i can choose any
+T 1709356126 18<19mats118>	l0de still doesn't have a real job
+T 1709356253 18<29TheAppleFox18>	fef first, why do you want a VPN?
+T 1709356535 19*	Now talking on 22#security
+T 1709356535 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709356535 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709356542 18<29fef18>	to encrypt my data from plain internet TheAppleFox
+T 1709356556 18<29TheAppleFox18>	 data is already encrypted with HTTPS
+T 1709356629 19*	Now talking on 22#security
+T 1709356629 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709356629 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709358554 18<22ajak18>	data is encrypted with https... if it's encrypted with https
+T 1709358599 18<22ajak18>	if you care about "encrypting your data" think about *all* routes the data takes and what you're actually protecting against, and it's visible to that attacker already
+T 1709358672 18<22ajak18>	commercial VPN providers really just make your traffic less informative to your ISP
+T 1709359593 18<29fef18>	TheAppleFox, at each intermediate hop the data is decrypted
+T 1709359661 18<29fef18>	its encrypted between browser and server but not for the hop
+T 1709359696 18<22iz18>	wut
+T 1709359840 18<29fef18>	ajak, how do the attacker know what possible route any data will take place it would change over time right?
+T 1709359907 18<29fef18>	for example traceroute of google.com wont be same right?
+T 1709360615 18<29fef18>	from some more google intermediate hop not possible once https done but in some cases  network admin can configure the router to do so for termination.
+T 1709360653 18<22iz18>	if it's encrypted end-to-end, from server to browser, it doesn't matter what route it takes
+T 1709360801 18<29fef18>	during the https handshake are we still protected?
+T 1709360962 18<22iz18>	from what?
+T 1709360982 18<29fef18>	from the attacker
+T 1709361043 18<22iz18>	it doesn't matter if an attacker eavesdrops on the connection starting, that's the whole point
+T 1709361204 18<29fef18>	:?
+T 1709362135 18<29fef18>	how it doesnt matter iz
+T 1709362511 18<22iz18>	because the protocol lets both ends decide on a session key to use, without ever sending the key.. and the information it does send isn't enough to figure out the key by itself
+T 1709363319 18<29fef18>	this is what i got from google : If an attacker possesses information about the encryption algorithm and the exchanged parameters used during the SSL/TLS handshake, and they also manage to capture the pre-master secret (or any equivalent secret), then theoretically, they could derive the session key and potentially decrypt the data.
+T 1709363415 18<22iz18>	lol, google about how the protocol works, the secrets aren't transmitted
+T 1709363539 18<29fef18>	why lol bro? iz
+T 1709363674 18<22iz18>	it basically reads like "if the attacker manages to get all the secret information that isn't transmitted, along with the information that is transmitted, then in theory they could derive the same key the endpoints do -- but they can't"
+T 1709363707 18<29fef18>	my question to google was even an attacker act as intermediate hop can he come up with session key.
+T 1709363736 18<22iz18>	you are super confused about what end-to-end encryption is
+T 1709363943 18<29fef18>	:/
+T 1709364135 18<22iz18>	google for something that explains how SSL works instead of trying to google for the answer you think it is, because you are way off in thinking intermediate hops matter somehow
+T 1709366786 18<29TheAppleFox18>	fef yes, VPNs are extra, not a requirement
+T 1709368249 18<29fef18>	somehow iz
+T 1709369484 18<22iz18>	fef: do you understand public/private key asymmetric encryption?  basically ssl uses that to exchange a session key which is used to encrypt the rest of the connection, b/c symmetric encryption is way faster
+T 1709373141 18<29BlueyHealer18>	Commercial VPNs are mostly for censorship evasion.
+T 1709390265 18<22eson12318>	i am a bit curious, say doing brute forcing on login forms or SSH to see if the user has any poor passwords and usernames, is that counted as pentesting ?
+T 1709390270 18<22eson12318>	like i mean in real project
+T 1709390461 18<24jgowdy18>	eson123 I would say no, outside of making sure that brute force attacks are obstructed by rate limiting / tar pitting / account disabling / some mechanism
+T 1709390512 18<24jgowdy18>	So actually attacking a user account to look for bad passwords, no, making sure attempts are limited by some mechanism, yes.
+T 1709390519 18<24jgowdy18>	IMO
+T 1709390534 18<19wasamasa18>	I don't see what a particular attack would have anything to do whether you're doing a penetration test or not
+T 1709390535 18<22eson12318>	yea i thought so as well but was not sure
+T 1709390628 18<19wasamasa18>	if you're contracted to perform an authorized security test of a computer system and have signed a legal agreement nailing down what you're allowed to attack and how, then the question makes a lot more sense
+T 1709390633 18<19wasamasa18>	but in general, not really
+T 1709390717 18<22eson12318>	so if in the agreement they say nothing about forbidding us to do brute forcing, then once a brute force succeeds, that's still counted ?
+T 1709390718 18<24jgowdy18>	I may have been missing some context from the topic.  If you're brute forcing a user on a system that you aren't authorized to do so, that may or may not be considered part of a proper pen test, but either way what you're doing is in the same class of actions.
+T 1709390723 18<22eson12318>	even though i doubt they won't forbid that
+T 1709390806 18<19wasamasa18>	to give you a specific example: the nessus scanner does have a number of checks for default passwords seen in embedded appliances (and more)
+T 1709390842 18<19wasamasa18>	if your test were to overlook these default passwords because you thought brute-force attacks against devices exposing SSH services are not worth it, I'd very much doubt the overall quality of your test
+T 1709390867 18<24jgowdy18>	Spot on wasamasa
+T 1709390980 18<19wasamasa18>	but I've also encountered tests were I had to specifically exclude some testing activity because it was considered too much of a risk for the tested system
+T 1709391042 18<19wasamasa18>	for example performing a brute-force attack against a system locking out user accounts indefinitely can lead to disruption
+T 1709391153 18<19wasamasa18>	overall, brute-force is often a valid approach
+T 1709391165 18<19wasamasa18>	sometimes it needs to be done in a smarter way
+T 1709391230 18<24jgowdy18>	Or systems that have weak performance / scale that fall over if you brute force too quickly, which is its own denial of service finding.
+T 1709391376 18<22eson12318>	ok so overall, checking default passwords or maybe the first few thousand ones inside rockyou.txt and bypassing brute forcing filter is valid
+T 1709391384 18<22eson12318>	but i guess a full-scale brute force is def a no then
+T 1709391482 18<22eson12318>	jgowdy: and yes speaking of that, i also wonder will people pay for a pentesting session if it's a ddos
+T 1709391495 18<22eson12318>	or it's just the company does not have enough money to pay for extra hardware
+T 1709402548 19*	Now talking on 22#security
+T 1709402548 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709402548 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709451377 19*	Now talking on 22#security
+T 1709451377 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709451377 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709457955 18<19wasamasa18>	mats1: I have no idea who you are
+T 1709477901 18<22eson12318>	guys a little tip please, is there any faster way to do UNION SELECT in SQLi instead of manually increasing the columns ? i think i can write a Python script to check this but well if someone has already built a tool for this i can just use it to save some time :P
+T 1709478141 18<25mwebsec18>	but SQLMap would do that automatically
+T 1709478302 18<22eson12318>	well sqlmap is a good tool but i don't feel like it will detect all endpoints which are vulnerable to SQLi, i used to try it on some endpoints and challenges which were clearly vulnerable to SQli but it didn't seem to pick it up for some reasons :/
+T 1709478361 18<25mwebsec18>	aha
+T 1709478380 18<25mwebsec18>	maybe increase --level 5 --risk 3
+T 1709478381 18<29Gurkenglas18>	.oO("if endpoint in paid_protection_money: pass")
+T 1709478397 18<25mwebsec18>	it will do more checks :)
+T 1709478452 18<22eson12318>	yea ok, for now it's either try again as you said, or i built a python script
+T 1709478458 18<22eson12318>	or maybe someone here knew something else :P
+T 1709478473 18<22eson12318>	Gurkenglas: and sorry i didn't get the joke
+T 1709478562 18<29Gurkenglas18>	...but you got that it's a joke? the joke would be that sqlmap didn't detect the vulnerability because the vulnerable party bribed the author of sqlmap.
+T 1709478600 18<22eson12318>	i mean it's easy to identify jokes but understand them is another thing
+T 1709478605 18<22eson12318>	and lol ok got it
+T 1709478897 18<25mwebsec18>	lol
+T 1709478950 18<25mwebsec18>	i dont like the fact that 90% of bug bounty programs are being some sort of protection such as Cloudfront, Cloudflare. it significantly reduces attack surface
+T 1709479068 18<22eson12318>	speaking of which, i really need to do one or two programs, i feel like it's very much different from CTF and HTB stuffs
+T 1709523463 19*	Now talking on 22#security
+T 1709523463 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709523463 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709523580 19*	Now talking on 22#security
+T 1709523580 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709523580 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709528320 18<19goonmorning18>	Hello. Can you recommend any direct brute-force tool? Something that works repeatedly on prompt would be perfect. I forgot my password for an encrypted data. I am sad.
+T 1709530561 18<28calmclam18>	goonentag
+T 1709530575 18<19MadCamel18>	hola
+T 1709546025 18<25mwebsec18>	morning
+T 1709557007 18<29godSend2318>	hey all
+T 1709559353 18<25mwebsec18>	hey
+T 1709561418 18<25mwebsec18>	hows it going
+T 1709564661 18<29godSend2318>	good u
+T 1709564848 18<25mwebsec18>	not bad not bad
+T 1709564865 18<22kkawg18>	comsee comsa
+T 1709564998 18<25mwebsec18>	:D
+T 1709620790 19*	Now talking on 22#security
+T 1709620790 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709620790 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709631569 18<25mwebsec18>	morning
+T 1709636163 18<27wyclif18>	Good morning
+T 1709645085 18<25mwebsec18>	hows it going
+T 1709645089 18<28APic18>	Fine, fine
+T 1709645091 18<28APic18>	Thanks
+T 1709645100 18<28APic18>	Exercizing Piano
+T 1709645111 18<25mwebsec18>	nice
+T 1709645965 18<25mwebsec18>	yo
+T 1709646281 18<28APic18>	Y0
+T 1709648388 18<25mwebsec18>	y0y0
+T 1709648407 18<20ornx_18>	does the job market suck, or do i suck
+T 1709648414 18*	20ornx_ ask the magic 8-ball
+T 1709649581 18<25mwebsec18>	it does suck
+T 1709649585 18<25mwebsec18>	:D
+T 1709658822 19*	Now talking on 22#security
+T 1709658822 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709658822 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709661930 19*	Now talking on 22#security
+T 1709661930 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709661930 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709667679 19*	Now talking on 22#security
+T 1709667679 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709667679 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709674382 19*	Now talking on 22#security
+T 1709674382 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709674382 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709686297 19*	Now talking on 22#security
+T 1709686297 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709686297 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709699905 18<28c4lvin18>	Evening
+T 1709700634 18*	28calmclam nods
+T 1709700881 18<25xorAxAx18>	hrm, i always wonder, how can PQC work if the entropy of the privkey is much shorter than the one of an RSA key
+T 1709701005 18<28mk-fg18>	It's not just about the entropy, bruteforcing even 256b is unfeasible, whether it's quantum computers or earthful or regular ones
+T 1709701039 18<28calmclam18>	Magic
+T 1709701076 18<25xorAxAx18>	and PQC is necessary because of shors algorithm?
+T 1709701094 18<25xorAxAx18>	maybe shors algorithm and QC are just ex falso quod libet?
+T 1709701231 18<28mk-fg18>	A conspiracy of cryptographers to ensure demand for their quantum snakeoil
+T 1709701249 18<25xorAxAx18>	i am not claiming its a conspiracy
+T 1709701260 18<25xorAxAx18>	just want to understand the claims for its needs
+T 1709701326 18<28mk-fg18>	As I understand it, it's just a hedge against possible near-future breakthrough
+T 1709701350 18<25xorAxAx18>	i know, but what i wonder is: what if shors algorithm wouldnt feasible in the real world after all?
+T 1709701356 18<25xorAxAx18>	+be
+T 1709701360 18<28mk-fg18>	So that if someone stores your traffic, in 10y if this short thing and quantum-ecc ends up working, it won't decrypt everyone's secrets
+T 1709701382 18<28mk-fg18>	No problem then, pqc can be dropped, nothing is broken
+T 1709701405 18<25xorAxAx18>	is that foundationally proven?
+T 1709701412 18<25xorAxAx18>	that PQC is secure enough
+T 1709701496 18<28mk-fg18>	As far as no one else can break it aiui, and based on known primitives like lattices or worst-case even hashes
+T 1709701508 18<25xorAxAx18>	that sounds like a "no" :D
+T 1709701533 18<25xorAxAx18>	foundational cryptography doesnt consider single attacks, it allows to basically come up with a rigid proof of security by itself
+T 1709701574 18<28mk-fg18>	You're always reducing the thing to some math problem like prime number factorization or discrete log
+T 1709701590 18<28mk-fg18>	And aiui that's same for pqc
+T 1709701610 18<28mk-fg18>	But all those math problems can potentially be solved, we just don't know how
+T 1709701624 18<28mk-fg18>	Well, except for quantum computers and that shor's algo
+T 1709701901 18<28calmclam18>	With modern systems blasting out secrets through the aether through innumerable side channels I look forward to the day when crypto can meaningfully provide security at their theoretical level
+T 1709701988 18<25xorAxAx18>	calmclam: well, thats another issue and might also explain why PQC is so useful: less key material to extract via side channels
+T 1709705791 19*	Now talking on 22#security
+T 1709705791 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709705791 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709711259 18<22iz18>	xorAxAx: yeah, cuz shor's
+T 1709711372 18<22iz18>	also rsa keys have to be so big, b/c factoring is a relatively easy problem and the spacing of primes, esp when the numbers get big doesn't make for efficient bit sizes
+T 1709711493 18<22iz18>	also, as mk-fg said, pcq is like a hedge against future breakthroughs in quantum computing and also good algorithms aren't gonna appear instantly -- it will take cycles of research and peer review

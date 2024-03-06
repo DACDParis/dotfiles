@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<submenu></submenu>
+	<unique-id>1690789890926259-1</unique-id>
+	<command>kitty  %f</command>
+	<description>Example for a custom action</description>
+	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>archive-extract</icon>
+	<name>Extract All</name>
+	<submenu></submenu>
+	<unique-id>1691069705813661-1</unique-id>
+	<command>extract</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>application-certificate</icon>
+	<name>Root Here</name>
+	<submenu></submenu>
+	<unique-id>1691070261625184-2</unique-id>
+	<command>pkexec thunar %f</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+</actions>

@@ -1,0 +1,6 @@
+{
+    "device": "alsa_output.usb-SteelSeries_Arctis_Pro_Wireless-00.stereo-game",
+    "device-description": "Arctis Pro Wireless Game",
+    "device-profile": "usb-gaming-headset-output-stereo",
+    "preset-name": "Bass Enhancing + Perfect EQ"
+}

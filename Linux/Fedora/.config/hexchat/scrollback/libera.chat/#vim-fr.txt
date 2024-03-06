@@ -1,0 +1,358 @@
+T 1702193179 19*	Now talking on 22#vim-fr
+T 1702193179 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1702193179 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1702194034 20*	Disconnected (20)
+T 1702194061 19*	Now talking on 22#vim-fr
+T 1702194061 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1702194061 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1702194116 23*	gogoprog (~gogoprog@2a02:a03f:c39b:9400:601:8293:3115:4cf323) has joined
+T 1702194196 24*	dacd has quit (Ping timeout: 245 seconds)
+T 1702195289 19*	Now talking on 22#vim-fr
+T 1702195289 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1702195289 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1702198993 20*	Disconnected (20)
+T 1702201366 19*	Now talking on 22#vim-fr
+T 1702201366 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1702201366 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1702203419 18<29ircBot18>	<g​difolco> En gros la touche "Début" équivault à 0 et "Fin" à $, sauf que ça marche en insert mode
+T 1702203491 18<29ircBot18>	<g​difolco> je copiais-collais mes configs avant, mais en passant à nvim je me suis dit que j'allaisfaire les trucs bien
+T 1702203622 18<29ircBot18>	<g​difolco> après c'est un peu pénible car il ouvre le fichier dans /tmp et tu dois fermer ton éditeur pour mettre à jour ce que tu édite
+T 1702208540 19*	Now talking on 22#vim-fr
+T 1702208540 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1702208540 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1702214434 20*	Disconnected (20)
+T 1702214614 19*	Now talking on 22#vim-fr
+T 1702214614 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1702214614 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1702219834 20*	Disconnected (20)
+T 1702219889 19*	Now talking on 22#vim-fr
+T 1702219889 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1702219889 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1702220524 20*	Disconnected (20)
+T 1702220570 19*	Now talking on 22#vim-fr
+T 1702220570 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1702220570 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1702281887 19*	Now talking on 22#vim-fr
+T 1702281887 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1702281887 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1702282236 20*	Disconnected (20)
+T 1702282251 19*	Now talking on 22#vim-fr
+T 1702282251 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1702282251 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1702282262 20*	Disconnected (20)
+T 1702282282 19*	Now talking on 22#vim-fr
+T 1702282282 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1702282282 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1702285561 20*	Disconnected (20)
+T 1702314577 19*	Now talking on 22#vim-fr
+T 1702314577 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1702314577 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1702322572 20*	Disconnected (20)
+T 1702322852 19*	Now talking on 22#vim-fr
+T 1702322852 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1702322852 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1702812797 19*	Now talking on 22#vim-fr
+T 1702812797 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1702812797 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1705506304 19*	Now talking on 22#vim-fr
+T 1705506304 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1705506304 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1705524970 19*	Now talking on 22#vim-fr
+T 1705524970 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1705524970 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1705525535 19*	Now talking on 22#vim-fr
+T 1705525535 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1705525535 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1705525647 19*	Now talking on 22#vim-fr
+T 1705525647 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1705525647 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1705525767 19*	Now talking on 22#vim-fr
+T 1705525767 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1705525767 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1705526737 19*	Now talking on 22#vim-fr
+T 1705526737 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1705526737 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1705559182 19*	Now talking on 22#vim-fr
+T 1705559182 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1705559182 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1705562767 20*	Disconnected (20)
+T 1705562791 19*	Now talking on 22#vim-fr
+T 1705562791 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1705562791 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1705568249 19*	Now talking on 22#vim-fr
+T 1705568249 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1705568249 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1707739632 19*	Now talking on 22#vim-fr
+T 1707739632 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1707739632 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1707742868 19*	Now talking on 22#vim-fr
+T 1707742868 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1707742868 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708186109 19*	Now talking on 22#vim-fr
+T 1708186109 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708186109 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708438062 19*	Now talking on 22#vim-fr
+T 1708438062 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708438062 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708439546 19*	Now talking on 22#vim-fr
+T 1708439546 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708439546 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708439876 19*	Now talking on 22#vim-fr
+T 1708439876 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708439876 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708473217 19*	Now talking on 22#vim-fr
+T 1708473217 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708473217 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708507893 19*	Now talking on 22#vim-fr
+T 1708507893 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708507893 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708508320 19*	Now talking on 22#vim-fr
+T 1708508320 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708508320 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708530419 19*	Now talking on 22#vim-fr
+T 1708530419 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708530419 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708544281 19*	Now talking on 22#vim-fr
+T 1708544281 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708544281 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708553966 19*	Now talking on 22#vim-fr
+T 1708553966 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708553966 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708554077 19*	Now talking on 22#vim-fr
+T 1708554077 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708554077 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708606547 19*	Now talking on 22#vim-fr
+T 1708606547 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708606547 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708606631 19*	Now talking on 22#vim-fr
+T 1708606631 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708606631 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708623317 19*	Now talking on 22#vim-fr
+T 1708623317 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708623317 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708630546 19*	Now talking on 22#vim-fr
+T 1708630546 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708630546 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708631263 19*	Now talking on 22#vim-fr
+T 1708631263 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708631263 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708631930 19*	Now talking on 22#vim-fr
+T 1708631930 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708631930 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708632783 19*	Now talking on 22#vim-fr
+T 1708632783 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708632783 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708632966 19*	Now talking on 22#vim-fr
+T 1708632966 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708632966 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708696020 19*	Now talking on 22#vim-fr
+T 1708696020 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708696020 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708696321 19*	Now talking on 22#vim-fr
+T 1708696321 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708696321 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708720189 19*	Now talking on 22#vim-fr
+T 1708720189 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708720189 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708772561 19*	Now talking on 22#vim-fr
+T 1708772561 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708772561 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708779782 18<29ircBot18>	<j​ulientaq> kickstart.nvim va sûrement manger une mise à jour rapidement vu que TJ DeVries en fait la com sur ses streams en live.
+T 1708780751 18<29ircBot18>	<c​houhartem> après dans sa vidéo de présentation, il recommande de copier la conf depuis le repo plutôt que de cloner comme tu vas la personnaliser, c’est ce que j’ai fait (avant de modulariser)
+T 1708780826 18<29ircBot18>	<c​houhartem> mais c’était surtout pour savoir où j’ai mis quoi, il y a une version déjà pré-modularisée : https://github.com/dam9000/kickstart-modular.nvim
+T 1708788546 19*	Now talking on 22#vim-fr
+T 1708788546 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708788546 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708788723 19*	Now talking on 22#vim-fr
+T 1708788723 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708788723 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708792087 19*	Now talking on 22#vim-fr
+T 1708792087 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708792087 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708798432 18<29ircBot18>	<g​difolco> mon premier boss me disais ce genre de trucs aussi, bon, il disait aussi que je poussais beaucoup trop code par rapport aux autres.
+T 1708823390 19*	Now talking on 22#vim-fr
+T 1708823390 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708823390 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1708882893 19*	Now talking on 22#vim-fr
+T 1708882893 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1708882893 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709072158 19*	Now talking on 22#vim-fr
+T 1709072158 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709072158 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709082580 19*	Now talking on 22#vim-fr
+T 1709082580 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709082580 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709164962 19*	Now talking on 22#vim-fr
+T 1709164962 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709164962 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709165582 20*	Disconnected (20)
+T 1709165736 19*	Now talking on 22#vim-fr
+T 1709165736 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709165736 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709212532 20*	Disconnected (20)
+T 1709212551 19*	Now talking on 22#vim-fr
+T 1709212551 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709212551 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709213993 19*	Now talking on 22#vim-fr
+T 1709213993 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709213993 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709216163 19*	Now talking on 22#vim-fr
+T 1709216163 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709216163 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709227003 18<29ircBot18>	<t​aupiqueur_> quelqu'un s'y connait en imagemagick?
+T 1709227028 18<29ircBot18>	<t​aupiqueur_> j'essaie d'avoir une image de 1280x800 exactement mais c blurry! 😭
+T 1709227092 18<29ircBot18>	<t​aupiqueur_> j'ai essaye avec Preview sous macos, et imagemagick, les 2 donnent des resultats pas ouf (imagemagick est pire avec just -resize)
+T 1709227121 18<29ircBot18>	<t​aupiqueur_> https://cdn.discordapp.com/attachments/967025152342777929/1212811189461979197/screenshot_2024-02-29_163957.png?ex=65f33170&is=65e0bc70&hm=5a563a421135f041dcb5167b4ae3efe3af446be34aa6612ec78472f72fe13f61&
+T 1709227121 18<29ircBot18>	<t​aupiqueur_> https://cdn.discordapp.com/attachments/967025152342777929/1212811189805916211/screenshot_2024-02-29_1639571280x800px.png?ex=65f33170&is=65e0bc70&hm=02a4c07b132ce16f3e89ea348f2813b1b0af9d8f7edcaf999b0e6047d8458b28&
+T 1709227158 18<29ircBot18>	<t​aupiqueur_> a gauche c'est l'image originale, et a droite celle que j'ai resize
+T 1709227247 18<29ircBot18>	<t​aupiqueur_> idealement j'aimerais ne pas avoir a retailler, et avoir la taille de la fenetre deja bonne mais jai pas reussi. deja avoir la taille de la fenetre proportionnelle pour que quand je retaille ca deforme pas ct galere x(
+T 1709228780 18<29ircBot18>	<t​aupiqueur_> https://cdn.discordapp.com/attachments/967025152342777929/1212818146797293658/screenshot_2024-02-29_163957_2.png?ex=65f337eb&is=65e0c2eb&hm=6f956ce659c2c16e93aac5182986bd245c57906485e543c9e399b3e650947548&
+T 1709228782 18<29ircBot18>	<t​aupiqueur_> ^ avec gimp
+T 1709229293 18<29ircBot18>	<c​houhartem> ha oui, c’est souvent l’enfer… c’est vrai que je resize souvent des photos, donc c’est moins gênant… t’as essayé avec -adaptive-resize à la place de -resize ? (https://imagemagick.org/Usage/resize/#adaptive-resize)
+T 1709230107 18<29ircBot18>	<j​ulientaq> Je vais etre relou mais sharp js cest super bien pour ça
+T 1709230223 18<29ircBot18>	<t​aupiqueur_> tu sais comment mettre celle ci en 1280x800?
+T 1709230224 18<29ircBot18>	<t​aupiqueur_> https://cdn.discordapp.com/attachments/967025152342777929/1212824203448025199/Screenshot_2024-02-29_at_00.13.27.png?ex=65f33d8f&is=65e0c88f&hm=8de06e08891dcddd4653bbc8273c3f5ce74f973ff6ad2d3de5c6e4110bc11d70&
+T 1709230249 18<29ircBot18>	<t​aupiqueur_> (un fond en padding est autorise)
+T 1709230271 18<29ircBot18>	<t​aupiqueur_> vu que proportionnellement ca retaillera jamais 1280x800 sinon
+T 1709230317 18<29ircBot18>	<c​houhartem> oui, je me disais la même chose 😄  avec imagemagick je sais pas, j’aurais sorti the gimp
+T 1709230326 18<29ircBot18>	<t​aupiqueur_> ouais
+T 1709230343 18<29ircBot18>	<t​aupiqueur_> je sais pas comment faire dans gimp non pu sans perdre de quali x(
+T 1709230352 18<29ircBot18>	<t​aupiqueur_> jutilise jamais
+T 1709230436 18<29ircBot18>	<c​houhartem> https://cdn.discordapp.com/attachments/967025152342777929/1212825095266107392/coucou.png?ex=65f33e63&is=65e0c963&hm=214a003c93d4bc60caf6bd0e6cce6d0ce3f31874fd060d9c959232eb0977ce7c&
+T 1709230491 18<29ircBot18>	<t​aupiqueur_> c'est blurry
+T 1709230511 18<29ircBot18>	<t​aupiqueur_> t'as fait comment pour resizer?, t'as detruit les proportions?
+T 1709230526 18<29ircBot18>	<c​houhartem> diable
+T 1709230592 18<29ircBot18>	<c​houhartem> j’ai resize dans un premier temps en gardant les proprtions en …x800 (avec une interpolation linéaire) puis j’ai changé la taille du canevas en centrant le calque principal
+T 1709230609 18<29ircBot18>	<t​aupiqueur_> ce qui me choque moi c'est que le browser retaille impec on the fly, alors que avec gimp et tout c horrible mdrr
+T 1709230660 18<29ircBot18>	<c​houhartem> il travaille pas avec du binaire le browser, mais avec les fonts et les canevas 😄
+T 1709230667 18<29ircBot18>	<t​aupiqueur_> y a un calque? jvois rien mdr
+T 1709230699 18<29ircBot18>	<c​houhartem> non, la data a été perdue en enregistrant en .png…
+T 1709230869 18<29ircBot18>	<t​aupiqueur_> tu peux me montrer une video? 🙇
+T 1709231944 18<29ircBot18>	<c​houhartem> https://cdn.discordapp.com/attachments/967025152342777929/1212831418799890483/tuto_gimp.mp4?ex=65f34447&is=65e0cf47&hm=71a389ebca707ac082d6c4fffb40f2a6a083b82e43c8a5b6b6b5cd1efbb1112c&
+T 1709231964 18<29ircBot18>	<c​houhartem> c’est complètement incompréhensible 😄
+T 1709232002 18<29ircBot18>	<c​houhartem> on voit pas le curseur, on voit pas les inputs clavier, on voit pas ce qu’il se passe et je vais trop vite… parfait
+T 1709232143 18<29ircBot18>	<t​aupiqueur_> MDR ICANT 🤣
+T 1709232152 18<29ircBot18>	<t​aupiqueur_> on dirait une video tuto youtube mdrr
+T 1709232161 18<29ircBot18>	<c​houhartem> des années 2000
+T 1709232168 18<29ircBot18>	<t​aupiqueur_> c'est comique lol
+T 1709232191 18<29ircBot18>	<c​houhartem> j’ai hésité à commencer par “salut les copains et les copines” mais je me suis retenu (et c’était dur)
+T 1709232225 18<29ircBot18>	<c​houhartem> et encore, ya ma voix, pas juste un notepad.exe avec les instructions hasardeuses 😄
+T 1709232388 18<29ircBot18>	<t​aupiqueur_> C'est tres clair. En gros, t'as change la taille de l'image en gardant les proportions pour avoir une hauteur de 800 et la largeur osef. Ensuite t'as change la taille du canva en mettant 1280 de largeur, et cliquer "centrer" !, puis export
+T 1709232474 18<29ircBot18>	<t​aupiqueur_> lorsque tu as ouvert l'image tu avais pas un avertissement sur les couleurs ?
+T 1709232492 18<29ircBot18>	<t​aupiqueur_> et a l'export, tu as tout garder par defaut, sauf la compression que tu passes de 9 a 0 ?
+T 1709232513 18<29ircBot18>	<c​houhartem> ha non, j’ai rien changé de ce côté mais c’est pas con 😄
+T 1709232531 18<29ircBot18>	<c​houhartem> non, j’ai copié ton image et l’ai collé dans _the gimp™…
+T 1709232532 18<29ircBot18>	<t​aupiqueur_> https://cdn.discordapp.com/attachments/1181684002193686578/1212830287134990366/image.png?ex=65f34339&is=65e0ce39&hm=055cb169387f83b78976377ab1e17f95579b33d9b4c8822179965b8e9073772b&
+T 1709232548 18<29ircBot18>	<t​aupiqueur_> ha tricheur
+T 1709232577 18<29ircBot18>	<c​houhartem> mais oui, c’est exactement ça
+T 1709232702 18<29ircBot18>	<t​aupiqueur_> c'est exactement le tuto dont j'avais besoin 😇  merci @chouhartem !!
+T 1709232768 18<29ircBot18>	<c​houhartem> de rien !
+T 1709232822 18<29ircBot18>	<c​houhartem> je notes les paramètres à changer dans obs aussi pour la prochaine fois 😅
+T 1709254781 19*	Now talking on 22#vim-fr
+T 1709254781 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709254781 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709298076 19*	Now talking on 22#vim-fr
+T 1709298076 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709298076 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709305277 19*	Now talking on 22#vim-fr
+T 1709305277 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709305277 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709312939 19*	Now talking on 22#vim-fr
+T 1709312939 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709312939 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709316253 19*	Now talking on 22#vim-fr
+T 1709316253 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709316253 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709345126 19*	Now talking on 22#vim-fr
+T 1709345126 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709345126 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709356535 19*	Now talking on 22#vim-fr
+T 1709356535 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709356535 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709356629 19*	Now talking on 22#vim-fr
+T 1709356629 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709356629 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709402548 19*	Now talking on 22#vim-fr
+T 1709402548 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709402548 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709451377 19*	Now talking on 22#vim-fr
+T 1709451377 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709451377 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709523463 19*	Now talking on 22#vim-fr
+T 1709523463 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709523463 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709523581 19*	Now talking on 22#vim-fr
+T 1709523581 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709523581 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709566518 18<25white-wolf18>	salut
+T 1709566525 18<25white-wolf18>	dites-moi
+T 1709566566 18<25white-wolf18>	est-il possible de coder à plusieurs sur une session vim ? genre comme avec un etherpad ?
+T 1709566684 18<26Chouhartem18>	git ?
+T 1709566742 18<26Chouhartem18>	(autrement je sais pas)
+T 1709566817 18<25white-wolf18>	mais git ne permet pas d'écrire en même temps sur le même code, j'aurai voulu utiliser vim à la façon d'un etherpad
+T 1709566857 18<26Chouhartem18>	oui, j’avais compris, j’étais à moitié sérieux…
+T 1709566888 18<25white-wolf18>	ah ok
+T 1709566901 18<25white-wolf18>	non des fois qu'il y ai un plugin ?
+T 1709566936 18<25white-wolf18>	sinon c'est sur je connais git
+T 1709566958 18<25white-wolf18>	mais par exemple pour la prise de note c'est pas top pour des cours
+T 1709566962 18<25white-wolf18>	et du code
+T 1709567067 18<25white-wolf18>	rien ne vaut un vrai éditeur mais etherpad ne remplace pas vim
+T 1709567116 18<25white-wolf18>	genre extrem programming mais en distanciel
+T 1709567161 18<26Chouhartem18>	j’ai vu ça en cherchant vite fait : https://github.com/derteta/vimpair mais c’est pour 2 personnes, pas maintenu depuis 5 ans, et aucune idée de la sécurité du bousin
+T 1709567171 18<26Chouhartem18>	t’as plus qu’à faire un plugin vimpad
+T 1709567318 18<25white-wolf18>	ouais
+T 1709567349 18<25white-wolf18>	je vais m'y atteler, ça me fera une bonne experience de prog
+T 1709567359 18<25white-wolf18>	en quoi je l'écris ?
+T 1709567444 18<25white-wolf18>	je peux l'écrire en C ?
+T 1709567467 18<25white-wolf18>	ou il faut absolument faire en langage de script ?
+T 1709567537 18<25white-wolf18>	je ne connais pas la language de script vim et très peu le C
+T 1709567575 18<26Chouhartem18>	je sais pas du tout, mais dès que tu vas faire du réseau… ça sera le bordel de toute manière
+T 1709567654 18<25white-wolf18>	ah
+T 1709567708 18<25white-wolf18>	en script vim alors under ssh
+T 1709568386 18<29ircBot18>	<j​ulientaq> le script vim c’est du lua.
+T 1709568395 18<29ircBot18>	<j​ulientaq> (pardon le nvim).
+T 1709568416 18<29ircBot18>	<j​ulientaq> mais attend dans la vidéo sur le kickstart j’ai entendu parler de nvim à plusieurs.
+T 1709568419 18<29ircBot18>	<j​ulientaq> laisse moi check.
+T 1709568482 18<29ircBot18>	<j​ulientaq> de la doc https://github.com/FredKSchott/CoVim
+T 1709568500 18<29ircBot18>	<j​ulientaq> c’est pas ce dont ça parlait ce matin, et accessoirement le repo est un sleep
+T 1709569012 18<25white-wolf18>	mais ça fonctionne avec nvim ou vim ?
+T 1709571972 18<29ircBot18>	<g​uyzmal> white-wolf - j'ai tenté une implem d'etherpad dans vim, très mauvaise idée
+T 1709571980 18<29ircBot18>	<g​uyzmal> (il y a presque 10 ans)
+T 1709571992 18<29ircBot18>	<g​uyzmal> le protocole était trop compliqué
+T 1709571998 18<29ircBot18>	<g​uyzmal> (vim-etherpad pour voir le squelette)
+T 1709572069 18<29ircBot18>	<g​uyzmal> white-wolf - il y a une feature vscode qui permet de faire du pair programming en live
+T 1709572073 18<29ircBot18>	<g​uyzmal> c'est assez chouette
+T 1709572086 18<29ircBot18>	<g​uyzmal> https://www.reddit.com/r/vim/comments/qr14nk/liveshare_or_something_similar_in_vim_and_vscode/
+T 1709572120 18<29ircBot18>	<g​uyzmal> mais live share c'est proprio https://github.com/microsoft/live-share/issues/3299
+T 1709572426 18<25white-wolf18>	je ne veux pae utilier autre chose que vim ou neovim
+T 1709572763 18<25white-wolf18>	en lua ce serai une bonne experience
+T 1709574774 18<29ircBot18>	<g​uyzmal> l'idée était d'implémenter live-share dans (n)vim pour pouvoir faire du live coding entre vim et d'autres éditeurs
+T 1709574842 18<29ircBot18>	<g​uyzmal> et sinon, tu peux coder ton truc en C, en Go ou en Rust, exposer une API en lua pour la config
+T 1709574862 18<29ircBot18>	<g​uyzmal> il y a des libs pour intéragir avec (n)vim dans presque tous les langages
+T 1709574878 18<29ircBot18>	<g​uyzmal> (j'avais fait l'implem de vim-etherpad en python à l'époque)
+T 1709575563 18<29ircBot18>	<c​houhartem> last commit: 8 years ago
+T 1709620790 19*	Now talking on 22#vim-fr
+T 1709620790 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709620790 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709622815 18<29ircBot18>	<j​ulientaq> hello.
+T 1709622828 18<29ircBot18>	<j​ulientaq> non mais le langage de scripting pour neovim c’est le lua.
+T 1709622844 18<29ircBot18>	<j​ulientaq> et plus le vimscript (si j’ai bien compris les vidéos de TJdeVries).
+T 1709622869 18<29ircBot18>	<j​ulientaq> (d’ailleurs je m’en vais essayer kickstart dès que j’ai fini le boulot du moment et le clavier à souder sur le bureau).
+T 1709658822 19*	Now talking on 22#vim-fr
+T 1709658822 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709658822 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709661930 19*	Now talking on 22#vim-fr
+T 1709661930 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709661930 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709667679 19*	Now talking on 22#vim-fr
+T 1709667679 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709667679 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709674383 19*	Now talking on 22#vim-fr
+T 1709674383 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709674383 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709686297 19*	Now talking on 22#vim-fr
+T 1709686297 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709686297 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)
+T 1709705791 19*	Now talking on 22#vim-fr
+T 1709705791 22*	Topic for 22#vim-fr is: On est pas bien là ?
+T 1709705791 22*	Topic for 22#vim-fr set by 26alkino (24Wed May 19 19:41:13 2021)

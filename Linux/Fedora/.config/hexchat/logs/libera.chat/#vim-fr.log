@@ -1,0 +1,626 @@
+**** BEGIN LOGGING AT Sun Dec 10 08:26:20 2023
+
+Dec 10 08:26:19 *	Now talking on #vim-fr
+Dec 10 08:26:19 *	Topic for #vim-fr is: On est pas bien là ?
+Dec 10 08:26:19 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** ENDING LOGGING AT Sun Dec 10 08:40:12 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 08:40:12 2023
+
+Dec 10 08:40:34 *	Disconnected ()
+**** ENDING LOGGING AT Sun Dec 10 08:40:34 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 08:41:01 2023
+
+Dec 10 08:41:01 *	Now talking on #vim-fr
+Dec 10 08:41:01 *	Topic for #vim-fr is: On est pas bien là ?
+Dec 10 08:41:01 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+Dec 10 08:41:56 *	gogoprog (~gogoprog@2a02:a03f:c39b:9400:601:8293:3115:4cf3) has joined
+**** ENDING LOGGING AT Sun Dec 10 08:42:24 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 08:42:24 2023
+
+Dec 10 08:43:16 *	dacd has quit (Ping timeout: 245 seconds)
+**** ENDING LOGGING AT Sun Dec 10 09:00:31 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 09:00:31 2023
+
+**** ENDING LOGGING AT Sun Dec 10 09:00:42 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 09:01:29 2023
+
+Dec 10 09:01:29 *	Now talking on #vim-fr
+Dec 10 09:01:29 *	Topic for #vim-fr is: On est pas bien là ?
+Dec 10 09:01:29 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** ENDING LOGGING AT Sun Dec 10 09:03:11 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 09:03:11 2023
+
+**** ENDING LOGGING AT Sun Dec 10 09:03:53 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 09:03:53 2023
+
+**** ENDING LOGGING AT Sun Dec 10 09:06:12 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 09:06:12 2023
+
+**** ENDING LOGGING AT Sun Dec 10 09:11:35 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 09:11:35 2023
+
+Dec 10 10:03:13 *	Disconnected ()
+**** ENDING LOGGING AT Sun Dec 10 10:03:13 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 10:42:47 2023
+
+Dec 10 10:42:46 *	Now talking on #vim-fr
+Dec 10 10:42:46 *	Topic for #vim-fr is: On est pas bien là ?
+Dec 10 10:42:46 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+Dec 10 11:16:59 <ircBot>	<g​difolco> En gros la touche "Début" équivault à 0 et "Fin" à $, sauf que ça marche en insert mode
+Dec 10 11:18:11 <ircBot>	<g​difolco> je copiais-collais mes configs avant, mais en passant à nvim je me suis dit que j'allaisfaire les trucs bien
+Dec 10 11:20:22 <ircBot>	<g​difolco> après c'est un peu pénible car il ouvre le fichier dans /tmp et tu dois fermer ton éditeur pour mettre à jour ce que tu édite
+**** ENDING LOGGING AT Sun Dec 10 12:03:10 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 12:42:21 2023
+
+Dec 10 12:42:20 *	Now talking on #vim-fr
+Dec 10 12:42:20 *	Topic for #vim-fr is: On est pas bien là ?
+Dec 10 12:42:20 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+Dec 10 14:20:34 *	Disconnected ()
+**** ENDING LOGGING AT Sun Dec 10 14:20:34 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 14:23:34 2023
+
+Dec 10 14:23:34 *	Now talking on #vim-fr
+Dec 10 14:23:34 *	Topic for #vim-fr is: On est pas bien là ?
+Dec 10 14:23:34 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+Dec 10 15:50:34 *	Disconnected ()
+**** ENDING LOGGING AT Sun Dec 10 15:50:34 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 15:51:29 2023
+
+Dec 10 15:51:29 *	Now talking on #vim-fr
+Dec 10 15:51:29 *	Topic for #vim-fr is: On est pas bien là ?
+Dec 10 15:51:29 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+Dec 10 16:02:04 *	Disconnected ()
+**** ENDING LOGGING AT Sun Dec 10 16:02:04 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 16:02:51 2023
+
+Dec 10 16:02:50 *	Now talking on #vim-fr
+Dec 10 16:02:50 *	Topic for #vim-fr is: On est pas bien là ?
+Dec 10 16:02:50 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** ENDING LOGGING AT Sun Dec 10 16:03:39 2023
+
+**** BEGIN LOGGING AT Mon Dec 11 09:04:48 2023
+
+Dec 11 09:04:47 *	Now talking on #vim-fr
+Dec 11 09:04:47 *	Topic for #vim-fr is: On est pas bien là ?
+Dec 11 09:04:47 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+Dec 11 09:10:36 *	Disconnected ()
+**** ENDING LOGGING AT Mon Dec 11 09:10:36 2023
+
+**** BEGIN LOGGING AT Mon Dec 11 09:10:51 2023
+
+Dec 11 09:10:51 *	Now talking on #vim-fr
+Dec 11 09:10:51 *	Topic for #vim-fr is: On est pas bien là ?
+Dec 11 09:10:51 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+Dec 11 09:11:02 *	Disconnected ()
+**** ENDING LOGGING AT Mon Dec 11 09:11:02 2023
+
+**** BEGIN LOGGING AT Mon Dec 11 09:11:23 2023
+
+Dec 11 09:11:22 *	Now talking on #vim-fr
+Dec 11 09:11:22 *	Topic for #vim-fr is: On est pas bien là ?
+Dec 11 09:11:22 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+Dec 11 10:06:01 *	Disconnected ()
+**** ENDING LOGGING AT Mon Dec 11 10:06:01 2023
+
+**** BEGIN LOGGING AT Mon Dec 11 18:09:42 2023
+
+Dec 11 18:09:37 *	Now talking on #vim-fr
+Dec 11 18:09:37 *	Topic for #vim-fr is: On est pas bien là ?
+Dec 11 18:09:37 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** ENDING LOGGING AT Mon Dec 11 18:14:11 2023
+
+**** BEGIN LOGGING AT Mon Dec 11 18:14:11 2023
+
+Dec 11 20:22:52 *	Disconnected ()
+**** ENDING LOGGING AT Mon Dec 11 20:22:52 2023
+
+**** BEGIN LOGGING AT Mon Dec 11 20:27:32 2023
+
+Dec 11 20:27:32 *	Now talking on #vim-fr
+Dec 11 20:27:32 *	Topic for #vim-fr is: On est pas bien là ?
+Dec 11 20:27:32 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** ENDING LOGGING AT Mon Dec 11 21:00:19 2023
+
+**** BEGIN LOGGING AT Sun Dec 17 12:33:18 2023
+
+Dec 17 12:33:17 *	Now talking on #vim-fr
+Dec 17 12:33:17 *	Topic for #vim-fr is: On est pas bien là ?
+Dec 17 12:33:17 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** ENDING LOGGING AT Sun Dec 17 14:12:03 2023
+
+**** BEGIN LOGGING AT Wed Jan 17 16:45:05 2024
+
+janv. 17 16:45:04 *	Now talking on #vim-fr
+janv. 17 16:45:04 *	Topic for #vim-fr is: On est pas bien là ?
+janv. 17 16:45:04 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** ENDING LOGGING AT Wed Jan 17 16:46:04 2024
+
+**** BEGIN LOGGING AT Wed Jan 17 21:56:11 2024
+
+janv. 17 21:56:10 *	Now talking on #vim-fr
+janv. 17 21:56:10 *	Topic for #vim-fr is: On est pas bien là ?
+janv. 17 21:56:10 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Wed Jan 17 22:05:36 2024
+
+janv. 17 22:05:35 *	Now talking on #vim-fr
+janv. 17 22:05:35 *	Topic for #vim-fr is: On est pas bien là ?
+janv. 17 22:05:35 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** ENDING LOGGING AT Wed Jan 17 22:07:05 2024
+
+**** BEGIN LOGGING AT Wed Jan 17 22:07:05 2024
+
+**** ENDING LOGGING AT Wed Jan 17 22:07:11 2024
+
+**** BEGIN LOGGING AT Wed Jan 17 22:07:27 2024
+
+janv. 17 22:07:27 *	Now talking on #vim-fr
+janv. 17 22:07:27 *	Topic for #vim-fr is: On est pas bien là ?
+janv. 17 22:07:27 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** ENDING LOGGING AT Wed Jan 17 22:07:51 2024
+
+**** BEGIN LOGGING AT Wed Jan 17 22:09:27 2024
+
+janv. 17 22:09:27 *	Now talking on #vim-fr
+janv. 17 22:09:27 *	Topic for #vim-fr is: On est pas bien là ?
+janv. 17 22:09:27 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Wed Jan 17 22:25:38 2024
+
+janv. 17 22:25:37 *	Now talking on #vim-fr
+janv. 17 22:25:37 *	Topic for #vim-fr is: On est pas bien là ?
+janv. 17 22:25:37 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** ENDING LOGGING AT Wed Jan 17 22:37:34 2024
+
+**** BEGIN LOGGING AT Thu Jan 18 07:26:22 2024
+
+janv. 18 07:26:22 *	Now talking on #vim-fr
+janv. 18 07:26:22 *	Topic for #vim-fr is: On est pas bien là ?
+janv. 18 07:26:22 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+janv. 18 08:26:07 *	Disconnected ()
+**** ENDING LOGGING AT Thu Jan 18 08:26:07 2024
+
+**** BEGIN LOGGING AT Thu Jan 18 08:26:31 2024
+
+janv. 18 08:26:31 *	Now talking on #vim-fr
+janv. 18 08:26:31 *	Topic for #vim-fr is: On est pas bien là ?
+janv. 18 08:26:31 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** ENDING LOGGING AT Thu Jan 18 09:20:36 2024
+
+**** BEGIN LOGGING AT Thu Jan 18 09:57:30 2024
+
+janv. 18 09:57:29 *	Now talking on #vim-fr
+janv. 18 09:57:29 *	Topic for #vim-fr is: On est pas bien là ?
+janv. 18 09:57:29 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Mon Feb 12 13:07:13 2024
+
+févr. 12 13:07:12 *	Now talking on #vim-fr
+févr. 12 13:07:12 *	Topic for #vim-fr is: On est pas bien là ?
+févr. 12 13:07:12 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Mon Feb 12 14:01:09 2024
+
+févr. 12 14:01:08 *	Now talking on #vim-fr
+févr. 12 14:01:08 *	Topic for #vim-fr is: On est pas bien là ?
+févr. 12 14:01:08 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Sat Feb 17 17:08:29 2024
+
+Feb 17 17:08:29 *	Now talking on #vim-fr
+Feb 17 17:08:29 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 17 17:08:29 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Tue Feb 20 15:07:42 2024
+
+Feb 20 15:07:42 *	Now talking on #vim-fr
+Feb 20 15:07:42 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 20 15:07:42 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Tue Feb 20 15:32:26 2024
+
+Feb 20 15:32:26 *	Now talking on #vim-fr
+Feb 20 15:32:26 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 20 15:32:26 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Tue Feb 20 15:37:56 2024
+
+Feb 20 15:37:56 *	Now talking on #vim-fr
+Feb 20 15:37:56 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 20 15:37:56 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Wed Feb 21 00:53:37 2024
+
+Feb 21 00:53:37 *	Now talking on #vim-fr
+Feb 21 00:53:37 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 21 00:53:37 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Wed Feb 21 10:31:33 2024
+
+Feb 21 10:31:33 *	Now talking on #vim-fr
+Feb 21 10:31:33 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 21 10:31:33 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Wed Feb 21 10:38:42 2024
+
+Feb 21 10:38:40 *	Now talking on #vim-fr
+Feb 21 10:38:40 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 21 10:38:40 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Wed Feb 21 16:46:59 2024
+
+Feb 21 16:46:59 *	Now talking on #vim-fr
+Feb 21 16:46:59 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 21 16:46:59 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Wed Feb 21 20:38:01 2024
+
+Feb 21 20:38:01 *	Now talking on #vim-fr
+Feb 21 20:38:01 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 21 20:38:01 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Wed Feb 21 23:19:27 2024
+
+Feb 21 23:19:26 *	Now talking on #vim-fr
+Feb 21 23:19:26 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 21 23:19:26 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** ENDING LOGGING AT Wed Feb 21 23:20:04 2024
+
+**** BEGIN LOGGING AT Wed Feb 21 23:21:17 2024
+
+Feb 21 23:21:17 *	Now talking on #vim-fr
+Feb 21 23:21:17 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 21 23:21:17 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** ENDING LOGGING AT Wed Feb 21 23:50:23 2024
+
+**** BEGIN LOGGING AT Wed Feb 21 23:50:23 2024
+
+**** ENDING LOGGING AT Wed Feb 21 23:52:21 2024
+
+**** BEGIN LOGGING AT Wed Feb 21 23:52:21 2024
+
+**** ENDING LOGGING AT Wed Feb 21 23:53:41 2024
+
+**** BEGIN LOGGING AT Wed Feb 21 23:53:41 2024
+
+**** ENDING LOGGING AT Wed Feb 21 23:57:59 2024
+
+**** BEGIN LOGGING AT Wed Feb 21 23:57:59 2024
+
+**** ENDING LOGGING AT Thu Feb 22 13:52:24 2024
+
+**** BEGIN LOGGING AT Thu Feb 22 13:55:48 2024
+
+Feb 22 13:55:47 *	Now talking on #vim-fr
+Feb 22 13:55:47 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 22 13:55:47 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Thu Feb 22 13:57:12 2024
+
+Feb 22 13:57:11 *	Now talking on #vim-fr
+Feb 22 13:57:11 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 22 13:57:11 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** ENDING LOGGING AT Thu Feb 22 17:51:49 2024
+
+**** BEGIN LOGGING AT Thu Feb 22 18:35:18 2024
+
+Feb 22 18:35:17 *	Now talking on #vim-fr
+Feb 22 18:35:17 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 22 18:35:17 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Thu Feb 22 20:35:46 2024
+
+Feb 22 20:35:46 *	Now talking on #vim-fr
+Feb 22 20:35:46 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 22 20:35:46 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Thu Feb 22 20:47:45 2024
+
+Feb 22 20:47:43 *	Now talking on #vim-fr
+Feb 22 20:47:43 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 22 20:47:43 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Thu Feb 22 20:58:52 2024
+
+Feb 22 20:58:50 *	Now talking on #vim-fr
+Feb 22 20:58:50 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 22 20:58:50 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Thu Feb 22 21:13:03 2024
+
+Feb 22 21:13:03 *	Now talking on #vim-fr
+Feb 22 21:13:03 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 22 21:13:03 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Thu Feb 22 21:16:07 2024
+
+Feb 22 21:16:06 *	Now talking on #vim-fr
+Feb 22 21:16:06 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 22 21:16:06 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Fri Feb 23 14:47:00 2024
+
+Feb 23 14:47:00 *	Now talking on #vim-fr
+Feb 23 14:47:00 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 23 14:47:00 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Fri Feb 23 14:52:02 2024
+
+Feb 23 14:52:01 *	Now talking on #vim-fr
+Feb 23 14:52:01 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 23 14:52:01 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Fri Feb 23 21:29:52 2024
+
+Feb 23 21:29:49 *	Now talking on #vim-fr
+Feb 23 21:29:49 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 23 21:29:49 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Sat Feb 24 12:02:42 2024
+
+Feb 24 12:02:41 *	Now talking on #vim-fr
+Feb 24 12:02:41 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 24 12:02:41 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+Feb 24 14:03:02 <ircBot>	<j​ulientaq> kickstart.nvim va sûrement manger une mise à jour rapidement vu que TJ DeVries en fait la com sur ses streams en live.
+Feb 24 14:19:11 <ircBot>	<c​houhartem> après dans sa vidéo de présentation, il recommande de copier la conf depuis le repo plutôt que de cloner comme tu vas la personnaliser, c’est ce que j’ai fait (avant de modulariser)
+Feb 24 14:20:26 <ircBot>	<c​houhartem> mais c’était surtout pour savoir où j’ai mis quoi, il y a une version déjà pré-modularisée : https://github.com/dam9000/kickstart-modular.nvim
+**** BEGIN LOGGING AT Sat Feb 24 16:29:08 2024
+
+Feb 24 16:29:06 *	Now talking on #vim-fr
+Feb 24 16:29:06 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 24 16:29:06 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Sat Feb 24 16:32:03 2024
+
+Feb 24 16:32:03 *	Now talking on #vim-fr
+Feb 24 16:32:03 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 24 16:32:03 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Sat Feb 24 17:28:08 2024
+
+Feb 24 17:28:07 *	Now talking on #vim-fr
+Feb 24 17:28:07 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 24 17:28:07 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+Feb 24 19:13:52 <ircBot>	<g​difolco> mon premier boss me disais ce genre de trucs aussi, bon, il disait aussi que je poussais beaucoup trop code par rapport aux autres.
+**** ENDING LOGGING AT Sat Feb 24 19:15:17 2024
+
+**** BEGIN LOGGING AT Sun Feb 25 02:09:51 2024
+
+Feb 25 02:09:50 *	Now talking on #vim-fr
+Feb 25 02:09:50 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 25 02:09:50 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Sun Feb 25 18:41:35 2024
+
+Feb 25 18:41:33 *	Now talking on #vim-fr
+Feb 25 18:41:33 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 25 18:41:33 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** ENDING LOGGING AT Sun Feb 25 18:41:51 2024
+
+**** BEGIN LOGGING AT Tue Feb 27 23:16:00 2024
+
+Feb 27 23:15:58 *	Now talking on #vim-fr
+Feb 27 23:15:58 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 27 23:15:58 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Wed Feb 28 02:09:41 2024
+
+Feb 28 02:09:40 *	Now talking on #vim-fr
+Feb 28 02:09:40 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 28 02:09:40 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** ENDING LOGGING AT Wed Feb 28 02:32:44 2024
+
+**** BEGIN LOGGING AT Thu Feb 29 01:02:43 2024
+
+Feb 29 01:02:42 *	Now talking on #vim-fr
+Feb 29 01:02:42 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 29 01:02:42 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+Feb 29 01:13:02 *	Disconnected ()
+**** ENDING LOGGING AT Thu Feb 29 01:13:02 2024
+
+**** BEGIN LOGGING AT Thu Feb 29 01:15:36 2024
+
+Feb 29 01:15:36 *	Now talking on #vim-fr
+Feb 29 01:15:36 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 29 01:15:36 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+Feb 29 14:15:32 *	Disconnected ()
+**** ENDING LOGGING AT Thu Feb 29 14:15:32 2024
+
+**** BEGIN LOGGING AT Thu Feb 29 14:15:51 2024
+
+Feb 29 14:15:51 *	Now talking on #vim-fr
+Feb 29 14:15:51 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 29 14:15:51 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Thu Feb 29 14:39:53 2024
+
+Feb 29 14:39:53 *	Now talking on #vim-fr
+Feb 29 14:39:53 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 29 14:39:53 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Thu Feb 29 15:16:04 2024
+
+Feb 29 15:16:03 *	Now talking on #vim-fr
+Feb 29 15:16:03 *	Topic for #vim-fr is: On est pas bien là ?
+Feb 29 15:16:03 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+Feb 29 18:16:43 <ircBot>	<t​aupiqueur_> quelqu'un s'y connait en imagemagick?
+Feb 29 18:17:08 <ircBot>	<t​aupiqueur_> j'essaie d'avoir une image de 1280x800 exactement mais c blurry! 😭
+Feb 29 18:18:12 <ircBot>	<t​aupiqueur_> j'ai essaye avec Preview sous macos, et imagemagick, les 2 donnent des resultats pas ouf (imagemagick est pire avec just -resize)
+Feb 29 18:18:41 <ircBot>	<t​aupiqueur_> https://cdn.discordapp.com/attachments/967025152342777929/1212811189461979197/screenshot_2024-02-29_163957.png?ex=65f33170&is=65e0bc70&hm=5a563a421135f041dcb5167b4ae3efe3af446be34aa6612ec78472f72fe13f61&
+Feb 29 18:18:41 <ircBot>	<t​aupiqueur_> https://cdn.discordapp.com/attachments/967025152342777929/1212811189805916211/screenshot_2024-02-29_1639571280x800px.png?ex=65f33170&is=65e0bc70&hm=02a4c07b132ce16f3e89ea348f2813b1b0af9d8f7edcaf999b0e6047d8458b28&
+Feb 29 18:19:18 <ircBot>	<t​aupiqueur_> a gauche c'est l'image originale, et a droite celle que j'ai resize
+Feb 29 18:20:47 <ircBot>	<t​aupiqueur_> idealement j'aimerais ne pas avoir a retailler, et avoir la taille de la fenetre deja bonne mais jai pas reussi. deja avoir la taille de la fenetre proportionnelle pour que quand je retaille ca deforme pas ct galere x(
+Feb 29 18:46:20 <ircBot>	<t​aupiqueur_> https://cdn.discordapp.com/attachments/967025152342777929/1212818146797293658/screenshot_2024-02-29_163957_2.png?ex=65f337eb&is=65e0c2eb&hm=6f956ce659c2c16e93aac5182986bd245c57906485e543c9e399b3e650947548&
+Feb 29 18:46:22 <ircBot>	<t​aupiqueur_> ^ avec gimp
+Feb 29 18:54:53 <ircBot>	<c​houhartem> ha oui, c’est souvent l’enfer… c’est vrai que je resize souvent des photos, donc c’est moins gênant… t’as essayé avec -adaptive-resize à la place de -resize ? (https://imagemagick.org/Usage/resize/#adaptive-resize)
+Feb 29 19:08:27 <ircBot>	<j​ulientaq> Je vais etre relou mais sharp js cest super bien pour ça
+Feb 29 19:10:23 <ircBot>	<t​aupiqueur_> tu sais comment mettre celle ci en 1280x800?
+Feb 29 19:10:24 <ircBot>	<t​aupiqueur_> https://cdn.discordapp.com/attachments/967025152342777929/1212824203448025199/Screenshot_2024-02-29_at_00.13.27.png?ex=65f33d8f&is=65e0c88f&hm=8de06e08891dcddd4653bbc8273c3f5ce74f973ff6ad2d3de5c6e4110bc11d70&
+Feb 29 19:10:49 <ircBot>	<t​aupiqueur_> (un fond en padding est autorise)
+Feb 29 19:11:11 <ircBot>	<t​aupiqueur_> vu que proportionnellement ca retaillera jamais 1280x800 sinon
+Feb 29 19:11:57 <ircBot>	<c​houhartem> oui, je me disais la même chose 😄  avec imagemagick je sais pas, j’aurais sorti the gimp
+Feb 29 19:12:06 <ircBot>	<t​aupiqueur_> ouais
+Feb 29 19:12:23 <ircBot>	<t​aupiqueur_> je sais pas comment faire dans gimp non pu sans perdre de quali x(
+Feb 29 19:12:32 <ircBot>	<t​aupiqueur_> jutilise jamais
+Feb 29 19:13:56 <ircBot>	<c​houhartem> https://cdn.discordapp.com/attachments/967025152342777929/1212825095266107392/coucou.png?ex=65f33e63&is=65e0c963&hm=214a003c93d4bc60caf6bd0e6cce6d0ce3f31874fd060d9c959232eb0977ce7c&
+Feb 29 19:14:51 <ircBot>	<t​aupiqueur_> c'est blurry
+Feb 29 19:15:11 <ircBot>	<t​aupiqueur_> t'as fait comment pour resizer?, t'as detruit les proportions?
+Feb 29 19:15:26 <ircBot>	<c​houhartem> diable
+Feb 29 19:16:32 <ircBot>	<c​houhartem> j’ai resize dans un premier temps en gardant les proprtions en …x800 (avec une interpolation linéaire) puis j’ai changé la taille du canevas en centrant le calque principal
+Feb 29 19:16:49 <ircBot>	<t​aupiqueur_> ce qui me choque moi c'est que le browser retaille impec on the fly, alors que avec gimp et tout c horrible mdrr
+Feb 29 19:17:40 <ircBot>	<c​houhartem> il travaille pas avec du binaire le browser, mais avec les fonts et les canevas 😄
+Feb 29 19:17:47 <ircBot>	<t​aupiqueur_> y a un calque? jvois rien mdr
+Feb 29 19:18:19 <ircBot>	<c​houhartem> non, la data a été perdue en enregistrant en .png…
+Feb 29 19:21:09 <ircBot>	<t​aupiqueur_> tu peux me montrer une video? 🙇
+Feb 29 19:39:04 <ircBot>	<c​houhartem> https://cdn.discordapp.com/attachments/967025152342777929/1212831418799890483/tuto_gimp.mp4?ex=65f34447&is=65e0cf47&hm=71a389ebca707ac082d6c4fffb40f2a6a083b82e43c8a5b6b6b5cd1efbb1112c&
+Feb 29 19:39:24 <ircBot>	<c​houhartem> c’est complètement incompréhensible 😄
+Feb 29 19:40:02 <ircBot>	<c​houhartem> on voit pas le curseur, on voit pas les inputs clavier, on voit pas ce qu’il se passe et je vais trop vite… parfait
+Feb 29 19:42:23 <ircBot>	<t​aupiqueur_> MDR ICANT 🤣
+Feb 29 19:42:32 <ircBot>	<t​aupiqueur_> on dirait une video tuto youtube mdrr
+Feb 29 19:42:41 <ircBot>	<c​houhartem> des années 2000
+Feb 29 19:42:48 <ircBot>	<t​aupiqueur_> c'est comique lol
+Feb 29 19:43:11 <ircBot>	<c​houhartem> j’ai hésité à commencer par “salut les copains et les copines” mais je me suis retenu (et c’était dur)
+Feb 29 19:43:45 <ircBot>	<c​houhartem> et encore, ya ma voix, pas juste un notepad.exe avec les instructions hasardeuses 😄
+Feb 29 19:46:28 <ircBot>	<t​aupiqueur_> C'est tres clair. En gros, t'as change la taille de l'image en gardant les proportions pour avoir une hauteur de 800 et la largeur osef. Ensuite t'as change la taille du canva en mettant 1280 de largeur, et cliquer "centrer" !, puis export
+Feb 29 19:47:54 <ircBot>	<t​aupiqueur_> lorsque tu as ouvert l'image tu avais pas un avertissement sur les couleurs ?
+Feb 29 19:48:12 <ircBot>	<t​aupiqueur_> et a l'export, tu as tout garder par defaut, sauf la compression que tu passes de 9 a 0 ?
+Feb 29 19:48:33 <ircBot>	<c​houhartem> ha non, j’ai rien changé de ce côté mais c’est pas con 😄
+Feb 29 19:48:51 <ircBot>	<c​houhartem> non, j’ai copié ton image et l’ai collé dans _the gimp™…
+Feb 29 19:48:52 <ircBot>	<t​aupiqueur_> https://cdn.discordapp.com/attachments/1181684002193686578/1212830287134990366/image.png?ex=65f34339&is=65e0ce39&hm=055cb169387f83b78976377ab1e17f95579b33d9b4c8822179965b8e9073772b&
+Feb 29 19:49:08 <ircBot>	<t​aupiqueur_> ha tricheur
+Feb 29 19:49:37 <ircBot>	<c​houhartem> mais oui, c’est exactement ça
+Feb 29 19:51:42 <ircBot>	<t​aupiqueur_> c'est exactement le tuto dont j'avais besoin 😇  merci @chouhartem !!
+Feb 29 19:52:48 <ircBot>	<c​houhartem> de rien !
+Feb 29 19:53:42 <ircBot>	<c​houhartem> je notes les paramètres à changer dans obs aussi pour la prochaine fois 😅
+**** BEGIN LOGGING AT Fri Mar  1 01:59:42 2024
+
+Mar 01 01:59:41 *	Now talking on #vim-fr
+Mar 01 01:59:41 *	Topic for #vim-fr is: On est pas bien là ?
+Mar 01 01:59:41 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Fri Mar  1 14:01:17 2024
+
+Mar 01 14:01:16 *	Now talking on #vim-fr
+Mar 01 14:01:16 *	Topic for #vim-fr is: On est pas bien là ?
+Mar 01 14:01:16 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Fri Mar  1 16:01:18 2024
+
+Mar 01 16:01:17 *	Now talking on #vim-fr
+Mar 01 16:01:17 *	Topic for #vim-fr is: On est pas bien là ?
+Mar 01 16:01:17 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Fri Mar  1 18:08:59 2024
+
+Mar 01 18:08:59 *	Now talking on #vim-fr
+Mar 01 18:08:59 *	Topic for #vim-fr is: On est pas bien là ?
+Mar 01 18:08:59 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** ENDING LOGGING AT Fri Mar  1 18:10:30 2024
+
+**** BEGIN LOGGING AT Fri Mar  1 19:04:14 2024
+
+Mar 01 19:04:13 *	Now talking on #vim-fr
+Mar 01 19:04:13 *	Topic for #vim-fr is: On est pas bien là ?
+Mar 01 19:04:13 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Sat Mar  2 03:05:27 2024
+
+Mar 02 03:05:26 *	Now talking on #vim-fr
+Mar 02 03:05:26 *	Topic for #vim-fr is: On est pas bien là ?
+Mar 02 03:05:26 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Sat Mar  2 06:15:35 2024
+
+Mar 02 06:15:35 *	Now talking on #vim-fr
+Mar 02 06:15:35 *	Topic for #vim-fr is: On est pas bien là ?
+Mar 02 06:15:35 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Sat Mar  2 06:17:10 2024
+
+Mar 02 06:17:09 *	Now talking on #vim-fr
+Mar 02 06:17:09 *	Topic for #vim-fr is: On est pas bien là ?
+Mar 02 06:17:09 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Sat Mar  2 19:02:29 2024
+
+Mar 02 19:02:28 *	Now talking on #vim-fr
+Mar 02 19:02:28 *	Topic for #vim-fr is: On est pas bien là ?
+Mar 02 19:02:28 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Sun Mar  3 08:36:18 2024
+
+Mar 03 08:36:17 *	Now talking on #vim-fr
+Mar 03 08:36:17 *	Topic for #vim-fr is: On est pas bien là ?
+Mar 03 08:36:17 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Mon Mar  4 04:37:44 2024
+
+Mar 04 04:37:43 *	Now talking on #vim-fr
+Mar 04 04:37:43 *	Topic for #vim-fr is: On est pas bien là ?
+Mar 04 04:37:43 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Mon Mar  4 04:39:41 2024
+
+Mar 04 04:39:41 *	Now talking on #vim-fr
+Mar 04 04:39:41 *	Topic for #vim-fr is: On est pas bien là ?
+Mar 04 04:39:41 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+Mar 04 16:35:18 <white-wolf>	salut
+Mar 04 16:35:25 <white-wolf>	dites-moi
+Mar 04 16:36:06 <white-wolf>	est-il possible de coder à plusieurs sur une session vim ? genre comme avec un etherpad ?
+Mar 04 16:38:04 <Chouhartem>	git ?
+Mar 04 16:39:02 <Chouhartem>	(autrement je sais pas)
+Mar 04 16:40:17 <white-wolf>	mais git ne permet pas d'écrire en même temps sur le même code, j'aurai voulu utiliser vim à la façon d'un etherpad
+Mar 04 16:40:57 <Chouhartem>	oui, j’avais compris, j’étais à moitié sérieux…
+Mar 04 16:41:28 <white-wolf>	ah ok
+Mar 04 16:41:41 <white-wolf>	non des fois qu'il y ai un plugin ?
+Mar 04 16:42:16 <white-wolf>	sinon c'est sur je connais git
+Mar 04 16:42:38 <white-wolf>	mais par exemple pour la prise de note c'est pas top pour des cours
+Mar 04 16:42:42 <white-wolf>	et du code
+Mar 04 16:44:27 <white-wolf>	rien ne vaut un vrai éditeur mais etherpad ne remplace pas vim
+Mar 04 16:45:16 <white-wolf>	genre extrem programming mais en distanciel
+Mar 04 16:46:01 <Chouhartem>	j’ai vu ça en cherchant vite fait : https://github.com/derteta/vimpair mais c’est pour 2 personnes, pas maintenu depuis 5 ans, et aucune idée de la sécurité du bousin
+Mar 04 16:46:11 <Chouhartem>	t’as plus qu’à faire un plugin vimpad
+Mar 04 16:48:38 <white-wolf>	ouais
+Mar 04 16:49:09 <white-wolf>	je vais m'y atteler, ça me fera une bonne experience de prog
+Mar 04 16:49:19 <white-wolf>	en quoi je l'écris ?
+Mar 04 16:50:44 <white-wolf>	je peux l'écrire en C ?
+Mar 04 16:51:07 <white-wolf>	ou il faut absolument faire en langage de script ?
+Mar 04 16:52:17 <white-wolf>	je ne connais pas la language de script vim et très peu le C
+Mar 04 16:52:55 <Chouhartem>	je sais pas du tout, mais dès que tu vas faire du réseau… ça sera le bordel de toute manière
+Mar 04 16:54:14 <white-wolf>	ah
+Mar 04 16:55:08 <white-wolf>	en script vim alors under ssh
+Mar 04 17:06:26 <ircBot>	<j​ulientaq> le script vim c’est du lua.
+Mar 04 17:06:35 <ircBot>	<j​ulientaq> (pardon le nvim).
+Mar 04 17:06:56 <ircBot>	<j​ulientaq> mais attend dans la vidéo sur le kickstart j’ai entendu parler de nvim à plusieurs.
+Mar 04 17:06:59 <ircBot>	<j​ulientaq> laisse moi check.
+Mar 04 17:08:02 <ircBot>	<j​ulientaq> de la doc https://github.com/FredKSchott/CoVim
+Mar 04 17:08:20 <ircBot>	<j​ulientaq> c’est pas ce dont ça parlait ce matin, et accessoirement le repo est un sleep
+Mar 04 17:16:52 <white-wolf>	mais ça fonctionne avec nvim ou vim ?
+Mar 04 18:06:12 <ircBot>	<g​uyzmal> white-wolf - j'ai tenté une implem d'etherpad dans vim, très mauvaise idée
+Mar 04 18:06:20 <ircBot>	<g​uyzmal> (il y a presque 10 ans)
+Mar 04 18:06:32 <ircBot>	<g​uyzmal> le protocole était trop compliqué
+Mar 04 18:06:38 <ircBot>	<g​uyzmal> (vim-etherpad pour voir le squelette)
+Mar 04 18:07:49 <ircBot>	<g​uyzmal> white-wolf - il y a une feature vscode qui permet de faire du pair programming en live
+Mar 04 18:07:53 <ircBot>	<g​uyzmal> c'est assez chouette
+Mar 04 18:08:06 <ircBot>	<g​uyzmal> https://www.reddit.com/r/vim/comments/qr14nk/liveshare_or_something_similar_in_vim_and_vscode/
+Mar 04 18:08:40 <ircBot>	<g​uyzmal> mais live share c'est proprio https://github.com/microsoft/live-share/issues/3299
+Mar 04 18:13:46 <white-wolf>	je ne veux pae utilier autre chose que vim ou neovim
+Mar 04 18:19:23 <white-wolf>	en lua ce serai une bonne experience
+Mar 04 18:52:54 <ircBot>	<g​uyzmal> l'idée était d'implémenter live-share dans (n)vim pour pouvoir faire du live coding entre vim et d'autres éditeurs
+Mar 04 18:54:02 <ircBot>	<g​uyzmal> et sinon, tu peux coder ton truc en C, en Go ou en Rust, exposer une API en lua pour la config
+Mar 04 18:54:22 <ircBot>	<g​uyzmal> il y a des libs pour intéragir avec (n)vim dans presque tous les langages
+Mar 04 18:54:38 <ircBot>	<g​uyzmal> (j'avais fait l'implem de vim-etherpad en python à l'époque)
+Mar 04 19:06:03 <ircBot>	<c​houhartem> last commit: 8 years ago
+**** BEGIN LOGGING AT Tue Mar  5 07:39:52 2024
+
+Mar 05 07:39:50 *	Now talking on #vim-fr
+Mar 05 07:39:50 *	Topic for #vim-fr is: On est pas bien là ?
+Mar 05 07:39:50 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+Mar 05 08:13:35 <ircBot>	<j​ulientaq> hello.
+Mar 05 08:13:48 <ircBot>	<j​ulientaq> non mais le langage de scripting pour neovim c’est le lua.
+Mar 05 08:14:04 <ircBot>	<j​ulientaq> et plus le vimscript (si j’ai bien compris les vidéos de TJdeVries).
+Mar 05 08:14:29 <ircBot>	<j​ulientaq> (d’ailleurs je m’en vais essayer kickstart dès que j’ai fini le boulot du moment et le clavier à souder sur le bureau).
+**** BEGIN LOGGING AT Tue Mar  5 18:13:43 2024
+
+Mar 05 18:13:42 *	Now talking on #vim-fr
+Mar 05 18:13:42 *	Topic for #vim-fr is: On est pas bien là ?
+Mar 05 18:13:42 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Tue Mar  5 19:05:32 2024
+
+Mar 05 19:05:30 *	Now talking on #vim-fr
+Mar 05 19:05:30 *	Topic for #vim-fr is: On est pas bien là ?
+Mar 05 19:05:30 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Tue Mar  5 20:41:19 2024
+
+Mar 05 20:41:19 *	Now talking on #vim-fr
+Mar 05 20:41:19 *	Topic for #vim-fr is: On est pas bien là ?
+Mar 05 20:41:19 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Tue Mar  5 22:33:04 2024
+
+Mar 05 22:33:03 *	Now talking on #vim-fr
+Mar 05 22:33:03 *	Topic for #vim-fr is: On est pas bien là ?
+Mar 05 22:33:03 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Wed Mar  6 01:51:37 2024
+
+Mar 06 01:51:37 *	Now talking on #vim-fr
+Mar 06 01:51:37 *	Topic for #vim-fr is: On est pas bien là ?
+Mar 06 01:51:37 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)
+**** BEGIN LOGGING AT Wed Mar  6 07:16:32 2024
+
+Mar 06 07:16:31 *	Now talking on #vim-fr
+Mar 06 07:16:31 *	Topic for #vim-fr is: On est pas bien là ?
+Mar 06 07:16:31 *	Topic for #vim-fr set by alkino (Wed May 19 19:41:13 2021)

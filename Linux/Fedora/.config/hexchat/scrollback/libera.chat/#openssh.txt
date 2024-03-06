@@ -1,0 +1,345 @@
+T 1702193179 19*	Now talking on 22#openssh
+T 1702193179 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1702193179 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1702194034 20*	Disconnected (20)
+T 1702194061 19*	Now talking on 22#openssh
+T 1702194061 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1702194061 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1702194196 24*	dacd has quit (Ping timeout: 245 seconds)
+T 1702195289 19*	Now talking on 22#openssh
+T 1702195289 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1702195289 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1702198993 20*	Disconnected (20)
+T 1702201366 19*	Now talking on 22#openssh
+T 1702201366 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1702201366 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1702208540 19*	Now talking on 22#openssh
+T 1702208540 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1702208540 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1702214434 20*	Disconnected (20)
+T 1702214614 19*	Now talking on 22#openssh
+T 1702214614 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1702214614 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1702219834 20*	Disconnected (20)
+T 1702219889 19*	Now talking on 22#openssh
+T 1702219889 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1702219889 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1702220524 20*	Disconnected (20)
+T 1702220571 19*	Now talking on 22#openssh
+T 1702220571 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1702220571 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1702281887 19*	Now talking on 22#openssh
+T 1702281887 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1702281887 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1702282236 20*	Disconnected (20)
+T 1702282251 19*	Now talking on 22#openssh
+T 1702282251 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1702282251 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1702282262 20*	Disconnected (20)
+T 1702282282 19*	Now talking on 22#openssh
+T 1702282282 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1702282282 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1702285561 20*	Disconnected (20)
+T 1702314577 19*	Now talking on 22#openssh
+T 1702314577 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1702314577 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1702322572 20*	Disconnected (20)
+T 1702322852 19*	Now talking on 22#openssh
+T 1702322852 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1702322852 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1702812797 19*	Now talking on 22#openssh
+T 1702812797 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1702812797 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1705506304 19*	Now talking on 22#openssh
+T 1705506304 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1705506304 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1705524970 19*	Now talking on 22#openssh
+T 1705524970 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1705524970 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1705525535 19*	Now talking on 22#openssh
+T 1705525535 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1705525535 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1705525647 19*	Now talking on 22#openssh
+T 1705525647 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1705525647 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1705525767 19*	Now talking on 22#openssh
+T 1705525767 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1705525767 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1705526737 19*	Now talking on 22#openssh
+T 1705526737 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1705526737 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1705559182 19*	Now talking on 22#openssh
+T 1705559182 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1705559182 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1705562767 20*	Disconnected (20)
+T 1705562791 19*	Now talking on 22#openssh
+T 1705562791 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1705562791 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1705568249 19*	Now talking on 22#openssh
+T 1705568249 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1705568249 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1707739632 19*	Now talking on 22#openssh
+T 1707739632 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1707739632 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1707742868 19*	Now talking on 22#openssh
+T 1707742868 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1707742868 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1707748857 22*	26ChanServ gives voice to 18Han
+T 1708186109 19*	Now talking on 22#openssh
+T 1708186109 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708186109 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708438062 19*	Now talking on 22#openssh
+T 1708438062 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708438062 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708439546 19*	Now talking on 22#openssh
+T 1708439546 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708439546 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708439683 18<19wwalker18>	Well said henk !  Bull shit should always be identified and stamped out, regardless of the source.
+T 1708439876 19*	Now talking on 22#openssh
+T 1708439876 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708439876 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708440597 18<20Juest18>	hey, is encryption and signing of ssh keys viable for verification purposes?
+T 1708440769 18<29henk18>	verifying what?
+T 1708440786 18<29henk18>	do you mean encrypting and signing the ssh keys? with what? or using them to encrypt or sign some other data?
+T 1708440966 22*	26ChanServ gives voice to 18BasketCase
+T 1708441031 18<20Juest18>	henk: as in, using a ssh key to encrypt data such as a text file to share it secretly with someone, or signing it for party verification
+T 1708441050 18<20Juest18>	using a ssh key to encrypt or sign files, yes
+T 1708441070 18<20Juest18>	verifying that the data comes from a trusted source
+T 1708441206 18<19wwalker18>	Juest: curious, why not use gpg/pgp?
+T 1708441241 18<20Juest18>	wwalker: ssh would be an alternative to gpg/pgp
+T 1708441371 18<29henk18>	Juest: yeah, AFAIK that works, a quick search of the web returns e.g. https://www.agwa.name/blog/post/ssh_signatures. whether it’s viable depends a bit on the circumstances.
+T 1708441411 18<20Juest18>	the point of this is for the event of needing to verify myself against a shared host, suppose i lost access for some reason but i gave the ssh key in the signup form so it could be used for said recovery and secure contact with the admin/provider
+T 1708441469 18<20Juest18>	that's the proposed use case of it
+T 1708441494 18<20Juest18>	is it possible to embed the signature in the data and still be able to verify it without splitting it again?
+T 1708441563 18<25another|18>	so... your scenario is, you lost access to ... what exactly? but still have access to your ssh key?
+T 1708441709 18<20Juest18>	hypothetical scenario: shared vps sign up with a ssh key, access got compromised somehow, recovery involves verifying with them with a initial ssh key
+T 1708441726 18<29Foxboron18>	another|: We use this to verify ownership of AUR accounts when the user has lost their password
+T 1708441735 18<29Foxboron18>	as we have the ssh key on hand (usually) and they still have their SSH key
+T 1708441752 18<20Juest18>	ah neat!
+T 1708441753 18<29Foxboron18>	we also do this for misc other stuff in Arch if the user is not in the keyring
+T 1708441776 18<29Foxboron18>	As we have all support staffs ssh keys on hand at all times, but the gnupg key depends if they are a packager or not
+T 1708441778 18<20Juest18>	ssh key is used for git aur access and recovery right?
+T 1708441786 18<20Juest18>	gpg key is for packagers only?
+T 1708441791 18<29Foxboron18>	account recovery really
+T 1708441793 18<20Juest18>	and needs to be published right?
+T 1708441810 18<20Juest18>	ah i see, but im seeing that write access to an aur package repository is through ssh
+T 1708441812 18<29Foxboron18>	Juest: We have our own keyring with keys we trust, not all staff is part of that keyring as it's only relevant for packaging
+T 1708441842 18<29Foxboron18>	Juest: ah wait, I misunderstood. Both, yes
+T 1708441903 18<20Juest18>	ah, so its a good idea/recommended to put the ssh key since its not exposed on the profile and enables write access to aur gits, yeah?
+T 1708441909 18<29Foxboron18>	yes
+T 1708441916 18<20Juest18>	neat!
+T 1708441923 18<20Juest18>	i've done that, glad i did
+T 1708441937 18<29Foxboron18>	And we get the benefit of using it for account recovery as well :)
+T 1708441945 18<29Foxboron18>	We even do this for gitlab access if 2fa is lost
+T 1708441960 18<29Foxboron18>	So yeah, ssh signing is cool. I just wish the tooling would be better
+T 1708441989 18<20Juest18>	i guess its considered niche..?
+T 1708441997 18<29Foxboron18>	It shouldn't.
+T 1708442009 18<20Juest18>	fair enough
+T 1708442013 18<20Juest18>	happy to learn through :)
+T 1708442017 18<29Foxboron18>	There isn't a good reason why *signing* is hidden behind ssh-keygen -Y
+T 1708442055 18<20Juest18>	maybe look at the commit that did those changes?
+T 1708442064 18<20Juest18>	commit(s)*
+T 1708442115 18<29Foxboron18>	That sounds like work I'm not doing :)
+T 1708442121 18<20Juest18>	its ok
+T 1708442131 18<20Juest18>	was just a suggestion and a question to myself too
+T 1708442207 18<20Juest18>	thanks for chiming in Foxboron, i didnt know that about arch/aur accounts
+T 1708442216 18<29Foxboron18>	No worries :)
+T 1708443090 18<25another|18>	heh. good to know should I ever forget my password
+T 1708443485 18<29Foxboron18>	another|: :)
+T 1708443496 18<29Foxboron18>	another|: it's a good trick to keep in mind when you have someones ssh key but not anything else
+T 1708446634 18<25another|18>	hmm.. just for the lulz, how does this work in practice? you give me a challenge file to sign?
+T 1708446686 18<25another|18>	then I do something like `ssh-keygen -Y sign -f ~/.ssh/id_somekey -n spacename challenge` 
+T 1708447329 18<25another|18>	hmm.. and then you can verify that file. I see
+T 1708447331 18<25another|18>	neat
+T 1708451501 18<24aloo_shu18>	world could be a different place if plugging this had become a standard way of web authing instead of password and a neverending succession of measures to secure that mechanism better
+T 1708473217 19*	Now talking on 22#openssh
+T 1708473217 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708473217 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708507893 19*	Now talking on 22#openssh
+T 1708507893 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708507893 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708508320 19*	Now talking on 22#openssh
+T 1708508320 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708508320 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708530419 19*	Now talking on 22#openssh
+T 1708530419 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708530419 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708531167 18<29Mo18>	Hi, I need to connect an Oracle database via SSH tunnel. I start the ssh tunnel like this:    ssh -C -N -L 8521:localhost:1521 userA@oracleserver
+T 1708531217 18<29Mo18>	Locally I do     sqlplus userA/secret@//localhost:8521/userdb  
+T 1708531240 18<29Mo18>	But right after that I see in the ssh tunnel STDOUT:  channel 2: open failed: connect failed: Connection refused    What does that mean?
+T 1708531324 18<29henk18>	without a lot of thinking: there is nothing actually listening on "localhost:1521" on "oracleserver"
+T 1708531399 18<29henk18>	(in the sense of: I didn’t think about it a lot, so maybe completely false. not in the sense of: this is so simple that I didn’t even have to think about it.)
+T 1708531573 18<29Mo18>	henk: Doing an  ssh root@oracleserver, then netstat -tulpen |grep 1521   I see a    tcp  0 0 :::1521  :::*  LISTEN 489 25926 2446/tnslsnr
+T 1708531658 18<20BasketCase18>	Mo: looks like it is only listening on IPv6?
+T 1708531666 18<29henk18>	and can you connect to that port locally on oracleserver? e.g. with sqlplus or just netcat or telnet?
+T 1708531744 18<29Mo18>	Sorry, was using the wrong hostname, you helped me a lot, I learned a lot.... :) It works like expected now.
+T 1708531822 18<20BasketCase18>	gotta love IPv6 with :::port
+T 1708532011 18<29Mo18>	But doing the same tunnel on a different client, where user@oracleserver is replaced by  myserver, which is an entry in .ssh/config with several hops fails. The tunnel seems to be working, but doing a  telnet localhost 8521  cannot connect and I don't see any failure on the tunnel STDOUT.
+T 1708532055 18<29Mo18>	With hops I mean, that entry is using a   ProxyJump gw:22
+T 1708532392 18<29Mo18>	Weird. I killed all running ssh processes, and started the tunnel again, now it works.
+T 1708532540 18<20BasketCase18>	you using ControlMaster?
+T 1708535945 18<29Mo18>	BasketCase: Yes, I use a ControlMaster. Sometimes it helps to kill all ssh instances..
+T 1708535981 18<20BasketCase18>	then be aware that some ssh options are ignored for slave sessions
+T 1708544281 19*	Now talking on 22#openssh
+T 1708544281 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708544281 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708553966 19*	Now talking on 22#openssh
+T 1708553966 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708553966 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708554077 19*	Now talking on 22#openssh
+T 1708554077 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708554077 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708606547 19*	Now talking on 22#openssh
+T 1708606547 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708606547 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708606631 19*	Now talking on 22#openssh
+T 1708606631 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708606631 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708623317 19*	Now talking on 22#openssh
+T 1708623317 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708623317 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708630546 19*	Now talking on 22#openssh
+T 1708630546 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708630546 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708631263 19*	Now talking on 22#openssh
+T 1708631263 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708631263 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708631930 19*	Now talking on 22#openssh
+T 1708631930 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708631930 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708632783 19*	Now talking on 22#openssh
+T 1708632783 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708632783 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708632966 19*	Now talking on 22#openssh
+T 1708632966 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708632966 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708634040 22*	26ChanServ gives voice to 18Han
+T 1708680046 18<27FH_thecat18>	is there a way to tell ssh to automatically add my private key to the agent, when it asks for password the first time (and agent is not running yet) ?
+T 1708680898 18<22tlund18>	FH_thecat: you want ssh to start the agent?
+T 1708680997 18<27FH_thecat18>	yes, when it's not alredy started. otherwise I have to remember to run ssh-add first, before first use of ssh
+T 1708696020 19*	Now talking on 22#openssh
+T 1708696020 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708696020 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708696321 19*	Now talking on 22#openssh
+T 1708696321 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708696321 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708720189 19*	Now talking on 22#openssh
+T 1708720189 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708720189 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708772561 19*	Now talking on 22#openssh
+T 1708772561 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708772561 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708777226 22*	26ChanServ gives voice to 18lacroix
+T 1708788546 19*	Now talking on 22#openssh
+T 1708788546 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708788546 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708788723 19*	Now talking on 22#openssh
+T 1708788723 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708788723 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708792087 19*	Now talking on 22#openssh
+T 1708792087 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708792087 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708823390 19*	Now talking on 22#openssh
+T 1708823390 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708823390 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1708851231 22*	26ChanServ gives voice to 18lacroix
+T 1708882893 19*	Now talking on 22#openssh
+T 1708882893 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1708882893 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709072158 19*	Now talking on 22#openssh
+T 1709072158 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709072158 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709082580 19*	Now talking on 22#openssh
+T 1709082580 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709082580 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709164962 19*	Now talking on 22#openssh
+T 1709164962 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709164962 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709165582 20*	Disconnected (20)
+T 1709165736 19*	Now talking on 22#openssh
+T 1709165736 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709165736 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709198224 18<29jaeckel18>	'lo
+T 1709198301 18<29jaeckel18>	I'm currently adding support to decrypt Chacha20Poly1305 support for encrypted SSH private keys to libtomcrypt and I realized that the tag that is created by OpenSSH doesn't match what is defined in the RFC.
+T 1709198455 18<29jaeckel18>	ltc does exactly as specified in https://datatracker.ietf.org/doc/html/rfc7539#section-2.8.1 but OpenSSH left out the last two steps before creating the MAC (`mac_data |= num_to_4_le_bytes(aad.length)` & `mac_data |= num_to_4_le_bytes(ciphertext.length)`)
+T 1709198506 18<29jaeckel18>	Is there a reason why this was done?
+T 1709198664 18<29jaeckel18>	s/I'm currently adding support to decrypt Chacha20Poly1305 support for encrypted SSH private keys/I'm currently adding support for Chacha20Poly1305 encrypted SSH private keys/
+T 1709199119 18<29jaeckel18>	1. the RFC mentioned has been obsoleted by RFC8439. 2. the two steps are now using `num_to_8_le_bytes()` instead. -> The problem still persists.
+T 1709200413 18<29jaeckel18>	most likely the answer will be "because chacha20-poly1305@openssh.com is not the same as Chacha20Poly1305 as of the RFC" ...
+T 1709212532 20*	Disconnected (20)
+T 1709212551 19*	Now talking on 22#openssh
+T 1709212551 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709212551 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709213993 19*	Now talking on 22#openssh
+T 1709213993 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709213993 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709216163 19*	Now talking on 22#openssh
+T 1709216163 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709216163 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709254781 19*	Now talking on 22#openssh
+T 1709254781 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709254781 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709298076 19*	Now talking on 22#openssh
+T 1709298076 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709298076 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709305277 19*	Now talking on 22#openssh
+T 1709305277 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709305277 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709312939 19*	Now talking on 22#openssh
+T 1709312939 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709312939 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709316253 19*	Now talking on 22#openssh
+T 1709316253 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709316253 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709345126 19*	Now talking on 22#openssh
+T 1709345126 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709345126 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709356535 19*	Now talking on 22#openssh
+T 1709356535 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709356535 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709356629 19*	Now talking on 22#openssh
+T 1709356629 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709356629 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709402548 19*	Now talking on 22#openssh
+T 1709402548 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709402548 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709451377 19*	Now talking on 22#openssh
+T 1709451377 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709451377 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709523463 19*	Now talking on 22#openssh
+T 1709523463 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709523463 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709523581 19*	Now talking on 22#openssh
+T 1709523581 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709523581 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709569443 18<22SuperLag18>	I have 3 new RHEL 9.3 instances that I set up in AWS. Joined them to an AD domain. I know they're on the domain, but when I attempt to SSH to them, I get an immediate "Permission denied (publickey,gssapi-keyex,gssapi-with-mic)."
+T 1709569488 18<22SuperLag18>	My sshd_config (copied from a previous attempt, where I filtered out all the commented lines…) is at https://gist.github.com/akulbe-tnm/b9e4ebded35bfca07506abbd2b493303
+T 1709569574 18<22SuperLag18>	I set SSHD to debug, and that's here: https://gist.github.com/akulbe-tnm/d984bd33147bcb6702e58864d068d970
+T 1709569624 18<22SuperLag18>	I set a client login attempt to verbose, and that's here: https://gist.github.com/akulbe-tnm/53bbe699d72b574cf542185f65d7c71b 
+T 1709572661 18<19programmerq18>	SuperLag: are you expecting the key that your client is offering to be accepted? Or are you expecting keyboard interactive password auth?
+T 1709572743 18<22SuperLag18>	programmerq: keyboard auth, key only if they have one
+T 1709579864 18<19programmerq18>	in this case, the client is offering a key, and it is rejected. Do you expect in that particular case that the key being offered should work?
+T 1709579906 18<19programmerq18>	the user doesn't have a ~/.ssh/authorized_keys and I'm not sure if you're trying to get the authorized key data to be loaded from the domain.
+T 1709579925 18<19programmerq18>	nsswitch.conf and your pam profiles would also be interesting to see. 
+T 1709580002 18<19programmerq18>	I'm not 100% sure why the keyboard method seems to be dropped along the way. The "methods that can continue" no longer list keyboard by the time it's trying the key.
+T 1709620790 19*	Now talking on 22#openssh
+T 1709620790 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709620790 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709658822 19*	Now talking on 22#openssh
+T 1709658822 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709658822 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709661930 19*	Now talking on 22#openssh
+T 1709661930 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709661930 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709667679 19*	Now talking on 22#openssh
+T 1709667679 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709667679 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709674383 19*	Now talking on 22#openssh
+T 1709674383 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709674383 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709686297 19*	Now talking on 22#openssh
+T 1709686297 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709686297 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1709705791 19*	Now talking on 22#openssh
+T 1709705791 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1709705791 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)

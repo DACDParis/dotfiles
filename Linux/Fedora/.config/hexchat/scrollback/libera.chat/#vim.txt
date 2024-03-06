@@ -1,0 +1,1430 @@
+T 1702193179 19*	Now talking on 22#vim
+T 1702193179 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.0 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1702193179 22*	Topic for 22#vim set by 26jamessan (24Sat Aug  5 21:18:32 2023)
+T 1702193816 24*	ahmedelgabri has quit (Ping timeout: 268 seconds)
+T 1702193845 23*	zwr (~zwr@200-97-244-121.user3p.veloxzone.com.br23) has joined
+T 1702193868 23*	jklfds (~jklfds@user/jklfds23) has joined
+T 1702194034 20*	Disconnected (20)
+T 1702194061 19*	Now talking on 22#vim
+T 1702194061 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.0 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1702194061 22*	Topic for 22#vim set by 26jamessan (24Sat Aug  5 21:18:32 2023)
+T 1702194095 23*	bitoff (~bitoff@109.186.198.20623) has joined
+T 1702194143 23*	vainamoinen (~vainamoin@38.141.150.14823) has joined
+T 1702194168 24*	jklfds has quit (Ping timeout: 268 seconds)
+T 1702194196 24*	dacd has quit (Ping timeout: 245 seconds)
+T 1702194200 23*	cwdar^ (~cd@c-98-242-74-66.hsd1.ga.comcast.net23) has joined
+T 1702194393 24*	igemnace has quit (Quit: WeeChat 4.1.2)
+T 1702194401 24*	clarkk has quit (Quit: Leaving)
+T 1702194910 24*	dcb has quit (Quit: MSN Messenger 4.1.2)
+T 1702194951 23*	rustyy (~rusty@74.3.163.18723) has joined
+T 1702195289 19*	Now talking on 22#vim
+T 1702195289 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.0 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1702195289 22*	Topic for 22#vim set by 26jamessan (24Sat Aug  5 21:18:32 2023)
+T 1702195415 23*	ahmedelgabri (~ahmedelga@2a02-a446-d88a-1-d8b3-a9e9-69cb-d22.fixed6.kpn.net23) has joined
+T 1702198993 20*	Disconnected (20)
+T 1702201366 19*	Now talking on 22#vim
+T 1702201366 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.0 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1702201366 22*	Topic for 22#vim set by 26jamessan (24Sat Aug  5 21:18:32 2023)
+T 1702208540 19*	Now talking on 22#vim
+T 1702208540 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.0 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1702208540 22*	Topic for 22#vim set by 26jamessan (24Sat Aug  5 21:18:32 2023)
+T 1702214434 20*	Disconnected (20)
+T 1702214614 19*	Now talking on 22#vim
+T 1702214614 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.0 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1702214614 22*	Topic for 22#vim set by 26jamessan (24Sat Aug  5 21:18:32 2023)
+T 1702218093 18<29xerox18>	how do you multiple-insert newlines? like C-v jjjjj I, then newline
+T 1702218757 18<19m_ben18>	xerox: can you give an example where you want the newlines inserted?
+T 1702219086 18<29xerox18>	m_ben: had a bunch of stmt; stmt lines, changing ; into \n
+T 1702219124 18<29xerox18>	another way I know of doing it is visual selection then :s/;/\r/g but I was wondering how to do it with I, I tried some ways to input ^M or \r but that didn't do it
+T 1702219155 18<26lopid18>	i have [link to pastebin], i want [link to pastebin]
+T 1702219290 18<29xerox18>	my bad
+T 1702219403 18<29xerox18>	https://pastebin.com/raw/AZL7SdQy
+T 1702219528 18<26lopid18>	i would just :%s/; /\r
+T 1702219609 18<29xerox18>	yeah I know about that one was just wondering if one could do it to a selection like that
+T 1702219625 18<26lopid18>	not that i know of
+T 1702219795 18<26lopid18>	you could select then do the regex: s/\%V; /\r
+T 1702219804 18<29xerox18>	I see
+T 1702219834 20*	Disconnected (20)
+T 1702219889 19*	Now talking on 22#vim
+T 1702219889 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.0 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1702219889 22*	Topic for 22#vim set by 26jamessan (24Sat Aug  5 21:18:32 2023)
+T 1702219988 18<26lopid18>	according to :help v_b_c, the line break is 
+T 1702220524 20*	Disconnected (20)
+T 1702220571 19*	Now talking on 22#vim
+T 1702220571 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.0 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1702220571 22*	Topic for 22#vim set by 26jamessan (24Sat Aug  5 21:18:32 2023)
+T 1702281887 19*	Now talking on 22#vim
+T 1702281887 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.0 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1702281887 22*	Topic for 22#vim set by 26jamessan (24Sat Aug  5 21:18:32 2023)
+T 1702282236 20*	Disconnected (20)
+T 1702282251 19*	Now talking on 22#vim
+T 1702282251 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.0 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1702282251 22*	Topic for 22#vim set by 26jamessan (24Sat Aug  5 21:18:32 2023)
+T 1702282262 20*	Disconnected (20)
+T 1702282282 19*	Now talking on 22#vim
+T 1702282282 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.0 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1702282282 22*	Topic for 22#vim set by 26jamessan (24Sat Aug  5 21:18:32 2023)
+T 1702285561 20*	Disconnected (20)
+T 1702314577 19*	Now talking on 22#vim
+T 1702314577 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.0 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1702314577 22*	Topic for 22#vim set by 26jamessan (24Sat Aug  5 21:18:32 2023)
+T 1702317918 18<20cocomo18>	does vim have a parsed tree of the current file, which it may use for syntax highlighting etc. and is it availble through a vim script API?
+T 1702318097 18<26lopid18>	no
+T 1702318105 18<26lopid18>	vim does syntax highlighting with regexes
+T 1702318114 18<20cocomo18>	based
+T 1702322572 20*	Disconnected (20)
+T 1702322852 19*	Now talking on 22#vim
+T 1702322852 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.0 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1702322852 22*	Topic for 22#vim set by 26jamessan (24Sat Aug  5 21:18:32 2023)
+T 1702323948 18<28jclsn18>	I am bored. Name your favorite new plugins you discovered recently!
+T 1702812797 19*	Now talking on 22#vim
+T 1702812797 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.0 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1702812797 22*	Topic for 22#vim set by 26jamessan (24Sat Aug  5 21:18:32 2023)
+T 1705506304 19*	Now talking on 22#vim
+T 1705506304 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1705506304 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1705524970 19*	Now talking on 22#vim
+T 1705524970 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1705524970 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1705525535 19*	Now talking on 22#vim
+T 1705525535 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1705525535 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1705525647 19*	Now talking on 22#vim
+T 1705525647 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1705525647 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1705525767 19*	Now talking on 22#vim
+T 1705525767 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1705525767 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1705526737 19*	Now talking on 22#vim
+T 1705526737 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1705526737 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1705527372 18<24dob1_18>	dw but keep the space, how can I do this ?
+T 1705527392 18<24dob1_18>	foo bar    on foo dw it gives me  "bar"  I want " bar"
+T 1705559182 19*	Now talking on 22#vim
+T 1705559182 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1705559182 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1705562767 20*	Disconnected (20)
+T 1705562791 19*	Now talking on 22#vim
+T 1705562791 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1705562791 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1705568249 19*	Now talking on 22#vim
+T 1705568249 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1705568249 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1707739632 19*	Now talking on 22#vim
+T 1707739632 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1707739632 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1707742868 19*	Now talking on 22#vim
+T 1707742868 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1707742868 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708186109 19*	Now talking on 22#vim
+T 1708186109 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708186109 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708438062 19*	Now talking on 22#vim
+T 1708438062 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708438062 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708439546 19*	Now talking on 22#vim
+T 1708439546 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708439546 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708439876 19*	Now talking on 22#vim
+T 1708439876 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708439876 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708441642 18<22tirnanog18>	xx: do you have to unset tw though?
+T 1708441665 18<22tirnanog18>	it may not have any peripheral effect, though it depends on your workflow.
+T 1708442151 18<26lopid18>	it's also local to the buffer if you use :setlocal
+T 1708442415 18<26lopid18>	oh it is already
+T 1708442797 18<22FakuVe18>	Hey , is there an exit Status for commands executed within Vim ? (not shell commands)
+T 1708442841 18<22FakuVe18>	I have seen there is , v:errmsg , But when scripting something , this could have been setted by other function call
+T 1708442871 18<22FakuVe18>	So shall I set the variable to 0 , then perform the error check with this? or just 
+T 1708442884 18<22FakuVe18>	There is an exit-code like variable
+T 1708442961 18<26lopid18>	there's :try and various assert functions
+T 1708443368 18<22FakuVe18>	lopid: cheers
+T 1708443507 18<27xx18>	tirnanog: I don't know what sideffects it can have, so I'd prefer to return it to the state it was before
+T 1708443522 18<27xx18>	anyway !fmt works, I forgot about having that executable available
+T 1708443567 18<22tirnanog18>	fair enough.
+T 1708450560 18<24patanga18>	why does even an exit with :q! change the timestamp of the file/folder? is there a way to avoid that?
+T 1708450634 18<26lopid18>	maybe because of the swapfile. don't use a swapfile
+T 1708450718 18<22tirnanog18>	I can't rerpoduce that.
+T 1708450742 18<22tirnanog18>	then again, there is some abiguity in "file/folder".
+T 1708450749 18<22tirnanog18>	and I can't type, apparently.
+T 1708450873 18<22tirnanog18>	anyway, :q! does not alter the mtime or ctime of a file whose buffer was modified here.
+T 1708451313 18<24patanga18>	tirnanog: yes. only the folder's timestamp is changed. the file' not
+T 1708451331 18<24patanga18>	*file's*
+T 1708451340 18<22tirnanog18>	which timestamp are you referring to exactly? there are at least three.
+T 1708451413 18<24patanga18>	atime rests the same. mtime and ctime change
+T 1708451417 18<24patanga18>	of the folder
+T 1708451432 18<22tirnanog18>	it's probably what lopid said. swapfile and/or backup file being written into the directory at the time of opening the file within said directory.
+T 1708451446 18<22tirnanog18>	you can configure swapfiles to be written elsewhere, if it's a problem.
+T 1708451480 18<24patanga18>	i dont see any swapfile, if you mean this .swp files
+T 1708451494 18<24patanga18>	*these*
+T 1708451510 18<26lopid18>	you wouldn't, after the event, unless something went wrong
+T 1708451530 18<22tirnanog18>	indeed. inspect while the file is still open.
+T 1708451557 18<22tirnanog18>	.filename.swp would be typical.
+T 1708451596 18<24patanga18>	lopid: right. there is the swap file there while the file is open. how can i disable that behaviour of vim , even in case something goes wrong it leaves me without a backup of the file?
+T 1708451711 18<22tirnanog18>	define "directory" so that . isn't part of it.
+T 1708451720 18<22tirnanog18>	that way swap files will be written elsewhere, and you can decide exactly where.
+T 1708451734 18<26lopid18>	-n disabled the swapfile
+T 1708451739 18<26lopid18>	s
+T 1708451739 18<22tirnanog18>	say, ~/.cache/vim
+T 1708451892 18<22tirnanog18>	to be clear: set directory=~/.cache/vim
+T 1708451897 18<22tirnanog18>	or wherever else you feel is appropriate.
+T 1708452111 18<24patanga18>	lopid: thanks. yeah, i could have found that myself. sorry.
+T 1708452132 18<24patanga18>	tirnanog: thanks for the idea to define a swapfile somewhere else
+T 1708452198 18<22tirnanog18>	of course, if you disable them, there will be no recovery safety.
+T 1708452201 18<22tirnanog18>	keep that in mind.
+T 1708452318 18<24patanga18>	sure
+T 1708454262 18<25maikel_frias18>	that's a load of people
+T 1708454429 18<26lopid18>	:%people
+T 1708455698 18<22FakuVe18>	So I am doing a function taht is going to be executed through ~/.vim/autoload/something.vim
+T 1708455735 18<22FakuVe18>	I need this function to get the fileName of the buffer with which is been called
+T 1708455746 18<22FakuVe18>	(for that your would normaly expand('%') 
+T 1708455752 18<22FakuVe18>	But in this context expand('
+T 1708455790 18<22FakuVe18>	Is not working cause the execution environment of this command lies outside that file
+T 1708455800 18<22FakuVe18>	Is there other way to tell which file I am working in?
+T 1708458101 18<19m_ben18>	I don't understand, post some code
+T 1708458109 18<22FakuVe18>	noremap <F5> :call myFile#MyFunc()<CR>
+T 1708458139 18<22FakuVe18>	~/.vim/autoload/myfile.vim
+T 1708458145 18<22FakuVe18>	function myFile#MyFunc()
+T 1708458150 18<22FakuVe18>	    echo expand('%')
+T 1708458155 18<22FakuVe18>	endfunc
+T 1708458339 18<22FakuVe18>	oh yeah it worked
+T 1708458351 18<22FakuVe18>	But previously it didint
+T 1708458354 18<22FakuVe18>	such a weird case
+T 1708473217 19*	Now talking on 22#vim
+T 1708473217 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708473217 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708484362 18<20birkoff18>	is it possible to start vim and have the last command from history available to execute via @: ? 
+T 1708487030 18<22habamax18>	with some vimscript why not
+T 1708487090 18<22habamax18>	although it would require some magic as : register is readonly
+T 1708487254 18<22habamax18>	nah, it probably is impossible
+T 1708487275 18<22habamax18>	but q:k<CR> will do it
+T 1708506067 18<29netmonk18>	is there a way to manipulate each word of a line 
+T 1708506114 18<29netmonk18>	like i would like to turn a line: foo bar toto into 'foo', 'bar', 'toto'
+T 1708506895 18<25OMGOMG18>	:s/\w*/'&'/g
+T 1708507893 19*	Now talking on 22#vim
+T 1708507893 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708507893 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708508320 19*	Now talking on 22#vim
+T 1708508320 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708508320 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708508813 18<22nerozero18>	o/
+T 1708508885 18<22nerozero18>	I got a weird question, is there a way other then clipboard to copy text from vim on one host to vim running on another ( via ssh ) 
+T 1708508905 18<22nerozero18>	or on the same machine but on different tmux sessions 
+T 1708508957 18<22nerozero18>	please don't hit me hard :)
+T 1708508961 18<29brutusmcforce18>	you can run xclip through ssh
+T 1708508991 18<29brutusmcforce18>	vim uses its own clipboard thing though, disregard
+T 1708509021 18<22nerozero18>	yah ... 
+T 1708509063 18<22nerozero18>	just looking for a way to exchange text other then mouse select of the screen
+T 1708509910 18<26lopid18>	if you are forwarding x then you can yank to and paste from "+ 
+T 1708525031 18<28dumbledoor18>	Given a JavaScript array of objects, how would you count the number of objects? Does anyone have a trick to do this? Example: https://paste.debian.net/1308089/
+T 1708525099 18<28dumbledoor18>	Would you use some vim function or quickly write a function or perhaps you have a plugin?
+T 1708525463 18<28dumbledoor18>	The formatting of the objects is significant. Both braces must be on newlines.
+T 1708525775 18<28dumbledoor18>	A different question: How can I get a vim macro to replay until a certain line?
+T 1708525890 18<28dumbledoor18>	For example I am on line 30 and I need a macro that does something like this. process current line -> 3j -> process -> 3j -> process -> atOrBeyond(70) ? stop
+T 1708525980 18<20stutz18>	I feel like that'd be a job for a js plugin that shows you the information because that should ideally use some kind of ast. 3j -> process -> 3j process.. would only work for that one specific array with that one specific formatting 
+T 1708526056 18<28dumbledoor18>	stutz: Ok, so something like nvim's treesitter textobjects?
+T 1708526096 18<28dumbledoor18>	(or something that uses them)
+T 1708526112 18<20stutz18>	the dumbest solution I can think of (again, only works for that very specific thing) select everything in [] and run :s/},//gn
+T 1708526135 18<20stutz18>	assuming that }, is the end of one entry therefor the sum of all }, occurences is the sum of items in that list
+T 1708526152 18<28dumbledoor18>	hmm, but this wouldn't work if there were more nested objects
+T 1708526182 18<28dumbledoor18>	hey how can I use the vim command line to tell a macro to run or not?
+T 1708526195 18<20stutz18>	it'd work if you included the whitespaces before the }, which again, really stupid.
+T 1708526268 18<28dumbledoor18>	stutz: How can I check what is the current line number?
+T 1708526279 18<28dumbledoor18>	I am trying the macro thing.
+T 1708526297 18<28dumbledoor18>	using the vim command line that is
+T 1708526391 18<28dumbledoor18>	Ok, it's line(".")
+T 1708526401 18<28dumbledoor18>	I'll try somethings and get back
+T 1708526403 18<28dumbledoor18>	later
+T 1708526430 18<20stutz18>	idk what you're trying to do but you might wanna checkout tern.js if u try to get code analysis done for js
+T 1708526438 18<20stutz18>	just throwing that one out, you have fun!
+T 1708526473 18<28dumbledoor18>	will look at it stutz. thanks
+T 1708527070 18<27igemnace18>	aww. they left, but the trick i usually do is just append .length then :'<,'>w !node -p
+T 1708527380 18<20stutz18>	for simple js files sure but that wouldnt work for bigger code bases.
+T 1708527428 18<20stutz18>	either way its probably a weird use case anyway so meh
+T 1708527439 18<24lairnc18>	I have a problem with vim and I am not sure if it is because I am using it differently than anyone else:
+T 1708527439 18<24lairnc18>	Let's imagine you are still getting to know the codebase of a project; you are still not familiar with the name of the files.
+T 1708527439 18<24lairnc18>	You are editing one file, then you want to look for another file whose name you are not really sure. So you go through the list of opened buffers. You open one. It's not that one. You open the list again and enter another buffer. Ok. From that point, how do you get back to the first buffer you were editing if you don't recall its name?
+T 1708527500 18<20stutz18>	:h ctrl-o
+T 1708527500 18<25digmbot18>	:help ctrl-o -> http://vimhelp.appspot.com/motion.txt.html#CTRL-O
+T 1708527593 18<20stutz18>	fwiw when we talk about code you shouldn't really care about files/filenames but more about the content of files.
+T 1708527652 18<27igemnace18>	stutz: re: bigger code bases, as long as you carve out lines you can :'<,'>w cleanly then undo after, it should still work well
+T 1708527718 18<20stutz18>	sure, that'd work.
+T 1708527735 18<24lairnc18>	the content of the file?
+T 1708527759 18<20stutz18>	I dont have the use case where I have an editor open and I think *oh I need to find that file*
+T 1708527782 18<20stutz18>	thats not something I care about, I care about function/class/structs/enum/variable/etc defintions. 
+T 1708527825 18<24lairnc18>	how do you find a variable without knowing the name of the file?
+T 1708527843 18<20stutz18>	using tags or a language server that finds it for me
+T 1708527862 18<20stutz18>	https://vimways.org/2018/you-should-be-using-tags-in-vim/ 
+T 1708527880 18<24lairnc18>	sometimes languageserver doesnt find the actual definition of a function
+T 1708527897 18<20stutz18>	read link
+T 1708527938 18<24lairnc18>	ok, im reading
+T 1708527941 18<24lairnc18>	ty!
+T 1708528037 18<26japh18>	lairnc, yeah, I had to do this hack for one of the servers today https://github.com/trapd00r/configs/blob/master/zsh/zshrc#L1452
+T 1708528047 18<26japh18>	weird but whatever
+T 1708528171 18<20stutz18>	huh? japh that seems wrong. phpactor doesn;t care about pwd
+T 1708528195 18<26japh18>	maybe it doesn't, but what it cares about though is where you start vim
+T 1708528204 18<26japh18>	this is because of composer and git
+T 1708528207 18<20stutz18>	I can literally cd into the directory where the file is, vim Foo.php and then use gd and phpactor jumps to the correct location
+T 1708528217 18<26japh18>	the docs say you can't
+T 1708528219 18<26japh18>	:)
+T 1708528222 18<20stutz18>	I literally just did it
+T 1708528258 18<26japh18>	https://phpactor.readthedocs.io/en/master/usage/vim-plugin.html#vim-plugin
+T 1708528265 18<26japh18>	Under "Composer not found"
+T 1708528335 18<26japh18>	are you using something other than
+T 1708528336 18<26japh18>	autocmd Filetype php nnoremap <backspace> :PhpactorGotoDefinition<cr>
+T 1708528337 18<26japh18>	 ?
+T 1708528443 18<20stutz18>	after/ftplugin/php.vim https://ctxt.io/2/AAAIBNThFA
+T 1708528473 18<20stutz18>	the default mappings are at the bottom, nothing fancy, no auto cd hack in either vim nor zsh
+T 1708528505 18<20stutz18>	also the doc is weird cos it says project directory not *root directory*
+T 1708528530 18<26japh18>	autocmd BufWritePost *.php silent! !eval '[ -f ".git/hooks/ctags"  ] && .git/hooks/ctags' &   even this line can't possibly work for you
+T 1708528549 18<20stutz18>	it also talks about composer and git *not found* specifically 
+T 1708528561 18<20stutz18>	tl;dr it works on my machine (tm) :D
+T 1708528582 18<26japh18>	yes, if I don't do my hack, gd works for what's not in vendor/ etc
+T 1708528787 18<20stutz18>	https://github.com/airblade/vim-rooter is also a thing, you probably know about it already but in case you do not i just wanted to mention it
+T 1708528852 18<26japh18>	yeah, I was using this already but no dice. I think it happens to late
+T 1708528930 18<22nerozero18>	lopid, WOOOWOWOOW - that was massive ! 
+T 1708528968 18<22nerozero18>	ssh -X + "vim "+y" actually did the job ! 
+T 1708528976 18<22nerozero18>	That was really impressive 
+T 1708528987 18<26japh18>	stutz, so, I tried your after/ script
+T 1708529016 18<26japh18>	it didn't help one single bit
+T 1708529022 18<26japh18>	weird how it can work for you
+T 1708529024 18*	26lopid jumps
+T 1708529049 18<20stutz18>	idk, maybe something else doing magic that I am unaware of japh. honestly I just read your statement and thought thats weird, I never had that issue.
+T 1708529049 18*	22nerozero also jumps non stop ! 
+T 1708529074 18<20stutz18>	didn't mean to "argue" your point :D It might as well just be another thing on my system doing magic
+T 1708529100 18<26japh18>	hey, no worries at all mate, I would have prefered if it worked as well :)
+T 1708529428 18<20stutz18>	oh japh I might be dumb but I don't use phpactor for gd
+T 1708529435 18<26japh18>	lol
+T 1708529449 18<26japh18>	just tags?
+T 1708529461 18<20stutz18>	I just realized the mapping is commented out, so I checked the lsp status and et voila
+T 1708529472 18<20stutz18>	intelephense: running
+T 1708529497 18<26japh18>	wait is that another php server?
+T 1708529507 18<26japh18>	I'm new to php, just getting started...
+T 1708529751 18<20stutz18>	I guess so? I know only three servers rn, phpactor, php-language-server, and intelephense. the last one is what I am using. 
+T 1708530419 19*	Now talking on 22#vim
+T 1708530419 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708530419 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708530514 18<28dumbledoor18>	no_gravity maybe you can use a keybinding for this? https://github.com/preservim/nerdtree#how-can-i-map-a-specific-key-or-shortcut-to-open-nerdtree
+T 1708530544 18<28dumbledoor18>	look at :NERDTreeFind specifically
+T 1708530809 18<29Cheaterman18>	Bliblibli buddiez I hope y'all doing goodie ^__^
+T 1708530873 18<29Cheaterman18>	File /usr/share/vim/vim/syntax/html.vim
+T 1708530884 18<29Cheaterman18>	Has   syn sync minlines=10
+T 1708530911 18<29Cheaterman18>	So it doesn't seem to honor g:vimsyn_minlines
+T 1708530942 18<29Cheaterman18>	Am I right or am I looking in the wrong place?
+T 1708530999 18<29Cheaterman18>	Commenting it seems to fix sync for me
+T 1708531102 18<27igemnace18>	dumbledoor: yes, see :h :| (but note it can't be done all the time)
+T 1708531102 18<25digmbot18>	:help :| -> http://vimhelp.appspot.com/cmdline.txt.html#%3Abar
+T 1708531152 18<27igemnace18>	e.g. :while ... | ... | endwhile
+T 1708531232 18<28dumbledoor18>	igemnace: Why doesn't this work? while line(".") < 10 | norm j | endwhile
+T 1708531242 18<29Cheaterman18>	https://github.com/vim/vim/pull/14071/ I guess better safe than sorry IDK
+T 1708531244 18<28dumbledoor18>	This doesn't work either: while line(".") < 10 | :norm j | :endwhile
+T 1708531254 18<27igemnace18>	dumbledoor: :norm is one of the exceptions listed in :h :|
+T 1708531254 18<25digmbot18>	:help :| -> http://vimhelp.appspot.com/cmdline.txt.html#%3Abar
+T 1708531274 18<27igemnace18>	try :execute 'norm j' instead, for example
+T 1708531278 18<28dumbledoor18>	oops i had looked at :h | instead
+T 1708531278 18<25digmbot18>	:help | -> http://vimhelp.appspot.com/motion.txt.html#bar
+T 1708531287 18<28dumbledoor18>	i'll look at :h :|
+T 1708531287 18<25digmbot18>	:help :| -> http://vimhelp.appspot.com/cmdline.txt.html#%3Abar
+T 1708531288 18<28dumbledoor18>	now
+T 1708531413 18<28dumbledoor18>	thanks igemnace :execute works. Tell me, do if you have to do use normal mode commands in this manner do you use :execute norm everytime or is there a more common syntax
+T 1708531493 18<27igemnace18>	:execute 'norm ...' is reasonably common. esp with :h expr-"
+T 1708531494 18<25digmbot18>	:help expr-" -> http://vimhelp.appspot.com/eval.txt.html#expr-quote
+T 1708531582 18<27igemnace18>	depending on what you're doing though, it's not all the time you'd call :norm from vimscript (very very situation dependent, but e.g. expr mappings, macros, or eschewing normal mode commands for functions instead might be a better fit)
+T 1708531652 18<29Cheaterman18>	Love me some macro abuse
+T 1708531668 18<29Cheaterman18>	qq10Gq for your use-case
+T 1708531670 18<29Cheaterman18>	then you can just @q
+T 1708531899 18<28dumbledoor18>	I thought so igemnace. Writing normal mode commands together in a string looks very hacky. I wonder if every vim motion has an equivalent way to do with vimscript functions. For example, is it possible to move down a line from he command line mode without using j ? Does a function suitable for this purpose exist? Just wondering.
+T 1708532040 18<29Cheaterman18>	normal/exec norm seems to be what people do for that
+T 1708532123 18<27igemnace18>	in general: no, not every motion has an equivalent way with vimscript functions. taking a step back: what are you trying to achieve, big picture? i find that thinking the "normal mode" way, with functions, with ex commandline, etc are different paradigms
+T 1708532263 18<28dumbledoor18>	I was just asking. My current objective is: replay a vim macro as long as the cursor has not crossed a particular line number. But I am trying this myself and ask for help on getting stuck by some atomic question
+T 1708532300 18<28dumbledoor18>	will ask for help when I get stuck*
+T 1708532340 18<27igemnace18>	sure, np. not sure your exact case, but e.g. :1,10norm! @q might be useful
+T 1708532358 18<29Cheaterman18>	I find it intriguing that html syntax has been broken for at the _very_ least 20 years and nobody noticed and/or tried to fix it
+T 1708532376 18<27igemnace18>	(doesn't account for your macro moving through lines itself, but maybe you can mold the macro to fit)
+T 1708532392 18<29Cheaterman18>	Like, this would be the commit: https://github.com/vim/vim/commit/071d4279d6ab81b7187b48f3a0fc61e587b6db6c (RIP Bram <3)
+T 1708535525 18<22ash_worksi18>	can I move directly down, highlighing 1 column in visual block mode across what would normally be considered a paragraph, `}`? Just using } takes me 1 line after the paragraph which highlights the current column plus everything behind it.
+T 1708536427 18<26lopid18>	not sure what you mean. ctrl-v and gj ?
+T 1708536517 18<28dumbledoor18>	Is it possible to go a few steps back in the undo history without undoing the steps in between?
+T 1708536539 18<19GranitePenguin18>	this sounds like https://vi.stackexchange.com/questions/20782/jump-to-end-of-paragraph
+T 1708536646 18<28dumbledoor18>	For example I type A\nB\nC, then replace A with X, then replace B with Y. Is it now possible to undo X back to A without undoing Y?
+T 1708536819 18<26lopid18>	i usually undo, yank what i want, redo, paste it
+T 1708536884 18<26lopid18>	there are some undo plugins that can provide diffs i think (gundo, undotree) that might help
+T 1708536919 18<28dumbledoor18>	lopid: oh so you replace the extra undone part with whatever you get in your register
+T 1708536935 18<28dumbledoor18>	in that case wouldn't it be yank -> undo -> redo -> paste
+T 1708536971 18<26lopid18>	if that's what you want
+T 1708537000 18<28dumbledoor18>	that doesn't always work when the lines are spread over a wide range. i'll have to look into those plugings
+T 1708537007 18<26lopid18>	right
+T 1708537031 18<26lopid18>	maybe you could save the buffer as it was, come back and diff it
+T 1708537042 18<26lopid18>	same principle
+T 1708537045 18<29Cheaterman18>	I generally do what lopid suggested personally, if I have to yank a whole block as a consequence so be it
+T 1708537049 18<29Cheaterman18>	but it's suboptimal for sure
+T 1708537050 18<28dumbledoor18>	so manually make changes after looking at git diff?
+T 1708537069 18<28dumbledoor18>	I see Cheaterman
+T 1708537088 18<26lopid18>	go back to see that changes i want. save them somewhere (register, new file, etc). come back, restore at will
+T 1708537096 18<29Cheaterman18>	It's always a tradeoff between the learning curve of a new plugin vs the "wasted time" of a known subobtimal method (for which you may already have developed muscle memory anyway)
+T 1708537106 18<29Cheaterman18>	yes exactly what lopid just sai
+T 1708537107 18<29Cheaterman18>	said
+T 1708537131 18<29Cheaterman18>	Combined with solid use of visual mode (eg "visual inside braces") it really goes fast
+T 1708537196 18<29Cheaterman18>	The "fun" part of what lopid just suggested with an extra buffer/file is you can then use diff mode
+T 1708537234 18<28dumbledoor18>	But then I have to manually move the changes from the extra file to the original right Cheaterman
+T 1708537238 18<29Cheaterman18>	Absolutely
+T 1708537268 18<29Cheaterman18>	OTOH perhaps not but... that's what I do :-) could be vimdiff has ways to make that simpler too
+T 1708537501 18<29Cheaterman18>	There's :diffg and :diffpu apparently
+T 1708537518 18<29Cheaterman18>	There's also :do and :dp but those don't work with visual mode
+T 1708537545 18<29Cheaterman18>	Generally :help diff is good (at least if you're used to vim docs)
+T 1708537545 18<25digmbot18>	:help diff -> http://vimhelp.appspot.com/diff.txt.html#diff
+T 1708537741 18<28dumbledoor18>	Thanks I didn't think about vimdiff. Last time I tried that out for resolving git merge conflicts the separation of code using git conflict markers made by head spin. Since then I have strayed clear from it. But, it seems that it's slightly lesser complicated when not used with git. So, I'll look more into it.
+T 1708538924 18<20stefanos8218>	greetings everyone. I have a question about expand(); I have a directory $HOME/tmp/various that contains a file named testing.txt and I would like to get only `various` directory instead of the absolute path...I use fzy and I face this nightmare with long paths when terminal is not maximized :/
+T 1708538971 18<20stefanos8218>	going with expand('%:p:h') works just fine, but the full path is quite long most of the times
+T 1708539107 18<20stefanos8218>	the interesting thing is that expand('%:p:h') and getcwd() produce the same results, but it would be interesting to have something like basename(getcwd())
+T 1708539423 18<28dumbledoor6618>	stefanos82 Is expand('%:p:t') what you are looking for?
+T 1708539545 18<28dumbledoor6618>	Or perhaps expand('%:p:h:t')
+T 1708539817 18<22ash_worksi18>	lopid: no, I mean... uh... like this? https://gist.github.com/ash-m/2ed8fb837536360b4f31726a91f2aaf6
+T 1708539839 18<22ash_worksi18>	hard for me to describe
+T 1708540014 18<26lopid18>	ctrl-v would select the column in |'s
+T 1708540082 18<22ash_worksi18>	lopid: I mean... that'll put me in block mode and then I can inch down to the bottom, yes...
+T 1708540155 18<22ash_worksi18>	lopid: I mean, while _in_ visual block mode, and given your cursor is on the `m` of `|m|`, is there a way to move directly to the `d` in `|d|` ?
+T 1708540215 18<26lopid18>	not directly. you could jump 4j
+T 1708540402 18<28dumbledoor18>	ash_worksi did you look at this link https://vi.stackexchange.com/questions/20782/jump-to-end-of-paragraph shared above by granitpenguin. It does what you want
+T 1708540497 18<22ash_worksi18>	yeah; I am pretty bad at getting that correct and if you overshoot then it'll put me at the start of the line so I have to inch up with `k` and inch right with `l` many more times than just inching down to begin with
+T 1708540502 18<22ash_worksi18>	lopid: ^
+T 1708540526 18<22ash_worksi18>	dumbledoor: I did not, I'll take a look, thanks
+T 1708540529 18<26lopid18>	i think it's the best you can do short of scripting it a bit like in that link
+T 1708540562 18<26lopid18>	you could always make a number of short jumps *shrug*
+T 1708540606 18<26lopid18>	maybe even create a mark before you set up, to you can return easily
+T 1708540610 18<26lopid18>	set off
+T 1708540900 18<22ash_worksi18>	lopid: yeah, that's another thing I've been meaning to ask, I read somewhere (since I have in my notes) that "`[  go to the last edited position (for example, the begining of a paste)" -- there isn't such a position set when you go in and out of visual mode is there?
+T 1708540949 18<22ash_worksi18>	oh hell it's there in my notes
+T 1708540952 18<22ash_worksi18>	I take back my question
+T 1708540962 18<22ash_worksi18>	its `< for those who are curious
+T 1708541938 18<29Cheaterman18>	Ah dang dumbledore is gone
+T 1708541944 18<29Cheaterman18>	I'd have advised fugitive
+T 1708541956 18<29Cheaterman18>	Learning curve is fairly shallow IME, and it really gets the job done
+T 1708542147 18<29Cheaterman18>	ash_worksi: I usually just use gv to go back to visual, then o to select the right end, then ^C or ESC to keep my cursor there while going back to normal mode
+T 1708542217 18<29Cheaterman18>	Also to navigate overshoots I don't spam l "many more times", I use w/b/W/B
+T 1708542321 18<29Cheaterman18>	ash_worksi: Ah and yes I guess your main question is about o in visual mode
+T 1708542379 18<29Cheaterman18>	About last edited position, generally ^I/^O serve me well
+T 1708544281 19*	Now talking on 22#vim
+T 1708544281 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708544281 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708545675 18<22ash_worksi18>	Cheaterman: hmm, I wonder if `[ will take you across files.... I hope it doesn't
+T 1708545747 18<22ash_worksi18>	... it does not. :)
+T 1708545757 18<22ash_worksi18>	I didn't realize it's a mark actually
+T 1708545859 18<22ash_worksi18>	Cheaterman: yes, well, when you have a litany of misc chars (like parens, underscores, slashes, etc) then sometimes it's easier to just hold `l` for me. Nonetheless I'll try what you're saying
+T 1708545877 18<29Cheaterman18>	Well
+T 1708545887 18<29Cheaterman18>	You could also... exploit said chars
+T 1708545889 18<29Cheaterman18>	Do you know f and F
+T 1708545908 18<22ash_worksi18>	yes
+T 1708545911 18<29Cheaterman18>	Also do you know %
+T 1708545916 18<22ash_worksi18>	yes
+T 1708545932 18<29Cheaterman18>	Then IDK what to say haha, clearly you know better ways to navigate than holding l
+T 1708545939 18<22ash_worksi18>	:P
+T 1708545976 18<22ash_worksi18>	gv is supposed to take me _out_ of visual mode while leaving the (visual) cursor where it is?
+T 1708546126 18<22ash_worksi18>	maybe mine is mapped to something... in normal or visual mode it highlights to the end of the file without moving the cursor
+T 1708546150 18<22pell_18>	You could also estimate how far to go with 5l 5h to get close and then h or l the rest of the way.
+T 1708546255 18<22pell_18>	But f will get you there more precisely, with a few times doing n if you have a bunch of the same characters
+T 1708546263 18<22pell_18>	Like Cheaterman said
+T 1708546357 18<22ash_worksi18>	pell_: yeah
+T 1708546375 18<22ash_worksi18>	right now, I am trying to figure out what `gv` is supposed to do vs what is happening on my laptop
+T 1708546439 18<22ash_worksi18>	I tried starting with `vi -u NONE`; when I try that, it doesn't appear to do anything in visual block mode
+T 1708546500 18<22ash_worksi18>	oh .. it seems to go back to the last selected position
+T 1708546557 18<22ash_worksi18>	even given that I don't really understand what Cheaterman said.... "o to select the right end" ... what?
+T 1708546595 18<22pell_18>	left end
+T 1708546629 18<22pell_18>	o takes you to the beginning of the line
+T 1708546654 18<22ash_worksi18>	pell_: in what mode?
+T 1708546693 18<22pell_18>	edit mode. are you still talking about visual mode?
+T 1708546706 18<22ash_worksi18>	pell_: yeah
+T 1708546735 18<22ash_worksi18>	I mean, my original question is regarding highlighting a single column of text
+T 1708546758 18<22ash_worksi18>	pell_: like so: https://gist.github.com/ash-m/2ed8fb837536360b4f31726a91f2aaf6 (given the || indicate the highlight)
+T 1708546800 18<22ash_worksi18>	pell_: also, "edit mode" == "insert mode" ?
+T 1708546810 18<22ash_worksi18>	pell_: because in that case, "o" just types an "o"
+T 1708546835 18<22pell_18>	ok. I've never done much with visual mode aside from copying to the clipboard, and I don't even do that with vim commands very often
+T 1708546879 18<22ash_worksi18>	in normal mode it [o]pens a line, and in visual mode it seems to trade places with the start position of the selection
+T 1708546915 18<22ash_worksi18>	pell_: I often use it to overwrite text
+T 1708546964 18<22ash_worksi18>	esp in some form of brackets where I can just type ^vi(p
+T 1708546976 18<22ash_worksi18>	(where ^ = ctrl)
+T 1708546987 18<22pell_18>	I'm thinking of 0 (zero). It's hard to talk about, because my fingers just do it.
+T 1708547084 18<22ash_worksi18>	oh
+T 1708547139 18<22ash_worksi18>	maybe Cheaterman thought I want to select a horizontal line of text
+T 1708547178 18<22ash_worksi18>	because I don't get this "select the (right?|left?) end"
+T 1708547197 18<22ash_worksi18>	maybe they meant "correct" end
+T 1708547260 18<28jclsn18>	Does anyone know a source for statically linked vim binaries for ARM?
+T 1708547800 18<29Cheaterman18>	ash_worksi: So
+T 1708547805 18<29Cheaterman18>	ash_worksi: gv restores your last visual
+T 1708547811 18<29Cheaterman18>	ash_worksi: o alternates between beginning and end of it
+T 1708547818 18<29Cheaterman18>	^C then takes you out of visual
+T 1708547844 18<29Cheaterman18>	So, _that_'s how you can easily move back to a place you previously visual'd
+T 1708547859 18<29Cheaterman18>	In your case you had visual block with a column
+T 1708547864 18<29Cheaterman18>	So it'll alternate between top and bottom
+T 1708547875 18<29Cheaterman18>	Not really assuming a horizontal line of text unlike what you just said
+T 1708547924 18<29Cheaterman18>	ash_worksi: and yes I meant correct end, "right" is another word for correct as opposed to "wrong"
+T 1708548002 18<29Cheaterman18>	jclsn: I'd cross-build them if I were you
+T 1708548023 18<28jclsn18>	Cheaterman: Yeah just trying that with docker buildx
+T 1708548025 18<29Cheaterman18>	Maybe it's just the Gentooligan in me, but I rarely find stuff built to my wishes
+T 1708548026 18<29Cheaterman18>	Good idea!
+T 1708548032 18<28jclsn18>	Too lazy to compile me a toolchain 
+T 1708548040 18<29Cheaterman18>	Totally fair, but THAT you can find prebuilt easily in theory
+T 1708548044 18<29Cheaterman18>	What are you targeting?
+T 1708548050 18<28jclsn18>	armv7
+T 1708548054 18<29Cheaterman18>	SBC or phone or other
+T 1708548057 18<28jclsn18>	TV
+T 1708548062 18<29Cheaterman18>	oh wow OK :-D
+T 1708548064 18<29Cheaterman18>	so SBC
+T 1708548068 18<29Cheaterman18>	Android or Linux
+T 1708548068 18<28jclsn18>	Yes
+T 1708548074 18<28jclsn18>	LG TV with webOS
+T 1708548088 18<29Cheaterman18>	Oh uh so a very bastardized Linux
+T 1708548089 18<28jclsn18>	No way to install libraries or mess with the rootfs
+T 1708548092 18<29Cheaterman18>	Yeah I see :-/
+T 1708548097 18<28jclsn18>	It is Yocto 
+T 1708548101 18<29Cheaterman18>	Do they provide a toolchain through eg a devkit?
+T 1708548102 18<28jclsn18>	Very old version
+T 1708548122 18<28jclsn18>	There is an inoffical toolchain, but it is missing ncurses even
+T 1708548129 18<29Cheaterman18>	Prebuilt toolchains aren't usually hard to find - and I do mean cross-build toolchains
+T 1708548131 18<22pell_18>	@jclsn and you have to type with your remote control
+T 1708548132 18<29Cheaterman18>	erf I see
+T 1708548133 18<28jclsn18>	and I am too lazy to build one. Just kidding around
+T 1708548142 18<29Cheaterman18>	Makes sense makes sense
+T 1708548142 18<28jclsn18>	This is quite nice https://github.com/ansemjo/static-toolbox
+T 1708548157 18<28jclsn18>	Never knew that you could use docker to cross-compile
+T 1708548172 18<29Cheaterman18>	Seems pretty cool indeed
+T 1708548175 18<29Cheaterman18>	Yes why not :-)
+T 1708548185 18<29Cheaterman18>	You can even run non-native binaries on mac
+T 1708548199 18<29Cheaterman18>	(caused the rest of us to have to add --platform=linux64 on our build scripts haha)
+T 1708548217 18<29Cheaterman18>	linux/amd64*
+T 1708548223 18<28jclsn18>	Uh static make
+T 1708548229 18<28jclsn18>	Could even build directly on the TV haha
+T 1708548235 18<29Cheaterman18>	Haha yes!
+T 1708548252 18<29Cheaterman18>	You could literally extract the toolchain from the image, and make yourself at home on the TV
+T 1708548275 18<28jclsn18>	Some other guys have already done that
+T 1708548283 18<28jclsn18>	They did found the exploits and all
+T 1708548305 18<28jclsn18>	There is a whole project around it by some Linux hackers
+T 1708548320 18<28jclsn18>	Enabling Ambilight and some other apps on the TVs
+T 1708548355 18<28jclsn18>	and I have nothing I really need it for, but when ssh into any machine, I WANT VIM
+T 1708548388 18<28jclsn18>	It also makes me seem like a better programmer than I actually am
+T 1708548478 18<22pell_18>	which text editor is installed?
+T 1708548493 18<22pell_18>	or is there any?
+T 1708548758 18<28jclsn18>	Ha worked
+T 1708548768 18<28jclsn18>	Static vim on my TV :P
+T 1708548861 18<22pell_18>	Vim, the Gentoo Linux of text editors
+T 1708548911 18<22pell_18>	Edit configs on your toaster
+T 1708552012 18<29Cheaterman18>	jclsn: congrats :D
+T 1708552048 18<29Cheaterman18>	Pell's kinda right except Gentoo is the vim of distros :-)
+T 1708552545 18<22ash_worksi18>	Cheaterman: so, firstly, further clarification, "then ^C or ESC to keep my cursor there while going back to normal mode" -- are you saying as opposed to going back to normal mode in another manner?
+T 1708552576 18<29Cheaterman18>	Not really no :) rather as opposed to doing something else
+T 1708552640 18<22ash_worksi18>	Cheaterman: secondly; is that all addressing when I asked about going to the last visualized position?
+T 1708552651 18<29Cheaterman18>	I think so
+T 1708552664 18<29Cheaterman18>	But it also addresses your further question about going from |a| to |m| or something
+T 1708552672 18<29Cheaterman18>	since I explained what o does
+T 1708552749 18<22ash_worksi18>	I think then you misunderstood the premise; I was trying to ask: having no previous visual selection, is it possible to visually select a vertical column of characters such as from |a| to |m| in this example: https://gist.github.com/ash-m/2ed8fb837536360b4f31726a91f2aaf6
+T 1708552767 18<22ash_worksi18>	Cheaterman: or rather, I misconveyed the premise
+T 1708552790 18<29Cheaterman18>	Aaaaaaaaah :-)
+T 1708552793 18<29Cheaterman18>	Like a vertical f
+T 1708552799 18<22ash_worksi18>	yes
+T 1708552802 18<29Cheaterman18>	That would be handy asf indeed
+T 1708552835 18<22ash_worksi18>	well, I'll add you to the list of people who tell me there's no native easy way to do that
+T 1708552837 18<29Cheaterman18>	I'm afraid OOTB (and without some scripting) it's gonna be / and ?
+T 1708552842 18<29Cheaterman18>	Well
+T 1708552846 18<29Cheaterman18>	https://stackoverflow.com/questions/21264034/vim-vertical-f-and-t
+T 1708552860 18<29Cheaterman18>	There's a bunch of good answers
+T 1708552862 18<29Cheaterman18>	Including a plugin
+T 1708553966 19*	Now talking on 22#vim
+T 1708553966 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708553966 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708554077 19*	Now talking on 22#vim
+T 1708554077 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708554077 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708554305 18<22ash_worksi18>	where are the these predefined marks in the help docs?
+T 1708554374 18<22ash_worksi18>	ie: [] start/stop of last edit, <> start/stop of last visual selection, {} start/stop of... ?
+T 1708554593 18<22ash_worksi18>	I guess those are just "paragraphs"
+T 1708554651 18<22habamax18>	usually :h '[
+T 1708554652 18<25digmbot18>	:help '[ -> http://vimhelp.appspot.com/motion.txt.html#%27%5B
+T 1708554664 18<22habamax18>	:h '<
+T 1708554664 18<25digmbot18>	:help '< -> http://vimhelp.appspot.com/motion.txt.html#%27%3C
+T 1708554741 18<22ash_worksi18>	thanks habamax 
+T 1708555783 18<22ash_worksi18>	is `:execute "normal " ... "..."` the best way to interpolate commands? (in my case: `:execute "normal }k" . col('.') . "lh"` # move to the current position of the last line of a paragraph)
+T 1708555968 18<22habamax18>	to interpolate? probably yes. To get to the last line of paragraph? probably no
+T 1708556174 19<ash_worksi>	habamax: `normal }k` isn't the best way to get to the last line in a paragraph?
+T 1708556212 19<habamax>	nnoremap <CR> <cmd>call cursor(getpos("'}")[1]-1, col('.'))<CR>
+T 1708556267 19<habamax>	it might be the best way to get to the last line in paragraph, but your example was to move to current position as well
+T 1708556281 18<22ash_worksi18>	habamax: sorry, that was the intention
+T 1708556297 18<22habamax18>	so you can use :h cursor() to position your cursor
+T 1708556297 18<25digmbot18>	:help cursor() -> http://vimhelp.appspot.com/builtin.txt.html#cursor%28%29
+T 1708556323 18<22habamax18>	there is also getpos() to get position of, '}  paragraph end
+T 1708556336 18<22habamax18>	and you can combine it...
+T 1708556433 18<22habamax18>	but if former works for you, sure go for it
+T 1708556566 18<22ash_worksi18>	so, firstly, in your map command... are you mapping that to Carriage Return?
+T 1708556606 18<22habamax18>	in vim9script, which is what you're using probably: https://0x0.st/H5TZ.txt
+T 1708556624 18<22habamax18>	ash_worksi, yes, just as a throwaway example
+T 1708556705 18<22habamax18>	https://asciinema.org/a/fFFO3pWnrkw46ORET75qEyHCC
+T 1708557016 18<22ash_worksi18>	habamax: I am guessing that [1] references the nth paragraph relative to the current one?
+T 1708557030 18<22habamax18>	nope, :h getpos()
+T 1708557030 18<25digmbot18>	:help getpos() -> http://vimhelp.appspot.com/builtin.txt.html#getpos%28%29
+T 1708557073 18<22habamax18>	returns a list of [bufnumber, line number, column number, offset]
+T 1708557110 18<22habamax18>	[1] targets second element of that list
+T 1708557225 18<22habamax18>	'} is the end of current paragraph, so getpos("'}") returns position of the end of current paragraph
+T 1708557272 18<22ash_worksi18>	I see
+T 1708557344 18<22ash_worksi18>	I am always afraid of creating my own custom mappings overriding useful native maps
+T 1708557376 18<22habamax18>	do not afraid, experiment
+T 1708558334 18<22ash_worksi18>	habamax: is there a movement-y key that stands out to you as natively useless?
+T 1708558565 18<22habamax18>	I never use + and -, wouldn't call them useless though
+T 1708558681 18<22habamax18>	you actually gave me an idea with your previous question, I was constantly annoyed by visual block selection with { or }
+T 1708558707 18<22habamax18>	like if I want to prepend something inside a paragraph with visual block I
+T 1708558743 18<22habamax18>	so I was doing <C-v>} to realize cursor went off and I need to correct it with navigation
+T 1708558768 18<22habamax18>	so I have created a mapping that "fixes" it for me ;)
+T 1708558787 18<22ash_worksi18>	that does sound similar to my problem
+T 1708558818 18<22ash_worksi18>	though I don't really get what you mean in the visual block sense
+T 1708558849 18<22habamax18>	https://asciinema.org/a/8SpnOueftAtZMICA3q4CtvCaa
+T 1708558894 18<22ash_worksi18>	OH
+T 1708558895 18<22ash_worksi18>	I see
+T 1708558907 18<22ash_worksi18>	habamax: that is often my case
+T 1708558946 18<22habamax18>	https://github.com/habamax/.vim/blob/master/plugin/mappings.vim#L81-L95
+T 1708558949 18<22ash_worksi18>	habamax: you have to change that to `noremap`, right?
+T 1708558953 18<22ash_worksi18>	drop the 'n'
+T 1708558991 18<22habamax18>	nope, I did it for visual mode which is xnoremap + inside the func I am checking if visual mode is actually visual block mode
+T 1708559069 18<22ash_worksi18>	habamax: I don't think I get xnoremap
+T 1708559116 18<22habamax18>	xnoremap works when you are in visaul mode
+T 1708559133 18<22ash_worksi18>	I see
+T 1708572312 18<27jmcantrell18>	i've got an autocmd on TextYankPost and the regname is empty when using quoteplus. vim is compiled with xterm_clipboard. is there something special going on when not on x? i'm over ssh
+T 1708580290 18<24ccx18>	There are no default normal-mode bindings for navigating the quickfix/location list, right? Is there some convention for them? Say [q ]q
+T 1708580352 18<22habamax18>	I use ]q [q and [Q ]Q not sure about existing convention
+T 1708580370 18<24ccx18>	What's the [Q ]Q ?
+T 1708580389 18<22habamax18>	cfirst/clast
+T 1708580411 18<24ccx18>	Gotcha, that sounds useful.
+T 1708580472 18<22habamax18>	probably tpope made it popular
+T 1708580500 18<22habamax18>	]q[q
+T 1708580648 18<20tanath18>	i'd suggest also adding ]b for next buffer, et al, if you haven't yet
+T 1708580700 18<22habamax18>	doesn't work for me -- I usually have too many buffers opened to find it useful
+T 1708594779 18<20m0norail18>	This plugin contains a lot of bindings like [b and [q: https://github.com/tpope/vim-unimpaired/blob/master/doc/unimpaired.txt
+T 1708594832 18<20sphertext__18>	habamax may i suggest you give the fzf plugin a try. it binds C-b to displaying a preview pop up window, with all the open buffers and a prompt that runs a fuzzy finder in that list. the default selection is the previously active buffer too (for that window), so switching back and forth between 2 buffers is as easy as <C-b> <CR>
+T 1708596343 18<22habamax18>	sphertext__, thx for suggestion
+T 1708596372 18<22habamax18>	https://github.com/habamax/vim-select
+T 1708596391 18<22habamax18>	https://github.com/habamax/.vim?tab=readme-ov-file#fuzzy-popup-finder
+T 1708596407 18<22habamax18>	I use this, "hand-made" fuzzy finder, sphertext__
+T 1708596447 18<22habamax18>	was fzf'ing many years ago though
+T 1708596453 18<20sphertext__18>	oh yeah, that looks pretty cool. very similar to fzf 
+T 1708596696 18<22habamax18>	and one less binary to rely on
+T 1708597754 18<28dumbledoor18>	Is it safe to close the terminal without closing vim first?
+T 1708597982 18<28dumbledoor18>	Hmm, seems like it depends on what signal my terminal application sends to vim (if it does) before closing. Ok, I will ask the tmux guys what happens on :kill-session
+T 1708598362 18<20osse18>	dumbledoor: it's HUP
+T 1708598383 18<20osse18>	I asked the very same question once and got a weird answer, so itested it myself
+T 1708598402 18<28dumbledoor18>	Ah, thanks you saved me from going through tmux' source code.
+T 1708598411 18<28dumbledoor18>	So, is vim robust enough to handle SIGHUP?
+T 1708598432 18<28dumbledoor18>	How did you test it by the way?
+T 1708598467 18<20osse18>	open a pane, define TRAPINT() { echo INT > file; } and so on for TRAPINT, TRAPHUP etc. then :kill-pane and inspect file
+T 1708598484 18<20osse18>	(that's zsh specific I think, but could do the same with bash)
+T 1708598511 18<20osse18>	I justr re-read the answer I got then, and they say it's HUP :P I missed it the first time
+T 1708598521 18<20osse18>	"tmux does not send the signals, that is the responsibility of the kernel, and it will send SIGHUP"
+T 1708598527 18<20osse18>	I don't understand the first part though
+T 1708598552 18<20osse18>	 But it explains why my own code dive didn't yield anything
+T 1708598595 18<28dumbledoor18>	Oh, so the TRAPINT() thing did not work as intended?
+T 1708598608 18<20osse18>	yes
+T 1708598626 18<20osse18>	one of those functions get executed depending on which signal is sent
+T 1708598636 18<20osse18>	TRAPINT didn't. TRAPHUP did
+T 1708598662 18<28dumbledoor18>	oh. are these names zsh specific?
+T 1708598676 18<28dumbledoor18>	how did you get them to run when the signal was sent
+T 1708598680 18<28dumbledoor18>	otherwise
+T 1708598731 18<28dumbledoor18>	s/name/tokens/g
+T 1708599074 18<28dumbledoor18>	Forget that, I'll read more on shell traps myself.
+T 1708599099 18<28dumbledoor18>	osse: do you now do tmux kill-session while vim is running?
+T 1708599208 18<20sphertext__18>	you'll probably end up with leftover swap files either way, if you have any modified buffers 
+T 1708599276 18<28dumbledoor18>	what if I saved all files beforehand. Can the vim software itself get corrupted on doing this multiple times over the months? sphertext__
+T 1708599287 18<28dumbledoor18>	months/years
+T 1708599507 18<20sphertext__18>	the vim program won't get corrupted. your main concern is the swap files. actually even if you saved all your buffers, but the vim process hangs around after you closed your terminal, then you will be alerted when you reopen the files that are still open in the previous process 
+T 1708599561 18<20sphertext__18>	ideally you would want to reconnect/reattach a new terminal to the previous vim process (instead of starting a new one), but that requires some complicated magic 
+T 1708599751 18<28dumbledoor18>	makes sense. i'll check this myself by not closing vim from now on.
+T 1708599868 18*	28dumbledoor wonders if the G in SIGINT is pronounced like gif or gif
+T 1708600642 18<20osse18>	dumbledoor: you can also just kill -HUP $vimpid  to test
+T 1708600707 18<28dumbledoor18>	yes, but i do not care about losing data. i want to know if the vim program itself breaks the next time i open it.
+T 1708600719 18<28dumbledoor18>	over time
+T 1708600756 18<20osse18>	as in after 10-50 signals it'll degrade??
+T 1708600763 18<28dumbledoor18>	yes
+T 1708600793 18<20osse18>	sounds unlikely unless you have a PC made of organic material
+T 1708600828 18<22habamax18>	the only "visible" issue you might have is the swp files that might get in the way
+T 1708600870 18<28dumbledoor18>	lol. Ok, well anyway the main objective was that I should not be concerned about my running programs when I do tmux kill-session. And from now on that's just what I am gonna do. So, problem is solved.
+T 1708600912 18<20osse18>	Seems like the proper way to do signal handling in vim is an autocmd VimLeave that inspects the v:dying variable
+T 1708600952 18<20osse18>	hmmm... it doesn't tell you which signal...
+T 1708602510 18<29Cheaterman18>	Very interesting conversation this morning ; the way I personally navigate is I have <C-n> and <C-p> nmapped to :bn<CR> and :bp<CR> respectively
+T 1708602724 18<29Cheaterman18>	Also liberal use of <C-^>
+T 1708606547 19*	Now talking on 22#vim
+T 1708606547 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708606547 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708606631 19*	Now talking on 22#vim
+T 1708606631 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708606631 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708614953 18<29Cheaterman18>	foldmethod - manual, indent or syntax?
+T 1708614961 18<29Cheaterman18>	I'm on manual and I'm thinking of changing, I'd like to hear some pros and cons :-)
+T 1708615334 18<29Cheaterman18>	I like that you can expand visual selection with eg "at" as much as you want
+T 1708615352 18<29Cheaterman18>	Feels like conquering Hoth while also making HTML bearable :D
+T 1708623317 19*	Now talking on 22#vim
+T 1708623317 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708623317 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708623731 18<24quesker18>	how can I disable this plugin for files in certain dirs?
+T 1708623821 18<24quesker18>	it is in .vim/pack/plugins/start
+T 1708623940 18<24quesker18>	I should turn this whole thing off
+T 1708625047 18<24quesker18>	I tried an autocmd to disable it but the plugins load after .vimrc
+T 1708627441 18<20birkoff18>	is there a keybinding that can take percentage to set window size  ? 
+T 1708627577 18<29Cheaterman18>	sphertext__: Interesting, thanks! And yes I figured indent would be fine for Python hehe, the one that worries me for it is poorly-indented HTML, so I was really wondering if I could set foldmethod to syntax and assume all syntaxes have solid folding support
+T 1708627746 18<29Cheaterman18>	birkoff: Not from what I can see in :help :res, sorry
+T 1708627763 18<29Cheaterman18>	OTOH I'm curious if there's an equivalent to z{nr}<CR> for vertical windows - but I assume I'd have seen it
+T 1708630546 19*	Now talking on 22#vim
+T 1708630546 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708630546 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708630653 18<20birkoff18>	can the ':' prompt text changed?
+T 1708631263 19*	Now talking on 22#vim
+T 1708631263 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708631263 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708631651 18<29Cheaterman18>	birkoff: What an interesting question :-D - adding an alternate map to : seems to work as you expect on nvim but not on vim
+T 1708631656 18<29Cheaterman18>	ie :nnoremap ; :
+T 1708631679 18<29Cheaterman18>	ofc that's assuming you want the prompt to be the key you triggered command mode with
+T 1708631679 18<20birkoff18>	I meant to change the prompt text itself not the command 
+T 1708631684 18<29Cheaterman18>	Yes, see above
+T 1708631706 18<29Cheaterman18>	either way to the best of my knowledge there isn't a way to either change only the prompt on nvim or change the prompt at all on vim
+T 1708631708 18<20birkoff18>	what if I dont want that?
+T 1708631714 18<29Cheaterman18>	Again see above :D
+T 1708631720 18<29Cheaterman18>	But I'm not omniscient
+T 1708631774 18<29Cheaterman18>	OTOH I do have a copy of vim locally, I could search the sources to see how static the ':' is
+T 1708631930 19*	Now talking on 22#vim
+T 1708631930 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708631930 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708632783 19*	Now talking on 22#vim
+T 1708632783 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708632783 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708632815 18<29Cheaterman18>	 * (Sorry for the goto's, I know it is ugly).
+T 1708632819 18<29Cheaterman18>	Hahaha.
+T 1708632966 19*	Now talking on 22#vim
+T 1708632966 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708632966 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708633121 18<29Cheaterman18>	So many interesting things, like Ctrl+Q being equivalent to Ctrl+V
+T 1708633145 18<29Cheaterman18>	Either way the colon seems to be very static, sorry birkoff - I haven't seen (I think...) the exact rendering code but I'm fairly sure judging from the rest
+T 1708633181 18<29Cheaterman18>	quesker: you have getenv() in vim, eg :echo getenv("SHELL")
+T 1708633901 18<27hernan18>	sometimes when i split a buffer and open a file, vim auto re-sets the sizes for every buffer.Is there some shortcut to return buffers to their previous sizes ?
+T 1708636914 18<20birkoff18>	can I paste raw termcap options in a terminal buffer? when I try the control characters are erased. tried setting 'paste' to no avail
+T 1708636967 18<20birkoff18>	I do it with: <C-w>"=&t_SC  for example
+T 1708637389 18<20birkoff18>	why am I getting E16: Invalid range for a user defined command with -range=0 and values higher than 1 ? 
+T 1708640912 18<20birkoff18>	isn't it weird that v:count is not mentioned even once in map.txt ? 
+T 1708641233 18<20birkoff18>	is it possible to pass v:count in an inbetween binding? i.e. for map <c-w><a-m>  have it "understand" v:count when typing <c-w>4<a-m> 
+T 1708641542 18<22habamax18>	it is always passed afaik
+T 1708641578 18<22habamax18>	I mean, it is available at rhs of the mapping, would it be using it? depends on how you do it
+T 1708642246 18<20birkoff18>	it doesn't look like it 
+T 1708642280 18<20birkoff18>	I can do i.e. 3<c-w><a-m>  but not <c-w>3<a-m>. v:count is simply passed on from rhs
+T 1708642629 18<22habamax18>	you're right
+T 1708642687 18<22habamax18>	and the answer is, your normal mode command is not composable
+T 1708642760 18<22habamax18>	if your C-w was in operator pending mode that expects a motion -- v:count would've been there
+T 1708651076 18<20birkoff18>	how can I pass a flag with a mapping ? I'm already using count 
+T 1708657189 18<20birkoff18>	is it possible to hide the command line when not in use?
+T 1708657205 18<20birkoff18>	i.e. make it pop up only when pressing : and when it needs to show messages
+T 1708657537 18<22habamax18>	no, it was possible for a brief period of time when Bram merged PR, but it caused too many problems and reverted at the end
+T 1708657614 18<22habamax18>	I can't find PR though
+T 1708657814 18<22habamax18>	https://github.com/vim/vim/issues/11543
+T 1708665767 18<20birkoff18>	oh
+T 1708666246 18<20birkoff18>	how can i save custom colorscheme modifications?
+T 1708670903 18<24quesker18>	how do I quote this to expand $TMPDIR env var?   if match(getcwd(), $TMPDIR/pass.?*/?*.txt)
+T 1708670946 18<24quesker18>	I just realized that is a glob not a regex
+T 1708671037 18<24quesker18>	the real problem is that this just doesn't work  autocmd VimEnter $TMPDIR/pass.?*/?*.txt Copilot disable
+T 1708671128 18<24quesker18>	that glob does match though
+T 1708672227 18<22habamax18>	vimenter doesn't expect file
+T 1708672244 18<24quesker18>	what do you mean?
+T 1708672308 18<24quesker18>	au {event} {pat} {cmd}  right?
+T 1708672342 18<24quesker18>	how can you test au?  like make vim do something simple that I can see if the pat matched
+T 1708672357 18<22habamax18>	au Colorscheme <- do you expect a filename here as well?
+T 1708672424 18<22habamax18>	use echom "some message"
+T 1708672429 18<24quesker18>	k
+T 1708672445 18<24quesker18>	I thought it always needed a pattern.  I never messed with au before
+T 1708672491 18<22habamax18>	yes, but what this pattern would be matched against?
+T 1708672500 18<24quesker18>	the file being edited
+T 1708672507 18<22habamax18>	in case of au colorscheme -- with colorscheme name
+T 1708672520 18<22habamax18>	in case of au BufEnter -- with the buffer name
+T 1708672546 18<22habamax18>	but I don't know what it has to match in vimenter
+T 1708672569 18<22habamax18>	I doubt it is a filename or path
+T 1708672578 18<24quesker18>	all the ones I see have * there with vimenter
+T 1708672586 18<24quesker18>	to match any file
+T 1708672594 18<22habamax18>	not any file but anything
+T 1708672606 18<24quesker18>	hmm 
+T 1708672610 18<24quesker18>	very confused  :)
+T 1708672620 18<24quesker18>	where would that echom go to if it worked?
+T 1708672627 18<22habamax18>	:messages
+T 1708672876 18<22habamax18>	why do you need an autocommand in the first place?
+T 1708672912 18<24quesker18>	I want to disable copilot plugin when editing my password manager passwords
+T 1708672941 18<22habamax18>	in a new vim instance or existing one?
+T 1708672954 18<22habamax18>	cause VimEnter triggers once when you start vim
+T 1708672965 18<24quesker18>	the password manager runs a new vim each time
+T 1708672996 18<22habamax18>	go with bufenter then
+T 1708673004 18<24quesker18>	ok
+T 1708673079 18<24quesker18>	still doesn't seem to work.  I am just going to use g:copilot_filetypes instead I guess
+T 1708673098 18<24quesker18>	but then no copilot in text ft.  which is ok I guess
+T 1708673785 18<24quesker18>	I got it.  tricky glob
+T 1708673821 18<24quesker18>	have to have exact right number of /
+T 1708674074 18<24quesker18>	autocmd VimEnter /private$TMPDIR/pass.?*/?*.txt Copilot disable
+T 1708674757 18<24quesker18>	I decided to not load the plugin automatically, so I did cd .vim/pack/github; mv start opt
+T 1708674847 18<24quesker18>	much better to just load as needed I think
+T 1708674872 18<24quesker18>	maybe in modeline 
+T 1708675055 18<24quesker18>	hmm can you not do packadd in modeline?
+T 1708675650 18<24quesker18>	haha    autocmd VimEnter * if getline(2) =~ "copilot" | pa copilot.vim | endif
+T 1708676200 18<22strk18>	I've a problem with VISUAL LINE resulting in white text over white background, how do I configure this ? It's in a Kitty terminal, where highlighting text with the mouse has a nicer effect (black text over yellow background) so this might be vim specific. Even screen(1) copy functionality turns the highlighted text into black over white background. The default text is white over black. Only vim VISUAL
+T 1708676202 18<22strk18>	MODE does this white-on-white thing
+T 1708681749 18<26lopid18>	use a different colour scheme?
+T 1708685610 18<22strk18>	how/where ?
+T 1708685623 18<26lopid18>	:help colorscheme
+T 1708685623 18<25digmbot18>	:help colorscheme -> http://vimhelp.appspot.com/syntax.txt.html#%3Acolorscheme
+T 1708685662 18<22strk18>	current colorscheme is default, how can it be so bogus ? I mean... it must be affected by something else ?
+T 1708685704 18<22strk18>	yes: affected by terminal, as gnome-terminal doesn't give the same problem (Kitty does)
+T 1708686357 18<26lopid18>	kitty has its own set of colour schemes, i think
+T 1708688283 18<22strk18>	how does vim references colors 
+T 1708696020 19*	Now talking on 22#vim
+T 1708696020 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708696020 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708696321 19*	Now talking on 22#vim
+T 1708696321 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708696321 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708703145 18<25dza18>	sup darkvimmers
+T 1708703402 18<26japh18>	nothing much
+T 1708704229 18<29Cheaterman18>	vimmin' :D
+T 1708704275 18<29Cheaterman18>	strk: I have an idea!
+T 1708704282 18<29Cheaterman18>	Are you using visual with mouse by any chance
+T 1708704288 18<29Cheaterman18>	Try pure keyboard visual and see if it works better
+T 1708704289 18<22strk18>	No
+T 1708704313 18<29Cheaterman18>	OK - I was suspecting the terminal selection highlight was inverting text color from vim visual
+T 1708704319 18<29Cheaterman18>	resulting in white on white
+T 1708710142 18<24defjam18>	hey i am having problems with this code...i dont know what "k" means
+T 1708710148 18<24defjam18>	:nmap <F2> i<CR><ESC>k"=strftime('%H:%M:%S')<CR>P<ESC>o                                                                                                                                                                                     
+T 1708710216 18<24defjam18>	:nmap <F2> i<CR><ESC>k"=strftime('%H:%M:%S')<CR>P<ESC>o
+T 1708710233 18<24defjam18>	any ideas what the k"= is for
+T 1708710382 18<29phy172918>	I assume you know what k in normal mode does
+T 1708710395 18<24defjam18>	it moves up one line
+T 1708710408 18<24defjam18>	hmm ok thanks
+T 1708710410 18<29phy172918>	right the unusual bit is :h "=
+T 1708710410 18<25digmbot18>	:help "= -> http://vimhelp.appspot.com/change.txt.html#quote%3D
+T 1708710430 18<29phy172918>	s/unusual/unfamiliar/
+T 1708710446 18<24defjam18>	ah i thought it meant into buffer = put the strftime result
+T 1708710505 18<24defjam18>	register = 
+T 1708712555 18<22ash_worksi18>	weird question; is there a way to perform s/// on buffer contents before putting it?
+T 1708712644 18<22ash_worksi18>	actually, that's not really what I want to do... I think what I want to do is overly complicating my life
+T 1708715720 18<25dza18>	wheres romainl?
+T 1708716717 18<26japh18>	in my basement
+T 1708716890 18<29Cheaterman18>	ash_worksi: Hey, why else would you be a vim user amirite ;-)
+T 1708720189 19*	Now talking on 22#vim
+T 1708720189 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708720189 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708721895 18<19m_ben18>	dza: romainl hasn't been here a lot the last few months, maybe twice
+T 1708722194 18<26absinthium18>	What's everyone's favorite language to write in Vim?
+T 1708722212 18<26absinthium18>	Barring English. :P
+T 1708722289 18<26absinthium18>	I'm looking to get into either Common Lisp or Python, but it seems like Common Lisp users are all in on Emacs. Does anyone here program in Common Lisp with Vim?
+T 1708722672 18<29Cheaterman18>	absinthium: I write a lot of Python and I certainly would recommend it over common Lisp XD
+T 1708722711 18<26absinthium18>	Yeah, I wanted to like Common Lisp, but the syntax is very dated.
+T 1708722736 18<29Cheaterman18>	that's the beauty of it in theory
+T 1708722737 18<26absinthium18>	I guess I shouldn't debate the two.
+T 1708722754 18<26absinthium18>	Cheaterman: And in practice?
+T 1708722960 18<29Cheaterman18>	absinthium: In practice I prefer to bask in the glory of the features I implemented and how useful I can make my software, rather than in the abstract simplicity of the syntax
+T 1708722973 18<29Cheaterman18>	Python is a whole lot better to get actual work done
+T 1708722989 18<29Cheaterman18>	OTOH if all Common Lispers are on emacs and you were doing it on vim, I guess that would make you a... uncommon Lisper? :D
+T 1708723041 18<29Cheaterman18>	Or in other words, IMHO a good language isn't about the simplicity of its compiler but in the complexity of the stuff you can build with it (and how you can tame said complexity)
+T 1708723076 18<29Cheaterman18>	(put the complexity demon on a leash - _you_ say now, complexity _very_, _very_ bad)
+T 1708723103 18<29Cheaterman18>	( https://grugbrain.dev/ - just realized you liekly don't have the ref)
+T 1708723225 18<25dza18>	m_ben: oh, I hope all is good. Thanks for the note!
+T 1708723519 18<19m_ben18>	dza: in general #vim isn't as active as it used to be a few years ago. people have moved on to other things or just don't use irc anymore. idk
+T 1708723539 18<19m_ben18>	same goes for the vim subreddit
+T 1708723564 18<25dza18>	* no one liked that *
+T 1708723627 18<25dza18>	well still 700+ users thats something but it was over 1000+
+T 1708723680 18<25dza18>	and I mean like weddit.. phew.. who cares.. why don't that site just die already.. its getting worse by the hour
+T 1708724300 18<29Cheaterman18>	m_ben: I think the latter, I assume there must be a vibrant vim community on Discord
+T 1708724307 18<29Cheaterman18>	OTOH it might be a nvim community instead
+T 1708724358 18<29Cheaterman18>	2238 members on vi-tality
+T 1708724369 18<29Cheaterman18>	And obviously 32K on primeagen but that's a bit of a different story
+T 1708724395 18<29Cheaterman18>	It's gonna be about nvim but also Rust mentioned, Go+htmx stack of the future, OCaml supremacy etc
+T 1708724396 18<19m_ben18>	prime... no thank you :D
+T 1708724400 18<29Cheaterman18>	Hahahahahahaha
+T 1708724796 18<25dza18>	if there is a vim community on discord... Its not a good one .. haha
+T 1708726932 18<29Somelauw18>	Just curious, but since BM is no more, does anyone know who his successor is. Even Wikipedia doesn't seem to know.
+T 1708726977 18<29Somelauw18>	or is neovim the future?
+T 1708727251 18<19m_ben18>	Somelauw: https://github.com/orgs/vim/people 
+T 1708727309 18<29Somelauw18>	so it's a counsel of 6?
+T 1708727791 18<25dza18>	Somelauw: you can also check https://github.com/vim/vim/commits/master/ theres a lot of regulars that contribute
+T 1708727832 18<25dza18>	Christian Brabrand was handed the `keys to the kingdom` (so to say) as Bram passed
+T 1708729676 18<29Cheaterman18>	dza: I've had the pleasure to interact with chrisbra on GitHub, thanks to them I'll be fixing a long-annoying bug in html syntax
+T 1708729706 18<25dza18>	Cheaterman: thats great, my <ScriptCmd> syntax PR was approved to.. after 2 years I think heh
+T 1708729716 18<29Cheaterman18>	Haha, nice!
+T 1708732244 18<26absinthium18>	I'd say 700+ members in a room about a 32-year-old text-editor using a dying/dead chat protocol is actually kind of amazing.
+T 1708736548 18<24andonome18>	absinthium: IRC's outlived a number of forums. Vim may outlive any number of text editing tools.
+T 1708772561 19*	Now talking on 22#vim
+T 1708772561 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708772561 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708772864 18<27jmcantrell18>	habamax: in case you're curious, this is what i came up with after digging through fzf.vim https://paste.rs/B86mW
+T 1708774034 18<22habamax18>	looks ok
+T 1708782164 18<24tully18>	wow irc in vim. Watever next
+T 1708785314 18<20pid140018>	hi there! can anyone please tell me why this vim mapping doesnt work : inoremap <M-Bslash> <C-\><C-O>dB
+T 1708785422 18<20pid140018>	hi there! can anyone please tell me why this vim mapping doesnt work : inoremap <M-Bslash> <C-\><C-O>dB
+T 1708785770 18<26lopid18>	to do what?
+T 1708786079 18<20pid140018>	@lopid to remove the characters from the cursor position to the beginning of the word where the cursor is present
+T 1708786112 18<20pid140018>	inoremap <C-Bslash> <C-\><C-O>dB   ctrl key also doesnt seem to work with it
+T 1708786161 18<26lopid18>	you should be able to just inoremap <m-bslash> <c-o>dB
+T 1708786173 18<20pid140018>	hold on lemme try that
+T 1708786295 18<20pid140018>	@lopid nah man, it doesnt seem to work. although, this one works inoremap <M-Del> <C-\><C-O>dw but this removes from cursor till the end of the word, the opposite of what i want
+T 1708786456 18<26lopid18>	this isn't twitter
+T 1708786459 18<26lopid18>	what does it do?
+T 1708786674 18<20pid140018>	your suggestion: inoremap <m-bslash> <c-o>dB doesnt do anything at all. 
+T 1708786693 18<26lopid18>	m = esc or alt
+T 1708786709 18<20pid140018>	yes, i am pressing either of those, doesnt work
+T 1708786728 18<26lopid18>	does it work with c- at least?
+T 1708786741 18<20pid140018>	lemme see
+T 1708786742 18<20pid140018>	brbr
+T 1708786744 18<20pid140018>	brb
+T 1708786791 18<20pid140018>	no. doesnt work.
+T 1708786804 18<26lopid18>	what version?
+T 1708786816 18<20pid140018>	let me share the rest of my mappings? see if anything is conflicting with it?
+T 1708786831 18<20pid140018>	vim --version
+T 1708786831 18<20pid140018>	VIM - Vi IMproved 9.0 (2022 Jun 28, compiled May 04 2023 10:24:44)
+T 1708786850 18<26lopid18>	try with a clean vim: vim -Nu NONE
+T 1708786875 18<20pid140018>	okay
+T 1708786943 18<20pid140018>	nope still not working
+T 1708786948 18<20pid140018>	does it work for you as expected?
+T 1708786966 18<26lopid18>	yeah, vim and gvim
+T 1708786983 18<20pid140018>	do you wanna see my other mappings ?
+T 1708786990 18<20pid140018>	i dont know if anything is conflicting with it
+T 1708787009 18<26lopid18>	it should work clean
+T 1708787020 18<26lopid18>	maybe a typo when you're entering it?
+T 1708787108 18<20pid140018>	i didnt see i had a nnoremap <M-Bslash> dB down below. should i remove it and try again?
+T 1708787134 18<26lopid18>	how could you have that in a clean vim?
+T 1708787179 18<20pid140018>	no sorry. i wasnt clean, my fault. i was talking about my existing config in my last comment
+T 1708787339 18<20pid140018>	i tried it with clean vim
+T 1708787397 18<20pid140018>	the backspace works as h key like, it just navigates around the text one character at a time. does not do anything
+T 1708788546 19*	Now talking on 22#vim
+T 1708788546 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708788546 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708788547 18<20pid140018>	i did it in xterm
+T 1708788585 18<26lopid18>	c-blash
+T 1708788591 18<20pid140018>	oh ffs man
+T 1708788723 19*	Now talking on 22#vim
+T 1708788723 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708788723 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708788779 18<20pid140018>	im such a noob lol
+T 1708788780 18<20pid140018>	https://asciinema.org/a/6do82X75Fa2vMOUH5f0cdDGyg
+T 1708788791 18<20pid140018>	see this time i tried both ALT and CTRL mappings
+T 1708788795 18<20pid140018>	still, the damn same
+T 1708788836 18<26lopid18>	<c-o> dB
+T 1708788865 18<26lopid18>	but the second try looks ok
+T 1708788880 18<20pid140018>	yeah, nothing freakin works, and just cant understand why.
+T 1708788888 18<26lopid18>	does <c-o>dB work manually?
+T 1708788899 18<20pid140018>	yes absolutely, i mean not <c-o> but just dB
+T 1708788905 18<20pid140018>	i mean
+T 1708788905 18<20pid140018>	yes
+T 1708788906 18<20pid140018>	yes
+T 1708788907 18<20pid140018>	it works
+T 1708788911 18<26lopid18>	with <c-o>
+T 1708788964 18<20pid140018>	E488 
+T 1708788986 18<20pid140018>	wait no its not working at all
+T 1708789043 18<20pid140018>	E488: Trailing Characters: c-o>dB : <c-o>dB
+T 1708789051 18<20pid140018>	this is what i get if i try <c-o>dB
+T 1708789057 18<20pid140018>	but if i do dB it works just fine
+T 1708789059 18<26lopid18>	in insert mode?
+T 1708789088 18<20pid140018>	no normal mode
+T 1708789099 18<26lopid18>	<c-o> is meant for insert mode
+T 1708789112 18<26lopid18>	(in this case)
+T 1708789116 18<20pid140018>	wait no i accidentally did : 
+T 1708789117 18<20pid140018>	yes
+T 1708789123 18<20pid140018>	but in normal mode only dB works
+T 1708789132 18<26lopid18>	you don't need <c-o> in normal mode
+T 1708789141 18<20pid140018>	oh okay
+T 1708789149 18<20pid140018>	so yes, dB works in normal mode
+T 1708789157 18<26lopid18>	does <c-o>dB work in insert mode?
+T 1708789205 18<20pid140018>	im kind of dumb. how will i see if <c-o>dB is working in insert mode, because after hitting i , whatever i type is shown on my output file
+T 1708789246 18<26lopid18>	https://asciinema.org/a/3axYQ1PQgAoy7DBGeVMGEHrwV
+T 1708789274 18<26lopid18>	note the status indicator change
+T 1708789303 18<20pid140018>	yes how did you get it?
+T 1708789327 18<26lopid18>	by holding control and pressing o in insert mode, then dB
+T 1708789328 18<20pid140018>	if i hit i on my keyboard, it takes me -- INSERT -- mode
+T 1708789338 18<26lopid18>	yes, from that mode
+T 1708789341 18<20pid140018>	ohh OHHHH thats why C-O.. damn i get it now
+T 1708789345 18<20pid140018>	yesss i get it now
+T 1708789358 18<26lopid18>	:help i_ctrl-o
+T 1708789358 18<25digmbot18>	:help i_ctrl-o -> http://vimhelp.appspot.com/insert.txt.html#i_CTRL-O
+T 1708789367 18<20pid140018>	yes i can confirm
+T 1708789373 18<20pid140018>	that <c-o> db does work
+T 1708789419 18<26lopid18>	now, in insert mode, do <c-v> then press alt-backslash. what does it print?
+T 1708789467 18<20pid140018>	i got these characters ^[[
+T 1708789483 18<26lopid18>	in xterm still?
+T 1708789505 18<20pid140018>	no 
+T 1708789508 18<20pid140018>	normal
+T 1708789510 18<20pid140018>	zsh
+T 1708789569 18<26lopid18>	what does it print with control-\ ?
+T 1708789577 18<26lopid18>	after ctrl-v
+T 1708789619 18<20pid140018>	^\
+T 1708789710 18<26lopid18>	are you wanting the trigger to be a backslash or a backspace?
+T 1708789728 18<20pid140018>	backspace
+T 1708789730 18<20pid140018>	wait
+T 1708789740 18<20pid140018>	so you are telling me i was on backslash this whole time 
+T 1708789750 18<20pid140018>	whereas what i wanted was backspace
+T 1708789771 18<26lopid18>	you had bslash initially
+T 1708789785 18<20pid140018>	holy - i didnt even realize it was bslash and b space or sm
+T 1708789803 18<20pid140018>	this is some... oh my god.., i wasted 30 freakin minutes. major L.
+T 1708789809 18<20pid140018>	now man help me out with backspace
+T 1708789809 18<26lopid18>	:)
+T 1708789821 18<26lopid18>	i'm sorry your ticket time has just expired
+T 1708789825 18<20pid140018>	lol 
+T 1708789828 18<20pid140018>	oh COME ON
+T 1708789841 18<26lopid18>	and you want it from insert mode or normal mode?
+T 1708789846 18<20pid140018>	insert mode
+T 1708789851 18<20pid140018>	inoremap
+T 1708789856 18<26lopid18>	inoremap <m-bs> <c-o>dB
+T 1708789868 18<26lopid18>	that's alt-backspace
+T 1708789878 18<20pid140018>	yeah and c-bs would be ctrl-backspace?
+T 1708789883 18<26lopid18>	yes
+T 1708789894 18<20pid140018>	and nnoremap <m-bs>db
+T 1708789899 18<20pid140018>	and <c-bs>db
+T 1708789902 18<20pid140018>	for normal mode?
+T 1708789926 18<26lopid18>	you'll need a space there
+T 1708789938 18<26lopid18>	b and B are different
+T 1708789947 18<20pid140018>	oh how so?
+T 1708789951 18<26lopid18>	:help b
+T 1708789951 18<25digmbot18>	:help b -> http://vimhelp.appspot.com/motion.txt.html#b
+T 1708789963 18<20pid140018>	oh thats how you get help. thanks 
+T 1708789994 18<20pid140018>	man i gotta stick to the documentation more lol ngl
+T 1708790027 18<26lopid18>	i suspect you cargo culted the thing you tried to begin with
+T 1708790059 18<20pid140018>	i chatgpted it my man xD
+T 1708790076 18<26lopid18>	worse
+T 1708790081 18<20pid140018>	agreed.
+T 1708790205 18<20pid140018>	yeah well sh!t. it's not working. i dont know why, and i dont want to know how, ill just manually db it. thanks anyways
+T 1708790221 18<20pid140018>	inoremap <m-bs> <c-o>dB
+T 1708790221 18<20pid140018>	inoremap <C-bs> <c-o>dB
+T 1708790221 18<20pid140018>	inoremap <M-Del> <C-\><C-O>dw
+T 1708790221 18<20pid140018>	inoremap <C-Del> <C-\><C-O>dw
+T 1708790221 18<20pid140018>	nnoremap <m-bs> dB
+T 1708790222 18<20pid140018>	nnoremap <c-bs> dB
+T 1708790227 18<20pid140018>	thats what i had as my config btw
+T 1708790279 18<26lopid18>	it looks ok, though you might have trouble with m- and alt- in some terminals
+T 1708790283 18<20pid140018>	before you say anything ,tried changing dB to db, doesnt work either
+T 1708790291 18<20pid140018>	yeah im on gnome-terminal
+T 1708790295 18<20pid140018>	must be something up with that
+T 1708790340 18<26lopid18>	i think it's ok
+T 1708790405 18<20pid140018>	well let's leave it at that. thanks a lot @lopid
+T 1708790434 18<26lopid18>	lopid
+T 1708790519 18<20pid140018>	oh you can do that without @.. wow, learning new every minute lol
+T 1708790522 18<20pid140018>	pid1400
+T 1708790526 18<20pid140018>	heh, works!
+T 1708792087 19*	Now talking on 22#vim
+T 1708792087 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708792087 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708792166 18<22Chipzz18>	pid1400: this is IRC, not discord or X/ twitter. @'ing people is a twitter/ discord thing, it's not customary on IRC. Most people will however set up their IRC client to highlight on lines containing their nickname
+T 1708792256 18<22Chipzz18>	and even if they don't set that up, all IRC clients I know of will highlight <nick>: at the start of the line automagically, which is why on IRC that style is customary/ expected
+T 1708792260 18<22Chipzz18>	just FYI
+T 1708793964 18<20pid140018>	oh thanks for the intel Chipzz . new to irc!
+T 1708793978 18<20pid140018>	thank you
+T 1708794411 18<22Chipzz18>	yw
+T 1708795682 18<24lairnc18>	im trying to make tree-sitter folds work
+T 1708795696 18<24lairnc18>	I have in my init file:
+T 1708795697 18<24lairnc18>	vim.opt.foldmethod = 'expr'
+T 1708795697 18<24lairnc18>	vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+T 1708795697 18<24lairnc18>	vim.opt.foldenable = false
+T 1708795705 18<24lairnc18>	but they don't seem to work
+T 1708795914 18<26lopid18>	#neovim
+T 1708796463 18<24mpbsd18>	Guys, I need help from you so that I could finish a really useful vimscript function. This function gets all the citation keys from a bibtex file that I have on my computer. What I would like it to do is present the results in a vertical split so that I can choose with a number, similar to what vim already does with z=. Could you point me to the right help pages please?
+T 1708797127 18<26lopid18>	so like the quickfix or location list, but on the side?
+T 1708823390 19*	Now talking on 22#vim
+T 1708823390 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708823390 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1708832817 18<27jmcantrell18>	i'm running vim -c 'helptags ALL' -c q in a script. If it's in a terminal there is a flicker as it's presumably starting the ui then quitting immediately. if i redirect stdout to /dev/null, there's no more flicker, but i get a warning. is there any way to avoid the warning?
+T 1708833224 18<27jmcantrell18>	it looks like i can use -e for ex mode, and it seems to work. i'm not sure what the other implications are. guess i need to read up on that
+T 1708851925 18<28jclsn18>	Anyone good at patterns? How to match any number, be it hex or float or int?
+T 1708852266 18<28jclsn18>	Ah no that won't be enough
+T 1708852281 18<28jclsn18>	Writing syntax files is really hard. So many cases to match and exclude
+T 1708852316 18<28jclsn18>	Want to extend this syntax filet to match numbers, but only in certain cases https://github.com/jclsn/vim-assembly/blob/master/syntax/assembly.vim
+T 1708852353 18<28jclsn18>	It doesn't match memory regions right though, like 1004:
+T 1708852377 18<28jclsn18>	I wonder why there is no nice assembly syntax file out there
+T 1708854225 18<29Cheaterman18>	jclsn: I can do patterns
+T 1708854267 18<29Cheaterman18>	But this is a particularly thorny problem and in the context of assembly you might care about weird formats like 0$ or whatever
+T 1708854271 18<29Cheaterman18>	or #123
+T 1708855582 18<26lopid18>	look at how other syntax definitions do it
+T 1708882893 19*	Now talking on 22#vim
+T 1708882893 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1708882893 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709072158 19*	Now talking on 22#vim
+T 1709072158 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709072158 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709072247 18<19ring18>	yes, I finished that for my own colorscheme and then realized a /lot/ of syntax elements link to a small group of highlights.. changing the value for one purpose botches something elsewhere
+T 1709072916 18<22habamax18>	syntax files usually define their own highlight groups one can redefine in the colorscheme
+T 1709072965 18<19ring18>	yes, that's the main issue, really. what is a sufficient level of depth for a public color scheme? rust, typescript, javsacript, haskell?
+T 1709072975 18<22habamax18>	e.g `static` in c is `cStorageClass`
+T 1709072985 18<19ring18>	there are so many syntaxes with their own unique highlight groups
+T 1709073006 18<22habamax18>	they in turn link them by default to :h group-names
+T 1709073030 18<22habamax18>	so public colorscheme has to work out whatever is in group-names
+T 1709073057 18<22habamax18>	and maybe tune specific highlights of specific syntax files
+T 1709073070 18<22habamax18>	that don't look good with default linking
+T 1709073126 18<19ring18>	correct, but that is certainly a limitation. if you have many disparate syntax components, you reach a point where links to the built-in groups become very saturated
+T 1709073190 18<19ring18>	suddenly, changing the color for Struct or Special affects a spattered bunch of things
+T 1709073311 18<22habamax18>	it is, that is why one changes cStruct or javascriptStruct
+T 1709073315 18<19ring18>	https://github.com/HerringtonDarkholme/yats.vim/blob/master/syntax/common.vim here, you can see the saturation of Keyword, Special, etc... redefining many of these would then only affect typescript and you have other languages to sift through
+T 1709073336 18<19ring18>	it's just a bit tedious
+T 1709073395 18<20j`ey18>	then leave them as is!
+T 1709073408 18<22habamax18>	fwiw, syntax file author are insane
+T 1709073418 18<22habamax18>	s/author/&s
+T 1709073474 18<19ring18>	precisely. more reason to reign in their chaos with an expanded (yet focused) set of highlight groups
+T 1709073486 18<22habamax18>	usually, colorscheme authours come up with colors that suits "most of the cases" aka files they are working with
+T 1709073537 18<19ring18>	I am working on a colorscheme now, so I suppose it would benefit me to behave like other 'colorscheme authors,' but this was definitely a demotivator for me
+T 1709073564 18<22habamax18>	after 50+ colorschemes I am ok :)
+T 1709073583 18<19ring18>	yes I saw your involvement in the colorschemes. I use ColorTemplate v3 
+T 1709073602 18<22habamax18>	I am yet to try it out
+T 1709073690 18<19ring18>	Colortemplate is clearly the best way to create colorschemes; it's relieving to use when you see some of what's out there... I suppose I'll just go through each language I care about and make tweaks where necessary, though
+T 1709073713 18<29nickspoon18>	What kind of tweaks are you making?
+T 1709073733 18<19ring18>	for my colorscheme; not for any syntax definitions
+T 1709073797 18<29nickspoon18>	I am just curious to know what these necessary tweaks are
+T 1709073820 18<22habamax18>	I would have changed javascript default links if I were using it
+T 1709073853 18<22habamax18>	elixir is also an abomination
+T 1709073893 18<22habamax18>	not the language, but the syntax hl
+T 1709073952 18<19ring18>	string interpolation needs highlighting, the error propagation operator '?' is paired with exports/imports, highlights inside lambdas need some surgery as well...
+T 1709073977 18<22habamax18>	am guessing you're about vim syntax?
+T 1709073978 18<19ring18>	generic type parameters too
+T 1709073981 18<22habamax18>	vimscript?
+T 1709073991 18<19ring18>	sorry, RUst
+T 1709074023 18<19ring18>	typescript needs some intervention as well; the colors don't map favorably in some cases
+T 1709074032 18<22habamax18>	oh, never opened rust file so idk :)
+T 1709074081 18<19ring18>	the sigil is also paired with Type or something like that
+T 1709074095 18<19ring18>	so if you want &mut to have a purple &, suddenly half your file is purple
+T 1709074102 18<29nickspoon18>	Rust needing string interpolation highlighting and lambda support etc. is a different issue, that's just something that the maintainer needs to add or merge if someone else does it. If it's missing completely and you know how to do it, submit a PR?
+T 1709074102 18<19ring18>	unless you use the rust-specific highlight groups
+T 1709074171 18<19ring18>	I haven't yet dug through https://github.com/rust-lang/rust.vim/blob/master/syntax/rust.vim but I think some of these (perhaps not string interpolation) are available for changing
+T 1709074176 18<19ring18>	e.g. rustSigil is in there
+T 1709074226 18<19m_ben18>	I agree, vim's default typescript syntax highlighting is awful
+T 1709074304 18<19ring18>	the syntax definitions (regex) are there, but it involves an awesome level of granularity mapped to a small set of built-in highlight groups which takes all the air out
+T 1709074448 18<19ring18>	some of the C highlight groups (PreProc, Include, Define) are adapted for use in other languages just to get a bit more variety
+T 1709075166 18<19ring18>	https://github.com/lifepillar/vim-gruvbox8/blob/master/templates/_filetypes this, for example, shows what may not be necessary, but is certainly important for a widely adopted colorscheme
+T 1709075297 18<19ring18>	javascript in particular is naked without those JS-specific definitions
+T 1709082580 19*	Now talking on 22#vim
+T 1709082580 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709082580 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709082656 18<24vimpostor18>	I even know people that prefer only greyscale syntax highlighting - but I always suspected it has to do with their terrible Thinkpad display color tones
+T 1709082677 18*	24vimpostor has upset half of the IRC room now
+T 1709082699 18*	26pr3d4t0r pets his MacBook Pro and beautiful displays.
+T 1709083632 18<22habamax18>	I will be using quiet once it is propagated to cloud vms :)
+T 1709164962 19*	Now talking on 22#vim
+T 1709164962 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709164962 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709165582 20*	Disconnected (20)
+T 1709165736 19*	Now talking on 22#vim
+T 1709165736 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709165736 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709212532 20*	Disconnected (20)
+T 1709212551 19*	Now talking on 22#vim
+T 1709212551 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709212551 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709213993 19*	Now talking on 22#vim
+T 1709213993 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709213993 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709215179 18<22FakuVe18>	Hi there
+T 1709215191 18<22FakuVe18>	I am having a hard time understanding the iskeword option
+T 1709215200 18<22FakuVe18>	iskeyword
+T 1709215211 18<22FakuVe18>	I see by default in my system is setted to
+T 1709215238 18<22FakuVe18>	@,48-57,_,192-255
+T 1709215270 18<22FakuVe18>	Which reads to all a-z A-Z , numbers, _ , extended ASCII chars
+T 1709215284 18<22FakuVe18>	But as I see in vimhelp files
+T 1709215313 18<22FakuVe18>	!-~,^*,^\|,^\",192-255
+T 1709215322 18<22FakuVe18>	Which I have a hard time to read
+T 1709215365 18<22FakuVe18>	I guess is saying , dont add * , nor | , nor "
+T 1709215399 18<22FakuVe18>	The first I dont understand what means !-~
+T 1709215442 18<22FakuVe18>	ah Ok from ! to tilde 
+T 1709216163 19*	Now talking on 22#vim
+T 1709216163 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709216163 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709229953 18<26hacknorris18>	someone knows why both vim and neovim want to have plugins as directories?
+T 1709230024 18<26hacknorris18>	like i'm getting "(/usr/share/vim/vim90/plugin/file.vim) , ... , = -1 ENOTDIR  (not a directory)"
+T 1709230100 18<26hacknorris18>	here full log (captured via strace): http://vpaste.net/L9Xxy
+T 1709230586 18<26hacknorris18>	so any ideas for plugins?
+T 1709231392 18<26hacknorris18>	nvm. found out that plugin itself wasn't liking me, not some configs xD
+T 1709254781 19*	Now talking on 22#vim
+T 1709254781 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709254781 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709270509 18<19eyeris18>	With this mapping, the <Tab> is expanding to ^I rather than expanding the %:h expression as it does interactively: 'nmap! <C-S-e> :e %:h<Tab>' -- why is that? Is there a way to get it to expand?
+T 1709271016 18<22habamax18>	one way to use :h 'wildcharm'
+T 1709271016 18<25digmbot18>	:help 'wildcharm' -> http://vimhelp.appspot.com/options.txt.html#%27wildcharm%27
+T 1709271076 18<22habamax18>	https://0x0.st/HRD2.txt
+T 1709271238 18<19eyeris18>	very cool!
+T 1709271241 18<19eyeris18>	that does indeed work
+T 1709271274 18<19eyeris18>	interestingly though it does not work with 'set wcm=<C-0>'
+T 1709271284 18<19eyeris18>	afterward 'echo &wcm' gives '0'
+T 1709271318 18<22habamax18>	<c-0> is not recognizable by terminal
+T 1709271440 18<19eyeris18>	is that just historical accident?
+T 1709271483 18<19eyeris18>	is there any potential gotchas with setting both wildchar and wildcharm to <Tab>?
+T 1709272140 18<22habamax18>	idk, to be frank
+T 1709298076 19*	Now talking on 22#vim
+T 1709298076 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709298076 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709305277 19*	Now talking on 22#vim
+T 1709305277 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709305277 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709312939 19*	Now talking on 22#vim
+T 1709312939 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709312939 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709316253 19*	Now talking on 22#vim
+T 1709316253 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709316253 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709345126 19*	Now talking on 22#vim
+T 1709345126 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709345126 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709356535 19*	Now talking on 22#vim
+T 1709356535 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709356535 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709356629 19*	Now talking on 22#vim
+T 1709356629 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709356629 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709371883 18<19sphertext18>	i yanked some multi-line text. and i have a table-like format in my file. how do i put the yanked text inside a column of the table, so that each line is inserted in one row of the table (without creating additional rows)?
+T 1709371969 18<19sphertext18>	even if i do visual-mode to select the starting position in that column for each row, put just creates new rows for each line
+T 1709372145 18<22habamax18>	did you try visual block?
+T 1709372160 18<19sphertext18>	yeah
+T 1709372173 18<19sphertext18>	it's kinda weird
+T 1709372176 18<19sphertext18>	i kinda solved it 
+T 1709372201 18<19sphertext18>	ok so
+T 1709372229 18<19sphertext18>	you have to yank in visual block, then just put normally in the first row 
+T 1709372239 18<22habamax18>	yes
+T 1709372315 18<19sphertext18>	ok but now i have a different problem. this vimcasts says that in visual block, $ should select to the end of all lines, even if they are diff length. for me this just selects to the length of the last line  http://vimcasts.org/episodes/selecting-columns-with-visual-block-mode/ at 2:32
+T 1709372386 18<22habamax18>	don't know about vimcasts, but yes in visual block $ select till the end of all lines
+T 1709372393 18<19sphertext18>	not for me?
+T 1709372401 18<22habamax18>	idk what setup you have
+T 1709372444 18<19sphertext18>	ok i have $ remapped to g$
+T 1709372471 18<19sphertext18>	to work as i expect it to when set wrap
+T 1709372480 18<19sphertext18>	i think that's the problem 
+T 1709372577 18<19sphertext18>	hmm but is only remapped for normal mode 
+T 1709372622 18<19sphertext18>	ok apparently visual-block is under normal mode? i guess
+T 1709372629 18<22habamax18>	try with vim -Nu NONE
+T 1709372683 18<19sphertext18>	it's ok i just did `noremap <silent> $ $` to map it back to default 
+T 1709372704 18<22habamax18>	https://asciinema.org/a/tsXX7oYTKO00xL2tzHSFRxmva
+T 1709372715 18<19sphertext18>	annoying I have to change it and change it back whenever I need it for visual block 
+T 1709372807 18<19sphertext18>	well yes what you did only works if $ is $
+T 1709372813 18<22habamax18>	noremap is not for normal mode
+T 1709372818 18<22habamax18>	jfyi
+T 1709372830 18<19sphertext18>	oh i thought no = normal
+T 1709372835 18<22habamax18>	nnoremap is
+T 1709372856 18<22habamax18>	noremap == map that doesn't use remapped keys
+T 1709372861 18<22habamax18>	`nore`
+T 1709372916 18<22habamax18>	and map (as well as noremap) target normal and visual
+T 1709372939 18<22habamax18>	:h map-table
+T 1709372939 18<25digmbot18>	:help map-table -> http://vimhelp.appspot.com/map.txt.html#map-table
+T 1709372964 18<19sphertext18>	yes i think i need g$ in both normal and visual, in order to have nice behaviour with wrapped text
+T 1709373016 18<22habamax18>	sure, but this was to clarify "ok apparently visual-block is under normal mode?"
+T 1709373037 18<19sphertext18>	true. that was wrong 
+T 1709373197 18<22habamax18>	you can go furhter then, remap $ to check if vim is in visual block mode...
+T 1709373325 18<19sphertext18>	so.. mode() would return C?
+T 1709373333 18<19sphertext18>	in visual block
+T 1709373349 18<22habamax18>	something like: noremap <expr> $ mode() == "\<C-v>" ? "$" : "g$"
+T 1709373674 18<19sphertext18>	oh..
+T 1709373684 18<19sphertext18>	is that a control character?
+T 1709373715 18<22habamax18>	C-v?
+T 1709373719 18<19sphertext18>	"mode([expr]) [...] only the first letter is returned."
+T 1709373720 18<19sphertext18>	yeah
+T 1709373726 18<19sphertext18>	i expected it to return "C"
+T 1709373741 18<22habamax18>	it is CTRL-V in vim's term
+T 1709373757 18<19sphertext18>	that is considered 1 character?
+T 1709373810 18<22habamax18>	yep, this is 
+T 1709373828 18<22habamax18>	it is somewhere in the help, I don't remember
+T 1709373835 18<19sphertext18>	so.. kinda like a control character 
+T 1709373850 18<19sphertext18>	new mapping works nice, thanks
+T 1709373936 18<22habamax18>	it is the last paragrpah of :h key-notation
+T 1709373936 18<25digmbot18>	:help key-notation -> http://vimhelp.appspot.com/intro.txt.html#key-notation
+T 1709373974 18<22habamax18>	"The notation can be used in a double quoted strings, using "\<" at the start"...
+T 1709402548 19*	Now talking on 22#vim
+T 1709402548 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709402548 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709451377 19*	Now talking on 22#vim
+T 1709451377 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709451377 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709468460 18<27obiwahn18>	i am using coc-complete with vim
+T 1709468502 18<27obiwahn18>	And whenever I try a rename. the popup windows opens, but it opens at the top of the buffer.
+T 1709468544 18<27obiwahn18>	now i wonder if one of you uses the tool as well and has the same problem or maybe you can give me a hint what to look for
+T 1709468773 18<27obiwahn18>	https://github.com/neoclide/coc.nvim/blob/master/autoload/coc/ui.vim#L30
+T 1709468962 18<27obiwahn18>	What could be the reason that the opening the menu scrolls to the top of the buffer?
+T 1709469066 18<27obiwahn18>	https://github.com/vim/vim/issues/4876 - it is like this
+T 1709469119 18<27obiwahn18>	https://0x0.st/H7Z6.txt
+T 1709469129 18<27obiwahn18>	^-- my vim version
+T 1709469821 18<19m_ben18>	obiwahn: I opened that issue :D
+T 1709469854 18<19m_ben18>	can't help you because I don't use coc
+T 1709469875 18<27obiwahn18>	well now i doubt that it is the correct window type, it is more a small floating popup or something at the top.
+T 1709469883 18<27obiwahn18>	but is is vim not neovim
+T 1709470137 18<19m_ben18>	which window scrolls, the popup window or the current window?
+T 1709470225 18<27obiwahn18>	The current window i guess, I am with my cursor on a word. And as soon as I start the rename the lillte new window opens up and I am in the fist line
+T 1709470658 18<19m_ben18>	obiwahn: do you use the fastfold plugin?
+T 1709470668 18<19m_ben18>	I remember having similar issues
+T 1709470715 18<27obiwahn18>	I use something for folding, so i can open folds with space. let me check.
+T 1709470750 18<19m_ben18>	I mean this one here: https://github.com/Konfekt/FastFold
+T 1709470757 18<27obiwahn18>	no
+T 1709470804 18<27obiwahn18>	https://0x0.st/H7ZD.txt
+T 1709475372 18<27obiwahn18>	it is caused by editorconfig
+T 1709475375 18<27obiwahn18>	WTF
+T 1709475431 18<19m_ben18>	obiwahn: the new builtin plugin or some 3rd party editorconfig?
+T 1709475459 18<27obiwahn18>	oh i have a 3rd party plugin is there editorconfig support out of the box now?
+T 1709475495 18<27obiwahn18>	origingit@github.com:/editorconfig/editorconfig-vim (fetch)
+T 1709475653 18<19m_ben18>	obiwahn: :h editorconfig-install
+T 1709475653 18<25digmbot18>	:help editorconfig-install -> http://vimhelp.appspot.com/usr_05.txt.html#editorconfig-install
+T 1709475678 18<19m_ben18>	I haven't used it myself yet so can't say anything about it
+T 1709475735 18<27obiwahn18>	digmbot: is that the same plugin?
+T 1709475735 18<25digmbot18>	obiwahn: beep boop boop...
+T 1709475841 18<27obiwahn18>	m_ben: do you know the source of the builtin plugin?
+T 1709475950 18<19m_ben18>	run :packadd editorconfig, after that you can check it out with :h editorconfig.txt
+T 1709476031 18<19m_ben18>	or take a look at the script files in $VIMRUNTIME/pack/dist/opt/editorconfig/
+T 1709476045 18<27obiwahn18>	will it breaks coc in the same way
+T 1709476107 18<19m_ben18>	idk, I don't use either plugin :)
+T 1709476158 18<19m_ben18>	and I would open an issue on coc-complete's github page about your bug
+T 1709476599 18<27obiwahn18>	m_ben: if you are not working totally alone then consider looking at editorconfig :)
+T 1709476620 18<27obiwahn18>	I think it is really great :)
+T 1709476836 18<27obiwahn18>	https://github.com/editorconfig/editorconfig-vim/commit/7eec46701ec7a954a6cb0b0e348ad7c13a893425
+T 1709476849 18<27obiwahn18>	maybe it is related to this commit
+T 1709523463 19*	Now talking on 22#vim
+T 1709523463 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709523463 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709523580 19*	Now talking on 22#vim
+T 1709523580 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709523580 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709538724 18<20osse18>	birkoff: approx 4 years
+T 1709538753 18<20birkoff18>	i mean from which version can it used ?
+T 1709538796 18<20osse18>	8.2.1978
+T 1709539280 18<20birkoff18>	thanks
+T 1709539557 18<20birkoff18>	can I somehow use more than 1 returned value of a function in an expression in different args of another ? 
+T 1709539576 18<20birkoff18>	i.e. something like  somefunc()->otherfunc(somefunc_ret1, somefunc_ret2) ? 
+T 1709539985 18<20birkoff18>	never mind
+T 1709540053 18<20birkoff18>	is it possible to start visual mode via a function call with a specific column range perhaps ?
+T 1709547218 18<22strk18>	why is ">" not using tabs when <TAB> is using them ?
+T 1709547793 18<22habamax18>	> uses shiftwidth
+T 1709547866 18<22habamax18>	and if you have set noexpandtab and shiftwidth == tabstop then it will insert actual tab
+T 1709547915 18<22habamax18>	if you have tabstop ==8 and shiftwidth ==4 then first > will insert 4 spaces and second -- tab
+T 1709548615 18<22strk18>	???
+T 1709548627 18<22strk18>	I need to take a master to understand this
+T 1709548655 18<22strk18>	I have tabstop=2
+T 1709548677 18<22strk18>	but I'm using tabstop to check with my eyes whether what I'm seeing are tabs or spaces
+T 1709548686 18<22strk18>	so I go set tabstop=10 and see what moves
+T 1709548714 18<22strk18>	> being affected by tabstop sounds crazy, is there any way to _force_ > to use tabs ?
+T 1709548776 18<22habamax18>	https://asciinema.org/a/Z5le7qmsod8awlUgEidWKR4RA
+T 1709548829 18<22habamax18>	tabstop should be equal shiftwidth, then > will use tabs (if set noexpandtab)
+T 1709548885 18<22habamax18>	or set shiftwidth=0
+T 1709549101 18<22habamax18>	make your tabs visible with `set list listchars=tab:›\ ,nbsp:․,trail:·,extends:…,precedes:…`
+T 1709549122 18<22habamax18>	well, not only tabs but you should get the idea
+T 1709549560 18<22habamax18>	:set shiftwidth=0 will make it use tabs
+T 1709560362 18<22strk18>	thanks!
+T 1709620790 19*	Now talking on 22#vim
+T 1709620790 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709620790 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709629640 18<22nerozero18>	hi there, can I do a vsplit and open there already opened file from buffer by name?
+T 1709629689 18<27igemnace18>	:vsp <name>
+T 1709629699 18<22nerozero18>	simpla as that .. woo 
+T 1709629713 18<22nerozero18>	s/simpla/simple/
+T 1709629716 18<22nerozero18>	thanks 
+T 1709629772 18<22nerozero18>	then one more thing, can I make split new window to the right ? 
+T 1709629926 18<29ttkap18>	set splitright
+T 1709629953 18<22nerozero18>	thank you so much !!!!
+T 1709634996 18*	22nerozero blesses everyone who made vim possible and reads and responds to this channel
+T 1709636957 18<25OMGOMG18>	what's the state of the art way to search for foo, keep the highlight on foo, and search for bar?
+T 1709637020 18<26lopid18>	use some plugin (or just match yourself) to highlight foo separately
+T 1709637085 18<25OMGOMG18>	thanks
+T 1709637174 18<26lopid18>	you could also probably tenuously use some form of non-matching lookaround to get both with the same pattern, with questionable results
+T 1709637294 18<25OMGOMG18>	ideally the foo and bar would be highlit in different colours
+T 1709637408 18<26lopid18>	then the former
+T 1709637438 18<26lopid18>	highlight foo ctermbg=blue      match foo /foo/
+T 1709637532 18<25OMGOMG18>	cool
+T 1709637546 18<25OMGOMG18>	i was mostly asking to know which plugins people used. there exist a bunch
+T 1709637603 18<26lopid18>	it was simple enough that i used it as an example when learning writing plugins, so i use my own
+T 1709637668 18<25OMGOMG18>	judging by the change logs of the plugins that exist it's not necessarily simple
+T 1709637681 18<26lopid18>	feature creep probably
+T 1709638514 18<22nerozero18>	lopid is there anything vim can`t do ? :D just kidding :D there is no such a thing, i know :)
+T 1709640697 18<26lopid18>	:! can do most things ;
+T 1709640699 18<26lopid18>	0
+T 1709640701 18<26lopid18>	)
+T 1709649398 18<24tully18>	Omfg how do you all use vim in an environment where CAPS can’t be set as escape?
+T 1709649411 18<24tully18>	I can’t reach all the way to the esc key!!
+T 1709649500 18<27igemnace18>	tully: you can also use <C-[>
+T 1709649541 18<24tully18>	Awesome
+T 1709649551 18<24tully18>	kind of awkward but it will work 
+T 1709651139 18<26japh18>	tully, you solve that in the keyboard firmware so that it stays that way no matter what system you're on.
+T 1709651433 18<26lopid18>	ctrl-c if you don't like that
+T 1709652899 18<29mjanssen18>	ctrl-[ and ctrl-c are not the same
+T 1709653957 18<24tully18>	I just remembered I used to inoremap CR Esc
+T 1709654219 18<26lopid18>	surely it's harder to type CR that press escape. where is your escape key? cambodia?
+T 1709654229 18<26lopid18>	than
+T 1709655536 18<26japh18>	... that's weird
+T 1709657006 18<24tully18>	I mean carriage return
+T 1709657246 18<27mingdao18>	↵ 
+T 1709658822 19*	Now talking on 22#vim
+T 1709658822 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709658822 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709661515 18<26lopid18>	so you can't manually enter a newline in insert mode?
+T 1709661930 19*	Now talking on 22#vim
+T 1709661930 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709661930 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709665358 18<26japh18>	lopid, I guess :set tw& ?
+T 1709665390 18<26lopid18>	heh
+T 1709667679 19*	Now talking on 22#vim
+T 1709667679 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709667679 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709674383 19*	Now talking on 22#vim
+T 1709674383 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709674383 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709686297 19*	Now talking on 22#vim
+T 1709686297 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709686297 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709687130 18<26absinthium18>	I'm trying to setup SLIMV and it says to copy the files to my "vimfiles" folder. Does this have to be the /usr/share/vim/vimfiles directory, or can I refer to it from ~/.vim or, perhaps, ~/vimfiles?
+T 1709687467 18<22habamax18>	linux/osx ~/.vim/
+T 1709687476 18<22habamax18>	windows ~/vimfiles/
+T 1709688269 18<26absinthium18>	Also, does anyone have a Lisp IDE setup in Vim? If so, which one?
+T 1709688586 18<22habamax18>	for lisp stuff I would go for emacs tbf
+T 1709688604 18<29nickspoon18>	why?
+T 1709688605 18<22habamax18>	it has established infrastructure and plugins for that
+T 1709688621 18<22habamax18>	sly/slime + swank
+T 1709688652 18<22habamax18>	okay, for commonlisp, clojure and racket/scheme
+T 1709688675 18<29nickspoon18>	they're basically just repls though right? surely getting a good lisp environment running in vim must be a solved problem?
+T 1709688681 18<22habamax18>	for newLisp and some others it might be not that compelling
+T 1709688705 18<22habamax18>	well, I wouldn't call it just repl
+T 1709688724 18<22habamax18>	it is kind of a proper repl, very well integrated
+T 1709688765 18<22habamax18>	slimv tries to replicate it, but I never tried it
+T 1709688923 18<26absinthium18>	Yes, I meant Common Lisp. I truly, truly don't like Emacs though. I tried it before Vim and I thought it was horrendous.
+T 1709688935 18<26absinthium18>	I'm trying to get slimv setup now, but it's not running. :\
+T 1709688944 18<26absinthium18>	Also, `vim-slime`.
+T 1709688946 18<22habamax18>	emacs is... different
+T 1709688957 18<22habamax18>	even with evil
+T 1709688985 18*	22habamax can do emacs in emacs way, but prefers vim
+T 1709689038 18<22habamax18>	I was thinking to write an integration with swank to have simplified slime/sly in vim but it never happened
+T 1709689046 18<22habamax18>	:)
+T 1709689177 18<22habamax18>	vim has jobs and channels, so it looks feasible but it probably will take quite an effort anyway
+T 1709689296 18<22habamax18>	you can go "easy" with a :terminal and mappings to send selection to it (assuming cl repl is in terminal
+T 1709689297 18<22habamax18>	)
+T 1709689565 18<22habamax18>	https://asciinema.org/a/uPEiCcecbixb9qg7ThyZQS8AO
+T 1709689779 18<22des_h18>	does anyone know a vim plugin which can generate this kind of table formatting with multi-line rows? https://catonmat.net/ftp/awk.cheat.sheet.txt
+T 1709690121 18<26absinthium18>	habamax: How did you change the terminal to vertical split?
+T 1709690147 18<29phant18>	ctrl-w + v
+T 1709690198 18<26absinthium18>	Oh, that opened another terminal next to the one that was already opened.
+T 1709690219 18<22habamax18>	C-w H (or J or K or L)
+T 1709690257 18<29phant18>	Oh change to it not open it
+T 1709690332 18<22des_h18>	also C-w C-w will jump back and forth between the two most recent 
+T 1709690365 18<29phant18>	Also, while we're on the topic, anyone know how I can prevent windows from resizing when I enter and exit fullscreen? 
+T 1709690386 18<29phant18>	I'm on i3wm and it's a pain to have to hit ctrl-w = every time I fullscreen in and out 
+T 1709690470 18<22des_h18>	not possible. bcus the implementation for window resizing does not implement proportionality (i assume you'd want to maintain relative proportions when changing the dimensions of your terminal) 
+T 1709690480 18<29phant18>	:\
+T 1709690482 18<26absinthium18>	Thanks! I think sbcl running in a terminal is all I need. :)
+T 1709690492 18<26absinthium18>	Do these shortcuts have commands as well?
+T 1709690506 18<22habamax18>	absinthium, have fun
+T 1709690515 18<22des_h18>	phant: `:help todo` and search for `resized proportionally`
+T 1709690525 18<22des_h18>	(it's on their todo list)
+T 1709690550 18<22habamax18>	absinthium, you might check https://github.com/habamax/.vim/blob/master/autoload/term.vim#L2-L5
+T 1709690577 18<22habamax18>	an example on how to have a mapping to send visual text to a terminal
+T 1709690634 18<22des_h18>	absinthium: they don't. when you want to issue them programmatically from a script you use the instruction `wincmd [whatever you press after C-w]`. so for example `wincmd j` is equivalent to pressing `C-w j`
+T 1709690706 18<26absinthium18>	des_h: Ah, thank you.
+T 1709690734 18<26absinthium18>	habamax: So, by default, Vim doesn't send the information to the terminal running `sbcl`?
+T 1709690748 18<22habamax18>	it is not
+T 1709690806 18<22des_h18>	the plugin vimREPL provides commands for sending lines/visual selections into an interpreter running in another split. very handy for debugging python/bash scripts. 
+T 1709691972 18<26absinthium18>	So, I'm trying to install `slimv` and it says to run: `let g:slimv_swank_cmd = '! xterm -e sbcl --load /usr/share/common-lisp/source/slime/start-swank.lisp &'`
+T 1709692002 18<26absinthium18>	However, I don't have "slime" in my /usr/share/common-lisp directory. Only "gpg-error" and "gpgme".
+T 1709692192 18<26absinthium18>	The tutorial told me to unzip in vimfiles, but habamax said ~/.vim would work. I've tried changing the directory in the command to "~/.vim/slime" but that doesn't work.
+T 1709692275 18<26absinthium18>	Here's the full command I'm trying: `:let g:slimv_swank_cmd = '! alacritty -e sbcl --load ~/.vim/slime/start-swank.lisp &'`
+T 1709692303 18<26absinthium18>	Note: the command `alacritty -e sbcl --load ~/.vim/slime/start-swank.lisp` works fine in Alacritty.
+T 1709692493 18<22habamax18>	absinthium, ~/.vim/ is the directory on runtimepath,
+T 1709692527 18<22habamax18>	in vim if you are to install plugins modern way, you have to put a plugin into ~/.vim/pack/WHATEVER/start/nameofplugin/
+T 1709692739 18<22habamax18>	or use vim-plug
+T 1709692744 18<22habamax18>	or minpac
+T 1709692749 18<22habamax18>	or any other plugin manager
+T 1709693849 18<26absinthium18>	Okay, I installed `vim-plug` via AUR, and I've added the following lines to my ~/.vimrc:
+T 1709693857 18<26absinthium18>	" Plugins
+T 1709693859 18<26absinthium18>	call plug#begin()
+T 1709693861 18<26absinthium18>	Plug 'https://github.com/kovisoft/slimv.git'
+T 1709693863 18<26absinthium18>	call plug#end()
+T 1709693893 18<26absinthium18>	I've reloaded ~/.vimrc with `:source` and then tried `:PlugInstall`. However, I get an error about the cwd.
+T 1709693922 18<26absinthium18>	"Error detected while processing function <SNR>16_install[1]..<SNR>16_update_impl[53]..<SNR
+T 1709693924 18<26absinthium18>	>16_prepare[2]..function <SNR>16_install[1]..<SNR>16_update_impl[53]..<SNR>16_prepare:"
+T 1709693933 18<26absinthium18>	"line    2:
+T 1709693935 18<26absinthium18>	E605: Exception not caught: Invalid current working directory. Cannot proceed."
+T 1709696558 18<26absinthium18>	Oh, I was able to get it with `:cd ~/.vim`. Sorry, this is my first time installing a plugin.
+T 1709705791 19*	Now talking on 22#vim
+T 1709705791 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709705791 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)

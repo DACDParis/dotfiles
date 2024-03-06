@@ -1,0 +1,1073 @@
+**** BEGIN LOGGING AT Sun Dec 10 08:26:20 2023
+
+Dec 10 08:26:19 *	Now talking on #ansible
+Dec 10 08:26:19 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.1, 2.15.7, 2.14.12; ansible 9.1.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Dec 10 08:26:19 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Dec  5 20:45:00 2023)
+Dec 10 08:26:20 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** ENDING LOGGING AT Sun Dec 10 08:40:12 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 08:40:12 2023
+
+Dec 10 08:40:34 *	Disconnected ()
+**** ENDING LOGGING AT Sun Dec 10 08:40:34 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 08:41:01 2023
+
+Dec 10 08:41:01 *	Now talking on #ansible
+Dec 10 08:41:01 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.1, 2.15.7, 2.14.12; ansible 9.1.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Dec 10 08:41:01 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Dec  5 20:45:00 2023)
+Dec 10 08:41:01 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** ENDING LOGGING AT Sun Dec 10 08:42:24 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 08:42:24 2023
+
+Dec 10 08:43:16 *	dacd has quit (Ping timeout: 245 seconds)
+Dec 10 08:59:05 *	f4stpath has quit (Remote host closed the connection)
+**** ENDING LOGGING AT Sun Dec 10 09:00:31 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 09:00:31 2023
+
+**** ENDING LOGGING AT Sun Dec 10 09:00:42 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 09:01:29 2023
+
+Dec 10 09:01:29 *	Now talking on #ansible
+Dec 10 09:01:29 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.1, 2.15.7, 2.14.12; ansible 9.1.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Dec 10 09:01:29 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Dec  5 20:45:00 2023)
+Dec 10 09:01:29 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Dec 10 09:02:27 *	sandb0y (~pirate@user/sandb0y) has joined
+**** ENDING LOGGING AT Sun Dec 10 09:03:11 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 09:03:11 2023
+
+**** ENDING LOGGING AT Sun Dec 10 09:03:53 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 09:03:53 2023
+
+**** ENDING LOGGING AT Sun Dec 10 09:06:12 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 09:06:12 2023
+
+**** ENDING LOGGING AT Sun Dec 10 09:11:35 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 09:11:35 2023
+
+Dec 10 10:03:13 *	Disconnected ()
+**** ENDING LOGGING AT Sun Dec 10 10:03:13 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 10:42:46 2023
+
+Dec 10 10:42:46 *	Now talking on #ansible
+Dec 10 10:42:46 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.1, 2.15.7, 2.14.12; ansible 9.1.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Dec 10 10:42:46 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Dec  5 20:45:00 2023)
+Dec 10 10:42:46 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Dec 10 10:43:14 <madkiss>	hi folks. What is the easiest way to ensure that runner containers in AWX are not terminated after a task in them has failed? I need to debug something.
+Dec 10 10:55:02 <madkiss>	or can somebody recommend another strategy to debug a failing task inside of a job that is run within an execution environment?
+Dec 10 10:59:15 <oblikoamorale>	ask in #ansible-awx , here we mostly care about cli ansible
+Dec 10 10:59:21 <madkiss>	thanks
+**** ENDING LOGGING AT Sun Dec 10 12:03:10 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 12:42:21 2023
+
+Dec 10 12:42:20 *	Now talking on #ansible
+Dec 10 12:42:20 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.1, 2.15.7, 2.14.12; ansible 9.1.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Dec 10 12:42:20 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Dec  5 20:45:00 2023)
+Dec 10 12:42:20 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Dec 10 14:20:34 *	Disconnected ()
+**** ENDING LOGGING AT Sun Dec 10 14:20:34 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 14:23:34 2023
+
+Dec 10 14:23:34 *	Now talking on #ansible
+Dec 10 14:23:34 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.1, 2.15.7, 2.14.12; ansible 9.1.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Dec 10 14:23:34 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Dec  5 20:45:00 2023)
+Dec 10 14:23:34 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Dec 10 15:50:34 *	Disconnected ()
+**** ENDING LOGGING AT Sun Dec 10 15:50:34 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 15:51:30 2023
+
+Dec 10 15:51:29 *	Now talking on #ansible
+Dec 10 15:51:29 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.1, 2.15.7, 2.14.12; ansible 9.1.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Dec 10 15:51:29 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Dec  5 20:45:00 2023)
+Dec 10 15:51:29 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Dec 10 16:02:04 *	Disconnected ()
+**** ENDING LOGGING AT Sun Dec 10 16:02:04 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 16:02:52 2023
+
+Dec 10 16:02:51 *	Now talking on #ansible
+Dec 10 16:02:51 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.1, 2.15.7, 2.14.12; ansible 9.1.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Dec 10 16:02:51 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Dec  5 20:45:00 2023)
+Dec 10 16:02:51 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** ENDING LOGGING AT Sun Dec 10 16:03:39 2023
+
+**** BEGIN LOGGING AT Mon Dec 11 09:04:48 2023
+
+Dec 11 09:04:47 *	Now talking on #ansible
+Dec 11 09:04:47 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.1, 2.15.7, 2.14.12; ansible 9.1.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Dec 11 09:04:47 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Dec  5 20:45:00 2023)
+Dec 11 09:04:47 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Dec 11 09:10:36 *	Disconnected ()
+**** ENDING LOGGING AT Mon Dec 11 09:10:36 2023
+
+**** BEGIN LOGGING AT Mon Dec 11 09:10:52 2023
+
+Dec 11 09:10:51 *	Now talking on #ansible
+Dec 11 09:10:51 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.1, 2.15.7, 2.14.12; ansible 9.1.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Dec 11 09:10:51 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Dec  5 20:45:00 2023)
+Dec 11 09:10:51 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Dec 11 09:11:02 *	Disconnected ()
+**** ENDING LOGGING AT Mon Dec 11 09:11:02 2023
+
+**** BEGIN LOGGING AT Mon Dec 11 09:11:23 2023
+
+Dec 11 09:11:22 *	Now talking on #ansible
+Dec 11 09:11:22 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.1, 2.15.7, 2.14.12; ansible 9.1.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Dec 11 09:11:22 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Dec  5 20:45:00 2023)
+Dec 11 09:11:22 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Dec 11 09:35:22 <tkonto>	hi everyone.
+Dec 11 09:35:32 <tkonto>	I have the following problem with a list:
+Dec 11 09:36:42 <tkonto>	https://dpaste.org/1kx00
+Dec 11 09:36:56 <tkonto>	What I try to do is add the "unit_id" in each dict in the list
+Dec 11 09:36:58 <tkonto>	My code:
+Dec 11 09:37:33 <tkonto>	https://dpaste.org/s3RYV
+Dec 11 09:37:50 <tkonto>	Any idea?
+Dec 11 09:37:57 <tkonto>	To explain it:
+Dec 11 09:38:52 <tkonto>	This will add the unit_id for a SCSI paravirtualized HD. But id 7 is excluded (the ID of the controller itself). Looping the range with exclusion, resulted in skipping whatever item would be allocated unit_id 7
+Dec 11 09:39:12 <tkonto>	so I created the range outside the loop, and then I try to iterate the object and the range, withing a loop
+Dec 11 09:39:57 <tkonto>	but instead of getting: key:***, value:***, unit_id:*** I get what you read in https://dpaste.org/1kx00
+Dec 11 09:40:34 <tkonto>	only the last dict in the list returns combined
+Dec 11 10:06:01 *	Disconnected ()
+**** ENDING LOGGING AT Mon Dec 11 10:06:01 2023
+
+**** BEGIN LOGGING AT Mon Dec 11 18:09:40 2023
+
+Dec 11 18:09:37 *	Now talking on #ansible
+Dec 11 18:09:37 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.1, 2.15.7, 2.14.12; ansible 9.1.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Dec 11 18:09:37 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Dec  5 20:45:00 2023)
+Dec 11 18:09:37 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Dec 11 18:10:05 <akrumov>	Has anyone else encountered the following issue? I've built Ansible from the devel branch, and when I try to execute a playbook, I receive the following error: ansible_ansible.builtin.file_payload.zip/ansible/module_utils/basic.py, line 5, SyntaxError: future feature annotations is not defined. From what I've seen, there is a pull request (https://github.com/ansible/ansible/pull/81902) that make changes to this. I'm using Python version 3.11.4 with Ansible
+Dec 11 18:10:05 <akrumov>	[core 2.17.0.dev0] (devel a9919dd7f6).
+**** ENDING LOGGING AT Mon Dec 11 18:14:11 2023
+
+**** BEGIN LOGGING AT Mon Dec 11 18:14:11 2023
+
+Dec 11 18:18:40 <jms1>	question: is there a way to have a message printed (like `ansible.builtin.debug`) at the very end of a playbook run? we're going to have playbooks which invoke several dozen different roles, which will potentially generate a couple thousand screenfuls of output, and i need a "you need to reboot the machine" message to print at the very end of the output so the user doesn't miss it
+Dec 11 18:20:11 <akrumov>	Did you try to use post_tasks ?
+Dec 11 18:24:20 <oblikoamorale>	akrumov: works for me. doublecheck your python version (anything 3.7+ should work) https://dpaste.org/yv3u9
+Dec 11 18:28:57 <jms1>	i didn't try, because i didn't know such a thing existed. reading about it now.
+Dec 11 18:32:04 <jms1>	okay, so pre_tasks and post_tasks can be declared in a playbook. is there a way for a ROLE to declare tasks that need to be done at the end of the playbook which called it?
+Dec 11 18:32:26 <akrumov>	oblikoamorale I just tested it on 2 different machines with this python version with same results. Did you run only this command or build the ansible and run playbook or task ?
+Dec 11 18:33:16 <oblikoamorale>	what is your python version on target host?
+Dec 11 18:34:25 <oblikoamorale>	apparently 2.17 will require at least python 3.7
+Dec 11 18:35:08 <akrumov>	python3.10
+Dec 11 18:36:46 <oblikoamorale>	and if you try to make that import on py3.10 as I showed, will it fail?
+Dec 11 18:37:46 <akrumov>	no it´s working
+Dec 11 18:37:56 <oblikoamorale>	huh. works for me on py 3.10.12.  and no, I didn't build ansible. just testing the error you have indicated
+Dec 11 18:38:54 <oblikoamorale>	is it possible you have more than one py3 version on target host and interpreter discovery somehow chooses wrong one?
+Dec 11 18:40:05 <akrumov>	I was thinking the same so I set the interpretter in the inventory:
+Dec 11 18:42:01 <akrumov>	jms1 I don think this is possible. I just don get it why post_tasks doesn't´t work for you ?
+Dec 11 18:44:22 <oblikoamorale>	does it fail if you run 'ansible -m file -a "path=/tmp/test state=touch" localhost' ? on the host with py 3.11
+Dec 11 18:45:04 <akrumov>	This is working
+Dec 11 18:46:34 <oblikoamorale>	then doublecheck your python interpreter assumptions.   ansible -m setup -a "filter=ansible_python" target_host
+Dec 11 18:49:18 <jms1>	akrumov: i don't know either. again, i didn't know "post_tasks" existed until ten minutes ago. i haven't had time to try it. is there a way for code within the roles to dynamically add messages to an array, and then a "post_tasks" item could just print the array?
+Dec 11 18:52:27 <akrumov>	Yes, you need to use set_fact. set_fact:
+Dec 11 18:52:27 <akrumov>	 messages: "{{ messages + ['Your message here'] }}"
+Dec 11 18:54:13 <jms1>	so `messages` is like a "global variable" ... over time would that build `['a','b','c']` or `['a',['b',['c']]]` ?
+Dec 11 18:55:04 <akrumov>	jms1 ['a','b','c']
+Dec 11 18:55:19 <akrumov>	How can I mention user ?
+Dec 11 18:55:38 <jms1>	"mention user"?
+Dec 11 18:56:18 <akrumov>	<oblikoamoral> It doesn't fail
+Dec 11 18:57:53 <oblikoamorale>	what doesn't fail? what does setup module report as your python interpreter on target host in question?
+Dec 11 18:59:06 <sahil_>	Hi. I was learning ansible, and was tinkering with it. 3 arch VMs and 1 debian VM. This is the playbook https://termbin.com/d7j7 .  And I got this https://termbin.com/nm9r . It says ok=8 for debian one 192.168.122.19, rest it says 1 ok. is that 8 because of 2 gather facts and 6 plays, or what. And what's that ok=1 for the other 3 VMs
+Dec 11 18:59:16 <akrumov>	Here is the output: https://dpaste.org/jVMKv
+Dec 11 18:59:39 <oblikoamorale>	jms1: I've been there. and honestly the idea for human to track playbook execution results is rather silly. if you still think you have to do this, look at handlers. they are run on play end
+Dec 11 19:00:14 <oblikoamorale>	akrumov: I'm out of ideas
+Dec 11 19:00:15 <sahil_>	And why didn't it try to run on the arch VMs again. After the first package install failure, it didn't even try.
+Dec 11 19:02:08 <jms1>	oblikomorale: is there an alternative, i.e. some way for a human to *reliably* be told that a change that ansible made, requires that they take a specific action? i.e. reboot to enable/disable selinux, restart a service that *cannot* be restarted outside of a maintenance window, that kinda thing
+Dec 11 19:07:53 <oblikoamorale>	handlers. make handlers to do a debug: msg: whatever message you need.  notify handler on needed task(s).  as a free bonus messages will be host specific without the need of additional processing that set_fact method will require
+Dec 11 19:11:46 <akrumov>	oblikoamorale ty for the help mate :)
+Dec 11 19:53:52 <mackerman>	jms1: Or, schedule the thing to happen in the future,  in cron or whatever.
+Dec 11 19:54:16 <mackerman>	I'm suspicious of disable selinux in particular, that's not a thing I would ever to on Red Hat boxes.
+Dec 11 19:54:24 <mackerman>	* do to Red Hat boxes
+Dec 11 19:56:44 <jms1>	the current puppet code base is handling everything from centos 5 forward ... ansible is going to be RHEL 9 and later, so i'm pushing to make selinux non-configurable, or at least only enforcing/permissive but never disabled ... until that happens i still have to be able to handle going to/from disabled (and after that i'll still need to handle "from" disabled, in which case a reboot is still needed)
+Dec 11 19:58:05 <jms1>	plus there are some other changes that normally require service restarts, but we're not allowed to restart certain services outside of a maintenance window, so instead we just print a message saying "service xyz needs to be restarted" so the production guys are at least *aware* of it
+Dec 11 19:59:17 <mackerman>	sahil_: Default behavior is for failed tasks to stop that host from executing any further tasks.
+Dec 11 20:00:15 <mackerman>	sahil_: If there are host specific differences, say different distro's package manager, you need some way for hosts to know which one to run
+Dec 11 20:01:56 <mackerman>	ansible-doc package #  for package manager specifically, there is a module which tries to be smart and run the pacakage manager detected on the host
+Dec 11 20:02:28 <mackerman>	Although that won't translate  package names and other differences
+Dec 11 20:03:05 <mackerman>	You also can make more targeted groups than  "all",   if your inventory has distro specific groups for example.
+Dec 11 20:03:22 <sahil_>	mackerman: Yes groups in the inventory file.
+Dec 11 20:04:23 <mackerman>	ansible-doc -t inventory constructed  # also possible to dynamically add groups, like from facts.  There's a keyed_groups example  in this constructed inventory  type that makes use of  ansible_facts.distribution  detected values
+Dec 11 20:06:16 <sahil_>	mackerman: Thanks for confirming. I plan to finish the learnlinuxtv playlist first, then will give sometime maybe 4-5 days for documentation to fully seepin. :) It's cool though. Plan to port my dotfiles script from bash to ansible.
+Dec 11 20:07:01 <mackerman>	Or run the script as is, with generic  script Ansible module
+Dec 11 20:09:33 <sahil_>	mackerman: Or Make it such that Irrespective of distro, I can use them. Ansible-vault for ssh keys.Currently the script is pretty lame (logic wize) https://github.com/mesahilgautam/dotfiles/blob/main/config.sh
+Dec 11 20:09:48 <sahil_>	And it's limited to arch only
+Dec 11 20:22:52 *	Disconnected ()
+**** ENDING LOGGING AT Mon Dec 11 20:22:52 2023
+
+**** BEGIN LOGGING AT Mon Dec 11 20:27:35 2023
+
+Dec 11 20:27:32 *	Now talking on #ansible
+Dec 11 20:27:32 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.1, 2.15.7, 2.14.12; ansible 9.1.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Dec 11 20:27:32 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Dec  5 20:45:00 2023)
+Dec 11 20:27:32 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** ENDING LOGGING AT Mon Dec 11 21:00:19 2023
+
+**** BEGIN LOGGING AT Sun Dec 17 12:33:17 2023
+
+Dec 17 12:33:17 *	Now talking on #ansible
+Dec 17 12:33:17 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.2, 2.15.8, 2.14.13; ansible 9.1.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Dec 17 12:33:17 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Mon Dec 11 22:00:00 2023)
+Dec 17 12:33:17 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Dec 17 12:33:48 <oblikoamorale>	"| rejectattr('attribute', 'defined') "    # resulting list can be used as if not defined attribute defaultes to true
+Dec 17 12:48:50 <oblikoamorale>	so, combined result of your requirements will be something like:  "{{ list_of_dicts | selectattr('attribute', 'defined') | selectattr('attribute') + list_of_dicts | rejectattr('attribute', 'defined') }}"   . but it's infinitely better to be explicit with definitions than jump through those hoops
+Dec 17 12:54:16 <oblikoamorale>	alternatively you are free to implement custom filter plugin with arbitrary selection logic
+Dec 17 13:06:28 <StyXman>	right,where should I put it?
+Dec 17 13:06:55 <StyXman>	in my own ansible tree, I mean, so it gets picked up automatically
+Dec 17 13:08:17 <StyXman>	this is my final task after adding the data: https://dpaste.org/vY6tz
+Dec 17 13:09:07 <StyXman>	and I notice that implementing or is... impossible? unless I use two tasks
+Dec 17 13:21:55 <oblikoamorale>	how does this expression not do what you want?
+Dec 17 14:10:45 <StyXman>	oblikoamorale: it works, but force me to complete the data
+**** ENDING LOGGING AT Sun Dec 17 14:12:03 2023
+
+**** BEGIN LOGGING AT Wed Jan 17 16:45:04 2024
+
+janv. 17 16:45:04 *	Now talking on #ansible
+janv. 17 16:45:04 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.2, 2.15.8, 2.14.13; ansible 9.1.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+janv. 17 16:45:04 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Mon Dec 11 22:00:00 2023)
+janv. 17 16:45:04 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** ENDING LOGGING AT Wed Jan 17 16:46:04 2024
+
+**** BEGIN LOGGING AT Wed Jan 17 21:56:11 2024
+
+janv. 17 21:56:10 *	Now talking on #ansible
+janv. 17 21:56:10 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.2, 2.15.8, 2.14.13; ansible 9.1.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+janv. 17 21:56:10 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Mon Dec 11 22:00:00 2023)
+janv. 17 21:56:10 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Wed Jan 17 22:05:35 2024
+
+janv. 17 22:05:35 *	Now talking on #ansible
+janv. 17 22:05:35 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.2, 2.15.8, 2.14.13; ansible 9.1.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+janv. 17 22:05:35 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Mon Dec 11 22:00:00 2023)
+janv. 17 22:05:35 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** ENDING LOGGING AT Wed Jan 17 22:07:05 2024
+
+**** BEGIN LOGGING AT Wed Jan 17 22:07:05 2024
+
+**** ENDING LOGGING AT Wed Jan 17 22:07:11 2024
+
+**** BEGIN LOGGING AT Wed Jan 17 22:07:27 2024
+
+janv. 17 22:07:27 *	Now talking on #ansible
+janv. 17 22:07:27 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.2, 2.15.8, 2.14.13; ansible 9.1.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+janv. 17 22:07:27 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Mon Dec 11 22:00:00 2023)
+janv. 17 22:07:27 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** ENDING LOGGING AT Wed Jan 17 22:07:51 2024
+
+**** BEGIN LOGGING AT Wed Jan 17 22:09:27 2024
+
+janv. 17 22:09:27 *	Now talking on #ansible
+janv. 17 22:09:27 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.2, 2.15.8, 2.14.13; ansible 9.1.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+janv. 17 22:09:27 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Mon Dec 11 22:00:00 2023)
+janv. 17 22:09:27 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Wed Jan 17 22:25:37 2024
+
+janv. 17 22:25:37 *	Now talking on #ansible
+janv. 17 22:25:37 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.2, 2.15.8, 2.14.13; ansible 9.1.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+janv. 17 22:25:37 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Mon Dec 11 22:00:00 2023)
+janv. 17 22:25:37 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** ENDING LOGGING AT Wed Jan 17 22:37:34 2024
+
+**** BEGIN LOGGING AT Thu Jan 18 07:26:22 2024
+
+janv. 18 07:26:22 *	Now talking on #ansible
+janv. 18 07:26:22 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.2, 2.15.8, 2.14.13; ansible 9.1.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+janv. 18 07:26:22 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Mon Dec 11 22:00:00 2023)
+janv. 18 07:26:22 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+janv. 18 07:36:48 <ladeda>	Seems like a similar issue to https://github.com/ansible/ansible/issues/77246
+janv. 18 08:26:07 *	Disconnected ()
+**** ENDING LOGGING AT Thu Jan 18 08:26:07 2024
+
+**** BEGIN LOGGING AT Thu Jan 18 08:26:31 2024
+
+janv. 18 08:26:31 *	Now talking on #ansible
+janv. 18 08:26:31 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.2, 2.15.8, 2.14.13; ansible 9.1.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+janv. 18 08:26:31 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Mon Dec 11 22:00:00 2023)
+janv. 18 08:26:31 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** ENDING LOGGING AT Thu Jan 18 09:20:36 2024
+
+**** BEGIN LOGGING AT Thu Jan 18 09:57:29 2024
+
+janv. 18 09:57:29 *	Now talking on #ansible
+janv. 18 09:57:29 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.2, 2.15.8, 2.14.13; ansible 9.1.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+janv. 18 09:57:29 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Mon Dec 11 22:00:00 2023)
+janv. 18 09:57:29 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+janv. 18 10:33:43 <tty0>	Hi all! i have a task with 3 vars (config, wazuh_logging and logging) and I want to do something like this (but working ofc ;): content: '{{ config | if feature_wazuh combine(wazuh_logging, recursive=True) else combine(logging, recursive=True) | to_nice_json(indent=2) }}'
+janv. 18 10:33:54 <tty0>	do you have any suggestion?
+janv. 18 10:36:18 <tty0>	wazuh_logging is a host/group variable
+janv. 18 10:44:57 <tty0>	i was completely wrong here, give me a sec to fix the inline if-statement :)
+janv. 18 10:49:32 <tty0>	i think i got it working when i used correct syntax :D this is how it looks: content: '{{ config | combine(wazuh_logging, recursive=True) if feature_wazuh | default(False) else combine(logging, recursive=True)  | to_nice_json(indent=2) }}'
+janv. 18 10:52:35 <tty0>	no, it didn't, i still need some guidance here :/
+janv. 18 11:01:24 <jrosser>	tty0: without seeing a specific example with actual data it is difficult, but you might try using ternary to simplify it `(feature_wazuh | default(false)) | ternary(wazuh_logging, logging)` will select between the two potential things you want to combine into `config`
+janv. 18 11:05:46 <tty0>	oh nice! i will try it out
+janv. 18 11:08:24 <tty0>	here is the task: https://dpaste.org/1bkGs
+janv. 18 11:49:08 <tty0>	is it possible to combine ansible.builtin.combine with ternary?
+janv. 18 11:49:16 <tty0>	bbl for lunch
+janv. 18 12:45:04 <tty0>	did a workaround by setting a new var (__logging) to '{{ (feature_wazuh | default(false)) | ternary(wazuh_logging, logging) }}' and use combine in the content like this: content: '{{ config | combine(__logging, recursive=True) | from_yaml |to_nice_json(indent=2) }}'
+janv. 18 12:45:31 <tty0>	the positive thing is that other than me can probably follow the thinking a bit easier
+**** BEGIN LOGGING AT Mon Feb 12 13:07:12 2024
+
+févr. 12 13:07:12 *	Now talking on #ansible
+févr. 12 13:07:12 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+févr. 12 13:07:12 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+févr. 12 13:07:12 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+févr. 12 13:28:21 <fdan>	hi what would be the command to run ansible playbook which would also display the variables
+**** BEGIN LOGGING AT Mon Feb 12 14:01:08 2024
+
+févr. 12 14:01:08 *	Now talking on #ansible
+févr. 12 14:01:08 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+févr. 12 14:01:08 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+févr. 12 14:01:08 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+févr. 12 15:40:59 *	ChanServ gives channel operator status to maxamillion
+févr. 12 15:41:13 *	ChanServ gives channel operator status to sivel
+**** BEGIN LOGGING AT Sat Feb 17 17:08:29 2024
+
+Feb 17 17:08:29 *	Now talking on #ansible
+Feb 17 17:08:29 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 17 17:08:29 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 17 17:08:29 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Tue Feb 20 15:07:42 2024
+
+Feb 20 15:07:42 *	Now talking on #ansible
+Feb 20 15:07:42 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 20 15:07:42 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 20 15:07:42 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Tue Feb 20 15:32:26 2024
+
+Feb 20 15:32:26 *	Now talking on #ansible
+Feb 20 15:32:26 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 20 15:32:26 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 20 15:32:26 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Tue Feb 20 15:37:56 2024
+
+Feb 20 15:37:56 *	Now talking on #ansible
+Feb 20 15:37:56 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 20 15:37:56 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 20 15:37:56 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Feb 20 18:18:45 <eoli3n>	is there a way to pattern "all host which contains string "01" in group "group1"" ?
+Feb 20 18:19:21 <eoli3n>	ok with &
+Feb 20 18:19:33 <eoli3n>	8 years of ansible, i still learn
+Feb 20 18:21:11 <bkhl>	eoli3n: look up ansible.builtin.group_by or ansible.builtin.add_host
+Feb 20 18:21:18 <eoli3n>	no need
+Feb 20 18:21:32 <eoli3n>	ansible '*01*:&group1'
+Feb 20 18:21:34 <eoli3n>	BOOM
+Feb 20 18:21:54 <eoli3n>	but thanks anyway ;)
+Feb 20 18:22:22 <bkhl>	eoli3n: where is the docs for that? (hard to google)
+Feb 20 18:22:28 <eoli3n>	https://docs.ansible.com/ansible/latest/inventory_guide/intro_patterns.html
+Feb 20 18:22:34 <eoli3n>	check "intersection of groups"
+Feb 20 18:22:39 <eoli3n>	in the table
+Feb 20 18:22:44 <eoli3n>	here https://docs.ansible.com/ansible/latest/inventory_guide/intro_patterns.html#common-patterns
+Feb 20 18:22:58 <bkhl>	Thanks.
+Feb 20 18:23:42 <bkhl>	The student becomes the master. :-)
+Feb 20 18:23:47 <eoli3n>	:P
+**** BEGIN LOGGING AT Wed Feb 21 00:53:37 2024
+
+Feb 21 00:53:37 *	Now talking on #ansible
+Feb 21 00:53:37 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 21 00:53:37 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 21 00:53:37 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Wed Feb 21 10:31:33 2024
+
+Feb 21 10:31:33 *	Now talking on #ansible
+Feb 21 10:31:33 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 21 10:31:33 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 21 10:31:33 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Wed Feb 21 10:38:41 2024
+
+Feb 21 10:38:40 *	Now talking on #ansible
+Feb 21 10:38:40 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 21 10:38:40 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 21 10:38:40 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Feb 21 12:17:07 <FreeBDSM>	hello, should I report this as an ansible-lint's bug that it gives me `schema[role-arg-spec]: $.argument_specs.main.options.myvar '{{ mydict.keys() | list }}' is not of type 'array'`?
+Feb 21 12:37:40 <oblikoamorale>	we don't know, #ansible-devtools is probably a more suitable place to ask; or even raise the issue on ansible-lint github repo.   if you provide a minimal reproducer someone might want to take a look
+Feb 21 12:40:44 <StyXman>	there wasa way to cover a failed taxk and handle the error with another task, but I can't find it in https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_error_handling.html
+Feb 21 12:42:35 <StyXman>	s/cover/recover/
+Feb 21 12:42:55 <StyXman>	my god, these new glasses suck :((( sorry for all the typos
+Feb 21 12:49:54 <StyXman>	ah, blog + rescue
+Feb 21 12:49:58 <StyXman>	block*
+Feb 21 12:50:07 <StyXman>	I also need a new brain, seemingly...
+Feb 21 13:01:52 <newpy>	does anyone know which module to use to configure cisco is-is?
+Feb 21 13:58:15 <geek01>	Hi community ,
+Feb 21 13:58:16 <geek01>	My dict is something like this :
+Feb 21 13:58:16 <geek01>	dict_newc:
+Feb 21 13:58:17 <geek01>	      - { type: 'log', rep_source: ["/tmp", "/images", "/app", "/var/log"]}
+Feb 21 13:58:17 <sivel>	geek01: Please slow down, or use a pastebin if you need to paste multiple lines. If you are using matrix, please do not send multi line messages. This is an automated message.
+Feb 21 13:58:17 <geek01>	i need to iterate over rep_source directory and copy to remote server ..
+Feb 21 13:58:18 <geek01>	i using loop for iteration, but it doesn't work
+Feb 21 13:58:18 <geek01>	any idea ??
+Feb 21 13:58:21 *	sivel sets ban on geek01!*@*
+Feb 21 14:01:15 <oblikoamorale>	1. don't paste into channel, use public paste site of your choice   2. illustrate how it does not work (exact task definition, error messages etc)   3. dict_newc is not a dict but a list of dicts    4. you'll be unbanned in a few minutes
+Feb 21 14:03:17 *	sivel removes ban on geek01!*@*
+Feb 21 14:04:11 <oblikoamorale>	uh, didn't notice they were killed as well
+Feb 21 15:13:08 <Gekk>	Hello community
+Feb 21 15:14:25 <Gekk>	I would like to iterate over dict
+Feb 21 15:14:43 <Gekk>	Code is here : https://paste.centos.org/view/e6fefda2
+Feb 21 15:16:01 <Gekk>	My needs is to iterate over rep_source to copy that directories
+Feb 21 15:16:29 <Gekk>	I'm using loop, but it doesn't help :(
+Feb 21 15:16:58 <frippe75>	Anyone knows if there is a way to set tags when doing import_playbook?? Similar to ansible-playbook --tags
+Feb 21 15:19:50 <frippe75>	From import_playbook doc .... Tags are not interpreted for this action, they are applied to the imported tasks
+Feb 21 15:21:03 <StyXman>	Gekk: you will need to show a little bit more of that code, and "doesn't help" is not very much descriptive of the outcome you're actully getting
+Feb 21 15:21:24 <StyXman>	at least show the task and the error message
+Feb 21 15:31:29 <frippe75>	Seems that passing/setting the tags during import_playbook kind-of-works. But I have a specific task where the target cant be reached. so fails on UNREACHABLE. But that task does not have the tag. So I was hoping for the tasks to be skipped due to tagging.
+Feb 21 16:10:28 <oblikoamorale>	tags can be applied to tasks either statically or dynamically. but the only way to choose what tags to run is --tags argument of ansible-playbook
+Feb 21 16:32:47 <alxgomz>	I'm getting a "playbook not found error" when trying to  call a playbook from a git hosted collection. Looks like all is setup properly but still getting this error. Details of my installation are visible there: http://pastebin.fr/136233
+Feb 21 16:36:04 <flowerysong>	alxgomz: That's not a valid name for a playbook in a collection. All collection content has to be valid Python identifiers, so `-` is not an allowed character.
+**** BEGIN LOGGING AT Wed Feb 21 16:46:59 2024
+
+Feb 21 16:46:59 *	Now talking on #ansible
+Feb 21 16:46:59 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 21 16:46:59 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 21 16:46:59 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Feb 21 18:16:55 <mathstuf>	hi, is there a reason why `ansible-playbook --check` seems to be trying to actually perform actions?
+Feb 21 18:27:11 <mathstuf>	the first failing action i have is https://docs.ansible.com/ansible/latest/collections/ansible/builtin/lineinfile_module.html
+Feb 21 18:27:28 <mathstuf>	the file doesnt exist because the package isnt installed (which seems fine given that we're in `--check`)?
+Feb 21 18:28:25 <bkhl>	And the lineinfile task has 'create: true'?
+Feb 21 18:35:02 <mathstuf>	nope
+Feb 21 18:35:41 <mathstuf>	ok, that looks relevant
+Feb 21 19:10:41 <flowerysong>	Modules that support check mode will generally still fail in cases where it can't possibly perform the action (in this case because the file doesn't exist.) To skip the task entirely in check mode. you have to add a condition.
+Feb 21 19:11:00 <flowerysong>	https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_checkmode.html#skipping-tasks-or-ignoring-errors-in-check-mode
+Feb 21 19:11:39 <flowerysong>	(Adding `create: true` probably isn't a good fix for this particular task, because you normally want it to fail if the file doesn't exist.)
+Feb 21 19:43:34 <SuperLag>	If you're using the Ansible provider for Terraform, does that assume the Ansible binaries are already on the box?
+Feb 21 19:47:06 <flowerysong>	That's really a Terraform question, but the answer's probably 'yes.'
+Feb 21 19:48:21 <flowerysong>	Just like if you were using `community.general.terraform` it needs Terraform to already be installed wherever the module is run.
+Feb 21 20:18:30 <mathstuf>	is there a way to add a host to additional groups through its host declaration?
+Feb 21 20:18:48 <mathstuf>	a group being able to say "all hosts with variable x set to y" is fine too
+Feb 21 20:21:12 <mathstuf>	ah, `ansible.builtin.add_host` looks promising
+Feb 21 20:29:27 <flowerysong>	mathstuf: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/constructed_inventory.html
+Feb 21 20:31:45 <bkhl>	mathstuf: also related: ansible.builtin.group_by
+**** BEGIN LOGGING AT Wed Feb 21 20:38:01 2024
+
+Feb 21 20:38:01 *	Now talking on #ansible
+Feb 21 20:38:01 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 21 20:38:01 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 21 20:38:01 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Feb 21 21:08:52 <mathstuf>	`ERROR! 'ansible.builtin.group_by' is not a valid attribute for a Play
+Feb 21 21:09:00 <mathstuf>	where should i use it?
+Feb 21 21:09:10 <mathstuf>	the examples dont say where it goes in the setup
+Feb 21 21:09:38 <jborean93>	the examples show you how it is placed in a task
+Feb 21 21:09:53 <jborean93>	if you are putting it in a playbook file directly you need to align it to the `tasks` indentation of the play
+Feb 21 21:12:42 <mathstuf>	i moved it to a new role's `tasks/main.yml`…same thing?
+Feb 21 21:14:25 <mathstuf>	sorry, forgot to save the file
+Feb 21 21:14:30 <jborean93>	if it's in the `tasks/main.yml` then that's just a list of tasks so the examples would apply as is
+Feb 21 22:58:13 <sandinak>	off question .. has anyone come up wiht a snazzy way to aggregate all the packages needed by roles so that they can be installed in one shot w/o having to name them all discretely
+**** BEGIN LOGGING AT Wed Feb 21 23:19:26 2024
+
+Feb 21 23:19:26 *	Now talking on #ansible
+Feb 21 23:19:26 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 21 23:19:26 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 21 23:19:26 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** ENDING LOGGING AT Wed Feb 21 23:20:04 2024
+
+**** BEGIN LOGGING AT Wed Feb 21 23:21:17 2024
+
+Feb 21 23:21:17 *	Now talking on #ansible
+Feb 21 23:21:17 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 21 23:21:17 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 21 23:21:17 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Feb 21 23:29:41 <mathstuf>	is there a way to iterate over a list and update the item currently being iterated over?
+Feb 21 23:30:11 <mathstuf>	something akin to `for i in items: if i.signal: i.consequences.append('some_item')`
+Feb 21 23:40:04 <mathstuf>	hmm, extended: true looks promising
+Feb 21 23:40:15 <mathstuf>	i can get the index and access the original variable that way?
+Feb 21 23:41:26 <mathstuf>	ah, still no `items[ansible_loop.index0] = …` mechanism
+**** ENDING LOGGING AT Wed Feb 21 23:50:23 2024
+
+**** BEGIN LOGGING AT Wed Feb 21 23:50:23 2024
+
+Feb 21 23:51:24 <mathstuf>	maybe i can just store into a new top-level dictionary variable
+**** ENDING LOGGING AT Wed Feb 21 23:52:21 2024
+
+**** BEGIN LOGGING AT Wed Feb 21 23:52:21 2024
+
+**** ENDING LOGGING AT Wed Feb 21 23:53:41 2024
+
+**** BEGIN LOGGING AT Wed Feb 21 23:53:41 2024
+
+Feb 21 23:56:22 <mathstuf>	ugh, even that is difficult as i want to do `f({a: [1]}, {b: [2]}) -> {a: [1, 2]}`
+**** ENDING LOGGING AT Wed Feb 21 23:57:59 2024
+
+**** BEGIN LOGGING AT Wed Feb 21 23:57:59 2024
+
+Feb 22 00:02:26 <justsomeguy>	Is this something you can write a plugin in python for?
+Feb 22 00:05:16 <mathstuf>	i would hope so
+Feb 22 00:05:50 <mathstuf>	something like an `append` and `combine` module that would look up the variable in the key and append/combine the value of it
+Feb 22 00:06:14 <mathstuf>	so you could do something like `item.inner.arr: [new1, new2]
+Feb 22 03:50:22 <newpy>	anyone know how to use cisco.ios.* to parse running-config into structured output? docs claim it is possible but I can't get it working
+Feb 22 03:58:57 <newpy>	ah found it, after running ios_command "sh run" & registering to variable output, I needed to pass output.stdout[0] to the next task (state: parsed, running_config: "{{ output.stdout[0] }}"
+Feb 22 04:26:12 <fdan>	when i try to run the playbook the playbook is stuck at gathering facts and it doesnt proceed beyond that
+Feb 22 04:26:38 <fdan>	i ran with -vv https://dpaste.org/V8a5Z
+Feb 22 04:27:12 <fdan>	could anyone help me here
+Feb 22 04:49:23 <Core2671>	hi guys
+Feb 22 07:25:17 <fdan>	when we encrypt a string using ansible vault, i somehow get a new line added, how to avoid that
+Feb 22 07:29:24 <oblikoamorale>	don't press enter, press ctrl+d twice as suggested in prompt
+Feb 22 07:30:02 <oblikoamorale>	2.16.3 does not introduce any surplus new lines
+Feb 22 07:48:23 <fdan>	oblikoamorale im using 2.15.2
+Feb 22 07:48:52 <fdan>	i create a new temp file, put the password and then do `ansible-vault encrypt mytextfile`
+Feb 22 07:49:28 <fdan>	and then i add
+Feb 22 07:49:28 <fdan>	token: !vault
+Feb 22 07:49:29 <fdan>	  $ANSIBLE_VAULT;1.1;AES256
+Feb 22 07:49:29 <fdan>	  3361303830313835623...
+Feb 22 07:49:32 *	sivel sets ban on fdan!*@*
+Feb 22 07:54:30 *	sivel removes ban on fdan!*@*
+Feb 22 08:07:17 <oblikoamorale>	erm. you were talking about encrypt_string and suddenly there is encrypt file. so what is it
+Feb 22 08:10:10 <fdan>	i never knew there was a comman to encrypt_string
+Feb 22 08:11:24 <fdan>	oblikoamorale can you please tell me the command?
+Feb 22 08:11:51 <fdan>	is it something like this ansible-vault encrypt_string 'mypassword!'
+Feb 22 08:14:32 <oblikoamorale>	ansible-vault encrypt_string --help
+Feb 22 08:15:52 <fdan>	nice
+Feb 22 10:49:12 <alien_lappy>	i want to limit to one host, but i have an inventory directory(which contains a hosts.yaml file); so i tried 'ansible-playbook -i inventory -l "server1," some-playbook.yaml' but that doesn't find the server1
+Feb 22 10:52:51 <plundra>	alien_lappy: Don't use ,? :)
+Feb 22 11:03:41 <endre>	yeah
+Feb 22 12:00:22 <alien_lappy>	"Could not match supplied host pattern" it also didn't work
+Feb 22 12:03:37 <alien_lappy>	the hosts.yaml file has like: "groupA:", "hosts:", "host1:", "ansible_host: ip.ad.re.ss" , which should be the correct way, i think?
+Feb 22 12:03:54 <alien_lappy>	but i can't match host1 with the --limit thing
+Feb 22 12:09:19 <endre>	what does the command `ansible-inventory --host host1` return?
+Feb 22 12:12:21 <alien_lappy>	'ansible-inventory -i inventory2 --host "host1" ' does return a dict with the ansible_host ip address
+Feb 22 12:13:31 <alien_lappy>	but ' ansible-playbook -i inventory2 "host1" playbook-foo.yaml ' does not match a host
+Feb 22 12:13:45 <alien_lappy>	but ' ansible-playbook -i inventory2 -l "host1" playbook-foo.yaml ' does not match a host
+Feb 22 12:13:49 <alien_lappy>	sorry, forgot the limit
+Feb 22 12:14:30 <legreffier>	is your playbook correctly referencing a group or host in inventory2 ?
+Feb 22 12:14:54 <legreffier>	use pastebin.com if you need to share code/logs
+Feb 22 12:16:56 <alien_lappy>	ic
+Feb 22 12:17:33 <alien_lappy>	yeah, sorry, i had a hosts none in the playbook for some reason
+**** ENDING LOGGING AT Thu Feb 22 13:52:24 2024
+
+**** BEGIN LOGGING AT Thu Feb 22 13:55:48 2024
+
+Feb 22 13:55:47 *	Now talking on #ansible
+Feb 22 13:55:47 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 22 13:55:47 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 22 13:55:47 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Thu Feb 22 13:57:12 2024
+
+Feb 22 13:57:11 *	Now talking on #ansible
+Feb 22 13:57:11 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 22 13:57:11 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 22 13:57:12 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Feb 22 14:02:45 <justin00>	#c
+Feb 22 14:06:18 <sandinak>	like .. it'd be cool if there was a directory structure under roles that was aggregated automagically.. I might write an inventory plugin for this.  Would be really useful for things like packages, firewall rules, etc.
+Feb 22 14:07:03 <sandinak>	where we could assemble all the entries and then use them once vs at role time
+Feb 22 14:16:15 <jrosser>	sandinak: does this help at all https://docs.ansible.com/ansible/latest/collections/community/general/merge_variables_lookup.html
+Feb 22 14:17:05 <jrosser>	i understand you ask about vars in roles though, so thats maybe not quite the same thing
+Feb 22 14:18:52 <oblikoamorale>	here we go again. https://witchychant.com/ansible-cumulative-inventory-variables/
+Feb 22 14:25:13 <mathstuf>	oblikoamorale: ooh, thanks! thats what ive been looking for
+Feb 22 16:15:49 <_NiC>	Anyone know why ansible wants to re-add an existing child in my xml? https://pastebin.com/aPjELgtw Am I using the module wrong?
+Feb 22 16:20:30 <petn-randall>	_NiC: Check the examples in `ansible-doc xml`, I think you want something like "name: Set the rating to '11'"
+Feb 22 16:22:35 <_NiC>	Wouldn't that make a <policy>11</policy>?
+Feb 22 16:23:04 <petn-randall>	_NiC: I think you need to use path/xpath/value instead of add_children.
+Feb 22 16:23:09 <_NiC>	all the things I want to add are attributes to the policy tag, not values in/of it
+Feb 22 16:23:20 <_NiC>	hm
+Feb 22 16:24:13 <petn-randall>	_NiC: Your intention is to add it when it doesn't exist, and when it already exists, leave it (and not duplicate it), right?
+Feb 22 16:24:26 <_NiC>	yes
+Feb 22 16:26:27 <legreffier>	_NiC: lookup "- name: Add or modify an attribute, add element if needed" in https://docs.ansible.com/ansible/latest/collections/community/general/xml_module.html
+Feb 22 16:26:45 <legreffier>	you explicitly tells it to add_children. it obeys.
+Feb 22 16:27:25 <_NiC>	but neither attribute: nor value: takes lists as arguments, so it seems I can only add one at a time
+Feb 22 16:27:53 <_NiC>	and since this xml file can have several <policy /> tags with different attributes and values, I can't really add one by one..
+Feb 22 16:29:22 <_NiC>	for example if I have a task with xpath: /policymap/policy, attribute: domain, value: resource, ansible writes a line like this: <policy xmlns="" domain="resource" rights="none"/>
+Feb 22 16:29:38 <_NiC>	(I believe the extra attributes are due to the !ATTLIST at the top of the xml file.)
+Feb 22 16:40:56 <_NiC>	I can use set_children, and list everything I want in there, that seems to work.
+Feb 22 16:42:18 <_NiC>	I'm not sure I understand/like the fact that xmlns="" is added whether I have it in my task or not, but I guess that's just down to how lxml parses the xml file.
+Feb 22 16:43:31 <_NiC>	It also removes all "children" in <policymap>, which includes everything including comments, which is a little odd, maybe.
+Feb 22 17:10:01 <StucKman>	where can I find the list of colors? I'm not sure how to spell gray and dark yellow does not seem to exist
+**** ENDING LOGGING AT Thu Feb 22 17:51:49 2024
+
+**** BEGIN LOGGING AT Thu Feb 22 18:35:17 2024
+
+Feb 22 18:35:17 *	Now talking on #ansible
+Feb 22 18:35:17 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 22 18:35:17 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 22 18:35:17 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Thu Feb 22 20:35:46 2024
+
+Feb 22 20:35:46 *	Now talking on #ansible
+Feb 22 20:35:46 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 22 20:35:46 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 22 20:35:46 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Thu Feb 22 20:47:44 2024
+
+Feb 22 20:47:43 *	Now talking on #ansible
+Feb 22 20:47:43 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 22 20:47:43 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 22 20:47:43 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Thu Feb 22 20:58:51 2024
+
+Feb 22 20:58:50 *	Now talking on #ansible
+Feb 22 20:58:50 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 22 20:58:50 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 22 20:58:50 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Thu Feb 22 21:13:03 2024
+
+Feb 22 21:13:03 *	Now talking on #ansible
+Feb 22 21:13:03 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 22 21:13:03 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 22 21:13:03 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Thu Feb 22 21:16:07 2024
+
+Feb 22 21:16:06 *	Now talking on #ansible
+Feb 22 21:16:06 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 22 21:16:06 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 22 21:16:06 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Feb 23 01:06:43 <newpy>	I'm using `include_task: subtasks.yaml; debug: msg="{{ subtask_var }}"`
+Feb 23 01:07:18 <newpy>	if subtask_var is a registered variable, I can access it from the parent
+Feb 23 01:07:50 <newpy>	but if it's just in `vars: ` section of the task, I can't
+Feb 23 01:08:15 <newpy>	should I just set_fact instead or is there a better way?
+Feb 23 10:04:54 <pva>	Hi, guys. Some time ago templating was disabled in ansible_managed variable. Now, there is a bug https://github.com/ansible/ansible/issues/82322 to get that back. @bcoca told there that this poses some security issue, yet I don't understand what security issue he is talking about. Could you help me to understand, how an attacker may use ansble_manage to hack anything?
+Feb 23 10:09:58 <pva>	I'd like some solution for the problem but atm I don't see any way how to hack that system and dev keeps silence there. Also, workaround exists, but ... first I'd like to understand what security implications it has and why.
+Feb 23 10:11:33 <pva>	BTW, if you don't understand that problem as I do, please, ask developer in ticket) May be then he'll explain the problem better.
+Feb 23 10:57:10 <oblikoamorale>	they probably dislike the possibility of malicious jinja experession injection sourced by ansible.cfg into all templates referencing ansible_managed. if you are after bcoca, they don't hang out here lately
+Feb 23 10:59:53 <oblikoamorale>	raise the issue on mailing list, or ansible forum, I guess, if you are so inclined to push this thing forward
+Feb 23 11:00:41 <oblikoamorale>	just remember that people rarely like crossposters :p
+Feb 23 11:57:51 <pva>	oblikoamorale: thanks! But do you understand why injection in ansible.cfg is considered to be a security issue? It looks expected for me, like changing files in /etc/ may ruin OS...
+Feb 23 11:58:18 <Shadur>	Possibly an odd question, but is it possible in an ansible role's meta or elsewhere to specify that it *needs* certain variables to exist and exit immediately with a reasonable error?
+Feb 23 11:59:26 <oblikoamorale>	pva: that's just my guess, I'm not saying it was the exact original reasoning
+Feb 23 11:59:46 <Shadur>	Hm, assert might do what I want.
+Feb 23 11:59:58 <double-p>	assert... yeha
+Feb 23 12:00:32 <oblikoamorale>	that's what role argspec is for
+Feb 23 12:00:46 <pva>	oblikoamorale: I see. If nobody answers here I'll try mailing list... But at least it's not something evident I overlook.
+Feb 23 12:43:49 <Shadur>	Argspec is exactly what I needed, thank you.
+Feb 23 12:44:21 <Shadur>	Another question: In a jinja2 template, is it possible to set a conditional along the lines of "If more than one of the following variables are defined" ?
+Feb 23 12:48:32 <oblikoamorale>	{% if [var1,var2,var3] | reject('undefined') | length > 1 %}...{% endif %}
+**** BEGIN LOGGING AT Fri Feb 23 14:47:00 2024
+
+Feb 23 14:47:00 *	Now talking on #ansible
+Feb 23 14:47:00 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 23 14:47:00 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 23 14:47:00 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Fri Feb 23 14:52:01 2024
+
+Feb 23 14:52:01 *	Now talking on #ansible
+Feb 23 14:52:01 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 23 14:52:01 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 23 14:52:01 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Feb 23 15:01:06 <Unixl0ver>	 /msg alis list * -min 25
+Feb 23 16:38:12 <tuxick>	"funny" how many threads you find on "Don't compare to empty string "
+Feb 23 16:39:06 <tuxick>	https://github.com/ansible/ansible-lint/issues/457
+Feb 23 16:39:50 <tuxick>	expecting "Closed: inconclusive"
+Feb 23 16:44:47 <tuxick>	ah, it has been decided
+Feb 23 16:49:32 <SuperLag>	If I'm cloning a repo with an ansible.cfg that says inventory=/file/in/repo/hosts, but I want force a particular playbook to only ever run on localhost, can I do that? and how?
+Feb 23 16:51:10 <SuperLag>	I'm using terraform w/cloud-init. In the cloud-init config, I'm saying to clone a repo, and run a playbook in that repo.
+Feb 23 16:51:40 <SuperLag>	with ansible-pull
+Feb 23 17:28:00 <flowerysong>	...use `hosts: localhost` in the playbook?
+Feb 23 17:48:55 <SuperLag>	tried that, didn't seem to work
+Feb 23 17:49:03 <SuperLag>	that was my first thought, as well
+Feb 23 18:32:40 <flowerysong>	It will work. That playbook then can't possibly run on anything other than localhost.
+Feb 23 18:33:17 <rvgate>	feels like this has been asked a million times, and couldnt find a "simple" loop-in-loop setup without creating new wrapper roles to do the following: https://pastebin.com/YsQ5Jgkq , i could solve it with a template and generate the resulting config.json, but that feels more like a workaround then a proper way to do it.
+Feb 23 18:35:05 <flowerysong>	If you mean "it doesn't work" as in it doesn't run at all, that's possible, but is probably down to how you're calling ansible-pull.
+Feb 23 18:36:35 <flowerysong>	rvgate: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/subelements_filter.html
+Feb 23 18:37:25 <flowerysong>	`loop: "{{ users | subelements('docker_registries') }}"`, or something similar.
+Feb 23 18:37:44 <rvgate>	flowerysong, thanks! ill have a look, didnt know that existed :)
+Feb 23 18:59:38 <rvgate>	flowerysong, made it work using: https://pastebin.com/0mvRgWf2 thanks again!
+Feb 23 19:27:37 <flowerysong>	I really, really hate `with_`-style loops. There's a reason I recommended the specific thing I did.
+Feb 23 19:29:03 <flowerysong>	This is a data transformation, you should be doing it with a filter, not a magic invocation of a lookup.
+Feb 23 19:40:35 <rvgate>	flowerysong, is there a functional difference with using with_subelements and the filter subelements? it feels like its producing the same output, at this point its more of a personal preference it seems
+Feb 23 19:50:53 <flowerysong>	The functional difference is that one teaches you how to use Jinja and can easily be used in other situations, and one is a black box where you don't understand what's happening and can't adapt it further without figuring out the internal logic.
+**** BEGIN LOGGING AT Fri Feb 23 21:29:51 2024
+
+Feb 23 21:29:49 *	Now talking on #ansible
+Feb 23 21:29:49 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 23 21:29:49 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 23 21:29:49 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Feb 23 22:52:31 <awb>	How can I append to a list that may not exist? I tried `- "{{ list | default(omit) }}`, but that didn't work. Any suggestions?
+Feb 23 22:58:48 <jrosser>	awb: omit should really only be used on module parameters, try using default([]) instead to end up with an empty list when it's undefined
+Feb 23 23:04:42 <awb>	jrosser: Let me give that a try...
+Feb 23 23:07:42 <awb>	Still doesn't work. :/ "An unhandled exception occurred while templating"
+Feb 23 23:08:02 <awb>	I'll try to isolate this into a simple test case.
+Feb 23 23:11:38 <kikinovak>	Hi. I tried to subscribe to the Ansible Mailing List with my (non-Gmail) e-mail address. Sent the subscription request, got the confirmation mail, replied to that, got a mail that said I was subscribed. And now messages are still being sent to my Gmail address (which I don't want to use). How comes Google hijacks this?
+Feb 23 23:12:38 <kikinovak>	On a side note: I wonder why one of the most widespread free software components doesn't use a real mailing list like mailman and relies to Google for that.
+Feb 23 23:14:22 <awb>	jrosser: The simple test case works, which suggests something else is wrong. Thanks for the pointer!
+Feb 23 23:15:14 <jrosser>	awb: no problem - here is some info about what omit is intended for https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_filters.html#making-variables-optional
+Feb 23 23:17:21 <awb>	I had used default('') and default([]) before, but was grasping at straws because none worked. Now it seems like I was looking in the wrong place :D
+Feb 24 01:51:23 <MockingMoniker>	Can I dynamically include plays in a loop? Can I dynamically include plays at all?
+Feb 24 01:52:38 <MockingMoniker>	By that I mean at the play level, not on the individual steps like include_roles or include_tasks.
+**** BEGIN LOGGING AT Sat Feb 24 12:02:42 2024
+
+Feb 24 12:02:41 *	Now talking on #ansible
+Feb 24 12:02:41 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 24 12:02:41 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 24 12:02:41 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Sat Feb 24 16:29:06 2024
+
+Feb 24 16:29:06 *	Now talking on #ansible
+Feb 24 16:29:06 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 24 16:29:06 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 24 16:29:06 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Sat Feb 24 16:32:03 2024
+
+Feb 24 16:32:03 *	Now talking on #ansible
+Feb 24 16:32:03 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 24 16:32:03 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 24 16:32:03 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Sat Feb 24 17:28:08 2024
+
+Feb 24 17:28:07 *	Now talking on #ansible
+Feb 24 17:28:07 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 24 17:28:07 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 24 17:28:08 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** ENDING LOGGING AT Sat Feb 24 19:15:17 2024
+
+**** BEGIN LOGGING AT Sun Feb 25 02:09:51 2024
+
+Feb 25 02:09:50 *	Now talking on #ansible
+Feb 25 02:09:50 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 25 02:09:50 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 25 02:09:50 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Sun Feb 25 18:41:34 2024
+
+Feb 25 18:41:33 *	Now talking on #ansible
+Feb 25 18:41:33 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.3, 2.15.9, 2.14.14; ansible 9.2.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 25 18:41:33 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Jan 30 18:00:00 2024)
+Feb 25 18:41:33 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** ENDING LOGGING AT Sun Feb 25 18:41:51 2024
+
+**** BEGIN LOGGING AT Tue Feb 27 23:15:59 2024
+
+Feb 27 23:15:58 *	Now talking on #ansible
+Feb 27 23:15:58 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 27 23:15:58 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Feb 27 23:15:58 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Feb 27 23:37:09 <flowerysong>	YAML doesn't allow tabs at all.
+Feb 27 23:38:08 <nerdette>	true
+Feb 27 23:38:58 *	ChanServ gives channel operator status to shertel
+Feb 27 23:41:36 <awb>	Looking for some help with run_once and role handlers. I have a role that writes a file on the controller and I do this with a handler. I do a flush_handlers right after notify from another role's tasks. What I see now is that the first target in a group stops processing the rest of the tasks until every other target is done. Any idea what might be going on there?
+Feb 27 23:49:39 <nerdette>	did you set -vvv and have a look?
+Feb 27 23:50:27 <nerdette>	I remember there was also an option to save the generated python scripts on the target
+Feb 27 23:50:45 <awb>	Yes and it wasn't super helpful. I just reduced my plays to a simple test case and will run it again real quick...
+Feb 27 23:50:46 <flowerysong>	Sounds like a bug. What version of ansible-core are you using? (Also, because it needs to be ruled out: are you using Mitogen?)
+Feb 27 23:52:58 <awb>	2.16.3 and I don't know what Mitogen is :D
+Feb 28 00:07:46 <flowerysong>	I can't reproduce your result with the information you've provided, so the issue probably lies somewhere in the details that you haven't provided.
+Feb 28 00:17:13 <awb>	I think I might have found something. I am looking at the -vvv output and following along the handler's tasks, it suddenly jumps back to the invoking task list. Let me see if I can describe it...
+Feb 28 00:21:18 <awb>	I see all these RUNNING HANDLER lines and they are all correct. It gets to a waitfor, which it correctly skips. The next task is a pause, which should also be skipped but instead it executes the next task after I did the handler flush. Meaning, it "jumps back" to the calling role. I see a TASK with the /wrong/ task description (the previous one from the handler) but the correct filename and execution.
+Feb 28 00:21:43 <awb>	Could this be caused by using a pause with a prompt in a handler?
+Feb 28 00:23:14 <awb>	It also only executes that next task for targets that are not the first one, the one it correctly used for the run_once.
+Feb 28 00:26:33 <awb>	I should probably also add that this all worked just fine previously when it was not a role, but import_tasks. To answer the obvious question of "what changed?" :D
+Feb 28 00:28:22 <nerdette>	btw., I believe I found my issue: old syntax. Correct I believe is:  loop: "{{ (files.files | sort(attribute='mtime'))[:-2] }}" ... testing it
+Feb 28 00:39:51 <nerdette>	... just removed a few thousand backup files, looks good :-)
+Feb 28 00:40:52 <awb>	Nice job, nerdette!
+Feb 28 00:42:13 <awb>	OK, so my problem is getting a bit more weird. The task in the handler that is mislabeled (i.e., it "jumps back") is always the fourth one. The target group is five hosts, four of which show up in that task.
+Feb 28 00:42:44 <awb>	I am going to change it all to debug tasks to eliminate any conditionals interfering.
+**** BEGIN LOGGING AT Wed Feb 28 02:09:41 2024
+
+Feb 28 02:09:40 *	Now talking on #ansible
+Feb 28 02:09:40 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 28 02:09:40 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Feb 28 02:09:40 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Feb 28 02:18:15 <vbotka>	awb, if you want to wait for a file use the module *wait_for*.
+Feb 28 02:20:49 <awb>	I use that pretty commonly and it's a good idea. I just think it is more hassle that it is worth in this case. I just move the handler code into tasks/main.yml and do an import_role instead. Works.
+**** ENDING LOGGING AT Wed Feb 28 02:32:44 2024
+
+**** BEGIN LOGGING AT Thu Feb 29 01:02:43 2024
+
+Feb 29 01:02:42 *	Now talking on #ansible
+Feb 29 01:02:42 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 29 01:02:42 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Feb 29 01:02:42 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Feb 29 01:13:02 *	Disconnected ()
+**** ENDING LOGGING AT Thu Feb 29 01:13:02 2024
+
+**** BEGIN LOGGING AT Thu Feb 29 01:15:36 2024
+
+Feb 29 01:15:36 *	Now talking on #ansible
+Feb 29 01:15:36 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 29 01:15:36 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Feb 29 01:15:36 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Feb 29 04:09:24 <newpy>	I'm have a list of items, and each item has a "name" attribute and another attribute which is also a list of items
+Feb 29 04:10:26 <newpy>	I'm trying to check each item and if name is "X" then check the second attribute and grab an attribute from each item in that sub-list
+Feb 29 04:11:52 <newpy>	would it be something like my_list | selectattr('name','eq','X') | map(attribute='mylist.otherattr.field')
+Feb 29 04:11:53 <newpy>	?
+Feb 29 04:25:59 <newpy>	hmm, thought for sure this would do it but no dice:  my_list | selectattr('name','eq','X') | map(attribute='otherattr') | selectattr('field')
+Feb 29 04:27:56 <newpy>	oh, I had a typo
+Feb 29 04:27:57 <newpy>	doh
+Feb 29 04:38:26 <newpy>	hmm, still stuck here: paste.ee/p/GVt0f
+Feb 29 04:42:54 <newpy>	added a flatten filter between the two maps, seems to have worked
+Feb 29 04:43:09 <newpy>	(commented the last map to see what the previous output was, noticed it was a list of lists)
+Feb 29 06:20:57 <vbotka>	newpy, fix the name of the filter *selectattr* and *flatten* the list before mapping *neighbor_address*
+Feb 29 10:50:03 <nomicon>	Throwing it out here if somebody knows:
+Feb 29 10:50:04 <nomicon>	https://github.com/freeipa/ansible-freeipa/issues/1214
+Feb 29 12:21:42 <Shadur>	Is it permissible to set a conditional on a handler?
+Feb 29 12:22:57 <Shadur>	Context: I'm setting up a role to install keepalived because I'm planning to switch to it from corosync, and during the role it calls the 'Restart keepalived' handler if the config file changes... But I do *not* want to start or restart keepalived if I've set the host var 'do_not_start_keepalived_yet' to true.
+Feb 29 12:24:13 <Shadur>	(BEcause it turns out that if you have a cluster running with corosync, and you install and configure keepalived on one of its nodes, and keepalived is restarted, they get into an argument about who is in charge of things and Bad Stuff Happens. Given that stuff you install corosync or keepalived on tends to have HA requirements, this is not something you want to see in a production environment)
+Feb 29 12:25:57 <oblikoamorale>	so many words... what have you tried and how it didn't work?  handler is just a task and, when keyword is applicable there as in any other tasks
+Feb 29 12:30:17 <Shadur>	Looks like that works.
+Feb 29 13:04:19 <fireba11>	hm ... i'm looking for suggestions what to use for firewall rules that is nice to mange with ansible. directly use iptables? use ufw? i want roles to add their own rules and obviously avoid having a rules file per host that just gets copied over .. :-P
+Feb 29 13:11:40 <FooBar>	I template nft's config-file based on a generic base + per role / per host / per group additional rules
+Feb 29 13:12:04 <FooBar>	https://github.com/sigio/ansible-role-nft
+Feb 29 13:12:29 <FooBar>	(though somewhat outdated, not what I actually use these days, but to give an idea)
+Feb 29 13:35:15 <Led_Zeppelin2>	i need to keep doing --extra-vars="ansible_become_pass='{{ lookup('env','ANSIBLE_BECOME_PASS') }}'". Is there a way I can encapsulate this?
+Feb 29 14:02:02 <oblikoamorale>	encapsulate how? you'd need to expand a bit
+Feb 29 14:15:32 *	Disconnected ()
+**** ENDING LOGGING AT Thu Feb 29 14:15:32 2024
+
+**** BEGIN LOGGING AT Thu Feb 29 14:15:51 2024
+
+Feb 29 14:15:51 *	Now talking on #ansible
+Feb 29 14:15:51 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 29 14:15:51 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Feb 29 14:15:51 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Feb 29 14:29:11 <satmd>	do you happen to set ansible_become_pass / become_pass anywhere else?
+Feb 29 14:29:31 <satmd>	using --extra-vars usually is only needed when overwriting a variable that's set somewhere in the written code
+Feb 29 14:29:49 <satmd>	and I think that if that's the case, it'd be better to change that place
+**** BEGIN LOGGING AT Thu Feb 29 14:39:53 2024
+
+Feb 29 14:39:53 *	Now talking on #ansible
+Feb 29 14:39:53 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 29 14:39:53 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Feb 29 14:39:53 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Thu Feb 29 15:16:03 2024
+
+Feb 29 15:16:03 *	Now talking on #ansible
+Feb 29 15:16:03 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Feb 29 15:16:03 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Feb 29 15:16:03 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Feb 29 18:35:43 <oliva>	hi all can you please tell me why a quoted string in parentheses evaluate to true when tested as conditional?
+Feb 29 18:39:34 <newpy>	hi, question on inventories:
+Feb 29 18:39:56 <newpy>	Most of the inventories I see are of the format <group>: <host>: ...
+Feb 29 18:40:35 <newpy>	I saw one using host are the parent with a groups attribute defining which groups it belonged to
+Feb 29 18:40:58 <newpy>	was that for an older version of ansible or are both still valid?
+Feb 29 18:47:26 <oblikoamorale>	oliva: non empty string is always truthy. what are your expectations?
+Feb 29 18:54:07 <oblikoamorale>	newpy: not clear what your question is. out of the box ansible supports inventories in either yaml or ini formats, and their structure hasn't been changed in like... forever?
+Feb 29 18:58:56 <newpy>	oblikoamorale, you mean like this? https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html#hosts-in-multiple-groups
+Feb 29 18:59:33 <newpy>	I guess my issue is that I've defined host vars in the inventory file when I should have put it in hostvars/
+Feb 29 19:00:33 <newpy>	actually it's trickier since I create my inventory dynamically
+Feb 29 19:00:57 <newpy>	not sure if/how I can do that for host_vars as well
+Feb 29 19:01:37 <newpy>	my hope was to just keep my inventory as <hostname>: <vars>... and add a "groups" list attribute with the groups the host belongs to
+Feb 29 19:02:41 <newpy>	oh docs say it merges the data from the groups so I guess if entry has nested vars they'll be combined
+Feb 29 19:02:49 <newpy>	*any entry
+Feb 29 19:23:38 <oliva>	oblikoamorale: I tought so but why only inside parentheses?
+Feb 29 19:26:14 <oblikoamorale>	when: ("string")   and when: '"string"'   are both truthy. 2nd case must be doublequoted otherwise it's parsed as when: string.  round brackets serve the same purpose
+Feb 29 19:29:19 <oliva>	oblikoamorale: thank you very much for your kind explaination
+Feb 29 19:36:00 <jrglynn2>	newpy: I use dynamic inventory and assign groups in my inventory file, then can use `group_vars` directory structure to assign variables/etc. is that what you are asking? https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html#organizing-host-and-group-variables
+Feb 29 20:15:45 <newpy>	jrglynn2, yea it's tricky b/c I dispatch the actual play to ansible_runner on a container outside of my control
+Feb 29 20:16:08 <newpy>	I should be able to drop files into /etc/ansible hopefully, let me see
+Feb 29 20:16:54 <newpy>	jrglynn2, I was hoping I could just assign group vars, group assignments, etc, all in the dynamic inventory
+Feb 29 20:17:23 <newpy>	but maybe this is really slow too now that I think about it, a lot of this data will be somewhat static
+Feb 29 20:31:21 <jrglynn2>	i have never tried to assign variables in the group definition, never had the need. So i don't knwo if it would work - but here is an exerpt of my `keyed_groups` that gets created - I added the `vars` piece. If it was going to work, it would be that type of format ... this is YAML  ==> https://pastebin.com/XGJz8fW3
+**** BEGIN LOGGING AT Fri Mar  1 01:59:41 2024
+
+Mar 01 01:59:41 *	Now talking on #ansible
+Mar 01 01:59:41 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 01 01:59:41 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 01 01:59:41 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Mar 01 09:08:29 <double-p>	offtopic shameless plug - we just opened CfP for EuroBSDcon :)
+Mar 01 11:46:07 <fdan>	what is test kitchen?
+Mar 01 11:46:31 <fdan>	i know its a testing framework
+Mar 01 11:46:35 <fdan>	how do i use it with ansible
+Mar 01 11:47:13 <fdan>	what does bundle install and bundle exec kitchen test -l debug does?
+**** BEGIN LOGGING AT Fri Mar  1 14:01:16 2024
+
+Mar 01 14:01:16 *	Now talking on #ansible
+Mar 01 14:01:16 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 01 14:01:16 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 01 14:01:16 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Fri Mar  1 16:01:17 2024
+
+Mar 01 16:01:17 *	Now talking on #ansible
+Mar 01 16:01:17 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 01 16:01:17 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 01 16:01:17 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Fri Mar  1 18:08:59 2024
+
+Mar 01 18:08:59 *	Now talking on #ansible
+Mar 01 18:08:59 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 01 18:08:59 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 01 18:08:59 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** ENDING LOGGING AT Fri Mar  1 18:10:30 2024
+
+**** BEGIN LOGGING AT Fri Mar  1 19:04:13 2024
+
+Mar 01 19:04:13 *	Now talking on #ansible
+Mar 01 19:04:13 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 01 19:04:13 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 01 19:04:13 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Sat Mar  2 03:05:27 2024
+
+Mar 02 03:05:26 *	Now talking on #ansible
+Mar 02 03:05:26 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 02 03:05:26 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 02 03:05:26 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Sat Mar  2 06:15:35 2024
+
+Mar 02 06:15:35 *	Now talking on #ansible
+Mar 02 06:15:35 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 02 06:15:35 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 02 06:15:35 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Sat Mar  2 06:17:09 2024
+
+Mar 02 06:17:09 *	Now talking on #ansible
+Mar 02 06:17:09 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 02 06:17:09 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 02 06:17:09 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Sat Mar  2 19:02:28 2024
+
+Mar 02 19:02:28 *	Now talking on #ansible
+Mar 02 19:02:28 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 02 19:02:28 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 02 19:02:28 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Sun Mar  3 08:36:18 2024
+
+Mar 03 08:36:17 *	Now talking on #ansible
+Mar 03 08:36:17 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 03 08:36:17 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 03 08:36:17 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Mar 03 14:51:39 <ljkimz>	Is it expected that using `required_if` in a custom module argument spec makes the parameters that are tested implicitly required? I have a simple module with a parameter `enabled` which is not required for all uses of the module. However, we do want to specify that a few other parameters are required WHEN `enabled` is used.
+Mar 03 14:51:40 <ljkimz>	https://pastebin.com/NPUbm6Gd
+Mar 03 14:52:44 <ljkimz>	But when we use `required_if` to specify the parameters required with `enabled` then the module execution fails unless we provide `enabled ` at all times: `Exception calling “Create” with “2” argument(s): “Object reference not set to an instance of an object.”` If it's not clear this is specifically a Windows module.
+Mar 03 15:33:22 <oblikoamorale>	while i don't have input for argspec subject, aren't you missing single quote in line 6
+Mar 03 16:02:16 <ljkimz>	oblikoamorale yes. But that's not the problem. I actually transcribed that code from a disconnected environment. In the source it's fine I just messed up on the paste
+Mar 03 16:02:29 <ljkimz>	But thanks for at least looking
+**** BEGIN LOGGING AT Mon Mar  4 04:37:43 2024
+
+Mar 04 04:37:43 *	Now talking on #ansible
+Mar 04 04:37:43 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 04 04:37:43 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 04 04:37:43 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Mon Mar  4 04:39:41 2024
+
+Mar 04 04:39:40 *	Now talking on #ansible
+Mar 04 04:39:40 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 04 04:39:40 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 04 04:39:41 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Mar 04 15:40:45 <macado>	Does AWX have it's own specific channel?  I was going to open a bug report but need some help investigating an issue we are having with long running Ansible jobs that just seem to crash/die in middle of job.     Running AWX 23.8.0 using AWX operator (awx-operator.v2.12.0) on Red Hat Openshift.   From what I can tell the awx-prod-task pod
+Mar 04 15:40:46 <macado>	keeps restarting (although may that is normal, sorry sort of new to AWX).  I dont recall having this issue a month ago so i'm not sure if it's an issue with a recently upgraded version from the operator. It's happening in both my lab and prod AWX environments.
+Mar 04 15:40:46 <macado>	I am seeing this this in awx-prod-task logs in openshift but I am not sure if this is the issue. https://pastebin.com/JGDfxQXQ
+Mar 04 15:42:53 <oblikoamorale>	we deal with ansible cli here mostly, try #ansible-awx
+Mar 04 15:44:33 <macado>	oblikoamorale thanks!
+Mar 04 15:55:21 <doubletwist>	If a playbook uses 'tasks_from' when importing a role - will it still be able to use and handlers defined in that role?
+Mar 04 15:55:30 <doubletwist>	any handlers
+Mar 04 15:56:54 <double-p>	wouldnt count on that
+Mar 04 16:01:48 <oblikoamorale>	so... let's be more specific. in a playbook there is a play, with a task in tasks section, referencing import_role having tasks_from param. why wouldn't it process role handlers? it will, from handlers/main.yml. what happens if you try it?
+Mar 04 16:19:26 <doubletwist>	Apparently it does work. Although now I'm trying to figure out why it's calling the handler even when the notifying tasks has no changes
+Mar 04 16:24:19 <double-p>	gpg keyring import... every time. aargh.
+Mar 04 16:26:08 <oblikoamorale>	doubletwist: provide a minimal reproducer so we can take a look. although I very much doubt handlers are invoked without notifications
+Mar 04 16:33:49 <doubletwist>	https://paste.debian.net/1309424/
+Mar 04 16:41:07 <oblikoamorale>	according to task name, the handler "Reboot after patch" is not executed. some task named "myrole : Reboot systems after successful patching.." runs instead
+Mar 04 16:43:10 <doubletwist>	lol
+Mar 04 16:43:12 <doubletwist>	oops
+Mar 04 16:43:42 <doubletwist>	yup, that'd do it.
+Mar 04 16:43:43 <doubletwist>	Thank you
+Mar 04 17:46:00 <test_>	hi, i have something like "MY_VAR: [1,2,3]" in group_vars; for a specific host, the list shall be appened like "MY_VAR: {{ MY_VAR + [4,5] }}" - but that leads to a recursion error - how would I do that correctly?
+Mar 04 19:37:38 <jrglynn2>	test_: have you tried `.append`? {{ MY_VAR.append(4) }}? see https://stackoverflow.com/questions/49619445/how-to-append-to-a-list-in-jinja2-for-ansible
+Mar 04 19:39:58 <oblikoamorale>	nah, what they likely are looking for is some variation of https://witchychant.com/ansible-cumulative-inventory-variables/
+Mar 04 19:56:43 <miira>	Hello all, can someone help me? I am trying to find a variable inside another variable inside a conditon "when: item is search(vol_type)" where item is a list with key and value and vol_type is a variable that has a result that changes and is not fixed. How can I acheive this?
+Mar 04 20:33:26 <newpy>	has anyone gotten cisco.ios.ios_l3_interfaces module state: deleted to work?
+**** BEGIN LOGGING AT Tue Mar  5 07:39:51 2024
+
+Mar 05 07:39:50 *	Now talking on #ansible
+Mar 05 07:39:50 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 05 07:39:50 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 05 07:39:50 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Mar 05 08:54:33 <Haxxa>	Hi, is there anyway to send AT commands using Ansible. I have 50 devices to setup that require AT commands over serial. Iwas using minicom but its getting very very tedious
+Mar 05 09:02:50 <fdan>	anyone familiar with test kitchen?
+Mar 05 09:10:20 <double-p>	Haxxa: maybe https://github.com/k0ste/ansible-role-netctl (see the ppp connection)
+Mar 05 09:13:17 <Haxxa>	Yeah tried that earlier, ideally I could just pipe AT commands:
+Mar 05 09:13:18 <Haxxa>	AT+QCFG="usbnet",1    AT+CGDCONT=1,"IP","super"   AT+CFUN=1,1
+Mar 05 09:48:26 <fdan>	any one can help me with test kitchen?
+Mar 05 09:49:58 <oblikoamorale>	no, ask their support
+Mar 05 09:50:39 <fdan>	ok ill look in google, but do they even have their support?
+Mar 05 09:55:01 <fdan>	oblikoamorale https://dpaste.org/oqaUr
+Mar 05 09:55:26 <fdan>	file structure: https://dpaste.org/7Svj0
+Mar 05 09:56:04 <fdan>	could you help me whats wrong and why i get this error
+Mar 05 10:07:17 <colo>	Haxxa: well, doing serial communication is finnicky business. but minicom, picocom et al. should be fine to use - I have a hard time imagining how a dedicated ansible module should vastly improve your current experience ;) maybe you are holding it slightly wrong? what is the actual problem?
+Mar 05 10:08:19 <Haxxa>	colo, I am setting up QC25 modems on 50 embedded linux boxes and don't want to manually ssh into every box and send the AT commands
+Mar 05 10:08:46 <colo>	so... use the `script` module?
+Mar 05 10:09:44 <colo>	just because you use ansible doesn't mean that EVERYTHING you do in your play/role has to be done using its clumsy DSL and "native
+Mar 05 10:09:46 <colo>	" modules
+Mar 05 10:10:31 <double-p>	some of those router dialin modules, too? fortios/fortinet and such
+Mar 05 10:11:50 <Haxxa>	I only started using ansible today, I had a problem and it solved it. i.e. mass configuring devices in a repeatable way. I don't really know whats best way to handle finiky modems
+Mar 05 10:13:07 <colo>	Haxxa: I see :) well, I would write a shellscript for the target device that sets the modem up in the expected way once, then use an inventory of all remote hosts and a task using that script via the ansible `script` module to mass-deploy/execute it. job done.
+Mar 05 10:13:23 <colo>	(the script would use minicom, if you have that on each remote host)
+Mar 05 10:14:57 <Haxxa>	So I have been using minicom interactively thus far. How do I use minicom with a script and make it wait for AT: OK for example, where commands can take 10 seconds to reply
+Mar 05 10:16:52 <colo>	you can try automating minicom (using expect, for example), or use another tool for serial comms that is more friendly towards non-interactive use. maybe check out https://linux.die.net/man/1/runscript first.
+Mar 05 10:18:17 <Haxxa>	Thanks
+Mar 05 11:09:17 <oblikoamorale>	fdan: we wouldn't know. the error suggests the role is not in configured role search path
+Mar 05 14:46:46 <fdan>	still unable to solve this problem: https://dpaste.org/oqaUr
+Mar 05 14:46:47 <fdan>	file structure: https://dpaste.org/7Svj0
+Mar 05 14:46:47 <fdan>	can anyone me on how to fix this
+Mar 05 14:50:51 <legreffier>	fdan: ansible-playbook will automatically look up and find role, you don't want to specify neither a path or a key here , just list your roles as "- role_name" under the "roles:" key.
+Mar 05 14:51:36 <flowerysong>	The key is fine, it's an alternate syntax for when you need to associate additional things with it (like tags.)
+Mar 05 14:51:58 <fdan>	legreffier you mean to say  this is not needed   requirements_collection_path: roles/requirements.yml ?
+Mar 05 14:51:58 <flowerysong>	But `roles/` should never need to be part of your role name.
+Mar 05 14:52:44 <fdan>	flowerysong which line number exactly?
+Mar 05 14:53:15 <flowerysong>	The error appears to be in '/tmp/kitchen/playbook.yml': line 18, column 7, but may
+Mar 05 14:54:42 <legreffier>	i was only talking about the first dpaste link.
+Mar 05 14:55:01 <fdan>	flowerysong i have something like this https://dpaste.org/hkPHX
+Mar 05 14:56:34 <legreffier>	this is how your playbook should look : https://dpaste.org/jYSQ6
+Mar 05 14:57:50 <fdan>	legreffier but i dont see anything wrong with my approach
+Mar 05 14:58:18 <fdan>	why do you think my approach is wrong
+Mar 05 14:58:53 <legreffier>	ok. have a nice day. lol. *plonk*
+Mar 05 14:59:24 <flowerysong>	fdan: That's not the version of the playbook that error is from, because it does not contain the line in the error.
+Mar 05 15:01:13 <flowerysong>	And `role: .` is an incredibly terrible idea.
+Mar 05 15:01:35 <fdan>	what does role: . means?
+Mar 05 15:04:00 <flowerysong>	The line in your playbook.
+Mar 05 15:04:47 <fdan>	yes what does it mean.
+Mar 05 15:04:57 <fdan>	because i didnt wrote those parts in it
+Mar 05 15:05:52 <flowerysong>	I'm not sure how it would actually behave, because roles are supposed to have names, not point to magic directory entries like '.' (which is the current directory, while '..' is the parent directory.)
+Mar 05 15:08:48 <fdan>	hmm
+Mar 05 15:11:17 <flowerysong>	Theoretically I think it would load the first path in your roles search path as a role, which should end up as an empty role because those paths are supposed to be to containing directories. But you could misconfigure things so it actually loads a role, probably.
+Mar 05 15:15:09 <fdan>	flowerysong: this is what it still points to https://dpaste.org/hkPHX
+Mar 05 15:15:14 <fdan>	i still see the same error https://dpaste.org/hkPHX
+Mar 05 15:15:21 <fdan>	       The error appears to be in '/tmp/kitchen/playbook.yml': line 18, column 7, but may
+Mar 05 15:22:12 <flowerysong>	Then you're not editing the playbook that you're actually running. This playbook *cannot* result in the error you showed.
+Mar 05 15:22:21 <flowerysong>	As I stated previously.
+Mar 05 15:29:32 <shertel>	the `roles_path: .` in the provisioner seems like it would overwrite the default (rather than append/prepend), did you try without that?
+Mar 05 15:32:45 <fdan>	shertel: which line exactly?
+Mar 05 15:33:22 <fdan>	shertel: https://dpaste.org/7Svj0#L3
+Mar 05 15:33:26 <fdan>	this one?
+Mar 05 15:36:19 <shertel>	fdan: yes, that's the one I was wondering about
+Mar 05 15:38:14 <fdan>	ok i removed it, now it says this error        ERROR! The requirements file '/tmp/kitchen/roles/requirements.yml' does not exist.
+Mar 05 16:32:57 <Haxxa>	Any guess why these commands work when entered directly into the shell, but not when called from ansible?
+Mar 05 16:32:57 <Haxxa>	https://paste.debian.net/plain/1309535
+Mar 05 16:33:04 <Haxxa>	(root shell)
+Mar 05 16:36:42 <jtanner>	Haxxa: https://stackoverflow.com/a/56682415
+Mar 05 16:37:05 <Haxxa>	jtanner just figured it out as you posted it
+Mar 05 16:37:31 <Haxxa>	BTW I started using ansible this afternoon or first time, I am finding it very nice
+**** BEGIN LOGGING AT Tue Mar  5 18:13:43 2024
+
+Mar 05 18:13:42 *	Now talking on #ansible
+Mar 05 18:13:42 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 05 18:13:42 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 05 18:13:42 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Tue Mar  5 19:05:31 2024
+
+Mar 05 19:05:30 *	Now talking on #ansible
+Mar 05 19:05:30 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 05 19:05:30 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 05 19:05:30 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Mar 05 19:17:18 <Freneticks>	Oddmonger: la switch c'est juste une SoC nvidia ARM
+Mar 05 19:17:31 <Freneticks>	sorry mt
+Mar 05 19:17:40 <stenno>	ceci n'est pas un switch
+**** BEGIN LOGGING AT Tue Mar  5 20:41:19 2024
+
+Mar 05 20:41:19 *	Now talking on #ansible
+Mar 05 20:41:19 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 05 20:41:19 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 05 20:41:19 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Tue Mar  5 22:33:04 2024
+
+Mar 05 22:33:02 *	Now talking on #ansible
+Mar 05 22:33:02 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 05 22:33:02 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 05 22:33:03 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Wed Mar  6 01:51:37 2024
+
+Mar 06 01:51:37 *	Now talking on #ansible
+Mar 06 01:51:37 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 06 01:51:37 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 06 01:51:37 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Wed Mar  6 07:16:32 2024
+
+Mar 06 07:16:31 *	Now talking on #ansible
+Mar 06 07:16:31 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 06 07:16:31 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 06 07:16:31 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Mar 06 08:56:22 <cla>	awb: Correct.

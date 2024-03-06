@@ -1,0 +1,1807 @@
+**** BEGIN LOGGING AT Mon Dec 11 09:11:23 2023
+
+Dec 11 09:11:22 *	Now talking on #debian
+Dec 11 09:11:22 *	Topic for #debian is: Don't use 6.1.64 kernel (possible data loss), see #1057843 | Debian 12.3 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.8 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next | Community expectations:
+Dec 11 09:11:22 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sat Dec  9 20:07:03 2023)
+Dec 11 09:11:22 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+Dec 11 10:06:01 *	Disconnected ()
+**** ENDING LOGGING AT Mon Dec 11 10:06:01 2023
+
+**** BEGIN LOGGING AT Mon Dec 11 18:09:39 2023
+
+Dec 11 18:09:37 *	Now talking on #debian
+Dec 11 18:09:37 *	Topic for #debian is: Don't use 6.1.64 kernel (possible data loss), see #1057843 | Debian 12.3 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.8 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next | Community expectations:
+Dec 11 18:09:37 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sat Dec  9 20:07:03 2023)
+Dec 11 18:09:37 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** ENDING LOGGING AT Mon Dec 11 18:14:11 2023
+
+**** BEGIN LOGGING AT Mon Dec 11 18:14:11 2023
+
+Dec 11 19:03:44 <dzwdz>	is there a reason why grafana isn't in the repos, but prometheus is?
+Dec 11 19:03:54 <dzwdz>	i was under the impression the two tend to be used together
+Dec 11 19:20:28 <sney>	dzwdz: looks like the grafana package was orphaned and removed a few years ago, and nobody has been able to get it back in, maybe due to javascript bundling and/or golang dependencies
+Dec 11 19:20:54 <sney>	anarcat wrote an overview in the current rfp,
+Dec 11 19:20:56 <sney>	,bug 923872
+Dec 11 19:20:57 <judd>	Bug https://bugs.debian.org/923872 in wnpp (open): «RFP: grafana -- feature rich metrics dashboard and graph editor»; severity: wishlist; opened: 2019-03-06; last modified: 2019-03-06.
+Dec 11 19:21:04 <dzwdz>	ah, thanks!
+Dec 11 19:21:51 <sney>	np
+Dec 11 19:22:41 <dzwdz>	for future reference - how did you find that?
+Dec 11 19:23:31 <sney>	I searched wnpp ("work needing and prospective packages") for it. wnpp.debian.net
+Dec 11 19:25:16 <dzwdz>	huh, i added their APT repository, and the only dependency of their package is musl
+Dec 11 19:25:18 <dzwdz>	kinda cursed
+Dec 11 19:25:27 <sney>	bundle all the things
+Dec 11 19:25:57 <dzwdz>	i'm more curious about the musl part
+Dec 11 19:29:11 <sney>	why depend on musl specifically when any debian/derivative system will have glibc? who knows, it looks like they had a lot of questionable decisions
+Dec 11 19:29:17 <sney>	maybe just one nerd who prefers it *shrug*
+Dec 11 19:39:20 <BillTorvalds>	'In 2008, the principal developer of the ext3 and ext4 file systems, Theodore Ts'o, stated that although ext4 has improved features, it is not a major advance; it uses old technology and is a stop-gap. Ts'o said that Btrfs is the better direction because "it offers improvements in scalability, reliability, and ease of management".' <-- So why did he make ext4 to begin with? Why didn't btrfs take over from that point or at least by now as
+Dec 11 19:39:20 <BillTorvalds>	default everywhere? I feel "tricked" onto some crappy/lesser file system when I really care about not losing/corrupting data. :/
+Dec 11 19:40:14 <tomman>	a backup a day keeps the DR away~~
+Dec 11 19:41:17 <petn-randall>	BillTorvalds: You're free to use btrfs, nobody is stopping you.
+Dec 11 19:42:06 <petn-randall>	BillTorvalds: The reason it's not the default is because it has rather low performance on spinning disks, and has failure modes that are hard to recover from.
+Dec 11 19:42:14 <somiaj>	petn-randall: better is a matter of what one wants. ext4 is a well tested filesystem and works just fine for most cases, hence no real strong reason to leave it. I know there have been a few times discussion of making btrfs the default has raisen, but it never happened.
+Dec 11 19:42:30 <somiaj>	BillTorvalds: ^^
+Dec 11 19:42:34 <somiaj>	petn-randall: arg, my brain isn't working yet
+Dec 11 19:42:46 <sney>	istr fedora is/was defaulting to btrfs at one point
+Dec 11 19:42:57 <petn-randall>	somiaj: good morning (っ˘з(˘⌣˘ )
+Dec 11 19:43:35 <somiaj>	I also think lvm has a lot to do with it, once people started using lvm by default in most cases, it provides a lot of the features needed.
+Dec 11 19:45:18 <cc77>	I noticed that ubuntu server defaults to lvm disk configuration when installing and debian 12 (network install) to classical partitions.
+Dec 11 19:46:18 <petn-randall>	cc77: I think it's called "guided - LVM" or something in the debian installer.
+Dec 11 19:46:22 <dzwdz>	BillTorvalds: ext4 definitely isn't crappy
+Dec 11 19:46:36 <dzwdz>	it's not as featureful as other, more modern, filesystems, but it's very battletested
+Dec 11 19:46:48 *	petn-randall nodes.
+Dec 11 19:46:49 <dzwdz>	the recent data corruption bug wasn't really an issue with ext4 itself as much as with the backporting workflow
+Dec 11 19:47:11 <somiaj>	BillTorvalds: it has been a while since I've seen various benchmarks, but ext4 benchmarks are on par with other filesystems in many use cases, just some random site, https://www.phoronix.com/news/Linux-5.14-File-Systems, but you'll see that ext4 preforms better in some cases, so it isn't a bad filesystem. (I just found a random link, but trying to show that under many conditions it is a comparble system)
+Dec 11 19:47:11 <dzwdz>	could've happened to any kernel component
+Dec 11 19:47:29 <petn-randall>	Pretty sure it had less dataloss bugs in teh past compared to btrfs. ZFS had a recent one, but that didn't make the news.
+Dec 11 19:47:59 <somiaj>	really I don't think this one would have either if it didn't happen to time with a debian point release, it was in the upstream kernel for only about a week or two.
+Dec 11 19:48:08 <dzwdz>	btrfs doesn't really have a reputation for being stable in the first place :p
+Dec 11 19:48:42 <dzwdz>	that being said i didn't have any issues with it personally
+Dec 11 19:54:36 <jelly>	after a 3 day outage some 20 years ago with reiserfs, I don't trust any fs without a working fsck
+Dec 11 20:02:25 <chives>	Its actually a socks proxy i believe shouldnt dns be able to go through the proxy? not sure how to configure that vs http_proxy
+Dec 11 20:03:33 <Linux^>	Hi how does linux kernel works? I mean how is it maintained? Who implements new stuffs for free?
+Dec 11 20:04:12 <somiaj>	Linux^: you may find #kernel a better place to ask such a question
+Dec 11 20:04:13 <sney>	there is a big team of people that maintain it in a public git repo
+Dec 11 20:04:22 <sney>	go look around on git.kernel.org
+Dec 11 20:04:27 <somiaj>	(lots of work is done via corporate funding)
+Dec 11 20:04:41 <sney>	a lot of hardware vendors contribute drivers as well
+Dec 11 20:04:50 <Linux^>	I see
+Dec 11 20:05:02 <Linux^>	so run on big tech sponsorship
+Dec 11 20:05:24 <sney>	it is a little more complicated than that, but that's certainly a big part of it
+Dec 11 20:12:17 <somiaj>	Linux^: a big part of the GPL model is if you use the code, and make changes to the code, you share those changes. So popularity drives a lot of it too, lots of people have vested interest to improve the kernel then share the changes.
+Dec 11 20:13:00 <somiaj>	active kernel contributes I belive is in the tens of thousands.
+Dec 11 20:21:00 <Linux^>	Debian also works that way?
+Dec 11 20:22:52 *	Disconnected ()
+**** ENDING LOGGING AT Mon Dec 11 20:22:52 2023
+
+**** BEGIN LOGGING AT Mon Dec 11 20:27:35 2023
+
+Dec 11 20:27:32 *	Now talking on #debian
+Dec 11 20:27:32 *	Topic for #debian is: Don't use 6.1.64 kernel (possible data loss), see #1057843 | Debian 12.3 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.8 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next | Community expectations:
+Dec 11 20:27:32 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sat Dec  9 20:07:03 2023)
+Dec 11 20:27:32 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+Dec 11 20:41:06 <chives>	So there's no way in debian repos to configure a socks4 proxy so basic things like dns and http/https work from the os level?
+Dec 11 20:42:51 <somiaj>	You may find asking socks support helpful here, as users there maybe more familar with socks and its capabilties
+Dec 11 20:46:25 <jelly>	chives, solutions to complex problems in linux may require using more that one tool
+Dec 11 20:47:44 <chives>	my internet is so bad right now i cant even determine when socks4 became thing or who invented it
+Dec 11 20:47:51 <chives>	a thing
+Dec 11 20:47:55 <jelly>	"dns resolution on the OS level" means you need to change how resolver library works.  That usually means putting a customized dns resolver in /etc/resolv.conf, or using a customized resolver library in /etc/nsswitch.conf to look up hostnames in some other place than default
+Dec 11 20:50:20 <chives>	From what I understand it would be socks at the os level looks like the apps that support it proxy dns alongside http
+Dec 11 20:50:49 <jelly>	you can't use socks4 on its own, because socks4 leaves dns resolution to the client and only cares about socket() and connect()ions; SOCKS5 can do dns
+Dec 11 20:51:44 <chives>	hmm interesting was thinking it was just auth that was different
+Dec 11 20:51:47 <jelly>	so if you can't find a resolver that does both DoH and can use socks, you need to combine two things: a resolver that does DoH, and a way to make it use socks4 to establish ocnnections
+Dec 11 20:52:24 <jelly>	,i dante-client
+Dec 11 20:52:25 <judd>	Package dante-client (net, optional) in bookworm/amd64: SOCKS wrapper for users behind a firewall. Version: 1.4.2+dfsg-7; Size: 47.6k; Installed: 87k; Homepage: https://www.inet.no/dante/
+Dec 11 20:52:58 <jelly>	that's a wrapper library that can make socks-unaware programs use a socks proxy
+Dec 11 20:53:35 <jelly>	,i ruby-socksify
+Dec 11 20:53:36 <judd>	Package ruby-socksify (ruby, optional) in bookworm/amd64: Redirect all TCPSockets through a SOCKS5 proxy. Version: 1.7.1+gh-1; Size: 6.8k; Installed: 35k; Homepage: https://github.com/astro/socksify-ruby/
+Dec 11 20:53:52 <jelly>	there are several such wrappers, dunno which works best
+Dec 11 20:55:00 <jelly>	chives, why do you want _only_ the dns resolver to work through the proxy, tho?  Why not other traffic?
+Dec 11 20:57:34 <jwash>	hi everyone is it possible to have a python3.6 installation along side 3.1? i'm on debian 12. platformio requires 3.6+
+Dec 11 20:58:21 <badsektor>	guys my debian update told me that i should stop using sudo and switch to another thing but i didnt get it
+Dec 11 20:59:01 <somiaj>	badsektor: exactly what told you that?
+Dec 11 21:00:06 <badsektor>	today\s apt update
+Dec 11 21:00:19 FiSHLiM plugin unloaded
+**** ENDING LOGGING AT Mon Dec 11 21:00:19 2023
+
+**** BEGIN LOGGING AT Sun Dec 17 12:33:17 2023
+
+Dec 17 12:33:17 *	Now talking on #debian
+Dec 17 12:33:17 *	Topic for #debian is: Debian 12.4 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.8 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next | Community expectations: http://deb.li/conduct
+Dec 17 12:33:17 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Wed Dec 13 02:04:50 2023)
+Dec 17 12:33:17 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+Dec 17 12:48:25 <rigid>	Does anyone see what's causing this bug: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1055493 ? We're really struggling finding the cause. Our best guess until now is that "dh_installman spiders the temp directories and installs all manpages that it finds, regardless of what the .install files suggest."
+Dec 17 12:48:26 <judd>	Bug https://bugs.debian.org/1055493 in linuxcnc-uspace,linuxcnc-uspace-dev (open): «linuxcnc-uspace,linuxcnc-uspace-dev: both packages ship the manpages»; severity: serious; opened: 2023-11-07; last modified: 2023-11-27.
+Dec 17 12:49:24 <rigid>	It's unlikely that there's a bug in the debian buildchain, but it seems to call dh_installman while our buildchain doesn't.
+Dec 17 12:52:09 <rigid>	The install files (and .install.in) look fine https://github.com/LinuxCNC/linuxcnc/tree/master/debian
+Dec 17 12:52:33 <rigid>	Any hint or reference for a read highly appreciated.
+Dec 17 13:52:45 <rigid>	no one? can anyone point me to the debian buildchain? we can't reproduce it with ours.
+Dec 17 14:02:27 <BillTorvalds>	Question: There has been yet another Debian Linux kernel update (6.1.0-16-amd64), released only a few days after the previous "fix". Is this again related to that data-destroying bug? I've searched all around websites now without finding any mention of it or any changelog which mentions this version. It's really confusing that Debian doesn't use the "real" Linux kernel version numbers. Even `uname -r` just says the special "Debian kernel".
+Dec 17 14:02:58 <PerfDave>	rigid: THat's a bit in-depth for this which is mostly a user support channel. You might want to try #debian-mentors over on OFTC (not libera)
+Dec 17 14:04:17 <PerfDave>	rigid: I assume you've tried talking directly to the developers for those packages?
+Dec 17 14:04:53 <PerfDave>	https://tracker.debian.org/pkg/linuxcnc should have contact details
+Dec 17 14:08:34 <xx>	BillTorvalds: it's related to a serious wifi bug
+Dec 17 14:09:00 <xx>	the last few LTS kernel releases have been pretty poor quality
+**** ENDING LOGGING AT Sun Dec 17 14:12:03 2023
+
+**** BEGIN LOGGING AT Wed Jan 17 16:45:04 2024
+
+janv. 17 16:45:04 *	Now talking on #debian
+janv. 17 16:45:04 *	Topic for #debian is: Debian 12.4 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.8 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next | Community expectations: http://deb.li/conduct
+janv. 17 16:45:04 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Wed Dec 13 02:04:50 2023)
+janv. 17 16:45:04 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** ENDING LOGGING AT Wed Jan 17 16:46:04 2024
+
+**** BEGIN LOGGING AT Wed Jan 17 21:56:11 2024
+
+janv. 17 21:56:10 *	Now talking on #debian
+janv. 17 21:56:10 *	Topic for #debian is: Debian 12.4 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.8 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next | Community expectations: http://deb.li/conduct
+janv. 17 21:56:10 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Wed Dec 13 02:04:50 2023)
+janv. 17 21:56:10 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** BEGIN LOGGING AT Wed Jan 17 22:05:35 2024
+
+janv. 17 22:05:35 *	Now talking on #debian
+janv. 17 22:05:35 *	Topic for #debian is: Debian 12.4 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.8 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next | Community expectations: http://deb.li/conduct
+janv. 17 22:05:35 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Wed Dec 13 02:04:50 2023)
+janv. 17 22:05:35 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** ENDING LOGGING AT Wed Jan 17 22:07:05 2024
+
+**** BEGIN LOGGING AT Wed Jan 17 22:07:05 2024
+
+**** ENDING LOGGING AT Wed Jan 17 22:07:11 2024
+
+**** BEGIN LOGGING AT Wed Jan 17 22:07:27 2024
+
+janv. 17 22:07:27 *	Now talking on #debian
+janv. 17 22:07:27 *	Topic for #debian is: Debian 12.4 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.8 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next | Community expectations: http://deb.li/conduct
+janv. 17 22:07:27 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Wed Dec 13 02:04:50 2023)
+janv. 17 22:07:27 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** ENDING LOGGING AT Wed Jan 17 22:07:51 2024
+
+**** BEGIN LOGGING AT Wed Jan 17 22:09:27 2024
+
+janv. 17 22:09:27 *	Now talking on #debian
+janv. 17 22:09:27 *	Topic for #debian is: Debian 12.4 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.8 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next | Community expectations: http://deb.li/conduct
+janv. 17 22:09:27 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Wed Dec 13 02:04:50 2023)
+janv. 17 22:09:27 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** BEGIN LOGGING AT Wed Jan 17 22:25:37 2024
+
+janv. 17 22:25:37 *	Now talking on #debian
+janv. 17 22:25:37 *	Topic for #debian is: Debian 12.4 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.8 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next | Community expectations: http://deb.li/conduct
+janv. 17 22:25:37 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Wed Dec 13 02:04:50 2023)
+janv. 17 22:25:37 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** ENDING LOGGING AT Wed Jan 17 22:37:34 2024
+
+**** BEGIN LOGGING AT Thu Jan 18 07:26:22 2024
+
+janv. 18 07:26:22 *	Now talking on #debian
+janv. 18 07:26:22 *	Topic for #debian is: Debian 12.4 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.8 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next | Community expectations: http://deb.li/conduct
+janv. 18 07:26:22 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Wed Dec 13 02:04:50 2023)
+janv. 18 07:26:22 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+janv. 18 08:26:07 *	Disconnected ()
+**** ENDING LOGGING AT Thu Jan 18 08:26:07 2024
+
+**** BEGIN LOGGING AT Thu Jan 18 08:26:31 2024
+
+janv. 18 08:26:31 *	Now talking on #debian
+janv. 18 08:26:31 *	Topic for #debian is: Debian 12.4 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.8 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next | Community expectations: http://deb.li/conduct
+janv. 18 08:26:31 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Wed Dec 13 02:04:50 2023)
+janv. 18 08:26:31 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** ENDING LOGGING AT Thu Jan 18 09:20:36 2024
+
+**** BEGIN LOGGING AT Thu Jan 18 09:57:29 2024
+
+janv. 18 09:57:29 *	Now talking on #debian
+janv. 18 09:57:29 *	Topic for #debian is: Debian 12.4 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.8 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next | Community expectations: http://deb.li/conduct
+janv. 18 09:57:29 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Wed Dec 13 02:04:50 2023)
+janv. 18 09:57:29 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+janv. 18 10:27:52 <nasmConnoisseur>	Is it normal that I get almost no updates during the week?
+janv. 18 10:48:59 <n4dir>	nasmConnoisseur: i sure am never that astonished if debian only updates every few days. Right now i am usually on old-stable, not that sure how often is "normal" for stable
+janv. 18 10:49:17 <n4dir>	i never realized it slows down "during the week", but also never paid attention
+janv. 18 10:50:54 <jastrom>	nasmConnoisseur, I'd say so
+janv. 18 10:51:03 <jastrom>	nasmConnoisseur, or we face the same problem :)
+janv. 18 11:53:31 <nasmConnoisseur>	n4dir I mean that I get only a few.
+janv. 18 11:53:55 <nasmConnoisseur>	Or unattended-upgrades is doing them and I don't realize
+janv. 18 11:54:43 <nasmConnoisseur>	In wich case, where are the logs for the updates?
+janv. 18 11:56:38 <nasmConnoisseur>	Oki /var/log/apt
+janv. 18 12:29:28 <nasmConnoisseur>	That was not the case, but I removed unattended-upgrades.
+janv. 18 12:34:59 <nasmConnoisseur>	I want to control when the updates are done
+janv. 18 12:46:01 <mystified1234>	Hi I need some help please. running bookworm SERVER on a quad core i3-8300t, with CasaOs.connected with chroot from MxLinux, with working wifi & eth0. on bare metal Debian both wifi & ethernet are down, how can I resolve this with chroot
+janv. 18 12:46:38 <mystified1234>	Network:
+janv. 18 12:46:38 <mystified1234>	  Device-1: Realtek RTL8111/8168/8411 PCI Express Gigabit Ethernet
+janv. 18 12:46:39 <mystified1234>	    driver: r8169
+janv. 18 12:46:39 <mystified1234>	  IF: eth0 state: down mac: 54:bf:64:80:11:05
+janv. 18 12:46:39 *	debchange has kicked mystified1234 from #debian (flood detected)
+janv. 18 12:47:35 <mystified1234>	Hi I need some help please. running bookworm SERVER on a quad core i3-8300t, with CasaOs.connected with chroot from MxLinux, with working wifi & eth0. on bare metal Debian both wifi & ethernet are down, how can I resolve this with chroot
+janv. 18 12:48:01 <mystified1234>	Network:
+janv. 18 12:48:02 <mystified1234>	  Device-1: Realtek RTL8111/8168/8411 PCI Express Gigabit Ethernet
+janv. 18 12:48:02 <mystified1234>	    driver: r8169
+janv. 18 12:48:02 *	debchange sets quiet on *!*@2405:6e00:4f4:9fd6:3d48:dff5:ea71:93e9
+janv. 18 12:51:04 *	debchange removes quiet on *!*@2405:6e00:4f4:9fd6:3d48:dff5:ea71:93e9
+**** BEGIN LOGGING AT Mon Feb 12 13:07:12 2024
+
+févr. 12 13:07:12 *	Now talking on #debian
+févr. 12 13:07:12 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+févr. 12 13:07:12 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+févr. 12 13:07:12 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** BEGIN LOGGING AT Mon Feb 12 14:01:08 2024
+
+févr. 12 14:01:08 *	Now talking on #debian
+févr. 12 14:01:08 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+févr. 12 14:01:08 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+févr. 12 14:01:08 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+févr. 12 14:01:49 <budlight>	it fails to build the .debs
+févr. 12 14:13:40 <hacknorris>	someone knows how to make openbox menu autoupdating? i have enough of typing each app from terminal...
+févr. 12 14:22:26 <bmomjian>	Any timeline for the 12.5 nVidia fix?  https://unix.stackexchange.com/questions/768988/debian-12-5-kernel-fails-to-install
+févr. 12 14:23:04 <bmomjian>	I have installed the broken kernel source build but have not rebooted, so I will just keep my server up until the fix arrives.
+févr. 12 14:26:35 <bmomjian>	How did this get by testing?
+févr. 12 14:29:34 <xx>	nvidia is in non-free, it doesn't receive any testing
+févr. 12 14:29:39 <xx>	it's not officially part of debian
+févr. 12 14:30:26 <xx>	feel free to take part in testing by enabling the -proposed-updates a week before a point release and filing bugs with high priority
+févr. 12 14:31:22 <xx>	alternatively, perhaps preferentially, complain to nvidia to fix their garbage
+févr. 12 14:31:32 <bmomjian>	Wow, I had forgotten the non-free part and didn't know about the non-testing part.
+févr. 12 14:32:09 <bmomjian>	I just figured this would affect ~15% of users.
+févr. 12 14:40:25 <bmomjian>	I can just keep using the old kernel by not rebooting?
+févr. 12 14:40:52 <bmomjian>	If I lose power, I have to choose an older kernel on boot, right?
+févr. 12 14:52:28 <hacknorris>	i <3 ignorance
+févr. 12 14:58:26 <xx>	bmomjian: correct
+févr. 12 14:58:46 <xx>	nickgaw: you're on the wrong OS then
+févr. 12 15:08:18 <bmomjian>	Okay, I will just keep checking for updates.
+févr. 12 15:08:20 <bmomjian>	Thanks.
+févr. 12 15:40:56 *	ChanServ gives channel operator status to debchange
+févr. 12 15:41:12 *	ChanServ gives channel operator status to debchange
+févr. 12 15:55:53 <telgareith>	I've got an i7-6700 (no K, U, or anything), and Debian is reporting it doesn't have patched microcode via Linux adding it or BIOS. How do I check exactly which CPU vulnerabilities are present. So I can ask what Linux is doing about it? (I'm trying to maximize performance, security be damned)
+**** BEGIN LOGGING AT Sat Feb 17 17:08:29 2024
+
+Feb 17 17:08:29 *	Now talking on #debian
+Feb 17 17:08:29 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 17 17:08:29 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 17 17:08:29 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** BEGIN LOGGING AT Tue Feb 20 15:07:42 2024
+
+Feb 20 15:07:41 *	Now talking on #debian
+Feb 20 15:07:41 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 20 15:07:41 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 20 15:07:42 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** BEGIN LOGGING AT Tue Feb 20 15:32:26 2024
+
+Feb 20 15:32:26 *	Now talking on #debian
+Feb 20 15:32:26 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 20 15:32:26 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 20 15:32:26 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** BEGIN LOGGING AT Tue Feb 20 15:37:56 2024
+
+Feb 20 15:37:56 *	Now talking on #debian
+Feb 20 15:37:56 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 20 15:37:56 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 20 15:37:56 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+Feb 20 16:00:32 <tesseract>	,v firefox-esr
+Feb 20 16:00:34 <judd>	Package: firefox-esr on amd64 -- jessie: 52.8.1esr-1~deb8u1; jessie-security: 68.9.0esr-1~deb8u2; stretch: 68.10.0esr-1~deb9u1; stretch-security: 91.11.0esr-1~deb9u1; buster: 91.12.0esr-1~deb10u1; buster-security: 115.7.0esr-1~deb10u1; bullseye: 115.7.0esr-1~deb11u1; bullseye-security: 115.7.0esr-1~deb11u1; bookworm: 115.7.0esr-1~deb12u1; bookworm-security: 115.7.0esr-1~deb12u1; sid: 115.7.0esr-1; trixie: 115.7.0esr-1
+Feb 20 16:00:58 <tesseract>	,v firefox
+Feb 20 16:00:59 <judd>	Package: firefox on amd64 -- sid: 122.0.1-1
+Feb 20 16:24:32 <hexnewbie>	Any plan to restore /usr/share/vim, so we can alias /usr/share/vim/vimcurrent/macros/less.sh and use it? My various dynamic aliases doing a search of /usr/share/vim/vim*/macros/less.sh, it's a hell that we can't have a sane pager in Debian because of this ridiculous change
+Feb 20 16:24:53 <hexnewbie>	My various dynamic aliases [...] tend to malfunction half of the time
+Feb 20 16:25:06 <hexnewbie>	Restore /usr/share/vimcurrent
+Feb 20 16:35:29 <jelly>	P1ro, don't do sudo su.  do "sudo -i"
+Feb 20 16:35:40 <dTal>	or sudo -s
+Feb 20 16:37:45 <xx>	hexnewbie: send a wishlist bugreport against vim in debian
+Feb 20 16:37:53 <xx>	check first if one already exists
+Feb 20 16:46:31 <xx>	WantToHelp: paste your sources.list first
+Feb 20 16:46:32 <xx>	!paste
+Feb 20 16:46:32 <dpkg>	Do not paste more than 2 lines to this channel.  Instead, use for text: https://paste.debian.net | pics/screenshots: https://imgbb.com/ or https://imgur.com/upload | large files up to 100MB (think tar.gz): https://wikisend.com | Remember to tell us the URL  of your paste!  Cannot cut and paste?  Ask me about <pastebinit>, <nopaste>, <termbin>.
+Feb 20 16:47:36 <WantToHelp>	https://paste.debian.net/1307955/
+Feb 20 16:48:42 <xx>	WantToHelp: replace it with https://0x0.st/H5rz.txt
+Feb 20 16:49:50 <WantToHelp>	done
+Feb 20 16:49:57 <xx>	`sudo apt update`
+Feb 20 16:50:19 <WantToHelp>	29 packages
+Feb 20 16:50:37 <xx>	`apt list linux-headers-amd64 nvidia-kernel-dkms`
+Feb 20 16:51:14 <WantToHelp>	linux-headers-amd64/stable,now 6.1.76-1 amd64 [installed,automatic]
+Feb 20 16:51:18 <WantToHelp>	nvidia-kernel-dkms/stable-updates 525.147.05-7~deb12u1 amd64
+Feb 20 16:51:28 <xx>	did you by any chance uninstall nvidia drivers?
+Feb 20 16:51:47 <WantToHelp>	never explicitly
+Feb 20 16:51:52 <xx>	no matter, `sudo apt upgrade` and `sudo apt install nvidia-driver`
+Feb 20 16:52:17 <WantToHelp>	let me add that my card takes the nvidia-tesla-470 drivers
+Feb 20 16:52:38 <WantToHelp>	its older hardware
+Feb 20 16:52:53 <xx>	then the nvidia tesla driver
+Feb 20 16:53:04 <xx>	nvidia-tesla-470-driver probably
+Feb 20 16:53:21 <xx>	or
+Feb 20 16:53:31 <xx>	nvidia-tesla-driver probably better
+Feb 20 16:53:56 <xx>	or maybe not, I don't know tesla
+Feb 20 16:54:03 <xx>	do the nvidia-tesla-470-driver instead
+Feb 20 16:54:09 <WantToHelp>	ok
+Feb 20 16:54:23 <rue_mohr>	can I remove/install task-? to switch from gnome to kde?
+Feb 20 16:54:48 <xx>	rue_mohr: you can, but it's such a massive operation it's often better to reinstall
+Feb 20 16:55:07 <rue_mohr>	no no, I just spent 4 hours reinstalling last night
+Feb 20 16:55:10 <rue_mohr>	:(
+Feb 20 16:55:15 <WantToHelp>	xx: https://paste.debian.net/1307956/
+Feb 20 16:55:37 <xx>	WantToHelp: sounds good if that's the output of `sudo apt install nvidia-tesla-470-driver`
+Feb 20 16:55:48 <WantToHelp>	thats the output of sudo apt upgrade
+Feb 20 16:55:56 <xx>	even better then
+Feb 20 16:55:58 <WantToHelp>	ok
+Feb 20 16:56:41 <xx>	a little weird that you don't have nvidia-tesla-470-driver installed, does apt tell you something about some packages being autoremovable?
+Feb 20 16:58:43 <WantToHelp>	https://paste.debian.net/1307958/
+Feb 20 16:59:05 <xx>	then yes, still do `sudo apt install nvidia-tesla-470-driver`
+Feb 20 16:59:18 <WantToHelp>	Ok, upgrade still working
+Feb 20 17:00:52 <WantToHelp>	installation of the driver is finishes
+Feb 20 17:00:53 <WantToHelp>	d
+Feb 20 17:01:39 <WantToHelp>	I booted into my previous kernel on the advice of #linux to get these drivers working
+Feb 20 17:01:53 <WantToHelp>	dpkg -l
+Feb 20 17:01:54 <dpkg>	WantToHelp: i haven't a clue
+Feb 20 17:02:28 <xx>	WantToHelp: reboot into new kernel then
+Feb 20 17:02:45 <WantToHelp>	xx: dpkg -l shows 'ii' flags for the kernel packages that were previously 'iF'
+Feb 20 17:02:54 <WantToHelp>	rebooting
+Feb 20 17:06:21 <WantToHelp>	xx: Drivers are working in kernel 6.1.0-18-amd64 now which is my current version
+Feb 20 17:06:37 <xx>	!next
+Feb 20 17:06:37 <dpkg>	Another happy customer leaves the building.
+Feb 20 17:06:50 <WantToHelp>	Thank you
+Feb 20 17:07:46 <xx>	next time come to #debian directly, we'll know more details about debian than the general #linux channel
+Feb 20 17:08:13 <xx>	the #linux channel is great, but they'll just be guessing
+Feb 20 17:30:49 <yogg>	Hi
+Feb 20 17:30:49 <yogg>	I have here a soc board for testing. I installed debian 12 and it works fine. The board uses an emmc chip as harddisk. The debian system is currently installer on the "/dev/mmcblk0" device. Now I saw the two extra hardware partitions "/dev/mmcblk0boot0" and "/dev/mmcblk0boot1" which I already saw on other systems but always ignored. Now I want to
+Feb 20 17:30:50 <yogg>	use this partitions in some way (I want to understand how they work and which features they can provide if I use them). So my first step will be to find out what I need to use this partitions. Can I use them with grub or do I need something like u-boot (the partitions have only 16MB so I can only store the bootloader)?
+Feb 20 17:32:38 <xx>	you can't use them
+Feb 20 17:34:34 <yogg>	so grub and u-boot are the wrong tools? Do you know a bootloader which I can use for this?
+Feb 20 17:36:13 <sney>	SBCs have a lot of variation in what they need to boot, you should really be consulting the device manual to know for sure
+Feb 20 17:36:17 <sney>	that said, extlinux maybe?
+Feb 20 17:41:35 <yogg>	Ok so this is not so generic? I thought I can "simply" install a bootloader into this partition (with dd) and use it to load my system.
+Feb 20 17:41:50 <sney>	It Depends (tm)
+Feb 20 17:45:17 <yogg>	Ok then I have to read much more. Thanks.
+Feb 20 17:45:26 <sney>	np
+Feb 20 18:36:12 <P1ro>	jelly: im trying to fgure why is this happening, also i cant access from my local keyboard terminal
+Feb 20 18:37:03 <P1ro>	sudo -i change to root folder !
+Feb 20 18:37:21 <jelly>	oh noes, how will you survive
+Feb 20 18:38:10 <jelly>	P1ro, anyhow, does the console keyboard issue persist after reboot or are you hesitating to do a reboot right now?
+Feb 20 18:38:29 <P1ro>	jelly: it persist atfer reboot
+Feb 20 18:39:39 <jelly>	neat, you did some damage :-)
+Feb 20 18:40:25 <P1ro>	im trying to figure where and how this happend
+Feb 20 19:54:11 <Payam>	when does debian go over to kernel 6.6?
+Feb 20 19:56:56 <Payam>	My screen sometime flickers, especially around the top menu bar. in xfce
+Feb 20 20:02:51 <somiaj>	Payam: stable will not change kernel versions as the offical kernel during its life time, so bookworm will stick with 6.1
+Feb 20 20:02:58 <somiaj>	that being said, 6.6 will make it into backports eventually
+Feb 20 20:03:00 <somiaj>	!kernels
+Feb 20 20:03:02 <dpkg>	Linux kernel versions, stable: 6.7.5, mainline: 6.8-rc5, stable 6.7: 6.7.5, longterm 6.6: 6.6.17, longterm 6.1: 6.1.78, longterm 5.15: 5.15.148, longterm 5.10: 5.10.209, longterm 5.4: 5.4.268, longterm 4.19: 4.19.306, linux-next: next-20240220
+Feb 20 20:03:22 <Payam>	somiaj, ah. so next stable version will have 6.6?
+Feb 20 20:03:36 <somiaj>	Payam: probably not, the next stable won't be out for over a year, 6.6 will be a memory by then
+Feb 20 20:03:39 <somiaj>	,kernels
+Feb 20 20:03:40 <judd>	Available kernel versions are: buster: 4.19.0-21-amd64 (4.19.249-2); buster-backports: 5.10.0-0.deb10.16-amd64 (5.10.127-2~bpo10+1); bullseye: 5.10.0-28-amd64 (5.10.209-2); bullseye-backports: 6.1.0-0.deb11.17-amd64-unsigned (6.1.69-1~bpo11+1); bookworm: 6.1.0-18-amd64 (6.1.76-1)
+Feb 20 20:04:00 <somiaj>	yea, seems the bot isn't tracking bookworm-backports
+Feb 20 20:04:20 <Payam>	I have a flickering screen and suspect if that is the reason
+Feb 20 20:04:23 <somiaj>	yea, 6.5.10 is in backports
+Feb 20 20:04:34 <somiaj>	It might be, though what gpu do you have?
+Feb 20 20:04:42 <Payam>	no gpu
+Feb 20 20:04:56 <somiaj>	then how does your screen flicker if you don't have a gpu?
+Feb 20 20:05:12 <Payam>	https://gitlab.com/chinstrap/gammastep/-/issues/59
+Feb 20 20:05:46 <Payam>	This is my computer specifications. Forget about the title there. the problem is happening more often with gammastep but it is there even without having it on
+Feb 20 20:06:27 <greycat>	Their teletype has a wobbly leg.
+Feb 20 20:06:47 <somiaj>	You do have a gpu
+Feb 20 20:07:04 <Payam>	you mean onboard graphics?
+Feb 20 20:07:15 <somiaj>	anyways, i915 is your gpu driver, so intel gpu. Intel is usually fairly good, unless you have a really really new intel gpu, I'm unsure if a kernel upgrade will fix flickering
+Feb 20 20:07:47 <somiaj>	gpu = graphics processing unit, it is what makes the output for your screen. Sometimes it is built into the mainboard, others an auxillary card, but knowing what the exact gpu is can help with things
+Feb 20 20:08:03 <somiaj>	but if the flickering mostly happens with gammastep, could be something with xorg/gammastep.
+Feb 20 20:08:11 <Payam>	where did you see i915?
+Feb 20 20:08:22 <somiaj>	under list of modules
+Feb 20 20:08:46 <somiaj>	but you could try the 6.5 kernel from backports, it is easy to try and the old kernel stays installed so you can boot it if needed
+Feb 20 20:09:03 <Payam>	okey thanks. I will do it now.
+Feb 20 20:09:27 <somiaj>	but depending on the age of the intel gpu chip, I don't know if there will be much of a change
+Feb 20 20:11:31 <Payam>	what is the name of the kernel
+Feb 20 20:11:45 <greycat>	usually something like linux-image-6.1.0-18-amd64
+Feb 20 20:11:49 <Payam>	ah
+Feb 20 20:11:51 <Payam>	yes
+Feb 20 20:11:53 <Payam>	image
+Feb 20 20:12:46 <Payam>	installing
+Feb 20 20:13:01 <Payam>	rebooting
+Feb 20 20:13:11 <somiaj>	in this case if you want to keep upgraing the backports kernel (you probably do), apt -t bookworm-backports install linux-image-amd64 (use the metapackage)
+Feb 20 20:14:58 <greycat>	they slipped out right before your comment
+Feb 20 20:15:49 <somiaj>	in this case if you want to keep upgraing the backports kernel (you probably do), apt -t bookworm-backports install linux-image-amd64 (use the metapackage)
+Feb 20 20:15:57 <somiaj>	greycat: yea, I noticed
+Feb 20 20:16:13 <Payam>	before everytime I turned on Gammastep it flickered imediatly for 10 sec and then stoped flickering and then after a while the flickering happened randomly. but with this new kernel it was not the case
+Feb 20 20:16:16 <somiaj>	but just to test installing the actual kernel version is fine
+Feb 20 20:16:18 <Payam>	it seems to work
+Feb 20 20:16:32 <somiaj>	I would use the metapackage so you get 6.6 when it comes out, 6.7, and so on
+Feb 20 20:16:48 <somiaj>	(by comes out, when it is finally backported, which is about a month after upstream makes a release)
+Feb 20 20:17:01 <Payam>	do you mean me?
+Feb 20 20:17:17 <somiaj>	yes
+Feb 20 20:17:34 <Payam>	should I type 'sudo apt -t bookworm-backports install linux-image-amd64?
+Feb 20 20:18:10 <somiaj>	yes
+Feb 20 20:18:22 <Payam>	what does -t do?
+Feb 20 20:18:23 <somiaj>	that will install the metapackage, wich will upgrade the kernel fro you with 'apt upgrade'
+Feb 20 20:18:49 <Payam>	ah. nice
+Feb 20 20:18:54 <somiaj>	backports by default is pinned lower, so packages will not be installed from backports with out explicity telling apt to do so, the -t tells apt to use backports (makes the pinning 999)
+Feb 20 20:19:03 <Payam>	okey rebooting now.
+Feb 20 20:19:08 <somiaj>	you don't need ot
+Feb 20 20:19:31 <somiaj>	you already installed the kernel, the metapackage does nothing for you at this moemnt, but makes it so you will upgrade to the newer backport kernel when the next one is added\
+Feb 20 20:20:05 <Payam>	Actually it installed something.
+Feb 20 20:20:14 <somiaj>	yea, it installed the metapackage
+Feb 20 20:20:23 <Payam>	reboorting. see you in a sec
+Feb 20 20:20:26 <somiaj>	but it didn't actually install the backports kernel (assuming you correctly intalled it prevsioully)
+Feb 20 20:21:49 <Payam>	back
+Feb 20 20:21:57 <Payam>	working just fine
+Feb 20 20:22:06 <Payam>	awesome. I was so annoyed by that flickering.
+Feb 20 20:27:45 <Payam>	thank you somiaj
+Feb 20 22:43:49 <noent>	 /msg dpkg bookworm
+Feb 20 22:44:21 <noent>	that worked well
+Feb 20 22:44:27 <sney>	heh
+Feb 20 22:51:03 <karlpinc>	Those bots.  They're so dependable.  Soon they'll be able to take over my jo....
+Feb 21 00:15:19 <velix>	Did anyone of you notice that ippserver in package "ippsample" is built/linked agains libcups3, while Bullseye only has libcups2?
+Feb 21 00:16:58 <xx>	velix: ippsample is not in bullseye
+Feb 21 00:17:42 <velix>	xx: Uh, where does it come from then? :o
+Feb 21 00:17:56 <xx>	bookworm?
+Feb 21 00:18:02 <velix>	xx: How can Iapt-cache search ippsample
+Feb 21 00:18:02 <velix>	ippsample - samples/development tools for the IPP
+Feb 21 00:18:12 <velix>	what's the latest Debian? Sorry... I hate these names.
+Feb 21 00:18:12 <xx>	are you confusing bullseye with bookworm?
+Feb 21 00:18:17 <xx>	yeah I hate them too
+Feb 21 00:18:24 <xx>	should have had a different starting letter
+Feb 21 00:18:36 <velix>	yeah, I'm in bookworm :D
+Feb 21 00:18:45 <velix>	Did anyone of you notice that ippserver in package "ippsample" is built/linked agains libcups3, while BOOKWORM only has libcups2?
+Feb 21 00:18:48 <velix>	:D
+Feb 21 00:19:09 <xx>	is it though? it Build-Depends on libcups2-dev
+Feb 21 00:19:54 <velix>	ldd /usr/sbin/ippserver
+Feb 21 00:19:54 <velix>	        linux-vdso.so.1 (0x00007ffeda9e5000)
+Feb 21 00:19:54 <velix>	        libcups.so.3 => not found
+Feb 21 00:20:41 <velix>	apt-file search libcups.so.3 -> no result
+Feb 21 00:20:51 <somiaj>	velix: what is the output of 'apt policy ippsample', use a pastebin
+Feb 21 00:21:18 <velix>	somiaj: https://bpa.st/raw/FGJA
+Feb 21 00:22:00 <xx>	somiaj: it's not that
+Feb 21 00:22:04 <xx>	I confirm the same finding
+Feb 21 00:22:19 <somiaj>	https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1042570
+Feb 21 00:22:21 <judd>	Bug https://bugs.debian.org/1042570 in ippsample (open): «ippsample: ippserver and ippfind are non-functional»; severity: grave; opened: 2023-07-30; last modified: 2023-07-30.
+Feb 21 00:22:49 <somiaj>	yea, looks like something slipped by, might have to reubuild the package
+Feb 21 00:23:13 <xx>	needs to increase seerity beyond grave
+Feb 21 00:23:24 <velix>	xx: hell?
+Feb 21 00:23:30 <velix>	oh, the other direction.
+Feb 21 00:23:53 <xx>	depends on how nice the package is
+Feb 21 00:24:16 <karlpinc>	,v ippsample
+Feb 21 00:24:16 <velix>	it mirrors the importants of printing on linux. it's a complete mess.
+Feb 21 00:24:17 <judd>	Package: ippsample on amd64 -- bookworm: 0.0~git20220607.72f89b3-1; sid: 0.0~git20220607.72f89b3-1
+Feb 21 00:24:29 <velix>	yeah, that's mine.
+Feb 21 00:24:48 <velix>	let me podman into sid
+Feb 21 00:25:15 <xx>	not gonna help
+Feb 21 00:25:21 <xx>	it also depends on libcups2-dev
+Feb 21 00:25:26 <velix>	nope, same problem.
+Feb 21 00:25:26 <velix>	yeah
+Feb 21 00:25:41 <velix>	Man... it's so nice and easy to switch into a fresh debian these days.
+Feb 21 00:26:26 <xx>	did the branding on salsa change? I now have a black bar at the top
+Feb 21 00:28:47 <velix>	Wow, really interesting: Ubuntu's ippsample isn't linked against libcups at all!
+Feb 21 00:29:06 <velix>	(which makes sense)
+Feb 21 00:30:07 <xx>	well, you can try pinging that bug
+Feb 21 00:30:15 <xx>	or hunt down the maintainers, somehow
+Feb 21 00:30:19 <somiaj>	I think you can upload a binary with a source package, so might just be the amd64 version that is hosed
+Feb 21 00:30:59 <somiaj>	well not that, I found the builddlog
+Feb 21 00:31:07 <somiaj>	https://buildd.debian.org/status/fetch.php?pkg=ippsample&arch=amd64&ver=0.0%7Egit20220607.72f89b3-1&stamp=1655763450&raw=0
+**** BEGIN LOGGING AT Wed Feb 21 00:53:37 2024
+
+Feb 21 00:53:37 *	Now talking on #debian
+Feb 21 00:53:37 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 21 00:53:37 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 21 00:53:37 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+Feb 21 01:27:08 <luqtas>	the adjust of mouse speed Debian has is purposeful or it's because a old version is used at Gnome?
+Feb 21 01:27:49 <luqtas>	i noticed that on Arch/Fedora, setting the mouse speed to -1 and acceleration as 'flat' isn't slow as Debian
+Feb 21 02:22:45 <enth>	hi everyone, `apt install libudev-dev`
+Feb 21 02:22:51 <enth>	fails on my bullseye system
+Feb 21 02:24:55 <enth>	oops sorry
+Feb 21 02:25:10 <enth>	i mean `apt install libsystemd-dev`
+Feb 21 02:26:12 <enth>	Failed to fetch http://deb.debian.org/ [...] libsystemd-dev_252.17-1%7edeb12u1_amd64.deb  404  Not Found [IP: 151.101.118.132 80]
+Feb 21 02:31:41 <velix>	Funny, "ipptoolfile" isn't packaged at all, but all manpages & Co. for it :-)
+Feb 21 02:31:57 <warsoul>	my pc keeps rebooting by itself first freeze then reboots
+Feb 21 02:32:02 <warsoul>	how can i see whats going on
+Feb 21 02:32:11 <velix>	in 3 different packages :D
+Feb 21 02:35:38 <ajoberstar>	enth: On packages.debian.org I see bullseye at 247.3-7+deb11u4, bullseye-backports at 252.5-2~bpo11+1, and bookworm at 252.22-1~deb12u1. Do you maybe need an apt update?
+Feb 21 03:21:09 <euouae>	Hello
+Feb 21 03:21:23 <RoyalYork__>	hello
+Feb 21 03:23:04 <euouae>	does anyone know how to translate Debian Edu in weblate.org? I'm looking at this: <https://i.imgur.com/eR3bPxl.png> but I'm not sure how to use the dashboard
+Feb 21 03:23:48 <euouae>	for example `Debian Edu / Skolelinux 12 Bookworm Manual` would only be changed to `Debian Edu / Εγχειρίδιο Skolelinux 12 Bookworm`
+Feb 21 03:23:59 <euouae>	but I'm not sure how to create this translation
+Feb 21 03:24:02 <RoyalYork__>	You want to translate it ?
+Feb 21 03:24:12 <euouae>	yeah I want to translate to Greek
+Feb 21 03:24:18 <RoyalYork__>	Do you know Greek?
+Feb 21 03:24:23 <euouae>	I should ask my mom :P
+Feb 21 03:24:25 <RoyalYork__>	Or do you need assitance?
+Feb 21 03:24:32 <euouae>	I'm Greek, I'm trying to translate it
+Feb 21 03:24:46 <euouae>	RoyalYork__: I'm taking up <https://micronews.debian.org/2024/1708370295.html>
+Feb 21 03:26:15 <somiaj>	euouae: https://hosted.weblate.org/projects/debian-edu-documentation/bookworm-manual/el/ -- clicking around got me there
+Feb 21 03:26:15 <RoyalYork__>	Translation is one of those things where AI or translating sites don't always do a good job
+Feb 21 03:26:24 <somiaj>	I think you can click the 'Translate' button, probably need to register for an account frist
+Feb 21 03:27:02 <euouae>	I have an account yeah
+Feb 21 03:27:08 <RoyalYork__>	A lot of these translation projects are taken up by native speakers and writers
+Feb 21 03:27:22 <euouae>	RoyalYork__: I am a native speaker -- this is a website where you manually translate
+Feb 21 03:27:22 <somiaj>	In this case, this is a site where native speakers can add translation strings
+Feb 21 03:27:50 <euouae>	somiaj: got you where? I don't know what to look at
+Feb 21 03:28:00 <somiaj>	euouae: the link I shared with you
+Feb 21 03:28:15 <RoyalYork__>	euouae, then maybe i misunderstood what you're asking
+Feb 21 03:28:28 <somiaj>	that is the tranlastion progress (0) for the bookworm manual, I didn't see anything else that needed translated
+Feb 21 03:28:57 <euouae>	It's Debian Edu I'm translating
+Feb 21 03:29:03 <euouae>	I saw it at 0%
+Feb 21 03:29:11 <euouae>	I think I was the one who added Greek, it didn't even exist
+Feb 21 03:29:23 <somiaj>	debian edu is just debian (with custom packages)
+Feb 21 03:29:33 <somiaj>	the site you are sharing is mostly just adding tranlsations to debian, https://hosted.weblate.org/projects/debian-edu-documentation/-/el/
+Feb 21 03:29:45 <somiaj>	the only thing I see that needs work is the bookworm manual by that site
+Feb 21 03:30:15 <euouae>	okay so... no need for a Greek translation? It looks to be 0%
+Feb 21 03:30:22 <euouae>	I was just trying to follow the micronews article
+Feb 21 03:30:42 <somiaj>	looks like lots of need is needed, but it is for the bookworm-manual (only thing I see listed)
+Feb 21 03:30:57 <euouae>	OK I'll go for that
+Feb 21 03:30:59 <somiaj>	but you'll probably get better info asking the mailing list, debian-edu@lists.debian.org
+Feb 21 03:31:03 <somiaj>	https://hosted.weblate.org/projects/debian-edu-documentation/-/el/#information
+Feb 21 03:38:19 <euouae>	somiaj: thank you
+Feb 21 03:47:24 <euouae>	sigh that website is buggy on firefox :(
+Feb 21 03:47:32 <euouae>	the textbox misplaces the text pointer
+Feb 21 04:03:49 <^Gecko^>	hello!
+Feb 21 04:04:13 <karlpinc>	!ask
+Feb 21 04:04:13 <dpkg>	If you have a question, just ask! For example: "I have a problem with ___; I'm running Debian version ___. When I try to do ___ I get the following output ___. I expected it to do ___." Don't ask if you can ask, if anyone uses it, or pick one person to ask. We're all volunteers; make it easy for us to help you. If you don't get an answer try a few hours later or on https://lists.debian.org/debian-user/  See <smart questions><errors>.
+Feb 21 04:05:45 <^Gecko^>	I have wine installed, how do I create a desktop icon to run an exe?  currently I have to open a terminal window and also have to sudo to run the program.  of course if I close the terminal window the exe closes
+Feb 21 04:08:55 <karlpinc>	^Gecko^: Dunno.  I don't use wine.  This sounds like a common-enough request.  You start by making a shell (bash) script that does what you want in a terminal window.  Then you make the icon using whatever features your window manager has to make icons.  The shell script part I'd expect you could get help in a wine releated channel, if nobody can help here.
+Feb 21 04:08:59 <dvs>	^Gecko^: then run "hup wine &"
+Feb 21 04:09:20 <karlpinc>	dvs: I thought systemd depreciated hup.  ?
+Feb 21 04:09:37 <dvs>	did they?
+Feb 21 04:10:06 <karlpinc>	Thought so.  Haven't needed to use it so....
+Feb 21 04:11:40 <dvs>	Oh? I think it's "nohup" I'm thinking of.
+Feb 21 04:11:42 <karlpinc>	I am thinking of nohup.  (Er, what is "hup"?)
+Feb 21 04:12:04 <karlpinc>	Right.  nohup then.
+Feb 21 04:12:21 <karlpinc>	(Seems like the kind of thing lwn.net would write about.)
+Feb 21 04:14:07 <karlpinc>	dvs: But he does not just want to run wine, he wants to run an exe under wine.  (I presume the wine command has a way to do this.  He might have to resort to reading the instructions.)
+Feb 21 04:15:20 <karlpinc>	^Gecko^: Reading the instructions is generally preferred to taking advice from a random stranger on the internet.
+Feb 21 04:18:22 <tomman>	^Gecko^: you want to create a desktop launcher, right?
+Feb 21 04:18:36 <^Gecko^>	that's the idea yes
+Feb 21 04:18:48 <tomman>	this is easy, and can be achieved in a few ways
+Feb 21 04:19:32 <tomman>	the easiest one is to follow your desktop environment steps to create a ordinary desktop launcher (the format itself is standardized), and the command you want is "wine /path/to/your/windows.exe"
+Feb 21 04:20:07 <tomman>	providing a custom icon might be tough as extracting Windows icons from executables is not trivial under Linux, but otherwise creating a launcher is simple
+Feb 21 04:20:22 <tomman>	The other path is even simpler, provided that the application you're using under Wine has a installer
+Feb 21 04:20:44 <tomman>	installers create shortcut icons under Windows, and Wine mimics those on most desktop environments
+Feb 21 04:21:30 <tomman>	those are saved under ~/.share/applications/ (those .desktop files)
+Feb 21 04:21:38 <^Gecko^>	yeah the application is running directly from the windows drive
+Feb 21 04:21:45 <^Gecko^>	so installer is not an option
+Feb 21 04:21:45 <tomman>	they're exactly like the same launcher you would create youself
+Feb 21 04:21:58 <tomman>	Ah well, then that leaves you with the "create a launcher from your desktop" way
+Feb 21 04:22:15 <tomman>	and the command you want is as I said, "wine /path/to/your/windows.exe"
+Feb 21 04:22:27 <tomman>	that's the command you're telling the launcher to run
+Feb 21 04:23:28 <^Gecko^>	i'm using plasma, where's the 'create launcher'
+Feb 21 04:24:25 <tomman>	good question, as I use MATE :D
+Feb 21 04:24:48 <tomman>	on that one it's literally the same as on Windows (almost): right click empty space on desktop -> Create New Launcher
+Feb 21 04:25:09 <tomman>	https://www.xmodulo.com/create-desktop-shortcut-launcher-linux.html
+Feb 21 04:26:21 <tomman>	wow, can't find how to create a desktop shortcut on KDE!?
+Feb 21 04:26:45 <^Gecko^>	yeah 'create new launcher' doesn't appear to exist
+Feb 21 04:26:52 <tomman>	I haven't used KDE since the late 4.x era, but I can recall that on that one it was the same: right click desktop, etc
+Feb 21 04:27:23 <tomman>	even KDE3 (and its spinoff, Trinity) has it!
+Feb 21 04:27:31 <^Gecko^>	there's 'create new' > and a list.  bottom of the list is 'link to application' which is what I expect to work...
+Feb 21 04:27:42 <tomman>	yeah, that one should work
+Feb 21 04:27:52 <tomman>	that's how it appears on Trinity too
+Feb 21 04:28:23 <tomman>	(which actually clones the Windows way, as that's how you do create shortcuts since Windows 95!)
+Feb 21 04:28:27 <^Gecko^>	on the 'application' tab in that link properties are boxes like name, description, comment, environment variables, program, arguments, work path
+Feb 21 04:28:39 <tomman>	Name is the name of your launcher / shortcut
+Feb 21 04:28:46 <^Gecko^>	so I guess 'wine' is the program and 'arguments' would be the path to the exe?
+Feb 21 04:28:47 <tomman>	Description can be left blank
+Feb 21 04:28:51 <tomman>	Exactly
+Feb 21 04:29:14 <^Gecko^>	the only other variable in this is the 'sudo'
+Feb 21 04:29:21 <tomman>	leave everything else blank, except maybe for work path (where you may want to adjust it to your exe path)
+Feb 21 04:29:26 <tomman>	no, NEVER run Wine apps as sudo
+Feb 21 04:29:27 <^Gecko^>	shoudl sudo be the program and wine /path/exe
+Feb 21 04:29:31 <tomman>	NO.
+Feb 21 04:29:38 <tomman>	it's not needed, and it's a security risk
+Feb 21 04:29:44 <tomman>	sudo is for giving root powers
+Feb 21 04:30:35 <^Gecko^>	and ctrl+c from the terminal window closed wine, lol
+Feb 21 04:31:17 <tomman>	this is normal, yes
+Feb 21 04:31:35 <^Gecko^>	if I run wine /path/to/mirc.exe in terminal it errors out with 'wine: could not load kernel32.dll, status blahblahblah
+Feb 21 04:31:48 <^Gecko^>	with sudo it does not
+Feb 21 04:31:55 <^Gecko^>	does not error*
+Feb 21 04:32:00 <tomman>	your Wine install most likely is shot
+Feb 21 04:32:08 <tomman>	especially if your Wine prefix was created with sudo
+Feb 21 04:32:12 <^Gecko^>	joy
+Feb 21 04:32:17 <tomman>	again, NEVER run Wine with sudo
+Feb 21 04:32:31 <^Gecko^>	i usually just sudo su
+Feb 21 04:32:32 <tomman>	the easy way to fix it would be to nuke any ~/,wine/ dir
+Feb 21 04:32:34 <^Gecko^>	lol
+Feb 21 04:32:38 <tomman>	then run Wine as your regular use
+Feb 21 04:32:51 <tomman>	let it recreate the profile (which in effect is the equivalent of "reinstalling Windows")
+Feb 21 04:32:53 <tomman>	--regular user
+Feb 21 04:33:02 <^Gecko^>	or reinstall wine I suppose
+Feb 21 04:33:06 <tomman>	no
+Feb 21 04:33:16 <tomman>	there are two parts: Wine itself, and the prefix
+Feb 21 04:33:39 <tomman>	the prefix dir contains the registry, a bunch of stub DLLs, and that's where your Windows programs install their own stuff and save settings
+Feb 21 04:33:45 <tomman>	the "fake" Windows install
+Feb 21 04:33:57 <tomman>	and one of the most important components of a Wine setup
+Feb 21 04:34:09 <tomman>	that one is created the first time you run Wine as your regular user
+Feb 21 04:34:25 <tomman>	and it's automatically updated every time you run Wine after a version update
+Feb 21 04:34:27 <^Gecko^>	and the prefix needs to be created without sudo i suppose
+Feb 21 04:34:31 <tomman>	exactly
+Feb 21 04:34:36 <tomman>	it has to be created as your user
+Feb 21 04:34:45 <tomman>	otherwise the permissions will be all wrong and all hell will come loose
+Feb 21 04:34:56 <tomman>	so if there is already one, delete it (you MAY need to use sudo for this)
+Feb 21 04:35:11 <tomman>	or at least move aside
+Feb 21 04:35:59 <^Gecko^>	looks like .wine has my user and group
+Feb 21 04:36:26 <tomman>	Delete it, or at least rename it (i.e. .wine-broken)
+Feb 21 04:36:58 <^Gecko^>	it'll probably dump me off irc, lol
+Feb 21 04:37:18 <^Gecko^>	bbs
+Feb 21 04:40:09 <^Gecko^>	ok good that fixes the sudo problem, and sound in the app works now too
+Feb 21 04:40:45 <tomman>	that's because you now have a correct, clean profile properly created
+Feb 21 04:41:01 <tomman>	Wine never needs sudo under any circumstances, period
+Feb 21 04:41:19 <^Gecko^>	I've been wanting to migrate to linux for a good long time.  It's just been a couple of apps that I can't live without have always been a pain to make work, like this (mirc)
+Feb 21 04:42:18 <^Gecko^>	I've been dealing with linux here and there for years too.  my first firewall was FreeSCO linux on a 486 that used to be someones doorstop
+Feb 21 05:04:48 <^Gecko^>	yay the app launcher works.  I got distracted, framing a small wall to mount my television on
+Feb 21 05:22:01 <^Gecko^>	now if I'm lucky i can copy my firefox profile......
+Feb 21 05:49:58 <^Gecko^>	yay got it
+Feb 21 05:57:21 <P1ro>	Hi, i was messing with limits.conf and 99-sysctl.conf, i lose access over local keyboard, any user or even root, i can only access tru ssh and user, but sudo su dont work ( su: cannot open session: Cannot make/remove an entry for the specified session ) i can sudo -i or sudo root /bin/bash
+Feb 21 05:57:46 <P1ro>	i set all files back to default (from a backup) but i cant still access local, only ss and still cant "sudo su"
+Feb 21 06:19:40 <sem>	Are you using Ubuntu or Debian?
+Feb 21 07:08:15 <zykotick9>	Actually seeing someone in #d stating they have an issue with "sudo su isn't working" is a bit shocking to see.
+Feb 21 07:25:33 <smelly_socks>	is the user you're trying to `sudo su` with in the sudoers file?
+Feb 21 07:25:55 <smelly_socks>	debian, by default, doesn't add the created user account to the sudoers file
+Feb 21 07:26:41 <smelly_socks>	although it does if you do an expert install and disable the root account
+Feb 21 08:36:40 <Helmholtz>	Denial installer asks two times to select the mirror. Why? First it asks for country, then an archive mirror.
+Feb 21 08:36:49 <Helmholtz>	*Debian
+Feb 21 08:37:58 <Helmholtz>	In the second prompt, it still recommends deb.debian.org. But isn't this a global cdn mirror? if so why it asked for the country in the first place?
+Feb 21 08:38:43 <Affliction>	presumably localization
+Feb 21 08:43:08 <Helmholtz>	damn my network
+Feb 21 08:45:01 <Helmholtz>	ok, are the mirrors in www.debian.org/mirror/list.en.html safe? Is their hashes compared?
+Feb 21 08:46:37 <xx>	Helmholtz: apt checks pgp signatures
+Feb 21 08:46:44 <xx>	if in doubt, just use deb.debian.org with https
+Feb 21 08:47:06 <xx>	(it's more complicated than that, but as a simplification it works)
+Feb 21 08:50:09 <Helmholtz>	Are the repos listed there up to date? is there a mechanism in Debian to check if a mirror has the latest updates?
+Feb 21 08:55:15 <user1__>	how can I check If my gpu is recognized and I don't have to install the drivers for it?
+Feb 21 08:55:41 <xx>	user1__: check for messages in dmesg or some tool like inxi
+Feb 21 08:55:51 <xx>	lspci too
+Feb 21 08:57:27 <user1__>	https://pastebin.com/5Ke61vkh
+Feb 21 08:57:31 <user1__>	what does it say
+Feb 21 08:59:40 <user1__>	I did 'lspci'
+Feb 21 09:01:36 <user1__>	and that's the dmesg
+Feb 21 09:01:38 <user1__>	https://pastebin.com/gmpZvwYt
+**** BEGIN LOGGING AT Wed Feb 21 10:31:33 2024
+
+Feb 21 10:31:33 *	Now talking on #debian
+Feb 21 10:31:33 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 21 10:31:33 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 21 10:31:33 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** BEGIN LOGGING AT Wed Feb 21 10:38:41 2024
+
+Feb 21 10:38:40 *	Now talking on #debian
+Feb 21 10:38:40 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 21 10:38:40 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 21 10:38:40 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+Feb 21 11:44:38 <Ooze>	Hi. I just made a big mistake and ran sudo chown -R www-data:www-data /var instead of sudo chown -R www-data:www-data var/ (local var)
+Feb 21 11:44:50 <Ooze>	I cancelled it pretty quickly, but it looks like it still made some adjustments
+Feb 21 11:44:52 <Ooze>	What can I do?
+Feb 21 11:53:52 <xx>	Ooze: restore from backup or reinstall
+Feb 21 11:54:18 <Ooze>	No backup. Gotta reinstall, I guess. I can't just chown root:root -R?
+Feb 21 11:54:40 <xx>	you could, but there likely are dirs that are supposed to be owned by different users and groups
+Feb 21 11:54:48 <xx>	and chowing also changes some file permissions
+Feb 21 11:54:58 <xx>	like getting rid of sticky bits if I remember correctly, and maybe some other things
+Feb 21 11:55:18 <Ooze>	I won't be able to reinstall for a few days. What's most likely to break in the meantime?
+Feb 21 11:55:28 <xx>	everything :)
+Feb 21 11:55:34 <xx>	but wait if someone else has some other idea
+Feb 21 12:10:43 <Ooze>	I exported a 'find /var -user www-data' into a text file. It doesn't look too bad. Think I can fix this? https://dpaste.org/d6zwp
+Feb 21 12:13:57 <PerfDave>	Ooze: Set up a test system, install the same packages, compare permissions in its /var to your broken system?
+Feb 21 12:14:24 <PerfDave>	You could do that in a VM or something
+Feb 21 12:15:06 <daemon>	Ooze, https://termbin.com/lif7
+Feb 21 12:15:10 <daemon>	as a guide
+Feb 21 12:16:32 <vague>	Ooze, I did ls -lr /var to give you some help but systems differ, https://pastes.vague.se/sJMF9ANT
+Feb 21 12:18:13 <Ooze>	Thanks, all. Going to try to work through this. /var/lib/containerd/io.containerd is concerning to me
+Feb 21 12:21:27 <xx>	Ooze: you could compare it to your other systems
+Feb 21 12:22:13 <xx>	`find /var -not -user root 2>/dev/null -printf '%u:%g %M %p\n'`
+Feb 21 12:35:57 <Ooze>	Someone suggested this. #debian approved? $(find /var -exec dpkg -S {} + 2> /dev/null | grep -v "no path found" | cut -d : -f 1 | sed 's/, /\n/g')
+Feb 21 13:32:58 <user1__>	hello anybody?
+Feb 21 13:47:52 <darsie>	user1__: https://no-hello.com/
+Feb 21 13:50:03 <user1__>	darsie bruh I asked a question go up (how can I check if my gpu is recognized and I don't have to install the drivers for it)
+Feb 21 13:50:33 <user1__>	also does dmesg reveal if there is missing firmware?
+Feb 21 13:52:39 <darsie>	I can't see anything else from you before "hello anybody?". You also only joined 8 s before saying that.
+Feb 21 14:03:55 <user1__>	darsie there https://imgur.com/a/w9GihWD
+Feb 21 14:04:37 <user1__>	anyway catch u later I'm going afk have to get some sleep
+Feb 21 14:04:50 <hackfoo>	user1__: That was hours ago.
+Feb 21 14:05:09 <user1__>	hackfoo still valid
+Feb 21 14:05:21 <hackfoo>	No, it isn't.
+Feb 21 14:06:44 <hackfoo>	You can't assume that anyone here was even connected when you asked your original question, or that they were at the keyboard when you asked.
+Feb 21 14:07:36 <vague>	Is there a new service in bookworm that normalizes audio? I'm listening to spotify with headphones and the volume keeps changing. I've turned off any kind of normalization in spotify so the only other culprit would be gnome, or pipewire, not sure what I should look for
+Feb 21 14:07:45 <hackfoo>	user1__: So when you return, I'd suggest starting over and asking whatever your question is again.
+Feb 21 14:44:32 <badsektor>	guys look at this, this is ridiculous
+Feb 21 14:44:33 <badsektor>	https://paste.debian.net/1308079/
+Feb 21 14:45:40 <badsektor>	i once did the mistake and did autoremove them/, then after reboot system booted into console: no X
+Feb 21 14:49:00 <xx>	badsektor: you're not on debian stable
+Feb 21 14:50:18 <xx>	or maybe you are, the package list is still strange
+Feb 21 14:50:29 <xx>	it shouldn't affect anything, you likely have a different problem
+Feb 21 14:52:06 <xx>	really really weird that libperl5.36 would be marked as autoremovable
+Feb 21 14:59:31 <badsektor>	xx, i am on testing
+Feb 21 14:59:40 <badsektor>	xx, so what messed it up
+Feb 21 14:59:51 <xx>	!testing
+Feb 21 14:59:51 <dpkg>	Testing is a continuously updated release between <stable> and <unstable>, currently codenamed <trixie>. See http://wiki.debian.org/DebianTesting . Support in #debian-next on irc.oftc.net; ask me about <testing faq> <bookworm->trixie> <testing security> <moving target> <apt-listchanges> <apt-listbugs> and <bts>. You need a sound knowledge of Debian and be prepared for a very bumpy ride. Don't use it on things that are critical!
+Feb 21 15:00:22 <xx>	stuff gets messed up on testing all the time, you're supposed to know what you're doing. Support for it is not on this network but on OFTC in the #debian-next channel
+Feb 21 15:01:40 <badsektor>	ok thanks
+Feb 21 15:35:21 <raub>	Another syslog-ng question: if I have a filter called bob(), can I use it to exclude whatever it is looking for, i.e. log{filter(not bob);}; ?
+**** BEGIN LOGGING AT Wed Feb 21 16:46:59 2024
+
+Feb 21 16:46:59 *	Now talking on #debian
+Feb 21 16:46:59 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 21 16:46:59 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 21 16:46:59 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+Feb 21 17:00:02 <ppw>	hello
+Feb 21 17:00:43 <sney>	hi
+Feb 21 17:01:57 <ppw>	is there a tutorial on creating your own debian "spin"? I want to make a minimal bootable i386 iso with two or three additional packages that are not in netinst
+Feb 21 17:02:51 <sney>	!blends
+Feb 21 17:02:51 <dpkg>	A Debian Pure Blend (formerly Custom Debian Distribution) is a subset of Debian configured to support a particular target group out-of-the-box.  Not to be confused with distributions <based on Debian>.  http://wiki.debian.org/DebianPureBlends  http://blends.debian.org/  #debian-blends on irc.oftc.net.
+Feb 21 17:02:54 <sney>	in there maybe
+Feb 21 17:07:34 <ppw>	I think this is what I'm looking for https://wiki.debian.org/DebianInstaller/Build
+Feb 21 17:22:08 <ppw>	or even better https://debian-live-config.readthedocs.io/en/latest/custom.html
+Feb 21 17:22:47 <mathew>	Hey. I m on kde, after reboot i have stuttering desktop
+Feb 21 17:22:55 <mathew>	kscreen_backend_launcher[2324]:  #011Priorities: fals
+Feb 21 17:22:59 <mathew>	spams the logs
+Feb 21 18:11:40 <denisbr>	Hi All
+Feb 21 18:34:22 <strk>	the machine's fan started, I coud hear it, so I went looking and there was a /usr/lib/snapd/snapd at 100% CPU, but `dpkg -S /usr/lib/snapd/snapd` says: dpkg-query: no path found matching pattern /usr/lib/snapd/snapd
+Feb 21 18:34:47 <strk>	sudo dpkg -l | grep snap # only finds libsnapd-glib-2-1 and libsnappy1v5
+Feb 21 18:34:58 <strk>	how do I get rid of that cancer ?
+Feb 21 18:37:41 <oerheks>	snaps are not installed with dpkg
+Feb 21 18:38:33 <joepublic>	no, but snap is
+Feb 21 18:38:57 <oerheks>	snapd is *
+Feb 21 18:50:21 <wizardyesterday>	Hi, I want to be able to run an old version of Scilab (the new version doesn't properly work with my Intel graphics chipset). So... I need to install glibc 2.3.x to satisfy the requirements of Scilab 4.1.2. Simple enough. Should I merely download glibc 2.3.x (I'll), build and install in a safe location, set LD_LIBRARY_PATH to that location, and everything will magically work (yes, there may be othe
+Feb 21 18:50:27 <wizardyesterday>	r things I need to do)?
+Feb 21 18:50:27 <wizardyesterday>	Sorry about the long post.
+Feb 21 18:50:35 <shtrb>	regarding https://bits.debian.org/2023/12/debian-statement-cyber-resillience-act.md.html , shouldn't there be a debian non EU repo now ?
+Feb 21 18:50:41 <strk>	Still dpkg does not find snapd
+Feb 21 19:35:37 <PerfDave>	strk: Perhaps you have installed snapd through some other mechanism than apt?
+Feb 21 19:36:01 <PerfDave>	wizardyesterday: You might be better off running a chroot of an older release which uses glibc 2.3
+Feb 21 19:36:05 <strk>	peraphs, but also bash: snap: command not found
+Feb 21 19:36:25 <PerfDave>	I don't think that tells you anything useful
+Feb 21 19:36:26 <strk>	uh, I must be mixing machines
+**** BEGIN LOGGING AT Wed Feb 21 20:38:01 2024
+
+Feb 21 20:38:01 *	Now talking on #debian
+Feb 21 20:38:01 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 21 20:38:01 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 21 20:38:01 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+Feb 21 21:46:01 <cloudowind>	windows show 3
+Feb 21 21:47:52 <xx>	cloudowind: https://0x0.st/H5cm.png
+Feb 21 21:48:38 <cloudowind>	:)
+Feb 21 22:18:44 <karlpinc>	Is there a way to list the individual fonts I have installed?  How about listing the font packages?
+Feb 21 22:19:41 <sney>	the package names stabilized on fonts-foo a while ago, so 'apt list --installed fonts-*' should be all of them
+Feb 21 22:19:52 <sney>	there is also fc-list
+Feb 21 22:19:56 <karlpinc>	`aptitude search '~ifont'` seems to do a pretty good job of listing font packages.  Can I assume that all font packages begin either with "fonts-" or xfonts-"?
+Feb 21 22:20:24 <karlpinc>	fc-list sounds great.  Thanks.
+Feb 21 22:21:02 <sney>	np
+Feb 21 22:21:04 <PerfDave>	Maybe search by Tag: made-of::font
+Feb 21 22:24:46 <karlpinc>	'apt list --installed fonts-*' does not seem to catch the xfonts, xfonts-100dpi and xfonts-75dpi.  But I don't know if these are "only" for X and don't do anything anywere else, or what.  (And that statement itself does not make much sense to me.  How would that be possible.)  Is there an explaination of the xfonts-* packages beyond the package description?
+Feb 21 22:25:37 <karlpinc>	(Like "regular fonts are somehow translated into xfonts"?  Which also does not make sense.)
+Feb 21 22:25:43 <sney>	they are a different format, pcf vs ttf/otf
+Feb 21 22:25:53 <karlpinc>	Ok.  Thanks.
+Feb 21 22:26:10 <karlpinc>	I try to know as little about fonts (and printing) as possible.
+Feb 21 22:26:15 <sney>	I'm not sure what the difference is beyond that but the name does imply they're only for X
+Feb 21 22:27:07 <sney>	oh, package description for xfonts says no unicode, so right away that's not something I care about
+Feb 21 22:32:58 <karlpinc>	What's the right way to search for a particular font?  (Looking for "Century Schoolbook L Bold".)
+Feb 21 22:33:07 <karlpinc>	apt-file does not seem to be helping.
+Feb 21 22:33:11 <sney>	fc-match?
+Feb 21 22:33:38 <sney>	or maybe -query, one of those fontconfig guys I would think
+Feb 21 22:33:44 <karlpinc>	I need to find the package it's in.  It does not appear to be installed.
+Feb 21 22:34:32 <sney>	ah, are you sure it's even permissibly licensed? there are a decent number of fonts that you see all the time on proprietary OSes that debian can't actually distribute
+Feb 21 22:35:12 <karlpinc>	Well, I made a document (gimp/xcf) using some version of debian or another that seems to contain the font.
+Feb 21 22:35:58 <sney>	ok so probably
+Feb 21 22:36:19 <PerfDave>	Might have been packaged with GIMP itself rather than as a separate package
+Feb 21 22:36:52 <karlpinc>	I don't generally install non-free stuff.  But I _might_ have.  I wouldn't expect to have installed non-free fonts.  Except maybe once, around etch, before the liberation fonts.
+Feb 21 22:37:21 <sney>	'apt search century' shows a few font packages that might say for sure in their long desc fields
+Feb 21 22:56:29 <karlpinc>	It seems the fc-list output says that the New Century Schoolbook fonts are in the xfonts-{75,100}dpi packages.  They show up in the gimp font menu...  So...
+Feb 21 22:56:33 <karlpinc>	!next
+Feb 21 22:56:33 <dpkg>	Another happy customer leaves the building.
+Feb 21 23:00:12 <cloudowind>	could i get a chiken kebab with let tom cheese and garlic please
+**** BEGIN LOGGING AT Wed Feb 21 23:19:26 2024
+
+Feb 21 23:19:26 *	Now talking on #debian
+Feb 21 23:19:26 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 21 23:19:26 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 21 23:19:26 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** ENDING LOGGING AT Wed Feb 21 23:20:04 2024
+
+**** BEGIN LOGGING AT Wed Feb 21 23:21:17 2024
+
+Feb 21 23:21:17 *	Now talking on #debian
+Feb 21 23:21:17 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 21 23:21:17 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 21 23:21:17 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+Feb 21 23:39:06 <little_pudding>	welcome, everyone. it is i, little pudding. i've come to seek aid with my debian(r) gnome(tm) desktop(r) setup
+Feb 21 23:39:34 <oerheks>	hi little_pudding, ask, wait and see
+Feb 21 23:40:41 <little_pudding>	problem the first: i have enabled two extensions called Window List and Workspace Indicator. unfortunately, Window List also shows the workspace indicators in the bottom right corner. so now i have that thing in the top, and the bottom
+Feb 21 23:40:58 <little_pudding>	i'd like for the bottom one to go away, because the top one (controlled by Workspace Indicator) is sufficient
+Feb 21 23:41:27 <little_pudding>	this is Debian 12.5
+Feb 21 23:42:28 <little_pudding>	problem the second: i'd love to have a Bluetooth status/control icon in the top right
+Feb 21 23:48:42 <DmanT>	i have an ask to gnome?
+Feb 21 23:49:17 <DmanT>	i can make "right click => new folder"... how i can add a custom entry in this context menu?
+**** ENDING LOGGING AT Wed Feb 21 23:50:23 2024
+
+**** BEGIN LOGGING AT Wed Feb 21 23:50:23 2024
+
+**** ENDING LOGGING AT Wed Feb 21 23:52:21 2024
+
+**** BEGIN LOGGING AT Wed Feb 21 23:52:21 2024
+
+**** ENDING LOGGING AT Wed Feb 21 23:53:41 2024
+
+**** BEGIN LOGGING AT Wed Feb 21 23:53:41 2024
+
+**** ENDING LOGGING AT Wed Feb 21 23:57:59 2024
+
+**** BEGIN LOGGING AT Wed Feb 21 23:57:59 2024
+
+Feb 22 00:00:50 <somiaj>	little_pudding: did you install these extnesions from debian (a debian package) or from gnome?
+Feb 22 00:08:23 <little_pudding>	somiaj: they come pre-installed with debian gnome
+Feb 22 00:08:47 <little_pudding>	they were already there in the list. i just had to flip the switch to enable them
+Feb 22 00:09:05 <little_pudding>	listed as "built-in"
+Feb 22 00:09:23 <somiaj>	ahh okay, so they are from debian then (I don't use gnome so just double checking).
+Feb 22 00:09:51 <somiaj>	It could be that such an options don't let you configure things like you want, the suggestion of asking a more gnome support channel might help (though gnome users here might chime in, I'm not one of them)
+Feb 22 00:10:55 <sney>	gnome doesn't like being customized. you might need to find some extra addons to do what you're looking for
+Feb 22 00:19:53 <little_pudding>	oh i have another problem. also gnome, of course. icons on the desktop?
+Feb 22 00:20:05 <little_pudding>	where icons. no can see, no can find setting
+Feb 22 00:20:17 <sney>	I'm pretty sure gnome axed those completely when 3.x came out
+Feb 22 00:21:46 <little_pudding>	geez louise, is you kidding me
+Feb 22 00:21:58 <little_pudding>	maybe i should've gone for MATE or XFCE
+Feb 22 00:22:53 <n4dir>	sure more intuitive
+Feb 22 00:23:55 <sney>	gnome is great if you like the defaults. if you don't... probably just pick something else
+Feb 22 00:25:10 <sney>	(don't limit yourself to the gtk ones either, plasma has been fantastic for about a decade and has perfectly smooth gtk theming these days too)
+Feb 22 00:31:49 <caesar-ew>	hello I'm trying to install samba-ad on a debian 12. But when I run the command 'samba-tool domain provision --use-rfc2307 --interactive' I get the error 'Can not dump core: corepath not set up' I have tride to gooogle what is wrong but I don't find any thing. Does anybody know what it means?
+Feb 22 00:32:35 <little_pudding>	i ran kde5/plasma on manjaro a few years ago. unfortunately i found it horrific. i really like mate and xfce, though
+Feb 22 00:32:41 <PerfDave>	caesar-ew: That sounds like it's trying to dump core, which means something has gone very wrong with the samba-tool program.
+Feb 22 00:32:52 <little_pudding>	debian mate might just be what i'm looking for
+Feb 22 00:40:42 <oerheks>	♥
+Feb 22 00:41:26 <karlpinc>	caesar-ew: How did you install samba-ad?  From the debian package or some other way?
+Feb 22 00:41:31 <somiaj>	yea, mate is decent if you like the old look of gnome2, I think kde is getting more and more users due to it is a bit more modern but has the configurability people like
+Feb 22 00:41:33 <caesar-ew>	PerfDave: yes, somthing wnt wrong, I have followd the tortuals I have have found. But I don't understand where I went wrong :(
+Feb 22 00:42:24 <karlpinc>	caesar-ew: That is the problem with taking advice from random strangers.  Just saying.
+Feb 22 00:42:46 <caesar-ew>	karlpinc: Yes I used the default debian repo
+Feb 22 00:44:08 <karlpinc>	caesar-ew: We need to know more.  What tutorial did you follow?  And start by telling us the version of debian you are using.
+Feb 22 00:46:13 <karlpinc>	caesar-ew: (I always have to poke samba with a stick to get it to work.  But failing when dumping core is an entirely different level of the software stack.  Ask/tell the channel and see if somebody can help.  Otherwise, wait and try again when different people are here or try #samba.  But don't ask in both channels at once.)
+Feb 22 00:46:52 <karlpinc>	caesar-ew: Oh.  You did say debian 12.
+Feb 22 00:47:19 <caesar-ew>	I followed thise on adamtheautomator.com/domain-controller-on-linux/
+Feb 22 00:47:24 <caesar-ew>	Yes debian 12
+Feb 22 00:47:53 <caesar-ew>	samba --version
+Feb 22 00:47:54 <caesar-ew>	 Version 4.17.12-Debian
+Feb 22 00:52:28 <caesar-ew>	every thing worked as in the tortural to 'samba-tool domain provision --use-rfc2307 --interactive' then I get the error. I have looked at the samba dockuments but the look likes I have done it right. and I can't find any error with testparm or samba-tool testparm
+Feb 22 00:53:58 <caesar-ew>	 cat /etc/samba/smb.conf
+Feb 22 00:53:58 <caesar-ew>	# Global parameters
+Feb 22 00:53:58 <caesar-ew>	[global]
+Feb 22 00:53:58 <caesar-ew>	        dns forwarder = 8.8.8.8
+Feb 22 00:53:58 <caesar-ew>	        netbios name = SAMBAAD
+Feb 22 00:53:59 *	debchange has kicked caesar-ew from #debian (flood detected)
+Feb 22 01:02:27 <Thuryn>	netbios name = SAMBAAD  <--  this made me smile
+Feb 22 01:02:50 <somiaj>	what did sam do?
+Feb 22 01:03:02 <somiaj>	wonder if caesar realized they can just join back...
+Feb 22 01:03:51 <Thuryn>	https://play.google.com/store/movies/details/Sthaniya_Sambaad
+Feb 22 01:04:01 <Thuryn>	look how super-cool they are
+Feb 22 01:04:17 <somiaj>	link didn't work
+Feb 22 01:06:23 <Thuryn>	here we go:  https://play.google.com/store/movies/details/Sthaniya_Sambaad?id=E315AC383D8CE694MV
+Feb 22 01:06:36 <Thuryn>	i cut off too much of the CGI crap
+Feb 22 03:10:14 <incal>	o/ sensors(1) now reports 'ERROR: Can't get value of subfeature in0_input: Can't read' and 'ERROR: Can't get value of subfeature in1_input: Can't read' for the CPU and GPU temperatures, this previously worked so don't know why it doesn't all of a sudden. ideas? TIA
+Feb 22 06:20:28 <user1__>	that's the dmesg: https://pastebin.com/gmpZvwYt
+Feb 22 06:20:58 <user1__>	that's the lspci: https://pastebin.com/5Ke61vkh
+Feb 22 06:21:34 <user1__>	does it say anything about missing firmware or drivers about a gpu?
+Feb 22 06:53:29 <incal>	user1__, no. just that error message on 'sensors -j'
+Feb 22 06:54:51 <incal>	... maybe you are talking about some other GPU issue LOL
+Feb 22 07:22:55 <user1__>	incal no we ballin lol
+Feb 22 07:23:22 <user1__>	but what does the 'sensors -j' error mean?
+Feb 22 07:28:57 <incal>	I don't know
+Feb 22 07:29:26 <user1__>	incal hah :D
+Feb 22 11:22:41 <StucKman>	I'm trying to run quasselcore as an user. somehow it's not being able to read the certificate or create the sqlite backend file when both filepaths are 100% accessible by my user as reported by namei. strace says both open() syscall return EACCESS, which makes no sense
+Feb 22 11:22:59 <StucKman>	any ideas hot to trace it with something more powerful than strace?
+Feb 22 11:30:31 <vague>	StucKman, what are the permissions on the certificate file?
+Feb 22 11:32:15 <vague>	I assume it's a client certificate you are talking about? The permissions need to be 600
+Feb 22 11:34:33 <mcfrisk_>	hi, how to use Debian docker images with "reproducible" timestamps? "debian/snapshot:unstable-20240202" no longer works but snapshots like "debian/unstable-20240211" do
+Feb 22 12:08:58 <Haxxa>	I am trying to limit internet usage on cellular (apart from NTP) what other data occurs over a stock debian install? I am not limiting anything so far.
+Feb 22 13:28:39 <incal>	user1__, strace run: https://dataswamp.org/~incal/error/sensors-j.txt
+Feb 22 13:28:51 <incal>	ah, offline
+Feb 22 13:39:10 <incal>	asked on gmane.linux.debian.user, let's see if they know
+**** ENDING LOGGING AT Thu Feb 22 13:52:24 2024
+
+**** BEGIN LOGGING AT Thu Feb 22 13:55:48 2024
+
+Feb 22 13:55:47 *	Now talking on #debian
+Feb 22 13:55:47 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 22 13:55:47 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 22 13:55:47 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** BEGIN LOGGING AT Thu Feb 22 13:57:12 2024
+
+Feb 22 13:57:11 *	Now talking on #debian
+Feb 22 13:57:11 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 22 13:57:11 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 22 13:57:12 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+Feb 22 16:03:41 <Helmholtz>	what is the default networking package in Debian? I installed Debian with networking available but after a few tweaks I lost connectivity
+Feb 22 16:04:27 <Helmholtz>	What command to use to debug? this happened before I could install network-manager
+Feb 22 16:06:17 <petn-randall>	Helmholtz: It either uses network-manager or ifupdown, depending on what you exactly install.
+Feb 22 16:07:52 <Helmholtz>	I only have networkctl
+Feb 22 16:08:23 <Helmholtz>	it says warning systemd-networkd is not running, output will be incomplete
+Feb 22 16:08:51 <Helmholtz>	and lists 3 rows, one loopback, onw enp and one wlp3s0.
+Feb 22 16:09:09 <Helmholtz>	none of them are operational
+Feb 22 16:15:13 <petn-randall>	Helmholtz: `man ifup` shows nothing?
+Feb 22 16:15:26 <petn-randall>	Helmholtz: networkd is not used in any installation by default.
+Feb 22 16:17:20 <Helmholtz>	petn-randall: it shows its ma page
+Feb 22 16:17:24 <Helmholtz>	manpage
+Feb 22 16:20:15 <Helmholtz>	sudo ifup wlp3s0 ? :/')
+Feb 22 16:20:16 <Helmholtz>	j
+Feb 22 16:20:16 <Helmholtz>	موذت
+Feb 22 16:20:45 <Helmholtz>	send_packet: Network is down
+Feb 22 16:21:03 <Helmholtz>	sorry for random chars in chat.
+Feb 22 16:21:12 <petn-randall>	Helmholtz: Is it a wifi interface?
+Feb 22 16:21:26 <Helmholtz>	yes
+Feb 22 16:21:45 <petn-randall>	Helmholtz: Check `man interfaces` and update /etc/network/interfaces to enable that.
+Feb 22 16:22:36 <petn-randall>	Helmholtz: After that you can reinstall network-manager, rename the file, and after a restart use n-m to configure it again. ifupdown/network-manager are mutually exclusive per network interface.
+Feb 22 16:23:31 <Helmholtz>	what does the mean? Operation not possible due to RF-KILL
+Feb 22 16:26:40 <sney>	Helmholtz: it means something is disabling the wifi, on a laptop sometimes you need to toggle a hardware switch or do some Fn-key combo
+Feb 22 16:26:54 <sney>	Helmholtz: you can install the tool 'rfkill' and use it to override this too, sometimes.
+Feb 22 16:27:06 <Helmholtz>	yeah, a few minutes ago I messes something and had to go to tty
+Feb 22 16:27:28 <wa1em>	tty is always fun when you have to debug :P
+Feb 22 16:27:33 <Helmholtz>	I randomly pressed some F buttons
+Feb 22 16:28:04 <Helmholtz>	F8 toggles wifi but I have not set it up yet on Debian
+Feb 22 16:29:28 <Helmholtz>	sney, yeah that was it. the keyboard toggled wifi off
+Feb 22 16:31:25 <Helmholtz>	wa1em learned going to tty many moons ago. from guys in IRC (it was freenode back then).
+Feb 22 16:32:08 <linuxmodder>	sorry about the nick change it defaulted to my backup
+Feb 22 16:32:22 <Helmholtz>	👌
+Feb 22 16:32:47 <Helmholtz>	why lightdm doesn't pre fill my username?
+Feb 22 16:40:35 <linuxmodder>	Not sure but I personally prefer that for my laptops
+Feb 22 16:40:59 <linuxmodder>	I believe there is a way in the xsessions profile but I never care to bother with it
+Feb 22 16:48:02 <shtrb>	I have cryptsetup-initramfs , I have rootfs installed, when I boot I get waiting for encrypted device and fall back to busybox shell, when I chroot and I do blkdid I can see that the UUID inside /etc/crypttab is the same written in the waiting for encryption device,
+Feb 22 16:48:09 <shtrb>	any points maybe ?
+Feb 22 16:52:56 <librton>	yt-dlp on debian is paradox between the stability philosophy of debian versus the software ability to download youtube videos
+Feb 22 16:53:07 <sney>	yep
+Feb 22 16:53:50 <librton>	I think yt-dlp is mature enough to remain up to date on debian repos
+Feb 22 16:54:14 <sney>	debian freezes software versions for each stable release, there is not a point where "mature" changes this
+Feb 22 16:54:19 <shtrb>	oh and ls /dev/ does not show the drive at all
+Feb 22 16:54:24 <sney>	it would make sense to put it on stable-fasttrack though
+Feb 22 16:54:34 <librton>	otherwise just remove it so we can have a clean install from scratch without having to fight against the preinstalled OLD useless version
+Feb 22 16:55:42 <sney>	"apt remove yt-dlp" problem solved, next
+Feb 22 16:55:52 <librton>	sney: it's not that easy
+Feb 22 16:55:59 <shtrb>	sney do you have an idea perhaps ?
+Feb 22 16:56:16 <sney>	shtrb: I don't know cryptsetup well, sorry
+Feb 22 16:56:28 <librton>	I had to go through that, plus nala remove then apt-get remove then again nala remove and yet I'm not sure all config files are gone
+Feb 22 16:56:32 <StucKman>	vague: 600, but what I see is not an application error, but open() returning -1 and EACCESS in errno
+Feb 22 16:56:34 <shtrb>	thanks sney
+Feb 22 16:57:17 <sney>	librton: if you have a problem with lingering config files then the operation you want is purge, and it shouldn't matter what libapt-pkg fronted you use (if it did make a difference, please file a bug)
+Feb 22 16:57:31 <StucKman>	like this:
+Feb 22 16:57:33 <StucKman>	statx(AT_FDCWD, "/home/mdione/local/var/lib/quassel/quasselCert.pem", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_ma
+Feb 22 16:57:33 <StucKman>	sk=STATX_ALL, stx_attributes=0, stx_mode=S_IFREG|0600, stx_size=5285, ...}) = 0
+Feb 22 16:57:34 <StucKman>	openat(AT_FDCWD, "/home/mdione/local/var/lib/quassel/quasselCert.pem", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)
+Feb 22 16:57:34 *	debchange has kicked StucKman from #debian (flood detected)
+Feb 22 16:58:25 <StucKman>	2 lines is flooding? damn
+Feb 22 16:58:35 <StucKman>	(sorry)
+Feb 22 16:58:54 <Thuryn>	well, we saw three
+Feb 22 16:58:58 <librton>	sney: I tried both purge and autoremove but it was not enough to go find stuff manually and delete from ~/.local/bin & /usr/bin
+Feb 22 16:59:19 <Thuryn>	but yeah, don't paste more than a line or maybe two in here.  use the pastbin
+Feb 22 16:59:28 <librton>	then reinstall using nala only .. and then copy recent version from github , hopping it will work again
+Feb 22 17:00:14 <StucKman>	I see, the first one was my actually typing
+Feb 22 17:00:17 <sney>	!reportbug
+Feb 22 17:00:17 <dpkg>	reportbug is used to submit bugs to the Debian <BTS>.  Install reportbug, then run reportbug.  See http://www.debian.org/Bugs/ http://www.debian.org/releases/stable/i386/ch05s04#problem-report for some general information about using reportbug and/or for <debian-installer> bug reporting.  Also ask me about <report-bugs>.  http://wiki.debian.org/reportbug  http://www.debian.org/Bugs/Reporting, or <reportbug MTA>
+Feb 22 17:00:27 <librton>	sney: in simple words it's pointless to preinstall a package that is prune to stop withint a month or two at max due to youtube policies to prevent videos downloads
+Feb 22 17:00:49 <sney>	librton: file a bug. #debian does not make these decisions, I am just a fellow user
+Feb 22 17:01:35 <librton>	sney: I don't know how to report a bug, beside it's a bug, it's a wrong logic.
+Feb 22 17:01:45 <librton>	where do they report debian issues?
+Feb 22 17:02:18 <sney>	!reportbug
+Feb 22 17:02:18 <dpkg>	reportbug is used to submit bugs to the Debian <BTS>.  Install reportbug, then run reportbug.  See http://www.debian.org/Bugs/ http://www.debian.org/releases/stable/i386/ch05s04#problem-report for some general information about using reportbug and/or for <debian-installer> bug reporting.  Also ask me about <report-bugs>.  http://wiki.debian.org/reportbug  http://www.debian.org/Bugs/Reporting, or <reportbug MTA>
+Feb 22 17:02:21 <sney>	^ look
+Feb 22 17:02:22 <Thuryn>	StucKman, looks like the statx line got broken into two lines, perhaps as a paste artifact
+Feb 22 17:02:40 <librton>	got it
+Feb 22 17:02:42 <StucKman>	ok, oik, pastebin it is
+Feb 22 17:03:15 <StucKman>	https://dpaste.org/s4teJ
+Feb 22 17:03:38 <StucKman>	as you can see i the stat call, the mode is 600
+Feb 22 17:03:59 <sney>	librton: if yt-dlp is being installed automatically by some other package, you may want to report the bug for that package instead of yt-dlp, but both maintainers should be copied anyway. you can see maintainer contacts in "apt show" output for any package
+Feb 22 17:04:48 <StucKman>	and here are the files as seen by ls: https://dpaste.org/MbrWq `namei` confirms all elements up to here can be read by my user
+Feb 22 17:07:35 <DmanT>	https://nopaste.net/r9nYvnO3AX
+Feb 22 17:07:36 <DmanT>	why?
+Feb 22 17:09:18 <StucKman>	DmanT: sounds like a quite specific question, aren't there any SIP or LinPhone channels?
+Feb 22 17:22:36 <Voidwarper>	Which kernel does Debian stable use?
+Feb 22 17:22:53 <Voidwarper>	The latest LTS one or something else
+Feb 22 17:22:59 <sney>	6.1 longterm
+Feb 22 17:23:14 <Voidwarper>	Ok thanks
+Feb 22 17:23:19 <sney>	,kernels
+Feb 22 17:23:20 <judd>	Available kernel versions are: buster: 4.19.0-21-amd64 (4.19.249-2); buster-backports: 5.10.0-0.deb10.16-amd64 (5.10.127-2~bpo10+1); bullseye: 5.10.0-28-amd64 (5.10.209-2); bullseye-backports: 6.1.0-0.deb11.17-amd64-unsigned (6.1.69-1~bpo11+1); bookworm: 6.1.0-18-amd64 (6.1.76-1)
+Feb 22 17:23:34 <Voidwarper>	Perfect
+Feb 22 17:23:40 <sney>	np
+Feb 22 17:34:45 <wizardyesterday>	If I want to install a VM on Debian 12, is Virtualbox a good choice? I'm new to VMs.
+Feb 22 17:35:07 <sney>	virtualbox is ok but virt-manager is more integrated and supported
+Feb 22 17:35:23 <sney>	see also https://wiki.debian.org/KVM
+Feb 22 17:35:47 <wizardyesterday>	sney, I did see menion of KV
+Feb 22 17:35:50 <wizardyesterday>	ugh
+Feb 22 17:36:02 <wizardyesterday>	I did see mention of KVM, also.
+Feb 22 17:36:20 <wizardyesterday>	I'll do more investigation... thanks much!
+Feb 22 17:36:46 <sney>	np. virt-manager is just a gui application to manage kvm etc so it's probably what you want
+Feb 22 17:37:25 <wizardyesterday>	sney, Ahh, that's what I was curious about. Okay, the study of KVM for me! :)
+Feb 22 17:37:35 <Helmholtz>	in a Debian 12 + i3 setting, which sound server should I setup? pulse audio or pipe wire? pulse audio was working fine on Ubuntu
+Feb 22 17:39:02 <sney>	if you like pulseaudio you can keep using it
+**** ENDING LOGGING AT Thu Feb 22 17:51:49 2024
+
+**** BEGIN LOGGING AT Thu Feb 22 18:35:17 2024
+
+Feb 22 18:35:17 *	Now talking on #debian
+Feb 22 18:35:17 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 22 18:35:17 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 22 18:35:17 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+Feb 22 18:46:47 <jelly>	,v postfwd
+Feb 22 18:46:48 <judd>	Package: postfwd on amd64 -- jessie: 1.35-3; stretch: 1.35-4; stretch-backports: 1.35-5~bpo9+1; buster: 1.35-5; buster-backports: 1.35-6~bpo10+1; bullseye: 1.35-6; bullseye-backports: 1.35-8~bpo11+2; bookworm: 1.35-8; sid: 1.35-8; trixie: 1.35-8
+**** BEGIN LOGGING AT Thu Feb 22 20:35:46 2024
+
+Feb 22 20:35:46 *	Now talking on #debian
+Feb 22 20:35:46 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 22 20:35:46 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 22 20:35:46 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** BEGIN LOGGING AT Thu Feb 22 20:47:44 2024
+
+Feb 22 20:47:43 *	Now talking on #debian
+Feb 22 20:47:43 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 22 20:47:43 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 22 20:47:43 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** BEGIN LOGGING AT Thu Feb 22 20:58:51 2024
+
+Feb 22 20:58:50 *	Now talking on #debian
+Feb 22 20:58:50 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 22 20:58:50 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 22 20:58:50 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** BEGIN LOGGING AT Thu Feb 22 21:13:03 2024
+
+Feb 22 21:13:03 *	Now talking on #debian
+Feb 22 21:13:03 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 22 21:13:03 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 22 21:13:03 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** BEGIN LOGGING AT Thu Feb 22 21:16:06 2024
+
+Feb 22 21:16:06 *	Now talking on #debian
+Feb 22 21:16:06 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 22 21:16:06 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 22 21:16:06 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+Feb 23 02:45:29 <Larotin>	Hi
+Feb 23 02:48:09 <Larotin>	Today, I got issues running a game that utilise libjpeg (not turbo) on debian testing, because the maintainer of the package didn't upload the package on testing but kept it in sid, I had to manually compile the library to get the game to work, I want to report the bug so anyone else doesn't face the same fate.
+Feb 23 02:54:22 <Larotin>	Hello?
+Feb 23 02:54:42 <joepublic>	you are saying you want to report a bug on a debian package?
+Feb 23 02:54:48 <Larotin>	Yes
+Feb 23 02:55:06 <joepublic>	one might use `reportbug` for this purpose
+Feb 23 02:57:29 <Larotin>	How can I use it? (I don't know what reportbug it)
+Feb 23 02:57:32 <Larotin>	*is
+Feb 23 02:59:06 <joepublic>	it may be used by typing reportbug into a terminal and following the text prompts.
+Feb 23 02:59:23 <joepublic>	`man reportbug` for more helpful (really) information.
+Feb 23 03:29:26 <Larotin>	reportbug doesn't work.
+Feb 23 03:34:47 <^Gecko^>	turn in a  bug report
+Feb 23 03:35:33 <Larotin>	uhh
+Feb 23 03:35:45 <Larotin>	wdym by "turn in"
+Feb 23 03:39:10 *	^Gecko^ shrugs
+Feb 23 03:39:13 <^Gecko^>	lol
+Feb 23 04:48:57 <fb`>	Possible dependency issue bootstrapping bookworm. dh_installinit (via util-linux postinst) adds a call to update-rc.d, however update-rc.d not found
+Feb 23 04:56:00 <fb`>	In other words, package debhelper provides dh_installinit but does not add a dependency for required update-rc.d from package init-system-helpers
+Feb 23 06:59:08 <darwin>	how can I rollback to the Thunderbird that still had UNIX MoveMail?  (I haven't used newer with my Thunderbird profile, just temporarily am using my /home hard disc drive (HDD) on Debian-based)
+Feb 23 07:48:34 <darwin>	how come chromium-ungoogled conflicts with chromium?  On Slackware and other strictly UNIX-like (or probably also genetic UNIX like *BSD) they don't conflict
+Feb 23 08:14:36 <darwin>	on some Debian-based OS it prompts to ask if I really want to install stuff with apt(-get) from official repository... on other PCs (but same OS) it doesn't... what's the configuration difference?
+Feb 23 08:18:06 <mandem0110>	darwin: this is #debian, we can't support #ubuntu here. :)
+Feb 23 08:18:39 <mandem0110>	Debian *based* isn't Debian. Sorry...
+Feb 23 08:18:47 <darwin>	i use Debian, Devuan, Ubuntu and other forks that use apt the same from official Debian repositories
+Feb 23 08:18:55 <mandem0110>	^
+Feb 23 08:19:01 <darwin>	technically Debian is Debian-based the same way 1/2=2/4
+Feb 23 08:22:01 <mandem0110>	darwin: this is a #debian OS support channel... *NOT* a #debian based OS support channel...
+Feb 23 08:25:33 <darwin>	doesn't seem OS-dependent rather than configuration of apt which is a Debian project: superuser.com/questions/164553/automatically-answer-yes-when-using-apt-get-install
+Feb 23 08:26:13 <darwin>	it's probably one of them had the configuration
+Feb 23 10:12:00 <yogg>	Hi
+Feb 23 10:12:00 <yogg>	I use debian now since many years but I always struggle to change the keyboard layout on the console. If "console-data" is installed I can use "loadkeys us|de|fr|..." to temporary change the layout in the current shell. "dpkg-reconfigure keyboard-configuration" changes it permanent but does not change the current shell (also the standard user may
+Feb 23 10:12:01 <yogg>	not understand all the questions on the reconfigure). Is there a simple way to permanently change the keyboard layout in the console (no GUI) which also changes the layout in the current shell (and maybe only asks for the layout itself)? Or is a self made script the only way for this?
+Feb 23 10:14:32 <xx>	yogg: console-setup
+Feb 23 10:14:58 <xx>	`dpkg-reconfigure console-setup`
+Feb 23 10:16:40 <yogg>	xx: this only changes options for the console itself (encoding -> utf8, ...). It does not ask me about the keyboard layout
+Feb 23 10:18:23 <xx>	I'll have a look
+Feb 23 10:18:37 <xx>	did you change the settings in /etc/default/keyboard
+Feb 23 10:18:43 <yogg>	In the "old" installer there was a "type to find out your layout" option (maybe it is still there and I oversaw it). Can I start this again somehow?
+Feb 23 10:19:29 <xx>	that screen should be `dpkg-reconfigure keyboard-configuration`, if you don't see it then I don't know
+Feb 23 10:23:35 <yogg>	hmm the first thing it asks me is what keyboard model I have (Generic 101-key PC, Generic 102-key PC, Generic 105-key PC, ... -> long list). I search a little more in the docs
+Feb 23 10:55:31 <yogg>	ok "setupcon" applies the changes made with "dpkg-reconfigure keyboard-configuration" to the current shell.
+Feb 23 11:56:38 <xx>	the command `geteltorito` is in the genisoimage package on debian, which is mostly deprecated. xorriso is generally the replacement for it. Anyone know how to get the functionality of geteltorito using xorriso or some other tool?
+Feb 23 11:57:26 <darsie>	Is torito some food?
+Feb 23 11:57:51 <xx>	darsie: https://en.wikipedia.org/wiki/ISO_9660#El_Torito
+Feb 23 11:59:02 <darsie>	According to legend, the El Torito CD/DVD extension to ISO 9660 got its name because its design originated in an El Torito restaurant in Irvine, California. El Torito (Spanish for "the little bull") is an American chain that serves Mexican food.
+Feb 23 12:10:24 <cloudowind>	interesting
+**** BEGIN LOGGING AT Fri Feb 23 14:47:00 2024
+
+Feb 23 14:47:00 *	Now talking on #debian
+Feb 23 14:47:00 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 23 14:47:00 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 23 14:47:00 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** BEGIN LOGGING AT Fri Feb 23 14:52:01 2024
+
+Feb 23 14:52:01 *	Now talking on #debian
+Feb 23 14:52:01 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 23 14:52:01 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 23 14:52:01 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+Feb 23 15:13:44 <Helmholtz>	installed Thunar with volman plugin and gvfs. I can't mount my internal drives
+Feb 23 15:14:10 <Helmholtz>	Not authorized to perform operation.
+Feb 23 15:15:22 <masterkorp>	Hello, has any of you get got a dual screen foldable usb display working on linux ?
+Feb 23 16:41:47 *	debchange sets ban on *!*@198.98.60.89
+Feb 23 16:41:50 *	debchange has kicked vorteckz from #debian (You are banned from this channel)
+Feb 23 16:53:54 <platta>	I was upgrading from buster to bookworm, updated all sources.list files to point to bookworm, but then mistakenly tried to install ntp before completing the upgrade. I can’t SSH in or log in with a physical keyboard, but I do have Portainer running, so technically I can launch a container with root access to the entire host. How screwed am I?
+Feb 23 16:57:34 <sney>	upgrading directly from buster to bookworm is not supported
+Feb 23 16:58:15 <sney>	but if you can get a root shell maybe you can fix this, which is likely the real problem, https://www.debian.org/releases/bookworm/amd64/release-notes/ch-information.en.html#libcrypt-upgrade-from-buster
+Feb 23 17:03:37 *	debchange sets ban on *!*@198.251.81.118
+Feb 23 17:03:39 *	debchange has kicked vorteckz from #debian (You are banned from this channel)
+Feb 23 17:05:39 <xx>	someone should update the ban message in the bot
+Feb 23 17:06:21 <platta>	I see my mistake, I was reading a doc on moving from buster to bullseye but substituted bookworm instead. I’m trying the fix now - if the system becomes accessible again should I try the steps to properly upgrade to bullseye?
+Feb 23 17:06:58 <sney>	if you already have a significant set of bookworm packages at this point just try to finish it
+Feb 23 17:07:01 <xx>	platta: impossible to tell, you're in an untested and unsupported situation
+Feb 23 17:07:10 <xx>	you can try going to bookworm and fix whatever breaks
+Feb 23 17:07:21 <xx>	but a mix of buster+bullseye+bookworm?
+Feb 23 17:07:46 <xx>	also, you're right to blame debian for going b-b-b in their codenames
+Feb 23 17:08:45 <xx>	if I had the power, I'd talk to the debian project lead to change the debian policy to prohibit consecutive release names starting with the same letter
+Feb 23 17:10:02 <sney>	I'd require any active debian members to do end user support for 30 days every year, so they can more easily see the kinds of problems that pop up
+Feb 23 17:11:43 <xx>	heh
+Feb 23 17:12:55 <xx>	I guess if someone put the effort into it, and compiled all the typical issues users face, then there could be some rule that active debian members must read such a list at least once a year
+Feb 23 17:13:09 <xx>	I'm sure they just don't know because the info doesn't get to them
+Feb 23 17:13:36 <sney>	I've been in some dev discussions where they just don't believe some things are necessary/valuable
+Feb 23 17:14:00 <xx>	you're right, they'd likely quickly re-evaluate that position if they spent time in support
+Feb 23 17:14:02 <sney>	some stuff people have to experience for themselves, rather than skimming an email
+Feb 23 17:19:23 <Helmholtz>	is nm-applet shipped in Debian 12?
+Feb 23 17:19:42 <Helmholtz>	it's not installed with network-manager package
+Feb 23 17:20:15 <sney>	I think that one is in network-manager-gnome
+Feb 23 17:21:13 <platta>	Server is accessible again after applying that fix and rebooting. Trying to complete the upgrade to bookworm. Thanks sney and xx.
+Feb 23 17:21:19 <sney>	np
+Feb 23 17:23:04 <Helmholtz>	sney, does it pull in gnome DE?
+Feb 23 17:23:29 <Helmholtz>	I want a graphical interface and tray for network-manager
+Feb 23 17:24:52 <sney>	Helmholtz: only the required gnome/gtk libraries, this is also the one used by xfce etc
+Feb 23 17:25:30 <Helmholtz>	thank you 😍
+Feb 23 17:29:31 <Helmholtz>	why does nm-applet say : device not managed?
+Feb 23 17:31:22 <sney>	Helmholtz: because the device is set up in /etc/network/interfaces most likely
+Feb 23 17:31:30 <sney>	you don't want 2 different tools managing the same interface
+Feb 23 17:32:11 <Helmholtz>	How to disable the first method? since it's doesn't have GUI
+Feb 23 17:32:31 <sney>	edit that file and comment the lines that mention your interface
+Feb 23 17:33:56 <Helmholtz>	shouldn't there be a command for this?
+Feb 23 17:34:11 <Helmholtz>	like some disable command or stopping a service
+Feb 23 17:34:50 <sney>	only if you want your network connection to drop while you switch over
+Feb 23 17:35:32 <sney>	ifupdown, which handles /etc/network/interfaces, is not really a "service" anyway, just a collection of scripts. it's fine to edit interfaces without calling ifdown
+Feb 23 17:39:56 <Helmholtz>	sney, so I commented out everything on that file except the first line that imports from interfaces.d
+Feb 23 17:40:06 <Helmholtz>	then rebooted my machine
+Feb 23 17:40:52 <Helmholtz>	nm-applet can now detect stuff. it means from now on, NetworkManager handles my Wifi/ethernet right?
+Feb 23 17:44:19 <Helmholtz>	still not sure about the "auto lo" and "iface lo inet loopback" that I commented out. was it correct to remove them?
+Feb 23 17:45:46 <xx>	you can leave them or remove them, it doesn't affect anything
+Feb 23 17:56:55 <somiaj>	does network manager now handle 'lo' if you remove it from the interfaces file? I thought the suggestion was to keep that there, and just use network manager for other interfaces
+Feb 23 17:58:03 <xx>	network manager just ignores localhost
+Feb 23 17:58:08 <xx>	hardcoded I think
+Feb 23 17:58:25 <xx>	I don't have lo in interfaces file for years
+Feb 23 17:58:35 <somiaj>	Sure, but if you comment out lo in the interfaces file, then would lo be brought up using other tools?
+Feb 23 17:58:47 <xx>	I don't know
+Feb 23 17:59:00 <somiaj>	I've just left lo alone due to it works, not that I know if it is required or not, so my suggestion would be to keep it there.
+Feb 23 17:59:05 <xx>	what other tools know how to handle /etc/network/interfaces? It's a debian file.
+Feb 23 18:25:32 <PerfDave>	xx: Debian's network-manager knows to ignore interfaces specified in /e/n/i in general, I don't know if lo is a special case.
+Feb 23 18:42:48 *	debchange removes ban on *!*@198.98.60.89
+Feb 23 19:03:40 *	debchange removes ban on *!*@198.251.81.118
+Feb 23 19:16:23 <tesseract>	does anyone know how to change default directory that nautilus open when launch on Debian 12?
+Feb 23 19:16:50 <tesseract>	i found some stuff but they are old solutions. it looks like there were changes made
+Feb 23 19:20:27 <somiaj>	is it not opening $HOME by default?
+Feb 23 19:20:41 <somiaj>	my guess is something hidden in gsettings somwehere, but can't say more than that
+Feb 23 19:21:03 <tesseract>	somiaj: it opens home yes
+Feb 23 19:21:38 <somiaj>	okay, at least the default seems reasonable...anyways, not sure how to change that
+Feb 23 19:22:28 <tesseract>	ok checking some stuff
+Feb 23 19:23:02 <somiaj>	do you run nautilus from the command line for from an menu using a .desktop file?
+Feb 23 19:23:26 <somiaj>	one suggestion that seems reasonable is just update the .desktop file if you are launching from a menu, if using form a command line, unsure
+Feb 23 19:49:28 <lolok>	if i have a debian10 server, and i play with apr sources, can i upgrade straight to debian12?
+Feb 23 19:49:34 <lolok>	apt*
+Feb 23 19:49:51 <sney>	no
+Feb 23 19:49:58 <sney>	you have to upgrade to debian 11 first
+Feb 23 19:50:03 <joepublic>	no.  to 11, and then 12, yes.  10 to 12, no.
+Feb 23 19:50:04 <lolok>	cheers
+Feb 23 19:51:39 <somiaj>	lolok: read the release notes for debian 11 and then for debian 12 to give you pointers and possible sticky points in the upgrdae
+Feb 23 19:52:55 <Thoth>	Hi People
+Feb 23 19:57:15 <lolok>	yea reading now
+**** BEGIN LOGGING AT Fri Feb 23 21:29:50 2024
+
+Feb 23 21:29:49 *	Now talking on #debian
+Feb 23 21:29:49 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 23 21:29:49 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 23 21:29:49 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+Feb 23 23:19:13 <vorteckz>	hello everybody
+Feb 23 23:19:25 <somiaj>	greetings
+Feb 23 23:41:08 <cloudowind>	hello vorteckz somiaj
+Feb 23 23:41:20 <vorteckz>	LEMP or LAMP
+Feb 23 23:42:03 <somiaj>	to many possibilities these days, and what P are you using, python? php? perl?
+Feb 23 23:42:24 <vorteckz>	python and php
+Feb 23 23:42:40 <vorteckz>	well
+Feb 23 23:42:46 <vorteckz>	probably not python
+Feb 23 23:42:52 <somiaj>	debian nicely patches all of them for you
+Feb 23 23:43:03 <somiaj>	I figured, most people who talk about LAMP or what not mean php
+Feb 23 23:43:14 <somiaj>	though M is now mariadb and not mysql
+Feb 23 23:43:35 <vorteckz>	nginx or apache
+Feb 23 23:43:39 <vorteckz>	l like both
+Feb 23 23:43:46 <vorteckz>	but nginx i like a little more
+Feb 23 23:48:27 <somiaj>	I'd use ngnix unless there is some module needed in apache, I find I need apache specific modules a lot
+Feb 23 23:48:45 <PerfDave>	These days I just run web apps in containers
+Feb 23 23:54:53 <somiaj>	Yea, I find I run a lot of webservers using python/perl/ruby/etc, and then just have an ngnix or apache proxie
+Feb 23 23:55:17 <somiaj>	I'm still stuck using apache mostly due to I need an odic auth plugin so I can put some pages behind my university's single login
+Feb 24 00:01:25 <cloudowind>	why you guys not joinin #debian-offtopic
+Feb 24 00:03:51 <somiaj>	cloudowind: we probably should, thanks for the reminder.
+Feb 24 00:05:31 <cloudowind>	didnt mean anything sorry if you got me wrong
+Feb 24 00:06:24 <cloudowind>	if you do so we can join the conversation too :)
+Feb 24 02:02:16 <cheapie>	Installing bookworm on a 700MHz TBird... this might take a while.
+Feb 24 02:03:49 <cheapie>	There is context - I recently picked up an ISA NIC I want to use in my 486 box (running Windows 95), but it's one of the ones that uses a config tool to select resources, and said config tool seems to be impossible to find right now. I spent several hours trying to make it work, guessing at the current settings, etc.... but what came up over and over again is that Linux may be able to autodetect it.
+Feb 24 02:04:17 <cheapie>	The driver still exists as of bookworm (still in sid too, actually) and this is my newest box with an ISA slot, so... :P
+Feb 24 02:21:19 <stack_overflow>	ISA NIC? Oh, whoa, I thought RTL8139 I found in a box been already sorta old fashioned...
+Feb 24 02:28:56 <cheapie>	stack_overflow: The box I actually want to use it in (the 95 one) has 4 ISA slots and.... not much else.
+Feb 24 02:29:10 <cheapie>	Onboard (soldered) VLB graphics though :D
+Feb 24 02:29:59 <joepublic>	Vesa Local Bus...  Faster than ISA!
+Feb 24 02:30:11 <stack_overflow>	Whoa, that's really vintage thing it seems.
+Feb 24 02:37:10 <tomman>	OK, hope kernel devs never attempt to retire support for RTL8139 cards
+Feb 24 02:37:39 <tomman>	but then there is this: https://www.phoronix.com/news/Linux-Disabling-RNDIS-Attempt
+Feb 24 02:41:39 <cheapie>	I think if I had any more RTL8139s I'd be buried in them.
+Feb 24 02:41:58 <cheapie>	stack_overflow: 486 boxes tend to be old, yes
+Feb 24 02:46:10 <^Gecko^>	486?  use the good old 3com 3c509
+Feb 24 02:46:26 <^Gecko^>	I'm not sure if the 3c905 would work
+Feb 24 02:50:02 <^Gecko^>	I used a pair of 3c509's in the 486 doorstop firewall
+Feb 24 02:50:30 <stack_overflow>	tomman: guess 8139 got nothing to do with RNDIS?
+Feb 24 02:51:30 <tomman>	stack_overflow: indeed... but there is a rage these days for deprcating/killing drivers for "old hardware", even if it still has active users
+Feb 24 02:51:32 <stack_overflow>	cheapie: I even had one ... eventually. Tho its been "5x86" overdrive on more recent mobo featuring PCI.
+Feb 24 02:51:40 <tomman>	(usually the argument is "security")
+Feb 24 02:52:34 <stack_overflow>	probably more like "maintenability". Linux kernel is a big thing and gets plenty code added. Without any removal it would grow BIG and would likely get crushed by own weight.
+Feb 24 02:53:44 <stack_overflow>	Drivers itself are ofc relatively decorrelated, but I guess nobody wants to maintain really vintage subsystems. This said I think it still runs on some 68000 - someone apparently still cares and maintains this.
+Feb 24 02:54:05 <cheapie>	^Gecko^: I have a 3C509 and it works fine in there, but I'm trying to get this NIC working in /something/ so I don't have to shuffle cards around.
+Feb 24 02:54:08 <stack_overflow>	Guess as long as code maintained linux kernel devs can live with it. But if it isnt...
+Feb 24 02:56:23 <^Gecko^>	oh I saw this about vmware and broadcom the other day; apparently broadcom is pulling a martin shkreli and multiplying the price of vmware ten fold.  https://www.youtube.com/watch?v=peH4ic7g5yc
+Feb 24 02:57:47 <^Gecko^>	cheapie I chose the 3c509 (this was back in 2000-2001) because I could get three of them on ebay for about 20 or 30 bucks
+Feb 24 02:58:00 <^Gecko^>	was using the single floppy linux called FreeSCO
+Feb 24 02:58:08 <stack_overflow>	fortunately every modern Linux got KVM built in so vmware can get to hell :)
+Feb 24 02:58:40 <^Gecko^>	stack_overflow yeah but that doesn't help if you want vmware to be the hypervisor
+Feb 24 03:00:10 <^Gecko^>	or businesses that are already locked in like tradesmen get locked in to their tool battery manufacturer
+Feb 24 03:00:30 <^Gecko^>	I'm on team red, btw
+Feb 24 03:01:23 <stack_overflow>	Sure its alright to be between hammer and anvil, but its strange to take place and complain someone hits you with hammer and puts into fire.
+Feb 24 03:01:50 <stack_overflow>	Vendorlock is such a funny thing...
+**** BEGIN LOGGING AT Sat Feb 24 12:02:42 2024
+
+Feb 24 12:02:41 *	Now talking on #debian
+Feb 24 12:02:41 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 24 12:02:41 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 24 12:02:41 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+Feb 24 13:09:57 <tesseract>	,v firefox
+Feb 24 13:09:58 <judd>	Package: firefox on amd64 -- sid: 123.0-1
+Feb 24 13:10:38 <DmanT>	hi all
+Feb 24 13:10:53 <DmanT>	debian "only" or is gnome a part from debian?
+Feb 24 13:27:52 <xx>	DmanT: what?
+Feb 24 13:32:08 <DmanT>	just questions about debian or is gnome also part of debian?
+Feb 24 13:34:02 <joepublic>	gnome questions are on topic if you're running it on debian stable.
+Feb 24 13:34:11 <DmanT>	yes
+Feb 24 13:34:45 <xx>	gnome is packaged in debian, yes
+Feb 24 13:34:56 <xx>	gnome is not developed by debian
+Feb 24 13:35:15 <DmanT>	i must you translate
+Feb 24 13:35:49 <xx>	and yes, you can ask about gnome in here as long as you are running debian and need support with gnome on debian
+Feb 24 13:36:23 <DmanT>	So I tried the German channel and they couldn't help me or understand me
+Feb 24 13:38:19 <DmanT>	you can create keyboard shortcuts
+Feb 24 13:38:38 <xx>	!de
+Feb 24 13:38:38 <dpkg>	Deutschsprachige Hilfe bekommt ihr in #debian.de (auf irc.oftc.net, irc.libera.chat oder irc.belwue.de) - debian-user-german@lists.debian.org
+Feb 24 13:39:52 <DmanT>	Oh whatever. bye
+Feb 24 13:42:01 <xx>	I mean, we can't understand you, so what are we supposed to do?
+Feb 24 13:42:43 <DmanT>	I said. the Germans can't understand me. that's why I want to try it here. but have to use translate
+Feb 24 13:43:04 <DmanT>	I tried it in the German channel. They just don't understand anything.
+Feb 24 13:43:51 <joepublic>	You might try asking a question?
+Feb 24 13:44:02 <DmanT>	yes
+Feb 24 13:45:15 <DmanT>	I go to Applications => Settings => Keyboard => Keyboard Shortcuts. There I can now make keyboard shortcuts for my system. Example: Audio louder. Then I assign a key and can use it system-wide for volume.
+Feb 24 13:45:25 <DmanT>	to the question:
+Feb 24 13:46:12 <DmanT>	A: How can I add my own things there? So, for example, I create an audio sink and want to control this using a key combination and not the entire system volume?
+Feb 24 13:46:28 <waterkip>	have you tried this? https://help.gnome.org/users/gnome-help/stable/keyboard-shortcuts-set.html.en
+Feb 24 13:47:10 <DmanT>	ys but i want add my own things
+Feb 24 13:47:50 <waterkip>	DmanT: I think for that you'll need to create a script that does the volume control for your sinks by using pactl or the pipewire equivalent
+Feb 24 13:48:13 <waterkip>	than use that script in a custom shortcut
+Feb 24 13:48:59 <DmanT>	It must be possible to rewrite Debian/Gnome so that I can add my own stuff there
+Feb 24 13:49:12 <waterkip>	from what I read it is already possible
+Feb 24 13:50:10 <DmanT>	hmpf
+Feb 24 13:50:39 <waterkip>	https://www.addictivetips.com/ubuntu-linux-tips/customize-keyboard-shortcuts-on-gnome-shell/
+Feb 24 13:50:59 <DmanT>	no
+Feb 24 13:51:02 <DmanT>	this i dont want
+Feb 24 13:51:06 <waterkip>	ok
+Feb 24 13:51:24 <DmanT>	https://imgur.com/a/76dsFiQ
+Feb 24 13:51:28 <DmanT>	create entries there
+Feb 24 13:51:56 <DmanT>	nothing set.. create complete custom
+Feb 24 13:52:32 <waterkip>	I don't understand that screenshot, its in german and I don't speak it and I don't use gnome, so I don't recognize it either
+Feb 24 13:52:52 <waterkip>	task combination, so that is shortcut?
+Feb 24 13:53:10 <DmanT>	yes
+Feb 24 13:53:25 <DmanT>	and there.. are fixed entries from system/gnome.. what ever
+Feb 24 13:53:32 <DmanT>	i want create there my own
+Feb 24 13:53:52 <waterkip>	yes
+Feb 24 13:54:00 <waterkip>	read: https://help.gnome.org/users/gnome-help/stable/keyboard-shortcuts-set.html.en
+Feb 24 13:54:05 <waterkip>	and add your own
+Feb 24 13:54:15 <DmanT>	no
+Feb 24 13:54:21 <DmanT>	hmpf
+Feb 24 13:54:31 <waterkip>	Click the + button. The Add Custom Shortcut window will appear.
+Feb 24 13:54:42 <DmanT>	there i DONT SEE ADD BUTTON
+Feb 24 13:54:46 <DmanT>	look upload
+Feb 24 13:55:13 <DmanT>	where i set my gnome on english?
+Feb 24 13:56:27 <waterkip>	i dunno, somewhere > settings > languages I guess
+Feb 24 13:57:23 <DmanT>	i dont have english
+Feb 24 13:58:11 <DmanT>	well, it doesn’t matter. It's always funny when someone wants to tell you something that you should use that doesn't exist. Have a nice day
+Feb 24 13:58:51 <waterkip>	perhaps read the official documentation and join #gnome
+Feb 24 14:00:25 <DmanT>	It was currently still part of Debian. xD oh yeah. that's nice again. clue where there is no clue.
+Feb 24 14:00:58 <waterkip>	yes, it is part of debian, but accept that not everyone uses gnome on debian
+Feb 24 14:01:32 *	waterkip < i3 user
+Feb 24 14:02:00 <waterkip>	i just google and ask if you tried X or Y
+Feb 24 14:02:09 <DmanT>	Oh well. In the end, gnome only shows what Debian tells it, because the entries are also in cinnamon, xfce and co. So that's a Debian thing. but whatever.
+Feb 24 14:02:13 <waterkip>	you just say "no", "this I don't want"
+Feb 24 14:02:42 <waterkip>	good luck and have a nice day
+Feb 24 14:48:05 <Assid>	heya .. i have a proxmox install which is technically built on debian.. on a mini pc, the system randomly just shuts down and i cant figure out why .. this is the last logs of that day before i end up starting it up again : https://pastebin.com/G8FfNew1
+Feb 24 14:51:01 <Assid>	https://pastebin.com/cH51bBQS  -- thats the kernel log
+Feb 24 14:55:08 <DmanT>	https://streamable.com/pbf93y
+Feb 24 16:05:19 <PerfDave>	!proxmox
+Feb 24 16:05:19 <dpkg>	Proxmox Virtual Environment (Proxmox VE) is a GNU/Linux distribution <based on Debian>, providing a virtualization platform with <LXC> and <KVM>.  It is not supported in #debian.  There's an unofficial ##proxmox channel on irc.libera.chat.  For official venues, see http://pve.proxmox.com/wiki/Get_support
+**** BEGIN LOGGING AT Sat Feb 24 16:29:06 2024
+
+Feb 24 16:29:06 *	Now talking on #debian
+Feb 24 16:29:06 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 24 16:29:06 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 24 16:29:06 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** BEGIN LOGGING AT Sat Feb 24 16:32:03 2024
+
+Feb 24 16:32:03 *	Now talking on #debian
+Feb 24 16:32:03 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 24 16:32:03 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 24 16:32:03 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** BEGIN LOGGING AT Sat Feb 24 17:28:08 2024
+
+Feb 24 17:28:07 *	Now talking on #debian
+Feb 24 17:28:07 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 24 17:28:07 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 24 17:28:08 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+Feb 24 19:01:16 <sedrosken>	Probably not a debian-specific question, but I'm using the Chromebook layout and I'd like to change the switching key from RAlt to RShift since I don't use RShift anyway and RAlt seems to behave somewhat weirdly in a bash shell -- I'm using it to get Home/End/PgUp/PgDn on the arrow keys and Delete on backspace, CapsLock on Meta (which, on a chromebook, is where CapsLock should be)
+Feb 24 19:02:07 <sedrosken>	would I just change the line ' include "level3(ralt_switch)" ' to instead reference rshift?
+Feb 24 19:02:30 <sedrosken>	is there a way to disable the RShift key for anything but this modifier?
+Feb 24 19:07:22 <sedrosken>	For example, RAlt+Left, which should be Home, prints a capital H to the console
+Feb 24 19:07:38 <sedrosken>	I'm assuming it must be interpreting RAlt as AltGr or something?
+**** ENDING LOGGING AT Sat Feb 24 19:15:17 2024
+
+**** BEGIN LOGGING AT Sun Feb 25 02:09:51 2024
+
+Feb 25 02:09:50 *	Now talking on #debian
+Feb 25 02:09:50 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 25 02:09:50 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 25 02:09:50 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+Feb 25 02:41:20 <droople>	On my x1 yoga, the install selection menu works on the netinst image, but not once I get into the installer.
+Feb 25 02:41:50 <droople>	In the graphical installer, the touch screen works and the track pad does not.
+Feb 25 02:44:24 <droople>	The keyboard doesn't work with any option
+Feb 25 02:45:04 <droople>	I should have said "the keyboard works on the install selection menue, but not once I get into the installer."
+Feb 25 02:45:56 <xisop>	Greetings. I am using `6.1.0-18-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.76-1 (2024-02-01) x86_64 GNU/Linux`. I have two monitors. One plugged into the pc and another monitor plugged directly into my video card. When I boot, the video card monitor displays the framebuffer output of the boot sequence perfectly. but when xdm starts, it goes blank
+Feb 25 02:46:34 <xisop>	in addition, i am seeing some errors regarding that in /var/log/Xorg.0.log particularly: `(EE) modeset: Failed to load module "glamoregl" (module does not exist, 0)`
+Feb 25 02:52:44 <xisop>	also, what is the procedure for blacklisting modules? i've put a blacklist.conf in /etc/modprobe.d/ and somehow the modules seem to still get loaded
+Feb 25 02:57:46 <droople>	noapic gives me keyboard on graphical, but not trackpad. Putting in acpi=off in addition made kworker or something complain that it was taking too long
+Feb 25 02:59:30 <droople>	watchdog: BUG: soft lockup - CPU#0 stuck for 44s [kworker/u2:1:25]
+Feb 25 02:59:40 <droople>	and that one's with acpi=off by itself.
+Feb 25 04:06:28 <darwin>	did anything replace apt-dpkg-ref package?
+Feb 25 04:08:41 <somiaj>	,v apt-dpkg-ref
+Feb 25 04:08:42 <judd>	Package: apt-dpkg-ref on amd64 -- buster: 5.3.1+nmu2; stretch: 5.3.1+nmu2; bullseye: 5.3.2
+Feb 25 04:09:49 <somiaj>	none were mentioned in the removal report, that package just got outdated and unmainted
+Feb 25 04:10:56 <somiaj>	darwin: https://www.debian.org/doc/manuals/debian-faq/pkgtools.en.html <-- is that decent enough reference?
+Feb 25 04:11:50 <darwin>	it probably is but I want it accessible on command-line without Internet also
+Feb 25 04:12:18 <somiaj>	there might be a package that contains all that html
+Feb 25 04:12:49 <somiaj>	,i debian-faq
+Feb 25 04:12:50 <judd>	Package debian-faq (doc, standard) in bookworm/amd64: Debian Frequently Asked Questions. Version: 11.1; Size: 487.8k; Installed: 790k; Homepage: https://www.debian.org/doc/user-manuals#faq
+Feb 25 04:12:58 <somiaj>	that might be the same thing, I dind't double check, but it seems reasonable
+Feb 25 04:12:59 <darwin>	good
+Feb 25 04:51:41 <droople>	Now "mount /dev/foo /mnt" isn't working in the install usb shell
+Feb 25 04:52:31 <droople>	invalid argument, if I specify fs I get no such device
+Feb 25 04:57:40 <droople>	ok I just had to do a certain stage of the installation to I guess have it modprobe the right stuff
+Feb 25 05:13:13 <droople>	Is it possible to boot the system from the "(initramfs)" prompt?
+Feb 25 06:23:28 <somiaj>	droople: what is 'foo' in one of your examples
+Feb 25 06:23:48 <somiaj>	oh yea, the installer loads modules slowly, if you use the expert installer you can move around a bit more
+Feb 25 06:53:25 <droople>	Is there a channel just for cinnamon or can someone here tell me why my applet in .local with different popup widths seems to be ignored?
+Feb 25 06:53:30 <droople>	(no luck with #cinnamon)
+Feb 25 06:55:28 <lolok>	does it work in other desktops? if not than theres probably some error, and it falls back to the original
+Feb 25 06:57:56 <droople>	xsession-errors is unfortunately no help
+Feb 25 07:19:02 <Larotin>	I have installed debian testing on a flash drive, after I install the custom kernel (xanmod) and gnome, and after that the /etc folder vanished for some reason, I need a way to re-configure the system or re-generate /etc; If that's not possible, I need to know what happened to not reproduce this error.
+Feb 25 07:19:16 <Larotin>	(gnome-core)
+Feb 25 07:21:00 <Larotin>	I made a minor after-after grammer error but the rest is readable (I guess)
+Feb 25 07:25:48 <Larotin>	F this, HOW CAN I MAKE DEBIAN FASTER ON A FLASH DRIVE?? I NEED THIS!
+Feb 25 07:28:06 <budlight>	your going to have reinstall debian
+Feb 25 07:28:27 <somiaj>	usb drives can just be slow, espically if you are using usb2. The way live images work is run things from memeory (not the drive). You can create custom live images though.
+Feb 25 07:29:38 <Larotin>	somiaj: yeah, but live image can't have persistent storage.
+Feb 25 07:30:38 <somiaj>	It can
+Feb 25 07:31:07 <somiaj>	just make a second partition for that, there are even ways to be able to save stuff you install, but the details seem to change a lot and a lot of out dated guides out there
+Feb 25 07:34:04 <Larotin>	ok, for the time-being, I'll reinstall debian testing on a hard-disk, portable linux can wait a while...
+Feb 25 07:34:12 <Larotin>	thanks
+Feb 25 07:46:03 <user01>	is there any debian software that can visualize midi files like this? https://www.youtube.com/watch?v=Aasr_YK2UD4
+Feb 25 07:50:29 <somiaj>	https://github.com/kosua20/MIDIVisualizer -- google gave that, though looks like linux use is expirmential
+Feb 25 08:25:41 <droople>	My touch pad isn't listed in xinput, and none of the recommended grub command line options are fixing it.
+Feb 25 08:45:43 <sedrosken>	I'm a HiDPI user running KDE under X11 -- Debian 12.5 amd64 -- scaling factor is 2, I think that corresponds to 192DPI? Anyway, I can't seem to get SDL applications to respect that. They always seem to want to run at 96DPI
+Feb 25 08:46:02 <sedrosken>	Is there an environment variable I'm missing setting or something?
+Feb 25 08:46:49 <sedrosken>	I'd just deal, but this is a 13.3" display pushing 3200x1800, so it's utterly inscrutable at 96DPI
+Feb 25 08:48:02 <somiaj>	you can set some Xft stuff in ~/.Xdefaults, I use 'Xft.dpi: 120' there, though this only works if the SDL apps are using xft fonts
+Feb 25 08:52:11 <sedrosken>	doesn't seem to help
+Feb 25 08:52:19 <sedrosken>	I've tried xrdbing it too
+Feb 25 08:55:09 <somiaj>	did you load the settings with xrdb?
+Feb 25 08:55:28 <somiaj>	so xrdb --merge ~/.Xdefaults after you add the option
+Feb 25 08:58:41 <sedrosken>	yes
+Feb 25 09:05:42 <droople>	Okay, touchpad not listed in xinput, but it works in the graphical bios.
+Feb 25 09:23:30 <droople>	Also the touch screen worked in the installation usb, but not here
+Feb 25 11:21:46 <cadmio>	Hello
+Feb 25 11:22:00 <cadmio>	I need to increase the volume with they '+' key
+**** BEGIN LOGGING AT Sun Feb 25 18:41:34 2024
+
+Feb 25 18:41:33 *	Now talking on #debian
+Feb 25 18:41:33 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 25 18:41:33 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 25 18:41:33 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** ENDING LOGGING AT Sun Feb 25 18:41:52 2024
+
+**** BEGIN LOGGING AT Tue Feb 27 23:15:59 2024
+
+Feb 27 23:15:58 *	Now talking on #debian
+Feb 27 23:15:58 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 27 23:15:58 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 27 23:15:58 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+Feb 27 23:16:39 <xx>	that works
+Feb 27 23:16:51 <xx>	a chicken could install debian if you put seeds on the keyboard
+Feb 27 23:16:59 <n4dir>	yeah.
+Feb 27 23:17:01 <xx>	on the enter key
+Feb 27 23:53:39 *	zykotick9 notes d-i (text mode) does require use of the arrow key besides ENTER -- to confirm either partitioning or formatting
+Feb 27 23:56:47 <arino>	abrotman: hey boss, how is your debian today?)
+Feb 28 00:04:44 <abrotman>	...
+Feb 28 00:07:47 <arino>	abrotman: don't forget to clean up the kernel config today
+Feb 28 00:08:48 <abrotman>	Trolls are weird people, thanks folks!
+Feb 28 00:09:24 <arino>	abrotman: yeah, they're everywhere
+Feb 28 00:16:54 <arino>	i know a couple of beautiful girls with debian installed and they asked me to help them to put some files in their tight partitions
+Feb 28 00:17:43 <Livio>	apt-get install pigz
+Feb 28 00:17:54 <arino>	they don't like to think actiually, so am i, thats why i am here, to choose some files for their partitions
+Feb 28 00:18:06 <arino>	can you help me?/
+Feb 28 00:27:37 <mutante>	arino: https://www.debian.org/women/
+**** BEGIN LOGGING AT Wed Feb 28 02:09:40 2024
+
+Feb 28 02:09:40 *	Now talking on #debian
+Feb 28 02:09:40 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 28 02:09:40 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 28 02:09:40 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** ENDING LOGGING AT Wed Feb 28 02:32:44 2024
+
+**** BEGIN LOGGING AT Thu Feb 29 01:02:42 2024
+
+Feb 29 01:02:42 *	Now talking on #debian
+Feb 29 01:02:42 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 29 01:02:42 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 29 01:02:42 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+Feb 29 01:13:02 *	Disconnected ()
+**** ENDING LOGGING AT Thu Feb 29 01:13:02 2024
+
+**** BEGIN LOGGING AT Thu Feb 29 01:15:36 2024
+
+Feb 29 01:15:36 *	Now talking on #debian
+Feb 29 01:15:36 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 29 01:15:36 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 29 01:15:36 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+Feb 29 02:03:24 <fatal>	does canonical's relicensing of lxd also affect lxc in future debian releases?
+Feb 29 02:17:20 <somiaj>	unsure, you might find debian-legal a bit better place to ask such things (it is a mailing list, or check the archives to see if it has been discussed)
+Feb 29 02:18:22 <somiaj>	might be debian moves to the communit fork incus
+Feb 29 02:18:29 <sney>	that's usually how those things go
+Feb 29 02:20:21 <somiaj>	though the license they chose AGPL-3 is DSFG-free
+Feb 29 02:20:53 <joepublic>	DFSG?
+Feb 29 02:21:18 <somiaj>	yea, I seem to always get that backwards
+Feb 29 02:23:36 <fatal>	i already know of the lxd fork incus, at least on wiki.debian it does not say anything about lxc moving.
+Feb 29 02:24:11 <sney>	the wiki would normally not get updated until after packages have been uploaded which is the last step
+Feb 29 02:26:30 <fatal>	maybe i just ask stéphane about it
+Feb 29 02:37:49 <monr0e>	<monr0e> I don't suppose anyone has ever experienced a fullscreen application disabling secondary monitors? Could be an xfce issue, debian issue, or compiz issue
+Feb 29 02:37:57 <monr0e>	it isnt compiz, happens under xfwm4 too
+Feb 29 02:38:18 <monr0e>	also happens when I fullscreen an RDP session in remmina
+Feb 29 02:46:17 <fatal>	monr0e: i have and it's the applications fault
+Feb 29 02:47:06 <monr0e>	fatal: I've never seen this behaviour before, either on other distros or on linux. What's special about debian xfce?
+Feb 29 02:47:11 <monr0e>	uh
+Feb 29 02:47:15 <monr0e>	other distros of windows
+Feb 29 02:47:20 <monr0e>	*or jfc i cant type
+Feb 29 02:47:58 <monr0e>	there's also a vast age difference between remmina and armagetron, the latter being built using sdl as a display... wrapper?
+Feb 29 02:50:16 <fatal>	i think it happend with ioquake3 but you have to configure that then instead
+Feb 29 02:51:31 <monr0e>	But that's silly. Why should Debian behave any differently to any other system, on which full-screen applications don't come with this nonsense?
+Feb 29 02:52:14 *	fatal sips tea
+Feb 29 02:52:34 <monr0e>	oh is this a debian thing
+Feb 29 02:52:53 <monr0e>	bleh. I came to debian for stability lmao
+Feb 29 03:22:10 <somiaj>	monr0e: have you tried other window mangers?
+Feb 29 03:22:31 <monr0e>	you think it might be a lightdm bug?
+Feb 29 03:22:40 <monr0e>	oh wait
+Feb 29 03:22:41 <monr0e>	wrong thing
+Feb 29 03:23:11 <somiaj>	well you have only tested xfm4, maybe try i3 or something else, just to rule stuff out
+Feb 29 03:23:16 <somiaj>	now I think it is the application's fault too
+Feb 29 03:23:19 <somiaj>	now = no
+Feb 29 03:23:40 <somiaj>	or maybe cave in and try mate or gnome, lots of times that is where things are tested
+Feb 29 03:24:21 <monr0e>	I tried xfwm after compiz, both of them demonstrate exactly the same behaviour. I have a feeling its not the window manager, especially given that the actual monitor goes to sleep
+Feb 29 03:24:25 <monr0e>	both do
+Feb 29 03:24:30 <monr0e>	I have three
+Feb 29 03:25:09 <monr0e>	someone in the sysadmin chat has a suspicion that its the nvidia driver, and given 525 is kinda old, ya maybe. I'll try kwin to be sure but idk man
+Feb 29 03:26:39 <n4dir>	you could also quickly test it with another user, but same setup (xfce or xfce with compiz)
+Feb 29 03:27:15 <monr0e>	to what end?
+Feb 29 03:27:25 <n4dir>	that is basic troubleshooting.
+Feb 29 03:27:27 <somiaj>	what app is causing you these issues?
+Feb 29 03:27:33 <monr0e>	Oh I see what you're getting at
+Feb 29 03:27:48 <n4dir>	it probably will not help, but it sure is done quickly.
+Feb 29 03:27:53 <somiaj>	monr0e: n4dir suggestion is to climate a possibility of a user configuration
+Feb 29 03:27:58 <somiaj>	elimate
+Feb 29 03:28:03 <n4dir>	same for the proposal of somiaj to quickly check a WM
+Feb 29 03:28:09 <monr0e>	somiaj: First noticed it with armagetron advanced, then with remmina
+Feb 29 03:28:29 <monr0e>	tron is old as shit, remmina is relatively new
+Feb 29 03:28:42 <somiaj>	ahh not seeing armagetron in debian
+Feb 29 03:28:54 <monr0e>	try searching for armagetronad
+Feb 29 03:29:10 <somiaj>	I'll test that here for you
+Feb 29 03:29:13 <somiaj>	can't really test remmina
+Feb 29 03:29:29 <monr0e>	btw the debian build is buggered, so don't take that as gospel. Whoever built it enabled vsync
+Feb 29 03:30:56 <somiaj>	well full screen covers both my monintors here
+Feb 29 03:31:57 <monr0e>	try setting the resolution, both window and game, to the same resolution as one monitor
+Feb 29 03:32:24 <monr0e>	settings > system settings > display preferences
+Feb 29 03:32:53 <somiaj>	If I were to run this game I would turn full screen off, make the resolution the same as my monitor, and remove all the decorations from the window (no borders or title bar), and in that case it works just fine
+Feb 29 03:34:24 <somiaj>	yea, if I set screen resolution to be a single monitor than it turns off the other monitors. I think this is just what the program does.
+Feb 29 03:34:46 <monr0e>	It's never done that on any other platform I've run it on
+Feb 29 03:35:09 <somiaj>	I almost wonder if it is working as designed, anyways, in fvwm I don't ever use 'full screen', I just made the window size the size of my monitor, then turned off full screen, and removed titlebar/borders, and it works great
+Feb 29 03:35:26 <monr0e>	and its not the only game I'll be playing occasionally either, the likes of warthunder won't take kindly to that sort of arrangement I don't think
+Feb 29 03:36:00 <somiaj>	I too am using nvidia, so maybe that is it
+Feb 29 04:14:08 <ahoka>	So I updated from Debian 10 to Debian 12.5. Love Debian 12, but there's a major annoying thing. On Debian 10, I could open files and go to my home directory and search for a file name, and it would show up any matching results, including results that might be in Home/Videos or in Home/Pictures. Now, with Debian 12, it doesn't. If I have a mp3 file called "techno_song.mp3" which is contained within my Music folder, which is in my Home Directory, it won't show up
+Feb 29 04:14:08 <ahoka>	on Debian 12 UNLESS I am in that Music Directory. Can be annoying when you know where you got a file but don't know where it is
+Feb 29 04:14:25 <ahoka>	is there something in settings I can go to in order to change this
+Feb 29 04:16:10 <n4dir>	ahoka: with a file-manager? If yes, which one? Probably you have to set it to search recursively, if that is possible.
+Feb 29 04:19:32 <somiaj>	ahoka: just to double check, did you upgrade through debian 11?
+Feb 29 04:20:13 <somiaj>	and to answer your actual question, what file manager are you using?
+Feb 29 04:30:30 <ahoka>	n4dir, the built in file manager
+Feb 29 04:30:36 <ahoka>	somiaj, no
+Feb 29 04:31:21 <ahoka>	I originally had Debian 10, I downloaded a 12.5 .iso from the official website, burned that to usb, booted, and did a fresh install that went over the entire hard drive
+Feb 29 04:31:33 <ahoka>	anyways, that's something I've noticed that's different
+Feb 29 04:31:51 <ahoka>	I have /home/user/custom_folder/some_file.mp3  for example right
+Feb 29 04:32:01 <somiaj>	ahoka: ahh you did a fresh install, that is fine, debian also allows you to upgrade installs (so dyou odn't have to reinstall)
+Feb 29 04:32:10 <somiaj>	but if you would have upgraded, you would have to first upgrade to 11, then upgrade to 12
+Feb 29 04:32:36 <somiaj>	ahoka: 'built in file manager' doesn't mean much, debian provides multiple tools, and the one you have depends on what you install. What DE are you using?
+Feb 29 04:32:48 <ahoka>	I'm using gnome, I apologize
+Feb 29 04:33:10 <ahoka>	nautilus
+Feb 29 04:33:11 <somiaj>	then you are using the natuilus file manager.
+Feb 29 04:33:43 <ahoka>	I see, then silly me needs to talk to nautilus devs, not Debian
+Feb 29 04:34:09 <somiaj>	a google search says that under preferences -> search and preview tab -> you have a 'search in subfolders' or some option you can toggle
+Feb 29 04:34:50 <n4dir>	somiaj: yeah, i found it too.
+Feb 29 04:35:30 <n4dir>	would be weird if you couldn't search like that. Rather: pointless
+Feb 29 04:35:50 <ahoka>	My good sir, I have done that, that has not fixed my problem. For example, when I go to twitter.cop, and try to upload an image/video, my search fails
+Feb 29 04:36:10 <ahoka>	That's why I came to complain, kuz the feature simply is not working the same for me as it was before
+Feb 29 04:36:47 <n4dir>	how to you go to twitter.cop ?
+Feb 29 04:36:52 <ahoka>	But I still understand that I should have went to nautilus specifically, not to the #debian channel
+Feb 29 04:36:56 <somiaj>	gnome often limits features it doesn't think are that useful, that is how gnome works. You may find another file manager more useful
+Feb 29 04:36:59 <ahoka>	s/twitter.cop/twitter.com
+Feb 29 04:37:18 <n4dir>	so you use the web-browser?
+Feb 29 04:39:03 <ahoka>	on debian 10, when I was using a web browser, or the signal-desktop program, or literally anything else, I could search for files I knew I had, which were in sub-directories. All these programs are going to do is open my default files program, which in this case is nautilus. It's not the same for me off the Debian 12.5 iso I installed, as it was for me in Debian 10, and some other previous versions
+Feb 29 04:39:42 <somiaj>	you mean the file chooser that is opened when you want to say 'upload a file', that won't be nautilus, gtk has its own built in file chooser, that is something different
+Feb 29 04:40:14 <ahoka>	perhaps it's not always nautilus, but the concept I'm trying to convey should hopefully be clarified by now
+Feb 29 04:40:18 <somiaj>	But here you are notcing the change in gnome (which debian packages), and more and more gnome/gtk is getting simpler and not letting as many user configurations
+Feb 29 04:40:22 <somiaj>	I know many users moving over to kde due to this
+Feb 29 04:40:37 <ahoka>	I would rather nag gnome devs
+Feb 29 04:40:42 <somiaj>	good luck with that
+Feb 29 04:40:47 <ahoka>	lol
+Feb 29 11:06:15 <TuxJobs>	I've posted the details in #hardware, but short story: I finally got the AMD graphics card working after swapping it from the old NVIDIA one.
+Feb 29 11:07:14 <TuxJobs>	I installed firmware-amd-graphics first, but I'm not sure it was a software issue at all. More likely hardware. Anyway...
+Feb 29 11:07:38 <TuxJobs>	Just wondering now: is there anything else that I should do besides deleting everything related to NVIDIA drivers?
+Feb 29 11:08:47 <TuxJobs>	I mean, if I run the command `sudo update-alternatives --config glx` now, it still talks about (and has selected) "NVIDIA" and nothing about "AMD". Does that mean it's not currently using the full performance?
+Feb 29 11:09:24 <TuxJobs>	Hopefully a reinstallation of Debian would make such cruft go away?
+Feb 29 11:09:32 <TuxJobs>	But I don't wanna deal with that right now if I can avoid it.
+Feb 29 11:11:58 <arino>	TuxJobs: whats the AMD card model?
+Feb 29 11:13:32 <arino>	actually you should install xserver-xorg-video-amdgpu and reconfigure your X (if you're still on X), then restart your WM/DE and thats it
+Feb 29 11:36:20 <vague>	How do I pass extra flags to dkms when installing a dkms package with apt? I need to pass --force to install a modified version of a module(hdaps.ko)
+Feb 29 11:42:23 <cent>	preseed/late_command - does commands defined by this option work in the installer "world" or at the installed host level?
+Feb 29 11:55:37 <TuxJobs>	arino: MSI Radeon RX 6400 4GB AERO ITX
+Feb 29 11:55:59 <TuxJobs>	arino: What do you mean by "reconfigure your X"?
+Feb 29 11:56:56 <arino>	TuxJobs: Xorg can read the configuration from files, you can use something like "Xorg --configure" to generate one and see what screens and gpu it has found
+Feb 29 11:57:39 <TuxJobs>	arino: "xserver-xorg-video-amdgpu/stable,now 23.0.0-1 amd64 [installed,automatic]" <-- Apparently it was installed automaticlally, likely because of installing the "firmware-amd-graphics" package?
+Feb 29 11:58:31 <arino>	yeah, now you can try Xorg --configure
+Feb 29 12:06:38 <xx>	arino: that hasn't been needed in over 10 years
+Feb 29 12:06:46 <DmanT>	i need help with an udev
+Feb 29 12:06:56 <DmanT>	ACTION=="add", SUBSYSTEM=="usb", ENV{PRODUCT}=="4e6/e003/*", RUN+="/etc/udev/scripts/gnupg-ccid"
+Feb 29 12:07:07 <DmanT>	Bus 002 Device 008: ID 0c4b:9102
+Feb 29 12:07:12 <DmanT>	what i must change?
+Feb 29 12:07:33 <arino>	xx: what?
+Feb 29 12:07:47 <xx>	xorg has autoconfiguration
+Feb 29 12:08:13 <arino>	xx: maybe then he can check the X uses right gpu from logs
+Feb 29 12:08:13 <xx>	no need to generate any files
+Feb 29 12:08:25 <xx>	in fact, generating files can break things because they don't get autoupdated
+Feb 29 12:09:22 <arino>	xx: its just a way to see how X reacts on new hardware, we're not placing any files anywhere
+Feb 29 12:09:36 <arino>	and generating files may be usefull if you have more than one gpu
+Feb 29 12:09:48 <arino>	but its not the case now ofc
+Feb 29 12:10:36 <arino>	xx: if you know the better ways - tell him now
+Feb 29 12:11:07 <xx>	the better way is to... just boot?
+Feb 29 12:11:25 <xx>	he has one graphics card, and nvidia driver does not get loaded if it doesn't detect nvidia card
+Feb 29 12:13:48 <arino>	how to be sure its amdgpu now, not the vesa or something?
+Feb 29 12:14:01 <arino>	or maybe integrated intel from cpu
+Feb 29 12:30:55 <TuxJobs>	Maybe it got lost in the messages earlier, but: if I run the command `sudo update-alternatives --config glx` now, it still talks about (and has selected) "NVIDIA" and nothing about "AMD".
+Feb 29 12:31:12 <TuxJobs>	arino: There's no on-board graphics or IGPU on my motherboard/CPU.
+Feb 29 12:36:20 <TuxJobs>	xx & arino: So I should not be running `Xorg --configure`?
+Feb 29 13:17:51 <arino>	TuxJobs: xx thinks its not necessary
+Feb 29 13:18:23 <arino>	TuxJobs: actually if you have only one gpu - you can check X logs and be sure it uses the driver you want
+Feb 29 13:57:09 <TuxJobs>	X logs? journalctl? Or any particular command?
+Feb 29 13:59:54 <Walex>	TuxJobs: /var/log/Xorg.*.log
+Feb 29 14:11:51 <TuxJobs>	Walex: Will check.
+Feb 29 14:12:18 <TuxJobs>	BTW, `apt list --installed | grep nvidia` lists TONS of different packages. Is there a simple way to uninstall all of them? Some "master package", perhaps?
+Feb 29 14:14:04 <TuxJobs>	Judging by all the "AMDGPU" lines, I'd say it's using the AMD drivers.
+Feb 29 14:15:32 *	Disconnected ()
+**** ENDING LOGGING AT Thu Feb 29 14:15:32 2024
+
+**** BEGIN LOGGING AT Thu Feb 29 14:15:51 2024
+
+Feb 29 14:15:51 *	Now talking on #debian
+Feb 29 14:15:51 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 29 14:15:51 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 29 14:15:51 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+Feb 29 14:26:42 <Walex>	TuxJobs: the logs lists all trhe drivers that have been tried.
+Feb 29 14:29:27 <xx>	TuxJobs: `sudo apt purge nvidia-driver` and then `sudo apt autopurge` but be very very careful with the 2nd command, read what it's going to do before you confirm the purge
+Feb 29 14:34:23 <arino>	TuxJobs: you can use mesa-utils programms to measure performace
+**** BEGIN LOGGING AT Thu Feb 29 14:39:53 2024
+
+Feb 29 14:39:52 *	Now talking on #debian
+Feb 29 14:39:53 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 29 14:39:53 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 29 14:39:53 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** BEGIN LOGGING AT Thu Feb 29 15:16:03 2024
+
+Feb 29 15:16:03 *	Now talking on #debian
+Feb 29 15:16:03 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Feb 29 15:16:03 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Feb 29 15:16:03 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+Feb 29 15:54:33 <Hansol>	guy
+Feb 29 15:54:44 <Hansol>	guy's ** its possible to install oracle database on debian >
+Feb 29 15:58:05 <joepublic>	as I understand it, yes.  https://wiki.debian.org/OracleDB
+Feb 29 16:01:53 <tomreyn>	it's also possible to install postgresql (which is libre software, and offers a similar feature set to oracle) on debian
+Feb 29 16:02:36 <Hansol>	what about mariaDB ?
+Feb 29 16:02:47 <Hansol>	it similar to OracleDB
+Feb 29 16:02:57 <Hansol>	or prostgresql is more similar ?
+Feb 29 16:04:27 <joepublic>	mariadb is certainly more popular.
+Feb 29 16:04:28 <randall>	Hansol: What are you using it for? Maybe that would help giving you an educated recommendation.
+Feb 29 16:04:39 <tomreyn>	i didn't mean to start a discussion on different database servers, just wanted to suggest to consider whether the most proprietary and most expensive is actually the best option for what you're going to do.
+Feb 29 16:05:44 <joepublic>	ddg suggests this comparison, make up your own mind I suppose.  https://db-engines.com/en/system/MySQL%3bOracle%3bPostgreSQL
+Feb 29 16:07:23 <jelly>	Hansol, is it possible?  It's possible.  Is it sane, considering the list of supported OS / distros from the database vendor?
+Feb 29 16:07:52 <jelly>	you could also install MS SQL...
+Feb 29 16:08:06 <tomreyn>	or sqlite
+Feb 29 16:08:42 <jelly>	https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-setup?view=sql-server-ver16 :-D
+Feb 29 16:10:22 <Hansol>	i want to start to learn Oracle SQL
+Feb 29 16:10:41 <jelly>	if that's your goal, use a supported OS
+Feb 29 16:12:12 <Hansol>	i need to pay to install and start learn Oracle SQL on Debian ?
+Feb 29 16:12:48 <randall>	Hansol: You'll have to ask Oracle how much it costs.
+Feb 29 16:14:56 <jelly>	Hansol, first verify whether Debian is among the supported Linux distributions: https://docs.oracle.com/en/database/oracle/oracle-database/19/ladbi/operating-system-checklist-for-oracle-database-installation-on-linux.html#GUID-E5C0A90E-7750-45D9-A8BC-C7319ED934F0
+Feb 29 16:15:11 <jelly>	(it is not)
+Feb 29 16:17:11 <jelly>	Hansol, then look at the differences between Oracle XE, also called Oracle Free Database ("free" to use with restrictions) and Oracle Database product
+Feb 29 16:19:09 *	jelly sighs
+Feb 29 16:20:50 <joepublic>	I sort of regret my lack of experience with oracle--having to make sequences in place of auto_increment was an eye opener--but my mysql skills are handy to have nonetheless.
+Feb 29 19:18:04 <karlpinc>	joepublic: If you're making synthetic keys then "GENERATED AS IDENTITY" is preferred.
+Feb 29 19:23:15 <Guest9508>	Hello everyone
+Feb 29 19:37:27 <TuxJobs>	xx: `sudo apt autopurge` doesn't seem to want to remove anything beyond nvidia junk. Did you expect it to also include the Linux kernel or Plasma or something?
+Feb 29 19:39:30 <xx>	I expect you to read and use your best judgement before confirming you want to purge the presented packages, so many people just say yes and purge half their system
+Feb 29 19:39:42 <xx>	if it looks like nvidia only, then it's fine, but read it carefully
+Feb 29 20:07:19 <TuxJobs>	xx: Scary. Isn't the purge mechanism rock-solid like APT appears to be in general?
+Feb 29 20:08:01 <sney>	basically, but it only understands the relationships between packages, not what the user expects their system to keep
+Feb 29 20:09:06 <sney>	so if you remove a midlevel dependency of some major metapackage on your system, autoremove/autopurge will remove that metapackage and enough of its deps to cause a usability problem. even if it's task-gnome-desktop
+Feb 29 20:09:14 <TuxJobs>	The only one I'm somewhat unsure about is this: libgles1*
+Feb 29 20:09:43 <sney>	you can also read package descriptions with 'apt show packagename' which will often help clarify what things are and whether they're safe to remove
+Feb 29 20:10:07 <xx>	TuxJobs: purge will rock-solidly purge stuff :)
+Feb 29 20:10:17 <xx>	and only the things it says it will
+Feb 29 20:10:31 <TuxJobs>	"Vendor neutral GL dispatch library -- GLESv1 support"
+Feb 29 20:10:53 <xx>	TuxJobs: for what it's worth, I don't have that package on my system
+Feb 29 20:11:26 <xx>	`apt rdepends libgles1` shows nvidia stuff
+Feb 29 20:12:27 <guy_frm_yogaland>	hello everyone! hope everyone is doing great..
+Feb 29 20:13:12 <xx>	no
+Feb 29 20:15:19 <guy_frm_yogaland>	ok, actually I had a query about an issue which I have been facing since i updated the os. I get graphics problems and around many app borders it shows just red color and the video thumbnails also shows the red color. don't know how to fix this..
+Feb 29 20:18:25 <TuxJobs>	xx: After executing the command, `apt list --installed | grep nvidia` still seems to list all the same packages... Or at least a ton of them. And while the command was running, it outputted a bunch of "W:" lines which I assume mean "Warning:", such as: "W: Possible missing firmware /lib/firmware/amdgpu/gc_11_0_3_mes.bin for module amdgpu" (all the warnings are the same but for different .bin files).
+Feb 29 20:20:57 <guy_frm_yogaland>	I run an old computer with intel core 2 quad cpu and built in intel i915 gpu
+Feb 29 20:22:32 <sney>	TuxJobs: the possible missing firmware warning is normal with amdgpu, there are a lot more firmware files it supports than are available (or needed)
+Feb 29 20:22:59 <sney>	TuxJobs: as long as you have firmware-amd-graphics installed you can ignore those
+Feb 29 20:55:40 <xx>	TuxJobs: it really *really* helps if you paste the output of the commands
+**** BEGIN LOGGING AT Fri Mar  1 01:59:41 2024
+
+Mar 01 01:59:41 *	Now talking on #debian
+Mar 01 01:59:41 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Mar 01 01:59:41 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Mar 01 01:59:41 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+Mar 01 05:40:40 <Gaurav1>	Hello
+Mar 01 05:49:52 <Gaurav1>	Hello
+Mar 01 05:55:27 <velix>	Debian still suffers on very low quality-check on important packages. One server is running bullseye, wget 1.21-1+deb11u1 complains that libgnutls.so.30: version `GNUTLS_3_6_3' not found. But Debian provides 3.7.1-5+deb11u4 only.
+Mar 01 05:55:49 <velix>	oh, you moved to oftc... 1 sec
+Mar 01 08:46:14 <KnowledgeShark>	Does anyone know the correct xorg.conf settings for a USB wired 6 Button RGB Gaming HAVIT HVMS672; AKA "Magic Eagle"; My Scroll Wheel doesn't work. I am using Debian 12.5.0-amd64 + sddm Window Manager + LXQT. (Not working in PCMan-FM or Dolphin); Driving me nuts! Thanks in advance for any remedy attempts or actual solves.
+Mar 01 08:51:19 <KnowledgeShark>	HAVIT HVMS672 Mouse* (Forgot the mouse part).
+Mar 01 09:43:31 <vague>	I have no idea about the mouse but check with 'xev' that you get proper keycodes when you scroll, then you might rebind those with xbindkeys to pgup/pgdn in some sort of way
+Mar 01 10:36:48 <TheBigK>	where do i find the kernel documentation about start parameters? Im searching for the syntax of ip= start parameter. i wonder if its possible to use multiple options... im using dhcp right now but i wann have dual stack so i get preboot a ipv6 as well
+Mar 01 10:37:13 <TheBigK>	so i want to add auto6... but not sure how the delimiter would be
+Mar 01 10:42:22 <vague>	The documentation for ip= says See Documentation/admin-guide/nfs/nfsroot.rst
+Mar 01 10:42:28 <vague>	https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html?highlight=boot%20parameter
+Mar 01 10:50:10 <hexnewbie>	I want to install proftpd-core on a server where proftpd is masked, disabled and not working. I already did dpkg-divert on /lib/systemd/systemd-sysv-install and /usr/sbin/invoke-rc.d, but it keeps failing with Job for proftpd.service failed because the control process exited with error code.
+Mar 01 10:50:13 <hexnewbie>	What do I need to do?
+Mar 01 10:50:30 <hexnewbie>	proftpd should definitely not start, but I need the package installed
+Mar 01 10:50:55 <hexnewbie>	That's Debian 11
+Mar 01 10:53:48 <TheBigK>	vague: thanks
+Mar 01 10:54:14 <TheBigK>	Method to use for autoconfiguration. In the case of options which specify multiple autoconfiguration protocols, requests are sent using all protocols, and the first one to reply is used. <- does this mean i cant use dual stack ?
+Mar 01 10:54:47 <hexnewbie>	OK, I replaced /etc/systemd/system/proftpd.service with a service that does ExecStart=true
+Mar 01 10:54:56 <hexnewbie>	That did it
+Mar 01 10:55:41 <hexnewbie>	Maybe we should have an easier way to disable a daemon and have it stay disabled during updates (I imagine someone uninstalled proftpd-core here because they got fed up with upgrades re-enabling it)
+Mar 01 10:57:03 <TheBigK>	u can overwrite any service with systemctl edit "blabla.service"
+Mar 01 10:57:28 <TheBigK>	and disable the service in that definition
+Mar 01 10:58:37 <TheBigK>	hexnewbie: i would not recommend editing in /etc/systemd/system/$anyservice.service definition... its usually a symlink to /lib/systemd which is controlled by the debian package
+Mar 01 10:58:52 <TheBigK>	so this is overwritten again
+Mar 01 10:59:18 <TheBigK>	thats what systectl edit is for :)
+Mar 01 10:59:33 <hexnewbie>	I used systemctl edit --full to edit it in this instance, but it was a symlink to /dev/null in my case (well, not while I was getting the error I pasted, since I deleted the symlink with systemctl unmask)
+Mar 01 11:00:19 <TheBigK>	hexnewbie: i would think someone did that because of limited knowledge of systmed? thats atleast my guess
+Mar 01 11:01:23 <hexnewbie>	I kept masking, unmasing, and manually playing with the file to get rid of the apt-get -f install, so I may have done everything. Point is, it's a do-nothing regular file in /etc/systemd/system/proftpd.service now and it works :)
+Mar 01 11:02:03 <TheBigK>	thats probably a temp solution since this file might get overwirtten?
+Mar 01 11:02:25 <TheBigK>	but my knowledge is also limited when it comes to systemd... still learning :)
+Mar 01 11:08:25 <zanoh>	I'm impressed how fedora managed to reverse engineer how to get linux to work on M1 Macs. Or at least, bootable.
+Mar 01 11:08:34 <zanoh>	So you can use debian on your M1 mac
+Mar 01 11:09:51 <TheBigK>	i thought the only viable option for linux on m1 macs is asahi ?
+Mar 01 11:10:14 <zanoh>	The debian wiki has an article on how to take asahi and make it work for debian
+Mar 01 11:10:50 <zanoh>	https://wiki.debian.org/InstallingDebianOn/Apple/M1
+Mar 01 11:12:32 <TheBigK>	sounds great.
+Mar 01 11:13:23 <zanoh>	Would it be fair to say debian is like NetBSD, it's meant to run anywhere? Maybe not literally a toaster, but still.
+Mar 01 11:13:53 <TheBigK>	im rly excited for the new snapdragon processor coming up...
+Mar 01 11:14:20 <TheBigK>	if the performance is as good as rumors go.. then u dont need this weird apple hardware :)
+Mar 01 11:16:14 <TheBigK>	that apple thinks its a good idea to have a freaking hole in the display is beyond me
+Mar 01 11:16:56 <zanoh>	I still lulz at that time stallman blogged about how he wasn't glad steve jobs was dead, but glad he was gone.
+Mar 01 11:18:47 <TheBigK>	as if that has changed anything regarding open source... apple is still apple
+Mar 01 11:29:25 <zanoh>	I've never seen MIPS processors outside of the nintendo 64.
+Mar 01 11:29:54 <zanoh>	Debian has official support for 64 bit little endian MIPS.
+Mar 01 13:26:11 <TuxJobs>	Well, it booted up again, but the whole graphics card swap (NVIDIA to AMD) was a major letdown as it has not fixed the annoying glitches with the KDE Plasma desktop which was the sole reason for me to switch graphics cards in the first place.
+Mar 01 13:26:31 <nisa>	TuxJobs: what glitches?
+Mar 01 13:27:00 <nisa>	Are you sure your invidia drivers are fully removed?
+Mar 01 13:27:09 <TuxJobs>	A KDE developer told me that the issues I was having are due to Plasma's desktop (unlike Dolphin) is force-GPU-accelerated (no CPU option) and that is why the icons were so difficult to move around on the desktop and also why the wastebin icon visually looks permanently full.
+Mar 01 13:27:17 <TuxJobs>	nisa: Pretty sure.
+Mar 01 13:28:01 <TuxJobs>	nisa: Although it's possible that it would go away if I were to reinstall Debian (yet again), where it possibly does some sort of initial "auto-configuring" based on the hardware.
+Mar 01 13:28:24 <TuxJobs>	(Pure speculation by me)
+Mar 01 13:28:36 <nisa>	Nah not really
+Mar 01 13:28:45 <nisa>	It does auto configuration on every bootup
+Mar 01 13:28:54 <nisa>	(Basically)
+Mar 01 13:29:02 <nisa>	That's what udev is for
+Mar 01 13:29:51 <nisa>	It is what Windows lacks, and why you can only really use a Windows installation on the PC you've made it on
+Mar 01 13:30:20 <nisa>	But Linux doesn't have that issue, it's why live DVDs can exist
+Mar 01 13:38:48 <TuxJobs>	nisa: Well, I hate to say anything positive about Windows, but the one thing it did have was a desktop with objects/icons that you could move around, and a trashcan icon that always updated to reflect its state!
+Mar 01 13:39:31 <TuxJobs>	I don't understand how something like that could be affected by the hardware whereas Dolphin and everything else seems to work flawlessly.
+Mar 01 13:39:45 <TuxJobs>	But apparently it wasn't a hardware issue after all since this AMD card behaves identically.
+Mar 01 13:40:54 <xx>	TuxJobs: eventually, one day, you'll just go back to xfce and regret all the time wasted trying to make kde work
+Mar 01 13:41:12 <joepublic>	^
+Mar 01 13:41:30 <xx>	nobody needs GPU-accelerated icons
+Mar 01 13:41:39 <xx>	it's a damn picture
+Mar 01 13:46:27 <TuxJobs>	xx: Not if it starts doing the constant crashing of the taskbar again and showing those flickering brief window instances down there, which were the main reasons that I was *forced* to switch.
+Mar 01 13:46:38 <TuxJobs>	xx: If this was not a hardware issue, then I assume that those were also not.
+Mar 01 13:46:49 <xx>	let's call it a hardware issue
+Mar 01 13:46:57 <xx>	I still suspect you have some bad RAM or other component
+Mar 01 13:47:07 <xx>	because your problems are unique
+Mar 01 13:47:14 <TuxJobs>	Which *only* affects that?
+Mar 01 13:47:19 <xx>	yes
+Mar 01 13:47:24 <TuxJobs>	Even though I ran the RAM tester?
+Mar 01 13:47:28 <TuxJobs>	(But not for 24 hours)
+Mar 01 13:47:29 <xx>	having seen your graphical issues on boot, those are explained by bad RAM
+Mar 01 13:47:54 <TuxJobs>	xx: Seems to be a bad DP-to-DVI cable, if you mean what I think you mean.
+Mar 01 13:48:29 <xx>	did the RAM test pass at least once?
+Mar 01 13:48:31 <TuxJobs>	I can't explain why the DP-to-DP one initially only semi-worked, though. Could be that the aging monitor's DP connector is physically breaking down.
+Mar 01 13:48:46 <TuxJobs>	Yes, but I don't remember the details now.
+Mar 01 13:49:49 <TuxJobs>	The cheapest available graphics card ($200) was far cheaper than buying a whole new computer, though. Which I want but cannot afford for a long time.
+Mar 01 13:50:01 <TuxJobs>	And the hyperinflation doesn't make it easier to save up for things.
+Mar 01 13:50:55 <xx>	that reminds me, I should increase my prices
+**** BEGIN LOGGING AT Fri Mar  1 14:01:16 2024
+
+Mar 01 14:01:16 *	Now talking on #debian
+Mar 01 14:01:16 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Mar 01 14:01:16 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Mar 01 14:01:16 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+Mar 01 14:05:39 <TuxJobs>	xx: Prices on what?
+Mar 01 14:06:11 <xx>	my services
+Mar 01 14:06:21 <xx>	you know, $job
+Mar 01 14:33:37 <shtrb>	how do people close windows in modern configs ? I opened FF on a new machine and there is no close button nor menu bar , I know I can add them , but what people actually use ?
+Mar 01 14:34:41 <oerheks>	alt f4
+Mar 01 14:35:06 <oerheks>	if there is no menubar, sure there is a short key
+Mar 01 14:35:32 <shtrb>	so new comers actually know about the alt f4 shortcuts ?
+Mar 01 14:36:02 <oerheks>	newcomers do have a menu bar and close /min button on the panel
+Mar 01 14:36:04 <shtrb>	I had seen that already in several apps (but FF was the last) all of them "modern"
+Mar 01 14:36:16 <joepublic>	if they are in firefox, newcomers can surely look up alt+f4
+Mar 01 14:36:17 <shtrb>	oerheks, I took default installation
+Mar 01 14:36:41 <oerheks>	default gives a menu bar and close /min button on the panel
+Mar 01 14:37:38 <Thuryn>	"newcomers can surely look up alt+f4"  how would a newcomer know to do that?
+Mar 01 14:37:40 <shtrb>	oerheks, I'm on bookworm , for thest again I created a new user and run firefox -profile /tmp , and there was no menubar
+Mar 01 14:38:34 <oerheks>	why would a newcomer run firefox -profile /tmp ?
+Mar 01 14:38:44 <oerheks>	explain in detail please
+Mar 01 14:38:59 <Thuryn>	asking a second question is not an answer to the first question.
+Mar 01 14:39:26 <shtrb>	oerheks, I passed firefox -profile /tmp to be sure that there is no system wide profile that would affect it
+Mar 01 14:39:36 <joepublic>	how to look things up in firefox is probably beyond the scope of discussion, but I would assume that firefox provides access to search engines?
+Mar 01 14:39:44 <shtrb>	it does
+Mar 01 14:40:18 <joepublic>	Whenever I have no obvious controls, that's usually my solution.  Like when I switch virtualbox to stretch-display and forget how to get it back.
+Mar 01 14:40:41 <shtrb>	I agree, I was just wondering what people do these days
+Mar 01 14:42:27 <shtrb>	oerheks, fyi from FF itself https://support.mozilla.org/en-US/kb/restore-menu-bar-firefox?redirectslug=Menu+bar+is+missing&redirectlocale=en-US "The File Edit View History Bookmarks Tools Help Menu bar in Firefox is hidden by default." , the same exist over multiple apps
+Mar 01 14:43:19 <joepublic>	ah, yes, only the "hamburger menu" remains
+Mar 01 14:43:45 <oerheks>	the menu icons are there, so is close/min/max
+Mar 01 14:44:27 <shtrb>	joepublic, oh right , and that menu has the close option , nice catch !
+Mar 01 14:45:40 <joepublic>	I prefer traditional (windows 95-ish to admit it) control and menus, which is why I prefer xfce to gnome, nice as gnome is
+Mar 01 14:46:23 <xx>	win95 UI design was the pinnacle of human achievement
+Mar 01 14:46:29 <xx>	everything that came after was a downgrade
+Mar 01 14:46:48 <shtrb>	:D
+Mar 01 14:46:58 <xx>	if I had $1B, I'd pay a dev team to recreate win95 UI for linux
+Mar 01 14:47:10 <xx>	not based on gnome or anything else, make it a new linux UI toolkit
+Mar 01 14:47:37 <joepublic>	someone likely agrees with you, https://en.wikipedia.org/wiki/FVWM95
+Mar 01 15:03:41 <arino>	xx: how about 3.11?
+Mar 01 15:04:02 <xx>	couldn't tile over windows as far as I remember
+Mar 01 15:04:20 <arino>	xx: you don't have to pay, there was KDE 2 and early Gnome which was pretty similar
+Mar 01 15:04:28 <joepublic>	3.11 had no start menu, no x in the corner to close.
+Mar 01 15:04:34 <xx>	arino: yeah but those don't run on modern systems
+Mar 01 15:04:41 <xx>	I'd pay for something that runs with modern debian
+Mar 01 15:05:07 <arino>	i think its adoptable, a small team, a half of year and its in a bag
+Mar 01 15:05:54 <arino>	you also can use KDE/Plasma 5 and it is highly configurable and has the Win98 styles, you can cover 80% similar UX with it
+Mar 01 15:05:58 <arino>	i did it before)
+**** BEGIN LOGGING AT Fri Mar  1 16:01:17 2024
+
+Mar 01 16:01:17 *	Now talking on #debian
+Mar 01 16:01:17 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Mar 01 16:01:17 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Mar 01 16:01:17 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** BEGIN LOGGING AT Fri Mar  1 18:08:59 2024
+
+Mar 01 18:08:59 *	Now talking on #debian
+Mar 01 18:08:59 *	Topic for #debian is: Debian 12.5 "bookworm" /msg dpkg bookworm | oldstable, Debian 11.9 "bullseye" /msg dpkg bullseye | Debian 10 "buster" on limited LTS support /msg dpkg buster-lts | Debian 8 and 9 commercial support: /msg dpkg elts | NO FLOOD: /msg dpkg paste | offtopic: #debian-offtopic | testing/unstable: #debian-next @irc.oftc.net | Community expectations: http://deb.li/conduct
+Mar 01 18:08:59 *	Topic for #debian set by somiaj!~somiaj@fvwm/admin (Sun Feb 11 02:20:35 2024)
+Mar 01 18:08:59 -ChanServ-	[#debian] Welcome to #Debian. This is a support channel; if you have a question about stable releases of Debian GNU/Linux, ask and we will try our best to answer it. Please do not paste in the channel; use https://paste.debian.net instead. Developers and specialist channels are mostly at irc.debian.org / irc.oftc.net. Community expectations: https://www.debian.org/code_of_conduct
+**** ENDING LOGGING AT Fri Mar  1 18:10:30 2024
+

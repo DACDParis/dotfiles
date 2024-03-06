@@ -1,0 +1,485 @@
+T 1705525836 19*	Now talking on 22#nixos
+T 1705525836 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1705525836 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1705526737 19*	Now talking on 22#nixos
+T 1705526737 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1705526737 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1705559182 19*	Now talking on 22#nixos
+T 1705559182 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1705559182 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1705562767 20*	Disconnected (20)
+T 1705562785 22*	26dacd sets mode 24+Z on 22dacd
+T 1705562785 22*	26dacd sets mode 24+i on 22dacd
+T 1705562785 22*	26dacd sets mode 24+w on 22dacd
+T 1705562785 -18SaslServ-	Last login from: ~dacd@2a01:e0a:1ee:f630:686d:9ca7:86e9:dbd2 on Jan 18 07:26:12 2024 +0000.
+T 1705562791 19*	Now talking on 22#nixos
+T 1705562791 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1705562791 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1705568249 19*	Now talking on 22#nixos
+T 1705568249 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1705568249 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1705574413 18<20nepster37518>	Hi everyone, I just started my NixOS journey and ran into an issue. For work, I need a `jetbrains.jdk` JVM to reload Java classes while debugging. In order to use the full potential, there is some external library, that needs to be installed in a special directory of the `jetbrains.jdk` package. I need help finding a way to modify the package in a way to add a file there..
+T 1705574523 18<25Kinnison18>	Does it have to be in the directory, or just on a classpath or similar?
+T 1705574527 18<20nepster37518>	I played around with package overrides to modify the postInstall steps and tried doing some overlay magic, without really understanding what I'm doing there. I tried reading the documentation but wasn't able to find my usecase documented and wasn't really able to understand what I tried.
+T 1705574583 18<20nepster37518>	It has to be installed in the following folder: ${JVM_ROOT}/lib/hotswap/hotswap-agent.jar. 
+T 1705574681 18<20nepster37518>	Extending the classpath would not be an issue I guess, I did this for eclipse in the past and use IntelliJ right now, where I could modify these parameters in the IDE. But according to the documentation of this HotswapAgent, the file needs to be placed exactly at this place, which is read-only for me.
+T 1705574697 18<20nepster37518>	Documentation: https://github.com/HotswapProjects/HotswapAgent/blob/master/README.md
+T 1705574909 18<25Kinnison18>	Hmm.. you're OK with making your own package in the sense of copying jetbrains-jdk/default.nix to your own config and editing it?
+T 1705575020 18<20nepster37518>	This might be the way to go but I don't know where to start to be honest. Could you give me some hints in the right direction or where to find a guide? 
+T 1705575036 18<25Kinnison18>	I've never hacked a java package before so I'm still thinking :D
+T 1705575046 18<25Kinnison18>	Unfortunately this kind of thing isn't simple :(
+T 1705575056 18<25Kinnison18>	(and I'm still pretty much a noob anyway)
+T 1705575077 18<25Kinnison18>	What I was thinking was, roughly:
+T 1705575088 18<25Kinnison18>	1. Copy the jetbrains-jdk package into your configuration
+T 1705575104 18<20nepster37518>	I thought of something like: Take the package as is, perform some custom steps after installation, done. I'm fine with downloading the .jar myself into a pre-defined directory.
+T 1705575121 18<25Kinnison18>	2. Ensure you can still use it without hotswap by switching to that package rather than the nixpkgs.jetbrains-jdk
+T 1705575136 18<25Kinnison18>	3. Create a simple package to contain the hotswap agent jar
+T 1705575161 18<25Kinnison18>	4. add that as a dependency in your copy of the jdk, and copy/link it into place during the buildPhase or installPhase as appropriate
+T 1705575175 18<25Kinnison18>	But the details of all that is still a little beyond me
+T 1705575189 18<26Strykar18>	Hi, new to nixos and still wrapping my head around things.. I read the Nvidia and CUDA wiki pages, and what is not clear to me still is how easy it is to mix Nvidia driver and CUDA versions (within reason)?
+T 1705575232 18<20nepster37518>	Thanks @Kinnison, this sounds like a proper way to go. I'll try to figure out the steps :)
+T 1705575328 18<19djm18>	Wouldn't something like this work? (Not the writeText part, obviously)
+T 1705575597 18<20nepster37518>	Something like what? Am I missing a dm or something?
+T 1705575609 18<19djm18>	Oh, sorry, I forgot to paste the link
+T 1705575618 18<19djm18>	https://discourse.nixos.org/t/adding-a-file-to-a-package/35006/2
+T 1705576016 18<20nepster37518>	Thanks @djm, that looks promising. I'll give it a try!
+T 1705577405 20<dacd>30	Hi everyone, does someone can tell me were i can get a proper guide to selfhost nextcloud? Thanks, have a great day.
+T 1705577503 20<dacd>30	P.S.- :) sorry for the "does someone" ;)
+T 1705577645 18<20nepster37518>	Something like this: https://jacobneplokh.com/how-to-setup-nextcloud-on-nixos/?
+T 1705577756 20<dacd>30	thak you very much for the quick answer
+T 1705577837 20<dacd>30	i've tried to follow that one already but i think i'm somewere blocked by a the way i set a reverse proxy on my isp router
+T 1705577884 20<dacd>30	the router as a os and i could set a reverse proxy on it and i got a domain there too
+T 1705578060 20<dacd>30	when i've followed that guide i remember i got a msg saying something about the no need of use od reverse proxy with ngix (sorry can't remember to be more precise)
+T 1705578106 20<dacd>30	did you already tried to follow that guide?
+T 1705578280 20<dacd>30	...the vm of nixos that i'm trying to make is made on the router os too, i've done it once with fedora but i'm a bit lost with the nixos way
+T 1707739632 19*	Now talking on 22#nixos
+T 1707739632 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1707739632 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1707742868 19*	Now talking on 22#nixos
+T 1707742868 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1707742868 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1707747144 18<25Soni18>	is it okay to use nix for python packaging (non-pypi)?
+T 1707748026 18<20nullie18>	what are you packaging and for which audience?
+T 1707748304 18<25Soni18>	we want a package manager that solves the PIL/pillow problem
+T 1707748365 18<25Soni18>	(that's what we're calling it. but the basic idea is that you should be able to just substitute packages. X depends on Y but Y is outdated and you have a perfectly good fork Z? you should still be able to depend on X by simply substituting Y for Z.)
+T 1707748384 18<25Soni18>	(things you can't do with pip)
+T 1707749176 18<27Rusty118>	Soni: https://nixos.org/manual/nixpkgs/stable/#how-to-override-a-python-package-using-overlays maybe?
+T 1707749242 18<25Soni18>	Rusty1: not trying to override pypi packages, just make our own python packaging platform based on nix
+T 1707749599 18<25Soni18>	Rusty1: nix does have first-class support for package overrides, right?
+T 1707749749 18<20nullie18>	python imports packages by name, so if it imports PIL it won't be able to import pillow without modification
+T 1708186109 19*	Now talking on 22#nixos
+T 1708186109 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708186109 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708438062 19*	Now talking on 22#nixos
+T 1708438062 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708438062 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708439546 19*	Now talking on 22#nixos
+T 1708439546 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708439546 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708439876 19*	Now talking on 22#nixos
+T 1708439876 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708439876 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708455963 18<20lxsameer18>	hey folks, I'm new to nixos, I created a flake file for a project of mine with one output "out", when I add it to my systemPackages it's bin directory is not in my PATH so I can't use any binaries of that package. Here is my derivation: https://devheroes.codes/FG42/FG42/src/branch/v4/nix/fg42.nix
+T 1708455978 18<20lxsameer18>	what could be the problem here?
+T 1708460027 18<29trofi18>	does `$out/bin/` contain executable files?
+T 1708460063 18<29trofi18>	and systemPackages does not add the PATH, instead it populates symlinks in /run/current-system/sw/bin
+T 1708460087 18<29trofi18>	specifically to allow binary switch on `nixos-rebuild --switch` for users that already have logged in
+T 1708460119 18<29trofi18>	otherwise using absolute paths to /nix/store would require relogin
+T 1708461117 18<20nullie18>	building python3.11-debugpy-1.8.0 hangs on pytestCheckPhase for me. How can I find out stack trace for the derivation?
+T 1708461151 18<22clever18>	nullie: `ps -eH x` would show a process tree for the whole system, the derivation would be within that
+T 1708461173 18<22clever18>	and if your under nix-shell/develop, then you can run that same command after a build is done, and see if it hangs the same way
+T 1708461245 18<20nullie18>	I mean I need to find what evaluates that derivation in the flake
+T 1708461279 18<20nullie18>	so I'm nixos-rebuild'ing actually and what to find out how can I update that component or remove it
+T 1708461308 18<20nullie18>	s/what/I want/
+T 1708461677 18<22clever18>	nullie: based on the name, i would guess python3Packages.debugpy
+T 1708461719 18<20nullie18>	I'm not calling it directly, it's a dependecy of something else
+T 1708461746 18<22clever18>	nullie: kill any process in the build, when it fails, nix will tell you the whole dep chain
+T 1708461784 18<20nullie18>	yeah, thanks, that's what I just did
+T 1708462192 18<20lxsameer18>	hey folks, do you use nixos and home-manager together?
+T 1708462213 18<20lxsameer18>	or nixos is enough to manage your homepage as well?
+T 1708462402 18<20yushyin18>	you can use home-manager standalone or as a nixos module. not sure why you need either for a 'homepage'
+T 1708462545 18<20lxsameer18>	oh dang in, s/homepage/home dir/
+T 1708462555 18<20lxsameer18>	it's been a long day :))
+T 1708462871 18<20yushyin18>	i don't think that you *need* home-manager to manage your home directory with nixos. But there are some projects that require home-manager. Besides, you would end up putting something together similar to what home-manager does anyway
+T 1708463339 18<20nullie18>	lxsameer: home manager provides some additional conveniences
+T 1708463998 18<20yushyin18>	is it preferred to use mkDerivation with fix-point instead of `rec'? I've seen both now, I wonder which is preferred by the community
+T 1708464041 18<28tpw_rules18>	i think the former is preferred because it allows overrideAttrs to work sensibly
+T 1708464053 18<28tpw_rules18>	that said i don't think i've seen a good guide on the former and tend toward the latter
+T 1708464362 18<20yushyin18>	i see, yes, that could actually be the reason why i saw instances of the first variant in the first place
+T 1708464553 18<28tpw_rules18>	i understand it's a new capability
+T 1708464587 18<28tpw_rules18>	if you have docs please share
+T 1708466968 18<20lxsameer18>	nullie: cooooool
+T 1708467001 18<20nullie18>	but it worries me a bit that some nixos and home-manager functionalities overlap
+T 1708467178 18<20yushyin18>	i think there are some voices that say home-manager should just be part of nixpkgs
+T 1708467217 18<20lxsameer18>	nullie: like what?
+T 1708467236 18<20nullie18>	lxsameer: i3 wm
+T 1708467242 18<20lxsameer18>	I'm planning to move to nixos, I'd like to know how you manage nixos and home manager together
+T 1708467261 18<20nullie18>	I'm using a home-manager module in nixos configuration
+T 1708467264 18<20lxsameer18>	nullie: ahhh, so both provide same modules
+T 1708467265 18<20lxsameer18>	?
+T 1708467280 18<20nullie18>	no, they are different but have overlapping functionality
+T 1708467303 18<20yushyin18>	https://nix-community.github.io/home-manager/index.xhtml#sec-flakes-nixos-module
+T 1708467307 18<20yushyin18>	"To use Home Manager as a NixOS module, a bare-minimum flake.nix would be as follows:"
+T 1708467347 18<20lxsameer18>	so do you suggest using home-manager with nixos in general?
+T 1708467395 18<20nullie18>	yes
+T 1708467402 18<20lxsameer18>	coool thank you
+T 1708467423 18<20lxsameer18>	any other useful tool that i might need to use with nixos?
+T 1708467432 18<20yushyin18>	it depends, do you also want to use nix to declaratively define your $home?
+T 1708467472 18<20lxsameer18>	yushyin: hell yeah
+T 1708467513 18<20lxsameer18>	i want to be able to restore my box to the exact same state, if i one day decide to set fire on my pc and buy a new one
+T 1708467537 18<20yushyin18>	i have some multi-user systems where this is not desired
+T 1708467563 18<20lxsameer18>	interesting, mine is a single user pretty much
+T 1708467638 18<20yushyin18>	well, if it's about state, you'll still need to backup some state in e.g. /var/lib and such
+T 1708467723 18<20lxsameer18>	nixos state or in general
+T 1708468005 18<20yushyin18>	basically everything you can't do or don't want to do declaratively in your nixos config
+T 1708468036 18<20lxsameer18>	yushyin: ah got it
+T 1708473217 19*	Now talking on 22#nixos
+T 1708473217 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708473217 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708490172 18<20fmlatghor18>	hledger-iadd is marked as broken, but it builds for me in the nixpkgs git repo under the haskell-updates branch
+T 1708490184 18<20fmlatghor18>	https://pastebin.com/bx9FgiJ4
+T 1708490195 18<20fmlatghor18>	missing or private dependencies? Why can't nix install them?
+T 1708490213 18*	20fmlatghor shrugs
+T 1708490216 18<20fmlatghor18>	 I'm still new to nix
+T 1708490227 18<20fmlatghor18>	accidentally wrote this in ##electronics. Now I'm in the write chan
+T 1708490231 18<20fmlatghor18>	s/write/right
+T 1708502735 18<24srk18>	fmlatghor: it only allows resolving depenedencies from nixpkgs - it can't satisfy bounds in that case (i.e. doJailbreak would be needed)
+T 1708502853 18<24srk18>	fmlatghor: you can submit a PR to haskell-updates branch that unmarks a broken package if it builds, there are bunch of examples already in the current update PR https://github.com/NixOS/nixpkgs/pull/279413
+T 1708507893 19*	Now talking on 22#nixos
+T 1708507893 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708507893 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708508320 19*	Now talking on 22#nixos
+T 1708508320 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708508320 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708524514 18<25xdej18>	/nix/store/bxzxkywkbkqdd90wbbkia8mds7m1gkdl-system-path/bin/musicxml2ly calls /nix/store/b0kds7f7wlfmgbnmr8yy4na6a5m9xn1p-lilypond-2.24.2/bin/.musicxml2ly-wrapped_ which strips $PATH to /nix/store/<snip>-ghostscript-with-X-10.02.1/bin and then fails to find `lilypond`, `head` and `cut`.
+T 1708524621 18<25xdej18>	I have fixed the issue by taking out this PATH stripping, and all works with musicxml2ly replaced by: #! /nix/store/<snip>-bash-5.2-p15/bin/bash -e\n export LILYPOND_DATADIR='/nix/store/<snip>-lilypond-2.24.2/share/lilypond/2.24.2'\n export GUILE_AUTO_COMPILE='0'\n exec -a "$0"
+T 1708524634 18<25xdej18>	how should I report that ?
+T 1708524768 18<25xdej18>	(/nix/store/bxzxkywkbkqdd90wbbkia8mds7m1gkdl-system-path/bin/musicxml2ly is a link to /nix/store/b0kds7f7wlfmgbnmr8yy4na6a5m9xn1p-lilypond-2.24.2/bin/musicxml2ly)
+T 1708528636 18<20fmlatghor18>	srk: what do you mean by 'bounds'?
+T 1708528689 18<20fmlatghor18>	I see https://gutier.io/post/development-fixing-broken-haskell-packages-nixpkgs/
+T 1708528983 18<20fmlatghor18>	srk: what I don't understand is that those packages are available in nixpkgs, under haskellPackages
+T 1708529085 18<20fmlatghor18>	srk: so why would it be able to build from nixpkgs locally, but not via the system? Oh wait, it's because haskell-updates is a different branch that probably has the issues that I'm dealing with already solved and they haven't been merged yet for one reason or another.
+T 1708529619 18<20fmlatghor18>	stigo: besides gpg, there's this new tool called sequioa-pgp that's a reworking of the pgp ecosystem. I haven't used it yet since it I've only just heard about it and I haven't heard of it being adopted yet. Things will get better just as how audio has gotten so much better with linux. We have jack, pulse, alsa, and pipewire to merge all of them.
+T 1708530419 19*	Now talking on 22#nixos
+T 1708530419 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708530419 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708533458 18<20tanath18>	i reinstalled a program with nix and the hash in the path changed even though the version was the same. shouldn't it also be the same?
+T 1708533587 18<20lxsameer18>	tanath: depends, did you change the inputs to your derivation?
+T 1708533596 18<20lxsameer18>	if yes, then the hash expected to be different 
+T 1708533609 18<20tanath18>	i'm not even sure what that means. i just installed it again to check for an update
+T 1708533883 18<28tpw_rules18>	there was likely an update to one of its dependencies
+T 1708534151 18<20tanath18>	ah, ok
+T 1708534199 18<20tanath18>	anyone know why trying to do update takes like 6+ gb of ram?
+T 1708534236 18<20tanath18>	i don't have the ram to spare for that so i can't do the normal update method. nor nix-index
+T 1708536097 18<20stigo18>	tanath: what command are you running to update?
+T 1708536151 18<20tanath18>	nix-env -u
+T 1708536237 18<20stigo18>	yes i've noticed that nix-env takes a lot of ram to update, i dont use it myself but have heard that `nix profile` is a better replacement for doing imperative package management
+T 1708536328 18<20tanath18>	ok, i see 'nix profile upgrade'. i'll try that next time
+T 1708536351 18<20stigo18>	fmlatghor: sequoia seems like a nice pgp implementation, was pinged about sequoia-chameleon-gnupg yesterday at the hackerspace that can make a move from gnupg to sq easier
+T 1708542397 18<20tanath18>	what is considered an 'insecure package'? i'm finding stuff about how to enable it, but not what it is or why i might want to
+T 1708542590 18<20yushyin18>	there are various reasons why a package is marked as 'insecure'. You will often be told the reason when you try to install the package. The most common reasons are because there is a known vulnerability, or because the software is simply already EOL
+T 1708542711 18<22Athas18>	Is this because of "freeimage" being marked as insecure?
+T 1708542727 18<22Athas18>	How do I figure out which of my derivations depend on it?  I suppose I can just grep the repository.
+T 1708542761 18<20yushyin18>	`nix why-depends' might help
+T 1708542808 18<22Athas18>	I think it's imv.
+T 1708542854 18<20yushyin18>	https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/development/libraries/freeimage/default.nix#L75-L87 many known vulns
+T 1708542878 18<22Athas18>	Right, I trust that the Nixpkgs maintainers made the right choice.  I just wanted to see which of my packages to remove.
+T 1708542891 18<22Athas18>	I have a lot of packages listed that I don't actually use very often, or at all.
+T 1708544281 19*	Now talking on 22#nixos
+T 1708544281 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708544281 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708553966 19*	Now talking on 22#nixos
+T 1708553966 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708553966 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708554077 19*	Now talking on 22#nixos
+T 1708554077 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708554077 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708555035 18<20lxsameer18>	hey folks, I have a derivation that I want to use with nixos, it has a few fonts as buildInputs and I set propagatedBuildInputs to buildInputs as well. But when I install that package on nixos, it can't find the fonts. am I missing something here?
+T 1708555168 18<29trofi18>	propagatedBuildInputs are propagated to build context inly
+T 1708555189 18<29trofi18>	if you need a runtime to be retained you need to put something into $out
+T 1708555201 18<29trofi18>	a text file might be enough
+T 1708555300 18<20lxsameer18>	trofi: what do you mean? like package the fonts with my derivation?
+T 1708555304 18<29trofi18>	but you probably need to tell what fonts you need via `fonts.packages = ` in `configuration.nix` to get relevant font plumbing to be generated by `nixos-rebuild`.
+T 1708555333 18<20lxsameer18>	trofi: there are other dependencies as well
+T 1708555365 18<20lxsameer18>	for example it require ripgrep as well. is there anyway to specify runtime dependencies at all?
+T 1708555398 18<29trofi18>	for executables the typical solution is to patch absolute paths into the source code
+T 1708555432 18<29trofi18>	like "ripgrep" woult be substituted into "${lib.getBin ripgrep}/bin/ripgrep"
+T 1708555449 18<29trofi18>	that way finally built binary would embed the reference
+T 1708555463 18<20lxsameer18>	you lost me :P
+T 1708555473 18<20lxsameer18>	any doc I can read to understand this better?
+T 1708555480 18<20lxsameer18>	or any example on nixpkgs ?
+T 1708555490 18<29trofi18>	for fonts it depends, but generally fonts are not embedded into applications and a nixos module provides needed details when `programs.foo.enable = true;` is set.
+T 1708555518 18<29trofi18>	`duperemove` is an example that embeds `lcspu` as an absolute path
+T 1708555554 18<29trofi18>	https://github.com/NixOS/nixpkgs/blob/3ce7f9e4f54f85c6a94614329d02a3af6d918bc1/pkgs/tools/filesystems/duperemove/default.nix#L27
+T 1708555563 18<20yushyin18>	for ripgrep you could also make a wrapper that adds ripgrep to PATH, (makeWrapper)
+T 1708555572 18<20lxsameer18>	cheers, thank you
+T 1708555610 18<20lxsameer18>	yushyin: interesting, I'll have a look at that too
+T 1708555696 18<29trofi18>	Yeah, wrapper should work as well as long as you don't mind PATH= variable pollution. For programs like terminal emulators it's a bit problematic to expose too much via wrapper's variables
+T 1708555746 18<20lxsameer18>	thank you
+T 1708555755 18<29trofi18>	Example knob for a `ghostsscript` to enable extra fonts: https://github.com/NixOS/nixpkgs/blob/3ce7f9e4f54f85c6a94614329d02a3af6d918bc1/nixos/modules/config/fonts/ghostscript.nix#L21
+T 1708555779 18<20lxsameer18>	cooool
+T 1708555781 18<29trofi18>	or for `enlightenment`: https://github.com/NixOS/nixpkgs/blob/3ce7f9e4f54f85c6a94614329d02a3af6d918bc1/nixos/modules/services/x11/desktop-managers/enlightenment.nix#L95
+T 1708555820 18<20lxsameer18>	I think I need to create a module on top of that derivation as well
+T 1708555849 18<29trofi18>	sounds reasonable
+T 1708555851 18<20lxsameer18>	one last question
+T 1708555919 18<20lxsameer18>	my derivation is emacs based, it requires a lot of emacs packages that I've included in buildInputs. now, would those packages end up in nixos when installing my derivation? it's based on the emacsWrapper
+T 1708556057 19<trofi>	i think it depends on the exact mechanics how your package looks like (i know nothing about emacs)
+T 1708556093 19<trofi>	there is a runtime closure with references that you can instead with `nix path-info -r /part/to/nix/store`
+T 1708556140 19<trofi>	if those packages need fancy registration (like `fonts.packages` example above) then just being in runtime closure might not be enough to be usable in the editor
+T 1708556188 19<lxsameer>	I need to read more then
+T 1708556193 19<lxsameer>	thanks for your help
+T 1708557330 18<20tanath18>	so, i tried `nix profile upgrade '.*'` and it says they're not installed from a flake so can't be checked for upgrades. so i guess i can't use this method to upgrade
+T 1708561234 18<24jb127797618>	I have sound pipewire pavucontrol shows pro 5 as the speaker. how do i get speaker and hdmi working dosen't show in the profile 
+T 1708565002 18<20fmlatghor18>	srk: thanks for explaining, I understand now
+T 1708604876 18<22knautia18>	Hi guys, in a flake nixosConfigurations config I have set nixpkgs.config.permittedInsecurePackages = [ "squid-6.6" ], which was required for services.squid.enable = true; to work.  Now inside a systemd.services."custom-service" I want to make use of the outPath of the squid package through ${nixpkgs.legacyPackages.aarch64-linux.squid.outPath}, but for that I get:
+T 1708604876 18<22knautia18>	       [...]
+T 1708604876 18<22knautia18>	       error: Package ‘squid-6.6’ in /nix/store/m9s94alic7s2r6v47p7lwfj58ibc076a-source/pkgs/servers/squid/default.nix:53 is marked as insecure, refusing to evaluate.
+T 1708604876 18<22knautia18>	       [...]
+T 1708604914 18<22knautia18>	Does the nixpkgs.config.permittedInsecurePackages option get applied too late?
+T 1708604965 18<22knautia18>	I can reproduce it through nix repl and :lf . and inputs.nixpkgs.legacy...
+T 1708605400 18<22knautia18>	Or does it have to do with accidentally using multiple instance of nixpkgs?
+T 1708606002 18<28patrl18>	hi guys, are there any megasync users here by any chance? i'm trying to figure out what's wrong with the nixpkgs derivation
+T 1708606039 18<28patrl18>	the binary is in the nix store, but it doesn't get symlinked to /run/current-system/sw/bin/
+T 1708606080 18<28patrl18>	probably relatedly, the package search webapp says that "this package provides no programs."
+T 1708606547 19*	Now talking on 22#nixos
+T 1708606547 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708606547 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708606631 19*	Now talking on 22#nixos
+T 1708606631 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708606631 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708607391 18<29dazage18>	is it good practice to reboot a nixos system after a channel upgrade�?
+T 1708607446 18<20yushyin18>	if you want to reboot into the new kernel, you should
+T 1708607666 18<29dazage18>	yushyin: will do, thanks!
+T 1708607996 18<28patrl18>	hmm, it turns out my previous query was an independent issue with my system (a deploy-rs issue, I think)
+T 1708610515 18<20lxsameer18>	b
+T 1708610517 18<20lxsameer18>	b
+T 1708611925 18<20lxsameer18>	is there any way to make nixos installation automatic? even partitioning and everything?
+T 1708612089 18<26dminuoso18>	lxsameer: Sure.
+T 1708612122 18<20yushyin18>	there is disko for formatting
+T 1708612161 18<20yushyin18>	at the end of the day, you somehow put together a bash script, which is then executed
+T 1708612224 18<20lxsameer18>	makes sense, but I was hoping nixos provide something to make it easier
+T 1708612342 18<26dminuoso18>	lxsameer: nixos makes it super easy to make something yourself.
+T 1708612602 18<20yushyin18>	there is e.g. nixos-anywhere, where the prerequisite is a system with ssh access (and >=1.5G RAM), everything else happens automatically
+T 1708612703 18<20lxsameer18>	yushyin: coool, I'll have a look
+T 1708612711 18<26dminuoso18>	lxsameer: We have a derivation that includes a simple python installation wizard that asks some very basic questions (IP/netmask, what device to nuke), and then automatically parititions, formats and configures the initial server.
+T 1708612736 18<26dminuoso18>	So its really just `sudo wizard.py` after the iso is booted, and within 20 seconds the server is installed with all our custom glue.
+T 1708612752 18<20lxsameer18>	dminuoso: cool, shoot me a link please
+T 1708612795 18<26dminuoso18>	Its an internal tool, but its basically just `questionary` and `subprocess`
+T 1708612834 18<26dminuoso18>	We tag all the filesystems with labels, such that our "base profile" (which every server has) seamlessly attaches, with no need for any hardware.nix
+T 1708612854 18<20lxsameer18>	dminuoso: coooool
+T 1708612855 18<26dminuoso18>	I can check with the other folks, but we can probably opensource it
+T 1708612938 18<26dminuoso18>	(We cant fully automate it, because we dont use DHCP - so at minimum we have to provide IP address configuration)
+T 1708612957 18<20yushyin18>	i have also seen terraform + nix 
+T 1708612959 18<26dminuoso18>	But at least we reduce the total effort to about 10-15 seconds
+T 1708612999 18<26dminuoso18>	Given that on average we create a new nix server maybe once or twice a month, the manual labor is acceptable.
+T 1708613022 18<20lxsameer18>	in my case I want to install nixos on my own devices, so everything is known in advance
+T 1708613048 18<20yushyin18>	https://pbs.twimg.com/media/FdGlI2kXEAEvFZ5.jpg :D
+T 1708613091 18<26dminuoso18>	lxsameer: In the end, I think I would just spend the time handrolling it.
+T 1708613110 18<26dminuoso18>	At least in a $work setting, because every place has its own requirements or habits,
+T 1708613125 18<20lxsameer18>	yushyin: :)))) that's me right now
+T 1708613130 18<26dminuoso18>	It's not much effort, and if you *do* require lots of effort, its because you have some custom requirements.
+T 1708613148 18<20lxsameer18>	cool, thanks folks
+T 1708617309 18<22knautia18>	So just if someone was confused by my question before about configuring nixpkgs: it seems I'm mist things about how flakes, modules, nixpkgs, nixpkgs.config, pkgs relate to each other and created instances of nixpkgs separate from pkgs contrary to my actual intention to be more explicit. A helpful read seems to be: https://blog.nobbz.dev/2022-12-12-getting-inputs-to-modules-in-a-flake/
+T 1708617316 18<22knautia18>	*misunderstanding
+T 1708617638 18<20yushyin18>	if you derived your own `pkgs' instance and passed it to nixosSystem, the *module option* nixpkgs.config will be ignore
+T 1708618065 18<22knautia18>	@yushyin thanks for clarifying!
+T 1708620512 18<27ponyofdeath18>	hi, trying to add this https://github.com/NixOS/nixpkgs/pull/286522 to my system. What is the best way? To check out that branch and add as an overlay or?
+T 1708623317 19*	Now talking on 22#nixos
+T 1708623317 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708623317 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708623354 18<20lxsameer18>	yushyin: gotcha, thank you
+T 1708623616 18<27ponyofdeath18>	yushyin: so I did this: https://0x0.st/H51A.txt
+T 1708623659 18<27ponyofdeath18>	yushyin: but dont think this will take the latest packages from nixpkgs unstable branch then overlay the plasma6 module
+T 1708623794 18<20yushyin18>	you can set the `nixpkgs.pkgs' option to a different nixpkgs
+T 1708623903 18<27ponyofdeath18>	yushyin: yeah but wouldnt that remove the plasma6 changes?
+T 1708623923 18<27ponyofdeath18>	as they are also in nixpkgs.pkgs of that branch no?
+T 1708624377 18<20yushyin18>	if you want also all the packages related changes, just use the branch as is. If it's a recent rebase from master, it will be even more recent than -unstable
+T 1708624449 18<20yushyin18>	if you really really want to base it on nixos-unstable, then you might have luck with creating your own branch from unstable and merging the changes from the other branch into it.
+T 1708624533 18<27ponyofdeath18>	yushyin: ok thanks so much
+T 1708628987 18<20lxsameer18>	hey folks, is it possible to pass a value as an input to a flake?
+T 1708630546 19*	Now talking on 22#nixos
+T 1708630546 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708630546 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708631263 19*	Now talking on 22#nixos
+T 1708631263 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708631263 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708631930 19*	Now talking on 22#nixos
+T 1708631930 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708631930 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708632783 19*	Now talking on 22#nixos
+T 1708632783 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708632783 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708632966 19*	Now talking on 22#nixos
+T 1708632966 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708632966 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708633058 18<20lxsameer18>	interesting 
+T 1708633128 18<29trofi18>	+1
+T 1708633166 18<28tpw_rules18>	where flakeInputs is an attrset of names to paths
+T 1708633288 18<20lxsameer18>	names to paths? I thought it's the actual input set passed to the output function
+T 1708633298 18<28tpw_rules18>	which is that
+T 1708633334 18<20lxsameer18>	ow
+T 1708635047 18<20nullie18>	why do you need channels with flakes?
+T 1708635514 18<20yushyin18>	i guess for search path syntax? nix-shell/nix-build/nix-instantiate code examples often use <nixpkgs>
+T 1708635571 18<29trofi18>	as well as `nix-shell` and other basic tools
+T 1708639053 18<20lxsameer18>	how can I differentiate between an installation of nixos vs a live session of nixos from the installer media?
+T 1708641797 18<29trofi18>	Why do you need to? :) (i suspect there are files to look at)
+T 1708696020 19*	Now talking on 22#nixos
+T 1708696020 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708696020 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708696321 19*	Now talking on 22#nixos
+T 1708696321 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708696321 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708709804 18<28munksgaard18>	I have recently nixified/flakified my emacs configuration: https://github.com/Munksgaard/philnix/blob/master/church/emacs.nix. However, it irks me a bit that I have a big string of elisp in the middle (my `prelude`). Is there a way to write that elisp to a file, and then import it into the prelude config? Ideally I'd like line 16 to read something like `prelude = ./prelude.el;` or something like
+T 1708709806 18<28munksgaard18>	that. Any ideas?
+T 1708713242 18<22impl18>	munksgaard: I think you want `builtins.readFile`, e.g.: https://github.com/impl/site-configs/blob/main/home/impl/programs/vim/default.nix#L51
+T 1708715937 18<28munksgaard18>	impl: Perfect, thanks!
+T 1708717827 18<20lxsameer18>	folks, how do you manage your nixos configuration locally? I want to have it under git. Do you symlink the file or do you use something like nixOps to deploy your changes?
+T 1708718031 18<20yushyin18>	i have a flake based setup
+T 1708718050 18<20yushyin18>	(in a git repo)
+T 1708718079 18<20yushyin18>	and nixos-rebuild does accept a --flake argument
+T 1708718101 18<20lxsameer18>	yushyin: cool, is it possible to see your config?
+T 1708718128 18<20lxsameer18>	yushyin: and did you install nixos normally (no flake at first) and then moved to flakes?
+T 1708718193 18<20yushyin18>	it's not public (yet). No, i started my nix/nixos journey with flakes and i never used it 'the old way'.
+T 1708718240 18<20lxsameer18>	yushyin: i see, does the installer supports flake only configuration generation?
+T 1708718371 18<20yushyin18>	at least nixos-install supports --flake
+T 1708718420 18<20yushyin18>	but switching to flakes later also works
+T 1708718494 18<20lxsameer18>	yushyin: thank you
+T 1708718575 18<20yushyin18>	i think some also just do what you suggested and symlink the configuration from a git repo
+T 1708718689 18<20lxsameer18>	yushyin: i like yours better
+T 1708718702 18<28tpw_rules18>	with a flake you can specify the path to the flake and don't need to keep in /etc/nixos
+T 1708718714 18<28tpw_rules18>	--flake .# is "current hostname in the current directory"
+T 1708718866 18<20lxsameer18>	tpw_rules: awesome, i already created a flake based configuration that i test with qemu, but i didn't know I can i can use it with the installer
+T 1708720189 19*	Now talking on 22#nixos
+T 1708720189 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708720189 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708720607 18<20lxsameer18>	how can I create a symlink from a path in store to a directory somewhere in the file system?
+T 1708726619 18<29trofi18>	i din't think you can
+T 1708727612 18<20lxsameer18>	I used environment.etc..... 
+T 1708728300 18<29trofi18>	i think it's the other way around :)
+T 1708772561 19*	Now talking on 22#nixos
+T 1708772561 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708772561 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708773629 18<20buovjaga18>	In my home-manager config I added programs.fzf.enable = true; but keybindings don't work. What might be the problem? Shell is bash.
+T 1708774563 18<20buovjaga18>	If I do `source "$(fzf-share)/key-bindings.bash"` the keybindings work
+T 1708774787 18<20buovjaga18>	but if I add it to programs.bash.initExtra it doesn't work
+T 1708774800 18<20buovjaga18>	ie. in the way mentioned here https://nixos.wiki/wiki/Fzf
+T 1708777273 18<29vxp18>	Passing by to say I've found a way on how to tell gdm what is the monitor I use as "primary". I've found the solution on a merge request that never came to master: https://github.com/NixOS/nixpkgs/pull/107850
+T 1708777295 18<29vxp18>	There was on the comments a nice solution to my issue. 
+T 1708778738 18<20nullie18>	buovjaga: did you set bash.enable = true?
+T 1708778770 18<20nullie18>	oh
+T 1708778784 18<20nullie18>	buovjaga: I think you have to do fzf.enableBashIntegration = true
+T 1708780494 18<20buovjaga18>	nullie: I had also tried it, but it is true by default and it did not make a difference
+T 1708780507 18<20buovjaga18>	https://mynixos.com/home-manager/option/programs.fzf.enableBashIntegration
+T 1708788546 19*	Now talking on 22#nixos
+T 1708788546 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708788546 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708788723 19*	Now talking on 22#nixos
+T 1708788723 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708788723 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708792087 19*	Now talking on 22#nixos
+T 1708792087 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708792087 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708792129 18<20lxsameer18>	hey folks, is there anyway to install a specific nix version on nixos?
+T 1708793373 18<20yushyin18>	you can instantiate another nixpkgs revision to get yourself a package in a specific version, https://lazamar.co.uk/nix-versions/?channel=nixpkgs-unstable&package=nix but to be frank, I don't understand why you would want another `nix'. What's wrong with the `nix' provided by the channel?
+T 1708793865 18<20lxsameer18>	cheers
+T 1708793889 18<20lxsameer18>	yushyin: i think it does not support a certain input schema for flakes
+T 1708793902 18<20lxsameer18>	the same flake works on my gentoo with nix 1.20
+T 1708795891 18<20yushyin18>	i'm not sure if that old of an nix even has flake-support. I'm not certain if there was even a 1.20 release of nix.
+T 1708796833 18<20tanath18>	this is weird. i ran `nix-env -qc` and saw 'nix-2.20.1   > 2.19.3'. i wasn't paying attention and saw the > and ran 'nix-env -iA nixpkgs.nix' but instead of installing the 2.19.3 version i got "installing 'nix-2.18.1'" which is even lower
+T 1708796882 18<20tanath18>	my intent was to check and do upgrades. instead i went down a few versions >_<
+T 1708823390 19*	Now talking on 22#nixos
+T 1708823390 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708823390 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1708829392 18<22mccd18>	Heya! How can I use buildGoModule and fetchFromGithub in home-manager
+T 1708829422 18<22mccd18>	I added the following: { fetchFromGithub, buildGoModule, config, pkgs, ... } at the top, but that seems to be insufficient
+T 1708829905 18<20yushyin18>	if you want to use those from within a module you can do pkgs.fetchFromGithub and pkgs.buildGoModule
+T 1708830063 18<22mccd18>	@yushyin Thanks!
+T 1708830200 18<20yushyin18>	I assume this is a Module file (because of 'config' in the attribute list)? Adding "fetchFromGithub, buildGoModule" in the module attribute list will not do it.
+T 1708830227 18<20yushyin18>	You may have seen examples online where "fetchFromGithub, buildGoModule" was indeed listed in the attribute list, but this is from the callPackage pattern.
+T 1708830240 18<22clever18>	mccd: when in a module, you need to use pkgs.fetchFromGithub and friends
+T 1708830248 18<22clever18>	and add pkgs, to the args no line 1
+T 1708830260 18<20yushyin18>	e.g. `yourPackage = pkgs.callPackage ./yourPackageFile.nix {}'
+T 1708830343 18<22clever18>	yeah, thats better
+T 1708830572 18<22mccd18>	@yushyin yeah examples I saw used the module attribute list and I couldn't quite figure out where the go module was "located"
+T 1708847524 18<20buovjaga18>	About my fzf keybinding mystery: https://discourse.nixos.org/t/home-manager-and-fzf-keybindings/40243/2 We have to add programs.bash.enable = true; or they won't work!
+T 1708882893 19*	Now talking on 22#nixos
+T 1708882893 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1708882893 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1709072158 19*	Now talking on 22#nixos
+T 1709072158 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1709072158 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1709072919 18<26JamesMowery18>	nullie I think that was it. I switched over to just using Docker without the rootless option, and it seems like it is working. No idea why the rootless isn't any good (I also was struggling when trying to use podman). But... oh well, as long as it works until I figure out more Nix language stuff! I appreciate it!
+T 1709073206 18<26JamesMowery18>	Unfortunately, I have an entirely different problem now. Trying to use dpkg to install a .deb while in the Ubuntu distrobox, and it says command not found. apt is also not found. Nothing is found. Feels like I'm not really even in a container at this point. Oh my, lol.
+T 1709073297 18<26JamesMowery18>	Oh... it's because Distrobox reset itself and created a Fedora box instead, lol. HOw odd :D 
+T 1709073335 18<19cdegroot18>	Flatpak works on NixOS by the way. 
+T 1709073359 18<26JamesMowery18>	cdegroot unfortunately the broker software is not on Flatpak or any other platform. It only comes in .deb format.
+T 1709073396 18<26JamesMowery18>	There were instructions on how to run .debs with a nix-shell, but the nix language is still a bit over my head. Slowly picking it up, but I have a long way to go.
+T 1709073427 18<19cdegroot18>	Ah, I misunderstood your "there's no AppImage, Flatpack, Snaps available". You meant for the package. I read for NixOS :). 
+T 1709073458 18<19cdegroot18>	The easy way is just to whip up a VM. The fun way <cough> is to wrap the .deb in a Nix package (unpack it, patch it, etc). 
+T 1709073606 18<26JamesMowery18>	cdegroot Yeah I am hoping to learn how to package software and how to run a pull request in NixOS (for example, Thorium browser has a pull request in Nixpkgs, and I'd love to figure out a way to download the pull request and run it and contribute if it works or not). Unfortunately it's all still a bit over my head.
+T 1709073643 18<26JamesMowery18>	I would love to find a tutorial on how to package a piece of software from scratch on NixOS. I tried searching for that on Void Linux when I was there, and there were no good examples or YouTube tutorials.
+T 1709073997 18<19cdegroot18>	My "tutorial" is usually the source tree. I hunt for a package like it, and then take that as the baseline. 
+T 1709074179 18<20yushyin18>	https://nixos.wiki/wiki/Packaging/Binaries#Creating_the_Derivation_for_upstream_Packaging
+T 1709082580 19*	Now talking on 22#nixos
+T 1709082580 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1709082580 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1709164962 19*	Now talking on 22#nixos
+T 1709164962 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1709164962 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1709165582 20*	Disconnected (20)
+T 1709165736 19*	Now talking on 22#nixos
+T 1709165736 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1709165736 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1709180986 18<26kulak18>	I can't figure out how to expand this: environment.systemPackages = with pkgs; [ vscode.fhs ];
+T 1709180994 18<26kulak18>	with programs.vscode.package = pkgs.vscode.fhsWithPackages (ps: with ps; [ rustup zlib openssl.dev pkg-config ]);
+T 1709181050 18<26kulak18>	I am trying something like vscode.fhs.withPackages(ps: with ps; []), but it keeps reporting that withPackages attribute is not available. 
+T 1709190750 18<25hyper_ch18>	yushyin: the fix got merged into master
+T 1709197307 18<29tsujp18>	I'm trying to patch a `flake.nix` of a package I am using as I suspect it's removing a file needed to build the package. I cannot get this to work though
+T 1709197365 18<29tsujp18>	My own flake.nix is this, I attempt to apply `patchy.patch` in a derivation but I don't think it's being applied? https://bpa.st/74GA
+T 1709200605 18<28munksgaard18>	Is anyone using cache-nix-action on Github? I am having a hard time figuring out how to merge caches between different jobs in my CI. For example: I have one job that run `nix build` and one that runs `nix flake check`, and it seems obvious that they should be able to share a cache.
+T 1709200671 18<28munksgaard18>	The documentation lists some examples using matrixes (https://github.com/nix-community/cache-nix-action/blob/main/.github/workflows/ci.yaml#L164), but I'm confused between the relationship between the different jobs in the example workflow and how exactly the cache merging happens.
+T 1709210182 18<26dminuoso18>	I have a bunch of files in a directory that I want to make a derivation out of, such that the resulting $out contains those files, plus some extra file. Which derivation builder would you use for this? stdenvNoCC.mkDerivation? runCommandLocal?
+T 1709210471 18<20yushyin18>	runCommandLocal seems fine. It uses stdenvNoCC.
+T 1709212532 20*	Disconnected (20)
+T 1709212551 19*	Now talking on 22#nixos
+T 1709212551 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1709212551 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1709213188 18<26dminuoso18>	Alright I'll do that, thanks.
+T 1709213993 19*	Now talking on 22#nixos
+T 1709213993 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1709213993 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1709216163 19*	Now talking on 22#nixos
+T 1709216163 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1709216163 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1709228475 18<20lxsameer18>	hey folks, I use my derivation with nixos, eventhough python311 is part of my derivation's runtime closure, but when I run in on nixos, it does not have access to python311. is there any trick to make that available? here is my derivation: https://devheroes.codes/FG42/FG42/src/branch/v4/nix/fg42.nix
+T 1709235280 18<29trofi18>	s/runtiem/runtime/ :)
+T 1709235307 18<29trofi18>	do you see build failures or runtime failures?
+T 1709235363 18<29trofi18>	Do you intentionally use '$' in package name? 'pname = "fg42$";'
+T 1709254781 19*	Now talking on 22#nixos
+T 1709254781 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1709254781 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1709260859 18<26wastrel18>	hi i just installed nixos in a vm, how do i update to plasma 6 in kde
+T 1709263836 18<19raktajino18>	looks like you gotta use unstable for that but https://nixos.wiki/wiki/KDE
+T 1709263967 18<19raktajino18>	about channels: https://nixos.wiki/wiki/Nix_channels
+T 1709273249 18<24jb127797618>	How do you use a xdg.configFile ?
+T 1709277842 18<26dminuoso18>	Is there a first-class way to specify a nixos option dependency Something along the lines of `services.foo requires services.bar.enable`?
+T 1709279848 18<22clever18>	dminuoso: i think asserts is the only real option
+T 1709279876 18<22clever18>	dminuoso: https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/system/boot/loader/grub/grub.nix#L763-L772
+T 1709279903 18<22clever18>	basically, assertions is a special nixos option, that any module can add "config" to, and at the end of the eval, nixos will check them all, and list every error at once
+T 1709279920 18<22clever18>	if you do it with the assert directive, it stops immediately, and your left fixing errors one by one
+T 1709279961 18<22clever18>	you could also just set bar.enable = true; in your mkIf block
+T 1709279973 18<22clever18>	and if the user hasnt said what bar should be, it just turns itself on automatically
+T 1709279991 18<22clever18>	if the user explicitely set enable=false;, a conflict will occur, and the user gets to decide how to fix it
+T 1709282217 18<26dminuoso18>	clever: Yeah I dont want to just set bar.enable because bar requires further configuration, and I want to make the necessity/implication of running bar a bit more explicit.
+T 1709282252 18<26dminuoso18>	I'll just do an assertion. Im aware of them, was just wondering whether there was something in lib for this.
+T 1709288266 18<24TehBoss18>	would using home manager allow me to install developer versions of libraries for my user? (so i don't have to use shell.nix)
+T 1709288539 18<22clever18>	TehBoss: not really, developer stuff is only meant to work in nix-shell or `nix develop`
+T 1709298076 19*	Now talking on 22#nixos
+T 1709298076 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1709298076 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1709305277 19*	Now talking on 22#nixos
+T 1709305277 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1709305277 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)
+T 1709312939 19*	Now talking on 22#nixos
+T 1709312939 22*	Topic for 22#nixos is: ✨ NixOS 23.11 Tapir ✨ || https://nixos.org/blog/announcements.html || https://nixos.org || Latest NixOS: https://nixos.org/nixos/download.html || Latest Nix: https://nixos.org/nix/download.html || We're also on Matrix: #community:nixos.org (Spaces) / #nix:nixos.org
+T 1709312939 22*	Topic for 22#nixos set by 26Mic92!~joerg@mail.thalheim.io (24Fri Dec  1 13:29:42 2023)

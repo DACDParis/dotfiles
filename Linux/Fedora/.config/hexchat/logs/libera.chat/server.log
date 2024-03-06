@@ -1,0 +1,55 @@
+**** BEGIN LOGGING AT Sun Dec 10 07:56:39 2023
+
+Dec 10 07:56:39 *	Looking up irc.libera.chat
+**** BEGIN LOGGING AT Sun Dec 10 08:26:08 2023
+
+Dec 10 08:26:08 *	Looking up irc.libera.chat
+Dec 10 08:26:08 *	Connecting to irc.libera.chat (108.181.132.149:6697)
+Dec 10 08:26:08 *	* Subject: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Dec 10 08:26:08 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Dec 10 08:26:08 *	* Subject: /C=US/O=Let's Encrypt/CN=R3
+Dec 10 08:26:08 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Dec 10 08:26:08 *	* Subject: /CN=silver.libera.chat
+Dec 10 08:26:08 *	* Issuer: /C=US/O=Let's Encrypt/CN=R3
+Dec 10 08:26:08 *	* Certification info:
+Dec 10 08:26:08 *	  Subject:
+Dec 10 08:26:08 *	    CN=silver.libera.chat
+Dec 10 08:26:08 *	  Issuer:
+Dec 10 08:26:08 *	    C=US
+Dec 10 08:26:08 *	    O=Let's Encrypt
+Dec 10 08:26:08 *	    CN=R3
+Dec 10 08:26:08 *	  Public key algorithm: rsaEncryption (4096 bits)
+Dec 10 08:26:08 *	  Sign algorithm sha256WithRSAEncryption
+Dec 10 08:26:08 *	  Valid since Nov 27 17:20:48 2023 GM to Feb 25 17:20:47 2024 GM
+Dec 10 08:26:08 *	* Cipher info:
+Dec 10 08:26:08 *	  Version: TLSv1.3, cipher TLS_AES_256_GCM_SHA384 (256 bits)
+Dec 10 08:26:08 *	Connected. Now logging in.
+Dec 10 08:26:09 *	*** Checking Ident
+Dec 10 08:26:09 *	*** Looking up your hostname...
+Dec 10 08:26:09 *	*** Couldn't look up your hostname
+Dec 10 08:26:14 *	*** No Ident response
+Dec 10 08:26:14 *	Capabilities supported: account-notify away-notify chghost extended-join multi-prefix sasl=PLAIN,ECDSA-NIST256P-CHALLENGE,EXTERNAL tls account-tag cap-notify echo-message server-time solanum.chat/identify-msg solanum.chat/oper solanum.chat/realhost
+Dec 10 08:26:14 *	Capabilities requested: account-notify away-notify chghost extended-join multi-prefix sasl account-tag cap-notify server-time solanum.chat/identify-msg 
+Dec 10 08:26:14 *	dacd is already in use. Retrying with david_...
+Dec 10 08:26:15 *	Capabilities acknowledged: account-notify away-notify chghost extended-join multi-prefix sasl account-tag cap-notify server-time solanum.chat/identify-msg
+Dec 10 08:26:15 *	Authenticating via SASL as david (PLAIN)
+**** ENDING LOGGING AT Sun Dec 10 08:26:16 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 12:37:39 2023
+
+Dec 10 12:37:39 *	Looking up irc.libera.chat
+Dec 10 12:37:39 *	Unknown host. Maybe you misspelled it?
+Dec 10 12:37:49 Cycling to next server in Libera.Chat...
+Dec 10 12:37:49 *	Disconnected ()
+**** ENDING LOGGING AT Sun Dec 10 12:37:49 2023
+
+**** BEGIN LOGGING AT Sun Dec 10 12:37:49 2023
+
+Dec 10 12:37:49 *	Looking up irc.libera.chat
+Dec 10 12:37:49 *	Unknown host. Maybe you misspelled it?
+Dec 10 12:37:56 Sysinfo plugin unloaded
+Dec 10 12:37:56 Checksum plugin unloaded
+Dec 10 12:37:56 FiSHLiM plugin unloaded
+Dec 10 12:37:56 Perl interface unloaded
+**** ENDING LOGGING AT Sun Dec 10 12:37:56 2023
+

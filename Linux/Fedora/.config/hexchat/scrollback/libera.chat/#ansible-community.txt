@@ -1,0 +1,332 @@
+T 1702193179 19*	Now talking on 22#ansible-community
+T 1702193179 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1702193179 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1702193180 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1702194034 20*	Disconnected (20)
+T 1702194061 19*	Now talking on 22#ansible-community
+T 1702194061 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1702194061 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1702194061 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1702194196 24*	dacd has quit (Ping timeout: 245 seconds)
+T 1702195289 19*	Now talking on 22#ansible-community
+T 1702195289 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1702195289 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1702195289 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1702198993 20*	Disconnected (20)
+T 1702201366 19*	Now talking on 22#ansible-community
+T 1702201366 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1702201366 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1702201366 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1702208540 19*	Now talking on 22#ansible-community
+T 1702208540 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1702208540 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1702208540 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1702214434 20*	Disconnected (20)
+T 1702214614 19*	Now talking on 22#ansible-community
+T 1702214614 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1702214614 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1702214614 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1702219834 20*	Disconnected (20)
+T 1702219889 19*	Now talking on 22#ansible-community
+T 1702219889 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1702219889 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1702219889 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1702220524 20*	Disconnected (20)
+T 1702220570 19*	Now talking on 22#ansible-community
+T 1702220570 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1702220570 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1702220571 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1702281887 19*	Now talking on 22#ansible-community
+T 1702281887 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1702281887 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1702281887 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1702282236 20*	Disconnected (20)
+T 1702282251 19*	Now talking on 22#ansible-community
+T 1702282251 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1702282251 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1702282251 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1702282262 20*	Disconnected (20)
+T 1702282282 19*	Now talking on 22#ansible-community
+T 1702282282 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1702282282 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1702282282 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1702285561 20*	Disconnected (20)
+T 1702314577 19*	Now talking on 22#ansible-community
+T 1702314577 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1702314577 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1702314577 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1702322572 20*	Disconnected (20)
+T 1702322852 19*	Now talking on 22#ansible-community
+T 1702322852 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1702322852 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1702322852 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1702812797 19*	Now talking on 22#ansible-community
+T 1702812797 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1702812797 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1702812797 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1705506304 19*	Now talking on 22#ansible-community
+T 1705506304 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1705506304 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1705506304 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1705524970 19*	Now talking on 22#ansible-community
+T 1705524970 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1705524970 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1705524971 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1705525535 19*	Now talking on 22#ansible-community
+T 1705525535 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1705525535 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1705525535 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1705525647 19*	Now talking on 22#ansible-community
+T 1705525647 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1705525647 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1705525647 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1705525767 19*	Now talking on 22#ansible-community
+T 1705525767 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1705525767 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1705525767 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1705526737 19*	Now talking on 22#ansible-community
+T 1705526737 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1705526737 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1705526737 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1705559182 19*	Now talking on 22#ansible-community
+T 1705559182 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1705559182 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1705559182 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1705562767 20*	Disconnected (20)
+T 1705562791 19*	Now talking on 22#ansible-community
+T 1705562791 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1705562791 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1705562791 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1705568249 19*	Now talking on 22#ansible-community
+T 1705568249 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1705568249 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1705568249 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1707739632 19*	Now talking on 22#ansible-community
+T 1707739632 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1707739632 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1707739632 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1707742868 19*	Now talking on 22#ansible-community
+T 1707742868 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1707742868 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1707742868 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708186109 19*	Now talking on 22#ansible-community
+T 1708186109 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708186109 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708186109 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708438062 19*	Now talking on 22#ansible-community
+T 1708438062 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708438062 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708438062 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708439546 19*	Now talking on 22#ansible-community
+T 1708439546 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708439546 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708439546 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708439876 19*	Now talking on 22#ansible-community
+T 1708439876 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708439876 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708439876 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708473217 19*	Now talking on 22#ansible-community
+T 1708473217 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708473217 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708473217 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708507893 19*	Now talking on 22#ansible-community
+T 1708507893 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708507893 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708507893 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708508320 19*	Now talking on 22#ansible-community
+T 1708508320 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708508320 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708508320 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708530419 19*	Now talking on 22#ansible-community
+T 1708530419 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708530419 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708530419 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708544281 19*	Now talking on 22#ansible-community
+T 1708544281 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708544281 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708544281 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708547159 18<24cyberpear18>	awfully quiet here
+T 1708553966 19*	Now talking on 22#ansible-community
+T 1708553966 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708553966 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708553966 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708554077 19*	Now talking on 22#ansible-community
+T 1708554077 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708554077 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708554077 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708606547 19*	Now talking on 22#ansible-community
+T 1708606547 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708606547 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708606548 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708606631 19*	Now talking on 22#ansible-community
+T 1708606631 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708606631 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708606632 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708623317 19*	Now talking on 22#ansible-community
+T 1708623317 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708623317 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708623317 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708630546 19*	Now talking on 22#ansible-community
+T 1708630546 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708630546 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708630546 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708631263 19*	Now talking on 22#ansible-community
+T 1708631263 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708631263 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708631263 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708631930 19*	Now talking on 22#ansible-community
+T 1708631930 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708631930 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708631930 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708632783 19*	Now talking on 22#ansible-community
+T 1708632783 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708632783 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708632783 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708632966 19*	Now talking on 22#ansible-community
+T 1708632966 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708632966 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708632966 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708696020 19*	Now talking on 22#ansible-community
+T 1708696020 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708696020 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708696020 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708696321 19*	Now talking on 22#ansible-community
+T 1708696321 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708696321 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708696321 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708697325 18<20rvgate18>	maaaybe
+T 1708720189 19*	Now talking on 22#ansible-community
+T 1708720189 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708720189 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708720189 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708772561 19*	Now talking on 22#ansible-community
+T 1708772561 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708772561 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708772561 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708788546 19*	Now talking on 22#ansible-community
+T 1708788546 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708788546 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708788546 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708788723 19*	Now talking on 22#ansible-community
+T 1708788723 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708788723 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708788723 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708792087 19*	Now talking on 22#ansible-community
+T 1708792087 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708792087 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708792088 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708823390 19*	Now talking on 22#ansible-community
+T 1708823390 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708823390 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708823390 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1708882893 19*	Now talking on 22#ansible-community
+T 1708882893 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1708882893 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1708882893 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709072158 19*	Now talking on 22#ansible-community
+T 1709072158 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709072158 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709072158 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709073538 22*	26ChanServ gives channel operator status to 18shertel
+T 1709082580 19*	Now talking on 22#ansible-community
+T 1709082580 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709082580 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709082580 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709164962 19*	Now talking on 22#ansible-community
+T 1709164962 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709164962 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709164962 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709165582 20*	Disconnected (20)
+T 1709165736 19*	Now talking on 22#ansible-community
+T 1709165736 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709165736 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709165736 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709212532 20*	Disconnected (20)
+T 1709212551 19*	Now talking on 22#ansible-community
+T 1709212551 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709212551 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709212551 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709213993 19*	Now talking on 22#ansible-community
+T 1709213993 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709213993 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709213993 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709216163 19*	Now talking on 22#ansible-community
+T 1709216163 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709216163 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709216163 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709254781 19*	Now talking on 22#ansible-community
+T 1709254781 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709254781 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709254781 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709298076 19*	Now talking on 22#ansible-community
+T 1709298076 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709298076 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709298076 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709305277 19*	Now talking on 22#ansible-community
+T 1709305277 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709305277 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709305277 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709312939 19*	Now talking on 22#ansible-community
+T 1709312939 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709312939 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709312939 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709316253 19*	Now talking on 22#ansible-community
+T 1709316253 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709316253 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709316253 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709345126 19*	Now talking on 22#ansible-community
+T 1709345126 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709345126 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709345126 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709356535 19*	Now talking on 22#ansible-community
+T 1709356535 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709356535 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709356535 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709356629 19*	Now talking on 22#ansible-community
+T 1709356629 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709356629 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709356629 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709402548 19*	Now talking on 22#ansible-community
+T 1709402548 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709402548 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709402548 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709451377 19*	Now talking on 22#ansible-community
+T 1709451377 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709451377 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709451377 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709523463 19*	Now talking on 22#ansible-community
+T 1709523463 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709523463 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709523463 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709523581 19*	Now talking on 22#ansible-community
+T 1709523581 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709523581 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709523581 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709620790 19*	Now talking on 22#ansible-community
+T 1709620790 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709620790 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709620790 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709658822 19*	Now talking on 22#ansible-community
+T 1709658822 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709658822 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709658822 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709661930 19*	Now talking on 22#ansible-community
+T 1709661930 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709661930 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709661930 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709667679 19*	Now talking on 22#ansible-community
+T 1709667679 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709667679 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709667679 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709674383 19*	Now talking on 22#ansible-community
+T 1709674383 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709674383 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709674383 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709686297 19*	Now talking on 22#ansible-community
+T 1709686297 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709686297 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709686297 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
+T 1709705791 19*	Now talking on 22#ansible-community
+T 1709705791 22*	Topic for 22#ansible-community is: Ansible Community Working Group | https://www.ansible.com/community | Meetings on Wednesdays at 18:00UTC, Agenda: https://github.com/ansible/community/labels/community
+T 1709705791 22*	Topic for 22#ansible-community set by 26zodbot!~supybot@fedora/bot/zodbot (24Wed Aug 23 20:20:07 2023)
+T 1709705791 -18ChanServ-	[#ansible-community] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible-community:libera.chat
