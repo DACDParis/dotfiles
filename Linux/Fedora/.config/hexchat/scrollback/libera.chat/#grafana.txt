@@ -121,3 +121,36 @@ T 1709667679 19*	Now talking on 22#grafana
 T 1709674383 19*	Now talking on 22#grafana
 T 1709686297 19*	Now talking on 22#grafana
 T 1709705791 19*	Now talking on 22#grafana
+T 1709727115 18<25VG23418>	Hello. How do I control the amount of row entries in a table dashboard. For example, if I have a table of pods and only want pods that are active or actively requesting cpu, how do I configure the grafana table to only show those entries? 
+T 1709728181 19*	Now talking on 22#grafana
+T 1709736874 18<22trafficriot18>	Hey I have grafana and prometheus set up in a docker-compose file. I was moving some files around and accidentally deleted the data for grafana and grafana's postgres db. I restored from a backup but now when i go to configure email alerting it says "Alertmanager does not exist for this organization" but i didn't even set it up with alertmanager, i
+T 1709736874 18<22trafficriot18>	just used the built in email alert. It also says "Failed to fetch contact points". Any idea what could cause this?
+T 1709757842 19*	Now talking on 22#grafana
+T 1709774324 19*	Now talking on 22#grafana
+T 1709786353 19*	Now talking on 22#grafana
+T 1709787188 19*	Now talking on 22#grafana
+T 1709790361 19*	Now talking on 22#grafana
+T 1709808329 19*	Now talking on 22#grafana
+T 1709810810 19*	Now talking on 22#grafana
+T 1709811590 19*	Now talking on 22#grafana
+T 1709817348 19*	Now talking on 22#grafana
+T 1709934726 19*	Now talking on 22#grafana
+T 1709935464 19*	Now talking on 22#grafana
+T 1709935634 19*	Now talking on 22#grafana
+T 1709936054 19*	Now talking on 22#grafana
+T 1709966630 19*	Now talking on 22#grafana
+T 1709969040 19*	Now talking on 22#grafana
+T 1709975301 19*	Now talking on 22#grafana
+T 1709975561 19*	Now talking on 22#grafana
+T 1709978956 19*	Now talking on 22#grafana
+T 1709980395 19*	Now talking on 22#grafana
+T 1709988023 19*	Now talking on 22#grafana
+T 1709991215 19*	Now talking on 22#grafana
+T 1710026477 19*	Now talking on 22#grafana
+T 1710026566 19*	Now talking on 22#grafana
+T 1710026858 19*	Now talking on 22#grafana
+T 1710027101 19*	Now talking on 22#grafana
+T 1710031100 19*	Now talking on 22#grafana
+T 1710031928 19*	Now talking on 22#grafana
+T 1710049342 19*	Now talking on 22#grafana
+T 1710109467 19*	Now talking on 22#grafana

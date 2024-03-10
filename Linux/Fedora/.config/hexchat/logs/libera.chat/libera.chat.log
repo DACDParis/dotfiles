@@ -5036,3 +5036,1555 @@ Mar 06 07:16:31 *	##mac :Cannot join channel (+r) - you need to be logged into y
 Mar 06 07:16:31 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
 Mar 06 07:16:31 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
 Mar 06 07:16:31 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Wed Mar  6 13:29:35 2024
+
+Mar 06 13:29:35 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 06 13:29:35 *	Your host is mercury.libera.chat[51.89.226.78/6697], running version solanum-1.0-dev
+Mar 06 13:29:35 *	This server was created Thu Nov 16 2023 at 06:35:18 UTC
+Mar 06 13:29:35 *	mercury.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 06 13:29:35 *	ACCOUNTEXTBAN=a WHOX KNOCK MONITOR=100 ETRACE FNC SAFELIST ELIST=CMNTU CALLERID=g CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 06 13:29:35 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 06 13:29:35 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 06 13:29:35 *	There are 65 users and 33832 invisible on 28 servers
+Mar 06 13:29:35 *	38 :IRC Operators online
+Mar 06 13:29:35 *	146 :unknown connection(s)
+Mar 06 13:29:35 *	22924 :channels formed
+Mar 06 13:29:35 *	I have 2185 clients and 1 servers
+Mar 06 13:29:35 *	2185 2671 :Current local users 2185, max 2671
+Mar 06 13:29:35 *	33897 35905 :Current global users 33897, max 35905
+Mar 06 13:29:35 *	Highest connection count: 2672 (2671 clients) (120053 connections received)
+Mar 06 13:29:35 *	- mercury.libera.chat Message of the Day - 
+Mar 06 13:29:35 *	- -[ Mercury ]-[ Atomic number: 80 ]-[ Chemical symbol: Hg ]-
+Mar 06 13:29:35 *	-  
+Mar 06 13:29:35 *	- Known since antiquity, Mercury is a heavy, liquid metal
+Mar 06 13:29:35 *	- element at room temperature - the only such element. Despite
+Mar 06 13:29:35 *	- the wide ranging use, mercury is a relatively rare element,
+Mar 06 13:29:35 *	- though this is mitigated by its ore deposits tending to be
+Mar 06 13:29:35 *	- highly concentrated.
+Mar 06 13:29:35 *	-  
+Mar 06 13:29:35 *	- The uses of mercury include medical applications such as
+Mar 06 13:29:35 *	- dental amalgams, topical antiseptic compounds, and blood
+Mar 06 13:29:35 *	- pressure meters.  Outside of medicine, mercury can be found
+Mar 06 13:29:35 *	- in telescopes to form flat mirror surfaces, as well as
+Mar 06 13:29:35 *	- parabolic surfaces when their container is spun. Mercury has
+Mar 06 13:29:35 *	- historically and continues to be used in many other
+Mar 06 13:29:35 *	- industries and applications.
+Mar 06 13:29:35 *	-  
+Mar 06 13:29:35 *	-  
+Mar 06 13:29:35 *	- Welcome to Libera Chat, the IRC network for
+Mar 06 13:29:35 *	- free & open-source software and peer directed projects.
+Mar 06 13:29:35 *	-  
+Mar 06 13:29:35 *	- Use of Libera Chat is governed by our network policies.
+Mar 06 13:29:35 *	-  
+Mar 06 13:29:35 *	- To reduce network abuses we perform open proxy checks
+Mar 06 13:29:35 *	- on hosts at connection time.
+Mar 06 13:29:35 *	-  
+Mar 06 13:29:35 *	- Please visit us in #libera for questions and support.
+Mar 06 13:29:35 *	-  
+Mar 06 13:29:35 *	- Website and documentation:  https://libera.chat
+Mar 06 13:29:35 *	- Webchat:                    https://web.libera.chat
+Mar 06 13:29:35 *	- Network policies:           https://libera.chat/policies
+Mar 06 13:29:35 *	- Email:                      support@libera.chat
+Mar 06 13:29:35 *	End of /MOTD command.
+Mar 06 13:29:35 *	dacd sets mode +Z on dacd
+Mar 06 13:29:35 *	dacd sets mode +i on dacd
+Mar 06 13:29:35 *	dacd sets mode +w on dacd
+Mar 06 13:29:35 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 06 13:29:41 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 06 13:29:41 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 06 13:29:41 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 06 13:29:41 *	#windows #windows-please-register :Forwarding to another channel
+Mar 06 13:29:41 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 06 13:29:41 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 06 13:29:41 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 06 13:29:41 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 06 13:29:41 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Wed Mar  6 21:43:56 2024
+
+Mar 06 21:43:56 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 06 21:43:56 *	Your host is mercury.libera.chat[51.89.226.78/6697], running version solanum-1.0-dev
+Mar 06 21:43:56 *	This server was created Thu Nov 16 2023 at 06:35:18 UTC
+Mar 06 21:43:56 *	mercury.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 06 21:43:56 *	ACCOUNTEXTBAN=a WHOX KNOCK MONITOR=100 ETRACE FNC SAFELIST ELIST=CMNTU CALLERID=g CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 06 21:43:56 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 06 21:43:56 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 06 21:43:56 *	There are 66 users and 34319 invisible on 28 servers
+Mar 06 21:43:56 *	39 :IRC Operators online
+Mar 06 21:43:56 *	65 :unknown connection(s)
+Mar 06 21:43:56 *	22872 :channels formed
+Mar 06 21:43:56 *	I have 2232 clients and 1 servers
+Mar 06 21:43:56 *	2232 2671 :Current local users 2232, max 2671
+Mar 06 21:43:56 *	34385 35905 :Current global users 34385, max 35905
+Mar 06 21:43:56 *	Highest connection count: 2672 (2671 clients) (121689 connections received)
+Mar 06 21:43:56 *	- mercury.libera.chat Message of the Day - 
+Mar 06 21:43:56 *	- -[ Mercury ]-[ Atomic number: 80 ]-[ Chemical symbol: Hg ]-
+Mar 06 21:43:56 *	-  
+Mar 06 21:43:56 *	- Known since antiquity, Mercury is a heavy, liquid metal
+Mar 06 21:43:56 *	- element at room temperature - the only such element. Despite
+Mar 06 21:43:56 *	- the wide ranging use, mercury is a relatively rare element,
+Mar 06 21:43:56 *	- though this is mitigated by its ore deposits tending to be
+Mar 06 21:43:56 *	- highly concentrated.
+Mar 06 21:43:56 *	-  
+Mar 06 21:43:56 *	- The uses of mercury include medical applications such as
+Mar 06 21:43:56 *	- dental amalgams, topical antiseptic compounds, and blood
+Mar 06 21:43:56 *	- pressure meters.  Outside of medicine, mercury can be found
+Mar 06 21:43:56 *	- in telescopes to form flat mirror surfaces, as well as
+Mar 06 21:43:56 *	- parabolic surfaces when their container is spun. Mercury has
+Mar 06 21:43:56 *	- historically and continues to be used in many other
+Mar 06 21:43:56 *	- industries and applications.
+Mar 06 21:43:56 *	-  
+Mar 06 21:43:56 *	-  
+Mar 06 21:43:56 *	- Welcome to Libera Chat, the IRC network for
+Mar 06 21:43:56 *	- free & open-source software and peer directed projects.
+Mar 06 21:43:56 *	-  
+Mar 06 21:43:56 *	- Use of Libera Chat is governed by our network policies.
+Mar 06 21:43:56 *	-  
+Mar 06 21:43:56 *	- To reduce network abuses we perform open proxy checks
+Mar 06 21:43:56 *	- on hosts at connection time.
+Mar 06 21:43:56 *	-  
+Mar 06 21:43:56 *	- Please visit us in #libera for questions and support.
+Mar 06 21:43:56 *	-  
+Mar 06 21:43:56 *	- Website and documentation:  https://libera.chat
+Mar 06 21:43:56 *	- Webchat:                    https://web.libera.chat
+Mar 06 21:43:56 *	- Network policies:           https://libera.chat/policies
+Mar 06 21:43:56 *	- Email:                      support@libera.chat
+Mar 06 21:43:56 *	End of /MOTD command.
+Mar 06 21:43:56 *	dacd sets mode +Z on dacd
+Mar 06 21:43:56 *	dacd sets mode +i on dacd
+Mar 06 21:43:56 *	dacd sets mode +w on dacd
+Mar 06 21:43:56 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 06 21:44:02 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 06 21:44:02 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 06 21:44:02 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 06 21:44:02 *	#windows #windows-please-register :Forwarding to another channel
+Mar 06 21:44:02 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 06 21:44:02 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 06 21:44:02 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 06 21:44:02 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 06 21:44:02 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 06 23:44:24 Sysinfo plugin unloaded
+Mar 06 23:44:24 Perl interface unloaded
+Mar 06 23:44:24 Checksum plugin unloaded
+**** ENDING LOGGING AT Wed Mar  6 23:44:24 2024
+
+**** BEGIN LOGGING AT Thu Mar  7 02:18:38 2024
+
+Mar 07 02:18:38 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 07 02:18:38 *	Your host is zirconium.libera.chat[46.16.175.175/6697], running version solanum-1.0-dev
+Mar 07 02:18:38 *	This server was created Fri Nov 17 2023 at 08:47:16 UTC
+Mar 07 02:18:38 *	zirconium.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 07 02:18:38 *	ACCOUNTEXTBAN=a ETRACE WHOX FNC MONITOR=100 SAFELIST ELIST=CMNTU CALLERID=g KNOCK CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 07 02:18:38 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 07 02:18:38 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 07 02:18:38 *	There are 64 users and 33815 invisible on 28 servers
+Mar 07 02:18:38 *	39 :IRC Operators online
+Mar 07 02:18:38 *	99 :unknown connection(s)
+Mar 07 02:18:38 *	22731 :channels formed
+Mar 07 02:18:38 *	I have 2190 clients and 1 servers
+Mar 07 02:18:38 *	2190 2598 :Current local users 2190, max 2598
+Mar 07 02:18:38 *	33879 35905 :Current global users 33879, max 35905
+Mar 07 02:18:38 *	Highest connection count: 2599 (2598 clients) (94275 connections received)
+Mar 07 02:18:38 *	- zirconium.libera.chat Message of the Day - 
+Mar 07 02:18:38 *	- This server provided by Seeweb <https://www.seeweb.it/>
+Mar 07 02:18:38 *	- Welcome to Libera Chat, the IRC network for
+Mar 07 02:18:38 *	- free & open-source software and peer directed projects.
+Mar 07 02:18:38 *	-  
+Mar 07 02:18:38 *	- Use of Libera Chat is governed by our network policies.
+Mar 07 02:18:38 *	-  
+Mar 07 02:18:38 *	- To reduce network abuses we perform open proxy checks
+Mar 07 02:18:38 *	- on hosts at connection time.
+Mar 07 02:18:38 *	-  
+Mar 07 02:18:38 *	- Please visit us in #libera for questions and support.
+Mar 07 02:18:38 *	-  
+Mar 07 02:18:38 *	- Website and documentation:  https://libera.chat
+Mar 07 02:18:38 *	- Webchat:                    https://web.libera.chat
+Mar 07 02:18:38 *	- Network policies:           https://libera.chat/policies
+Mar 07 02:18:38 *	- Email:                      support@libera.chat
+Mar 07 02:18:38 *	End of /MOTD command.
+Mar 07 02:18:38 *	dacd sets mode +Z on dacd
+Mar 07 02:18:38 *	dacd sets mode +i on dacd
+Mar 07 02:18:38 *	dacd sets mode +w on dacd
+Mar 07 02:18:38 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 07 02:18:44 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 02:18:44 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 02:18:44 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 02:18:44 *	#windows #windows-please-register :Forwarding to another channel
+Mar 07 02:18:44 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 02:18:44 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 02:18:44 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 02:18:44 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 02:18:44 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Thu Mar  7 05:39:07 2024
+
+Mar 07 05:39:07 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 07 05:39:07 *	Your host is tantalum.libera.chat[93.158.237.2/6697], running version solanum-1.0-dev
+Mar 07 05:39:07 *	This server was created Sat Nov 18 2023 at 03:37:54 UTC
+Mar 07 05:39:07 *	tantalum.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 07 05:39:07 *	ACCOUNTEXTBAN=a WHOX MONITOR=100 SAFELIST ELIST=CMNTU ETRACE FNC CALLERID=g KNOCK CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 07 05:39:07 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 07 05:39:07 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 07 05:39:07 *	There are 63 users and 33431 invisible on 28 servers
+Mar 07 05:39:07 *	39 :IRC Operators online
+Mar 07 05:39:07 *	91 :unknown connection(s)
+Mar 07 05:39:07 *	22637 :channels formed
+Mar 07 05:39:07 *	I have 2183 clients and 1 servers
+Mar 07 05:39:07 *	2183 2963 :Current local users 2183, max 2963
+Mar 07 05:39:07 *	33494 36895 :Current global users 33494, max 36895
+Mar 07 05:39:07 *	Highest connection count: 2964 (2963 clients) (373935 connections received)
+Mar 07 05:39:07 *	- tantalum.libera.chat Message of the Day - 
+Mar 07 05:39:07 *	- This server provided by Hyperfilter (https://hyperfilter.com)
+Mar 07 05:39:07 *	-  
+Mar 07 05:39:07 *	-  
+Mar 07 05:39:07 *	- Welcome to Libera Chat, the IRC network for
+Mar 07 05:39:07 *	- free & open-source software and peer directed projects.
+Mar 07 05:39:07 *	-  
+Mar 07 05:39:07 *	- Use of Libera Chat is governed by our network policies.
+Mar 07 05:39:07 *	-  
+Mar 07 05:39:07 *	- To reduce network abuses we perform open proxy checks
+Mar 07 05:39:07 *	- on hosts at connection time.
+Mar 07 05:39:07 *	-  
+Mar 07 05:39:07 *	- Please visit us in #libera for questions and support.
+Mar 07 05:39:07 *	-  
+Mar 07 05:39:07 *	- Website and documentation:  https://libera.chat
+Mar 07 05:39:07 *	- Webchat:                    https://web.libera.chat
+Mar 07 05:39:07 *	- Network policies:           https://libera.chat/policies
+Mar 07 05:39:07 *	- Email:                      support@libera.chat
+Mar 07 05:39:07 *	End of /MOTD command.
+Mar 07 05:39:07 *	dacd sets mode +Z on dacd
+Mar 07 05:39:07 *	dacd sets mode +i on dacd
+Mar 07 05:39:07 *	dacd sets mode +w on dacd
+Mar 07 05:39:07 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 07 05:39:13 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 05:39:13 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 05:39:13 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 05:39:13 *	#windows #windows-please-register :Forwarding to another channel
+Mar 07 05:39:13 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 05:39:13 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 05:39:13 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 05:39:13 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 05:39:13 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Thu Mar  7 05:53:02 2024
+
+Mar 07 05:53:02 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 07 05:53:02 *	Your host is mercury.libera.chat[51.89.226.78/6697], running version solanum-1.0-dev
+Mar 07 05:53:02 *	This server was created Thu Nov 16 2023 at 06:35:18 UTC
+Mar 07 05:53:02 *	mercury.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 07 05:53:02 *	ACCOUNTEXTBAN=a WHOX KNOCK MONITOR=100 ETRACE FNC SAFELIST ELIST=CMNTU CALLERID=g CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 07 05:53:02 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 07 05:53:02 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 07 05:53:02 *	There are 63 users and 33451 invisible on 28 servers
+Mar 07 05:53:02 *	39 :IRC Operators online
+Mar 07 05:53:02 *	85 :unknown connection(s)
+Mar 07 05:53:02 *	22642 :channels formed
+Mar 07 05:53:02 *	I have 2183 clients and 1 servers
+Mar 07 05:53:02 *	2183 2671 :Current local users 2183, max 2671
+Mar 07 05:53:02 *	33514 35905 :Current global users 33514, max 35905
+Mar 07 05:53:02 *	Highest connection count: 2672 (2671 clients) (122946 connections received)
+Mar 07 05:53:02 *	- mercury.libera.chat Message of the Day - 
+Mar 07 05:53:02 *	- -[ Mercury ]-[ Atomic number: 80 ]-[ Chemical symbol: Hg ]-
+Mar 07 05:53:02 *	-  
+Mar 07 05:53:02 *	- Known since antiquity, Mercury is a heavy, liquid metal
+Mar 07 05:53:02 *	- element at room temperature - the only such element. Despite
+Mar 07 05:53:02 *	- the wide ranging use, mercury is a relatively rare element,
+Mar 07 05:53:02 *	- though this is mitigated by its ore deposits tending to be
+Mar 07 05:53:02 *	- highly concentrated.
+Mar 07 05:53:02 *	-  
+Mar 07 05:53:02 *	- The uses of mercury include medical applications such as
+Mar 07 05:53:02 *	- dental amalgams, topical antiseptic compounds, and blood
+Mar 07 05:53:02 *	- pressure meters.  Outside of medicine, mercury can be found
+Mar 07 05:53:02 *	- in telescopes to form flat mirror surfaces, as well as
+Mar 07 05:53:02 *	- parabolic surfaces when their container is spun. Mercury has
+Mar 07 05:53:02 *	- historically and continues to be used in many other
+Mar 07 05:53:02 *	- industries and applications.
+Mar 07 05:53:02 *	-  
+Mar 07 05:53:02 *	-  
+Mar 07 05:53:02 *	- Welcome to Libera Chat, the IRC network for
+Mar 07 05:53:02 *	- free & open-source software and peer directed projects.
+Mar 07 05:53:02 *	-  
+Mar 07 05:53:02 *	- Use of Libera Chat is governed by our network policies.
+Mar 07 05:53:02 *	-  
+Mar 07 05:53:02 *	- To reduce network abuses we perform open proxy checks
+Mar 07 05:53:02 *	- on hosts at connection time.
+Mar 07 05:53:02 *	-  
+Mar 07 05:53:02 *	- Please visit us in #libera for questions and support.
+Mar 07 05:53:02 *	-  
+Mar 07 05:53:02 *	- Website and documentation:  https://libera.chat
+Mar 07 05:53:02 *	- Webchat:                    https://web.libera.chat
+Mar 07 05:53:02 *	- Network policies:           https://libera.chat/policies
+Mar 07 05:53:02 *	- Email:                      support@libera.chat
+Mar 07 05:53:02 *	End of /MOTD command.
+Mar 07 05:53:02 *	dacd sets mode +Z on dacd
+Mar 07 05:53:02 *	dacd sets mode +i on dacd
+Mar 07 05:53:02 *	dacd sets mode +w on dacd
+Mar 07 05:53:02 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 07 05:53:08 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 05:53:08 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 05:53:08 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 05:53:08 *	#windows #windows-please-register :Forwarding to another channel
+Mar 07 05:53:08 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 05:53:08 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 05:53:08 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 05:53:08 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 05:53:08 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Thu Mar  7 06:45:55 2024
+
+Mar 07 06:45:55 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 07 06:45:55 *	Your host is calcium.libera.chat[64.86.243.186/6697], running version solanum-1.0-dev
+Mar 07 06:45:55 *	This server was created Mon Nov 13 2023 at 21:34:42 UTC
+Mar 07 06:45:55 *	calcium.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 07 06:45:55 *	ACCOUNTEXTBAN=a ETRACE SAFELIST ELIST=CMNTU MONITOR=100 CALLERID=g FNC WHOX KNOCK CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 07 06:45:55 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 07 06:45:55 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 07 06:45:55 *	There are 63 users and 33501 invisible on 28 servers
+Mar 07 06:45:55 *	39 :IRC Operators online
+Mar 07 06:45:55 *	74 :unknown connection(s)
+Mar 07 06:45:55 *	22659 :channels formed
+Mar 07 06:45:55 *	I have 2215 clients and 1 servers
+Mar 07 06:45:55 *	2215 2971 :Current local users 2215, max 2971
+Mar 07 06:45:55 *	33564 36895 :Current global users 33564, max 36895
+Mar 07 06:45:55 *	Highest connection count: 2972 (2971 clients) (232160 connections received)
+Mar 07 06:45:55 *	- calcium.libera.chat Message of the Day - 
+Mar 07 06:45:55 *	- Welcome to Libera Chat, the IRC network for
+Mar 07 06:45:55 *	- free & open-source software and peer directed projects.
+Mar 07 06:45:55 *	-  
+Mar 07 06:45:55 *	- Use of Libera Chat is governed by our network policies.
+Mar 07 06:45:55 *	-  
+Mar 07 06:45:55 *	- To reduce network abuses we perform open proxy checks
+Mar 07 06:45:55 *	- on hosts at connection time.
+Mar 07 06:45:55 *	-  
+Mar 07 06:45:55 *	- Please visit us in #libera for questions and support.
+Mar 07 06:45:55 *	-  
+Mar 07 06:45:55 *	- Website and documentation:  https://libera.chat
+Mar 07 06:45:55 *	- Webchat:                    https://web.libera.chat
+Mar 07 06:45:55 *	- Network policies:           https://libera.chat/policies
+Mar 07 06:45:55 *	- Email:                      support@libera.chat
+Mar 07 06:45:55 *	End of /MOTD command.
+Mar 07 06:45:55 *	dacd sets mode +Z on dacd
+Mar 07 06:45:55 *	dacd sets mode +i on dacd
+Mar 07 06:45:55 *	dacd sets mode +w on dacd
+Mar 07 06:45:55 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 07 06:46:01 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 06:46:01 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 06:46:01 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 06:46:01 *	#windows #windows-please-register :Forwarding to another channel
+Mar 07 06:46:01 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 06:46:01 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 06:46:01 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 06:46:01 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 06:46:01 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Thu Mar  7 11:45:22 2024
+
+Mar 07 11:45:22 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 07 11:45:22 *	Your host is molybdenum.libera.chat[51.161.82.214/6697], running version solanum-1.0-dev
+Mar 07 11:45:22 *	This server was created Sat Nov 11 2023 at 02:04:41 UTC
+Mar 07 11:45:22 *	molybdenum.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 07 11:45:22 *	ACCOUNTEXTBAN=a WHOX KNOCK MONITOR=100 ETRACE FNC SAFELIST ELIST=CMNTU CALLERID=g CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 07 11:45:22 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 07 11:45:22 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 07 11:45:22 *	There are 64 users and 35377 invisible on 28 servers
+Mar 07 11:45:22 *	39 :IRC Operators online
+Mar 07 11:45:22 *	43 :unknown connection(s)
+Mar 07 11:45:22 *	22874 :channels formed
+Mar 07 11:45:22 *	I have 2293 clients and 1 servers
+Mar 07 11:45:22 *	2293 3361 :Current local users 2293, max 3361
+Mar 07 11:45:22 *	35441 36895 :Current global users 35441, max 36895
+Mar 07 11:45:22 *	Highest connection count: 3362 (3361 clients) (287392 connections received)
+Mar 07 11:45:22 *	- molybdenum.libera.chat Message of the Day - 
+Mar 07 11:45:22 *	- -[ Molybdenum ]-[ Atomic number: 42 ]-[ Chemical symbol: Mo ]-
+Mar 07 11:45:22 *	-  
+Mar 07 11:45:22 *	- Molybdenum has been known throughout history, though its
+Mar 07 11:45:22 *	- properties meant that it was confused with lead ores. It was
+Mar 07 11:45:22 *	- first identified as a distinct element in 1778, meaning our
+Mar 07 11:45:22 *	- modern understanding of its existence reaches about as far
+Mar 07 11:45:22 *	- back as American independence.
+Mar 07 11:45:22 *	-  
+Mar 07 11:45:22 *	- Molybdenum has a very high melting point, 2623°C, the fifth-
+Mar 07 11:45:22 *	- highest temperature of any element.
+Mar 07 11:45:22 *	-  
+Mar 07 11:45:22 *	- While pure molybdenum is only about as strong as tooth enamel,
+Mar 07 11:45:22 *	- it forms strong alloys that are resistant to corrosion and
+Mar 07 11:45:22 *	- stable under varying temperatures. As a result, these alloys
+Mar 07 11:45:22 *	- are used for metal armour plates, high-performance aircraft
+Mar 07 11:45:22 *	- parts, and pumps for molten metal flows.
+Mar 07 11:45:22 *	-  
+Mar 07 11:45:22 *	- In its elemental form, it can be used as a fertiliser, and the
+Mar 07 11:45:22 *	- isotope molybdenum-99 is used as a source of technetium-99m,
+Mar 07 11:45:22 *	- an important medical radioisotope used for 3D bone scans and
+Mar 07 11:45:22 *	- the investigation of blood flow when diagnosing heart disease.
+Mar 07 11:45:22 *	-  
+Mar 07 11:45:22 *	-  
+Mar 07 11:45:22 *	- Welcome to Libera Chat, the IRC network for
+Mar 07 11:45:22 *	- free & open-source software and peer directed projects.
+Mar 07 11:45:22 *	-  
+Mar 07 11:45:22 *	- Use of Libera Chat is governed by our network policies.
+Mar 07 11:45:22 *	-  
+Mar 07 11:45:22 *	- To reduce network abuses we perform open proxy checks
+Mar 07 11:45:22 *	- on hosts at connection time.
+Mar 07 11:45:22 *	-  
+Mar 07 11:45:22 *	- Please visit us in #libera for questions and support.
+Mar 07 11:45:22 *	-  
+Mar 07 11:45:22 *	- Website and documentation:  https://libera.chat
+Mar 07 11:45:22 *	- Webchat:                    https://web.libera.chat
+Mar 07 11:45:22 *	- Network policies:           https://libera.chat/policies
+Mar 07 11:45:22 *	- Email:                      support@libera.chat
+Mar 07 11:45:22 *	End of /MOTD command.
+Mar 07 11:45:22 *	dacd sets mode +Z on dacd
+Mar 07 11:45:22 *	dacd sets mode +i on dacd
+Mar 07 11:45:22 *	dacd sets mode +w on dacd
+Mar 07 11:45:22 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 07 11:45:29 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 11:45:29 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 11:45:29 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 11:45:29 *	#windows #windows-please-register :Forwarding to another channel
+Mar 07 11:45:29 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 11:45:29 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 11:45:29 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 11:45:29 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 11:45:29 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Thu Mar  7 12:26:44 2024
+
+Mar 07 12:26:44 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 07 12:26:44 *	Your host is mercury.libera.chat[51.89.226.78/6697], running version solanum-1.0-dev
+Mar 07 12:26:44 *	This server was created Thu Nov 16 2023 at 06:35:18 UTC
+Mar 07 12:26:44 *	mercury.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 07 12:26:44 *	ACCOUNTEXTBAN=a WHOX KNOCK MONITOR=100 ETRACE FNC SAFELIST ELIST=CMNTU CALLERID=g CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 07 12:26:44 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 07 12:26:44 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 07 12:26:44 *	There are 66 users and 35521 invisible on 28 servers
+Mar 07 12:26:44 *	39 :IRC Operators online
+Mar 07 12:26:44 *	215 :unknown connection(s)
+Mar 07 12:26:44 *	22915 :channels formed
+Mar 07 12:26:44 *	I have 2385 clients and 1 servers
+Mar 07 12:26:44 *	2385 2671 :Current local users 2385, max 2671
+Mar 07 12:26:44 *	35587 35905 :Current global users 35587, max 35905
+Mar 07 12:26:44 *	Highest connection count: 2672 (2671 clients) (124178 connections received)
+Mar 07 12:26:44 *	- mercury.libera.chat Message of the Day - 
+Mar 07 12:26:44 *	- -[ Mercury ]-[ Atomic number: 80 ]-[ Chemical symbol: Hg ]-
+Mar 07 12:26:44 *	-  
+Mar 07 12:26:44 *	- Known since antiquity, Mercury is a heavy, liquid metal
+Mar 07 12:26:44 *	- element at room temperature - the only such element. Despite
+Mar 07 12:26:44 *	- the wide ranging use, mercury is a relatively rare element,
+Mar 07 12:26:44 *	- though this is mitigated by its ore deposits tending to be
+Mar 07 12:26:44 *	- highly concentrated.
+Mar 07 12:26:44 *	-  
+Mar 07 12:26:44 *	- The uses of mercury include medical applications such as
+Mar 07 12:26:44 *	- dental amalgams, topical antiseptic compounds, and blood
+Mar 07 12:26:44 *	- pressure meters.  Outside of medicine, mercury can be found
+Mar 07 12:26:44 *	- in telescopes to form flat mirror surfaces, as well as
+Mar 07 12:26:44 *	- parabolic surfaces when their container is spun. Mercury has
+Mar 07 12:26:44 *	- historically and continues to be used in many other
+Mar 07 12:26:44 *	- industries and applications.
+Mar 07 12:26:44 *	-  
+Mar 07 12:26:44 *	-  
+Mar 07 12:26:44 *	- Welcome to Libera Chat, the IRC network for
+Mar 07 12:26:44 *	- free & open-source software and peer directed projects.
+Mar 07 12:26:44 *	-  
+Mar 07 12:26:44 *	- Use of Libera Chat is governed by our network policies.
+Mar 07 12:26:44 *	-  
+Mar 07 12:26:44 *	- To reduce network abuses we perform open proxy checks
+Mar 07 12:26:44 *	- on hosts at connection time.
+Mar 07 12:26:44 *	-  
+Mar 07 12:26:44 *	- Please visit us in #libera for questions and support.
+Mar 07 12:26:44 *	-  
+Mar 07 12:26:44 *	- Website and documentation:  https://libera.chat
+Mar 07 12:26:44 *	- Webchat:                    https://web.libera.chat
+Mar 07 12:26:44 *	- Network policies:           https://libera.chat/policies
+Mar 07 12:26:44 *	- Email:                      support@libera.chat
+Mar 07 12:26:44 *	End of /MOTD command.
+Mar 07 12:26:44 *	dacd sets mode +Z on dacd
+Mar 07 12:26:44 *	dacd sets mode +i on dacd
+Mar 07 12:26:44 *	dacd sets mode +w on dacd
+Mar 07 12:26:44 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 07 12:26:50 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 12:26:50 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 12:26:50 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 12:26:50 *	#windows #windows-please-register :Forwarding to another channel
+Mar 07 12:26:50 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 12:26:50 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 12:26:50 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 12:26:50 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 12:26:50 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Thu Mar  7 12:39:44 2024
+
+Mar 07 12:39:44 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 07 12:39:44 *	Your host is zirconium.libera.chat[46.16.175.175/6697], running version solanum-1.0-dev
+Mar 07 12:39:44 *	This server was created Fri Nov 17 2023 at 08:47:16 UTC
+Mar 07 12:39:44 *	zirconium.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 07 12:39:44 *	ACCOUNTEXTBAN=a ETRACE WHOX FNC MONITOR=100 SAFELIST ELIST=CMNTU CALLERID=g KNOCK CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 07 12:39:44 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 07 12:39:44 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 07 12:39:44 *	There are 66 users and 35537 invisible on 28 servers
+Mar 07 12:39:44 *	39 :IRC Operators online
+Mar 07 12:39:44 *	108 :unknown connection(s)
+Mar 07 12:39:44 *	22915 :channels formed
+Mar 07 12:39:44 *	I have 2360 clients and 1 servers
+Mar 07 12:39:44 *	2360 2598 :Current local users 2360, max 2598
+Mar 07 12:39:44 *	35603 35905 :Current global users 35603, max 35905
+Mar 07 12:39:44 *	Highest connection count: 2599 (2598 clients) (95974 connections received)
+Mar 07 12:39:44 *	- zirconium.libera.chat Message of the Day - 
+Mar 07 12:39:44 *	- This server provided by Seeweb <https://www.seeweb.it/>
+Mar 07 12:39:44 *	- Welcome to Libera Chat, the IRC network for
+Mar 07 12:39:44 *	- free & open-source software and peer directed projects.
+Mar 07 12:39:44 *	-  
+Mar 07 12:39:44 *	- Use of Libera Chat is governed by our network policies.
+Mar 07 12:39:44 *	-  
+Mar 07 12:39:44 *	- To reduce network abuses we perform open proxy checks
+Mar 07 12:39:44 *	- on hosts at connection time.
+Mar 07 12:39:44 *	-  
+Mar 07 12:39:44 *	- Please visit us in #libera for questions and support.
+Mar 07 12:39:44 *	-  
+Mar 07 12:39:44 *	- Website and documentation:  https://libera.chat
+Mar 07 12:39:44 *	- Webchat:                    https://web.libera.chat
+Mar 07 12:39:44 *	- Network policies:           https://libera.chat/policies
+Mar 07 12:39:44 *	- Email:                      support@libera.chat
+Mar 07 12:39:44 *	End of /MOTD command.
+Mar 07 12:39:44 *	dacd sets mode +Z on dacd
+Mar 07 12:39:44 *	dacd sets mode +i on dacd
+Mar 07 12:39:44 *	dacd sets mode +w on dacd
+Mar 07 12:39:44 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 07 12:39:50 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 12:39:50 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 12:39:50 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 12:39:50 *	#windows #windows-please-register :Forwarding to another channel
+Mar 07 12:39:50 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 12:39:50 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 12:39:50 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 12:39:50 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 12:39:50 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Thu Mar  7 14:15:42 2024
+
+Mar 07 14:15:42 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 07 14:15:42 *	Your host is tantalum.libera.chat[93.158.237.2/6697], running version solanum-1.0-dev
+Mar 07 14:15:42 *	This server was created Sat Nov 18 2023 at 03:37:54 UTC
+Mar 07 14:15:42 *	tantalum.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 07 14:15:42 *	ACCOUNTEXTBAN=a WHOX MONITOR=100 SAFELIST ELIST=CMNTU ETRACE FNC CALLERID=g KNOCK CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 07 14:15:42 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 07 14:15:42 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 07 14:15:42 *	There are 68 users and 35665 invisible on 28 servers
+Mar 07 14:15:42 *	39 :IRC Operators online
+Mar 07 14:15:42 *	161 :unknown connection(s)
+Mar 07 14:15:42 *	22933 :channels formed
+Mar 07 14:15:42 *	I have 2367 clients and 1 servers
+Mar 07 14:15:42 *	2367 2963 :Current local users 2367, max 2963
+Mar 07 14:15:42 *	35733 36895 :Current global users 35733, max 36895
+Mar 07 14:15:42 *	Highest connection count: 2964 (2963 clients) (375149 connections received)
+Mar 07 14:15:42 *	- tantalum.libera.chat Message of the Day - 
+Mar 07 14:15:42 *	- This server provided by Hyperfilter (https://hyperfilter.com)
+Mar 07 14:15:42 *	-  
+Mar 07 14:15:42 *	-  
+Mar 07 14:15:42 *	- Welcome to Libera Chat, the IRC network for
+Mar 07 14:15:42 *	- free & open-source software and peer directed projects.
+Mar 07 14:15:42 *	-  
+Mar 07 14:15:42 *	- Use of Libera Chat is governed by our network policies.
+Mar 07 14:15:42 *	-  
+Mar 07 14:15:42 *	- To reduce network abuses we perform open proxy checks
+Mar 07 14:15:42 *	- on hosts at connection time.
+Mar 07 14:15:42 *	-  
+Mar 07 14:15:42 *	- Please visit us in #libera for questions and support.
+Mar 07 14:15:42 *	-  
+Mar 07 14:15:42 *	- Website and documentation:  https://libera.chat
+Mar 07 14:15:42 *	- Webchat:                    https://web.libera.chat
+Mar 07 14:15:42 *	- Network policies:           https://libera.chat/policies
+Mar 07 14:15:42 *	- Email:                      support@libera.chat
+Mar 07 14:15:42 *	End of /MOTD command.
+Mar 07 14:15:42 *	dacd sets mode +Z on dacd
+Mar 07 14:15:42 *	dacd sets mode +i on dacd
+Mar 07 14:15:42 *	dacd sets mode +w on dacd
+Mar 07 14:15:42 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 07 14:15:48 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 14:15:48 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 14:15:48 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 14:15:48 *	#windows #windows-please-register :Forwarding to another channel
+Mar 07 14:15:48 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 14:15:48 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 14:15:48 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 14:15:48 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 07 14:15:48 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Fri Mar  8 22:52:00 2024
+
+Mar 08 22:52:00 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 08 22:52:00 *	Your host is mercury.libera.chat[51.89.226.78/6697], running version solanum-1.0-dev
+Mar 08 22:52:00 *	This server was created Thu Nov 16 2023 at 06:35:18 UTC
+Mar 08 22:52:00 *	mercury.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 08 22:52:00 *	ACCOUNTEXTBAN=a WHOX KNOCK MONITOR=100 ETRACE FNC SAFELIST ELIST=CMNTU CALLERID=g CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 08 22:52:00 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 08 22:52:00 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 08 22:52:00 *	There are 69 users and 33685 invisible on 28 servers
+Mar 08 22:52:00 *	38 :IRC Operators online
+Mar 08 22:52:00 *	141 :unknown connection(s)
+Mar 08 22:52:00 *	22812 :channels formed
+Mar 08 22:52:00 *	I have 2228 clients and 1 servers
+Mar 08 22:52:00 *	2228 2671 :Current local users 2228, max 2671
+Mar 08 22:52:00 *	33754 35905 :Current global users 33754, max 35905
+Mar 08 22:52:00 *	Highest connection count: 2672 (2671 clients) (129966 connections received)
+Mar 08 22:52:00 *	- mercury.libera.chat Message of the Day - 
+Mar 08 22:52:00 *	- -[ Mercury ]-[ Atomic number: 80 ]-[ Chemical symbol: Hg ]-
+Mar 08 22:52:00 *	-  
+Mar 08 22:52:00 *	- Known since antiquity, Mercury is a heavy, liquid metal
+Mar 08 22:52:00 *	- element at room temperature - the only such element. Despite
+Mar 08 22:52:00 *	- the wide ranging use, mercury is a relatively rare element,
+Mar 08 22:52:00 *	- though this is mitigated by its ore deposits tending to be
+Mar 08 22:52:00 *	- highly concentrated.
+Mar 08 22:52:00 *	-  
+Mar 08 22:52:00 *	- The uses of mercury include medical applications such as
+Mar 08 22:52:00 *	- dental amalgams, topical antiseptic compounds, and blood
+Mar 08 22:52:00 *	- pressure meters.  Outside of medicine, mercury can be found
+Mar 08 22:52:00 *	- in telescopes to form flat mirror surfaces, as well as
+Mar 08 22:52:00 *	- parabolic surfaces when their container is spun. Mercury has
+Mar 08 22:52:00 *	- historically and continues to be used in many other
+Mar 08 22:52:00 *	- industries and applications.
+Mar 08 22:52:00 *	-  
+Mar 08 22:52:00 *	-  
+Mar 08 22:52:00 *	- Welcome to Libera Chat, the IRC network for
+Mar 08 22:52:00 *	- free & open-source software and peer directed projects.
+Mar 08 22:52:00 *	-  
+Mar 08 22:52:00 *	- Use of Libera Chat is governed by our network policies.
+Mar 08 22:52:00 *	-  
+Mar 08 22:52:00 *	- To reduce network abuses we perform open proxy checks
+Mar 08 22:52:00 *	- on hosts at connection time.
+Mar 08 22:52:00 *	-  
+Mar 08 22:52:00 *	- Please visit us in #libera for questions and support.
+Mar 08 22:52:00 *	-  
+Mar 08 22:52:00 *	- Website and documentation:  https://libera.chat
+Mar 08 22:52:00 *	- Webchat:                    https://web.libera.chat
+Mar 08 22:52:00 *	- Network policies:           https://libera.chat/policies
+Mar 08 22:52:00 *	- Email:                      support@libera.chat
+Mar 08 22:52:00 *	End of /MOTD command.
+Mar 08 22:52:00 *	dacd sets mode +Z on dacd
+Mar 08 22:52:00 *	dacd sets mode +i on dacd
+Mar 08 22:52:00 *	dacd sets mode +w on dacd
+Mar 08 22:52:00 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 08 22:52:06 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 22:52:06 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 22:52:06 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 22:52:06 *	#windows #windows-please-register :Forwarding to another channel
+Mar 08 22:52:06 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 22:52:06 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 22:52:06 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 22:52:06 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 22:52:06 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Fri Mar  8 23:04:17 2024
+
+Mar 08 23:04:17 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 08 23:04:17 *	Your host is copper.libera.chat[130.185.232.126/6697], running version solanum-1.0-dev
+Mar 08 23:04:17 *	This server was created Sat Nov 18 2023 at 03:16:28 UTC
+Mar 08 23:04:17 *	copper.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 08 23:04:17 *	ACCOUNTEXTBAN=a ETRACE FNC WHOX KNOCK CALLERID=g MONITOR=100 SAFELIST ELIST=CMNTU CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 08 23:04:17 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 08 23:04:17 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 08 23:04:17 *	There are 69 users and 33677 invisible on 28 servers
+Mar 08 23:04:17 *	38 :IRC Operators online
+Mar 08 23:04:17 *	69 :unknown connection(s)
+Mar 08 23:04:17 *	22797 :channels formed
+Mar 08 23:04:17 *	I have 2190 clients and 1 servers
+Mar 08 23:04:17 *	2190 2711 :Current local users 2190, max 2711
+Mar 08 23:04:17 *	33746 36895 :Current global users 33746, max 36895
+Mar 08 23:04:17 *	Highest connection count: 2712 (2711 clients) (349340 connections received)
+Mar 08 23:04:17 *	- copper.libera.chat Message of the Day - 
+Mar 08 23:04:17 *	- Welcome to Libera Chat, the IRC network for
+Mar 08 23:04:17 *	- free & open-source software and peer directed projects.
+Mar 08 23:04:17 *	-  
+Mar 08 23:04:17 *	- Use of Libera Chat is governed by our network policies.
+Mar 08 23:04:17 *	-  
+Mar 08 23:04:17 *	- To reduce network abuses we perform open proxy checks
+Mar 08 23:04:17 *	- on hosts at connection time.
+Mar 08 23:04:17 *	-  
+Mar 08 23:04:17 *	- Please visit us in #libera for questions and support.
+Mar 08 23:04:17 *	-  
+Mar 08 23:04:17 *	- Website and documentation:  https://libera.chat
+Mar 08 23:04:17 *	- Webchat:                    https://web.libera.chat
+Mar 08 23:04:17 *	- Network policies:           https://libera.chat/policies
+Mar 08 23:04:17 *	- Email:                      support@libera.chat
+Mar 08 23:04:17 *	End of /MOTD command.
+Mar 08 23:04:17 *	dacd sets mode +Z on dacd
+Mar 08 23:04:17 *	dacd sets mode +i on dacd
+Mar 08 23:04:17 *	dacd sets mode +w on dacd
+Mar 08 23:04:17 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 08 23:04:23 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 23:04:23 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 23:04:23 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 23:04:24 *	#windows #windows-please-register :Forwarding to another channel
+Mar 08 23:04:24 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 23:04:24 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 23:04:24 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 23:04:24 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 23:04:24 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Fri Mar  8 23:07:07 2024
+
+Mar 08 23:07:07 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 08 23:07:07 *	Your host is copper.libera.chat[130.185.232.126/6697], running version solanum-1.0-dev
+Mar 08 23:07:07 *	This server was created Sat Nov 18 2023 at 03:16:28 UTC
+Mar 08 23:07:07 *	copper.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 08 23:07:07 *	ACCOUNTEXTBAN=a ETRACE FNC WHOX KNOCK CALLERID=g MONITOR=100 SAFELIST ELIST=CMNTU CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 08 23:07:07 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 08 23:07:07 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 08 23:07:07 *	There are 68 users and 33670 invisible on 28 servers
+Mar 08 23:07:07 *	38 :IRC Operators online
+Mar 08 23:07:07 *	78 :unknown connection(s)
+Mar 08 23:07:07 *	22792 :channels formed
+Mar 08 23:07:07 *	I have 2200 clients and 1 servers
+Mar 08 23:07:07 *	2200 2711 :Current local users 2200, max 2711
+Mar 08 23:07:07 *	33738 36895 :Current global users 33738, max 36895
+Mar 08 23:07:07 *	Highest connection count: 2712 (2711 clients) (349360 connections received)
+Mar 08 23:07:07 *	- copper.libera.chat Message of the Day - 
+Mar 08 23:07:07 *	- Welcome to Libera Chat, the IRC network for
+Mar 08 23:07:07 *	- free & open-source software and peer directed projects.
+Mar 08 23:07:07 *	-  
+Mar 08 23:07:07 *	- Use of Libera Chat is governed by our network policies.
+Mar 08 23:07:07 *	-  
+Mar 08 23:07:07 *	- To reduce network abuses we perform open proxy checks
+Mar 08 23:07:07 *	- on hosts at connection time.
+Mar 08 23:07:07 *	-  
+Mar 08 23:07:07 *	- Please visit us in #libera for questions and support.
+Mar 08 23:07:07 *	-  
+Mar 08 23:07:07 *	- Website and documentation:  https://libera.chat
+Mar 08 23:07:07 *	- Webchat:                    https://web.libera.chat
+Mar 08 23:07:07 *	- Network policies:           https://libera.chat/policies
+Mar 08 23:07:07 *	- Email:                      support@libera.chat
+Mar 08 23:07:07 *	End of /MOTD command.
+Mar 08 23:07:07 *	dacd sets mode +Z on dacd
+Mar 08 23:07:07 *	dacd sets mode +i on dacd
+Mar 08 23:07:07 *	dacd sets mode +w on dacd
+Mar 08 23:07:07 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 08 23:07:13 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 23:07:13 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 23:07:14 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 23:07:14 *	#windows #windows-please-register :Forwarding to another channel
+Mar 08 23:07:14 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 23:07:14 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 23:07:14 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 23:07:14 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 23:07:14 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Fri Mar  8 23:14:08 2024
+
+Mar 08 23:14:08 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 08 23:14:08 *	Your host is silver.libera.chat[108.181.132.149/6697], running version solanum-1.0-dev
+Mar 08 23:14:08 *	This server was created Wed Nov 15 2023 at 03:39:04 UTC
+Mar 08 23:14:08 *	silver.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 08 23:14:08 *	ACCOUNTEXTBAN=a ETRACE FNC SAFELIST ELIST=CMNTU CALLERID=g MONITOR=100 KNOCK WHOX CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 08 23:14:08 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 08 23:14:08 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 08 23:14:08 *	There are 68 users and 33667 invisible on 28 servers
+Mar 08 23:14:08 *	38 :IRC Operators online
+Mar 08 23:14:08 *	28 :unknown connection(s)
+Mar 08 23:14:08 *	22793 :channels formed
+Mar 08 23:14:08 *	I have 2190 clients and 1 servers
+Mar 08 23:14:08 *	2190 2780 :Current local users 2190, max 2780
+Mar 08 23:14:08 *	33735 36895 :Current global users 33735, max 36895
+Mar 08 23:14:08 *	Highest connection count: 2781 (2780 clients) (317986 connections received)
+Mar 08 23:14:08 *	- silver.libera.chat Message of the Day - 
+Mar 08 23:14:08 *	- This server is provided by Psychz Networks.
+Mar 08 23:14:08 *	-  
+Mar 08 23:14:08 *	- Welcome to Libera Chat, the IRC network for
+Mar 08 23:14:08 *	- free & open-source software and peer directed projects.
+Mar 08 23:14:08 *	-  
+Mar 08 23:14:08 *	- Use of Libera Chat is governed by our network policies.
+Mar 08 23:14:08 *	-  
+Mar 08 23:14:08 *	- To reduce network abuses we perform open proxy checks
+Mar 08 23:14:08 *	- on hosts at connection time.
+Mar 08 23:14:08 *	-  
+Mar 08 23:14:08 *	- Please visit us in #libera for questions and support.
+Mar 08 23:14:08 *	-  
+Mar 08 23:14:08 *	- Website and documentation:  https://libera.chat
+Mar 08 23:14:08 *	- Webchat:                    https://web.libera.chat
+Mar 08 23:14:08 *	- Network policies:           https://libera.chat/policies
+Mar 08 23:14:08 *	- Email:                      support@libera.chat
+Mar 08 23:14:08 *	End of /MOTD command.
+Mar 08 23:14:08 *	dacd sets mode +Z on dacd
+Mar 08 23:14:08 *	dacd sets mode +i on dacd
+Mar 08 23:14:08 *	dacd sets mode +w on dacd
+Mar 08 23:14:08 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 08 23:14:14 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 23:14:14 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 23:14:14 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 23:14:14 *	#windows #windows-please-register :Forwarding to another channel
+Mar 08 23:14:14 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 23:14:14 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 23:14:14 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 23:14:14 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 08 23:14:14 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Sat Mar  9 07:43:44 2024
+
+Mar 09 07:43:44 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 09 07:43:44 *	Your host is calcium.libera.chat[64.86.243.186/6697], running version solanum-1.0-dev
+Mar 09 07:43:44 *	This server was created Mon Nov 13 2023 at 21:34:42 UTC
+Mar 09 07:43:44 *	calcium.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 09 07:43:44 *	ACCOUNTEXTBAN=a ETRACE SAFELIST ELIST=CMNTU MONITOR=100 CALLERID=g FNC WHOX KNOCK CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 09 07:43:44 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 09 07:43:44 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 09 07:43:44 *	There are 68 users and 32981 invisible on 28 servers
+Mar 09 07:43:44 *	38 :IRC Operators online
+Mar 09 07:43:44 *	125 :unknown connection(s)
+Mar 09 07:43:44 *	22635 :channels formed
+Mar 09 07:43:44 *	I have 2166 clients and 1 servers
+Mar 09 07:43:44 *	2166 2971 :Current local users 2166, max 2971
+Mar 09 07:43:44 *	33049 36895 :Current global users 33049, max 36895
+Mar 09 07:43:44 *	Highest connection count: 2972 (2971 clients) (236796 connections received)
+Mar 09 07:43:44 *	- calcium.libera.chat Message of the Day - 
+Mar 09 07:43:44 *	- Welcome to Libera Chat, the IRC network for
+Mar 09 07:43:44 *	- free & open-source software and peer directed projects.
+Mar 09 07:43:44 *	-  
+Mar 09 07:43:44 *	- Use of Libera Chat is governed by our network policies.
+Mar 09 07:43:44 *	-  
+Mar 09 07:43:44 *	- To reduce network abuses we perform open proxy checks
+Mar 09 07:43:44 *	- on hosts at connection time.
+Mar 09 07:43:44 *	-  
+Mar 09 07:43:44 *	- Please visit us in #libera for questions and support.
+Mar 09 07:43:44 *	-  
+Mar 09 07:43:44 *	- Website and documentation:  https://libera.chat
+Mar 09 07:43:44 *	- Webchat:                    https://web.libera.chat
+Mar 09 07:43:44 *	- Network policies:           https://libera.chat/policies
+Mar 09 07:43:44 *	- Email:                      support@libera.chat
+Mar 09 07:43:44 *	End of /MOTD command.
+Mar 09 07:43:44 *	dacd sets mode +Z on dacd
+Mar 09 07:43:44 *	dacd sets mode +i on dacd
+Mar 09 07:43:44 *	dacd sets mode +w on dacd
+Mar 09 07:43:44 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 09 07:43:50 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 07:43:50 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 07:43:50 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 07:43:50 *	#windows #windows-please-register :Forwarding to another channel
+Mar 09 07:43:50 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 07:43:50 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 07:43:50 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 07:43:50 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 07:43:50 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Sat Mar  9 08:23:54 2024
+
+Mar 09 08:23:54 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 09 08:23:54 *	Your host is erbium.libera.chat[82.96.96.60/6697], running version solanum-1.0-dev
+Mar 09 08:23:54 *	This server was created Tue Nov 14 2023 at 21:13:03 UTC
+Mar 09 08:23:54 *	erbium.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 09 08:23:54 *	ACCOUNTEXTBAN=a SAFELIST ELIST=CMNTU MONITOR=100 FNC WHOX ETRACE KNOCK CALLERID=g CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 09 08:23:54 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 09 08:23:54 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 09 08:23:54 *	There are 67 users and 33033 invisible on 28 servers
+Mar 09 08:23:54 *	39 :IRC Operators online
+Mar 09 08:23:54 *	157 :unknown connection(s)
+Mar 09 08:23:54 *	22641 :channels formed
+Mar 09 08:23:54 *	I have 2186 clients and 1 servers
+Mar 09 08:23:54 *	2186 3031 :Current local users 2186, max 3031
+Mar 09 08:23:54 *	33100 36895 :Current global users 33100, max 36895
+Mar 09 08:23:54 *	Highest connection count: 3032 (3031 clients) (257778 connections received)
+Mar 09 08:23:54 *	- erbium.libera.chat Message of the Day - 
+Mar 09 08:23:54 *	- Welcome to Libera Chat, the IRC network for
+Mar 09 08:23:54 *	- free & open-source software and peer directed projects.
+Mar 09 08:23:54 *	-  
+Mar 09 08:23:54 *	- Use of Libera Chat is governed by our network policies.
+Mar 09 08:23:54 *	-  
+Mar 09 08:23:54 *	- To reduce network abuses we perform open proxy checks
+Mar 09 08:23:54 *	- on hosts at connection time.
+Mar 09 08:23:54 *	-  
+Mar 09 08:23:54 *	- Please visit us in #libera for questions and support.
+Mar 09 08:23:54 *	-  
+Mar 09 08:23:54 *	- Website and documentation:  https://libera.chat
+Mar 09 08:23:54 *	- Webchat:                    https://web.libera.chat
+Mar 09 08:23:54 *	- Network policies:           https://libera.chat/policies
+Mar 09 08:23:54 *	- Email:                      support@libera.chat
+Mar 09 08:23:54 *	End of /MOTD command.
+Mar 09 08:23:54 *	dacd sets mode +Z on dacd
+Mar 09 08:23:54 *	dacd sets mode +i on dacd
+Mar 09 08:23:54 *	dacd sets mode +w on dacd
+Mar 09 08:23:54 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 09 08:24:00 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 08:24:00 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 08:24:00 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 08:24:00 *	#windows #windows-please-register :Forwarding to another channel
+Mar 09 08:24:00 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 08:24:00 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 08:24:00 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 08:24:00 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 08:24:00 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Sat Mar  9 10:08:15 2024
+
+Mar 09 10:08:15 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 09 10:08:15 *	Your host is erbium.libera.chat[82.96.96.60/6697], running version solanum-1.0-dev
+Mar 09 10:08:15 *	This server was created Tue Nov 14 2023 at 21:13:03 UTC
+Mar 09 10:08:15 *	erbium.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 09 10:08:15 *	ACCOUNTEXTBAN=a SAFELIST ELIST=CMNTU MONITOR=100 FNC WHOX ETRACE KNOCK CALLERID=g CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 09 10:08:15 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 09 10:08:15 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 09 10:08:15 *	There are 68 users and 33337 invisible on 28 servers
+Mar 09 10:08:15 *	39 :IRC Operators online
+Mar 09 10:08:15 *	165 :unknown connection(s)
+Mar 09 10:08:15 *	22719 :channels formed
+Mar 09 10:08:15 *	I have 2211 clients and 1 servers
+Mar 09 10:08:15 *	2211 3031 :Current local users 2211, max 3031
+Mar 09 10:08:15 *	33405 36895 :Current global users 33405, max 36895
+Mar 09 10:08:15 *	Highest connection count: 3032 (3031 clients) (257913 connections received)
+Mar 09 10:08:15 *	- erbium.libera.chat Message of the Day - 
+Mar 09 10:08:15 *	- Welcome to Libera Chat, the IRC network for
+Mar 09 10:08:15 *	- free & open-source software and peer directed projects.
+Mar 09 10:08:15 *	-  
+Mar 09 10:08:15 *	- Use of Libera Chat is governed by our network policies.
+Mar 09 10:08:15 *	-  
+Mar 09 10:08:15 *	- To reduce network abuses we perform open proxy checks
+Mar 09 10:08:15 *	- on hosts at connection time.
+Mar 09 10:08:15 *	-  
+Mar 09 10:08:15 *	- Please visit us in #libera for questions and support.
+Mar 09 10:08:15 *	-  
+Mar 09 10:08:15 *	- Website and documentation:  https://libera.chat
+Mar 09 10:08:15 *	- Webchat:                    https://web.libera.chat
+Mar 09 10:08:15 *	- Network policies:           https://libera.chat/policies
+Mar 09 10:08:15 *	- Email:                      support@libera.chat
+Mar 09 10:08:15 *	End of /MOTD command.
+Mar 09 10:08:15 *	dacd sets mode +Z on dacd
+Mar 09 10:08:15 *	dacd sets mode +i on dacd
+Mar 09 10:08:15 *	dacd sets mode +w on dacd
+Mar 09 10:08:15 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 09 10:08:21 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 10:08:21 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 10:08:21 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 10:08:21 *	#windows #windows-please-register :Forwarding to another channel
+Mar 09 10:08:21 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 10:08:21 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 10:08:21 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 10:08:21 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 10:08:21 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 10:09:15 Sysinfo plugin unloaded
+Mar 09 10:09:15 Perl interface unloaded
+Mar 09 10:09:15 Checksum plugin unloaded
+**** ENDING LOGGING AT Sat Mar  9 10:09:15 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 10:12:35 2024
+
+Mar 09 10:12:35 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 09 10:12:35 *	Your host is erbium.libera.chat[82.96.96.60/6697], running version solanum-1.0-dev
+Mar 09 10:12:35 *	This server was created Tue Nov 14 2023 at 21:13:03 UTC
+Mar 09 10:12:35 *	erbium.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 09 10:12:35 *	ACCOUNTEXTBAN=a SAFELIST ELIST=CMNTU MONITOR=100 FNC WHOX ETRACE KNOCK CALLERID=g CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 09 10:12:35 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 09 10:12:35 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 09 10:12:35 *	There are 68 users and 33357 invisible on 28 servers
+Mar 09 10:12:35 *	39 :IRC Operators online
+Mar 09 10:12:35 *	201 :unknown connection(s)
+Mar 09 10:12:35 *	22727 :channels formed
+Mar 09 10:12:35 *	I have 2235 clients and 1 servers
+Mar 09 10:12:35 *	2235 3031 :Current local users 2235, max 3031
+Mar 09 10:12:35 *	33425 36895 :Current global users 33425, max 36895
+Mar 09 10:12:35 *	Highest connection count: 3032 (3031 clients) (257961 connections received)
+Mar 09 10:12:35 *	- erbium.libera.chat Message of the Day - 
+Mar 09 10:12:35 *	- Welcome to Libera Chat, the IRC network for
+Mar 09 10:12:35 *	- free & open-source software and peer directed projects.
+Mar 09 10:12:35 *	-  
+Mar 09 10:12:35 *	- Use of Libera Chat is governed by our network policies.
+Mar 09 10:12:35 *	-  
+Mar 09 10:12:35 *	- To reduce network abuses we perform open proxy checks
+Mar 09 10:12:35 *	- on hosts at connection time.
+Mar 09 10:12:35 *	-  
+Mar 09 10:12:35 *	- Please visit us in #libera for questions and support.
+Mar 09 10:12:35 *	-  
+Mar 09 10:12:35 *	- Website and documentation:  https://libera.chat
+Mar 09 10:12:35 *	- Webchat:                    https://web.libera.chat
+Mar 09 10:12:35 *	- Network policies:           https://libera.chat/policies
+Mar 09 10:12:35 *	- Email:                      support@libera.chat
+Mar 09 10:12:35 *	End of /MOTD command.
+Mar 09 10:12:35 *	dacd sets mode +Z on dacd
+Mar 09 10:12:35 *	dacd sets mode +i on dacd
+Mar 09 10:12:35 *	dacd sets mode +w on dacd
+Mar 09 10:12:35 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 09 10:12:41 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 10:12:41 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 10:12:41 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 10:12:41 *	#windows #windows-please-register :Forwarding to another channel
+Mar 09 10:12:41 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 10:12:41 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 10:12:41 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 10:12:41 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 10:12:41 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Sat Mar  9 11:09:10 2024
+
+Mar 09 11:09:10 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 09 11:09:10 *	Your host is zirconium.libera.chat[46.16.175.175/6697], running version solanum-1.0-dev
+Mar 09 11:09:10 *	This server was created Fri Nov 17 2023 at 08:47:16 UTC
+Mar 09 11:09:10 *	zirconium.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 09 11:09:10 *	ACCOUNTEXTBAN=a ETRACE WHOX FNC MONITOR=100 SAFELIST ELIST=CMNTU CALLERID=g KNOCK CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 09 11:09:10 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 09 11:09:10 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 09 11:09:10 *	There are 68 users and 33445 invisible on 28 servers
+Mar 09 11:09:10 *	39 :IRC Operators online
+Mar 09 11:09:10 *	129 :unknown connection(s)
+Mar 09 11:09:10 *	22758 :channels formed
+Mar 09 11:09:10 *	I have 2237 clients and 1 servers
+Mar 09 11:09:10 *	2237 2598 :Current local users 2237, max 2598
+Mar 09 11:09:10 *	33513 35905 :Current global users 33513, max 35905
+Mar 09 11:09:10 *	Highest connection count: 2599 (2598 clients) (102510 connections received)
+Mar 09 11:09:10 *	- zirconium.libera.chat Message of the Day - 
+Mar 09 11:09:10 *	- This server provided by Seeweb <https://www.seeweb.it/>
+Mar 09 11:09:10 *	- Welcome to Libera Chat, the IRC network for
+Mar 09 11:09:10 *	- free & open-source software and peer directed projects.
+Mar 09 11:09:10 *	-  
+Mar 09 11:09:10 *	- Use of Libera Chat is governed by our network policies.
+Mar 09 11:09:10 *	-  
+Mar 09 11:09:10 *	- To reduce network abuses we perform open proxy checks
+Mar 09 11:09:10 *	- on hosts at connection time.
+Mar 09 11:09:10 *	-  
+Mar 09 11:09:10 *	- Please visit us in #libera for questions and support.
+Mar 09 11:09:10 *	-  
+Mar 09 11:09:10 *	- Website and documentation:  https://libera.chat
+Mar 09 11:09:10 *	- Webchat:                    https://web.libera.chat
+Mar 09 11:09:10 *	- Network policies:           https://libera.chat/policies
+Mar 09 11:09:10 *	- Email:                      support@libera.chat
+Mar 09 11:09:10 *	End of /MOTD command.
+Mar 09 11:09:10 *	dacd sets mode +Z on dacd
+Mar 09 11:09:10 *	dacd sets mode +i on dacd
+Mar 09 11:09:10 *	dacd sets mode +w on dacd
+Mar 09 11:09:10 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 09 11:09:16 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 11:09:16 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 11:09:16 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 11:09:16 *	#windows #windows-please-register :Forwarding to another channel
+Mar 09 11:09:16 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 11:09:16 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 11:09:16 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 11:09:16 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 11:09:16 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Sat Mar  9 11:33:09 2024
+
+Mar 09 11:33:09 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 09 11:33:09 *	Your host is calcium.libera.chat[64.86.243.186/6697], running version solanum-1.0-dev
+Mar 09 11:33:09 *	This server was created Mon Nov 13 2023 at 21:34:42 UTC
+Mar 09 11:33:09 *	calcium.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 09 11:33:09 *	ACCOUNTEXTBAN=a ETRACE SAFELIST ELIST=CMNTU MONITOR=100 CALLERID=g FNC WHOX KNOCK CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 09 11:33:09 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 09 11:33:09 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 09 11:33:09 *	There are 68 users and 33480 invisible on 28 servers
+Mar 09 11:33:09 *	39 :IRC Operators online
+Mar 09 11:33:09 *	126 :unknown connection(s)
+Mar 09 11:33:09 *	22708 :channels formed
+Mar 09 11:33:09 *	I have 2190 clients and 1 servers
+Mar 09 11:33:09 *	2190 2971 :Current local users 2190, max 2971
+Mar 09 11:33:09 *	33548 36895 :Current global users 33548, max 36895
+Mar 09 11:33:09 *	Highest connection count: 2972 (2971 clients) (237127 connections received)
+Mar 09 11:33:09 *	- calcium.libera.chat Message of the Day - 
+Mar 09 11:33:09 *	- Welcome to Libera Chat, the IRC network for
+Mar 09 11:33:09 *	- free & open-source software and peer directed projects.
+Mar 09 11:33:09 *	-  
+Mar 09 11:33:09 *	- Use of Libera Chat is governed by our network policies.
+Mar 09 11:33:09 *	-  
+Mar 09 11:33:09 *	- To reduce network abuses we perform open proxy checks
+Mar 09 11:33:09 *	- on hosts at connection time.
+Mar 09 11:33:09 *	-  
+Mar 09 11:33:09 *	- Please visit us in #libera for questions and support.
+Mar 09 11:33:09 *	-  
+Mar 09 11:33:09 *	- Website and documentation:  https://libera.chat
+Mar 09 11:33:09 *	- Webchat:                    https://web.libera.chat
+Mar 09 11:33:09 *	- Network policies:           https://libera.chat/policies
+Mar 09 11:33:09 *	- Email:                      support@libera.chat
+Mar 09 11:33:09 *	End of /MOTD command.
+Mar 09 11:33:09 *	dacd sets mode +Z on dacd
+Mar 09 11:33:09 *	dacd sets mode +i on dacd
+Mar 09 11:33:09 *	dacd sets mode +w on dacd
+Mar 09 11:33:09 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 09 11:33:15 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 11:33:15 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 11:33:15 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 11:33:15 *	#windows #windows-please-register :Forwarding to another channel
+Mar 09 11:33:15 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 11:33:15 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 11:33:15 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 11:33:15 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 11:33:15 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 13:31:10 Sysinfo plugin unloaded
+Mar 09 13:31:10 Perl interface unloaded
+Mar 09 13:31:10 Checksum plugin unloaded
+**** ENDING LOGGING AT Sat Mar  9 13:31:10 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 13:40:17 2024
+
+Mar 09 13:40:17 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 09 13:40:17 *	Your host is zirconium.libera.chat[46.16.175.175/6697], running version solanum-1.0-dev
+Mar 09 13:40:17 *	This server was created Fri Nov 17 2023 at 08:47:16 UTC
+Mar 09 13:40:17 *	zirconium.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 09 13:40:17 *	ACCOUNTEXTBAN=a ETRACE WHOX FNC MONITOR=100 SAFELIST ELIST=CMNTU CALLERID=g KNOCK CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 09 13:40:17 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 09 13:40:17 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 09 13:40:17 *	There are 66 users and 33541 invisible on 28 servers
+Mar 09 13:40:17 *	39 :IRC Operators online
+Mar 09 13:40:17 *	83 :unknown connection(s)
+Mar 09 13:40:17 *	22811 :channels formed
+Mar 09 13:40:17 *	I have 2213 clients and 1 servers
+Mar 09 13:40:17 *	2213 2598 :Current local users 2213, max 2598
+Mar 09 13:40:17 *	33607 35905 :Current global users 33607, max 35905
+Mar 09 13:40:17 *	Highest connection count: 2599 (2598 clients) (102772 connections received)
+Mar 09 13:40:17 *	- zirconium.libera.chat Message of the Day - 
+Mar 09 13:40:17 *	- This server provided by Seeweb <https://www.seeweb.it/>
+Mar 09 13:40:17 *	- Welcome to Libera Chat, the IRC network for
+Mar 09 13:40:17 *	- free & open-source software and peer directed projects.
+Mar 09 13:40:17 *	-  
+Mar 09 13:40:17 *	- Use of Libera Chat is governed by our network policies.
+Mar 09 13:40:17 *	-  
+Mar 09 13:40:17 *	- To reduce network abuses we perform open proxy checks
+Mar 09 13:40:17 *	- on hosts at connection time.
+Mar 09 13:40:17 *	-  
+Mar 09 13:40:17 *	- Please visit us in #libera for questions and support.
+Mar 09 13:40:17 *	-  
+Mar 09 13:40:17 *	- Website and documentation:  https://libera.chat
+Mar 09 13:40:17 *	- Webchat:                    https://web.libera.chat
+Mar 09 13:40:17 *	- Network policies:           https://libera.chat/policies
+Mar 09 13:40:17 *	- Email:                      support@libera.chat
+Mar 09 13:40:17 *	End of /MOTD command.
+Mar 09 13:40:17 *	dacd sets mode +Z on dacd
+Mar 09 13:40:17 *	dacd sets mode +i on dacd
+Mar 09 13:40:17 *	dacd sets mode +w on dacd
+Mar 09 13:40:17 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 09 13:40:23 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 13:40:23 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 13:40:23 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 13:40:23 *	#windows #windows-please-register :Forwarding to another channel
+Mar 09 13:40:23 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 13:40:23 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 13:40:23 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 13:40:23 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 13:40:23 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Sat Mar  9 14:33:29 2024
+
+Mar 09 14:33:29 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 09 14:33:29 *	Your host is tantalum.libera.chat[93.158.237.2/6697], running version solanum-1.0-dev
+Mar 09 14:33:29 *	This server was created Sat Nov 18 2023 at 03:37:54 UTC
+Mar 09 14:33:29 *	tantalum.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 09 14:33:29 *	ACCOUNTEXTBAN=a WHOX MONITOR=100 SAFELIST ELIST=CMNTU ETRACE FNC CALLERID=g KNOCK CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 09 14:33:29 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 09 14:33:29 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 09 14:33:29 *	There are 66 users and 33587 invisible on 28 servers
+Mar 09 14:33:29 *	37 :IRC Operators online
+Mar 09 14:33:29 *	120 :unknown connection(s)
+Mar 09 14:33:29 *	22800 :channels formed
+Mar 09 14:33:29 *	I have 2220 clients and 1 servers
+Mar 09 14:33:29 *	2220 2963 :Current local users 2220, max 2963
+Mar 09 14:33:29 *	33653 36895 :Current global users 33653, max 36895
+Mar 09 14:33:29 *	Highest connection count: 2964 (2963 clients) (381164 connections received)
+Mar 09 14:33:29 *	- tantalum.libera.chat Message of the Day - 
+Mar 09 14:33:29 *	- This server provided by Hyperfilter (https://hyperfilter.com)
+Mar 09 14:33:29 *	-  
+Mar 09 14:33:29 *	-  
+Mar 09 14:33:29 *	- Welcome to Libera Chat, the IRC network for
+Mar 09 14:33:29 *	- free & open-source software and peer directed projects.
+Mar 09 14:33:29 *	-  
+Mar 09 14:33:29 *	- Use of Libera Chat is governed by our network policies.
+Mar 09 14:33:29 *	-  
+Mar 09 14:33:29 *	- To reduce network abuses we perform open proxy checks
+Mar 09 14:33:29 *	- on hosts at connection time.
+Mar 09 14:33:29 *	-  
+Mar 09 14:33:29 *	- Please visit us in #libera for questions and support.
+Mar 09 14:33:29 *	-  
+Mar 09 14:33:29 *	- Website and documentation:  https://libera.chat
+Mar 09 14:33:29 *	- Webchat:                    https://web.libera.chat
+Mar 09 14:33:29 *	- Network policies:           https://libera.chat/policies
+Mar 09 14:33:29 *	- Email:                      support@libera.chat
+Mar 09 14:33:29 *	End of /MOTD command.
+Mar 09 14:33:29 *	dacd sets mode +Z on dacd
+Mar 09 14:33:29 *	dacd sets mode +i on dacd
+Mar 09 14:33:29 *	dacd sets mode +w on dacd
+Mar 09 14:33:29 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 09 14:33:35 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 14:33:35 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 14:33:35 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 14:33:35 *	#windows #windows-please-register :Forwarding to another channel
+Mar 09 14:33:35 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 14:33:35 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 14:33:35 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 14:33:35 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 09 14:33:35 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Sun Mar 10 00:21:10 2024
+
+Mar 10 00:21:10 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 10 00:21:10 *	Your host is copper.libera.chat[130.185.232.126/6697], running version solanum-1.0-dev
+Mar 10 00:21:10 *	This server was created Sat Nov 18 2023 at 03:16:28 UTC
+Mar 10 00:21:10 *	copper.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 10 00:21:10 *	ACCOUNTEXTBAN=a ETRACE FNC WHOX KNOCK CALLERID=g MONITOR=100 SAFELIST ELIST=CMNTU CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 10 00:21:10 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 10 00:21:10 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 10 00:21:10 *	There are 67 users and 33597 invisible on 28 servers
+Mar 10 00:21:10 *	37 :IRC Operators online
+Mar 10 00:21:10 *	17 :unknown connection(s)
+Mar 10 00:21:10 *	22758 :channels formed
+Mar 10 00:21:10 *	I have 2183 clients and 1 servers
+Mar 10 00:21:10 *	2183 2711 :Current local users 2183, max 2711
+Mar 10 00:21:10 *	33664 36895 :Current global users 33664, max 36895
+Mar 10 00:21:10 *	Highest connection count: 2712 (2711 clients) (353532 connections received)
+Mar 10 00:21:10 *	- copper.libera.chat Message of the Day - 
+Mar 10 00:21:10 *	- Welcome to Libera Chat, the IRC network for
+Mar 10 00:21:10 *	- free & open-source software and peer directed projects.
+Mar 10 00:21:10 *	-  
+Mar 10 00:21:10 *	- Use of Libera Chat is governed by our network policies.
+Mar 10 00:21:10 *	-  
+Mar 10 00:21:10 *	- To reduce network abuses we perform open proxy checks
+Mar 10 00:21:10 *	- on hosts at connection time.
+Mar 10 00:21:10 *	-  
+Mar 10 00:21:10 *	- Please visit us in #libera for questions and support.
+Mar 10 00:21:10 *	-  
+Mar 10 00:21:10 *	- Website and documentation:  https://libera.chat
+Mar 10 00:21:10 *	- Webchat:                    https://web.libera.chat
+Mar 10 00:21:10 *	- Network policies:           https://libera.chat/policies
+Mar 10 00:21:10 *	- Email:                      support@libera.chat
+Mar 10 00:21:10 *	End of /MOTD command.
+Mar 10 00:21:10 *	dacd sets mode +Z on dacd
+Mar 10 00:21:10 *	dacd sets mode +i on dacd
+Mar 10 00:21:10 *	dacd sets mode +w on dacd
+Mar 10 00:21:10 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 10 00:21:16 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:21:16 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:21:16 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:21:17 *	#windows #windows-please-register :Forwarding to another channel
+Mar 10 00:21:17 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:21:17 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:21:17 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:21:17 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:21:17 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Sun Mar 10 00:22:39 2024
+
+Mar 10 00:22:39 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 10 00:22:39 *	Your host is copper.libera.chat[130.185.232.126/6697], running version solanum-1.0-dev
+Mar 10 00:22:39 *	This server was created Sat Nov 18 2023 at 03:16:28 UTC
+Mar 10 00:22:39 *	copper.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 10 00:22:39 *	ACCOUNTEXTBAN=a ETRACE FNC WHOX KNOCK CALLERID=g MONITOR=100 SAFELIST ELIST=CMNTU CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 10 00:22:39 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 10 00:22:39 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 10 00:22:39 *	There are 67 users and 33606 invisible on 28 servers
+Mar 10 00:22:39 *	37 :IRC Operators online
+Mar 10 00:22:39 *	47 :unknown connection(s)
+Mar 10 00:22:39 *	22758 :channels formed
+Mar 10 00:22:39 *	I have 2188 clients and 1 servers
+Mar 10 00:22:39 *	2188 2711 :Current local users 2188, max 2711
+Mar 10 00:22:39 *	33673 36895 :Current global users 33673, max 36895
+Mar 10 00:22:39 *	Highest connection count: 2712 (2711 clients) (353539 connections received)
+Mar 10 00:22:39 *	- copper.libera.chat Message of the Day - 
+Mar 10 00:22:39 *	- Welcome to Libera Chat, the IRC network for
+Mar 10 00:22:39 *	- free & open-source software and peer directed projects.
+Mar 10 00:22:39 *	-  
+Mar 10 00:22:39 *	- Use of Libera Chat is governed by our network policies.
+Mar 10 00:22:39 *	-  
+Mar 10 00:22:39 *	- To reduce network abuses we perform open proxy checks
+Mar 10 00:22:39 *	- on hosts at connection time.
+Mar 10 00:22:39 *	-  
+Mar 10 00:22:39 *	- Please visit us in #libera for questions and support.
+Mar 10 00:22:39 *	-  
+Mar 10 00:22:39 *	- Website and documentation:  https://libera.chat
+Mar 10 00:22:39 *	- Webchat:                    https://web.libera.chat
+Mar 10 00:22:39 *	- Network policies:           https://libera.chat/policies
+Mar 10 00:22:39 *	- Email:                      support@libera.chat
+Mar 10 00:22:39 *	End of /MOTD command.
+Mar 10 00:22:39 *	dacd sets mode +Z on dacd
+Mar 10 00:22:39 *	dacd sets mode +i on dacd
+Mar 10 00:22:39 *	dacd sets mode +w on dacd
+Mar 10 00:22:39 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 10 00:22:45 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:22:45 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:22:45 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:22:46 *	#windows #windows-please-register :Forwarding to another channel
+Mar 10 00:22:46 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:22:46 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:22:46 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:22:46 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:22:46 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Sun Mar 10 00:27:31 2024
+
+Mar 10 00:27:31 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 10 00:27:31 *	Your host is copper.libera.chat[130.185.232.126/6697], running version solanum-1.0-dev
+Mar 10 00:27:31 *	This server was created Sat Nov 18 2023 at 03:16:28 UTC
+Mar 10 00:27:31 *	copper.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 10 00:27:31 *	ACCOUNTEXTBAN=a ETRACE FNC WHOX KNOCK CALLERID=g MONITOR=100 SAFELIST ELIST=CMNTU CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 10 00:27:31 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 10 00:27:31 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 10 00:27:31 *	There are 68 users and 33616 invisible on 28 servers
+Mar 10 00:27:31 *	37 :IRC Operators online
+Mar 10 00:27:31 *	66 :unknown connection(s)
+Mar 10 00:27:31 *	22766 :channels formed
+Mar 10 00:27:31 *	I have 2204 clients and 1 servers
+Mar 10 00:27:31 *	2204 2711 :Current local users 2204, max 2711
+Mar 10 00:27:31 *	33684 36895 :Current global users 33684, max 36895
+Mar 10 00:27:31 *	Highest connection count: 2712 (2711 clients) (353562 connections received)
+Mar 10 00:27:31 *	- copper.libera.chat Message of the Day - 
+Mar 10 00:27:31 *	- Welcome to Libera Chat, the IRC network for
+Mar 10 00:27:31 *	- free & open-source software and peer directed projects.
+Mar 10 00:27:31 *	-  
+Mar 10 00:27:31 *	- Use of Libera Chat is governed by our network policies.
+Mar 10 00:27:31 *	-  
+Mar 10 00:27:31 *	- To reduce network abuses we perform open proxy checks
+Mar 10 00:27:31 *	- on hosts at connection time.
+Mar 10 00:27:31 *	-  
+Mar 10 00:27:31 *	- Please visit us in #libera for questions and support.
+Mar 10 00:27:31 *	-  
+Mar 10 00:27:31 *	- Website and documentation:  https://libera.chat
+Mar 10 00:27:31 *	- Webchat:                    https://web.libera.chat
+Mar 10 00:27:31 *	- Network policies:           https://libera.chat/policies
+Mar 10 00:27:31 *	- Email:                      support@libera.chat
+Mar 10 00:27:31 *	End of /MOTD command.
+Mar 10 00:27:31 *	dacd sets mode +Z on dacd
+Mar 10 00:27:31 *	dacd sets mode +i on dacd
+Mar 10 00:27:31 *	dacd sets mode +w on dacd
+Mar 10 00:27:31 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 10 00:27:37 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:27:37 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:27:38 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:27:38 *	#windows #windows-please-register :Forwarding to another channel
+Mar 10 00:27:38 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:27:38 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:27:38 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:27:38 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:27:38 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Sun Mar 10 00:31:34 2024
+
+Mar 10 00:31:34 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 10 00:31:34 *	Your host is copper.libera.chat[130.185.232.126/6697], running version solanum-1.0-dev
+Mar 10 00:31:34 *	This server was created Sat Nov 18 2023 at 03:16:28 UTC
+Mar 10 00:31:34 *	copper.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 10 00:31:34 *	ACCOUNTEXTBAN=a ETRACE FNC WHOX KNOCK CALLERID=g MONITOR=100 SAFELIST ELIST=CMNTU CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 10 00:31:34 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 10 00:31:34 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 10 00:31:34 *	There are 68 users and 33597 invisible on 28 servers
+Mar 10 00:31:34 *	37 :IRC Operators online
+Mar 10 00:31:34 *	80 :unknown connection(s)
+Mar 10 00:31:34 *	22766 :channels formed
+Mar 10 00:31:34 *	I have 2201 clients and 1 servers
+Mar 10 00:31:34 *	2201 2711 :Current local users 2201, max 2711
+Mar 10 00:31:34 *	33665 36895 :Current global users 33665, max 36895
+Mar 10 00:31:34 *	Highest connection count: 2712 (2711 clients) (353583 connections received)
+Mar 10 00:31:34 *	- copper.libera.chat Message of the Day - 
+Mar 10 00:31:34 *	- Welcome to Libera Chat, the IRC network for
+Mar 10 00:31:34 *	- free & open-source software and peer directed projects.
+Mar 10 00:31:34 *	-  
+Mar 10 00:31:34 *	- Use of Libera Chat is governed by our network policies.
+Mar 10 00:31:34 *	-  
+Mar 10 00:31:34 *	- To reduce network abuses we perform open proxy checks
+Mar 10 00:31:34 *	- on hosts at connection time.
+Mar 10 00:31:34 *	-  
+Mar 10 00:31:34 *	- Please visit us in #libera for questions and support.
+Mar 10 00:31:34 *	-  
+Mar 10 00:31:34 *	- Website and documentation:  https://libera.chat
+Mar 10 00:31:34 *	- Webchat:                    https://web.libera.chat
+Mar 10 00:31:34 *	- Network policies:           https://libera.chat/policies
+Mar 10 00:31:34 *	- Email:                      support@libera.chat
+Mar 10 00:31:34 *	End of /MOTD command.
+Mar 10 00:31:34 *	dacd sets mode +Z on dacd
+Mar 10 00:31:34 *	dacd sets mode +i on dacd
+Mar 10 00:31:34 *	dacd sets mode +w on dacd
+Mar 10 00:31:34 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 10 00:31:40 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:31:40 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:31:40 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:31:41 *	#windows #windows-please-register :Forwarding to another channel
+Mar 10 00:31:41 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:31:41 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:31:41 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:31:41 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 00:31:41 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Sun Mar 10 01:38:14 2024
+
+Mar 10 01:38:14 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 10 01:38:14 *	Your host is tantalum.libera.chat[93.158.237.2/6697], running version solanum-1.0-dev
+Mar 10 01:38:14 *	This server was created Sat Nov 18 2023 at 03:37:54 UTC
+Mar 10 01:38:14 *	tantalum.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 10 01:38:14 *	ACCOUNTEXTBAN=a WHOX MONITOR=100 SAFELIST ELIST=CMNTU ETRACE FNC CALLERID=g KNOCK CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 10 01:38:14 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 10 01:38:14 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 10 01:38:14 *	There are 66 users and 33423 invisible on 28 servers
+Mar 10 01:38:14 *	37 :IRC Operators online
+Mar 10 01:38:14 *	19 :unknown connection(s)
+Mar 10 01:38:14 *	22747 :channels formed
+Mar 10 01:38:14 *	I have 2174 clients and 1 servers
+Mar 10 01:38:14 *	2174 2963 :Current local users 2174, max 2963
+Mar 10 01:38:14 *	33489 36895 :Current global users 33489, max 36895
+Mar 10 01:38:14 *	Highest connection count: 2964 (2963 clients) (382351 connections received)
+Mar 10 01:38:14 *	- tantalum.libera.chat Message of the Day - 
+Mar 10 01:38:14 *	- This server provided by Hyperfilter (https://hyperfilter.com)
+Mar 10 01:38:14 *	-  
+Mar 10 01:38:14 *	-  
+Mar 10 01:38:14 *	- Welcome to Libera Chat, the IRC network for
+Mar 10 01:38:14 *	- free & open-source software and peer directed projects.
+Mar 10 01:38:14 *	-  
+Mar 10 01:38:14 *	- Use of Libera Chat is governed by our network policies.
+Mar 10 01:38:14 *	-  
+Mar 10 01:38:14 *	- To reduce network abuses we perform open proxy checks
+Mar 10 01:38:14 *	- on hosts at connection time.
+Mar 10 01:38:14 *	-  
+Mar 10 01:38:14 *	- Please visit us in #libera for questions and support.
+Mar 10 01:38:14 *	-  
+Mar 10 01:38:14 *	- Website and documentation:  https://libera.chat
+Mar 10 01:38:14 *	- Webchat:                    https://web.libera.chat
+Mar 10 01:38:14 *	- Network policies:           https://libera.chat/policies
+Mar 10 01:38:14 *	- Email:                      support@libera.chat
+Mar 10 01:38:14 *	End of /MOTD command.
+Mar 10 01:38:14 *	dacd sets mode +Z on dacd
+Mar 10 01:38:14 *	dacd sets mode +i on dacd
+Mar 10 01:38:14 *	dacd sets mode +w on dacd
+Mar 10 01:38:14 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 10 01:38:20 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 01:38:20 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 01:38:20 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 01:38:20 *	#windows #windows-please-register :Forwarding to another channel
+Mar 10 01:38:20 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 01:38:20 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 01:38:20 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 01:38:20 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 01:38:20 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Sun Mar 10 01:52:02 2024
+
+Mar 10 01:52:02 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 10 01:52:02 *	Your host is tantalum.libera.chat[93.158.237.2/6697], running version solanum-1.0-dev
+Mar 10 01:52:02 *	This server was created Sat Nov 18 2023 at 03:37:54 UTC
+Mar 10 01:52:02 *	tantalum.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 10 01:52:02 *	ACCOUNTEXTBAN=a WHOX MONITOR=100 SAFELIST ELIST=CMNTU ETRACE FNC CALLERID=g KNOCK CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 10 01:52:02 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 10 01:52:02 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 10 01:52:02 *	There are 66 users and 33362 invisible on 28 servers
+Mar 10 01:52:02 *	37 :IRC Operators online
+Mar 10 01:52:02 *	141 :unknown connection(s)
+Mar 10 01:52:02 *	22739 :channels formed
+Mar 10 01:52:02 *	I have 2195 clients and 1 servers
+Mar 10 01:52:02 *	2195 2963 :Current local users 2195, max 2963
+Mar 10 01:52:02 *	33428 36895 :Current global users 33428, max 36895
+Mar 10 01:52:02 *	Highest connection count: 2964 (2963 clients) (382412 connections received)
+Mar 10 01:52:02 *	- tantalum.libera.chat Message of the Day - 
+Mar 10 01:52:02 *	- This server provided by Hyperfilter (https://hyperfilter.com)
+Mar 10 01:52:02 *	-  
+Mar 10 01:52:02 *	-  
+Mar 10 01:52:02 *	- Welcome to Libera Chat, the IRC network for
+Mar 10 01:52:02 *	- free & open-source software and peer directed projects.
+Mar 10 01:52:02 *	-  
+Mar 10 01:52:02 *	- Use of Libera Chat is governed by our network policies.
+Mar 10 01:52:02 *	-  
+Mar 10 01:52:02 *	- To reduce network abuses we perform open proxy checks
+Mar 10 01:52:02 *	- on hosts at connection time.
+Mar 10 01:52:02 *	-  
+Mar 10 01:52:02 *	- Please visit us in #libera for questions and support.
+Mar 10 01:52:02 *	-  
+Mar 10 01:52:02 *	- Website and documentation:  https://libera.chat
+Mar 10 01:52:02 *	- Webchat:                    https://web.libera.chat
+Mar 10 01:52:02 *	- Network policies:           https://libera.chat/policies
+Mar 10 01:52:02 *	- Email:                      support@libera.chat
+Mar 10 01:52:02 *	End of /MOTD command.
+Mar 10 01:52:02 *	dacd sets mode +Z on dacd
+Mar 10 01:52:02 *	dacd sets mode +i on dacd
+Mar 10 01:52:02 *	dacd sets mode +w on dacd
+Mar 10 01:52:02 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 10 01:52:08 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 01:52:08 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 01:52:08 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 01:52:08 *	#windows #windows-please-register :Forwarding to another channel
+Mar 10 01:52:08 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 01:52:08 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 01:52:08 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 01:52:08 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 01:52:08 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 04:26:38 Sysinfo plugin unloaded
+Mar 10 04:26:38 Perl interface unloaded
+Mar 10 04:26:38 Checksum plugin unloaded
+**** ENDING LOGGING AT Sun Mar 10 04:26:38 2024
+
+**** BEGIN LOGGING AT Sun Mar 10 06:42:15 2024
+
+Mar 10 06:42:15 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 10 06:42:15 *	Your host is molybdenum.libera.chat[51.161.82.214/6697], running version solanum-1.0-dev
+Mar 10 06:42:15 *	This server was created Sat Nov 11 2023 at 02:04:41 UTC
+Mar 10 06:42:15 *	molybdenum.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 10 06:42:15 *	ACCOUNTEXTBAN=a WHOX KNOCK MONITOR=100 ETRACE FNC SAFELIST ELIST=CMNTU CALLERID=g CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 10 06:42:15 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 10 06:42:15 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 10 06:42:15 *	There are 66 users and 32717 invisible on 28 servers
+Mar 10 06:42:15 *	38 :IRC Operators online
+Mar 10 06:42:15 *	230 :unknown connection(s)
+Mar 10 06:42:15 *	22646 :channels formed
+Mar 10 06:42:15 *	I have 2150 clients and 1 servers
+Mar 10 06:42:15 *	2150 3361 :Current local users 2150, max 3361
+Mar 10 06:42:15 *	32783 36895 :Current global users 32783, max 36895
+Mar 10 06:42:15 *	Highest connection count: 3362 (3361 clients) (295425 connections received)
+Mar 10 06:42:15 *	- molybdenum.libera.chat Message of the Day - 
+Mar 10 06:42:15 *	- -[ Molybdenum ]-[ Atomic number: 42 ]-[ Chemical symbol: Mo ]-
+Mar 10 06:42:15 *	-  
+Mar 10 06:42:15 *	- Molybdenum has been known throughout history, though its
+Mar 10 06:42:15 *	- properties meant that it was confused with lead ores. It was
+Mar 10 06:42:15 *	- first identified as a distinct element in 1778, meaning our
+Mar 10 06:42:15 *	- modern understanding of its existence reaches about as far
+Mar 10 06:42:15 *	- back as American independence.
+Mar 10 06:42:15 *	-  
+Mar 10 06:42:15 *	- Molybdenum has a very high melting point, 2623°C, the fifth-
+Mar 10 06:42:15 *	- highest temperature of any element.
+Mar 10 06:42:15 *	-  
+Mar 10 06:42:15 *	- While pure molybdenum is only about as strong as tooth enamel,
+Mar 10 06:42:15 *	- it forms strong alloys that are resistant to corrosion and
+Mar 10 06:42:15 *	- stable under varying temperatures. As a result, these alloys
+Mar 10 06:42:15 *	- are used for metal armour plates, high-performance aircraft
+Mar 10 06:42:15 *	- parts, and pumps for molten metal flows.
+Mar 10 06:42:15 *	-  
+Mar 10 06:42:15 *	- In its elemental form, it can be used as a fertiliser, and the
+Mar 10 06:42:15 *	- isotope molybdenum-99 is used as a source of technetium-99m,
+Mar 10 06:42:15 *	- an important medical radioisotope used for 3D bone scans and
+Mar 10 06:42:15 *	- the investigation of blood flow when diagnosing heart disease.
+Mar 10 06:42:15 *	-  
+Mar 10 06:42:15 *	-  
+Mar 10 06:42:15 *	- Welcome to Libera Chat, the IRC network for
+Mar 10 06:42:15 *	- free & open-source software and peer directed projects.
+Mar 10 06:42:15 *	-  
+Mar 10 06:42:15 *	- Use of Libera Chat is governed by our network policies.
+Mar 10 06:42:15 *	-  
+Mar 10 06:42:15 *	- To reduce network abuses we perform open proxy checks
+Mar 10 06:42:15 *	- on hosts at connection time.
+Mar 10 06:42:15 *	-  
+Mar 10 06:42:15 *	- Please visit us in #libera for questions and support.
+Mar 10 06:42:15 *	-  
+Mar 10 06:42:15 *	- Website and documentation:  https://libera.chat
+Mar 10 06:42:15 *	- Webchat:                    https://web.libera.chat
+Mar 10 06:42:15 *	- Network policies:           https://libera.chat/policies
+Mar 10 06:42:15 *	- Email:                      support@libera.chat
+Mar 10 06:42:15 *	End of /MOTD command.
+Mar 10 06:42:15 *	dacd sets mode +Z on dacd
+Mar 10 06:42:15 *	dacd sets mode +i on dacd
+Mar 10 06:42:15 *	dacd sets mode +w on dacd
+Mar 10 06:42:15 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 10 06:42:22 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 06:42:22 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 06:42:22 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 06:42:22 *	#windows #windows-please-register :Forwarding to another channel
+Mar 10 06:42:22 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 06:42:22 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 06:42:22 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 06:42:22 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 06:42:22 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account
+**** BEGIN LOGGING AT Sun Mar 10 23:24:21 2024
+
+Mar 10 23:24:21 *	Welcome to the Libera.Chat Internet Relay Chat Network dacd
+Mar 10 23:24:21 *	Your host is calcium.libera.chat[64.86.243.186/6697], running version solanum-1.0-dev
+Mar 10 23:24:21 *	This server was created Mon Nov 13 2023 at 21:34:42 UTC
+Mar 10 23:24:21 *	calcium.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Mar 10 23:24:21 *	ACCOUNTEXTBAN=a ETRACE SAFELIST ELIST=CMNTU MONITOR=100 CALLERID=g FNC WHOX KNOCK CHANTYPES=# EXCEPTS INVEX :are supported by this server
+Mar 10 23:24:21 *	CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=Libera.Chat STATUSMSG=@+ CASEMAPPING=rfc1459 NICKLEN=16 MAXNICKLEN=16 CHANNELLEN=50 TOPICLEN=390 :are supported by this server
+Mar 10 23:24:21 *	DEAF=D TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,agjrxz :are supported by this server
+Mar 10 23:24:21 *	There are 66 users and 33589 invisible on 28 servers
+Mar 10 23:24:21 *	40 :IRC Operators online
+Mar 10 23:24:21 *	78 :unknown connection(s)
+Mar 10 23:24:21 *	22862 :channels formed
+Mar 10 23:24:21 *	I have 2218 clients and 1 servers
+Mar 10 23:24:21 *	2218 2971 :Current local users 2218, max 2971
+Mar 10 23:24:21 *	33655 36895 :Current global users 33655, max 36895
+Mar 10 23:24:21 *	Highest connection count: 2972 (2971 clients) (239864 connections received)
+Mar 10 23:24:21 *	- calcium.libera.chat Message of the Day - 
+Mar 10 23:24:21 *	- Welcome to Libera Chat, the IRC network for
+Mar 10 23:24:21 *	- free & open-source software and peer directed projects.
+Mar 10 23:24:21 *	-  
+Mar 10 23:24:21 *	- Use of Libera Chat is governed by our network policies.
+Mar 10 23:24:21 *	-  
+Mar 10 23:24:21 *	- To reduce network abuses we perform open proxy checks
+Mar 10 23:24:21 *	- on hosts at connection time.
+Mar 10 23:24:21 *	-  
+Mar 10 23:24:21 *	- Please visit us in #libera for questions and support.
+Mar 10 23:24:21 *	-  
+Mar 10 23:24:21 *	- Website and documentation:  https://libera.chat
+Mar 10 23:24:21 *	- Webchat:                    https://web.libera.chat
+Mar 10 23:24:21 *	- Network policies:           https://libera.chat/policies
+Mar 10 23:24:21 *	- Email:                      support@libera.chat
+Mar 10 23:24:21 *	End of /MOTD command.
+Mar 10 23:24:21 *	dacd sets mode +Z on dacd
+Mar 10 23:24:21 *	dacd sets mode +i on dacd
+Mar 10 23:24:21 *	dacd sets mode +w on dacd
+Mar 10 23:24:21 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY dacd <password>
+Mar 10 23:24:27 *	#archlinux :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 23:24:27 *	#debian :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 23:24:27 *	#networking :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 23:24:27 *	#windows #windows-please-register :Forwarding to another channel
+Mar 10 23:24:27 *	##apple :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 23:24:27 *	##mac :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 23:24:27 *	#linux-hardening :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 23:24:27 *	##francais :Cannot join channel (+r) - you need to be logged into your NickServ account
+Mar 10 23:24:27 *	#nixos :Cannot join channel (+r) - you need to be logged into your NickServ account

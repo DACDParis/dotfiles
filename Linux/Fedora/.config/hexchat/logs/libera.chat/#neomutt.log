@@ -799,3 +799,248 @@ Mar 06 07:16:31 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Th
 Mar 06 07:16:31 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
 Mar 06 07:16:31 *	Channel #neomutt url: https://neomutt.org
 Mar 06 13:07:20 <rbmarliere>	hi everyone! is there a way to ignore mailcap when inserting text in a reply? for example, replying inline to patches that goes through something like diff-so-fancy or delta?
+Mar 06 13:11:33 <rbmarliere>	I dont think its possible but wouldnt hurt to ask anyway :)
+**** BEGIN LOGGING AT Wed Mar  6 13:29:43 2024
+
+Mar 06 13:29:41 *	Now talking on #neomutt
+Mar 06 13:29:41 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 06 13:29:41 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 06 13:29:41 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 06 13:29:41 *	Channel #neomutt url: https://neomutt.org
+Mar 06 14:46:41 <gahr>	ouch, my Drafts mailbox has a new count of -1
+Mar 06 14:47:42 <gahr>	I can repro it: compose, save to draft, count=1, compose, resume, discard, count=-1
+Mar 06 16:03:22 <demure>	rbmarliere: you could probably bind a macro to start a one off reply with the custom settings/mode
+Mar 06 17:44:22 <ngortheone>	hey there
+Mar 06 17:45:05 <ngortheone>	how do I use truecolor? quick search does not show any docs, I am probably overthinking it... do I even need to do anything?
+Mar 06 18:16:38 <jindraj>	ngortheone: you need terminal with true color support and set corresponding TERM env variable, e.g.: xterm-direct. Then you should be ready to use hex codes for colors.
+Mar 06 18:17:28 <ngortheone>	so I just use hex codes in the same places where old color codes were before?
+Mar 06 18:17:38 <ngortheone>	jindraj: thanks 
+Mar 06 18:59:31 <jindraj>	ngortheone: exactly. the main pitfall is you cannot use prefixes. if you used e.g. prefix$my_color like `my_color = blue` -> `bright$color`, there's nothing like bright#0000ff :D
+**** BEGIN LOGGING AT Wed Mar  6 21:44:03 2024
+
+Mar 06 21:44:02 *	Now talking on #neomutt
+Mar 06 21:44:02 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 06 21:44:02 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 06 21:44:02 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 06 21:44:02 *	Channel #neomutt url: https://neomutt.org
+**** ENDING LOGGING AT Wed Mar  6 23:44:24 2024
+
+**** BEGIN LOGGING AT Thu Mar  7 02:18:47 2024
+
+Mar 07 02:18:44 *	Now talking on #neomutt
+Mar 07 02:18:44 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 07 02:18:44 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 07 02:18:44 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 07 02:18:44 *	Channel #neomutt url: https://neomutt.org
+Mar 07 02:53:10 <anchovy>	hi. does neomutt support multiple imap accounts and can present them as a unified mailbox?
+**** BEGIN LOGGING AT Thu Mar  7 05:39:14 2024
+
+Mar 07 05:39:13 *	Now talking on #neomutt
+Mar 07 05:39:13 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 07 05:39:13 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 07 05:39:13 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 07 05:39:13 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Thu Mar  7 05:53:09 2024
+
+Mar 07 05:53:08 *	Now talking on #neomutt
+Mar 07 05:53:08 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 07 05:53:08 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 07 05:53:08 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 07 05:53:08 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Thu Mar  7 06:46:02 2024
+
+Mar 07 06:46:01 *	Now talking on #neomutt
+Mar 07 06:46:01 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 07 06:46:01 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 07 06:46:01 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 07 06:46:01 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Thu Mar  7 11:45:31 2024
+
+Mar 07 11:45:29 *	Now talking on #neomutt
+Mar 07 11:45:29 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 07 11:45:29 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 07 11:45:29 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 07 11:45:29 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Thu Mar  7 12:26:51 2024
+
+Mar 07 12:26:50 *	Now talking on #neomutt
+Mar 07 12:26:50 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 07 12:26:50 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 07 12:26:50 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 07 12:26:50 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Thu Mar  7 12:39:51 2024
+
+Mar 07 12:39:50 *	Now talking on #neomutt
+Mar 07 12:39:50 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 07 12:39:50 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 07 12:39:50 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 07 12:39:50 *	Channel #neomutt url: https://neomutt.org
+Mar 07 12:52:19 <rbmarliere>	demure: i just went back to a simple pattern coloring instead, ty :)
+**** BEGIN LOGGING AT Thu Mar  7 14:15:49 2024
+
+Mar 07 14:15:48 *	Now talking on #neomutt
+Mar 07 14:15:48 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 07 14:15:48 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 07 14:15:48 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 07 14:15:48 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Fri Mar  8 22:52:06 2024
+
+Mar 08 22:52:06 *	Now talking on #neomutt
+Mar 08 22:52:06 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 08 22:52:06 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 08 22:52:06 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 08 22:52:06 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Fri Mar  8 23:04:26 2024
+
+Mar 08 23:04:24 *	Now talking on #neomutt
+Mar 08 23:04:24 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 08 23:04:24 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 08 23:04:24 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 08 23:04:24 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Fri Mar  8 23:07:14 2024
+
+Mar 08 23:07:14 *	Now talking on #neomutt
+Mar 08 23:07:14 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 08 23:07:14 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 08 23:07:14 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 08 23:07:14 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Fri Mar  8 23:14:16 2024
+
+Mar 08 23:14:14 *	Now talking on #neomutt
+Mar 08 23:14:14 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 08 23:14:14 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 08 23:14:14 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 08 23:14:14 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Sat Mar  9 07:43:52 2024
+
+Mar 09 07:43:50 *	Now talking on #neomutt
+Mar 09 07:43:50 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 09 07:43:50 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 09 07:43:50 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 09 07:43:50 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Sat Mar  9 08:24:01 2024
+
+Mar 09 08:24:00 *	Now talking on #neomutt
+Mar 09 08:24:00 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 09 08:24:00 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 09 08:24:00 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 09 08:24:00 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Sat Mar  9 10:08:22 2024
+
+Mar 09 10:08:21 *	Now talking on #neomutt
+Mar 09 10:08:21 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 09 10:08:21 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 09 10:08:21 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 09 10:08:21 *	Channel #neomutt url: https://neomutt.org
+**** ENDING LOGGING AT Sat Mar  9 10:09:15 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 10:12:43 2024
+
+Mar 09 10:12:41 *	Now talking on #neomutt
+Mar 09 10:12:41 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 09 10:12:41 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 09 10:12:41 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 09 10:12:41 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Sat Mar  9 11:09:19 2024
+
+Mar 09 11:09:16 *	Now talking on #neomutt
+Mar 09 11:09:16 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 09 11:09:16 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 09 11:09:16 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 09 11:09:16 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Sat Mar  9 11:33:17 2024
+
+Mar 09 11:33:15 *	Now talking on #neomutt
+Mar 09 11:33:15 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 09 11:33:15 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 09 11:33:15 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 09 11:33:15 *	Channel #neomutt url: https://neomutt.org
+**** ENDING LOGGING AT Sat Mar  9 13:31:10 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 13:40:25 2024
+
+Mar 09 13:40:23 *	Now talking on #neomutt
+Mar 09 13:40:23 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 09 13:40:23 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 09 13:40:23 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 09 13:40:23 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Sat Mar  9 14:33:36 2024
+
+Mar 09 14:33:35 *	Now talking on #neomutt
+Mar 09 14:33:35 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 09 14:33:35 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 09 14:33:36 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 09 14:33:36 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Sun Mar 10 00:21:17 2024
+
+Mar 10 00:21:17 *	Now talking on #neomutt
+Mar 10 00:21:17 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 10 00:21:17 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 10 00:21:17 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 10 00:21:17 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Sun Mar 10 00:22:46 2024
+
+Mar 10 00:22:46 *	Now talking on #neomutt
+Mar 10 00:22:46 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 10 00:22:46 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 10 00:22:46 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 10 00:22:46 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Sun Mar 10 00:27:38 2024
+
+Mar 10 00:27:38 *	Now talking on #neomutt
+Mar 10 00:27:38 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 10 00:27:38 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 10 00:27:38 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 10 00:27:38 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Sun Mar 10 00:31:41 2024
+
+Mar 10 00:31:41 *	Now talking on #neomutt
+Mar 10 00:31:41 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 10 00:31:41 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 10 00:31:41 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 10 00:31:41 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Sun Mar 10 01:38:21 2024
+
+Mar 10 01:38:20 *	Now talking on #neomutt
+Mar 10 01:38:20 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 10 01:38:20 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 10 01:38:20 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 10 01:38:20 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Sun Mar 10 01:52:09 2024
+
+Mar 10 01:52:08 *	Now talking on #neomutt
+Mar 10 01:52:08 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 10 01:52:08 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 10 01:52:08 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 10 01:52:08 *	Channel #neomutt url: https://neomutt.org
+**** ENDING LOGGING AT Sun Mar 10 04:26:38 2024
+
+**** BEGIN LOGGING AT Sun Mar 10 06:42:23 2024
+
+Mar 10 06:42:22 *	Now talking on #neomutt
+Mar 10 06:42:22 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 10 06:42:22 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 10 06:42:22 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 10 06:42:22 *	Channel #neomutt url: https://neomutt.org
+Mar 10 11:57:10 <Guest97>	Hi. I'd like to start contributing to Neomutt but I'm not seeing any issues marked with the 'good first issue' label. I was wondering if anyone could point me in the right direction.
+Mar 10 12:07:25 <vuori>	Do you have any particular theme in mind? flatcap is probably the best person to say, but how about something like https://github.com/neomutt/neomutt/issues/4163 ? The data the user is asking about is _probably_ available through the gpgme library neomutt uses so with luck it's just a matter of adding those items to the stuff that's already shown
+Mar 10 12:08:08 <vuori>	Also expanding the current set of fuzzers would be nice to have if that's something you're interested in
+Mar 10 12:17:02 <Guest97>	Thanks for the reply.  I'm pretty open. My own personal theme was adding some more features to match features I had in Superhman such as Send Later and Snooze for later.
+Mar 10 12:17:03 <Guest97>	4613 looks like a good introduction since I want to make some enhancements.
+Mar 10 12:20:50 <Guest97>	I'll start having a look. Well. First I need to build neomutt locally. Then I'll start.
+Mar 10 12:20:51 <Guest97>	It says there are also mentors? How does that work?
+Mar 10 12:22:59 <vuori>	I'll have to leave that question to flatcap since I haven't been getting anything done in a good while
+Mar 10 12:25:12 <vuori>	I think send later/snooze would be welcome, but the still-ongoing backend/UI separation refactoring may affect those kinds of features where tasks need to be scheduled for later
+Mar 10 12:27:38 <vuori>	ultimately I expect that they will be easier to implement at that point, because old Mutt code has those two sides pretty closely tied up and trying to use backend objects to do things in the background will often cause problems for the UI which expects things to stay put
+Mar 10 12:31:44 <Guest97>	Got it. Do you know when the refactor is expected to finish?
+Mar 10 12:34:06 <vuori>	nope, I've been totally slacking off, but things are happening in pieces so the parts relevant to you may well be done before everything is done
+Mar 10 12:35:04 <vuori>	That said, the sending side is probably the easier side concurrency-wise. The biggest separation issues have been in the mailbox backends, where same structures have historically held UI state and mailbox state
+Mar 10 13:19:56 <Guest97>	Got it. Ok that's useful to know. Will prioritise the Send Later feature - which is the one I want to do most anyways.
+Mar 10 13:19:57 <Guest97>	Thanks for the help vuori
+**** BEGIN LOGGING AT Sun Mar 10 23:24:28 2024
+
+Mar 10 23:24:27 *	Now talking on #neomutt
+Mar 10 23:24:27 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 10 23:24:27 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 10 23:24:27 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 10 23:24:27 *	Channel #neomutt url: https://neomutt.org

@@ -307,3 +307,100 @@ T 1709708997 18<20bpalmer18>	so you add lsp-deferred to c-ts-mode-hook ?
 T 1709709058 18<28piyush_2418>	I do
 T 1709709081 18<28piyush_2418>	I just checked, apparently lsp-deferred is an optimization option, to not enable lsp until required
 T 1709709192 18<20bpalmer18>	ok, and C-h v c-ts-mode-hook RET shows that it is there?
+T 1709728181 19*	Now talking on 22#emacs-beginners
+T 1709728181 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1709728181 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1709757842 19*	Now talking on 22#emacs-beginners
+T 1709757842 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1709757842 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1709774324 19*	Now talking on 22#emacs-beginners
+T 1709774324 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1709774324 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1709780670 18<26r-ragul18>	I use nvm to manage node versions. I added the path to emacs 'exec-path'. eshell finds my node executable but eglot couldn't. How to resolve this?
+T 1709781071 18<20bpalmer18>	eglot couldn't, or the lsp it's talking to couldn't?
+T 1709781110 18<20bpalmer18>	exec-path is used for emacs to find tools, but subprocesses it creats do not inherit it.
+T 1709781116 18<20bpalmer18>	*creates
+T 1709781130 18<20bpalmer18>	for that, you may want to use setenv to change the PATH variable.
+T 1709781411 18<26r-ragul18>	Thanks for your response, I will try it out.
+T 1709781493 18<20bpalmer18>	if the lsp server is being started outside of emacs, you may need to set the path in your config files.
+T 1709786353 19*	Now talking on 22#emacs-beginners
+T 1709786353 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1709786353 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1709787188 19*	Now talking on 22#emacs-beginners
+T 1709787188 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1709787188 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1709790361 19*	Now talking on 22#emacs-beginners
+T 1709790361 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1709790361 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1709808329 19*	Now talking on 22#emacs-beginners
+T 1709808329 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1709808329 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1709810810 19*	Now talking on 22#emacs-beginners
+T 1709810810 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1709810810 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1709811590 19*	Now talking on 22#emacs-beginners
+T 1709811590 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1709811590 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1709817348 19*	Now talking on 22#emacs-beginners
+T 1709817348 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1709817348 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1709934726 19*	Now talking on 22#emacs-beginners
+T 1709934726 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1709934726 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1709935464 19*	Now talking on 22#emacs-beginners
+T 1709935464 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1709935464 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1709935634 19*	Now talking on 22#emacs-beginners
+T 1709935634 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1709935634 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1709936054 19*	Now talking on 22#emacs-beginners
+T 1709936054 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1709936054 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1709966630 19*	Now talking on 22#emacs-beginners
+T 1709966630 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1709966630 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1709969040 19*	Now talking on 22#emacs-beginners
+T 1709969040 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1709969040 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1709975301 19*	Now talking on 22#emacs-beginners
+T 1709975301 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1709975301 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1709975561 19*	Now talking on 22#emacs-beginners
+T 1709975561 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1709975561 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1709978956 19*	Now talking on 22#emacs-beginners
+T 1709978956 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1709978956 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1709980395 19*	Now talking on 22#emacs-beginners
+T 1709980395 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1709980395 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1709988023 19*	Now talking on 22#emacs-beginners
+T 1709988023 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1709988023 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1709991215 19*	Now talking on 22#emacs-beginners
+T 1709991215 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1709991215 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1710026477 19*	Now talking on 22#emacs-beginners
+T 1710026477 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1710026477 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1710026566 19*	Now talking on 22#emacs-beginners
+T 1710026566 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1710026566 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1710026858 19*	Now talking on 22#emacs-beginners
+T 1710026858 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1710026858 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1710027101 19*	Now talking on 22#emacs-beginners
+T 1710027101 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1710027101 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1710031100 19*	Now talking on 22#emacs-beginners
+T 1710031100 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1710031100 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1710031928 19*	Now talking on 22#emacs-beginners
+T 1710031928 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1710031928 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1710049342 19*	Now talking on 22#emacs-beginners
+T 1710049342 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1710049342 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)
+T 1710109467 19*	Now talking on 22#emacs-beginners
+T 1710109467 22*	Topic for 22#emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+T 1710109467 22*	Topic for 22#emacs-beginners set by 26bandali!~bandali@gnu/bandali (24Fri May 21 14:51:32 2021)

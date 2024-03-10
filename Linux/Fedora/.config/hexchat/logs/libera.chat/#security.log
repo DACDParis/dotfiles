@@ -1371,3 +1371,424 @@ Mar 06 08:51:33 <iz>	also, as mk-fg said, pcq is like a hedge against future bre
 Mar 06 11:11:35 <dnosng>	so, is im in sequrity?
 Mar 06 11:12:32 <calmclam>	sir this is a wendys
 Mar 06 11:26:35 <dnosng>	calmclam: very funy, did u know some port-chaker for my phone anrdoid, root free
+**** BEGIN LOGGING AT Wed Mar  6 13:29:42 2024
+
+Mar 06 13:29:41 *	Now talking on #security
+Mar 06 13:29:41 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 06 13:29:41 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 06 14:06:29 <mwebsec>	y0
+Mar 06 14:06:53 <mwebsec>	anyone from here has been accepted into synack redteam ?
+Mar 06 14:07:35 <calmclam>	no. did you apply?
+Mar 06 14:07:51 <calmclam>	(speaking only for myself)
+Mar 06 14:08:17 <mwebsec>	yea i did
+Mar 06 14:08:18 <mwebsec>	a week ago
+Mar 06 14:08:32 <mwebsec>	still no reply
+Mar 06 14:09:14 <calmclam>	nice. fortune favors the bold
+Mar 06 14:10:47 <mwebsec>	:D
+Mar 06 14:43:36 <mwebsec>	they processing slow my application
+Mar 06 14:43:48 <mwebsec>	but i will go through the fast track process because i got several certs
+Mar 06 14:43:58 <mwebsec>	i will chose the web route
+Mar 06 14:44:11 <mwebsec>	i chose the web route*
+Mar 06 14:52:36 <harrykar>	mwebsec: anyone from here has been accepted into synack redteam ?> what's about?
+Mar 06 14:55:41 <mwebsec>	just wanted to ask how long does it take for them to reply to the submitted application
+Mar 06 14:55:41 <mwebsec>	:D
+Mar 06 14:57:01 <harrykar>	mwebsec: can expand a bit please?
+Mar 06 14:57:11 <mwebsec>	i applied week and a half ago
+Mar 06 14:57:32 <mwebsec>	still no reply. i chose web route due to me having web app cert so that would fast track my application
+Mar 06 15:01:45 <calmclam>	i think at least one person wrote a blog about their experience joining them but i don't have a link
+Mar 06 15:03:43 <mwebsec>	okay
+Mar 06 19:41:05 <snoriman>	hi! i'm about to deploy a nodejs based app on a VPS and would love to hear some common practices that I should take into account. Currently I'm thinking about using Arch Linux (because I've been using that for a while). I want to install my nodejs app in /srv and use systemd to keep it running.
+Mar 06 19:41:38 <snoriman>	I've read somewhere that it might be a good idea to create a system user and run the project/app under that name
+Mar 06 19:41:52 <snoriman>	is this typical?
+Mar 06 19:50:24 <luca0N>	snoriman: Arch Linux is a rolling release distro, wouldn't recommend it for servers. and yes, creating dedicated user accounts for running programs is typical on Linux
+Mar 06 19:50:54 <luca0N>	some programs will outright prevent you from running them as root, for instance
+Mar 06 19:51:18 <snoriman>	ok thanks!
+Mar 06 19:51:39 <luca0N>	no worries!
+Mar 06 20:01:04 <snoriman>	luca0N: I was thinking to use git and clone a repos + tag for this app. When I create another user for this app, then I think this user also needs to be able to access my repository. Or is there a way to work around this?
+Mar 06 20:06:04 <luca0N>	snoriman: I'm not too familiar with npm, but I'd imagine you could set up an internal repo and deploy tagged versions there (or, heck, even publish them on npm if you're comfortable releasing it to the general public). if this isn't possible, then you could write a shell script to accomplish this
+Mar 06 20:06:26 <luca0N>	since you've mentioned Arch Linux, you could even create a PKGBUILD for your app.
+Mar 06 20:06:39 <snoriman>	ok yeah, I thought maybe there is a "trick" for this.
+Mar 06 20:06:54 <snoriman>	yeah I might look into pkgbuild or something like that
+Mar 06 20:07:03 <luca0N>	I'm not too familiar with nodejs, perhaps there's a proper way to go about this
+Mar 06 20:07:11 <luca0N>	since this is #security, I'd highly recommend signing releases
+Mar 06 20:09:09 <n0xx>	will the project be build on production?
+Mar 06 20:10:33 <snoriman>	n0xx: yes, well typically you run a nodejs based service simply with `nodejs service.js`
+Mar 06 21:04:38 <pedrowiski>	Do you guys consider surfshark a good vpn?
+Mar 06 21:14:20 <hays>	I want to have some files hosted on the web without dealing with http authentication. I was thinking i can force TLS and put them in a directory like /.f0jf03jf0e3jdejpeojlsfljf34lkfm3/files_here and that should be pretty safe.. is there something i'm missing in terms of people finding that?
+Mar 06 21:16:38 <EdFletcher>	same strategy is used by huge sites like github to create "secret" urls so yeah, i think you're fine
+Mar 06 21:17:49 <hays>	maybe these show up in the access logs right? maybe that's a slight concern?
+Mar 06 21:19:54 <mwebsec>	if the long string of characters url is referenced in a web page, then looking at html source of the page, attacker can copy the url and bruteforce files
+Mar 06 21:20:20 <hays>	true good point
+Mar 06 21:21:19 <hays>	i kind of want to turn off port 80 but i think it needs to be attending for letsencrypt
+Mar 06 21:21:22 <danieldg>	web browser history will also contain it, as will any MITM proxies (common for many company-provided networks)
+Mar 06 21:21:44 <danieldg>	you *can* configure letsenrypt to use other methods but they're harder
+Mar 06 21:23:23 <hays>	ahh interesting point about proxies
+**** BEGIN LOGGING AT Wed Mar  6 21:44:02 2024
+
+Mar 06 21:44:02 *	Now talking on #security
+Mar 06 21:44:02 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 06 21:44:02 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 06 21:45:50 <frenchboy[m]>	hays: it also depends on how long you want to keep the server on if it's just for an hour probability of someone compromising an intermediary proxy or a client that already has the url in his history is incredibly low but if you keep it running for years you have to account for that
+Mar 06 21:49:26 <iz>	i think consider the use-case here -- what are you hosting these files for?  who are you giving the url to?  will they need continual access or just for a bit?
+Mar 06 21:53:05 <en4rab>	wilsonfisk, opening no touch exit sensors with a modulated IR torch, its hilariously funny to do in real life through the glass in a door when you are on the other side of the sensor https://www.youtube.com/watch?v=g8V6AG4Bsew
+Mar 06 22:04:23 <LeeAdama>	is the linkedin outage a cyberattack or a sysadmin fuck up?
+Mar 06 22:23:26 <wasamasa>	nobody's gonna miss linkedin
+Mar 06 22:25:26 <wasamasa>	it's a special kinda scourge
+Mar 06 22:47:34 <mwebsec>	:D
+**** ENDING LOGGING AT Wed Mar  6 23:44:24 2024
+
+**** BEGIN LOGGING AT Thu Mar  7 02:18:45 2024
+
+Mar 07 02:18:44 *	Now talking on #security
+Mar 07 02:18:44 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 07 02:18:44 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 07 03:28:31 <nullvalue>	sorry im late, i came as soon as i wanted
+Mar 07 03:36:02 <calmclam>	nobody ever expects nullvalue
+Mar 07 03:39:15 <nullvalue>	yeah tht explains why exciting stuff dont happen much when im around
+Mar 07 03:39:26 *	nullvalue greets calmclam properlly
+Mar 07 03:39:38 *	calmclam tips hat
+Mar 07 03:39:49 <nullvalue>	what cha workin on,...want some coffee!!
+Mar 07 03:40:04 <calmclam>	sure
+Mar 07 03:40:26 <calmclam>	i'm trying to understand the javascript execution model. It's surprisingly complex for what most people consider a simple laungage.
+Mar 07 03:40:34 *	nullvalue hands over a d[_] to calmclam 
+Mar 07 03:40:41 *	calmclam sips
+Mar 07 03:41:00 <nullvalue>	oh, man i hate the long syntax'ng of that language with all my heart
+Mar 07 03:41:01 <nullvalue>	lol
+Mar 07 03:41:31 <calmclam>	I don't like it either.
+Mar 07 03:41:32 <nullvalue>	maybe thats the complication you are facing as well
+Mar 07 03:41:57 <calmclam>	They've added all kinds of crap to it in the last 10 years as well
+Mar 07 03:43:17 <calmclam>	I don't think the web could have settled on a more obtuse language if they tried. It's shocking, shocking that so many "applications" are built on it.
+Mar 07 03:44:28 <nullvalue>	i agree
+Mar 07 03:44:29 <calmclam>	ty
+Mar 07 03:46:19 <danieldg>	at least wasm is an attempt to get away from it, but it's rather slow to actually happen
+Mar 07 03:46:22 <nullvalue>	should ask the other parties "why has this happened" why did you let it happen even?
+Mar 07 03:46:43 <nullvalue>	ah see wasm happened too
+Mar 07 03:46:49 <danieldg>	but yeah, js is the ultimate "nothing more permanent than a temporary fix"
+Mar 07 03:48:33 <calmclam>	WASM is kind of like the new java. We'll see how it goes. It at least is being designed with security in mind from the outset, although time will tell how effective it is.
+Mar 07 03:49:10 <n0xx>	I'm so scared of js
+Mar 07 03:50:52 <calmclam>	As for js, I read a piece on its history. Aparently it was designed and implemented over a few weekends by an expert language designer working for netscape at the time. I'm pretty sure they had no idea it would try to fill this role. It was probably meant for putting scrolling marquees in the status bar and not much else.
+Mar 07 03:51:16 <calmclam>	We don't even have status bars anymore.
+Mar 07 03:51:27 <nullvalue>	heh n0xx
+Mar 07 03:51:44 <nullvalue>	dont worry js will not hurt you!! :P
+Mar 07 03:52:03 <nullvalue>	well maybe you eyes a bit, but thts abt it lol
+Mar 07 03:52:06 <n0xx>	it hurt me many times
+Mar 07 03:52:14 <nullvalue>	awww
+Mar 07 03:52:17 *	calmclam gets out the HR dolls
+Mar 07 03:52:32 <nullvalue>	tell us in the doll where js hurted you
+Mar 07 05:00:10 <monkeydonkeyping>	Hello
+Mar 07 05:03:09 <monkeydonkeyping>	?
+Mar 07 05:14:31 <monkeydonkeyping>	DO you guys actually use ASM ? attack surface management ? which only does passive scans
+Mar 07 05:25:09 <nullvalue>	no we do it from scratch no management tools involved
+**** BEGIN LOGGING AT Thu Mar  7 05:39:14 2024
+
+Mar 07 05:39:13 *	Now talking on #security
+Mar 07 05:39:13 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 07 05:39:13 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Thu Mar  7 05:53:08 2024
+
+Mar 07 05:53:08 *	Now talking on #security
+Mar 07 05:53:08 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 07 05:53:08 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Thu Mar  7 06:46:01 2024
+
+Mar 07 06:46:01 *	Now talking on #security
+Mar 07 06:46:01 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 07 06:46:01 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Thu Mar  7 11:45:30 2024
+
+Mar 07 11:45:29 *	Now talking on #security
+Mar 07 11:45:29 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 07 11:45:29 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Thu Mar  7 12:26:50 2024
+
+Mar 07 12:26:50 *	Now talking on #security
+Mar 07 12:26:50 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 07 12:26:50 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Thu Mar  7 12:39:50 2024
+
+Mar 07 12:39:50 *	Now talking on #security
+Mar 07 12:39:50 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 07 12:39:50 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Thu Mar  7 14:15:49 2024
+
+Mar 07 14:15:48 *	Now talking on #security
+Mar 07 14:15:48 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 07 14:15:48 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 07 15:23:59 <OurRoyalGabe>	oh yeah I am almost an Akuvox installer
+Mar 07 15:24:32 <OurRoyalGabe>	I don't know what I learned about more on the journey, setting up the doorbell or simplified Chinese
+Mar 07 23:33:48 <mwebsec>	another day another dollar
+Mar 07 23:33:55 <mwebsec>	found 4 stored xss in cms
+Mar 07 23:34:08 <mwebsec>	(~_-)
+Mar 08 00:48:26 <insecurity>	cool
+Mar 08 00:48:44 <insecurity>	mwebsec: bounty?
+Mar 08 00:49:01 <mwebsec>	not quite
+Mar 08 00:49:13 <mwebsec>	jsut downloaded opensource cms and pentest in my lab
+Mar 08 00:49:23 <mwebsec>	i do that every friday
+Mar 08 00:49:50 <mwebsec>	its not quite friday yet,but sure i will have some fun tomorrow. glad to have checked the xss as complete for this pentest
+Mar 08 00:51:20 <mwebsec>	i also got checkmarx scan running to scan its codebase for any flaws that i miss whilst testing :D
+Mar 08 01:25:33 <insecurity>	cool!
+Mar 08 01:25:39 <insecurity>	which cms did you download?
+**** BEGIN LOGGING AT Fri Mar  8 22:52:06 2024
+
+Mar 08 22:52:06 *	Now talking on #security
+Mar 08 22:52:06 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 08 22:52:06 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Fri Mar  8 23:04:25 2024
+
+Mar 08 23:04:23 *	Now talking on #security
+Mar 08 23:04:23 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 08 23:04:23 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Fri Mar  8 23:07:14 2024
+
+Mar 08 23:07:13 *	Now talking on #security
+Mar 08 23:07:13 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 08 23:07:13 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Fri Mar  8 23:14:15 2024
+
+Mar 08 23:14:14 *	Now talking on #security
+Mar 08 23:14:14 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 08 23:14:14 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 08 23:14:22 <jennie>	alright, ignore my latter question, I have thinkpad, how can I make sure no one can get in when computer is OFF
+Mar 08 23:14:48 <xorAxAx>	jennie: with or without internal battery?
+Mar 08 23:16:03 <jennie>	i dont think so this laptop has internal battery but the main battery is also under laptop bottom panel which has 10+ screws
+Mar 08 23:16:40 <xorAxAx>	then the answer is "yes"
+Mar 08 23:16:51 <jennie>	what can I do now :(
+Mar 08 23:16:53 <xorAxAx>	then you can shut down the laptop in the BIOS settings
+Mar 08 23:17:04 <jennie>	which setting is it?
+Mar 08 23:17:50 <xorAxAx>	not sure, you will recognize it when you see it
+Mar 08 23:18:00 <jennie>	whats the name of that setting?
+**** BEGIN LOGGING AT Sat Mar  9 07:43:51 2024
+
+Mar 09 07:43:50 *	Now talking on #security
+Mar 09 07:43:50 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 09 07:43:50 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Sat Mar  9 08:24:00 2024
+
+Mar 09 08:24:00 *	Now talking on #security
+Mar 09 08:24:00 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 09 08:24:00 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Sat Mar  9 10:08:21 2024
+
+Mar 09 10:08:21 *	Now talking on #security
+Mar 09 10:08:21 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 09 10:08:21 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** ENDING LOGGING AT Sat Mar  9 10:09:15 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 10:12:41 2024
+
+Mar 09 10:12:41 *	Now talking on #security
+Mar 09 10:12:41 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 09 10:12:41 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Sat Mar  9 11:09:17 2024
+
+Mar 09 11:09:16 *	Now talking on #security
+Mar 09 11:09:16 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 09 11:09:16 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Sat Mar  9 11:33:15 2024
+
+Mar 09 11:33:15 *	Now talking on #security
+Mar 09 11:33:15 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 09 11:33:15 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** ENDING LOGGING AT Sat Mar  9 13:31:10 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 13:40:23 2024
+
+Mar 09 13:40:23 *	Now talking on #security
+Mar 09 13:40:23 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 09 13:40:23 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 09 14:20:14 <APic>	;=P
+**** BEGIN LOGGING AT Sat Mar  9 14:33:36 2024
+
+Mar 09 14:33:35 *	Now talking on #security
+Mar 09 14:33:35 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 09 14:33:35 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 09 15:03:58 <mwebsec>	y0
+Mar 09 15:06:26 *	calmclam tips hat
+Mar 09 17:43:46 <mwebsec>	hi
+Mar 09 17:43:51 <mwebsec>	calmclam
+Mar 09 17:54:31 <iz>	hehe mats1
+Mar 09 18:29:26 <mats1>	it was two years ago, i remember being banned from ##economics was around then
+Mar 09 18:30:41 <mats1>	rmah was upset about the discussion of slavery
+Mar 09 18:31:09 <mats1>	which, incidentally, us has been continuously practising without interruption since its inception, https://apnews.com/article/prison-to-plate-inmate-labor-investigation-c6f0eb4747963283316e494eadf08c4e
+Mar 09 18:31:25 <mats1>	https://www.theguardian.com/us-news/2022/sep/27/slavery-loophole-unpaid-labor-in-prisons
+Mar 09 18:39:34 <mats1>	a multibillion slave empire powering the supply chain, with the support of the ostensibly democratic electorate and all of its interest groups -- shareholders and unions, ie, state/county/municipal employee unions (AFSCME), service employee unions (SEIU), law enforcement and corrections officers unions (such as CCPOA), nurses (NNU), national union of healthcare workers (NUHW), teamsters, etc
+Mar 09 18:39:47 <mats1>	multibillion dollar slave empire*
+Mar 09 18:41:33 <eson123>	question, so whenever there is a newly discovered CVE or one that you guys just met in a day, how do you guys figure out a way to simulate its PoC ? what i usually do is "CVE PoC" Or "CVE exploit" on Google and *hopefully* a post will appear but some CVE do not have that available so is there any reliable source where it explains all existing one and provide a snippet of code or PoC ?
+Mar 09 18:42:01 <mats1>	no
+Mar 09 18:42:34 <eson123>	oh :(
+Mar 09 19:01:26 <iz>	i don't feel like i was still in that channel in 2022, but i suppose maybe i was.. anyway, still holding my nflx
+Mar 09 19:02:23 <iz>	if the cve was a "responsible disclosure" and it's being posted at the same time/after a patch is released, you can bindiff the patch
+Mar 09 19:20:09 <eson123>	iz: sorry but i don't get when u say "bindiff"
+Mar 09 19:20:23 <eson123>	is that an english word or sth
+Mar 09 19:22:01 <iz>	it's a reverse engineering thing, there's an ida plugin called that, which can be used to help find the differences between two binaries.  you bindiff the unpatched version with the patched version and find what changed in the patch to figure out exactly how the vuln works and to make a poc or whatever
+Mar 09 19:26:06 <eson123>	oh, yea i guess that works too
+Mar 09 19:26:14 <eson123>	might take time but still better than nothing
+Mar 09 19:27:47 <eson123>	iz: also what is "nflx" ? google said it's netflix but i don't think so :D
+Mar 09 19:28:35 <iz>	yeah, it's referring to netflix stock
+Mar 09 19:29:46 <iz>	mats1 and i were kinda off on a bit of a tangent, but like he said, this is #security and nflx is a security ;b
+Mar 09 19:54:53 <mwebsec>	simply the best
+Mar 09 20:03:38 <mwebsec>	pow pow
+Mar 09 20:30:20 *	ChanServ gives channel operator status to ajak
+Mar 09 20:30:55 *	ajak removes quiet on *!*@conductor.oxasploits.com
+Mar 09 20:31:03 *	ajak removes channel operator status from ajak
+Mar 09 21:00:30 <mjacob>	gnrp: sorry, i didn't see your answer. i deliberately left "securely" a bit vague. for the sake of starting the discussion, one of the requirements should be that only the application which has stored the tokens can access them.
+Mar 09 23:53:13 <phonixgeist>	I have my openvpn with chroot-jail running as a service in debian, and now I am trying to add it to apparmor. I created my openvpn profile in apparmor but is conflicting with chroot. i am getting this error: --- chroot to '/.vpn-jail/' failed: Operation not permitted (errno=1) --- On my openvpn profile I added the jail folder to de list but not sure what to do now to make it work... any ideas what am i missing?
+**** BEGIN LOGGING AT Sun Mar 10 00:21:17 2024
+
+Mar 10 00:21:16 *	Now talking on #security
+Mar 10 00:21:16 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 10 00:21:16 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Sun Mar 10 00:22:46 2024
+
+Mar 10 00:22:45 *	Now talking on #security
+Mar 10 00:22:45 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 10 00:22:45 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Sun Mar 10 00:27:38 2024
+
+Mar 10 00:27:37 *	Now talking on #security
+Mar 10 00:27:37 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 10 00:27:37 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Sun Mar 10 00:31:41 2024
+
+Mar 10 00:31:40 *	Now talking on #security
+Mar 10 00:31:40 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 10 00:31:40 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 10 00:58:16 <kurahaupo>	phoenixgeist: chroot & fchroot are privileged syscalls, and therefore you need to allow them in the profile for OpenVPN
+Mar 10 01:00:36 <kurahaupo>	Or perhaps in a profile for "start container"
+**** BEGIN LOGGING AT Sun Mar 10 01:38:21 2024
+
+Mar 10 01:38:20 *	Now talking on #security
+Mar 10 01:38:20 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 10 01:38:20 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Sun Mar 10 01:52:09 2024
+
+Mar 10 01:52:08 *	Now talking on #security
+Mar 10 01:52:08 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 10 01:52:08 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 10 03:18:29 <houseparty>	Found my first bug. I actually didn't think of it as that but the guy for the server I found it on hinted I should seek the bounty
+Mar 10 03:18:52 <houseparty>	!!! ... over, I think, 27K insecure passwords in plaintext going back to the 2009 rockyou breach
+**** ENDING LOGGING AT Sun Mar 10 04:26:38 2024
+
+**** BEGIN LOGGING AT Sun Mar 10 06:42:22 2024
+
+Mar 10 06:42:22 *	Now talking on #security
+Mar 10 06:42:22 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 10 06:42:22 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 10 06:56:15 *	calmclam sprays houseparty with champagne
+Mar 10 07:32:12 <BGL>	every day but also every other day: Ivanti! - but also every day and night
+Mar 10 07:32:38 <BGL>	also CISA barely a year ago, Ivanti? and now CISA every day Ivanti!
+Mar 10 07:34:19 <BGL>	previously yes but then no, and now definitely no but at the same time still yes
+Mar 10 07:35:48 <BGL>	i sure wish there was an agency that could provide the least technical security advice possible, described at a higher level than executive summaries
+Mar 10 07:37:50 <BGL>	out with numbers, graphs, trends
+Mar 10 07:38:59 <BGL>	let's just start snapping our fingers, clapping and banging on pots as a means of relaying important information
+Mar 10 07:41:19 <BGL>	we're way ahead guys, but also my teams/zoom calls aren't connecting to India anymore? please help
+Mar 10 08:10:21 *	calmclam throws a telephone booth at BGL
+Mar 10 08:13:06 *	BGL sets up shop in a telephone booth
+Mar 10 08:13:51 *	calmclam hands BGL a box of Cap'n Crunch cereal
+Mar 10 08:21:31 <oxagast>	3
+Mar 10 08:39:38 *	BGL opens the box, and finds a special toy?
+Mar 10 08:51:36 <eson123>	just a random situation pop up in my head that idk whether it has happened but is there anyhow i can inspect whether a device is a legitimate one or it's a spoofed device which looks like a speaker, etc but actually records my audio and secretly send it through 4G to the attacker ?
+Mar 10 08:51:55 <eson123>	i mean it can still be faked to look exactly like the valid one
+Mar 10 08:52:52 <eson123>	sometime i bring weird devices or people i just met send me as gifts but still wanna make sure :P
+Mar 10 08:53:02 <BGL>	yeah, the water test
+Mar 10 08:53:13 <eson123>	water test ?
+Mar 10 08:57:13 <eson123>	nope, still not a clue on Google
+Mar 10 09:01:21 <BGL>	basically you measure vibrations from a nearby glass of water for exfiltration attacks
+Mar 10 09:13:23 <eson123>	BGL: you mean like see if the water surface slightly ripples ?
+Mar 10 13:15:33 <godSend23>	hey all
+Mar 10 13:15:51 <NthDegree>	hi ^.^
+Mar 10 13:17:47 <godSend23>	hi
+Mar 10 13:17:49 <godSend23>	what up
+Mar 10 13:17:50 <calmclam>	hi
+Mar 10 13:23:41 <godSend23>	?
+Mar 10 13:28:35 <mwebsec>	y0
+Mar 10 13:28:52 <NthDegree>	Not much, just weighing up which is worse: Trying to write some custom services to block apps from interfering with each other on Windows.. or living with the hackjob I had to scrape together to get acceptable VAAPI on Linux >_>
+Mar 10 13:30:36 <NthDegree>	You've gotta love it when Microsoft has servicing criteria of "an unauthorized user mode process cannot access or tamper with the code and data of another process" for their process boundary, yet everything running as the same user account can tamper with code and data of other processes running as the same user account
+Mar 10 13:31:47 <godSend23>	ooh
+Mar 10 13:32:25 <calmclam>	yeah, key word there is "unauthorized"
+Mar 10 13:34:16 <NthDegree>	that's the shocking part, you'd assume that they'd at least set the DACLs on processes to not allow such access by default, but instead, everything is authorised out of the box
+Mar 10 13:34:24 <calmclam>	and the tiny asterisk next to it that says "everything is authorized" lol
+Mar 10 13:35:48 <calmclam>	I wonder if they've done the analysis to see what it would break. They did something similar with user account control to enforce user consent before using admin privilege and it was a shitshown.
+Mar 10 13:37:45 <calmclam>	I wouldn't be surprised if win32 libraries reach into other processes all the time to implement its functionality
+Mar 10 13:39:13 <NthDegree>	it's difficult to tell because KeePassXC revokes most of its own DACLs but can't alter process ownership to add the final lock on it
+Mar 10 13:40:13 <NthDegree>	and we know some DVD players do a similar thing with a proper lock on top (Protected Process) to protect the interests of Hollywood
+Mar 10 13:40:22 <calmclam>	The ACL model isn't really suited for fine-grained access control so I'm not surprised they just don't deal with it
+Mar 10 13:42:42 <calmclam>	oh right i forgot about that
+Mar 10 13:44:25 <calmclam>	modern apps get their own special security acls too, i wonder if they are protected from the win32 side
+Mar 10 13:45:03 <calmclam>	i stopped learning about that stuff after vista
+Mar 10 13:45:13 <NthDegree>	from what I can tell, old-fashioned win32 apps get protected from the effects of constrained modern apps, but not the other way round
+Mar 10 13:45:25 <calmclam>	ah, that's unfortunate.
+Mar 10 13:46:39 <housemate>	cam
+Mar 10 13:46:43 <housemate>	lacan
+Mar 10 13:47:39 <calmclam>	NthDegree: So you are developing security software for Windows and linux?
+Mar 10 13:48:34 <NthDegree>	I wouldn't say developing anything as much as experimenting to see if I can harden my system to a level where the contents of my password manager can't be immediately stolen by any other running app without my knowledge
+Mar 10 13:48:45 <calmclam>	cool
+Mar 10 13:49:04 <calmclam>	It's a shame more of windows isn't source available, especially now that it's mostly worthless (IMHO)
+Mar 10 13:49:57 <godSend23>	anybody know how to order something on amazon and get it redirected to a locker instead of an address?
+Mar 10 13:50:57 <calmclam>	NthDegree: I'm not sure you'll be able to success, but good luck lol
+Mar 10 13:52:27 <NthDegree>	calmclam: well, it seems on Linux, cross-process memory accesses are guarded by ptrace checks, meaning the memory protections I want to accomplish on Windows work with a simple kernel.yama.ptrace_scope=3 in sysctl
+Mar 10 13:52:45 *	calmclam nods
+Mar 10 13:53:06 <NthDegree>	and the window messaging isolation is provided for free by Wayland compositors (for better or worse, depending on use case)
+Mar 10 13:53:53 <BurningMemory>	you should probably know that setting ptrace scope to 3 locks up the variable as well
+Mar 10 13:54:42 <calmclam>	I'd also be worried about clipboard access if you're using it for passwords
+Mar 10 13:55:32 <NthDegree>	yeah, I avoid the clipboard side of things by having it use the browser integration instead, which can be made to prompt for permission every time it wants a credential
+Mar 10 13:57:10 <BurningMemory>	good password managers wipe the clipboard after a certain time period anyways
+Mar 10 13:57:51 <NthDegree>	that's true, plus I need to do some tests but I think Wayland clients can't see clipboard changes until they're foregrounded
+Mar 10 13:59:00 <BurningMemory>	i just read the messages above. so, you're looking to harden your system?
+Mar 10 14:00:30 <housemate>	* Topic for #MEDICINE is: Take caution because that would be incredible. Taking a intangible thing... JUST FUCKING EYE-BALL THE ACID PUSSY!
+Mar 10 14:02:22 <NthDegree>	yeah, just to a basic level so when I'm running $random_software that it can't do obviously bad things so invisibly, with the assumption that I don't need absolute perfection, just for basic constraints to work as intended
+Mar 10 14:02:48 <BurningMemory>	it depends on how far you want to go and what your distribution is
+Mar 10 14:03:24 <housemate>	I am smoing cyproheptadine, it is oay, in-fact.
+Mar 10 14:03:50 <BurningMemory>	also, not running random software is a good start
+Mar 10 14:03:51 <housemate>	appoogies my between 'h' and ''' are broien...
+Mar 10 14:07:16 <NthDegree>	by random software I mean things like video games, where its provenance is tied to either large dodgy corporations or small indie dev teams with very lax security
+Mar 10 14:07:41 <NthDegree>	I'm using Fedora and I've got an opensnitch policy layered atop firewalld to stop the Internet being used as a backchannel, got ptrace restrictions on the go and am mostly using Wayland-native apps
+Mar 10 14:08:40 <BurningMemory>	well, i can suggest you some documentation on hardening your system, but what fedora does by default is sufficient for desktop usage. the biggest vulnerability is always the user
+Mar 10 14:09:24 <NthDegree>	I'm also going to try my hand at bwrap'ing everything which speaks to the Internet, since Red Hat has all but given up on confining desktop apps with custom SELinux policies (and the work to add all the necessary granular types to existing policy would be way too much of a ballache)
+Mar 10 14:09:29 <BurningMemory>	as far as i know though, stuff like steam you can use in flatpaks, with which you can restrict filesystem access
+Mar 10 14:10:00 <BurningMemory>	fedora uses the unconfined policy by default on desktop flavors
+Mar 10 14:10:50 <BurningMemory>	oh sorry, it's called "targeted"
+Mar 10 14:11:11 <calmclam>	NthDegree: nice
+Mar 10 14:12:02 <BurningMemory>	well, if you're very paranoid you can just use qubeos and live in a forest :)
+Mar 10 14:13:23 <NthDegree>	while Joanna Rutkowska put in a lot of work to add isolation, I couldn't give up smooth video playback (and working VAAPI) when browsing the web, that would be way too overkill
+Mar 10 14:14:09 <BurningMemory>	again, everything depends on your use case
+Mar 10 14:32:28 <NthDegree>	mine is more a case of wanting general computing to be a little less fragile, it doesn't have to be perfect, just not a complete shitshow
+Mar 10 14:58:48 <housemate>	https://executingreality.com/pdfs/lobby/THE_FUTURE.pdf
+Mar 10 14:59:17 <xorAxAx>	whats that, a pdfjs 0day bait? :)
+Mar 10 14:59:42 <katia>	just javascript.alert("lol")
+Mar 10 15:00:38 <xorAxAx>	ah
+Mar 10 15:02:55 <xorAxAx>	for just that, 13 kB is a lot
+Mar 10 15:03:20 <xorAxAx>	my earlier idea was to build a CV PDF that prints differently than shows on the screen - that would be cool
+Mar 10 15:04:22 <katia>	(nah idk if it is that)
+Mar 10 15:04:26 <katia>	:')
+Mar 10 15:04:51 <katia>	that does sound cool
+Mar 10 15:05:06 <katia>	imagine it's the same thing but flipped 90°
+Mar 10 15:05:18 <katia>	or 85°
+Mar 10 15:05:53 <calmclam>	or it prints the pdf bytes instead of its interpreted contents
+Mar 10 15:07:03 <xorAxAx>	nah, it would force color print and print a celeb photo but keep the same phone number
+Mar 10 15:07:16 <calmclam>	lol
+Mar 10 15:07:18 <xorAxAx>	(here, they want to see photos in the CV)
+Mar 10 15:07:46 <katia>	ò_ò nosy!
+Mar 10 15:07:49 <NthDegree>	maybe just have a webserver change the MIME type if the file is viewed twice, so that the second time it gets viewed it shows up as raw plaintext xD
+Mar 10 15:07:56 <xorAxAx>	i just checked, couldnt find any useful pdf assembler not written in js
+Mar 10 15:07:59 <calmclam>	brad pit from fight club?
+Mar 10 15:08:08 <xorAxAx>	NthDegree: but it should trigger on print
+Mar 10 15:08:18 <xorAxAx>	to approach companies with a "print first" policy
+Mar 10 15:09:08 <xorAxAx>	calmclam: nah, was considering adriana lima
+Mar 10 15:09:19 <xorAxAx>	the phone number would need to be special though
+Mar 10 15:09:37 <xorAxAx>	to get a heads up for the disguise preps
+Mar 10 15:10:27 <xorAxAx>	i mean, if people print, you dont want to work there anyhow :} i mean, even if they claim they have good reasons to print, they should fix their machines first
+Mar 10 15:12:57 <NthDegree>	it might be worth using built-in PDF DRM (but without the problematic encryption) to block printing for those lowest common denominator folks, since Microsoft Edge is partnering to have Adobe Acrobat's PDF engine added
+Mar 10 15:13:52 <xorAxAx>	NthDegree: but i dont want to block it, its their decision whether they want to print
+Mar 10 15:15:17 <NthDegree>	ah, fair enough
+Mar 10 20:40:02 <mats1>	there's "optional content groups" in PDFs
+Mar 10 20:40:57 <mats1>	and print-only layers in adobe indesign
+Mar 10 20:41:34 <mats1>	and js support
+Mar 10 20:42:00 <mats1>	and probably ten other ways
+Mar 10 20:50:12 <xorAxAx>	mats1: interesting. so it doesnt even need js fiddling
+Mar 10 20:57:18 <mats1>	its a thirty year old format with everything under the sun supported
+**** BEGIN LOGGING AT Sun Mar 10 23:24:27 2024
+
+Mar 10 23:24:27 *	Now talking on #security
+Mar 10 23:24:27 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 10 23:24:27 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)

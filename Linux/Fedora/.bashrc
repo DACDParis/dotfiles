@@ -86,3 +86,4 @@ source /home/david/.bash_completion/alacritty.bash
 
 export FZF_DEFAULT_OPTS="--history=$HOME/.fzf_history"
 
+. "$HOME/.cargo/env"

@@ -1119,3 +1119,260 @@ Mar 06 10:56:07 <ygk_12345>	endre please check this https://paste.opendev.org/sh
 Mar 06 11:00:12 <endre>	haproxy_bind_internal_lb_vip_interface vs
 Mar 06 11:00:14 <endre>	haproxy_bind_internal_lb_vip_address
 Mar 06 11:02:10 <ygk_12345>	ohh
+**** BEGIN LOGGING AT Wed Mar  6 13:29:43 2024
+
+Mar 06 13:29:41 *	Now talking on #ansible
+Mar 06 13:29:41 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 06 13:29:41 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 06 13:29:41 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Mar 06 13:46:54 <carloratm>	hi all! Do you use something to wrap ansible-playbook commands? I am currently using PHONY make targets
+Mar 06 13:48:06 <endre>	nice
+Mar 06 13:48:19 <endre>	we use ci server to run playbooks
+Mar 06 13:48:27 <endre>	not exactly wrapping
+Mar 06 13:48:39 <endre>	but has some makefile analogy
+Mar 06 13:50:09 <carloratm>	make has a fantastic property, you can almost garantee it's there.
+Mar 06 13:54:50 <endre>	weeeeeelllll :D
+Mar 06 13:55:05 <endre>	yes, if you don't forget to include in the image!
+Mar 06 13:55:36 <endre>	RUN apk add --no-cache alsa-lib alsa-lib-dev python3 make g++ && yarn install --production
+Mar 06 13:56:01 <endre>	i needed all this to compile midi nodejs package
+Mar 06 14:06:19 <carloratm>	we are using debian and ubuntu servers ... but yeah
+Mar 06 14:07:28 <carloratm>	actually, what we do is we deploy manually, but it must be one command
+Mar 06 14:08:13 <carloratm>	so the control machine is every team member laptop, which can be a mac or ubuntu or archlinux
+Mar 06 15:39:28 <colo>	carloratm: so you want something that keeps around the proper argument vector and environment for a successfull ansible-playbook run?
+Mar 06 15:39:44 <colo>	I guess a Makefile is fine for that purpose. or a shellscript.
+Mar 06 15:40:10 <carloratm>	colo: yes
+Mar 06 16:43:28 <fireba11>	i don't really see the gain in doing that *scratches chin*
+Mar 06 18:56:18 <greatgatsby>	Hello.  What's the proper module to use to get user-input within a role?  I want to pause indefinitely with a prompt and register the answer to a question.  Thanks.
+Mar 06 19:01:35 <greatgatsby>	maybe a better question, does pause with a prompt (and no time specified) wait indefinitely for input?
+Mar 06 19:24:04 <oblikoamorale>	from module synposis: "Pauses playbook execution for a set amount of time, or until a prompt is acknowledged"   I got lost digging the source, but since timeout can be None (not defined), I'd say it's safe to assume that wait for user input is indefinite
+Mar 06 19:24:34 <oblikoamorale>	and worst idea of the day award goes to... interactive roles
+Mar 06 19:28:02 <greatgatsby>	yeah I tried to find the source, but the python file linked to via the docs doesn't contain much code, so I'm not sure where the source actually is.  Yes, I also agree this is generally bad practice, but it's our own role that's confirming a pending config change that could really mess things up if it's done incorrectly
+Mar 06 19:29:15 <greatgatsby>	so we use check mode, and if there's a change about to be made, we write the new file to /tmp and give the operator a chance to manually diff the files before accepting the changes.  Very open to better alternative approaches.
+Mar 06 19:31:07 <oblikoamorale>	https://github.com/ansible/ansible/blob/devel/lib/ansible/plugins/action/pause.py knock yourself out :p
+Mar 06 19:32:36 <greatgatsby>	carloratm: we use Makefiles pretty extensively in our environment, but yeah, .PHONY all over the place.  I've also seen https://github.com/casey/just mentioned a lot recently.
+Mar 06 19:32:53 <greatgatsby>	oblikoamorale: thanks
+Mar 06 19:38:15 <pezius>	Can someone guide me on an issue I'm facing:
+Mar 06 19:38:16 <pezius>	Using module file /opt/ansible_env/lib64/python3.9/site-packages/ansible/modules/import_playbook.py
+Mar 06 19:38:16 <pezius>	fatal: [w2k19-i837633]: FAILED! => {
+Mar 06 19:38:17 <pezius>	    "msg": "module (ansible.builtin.import_playbook) is missing interpreter line"
+Mar 06 19:38:17 <sivel>	pezius: Please slow down, or use a pastebin if you need to paste multiple lines. If you are using matrix, please do not send multi line messages. This is an automated message.
+Mar 06 19:38:17 <pezius>	}
+Mar 06 19:38:21 *	sivel sets ban on pezius!*@*
+Mar 06 19:43:18 *	sivel removes ban on pezius!*@*
+Mar 06 20:06:33 <pezius>	seems i was banned for asking a question?
+Mar 06 20:08:02 <jrglynn2>	no, tempoarary ban for pasting multiple lines instead of using a pastebin - "pezius: Please slow down, or use a pastebin if you need to paste multiple lines. If you are using matrix, please do not send multi line messages. This is an automated message."
+Mar 06 20:10:37 <awb>	Apologies if someone answered my "serial: 1" question from yesterday and I didn't respond. Scrollback buffer isn't large enough and I didn't see it.
+**** BEGIN LOGGING AT Wed Mar  6 21:44:03 2024
+
+Mar 06 21:44:02 *	Now talking on #ansible
+Mar 06 21:44:02 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 06 21:44:02 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 06 21:44:02 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** ENDING LOGGING AT Wed Mar  6 23:44:24 2024
+
+**** BEGIN LOGGING AT Thu Mar  7 02:18:47 2024
+
+Mar 07 02:18:44 *	Now talking on #ansible
+Mar 07 02:18:44 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 07 02:18:44 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 07 02:18:44 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Thu Mar  7 05:39:14 2024
+
+Mar 07 05:39:13 *	Now talking on #ansible
+Mar 07 05:39:13 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 07 05:39:13 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 07 05:39:13 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Thu Mar  7 05:53:08 2024
+
+Mar 07 05:53:08 *	Now talking on #ansible
+Mar 07 05:53:08 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 07 05:53:08 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 07 05:53:08 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Thu Mar  7 06:46:02 2024
+
+Mar 07 06:46:01 *	Now talking on #ansible
+Mar 07 06:46:01 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 07 06:46:01 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 07 06:46:01 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Thu Mar  7 11:45:31 2024
+
+Mar 07 11:45:29 *	Now talking on #ansible
+Mar 07 11:45:29 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 07 11:45:29 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 07 11:45:29 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Thu Mar  7 12:26:51 2024
+
+Mar 07 12:26:50 *	Now talking on #ansible
+Mar 07 12:26:50 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 07 12:26:50 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 07 12:26:50 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Thu Mar  7 12:39:51 2024
+
+Mar 07 12:39:50 *	Now talking on #ansible
+Mar 07 12:39:50 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 07 12:39:50 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 07 12:39:50 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Thu Mar  7 14:15:49 2024
+
+Mar 07 14:15:48 *	Now talking on #ansible
+Mar 07 14:15:48 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 07 14:15:48 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 07 14:15:48 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Mar 07 18:07:34 <SuperLag>	Is there a way to use wildcards for the src for ansible.builtin.fetch?
+Mar 08 00:31:45 <spidr_mnky>	I am using include_role, and registering the result.  That works unless I apply it in a loop, in which case the variable I try to register does not get set.  Does that sound more like a bug or like me using my tools incorrectly?
+Mar 08 01:07:50 <Gilou>	spidr_mnky: it should give you a list
+Mar 08 01:09:50 <Gilou>	variable should be set as a dict, and you get the details as a list in the results key, iirc
+Mar 08 01:40:50 <spidr_mnky>	Thank you, Gilou.  I'll spare you further details, here; I went ahead and filed:  https://github.com/ansible/ansible/issues/82796
+**** BEGIN LOGGING AT Fri Mar  8 22:52:06 2024
+
+Mar 08 22:52:06 *	Now talking on #ansible
+Mar 08 22:52:06 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 08 22:52:06 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 08 22:52:06 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Fri Mar  8 23:04:25 2024
+
+Mar 08 23:04:23 *	Now talking on #ansible
+Mar 08 23:04:24 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 08 23:04:24 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 08 23:04:24 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Fri Mar  8 23:07:14 2024
+
+Mar 08 23:07:14 *	Now talking on #ansible
+Mar 08 23:07:14 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 08 23:07:14 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 08 23:07:14 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Fri Mar  8 23:14:16 2024
+
+Mar 08 23:14:14 *	Now talking on #ansible
+Mar 08 23:14:14 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 08 23:14:14 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 08 23:14:14 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Sat Mar  9 07:43:51 2024
+
+Mar 09 07:43:50 *	Now talking on #ansible
+Mar 09 07:43:50 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 09 07:43:50 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 09 07:43:50 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Sat Mar  9 08:24:01 2024
+
+Mar 09 08:24:00 *	Now talking on #ansible
+Mar 09 08:24:00 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 09 08:24:00 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 09 08:24:00 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Sat Mar  9 10:08:22 2024
+
+Mar 09 10:08:21 *	Now talking on #ansible
+Mar 09 10:08:21 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 09 10:08:21 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 09 10:08:21 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** ENDING LOGGING AT Sat Mar  9 10:09:15 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 10:12:43 2024
+
+Mar 09 10:12:41 *	Now talking on #ansible
+Mar 09 10:12:41 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 09 10:12:41 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 09 10:12:41 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Sat Mar  9 11:09:19 2024
+
+Mar 09 11:09:16 *	Now talking on #ansible
+Mar 09 11:09:16 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 09 11:09:16 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 09 11:09:16 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Sat Mar  9 11:33:16 2024
+
+Mar 09 11:33:15 *	Now talking on #ansible
+Mar 09 11:33:15 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 09 11:33:15 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 09 11:33:15 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** ENDING LOGGING AT Sat Mar  9 13:31:10 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 13:40:24 2024
+
+Mar 09 13:40:23 *	Now talking on #ansible
+Mar 09 13:40:23 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 09 13:40:23 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 09 13:40:23 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Sat Mar  9 14:33:36 2024
+
+Mar 09 14:33:35 *	Now talking on #ansible
+Mar 09 14:33:35 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 09 14:33:35 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 09 14:33:35 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Mar 09 17:11:50 <newpy>	is there an obvious choice of python packages to drive ansible? (I see ansible_runner & ansible, maybe there are others?)
+Mar 09 18:52:37 <satmd>	well, ansible-lint is useful
+Mar 09 20:31:21 <OutOfService>	Hi
+Mar 09 20:37:16 <OutOfService>	I'd like to use the vars_prompt module so that Before starting all my roles and tasks, it asks me for a username. I'm trying to create a role, with a task using this vars_prompt module, but always tells me that there is a problem with the way the task is written, or similar errors. So, I guess I cannot use this "module" everywhere, and if I read the official doc, it only shows an example of
+Mar 09 20:37:16 <OutOfService>	putting the vars_prompt inside a playbook. I'd like to use a diffrerent file for this pupose only: a file that just asks me some questions before starting the playbook. So, what do you recomend me to get this working? Thanks a lot in advance!
+Mar 09 21:04:35 <sahil_>	Hi, I use ansible vault for storing my private key on a public github repo. And I have a script that does all the magic to setup my .dotfiles (which is private)
+Mar 09 21:05:10 <sahil_>	How can I have multiple password attempts in ansible vault. At present if I type it wrong, the whole thing falls apart
+Mar 09 21:06:57 <sahil_>	One approach that I find working is to do the decrypting in the start of the script, and then continue if that passes.
+Mar 09 21:57:06 <stemid>	what's the trick for when you want to make quick changes to a role that you've installed from git? the git repo is on my computer but how can I make my playbook repo temporarily use it so I don't have to push my changes to git before I test them?
+Mar 09 22:09:22 <stemid>	I just did rm ~/.ansible/roles/myrole and then ln -s ~/my-role ~/.ansible/roles/myrole
+Mar 09 22:09:30 <stemid>	not sure what best practice is here
+**** BEGIN LOGGING AT Sun Mar 10 00:21:17 2024
+
+Mar 10 00:21:16 *	Now talking on #ansible
+Mar 10 00:21:16 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 10 00:21:16 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 10 00:21:17 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Sun Mar 10 00:22:46 2024
+
+Mar 10 00:22:45 *	Now talking on #ansible
+Mar 10 00:22:46 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 10 00:22:46 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 10 00:22:46 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Sun Mar 10 00:27:38 2024
+
+Mar 10 00:27:38 *	Now talking on #ansible
+Mar 10 00:27:38 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 10 00:27:38 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 10 00:27:38 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Sun Mar 10 00:31:41 2024
+
+Mar 10 00:31:40 *	Now talking on #ansible
+Mar 10 00:31:40 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 10 00:31:40 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 10 00:31:41 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Sun Mar 10 01:38:21 2024
+
+Mar 10 01:38:20 *	Now talking on #ansible
+Mar 10 01:38:20 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 10 01:38:20 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 10 01:38:20 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Sun Mar 10 01:52:09 2024
+
+Mar 10 01:52:08 *	Now talking on #ansible
+Mar 10 01:52:08 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 10 01:52:08 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 10 01:52:08 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** ENDING LOGGING AT Sun Mar 10 04:26:38 2024
+
+**** BEGIN LOGGING AT Sun Mar 10 06:42:23 2024
+
+Mar 10 06:42:22 *	Now talking on #ansible
+Mar 10 06:42:22 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 10 06:42:22 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 10 06:42:22 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Mar 10 12:40:29 <satmd>	rvgate: also add .ansible_vault to .gitignore ofc
+Mar 10 12:40:49 <satmd>	that's what we do
+Mar 10 13:14:41 <plantroon>	Hey I need to copy file between 2 servers that cannot in any way see each other - how do I do this with ansible? I was thinking about making use of slurp module and delegate_to, but the files are way too big. I cannot rsync from one server to the other, by design, they have no connection between each other. Only I can connect from my side (or what will be the future control node)
+Mar 10 14:00:03 <bkhl>	plantroon: you can use ansible.builtin.fetch to get the file to the controller, and then regular copy to write it to the destination.
+Mar 10 14:04:03 <plantroon>	hmmm  "When running fetch with become, the ansible.builtin.slurp module will also be used to fetch the contents of the file for determining the remote checksum. This effectively doubles the transfer size, and depending on the file size can consume all available memory on the remote or local hosts causing a MemoryError. Due to this it is advisable to run this module without become whenever possible."
+Mar 10 14:04:56 <plantroon>	the control node is either a small VM or a dev laptop, which poses the problem. At best it could have 16 GB of RAM which I am not sure will suffice for copying ~300 GB. I'll probably just pipe it around with tar, rsync, zstd/gzip and appropriate bandwidth limits ...
+Mar 10 14:15:55 <Kelsar>	plantroon: maybe it would be a scenario where a localhost scp -3 shell command would useful
+Mar 10 14:20:17 <plantroon>	looks good but I still need to get through sudo somehow. I mean, it's weird that there are such constraints. Maybe I'll get an approval for deploying ssh keys straight into root, that'll make things a lot easier.
+Mar 10 15:35:57 <OutOfService>	Hi
+Mar 10 16:57:37 <newpy>	I have input vars with desired state and I'd like to create a task that checks host state against that desired state to determine which other tasks need to be run, what's the best way to structure this?
+Mar 10 17:10:13 <newpy>	(unfortunately I'm using cisco collections which don't have the greatest idempotency/checks)
+Mar 10 17:41:56 <newpy>	would it be bad form to run a task that checks router state against user input variables (desired state) and notifies handlers for the tasks I want to run?
+Mar 10 17:42:16 <newpy>	not sure if handlers are supposed to be for "shared" cleanup across multiple tasks etc
+Mar 10 17:42:29 <newpy>	don't want to abuse it for something it wasn't necessarily meant for
+Mar 10 17:42:38 <newpy>	also not sure if I can notify handlers in different roles
+Mar 10 17:49:33 <oblikoamorale>	there's nothing wrong with conditional include_tasks/include_role. there is no "best" way, choose whatever works for you
+**** BEGIN LOGGING AT Sun Mar 10 23:24:28 2024
+
+Mar 10 23:24:27 *	Now talking on #ansible
+Mar 10 23:24:27 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 10 23:24:27 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 10 23:24:27 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat

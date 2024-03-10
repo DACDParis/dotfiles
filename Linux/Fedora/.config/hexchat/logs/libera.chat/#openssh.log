@@ -634,3 +634,182 @@ Mar 06 11:40:01 <henk>	I’d think when cross-compiling a plain `make install` m
 Mar 06 11:43:22 <Guest18>	I have tried with make DESTDIR=/media/sf_Workspace/openssh/openssh_install install too
 Mar 06 11:46:56 <henk>	yeah, but the install target seems to be trying to run `strip` and that seems to be architecture depenent. STFW gave me among other https://stackoverflow.com/questions/29236378/cross-compilation-of-openssh-for-arm which suggests having to set LD=
 Mar 06 12:05:48 <Guest18>	in environment-setup-cortexa9t2hf-neon-fslc-linux-gnueabi my LD is already set to arm-fslc-linux-gnueabi-ld
+**** BEGIN LOGGING AT Wed Mar  6 13:29:43 2024
+
+Mar 06 13:29:41 *	Now talking on #openssh
+Mar 06 13:29:41 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 06 13:29:41 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Wed Mar  6 21:44:03 2024
+
+Mar 06 21:44:02 *	Now talking on #openssh
+Mar 06 21:44:02 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 06 21:44:02 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+Mar 06 22:24:05 <hero_biz>	Hi everyone.
+Mar 06 22:24:05 <hero_biz>	I'm trying to run build sshd with openssl 3 and use FIPS module only in the system (disable default and enable base+fips module).
+Mar 06 22:24:06 <hero_biz>	Is it possible to use sshd like this?
+Mar 06 22:24:06 <hero_biz>	Because after compiling and configuring like this, linux ssh fails to connect to my sshd.
+Mar 06 22:40:25 <BasketCase>	I never thought that FIPS was a good idea in the first place but if you have to I am pretty sure there is a way
+Mar 06 22:40:39 <BasketCase>	I think RHEL does it or at least they used to
+Mar 06 22:55:18 <hero_biz>	Thanks for the info. I somehow don't know exactly why FIPS only environment affects openssh. It is a little strange.
+Mar 06 22:56:30 <another|>	n
+Mar 06 23:01:33 <BasketCase>	it is crypto cipher standards so it makes sense when FIPS is required
+**** ENDING LOGGING AT Wed Mar  6 23:44:24 2024
+
+**** BEGIN LOGGING AT Thu Mar  7 02:18:47 2024
+
+Mar 07 02:18:44 *	Now talking on #openssh
+Mar 07 02:18:44 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 07 02:18:44 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Thu Mar  7 05:39:14 2024
+
+Mar 07 05:39:13 *	Now talking on #openssh
+Mar 07 05:39:13 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 07 05:39:13 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Thu Mar  7 05:53:08 2024
+
+Mar 07 05:53:08 *	Now talking on #openssh
+Mar 07 05:53:08 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 07 05:53:08 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Thu Mar  7 06:46:02 2024
+
+Mar 07 06:46:01 *	Now talking on #openssh
+Mar 07 06:46:01 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 07 06:46:01 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Thu Mar  7 11:45:31 2024
+
+Mar 07 11:45:29 *	Now talking on #openssh
+Mar 07 11:45:29 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 07 11:45:29 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Thu Mar  7 12:26:51 2024
+
+Mar 07 12:26:50 *	Now talking on #openssh
+Mar 07 12:26:50 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 07 12:26:50 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Thu Mar  7 12:39:51 2024
+
+Mar 07 12:39:50 *	Now talking on #openssh
+Mar 07 12:39:50 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 07 12:39:50 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Thu Mar  7 14:15:49 2024
+
+Mar 07 14:15:48 *	Now talking on #openssh
+Mar 07 14:15:48 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 07 14:15:48 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Fri Mar  8 22:52:06 2024
+
+Mar 08 22:52:06 *	Now talking on #openssh
+Mar 08 22:52:06 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 08 22:52:06 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+Mar 08 22:59:33 <henk>	ah, man sshd, not man sshd_config
+**** BEGIN LOGGING AT Fri Mar  8 23:04:26 2024
+
+Mar 08 23:04:24 *	Now talking on #openssh
+Mar 08 23:04:24 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 08 23:04:24 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Fri Mar  8 23:07:14 2024
+
+Mar 08 23:07:14 *	Now talking on #openssh
+Mar 08 23:07:14 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 08 23:07:14 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Fri Mar  8 23:14:16 2024
+
+Mar 08 23:14:14 *	Now talking on #openssh
+Mar 08 23:14:14 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 08 23:14:14 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Sat Mar  9 07:43:52 2024
+
+Mar 09 07:43:50 *	Now talking on #openssh
+Mar 09 07:43:50 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 09 07:43:50 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Sat Mar  9 08:24:01 2024
+
+Mar 09 08:24:00 *	Now talking on #openssh
+Mar 09 08:24:00 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 09 08:24:00 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Sat Mar  9 10:08:22 2024
+
+Mar 09 10:08:21 *	Now talking on #openssh
+Mar 09 10:08:21 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 09 10:08:21 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** ENDING LOGGING AT Sat Mar  9 10:09:15 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 10:12:43 2024
+
+Mar 09 10:12:41 *	Now talking on #openssh
+Mar 09 10:12:41 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 09 10:12:41 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Sat Mar  9 11:09:19 2024
+
+Mar 09 11:09:16 *	Now talking on #openssh
+Mar 09 11:09:16 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 09 11:09:16 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Sat Mar  9 11:33:17 2024
+
+Mar 09 11:33:15 *	Now talking on #openssh
+Mar 09 11:33:15 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 09 11:33:15 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+Mar 09 13:11:41 <henk>	BasketCase: thanks
+**** ENDING LOGGING AT Sat Mar  9 13:31:10 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 13:40:25 2024
+
+Mar 09 13:40:23 *	Now talking on #openssh
+Mar 09 13:40:23 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 09 13:40:23 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Sat Mar  9 14:33:36 2024
+
+Mar 09 14:33:35 *	Now talking on #openssh
+Mar 09 14:33:35 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 09 14:33:35 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+Mar 09 14:46:39 <OutOfService>	hi
+Mar 09 14:49:34 <OutOfService>	I use mobaxterm a ssh client. My problem is that when I have to change from cable connection to wofo, all my connections closes, and I have to reconnect again. Is there any argument or option I could use in my linux ssh servers or clients in order to try to keep the connection during one or two secconds while the system is changing its connection? The main problem, I think, is that the Ip 
+Mar 09 14:49:34 <OutOfService>	will whange.. Thanks in advance!!
+Mar 09 15:26:25 <another|>	if your interface goes down, the sockets will be closed
+Mar 09 15:29:19 <OutOfService>	so, nor keepalive will save me from clossing that session, right?
+Mar 09 15:32:16 <another|>	no, as already discussed in #linux 
+Mar 09 15:49:24 <OutOfService>	thanks for your answer another|
+Mar 09 15:51:15 <another|>	according to their website, mobaxterm supports mosh as well
+Mar 09 16:08:37 <BasketCase>	OutOfService: if you were also running over a vpn it would be the vpn that needs reconnecting not ssh
+Mar 09 16:12:40 <Piru>	mosh is a neat solution to changing ip addr
+**** BEGIN LOGGING AT Sun Mar 10 00:21:17 2024
+
+Mar 10 00:21:17 *	Now talking on #openssh
+Mar 10 00:21:17 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 10 00:21:17 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Sun Mar 10 00:22:46 2024
+
+Mar 10 00:22:46 *	Now talking on #openssh
+Mar 10 00:22:46 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 10 00:22:46 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Sun Mar 10 00:27:38 2024
+
+Mar 10 00:27:38 *	Now talking on #openssh
+Mar 10 00:27:38 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 10 00:27:38 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Sun Mar 10 00:31:41 2024
+
+Mar 10 00:31:41 *	Now talking on #openssh
+Mar 10 00:31:41 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 10 00:31:41 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Sun Mar 10 01:38:21 2024
+
+Mar 10 01:38:20 *	Now talking on #openssh
+Mar 10 01:38:20 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 10 01:38:20 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Sun Mar 10 01:52:09 2024
+
+Mar 10 01:52:08 *	Now talking on #openssh
+Mar 10 01:52:08 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 10 01:52:08 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** ENDING LOGGING AT Sun Mar 10 04:26:38 2024
+
+**** BEGIN LOGGING AT Sun Mar 10 06:42:23 2024
+
+Mar 10 06:42:22 *	Now talking on #openssh
+Mar 10 06:42:22 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 10 06:42:22 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Sun Mar 10 23:24:28 2024
+
+Mar 10 23:24:27 *	Now talking on #openssh
+Mar 10 23:24:27 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 10 23:24:27 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)

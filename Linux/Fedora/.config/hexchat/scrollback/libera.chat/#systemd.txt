@@ -562,3 +562,139 @@ T 1709720367 18<22plundra18>	So a preference/tast or maybe even philosop
 T 1709720410 18<22plundra18>	Question being, any input in the matter? :) What would be more obvious in function if you stumbled upon it?
 T 1709720461 18<22plundra18>	I like not having to enable an additional unit, and not needing an [Install] section etc, as well as not needing to disable two units to disable the "function"
 T 1709720489 18<22plundra18>	Although having it as a "regular" standalone service might look more explicit.
+T 1709728181 19*	Now talking on 22#systemd
+T 1709728181 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709728181 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709740225 18<26Jannik209918>	oomctl shows Memory: Used: 0B Total: 0B , which is of course wrong - any ideas?
+T 1709740238 18<26Jannik209918>	this is on kernel 6.7 with unified cgroup hierarchy and memory accounting enabled
+T 1709745548 18<19twb18>	I have a batch job that reads /etc/foo/foo.json and writes /var/lib/foo/foo.html.  Can I use a .path to watch the source file and invoke the batch job if/when the source file changes?
+T 1709745585 18<19twb18>	(Right now this is actually re-rendering the HTML every single time someone requests it, which feels silly.)
+T 1709745750 18<19twb18>	PathChanged= looks reasonable, I don't think the file will ever change while systemd *isn't* running.  Not sure if it'll fire if the file exists before the .path itself exists, but I'll try it and see
+T 1709757842 19*	Now talking on 22#systemd
+T 1709757842 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709757842 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709774324 19*	Now talking on 22#systemd
+T 1709774324 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709774324 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709780668 18<22cwegener18>	Can I use the variables from `EnvironmentFile=` as arguments to `Environment=` ?
+T 1709780706 18<19twb18>	cwegener: I don't remember.  It should be easy enough to write a test unit
+T 1709781145 18<22cwegener18>	Yup. that's what I'm doing now ... so far the answer seems "no" ... I'll keep trying a bit harder. :)
+T 1709781253 18<22edu4rdshl18>	cwegener, you can't
+T 1709785931 18<19twb18>	OK so... I have a socket-activate daemon that works with ProtectSystem=full but crashes without any error messages with ProtectSystem=strict.
+T 1709785952 18<19twb18>	Adding "strace -e trace=file" to ExecStart= doesn't work, because I guess it's too locked down for that
+T 1709785982 18<19twb18>	How do I work out what file it's trying to write to?  It *ought* to be writing only to fd3 (the systemd-managed socket) plus /run/postgresql/<some socket>
+T 1709785998 18<19twb18>	But ProtectSystem=strict ReadWritePaths=/run fails with the same behaviour
+T 1709786353 19*	Now talking on 22#systemd
+T 1709786353 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709786353 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709786360 18<19twb18>	Aha, I cranked up the log level of the daemon, and now it tells me: FileNotFoundError: [Errno 2] No usable temporary directory found in ['/tmp', '/var/tmp', '/usr/tmp', '/']
+T 1709786524 18<19twb18>	And that's ultimately coming from https://github.com/python/cpython/blob/3.11/Lib/tempfile.py#L224-L226
+T 1709786548 18<19twb18>	Oh I am not setting PrivateTmp=!
+T 1709786552 18<19twb18>	Mystery solved
+T 1709786786 18<19twb18>	And that happened because I started with DynamicUser=yes (which implies PrivateTmp=yes), but then had to remove it
+T 1709787188 19*	Now talking on 22#systemd
+T 1709787188 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709787188 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709790361 19*	Now talking on 22#systemd
+T 1709790361 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709790361 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709808329 19*	Now talking on 22#systemd
+T 1709808329 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709808329 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709810810 19*	Now talking on 22#systemd
+T 1709810810 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709810810 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709811590 19*	Now talking on 22#systemd
+T 1709811590 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709811590 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709812115 18<22gdamjan18>	use Restart= in the service
+T 1709817348 19*	Now talking on 22#systemd
+T 1709817348 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709817348 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709820690 18<20birkoff18>	if RestartSec=3 and ...MaxDelaySec=300 and ...Steps=10  then is it possible to know the exact steps values that will be used ? i.e. from 3 to 300 in 10 steps can have several combinations
+T 1709821751 18<22gdamjan18>	hah, first time I see RestartSteps=
+T 1709822216 18<29yhndnzj18>	birkoff: https://github.com/systemd/systemd/blob/v255/src/core/service.c#L322
+T 1709827306 18<20birkoff18>	i've edited both ~/.gdbinit and /etc/gdb/gdbinit with some configuration but coredumpctl gdb ... doesn't seem to apply it nonetheless
+T 1709830075 18<20cek18>	it seems calling `mailx` from `ExecStart` doesn't work. why and why no logging for that?
+T 1709830363 18<20grawity18>	how did you run it, where did you look and what did you see?
+T 1709830523 18<20cek18>	exactly the https://unix.stackexchange.com/questions/314329/mailx-not-sending-email-when-run-as-a-systemd-service
+T 1709830538 18<20cek18>	obnoxious piece of garbage.
+T 1709934726 19*	Now talking on 22#systemd
+T 1709934726 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709934726 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709935464 19*	Now talking on 22#systemd
+T 1709935464 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709935464 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709935634 19*	Now talking on 22#systemd
+T 1709935634 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709935634 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709936054 19*	Now talking on 22#systemd
+T 1709936054 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709936054 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709966630 19*	Now talking on 22#systemd
+T 1709966630 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709966630 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709969040 19*	Now talking on 22#systemd
+T 1709969040 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709969040 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709969695 18<28helmut18>	hi. is there a reasonable way to combine a simple .service unit and a .path unit such that the unit is activated after the last path event? (i.e. when path activates while .service is running, those activations would be accumulated into a single reactivation of the .service unit after it finishes)
+T 1709975301 19*	Now talking on 22#systemd
+T 1709975301 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709975301 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709975561 19*	Now talking on 22#systemd
+T 1709975561 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709975561 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709978956 19*	Now talking on 22#systemd
+T 1709978956 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709978956 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709980395 19*	Now talking on 22#systemd
+T 1709980395 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709980395 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709981999 18<22pgnd18>	I need a service restriction on devices, limiting access to: /dev/uinput & all of the /dev/input/eventX, where X={0-20}. Iiuc, wildcards, e.g.:
+T 1709981999 18<22pgnd18>	DeviceAllow = /dev/uinput /dev/input/event*
+T 1709981999 18<22pgnd18>	are NOT allowed.  is there available shorthand for listing all 'X' here? or muse list explicitly?
+T 1709982584 18<28foul_owl18>	grawity: thank you!
+T 1709982722 18<28foul_owl18>	That fixed it. It was wine + some windows app that seemed to be leaking hundreds of connections
+T 1709984247 18<22pgnd18>	aha
+T 1709988023 19*	Now talking on 22#systemd
+T 1709988023 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709988023 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709991215 19*	Now talking on 22#systemd
+T 1709991215 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1709991215 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1709993553 18<20grawity18>	foul_owl: that might be a Wine bug of some sort, since it's more likely that Wine translates some Windows API to a DBus-based API than the app itself using DBus; watching bus traffic in bustle or dbus-monitor --user for repeated identical calls might reveal what it's doing
+T 1710026477 19*	Now talking on 22#systemd
+T 1710026477 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710026477 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710026566 19*	Now talking on 22#systemd
+T 1710026566 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710026566 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710026858 19*	Now talking on 22#systemd
+T 1710026858 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710026858 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710027101 19*	Now talking on 22#systemd
+T 1710027101 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710027101 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710031100 19*	Now talking on 22#systemd
+T 1710031100 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710031100 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710031928 19*	Now talking on 22#systemd
+T 1710031928 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710031928 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710049342 19*	Now talking on 22#systemd
+T 1710049342 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710049342 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710086393 18<20lxsameer18>	hey folks, is it possible to add a incremental number to log entries for each boot? 
+T 1710086549 18<20lxsameer18>	nvm
+T 1710090742 18<19ZLima1218>	lxsameer: you found -b for journalctl?
+T 1710094787 18<20ndim18>	When I add or remove a udev rules files, udev picks that up without explicitly notifying it with "udev control --reload".
+T 1710094825 18<20ndim18>	However, when I run "--action=add --subsystem-match=usb --attr-match=idVendor=05fc --attr-match=idProduct=0030" afterwards, I cannot be certain whether udev applies the ruleset from before or after adding/removing the rule file.
+T 1710094892 18<20ndim18>	Does adding a "udevadm control --reload" between adding/removing the file and the "udevadm trigger" ensure the trigger happens with the new ruleset?
+T 1710107663 18<28Eryn_FL18>	hey peeps
+T 1710107683 18<28Eryn_FL18>	i am trying to get my samba shares to mount at boot but some will mount but then the rest will fail 
+T 1710107687 18<28Eryn_FL18>	https://paste.debian.net/1310190/
+T 1710107693 18<28Eryn_FL18>	is this right way to do this?
+T 1710107707 18<28Eryn_FL18>	mostly my after and wanter ^
+T 1710109467 19*	Now talking on 22#systemd
+T 1710109467 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710109467 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)

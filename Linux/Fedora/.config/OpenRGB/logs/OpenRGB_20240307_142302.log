@@ -1,0 +1,74 @@
+    OpenRGB v0.9
+    Commit:  from 
+    Launched: 20240307_142302
+====================================================================================================
+
+0     |Info:    Found file: rgb.orp attempting to validate header
+0     |Info:    Valid v4 profile found for rgb
+1004  |Info:    ------------------------------------------------------
+1004  |Info:    |               Start device detection               |
+1004  |Info:    ------------------------------------------------------
+1005  |Info:    Initializing HID interfaces: Success
+1015  |Info:    ------------------------------------------------------
+1015  |Info:    |             Detecting I2C interfaces               |
+1015  |Info:    ------------------------------------------------------
+1015  |Info:    Registering I2C interface: /dev/i2c-3 Device 1002:73DF Subsystem: 1DA2:E445
+1015  |Info:    Registering I2C interface: /dev/i2c-10 Device 8086:3E92 Subsystem: 1849:3E92
+1016  |Info:    Registering I2C interface: /dev/i2c-1 Device 1002:73DF Subsystem: 1DA2:E445
+1016  |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+1016  |Info:    Registering I2C interface: /dev/i2c-8 Device 0000:0000 Subsystem: 0000:0000
+1016  |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+1016  |Info:    Registering I2C interface: /dev/i2c-6 Device 0000:0000 Subsystem: 0000:0000
+1016  |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+1016  |Info:    Registering I2C interface: /dev/i2c-13 Device 0000:0000 Subsystem: 0000:0000
+1016  |Info:    Registering I2C interface: /dev/i2c-4 Device 1002:73DF Subsystem: 1DA2:E445
+1016  |Info:    Registering I2C interface: /dev/i2c-11 Device 8086:3E92 Subsystem: 1849:3E92
+1016  |Info:    Registering I2C interface: /dev/i2c-2 Device 1002:73DF Subsystem: 1DA2:E445
+1016  |Info:    Registering I2C interface: /dev/i2c-0 Device 1002:73DF Subsystem: 1DA2:E445
+1016  |Info:    Registering I2C interface: /dev/i2c-9 Device 8086:A2A3 Subsystem: 1849:A2A3
+1016  |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+1016  |Info:    Registering I2C interface: /dev/i2c-7 Device 0000:0000 Subsystem: 0000:0000
+1016  |Warning: [i2c_smbus_linux] Failed to read i2c device PCI device ID
+1016  |Info:    Registering I2C interface: /dev/i2c-14 Device 0000:0000 Subsystem: 0000:0000
+1016  |Info:    Registering I2C interface: /dev/i2c-5 Device 1002:73DF Subsystem: 1DA2:E445
+1016  |Info:    Registering I2C interface: /dev/i2c-12 Device 8086:3E92 Subsystem: 1849:3E92
+1016  |Info:    ------------------------------------------------------
+1016  |Info:    |               Detecting I2C devices                |
+1016  |Info:    ------------------------------------------------------
+1157  |Info:    [ENE DRAM] Registering RGB controller
+1298  |Info:    [ENE DRAM] Registering RGB controller
+1914  |Info:    [ASRock Z370 Professional Gaming i7] Registering RGB controller
+1914  |Info:    ------------------------------------------------------
+1914  |Info:    |               Detecting I2C PCI devices            |
+1914  |Info:    ------------------------------------------------------
+1974  |Info:    ------------------------------------------------------
+1974  |Info:    |               Detecting HID devices                |
+1974  |Info:    ------------------------------------------------------
+1985  |Info:    [Razer Viper Ultimate (Wireless)] Registering RGB controller
+1986  |Info:    ------------------------------------------------------
+1986  |Info:    |            Detecting libusb HID devices            |
+1986  |Info:    ------------------------------------------------------
+2001  |Info:    ------------------------------------------------------
+2001  |Info:    |              Detecting other devices               |
+2001  |Info:    ------------------------------------------------------
+2013  |Info:    ------------------------------------------------------
+2013  |Info:    |                Detection completed                 |
+2013  |Info:    ------------------------------------------------------
+14479 |Info:    Profile loading: FAILED! for ENE DRAM @ I2C: /dev/i2c-9, address 0x71
+14479 |Info:    Profile loading: FAILED! for ENE DRAM @ I2C: /dev/i2c-9, address 0x73
+14479 |Info:    Profile loading: Succeeded for ASRock Z370 Professional Gaming i7 @ I2C: /dev/i2c-9, address 0x6A
+14479 |Info:    Profile loading: Succeeded for Razer Viper Ultimate (Wireless) @ HID: /dev/hidraw0
+24868 |Info:    Found file: rgb.orp attempting to validate header
+24868 |Info:    Valid v4 profile found for rgb
+47636 |Info:    Found file: rgb.orp attempting to validate header
+47636 |Info:    Valid v4 profile found for rgb
+61220 |Info:    Found file: rgb.orp attempting to validate header
+61220 |Info:    Valid v4 profile found for rgb
+70973 |Info:    Profile loading: Succeeded for ENE DRAM @ I2C: /dev/i2c-9, address 0x71
+70973 |Info:    Profile loading: Succeeded for ENE DRAM @ I2C: /dev/i2c-9, address 0x73
+70973 |Info:    Profile loading: Succeeded for ASRock Z370 Professional Gaming i7 @ I2C: /dev/i2c-9, address 0x6A
+70973 |Info:    Profile loading: Succeeded for Razer Viper Ultimate (Wireless) @ HID: /dev/hidraw0
+71226 |Info:    Profile loading: Succeeded for ENE DRAM @ I2C: /dev/i2c-9, address 0x71
+71226 |Info:    Profile loading: Succeeded for ENE DRAM @ I2C: /dev/i2c-9, address 0x73
+71227 |Info:    Profile loading: Succeeded for ASRock Z370 Professional Gaming i7 @ I2C: /dev/i2c-9, address 0x6A
+71227 |Info:    Profile loading: Succeeded for Razer Viper Ultimate (Wireless) @ HID: /dev/hidraw0

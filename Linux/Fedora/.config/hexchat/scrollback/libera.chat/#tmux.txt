@@ -452,3 +452,187 @@ T 1709686297 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/deve
 T 1709705791 19*	Now talking on 22#tmux
 T 1709705791 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
 T 1709705791 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709728181 19*	Now talking on 22#tmux
+T 1709728181 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709728181 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709757842 19*	Now talking on 22#tmux
+T 1709757842 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709757842 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709774324 19*	Now talking on 22#tmux
+T 1709774324 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709774324 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709777174 18<26slim18>	foul_owl: -S designates the start line of the capture, -10 is starting from 10 lines in the history to the end of your visible pane
+T 1709777458 18<26slim18>	i would pipe it through tail, probably
+T 1709777522 18<26slim18>	now that you mention it, not sure theres an easy/graceful way to do that
+T 1709777530 18<26slim18>	can think of a few hacky ways, maybe
+T 1709778121 18<26slim18>	tmux capture-pane -p| tail -n 10
+T 1709778134 18<26slim18>	tmux capture-pane -p -S $(($LINES-10))
+T 1709778147 18<26slim18>	:capture-pane -S '#{e|-|:#{pane_height},10}'
+T 1709778165 18<26slim18>	caveat being that output needs to be at the bottom of the visible pane
+T 1709778183 18<26slim18>	hacky at best, feel like i'm overlooking something dreadfully obvious
+T 1709778198 18<26slim18>	maybe someone else has a better idea, shrug
+T 1709786353 19*	Now talking on 22#tmux
+T 1709786353 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709786353 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709787188 19*	Now talking on 22#tmux
+T 1709787188 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709787188 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709790361 19*	Now talking on 22#tmux
+T 1709790361 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709790361 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709808329 19*	Now talking on 22#tmux
+T 1709808329 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709808329 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709810810 19*	Now talking on 22#tmux
+T 1709810810 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709810810 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709811128 18<20birkoff18>	tmux is crashing a lot lately
+T 1709811590 19*	Now talking on 22#tmux
+T 1709811590 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709811590 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709814607 18<27mingdao18>	me, neither
+T 1709814615 18<27mingdao18>	I don't think tmux has every crashed for me.
+T 1709814740 18<24depesz18>	birkoff: is it repetable?
+T 1709817348 19*	Now talking on 22#tmux
+T 1709817348 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709817348 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709827905 18<20birkoff18>	depesz: i dont have a methodical case, but it happened to me more than several times already
+T 1709827960 18<20birkoff18>	mostly SEGV dumps
+T 1709828001 18<24depesz18>	no idea, sorry.
+T 1709828092 18<27mingdao18>	birkoff: Do they show up in `coredumpctl list` ?
+T 1709828103 18<20birkoff18>	mingdao: yes obviously I run systemd
+T 1709830854 18<25Demosthenex18>	sorry to hear that.
+T 1709836346 18<19Elodin18>	Hi, when opening tmux i get a https://termbin.com/o0g46
+T 1709836360 18<19Elodin18>	this execute line
+T 1709837027 18<19Elodin18>	same happens without any configuration
+T 1709837579 18<27mingdao18>	Elodin: What VT are you using?
+T 1709837601 18<19Elodin18>	urxvt
+T 1709837607 18<27mingdao18>	Elodin: That sounds like a rxvt-unicode bug, although you've got some other special stuff there.
+T 1709837631 18<19Elodin18>	truly since then i installed kitty and it worked fine
+T 1709837652 18<19Elodin18>	i might downgrade urxvt and see if it goes back to the way it was
+T 1709837776 18<27mingdao18>	Elodin: It is a bug in the command.C file.  This is a patch that I used on one build I have locally:  https://cvsweb.openbsd.org/cgi-bin/cvsweb/~checkout~/ports/x11/rxvt-unicode/patches/patch-src_command_C?rev=1.6&content-type=text/t-type=text/plain
+T 1709837792 18<27mingdao18>	Elodin: What Linux distro are you using?
+T 1709837801 18<19Elodin18>	mingdao: archlinux
+T 1709837883 18<27mingdao18>	Same here.
+T 1709837900 18<27mingdao18>	Let me see which I am running on this Arch workstation.
+T 1709838046 18<27mingdao18>	I'm running rxvt-unicode-truecolor-wide-glyphs (9.31-5) with a PKGBUILD that I build locally.
+T 1709838059 18<27mingdao18>	I have IgnorePkg   =  rxvt-unicode-truecolor-wide-glyphs-debug rxvt-unicode-truecolor-wide-glyphs
+T 1709838067 18<27mingdao18>	So it doesn't automatically get updated.
+T 1709838090 18<27mingdao18>	I spoke to susi recently about it.  Let me go back and read which pkg they use on Arch.
+T 1709838107 18<27mingdao18>	<susi> I'm using https://aur.archlinux.org/packages/rxvt-unicode-truecolor-wide-glyphs
+T 1709838142 18<27mingdao18>	That is what my rxvt-unicode-truecolor-wide-glyphs-9.31-5 started from, but I added a couple of patches, so I am not letting it automatically update atm.
+T 1709838166 18<19Elodin18>	damn
+T 1709838350 18<19Elodin18>	this might be too much for me
+T 1709838395 18<27mingdao18>	Which version of rxvt-unicode do you have where it outputs https://termbin.com/o0g46 ?
+T 1709838419 18<27mingdao18>	I have reported it to the Arch maintainer, but not response.
+T 1709838428 18<27mingdao18>	The Arch PKGBUILD is a few months old.
+T 1709838446 18<19Elodin18>	interesting by installing the latest rxvt-unicode-truecolor-wide-glyphs
+T 1709838449 18<27mingdao18>	This has been fixed by rxvt-unicode upstream, but Arch is behind.
+T 1709838451 18<19Elodin18>	it fixed
+T 1709838466 18<27mingdao18>	The rxvt-unicode-truecolor-wide-glyphs package from AUR?
+T 1709838470 18<19Elodin18>	yes
+T 1709838489 18<27mingdao18>	I forget why I have held back from that one.
+T 1709838505 18<27mingdao18>	Elodin: Glad you got rid of that color sequence line.
+T 1709838528 18<19Elodin18>	yeah, but like you said it yourself... something held you back from this
+T 1709838530 18<19Elodin18>	haha
+T 1709838538 18<27mingdao18>	It wasn't a huge bother to me, because I could issue ctrl+u twice on the end of the line, and it cleared the screen.
+T 1709838614 18<19Elodin18>	i guess i should build it from the head then cuz all my other goodies stopped working
+T 1709838692 18<27mingdao18>	Elodin: This https://0x0.st/H7FH.txt is mingdao@workstation ~/software/rxvt-unicode-truecolor-wide-glyphs $ ls -1
+T 1709838709 18<27mingdao18>	patch-src_command.patch is my patch from https://cvsweb.openbsd.org/cgi-bin/cvsweb/~checkout~/ports/x11/rxvt-unicode/patches/patch-src_command_C?rev=1.6
+T 1709838768 18<27mingdao18>	I have mingdao@workstation ~/Arch/rxvt-unicode   from mingdao@workstation ~/Arch/ git clone https://github.com/exg/rxvt-unicode.git
+T 1709838872 18<27mingdao18>	This is the repo of exg, who is the one really maintaining rxvt-unicode now, rather than schmorp.
+T 1709838929 18<27mingdao18>	I'll just quote from what they told me.
+T 1709838959 18<27mingdao18>	< mingdao> exg: Is there a git mirror of http://cvs.schmorp.de/rxvt-unicode/ ?
+T 1709838964 18<27mingdao18>	< exg> mingdao: yes I maintain one https://github.com/exg/rxvt-unicode
+T 1709838997 18<27mingdao18>	When I get the time I'm going to make a PKGBUILD for that, and use it, updating it periodically via `git update`.
+T 1709839123 18<19Elodin18>	i suppose i would downgrade the packages i'm using? But i get libperl.so errors
+T 1709839136 18<19Elodin18>	sad cuz i dont know if im capable of following the instructions
+T 1709839159 18<27mingdao18>	Elodin: Ask about it in #rxvt-unicode
+T 1709839181 18<27mingdao18>	exg is in that channel
+T 1709839192 18<19Elodin18>	thanks
+T 1709839195 18<19Elodin18>	for everything
+T 1709839200 18<27mingdao18>	Show your link https://termbin.com/o0g46 and ask how to fix it.
+T 1709839206 18<27mingdao18>	yw
+T 1709839283 18<27mingdao18>	We shall see what we shall see.
+T 1709839382 18<27mingdao18>	I would tell them that you changed from the Arch repo package rxvt-unicode-9.31-4 to the AUR package rxvt-unicode-truecolor-wide-glyphs-9.31-7 and it no longer happens.
+T 1709839561 18<27mingdao18>	Elodin: Notice in #rxvt-unicode the /topic has "please wait up to 24 hours for a response to your question!"  Just stay joined to the channel and see.
+T 1709934726 19*	Now talking on 22#tmux
+T 1709934726 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709934726 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709935464 19*	Now talking on 22#tmux
+T 1709935464 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709935464 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709935634 19*	Now talking on 22#tmux
+T 1709935634 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709935634 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709936054 19*	Now talking on 22#tmux
+T 1709936054 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709936054 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709966630 19*	Now talking on 22#tmux
+T 1709966630 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709966630 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709969040 19*	Now talking on 22#tmux
+T 1709969040 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709969040 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709975301 19*	Now talking on 22#tmux
+T 1709975301 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709975301 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709975561 19*	Now talking on 22#tmux
+T 1709975561 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709975561 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709978956 19*	Now talking on 22#tmux
+T 1709978956 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709978956 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709980395 19*	Now talking on 22#tmux
+T 1709980395 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709980395 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709980708 18<27mindhunter18>	I have been using ranger image previews inside tmux and it appears to be working fine with alacritty. But when I switch tmux windows when I am on a particular image preview, the image still lingers in the next window. Can I prevent this? 
+T 1709984202 18<20birkoff18>	Why does this not work: `choose-tree -f "#{==:#{session_name},#{client_session}}"`  while this does: `choose-tree -f "#{==:#{session_name},some_session_name}"`
+T 1709985251 18<20birkoff18>	tried also with comparing #{session_name} to itself 
+T 1709988023 19*	Now talking on 22#tmux
+T 1709988023 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709988023 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709990336 18<20birkoff18>	is it possible to keep the colors when a pane dies ? 
+T 1709991215 19*	Now talking on 22#tmux
+T 1709991215 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1709991215 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1709995697 18<26slim18>	birkoff: the choose-tree doesn't work as expected due to how variable substitution is handled, use a run-shell with added #'s
+T 1709995709 18<20birkoff18>	slim: tried that too
+T 1709995729 18<26slim18>	ie. run -C 'choose-tree -f "##{==:##{session_name},#{client_session}}"'
+T 1709995731 18<26slim18>	that doesn't work ?
+T 1709996048 18<26slim18>	birkoff: works as expected with client_session and session_name on my end with that syntax, what unexpected output are you getting?
+T 1709996170 18<20birkoff18>	didnt double hash #{client_session}
+T 1709996176 18<20birkoff18>	did*
+T 1709996248 18<26slim18>	right on, so all good then? what did you mean by keep the colors when pane dies?
+T 1709996306 18<20birkoff18>	if I have a an application that is showing colors like diff in a dead panel it turns "black&white"
+T 1709996319 18<20birkoff18>	i.e. when it dies
+T 1709996598 18<26slim18>	hrmm, not sure what handles dead pane style tbh - do you have a custom window-style setting?
+T 1709996677 18<26slim18>	do non-active panes have different sytles from your window-active-style ?
+T 1710000929 18<26sybariten18>	Hmm hmm hmm , is it common for people to remap ctrl-b in tmux to ctrl-a instead? I have ctrl-b in one instance and have changed it to ctrl-a in another, and the latter is sooo much nicer. However, i just realized i am not able to do the bash key shortcut for "beginning of line"...
+T 1710000952 18<28jakllsch18>	you do know about escaping the prefix right?
+T 1710014826 18<26sybariten18>	jakllsch: no, not sure about that one
+T 1710015827 18<28jakllsch18>	^B ^B should get you a ^B into the actual pane
+T 1710026477 19*	Now talking on 22#tmux
+T 1710026477 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710026477 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710026566 19*	Now talking on 22#tmux
+T 1710026566 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710026566 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710026858 19*	Now talking on 22#tmux
+T 1710026858 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710026858 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710027101 19*	Now talking on 22#tmux
+T 1710027101 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710027101 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710031100 19*	Now talking on 22#tmux
+T 1710031100 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710031100 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710031928 19*	Now talking on 22#tmux
+T 1710031928 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710031928 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710049342 19*	Now talking on 22#tmux
+T 1710049342 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710049342 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710109467 19*	Now talking on 22#tmux
+T 1710109467 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710109467 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)

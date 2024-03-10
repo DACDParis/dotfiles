@@ -1701,3 +1701,280 @@ Mar 06 09:00:50 <igemnace>	o/
 Mar 06 09:07:47 <Viking667>	huh. mzscheme support is proving trickier than I thought.
 Mar 06 09:16:32 <Viking667>	... not that I'm likely to ever write a vim plugin anyhow, let alone one written in mzscheme.
 Mar 06 10:44:28 *	Viking667 waves goodnight again...
+**** BEGIN LOGGING AT Wed Mar  6 13:29:43 2024
+
+Mar 06 13:29:41 *	Now talking on #vim
+Mar 06 13:29:41 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 06 13:29:41 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+Mar 06 21:27:57 <birkoff>	the following mapping doesn't react as expected when preceded with a count:
+Mar 06 21:28:00 <birkoff>	nnoremap <expr> <C-w><C-p> "<C-w>"..(winnr()-(1*v:count1)).."<C-w>"
+Mar 06 21:28:49 <birkoff>	i.e. for 2<C-w><C-p> the window focus should move two windows backward by index
+Mar 06 21:29:00 <birkoff>	but it only moves one window
+**** BEGIN LOGGING AT Wed Mar  6 21:44:03 2024
+
+Mar 06 21:44:02 *	Now talking on #vim
+Mar 06 21:44:02 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 06 21:44:02 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+Mar 06 21:50:54 <birkoff>	m_ben: it doesn't work for you either ? 
+Mar 06 21:51:58 <m_ben>	no
+Mar 06 21:58:03 <m_ben>	birkoff: nnoremap <c-w><c-p> <cmd>execute "normal! \<c-w>" .. (winnr() - v:count1) .. "\<c-w>"<cr>
+Mar 06 21:58:15 <m_ben>	uglier but it works
+Mar 06 22:04:00 <birkoff>	thanks
+Mar 06 22:20:34 <ju>	when v:count1 is big enough this becomes <C-W>-N<C-W> which is not what you want i guess
+**** ENDING LOGGING AT Wed Mar  6 23:44:24 2024
+
+**** BEGIN LOGGING AT Thu Mar  7 02:18:47 2024
+
+Mar 07 02:18:44 *	Now talking on #vim
+Mar 07 02:18:44 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 07 02:18:44 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+Mar 07 02:33:56 <chowbok>	If I want to move line 10 to the line after 5, I do ":10m5". Is there an equivalent command if I want to append line 10 to line 5? 
+Mar 07 02:45:38 <habamax>	chowbok, there is a :copy or :t
+Mar 07 02:46:03 <habamax>	:h :copy
+Mar 07 02:46:03 <digmbot>	:help :copy -> http://vimhelp.appspot.com/change.txt.html#%3Acopy
+Mar 07 02:47:04 <chowbok>	Hmm
+Mar 07 02:47:21 <chowbok>	I may be misreading it, but I don't think that's what I want
+Mar 07 02:48:02 <chowbok>	I still want to move the contents of the line, I just want to move them to the end of the other line rather than the line after
+Mar 07 02:51:06 <habamax>	I see
+Mar 07 02:52:47 <habamax>	:10m5|5j
+Mar 07 02:54:57 <habamax>	or :10m5|5j!
+Mar 07 03:11:33 <chowbok>	That works, thanks!
+**** BEGIN LOGGING AT Thu Mar  7 05:39:14 2024
+
+Mar 07 05:39:13 *	Now talking on #vim
+Mar 07 05:39:13 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 07 05:39:13 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Thu Mar  7 05:53:08 2024
+
+Mar 07 05:53:08 *	Now talking on #vim
+Mar 07 05:53:08 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 07 05:53:08 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Thu Mar  7 06:46:02 2024
+
+Mar 07 06:46:01 *	Now talking on #vim
+Mar 07 06:46:01 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 07 06:46:01 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Thu Mar  7 11:45:31 2024
+
+Mar 07 11:45:29 *	Now talking on #vim
+Mar 07 11:45:29 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 07 11:45:29 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Thu Mar  7 12:26:51 2024
+
+Mar 07 12:26:50 *	Now talking on #vim
+Mar 07 12:26:50 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 07 12:26:50 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Thu Mar  7 12:39:51 2024
+
+Mar 07 12:39:50 *	Now talking on #vim
+Mar 07 12:39:50 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 07 12:39:50 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Thu Mar  7 14:15:49 2024
+
+Mar 07 14:15:48 *	Now talking on #vim
+Mar 07 14:15:48 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 07 14:15:48 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+Mar 07 14:32:28 <osse>	vimpostor: ranger
+Mar 07 14:32:30 <osse>	shit
+Mar 07 14:32:37 <lopid>	what the hell
+Mar 07 14:32:57 <osse>	vimgor: ranger
+Mar 07 14:32:57 <vimgor>	Learn more about Vim's ranges with the Vim Ranger : http://of-vim-and-vigor.blogspot.com/2012/02/vim-ranger.html
+Mar 07 14:33:05 <osse>	There we go
+Mar 07 14:33:16 <vimpostor>	I am not a bot
+Mar 07 14:34:19 <d3x>	vimpostor, prove it
+Mar 07 14:36:42 <vimpostor>	ok ya got me
+Mar 07 14:37:08 <tanath>	i was expecting https://github.com/ranger/ranger
+Mar 07 16:25:51 <nerozero>	Vim should be considered as a highly addictive drug. Recently I have found a very old drive with no vim installed and only mc/mcedit available there, spend couple of minutes to remember how to edit and extra time - how to exit mcedit ... 
+Mar 07 16:26:10 <nerozero>	Drive from old pc 
+Mar 07 17:45:16 <Zed`>	I wonder if I have ever seen a *NIX computer without at least vi
+Mar 07 20:50:10 <chowbok>	Really old Unix terminals didn't have monitors, just printers, so a screen editor like vi wouldn't work
+Mar 07 20:50:19 <chowbok>	You'd have to use ed
+Mar 07 20:50:33 <chowbok>	Before my time, thankfully
+Mar 07 22:19:50 <KOTP>	@Zed https://hackaday.com/2019/04/01/bye-bye-vi-gnu-linux-distros-drop-support/ So you will likely see without == vi, but will likely not see > vi
+Mar 07 22:40:45 <jamessan>	KOTP: That's a 4 year old april fool's joke
+Mar 07 22:47:03 <Zed`>	I am going to write a strongly worded letter
+Mar 07 22:50:24 <Zed`>	So what editor will one use? 
+Mar 07 22:50:45 <Zed`>	like if you need to modify a file to get a machine to boot?
+Mar 07 22:50:49 <Zed`>	ed?
+Mar 07 22:50:51 <Zed`>	nano?
+Mar 07 22:51:53 <phy1729>	EL already stopped shipping ed in their base
+Mar 07 22:53:28 <Zed`>	I mean nano is not awful 
+Mar 07 22:53:35 <Zed`>	but ed?
+Mar 07 22:53:37 *	Zed`  faints
+Mar 07 22:56:39 <Zed`>	Over 20-something years ago I was at a clients working on their PCs and they were having trouble with a Sperry computer which I knew nothing about  - the person that was there who was supposed to know how to operate it was freaking out because her code that the machine normally booted into was not loading
+Mar 07 22:57:33 <Zed`>	I was like vi /etc/rc.. somethhing something and they thought I was the second coming of Jesus 
+Mar 07 23:03:28 <KOTP>	I do still use `ed` when I know I am more focused on line based editing.  But you could have also fixed it likely with piping or `grep`/`sed`/`awk`.
+Mar 07 23:13:10 <mingdao>	Zed`: $EDITOR file
+Mar 07 23:13:25 <mingdao>	If it ain't ViM, it sucks.
+Mar 07 23:15:10 <Zed`>	GET OUT OF MY HEAD! :wq
+Mar 08 01:09:59 <jaggz>	how do I jump to my .c function's variable declaration even if it's local?
+Mar 08 01:10:20 <jaggz>	ctags and ctags-universal seem to do global declarations only and I can't find how to have it grab locals for ^] to work
+Mar 08 01:15:34 <tanath>	jaggz: gd
+**** BEGIN LOGGING AT Fri Mar  8 22:52:06 2024
+
+Mar 08 22:52:06 *	Now talking on #vim
+Mar 08 22:52:06 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 08 22:52:06 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Fri Mar  8 23:04:26 2024
+
+Mar 08 23:04:24 *	Now talking on #vim
+Mar 08 23:04:24 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 08 23:04:24 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Fri Mar  8 23:07:14 2024
+
+Mar 08 23:07:14 *	Now talking on #vim
+Mar 08 23:07:14 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 08 23:07:14 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Fri Mar  8 23:14:16 2024
+
+Mar 08 23:14:14 *	Now talking on #vim
+Mar 08 23:14:14 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 08 23:14:14 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Sat Mar  9 07:43:52 2024
+
+Mar 09 07:43:50 *	Now talking on #vim
+Mar 09 07:43:50 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 09 07:43:50 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Sat Mar  9 08:24:01 2024
+
+Mar 09 08:24:00 *	Now talking on #vim
+Mar 09 08:24:00 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 09 08:24:00 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Sat Mar  9 10:08:22 2024
+
+Mar 09 10:08:21 *	Now talking on #vim
+Mar 09 10:08:21 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 09 10:08:21 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** ENDING LOGGING AT Sat Mar  9 10:09:15 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 10:12:43 2024
+
+Mar 09 10:12:41 *	Now talking on #vim
+Mar 09 10:12:41 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 09 10:12:41 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Sat Mar  9 11:09:19 2024
+
+Mar 09 11:09:16 *	Now talking on #vim
+Mar 09 11:09:16 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 09 11:09:16 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Sat Mar  9 11:33:16 2024
+
+Mar 09 11:33:15 *	Now talking on #vim
+Mar 09 11:33:15 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 09 11:33:15 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** ENDING LOGGING AT Sat Mar  9 13:31:10 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 13:40:24 2024
+
+Mar 09 13:40:23 *	Now talking on #vim
+Mar 09 13:40:23 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 09 13:40:23 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Sat Mar  9 14:33:36 2024
+
+Mar 09 14:33:35 *	Now talking on #vim
+Mar 09 14:33:35 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 09 14:33:35 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+Mar 09 16:50:34 <japh>	quesker, it gets even better using this https://github.com/andymass/vim-matchup
+Mar 09 18:33:51 <FabTG>	Hi, is that possible that vim configuration comes from several concatenated files? let's say .vimrc1, .vimrc2, .vimrc3
+Mar 09 18:34:36 <lopid>	just source one after the other
+Mar 09 18:35:04 <FabTG>	and automatically when vim opens?
+Mar 09 18:35:16 <lopid>	if you do it from your vimrc
+Mar 09 18:35:23 <FabTG>	ohk
+Mar 09 18:35:47 <FabTG>	just need to write source ~/.vimrc1 in the vimrc file?
+Mar 09 18:35:57 <lopid>	:help :source
+Mar 09 18:35:57 <digmbot>	:help :source -> http://vimhelp.appspot.com/repeat.txt.html#%3Asource
+Mar 09 22:21:38 <birkoff>	how can I cause a recalculation of 'lines' & 'columns' in GVim ?
+Mar 09 22:21:58 <birkoff>	i.e. in my tiling window manager I enter and exit fullscreen
+Mar 09 22:43:43 <m_ben>	":echo &lines &columns" always gives you the current values
+Mar 09 22:45:14 <m_ben>	if you're looking for an event that is triggered when the (g)vim application window changes, see :h VimResized
+Mar 09 22:45:15 <digmbot>	:help VimResized -> http://vimhelp.appspot.com/autocmd.txt.html#VimResized
+Mar 09 22:45:20 <m_ben>	birkoff: ^
+Mar 09 23:19:40 <edpo>	PART
+**** BEGIN LOGGING AT Sun Mar 10 00:21:17 2024
+
+Mar 10 00:21:17 *	Now talking on #vim
+Mar 10 00:21:17 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 10 00:21:17 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Sun Mar 10 00:22:46 2024
+
+Mar 10 00:22:46 *	Now talking on #vim
+Mar 10 00:22:46 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 10 00:22:46 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Sun Mar 10 00:27:38 2024
+
+Mar 10 00:27:38 *	Now talking on #vim
+Mar 10 00:27:38 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 10 00:27:38 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Sun Mar 10 00:31:41 2024
+
+Mar 10 00:31:41 *	Now talking on #vim
+Mar 10 00:31:41 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 10 00:31:41 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Sun Mar 10 01:38:21 2024
+
+Mar 10 01:38:20 *	Now talking on #vim
+Mar 10 01:38:20 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 10 01:38:20 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Sun Mar 10 01:52:09 2024
+
+Mar 10 01:52:08 *	Now talking on #vim
+Mar 10 01:52:08 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 10 01:52:08 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** ENDING LOGGING AT Sun Mar 10 04:26:38 2024
+
+**** BEGIN LOGGING AT Sun Mar 10 06:42:23 2024
+
+Mar 10 06:42:22 *	Now talking on #vim
+Mar 10 06:42:22 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 10 06:42:22 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+Mar 10 14:39:39 <no_gravity>	I have vim folding set up to use indention and foldlevel=4. When I hit zM, everything that is indented gets folded. How can I only fold those parts of the buffer that are indented with at least 8 spaces?
+Mar 10 14:42:10 <no_gravity>	Or in other words: How do I only fold those parts of the buffer that are indented twice?
+Mar 10 14:52:56 <igemnace>	no_gravity: you can just :set foldlevel=1
+Mar 10 14:55:11 <no_gravity>	igemnace: In my tests, foldlevel has no impact on what is folded at all.
+Mar 10 14:56:43 <no_gravity>	igemnace: I start with "vim --clean" and then ":set foldmethod=indent". Then when I press zM, everything indented by more than 4 spaced gets indented. No matter what I set foldlevel to.
+Mar 10 15:01:20 <igemnace>	zM changes foldlevel
+Mar 10 15:01:23 <igemnace>	no_gravity: ^
+Mar 10 15:01:58 <no_gravity>	Ah!
+Mar 10 15:02:40 <no_gravity>	Is that all zM does? Set the foldlevel to 0?
+Mar 10 15:06:05 <igemnace>	looks like it, basing off :h zM
+Mar 10 15:06:05 <digmbot>	:help zM -> http://vimhelp.appspot.com/fold.txt.html#zM
+Mar 10 15:06:32 <no_gravity>	igemnace: Perfect. That solves my use case.
+Mar 10 15:06:44 <no_gravity>	I just have to zM and then zr to see a bit more. Great.
+Mar 10 15:10:15 <no_gravity>	I wish I could style the folded lines differently. Just a [+] would be cool. Without any additional info.
+Mar 10 15:12:38 <no_gravity>	Oh, this looks good: set foldtext="+ "
+Mar 10 15:13:17 <no_gravity>	Its a bit better than before. But it still shows "4 lines folded". Wonder if I can get rid of that too.
+Mar 10 15:16:51 <no_gravity>	Even better: set foldtext='+'
+Mar 10 15:50:05 <chiselfuse>	i sometimes type in arabic in vim and i have to constantly switch layouts because command mode expects english bindings. does anyone have a .vimrc section that maps the respective QWERTY arabic characters to the vim ones in command mode? or even better, one that maps keys agnostic of the current locale to their respective commands in command mode=
+Mar 10 15:56:32 <chiselfuse>	hmm, i found that there is a feature to tell vim to switch to a certain language only when in insert mode but i'd rather not have a different vim-language-switch in addition to the OS one
+Mar 10 15:57:24 <chiselfuse>	do i just manually alias all of them?
+Mar 10 16:42:28 <tedwing>	chiselfuse: It's possible to change the layout within Vim using :h 'keymap'. Otherwise, the layout could be changed at the OS level with something like https://stackoverflow.com/questions/64242110/vim-switch-keyboard-layout-in-normal-mode
+Mar 10 16:42:28 <digmbot>	:help 'keymap'. -> http://vimhelp.appspot.com/options.txt.html#%27keymap%27
+Mar 10 16:44:10 <tedwing>	Actually, I think the one I wanted was :h 'langmap'
+Mar 10 16:44:10 <digmbot>	:help 'langmap' -> http://vimhelp.appspot.com/options.txt.html#%27langmap%27
+Mar 10 16:59:37 <chiselfuse>	tedwing: hmm, can i have conditionals in this `function! ... endfunction`? can i call an external script to check currently set layout and branch if statement based on that?
+Mar 10 17:12:02 <tedwing>	chiselfuse: Yes, if you're going to set something up in Vimscript to change the OS layout, you can use conditionals and get the output of an external script with :h system( . The key for command mode would be the CmdlineEnter and CmdlineLeave autocmds. But it's also possible that an existing Vim plugin could satisfy your use case. There's some more information in this answer: 
+Mar 10 17:12:02 <digmbot>	:help system( -> http://vimhelp.appspot.com/builtin.txt.html#system%28%29
+Mar 10 17:12:07 <tedwing>	https://vi.stackexchange.com/questions/25890/recording-and-playing-macros-with-langmap-activated/28188#28188
+Mar 10 17:27:43 <pid1400>	hey anyone please tell me how do i set vim to show the current directory of the file always, while im editing the file
+Mar 10 17:30:38 <pid1400>	lopid
+Mar 10 17:31:12 <lopid>	always?
+Mar 10 17:32:06 <pid1400>	yeah like, what i mean is, suppose im editing a file /home/user/Documents/file.txt , so if i vi file.txt, at the bottom can it show /home/user/Documents/file.txt
+Mar 10 17:33:33 <lopid>	you can add it to the :help 'statusline'
+Mar 10 17:33:33 <digmbot>	:help 'statusline' -> http://vimhelp.appspot.com/options.txt.html#%27statusline%27
+Mar 10 17:34:03 <lopid>	%F
+Mar 10 17:35:37 <pid1400>	but if i do that, this is whats happening
+Mar 10 17:36:04 <pid1400>	if i do vi /home/user/Docs/file.txt from suppose /home/anotheruser/Docs/
+Mar 10 17:36:12 <pid1400>	then the status is /home/anotheruser/Docs
+Mar 10 17:36:21 <pid1400>	instead of the directory of the file
+Mar 10 17:36:48 <lopid>	vi or vim?
+Mar 10 17:36:51 <pid1400>	vi
+Mar 10 17:36:57 <pid1400>	vim
+Mar 10 17:37:02 <pid1400>	sorry, vim
+Mar 10 17:37:17 <pid1400>	i added vi aliased to vim in my zshrc. sorry for the confusion
+Mar 10 17:37:52 <lopid>	`vim -Nu NONE /home/user/Docs/file.txt` then `:set laststatus=2 stl=%F`
+Mar 10 17:39:53 <pid1400>	works! thank you lopid
+**** BEGIN LOGGING AT Sun Mar 10 23:24:28 2024
+
+Mar 10 23:24:27 *	Now talking on #vim
+Mar 10 23:24:27 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 10 23:24:27 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)

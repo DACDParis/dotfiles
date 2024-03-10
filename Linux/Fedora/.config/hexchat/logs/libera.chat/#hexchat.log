@@ -1044,3 +1044,318 @@ Mar 06 03:44:03 <zeamp>	If you say Starbucks in the mirror 3 times, a girl in yo
 Mar 06 07:16:31 *	Now talking on #hexchat
 Mar 06 07:16:31 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
 Mar 06 07:16:31 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** BEGIN LOGGING AT Wed Mar  6 13:29:43 2024
+
+Mar 06 13:29:41 *	Now talking on #hexchat
+Mar 06 13:29:41 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 06 13:29:41 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+Mar 06 16:54:42 <Oneman>	hi
+Mar 06 16:56:52 <Oneman>	have anyone here?
+Mar 06 16:57:01 <sney>	hi
+Mar 06 16:57:07 <Oneman>	ok thanks
+Mar 06 16:57:14 <Oneman>	i have a question
+Mar 06 16:57:19 <Oneman>	can u help?
+Mar 06 16:57:41 <sney>	is your question about hexchat? 
+Mar 06 16:57:53 <Oneman>	no
+Mar 06 16:58:20 <sney>	then there is probably a better channel for you. most distros have their own channels, so for instance if you are looking for arch support, you would /join #archlinux and then ask there 
+Mar 06 16:59:38 <Oneman>	looking for Avista tracker channel
+Mar 06 16:59:41 <Oneman>	can u help?
+Mar 06 17:00:12 <sney>	this network has a bot that can search for channels, use it like /msg alis list keyword
+Mar 06 17:00:30 <Oneman>	ok
+Mar 06 17:00:33 <Oneman>	i founded
+Mar 06 17:00:40 <Oneman>	thanks you ! 
+**** BEGIN LOGGING AT Wed Mar  6 21:44:03 2024
+
+Mar 06 21:44:02 *	Now talking on #hexchat
+Mar 06 21:44:02 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 06 21:44:02 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+Mar 06 22:01:54 <slidercrank>	hello
+Mar 06 22:02:38 <slidercrank>	Linux Mint developers announced they would be developing a replacement for now abandoned HexChat.  https://blog.linuxmint.com/?p=4650
+Mar 06 22:02:45 <slidercrank>	https://github.com/linuxmint/jargonaut
+Mar 06 22:02:59 <slidercrank>	but they don't call it an IRC client
+Mar 06 22:03:29 <slidercrank>	still it looks like it would be possible to connect to IRC servers (at least I hope so)
+Mar 06 22:04:15 <bfu>	maybe give this a try https://xchat.servx.org/linux/x86_64/
+Mar 06 22:11:59 <DasBrain_Hex>	Not sure what to think about Jargonaut. I see it as "You need help? Just start Jargonaut and ask. No configuration/setup needed."
+Mar 06 22:13:18 <DasBrain_Hex>	I think it could be great for newcomers to introduce to IRC. But then... Maybe it needs some "expert mode".
+Mar 06 22:21:56 <JanC>	bfu: why would people install/use random stuff from the internet like that...?
+Mar 06 22:23:07 <bfu>	curiosity?:)
+Mar 06 22:24:03 <PantelicGR>	slidercrank: >Although it uses the IRC, it won’t be developed as an IRC client. It will support pastebin/imgur via DND, uploading your system specifications, troubleshooting and many features which have nothing to do with IRC. Yet you won’t be able to join channels or perform common IRC commands... Jargonaut is an XAPP... <-- It's not an IRC client. It's just another chat app.
+Mar 06 22:24:37 <PantelicGR>	Thanks for sharing though.
+Mar 06 22:24:38 <JanC>	bfu: so where is the source code?  I'm pretty sure it's plain illegal what they do on that site...
+Mar 06 22:26:52 <JanC>	WTF is a "XAPP" (in this context)?
+Mar 06 22:27:14 <bfu>	is that illegal to not disclose your src?
+Mar 06 22:28:20 <JanC>	bfu: XChat/HexChat are GPL, so yes it's illegal (unless you own the copyright on everything yourself)
+Mar 06 22:29:16 <JanC>	or have a different license from all copyright owners
+Mar 06 22:29:41 <bfu>	oh well, then it is i suppose
+Mar 06 22:30:16 <bfu>	too bad, as it is still maintained.. pity its not open
+Mar 06 22:30:43 <JanC>	seems like it's mostly Windows-only also
+Mar 06 22:30:55 <PantelicGR>	JanC: As for XAPP I'm reading a wikipedia article but I don't know if it's related: https://en.wikipedia.org/wiki/XApps
+Mar 06 22:30:59 <JanC>	except for the "experimental linuxpackages"
+Mar 06 22:32:28 <JanC>	PantelicGR: I'm sure it's not, and it's just one of many things called "xapp" or some variation of it, which is why I have no idea what they mean  :)
+Mar 06 22:32:44 <PantelicGR>	OK.
+Mar 06 22:32:58 <JanC>	there is also some "AI" chatbot called XApp
+Mar 06 22:33:08 <JanC>	but I assume it's not that either
+Mar 06 22:33:37 <PantelicGR>	I won't use a replacement chat app instead of an IRC client.
+Mar 06 22:33:53 <PantelicGR>	Yeah.
+Mar 06 22:34:28 <PantelicGR>	I will keep using HexChat and maybe WeeChat in the future and see what happens.
+Mar 06 22:35:31 <JanC>	there are a whole bunch of other IRC applications
+Mar 06 22:35:54 <PantelicGR>	Yeah, I know. :)
+Mar 06 22:36:11 <rawhide>	JanC, but no other good ones
+Mar 06 22:36:15 <JanC>	for people who just need basic IRC they are probably going to be sufficient too
+Mar 06 22:37:04 <JanC>	but for "IRC power users" who expect scripting it was the only one based on Gtk, I think...   :-/
+Mar 06 22:37:09 <PantelicGR>	For anyone interested it has been posted here before: Comparison of Internet Relay Chat Clients: https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients
+Mar 06 22:37:46 <JanC>	that list is far from complete
+Mar 06 22:38:13 <PantelicGR>	Do you have a better list?
+Mar 06 22:38:15 <rawhide>	I've tried tons of IRC clients and HexChat is the only one I've liked
+Mar 06 22:38:27 <PantelicGR>	I still like HexChat too.
+Mar 06 22:39:20 <DasBrain_Hex>	I am currently in the process of switching to weechat.
+Mar 06 22:47:21 <JanC>	some Gtk-based ones that aren't listed on that Wikipedia page are Srain https://srain.silverrainz.me/ & Loqui https://github.com/sunnyone/loqui (hasn't been updated in years either...) & Polari https://wiki.gnome.org/Apps/Polari/
+Mar 06 22:49:47 <PantelicGR>	JanC: Nice. :)
+Mar 06 22:50:15 <JanC>	they sometimes look nice, but...
+Mar 06 22:52:32 <PantelicGR>	I will check them out.
+Mar 06 22:53:47 <JanC>	and there is Smuxi, of course
+Mar 06 22:54:39 <JanC>	and Pidgin & Empathy which can do basic IRC
+Mar 06 22:55:25 <PantelicGR>	I know Pidgin but not the others.
+Mar 06 22:56:02 <JanC>	Empathy is similar to pidgin in that it's a multi-protocol IM client
+Mar 06 22:58:29 <PantelicGR>	Do you know if Srain supports DCC?
+Mar 06 22:58:43 <PantelicGR>	I know that Pidgin supports it.
+Mar 06 22:59:53 <JanC>	I doubt it
+Mar 06 23:00:09 <PantelicGR>	Polari?
+Mar 06 23:00:20 <PantelicGR>	Empathy?
+Mar 06 23:00:28 <JanC>	I doubt it
+Mar 06 23:00:40 <JanC>	but feel free to try  :)
+Mar 06 23:01:12 <PantelicGR>	I will read info about them.
+Mar 06 23:01:47 <JanC>	https://srain.silverrainz.me/support.html says DCC → No
+Mar 06 23:03:01 <pj>	That sounds a lot like, "We're gonna jump the gun on burying hexchat, I know, let's just have an AI write us some random chat app and we'll call it a replacement."
+Mar 06 23:03:36 <JanC>	Srain has been around for a while, their focus is just on other things
+Mar 06 23:04:24 <JanC>	for many here, I suspect the main issue would be the lack of plugin/scripting support
+Mar 06 23:05:32 <JanC>	that and stuff like wasting space on screen that you really need when you are in >100 channels  :)
+Mar 06 23:05:41 <pj>	I've never cared for clients that tack on IRC support to other things.  If I wanted that there's already a number of "hexchat replacements" available.
+Mar 06 23:07:44 <PantelicGR>	So Srain isn't an option for me.
+Mar 06 23:09:45 <PantelicGR>	JanC: Does Polari support Windows?
+Mar 06 23:10:21 <PantelicGR>	It says: "Polari is a simple Internet Relay Chat (IRC) client that is designed to
+Mar 06 23:10:21 <PantelicGR>	integrate seamlessly with the GNOME desktop."
+Mar 06 23:10:32 <JanC>	I have no idea, but considering it's a Gnome project, I doubt that's a priority
+Mar 06 23:22:37 <PantelicGR>	All these IRC clients except Pidgin seem not to support DCC.
+**** ENDING LOGGING AT Wed Mar  6 23:44:24 2024
+
+**** BEGIN LOGGING AT Thu Mar  7 02:18:47 2024
+
+Mar 07 02:18:44 *	Now talking on #hexchat
+Mar 07 02:18:44 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 07 02:18:44 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+Mar 07 02:24:39 <JanC>	cappy: any halfway decent editor will handle indents for you, so it's really not an issue...
+Mar 07 02:25:55 <cappy>	JanC: I use PyCharm, so yeah. It's more the principle of the thing.
+Mar 07 02:25:56 <JanC>	and it's rarely a good idea to have code that is long & deeply nested
+Mar 07 02:27:04 <cappy>	JanC: You've not come from the F77 days ;-)  Of course, we don't do that anymore.
+Mar 07 02:27:33 <JanC>	the fact that such code exists does not mean it is or was a good idea  :)
+Mar 07 02:28:06 <JanC>	and tehre will always be exceptions, I guess
+Mar 07 02:28:30 <cappy>	Back then, it was /the only/ idea. But this is now... and we do things /differently/.
+Mar 07 02:28:40 <JanC>	but often it would be a lot easier to read & understand the code when it's split up
+Mar 07 02:29:31 <cappy>	Agree totally. It's just that I prefer languages that ignore whitespace and block code visibly.
+Mar 07 02:29:53 <JanC>	indentation is visible  :)
+Mar 07 02:30:39 <cappy>	Not to me. I don't see ghosts :0
+Mar 07 02:30:52 <JanC>	and it's easy to make things impossible to understand if you don't indent properly with {} blocks
+Mar 07 02:32:39 <JanC>	and if you really care, you can always use #{ and #} instead of { and } in Python   ;)
+Mar 07 02:32:46 <cappy>	Always do, and I think it's a thing of beauty. I have, however worked with one guy that prided himself on obfuscating production code by removing all whitespace. He persisted because he was a "known genius" that they couldn't afford to fire.
+Mar 07 02:33:18 <cappy>	JanC: Now that's an idea.
+Mar 07 02:33:38 <cappy>	But I'd get laughed at, I'm certain.
+Mar 07 02:34:53 <JanC>	I remember from back when I followed comp.lang.python that that was the standard reply every time some C developer came in complaining about it   ;)
+Mar 07 02:35:04 <JanC>	it might even have been in the FAQ
+Mar 07 02:36:03 <cappy>	See... see... C.  I be far from the only one. It's always those C-programmer guys, darn, darn.
+Mar 07 02:36:39 <JanC>	well, C or some other language using {} or whatever to delimit blocks
+Mar 07 02:38:08 <JanC>	cappy: did you auto-run that "genius" code through a code formatter whenever it was checked into source control?
+Mar 07 02:38:18 <cappy>	It's like a book with covers: { book }
+Mar 07 02:39:15 <cappy>	JanC: Oh yes we did. It was project code.
+Mar 07 02:57:17 <manjaro>	hola
+**** BEGIN LOGGING AT Thu Mar  7 05:39:14 2024
+
+Mar 07 05:39:13 *	Now talking on #hexchat
+Mar 07 05:39:13 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 07 05:39:13 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+Mar 07 05:43:16 <pj>	I have always felt that using formatting as syntax is a terrible idea.  I am all for proper formatting of code, but relying on it for syntax is just a recipie for disaster, imo.
+**** BEGIN LOGGING AT Thu Mar  7 05:53:08 2024
+
+Mar 07 05:53:08 *	Now talking on #hexchat
+Mar 07 05:53:08 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 07 05:53:08 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** BEGIN LOGGING AT Thu Mar  7 06:46:02 2024
+
+Mar 07 06:46:01 *	Now talking on #hexchat
+Mar 07 06:46:01 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 07 06:46:01 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** BEGIN LOGGING AT Thu Mar  7 11:45:31 2024
+
+Mar 07 11:45:29 *	Now talking on #hexchat
+Mar 07 11:45:29 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 07 11:45:29 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** BEGIN LOGGING AT Thu Mar  7 12:26:51 2024
+
+Mar 07 12:26:50 *	Now talking on #hexchat
+Mar 07 12:26:50 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 07 12:26:50 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** BEGIN LOGGING AT Thu Mar  7 12:39:51 2024
+
+Mar 07 12:39:50 *	Now talking on #hexchat
+Mar 07 12:39:50 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 07 12:39:50 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+Mar 07 12:50:49 <Marin>	hello
+**** BEGIN LOGGING AT Thu Mar  7 14:15:49 2024
+
+Mar 07 14:15:48 *	Now talking on #hexchat
+Mar 07 14:15:48 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 07 14:15:48 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+Mar 08 02:12:48 <grateful>	even AI loves hexchat https://app.suno.ai/song/9def70a0-35fc-4eb8-976b-21ee3597f4b5/
+**** BEGIN LOGGING AT Fri Mar  8 22:52:06 2024
+
+Mar 08 22:52:06 *	Now talking on #hexchat
+Mar 08 22:52:06 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 08 22:52:06 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** BEGIN LOGGING AT Fri Mar  8 23:04:26 2024
+
+Mar 08 23:04:24 *	Now talking on #hexchat
+Mar 08 23:04:24 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 08 23:04:24 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** BEGIN LOGGING AT Fri Mar  8 23:07:14 2024
+
+Mar 08 23:07:14 *	Now talking on #hexchat
+Mar 08 23:07:14 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 08 23:07:14 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** BEGIN LOGGING AT Fri Mar  8 23:14:16 2024
+
+Mar 08 23:14:14 *	Now talking on #hexchat
+Mar 08 23:14:14 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 08 23:14:14 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** BEGIN LOGGING AT Sat Mar  9 07:43:52 2024
+
+Mar 09 07:43:50 *	Now talking on #hexchat
+Mar 09 07:43:50 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 09 07:43:50 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+Mar 09 08:03:30 <sorcier>	anyone around who might be able to help me with my script, need to know if there's any glaring issues, that I'm just not seeing
+**** BEGIN LOGGING AT Sat Mar  9 08:24:01 2024
+
+Mar 09 08:24:00 *	Now talking on #hexchat
+Mar 09 08:24:00 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 09 08:24:00 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** BEGIN LOGGING AT Sat Mar  9 10:08:22 2024
+
+Mar 09 10:08:21 *	Now talking on #hexchat
+Mar 09 10:08:21 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 09 10:08:21 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** ENDING LOGGING AT Sat Mar  9 10:09:15 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 10:12:43 2024
+
+Mar 09 10:12:41 *	Now talking on #hexchat
+Mar 09 10:12:41 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 09 10:12:41 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** BEGIN LOGGING AT Sat Mar  9 11:09:19 2024
+
+Mar 09 11:09:16 *	Now talking on #hexchat
+Mar 09 11:09:16 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 09 11:09:16 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** BEGIN LOGGING AT Sat Mar  9 11:33:17 2024
+
+Mar 09 11:33:15 *	Now talking on #hexchat
+Mar 09 11:33:15 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 09 11:33:15 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** ENDING LOGGING AT Sat Mar  9 13:31:10 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 13:40:25 2024
+
+Mar 09 13:40:23 *	Now talking on #hexchat
+Mar 09 13:40:23 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 09 13:40:23 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** BEGIN LOGGING AT Sat Mar  9 14:33:36 2024
+
+Mar 09 14:33:35 *	Now talking on #hexchat
+Mar 09 14:33:35 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 09 14:33:35 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+Mar 09 16:00:37 <kveremitz>	pastebin?
+Mar 09 16:00:49 <kveremitz>	don't ask to ask :P
+Mar 09 17:52:38 <sorcier>	you're right. here's a pastebin. https://pastebin.com/GG7pYj7U
+Mar 09 19:28:29 <JanC>	sorcier: does it not work, or are you just asking for an opinion/review?
+Mar 09 19:29:21 <sorcier>	it doesn't work
+Mar 09 19:30:22 <sorcier>	it seems to load, but, upon requesting a file type that's not in the trusted list, it doesn't reject the file.
+Mar 09 19:36:23 <DasBrain^Hex>	/dcc close
+Mar 09 19:36:36 <JanC>	I think I see several errors already
+Mar 09 19:37:03 <sorcier>	great.
+Mar 09 19:39:57 <JanC>	first of all, there is no "commandf()" function in HexChat
+Mar 09 19:40:39 <JanC>	at least, not in Python
+Mar 09 19:42:25 <JanC>	(it exists in C, but its extra functionality of format strings is built-in in Python)
+Mar 09 19:46:27 <JanC>	second, you split the filename on "."s & take the last element in the resulting list of strings; that will not include a ".", while your list of "trusted extensions" all include dots
+Mar 09 19:49:57 <JanC>	I almost never use DCC, so I would have to go read the specs for that to check if you have any errors in that (but maybe DasBrain^Hex has more experience with it?)
+Mar 09 19:50:01 <sorcier>	so if i just remove the . from the trusted extensions, it will just check the last 3 characters and that hypothetically will work?
+Mar 09 19:50:36 <JanC>	that should fix that bug, yes
+Mar 09 19:51:03 <sorcier>	i'm fairly new to programming, just trying to get this to work as hexchat doesn't have this functionality built it and there's nothing that I can use that has it(mIRC but that's Windows based)
+Mar 09 19:51:08 <JanC>	and you use format strings elsewhere already, so I assume you know how to use them with command()
+Mar 09 19:54:24 <sorcier>	hrm, okay, going to try to figure out a few things
+Mar 09 21:15:48 <SupaGamer2017>	It's honestly sad that this has happened
+Mar 09 21:18:34 <SupaGamer2017>	Does anyone know if Flatpack is the only release of Hexchat for macOS?
+Mar 09 21:18:45 <SupaGamer2017>	Or is there some hidden binary that I have to traverse the web for
+Mar 09 21:18:53 <SupaGamer2017>	*Flatpak
+Mar 09 22:10:28 <JanC>	SupaGamer2017: I don't think there have been any releases for macOS at all for many years
+Mar 09 22:59:18 <sorcier>	i'm beginning to believe it's impossible to block a file transfer merely based off it's file extension.
+**** BEGIN LOGGING AT Sun Mar 10 00:21:17 2024
+
+Mar 10 00:21:17 *	Now talking on #hexchat
+Mar 10 00:21:17 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 10 00:21:17 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** BEGIN LOGGING AT Sun Mar 10 00:22:46 2024
+
+Mar 10 00:22:46 *	Now talking on #hexchat
+Mar 10 00:22:46 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 10 00:22:46 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** BEGIN LOGGING AT Sun Mar 10 00:27:38 2024
+
+Mar 10 00:27:38 *	Now talking on #hexchat
+Mar 10 00:27:38 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 10 00:27:38 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** BEGIN LOGGING AT Sun Mar 10 00:31:41 2024
+
+Mar 10 00:31:41 *	Now talking on #hexchat
+Mar 10 00:31:41 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 10 00:31:41 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** BEGIN LOGGING AT Sun Mar 10 01:38:21 2024
+
+Mar 10 01:38:20 *	Now talking on #hexchat
+Mar 10 01:38:20 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 10 01:38:20 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** BEGIN LOGGING AT Sun Mar 10 01:52:09 2024
+
+Mar 10 01:52:08 *	Now talking on #hexchat
+Mar 10 01:52:08 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 10 01:52:08 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** ENDING LOGGING AT Sun Mar 10 04:26:38 2024
+
+**** BEGIN LOGGING AT Sun Mar 10 06:42:23 2024
+
+Mar 10 06:42:22 *	Now talking on #hexchat
+Mar 10 06:42:22 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 10 06:42:22 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+Mar 10 17:27:38 <arcti>	how can I dynamically add a new db to a flask-sqlalchemy instance? 
+Mar 10 17:28:24 <arcti>	I'm building a tool with a plugin system and would like for plugins to be able to add db binds without having to edit the config file
+Mar 10 19:48:21 <Elon_Satoshi>	So I just learned about the final release. RIP
+Mar 10 22:06:17 <buf>	hi, some easy way to have some command executed on the startup?
+Mar 10 22:06:46 <buf>	independent of the network connection
+Mar 10 22:12:13 <JanC>	you can do that with a plugin or script
+Mar 10 22:12:18 <JanC>	but why independent of network connection?
+Mar 10 22:26:23 <buf>	because i only want it to run/set once, not on every reconnect
+Mar 10 22:26:39 <buf>	in case of disconnects
+Mar 10 22:27:57 <sney>	that would probably have to be scripted 
+Mar 10 22:30:57 <buf>	i bet it was already, once upon a time :)
+Mar 10 22:31:04 <buf>	but many scripts lost in time
+Mar 10 22:32:46 <JanC>	there are many many many scripts still around too, just hard to find them sometimes...  ;)
+Mar 10 22:33:35 <buf>	true, this is best place probably https://github.com/Poorchop/hexchat-scripts
+Mar 10 22:33:49 <buf>	but i also found dead urls there already
+Mar 10 22:36:47 <buf>	tab-name.pl (see remarks) - Adds channel modes and an unread messages counter to your tab names.
+Mar 10 22:36:54 <buf>	i think somebody asked about this not long ago
+Mar 10 22:39:14 <sney>	you can probably get those dead urls via web.archive.org 
+Mar 10 22:39:36 <buf>	not if hosted on github, i tried
+Mar 10 22:50:10 <JanC>	someone might have forked them, and you might be able to find a fork (but that won't be easy if the repository is just named hexchat-scripts probably...)
+Mar 10 22:54:32 <buf>	maybe this http://b0at.tx0.org/xchat/addons/scripts/startup/do_startup-1.pl
+**** BEGIN LOGGING AT Sun Mar 10 23:24:28 2024
+
+Mar 10 23:24:27 *	Now talking on #hexchat
+Mar 10 23:24:27 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 10 23:24:27 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)

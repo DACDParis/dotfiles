@@ -3029,3 +3029,645 @@ Mar 06 11:48:08 <yziquel>	Because the apt sources of ubuntu pro are not changing
 Mar 06 12:32:47 <david_>	hello
 Mar 06 12:34:19 <whiskey76>	\o
 Mar 06 12:41:37 <yziquel>	Is there a way for apt to show which kernel image provides a given version of the zfs kernel module ?
+**** BEGIN LOGGING AT Wed Mar  6 13:29:42 2024
+
+Mar 06 13:29:41 *	Now talking on #ubuntu
+Mar 06 13:29:41 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 06 13:29:41 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 06 13:29:41 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+Mar 06 13:33:55 <DocMors>	OK I'll answer myself, yes there will be FDE but it still counts as experimental
+Mar 06 14:30:34 <nikolam>	How do I torch all lxd configuration in Ubuntu and start over? I used to have a configuration on top of zfs volume and now I don't remember what I was doing but can't make it with  sudo lxd init to set it up
+Mar 06 14:31:08 <nikolam>	It fails to create bridged interface , I also have VirtualBox install on same Xubuntu 22.04 host
+Mar 06 14:40:09 <nikolam>	Error: Failed to create local member network "lxdbr1" in project "default": The DNS and DHCP service exited prematurely: exit status 2 ("dnsmasq: failed to create listening socket for 10.234.138.1: Address already in use")
+Mar 06 14:52:08 <leftyfb>	nikolam: sudo snap remove --purge lxd
+Mar 06 15:05:32 <BluesKaj>	Hi all
+Mar 06 15:51:26 <nikolam>	leftyfb, Unfortunately I get again similar message, Error: Failed to create local member network "lxdbr0" in project "default": The DNS and DHCP service exited prematurely: exit status 2 ("dnsmasq: failed to create listening socket for 10.63.68.1: Address already in use")
+Mar 06 16:08:56 <nikolam>	Error: Failed to create local member network "lxdbr0" in project "default": The DNS and DHCP service exited prematurely: exit status 2 ("dnsmasq: failed to create listening socket for 10.17.187.1: Address already in use") when trying  sudo lxd init -v
+Mar 06 19:33:20 <Kangarooo>	I have now bug- alt+tab not working. alt looks like not registering. for what to report bug?
+Mar 06 19:34:01 <Kangarooo>	oh no, looks like alt seperate works. how to check if keys work?
+Mar 06 19:34:06 <Kangarooo>	just combo not owkirng
+Mar 06 20:28:32 <nick__>	halo
+Mar 06 20:56:11 <itadmin>	yo
+**** BEGIN LOGGING AT Wed Mar  6 21:44:02 2024
+
+Mar 06 21:44:02 *	Now talking on #ubuntu
+Mar 06 21:44:02 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 06 21:44:02 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 06 21:44:02 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+Mar 06 22:15:12 <crash14>	Hi, I upgraded my server from Ubuntu 18.04 to 20 over ssh and it completed without any errors. Once I disconnected I wasn't able to connect back and when I restarted the server, I get the following error (a kernel panic) https://imgur.com/a/1KCqpmX What is happening and how can I fix this?
+Mar 06 22:16:55 <sarnold>	yikes
+Mar 06 22:19:20 <plastikman>	You have backups, right
+Mar 06 22:20:23 <sarnold>	it sure looks like the *important* error probably scrolled off screen :(
+Mar 06 22:20:32 <sarnold>	try the safe mode boot option?
+Mar 06 22:20:45 <EriC^^>	older kernel perhaps using grub?
+Mar 06 22:22:57 <plastikman>	Sounds to me like there is a missing initramfs or some other driver. try to boot with a recovery kernel as others have states
+**** ENDING LOGGING AT Wed Mar  6 23:44:24 2024
+
+**** BEGIN LOGGING AT Thu Mar  7 02:18:45 2024
+
+Mar 07 02:18:44 *	Now talking on #ubuntu
+Mar 07 02:18:44 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 07 02:18:44 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 07 02:18:44 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+Mar 07 05:21:08 <Nautilus>	it's been a while since I've used wget so I'm wondering if this would be a good contemporary user agent to use:
+Mar 07 05:21:09 <Nautilus>	--user-agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/113.0"
+Mar 07 05:23:13 <rbox>	what does good mean
+Mar 07 05:24:05 <oerheks>	current is 123.0 ?
+Mar 07 05:26:17 <Nautilus>	sorry, that's the old one from my notes, yes am looking for a good current user agent
+Mar 07 05:26:49 <Nautilus>	good, I can't say specify for sure. Just something reliable?
+Mar 07 05:27:38 <oerheks>	get your current one?
+Mar 07 05:27:51 <Nautilus>	just give it a go with --user-agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/123.0" then?  (note 123.0)
+Mar 07 05:27:58 <oerheks>	https://www.whatismybrowser.com/detect/what-is-my-user-agent/
+Mar 07 05:30:05 <Nautilus>	Ah thanks, it's : Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0
+**** BEGIN LOGGING AT Thu Mar  7 05:39:14 2024
+
+Mar 07 05:39:13 *	Now talking on #ubuntu
+Mar 07 05:39:13 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 07 05:39:13 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 07 05:39:13 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** BEGIN LOGGING AT Thu Mar  7 05:53:08 2024
+
+Mar 07 05:53:08 *	Now talking on #ubuntu
+Mar 07 05:53:08 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 07 05:53:08 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 07 05:53:08 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** BEGIN LOGGING AT Thu Mar  7 06:46:01 2024
+
+Mar 07 06:46:01 *	Now talking on #ubuntu
+Mar 07 06:46:01 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 07 06:46:01 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 07 06:46:01 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** BEGIN LOGGING AT Thu Mar  7 11:45:29 2024
+
+Mar 07 11:45:29 *	Now talking on #ubuntu
+Mar 07 11:45:29 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 07 11:45:29 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 07 11:45:29 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** BEGIN LOGGING AT Thu Mar  7 12:26:50 2024
+
+Mar 07 12:26:50 *	Now talking on #ubuntu
+Mar 07 12:26:50 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 07 12:26:50 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 07 12:26:50 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+Mar 07 12:27:58 <RhineDevil>	Hi, I tried to do apt update on a xenial ubuntu image in docker and got this: https://paste.debian.net/hidden/a51154a9/, ubuntu-archive-keyring.gpg and ubuntu-master-keyring.gpg are in /usr/share/keyrings as they should
+**** BEGIN LOGGING AT Thu Mar  7 12:39:50 2024
+
+Mar 07 12:39:50 *	Now talking on #ubuntu
+Mar 07 12:39:50 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 07 12:39:50 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 07 12:39:50 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+Mar 07 13:24:16 <wildv1per>	import socket
+Mar 07 13:24:21 <wildv1per>	import threading
+Mar 07 13:24:44 <wildv1per>	def handle_client(client_socket):
+Mar 07 13:24:56 <wildv1per>	# Modify this function to handle client connections
+Mar 07 13:24:56 <wildv1per>	    pass
+Mar 07 13:25:04 <wildv1per>	def main():
+Mar 07 13:25:05 <wildv1per>	    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+Mar 07 13:25:05 <wildv1per>	    server.bind(("0.0.0.0", 8888))
+Mar 07 13:25:05 <wildv1per>	    server.listen(5)
+Mar 07 13:25:05 <wildv1per>	    print("[*] Listening on 0.0.0.0:8888")
+Mar 07 13:25:05 *	Drone sets quiet on *!*@2600:6c44:6900:e8a:4191:2b:9ccf:a993
+Mar 07 13:26:24 *	Drone removes quiet on *!*@2600:6c44:6900:e8a:4191:2b:9ccf:a993
+Mar 07 13:30:05 <younder>	Did you 'hear' anything? python programmer?
+Mar 07 13:31:42 <stenno>	listening to 0.0.0.0 is.. pragmatic
+Mar 07 13:38:17 <younder>	Look a like that old code challenge where you where you write a echo protocol server that can handle at least 5 clients. Well a first poke at it..
+Mar 07 13:41:45 <stenno>	my first python program i ever wrote was a socket server and client
+Mar 07 13:41:53 <stenno>	still was in school then so it was around 2003 or so
+Mar 07 13:42:09 <stenno>	coming from C++, it was really amazing
+Mar 07 13:42:25 <stenno>	in python you could just do things without having to spend 200 SLOC to declare a connection or w/e
+Mar 07 13:49:24 <m0n0p>	Hello, I have this exact same problem https://bugs.launchpad.net/ubuntu/+source/emacsen-common/+bug/1990804  But I didn't find any solution, is anyone here able to help me ? thanks
+Mar 07 13:49:25 -ubottu/#ubuntu-	Launchpad bug 1990804 in emacsen-common (Ubuntu) "package cmake-data 3.22.1-1ubuntu1.22.04.1 failed to install/upgrade: installed cmake-data package post-installation script subprocess returned error exit status 1" [Undecided, Expired]
+Mar 07 13:52:12 <oerheks>	m0n0p, update please, jammy-updates give  3.22.1-1ubuntu1.22.04.2
+Mar 07 13:53:57 <oerheks>	not sure there is a fix in it, or in cmake itself..
+Mar 07 13:54:03 <m0n0p>	oerheks: everything is up to date
+Mar 07 13:54:12 <m0n0p>	if you mean: apt update && apt upgrade
+Mar 07 13:54:25 <oerheks>	https://packages.ubuntu.com/jammy-updates/cmake-data
+Mar 07 13:54:34 <m0n0p>	I cannot install cmake
+Mar 07 13:54:39 <oerheks>	apt dist-upgrade, yes
+Mar 07 13:54:47 <ioria>	m0n0p, apt-cache policy cmake-data
+Mar 07 13:55:42 <m0n0p>	cmake-data:
+Mar 07 13:55:43 <m0n0p>	  Installé : 3.22.1-1ubuntu1.22.04.2
+Mar 07 13:55:43 <m0n0p>	  Candidat : 3.22.1-1ubuntu1.22.04.2
+Mar 07 13:55:43 <m0n0p>	 Table de version :
+Mar 07 13:55:43 <m0n0p>	 *** 3.22.1-1ubuntu1.22.04.2 500
+Mar 07 13:55:43 <m0n0p>	        500 http://fr.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages
+Mar 07 13:55:43 *	Drone sets quiet on *!*@219.250.229.179
+Mar 07 13:55:56 <stenno>	lol
+Mar 07 13:56:49 <ioria>	m0n0p, wait a minute , then paste 'sudo apt install --reinstall cmake-data | nc termbin.com 9999'
+Mar 07 13:56:49 *	Drone removes quiet on *!*@219.250.229.179
+Mar 07 14:00:56 <m0n0p>	https://termbin.com/eou9 with sudo apt install --reinstall cmake-data 2>&1 | nc termbin.com 9999 sorry for earlier
+Mar 07 14:02:41 <ioria>	m0n0p, dpkg -l | grep -v ^ii | grep -v ^rc | nc termbin.com 9999
+Mar 07 14:04:07 <m0n0p>	ioria, https://termbin.com/viub
+Mar 07 14:05:33 <ioria>	m0n0p, sudo mv /var/lib/dpkg/info/cmake-data* /tmp
+Mar 07 14:06:33 <m0n0p>	ioria, okay and then ?
+Mar 07 14:06:36 <ioria>	m0n0p, sudo apt install --reinstall cmake-data
+Mar 07 14:07:09 <m0n0p>	E: Internal Error, No file name for cmake-data:amd64
+Mar 07 14:07:39 <m0n0p>	ioria,
+Mar 07 14:07:53 <oerheks>	maybe without * ??
+Mar 07 14:08:57 <ioria>	m0n0p, sudo dpkg --configure -a | nc termbin.com 9999
+Mar 07 14:10:01 <m0n0p>	ioria, https://termbin.com/kbme
+Mar 07 14:10:07 <m0n0p>	I reran it, and no output
+**** BEGIN LOGGING AT Thu Mar  7 14:15:49 2024
+
+Mar 07 14:15:48 *	Now talking on #ubuntu
+Mar 07 14:15:48 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 07 14:15:48 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 07 14:15:48 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+Mar 07 14:15:58 <ioria>	m0n0p, it's correctly installed afaict
+Mar 07 14:16:47 <m0n0p>	ioria, Amazing thank you very much. Also why you did that :sudo mv /var/lib/dpkg/info/cmake-data* /tmp ?
+Mar 07 14:17:10 <ioria>	m0n0p, they are probably corrupted, and now have been replaced
+Mar 07 14:17:26 <m0n0p>	okay
+Mar 07 14:17:39 <ioria>	m0n0p, ls /var/lib/dpkg/info/cmake-data*
+Mar 07 14:18:09 <m0n0p>	ioria, "/var/lib/dpkg/info/cmake-data*": No such file or directory (os error 2)
+Mar 07 14:23:05 <ioria>	m0n0p, sudo apt --fix-broken install
+Mar 07 14:23:42 <m0n0p>	ioria, no errors 0 mis à jour, 0 nouvellement installés, 0 à enlever et 0 non mis à jour.
+Mar 07 14:23:58 <ioria>	m0n0p, i think it's ok then
+Mar 07 14:24:14 <m0n0p>	ioria, ok thanks
+Mar 07 14:24:24 <ioria>	m0n0p, no problem
+Mar 07 14:24:54 <younder>	I'm afraid your OS has picked up French..
+Mar 07 14:25:58 <oerheks>	Oui?
+Mar 07 14:28:48 <ogra_>	younder, some call that "encryption" ... could be worse, could be chinese or so 😉
+Mar 07 14:34:21 <m0n0p>	younder, and cmake bailed lol
+Mar 07 14:35:54 <BluesKaj>	Hi all
+Mar 07 14:46:22 <sem>	Hi BluesKaj
+Mar 07 14:46:48 <sem>	hey everybody -- today before work, I will sudo apt install kubuntu-desktop ! :D and also whatever you do to install wayland
+Mar 07 14:47:35 <sem>	I have already taken the precaution of creating a new user who will only log into kubuntu and never log into lubuntu
+Mar 07 14:51:30 <BluesKaj>	hi sem
+Mar 07 14:52:11 <sem>	hey! First thing I am websearching during this install: what does kubuntu use enfc for, and is it ok that it is insecure
+Mar 07 14:52:26 <sem>	i know its spelled differently but I forget what it was
+Mar 07 14:53:58 <sem>	i wish i remembered what it was called lol.. clicked through too quick
+Mar 07 15:00:40 <sem>	now i am making sure to install sudo apt install plasma-workspace-wayland
+Mar 07 15:21:27 <Luisa14>	hey
+Mar 07 16:03:11 <plastikman>	!ask
+Mar 07 16:03:11 <ubottu>	Please don't ask to ask a question, simply ask the question (all on ONE line and in the channel, so that others can read and follow it easily). If anyone knows the answer they will most likely reply. :-) See also !patience
+Mar 07 16:04:47 <leftleg_>	Omg Richie Hawtin is here
+Mar 07 16:09:39 <silv3r_m00n>	hi there, on this acer swift laptop i have ubuntu installed / and home are on separate partitions, and home is encrypted. during upgrade process things got messed up and its not booting anymore. is is possible to reinstall the root with fresh ubuntu and use the same encrypted home drive, since i have the password ?
+Mar 07 16:33:19 <plastikman>	I dont see why not, but i cant say for sure.
+Mar 07 16:33:50 <plastikman>	why not boot to a live cd, copy the data off the drive then attemt the re-install.
+Mar 07 18:15:32 *	Drone removes ban on $a:bparker
+Mar 07 18:41:37 <krushia>	is there an ubuntu equivalent to https://snapshot.debian.org/ ?
+Mar 07 18:43:48 <oerheks>	old packages https://old-releases.ubuntu.com/ubuntu/
+Mar 07 18:44:02 <oerheks>	old versions of the iso https://old-releases.ubuntu.com/releases/
+Mar 07 18:44:48 <oerheks>	looking for mrwthumbnail ??
+Mar 07 18:45:38 <krushia>	i think i just found it
+Mar 07 18:45:44 <oerheks>	:-)
+Mar 07 18:45:54 <krushia>	package is apparently named "mrwtoppm-utils"
+Mar 07 18:46:09 <krushia>	not to be confused with "mrwtoppm" lol
+Mar 07 18:46:33 <oerheks>	good spot!
+Mar 07 18:46:44 <krushia>	thanks for the link though
+Mar 07 19:04:33 <szstr>	How to uh hmm do bluetooth through command line? connect then get an aymaj?
+Mar 07 19:05:17 <szstr>	or wait uh connect then send audio iconed thing
+Mar 07 19:23:05 <oerheks>	szstr, scan connect trust https://medium.com/@muffwaindan/connect-and-use-wireless-usb-and-bluetooth-mouse-and-or-keyboard-on-linux-b23b1a35057b
+Mar 07 19:23:30 <oerheks>	the trust part is hardly to find in any manual
+Mar 07 19:24:07 <oerheks>	i use bluez, to connect, and then use the normal gui thingy
+Mar 07 19:52:36 <atreo>	people, i am trying to write a script that auto sets up my ubuntu environment   (how can i from the terminal change the distro settings)  like turn off bluetooth, add keyboard shortcuts, add a profile picture etc...   where are these settings saved?
+Mar 07 19:53:28 <leftyfb>	atreo: gsettings if you're running gnome
+Mar 07 19:54:20 <atreo>	leftyfb: is it under ./config  ?
+Mar 07 19:54:38 <leftyfb>	atreo: it's a tool, not a configuration file
+Mar 07 19:56:02 <atreo>	leftyfb: you miss understood what i am trying to do,   i am trying to perform these settings changes from the terminal  (so i can save it into a script)
+Mar 07 19:57:33 <leftyfb>	atreo: gsettings is a command line tool that will do exactly what you're looking for
+Mar 07 19:57:40 <atreo>	leftyfb: oh
+Mar 07 19:57:47 <atreo>	hmmm ok,   let me try to read about it
+Mar 07 19:59:07 <atreo>	leftyfb: i can't seem to understand the manual page,    how can i add keyboard shortcuts using gsettings?
+Mar 07 20:00:18 <atreo>	it seems to be talking about key strokes
+Mar 07 20:02:27 <leftyfb>	keyboard shortcuts are a 2 part process
+Mar 07 20:03:22 <leftyfb>	gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
+Mar 07 20:03:53 <leftyfb>	that's part 1
+Mar 07 20:04:04 <leftyfb>	then defining the details of the custom sortuct
+Mar 07 20:04:06 <leftyfb>	shortcut*
+Mar 07 20:04:13 <leftyfb>	    - gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "nautilus"
+Mar 07 20:04:14 <leftyfb>	    - gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "nautilus"
+Mar 07 20:04:14 <leftyfb>	    - gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "<Super>e"
+Mar 07 20:04:33 <atreo>	leftyfb: ohhh   ok i think i see how this works
+Mar 07 20:04:48 <atreo>	ok let me try to understand what you just wrote     give me 5 minutes :-)
+Mar 07 20:05:18 <leftyfb>	atreo: if you add another shortcut, you need to run the 1st command again but append the 2nd custom shortcut (custom1)
+Mar 07 20:05:35 <ghost>	hi
+Mar 07 20:07:49 <atreo>	leftyfb: ok how do i findout what keyboard shortcuts i already have?    so i can reverse engineer the commands you just wrote
+Mar 07 20:08:53 <leftyfb>	gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings
+Mar 07 20:09:58 <atreo>	leftyfb: i see
+Mar 07 20:11:04 <atreo>	i see i have three shortcuts (as expected)  nice    custom0 custom1 custom2
+Mar 07 20:11:12 <atreo>	hwo do i print their content?
+Mar 07 20:12:18 <leftyfb>	gsettings get org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name
+Mar 07 20:12:22 <leftyfb>	command and binding
+Mar 07 20:13:57 <atreo>	leftyfb: woow  there was no way i could have figured this out myself
+Mar 07 20:14:01 <atreo>	ok let me take notes
+Mar 07 20:19:48 <Guest38>	does anyone have experience with this LUKS Encryption guide for Ubuntu ? <LINK> https://help.ubuntu.com/community/Full_Disk_Encryption_Howto_2019 </LINK>
+Mar 07 20:21:08 <Guest38>	after following this guide step by step I and rebooting I boot into ubuntu without GUI
+Mar 07 20:22:01 <atreo>	leftyfb: when i run the commands the previous one gets deleted, i am confused
+Mar 07 20:22:33 <atreo>	leftyfb: this is my script:  https://paste.debian.net/1309804/
+Mar 07 20:24:27 <leftyfb>	atreo: I explained that to you. You need to append the new shortcuts
+Mar 07 20:24:39 <atreo>	leftyfb: oh
+Mar 07 20:25:20 <atreo>	leftyfb: what is the append flag?
+Mar 07 20:26:15 <atreo>	oh wait
+Mar 07 20:26:17 <leftyfb>	gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/'], etc, etc, etc"
+Mar 07 20:26:22 <atreo>	you mean   "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/'], , , "
+Mar 07 20:26:25 <atreo>	ohhhhhh ok i get it
+Mar 07 20:26:30 <leftyfb>	you define that first
+Mar 07 20:27:55 <atreo>	leftyfb: it works    wow this is amazing !!!! :-)
+Mar 07 20:28:36 <leftyfb>	atreo: btw, look into ansible. That's how I setup my ubuntu environment, install all packages, configure everything and restore from backup
+Mar 07 20:29:23 <atreo>	leftyfb: interesting, it is a program that you install or is it within ubuntu itself?
+Mar 07 20:29:41 <leftyfb>	atreo: sudo apt install ansible
+Mar 07 20:29:46 <atreo>	leftyfb: ok
+Mar 07 20:30:36 <atreo>	leftyfb: but i want to stick with gsettings    how do i know how to configure the rest of the settings?  like Region & Langauge    and adding a user picture etc...    where are you getting/reading this complex information from?
+Mar 07 20:30:47 <leftyfb>	atreo: ansible will use gsettings
+Mar 07 20:32:06 <leftyfb>	atreo: dconf and dconf-editor are good tools to navigate and edit(not recommended) all the settings
+Mar 07 20:32:23 <atreo>	i see
+Mar 07 20:32:46 <younder>	ansible is a program written in python. It is a provisioner. It install software based on scripts. Unlike shellscripts it is designed to enure that everything is just installed one so that if you run the script again and fix a mistake the stuff that was ok gets skipped and the stuff you corrected runs again (indepotent)
+Mar 07 20:34:12 <younder>	There are many others like it puppet, chef, saltstack..
+Mar 07 20:37:32 <atreo>	leftyfb: i like this basic control of it in gsettings     how did you know the commands?   for example   how can i figure out the schema for (Region & Langauge)?
+Mar 07 20:39:01 <leftyfb>	atreo: sudo update-locale LANG=$new_language
+Mar 07 20:39:29 <atreo>	leftyfb: oh no, i don't use my local lanuage and format, because it is screwed up   i used the UK one
+Mar 07 20:40:07 <leftyfb>	atreo: you asked how you set your language. That's how
+Mar 07 20:40:14 <atreo>	oh
+Mar 07 20:40:16 <leftyfb>	for timezone: timedatectl set-timezone $timezone
+Mar 07 20:40:26 <leftyfb>	with sudo
+Mar 07 20:40:29 <atreo>	i see
+Mar 07 20:42:15 <atreo>	leftyfb: how do i find out what is my current  (update-locale)  settings?
+Mar 07 20:43:07 <atreo>	since langauge is LAN   what is format?    FOR? FORM? FORMAT?
+Mar 07 20:43:16 <atreo>	*LANG
+Mar 07 20:44:38 <atreo>	leftyfb: its ok i figured it out
+Mar 07 20:50:19 <atreo>	leftyfb: ok how about appearance settings scheme?  to change it from light to dark, where is that schema?
+Mar 07 20:52:22 <ravage>	gsettings get org.gnome.desktop.interface gtk-theme
+Mar 07 20:53:51 <atreo>	ravage: leftyfb   i am getting the hang of it       gsettings set org.gnome.desktop.interface gtk-theme "Yaru-dark"    right?
+Mar 07 20:55:11 <ravage>	yes. or for a specific accent color Yaru-blue-dark
+Mar 07 20:55:34 <atreo>	ravage: nice
+Mar 07 20:55:58 <atreo>	ravage: ok    here is an important question     gsettings get org.gnome.desktop.notifications KEY    how do i know what are all the available keys are?
+Mar 07 21:01:15 <atreo>	ravage: its ok   i fiured it out    list-keys
+Mar 07 21:02:21 <bprompt>	atreo: https://unix.stackexchange.com/questions/11164/how-do-i-browse-for-available-gsettings-options
+Mar 07 21:02:33 <atreo>	bprompt:    thanks :-)
+Mar 07 21:02:38 <bprompt>	np
+Mar 07 21:03:04 <atreo>	this is exciting   i am slowly scripting my ubuntu enviroment  so i can be up and running automatically    NIIIICE
+Mar 07 21:20:43 <atreo>	ravage: leftyfb in the nautilus there is a list-view   but i cannot find how to setup (Expandible forlders in list view)
+Mar 07 21:32:49 <chives>	Anyone familiar with the terminals in linux?  I'm wondering if i can start one for screen that when it terminates so does the terminal?
+Mar 07 21:34:34 <chives>	so that if i detach screen remotely i dont have extra sessions
+Mar 07 21:36:17 <tomreyn>	you can write and install an xdg desktop file which runs gnu screen and executes it in a terminal emulator
+Mar 07 21:54:53 <Square>	This is probably an easy question. I have a second partition set up. But, it seems i need to access (as in clicking it) it in nautilus/filemanager every time i restart my computer for Steam being able to see/discover it.
+Mar 07 21:55:22 <Square>	s/being/to be/
+Mar 07 21:55:23 <oerheks>	put it in fstab?
+Mar 07 21:55:33 <oerheks>	with proper permissions for steam
+Mar 07 21:55:50 <Square>	hmm.. not that i can remember. Never used fstab
+Mar 07 21:55:54 <oerheks>	https://askubuntu.com/questions/1489018/grant-steam-snap-access-to-second-hard-drive
+Mar 07 21:56:02 <Square>	thanks
+Mar 07 21:57:15 <oerheks>	Steam snap should have the removable drive permission by default.
+Mar 07 21:57:27 <oerheks>	see settings > applications > steam
+Mar 07 21:57:46 <Square>	okok. There was no mention of this mount in fstab, so maybe that's it
+Mar 07 21:57:55 <oerheks>	maybe one bit wrong, and wont automount
+Mar 07 21:57:55 <bprompt>	Square: you can list  your devices with -> lsblk <- once you know which device it's, you can use -> sudo blkid <-  to get its UUID to  be used in the /etc/fstab file for "automounting"
+Mar 07 21:58:37 <Square>	Gotcha. I'll try to use this info to make it work next reboot
+Mar 07 22:40:49 <oerheks>	yes!
+Mar 07 23:48:45 <szstr>	Best music .deb to download?
+Mar 08 00:00:59 <bprompt>	szstr: music player?
+Mar 08 00:02:13 <szstr>	music content
+Mar 08 00:03:49 <bprompt>	szstr:  youtube.com   or lastfm.com or pick any radio of choice
+Mar 08 00:03:54 <bprompt>	hehe
+Mar 08 00:05:54 <szstr>	Hmm what ayt about mana client or that Joba coded mmo download the client, just listen to the musziak
+Mar 08 00:09:40 <szstr>	Runesca3e!
+Mar 08 00:11:12 <leftyfb>	szstr: what is your ubuntu support question in clear English?
+Mar 08 00:15:32 <szstr>	Where can I get free cash?
+Mar 08 00:16:18 <jeremy31>	szstr: Try a different chat?
+Mar 08 00:16:55 <szstr>	Well yeah
+Mar 08 00:19:50 <leftyfb>	they've been trolling here for a couple months now
+Mar 08 01:13:22 <itadmin>	hello
+**** BEGIN LOGGING AT Fri Mar  8 22:52:06 2024
+
+Mar 08 22:52:06 *	Now talking on #ubuntu
+Mar 08 22:52:06 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 08 22:52:06 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 08 22:52:06 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** BEGIN LOGGING AT Fri Mar  8 23:04:25 2024
+
+Mar 08 23:04:23 *	Now talking on #ubuntu
+Mar 08 23:04:23 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 08 23:04:23 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 08 23:04:24 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** BEGIN LOGGING AT Fri Mar  8 23:07:14 2024
+
+Mar 08 23:07:13 *	Now talking on #ubuntu
+Mar 08 23:07:13 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 08 23:07:13 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 08 23:07:14 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** BEGIN LOGGING AT Fri Mar  8 23:14:15 2024
+
+Mar 08 23:14:14 *	Now talking on #ubuntu
+Mar 08 23:14:14 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 08 23:14:14 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 08 23:14:14 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** BEGIN LOGGING AT Sat Mar  9 07:43:51 2024
+
+Mar 09 07:43:50 *	Now talking on #ubuntu
+Mar 09 07:43:50 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 09 07:43:50 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 09 07:43:50 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** BEGIN LOGGING AT Sat Mar  9 08:24:00 2024
+
+Mar 09 08:24:00 *	Now talking on #ubuntu
+Mar 09 08:24:00 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 09 08:24:00 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 09 08:24:00 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** BEGIN LOGGING AT Sat Mar  9 10:08:21 2024
+
+Mar 09 10:08:21 *	Now talking on #ubuntu
+Mar 09 10:08:21 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 09 10:08:21 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 09 10:08:21 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** ENDING LOGGING AT Sat Mar  9 10:09:15 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 10:12:41 2024
+
+Mar 09 10:12:41 *	Now talking on #ubuntu
+Mar 09 10:12:41 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 09 10:12:41 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 09 10:12:41 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** BEGIN LOGGING AT Sat Mar  9 11:09:17 2024
+
+Mar 09 11:09:16 *	Now talking on #ubuntu
+Mar 09 11:09:16 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 09 11:09:16 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 09 11:09:16 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** BEGIN LOGGING AT Sat Mar  9 11:33:15 2024
+
+Mar 09 11:33:15 *	Now talking on #ubuntu
+Mar 09 11:33:15 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 09 11:33:15 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 09 11:33:15 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+Mar 09 12:05:05 <Jungler78>	Hello
+Mar 09 12:06:41 <danza>	o/
+Mar 09 12:06:43 <little>	hi
+Mar 09 12:07:00 <Jungler78>	what is this irc normally used for?
+**** ENDING LOGGING AT Sat Mar  9 13:31:10 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 13:40:23 2024
+
+Mar 09 13:40:23 *	Now talking on #ubuntu
+Mar 09 13:40:23 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 09 13:40:23 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 09 13:40:23 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+Mar 09 14:25:36 <gnuser>	Hi. I've a litle problem with the shortcuts. When I pulse crtl+alt+ins open terminnology but ever in the first virtual desktop. Can you help me?
+Mar 09 14:26:00 <gnuser>	I've use enlightenment
+Mar 09 14:28:33 <BluesKaj>	Hi all
+**** BEGIN LOGGING AT Sat Mar  9 14:33:36 2024
+
+Mar 09 14:33:35 *	Now talking on #ubuntu
+Mar 09 14:33:35 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 09 14:33:35 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 09 14:33:35 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+Mar 09 15:47:23 <applepear>	hello
+Mar 09 17:03:13 <yziquel>	I need to install a package without running its scripts. Specifically, I need to install the plocate package, to get the updatedb executable, but it insists on running the updatedb scripts. which creates a sevee problem on my VM. How do I install a package without running its postinst scripts ?
+Mar 09 17:05:19 <oerheks>	unpack it, and copy them manually? you might run into other issues, why would it create severe problems?
+Mar 09 17:13:38 <yziquel>	oerheks installing plocate starts updatedb. i'm on VM with virtiofs. the updatedb script just takes FOREVER (now that it does not blow up the number of file descriptors on the host). I've been on that on and off for a month. I just need to install updatebd without running it. and then try to run it in a way I can debug. As of today, either I
+Mar 09 17:13:39 <yziquel>	install updatedb, it runs, and it screws up my system. Either I don't install it and... i can't debug it.
+Mar 09 17:13:59 <yziquel>	so i need a way to stop the post-install script from running.
+Mar 09 17:22:46 <leftyfb>	yziquel: make an alias for "updatedb" that does nothing
+Mar 09 17:26:29 <yziquel>	leftyfb alias ? unclear.
+Mar 09 17:27:39 <leftyfb>	export alias updatedb='/bin/true'
+Mar 09 17:34:13 <yziquel>	leftyfb tried it. doesn't work. post-inst script still runs and updatebd is launched.
+Mar 09 17:35:22 <cmk>	whats up
+Mar 09 17:35:51 <leftyfb>	yziquel: you might have to set the alias as root
+Mar 09 17:36:12 <yziquel>	leftyfb unclear what that means to me. I speak only french and english.
+Mar 09 18:40:03 <oerheks>	i guess the 1st time plocate scans your whole system, that can take a while, just once.
+Mar 09 18:52:01 <Guest8677>	hallo alle zusammen
+Mar 09 18:52:16 <oerheks>	:-)
+Mar 09 18:54:28 <]BaTMaN[>	hello le salon
+Mar 09 18:55:29 <daniel>	was macht ihr so grade ?
+Mar 09 18:55:40 <oerheks>	i bet the name daniel is registered already.
+Mar 09 18:55:46 <oerheks>	read the topic?
+Mar 09 18:55:53 <oerheks>	ubuntu support
+Mar 09 19:46:38 <webchat46>	Hey all. I need help. I am not very tech savy. Is it possible to run Ubuntu over windows op sys? I was following tutorials and lost my SU commands and not am stuck. I called HP (new laptop) and windows support and they all say Linux is not supported
+Mar 09 19:48:03 <rbox>	what does "lost my su commands" mean
+Mar 09 19:48:11 <webchat46>	superuser commands
+Mar 09 19:48:19 <rbox>	yes... still says nothing
+Mar 09 19:48:48 <oerheks>	your 1st account has sudo rights .. forgot password?
+Mar 09 19:49:18 <oerheks>	or tell us what tutorials you followed?
+Mar 09 19:49:23 <webchat46>	I was downloading Unbuntu and gnome GUI and the online instructions had me doing SU commands like $ sudo apt update
+Mar 09 19:50:08 <webchat46>	I have been unable to get back into the cmd screen to install, Im not that savy
+Mar 09 19:50:16 <ioria>	webchat46, now you're sounding a chatbot
+Mar 09 19:50:26 <webchat46>	not bothead
+Mar 09 19:50:44 <kostkon>	!password | webchat46
+Mar 09 19:50:44 <ubottu>	webchat46: Forgot your password? See https://help.ubuntu.com/community/LostPassword What's the root password? See !sudo. Don't see *** in password prompts? That's normal. Sudo doesn't ask for your password? It remembers you for several minutes. Please use strong passwords, see https://help.ubuntu.com/community/StrongPasswords
+Mar 09 19:52:13 <webchat46>	I have my pwsrd, thats not my issue.
+Mar 09 19:52:28 <rbox>	you still havne't told us what the issue is
+Mar 09 19:53:00 <oerheks>	can you clarify 'lost my SU commands' ?
+Mar 09 19:53:03 <webchat46>	I am stuck trying to get back cmd screen to enter commands to finish ubuntu downloads
+Mar 09 19:53:14 <kostkon>	webchat46, become a bit more articulate if that is possible
+Mar 09 19:53:48 <webchat46>	NM I will keep search for a dummies guide lol I am not that tech savy
+Mar 09 19:54:04 <rbox>	yes, you've mentioend that a few times
+Mar 09 19:54:21 <akik>	webchat46: so you forgot your password or what?
+Mar 09 19:54:40 <oerheks>	ctrl alt t opens terminal again, but if you closed it, the command used has stopped.
+Mar 09 19:54:41 <kostkon>	well so long
+Mar 09 19:54:53 <oerheks>	oh
+Mar 09 20:35:37 <anadon>	I'm looking to add the packages for ROCm 6  (https://launchpad.net/ubuntu/+source/rocm-compilersupport) to my 23.10 install ahread of the 24.04 release.  I do not see information to add repository information so those packages will be picked up.  How should I be adding them?
+Mar 09 20:40:42 <rbox>	thats because those packages are already part of the regular ubuntu repos
+Mar 09 20:40:47 <rbox>	nothing to add
+Mar 09 20:45:00 <anadon>	The 5.3 ones are in 23.10.  I want to install PyTorch which requires 5.7+.
+Mar 09 20:45:25 <rbox>	well ther eis 5.2 and 6.0
+Mar 09 20:45:48 <rbox>	you could manually download the .deb files
+Mar 09 20:45:51 <rbox>	and hope they dont break eveythitng
+Mar 09 20:45:52 <rbox>	lol
+Mar 09 20:46:15 <anadon>	I was hoping for not that...
+Mar 09 20:46:19 <anadon>	Ick.
+Mar 09 20:47:15 <oerheks>	you noticed that 24.04 LTS gives v6 ?
+Mar 09 20:47:36 <rbox>	well you could add the repo with the 6
+Mar 09 20:47:40 <rbox>	but thats just gonna break everyhting
+Mar 09 20:47:40 <rbox>	lol
+Mar 09 20:47:47 <oerheks>	yeah, probably
+Mar 09 20:47:58 <rbox>	not probably
+Mar 09 20:47:58 <rbox>	it will
+Mar 09 20:48:01 <oerheks>	one could test 24.04 already..
+Mar 09 20:58:43 <anadon>	How stable is it even, yet?
+Mar 09 20:59:53 <rbox>	well its already march 9th and april is next month...
+Mar 09 21:00:06 <rbox>	i'd be pretty worried if it was still crashy and buggy
+Mar 09 21:06:10 <anadon>	But this is my primary system.  Looks like for the net two months, I'll be pinned to using PyTorch's CPU implementation.
+Mar 09 21:06:32 <rbox>	you could copmile it yosuelf
+Mar 09 21:06:33 <rbox>	lol
+Mar 09 21:06:39 <anadon>	boi
+Mar 09 21:06:52 <anadon>	ain't nobody got the time for dat
+Mar 09 21:49:31 <houseparty>	Can someone advise on a good strategy to handle packages which are frequently uninstalled by apt. I am not doing anything like dpkg -r or apt remove ... I also run an apt-mark manual script through a cronjob. Nonetheless, certain packages get remove periodically then I have to rerun an install script. In particular, I'm fighting with Discord. It is
+Mar 09 21:49:31 <houseparty>	not playing fair.
+Mar 09 21:56:12 <bprompt>	hmmm
+Mar 09 21:56:23 <bprompt>	houseparty: that's kinda odd, apt removing stuff?
+Mar 09 22:02:13 <houseparty>	yeah, I had to avoid the hostility in #linux
+Mar 09 22:02:52 <houseparty>	Rage fits... Yeah, it's odd... apt-mark manual should fix it but it's not...
+Mar 09 22:04:01 <bprompt>	houseparty: well, seems to be an assumption you may be making, for something else, no?   I mean, I haven't had that happenning with Apt
+Mar 09 22:04:32 <houseparty>	It might be Discord doing it... Discord won't launch on Jammy - at least on this host - unless I update it. Discord tells me to download the .deb binary, so I do... Or actually, I cancel it and run a script that does the same thing the binary would do if I were to install it manually
+Mar 09 22:04:37 <houseparty>	OK
+Mar 09 22:06:47 <bprompt>	houseparty: I don't use Discord myself, hmmm so hmm, sounds like a discord issue though, not an Apt one, did you install it using "snap" or as a .deb install?
+Mar 09 22:07:06 <houseparty>	So, I don't know if it will work... maybe I can do this: https://bpa.st/QCEQ
+Mar 09 22:07:09 <ravage>	the discord snap works fine 🙂
+Mar 09 22:07:53 <houseparty>	It's the deb... Oh, I can try the Snap... I didn't know there is one. I think Discord says to use the deb so that's probably why I started doing it but you're right thinking that. The snap is the preferred method on Ubuntu.
+Mar 09 22:08:43 <bprompt>	houseparty: try removing fully the .deb version first, no need for any remainders
+Mar 09 22:08:43 <ravage>	it is usually better than a PPA. and always better than installing single deb files you have to update manually
+Mar 09 22:08:53 <houseparty>	I use this script ... it works perfectly except for I have to run it about once a month:
+Mar 09 22:08:53 <houseparty>	https://bpa.st/CRIQ. I wrote that.
+Mar 09 22:09:24 <houseparty>	The trap cleanup function is cool because it removes unnecessary folders and it keeps the program directory tidy that way.
+Mar 09 22:11:48 <houseparty>	Maybe I tried the snap at some point and it broke so I quit using it. But that is my fault ... I tinker a lot and I probably broke it, hehe. Anyway, thank you. I appreciate your help.
+Mar 09 22:15:31 <houseparty>	Yeah, I confirmed it. And sorry for the noise... Discord once you to use the Deb. And I have no idea why. I am actually curious. I'm going to contact one of their devs as I'm sure they have a reason. My guess is that if you use the deb it will work on all Debian based distros as the snap won't work when or if snap is not installed.
+Mar 09 22:15:36 <houseparty>	*wants
+Mar 09 22:17:38 <jeremy31>	For Discord you might be better of using the browser version
+Mar 09 22:18:50 <houseparty>	Yeah, I agree jeremy31. Thanks for saying that. I have a friend who does that. I think for most popular apps, that's how he rolls. I guess I just run so many tabs that I like the apps. I am glad you said that ... If the snap doesn't do what I want, I think that will be the next step.
+Mar 09 22:20:03 <houseparty>	Do you guys get annoyed when the app developers don't list the snap info in the download sections of their websites?
+Mar 09 22:23:21 <bprompt>	houseparty: may just be an oversight, or a webpage not lately updated
+Mar 09 22:23:25 <jeremy31>	That discord deb seems to update about twice a week, then it updates again when you run the program
+Mar 09 22:26:48 <houseparty>	Yeah, that's what I'm saying... who's going to put up with that, haha.
+Mar 09 22:27:36 <houseparty>	So they think a Linux user wants to deal with that. They're causing noob panic... the great noob scare - as opposed to the great recession or great depression.
+Mar 09 22:28:00 <houseparty>	I'm not a noob but I tell a lot of people to switch to Linux and they don't want to deal with that
+Mar 09 23:39:01 <baggy>	when i imstall ubuntu from store it says WELCOME TO UBUNTU... Preparing Ubuntu.. how lond should i wait
+Mar 09 23:40:27 <baggy>	is it down
+Mar 09 23:40:35 <baggy>	or it my end
+Mar 09 23:42:12 <oerheks>	install ubuntu from store?
+Mar 09 23:42:51 <leftyfb>	!wsl | baggy
+Mar 09 23:42:51 <ubottu>	baggy: Windows 10 and newer have a feature called "Windows Subsystem for Linux", which allows it to run Ubuntu (and other Linux distro) userspace programs without porting/recompliation. For installation instructions, see https://msdn.microsoft.com/en-us/commandline/wsl/install_guide
+Mar 10 00:02:50 <baggy>	how long does prep take
+Mar 10 00:02:56 <baggy>	over an hour?
+Mar 10 00:03:10 <baggy>	fist time doing this
+Mar 10 00:06:51 <ravage>	no it should not take that long
+Mar 10 00:07:12 <ravage>	but we cant really help much with that here. the whole setup process is managed by windows
+Mar 10 00:07:35 <baggy>	thanks
+Mar 10 00:08:08 <baggy>	ill load
+Mar 10 00:08:54 <bprompt>	baggy: go make dinner, and come back :)
+**** BEGIN LOGGING AT Sun Mar 10 00:21:17 2024
+
+Mar 10 00:21:16 *	Now talking on #ubuntu
+Mar 10 00:21:16 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 10 00:21:16 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 10 00:21:17 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** BEGIN LOGGING AT Sun Mar 10 00:22:46 2024
+
+Mar 10 00:22:45 *	Now talking on #ubuntu
+Mar 10 00:22:45 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 10 00:22:45 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 10 00:22:46 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** BEGIN LOGGING AT Sun Mar 10 00:27:38 2024
+
+Mar 10 00:27:37 *	Now talking on #ubuntu
+Mar 10 00:27:37 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 10 00:27:37 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 10 00:27:38 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+Mar 10 00:28:58 <src>	any1 familiar w/ sw arrays on linux, more particularly mdadm? I have two nvme drives in my machine, one of which contains my ubuntu install (luks + encryption), can I use the second nvme as a mirrored drive (raid 1) via mdadm?
+Mar 10 00:29:45 <rbox>	src: https://letmegooglethat.com/?q=linux+convert+non+raid+to+raid+1
+Mar 10 00:29:51 <src>	I'm unsure whether it's a problem that I want to a) mirror the very drive that is my root drive and contains my install and b) mirror a drive which is encrypted (and want my mirrored drive to obviously be as well)
+**** BEGIN LOGGING AT Sun Mar 10 00:31:41 2024
+
+Mar 10 00:31:40 *	Now talking on #ubuntu
+Mar 10 00:31:40 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 10 00:31:40 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 10 00:31:41 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+Mar 10 00:33:04 <ravage>	the combination of RAID and encryption is not supported by the installer
+Mar 10 00:33:19 <ravage>	learned that the hard way with my 24.04 setup 🙂
+Mar 10 00:33:29 <houseparty>	You're recommending a type 1 hypervisor for Windows on a Linux channel - in response to WSL? And don't get me wrong, I love WSL ...
+Mar 10 00:33:57 <ravage>	who is "you" ?
+Mar 10 00:35:05 <bprompt>	"you" is not the "other" =)
+Mar 10 00:35:56 <ravage>	src: i ended up manually setting up my system with debootstrap. i now have 24.04 with an encrypted software RAID 1. it seems to be the only way to do that. i got a little further with the server installer. but even that did not really want to cooperate all the way through
+Mar 10 00:36:34 <bprompt>	houseparty: the question pertained to installing Linux on a windows10 machine through the MS store, thus the need for the hypervisor
+Mar 10 00:37:06 <src>	ravage: ty for the input, damn I hoped it'd be more straight forward than that... :/
+Mar 10 00:37:10 <bprompt>	24.04?   you're early by a month =)
+Mar 10 00:37:24 <houseparty>	Oh, I was unaware of the context.I can see where you were going with it now that you said that.
+Mar 10 00:37:27 <ravage>	i always test LTS releases to report bugs
+Mar 10 00:37:52 <houseparty>	I like Hyper-V but it is a pain to maintain... the networking can get wonky - and more so for me since I use a lot of VMs
+Mar 10 00:37:56 <ravage>	but the version does not really matter. same with every version starting with 22.04
+Mar 10 00:38:11 <houseparty>	I spent around two hours yesterday messing with Hyper-V.
+Mar 10 00:38:47 <bprompt>	ravage: can you update from a beta to an final version?
+Mar 10 00:39:19 <ravage>	yes. you just do your usual package updates
+Mar 10 00:39:25 <src>	ravage: alright, I'll simply partition the second nvme, and run a backup script to sync various files; it won't serve as a drop in replacement in case of the first nvme dying, but will be backup nonetheless
+Mar 10 00:39:25 <bprompt>	I mean, most I OSes, you have to toss the testing version and do a full i install of the final
+Mar 10 00:39:56 <src>	ravage: and the second nvme can be encrypted w/out problem and I dodge a lot of work
+Mar 10 00:40:15 <ravage>	src: sounds like a good plan
+Mar 10 00:40:29 <src>	I've got an external nvme case for two nvmes anyways
+Mar 10 00:40:50 <src>	I could always plug one out there and insert into my machine if the system nvme broke
+Mar 10 00:40:56 <houseparty>	You can update anything but - and I don't know how long anyone here has been using anyone - changing some things may break other things. Even then, few things, aside from breaking grub are unfixable.
+Mar 10 00:41:30 <src>	ravage: big thanks btw, was difficult to find conrecte info on software raid w/ an encrypted system drive
+Mar 10 00:41:48 <ravage>	yw, sorry that i dont have better news 🙂
+Mar 10 00:41:58 <bprompt>	" how long anyone here has been using anyone"?    well, forever, I use "anyone" at the supermarket for checking out for example :P
+Mar 10 00:45:44 <houseparty>	And you can fix grub but if the system won't even boot that's a lot of work.
+Mar 10 00:57:03 <applecuckoo>	Hi! I seem to have broken my networking, since I can no longer connect to WiFi. Running Ubuntu 23.10 with an Intel AX201.
+Mar 10 00:57:56 <applecuckoo>	I’ve tested the Wifi on a live image, so I’ve definitely bricked something within my installation.
+Mar 10 01:01:29 <applecuckoo>	The only command that might’ve caused the damage would be sudo ifconfig enx8038fddb072f 192.168.0.1
+Mar 10 01:04:33 <rbox>	thats not persistent
+Mar 10 01:15:07 <nothingeleven>	hello?
+**** BEGIN LOGGING AT Sun Mar 10 01:38:21 2024
+
+Mar 10 01:38:20 *	Now talking on #ubuntu
+Mar 10 01:38:20 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 10 01:38:20 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 10 01:38:20 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** BEGIN LOGGING AT Sun Mar 10 01:52:09 2024
+
+Mar 10 01:52:08 *	Now talking on #ubuntu
+Mar 10 01:52:08 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 10 01:52:08 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 10 01:52:08 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+Mar 10 04:07:32 <esv>	hey folks, does the autoinstall feature only works for ubuntu server?
+Mar 10 04:12:23 <houseparty>	Cant' see why it would not work and if it does not, write a bash script.
+Mar 10 04:12:35 <houseparty>	Or... I'm always bored... You can query me and if I have time, I'll do it
+Mar 10 04:15:04 <esv>	did you get to install ubuntu on win10?
+Mar 10 04:15:10 <esv>	why not use WSL?
+Mar 10 04:22:29 <esv>	so basically, I'm trying to leverage to automatically install an Ubuntu 22.04 desktop using autoinstall, but the install process seems to be ignored
+Mar 10 04:23:23 <esv>	here is how I am doing it: https://dpaste.com/6B2WEFEFU
+Mar 10 04:26:17 <esv>	interesting, it seems I'm doing it wrong.
+Mar 10 04:26:38 FiSHLiM plugin unloaded
+**** ENDING LOGGING AT Sun Mar 10 04:26:38 2024
+
+**** BEGIN LOGGING AT Sun Mar 10 06:42:22 2024
+
+Mar 10 06:42:22 *	Now talking on #ubuntu
+Mar 10 06:42:22 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 10 06:42:22 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 10 06:42:22 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+Mar 10 06:59:21 <webchat92>	Hello. My device is Lenovo ThinkPad L480. I installed a single boot Ubuntu 20.04.4 from a bootable USB on my system. There was a glitch with Bluetooth connectivity, so I upgraded the firmware, and suddenly the system switched off.
+Mar 10 07:00:48 <webchat92>	When I tried to boot the following error comes: (A7) Me FW Downgrade - Request MeSpiLock failed.
+Mar 10 07:02:42 <webchat92>	Any help available?
+Mar 10 07:19:51 <misra>	what is this program for?
+Mar 10 07:20:10 <akik>	this program is for chatting
+Mar 10 07:21:24 <misra>	thanks, this is my firts experience using lubuntu i'm just exploring apps included
+Mar 10 07:23:53 <Bashing-om>	misra: You have landed in the Ubuntu support channel :D
+Mar 10 07:29:59 <diogeness>	misra: first experience counts :)
+Mar 10 07:32:51 <tanath>	misra: you might be familiar with discord. this is similar, using irc protocols & servers. it's what discord's design is based on, and has been around longer than the web
+Mar 10 07:33:32 <akik>	which program on ubuntu is configured to join here?
+Mar 10 07:57:17 <misra>	thank you guys, i appreciate your kind messages
+Mar 10 08:05:11 <misra>	see ya later
+Mar 10 08:05:11 <misra>	take care
+Mar 10 08:05:11 <misra>	bye
+Mar 10 08:53:25 <akik>	why can't i update the firefox snap while firefox is running?
+Mar 10 08:54:09 <ravage>	technical limitation. just not possible
+Mar 10 08:55:43 <akik>	it was silly to put it into a snap in the first place
+Mar 10 14:08:04 <BluesKaj>	Hi all
+Mar 10 15:56:49 <archie>	what's /usr/libexec/fwupd/fwupd? it's using 102mb on my ubuntu server and that seems abnormally high
+Mar 10 16:00:47 <tsimpson>	fwupd is an open-source daemon for managing the installation of firmware updates on Linux-based systems
+Mar 10 17:48:06 <cbreak>	tried kubuntu-wayland a bit, but it seems still much slower than kubuntu-x11
+Mar 10 17:49:46 <rbox>	so dont use it?
+Mar 10 17:51:27 <archie>	rbox: why not?
+Mar 10 17:51:49 <rbox>	he just said its slower
+Mar 10 17:52:43 <archie>	what if they like kubuntu-wayland more and are open to diagnose the cause of the slowness?
+Mar 10 19:09:11 <cbreak>	I think wayland will be the future, since X11 is clearly on its last legs
+Mar 10 19:09:25 <cbreak>	and seems to be deprecated in more and more distros
+Mar 10 19:10:01 <cbreak>	the main difference in performance I've noticed in 3D games via Wine
+Mar 10 19:10:43 <cbreak>	but the rest of the GUI also feels slower. (Nothing obvious though, the frame rate counter indicates expected 60 FPS)
+Mar 10 19:11:01 <cbreak>	I'll probably try again with KDE 6
+Mar 10 19:36:31 <s2>	hey
+Mar 10 19:39:21 <bprompt>	s2: Hay Bartender!!! said the horse at the bar
+Mar 10 19:41:37 <bartosz>	hello
+Mar 10 19:42:24 <bartosz>	i search program to index disk usb and catalog it
+Mar 10 19:45:03 <rbox>	what does catalog mean
+Mar 10 19:45:19 <ioria>	we'll never know
+Mar 10 19:50:20 <bprompt>	hehe
+Mar 10 19:50:34 <bprompt>	rbox: sounded like "rsync" something
+Mar 10 20:10:42 <ic56>	bartosz: the traditional unix tools for such tasks are find(1), ls(1), and file(1).  The choice depends on your preferred output format.  For example, supposing the "disk" in question is mounted at /media/usb0 , you might try: cd /media/usb0 && find . |sed 's|./||' |sort  The sort(1) command is necessary because find(1), unlike ls(1), traverses directories as written to disk, without sorting.  The sed(1)
+Mar 10 20:10:48 <ic56>	command reduces the output.  There are faster ways to accomplish that; this is more legible for a novice.  The other option, "ls -lR", produces pretty output but not helpful for searches.  file(1) can be used in a loop to produce information about each file.  Eg save the sorted find(1) output to a file, then do something like this: (while read j; do printf '%s\t' $j; file $j; done) <f1 >f2
+Mar 10 20:11:38 <rbox>	he quit ages ago...
+Mar 10 20:11:47 <bprompt>	ic56: ahemm, he kinda left a while back =)
+Mar 10 20:11:52 <ic56>	rbox: ah. thanks
+Mar 10 20:12:20 <bprompt>	ic56: your connection maybe caught in a DST timewarp, either that or just laggy =)
+Mar 10 20:12:25 <ic56>	I don't watch who's on or not.  The answer benefits lurkers anyway.
+Mar 10 20:14:01 <ic56>	thanks, bprompt.
+Mar 10 20:19:26 <xrandr>	Hello. Does anyone know if samba4 (latest version) can support the domainf unctional level of windows 2012?
+Mar 10 20:19:57 <rbox>	sounds like a question fro the sama docuemtnation
+Mar 10 20:20:27 <xrandr>	tried asking in #samba yesterday, and no one answered.
+Mar 10 20:23:54 <bprompt>	xrandr: https://wiki.samba.org/index.php/Raising_the_Functional_Levels#Supported_Functional_Levels
+Mar 10 20:24:41 <xrandr>	ty
+Mar 10 20:39:12 <Kangarooo>	i just on kubuntu had like 10 notifications that need to reboot for updates to take effect
+Mar 10 20:39:53 <bprompt>	Kangarooo: turn off notifications =)
+**** BEGIN LOGGING AT Sun Mar 10 23:24:27 2024
+
+Mar 10 23:24:27 *	Now talking on #ubuntu
+Mar 10 23:24:27 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 10 23:24:27 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 10 23:24:27 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService

@@ -2584,3 +2584,1120 @@ Mar 06 12:51:54 <bertptrs>	There's the Wake trait that takes Arc<Self> and &Arc<
 Mar 06 12:52:51 <Widdershins>	&arc so you don't have to mess with the count by cloning it
 Mar 06 12:53:10 <bertptrs>	Exactly
 Mar 06 12:55:14 <bertptrs>	but rather than making an arbitrary decision on what makes sense, the standard just allows all combinations
+**** BEGIN LOGGING AT Wed Mar  6 13:29:44 2024
+
+Mar 06 13:29:41 *	Now talking on ##rust
+Mar 06 13:29:41 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 06 13:29:41 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 06 14:21:09 <mkoncek1>	*const () is a synonym for *const std::ffi::c_void?
+Mar 06 14:22:32 <Mutabah>	no, although they are sometimes used interchangably
+Mar 06 14:22:47 <Mutabah>	`()` is an empty tuple, a zero-sized type`
+Mar 06 14:23:08 <Mutabah>	`c_void` is the de-facto representation of C's `void` type, and is iirc an enum
+Mar 06 14:33:31 <bertptrs>	that's a strange representation of void https://doc.rust-lang.org/src/core/ffi/mod.rs.html#209-224
+Mar 06 14:35:28 <j`ey>	one variant I can maybe understand... but 2??
+Mar 06 14:35:32 <Mutabah>	See the comment above
+Mar 06 14:35:56 <j`ey>	ah
+Mar 06 14:37:11 <bertptrs>	I read the comment but I don't know enough LLVM internals to make sense of it
+Mar 06 14:48:15 <mkoncek1>	do i need the futures create to await a future? is there nothing like block_on in the vanilla Rust?
+Mar 06 14:52:14 <bertptrs>	there isn't
+Mar 06 14:52:40 <mkoncek1>	well, async_std has one
+Mar 06 14:52:41 <bertptrs>	you can try my minimal executor, beul, which is 84 lines and does the absolute minimum
+Mar 06 14:52:49 <bertptrs>	async std isn't std
+Mar 06 14:52:59 <mkoncek1>	i know but i am already using it
+Mar 06 14:53:29 <bertptrs>	you asked about vanilla ¯\_(ツ)_/¯
+Mar 06 14:55:57 <bertptrs>	std doesn't offer one because it is unclear what a general purpose executor should do
+Mar 06 14:56:20 <bertptrs>	tokio and async_std both offer much more than just futures execution, and most of the things they offer only work on their own runtimes
+Mar 06 15:04:13 <mkoncek1>	well... execute an asynchronous function as a synchronous one in the current thread is not an unreasonable request is it?
+Mar 06 15:04:29 <bertptrs>	it doesn't sound unreasonable
+Mar 06 15:04:46 <bertptrs>	but tokio::time::sleep() cannot be executed by any runtime other than tokio
+Mar 06 15:05:36 <bertptrs>	and it's not the only one, many futures require some specialized plumbing from their runtime to do anything useful
+Mar 06 15:05:55 <danieldg>	mkoncek1: by the time you have a non-trivial future, you already need some kind of reactor running to cause the wakeups
+Mar 06 15:06:11 <mkoncek1>	i am starting to wonder if i should try to use async at all
+Mar 06 15:06:28 <danieldg>	so delegating the wait to that just makes sense.  Tokio, for example, supports a single-thread model which would deadlock forever if you had and used that method.
+Mar 06 15:07:16 <bertptrs>	std needs to be very conservative in what it adds, because everything included stays forever. it's not impossible that one day std does have an executor, but until people agree what it should do, it won't be added any time soon
+Mar 06 15:07:48 <danieldg>	it's very likely it would end up pluggable like the allocator in std anyway
+Mar 06 15:08:38 <bertptrs>	I have my doubts, since the allocator story isn't moving either
+Mar 06 15:08:43 <danieldg>	there are more reasons to want to change how task scheduling works than changing how allocation works after all
+Mar 06 15:08:58 <danieldg>	I'm talking about GlobalAlloc which has been stable for quite a while
+Mar 06 15:09:16 <danieldg>	and has already switched between jemalloc and system malloc
+Mar 06 15:09:20 <bertptrs>	Ah yeah that works, mostly
+Mar 06 15:10:24 <danieldg>	similar to having one allocator for the process, having one executor for the process is normal
+Mar 06 15:10:49 <danieldg>	yes it's possible to have more than one of each, but that's pretty niche
+Mar 06 15:10:49 <mkoncek1>	we had a task at uni comparing 4 allocators: GNU, jemalloc, Intel something and one more, i don't exactly remember but i think jemalloc was the best whereas GNU was consistent
+Mar 06 15:11:34 <mkoncek1>	what is the price jemalloc pays for its speed tho?
+Mar 06 15:12:06 <bertptrs>	jemalloc is huge, which is why rust switched back to system malloc
+Mar 06 15:13:25 <erk>	rust the compiler still uses jemalloc as well.
+Mar 06 15:13:57 <erk>	bertptrs: jemalloc is already system malloc (if you use FreeBSD which I think is rather unlikely)
+Mar 06 15:17:42 <bertptrs>	I think also on macOS making it a bit more common
+Mar 06 15:20:00 <bertptrs>	On the other hand, if you're building for Alpine it's a good idea to use jemalloc because musl's allocator isn't built for performance
+Mar 06 15:23:44 <Guest11>	Hola
+Mar 06 15:30:52 <mkoncek1>	is std::ops::Fn treated specifically by the compiler syntax-wise?
+Mar 06 15:31:13 <mkoncek1>	help: use parenthetical notation instead: `FnMut() -> ()`
+Mar 06 15:52:02 <bertptrs>	Fn/FnOnce/FnMut have special syntax to write out the function signature, yesa
+Mar 06 15:58:37 <n1>	spb: hey ... to our yesterday conversation about "imports" bin vs lib .... i looked into the problem again with fresh mind and it's indeed pretty much straighforward and works nice ... i was probably tired more than i thought that i couldn't get it .... so once again thanks for your help
+Mar 06 16:43:32 <rendar>	Rust uses jemalloc by default?
+Mar 06 16:43:45 <bertptrs>	it doesn't AFAIK
+Mar 06 16:44:56 <dav1d>	no it does not
+Mar 06 16:45:24 <dav1d>	most (all?) our systems at $job have it explicitly configured though
+Mar 06 16:45:26 <j`ey>	(it did in the past)
+Mar 06 16:45:46 <bertptrs>	(until people complained loudly that the 2MB binary wasn't worth it)
+Mar 06 16:50:35 <saati>	didn't it perform pretty suboptimal on some workloads?
+Mar 06 16:53:32 <bertptrs>	AFAIK the size was the main argument, and it has a slightly larger memory footprint than libc while not performing better in single-threaded context
+Mar 06 17:43:43 <rendar>	mimalloc is pretty neat
+Mar 06 18:48:32 <Mikachu>	i thought that shadowing a variable in the same scope it was declared would drop it, turns out i was wrong
+Mar 06 18:49:44 <tokie>	Mikachu: thankfully no. it is VERY useful in rust :)
+Mar 06 18:49:59 <polychromata{J}>	try `let mut foo = a(); foo = b();` :)
+Mar 06 18:51:38 <Mikachu>	in my case i had a refcell foo, let foo_inner = foo.borrow_mut(); let foo_inner = foo_inner.clone(); or so (i also wanted to assign it so i did need to use borrow_mut), and was surprised to get a panic later, explicit drop fixed it
+Mar 06 18:53:24 <tokie>	usually i wouldn't do something like let foo_inner ..., since shadowing lets you let foo = foo.borrow_mut();
+Mar 06 18:53:38 <tokie>	like, unlike C++ you don't have to keep coming up with names for inner parts of things
+Mar 06 19:01:37 <danieldg>	it's always a good idea to explicitly drop locks if you care about when they unlock
+Mar 06 19:11:43 <dav1d>	rendar, thanks that's interesting
+Mar 06 19:11:54 <dav1d>	I have an urge to try it out
+Mar 06 19:12:32 <rendar>	dav1d, good! let me know
+Mar 06 19:13:22 <dav1d>	gonna pitch to to some colleagues cause I am pretty swamped with other stuff atm :(
+Mar 06 19:17:59 <rendar>	no probl
+Mar 06 19:18:15 <rendar>	dav1d, what kind of software is that, if i may ask?
+Mar 06 19:19:16 <dav1d>	rendar, processing pipeline and first API layer from Sentry
+Mar 06 19:19:35 <dav1d>	e.g. symbolication of stacktraces is one big part, the other is just the API which accepts all traffic
+Mar 06 19:19:44 <rendar>	i see
+Mar 06 19:20:10 <rendar>	so do you work for sentry.io?
+Mar 06 19:20:44 <dav1d>	rendar, yep
+Mar 06 19:20:55 <rendar>	great, where are you based?
+Mar 06 19:23:39 <dav1d>	rendar, Vienna
+Mar 06 19:23:51 <rendar>	very cool
+Mar 06 19:24:05 <dav1d>	if you mean me, Sentry also has an office in canada and sf
+Mar 06 19:24:23 <rendar>	yeah i saw it in their website
+Mar 06 19:25:27 <dav1d>	unfortunately we dont seem to have any results of jemalloc vs system alloc but overall it fixed a memory fragementation issue we were seeing while also improving performance
+Mar 06 19:25:58 <rendar>	yeah, i think mimalloc will further improve perf
+Mar 06 19:26:46 <tokie>	dav1d: you work for sentry/
+Mar 06 19:26:48 <tokie>	?
+Mar 06 19:27:16 <dav1d>	tokie, yes
+Mar 06 19:27:20 <tokie>	cool !:D
+Mar 06 19:27:23 <dav1d>	:D
+Mar 06 19:27:30 <tokie>	i know sentry!:D
+Mar 06 19:27:41 <dav1d>	I hope only good memories
+Mar 06 19:27:51 <tokie>	it catches my panics
+Mar 06 19:28:05 <dav1d>	it also catches our own panics lol
+Mar 06 19:33:30 <tokie>	well, it's cool to know sentry is a rust shop!
+Mar 06 19:41:38 <dav1d>	tokie, and we're moving a lot more to Rust!
+Mar 06 19:42:09 <tokie>	oh cool!
+Mar 06 19:42:21 <dav1d>	recently replaced a bunch of kafka consumers already
+Mar 06 19:42:25 <tokie>	so are we!:D
+Mar 06 19:42:26 <dav1d>	more to come
+Mar 06 19:42:57 <tokie>	i'm at CF and lots of rust going on
+Mar 06 19:43:38 <dav1d>	CF as in cloudflare? Another one :D
+Mar 06 19:44:06 <tokie>	yeah
+Mar 06 19:44:22 <dav1d>	cool
+Mar 06 19:46:03 <erk>	It is getting out of hand, now there are two of them
+Mar 06 19:46:50 <Mikachu>	let state = &mut *state.borrow_mut(); why on earth does this work?
+Mar 06 19:46:55 <tokie>	erk: two of who?
+Mar 06 19:47:22 <erk>	Cloudflare people on irc
+Mar 06 19:47:27 <tokie>	oh there's more than that
+Mar 06 19:49:02 <bwidawsk>	I'm having some trouble deciding between anyhow (eyre), thiserror crates. I'm writing a test harness (ie. library like). Generally speaking, most test clients will not care about the specific type of error, and mostly just report out what the error was as part of the test suite. I started off with anyhow, then switched to thiserror, but now feel like thiserror might not actually be necessary here. Any thoughts?
+Mar 06 19:50:08 <erk>	Mikachu: You are doing a reborrow of it, which is something that can give a bit of a headache sometime
+Mar 06 19:50:30 <Mikachu>	get_mut() refused to give me a &mut T because i only have a & on the refcell, but somehow i can get one anyway?
+Mar 06 19:50:53 <spb>	bwidawsk: those two crates solve quite different problems, and anyhow's doc suggests using thiserror alongside it
+Mar 06 19:50:55 <erk>	What you are doing is essentially &mut *(&mut bla)
+Mar 06 19:51:49 <erk>	ahh Mikachu it is the borrow_mut on refcell and not in the trait.
+Mar 06 19:51:53 <bertptrs>	Mikachu: RefCell allows you to get an &mut from an &, and it will enforce at runtime that only one of those is ever live
+Mar 06 19:51:56 <bwidawsk>	spb: sure, though I feel like the more anyhow integration I get, the less thiserror actually does anything for me
+Mar 06 19:52:02 <dav1d>	Mikachu, borrow_mut doesn't give you a mut pointer directly, it gives you a type which implements DerefMut
+Mar 06 19:52:08 <erk>	that borrow_mut will panic if you are not allowed to do that https://doc.rust-lang.org/std/cell/struct.RefCell.html#method.borrow_mut
+Mar 06 19:52:23 <bwidawsk>	spb: aiui, you really want thiserror if you want to be able to disambiguate errors
+Mar 06 19:52:34 <bwidawsk>	and anyhow if you don't really care
+Mar 06 19:52:49 <bertptrs>	well, you can care with anyhow
+Mar 06 19:53:03 <bertptrs>	but in general: anyhow (eyre) for binaries, thiserror for libraries
+Mar 06 19:53:15 <bwidawsk>	yeah, I'm just sort of a hybrid
+Mar 06 19:53:37 <bwidawsk>	I suppose it might make sense to keep using both for me
+Mar 06 19:54:05 <Mikachu>	erk: but when i do this, the RefMut immediately goes out of scope (it was never even given a binding), so how do i still have a &mut to the data?
+Mar 06 19:54:09 <bwidawsk>	internal APIs - thiserror. public APIs that are used directly by tests, anyhow
+Mar 06 19:54:57 <spb>	anyhow and relatives are for when you just want to propagate "an error occurred" upwards and maybe print it for human consumption, but don't care about calling code being able to programmatically handle different error types
+Mar 06 19:55:03 <Mikachu>	i'll just accept it as magic for now
+Mar 06 19:55:15 <spb>	this usually happens in application code, and usually shouldn't be in a library's public api
+Mar 06 19:56:31 <erk>	Mikachu: That is the part that is the reborrow, you can find some blogs and similar about it, but it is one of the features of the borrow system that is harder to wrap your head around
+Mar 06 19:59:49 <spb>	Mikachu: i think the magic phrase you're looking for is 'temporary lifetime extension' - see e.g. https://blog.m-ou.se/super-let/
+Mar 06 20:01:12 <spb>	tl;dr: sometimes, if a relatively simplistic set of rules are met, the lifetime of a temporary created inside a 'let' statement will be extended to match the binding created by the let
+Mar 06 20:01:35 <Mikachu>	i see
+Mar 06 20:19:17 <Guest0>	Come have sex with me on my profile phone
+Mar 06 20:20:31 <Guest0>	Primero haga clic en este enlace > https://ln.run/3zIyD
+Mar 06 20:20:32 <Guest0>	Y completa todas las opciones y luego muestra tu tarjeta, pero no te preocupes, es totalmente gratis.
+Mar 06 20:21:12 <Guest0>	hello darling
+Mar 06 21:28:08 <daddy>	i'm getting "undefined symbol" a bunch of times for a specific library, when linking statically to a library even though I have `cargo:rustc-link-lib=static=gmp`. What can I use to see where that linking is happening/failing ?
+**** BEGIN LOGGING AT Wed Mar  6 21:44:04 2024
+
+Mar 06 21:44:02 *	Now talking on ##rust
+Mar 06 21:44:02 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 06 21:44:02 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 06 22:04:17 <bertptrs>	weird bug, after upgrading axum to 0.7 (and fixing all the breaking changes) my laptop no longer has enough RAM to compile my project
+Mar 06 22:06:35 <bertptrs>	Memory usage jumped from a peak of 500MB to a over 6GB, that ain't right
+Mar 06 22:07:49 <bertptrs>	how do you even debug this
+Mar 06 22:08:22 <bertptrs>	eh, I'll update everything but axum for now, then
+Mar 06 22:09:59 <alip>	can someone please tell me why .map(drop) is used here: https://docs.rs/nix/latest/src/nix/unistd.rs.html#3095-3110 i don't get why it's needed
+Mar 06 22:11:30 <bertptrs>	alip: from looking at some other stuff, it's their preferred way to go from Result<T, E> to result<(), E>
+Mar 06 22:11:37 <tokie>	bertptrs: yikes
+Mar 06 22:11:44 <tokie>	i run out of memory if i try to do a coverage build
+Mar 06 22:11:48 <tokie>	with 16GB dedicated ...
+Mar 06 22:12:04 <bertptrs>	tokie: also axum? ouch, that's one heck of a regression
+Mar 06 22:12:09 <alip>	bertptrs: ah makes sense, thank you
+Mar 06 22:12:16 <tokie>	bertptrs: not axum, but a big tokio project
+Mar 06 22:12:36 <bertptrs>	tokio is not being bumped in my case
+Mar 06 22:12:40 <bertptrs>	hyper is tho
+Mar 06 22:12:44 <tokie>	hrm
+Mar 06 22:14:31 <bertptrs>	If I had time I'd go to their discord and figure it out, but I have a deadline to meet
+Mar 06 22:14:46 <bertptrs>	and a bedtime I guess but the deadline wins
+Mar 06 22:52:21 <Widdershins>	thus far i've successfully avoided going to anyone's discord to try to get anything fixed. miserable platform, the howling void at the end of knowledge, the enclosure in which history dies
+Mar 06 22:52:47 <Widdershins>	discord is for shitposting with my weird friends, not for collecting knowledge
+Mar 06 23:10:42 <mefistofeles>	whereas IRC is for shitposting with randoms
+Mar 06 23:10:50 <mefistofeles>	:P
+Mar 06 23:12:49 <daddy>	IRC is for solving the toughest problems known to man via shitposting with randoms.
+**** ENDING LOGGING AT Wed Mar  6 23:44:24 2024
+
+**** BEGIN LOGGING AT Thu Mar  7 02:18:47 2024
+
+Mar 07 02:18:44 *	Now talking on ##rust
+Mar 07 02:18:44 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 07 02:18:44 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 07 03:10:24 <swansone>	simple question I'm having a surprisingly hard time googling: In the scope of a function, is there a way to do something like `use MyLongNamedEnum::{*}` so I don't have to keep typing MyLongNamedEnum::SomeVariant?
+Mar 07 03:11:22 <danieldg>	yes
+Mar 07 03:11:37 <swansone>	Oh wait, that just literally works, doesn't it
+Mar 07 03:11:44 <danieldg>	:)
+Mar 07 03:11:48 <swansone>	That's what I get for not trying it
+Mar 07 03:14:31 <Mutabah>	:D
+Mar 07 03:15:02 <Mutabah>	IMO, better would be to `use MyLongNamedEnum as En;`
+Mar 07 03:15:19 <Mutabah>	just becuase then it's clearer what each name refers to, and you avoid accidentally making a bind pattern.
+Mar 07 03:15:35 <Mutabah>	... One day, I'll write up a RFC for inferred enum names
+Mar 07 03:15:44 <Mutabah>	`match foo { _::BarVariant => ... }`
+Mar 07 03:16:41 <phy1729>	That'd be handy because it should be obvious
+Mar 07 03:17:22 <Mutabah>	I think last time I tried I also got nerd-sniped into `_::new(...)` too
+Mar 07 03:19:28 <swansone>	An alias is a great suggestion Mutabah, thanks! I'll do that.
+**** BEGIN LOGGING AT Thu Mar  7 05:39:14 2024
+
+Mar 07 05:39:13 *	Now talking on ##rust
+Mar 07 05:39:13 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 07 05:39:13 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+**** BEGIN LOGGING AT Thu Mar  7 05:53:09 2024
+
+Mar 07 05:53:08 *	Now talking on ##rust
+Mar 07 05:53:08 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 07 05:53:08 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+**** BEGIN LOGGING AT Thu Mar  7 06:46:02 2024
+
+Mar 07 06:46:01 *	Now talking on ##rust
+Mar 07 06:46:01 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 07 06:46:01 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+**** BEGIN LOGGING AT Thu Mar  7 11:45:32 2024
+
+Mar 07 11:45:29 *	Now talking on ##rust
+Mar 07 11:45:29 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 07 11:45:29 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+**** BEGIN LOGGING AT Thu Mar  7 12:26:52 2024
+
+Mar 07 12:26:50 *	Now talking on ##rust
+Mar 07 12:26:50 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 07 12:26:50 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 07 12:28:25 <lmat>	Affliction: Thank you, very helpful!
+**** BEGIN LOGGING AT Thu Mar  7 12:39:51 2024
+
+Mar 07 12:39:50 *	Now talking on ##rust
+Mar 07 12:39:50 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 07 12:39:50 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 07 12:51:33 <nox>	I don't remember what Servo uses
+Mar 07 13:44:34 <erk>	nox: Now it uses tungstenite through the async_tungstenite crate.
+Mar 07 14:03:40 <Guest67>	hey
+Mar 07 14:04:57 <osse>	teacher
+Mar 07 14:05:02 <osse>	leave those kids alone
+**** BEGIN LOGGING AT Thu Mar  7 14:15:49 2024
+
+Mar 07 14:15:48 *	Now talking on ##rust
+Mar 07 14:15:48 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 07 14:15:48 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 07 15:21:57 <Luisa14>	hey
+Mar 07 16:06:26 <bertptrs>	not going to do it again
+Mar 07 16:09:55 <dav1d>	lol
+Mar 07 16:21:04 <n1>	i would like to cross compile for my Samsung Exynos5422 ARM - how do i exactly detect the architecture "name" for cargo target?
+Mar 07 16:21:38 <j`ey>	aarch64-unknown-linux-gnu
+Mar 07 16:22:18 <n1>	how did u figure?
+Mar 07 16:23:05 <j`ey>	because I do arm stuff :P
+Mar 07 16:23:36 <j`ey>	but tbh, Im not sure it's that easy, if youre running android. maybe termux will allow you to run stuff
+Mar 07 16:24:07 <n1>	it's my odroidhc2
+Mar 07 16:24:18 <n1>	from what i know it's 32bit
+Mar 07 16:24:21 <n1>	thats why i asked
+Mar 07 16:24:50 <j`ey>	oh I googled and thought it was 64-bit
+Mar 07 16:25:52 <n1>	i know it's armv7
+Mar 07 16:25:57 <n1>	LE
+Mar 07 16:26:02 <j`ey>	then I dont know, probably: arm-unknown-linux-gnueabhf or something
+Mar 07 16:26:02 <n1>	thats all i know
+Mar 07 16:26:34 <n1>	um...how do i decide between gnuabi and musleabi?
+Mar 07 16:27:36 <bertptrs>	generally if you're on musl, you know
+Mar 07 16:28:08 <n1>	i was thinking exactly the same :)
+Mar 07 16:28:22 <tokie>	bertptrs: lol
+Mar 07 16:28:26 <tokie>	"you know. ugh."
+Mar 07 16:29:26 <n1>	so last question - if i choose wrong target for compilation do i get the error right away on app startup or it can run and fail later because of wrong architecture (mainly gnu vs musle)?
+Mar 07 16:30:00 <bertptrs>	yeah, it will fail to load shared libs and crash
+Mar 07 16:30:24 <n1>	cool
+Mar 07 16:30:57 <bertptrs>	if it doesn't crash at that stage (or before that, if you got the ABI very wrong and the thing isn't even recognized as an executable)  it should work
+Mar 07 16:31:06 <n1>	looks like i narrowed down the list to 2 candidates: armv7-unknown-linux-gnueabi and armv7-unknown-linux-gnueabihfOD
+Mar 07 16:31:17 <n1>	(without the OD)
+Mar 07 16:31:26 <bertptrs>	hf stands for hardware float
+Mar 07 16:31:46 <bertptrs>	some arm chips don't have hardware support for floating point numbers and must emulate it in software
+Mar 07 16:32:07 <n1>	since dpkg says the architecture is armhf should i go for the later one?
+Mar 07 16:32:47 <bertptrs>	yes. and if not, I still would've guessed hf since I can't imagine a vendor selling an android phone that doesn't need to deal with floats
+Mar 07 16:33:46 <n1>	so hf is almost always the case?
+Mar 07 16:34:12 <bertptrs>	basically, I think the original pi didn't have hardware float but that's about it
+Mar 07 16:34:19 <bertptrs>	it's rare
+Mar 07 16:34:29 <bertptrs>	armv8 stopped making the distinction
+Mar 07 16:34:50 <n1>	cool thanks
+Mar 07 17:32:59 <gastus_>	https://dpaste.com/78F84NYEJ Line 19 / 29  already borrowed. The borrow is no longer needed there ? Is there a simple fix?
+Mar 07 17:47:07 <Mikachu>	gastus_: if let Some(ref h) = *(*my....borrow() { ... } else { // borrow_mut should be fine in here }
+Mar 07 17:48:25 <gastus_>	That's nice ! :-)
+Mar 07 17:49:49 <sword_smith>	Damn! Compilation takes forever now :( https://github.com/TritonVM/triton-vm
+Mar 07 17:50:02 <sword_smith>	When faster rustc?
+Mar 07 17:50:36 <j`ey>	sword_smith: rustc is gettng faster!
+Mar 07 17:51:03 <sword_smith>	j`ey: I just saw a YouTube video about that, that it was faster on nightly :)
+Mar 07 17:52:17 <sword_smith>	CI takes 46 minutes on ubuntu, 87 on macos.
+Mar 07 17:53:46 <gastus_>	But also failed :-(
+Mar 07 17:54:00 <sword_smith>	gastus_: yikes!
+Mar 07 17:54:05 <sword_smith>	I don't think so...
+Mar 07 17:59:58 <jbowen>	I have a program where I'd like to have a small list of primes defined as a constant, but it feels gross sticking it at the top of my src/main.rs. In C I'd have some file that I'd #include at the top of my main.c
+Mar 07 18:00:38 <jbowen>	What's the idiomatic way to do that within a Rust simple source tree?
+Mar 07 18:00:40 <j`ey>	jbowen: make a module
+Mar 07 18:00:55 <j`ey>	src/primes.rs, 'mod primes' at the top of main.rs
+Mar 07 18:03:14 <jbowen>	Cool, thank you, j`ey!
+Mar 07 18:03:46 <jbowen>	I think I was initially put off by the word "module" feeling like a much heavier weight solution
+Mar 07 18:04:50 <j`ey>	nope :)
+Mar 07 19:42:36 <dav1d>	sword_smith, https://github.com/Swatinem/rust-cache 👀
+Mar 07 19:43:10 <psyprus>	Q
+Mar 07 19:43:23 <psyprus>	sorry ignore
+Mar 07 22:24:12 <sword_smith>	dav1d: thanks. But it's not dependencies that are slow to build, but the repo itself.
+Mar 07 22:24:31 <sword_smith>	however, other repos depend on it. So there might be something there.
+**** BEGIN LOGGING AT Fri Mar  8 22:52:07 2024
+
+Mar 08 22:52:06 *	Now talking on ##rust
+Mar 08 22:52:06 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 08 22:52:06 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 08 22:54:39 <Diablo-D3>	https://rolldown.rs/
+Mar 08 22:54:45 <Diablo-D3>	remember when I said dont use rust for evil?
+Mar 08 22:54:56 <Diablo-D3>	this is somewhere on the evil continuum
+Mar 08 22:54:58 <polychromata{J}>	ugh
+Mar 08 22:55:16 <Diablo-D3>	people, please, dont feed the javascript trolls
+**** BEGIN LOGGING AT Fri Mar  8 23:04:26 2024
+
+Mar 08 23:04:24 *	Now talking on ##rust
+Mar 08 23:04:24 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 08 23:04:24 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+**** BEGIN LOGGING AT Fri Mar  8 23:07:15 2024
+
+Mar 08 23:07:14 *	Now talking on ##rust
+Mar 08 23:07:14 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 08 23:07:14 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+**** BEGIN LOGGING AT Fri Mar  8 23:14:17 2024
+
+Mar 08 23:14:14 *	Now talking on ##rust
+Mar 08 23:14:14 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 08 23:14:14 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+**** BEGIN LOGGING AT Sat Mar  9 07:43:52 2024
+
+Mar 09 07:43:50 *	Now talking on ##rust
+Mar 09 07:43:50 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 09 07:43:50 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+**** BEGIN LOGGING AT Sat Mar  9 08:24:02 2024
+
+Mar 09 08:24:00 *	Now talking on ##rust
+Mar 09 08:24:00 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 09 08:24:00 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+**** BEGIN LOGGING AT Sat Mar  9 10:08:22 2024
+
+Mar 09 10:08:21 *	Now talking on ##rust
+Mar 09 10:08:21 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 09 10:08:21 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 09 10:08:46 <polychromata{J}>	Ah, never mind. Looks like i just had to change the /sort metric/ dropdown.
+Mar 09 10:09:15 FiSHLiM plugin unloaded
+**** ENDING LOGGING AT Sat Mar  9 10:09:15 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 10:12:44 2024
+
+Mar 09 10:12:41 *	Now talking on ##rust
+Mar 09 10:12:41 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 09 10:12:41 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 09 10:15:17 <nox>	danieldg, daddy: Re: TLS overhead: just do RPK
+Mar 09 10:16:01 <nox>	https://datatracker.ietf.org/doc/html/rfc7250#section-1
+**** BEGIN LOGGING AT Sat Mar  9 11:09:20 2024
+
+Mar 09 11:09:16 *	Now talking on ##rust
+Mar 09 11:09:16 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 09 11:09:16 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 09 11:11:09 <Widdershins>	nox: oh man is there a rust TLS library that has mutual RPK support
+Mar 09 11:11:56 <Widdershins>	i want it so bad. x509 is suffering
+Mar 09 11:12:08 <nox>	Widdershins: boring ha a rpk feature
+Mar 09 11:13:22 <Widdershins>	i suppose that would work. i had a lot of trouble a year (or two?) ago when i was trying to figure out how to do this in boringssl directly
+Mar 09 11:16:38 <lmat>	I am computing an average of one property of a vec of structs:   data.iter().map(|e| e.val).sum() / data.len()   The error I get is, "
+Mar 09 11:17:10 <lmat>	"cannot infer type of the type parameter `S` declared on the method `sum`". I tried    sum<f64>  (f64 being the type of e.val), but that appears to be bad syntax.
+**** BEGIN LOGGING AT Sat Mar  9 11:33:17 2024
+
+Mar 09 11:33:15 *	Now talking on ##rust
+Mar 09 11:33:15 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 09 11:33:15 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 09 11:36:47 <lmat>	How do I print a tab character? I tried  print!("{}  ", val);  and print!("{}{}", val, "  "); but both are getting the tab expanded.
+Mar 09 11:36:56 <lmat>	This is in the context of a unit test
+Mar 09 11:37:11 <lmat>	(I'm printing a table that I would like to paste into libre-office --calc.
+Mar 09 11:39:47 <dav1d>	evalr, println!("\tfoo\tbar\t123")
+Mar 09 11:39:49 -evalr/##rust-	dav1d: 	foo	bar	123
+Mar 09 11:40:04 <lmat>	dav1d: Thank you!
+Mar 09 11:52:16 <nox>	Widdershins: Btw https://github.com/rustls/rustls/issues/423
+Mar 09 11:52:44 <Widdershins>	nox: eyes emoji
+Mar 09 11:54:46 <Widdershins>	> I don't know if it's theoretically possible to send a valid 1GB certificate during the handshake phase, and I don't want to have to know this, I'd rather just avoid X509. We don't need a self-driving car to crack a nut.
+Mar 09 11:54:49 <Widdershins>	lol same brother
+Mar 09 11:56:33 <polychromata{J}>	lmat: I don't see any reason why tabs in the source file should get transformed. Are you sure it's not your editor doing that? :)
+Mar 09 11:57:21 <lmat>	polychromata{J}: I'm pretty sure it's not my editor (vim with :set noexpandtab), but I would guess it's happening at another layer.
+Mar 09 11:58:01 <dav1d>	Widdershins, you can borrow these 👀
+Mar 09 11:58:05 <polychromata{J}>	evalr: let tab = '	'; (tab, u32::from(tab))
+Mar 09 11:58:07 -evalr/##rust-	polychromata{J}: error: character constant must be escaped: `\t` ...
+Mar 09 11:58:08 -evalr/##rust-	polychromata{J}: https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=71740193290e88d342282b37fa9d0840
+Mar 09 11:58:43 <polychromata{J}>	evalr: let tab = "	"; tab.chars().next()
+Mar 09 11:58:45 -evalr/##rust-	polychromata{J}: Some('\t')
+Mar 09 12:55:57 <Wulf>	Is that the right syntax to move a value out of an inner block?   { let x: u32; { x = something(); }  workon(x); }
+Mar 09 13:01:18 <polychromata{J}>	Yeah, that works.
+Mar 09 13:02:26 <polychromata{J}>	Sometimes `let x = { other_things(); x }; work_on(x);` is nicer.
+Mar 09 13:04:17 <Wulf>	indeed, that's nicer. And I didn't know I could do this. Thanks!
+Mar 09 13:07:07 <polychromata{J}>	something something most things are expressions :)
+Mar 09 13:11:15 <Widdershins>	blocks? expressions. if conditionals? expressions. for loops? return statements? expression. module? ok actually that's an item
+Mar 09 13:12:38 <Wulf>	There is no ++ operator like in C, right?  let foo = { *bar++ }; won't work?  let foo = { *bar += 1; *bar - 1 }; works, but I don't like it.
+Mar 09 13:12:54 <Widdershins>	`let` declarations aren't expressions but assignments to those variables are
+Mar 09 13:14:00 <Widdershins>	Wulf: postfix incr/decr is deeply discouraged in c++ these days for a reason :) *especially* if you care to use it as a value expression
+Mar 09 13:14:36 <Wulf>	Widdershins: suggestions how I can rewrite above code?
+Mar 09 13:15:13 <Widdershins>	i don't know, what type is bar
+Mar 09 13:15:19 <Wulf>	Widdershins: u32
+Mar 09 13:17:14 <Widdershins>	Wulf: why not `let foo = *bar; *bar += 1;
+Mar 09 13:17:30 <Widdershins>	don't get fancy
+Mar 09 13:17:39 <Wulf>	Widdershins: I need to acquire a mutex in the inner scope.
+Mar 09 13:18:08 <Widdershins>	well, have you shown me that? was i supposed to guess?
+Mar 09 13:19:47 <Wulf>	Widdershins: I was hoping that you'd guess that I somehow need that inner scope.
+Mar 09 13:20:08 <Widdershins>	you're hoping that i'll answer a question you haven't asked
+Mar 09 13:20:16 <Widdershins>	you should ask it, and present the problem
+Mar 09 13:22:47 <Widdershins>	inner scopes like that are rarely truly needed due to how the borrow checker works, they are just nicer to spell
+**** ENDING LOGGING AT Sat Mar  9 13:31:10 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 13:40:25 2024
+
+Mar 09 13:40:23 *	Now talking on ##rust
+Mar 09 13:40:23 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 09 13:40:23 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 09 14:10:39 <yziquel>	Really weird issue. appears only with rust code (other languages seem to be fine) when dealing with virtiosfd filesystems on guest machines with --cache=never on host.
+Mar 09 14:11:21 <yziquel>	https://github.com/cross-rs/cross/issues/1313#issuecomment-1986847352
+Mar 09 14:20:00 <saati>	do the other programs try to mmap it?
+Mar 09 14:20:15 <saati>	ENODEV on mmap means the fs does not support memory mapping
+**** BEGIN LOGGING AT Sat Mar  9 14:33:36 2024
+
+Mar 09 14:33:35 *	Now talking on ##rust
+Mar 09 14:33:35 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 09 14:33:35 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 09 16:17:45 <yziquel>	seems rust tend to use MAP_SHARED in mmap more than MAP_PRIVATE. I see that by comparing git and gix.
+Mar 09 16:18:28 <danieldg>	this really depends on what you're mapping more than just counting things
+Mar 09 16:19:22 <danieldg>	also, the two are basically identical unless you (the mapper) are writing to the file
+Mar 09 16:20:20 <danieldg>	if someone else is writing, MAP_PRIVATE has some nasty undefined behavior corner cases
+Mar 09 16:28:22 <yziquel>	danieldg your assumption (almost identical) is violated in my setup: I running rust code in a VM on a filesystem using virtiofs with a zfs backend on the host.
+Mar 09 16:29:16 <yziquel>	and disabling caching in virtiofsd. (with caching, seems like coherency is not enforced enough for the "No such device" error to pop up in the guest)
+Mar 09 16:30:26 <yziquel>	MAP_SHARED seems to ask for more than MAP_PRIVATE than qemu is prepared to hand over in terms of memory mapping of files.
+Mar 09 16:31:20 <danieldg>	yes, MAP_SHARED wants better guarantees with regards to modifications
+Mar 09 16:32:24 <yziquel>	danieldg this make rust code more difficult in a VM with virtiofs and no caching.
+Mar 09 16:33:03 <yziquel>	more difficult to run
+Mar 09 16:33:22 <danieldg>	I have no idea why you would want to do that, but ok
+Mar 09 16:33:43 <danieldg>	mostly it's the linker that does this, for shared objects
+Mar 09 16:33:52 <yziquel>	danieldg disaster recovery ? my last CPU died in a bang. I'm mounting my former computer as a VM.
+Mar 09 16:33:55 <danieldg>	so not rust's problem at all
+Mar 09 16:34:15 <danieldg>	virtiofs is *not* the preferred way to do that
+Mar 09 16:34:32 <yziquel>	danieldg and what is the prefered way ?
+Mar 09 16:34:44 <danieldg>	hand the VM the actual block devices
+Mar 09 16:34:51 <danieldg>	or images thereof
+Mar 09 16:35:11 <yziquel>	danieldg I've been bugging the incus / lxd chat room to pass the block device. They basically told me to shut up.
+Mar 09 16:35:32 <danieldg>	virtiofs is for sharing files you want to access on both systems
+Mar 09 16:36:25 <danieldg>	I have no idea what incus is
+Mar 09 16:36:36 <yziquel>	incus = fork of lxd.
+Mar 09 16:36:40 <danieldg>	and isn't lxd a container thing?
+Mar 09 16:36:53 <yziquel>	danieldg yes. a container, with some support for vm.
+Mar 09 16:37:08 <danieldg>	so your problem is that you aren't using a real VM
+Mar 09 16:37:21 <danieldg>	yes, a container should be using a shared FS like this
+Mar 09 16:37:34 <danieldg>	but a container is not the solution to "run my old system in a VM"
+Mar 09 16:37:40 <yziquel>	danieldg perhaps. my problem is that no one gives advice.
+Mar 09 16:37:53 <danieldg>	have some advice: use a VM
+Mar 09 16:37:57 <yziquel>	no. I'm using a QEMU vm managed by incus.
+Mar 09 16:38:02 <yziquel>	not a container.
+Mar 09 16:38:17 <danieldg>	it's pretty easy to pass block devices to a VM
+Mar 09 16:38:37 <danieldg>	you can't have them mounted in the host if you do that, though
+Mar 09 16:38:53 <spb>	in every setup i've used it's pretty difficult *not* to pass block devices to a VM
+Mar 09 16:38:57 <yziquel>	danieldg I haven't had any clue as to how mount the block device with incus,
+Mar 09 16:39:05 <danieldg>	this feels like an incus bug
+Mar 09 16:39:15 <yziquel>	Spawns_spb try it with incus. good luck.
+Mar 09 16:39:18 <yziquel>	spb
+Mar 09 16:39:18 <danieldg>	use libvirt or one of the nice gui frontends to it
+Mar 09 16:39:41 <yziquel>	danieldg ok. one more month toying with ANOTHER vm framework. cool,
+Mar 09 16:39:45 <danieldg>	if incus is meant to be a container thing, their VM support is probably half-baked
+Mar 09 16:39:56 <spb>	i'd really rather not, if it's all the same to you
+Mar 09 16:40:03 <spb>	if you want a VM, use a VM solution
+Mar 09 16:40:04 <yziquel>	danieldg i kind of figured that out indeed.
+Mar 09 16:40:45 <yziquel>	spb well, I want a container feel to it. will look at kata containers at one point.
+Mar 09 16:41:20 <danieldg>	then this is a limitation of virtiofsd
+Mar 09 16:41:32 <danieldg>	or a bug there
+Mar 09 16:41:34 <yziquel>	still, the MAP_SHARED issue remains an issue with rust + no caching virtiofs. This isn't going away just because I use something else.
+Mar 09 16:41:50 <danieldg>	it will go away if you don't use virtiofs with no caching
+Mar 09 16:41:55 <danieldg>	(why no caching?)
+Mar 09 16:41:57 <yziquel>	danieldg seems that it is a virtiofs bug.
+Mar 09 16:42:16 <danieldg>	rust is by far not the only thing using MAP_SHARED
+Mar 09 16:42:31 <danieldg>	if virtiofs can't do it, virtiofs is not ready for use
+Mar 09 16:42:36 <yziquel>	danieldg no caching matters because I can't index the VM with things like sudo updatedb is caching is allowed. it blows up the number of file descriptors on the host.
+Mar 09 16:43:07 <danieldg>	... so I'm reading virtiofs is buggy again
+Mar 09 16:43:14 <yziquel>	danieldg i'll try to bother a virtiofs chatroom then.
+Mar 09 16:43:21 <danieldg>	it's not hard to not blow up fd counts
+Mar 09 16:43:31 <danieldg>	samba servers, NFS servers, etc all do it
+Mar 09 16:43:45 <danieldg>	you could also just raise that limit
+Mar 09 16:44:04 <yziquel>	danieldg I've been unable to find the correct limit to raise and where to raise it.
+Mar 09 16:44:14 <yziquel>	danieldg spent a month on it.
+Mar 09 16:44:28 <danieldg>	/etc/security/limits.conf, ulimit, or the /proc/sys setting
+Mar 09 16:44:38 <spb>	that's still not a rust problem, and therefore quite off-topic for here
+Mar 09 16:44:51 <danieldg>	the virtiofs people should know what to do about *their* bug
+Mar 09 16:45:10 <yziquel>	danieldg I did try all that. something is not clear. and I won't ask people to help me again on that since they obviously think I bother them.
+Mar 09 16:45:22 <danieldg>	ok
+Mar 09 16:46:08 <yziquel>	spb it's a problem that occurs specifically for rust code. and that does impact people doing things in vms. on apple mostly, it seems, from what I gathered.
+Mar 09 16:47:04 <danieldg>	you'll hit it in C code too
+Mar 09 16:47:15 <yziquel>	danieldg haven't yet.
+Mar 09 16:48:11 <danieldg>	ok
+Mar 09 16:59:37 <spb>	yziquel: no, it's nothing specific to rust code. it just happens that the first time you encountered it was in rust code, which is not the same thing at all
+Mar 09 17:18:26 <yziquel>	spb I'm not sure. I'm wondering if the rust stdlib is not overly restrictive.
+Mar 09 17:18:32 <yziquel>	spb we'll see
+Mar 09 17:23:41 <dav1d>	yziquel, what dose that have to do with the std lib
+Mar 09 17:24:43 <danieldg>	rust std doesn't mmap at all
+Mar 09 17:25:16 <yziquel>	dav1d as many many many rust code fails, I suspect it should be somewhere down the stack. possibly in stdlib.
+Mar 09 17:25:36 <dav1d>	yziquel, it's not, there is no mmap in the std lib
+Mar 09 17:25:37 <yziquel>	danieldg then it should be somewhere down the stack not in stdlib
+Mar 09 17:27:17 <danieldg>	you also never said how it fails
+Mar 09 17:27:27 <danieldg>	but whatever, I already pointed you to how to solve it
+Mar 09 17:32:15 <capitol>	is there a way to differentiate in build.rs if your crate is being built as a dependency or as the "final target"? When the crate is a library
+Mar 09 17:32:53 <danieldg>	print out the various environment variables, I suspect there's a CARGO_* one that might be relevant
+Mar 09 17:33:50 <capitol>	i have been trying to investigate CARGO_PKG_NAME and CARGO_CRATE_NAME, but without success
+Mar 09 17:34:00 <capitol>	but good idea to print all of them
+Mar 09 17:38:59 <yziquel>	danieldg I did say how it fails.
+Mar 09 17:39:18 <yziquel>	danieldg https://github.com/cross-rs/cross/issues/1313#issuecomment-1986847352
+Mar 09 17:39:29 <yziquel>	danieldg up in the chat log.
+Mar 09 17:40:33 <danieldg>	oh, so it's not a rust bug, it's a gix bug
+Mar 09 17:40:58 <yziquel>	daniel it also occurs in cargo build
+Mar 09 17:41:00 <yziquel>	danieldg
+Mar 09 17:41:25 <yziquel>	danieldg and people running rust in a VM report that kind of bug in bug reports.
+Mar 09 17:41:43 <danieldg>	right; the bug is "various things assume that mmap works and don't have a fallback"
+Mar 09 17:41:59 <yziquel>	danieldg yes.
+Mar 09 17:42:17 <yziquel>	a "somewhere in rust ecosystem" + virtiosf bug.
+Mar 09 17:42:20 <danieldg>	no
+Mar 09 17:42:37 <danieldg>	it's just people using mmap that don't want to handle the failure
+Mar 09 17:42:49 <danieldg>	mostly because it doesn't happen on normal filesystems
+Mar 09 17:43:02 <danieldg>	it happens in C code too
+Mar 09 17:43:10 <yziquel>	danieldg I'll have to hunt down things to the source code before pointing fingers about people not handling the failure.
+Mar 09 17:43:31 <danieldg>	yziquel: you've done so already
+Mar 09 17:43:50 <yziquel>	danieldg no. I've used strace. I haven't seen the corresponding source code.
+Mar 09 17:44:13 <danieldg>	ok
+Mar 09 17:44:46 <danieldg>	but yes, rust has an mmap wrapper that lets you specify shared or private mapping
+Mar 09 17:45:23 <danieldg>	and I suppose the default is probably shared
+Mar 09 17:46:59 <danieldg>	yeah, memmap2 supports both private and shared - it calls it map_copy and map, respectively
+Mar 09 17:47:14 <yziquel>	danieldg well, I guess I won't understand the issue till 1. i see where the mmap wrapper is and 2. understand how madness like the DAX window in virtiofs works. Until then, I'm in the dark.
+Mar 09 17:47:17 <nox>	The mmap crate is unsound, the memmap crate properly marks the function that allows you to build one from a file as unsafe
+Mar 09 17:47:35 <dav1d>	danieldg, good guess https://docs.rs/memmap2/latest/src/memmap2/unix.rs.html#232-241
+Mar 09 17:48:31 <nox>	Ah there is a memmap2 crate now, ugh
+Mar 09 17:48:56 <danieldg>	nox: if you want to call that unsound you need to also call File::open unsound.  There's a limit to soundness when you iteract with the OS.
+Mar 09 17:49:16 <nox>	danieldg: If you mean /proc, that's on Linux, not on Rust
+Mar 09 17:49:33 <danieldg>	nox: no, I mean opening any of your dependencies
+Mar 09 17:49:41 <nox>	That doesn't cause memory unsafety
+Mar 09 17:49:46 <danieldg>	yes it can
+Mar 09 17:49:49 <nox>	How?
+Mar 09 17:50:00 <danieldg>	if you write to the executable file
+Mar 09 17:50:14 <nox>	I have no idea what you mean
+Mar 09 17:50:30 <danieldg>	you can open a shared library, for write, and overwrite the executable code
+Mar 09 17:50:43 <danieldg>	that's about as unsafe as it gets
+Mar 09 17:50:47 <nox>	What shared libraries
+Mar 09 17:51:04 <danieldg>	any one you use
+Mar 09 17:51:46 <nox>	That you dynamically loaded with unsafe code?
+Mar 09 17:52:00 <danieldg>	well, std depends on libc
+Mar 09 17:52:05 <nox>	But anyway that's very different from a process truncating a file that you mmapp'd
+Mar 09 17:52:22 <danieldg>	getting a SIGBUS is safe
+Mar 09 17:52:37 <danieldg>	it's generally not something you want, just like a deadlock or whatever, but it's safe
+Mar 09 17:52:41 <nox>	https://docs.rs/memmap2/latest/memmap2/struct.Mmap.html#method.map
+Mar 09 17:53:15 <danieldg>	yes, I'm aware that people mark it as unsafe
+Mar 09 17:54:16 <nox>	Because it is, "those other things can lead to unsoundness in Rust" isn't a counterargument to it being an unsafe operation
+Mar 09 17:56:07 <danieldg>	I'm not arguing it's unsafe
+Mar 09 17:56:24 <danieldg>	I'm saying that maybe it shouldn't be called unsound for no reason
+Mar 09 17:57:13 <nox>	I called it unsound because it's not marked as unsafe
+Mar 09 17:57:27 <Ademan_>	so I have a `struct Foo<'a> { bar: &'a bar, } ` and everything is fine, except I hit a point where I want to mutate bar when I have a mutable Foo. Is there a way to do this without making a duplicate MutableFoo, or making Foo *always* require an &'a mut Bar ?
+Mar 09 17:57:38 <Ademan_>	&'a Bar *
+Mar 09 17:58:19 <danieldg>	Ademan_: no, not really.  You can do other things like have an enum between the two ref types, or make Foo generic defaulting to &'a Bar
+Mar 09 17:59:04 <nox>	Ademan_: There may be a better way to design your stuff altogether but we can't see that from a Foo/Bar example
+Mar 09 18:00:23 <Ademan_>	danieldg: hrm thanks, making Foo generic might work out ok
+Mar 09 18:00:59 <danieldg>	warning: that can easily make your code pretty ugly
+Mar 09 18:01:31 <Ademan_>	nox: probably. Basically I'm "extending" Bar with some extra data in Foo. As I wrote that I realized, maybe I should just make Foo own a Bar, and worry less about potential duplication
+Mar 09 18:01:51 <Ademan_>	although Bar *is* potentially pretty big
+Mar 09 18:03:07 <danieldg>	owning an Arc might work
+Mar 09 18:03:15 <Ademan_>	I've never used Cow before, maybe that's actually viable?
+Mar 09 18:03:31 <danieldg>	Cow is basically the enum solution, but with owned instead of &mut
+Mar 09 18:03:44 <danieldg>	Arc::get_mut can be useful
+Mar 09 18:04:32 <danieldg>	(or even make_mut)
+Mar 09 18:06:17 <Ademan_>	hrm, maybe I'll just KISS (I'm stupid) and own the Bar, and revisit if I get reports of memory usage issues
+Mar 09 18:09:16 <Ademan_>	thanks for talking me through it
+Mar 09 18:09:27 <nox>	Yeah I would just own Bar probably
+Mar 09 18:12:05 <tokie>	poor Foo always gets left out for Bar
+Mar 09 19:01:00 <Diablo-D3>	man, I wish more apps were written the rusty way
+Mar 09 19:01:17 <Diablo-D3>	just one binary and thats all you need
+Mar 09 19:03:03 <danieldg>	hmm, not sure that's the rusty way; it happens plenty with other languages and also not with rust plenty of the time too
+Mar 09 19:03:07 <danieldg>	but I agree it's nice
+Mar 09 19:05:10 <Diablo-D3>	well, ever try to do that on c/c++? some libraries are outright hostile to static linking
+Mar 09 19:05:26 <Diablo-D3>	or you got ones that do really weird hacks due to OS fuckery
+Mar 09 19:05:47 <danieldg>	true; glibc is a major culprit there
+Mar 09 19:06:22 <Diablo-D3>	like, SDL used to, and I think still does, have SDLmain.a and SDL.dll on windows, it hijacks main() and ld loads sdl.dll
+Mar 09 19:06:37 <Diablo-D3>	glibc is a culprit on rhel, not so much other distros
+Mar 09 19:07:13 <danieldg>	is that just because other distros decide they don't care about making getpwnam() work with LDAP-ish systems?
+Mar 09 19:07:13 <Diablo-D3>	sadly, a lot of people build binaries on there =/
+Mar 09 19:07:40 <danieldg>	because iirc that's the main reason you have trouble static linking glibc
+Mar 09 19:08:12 <Diablo-D3>	I dont know; on debian, symbol poisoning only happens if you call a function that depends on newer glibcs (so, header defines your libc call, but its a macro that calls the actual symbol)
+Mar 09 19:08:32 <Diablo-D3>	so if you never call one of those, your binary may very well work on every libc6 system ever
+Mar 09 19:09:13 <Diablo-D3>	rust culture seems to like building binaries on alpine just to stop contamination entirely
+Mar 09 19:09:28 <Diablo-D3>	or at least, Ive seen a lot of rust programs distro binaries like that
+Mar 09 19:11:12 <Diablo-D3>	but no, what started my rant is actually the overhead of electron
+Mar 09 19:11:43 <Diablo-D3>	I am 100% anti-weirdo packaging formats
+Mar 09 19:11:49 <danieldg>	... you know, people could just ship a .html file too
+Mar 09 19:11:52 <Diablo-D3>	like, flatpak can go fuck itself, appimage aint really any better
+Mar 09 19:11:58 <danieldg>	if you're talking about electron
+Mar 09 19:12:06 <Diablo-D3>	hahah I wish they would
+Mar 09 19:12:55 <Diablo-D3>	like, fun fact: we all hate discord, right? if you're not using desktop/window capture for streaming in calls, its a shitload smoother in firefox
+Mar 09 19:13:23 <Diablo-D3>	its not an electron issue (such as discord using a out of date electron due to private vendored fork bullshit), because its equally as jank in chrome
+Mar 09 19:13:33 <Diablo-D3>	in firefox, its great
+Mar 09 19:14:01 <Diablo-D3>	imagine, a world where single file PWAs were how shit-apps were distributed
+Mar 09 19:14:51 <Diablo-D3>	no, instead, I have like 50 copies of chrome running, all different
+Mar 09 19:26:23 <Diablo-D3>	obsidian is actually pretty good as a note taking app. it actually leverages electron in its favor due to using normal conventional js in plugins to extend itself.
+Mar 09 19:26:55 <Diablo-D3>	a lot of markdown shit is in js, so a lot of plugins just drop the existing in-browser markdown transnformers into obsidian, and it just magically works
+Mar 09 19:27:11 <FireFly>	using JS in plugins to extend things is something we had 10 years ago too :p
+Mar 09 19:27:48 <FireFly>	but ye obsidian seems fine-ish
+Mar 09 20:40:39 <_Vi>	Is there some drawing abstraction crate where I can draw lines, rectangles, polygons, texts and so on and render them into HTML canvas from wasm, rasterize and save to png, or save as svg (e.g. using different downstream crates)?
+Mar 09 20:56:54 <danieldg>	_Vi: tiny-skia
+Mar 09 20:58:05 <danieldg>	it doesn't do text (directly) though; you could use resvg to do that I think
+Mar 09 20:58:26 <danieldg>	resvg will do svg stuff
+Mar 09 21:01:34 <_Vi>	Will it allow placing text as a text (not a path or rasterized bitmap) into svg while still allowing to render it for immediate displaying?
+Mar 09 21:02:24 <danieldg>	I think usvg (the resvg backend) might support that.  Not tried the svg output part though.
+Mar 09 21:04:11 <danieldg>	if your goal is to export to svg, you'd want to do all your drawing by modifying the svg tree
+Mar 09 21:04:11 <_Vi>	Will it skip those XML things in case where svg is not involved (e.g. just directly paint things on a HTML canvas)?
+Mar 09 21:04:33 <danieldg>	no
+Mar 09 21:06:48 <_Vi>	Or maybe closer to "yes"? "... strongly-typed tree structure", "... layer between an XML library and a potential SVG rendering library". If something renders to usvg tree (without actually being a real svg file), then rendering can be simpler and involve less overhead?
+Mar 09 21:07:54 <danieldg>	maybe
+Mar 09 21:08:31 <danieldg>	if you're in a browser, having the browser do the rendering is likely to do better (it can use the gpu, for one)
+Mar 09 21:09:36 <danieldg>	and it'll also do things like support links in your svg documents, which usvg calls out as not supported
+Mar 09 21:10:28 <capitol>	and javascript :P
+Mar 09 21:11:02 <danieldg>	right, you'd have to have a wasm engine in your wasm engine to do that
+Mar 09 21:11:11 <_Vi>	Can resvg or usvg or tiny-skia provide something that looks like a canvas API, but that will actually produce a SVG file at the end?
+Mar 09 21:11:17 <danieldg>	no
+Mar 09 21:11:55 <danieldg>	maybe usvg could do that, but I don't think it has editing support
+Mar 09 21:13:00 <danieldg>	for that you'd want an svg creation or editing crate
+Mar 09 21:13:26 <_Vi>	Or is there some other "easy mode" API to create new SVG files without dealing with tricky SVG details? Is svg file -> usvg tree a one-way conversion or compatible svg files can be round-tripped though usvg tree?
+Mar 09 21:14:28 <danieldg>	'svg' crate might do it.  I've not used it.
+Mar 09 21:15:44 <_Vi>	OK. Thanks for the advices.
+Mar 09 21:16:49 <danieldg>	yeah, 'svg' looks pretty simple but exactly what you'd want
+Mar 09 21:42:18 <TimMc>	Oh man, coding stuff up in Rust is so slow... and yet it feels really rewarding.
+Mar 09 21:42:42 <TimMc>	I think it's taking me back to when I was first learning to program (in anything).
+Mar 09 21:46:46 <lambda>	in my experience, the extra time I spend writing Rust as opposed to e.g. C or python, I get back severalfold by not having to debug it - it just works
+Mar 09 21:50:42 <TimMc>	Oh, no doubt.
+Mar 09 21:54:45 <pflanze>	Is there a way to specify for a type that it shall never implement Clone (nor Copy, of course) in the future? I.e. a way to make compilation fail if someone does.
+Mar 09 21:55:36 <danieldg>	no, negative trait bounds aren't stable
+Mar 09 21:55:50 <pflanze>	Ah, so something's in the making, amazing.
+Mar 09 21:56:06 <danieldg>	not sure if that one will ever be stable
+Mar 09 21:56:18 <danieldg>	specialization could do it too (another unstable feature)
+Mar 09 21:56:24 <pflanze>	OK.
+Mar 09 21:56:48 <danieldg>	for !Copy, you could require that it impl Drop
+Mar 09 21:57:20 <danieldg>	!Clone doesn't really restrict anything; you can always write a "fn clone(&self)" after all
+Mar 09 21:57:54 <danieldg>	what are you actually trying to do?
+Mar 09 21:58:50 <pflanze>	I've just been pondering how to make sure nobody breaks something by haphazardly adding #[derive(Clone)] to some type I know can't be cloned.
+Mar 09 21:59:04 <danieldg>	pflanze: you could always write a must-compile-fail test that tries to pass your thing to an f<T:Clone>()
+Mar 09 21:59:15 <pflanze>	Ah, good idea.
+Mar 09 21:59:38 <pflanze>	Hmm, how would you do that though?
+Mar 09 21:59:48 <pflanze>	Via build.rs or something?
+Mar 09 22:00:10 <danieldg>	not sure.  Someone has done it, I've see it in testing proc macros
+Mar 09 22:00:31 <pflanze>	OK. I'll keep those answers in mind, it's nothing urgent.
+Mar 09 22:00:44 <Alexendoo>	trybuild or ui_test
+Mar 09 22:00:57 <pflanze>	Thanks!
+Mar 09 22:02:54 <danieldg>	you could also add a field whose type is deliberately not Clone
+Mar 09 22:03:13 <danieldg>	you could call it PhantomNonClone to be blatant
+Mar 09 22:06:03 <pflanze>	Heh, true
+Mar 09 22:42:23 <lmat>	{ let me : f64 = 2.0; if &me == 3.0 { println!("equel"); } }
+Mar 09 22:42:25 <lmat>	What does this mean?
+Mar 09 22:42:51 <lmat>	evalr: { let me : f64 = 2.0; if &me == 3.0 { println!("equel"); } }
+Mar 09 22:42:53 -evalr/##rust-	lmat: error[E0277]: can't compare `&f64` with `{float}` ...
+Mar 09 22:42:54 -evalr/##rust-	lmat: https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=c86fda5dca001431500188a78171f92b
+Mar 09 22:43:29 <lmat>	In my code, this is a function:   fn fun(me : &f64) { if me == 0.0 .... }
+Mar 09 22:43:29 <j`ey>	just use me, not &me
+Mar 09 22:43:30 <j`ey>	?
+Mar 09 22:43:44 <j`ey>	why are you passing &f64?
+Mar 09 22:43:51 <j`ey>	why not f64?
+Mar 09 22:44:14 <danieldg>	lmat: if you want to do that, use *me
+Mar 09 22:44:27 <danieldg>	lmat: but passing f64 is basically always more efficient than passing &f64
+Mar 09 22:44:55 <lmat>	j`ey: I don't know... the function is actually more like this:     avgs.iter().zip(others).map(|(lhs, rhs)| { if lhs == 0.0 ... }   avgs and others is a Vec<f64>.
+Mar 09 22:45:19 <j`ey>	|(&lhs, &rhs)|
+Mar 09 22:45:23 <danieldg>	right, then use *, or annotate the closure args like that ^^
+Mar 09 22:45:27 <j`ey>	stop changing your question :P
+Mar 09 22:45:56 <lmat>	j`ey: Sorry, I'm trying to to give you my whole codebase and say, "fix it" :-P
+Mar 09 22:46:03 <lmat>	s/to to/not to/
+Mar 09 22:46:34 <j`ey>	basically you cant compare &f64 to f64, so you have to deref it
+Mar 09 22:46:42 <lmat>	(&lhs, &rhs) is a pattern that says "get the value of the first element in the tuple and assign it to lhs (same for rhs)"?
+Mar 09 22:48:17 <j`ey>	something like that yeah
+Mar 09 22:49:46 <lmat>	https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=4f70c225f58a01aa4383bd976fdcbb16  but that only goes for one of the arguments???
+Mar 09 22:50:33 <j`ey>	because you wrote zip(others)
+Mar 09 22:50:39 <j`ey>	not zip(others.iter())
+Mar 09 22:51:11 <lmat>	:-D
+Mar 09 22:52:01 <lmat>	j`ey: Ahh, zip takes (a:A, b:B), not (a:&A, b:&B). I didn't expect that.
+Mar 09 22:52:42 <j`ey>	yeah because with a: A, you can pass &A
+Mar 09 22:52:48 <j`ey>	but you cant pass A to a: &A
+Mar 09 22:56:59 <lmat>	j`ey: nice
+Mar 09 22:57:50 <pflanze>	The "backtrace" crate has stopped giving me useful output. I last used it a while ago and it was fine in one of the compilation modes (release or debug, not sure which anymore), but now it won't give me line numbers except for core files, and it won't give me a full backtrace in debug mode at all. I've upgraded to the newest version, still same.
+Mar 09 22:58:20 <pflanze>	I'm on Debian stable, rustc from Debian. Anyone seen anything similar, any idea?
+Mar 09 23:03:32 <pflanze>	Hmm, getting line numbers now in latest backtrace version *in debug mode with mold as linker*
+Mar 09 23:12:33 <evaloop>	pflanze: l'l use -C link-args=-fuse-ld=mold and any kind cargo command with -vvv, also if BACKTRACE=1 disabled or not prowided as option for debug or just can use DEBUG_RUSTFLAGS="-C debuginfo=2 :) or l'm not exact mean what :D
+Mar 09 23:17:13 <evaloop>	pflanze: mb I was wrong about that, but for me that worked. Mine rust
+Mar 09 23:17:13 <evaloop>	Version: 1:1.76
+Mar 09 23:18:14 <evaloop>	*provided
+Mar 09 23:19:06 <evaloop>	mistake correction after send D:
+Mar 09 23:21:22 <evaloop>	Also can pass that backtrace before cmd command
+Mar 09 23:22:30 <evaloop>	like that maybe BACKTRACE=1 crabgo build/test/install/orelse somecrap -vvv
+Mar 09 23:23:29 <pflanze>	I'm using the "backtrace" crate, I'm not referring to the panic feature, which may use different code (the backtrace crate seems to say so)
+Mar 09 23:23:54 <Beladona>	HI
+Mar 09 23:23:57 <Beladona>	Any clue here? https://imgur.com/ydOcc8g.png
+Mar 09 23:24:19 <pflanze>	(evaloop, I'm referring to "backtrace" crate version 0.3.69)
+Mar 09 23:26:35 <pflanze>	(I am recompiling with -C debuginfo=2 to see how that goes)
+Mar 09 23:33:26 <evaloop>	pflanze: also suggest maybe, sometime's l'l use xargo because maybe now is no-std crate, xargo mostly nice for no-std custom action.
+Mar 09 23:35:07 <pflanze>	Adding debuginfo=2 doesn't make a difference for me now (with newest 'backtrace' and mold), both debug and release outputs are unchanged, release remains broken. But whatever, it's ok for me to have to use debug mode right now.
+Mar 09 23:43:07 <evaloop>	mold is just linker for speed-up and size, great tool, -vvv expand view of borrow checker at compile/link time, maybe best way for mkae review or debug is use -vvv (max verbosive output)
+Mar 09 23:45:34 <j`ey>	pflanze: and your rustc didnt change?
+Mar 09 23:46:23 <j`ey>	nvm strip isnt by default, I thought it was for release
+Mar 09 23:47:46 <evaloop>	rustc 1.76.0 --version
+Mar 09 23:47:53 <pflanze>	j`ey, I did move to different hardware (both intel amd64 though); same Debian release, though, although the first was in a chroot and possibly not up to date
+Mar 09 23:48:37 <pflanze>	Also, using nested threads now (scoped thread pool); larger code base.
+Mar 09 23:48:38 <evaloop>	oh D:
+Mar 10 00:08:15 <Beladona>	fixed
+**** BEGIN LOGGING AT Sun Mar 10 00:21:17 2024
+
+Mar 10 00:21:17 *	Now talking on ##rust
+Mar 10 00:21:17 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 10 00:21:17 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+**** BEGIN LOGGING AT Sun Mar 10 00:22:47 2024
+
+Mar 10 00:22:46 *	Now talking on ##rust
+Mar 10 00:22:46 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 10 00:22:46 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+**** BEGIN LOGGING AT Sun Mar 10 00:27:38 2024
+
+Mar 10 00:27:38 *	Now talking on ##rust
+Mar 10 00:27:38 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 10 00:27:38 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+**** BEGIN LOGGING AT Sun Mar 10 00:31:42 2024
+
+Mar 10 00:31:41 *	Now talking on ##rust
+Mar 10 00:31:41 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 10 00:31:41 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 10 00:50:35 <neiluj>	Hi! Got a function parametrized by these traits: https://bpa.st/QJ7A. Except a function I'm calling would require further type constraints:  ScalarField = G2Cfg::ScalarField additionally. Is it possible to enforce this?
+Mar 10 01:25:42 <pflanze>	neiluj, G2Cfg::ScalarField is a type, not a trait, right?
+**** BEGIN LOGGING AT Sun Mar 10 01:38:21 2024
+
+Mar 10 01:38:20 *	Now talking on ##rust
+Mar 10 01:38:20 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 10 01:38:20 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 10 01:38:45 <neiluj>	now getting the error `T` cannot be shared between threads safely for a struct containing a PhantomData<T> field
+**** BEGIN LOGGING AT Sun Mar 10 01:52:09 2024
+
+Mar 10 01:52:08 *	Now talking on ##rust
+Mar 10 01:52:08 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 10 01:52:08 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 10 02:09:05 <TimMc>	Is there some sort of abstraction in Rust's ecosystem for "pull from a stream until you've got all the data"?
+Mar 10 02:09:17 <neiluj>	fixed my issue
+Mar 10 02:09:24 <TimMc>	\o/
+Mar 10 02:09:41 <neiluj>	just followed the compiler's instructions xD
+Mar 10 02:10:19 <TimMc>	I want to send a series of msgpack objects over TCP but it would be cool to not have to precede each with a length header. Theoretically this should be fine since msgpack has its own internal length headers, but I'm just not really sure how to hook everything up.
+Mar 10 02:20:06 <danieldg>	TimMc: tokio used to have a decoder abstraction on top of Stream
+Mar 10 02:21:06 <danieldg>	or just collect what's available into a buffer and run a msgpack decoder on it.  If the decoder returns "message truncated", then collect some more bytes
+Mar 10 02:21:55 <danieldg>	if the decoder doesn't tell you truncated vs malformed, then the header length fields aren't good enough
+Mar 10 02:25:04 <danieldg>	it doesn't look like msgpack has a fast length field/header
+Mar 10 02:25:44 <TimMc>	Each msgpack object tells you how long it is, but not necessarily in bytes. :-)
+Mar 10 02:26:06 <TimMc>	So an array says "I'm 100 elements long" but you don't know how large those are.
+Mar 10 02:27:10 <TimMc>	I guess I could write a msgpack decoder that knows how to await more bytes on a stream... meh.
+Mar 10 02:28:53 <danieldg>	you could certainly write the decoder as an async fn that takes an async buffered reader that it reads byte by byte
+Mar 10 02:29:22 <danieldg>	it's more efficient to just have a length field
+Mar 10 02:29:41 <danieldg>	plus it helps reject overlong messages before you start to parse them
+Mar 10 03:01:40 <Widdershins>	yeah that's one of the weaknesses of msgpack
+Mar 10 03:01:50 <Widdershins>	it's one of the It's Just JSON Except Binary encodings
+Mar 10 03:02:30 <Widdershins>	because the whole thing is schemaless they didn't bother to design it in a way that can be skip-parsed
+Mar 10 03:03:17 <danieldg>	original json can't be skip-parsed either, so it didn't lose anything
+Mar 10 03:03:39 <Widdershins>	yeah. potentially a missed opportunity, potentially a pain in the ass. it's a tradeoff
+Mar 10 03:03:55 <Widdershins>	looking at my recent adventures in What If We Encoded Backwards
+Mar 10 03:05:16 <Widdershins>	because TLV encodings that have a lot of nesting have a lot of advantages for being able to see the "future"
+**** ENDING LOGGING AT Sun Mar 10 04:26:38 2024
+
+**** BEGIN LOGGING AT Sun Mar 10 06:42:23 2024
+
+Mar 10 06:42:22 *	Now talking on ##rust
+Mar 10 06:42:22 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 10 06:42:22 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 10 12:21:39 <pflanze>	When implementing a self-referential struct via unsafe, if I never give public write access to the self-referenced data, do I need to Pin it?
+Mar 10 12:21:58 <pflanze>	Or am I correct in understanding that Pin just prevents swap in the case that it must be writable?
+Mar 10 12:22:36 <pflanze>	I.e. Pin isn't also acting as some kind of move prevention indication to the compiler itself, or is it?
+Mar 10 12:24:35 <Mutabah>	pflanze: `Pin` prevents you from getting `&mut` effectively
+Mar 10 12:24:48 <Mutabah>	while still allowing ownership
+Mar 10 12:25:01 <Mutabah>	it ensures reference/pointer stability
+Mar 10 12:25:51 <pflanze>	I have experience with C and C++, so I understand the pointer stability.
+Mar 10 12:26:09 <pflanze>	But I get pointer stability by using Box, not Pin.
+Mar 10 12:26:30 <Mutabah>	Pin is how unsafe code can assume a pointer is stable, without needing it to be on the heap
+Mar 10 12:26:30 <pflanze>	Pin is just to prevent the contents of the box from being replaced. Right?
+Mar 10 12:26:59 <Mutabah>	If you make a `Pin<&mut T>` you promise that the `T` won't change addresses until it is dropped
+Mar 10 12:27:02 <pflanze>	Hmm, okay, I haven't tried to not put things onto the heap.
+Mar 10 12:28:39 <pflanze>	My understanding was that Pin prevents the API users from messing up. Not me promising.
+Mar 10 12:29:09 <Mutabah>	It's both kinda
+Mar 10 12:29:55 <Mutabah>	`Pin::new_unchecked` is where you promise, and then the user (API or whoever) of the `Pin<Ptr>` can assume that they can take the address/raw-pointer and it'll stay valid until the data is dropped
+Mar 10 12:47:23 <pflanze>	Is there any problem with my unsafe usage here?: https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=9cb76688f8417ad91003ff0ff5724af2
+Mar 10 12:48:39 <j`ey>	miri thinks so
+Mar 10 12:48:42 <pflanze>	(My followup question will be, I could leave away the Pin here and the external API would still be safe, no? Although I'll admit the Pin may be useful to protect to some extent from people changing the insides of StringSplit's implementation)
+Mar 10 12:49:32 <pflanze>	How are you running miri if it's simple enough to say (if it's involved, I'll go read the docs)
+Mar 10 12:50:00 <j`ey>	click miri on the playground :P
+Mar 10 12:50:09 <pflanze>	Aha, ok :)
+Mar 10 12:50:10 <j`ey>	tools -> Miri
+Mar 10 12:50:17 <pflanze>	Now, miri of course won't tell whether my API *could* be misused.
+Mar 10 12:50:35 <j`ey>	miri thinks there *is* a problem
+Mar 10 12:50:45 <pflanze>	Oh!
+Mar 10 12:57:20 <pflanze>	Is there something fundamentally unsafe in my program (i.e. if I used ASAN instead and tried to mis-use the API could I trigger an ASAN violation?), or is it "just" that I should do things slightly differently so that miri is happy?
+Mar 10 13:19:24 <narodnik2>	is there a way to specify a trait const usize which is a multiple of some value?
+Mar 10 13:20:08 <narodnik2>	struct Foo<const N: usize> where N = 2^k for some k
+Mar 10 13:20:18 <narodnik2>	or is the only way to make k the parameter?
+Mar 10 13:22:56 <saati>	if it has private fields you could assert it's popcount is 1 in all it's constructors
+Mar 10 14:44:18 <Widdershins>	you could also just specify the power-of-2 instead
+Mar 10 14:44:53 <Widdershins>	maybe that would look worse though
+Mar 10 14:47:00 <saati>	still have to ensure it's lower than 64
+Mar 10 14:53:02 <yziquel>	Hi. I just rebuilt rust and cargo from source. anyone knows where the binaries are ?
+Mar 10 14:53:25 <yziquel>	there are multiple cargo binaries. stage0, stage 2, etc... what's that ?
+Mar 10 14:57:41 <j`ey>	stage0 is built with the existing cargo binary, stage1 is built by stage0
+Mar 10 15:06:31 <Alexendoo>	https://rustc-dev-guide.rust-lang.org/building/bootstrapping.html
+Mar 10 15:07:00 <Alexendoo>	they'll be in build/host/stage1
+Mar 10 15:11:37 <Alexendoo>	bootstrap prints a message telling you what rustup link command to use, usually you want that so you don't have to set LD_LIBRARY_PATH (or whatever platform equivalent) yourself
+Mar 10 15:33:49 <yziquel>	Alexendoo for cargo binary, I only see build/x86_64-unknown-linus/[stage0/bin/cargo|stage0-sysroot/bin/cargo|stage2-tools-bin/cargo] and one in src/tools/rust-installer/test/inage3/bin/cargo. No stage 1.
+Mar 10 15:34:04 <yziquel>	I did ./x.py build after a ./configure on a raw git checkout.
+Mar 10 15:40:01 <Alexendoo>	cargo is not built by default
+Mar 10 15:42:58 <yziquel>	urgh. I'd need to build cargo, Alexendoo. Does ./x.py build do incremental builds ? seems so.
+Mar 10 15:44:11 <yziquel>	not quite incremental...
+Mar 10 15:44:38 <Alexendoo>	Not by default, but e.g. the compiler profile has it on
+Mar 10 15:46:16 <Alexendoo>	What are you after build wise?
+Mar 10 15:47:30 <yziquel>	Alexendoo I want to fix a virtualisation issue with rustc as it misbhaves it a given setup for an os level reason. I'm hunting down all the wrong calls in the rust codebase.
+Mar 10 15:47:42 <yziquel>	on a given setup.
+Mar 10 15:48:01 <dav1d>	you're looking at the wrong thing
+Mar 10 15:48:16 <yziquel>	dav1d tell me more.
+Mar 10 15:48:35 <dav1d>	you're building the compiler when your binary produced by the compiler is failing
+Mar 10 15:48:48 <dav1d>	the compiler doesn't magically add mmap calls to binaries
+Mar 10 15:48:59 <yziquel>	dav1d no. it is the compiler itself that fails.
+Mar 10 15:49:10 <yziquel>	dav1d since 2016.
+Mar 10 15:49:11 <dav1d>	ah okay, my bad, misremembering the issue then
+Mar 10 15:49:39 <Alexendoo>	You wouldn't need to build cargo in that case, rustup will fall back to your own cargo when you use rustup link
+Mar 10 15:49:59 <yziquel>	Alexendoo I need to build cargo because I need to run cargo build to test.
+Mar 10 15:49:59 <dav1d>	thought your problem was gix or w/e
+Mar 10 15:50:07 <Alexendoo>	you can set `profile = "compiler"
+Mar 10 15:50:07 <Alexendoo>	` in config.toml to get incremental and other things
+Mar 10 15:50:25 <yziquel>	dav1d my problem is across the whole rust ecosystem.
+Mar 10 15:50:36 <Alexendoo>	cargo +stage1 build will work if you use rustup link without building cargo
+Mar 10 15:50:55 <dav1d>	yeah the source is gonna be the memmap* crates
+Mar 10 15:51:17 <yziquel>	dav1d yes.
+Mar 10 15:51:49 <yziquel>	Alexendoo what will rustup do for me ??
+Mar 10 15:51:49 <danieldg>	yziquel: just make an LD_PRELOAD hook for mmap that changes everything to MAP_PRIVATE
+Mar 10 15:52:37 <dav1d>	^
+Mar 10 15:52:46 <Alexendoo>	yziquel: https://rustc-dev-guide.rust-lang.org/building/how-to-build-and-run.html#creating-a-rustup-toolchain
+Mar 10 15:52:56 <yziquel>	danieldg intervene on the github issue if you claim this does not need fixing. For now, I'm fixing it if only for me. here you go: https://github.com/rust-lang/rust/issues/122262
+Mar 10 15:53:01 <danieldg>	or, you know, just learn how to use libvirt.  That's *way* less effort than changing every program you use to not use MAP_SHARED
+Mar 10 15:53:18 <yziquel>	danieldg or, you know, fix your 2016-old bug.
+Mar 10 15:53:25 <danieldg>	not my bug
+Mar 10 15:53:35 <yziquel>	danieldg bug in rust.
+Mar 10 15:53:48 <yziquel>	anyway. coffee. flame war -> guthub issue. thx.
+Mar 10 15:54:26 <dav1d>	jfc
+Mar 10 16:09:50 <saati>	lol sure a shitty fs not supporting MAP_SHARED is a rustc bug
+Mar 10 16:11:57 <danieldg>	I'm actually surprised it supports mmap at all
+Mar 10 16:12:58 <danieldg>	I guess it'd have to if you wanted to run binaries off it
+Mar 10 16:14:09 <yziquel>	saati it's not a rust bug. It's a bug that impacts anyone wanting to virtualise. and there are many.
+Mar 10 16:14:21 <yziquel>	saati you can keep denying it has an impact. It has one.
+Mar 10 16:14:40 <danieldg>	yziquel: 99.9% of people who virtualize don't hit this bug
+Mar 10 16:14:41 <yziquel>	saati and it may be a riust bug. to me, it's 1/3 a rust bug, 2/3 a virtiofs bug.
+Mar 10 16:15:01 <yziquel>	danieldg indeed. and the happy few who do do not recognise it.
+Mar 10 16:15:54 <yziquel>	danieldg it hits various filesystems since 2016. vboxfs. virtiofs with --cache=never (which is becoming the default in kata containers), and people iusing github actions use workarounds they just copy paste.
+Mar 10 16:16:57 <yziquel>	danieldg and i hit it. so i fix it.
+Mar 10 16:17:19 <danieldg>	right, I think it's a good feature to add
+Mar 10 16:17:23 <danieldg>	but it's more of a feature than a bug
+Mar 10 16:18:03 <danieldg>	it's a workaround for filesystems that don't support MAP_SHARED
+Mar 10 16:19:48 <polychromata{J}>	pflanze: i think your Pin doesn't cover enough—you need to pin the big string and the little strings together
+Mar 10 16:19:59 <danieldg>	but that's nitpciking I guess
+Mar 10 16:20:02 <polychromata{J}>	and i think the first error is about your 'static lie?
+Mar 10 16:20:53 <polychromata{J}>	but i can't speak to whether it's a violation or a flaunt of the unsafe rules
+Mar 10 16:22:37 <yziquel>	danieldg for your sore eyes that will make you cry tears of blood: 99% of people who virtualise do not hit this bug, I did. https://github.com/openzfs/zfs/issues/14989
+Mar 10 16:23:14 <yziquel>	https://github.com/openzfs/zfs/issues/14989#issuecomment-1980137649
+Mar 10 16:24:12 <yziquel>	shitty CPU. Just throw the computer through the window.
+Mar 10 16:25:41 <danieldg>	yeah, that's a bug: if you use a register you didn't tell the kernel to save/restore, then of course it can get corrupted
+Mar 10 16:26:06 <danieldg>	no different than using a thing protected by a lock without locking it
+Mar 10 16:26:07 <yziquel>	danieldg no. It's a bug in the CPU. Not in ZFS. Intel is at fault. Not openzfs.
+Mar 10 16:26:20 <danieldg>	huh
+Mar 10 16:26:29 <danieldg>	ah
+Mar 10 16:27:43 <yziquel>	intel defecated on themselves when implementing avx512f and fell short of their specs on a vmexit event.
+Mar 10 16:28:00 <danieldg>	well that looks like one of the dumber errata I've seen
+Mar 10 16:28:22 <danieldg>	usually such things require more moving parts to break stuff
+Mar 10 16:28:48 <danieldg>	I guess vmexit is probably complex enough for them to screw it up
+Mar 10 16:29:32 <yziquel>	yeah. well, so is MAP_SHARED on virtiofs where the memory mapping goes through qemu's own memory.
+Mar 10 16:29:54 <danieldg>	that's merely a missing feature
+Mar 10 16:30:00 <yziquel>	¨...
+Mar 10 16:48:54 <yziquel>	I still do not see how to build cargo from the rust source repo.
+Mar 10 16:48:54 <Vorpal>	I'm trying to figure out a good approach to error handling in command line programs and libraries for command line programs. Anyhow is great, but leads to type-erased errors. That is not always appropriate. thiserror is cumbersome and I haven't gotten backtrace reporting to work great on stable rust for nested errors. That last issue (good error causes with backtraces on stable rust) I consider an absolute requirement. If it weren't for that, snafu would look
+Mar 10 16:48:56 <Vorpal>	pretty good for example.
+Mar 10 16:49:19 <Vorpal>	so, anyone have any suggestions for what to use?
+Mar 10 16:51:08 <Vorpal>	I tried error-stack, but I ran into two major issues: It doesn't play well with other error reporting (so transitioning gradually to it is difficult). It has some support for converting anyhow errors, but that looses backtraces. Also I couldn't figure out how to use an error stack report as an Error type for a TryFrom trait impl
+Mar 10 16:51:30 <tokie>	why do you need backtraces ?
+Mar 10 16:51:49 <Vorpal>	tokie: I consider them essential for debugging and for bug reports.
+Mar 10 16:53:06 <yziquel>	Vorpal indeed.
+Mar 10 16:53:44 <Vorpal>	So yeah, anyhow is great (and it is easy to attach additional context on the way up), but not great if there are some cases that you actually want to handle instead of just report.
+Mar 10 16:54:27 <dav1d>	Vorpal, you can downcast errors with anyhow
+Mar 10 16:54:34 <tokie>	yeah, i would go with anyhow
+Mar 10 16:54:35 <dav1d>	in case you havent seen
+Mar 10 16:54:54 <tokie>	i've found in practice the "i may need to distinguish between errors!" never usually happens
+Mar 10 16:55:17 <tokie>	but i write daemons and not command-line programs, so maybe it's more common ...
+Mar 10 16:55:38 <Vorpal>	dav1d: hm I do remember seeing something about it, but didn't try it out since it looked hackish. Not good for a public API in a library (I'm making a tool + a reusable library for some of the functionality of that tool).
+Mar 10 16:56:04 <Vorpal>	[16:54] <tokie> i've found in practice the "i may need to distinguish between errors!" never usually happens <-- rare, but certain IO errors. That is usually handled locally though
+Mar 10 16:56:11 <dav1d>	Vorpal, then there isn't much left other than writing your own error types, with our without thiserror
+Mar 10 16:56:18 <tokie>	Vorpal: lol, yeah, i was about to write that
+Mar 10 16:56:56 <Vorpal>	another issue with anyhow is that it's error type can't be serialised. As I will be splitting some functionality into a part that is executed via sudo and then doing unix socket IPC back and forth this kind of matters down the road
+Mar 10 16:57:15 <Vorpal>	very niche thing, I know
+Mar 10 16:58:05 <Vorpal>	dav1d: is there a way to get backtraces to work well with thiserror though? Essentially I want the full on anyhow error handler with "foo, caused by bar, caused by quux, here is a helpful stacktrace if you ran with RUST_BACKTRACE=1"
+Mar 10 16:58:25 <tokie>	Vorpal: not so niche! are we coworkers? lol
+Mar 10 16:59:39 <Vorpal>	tokie: I'm basically doing a rewrite of https://github.com/CyberShadow/aconfmgr in rust (and with pluggable support for other distros, not just arch). Or that is the plan. So far I wrote some more basic tools that I will need (https://github.com/VorpalBlade/paketkoll)
+Mar 10 17:00:03 <Vorpal>	but yeah I use anyhow there, and I'm running into the serialisation issue
+Mar 10 17:00:38 <Vorpal>	as well as, the paketkoll_core library having anyhow in it's public API (that API is very much WIP currently)
+Mar 10 17:00:43 <tokie>	ohh god, that's all bash
+Mar 10 17:00:45 <tokie>	good luck
+Mar 10 17:01:18 <Vorpal>	tokie: despite it being bash (I'm probably going with rhai for user config) it actually works extremely well.
+Mar 10 17:02:49 <Vorpal>	I wish the provider API got stabilised. Then all of this would just work with snafu etc.
+Mar 10 17:03:20 <dav1d>	Vorpal, pretty sure you'd have to capture the backtrace yourself. But tbh might just write the error types yourself without thiserror
+Mar 10 17:03:36 <dav1d>	also neat seeing something from CyberShadow
+Mar 10 17:03:45 <Vorpal>	oh? you know them?
+Mar 10 17:04:06 <Vorpal>	so much boiler plate. Maybe I'll make my own macro to generate error types. Wait a sec...
+Mar 10 17:04:28 <dav1d>	yeah from my time doing D
+Mar 10 17:04:40 <dav1d>	Vorpal, it's not that bad tbh
+Mar 10 17:05:00 <dav1d>	but yeah nothing a macro_rules cant solve
+Mar 10 17:05:08 <Vorpal>	mhm
+Mar 10 17:05:42 <dav1d>	but thiserror also has #[backtrace], but I've never used it
+Mar 10 17:06:59 <Vorpal>	think you still have to capture the backtrace yourself (or take it from a source error)
+Mar 10 17:07:24 <tokie>	most of the stuff i write uses thiserror to format errors, but they eventually bubble up into a boxed error like anyhow anyway
+Mar 10 17:07:25 <tokie>	so sorta a mix
+Mar 10 17:07:31 <dav1d>	yep
+Mar 10 17:07:32 <tokie>	but thiserror is nice for formatting the text
+Mar 10 17:07:41 <dav1d>	but you can use it to generate the boilerplate
+Mar 10 17:07:43 <Vorpal>	it indeed is
+Mar 10 17:07:44 <tokie>	yep
+Mar 10 17:08:24 <Vorpal>	not sure how to extract the causes and backtraces in the end (like when you return anyhow::Result from main)
+Mar 10 17:08:25 <tokie>	just panic and let sentry manage the backtraces
+Mar 10 17:08:30 <tokie>	:x
+Mar 10 17:08:36 <Vorpal>	hah, nah thanks
+Mar 10 17:09:54 <Vorpal>	Error handling in closures is awkward. I use rayon a lot in this project, so I keep running into that.
+Mar 10 17:10:25 <tokie>	oh wow
+Mar 10 17:11:06 <Vorpal>	Speaking of rayon: sensible backtraces is something it doesn't have. Something I notice when profiling with perf and try to find my own code in the mess of workstealing schedulers. Basically top down flamegraphs are unusuable
+Mar 10 17:11:17 <Vorpal>	tokie: hm?
+Mar 10 17:12:49 <tokie>	i just never see anyone using rayon. it's nice to see a use case !:P
+Mar 10 17:14:06 <Vorpal>	tokie: doing many independent things as fast as possible is a use case
+Mar 10 17:14:42 <Vorpal>	which perfectly fits what paketkoll is doing (loading package metadata from many separate files, calculating checksums, walking the the whole file system, etc)
+Mar 10 17:20:43 <TimMc>	Oh man, my 300 line program worked perfectly on the first run!
+Mar 10 17:20:54 <TimMc>	(Well, the first run where I didn't fat-finger the command line, haha)
+Mar 10 17:21:10 <yziquel>	TimMc that's the kind of experience I initially had with OCaml before rust.
+Mar 10 17:35:08 <yziquel>	fed up with these annoying git submodules.
+Mar 10 17:36:17 <Vorpal>	yziquel: would you say that ocaml (or other MLs) have anything to offer if I learned Rust first?
+Mar 10 17:36:46 <yziquel>	Vorpal you want a theological debate ?
+Mar 10 17:38:24 <Vorpal>	yziquel: nah, just wondering if it has any neat ideas. I believe that learning more languages makes you a better programmer in all of them
+Mar 10 17:38:40 <yziquel>	My opinion: I wish rust syntax was more ocaml like and ocaml could tackle the metal more. ocaml is quicker to develop prototype and has a nicer type-reasoning-feel to it. but it can't reason about lifetimes. Though it does not support some unique keywords allowing for type level resource management.
+Mar 10 17:38:42 <Vorpal>	I don't code in scheme, but I think learning a LISP made me think differently
+Mar 10 17:38:47 <gastus>	Vorpal: lanugage + ecosystem + knowledge => time to complete a task. You don't teven know your task.
+Mar 10 17:38:57 <yziquel>	it does now support
+Mar 10 17:39:26 <yziquel>	gastus there are other reasons to dive into a language. Languages are not only tools.
+Mar 10 17:39:29 <Vorpal>	hm, interesting
+Mar 10 17:39:58 <yziquel>	Vorpal I'd say library support is richer in rust. But I wish rust had ocaml's gc.
+Mar 10 17:40:03 <yziquel>	as an option.
+Mar 10 17:40:26 <Vorpal>	yziquel: as someone who do command line tools as well as full on embedded I'm so happy rust doesn't have a GC
+Mar 10 17:41:19 <Vorpal>	at dayjob we are starting to eye rust (currently C++). With a GC that flat out wouldn't be an option (hard realtime, industrial equipment controller software)
+Mar 10 17:41:21 <yziquel>	Vorpal yes. but I'd rather it have an OPTIONAL gc. though that would impact the ecosystem and it would be less friendly to embedded. so....
+Mar 10 17:41:44 <gastus>	So Java OO (+ weaving, pointcutns), Python/JS (dynamic), TS = learn that you can type dynamic stuff so is good for tasks requiring such. Haskell/Nix => lazy expressions, Rust, borrowing, urweb shows how crazy you can go about type level, Nim shows that you can have multiple GC implementations within one language.
+Mar 10 17:41:49 <Vorpal>	yziquel: it wouldn't be optional. Because a ton of crates you would want to use would suddenly depend on it
+Mar 10 17:41:53 <yziquel>	Vorpal it is possible to have real time concurrent gcs. you just do not find them around much. except in the litterature.
+Mar 10 17:41:58 <Vorpal>	yziquel: it would be worse than the async/blocking split
+Mar 10 17:42:28 <gastus>	Talking about no GC: https://github.com/fitzgen/bumpalo seems to a link also talking about nightly option to pass allocator.
+Mar 10 17:42:33 <yziquel>	Vorpal I disagree.
+Mar 10 17:42:51 <yziquel>	gastus yes, I'm about to start using bumpaloo for my gc-like requirements
+Mar 10 17:43:22 <gastus>	The question I have is more like how to write code which can do both. Like let X = fun(); and have fun use a throw away allocator. Like with with_throw_away do .. code here  and once the block is done have all data erased.
+Mar 10 17:43:33 <yziquel>	gastus I need heavily recursive data structure, and rust rules that out without something like bumpaloo anyway.
+Mar 10 17:43:46 <Vorpal>	bumpalo is not a GC, it is a bump arena allocator.
+Mar 10 17:43:52 <gastus>	The pattern of rewriting libraries (haskell with / without monad) js (with without async) .. rust (with different GC) feels annoying.
+Mar 10 17:44:21 <yziquel>	gastus I believe GC should be available but optional. But only later than now, as that would otherwise submerge the ecosystem with gc compatible libs and embedded world would be left dangling.
+Mar 10 17:44:25 <Vorpal>	seems quite different to me. I have tried bumpalo in one single-threaded project that did lots of small allocations. Couldn't measure any statistically signficant speedup, so gave up on that
+Mar 10 17:45:34 <gastus>	And that's what I was told, too. I wrote my .so file which rewrote malloc. Same for me. So looks like the typcial malloc implementaions do a good job.
+Mar 10 17:45:39 <yziquel>	Vorpal try writing a custom lambda-calculus semi-compiled semi-interpreted nonsense. you'll see you'll need hairy memory management and bumpaloo is much like the small heap of ocaml's garbage collector anyway.
+Mar 10 17:45:42 <Vorpal>	also bumpalo doesn't play nice with rayon from what I can tell. You could have a bump allocator per thread (bumpalo-heard implements this) but with rayon you don't really know which thread you are on at any time (and you are supposed to get the allocator at the start since that is expensive). Maybe with a thread local, but eww.
+Mar 10 17:46:28 <nullie>	hi, which library can I use to make Cookie header from cookie values?
+Mar 10 17:46:28 <Vorpal>	yziquel: yeah never done that, I have written a BrainFuck compiler, but that is quite different memory management wise
+Mar 10 17:46:32 <yziquel>	Vorpal there is bumpaloo herd. or something like that for rayon support. Not on my roadmap for the moment.
+Mar 10 17:46:47 <Vorpal>	yziquel: I just mentioned it?
+Mar 10 17:47:08 <yziquel>	Vorpal ah. yes.
+Mar 10 17:48:33 <Vorpal>	so yeah bumpalo-heard doesn't fit rayon par_iter() workflow. If you are managing your own long-lived scoped threads I think it could work though
+Mar 10 17:49:00 <yziquel>	Vorpal I have other things in mind for that kind of stuff. but i'll say no more.
+Mar 10 17:49:01 <Vorpal>	and I can't even begin to imagine the horrors of trying to deal with this in thread locals. The borrow checker won't be happy
+Mar 10 17:49:54 <Vorpal>	yziquel: I ended up using lasso for a thread safer string interner instead. That works surprisingly well for heavily reused strings
+Mar 10 17:50:09 <Vorpal>	thread safe* (I wonder what thread safer is!)
+Mar 10 17:51:49 <yziquel>	Vorpal I don't believe rust's type checker should be force into doing some kind of LTA+ analysis.
+Mar 10 17:52:04 <Vorpal>	LTA+?
+Mar 10 17:52:46 <Vorpal>	brb, my 3D printer just signaled it finished
+Mar 10 17:56:45 <yziquel>	LTA+ is an old specification language (and more) in which you can reason about temporal assignments and prove stuff about distributed computing. Like byzantine problems solutions such as Paxos or Raft. Rust's borrow checker is cool for type systems and language, but does not rise IMO to the standard of such old technologies.
+Mar 10 17:56:50 <yziquel>	Vorpal
+Mar 10 17:57:30 <tokie>	Vorpal: i wrote a scheme compiler and i write very little scheme ! i think just implementing scheme is an interesting exercise
+Mar 10 17:57:47 <Vorpal>	yziquel: the thing with the borrow checker is that it is (somewhat) quick. I suspect the more complicated the slower it would be. Possibly undecidable even.
+Mar 10 17:57:56 <Vorpal>	thanks to Rice's theorem
+Mar 10 17:58:01 <yziquel>	Vorpal dunno. depends.
+Mar 10 17:58:28 <yziquel>	many fragments of logic are suprisingly decidable.
+Mar 10 17:59:16 <yziquel>	Much can be combined with Nelson-Oppen. so...
+Mar 10 18:03:09 <yziquel>	Can't build rust because I can't fetch the gccjit git submodule. I'm feeling more and more murderous.
+Mar 10 18:04:12 <Vorpal>	that is a weird non-standard backend isn't it?
+Mar 10 18:04:21 <Vorpal>	you surely shouldn't need that for standard rust
+Mar 10 18:04:46 <yziquel>	Vorpal. dunno. I tried the build instructions. ./x setup and ./x check. "can't fetch gccjit".
+Mar 10 18:05:36 <yziquel>	Vorpal trying ./configure and ./x.py build. we'll see if it changes something.
+Mar 10 18:05:41 <yziquel>	i hate these opaque build systems.
+Mar 10 18:06:40 <yziquel>	seems to build something. but I want to get cargo to be built. I still do not know how to do that.
+Mar 10 18:09:29 <yziquel>	and you have to log in to get to zulip. i'm annoyed.
+Mar 10 18:13:13 <Vorpal>	yziquel: had to deal with hand written Makefiles earlier today, even worse
+Mar 10 18:13:31 <yziquel>	Makefiles have been getting better nowadays.
+Mar 10 18:26:00 <yziquel>	too long to build
+Mar 10 18:29:48 <yziquel>	too long to build
+Mar 10 19:03:20 <neiluj>	Hi! seeing that a portion of my application can take up to 80ms to acquire a lock on a mutex, is there a way to avoid waiting too long?
+Mar 10 19:03:34 <nullie>	 Can I get raw HTTP request bytes from reqwest::Request?
+Mar 10 19:03:59 <rbox>	 neiluj wait until the mutex is not locked b efore acquiring it
+Mar 10 19:05:19 <bertptrs>	neiluj: std mutex doesn't offer anything useful for it, but parking_lot offers try_lock_for and try_lock_until which both effectively support some timeout
+Mar 10 19:06:45 <dav1d>	neiluj, you can with a Condvar
+Mar 10 19:07:02 <dav1d>	which has a wait_timeout method
+Mar 10 19:07:42 <bertptrs>	dav1d: that requires you already having the guard
+Mar 10 19:09:11 <dav1d>	bertptrs, I guess it's tricky
+Mar 10 19:09:23 <bertptrs>	it does something entirely unrelated, rather
+Mar 10 19:09:34 <dav1d>	you'd have the guard, unlock it with the condvar just to wait on it, probably not what you'd want
+Mar 10 19:10:33 <dav1d>	yeah brainfart, thought you could make it work
+Mar 10 19:10:40 <yziquel>	how does cargo select the rustc software to run ? how coupled is it to it ?
+Mar 10 19:11:16 <yziquel>	yziquel because if I have to run cargo to debug rustc, I need to control that selection. otherwise, it's useless trying to make a fix and build it if i can'trun it.
+Mar 10 19:14:37 <dav1d>	yziquel, RUSTC env var
+Mar 10 19:15:10 <dav1d>	(or override it in .cargo/config.toml)
+Mar 10 19:20:18 <neiluj>	oh nice thanks bertptrs!
+Mar 10 19:21:43 <neiluj>	thanks rbox, too!
+Mar 10 20:02:35 <OwlWizard>	ive just read about rust's matching and i have to say this seems like one of the most powerful parts of the langugae
+Mar 10 20:03:32 <rbox>	its not that differnt from like switch
+Mar 10 20:03:38 <bertptrs>	matching is so good most many major languages have started to incorporate it as well
+Mar 10 20:03:45 <bertptrs>	rbox: it's much more powerful than a switch
+Mar 10 20:03:48 <polychromata{J}>	It's pretty hecking different from switch as in C.
+Mar 10 20:03:53 <polychromata{J}>	Or even switch as in JavaScript.
+Mar 10 20:04:04 <bertptrs>	python and java introduced their own matching recently (ish)
+Mar 10 20:04:10 <rbox>	guess i'm not that easily impressed
+Mar 10 20:04:10 <polychromata{J}>	Rust didn't introduce it, though; Haskell and probably similar languages have had it for a while. :)
+Mar 10 20:04:26 <bertptrs>	it's pretty common in functional langauges, yes
+Mar 10 20:04:36 <polychromata{J}>	In every other language i try to use, i miss match{} /so bad./
+Mar 10 20:04:58 <OwlWizard>	i find the match guard feature to be extremely cool
+Mar 10 20:05:19 <polychromata{J}>	Swift actually beat Rust to that one by several years, heh.
+Mar 10 20:06:05 <bertptrs>	If swift wasn't so hard to get working under linux I'd probably like it a lot. it makes a lot of nice choices
+Mar 10 20:06:05 <spb>	matching is only the same as a switch statement if you never use enums with fields
+Mar 10 20:06:12 <OwlWizard>	iirc the point of rust isnt to invent everything
+Mar 10 20:06:16 <j`ey>	r nesting
+Mar 10 20:06:20 <j`ey>	*or
+Mar 10 20:06:29 <spb>	can't nest if your enums have no fields
+Mar 10 20:07:59 <bertptrs>	even then you can still match on for example chars much more elegantly than it would be with a switch-case
+Mar 10 20:08:49 <bertptrs>	match c { 'a'..='z' => Type::LowerCase, 'A'..='Z' => Type::UpperCase … etc
+Mar 10 20:14:09 <polychromata{J}>	Is there a way to impl AsyncRead for a type where the data comes not from an underlying reader but rather from other tasks that push data in by calling async methods with /borrowed/ buffers?
+Mar 10 20:14:42 <polychromata{J}>	I can conceptualise this in terms of rawpointers, and i feel like it's sound, but to write it with safe code i think i'd need like a channel over references with lifetimes i couldn't write.
+Mar 10 20:16:14 <polychromata{J}>	Essentially the problem is transporting the borrow from the push method to where poll_read can get at it.
+Mar 10 20:17:00 <bertptrs>	a VecDeque of pushed data and a mutex to guard it?
+Mar 10 20:19:11 <danieldg>	polychromata{J}: you have to transfer ownership out of the writing task
+Mar 10 20:19:20 <bertptrs>	Maybe I'm misunderstanding the problem
+Mar 10 20:19:22 <danieldg>	even with unsafe you'd have to do that
+Mar 10 20:20:41 <danieldg>	a shared buffer is a good way to do it, and pretty easy to do safely if you don't need to hold a lock on the buffer for long periods
+Mar 10 20:21:00 <danieldg>	(that is, nothing like calling AsyncRead to fill the buffer)
+Mar 10 20:21:39 <polychromata{J}>	bertptrs: That's the simple solution, right. The thing is that it introduces a third, intermediate buffer—and if my choice of size for this third buffer is too small for the usecase, it'll spin in async executor code a lot unnecessarily when it could have just copied straight from the source buffer to the sink buffer.
+Mar 10 20:22:21 <danieldg>	polychromata{J}: move the buffer's ownership instead of the data
+Mar 10 20:22:37 <polychromata{J}>	It's not an owned buffer.
+Mar 10 20:22:37 <bertptrs>	polychromata{J}: you know what they same about the time to start optimizing
+Mar 10 20:22:48 <bertptrs>	they say*
+Mar 10 20:25:27 <polychromata{J}>	Unsafely, i could make the method that pushes data return a future that borrows the buffer, passes a rawpointer to it, wakes tasks that are waiting to read, and resolves after receiving a signal that the reads are done.
+Mar 10 20:26:14 <polychromata{J}>	…maybe i should actually write this out and reframe my question as “how do i make this /safe/”?
+Mar 10 20:26:45 <danieldg>	polychromata{J}: and if your push method gets cancelled halfway through?
+Mar 10 20:27:05 <danieldg>	I bet that path is what would make things unable to be safe
+Mar 10 20:28:34 <polychromata{J}>	hmmm.
+Mar 10 20:29:51 <danieldg>	it's basically the same as sending a reference to another thread, which is unsafe without scoped threads
+Mar 10 20:30:30 <danieldg>	in fact futures usually can run on another thread
+Mar 10 20:30:41 <polychromata{J}>	Right. The thing is, the actual sharing is so short in scope that i figured there must be way to make it work?
+Mar 10 20:30:59 <polychromata{J}>	The sharing only needs to last for the length of one poll_read call.
+Mar 10 20:31:09 <polychromata{J}>	And that just copies a buffer.
+Mar 10 20:31:30 <danieldg>	Arc<Mutex<Buffer>>
+Mar 10 20:31:41 <polychromata{J}>	…where buffer = &[u8]
+Mar 10 20:31:56 <danieldg>	no, Buffer = Vec<u8>
+Mar 10 20:32:00 <polychromata{J}>	hence my “references with lifetimes i couldn't write”
+Mar 10 20:32:41 <danieldg>	this is a reason the bytes::Bytes buffers are owned
+Mar 10 20:32:42 <polychromata{J}>	See, but then i'm allocating a Vec, which takes us back to “introduces a third, intermediate buffer”
+Mar 10 20:34:02 <danieldg>	so you can't get ownership of the first *or* last buffer in any way?
+Mar 10 20:35:27 <danieldg>	then yeah, I agree, you can do it with unsafe but not with safe lifetimes
+Mar 10 20:35:33 <polychromata{J}>	Right. The push calls work on borrowed data (&[u8], which is borrowed from some other struct, which is borrowed from something else), and poll_read reads into a borrowed buffer
+Mar 10 20:37:09 <danieldg>	basically during the copy operation, you must ensure that both buffers are valid, but no single rust function will have more than one available as a parameter
+Mar 10 20:37:27 <bertptrs>	You could try to lazily use the buffer. have asyncread mark the entire struct as "I've got a dest buffer for you", and then when a push comes, check if there's a reader waiting, if so, copy to reader, else copy to intermediate
+Mar 10 20:37:48 <bertptrs>	Do some destructor magic to ensure the state remains valid
+Mar 10 20:38:04 <danieldg>	that's one way to do it with unsafe, eys
+Mar 10 20:39:06 <danieldg>	you can actually do it both ways: have enum ChannelState { ReaderHere(*const [u8]), WriterHere(*mut [u8]), OnlyDataHere(Vec<u8>), Empty }
+Mar 10 20:40:02 <danieldg>	the push-data transitions Empty->ReaderHere; on Drop it copies and moves to OnlyDataHere
+Mar 10 20:40:12 <bertptrs>	I think you have to have the buffer always, to deal with over and underflowing buckets
+Mar 10 20:40:22 <danieldg>	the writer (not poll_read, an actual async read) can do the same
+Mar 10 20:41:24 <danieldg>	if you insist on poll_read and poll_write, it's impossible; if you get async fn read+async fn write, you can use the full enum; one async + one poll is only that direction 'Here'
+Mar 10 20:41:57 <danieldg>	it sounds like you have async write + poll_read right now
+Mar 10 20:42:05 <polychromata{J}>	Yep.
+Mar 10 20:42:11 <polychromata{J}>	Hmmmmm.
+Mar 10 20:42:53 <polychromata{J}>	Alright. Thank you! ^.^
+Mar 10 20:43:07 <danieldg>	and the ChannelState must go in an Arc<Mutex<, with Drop on a guard held by the writer locking the mutex
+Mar 10 20:43:29 <polychromata{J}>	…oh, there /is/ still a mutex involved.
+Mar 10 20:43:32 <danieldg>	yep
+Mar 10 20:43:39 <polychromata{J}>	…that makes sense.
+Mar 10 20:43:51 <danieldg>	atomics aren't good enough for this
+Mar 10 20:44:00 <danieldg>	you need a wait capability
+Mar 10 20:44:17 <polychromata{J}>	Yeah.
+Mar 10 20:58:24 <Vorpal>	I tried the coz profiler (https://github.com/plasma-umass/coz) which seemed interesting, the idea is it that it can find things that won't stand out in other profilers. A pain to set up (bit rotted academic code, had to get various patches from PRs to make it work on modern Arch Linux with modern DWARF-5). But it found something that hadn't been on my radar. It told me that several functions in some [u8] with hex data -> decoded [u8] functions were slow. So I
+Mar 10 20:58:25 <Vorpal>	went ahead and switched out the hex decoding to the faster-hex crate. Runtime went from 287 ms to 268 ms. So it works.
+Mar 10 20:59:17 <Vorpal>	Quite a pain to manually add "progress points" etc to the code, and set it up as a looping thing.
+Mar 10 20:59:43 <capitol>	this sounds like a nice blog post :)
+Mar 10 21:00:04 <nullie>	Vorpal: is it even statistically significant improvement?
+Mar 10 21:01:26 <Vorpal>	nullie: yes it is. My stdev is ~4 ms according to hyperfine
+Mar 10 21:01:37 <Vorpal>	so 20 ms is well outside that
+Mar 10 21:02:46 <Vorpal>	nullie: I'm writing a command line program that runs quite quickly (in this configuration, where it trust filesystem mtimes, when it check checksums this would not be statistically significant)
+Mar 10 21:02:52 <nullie>	so less than required for declaring disovery?
+Mar 10 21:02:53 <Vorpal>	https://github.com/vorpalblade/paketkoll in case you are interested
+Mar 10 21:04:53 <Vorpal>	nullie: it is a repeatable improvement that is outside noise. If I rerun the hyperfine I get the same result. A single hyperfine run is indeed not 5 sigma as in science. But repeatability (across two different computers) I believe improves on that. Not sure how to do the maths on that though.
+Mar 10 21:06:37 <Vorpal>	I also make sure to vary the test order between old and new (to try to minimise effects that are temporal such as CPU boost). I turn off as much CPU boosting and clock frequency scaling that I can in Linux also.
+Mar 10 21:43:19 <polychromata{J}>	How do you lock an async mutex in a poll method?
+Mar 10 21:43:27 <polychromata{J}>	tokio::sync::Mutex doesn't have a poll_lock()
+Mar 10 21:43:51 <polychromata{J}>	Does the lock() future cancel the lock attempt if you drop it?
+Mar 10 21:44:23 <polychromata{J}>	Do i…poll it, pass the context through, and then forget the future if it wasn't ready? that seems like a bad idea
+Mar 10 21:46:11 <polychromata{J}>	There's an issue on the futures repo that was closed as a duplicate of another issue…which added `lock_owned()`? But i don't see how Arc<Mutex> vs &Mutex helps; there's still no poll_lock()
+Mar 10 21:46:51 <danieldg>	polychromata{J}: don't use an async mutex for this
+Mar 10 21:47:03 <danieldg>	use a *normal* mutex
+Mar 10 21:47:20 <polychromata{J}>	And just count on there being low contention?
+Mar 10 21:47:25 <danieldg>	you can't lock an async mutex in drop anyway, and that's also what you need
+Mar 10 21:47:34 <danieldg>	count on? no
+Mar 10 21:48:33 <danieldg>	you only hold the mutex momentarily by the push op, and during memcpy on the read
+Mar 10 21:49:30 <danieldg>	neither of those are long operations, so contention isn't the problem
+Mar 10 21:49:51 <danieldg>	also, only two users, so not much contention
+Mar 10 21:50:36 *	polychromata{J} nods slowly.
+**** BEGIN LOGGING AT Sun Mar 10 23:24:28 2024
+
+Mar 10 23:24:27 *	Now talking on ##rust
+Mar 10 23:24:27 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 10 23:24:27 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 10 23:24:35 <pflanze>	This version of my StringSplit runs cleanly with miri: https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=1f9d4c4353bc997f45ad5c1403409c88
+Mar 10 23:24:51 <pflanze>	It uses another Pin<Box< >> around the whole thing.
+Mar 10 23:25:08 <pflanze>	I don't see a good reason for that need, though.
+Mar 10 23:26:13 <danieldg>	agreed, that seems unneeded
+Mar 10 23:29:31 <pflanze>	Actually, none of the Pin:s are needed now.
+Mar 10 23:29:56 <pflanze>	miri is happy with just the outer Box. I guess that might change if I move it around outside, though.
+Mar 10 23:30:10 <danieldg>	the outer box isn't needed either
+Mar 10 23:30:21 <Widdershins>	i think it might be
+Mar 10 23:30:32 <Widdershins>	hmmm
+Mar 10 23:30:34 <danieldg>	why?  Other than being a miri limitation
+Mar 10 23:31:03 <Widdershins>	mostly that, miri gets pissy about pointer tagging
+Mar 10 23:31:23 <danieldg>	ok? That's not used here
+Mar 10 23:31:24 <Widdershins>	i think it isn't effectively different with it

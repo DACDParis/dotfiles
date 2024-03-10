@@ -1666,3 +1666,776 @@ Mar 06 07:16:31 *	Channel #MacOSX url: https://osxwiki.net/
 Mar 06 11:41:57 <deepy>	17.4 had a serious security update
 Mar 06 12:56:55 <MacinMan>	How's it going ?
 Mar 06 12:57:13 <swift110-mobile>	Deepy oh ok
+**** BEGIN LOGGING AT Wed Mar  6 13:29:43 2024
+
+Mar 06 13:29:41 *	Now talking on #MacOSX
+Mar 06 13:29:41 *	Topic for #MacOSX is:  Sonoma 14.3.1 (23D60) - Ventura 13.6.4 (22G513) - Monterey 12.7.3 (21H1015) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 06 13:29:41 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Feb  8 19:55:12 2024)
+Mar 06 13:29:41 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 06 13:29:41 *	Channel #MacOSX url: https://osxwiki.net/
+Mar 06 15:13:55 *	ChanServ gives channel operator status to cirrusbonsai
+Mar 06 17:19:59 <jaybe>	swift110-mobile: getting pwnt is a pretty compelling reason. update.
+Mar 06 17:31:25 <jaybe>	"VMware released a security advisory to address multiple vulnerabilities in ESXi, Workstation, Fusion, and Cloud Foundation. A cyber threat actor could exploit one of these vulnerabilities to take control of an affected system."
+Mar 06 17:38:00 <swift110-mobile>	jaybe: thanks
+Mar 06 18:01:12 *	ChanServ gives channel operator status to cirrusbonsai
+Mar 06 18:05:06 <jaybe>	now it all makes sense how it can happen… lol… (watch on a mac!) ~ https://www.reddit.com/r/gifs/comments/1b7tbir/expert_witness_in_rust_shooting_trial_points/
+Mar 06 19:55:07 <MacinMan>	Hey all, was simply curious. Since edge is now chromium. Based is there a reason to use it on a Mac over google chrome?  I just wondered if I reinstalled it what it will actually offer over chrome.
+Mar 06 20:04:16 <Cpuroast>	nothing
+Mar 06 20:04:55 <MacinMan>	I wasn't sure if MS added anything specific that's why I was asking. When I used it before it just seemed like chrome with a different theme and name
+Mar 06 20:06:18 <Ferris>	only if you're a webdev and manually testing browsers
+Mar 06 20:07:29 <MacinMan>	Ferris: I had installed it a few years ago when it first came to the Mac to try it and it didn't seem anything special so I just didn't use it much after that. After cleaning my system and starting fresh I had considered putting it back on. Although, now I don't think I need to
+Mar 06 20:07:51 <MacinMan>	I have Firefox chrome and safari which I think is enough for browser coverage 
+Mar 06 20:07:59 <Ferris>	yeah it's junk 
+Mar 06 20:08:30 <Ferris>	rather, it's leaps and bounds better than Internet Explorer ever was, but still not necessary
+Mar 06 20:09:33 <MacinMan>	Ferris: that was my other question does the new edge guarantee IE compatibility with sites that require it over the others or is IE compatibility not really an issue anymore ?
+Mar 06 20:10:26 <Ferris>	Our group doesn't bother with IE anymore
+Mar 06 20:10:27 <MacinMan>	I took basic web dev years ago but I'm sure what I learned is obsolete now
+Mar 06 20:11:01 <Ferris>	the last time I dealt with it was at an internship and the Intranet site required IE6 and nothing else, but that was 10 years ago and it was already archaic back then for that kind of requirement
+Mar 06 20:11:02 <MacinMan>	I guess the only thing that wouldn't be obsolete is the HTML code I learned
+Mar 06 20:11:42 <MacinMan>	I learned to use tools like front page 2000 as I learned on windows and not the mac
+Mar 06 20:14:04 <Ferris>	eek
+Mar 06 20:15:09 <Ferris>	There's a small movement of webdevs who are advocating for making the web light again, no huge JS libraries sent to the client, no huge PHP backends generating (or hopefully caching) pages at each request
+Mar 06 20:15:10 <MacinMan>	Well that was before I got into Mac OS X. It either had just come out was was being developed   I had a blue and white G3, or some other PPC and classic
+Mar 06 20:15:33 <Ferris>	just simple HTML with a little bit of simple JS or PHP as needed
+Mar 06 20:15:43 <Ferris>	no crazy CSS 
+Mar 06 20:15:51 <MacinMan>	I learned simple HTML as well
+Mar 06 20:16:04 <MacinMan>	That's why I was saying I doubt that part is obsolete
+Mar 06 20:18:15 <Ferris>	The HTML spec has largely only expanded and not really deprecated stuff. I know <center> was all the rage for a while and that has fallen out of favor and browsers will secretly complain, but it's still supported lol
+Mar 06 20:18:25 <Ferris>	for example
+Mar 06 20:18:44 <jaybe>	<blink>ftw</blink>
+Mar 06 20:19:35 <MacinMan>	I know the <head></head> <body></body> etc
+Mar 06 20:20:49 <jaybe>	<🕸️>Hello, World!</🕸️>
+Mar 06 20:21:24 <jaybe>	if one is going to get ones head involved,. the body  must also be involved ;)
+Mar 06 20:21:42 <Ferris>	lol jaybe, nano did not like those webs http://midspin.net/test/center.html
+Mar 06 20:22:12 *	jaybe pets its environment of utf-8-compliant goodness
+Mar 06 20:22:33 <jaybe>	Ferris: i am pleased someone is using nano for irc 💥 
+Mar 06 20:22:44 <MacinMan>	I remember Mac OS  x used to come with Apache, but I think they took it out right?
+Mar 06 20:23:06 <Ferris>	lol not for IRC, but to make http://midspin.net/test/center.html 
+Mar 06 20:23:12 <Ferris>	yeah MacinMan 
+Mar 06 20:23:14 <jaybe>	ah lolol
+Mar 06 20:23:32 <jaybe>	you almost earned cool points for nano-irc'ing
+Mar 06 20:23:41 <Ferris>	That'd be a trick
+Mar 06 20:23:49 <Ferris>	I use nano to open irc logs if that counts
+Mar 06 20:23:59 <jaybe>	the points aren’t real and are often stale and smell of teenager pockets though
+Mar 06 20:24:17 <jaybe>	`multitail` ftw
+Mar 06 20:24:26 <Ferris>	when I was a teenager I had a walkie talkie in one pocket and a calculator in the other
+Mar 06 20:24:52 <Ferris>	I hate when I'm using someone else's docker thingy and it doesn't have nano or multitail installed. are they monsters?
+Mar 06 20:25:05 <jaybe>	ew cavepeople
+Mar 06 20:31:46 <jaybe>	Ferris: for the toolbox and those docker bulges ~ https://www.instagram.com/reel/C2-dZ7FO7VN/?igsh=NTc4MTIwNjQ2YQ%3D%3D
+Mar 06 20:38:08 <Ferris>	yes 
+Mar 06 20:38:13 <Ferris>	yes exactly
+Mar 06 20:39:15 <Ferris>	Is this number even or odd? let me build a docker that pulls a 30mb js library and then run it in a nodejs server 
+Mar 06 20:39:28 *	jaybe 🤮 
+Mar 06 20:39:45 <jaybe>	i have 'no js' clauses is some contracts haha
+Mar 06 20:39:47 <EgonX>	It's only not funny because it's true
+Mar 06 20:39:52 <MacinMan>	Poor little jaybe ;)
+Mar 06 20:40:25 <jaybe>	MacinMan: no idea what you’re referring to, but 'thanks'?
+Mar 06 20:40:37 <jaybe>	poor little demntiaman lol
+Mar 06 20:40:40 <MacinMan>	I was referring to your emoji
+Mar 06 20:40:53 <jaybe>	vomiting about .js is nothing negative
+Mar 06 20:41:00 <jaybe>	it’s a celebration of commonsense
+Mar 06 20:41:06 <EgonX>	LOL
+Mar 06 20:50:12 *	jaybe ℹ️ "Apple terminates Epic Games developer account, calling it a 'threat' to iOS (techcrunch.com)"
+Mar 06 20:55:47 *	setnan .oO(is it a joke ? o_0 seems not)
+Mar 06 20:58:14 <setnan>	(i dont have techcrunch account) ok, https://www.epicgames.com/site/en-US/news/apple-terminated-epic-s-developer-account
+Mar 06 21:04:33 <MacinMan>	I'm still finding the occasional thing to update my payment info on. Think I got them all now
+Mar 06 21:07:41 <MacinMan>	Question, when a debit / credit card expires in a particular month does it usually mean the end of the month? It usually doesn't give a day. Just the month / year
+Mar 06 21:08:33 <Cpuroast>	does it matter?
+Mar 06 21:08:45 <Cpuroast>	you usually get your replacement way before it actually experires
+Mar 06 21:08:47 <Cpuroast>	expires
+Mar 06 21:08:53 <MacinMan>	I ask because my old debit card I removed from payment info showed expiring soon, not expired.  Not really. I was just curious 
+Mar 06 21:09:30 <MacinMan>	Cpuroast: in this case I changed banks so I entered a whole new set of card info
+Mar 06 21:09:38 <Cpuroast>	right
+Mar 06 21:09:42 <MacinMan>	So I'm good to go
+Mar 06 21:10:42 <MacinMan>	I do have the updated card from the old bank too though, but that card will also be dead once I close that account next month once all my deposits are known to be in the new account
+Mar 06 21:11:15 <NDPMacBook>	I'm in one of those cool quite pods in the Cambridge Library right now.
+Mar 06 21:11:18 <MacinMan>	Zelle is a handy tool 
+Mar 06 21:16:03 <MacinMan>	Cpuroast: here is a different question. Is there any reason why a single person should have multiple checking accounts? e.g. would there be any benefit for me keeping both accounts?
+Mar 06 21:16:26 <swift110-mobile>	NDPMacBook: Cambridge mass or England?
+Mar 06 21:16:46 <Cpuroast>	don't have to, but there's nothing inherently from with having more than 1 
+Mar 06 21:17:19 <NDPMacBook>	swift110-mobile: Mass-Ah-CHOOOO-ZITZ
+Mar 06 21:18:38 <swift110-mobile>	NDPMacBook: that’s cool I go to libraries in dc and will reserve rooms
+Mar 06 21:19:15 <NDPMacBook>	I have to help someone via Mac Screen share so that means talking to them. Otherwise I wouldn't need a private room.
+Mar 06 21:19:45 <swift110-mobile>	Understood
+Mar 06 21:20:27 <swift110-mobile>	It’s a shame that even in a library quiet spaces are the exception rather than the norm
+Mar 06 21:23:27 <NDPMacBook>	Well with noise cancelling headsets its not such a big deal.
+Mar 06 21:23:35 <NDPMacBook>	And libraries have to evolve to survive.
+Mar 06 21:23:39 <swift110-mobile>	That’s cool but it’s still annoying
+Mar 06 21:23:55 <NDPMacBook>	I think its charming to hear conversations (quiet on the first floor) and toddlers running around (in their own section in the larger branches).
+Mar 06 21:25:01 <swift110-mobile>	Yes it’s good to have a separate area for kids that’s for sure. It’s just that I was taught to be polite to others and not make unnecessary noise while indoors
+Mar 06 21:25:26 <swift110-mobile>	So for me it’s common courtesy which sadly isn’t so common anymore
+Mar 06 21:25:50 <NDPMacBook>	I hear you.
+Mar 06 21:25:55 <NDPMacBook>	I'm as quiet as a church mouse most of the time.
+Mar 06 21:26:09 <swift110-mobile>	That’s cool
+Mar 06 21:26:57 <swift110-mobile>	Just last week I had a study room at a library and two teen girls were in the room next to me making lots of noise sitting in the dark
+Mar 06 21:27:29 <swift110-mobile>	You want to hang out? Fine, but not when you are disturbing people in a study room
+Mar 06 21:27:52 <MacinMan>	swift110-mobile: NDPMacBook is quiet unless frustrated then he does this: https://www.youtube.com/shorts/4K7oORA_adM ;)
+Mar 06 21:27:54 <NDPMacBook>	Yeah I certainly hear that.
+Mar 06 21:28:14 <NDPMacBook>	MacinMan: lol
+Mar 06 21:28:38 <swift110-mobile>	lol
+**** BEGIN LOGGING AT Wed Mar  6 21:44:03 2024
+
+Mar 06 21:44:02 *	Now talking on #MacOSX
+Mar 06 21:44:02 *	Topic for #MacOSX is:  Sonoma 14.3.1 (23D60) - Ventura 13.6.4 (22G513) - Monterey 12.7.3 (21H1015) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 06 21:44:02 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Feb  8 19:55:12 2024)
+Mar 06 21:44:02 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 06 21:44:02 *	Channel #MacOSX url: https://osxwiki.net/
+Mar 06 21:48:01 *	ChanServ gives channel operator status to Cpuroast_
+Mar 06 22:02:23 <jaybe>	Hehe
+Mar 06 22:22:51 <delay>	How retarded is the apple site? I click to change the location to change the language and it does nothing
+Mar 06 22:22:53 <delay>	thanks a lot for this retardation
+Mar 06 22:25:01 <delay>	I have a laptop with these configs
+Mar 06 22:25:02 <delay>	2.5 GHz Quad-Core Intel Core i7
+Mar 06 22:25:06 <delay>	16 GB 1600 MHz DDR3
+Mar 06 22:25:12 <delay>	Intel Iris Pro 1536 MB
+Mar 06 22:26:00 <delay>	Result: MacOS Sonoma is not suggested as a updated and I will need to use MacOS Monterey until the battery dies and the computer starts to frequently crash without warnings, like it happened to my previous mac
+Mar 06 22:26:20 <delay>	also these batteries suck so much
+Mar 06 22:26:44 <delay>	electric cars are a joke if their batteries work like mac's batteries
+Mar 06 22:27:51 <delay>	I don't even know why they keep making laptops with batteries
+Mar 06 22:27:54 <delay>	they last maybe 1 year
+Mar 06 22:27:57 <delay>	it's a joke
+Mar 06 22:28:06 <delay>	better just to always use the plug
+Mar 06 22:39:23 <utterer>	i don’t think retarded is the right terminology to use
+Mar 06 22:41:12 <NDPMacBook>	swift110-mobile: lol now I'm near some teens who are so loud I can hear them over my noise cancelling.
+Mar 06 22:41:38 <MacinMan>	Be back later, have a good one
+Mar 06 22:43:11 <Brains>	delay: Laptop batteries are fine if they're treated correctly. Unfortunately, prior to the T2 appearing that meant *not* leaving your MacBook plugged into the charger all the time. And Sonoma requires Intel+T2 as minimum.
+Mar 06 22:43:39 <Brains>	You want to stay current, get rid of that Int-hell antique.
+Mar 06 22:44:02 <delay>	I don't even know if I can switch to the m1 chip
+Mar 06 22:44:07 <delay>	also how much does it cost
+Mar 06 22:44:16 <delay>	maybe it's almost better to buy a news laptop
+Mar 06 22:44:59 <Brains>	M2 MacBook Air can be had for as little as US$799 at the moment. There's only another year (maybe two) of Intel support in new macOS anyway.
+Mar 06 22:45:24 <delay>	well what i would first need it to replace the battery
+Mar 06 22:45:31 <delay>	how much does it cost to switch it
+Mar 06 22:45:33 <Cpuroast>	Brains: I disagree, Sonoma runs on the 2019 iMac, which does not have a T2 :)
+Mar 06 22:45:45 <jaybe>	hehe
+Mar 06 22:45:51 <Brains>	I know, ROasty, its an exception, we're talking laptops here ;)
+Mar 06 22:45:52 *	jaybe 🥁💥💦 
+Mar 06 22:45:59 <Cpuroast>	Brains: ok :)
+Mar 06 22:46:07 <jaybe>	Cpuroast: way to be ready though! ;)
+Mar 06 22:46:13 <delay>	I also have an older macbook that sometimes suddently switches off
+Mar 06 22:46:15 <delay>	any idea?
+Mar 06 22:46:20 <delay>	maybe the cpu is dead?
+Mar 06 22:46:33 <Brains>	delay: Switch what? THe battery in your existing laptop? THat's going to depend on exactly which one you have.
+Mar 06 22:46:34 <delay>	I don't know if this is due to a crash
+Mar 06 22:46:37 <delay>	the battery
+Mar 06 22:46:39 <delay>	I have no idea
+Mar 06 22:47:10 <delay>	I mean I have an older laptop sometimes just dies
+Mar 06 22:47:16 <delay>	it often happens
+Mar 06 22:47:17 <Brains>	No, the suddenly-turning-off isn't a CPU problem nor a battery problem, its a heat and/or age problem. 
+Mar 06 22:47:20 <delay>	I don't know why
+Mar 06 22:47:37 <delay>	age problem
+Mar 06 22:47:44 <Brains>	Again, I could tell you exactly why if I knew what machine it was.
+Mar 06 22:47:49 <delay>	yes I've observed that mac books were meant to last only 3-4 years
+Mar 06 22:47:52 <delay>	then they are dead
+Mar 06 22:48:16 <Brains>	Then you're not treating them very nicely, because eight years is how long most MacBooks last.
+Mar 06 22:48:18 *	Cpuroast looks at his mid-2012 macbook pro still running strong :)
+Mar 06 22:48:21 <delay>	You can tell me exactly?
+Mar 06 22:48:42 <delay>	The macbook pro I want to switch the battery from is the one I've given you the specification of above
+Mar 06 22:48:45 <Brains>	Every model has quirks that appear over time, and with over thirty years as an Apple tech, I know most of them :)
+Mar 06 22:48:54 <delay>	MacBook Pro (Retina, 15-inch, Mid 2015)
+Mar 06 22:49:12 <jaybe>	mbp last so long
+Mar 06 22:49:18 <Brains>	That's better. Specs don't matter as much.
+Mar 06 22:49:45 <jaybe>	kept a 2009 mbp for 10 years .sold it for ~600US at the time **right** before m1 breached ;)
+Mar 06 22:50:06 <Brains>	And that's nine years old. The battery is bonded to the topcase. There's also an official battery recall program for the 2015 15in.
+Mar 06 22:50:22 <jaybe>	easy to read about it and participate adn taek advantage
+Mar 06 22:50:29 <delay>	well but this one is from 2017
+Mar 06 22:50:31 <delay>	actually
+Mar 06 22:50:37 <delay>	I don't know why it says mid 2015
+Mar 06 22:50:41 <delay>	it's just the model year
+Mar 06 22:50:42 <Brains>	Because that's what it is.
+Mar 06 22:50:43 <delay>	I suppose
+Mar 06 22:50:52 <delay>	but this was new in 2017
+Mar 06 22:50:58 <Brains>	To you, maybe.
+Mar 06 22:51:07 <Brains>	THey stopped making them in late 2016.
+Mar 06 22:51:22 <jaybe>	i bought a new watering can in 2009 and it was brand new then
+Mar 06 22:51:25 <delay>	maybe they stopped making them, but it was new in the box
+Mar 06 22:51:31 <Brains>	So its eight, so it is near end of life anyway.
+Mar 06 22:51:32 <jaybe>	today is not new because it is not 2009 any longer
+Mar 06 22:52:24 <delay>	mine has almost 7 years
+Mar 06 22:52:26 <Brains>	delay: See if your machine qualifies. https://support.apple.com/15-inch-macbook-pro-battery-recall
+Mar 06 22:52:36 <delay>	and the battery does not last more than 15-30 minutes
+Mar 06 22:52:53 <jaybe>	that may indicate a problematic problem
+Mar 06 22:53:01 <jaybe>	that is unusual and unexpected behavior
+Mar 06 22:53:15 <Brains>	If your machine does not qualify, get rid of it, as it is not worth spending any more money on.
+Mar 06 22:53:46 <delay>	ok, thanks I will check that
+Mar 06 22:53:51 <delay>	how much do ur batteries last?
+Mar 06 22:53:53 <delay>	usually
+Mar 06 22:54:03 <delay>	i mean it clearly depends on how you're using ur laptop
+Mar 06 22:54:15 <jaybe>	easily couple days
+Mar 06 22:54:21 <delay>	wtf
+Mar 06 22:54:23 <delay>	really?
+Mar 06 22:54:32 <delay>	without having it plugged in?
+Mar 06 22:54:41 <Brains>	Joys of Apple silicon.
+Mar 06 22:54:53 <jaybe>	man those follow up questions hurt
+Mar 06 22:54:54 <delay>	and do u use it everyday?
+Mar 06 22:55:06 <jaybe>	they don’t hurt so much as they are cringe
+Mar 06 22:55:08 <delay>	well, I've used an m1 too for work and they don't last much, but it wasn't new
+Mar 06 22:55:18 <jaybe>	hope your day improves
+Mar 06 22:55:23 <Brains>	Getting two or three ten-hour working days off a single charge is not uncommon.
+Mar 06 22:55:36 <jaybe>	i pay attention to power usage however so i’m probably 'uncommon
+Mar 06 22:56:03 <jaybe>	i.e. display brightness, running applications, connected sockets/services, etc. while mobile… for… battery reasons
+Mar 06 22:56:18 <delay>	you're saying that you can work for 3 days, each day for 10 hours, without charging it?
+Mar 06 22:56:21 <jaybe>	macos provides for functioning in that performant lane if interested and willing
+Mar 06 22:56:41 <Brains>	Most folk, though, will get a whole day off a charge. Unplug from the charger for breakfast, surf-n-work all day & evening, plug in charger before bead, rinse repeat.
+Mar 06 22:57:13 <delay>	so what are your recommendations for battery life improvement?
+Mar 06 22:57:14 <Brains>	Yes, multiple days per charge with an Apple silicon MacBook is very possible.
+Mar 06 22:57:25 <Brains>	Getting rid of Intel, for starters :)
+Mar 06 22:57:32 <jaybe>	and if i chose to watch media, use heavy radio bandwidth (wifi), compile giant things all day, etc. then i wouldn’t do that on a battery in the first place, nor expect it out of it
+Mar 06 22:57:39 <delay>	well I recently used an m1 for work and it didn't last 1 day
+Mar 06 22:57:49 <delay>	but I do some calculations during the day
+Mar 06 22:57:54 <delay>	and I have many apps opened, often
+Mar 06 22:57:55 <jaybe>	doing 'work' "all day" would use a battery
+Mar 06 22:58:01 <jaybe>	common sense
+Mar 06 22:58:01 <delay>	so it's not the best for the battery, I suppose
+Mar 06 22:58:37 <Brains>	Single biggest power-saving tip with ASi Macs - don't use Chromium-based browsers, don't run Intel-only software that relies on Rosetta2.
+Mar 06 22:58:44 <delay>	well, ideally, I'd like to work a entire day without having to recharge
+Mar 06 22:58:46 <jaybe>	(and screen brightness)
+Mar 06 22:58:58 <jaybe>	then get a wheelbarrow and a car battery
+Mar 06 22:59:02 <delay>	so batteries should last at least 18 hours (say 6 for sleeping) without needing to be recharged
+Mar 06 22:59:11 <jaybe>	they can
+Mar 06 22:59:12 <jaybe>	and do
+Mar 06 22:59:26 <Brains>	*nods* Screen is the single-most greediest power consumer on ASi laptops, wifi is second, SoC is third.
+Mar 06 22:59:43 <jaybe>	light is bright is lack of night 
+Mar 06 22:59:52 <delay>	well I've been using chrome for a long time
+Mar 06 22:59:57 <delay>	why do u say that?
+Mar 06 22:59:59 <jaybe>	and expensive light when alone at night
+Mar 06 23:00:00 <delay>	any evidence?
+Mar 06 23:00:03 <Brains>	Because Chrome is shit?
+Mar 06 23:00:17 <jaybe>	chrime is ripe for the slaughtering but no one would want to eat any of it
+Mar 06 23:00:19 <Brains>	It is horrendously inefficient, code-wise.
+Mar 06 23:00:41 <delay>	it's not slow
+Mar 06 23:00:45 <jaybe>	hog
+Mar 06 23:00:48 <jaybe>	bloated sick hog
+Mar 06 23:00:54 <delay>	so what do u use?
+Mar 06 23:01:04 <jaybe>	a bloated sick hog that has learned to acquire and huff paint
+Mar 06 23:01:16 <delay>	I want to switch to a browser with more privacy and security features
+Mar 06 23:01:17 <jaybe>	safari comes with macos and is performant and compliments the hardware via software 
+Mar 06 23:01:19 <delay>	tor is too slow
+Mar 06 23:01:25 <Brains>	Its a bloaty CPU hog. Its fast the same way a mile-per-gallon drag racer is fast.
+Mar 06 23:01:42 <jaybe>	Brains: you’re being too kind :p
+Mar 06 23:02:00 <Brains>	:p
+Mar 06 23:03:06 <Brains>	Chromium is a CPU-pig no matter what platform it runs on, but its really greedy on macOS (no matter what architecture) because it brings along its own way of doing things that the OS would normally handle.
+Mar 06 23:03:33 <jaybe>	and brings its dirty filthy background friend along with it
+Mar 06 23:03:41 <jaybe>	s/friends
+Mar 06 23:03:47 <Brains>	Fucking Google Keystone. Fucking.
+Mar 06 23:04:30 <Brains>	Safari first, Firefox a distant second choice if you require more control over your browsing experience.
+Mar 06 23:04:56 <Brains>	I will never, ever, use anything based on Chromium.
+Mar 06 23:05:11 *	Brains thinks GoogleTaint™ is nasty
+Mar 06 23:05:14 <delay>	I used to use safari back in the day, but I don't know, I got used to this chrome
+Mar 06 23:05:24 <delay>	cuz maybe I also used it in the windows back in the day
+Mar 06 23:05:28 <delay>	but now I uses edge
+Mar 06 23:05:33 <jaybe>	people get used to consumption and misery
+Mar 06 23:05:35 <Brains>	Which is Chromium.
+Mar 06 23:05:40 <delay>	lol
+Mar 06 23:05:41 <jaybe>	best to get used to getting used to something less icky
+Mar 06 23:06:00 <delay>	edge is pretty too good i'd say
+Mar 06 23:06:15 <delay>	it's fast
+Mar 06 23:06:32 <delay>	maybe I'll switch to safari on the mac
+Mar 06 23:06:42 <jaybe>	don’t have to 'switch'
+Mar 06 23:06:57 <jaybe>	consider using safari on macos next time you use it. browse. be spider like. webby.
+Mar 06 23:07:21 <jaybe>	if it works, know it will be most performant with macos and its hardware
+Mar 06 23:08:23 <Brains>	https://qph.cf2.quoracdn.net/main-qimg-4a788e61a58847192471e4bc833b74e4
+Mar 06 23:09:24 <Brains>	better link: https://pbs.twimg.com/media/FvayhJNaYAEMsFJ.jpg
+Mar 06 23:09:39 <jaybe>	haha
+Mar 06 23:11:28 <delay>	so does that mean that you like firefox?
+Mar 06 23:11:42 <delay>	I've also tried it in the past, btw
+Mar 06 23:12:08 <delay>	but I must tell you, edge has nothing to do with IE
+Mar 06 23:12:11 <jaybe>	the fox is also obese and bloated however would be my first choice for a second-opinoin browser
+Mar 06 23:12:14 <delay>	only the company
+Mar 06 23:12:16 <delay>	that developed it
+Mar 06 23:17:55 <Brains>	Edge was initially its own browser & own engine when Microsoft first released it for Windows. Then they decided it was too much effort, swallowed a handful of Fukitol pills and wrapped their own skin around a Chromium engine.
+Mar 06 23:18:44 <nebiros>	Brains: I think the only one that doesn't use chromium these days is firefox, :\
+Mar 06 23:18:53 <Brains>	I'm quite happy with Firefox, and even happier with its fork Pale Moon.
+Mar 06 23:19:24 <Brains>	jaybe: https://pbs.twimg.com/media/GH-1s-MbIAAZy0D.jpg
+Mar 06 23:20:03 <nebiros>	Brains: works well on macOS?, cause last time I was using firefox it was eating lots of resources, :(
+Mar 06 23:20:48 *	jaybe lols - ultimately Brains - yup
+Mar 06 23:21:23 <Brains>	nebiros: Its still greedy, but its not a battery glutton like Chrime.
+Mar 06 23:22:10 <Brains>	Speed (specifically the lack thereof) doesn't concern me these days. *pats his little Core i5 2c2t MBA web-machine*
+Mar 06 23:22:35 <jaybe>	i still sometimes often never email my url
+Mar 06 23:22:44 <Brains>	The year is 2026: After losing Jony Ive, Evans Hankey & many other design heavyweights, Apple hired Breville's designer of the toasted sandwich grill to head up their next laptop project. https://pbs.twimg.com/media/GH4gUNqXoAADOsk.jpg
+Mar 06 23:25:37 <nebiros>	bn_work: looks correct
+Mar 06 23:25:41 <nebiros>	erhj
+Mar 06 23:29:44 <NDPMacBook>	I believe a sausage dog, or two is in order for dinner tonight.
+Mar 06 23:29:55 <delay>	I didn't know edge was built on top of chromium
+Mar 06 23:30:05 <delay>	but it actually feels faster than chrome
+Mar 06 23:30:26 <delay>	maybe it's because I use chrome on this dying mac
+Mar 06 23:30:36 <delay>	while I use edge of my pc, which is newer and more powerful
+Mar 06 23:30:47 <delay>	I should try edge on the mac
+Mar 06 23:30:50 <delay>	just to check
+Mar 06 23:30:54 <delay>	or chrome on the pc
+Mar 06 23:40:14 <swift110-mobile>	Hmm
+**** ENDING LOGGING AT Wed Mar  6 23:44:24 2024
+
+**** BEGIN LOGGING AT Thu Mar  7 02:18:47 2024
+
+Mar 07 02:18:44 *	Now talking on #MacOSX
+Mar 07 02:18:44 *	Topic for #MacOSX is:  Sonoma 14.3.1 (23D60) - Ventura 13.6.4 (22G513) - Monterey 12.7.3 (21H1015) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 07 02:18:44 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Feb  8 19:55:12 2024)
+Mar 07 02:18:44 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 07 02:18:44 *	Channel #MacOSX url: https://osxwiki.net/
+Mar 07 03:07:43 <jaybe>	swift110-mobile: Finder -> Video Files
+Mar 07 04:37:27 <swift110-mobile>	jaybe: I said iPad
+Mar 07 05:34:52 <jaybe>	swift110-mobile: oh; shrug. open video, or movies or whatever is on the ipad and see the videos?
+Mar 07 05:38:02 <jaybe>	plug it up to a mac and view its video files?
+**** BEGIN LOGGING AT Thu Mar  7 05:39:14 2024
+
+Mar 07 05:39:13 *	Now talking on #MacOSX
+Mar 07 05:39:13 *	Topic for #MacOSX is:  Sonoma 14.3.1 (23D60) - Ventura 13.6.4 (22G513) - Monterey 12.7.3 (21H1015) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 07 05:39:13 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Feb  8 19:55:12 2024)
+Mar 07 05:39:13 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 07 05:39:13 *	Channel #MacOSX url: https://osxwiki.net/
+**** BEGIN LOGGING AT Thu Mar  7 05:53:08 2024
+
+Mar 07 05:53:08 *	Now talking on #MacOSX
+Mar 07 05:53:08 *	Topic for #MacOSX is:  Sonoma 14.3.1 (23D60) - Ventura 13.6.4 (22G513) - Monterey 12.7.3 (21H1015) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 07 05:53:08 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Feb  8 19:55:12 2024)
+Mar 07 05:53:08 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 07 05:53:08 *	Channel #MacOSX url: https://osxwiki.net/
+**** BEGIN LOGGING AT Thu Mar  7 06:46:02 2024
+
+Mar 07 06:46:01 *	Now talking on #MacOSX
+Mar 07 06:46:01 *	Topic for #MacOSX is:  Sonoma 14.3.1 (23D60) - Ventura 13.6.4 (22G513) - Monterey 12.7.3 (21H1015) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 07 06:46:01 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Feb  8 19:55:12 2024)
+Mar 07 06:46:01 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 07 06:46:01 *	Channel #MacOSX url: https://osxwiki.net/
+Mar 07 06:52:52 <swift110-mobile>	Ok thanks
+**** BEGIN LOGGING AT Thu Mar  7 11:45:31 2024
+
+Mar 07 11:45:29 *	Now talking on #MacOSX
+Mar 07 11:45:29 *	Topic for #MacOSX is:  Sonoma 14.3.1 (23D60) - Ventura 13.6.4 (22G513) - Monterey 12.7.3 (21H1015) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 07 11:45:29 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Feb  8 19:55:12 2024)
+Mar 07 11:45:29 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 07 11:45:29 *	Channel #MacOSX url: https://osxwiki.net/
+Mar 07 11:49:51 <swift110-mobile>	Ok
+**** BEGIN LOGGING AT Thu Mar  7 12:26:51 2024
+
+Mar 07 12:26:50 *	Now talking on #MacOSX
+Mar 07 12:26:50 *	Topic for #MacOSX is:  Sonoma 14.3.1 (23D60) - Ventura 13.6.4 (22G513) - Monterey 12.7.3 (21H1015) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 07 12:26:50 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Feb  8 19:55:12 2024)
+Mar 07 12:26:50 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 07 12:26:50 *	Channel #MacOSX url: https://osxwiki.net/
+Mar 07 12:34:55 <maccampus>	Looking for someone with good Mac Hardware troubleshoot Knowledge
+Mar 07 12:35:49 <maccampus>	I hve here a Macbook Air which seems to have a broken screen or graph card
+**** BEGIN LOGGING AT Thu Mar  7 12:39:51 2024
+
+Mar 07 12:39:50 *	Now talking on #MacOSX
+Mar 07 12:39:50 *	Topic for #MacOSX is:  Sonoma 14.3.1 (23D60) - Ventura 13.6.4 (22G513) - Monterey 12.7.3 (21H1015) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 07 12:39:50 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Feb  8 19:55:12 2024)
+Mar 07 12:39:50 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 07 12:39:50 *	Channel #MacOSX url: https://osxwiki.net/
+Mar 07 12:41:28 <maccampus>	To get acces to the Data volume i needed a pasword, i asked the user how does not remembered his user pasword but send me a list of posibilities & the one i needed was there. Will this also be his user account pasword ? 
+Mar 07 14:03:11 <MacinMan>	How's it going ?  I just finished purging my iMessage history from iCloud it had built up quite a bit so wanted to clean it and start fresh
+**** BEGIN LOGGING AT Thu Mar  7 14:15:49 2024
+
+Mar 07 14:15:48 *	Now talking on #MacOSX
+Mar 07 14:15:48 *	Topic for #MacOSX is:  Sonoma 14.3.1 (23D60) - Ventura 13.6.4 (22G513) - Monterey 12.7.3 (21H1015) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 07 14:15:48 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Feb  8 19:55:12 2024)
+Mar 07 14:15:48 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 07 14:15:48 *	Channel #MacOSX url: https://osxwiki.net/
+Mar 07 14:59:57 *	ChanServ gives channel operator status to cirrusbonsai
+Mar 07 15:11:09 <fris>	thinking about getting the base model of new air
+Mar 07 15:11:49 <MacinMan>	fris: the new air looks nice as do the current Pros
+Mar 07 15:12:13 <fris>	reallyh only have a max budet of 2000 though
+Mar 07 15:12:28 <fris>	and need/want at least 512gb or 1tb ssd
+Mar 07 15:12:41 <MacinMan>	I will need a new Mac at some point but I really don't know what choice to make right now.  I prefer desktops but a laptop would be portable
+Mar 07 15:13:16 <MacinMan>	Also there is the whole platform concern when it comes to backward compatibility / third party
+Mar 07 15:13:32 <MacinMan>	For macOS by itself a new Mac would be fine.
+Mar 07 15:13:41 <MacinMan>	And modern software as well
+Mar 07 15:14:10 <cirrusbonsai>	i just missed out on an M2 Pro MacMini with 32GB RAM and 1TB SSD for $1600 from the refurb page.
+Mar 07 15:14:38 <cirrusbonsai>	but scope bloat has started and I'm eyeing a Mac Studio now.
+Mar 07 15:15:11 <MacinMan>	cirrusbonsai: the studio looks like a nice mini tower 
+Mar 07 15:16:00 <MacinMan>	Larger than a mini but not huge
+Mar 07 15:16:28 <cirrusbonsai>	M2 Max for $1869... about the same price as the a new MacMini M2 Pro (same RAM and storage specs).
+Mar 07 15:16:56 <MacinMan>	Did they update the mini to M3 yet ?
+Mar 07 15:17:18 <cirrusbonsai>	not yet
+Mar 07 15:18:09 <MacinMan>	I'm also watching for that larger iMac rumored to come as well
+Mar 07 15:18:30 <fris>	MacinMan: i would prob get that
+Mar 07 15:18:30 <MacinMan>	I'm just wondering if I should give up on that rumor
+Mar 07 15:18:36 <fris>	but 24 inch is way to small currently
+Mar 07 15:18:53 <cirrusbonsai>	yeah, the 27" is a nice size
+Mar 07 15:19:21 <fris>	need to check owc used stock for some items, they sent me the pdf yesterday
+Mar 07 15:19:57 <cirrusbonsai>	yeah, that's my next stop.
+Mar 07 15:20:10 <fris>	my friend offered me 1300 for mac mac mini, i bought it for 700 in nov
+Mar 07 15:21:13 <fris>	seems they only have m1 series owc used
+Mar 07 15:21:18 <fris>	at least here in canada
+Mar 07 15:21:22 <MacinMan>	fris: I'm actually fine with my current hardware it's more software I'm concerned about. Open core isn't going to be an option for me as too many things I would want to just work, don't and while Monterey is fine I'm just trying to consider security after it's out of support. Personally I'm not really concerned all that much right now because. I only go to trusted sites, and Chrome and Firefox will continue to receive updates for a while
+Mar 07 15:21:22 <MacinMan>	 and beyond that I just do local stuff. So based on that I don't think I'd have a high security risk sticking with an older os
+Mar 07 15:21:51 <fris>	2013 12 core, 64gb 2tb ssd mac po for 400$ :p
+Mar 07 15:22:17 <fris>	cirrusbonsai: think owc usa has mac studios 
+Mar 07 15:22:44 <utterer>	i have like 5 2013 mac pros collecting dust at the office. failover machines for when the failovers fail lol
+Mar 07 15:23:08 <fris>	decnet machine to pickup if someone just wants to try mac for first time and on budget
+Mar 07 15:23:29 <utterer>	and like 12 mac pro 2. and 3. 1’s that I can’t even give away 
+Mar 07 15:23:31 <MacinMan>	utterer: I've heard the trash can pros had quite a few issues
+Mar 07 15:23:57 <utterer>	i had a few that were under the apple extended warranty for gpu failure
+Mar 07 15:24:33 <MacinMan>	I think Apple did an M series pro didn't they?
+Mar 07 15:24:43 <fris>	Apple M2 chip with 8-core CPU, 10-core GPU, 16-core Neural Engine 24GB memory 2.0TB Solid-State Drive 1749
+Mar 07 15:24:48 <MacinMan>	Is that machine actually pro like the old chase greater ?
+Mar 07 15:24:54 <MacinMan>	Grater 
+Mar 07 15:24:55 <fris>	(air)
+Mar 07 15:25:01 <utterer>	yes it uses the same
+Mar 07 15:25:05 <fris>	MacinMan: no thats the garbage can
+Mar 07 15:25:08 <utterer>	chassis
+Mar 07 15:25:35 <utterer>	the m series pro uses the same chassis and is basically a studio mounted inside it 
+Mar 07 15:25:46 <MacinMan>	oh
+Mar 07 15:26:13 <fris>	owc has a m3 macbook pro with 8gb/512 for 1749, wish it had 16 or 24gb :/
+Mar 07 15:27:27 <fris>	cirrusbonsai: https://eshop.macsales.com/configure-my-mac/apple-mac-studio-apple-silicon-early-2022?sku=UATA1JS4XXXXXXG
+Mar 07 15:27:47 <utterer>	i was thinking of using one of the 2013 pros at home to replace my Mac Mini intel that serves as my Homebridge and Zomboid server but it may be overkill 
+Mar 07 15:28:09 <fris>	my 2018 mini is my current desktop
+Mar 07 15:28:29 <utterer>	yeah the 2018 is my desktop and I have a 2014 is the one above
+Mar 07 15:28:44 <fris>	what specs you got on your 2018
+Mar 07 15:29:12 <fris>	mines the i7 6 core, 64gb, 2tb, 10gbether maxed out version got for 700 in november
+Mar 07 15:29:31 <utterer>	the i5 3ghz, 16GB, 512
+Mar 07 15:30:06 <fris>	no real speeed issues, onlything is if im running vmware fusion and running my windows vm and doing windows updates, u can hear the fans going super loud, but i assume that will happen even with silicon
+Mar 07 15:30:31 <utterer>	I have yet to hear them on my
+Mar 07 15:30:33 <utterer>	MBP
+Mar 07 15:31:17 <MacinMan>	fris: I seem to only get fans on this late 2015 iMac when watching 4K content on Youtube. Other than that, it's pretty quiet
+Mar 07 15:31:39 <fris>	or when chrome goes nuts i hear fans :p
+Mar 07 15:32:22 <utterer>	I keep my mini vertical and I think that caused the ethernet on it to fail. Had to do an AppleCare replacement
+Mar 07 15:32:39 <kferris>	ports down?
+Mar 07 15:33:01 <utterer>	disappeared altogether as if it didn’t exist
+Mar 07 15:33:02 <fris>	have 10gb ethernet, but i dont have a direct ethernet connection :p
+Mar 07 15:33:03 <MacinMan>	fris: Sonoma runs decently in a Fusion VM on this iMac so I might do that for a while. Keep Monterey as the stable host and then just use a vm for stuff that needs a newer version as most of the stuff isn't really intense so works fine in a vm
+Mar 07 15:33:25 <fris>	im on monterey
+Mar 07 15:33:33 <fris>	i can upgrade to sonoma
+Mar 07 15:33:54 <utterer>	the new nas I got has 2.5gb ports. what a weird standard
+Mar 07 15:34:10 <utterer>	quasi-standard
+Mar 07 15:35:35 <MacinMan>	fris: I tried Sonoma with open core legacy patcher and for the most was stable with the exception of certain graphics  related stuff. And honestly I like Monterey better and not a fan of all the changes apple is making to the OS.
+Mar 07 15:35:41 <fris>	well i like total finder and it doesnt work with sonoma (works with ventura) so i could upgrade i guess to that
+Mar 07 15:37:04 <MacinMan>	fris: if I use Ventura, or Sonoma on this iMac by Open Core I would lose 3D acceleration in VMs and a few other quirks and while it wouldn't be a daily need I prefer things to just work when I need / want them
+Mar 07 15:37:38 <fris>	well total finder kinda works but you have to right click finder icon each time, instead of just cliking on finder icon for new window'
+Mar 07 15:40:22 <MacinMan>	fris: I was curious about something, maybe you can answer this. No one on the forum bothered to try:  what does Ventura / Sonoma base the find my Mac setting on?  What I mean is when I had Sonoma on the iMac it always said it was off in the device info under iCloud while the MBP on Sonoma / Ventura said on. The only difference between the two was the default network connection. The iMac is ethernet and the MBP is WiFi but the iMac has
+Mar 07 15:40:22 <MacinMan>	 Wifi on as the secondary connection but not connected just so location works.
+Mar 07 15:42:33 <MacinMan>	I know it's also functioning on the iMac as well, because it shows up in Find My
+Mar 07 16:02:11 <MacinMan>	Also the side channel mitigation setting in VMware what exactly is this for when it comes to a virtual machine ?
+Mar 07 16:02:33 <MacinMan>	I usually disable it because it tends to slow down the VM
+Mar 07 16:13:00 <MacinMan>	I'm also considering creating a Mojave install iso as to not take up a USB drive.  Hopefully the Mac can boot from a DVD
+Mar 07 16:14:55 <MacinMan>	I think since Mojave was smaller it should fit on a dual layer disc
+Mar 07 16:20:03 <MacinMan>	I've asked this before, but there isn't any reason to go older Thant Mojave for legacy support correct?
+Mar 07 16:20:55 <cirrusbonsai>	Legacy support of what?
+Mar 07 16:21:15 <MacinMan>	32 bit apps / games that won't run on a 64 bit only os
+Mar 07 16:22:44 <MacinMan>	cirrusbonsai: this iMac can go all the way back to El Capitan, but I don't think I need to go back that far for an install of a legacy OS to use when Needed so that's why I'm picking Mojave 
+Mar 07 16:22:45 <cirrusbonsai>	ah.  I try not to hang on to old apps.  you would know more than me.
+Mar 07 16:24:10 <MacinMan>	cirrusbonsai: well some of the launchers on GOG were never updated for modern macOS so if I want to play them I either need a windows VM or a 32 bit capable macOS. So I'm thinking 32 - bit macOS to not have the VM overhead
+Mar 07 16:29:17 <MacinMan>	The DVD idea is out though, I didn't think Mojave would be be bigger than 8.5 GB
+Mar 07 17:11:01 <swift110-mobile>	Oh
+Mar 07 17:12:20 <swift110-mobile>	utterer: you in the us?
+Mar 07 17:12:41 <swift110-mobile>	I wouldn’t mind one of those Mac pros
+Mar 07 17:12:55 <conr>	what is the quickest way to reply to a messages app thread with only a keyboard?
+Mar 07 17:13:45 <conr>	i've tried `cmd + n` or the `cmd + f` options but they are janky when searching for contacts.
+Mar 07 17:23:58 <pocketprotector>	you know when you add an account through mail and it sends you off to your provides login page.. in my case its chrome... is there a special name for the window that gets created? im trying to figure out how to enable my extensions on that chrome window to autofill passwords.
+Mar 07 17:24:12 <pocketprotector>	providers
+Mar 07 17:24:34 <pocketprotector>	some how its sending me to a chrome window without any features.
+Mar 07 17:25:34 <jaybe>	good day all  o/
+Mar 07 17:29:02 <MacinMan>	Morning jaybe 
+Mar 07 17:32:56 <swift110-mobile>	Hey jaybe
+Mar 07 17:36:44 <jaybe>	here’s the cisa link re latest cve ~ https://www.cisa.gov/news-events/alerts/2024/03/07/apple-releases-security-updates-ios-and-ipados
+Mar 07 17:40:24 <conr>	How you toggle your search results (cmd + f) on macos messages.app with a keyboard? up and down arrow keys don't work.
+Mar 07 17:41:36 <jaybe>	"Show More"
+Mar 07 17:41:53 <jaybe>	unfortunately, requires an action
+Mar 07 17:42:19 <jaybe>	or fortunately, depending on ones position
+Mar 07 17:45:16 <swift110-mobile>	Oh
+Mar 07 17:45:35 <jaybe>	conr: ^
+Mar 07 17:45:53 <jaybe>	ℹ️ "New York will send National Guard to subways after a string of violent crimes" (AP News)
+Mar 07 17:46:33 <swift110-mobile>	That’s crazy
+Mar 07 17:48:29 <conr>	jaybe: oh shoot, i have to `cmd + f` then "enter`. then i can scroll with keyboard up and down.
+Mar 07 17:48:31 <conr>	smh
+Mar 07 17:48:44 <jaybe>	nah- at least you figured it out and can do it! :)
+Mar 07 17:50:10 <conr>	hows everyone doing. i was a regular awhile back. glad to see this thread going strong.
+Mar 07 17:51:09 <jaybe>	ℹ️ "OpenAI publishes Elon Musk’s emails. ‘We’re sad that it’s come to this’ (CNN)
+Mar 07 19:53:19 <MacinMan>	Well, just did the rest of my updates today. 
+Mar 07 19:53:24 <MacinMan>	Just got done with the mac
+Mar 07 20:08:22 <MacinMan>	Updating to 14.4 in a VM to see what it adds.  I got a Sonoma VM set up today and it's actually working quite well or looking at apps that require a newer macOS version.  I just didn't install the pro apps because those don't support running in a virtual machine but everything else I wanted to look at seems to work.
+Mar 07 20:09:19 *	Cpuroast has changed the topic to:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 07 20:12:02 <MacinMan>	Anyone happen to know what AEServer is?  It doesn't show up in accessibility on a new install but after I've installed stuff and have used it for a while it shows up in the accessibility section in privacy settings
+Mar 07 20:12:23 <MacinMan>	I want to say Apple Event but not sure what's causing it to be put there
+Mar 07 20:13:01 <MacinMan>	For example I don't think it showed up until after the Monterey update today. 
+Mar 07 20:13:52 <MacinMan>	I've also been keeping an eye on my iMac's EFI firmware in SilentKnight and that wasn't updated either.
+Mar 07 20:44:04 <cirrusbonsai>	MacinMan google it.  AEServer is fine.
+Mar 07 20:45:21 <MacinMan>	cirrusbonsai: I wasn't worried about it. was just curious if anyone knew off the top of their heads
+Mar 07 20:45:32 <MacinMan>	I'll look it up at some point
+Mar 07 20:52:51 <MacinMan>	cirrusbonsai: ok so it's for remote apple events just looked it up. Meaning it probably gets activated when I use screen sharing
+Mar 07 20:53:16 <Brains>	G'day.
+Mar 07 20:56:32 <MacinMan>	Hi Brains 
+Mar 07 23:49:42 <NDPMacBook>	Ohhhhh dissssa bombad https://www.reddit.com/r/sysadmin/comments/1b904q6/admin_deleted_and_replaced_mdm_push_certificate/
+Mar 07 23:54:20 <Brains>	Just saw that on MacAdmins. Everyone in #microsoft-intune: "Yeah, you're fucked."
+Mar 08 00:03:24 <utterer>	oooof
+Mar 08 00:03:46 <utterer>	“teachable moment”
+Mar 08 00:03:51 <jaybe>	Ouchy
+Mar 08 00:51:46 <NDPMacBook>	This is so cool: https://www.reddit.com/r/Damnthatsinteresting/comments/1b8psb6/bouy_shaped_energy_converter_to_create/
+Mar 08 01:21:29 <swift110-mobile>	Sup
+Mar 08 01:25:57 <swift110-mobile>	lol
+Mar 08 01:26:54 <conr>	this is kind of OT, but does anybody connect to a samba network from their mac?
+**** BEGIN LOGGING AT Fri Mar  8 22:52:06 2024
+
+Mar 08 22:52:06 *	Now talking on #MacOSX
+Mar 08 22:52:06 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 08 22:52:06 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 08 22:52:06 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 08 22:52:06 *	Channel #MacOSX url: https://osxwiki.net/
+Mar 08 22:59:16 <fedorafan>	Brains how are you
+Mar 08 22:59:51 <fedorafan>	and tell us all now for the last time what happened to branes
+Mar 08 23:00:38 <fedorafan>	you know
+Mar 08 23:00:53 <fedorafan>	that was my friend ok
+Mar 08 23:01:59 <Brains>	whois me :)
+Mar 08 23:02:27 <fedorafan>	how is it in australia
+Mar 08 23:02:32 <fedorafan>	i heared
+Mar 08 23:02:36 <fedorafan>	north korea
+Mar 08 23:02:44 <fedorafan>	you are in a prison yeah
+**** BEGIN LOGGING AT Fri Mar  8 23:04:26 2024
+
+Mar 08 23:04:24 *	Now talking on #MacOSX
+Mar 08 23:04:24 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 08 23:04:24 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 08 23:04:24 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 08 23:04:24 *	Channel #MacOSX url: https://osxwiki.net/
+Mar 08 23:05:03 <fedorafan>	guys disease x is coming like tedros said all unvaccinated die in 10 hours
+Mar 08 23:05:05 <fedorafan>	booom
+Mar 08 23:05:09 <fedorafan>	and
+Mar 08 23:05:18 <fedorafan>	ridiculous
+Mar 08 23:06:06 <NDPMacBook>	Are you ok?
+**** BEGIN LOGGING AT Fri Mar  8 23:07:14 2024
+
+Mar 08 23:07:14 *	Now talking on #MacOSX
+Mar 08 23:07:14 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 08 23:07:14 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 08 23:07:14 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 08 23:07:14 *	Channel #MacOSX url: https://osxwiki.net/
+**** BEGIN LOGGING AT Fri Mar  8 23:14:16 2024
+
+Mar 08 23:14:14 *	Now talking on #MacOSX
+Mar 08 23:14:14 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 08 23:14:14 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 08 23:14:14 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 08 23:14:14 *	Channel #MacOSX url: https://osxwiki.net/
+Mar 08 23:14:57 <fedorafan>	one guys want to live with bible
+Mar 08 23:14:58 <fedorafan>	ok
+Mar 08 23:15:09 <fedorafan>	jesus solves all others want to say nothing happens
+Mar 08 23:15:13 <fedorafan>	it is just annoying
+Mar 08 23:17:19 <utterer>	jesus saves and at today's prices that isn't easy
+Mar 08 23:17:41 <fedorafan>	if i were jesus i would give a fuck
+Mar 08 23:17:55 <fedorafan>	just bastards
+**** BEGIN LOGGING AT Sat Mar  9 07:43:52 2024
+
+Mar 09 07:43:50 *	Now talking on #MacOSX
+Mar 09 07:43:50 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 09 07:43:50 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 09 07:43:50 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 09 07:43:50 *	Channel #MacOSX url: https://osxwiki.net/
+**** BEGIN LOGGING AT Sat Mar  9 08:24:01 2024
+
+Mar 09 08:24:00 *	Now talking on #MacOSX
+Mar 09 08:24:00 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 09 08:24:00 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 09 08:24:00 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 09 08:24:00 *	Channel #MacOSX url: https://osxwiki.net/
+Mar 09 08:47:56 <fedorafan>	morning
+**** BEGIN LOGGING AT Sat Mar  9 10:08:22 2024
+
+Mar 09 10:08:21 *	Now talking on #MacOSX
+Mar 09 10:08:21 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 09 10:08:21 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 09 10:08:21 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 09 10:08:21 *	Channel #MacOSX url: https://osxwiki.net/
+**** ENDING LOGGING AT Sat Mar  9 10:09:15 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 10:12:43 2024
+
+Mar 09 10:12:41 *	Now talking on #MacOSX
+Mar 09 10:12:41 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 09 10:12:41 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 09 10:12:41 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 09 10:12:41 *	Channel #MacOSX url: https://osxwiki.net/
+Mar 09 10:17:27 <swift110-mobile>	Hey fedorafan
+**** BEGIN LOGGING AT Sat Mar  9 11:09:19 2024
+
+Mar 09 11:09:16 *	Now talking on #MacOSX
+Mar 09 11:09:16 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 09 11:09:16 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 09 11:09:16 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 09 11:09:16 *	Channel #MacOSX url: https://osxwiki.net/
+**** BEGIN LOGGING AT Sat Mar  9 11:33:16 2024
+
+Mar 09 11:33:15 *	Now talking on #MacOSX
+Mar 09 11:33:15 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 09 11:33:15 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 09 11:33:15 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 09 11:33:15 *	Channel #MacOSX url: https://osxwiki.net/
+**** ENDING LOGGING AT Sat Mar  9 13:31:10 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 13:40:24 2024
+
+Mar 09 13:40:23 *	Now talking on #MacOSX
+Mar 09 13:40:23 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 09 13:40:23 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 09 13:40:23 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 09 13:40:23 *	Channel #MacOSX url: https://osxwiki.net/
+**** BEGIN LOGGING AT Sat Mar  9 14:33:36 2024
+
+Mar 09 14:33:35 *	Now talking on #MacOSX
+Mar 09 14:33:35 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 09 14:33:35 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 09 14:33:35 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 09 14:33:36 *	Channel #MacOSX url: https://osxwiki.net/
+Mar 09 14:36:30 <MacinMan>	Well just brought some more things into the VM to test performance so far I'm impressed and things are working well
+Mar 09 14:55:15 <MacinMan>	Strange, somehow the VM went to sleep but the window never went back 
+Mar 09 14:55:21 <MacinMan>	"Black"
+Mar 09 21:36:48 <Brains>	G'day.
+Mar 09 22:05:58 <Buzzlewoo>	yo
+Mar 09 22:18:49 <MacinMan>	Hey utterer is Curve (formally vectermator ) worth paying for the pro subscription?  I bought the affinity suite up front so just wondered if curve would offer me anything that doesn't do.
+Mar 09 22:21:17 <MacinMan>	I remember you deleted it when you saw it went to subscription. Just wondered if you ever went back to it after seeing if they offered anything useful
+Mar 09 22:25:11 <Buzzlewoo>	I deleted vectornator for the same reason. went affinity years ago. solid kit.
+Mar 09 22:26:36 <MacinMan>	Buzzlewoo: when Affinity released version 2 in 2022, I think it was, I purchased the whole suite for a one time payment of $99. Prior to that I only had affinity photo in the version 1x series
+Mar 09 22:27:54 <MacinMan>	When I took graphics / broadcast the adobe creative suite was used plus the old version of Final Cut Studio. Now things have changed so much I am not sure what's the standard today
+Mar 09 22:41:00 <Buzzlewoo>	Adobe is still the standard but the other apps aren't crap. in fact in many ways, affinity has leapfrogged adobe
+Mar 09 22:41:43 <MacinMan>	Well, I know some loyal adobe users quit when they went subscription only as well
+Mar 09 22:41:58 <Buzzlewoo>	factprs to consider: what do your employers / clients / colleagues use, MUST you use the same apps, exactly and when, exactly, wll AI evaporate "employment" as we know it?
+Mar 09 22:42:54 <MacinMan>	Buzzlewoo: in my case and right now, I would be looking at this situation as an independent creator but also seeking compatibility  with the general public too
+Mar 09 22:43:54 <Buzzlewoo>	in that case, you need only concern yourself with producing the deliverables you owe your clients
+Mar 09 22:44:25 <Buzzlewoo>	I've been using adobe since illustrator came on a single floppy disk. I'd happily go into battle with Affinitiy.
+Mar 09 22:46:05 <Buzzlewoo>	affinity can read and write adobe files; the exceptino is InDesign to Publisher..you can go one way, not the other
+Mar 09 22:46:37 <Buzzlewoo>	adobe is investing in AI; affinity has not yet made such a move.
+Mar 09 22:46:59 <Brains>	... thank the gods.
+Mar 09 22:47:12 <Brains>	AI art is an oxymoron.
+Mar 09 22:47:29 <MacinMan>	Buzzlewoo: for photos I have Pixelmator pro, affinity photo and Gimp for the three tool selection
+Mar 09 22:48:07 <MacinMan>	I also have Inkscape as an illustrator alternative as well as the affinity variant as well
+Mar 09 22:50:32 <Buzzlewoo>	true enough, Brains  but for many, "good enough" wins the race
+Mar 09 22:50:56 <Buzzlewoo>	inkscape is most worthy, as are gimp and scribus. and don't forget blender, y'all
+Mar 09 22:51:08 <Buzzlewoo>	I've done pro level work with all 3
+Mar 09 22:51:43 <MacinMan>	Thank you I forgot about Blender,  I have that as well
+Mar 09 22:52:18 <circuitbone>	It the datasets are vetted, it's a fine tool.
+Mar 09 22:53:07 <circuitbone>	The problem arises when commercial data / information is used without permission to compete against your own commercialisation.
+Mar 09 22:53:25 <Buzzlewoo>	circuitbone  huh?
+Mar 09 22:56:41 <Brains>	Today's "AI" was meant to do the tedious stuff for creative people, not doing the creative stuff for tedious people :)
+Mar 09 22:57:28 <circuitbone>	The current tools out there under the umbrella for generative ai using gans are trained on scraped data ( illegal procurement )
+Mar 09 22:57:49 <circuitbone>	Some companies have vetted datasets ( Adobe ) for one.
+Mar 09 23:00:11 <Buzzlewoo>	oh got it. yeah but that doesn't seem to matter to the AI set. all's fair in love, war, and eliminating overhead and people
+Mar 09 23:00:17 <Buzzlewoo>	swipery is ever on the table
+Mar 09 23:00:30 <circuitbone>	Anything that uses a dataset like this will be under scrutiny later for legal ramifications. https://laion.ai/blog/laion-5b/
+Mar 09 23:02:24 <circuitbone>	Everywhere I have worked in developing games, the lawyers have to vett the work we produce to make sure it's commercially viable to distribute. This component is usually skipped over with get rich with ai videos. They only care about the views, scams happen.
+Mar 09 23:02:41 <circuitbone>	Same for all other commercial mediums.
+Mar 09 23:02:54 <circuitbone>	At some stage we will have C2PA for all media.
+Mar 09 23:04:07 <circuitbone>	If you are dumb enough to buy prompts and generate works for the intent to go commercial, you might have some sad face days on your horizon. https://promptbase.com/
+Mar 09 23:04:39 <Buzzlewoo>	who will pick up the righteous legal banner?
+Mar 09 23:04:56 <circuitbone>	At the moment there are two large cases awaiting evaluation.
+Mar 09 23:05:05 <Buzzlewoo>	really? I did not know that.
+Mar 09 23:05:21 <circuitbone>	stay in your lane
+Mar 09 23:05:38 <Buzzlewoo>	if your pockets are deep enough, any crime you commit becomes law
+Mar 09 23:05:55 <circuitbone>	https://www.theverge.com/2023/2/6/23587393/ai-art-copyright-lawsuit-getty-images-stable-diffusion
+Mar 09 23:06:38 <circuitbone>	Many other large corporations are awaiting verdicts. The font masters of the world will peck at the corpse next.
+Mar 09 23:11:24 <circuitbone>	It's a little difficult to plead innocence or denial when the hallucinations statistical data produces near perfect watermarks. https://usercontent.irccloud-cdn.com/file/uowomvMZ/media_FUvJfuDXsAEnpR5.png
+Mar 09 23:12:49 <circuitbone>	If you want to use a tool like that commercially, Adobe firefly is currently using vetted datasets.
+Mar 09 23:16:10 <circuitbone>	The 3d NerF stuff marches on as well. It's so close to something imperceptible to an average 3d asset.
+Mar 09 23:16:48 <circuitbone>	https://usercontent.irccloud-cdn.com/file/SRqiTpYO/Screen%20Shot%202024-01-14%20at%2010.04.26%20am2024.png
+Mar 09 23:16:53 <circuitbone>	https://usercontent.irccloud-cdn.com/file/03N400xW/Screen%20Shot%202024-01-12%20at%2012.11.06%20pm2024.png
+Mar 09 23:23:09 <circuitbone>	https://firefly.adobe.com/public/t2i?id=urn%3Aaaid%3Asc%3AAP%3Abf4ca7bf-7b71-436b-813c-67af221fac7f&ff_channel=shared_link&ff_source=Text2Image
+Mar 09 23:23:25 <circuitbone>	Whatever you hallucinate in firefly is ok for commercial sale.
+Mar 09 23:30:00 <Buzzlewoo>	i'm personally not confident that firefly's feedstock is "vetted."
+Mar 09 23:30:11 <Buzzlewoo>	the stuff it makes is highly derivative
+Mar 09 23:30:28 <Buzzlewoo>	...familiar-looking, like "I know I've seen this before"
+Mar 09 23:31:23 <circuitbone>	If you did you research, you will have read the guarantee they have.
+Mar 09 23:31:38 <circuitbone>	your*
+Mar 09 23:32:14 <circuitbone>	https://www.fastcompany.com/90906560/adobe-feels-so-confident-its-firefly-generative-ai-wont-breach-copyright-itll-cover-your-legal-bills
+Mar 09 23:32:56 <Buzzlewoo>	I've read their crap, yeah
+Mar 09 23:32:59 <Buzzlewoo>	I'm not buying
+Mar 09 23:33:03 <circuitbone>	They trained on their own dataset which is vetted.
+Mar 09 23:33:19 <circuitbone>	Back on ignore, what an imbecile. 
+Mar 09 23:44:02 <Buzzlewoo>	I feel so special
+**** BEGIN LOGGING AT Sun Mar 10 00:21:17 2024
+
+Mar 10 00:21:17 *	Now talking on #MacOSX
+Mar 10 00:21:17 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 10 00:21:17 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 10 00:21:17 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 10 00:21:17 *	Channel #MacOSX url: https://osxwiki.net/
+**** BEGIN LOGGING AT Sun Mar 10 00:22:46 2024
+
+Mar 10 00:22:46 *	Now talking on #MacOSX
+Mar 10 00:22:46 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 10 00:22:46 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 10 00:22:46 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 10 00:22:46 *	Channel #MacOSX url: https://osxwiki.net/
+**** BEGIN LOGGING AT Sun Mar 10 00:27:38 2024
+
+Mar 10 00:27:38 *	Now talking on #MacOSX
+Mar 10 00:27:38 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 10 00:27:38 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 10 00:27:38 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 10 00:27:38 *	Channel #MacOSX url: https://osxwiki.net/
+**** BEGIN LOGGING AT Sun Mar 10 00:31:41 2024
+
+Mar 10 00:31:41 *	Now talking on #MacOSX
+Mar 10 00:31:41 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 10 00:31:41 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 10 00:31:41 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 10 00:31:41 *	Channel #MacOSX url: https://osxwiki.net/
+**** BEGIN LOGGING AT Sun Mar 10 01:38:21 2024
+
+Mar 10 01:38:20 *	Now talking on #MacOSX
+Mar 10 01:38:20 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 10 01:38:20 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 10 01:38:20 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 10 01:38:20 *	Channel #MacOSX url: https://osxwiki.net/
+**** BEGIN LOGGING AT Sun Mar 10 01:52:09 2024
+
+Mar 10 01:52:08 *	Now talking on #MacOSX
+Mar 10 01:52:08 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 10 01:52:08 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 10 01:52:08 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 10 01:52:08 *	Channel #MacOSX url: https://osxwiki.net/
+Mar 10 01:55:35 <Brains>	I found Darmok & Jalad! https://pbs.twimg.com/media/GIRTNM3aEAAZu1X.jpg
+Mar 10 01:58:06 <Buzzlewoo>	sweet
+Mar 10 01:58:53 <Buzzlewoo>	https://i.pinimg.com/originals/d2/fd/da/d2fdda9006ff393b8db7438ce0cc86b4.jpg
+Mar 10 02:40:15 <swift110-mobile>	Sup buzzlewoo
+Mar 10 02:41:19 <Buzzlewoo>	pretty cool..how's things with you?
+Mar 10 03:11:51 <Brains>	Not on the sudoers list? Take one of these! https://pbs.twimg.com/media/GIRkfk3awAAxD5a.jpg
+Mar 10 03:23:51 <swift110-mobile>	im good Buzzlewoo what are you up to
+Mar 10 03:39:21 <Buzzlewoo>	practicing a lil guitar, then having a blender sesh
+Mar 10 04:09:12 <swift110-mobile>	True
+**** ENDING LOGGING AT Sun Mar 10 04:26:38 2024
+
+**** BEGIN LOGGING AT Sun Mar 10 06:42:23 2024
+
+Mar 10 06:42:22 *	Now talking on #MacOSX
+Mar 10 06:42:22 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 10 06:42:22 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 10 06:42:22 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 10 06:42:22 *	Channel #MacOSX url: https://osxwiki.net/
+Mar 10 13:15:22 <godSend23>	hey al
+Mar 10 13:24:52 <godSend23>	anything gamechanging tech recently?
+Mar 10 17:31:39 <jaybe>	Fishman: the headliner ~ https://i.imgur.com/OWEzVrm.jpg
+Mar 10 17:43:40 <NDPMacBook>	I've received reports from my stomach that Dunkin Donuts is brazenly holding Sausage and Egg sandwiches on Croissants, with Hasbrowns and Gatorades along with sugary glazed donuts. I'm going to have to check out this transgression.
+Mar 10 18:11:09 <conr>	does anybody have a NFS share they mount with their macOS device? i'm able to do it, but its only in read-only mode. Can't r/w.
+Mar 10 18:18:16 <jaybe>	RIP Brad ~ https://www.youtube.com/watch?v=aNHFtJsbcYc
+Mar 10 19:14:40 <Buzzlewoo>	yo
+Mar 10 19:36:12 <swift110-mobile>	hey Buzzlewoo 
+Mar 10 19:51:05 <jaybe>	'day all
+Mar 10 20:16:44 <puff>	Afternoon.  I'm looking for suggestions for programming editors available on MacOSX, that won't be too complicated for a beginner programmer (my friend, mac user, artist) and won't be too annoying for me (mostly Linux guy, experienced programmer, lifelong emacs fan).
+Mar 10 20:17:34 <puff>	I've been teaching my friend to program.  So far we've been working on javascript in a proprietary app called max/msp (my friend is an artist who does a lot of stuff with max/msp).  The max/msp default editor for javascript files is very limited.  Tried to use some other Mac editor the other day, but it kept trying to capitalize words for us, etc, ended up being more trouble than it was worth.
+Mar 10 20:20:46 <NDPMacBook>	Hope this helps puff https://alvarotrigo.com/blog/javascript-editors-mac/
+Mar 10 20:21:00 <jaybe>	Sublime Text
+Mar 10 20:21:04 <puff>	NDPMacBook: Thanks.
+Mar 10 20:21:09 <puff>	jaybe: Thanks.
+Mar 10 20:31:38 <fris>	As of iOS 17.4 it requires clock app to be installed to ask Siri for battery percentage
+Mar 10 20:31:51 <NDPMacBook>	https://news.slashdot.org/story/24/03/10/1713225/one-year-later-81-of-svbs-clients-still-bank-with-them---and-big-banks-got-bigger
+Mar 10 20:40:39 <setnan>	puff: (MacOSX is the old name, 2016 ;) ) for js on macOS most of my contacts primarily use VSCode, personally i use VSCodium (same concept as Chrome vs Chromium), mainly because its popularity, advanced autocompletion and a lot of extensions (for web dev) that make life easier, but maybe not the first choice for a total beginner. Sublime Text is cool and probably the easiest
+Mar 10 20:42:19 <setnan>	(i use BBEdit free version too for quick and fast edit + sftp)
+Mar 10 21:29:19 <Buzzlewoo>	yo
+Mar 10 21:32:37 <Buzzlewoo>	why would mds, mds_stores and other "under the hood" processes continue to hoover up my CPU power?
+Mar 10 21:33:05 <Buzzlewoo>	4 out of 8 cores @ 100% for 30 mins +
+Mar 10 21:35:36 <MERCVRY>	take the PowerPCpill and never go back
+Mar 10 21:41:52 <Buzzlewoo>	heh
+Mar 10 21:48:59 <puff>	setnan: thanks.
+Mar 10 22:00:20 <NDPTAL85>	Dammit he didn't stick around long enough for the answer.
+Mar 10 22:34:45 <NDPMacBook>	Fascinating: https://www.tomshardware.com/laptops/macbooks/repair-shop-offers-2tb-ssd-upgrades-for-m1-m2-macbook-air
+Mar 10 22:37:06 <Brains>	Ahoy-hoy.
+Mar 10 22:37:46 <swift110-mobile>	lol
+Mar 10 22:38:09 <swift110-mobile>	I never understood the purpose of going to a channel asking a question and immediately leaving
+Mar 10 22:38:19 <swift110-mobile>	I have seen that as long as I have been on irc
+**** BEGIN LOGGING AT Sun Mar 10 23:24:28 2024
+
+Mar 10 23:24:27 *	Now talking on #MacOSX
+Mar 10 23:24:27 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 10 23:24:27 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 10 23:24:27 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 10 23:24:27 *	Channel #MacOSX url: https://osxwiki.net/
+Mar 10 23:30:27 <Brains>	Ha.

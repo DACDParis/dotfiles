@@ -1433,3 +1433,212 @@ T 1709712050 18<27igemnace18>	o/
 T 1709712467 18<26Viking66718>	huh. mzscheme support is proving trickier than I thought.
 T 1709712992 18<26Viking66718>	... not that I'm likely to ever write a vim plugin anyhow, let alone one written in mzscheme.
 T 1709718268 18*	26Viking667 waves goodnight again...
+T 1709728181 19*	Now talking on 22#vim
+T 1709728181 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709728181 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709756877 18<20birkoff18>	the following mapping doesn't react as expected when preceded with a count:
+T 1709756880 18<20birkoff18>	nnoremap <expr> <C-w><C-p> "<C-w>"..(winnr()-(1*v:count1)).."<C-w>"
+T 1709756929 18<20birkoff18>	i.e. for 2<C-w><C-p> the window focus should move two windows backward by index
+T 1709756940 18<20birkoff18>	but it only moves one window
+T 1709757842 19*	Now talking on 22#vim
+T 1709757842 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709757842 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709758254 18<20birkoff18>	m_ben: it doesn't work for you either ? 
+T 1709758318 18<19m_ben18>	no
+T 1709758683 18<19m_ben18>	birkoff: nnoremap <c-w><c-p> <cmd>execute "normal! \<c-w>" .. (winnr() - v:count1) .. "\<c-w>"<cr>
+T 1709758695 18<19m_ben18>	uglier but it works
+T 1709759040 18<20birkoff18>	thanks
+T 1709760034 18<28ju18>	when v:count1 is big enough this becomes <C-W>-N<C-W> which is not what you want i guess
+T 1709774324 19*	Now talking on 22#vim
+T 1709774324 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709774324 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709775236 18<22chowbok18>	If I want to move line 10 to the line after 5, I do ":10m5". Is there an equivalent command if I want to append line 10 to line 5? 
+T 1709775938 18<22habamax18>	chowbok, there is a :copy or :t
+T 1709775963 18<22habamax18>	:h :copy
+T 1709775963 18<25digmbot18>	:help :copy -> http://vimhelp.appspot.com/change.txt.html#%3Acopy
+T 1709776024 18<22chowbok18>	Hmm
+T 1709776041 18<22chowbok18>	I may be misreading it, but I don't think that's what I want
+T 1709776082 18<22chowbok18>	I still want to move the contents of the line, I just want to move them to the end of the other line rather than the line after
+T 1709776266 18<22habamax18>	I see
+T 1709776367 18<22habamax18>	:10m5|5j
+T 1709776497 18<22habamax18>	or :10m5|5j!
+T 1709777493 18<22chowbok18>	That works, thanks!
+T 1709786353 19*	Now talking on 22#vim
+T 1709786353 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709786353 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709787188 19*	Now talking on 22#vim
+T 1709787188 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709787188 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709790361 19*	Now talking on 22#vim
+T 1709790361 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709790361 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709808329 19*	Now talking on 22#vim
+T 1709808329 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709808329 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709810810 19*	Now talking on 22#vim
+T 1709810810 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709810810 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709811590 19*	Now talking on 22#vim
+T 1709811590 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709811590 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709817348 19*	Now talking on 22#vim
+T 1709817348 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709817348 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709818348 18<20osse18>	vimpostor: ranger
+T 1709818350 18<20osse18>	shit
+T 1709818357 18<26lopid18>	what the hell
+T 1709818377 18<20osse18>	vimgor: ranger
+T 1709818377 18<24vimgor18>	Learn more about Vim's ranges with the Vim Ranger : http://of-vim-and-vigor.blogspot.com/2012/02/vim-ranger.html
+T 1709818385 18<20osse18>	There we go
+T 1709818396 18<24vimpostor18>	I am not a bot
+T 1709818459 18<20d3x18>	vimpostor, prove it
+T 1709818602 18<24vimpostor18>	ok ya got me
+T 1709818628 18<20tanath18>	i was expecting https://github.com/ranger/ranger
+T 1709825151 18<22nerozero18>	Vim should be considered as a highly addictive drug. Recently I have found a very old drive with no vim installed and only mc/mcedit available there, spend couple of minutes to remember how to edit and extra time - how to exit mcedit ... 
+T 1709825170 18<22nerozero18>	Drive from old pc 
+T 1709829916 18<19Zed`18>	I wonder if I have ever seen a *NIX computer without at least vi
+T 1709841010 18<22chowbok18>	Really old Unix terminals didn't have monitors, just printers, so a screen editor like vi wouldn't work
+T 1709841019 18<22chowbok18>	You'd have to use ed
+T 1709841033 18<22chowbok18>	Before my time, thankfully
+T 1709846390 18<24KOTP18>	@Zed https://hackaday.com/2019/04/01/bye-bye-vi-gnu-linux-distros-drop-support/ So you will likely see without == vi, but will likely not see > vi
+T 1709847645 18<25jamessan18>	KOTP: That's a 4 year old april fool's joke
+T 1709848023 18<19Zed`18>	I am going to write a strongly worded letter
+T 1709848224 18<19Zed`18>	So what editor will one use? 
+T 1709848245 18<19Zed`18>	like if you need to modify a file to get a machine to boot?
+T 1709848249 18<19Zed`18>	ed?
+T 1709848251 18<19Zed`18>	nano?
+T 1709848313 18<29phy172918>	EL already stopped shipping ed in their base
+T 1709848408 18<19Zed`18>	I mean nano is not awful 
+T 1709848415 18<19Zed`18>	but ed?
+T 1709848417 18*	19Zed`  faints
+T 1709848599 18<19Zed`18>	Over 20-something years ago I was at a clients working on their PCs and they were having trouble with a Sperry computer which I knew nothing about  - the person that was there who was supposed to know how to operate it was freaking out because her code that the machine normally booted into was not loading
+T 1709848653 18<19Zed`18>	I was like vi /etc/rc.. somethhing something and they thought I was the second coming of Jesus 
+T 1709849008 18<24KOTP18>	I do still use `ed` when I know I am more focused on line based editing.  But you could have also fixed it likely with piping or `grep`/`sed`/`awk`.
+T 1709849590 18<27mingdao18>	Zed`: $EDITOR file
+T 1709849605 18<27mingdao18>	If it ain't ViM, it sucks.
+T 1709849710 18<19Zed`18>	GET OUT OF MY HEAD! :wq
+T 1709856599 18<19jaggz18>	how do I jump to my .c function's variable declaration even if it's local?
+T 1709856620 18<19jaggz18>	ctags and ctags-universal seem to do global declarations only and I can't find how to have it grab locals for ^] to work
+T 1709856934 18<20tanath18>	jaggz: gd
+T 1709934726 19*	Now talking on 22#vim
+T 1709934726 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709934726 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709935464 19*	Now talking on 22#vim
+T 1709935464 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709935464 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709935634 19*	Now talking on 22#vim
+T 1709935634 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709935634 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709936054 19*	Now talking on 22#vim
+T 1709936054 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709936054 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709966630 19*	Now talking on 22#vim
+T 1709966630 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709966630 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709969040 19*	Now talking on 22#vim
+T 1709969040 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709969040 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709975301 19*	Now talking on 22#vim
+T 1709975301 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709975301 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709975561 19*	Now talking on 22#vim
+T 1709975561 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709975561 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709978956 19*	Now talking on 22#vim
+T 1709978956 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709978956 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709980395 19*	Now talking on 22#vim
+T 1709980395 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709980395 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709988023 19*	Now talking on 22#vim
+T 1709988023 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709988023 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709991215 19*	Now talking on 22#vim
+T 1709991215 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1709991215 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1709999434 18<26japh18>	quesker, it gets even better using this https://github.com/andymass/vim-matchup
+T 1710005631 18<27FabTG18>	Hi, is that possible that vim configuration comes from several concatenated files? let's say .vimrc1, .vimrc2, .vimrc3
+T 1710005676 18<26lopid18>	just source one after the other
+T 1710005704 18<27FabTG18>	and automatically when vim opens?
+T 1710005716 18<26lopid18>	if you do it from your vimrc
+T 1710005723 18<27FabTG18>	ohk
+T 1710005747 18<27FabTG18>	just need to write source ~/.vimrc1 in the vimrc file?
+T 1710005757 18<26lopid18>	:help :source
+T 1710005757 18<25digmbot18>	:help :source -> http://vimhelp.appspot.com/repeat.txt.html#%3Asource
+T 1710019298 18<20birkoff18>	how can I cause a recalculation of 'lines' & 'columns' in GVim ?
+T 1710019318 18<20birkoff18>	i.e. in my tiling window manager I enter and exit fullscreen
+T 1710020623 18<19m_ben18>	":echo &lines &columns" always gives you the current values
+T 1710020714 18<19m_ben18>	if you're looking for an event that is triggered when the (g)vim application window changes, see :h VimResized
+T 1710020715 18<25digmbot18>	:help VimResized -> http://vimhelp.appspot.com/autocmd.txt.html#VimResized
+T 1710020720 18<19m_ben18>	birkoff: ^
+T 1710022780 18<20edpo18>	PART
+T 1710026477 19*	Now talking on 22#vim
+T 1710026477 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710026477 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710026566 19*	Now talking on 22#vim
+T 1710026566 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710026566 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710026858 19*	Now talking on 22#vim
+T 1710026858 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710026858 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710027101 19*	Now talking on 22#vim
+T 1710027101 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710027101 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710031100 19*	Now talking on 22#vim
+T 1710031100 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710031100 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710031928 19*	Now talking on 22#vim
+T 1710031928 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710031928 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710049342 19*	Now talking on 22#vim
+T 1710049342 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710049342 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710077979 18<20no_gravity18>	I have vim folding set up to use indention and foldlevel=4. When I hit zM, everything that is indented gets folded. How can I only fold those parts of the buffer that are indented with at least 8 spaces?
+T 1710078130 18<20no_gravity18>	Or in other words: How do I only fold those parts of the buffer that are indented twice?
+T 1710078776 18<27igemnace18>	no_gravity: you can just :set foldlevel=1
+T 1710078911 18<20no_gravity18>	igemnace: In my tests, foldlevel has no impact on what is folded at all.
+T 1710079003 18<20no_gravity18>	igemnace: I start with "vim --clean" and then ":set foldmethod=indent". Then when I press zM, everything indented by more than 4 spaced gets indented. No matter what I set foldlevel to.
+T 1710079280 18<27igemnace18>	zM changes foldlevel
+T 1710079283 18<27igemnace18>	no_gravity: ^
+T 1710079318 18<20no_gravity18>	Ah!
+T 1710079360 18<20no_gravity18>	Is that all zM does? Set the foldlevel to 0?
+T 1710079565 18<27igemnace18>	looks like it, basing off :h zM
+T 1710079565 18<25digmbot18>	:help zM -> http://vimhelp.appspot.com/fold.txt.html#zM
+T 1710079592 18<20no_gravity18>	igemnace: Perfect. That solves my use case.
+T 1710079604 18<20no_gravity18>	I just have to zM and then zr to see a bit more. Great.
+T 1710079815 18<20no_gravity18>	I wish I could style the folded lines differently. Just a [+] would be cool. Without any additional info.
+T 1710079958 18<20no_gravity18>	Oh, this looks good: set foldtext="+ "
+T 1710079997 18<20no_gravity18>	Its a bit better than before. But it still shows "4 lines folded". Wonder if I can get rid of that too.
+T 1710080211 18<20no_gravity18>	Even better: set foldtext='+'
+T 1710082205 18<26chiselfuse18>	i sometimes type in arabic in vim and i have to constantly switch layouts because command mode expects english bindings. does anyone have a .vimrc section that maps the respective QWERTY arabic characters to the vim ones in command mode? or even better, one that maps keys agnostic of the current locale to their respective commands in command mode=
+T 1710082592 18<26chiselfuse18>	hmm, i found that there is a feature to tell vim to switch to a certain language only when in insert mode but i'd rather not have a different vim-language-switch in addition to the OS one
+T 1710082644 18<26chiselfuse18>	do i just manually alias all of them?
+T 1710085348 18<28tedwing18>	chiselfuse: It's possible to change the layout within Vim using :h 'keymap'. Otherwise, the layout could be changed at the OS level with something like https://stackoverflow.com/questions/64242110/vim-switch-keyboard-layout-in-normal-mode
+T 1710085348 18<25digmbot18>	:help 'keymap'. -> http://vimhelp.appspot.com/options.txt.html#%27keymap%27
+T 1710085450 18<28tedwing18>	Actually, I think the one I wanted was :h 'langmap'
+T 1710085450 18<25digmbot18>	:help 'langmap' -> http://vimhelp.appspot.com/options.txt.html#%27langmap%27
+T 1710086377 18<26chiselfuse18>	tedwing: hmm, can i have conditionals in this `function! ... endfunction`? can i call an external script to check currently set layout and branch if statement based on that?
+T 1710087122 18<28tedwing18>	chiselfuse: Yes, if you're going to set something up in Vimscript to change the OS layout, you can use conditionals and get the output of an external script with :h system( . The key for command mode would be the CmdlineEnter and CmdlineLeave autocmds. But it's also possible that an existing Vim plugin could satisfy your use case. There's some more information in this answer: 
+T 1710087122 18<25digmbot18>	:help system( -> http://vimhelp.appspot.com/builtin.txt.html#system%28%29
+T 1710087127 18<28tedwing18>	https://vi.stackexchange.com/questions/25890/recording-and-playing-macros-with-langmap-activated/28188#28188
+T 1710088063 18<20pid140018>	hey anyone please tell me how do i set vim to show the current directory of the file always, while im editing the file
+T 1710088238 18<20pid140018>	lopid
+T 1710088272 18<26lopid18>	always?
+T 1710088326 18<20pid140018>	yeah like, what i mean is, suppose im editing a file /home/user/Documents/file.txt , so if i vi file.txt, at the bottom can it show /home/user/Documents/file.txt
+T 1710088413 18<26lopid18>	you can add it to the :help 'statusline'
+T 1710088413 18<25digmbot18>	:help 'statusline' -> http://vimhelp.appspot.com/options.txt.html#%27statusline%27
+T 1710088443 18<26lopid18>	%F
+T 1710088537 18<20pid140018>	but if i do that, this is whats happening
+T 1710088564 18<20pid140018>	if i do vi /home/user/Docs/file.txt from suppose /home/anotheruser/Docs/
+T 1710088572 18<20pid140018>	then the status is /home/anotheruser/Docs
+T 1710088581 18<20pid140018>	instead of the directory of the file
+T 1710088608 18<26lopid18>	vi or vim?
+T 1710088611 18<20pid140018>	vi
+T 1710088617 18<20pid140018>	vim
+T 1710088622 18<20pid140018>	sorry, vim
+T 1710088637 18<20pid140018>	i added vi aliased to vim in my zshrc. sorry for the confusion
+T 1710088672 18<26lopid18>	`vim -Nu NONE /home/user/Docs/file.txt` then `:set laststatus=2 stl=%F`
+T 1710088793 18<20pid140018>	works! thank you lopid
+T 1710109467 19*	Now talking on 22#vim
+T 1710109467 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710109467 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)

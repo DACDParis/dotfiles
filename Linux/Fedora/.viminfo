@@ -11,8 +11,12 @@
 # hlsearch on (H) or off (h):
 ~H
 # Command Line History (newest to oldest):
+:wq
+|2,0,1709970151,,"wq"
+:q!
+|2,0,1709769772,,"q!"
 :q
-|2,0,1708551595,,"q"
+|2,0,1709769769,,"q"
 
 # Search String History (newest to oldest):
 
@@ -23,9 +27,77 @@
 # Debug Line History (newest to oldest):
 
 # Registers:
+""1	CHAR	0
+	
+	
+|3,1,1,0,2,0,1709970110,"",""
+"2	LINE	0
+	export PATH="/$HOME/.local/bin/lvim:$PATH"
+|3,0,2,1,1,0,1709969961,"export PATH=\"/$HOME/.local/bin/lvim:$PATH\""
+"3	CHAR	0
+	
+	
+|3,0,3,0,2,0,1709969898,"",""
+"4	CHAR	0
+	
+	
+|3,0,4,0,2,0,1709969850,"",""
+"-	CHAR	0
+	
+	
+|3,0,36,0,2,0,1709970110,"",""
 
 # File marks:
+'0  40  0  ~/.zshrc
+|4,48,40,0,1709970151,"~/.zshrc"
+'1  5  8  /etc/yum.repos.d/rpmfusion-nonfree.repo.rpmsave
+|4,49,5,8,1709769772,"/etc/yum.repos.d/rpmfusion-nonfree.repo.rpmsave"
 
 # Jumplist (newest first):
+-'  40  0  ~/.zshrc
+|4,39,40,0,1709970151,"~/.zshrc"
+-'  1  0  ~/.zshrc
+|4,39,1,0,1709969296,"~/.zshrc"
+-'  5  8  /etc/yum.repos.d/rpmfusion-nonfree.repo.rpmsave
+|4,39,5,8,1709769772,"/etc/yum.repos.d/rpmfusion-nonfree.repo.rpmsave"
+-'  5  8  /etc/yum.repos.d/rpmfusion-nonfree.repo.rpmsave
+|4,39,5,8,1709769772,"/etc/yum.repos.d/rpmfusion-nonfree.repo.rpmsave"
+-'  1  0  /etc/yum.repos.d/rpmfusion-nonfree.repo.rpmsave
+|4,39,1,0,1709769759,"/etc/yum.repos.d/rpmfusion-nonfree.repo.rpmsave"
+-'  1  0  /etc/yum.repos.d/rpmfusion-nonfree.repo.rpmsave
+|4,39,1,0,1709769759,"/etc/yum.repos.d/rpmfusion-nonfree.repo.rpmsave"
 
 # History of marks within files (newest to oldest):
+
+> ~/.zshrc
+	*	1709970149	0
+	"	40	0
+	^	44	0
+	.	43	45
+	+	14	29
+	+	20	21
+	+	21	42
+	+	28	0
+	+	14	29
+	+	21	0
+	+	25	60
+	+	27	0
+	+	16	0
+	+	16	161
+	+	39	10
+	+	28	0
+	+	31	8
+	+	32	22
+	+	31	44
+	+	39	11
+	+	42	51
+	+	72	27
+	+	74	54
+	+	43	0
+	+	43	45
+
+> /etc/yum.repos.d/rpmfusion-nonfree.repo.rpmsave
+	*	1709769769	0
+	"	5	8
+	.	5	8
+	+	5	8

@@ -1,371 +1,3 @@
-fm
-ls
-ll
-convert
-ll
-convert Piece_Identite.png -quality 10% P.Identite.png
-ll
-convert Piece_Identite2.png -quality 50% P.Identite2.png
-ll
-mv Piece_Identite2.png ~/External/HD750/Docs/Personal/P.Identite.png
-ls
-ll
-rm P*.*
-ll
-cd
-ls
-ll
-cd Learn/
-ls
-cd Rust/
-ls
-mkdir Alacrity
-cd Alacrity
-git clone https://github.com/alacritty/alacritty.git
-cd alacritty
-ls
-install cmake freetype-devel fontconfig-devel libxcb-devel libxkbcommon-devel g++
-infocmp alacritty
-ls
-rustup update
-cd alacrity
-ls
-cargo build --release --features=wayland
-ll
-cd target/release/
-ls
-ll
-./alacritty 
-ls
-cd ..
-ls
-cd ..
-ls
-ls extra/
-cd extra/
-ls
-cd completions/
-la
-ls
-ll
-cd ..
-ks
-ls
-ls linux
-cd completions/
-ls
-cp alacritty.bash ~/.bash_completion/alacrity/
-lvbash
-ls
-cd ..
-ls
-cd ..
-ls
-cd alacritty
-ls
-cd ..
-cd target/
-ls
-cd release/
-ls
-ls examples/
-ls
-ll
-cp alacritty ~/.local/bin/
-alacrity
-alacritty
-rm ~/.local/bin/alacritty 
-cd ..
-ls
-cd ..
-ls
-cd target/
-ls
-rm -fr *
-;s
-ls
-cd rs
-cd release/
-ls
-alacritty
-.alacritty
-ls
-ll
-ls
-cp alacritty ~/.local/bin/
-search alacritty
-sudo dnf info alacritty
-ls
-ll
-z ala the
-z ala
-z
-z config
-z alacritty/
-z themes
-ls
-cd themes/
-ls
-ll
-z
-ll
-z External/
-ll
-ls
-ll
-cd
-ll
-exit
-ll
-hyprpicker
-ll External/
-z ala themes
-ls
-cd themes/
-ls
-lv zenburn.toml 
-exit
-echo "source $(pwd)/extra/completions/alacritty.bash" >> ~/.bashrc
-cargo build --release --features=wayland
-cargo init
-cargo build --release --features=wayland
-cargo build --release
-ls
-ll
-rm Cargo.*
-ls
-rm -fr src
-ls target
-rm -fr target/
-ls bin
-sbash
-cd .config
-ls
-ll
-ls a*
-mkdir alacrity
-cd alacrity/
-ls
-cd
-ls
-ll
-mkdir -p ~/.bash_completion
-cp extra/completions/alacritty.bash ~/.bash_completion/alacritty
-echo "source ~/.bash_completion/alacritty" >> ~/.bashrc
-mkdir -p ~/.bash_completion/alacrity
-sbash
-ls
-cd .bash_completion/alacrity/
-ls
-mv alacritty.bash ../
-cd ..
-ls
-sbash
-alacritty
-z 
-z Learn/Rust/Alacrity/alacritty/
-ls
-rust build --release
-rustup build --release
-cargo build --release
-ls
-cd target/release/
-ls
-./alacritty 
-ranger
-alacritty
-ls
-cd ..
-ls
-cd ..
-ls
-cd extra/
-ls
-cd linux
-ls
-cp Alacritty.desktop ~/.local/share/applications/
-ls
-cd ..
-ls
-cd logo
-ls
-cd ..
-ls
-sudo mkdir -p /usr/local/share/man/man1
-sudo mkdir -p /usr/local/share/man/man5
-scdoc < extra/man/alacritty.1.scd | gzip -c | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
-scdoc < extra/man/alacritty-msg.1.scd | gzip -c | sudo tee /usr/local/share/man/man1/alacritty-msg.1.gz > /dev/null
-scdoc < extra/man/alacritty.5.scd | gzip -c | sudo tee /usr/local/share/man/man5/alacritty.5.gz > /dev/null
-scdoc < extra/man/alacritty-bindings.5.scd | gzip -c | sudo tee /usr/local/share/man/man5/alacritty-bindings.5.gz > /dev/null
-sudo mkdir -p /usr/local/share/man/man1
-sudo mkdir -p /usr/local/share/man/man5
-scdoc < extra/man/alacritty.1.scd | gzip -c | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
-scdoc < extra/man/alacritty-msg.1.scd | gzip -c | sudo tee /usr/local/share/man/man1/alacritty-msg.1.gz > /dev/null
-scdoc < extra/man/alacritty.5.scd | gzip -c | sudo tee /usr/local/share/man/man5/alacritty.5.gz > /dev/null
-scdoc < extra/man/alacritty-bindings.5.scd | gzip -c | sudo tee /usr/local/share/man/man5/alacritty-bindings.5.gz > /dev/null
-sudo cp target/release/alacritty /usr/local/bin # or anywhere else in $PATH
-sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
-sudo desktop-file-install extra/linux/Alacritty.desktop
-sudo update-desktop-database
-alacritty --version
-cd ..
-ls
-cd ..
-ls
-cd Alacrity/
-cd alacritty/
-ls
-cd alacritty
-ls
-cd src
-ls
-lv main.rs 
-hyprprop
-z config/
-z
-z config
-ls
-mv alacrity/ alacritty/
-ls
-ls alacritty/
-ll alacritty/
-# We use Alacritty's default Linux config directory as our storage location here.
-mkdir -p ~/.config/alacritty/themes
-git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
-cd alacritty/
-ls
-lv alacritty.toml
-exit
-ll
-cd External/
-ll
-cd
-ll
-ls
-ll
-ls External/
-ranger
-ll
-tldr
-tldr rm
-tldr rm --help
-tldr rm --list
-[[hints.enabled]]
-command = "xdg-open" # On Linux/BSD
-# command = "open" # On macOS
-# command = { program = "cmd", args = [ "/c", "start", "" ] } # On Windows
-hyperlinks = true
-post_processing = true
-persist = false
-mouse.enabled = true
-binding = { key = "U", mods = "Control|Shift" }
-regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
-ls
-ll
-ranger
-lv
-exit
-lv
-ls
-cd openai-env/
-ls
-ll
-ls
-cd ..
-ls
-rm -fr openai-env/
-ls Templates/
-rm Templates/
-rm -fr Templates/
-ls
-ll
-exit
-search parec
-search sox
-search yodotool
-ffmpeg -f alsa -list_devices true -i ""
-ffmpeg
-ffmpeg --help
-ffmpeg -f alsa -devices true -i ""
-ffmpeg -f v4l2 -devices true -i ""
-python -m venv openai-env
-source openai-env/bin/activate
-pip install --upgrade openai
-pip install --upgrade pip
-ls
-cd openai-env/
-ls
-ll
-lv openai-test.py
-ls
-python3 openai-test.py 
-lv OPENAI_API_KEY.env
-ls
-python3 openai-test.py 
-ls
-cat pyvenv.cfg 
-cat OPENAI_API_KEY
-lv 
-python3 openai-test.py 
-ls
-cd bin
-ls
-cd ..
-ls
-ls lib
-ls include/
-ls include/python3.12/
-ls
-;s
-ls
-ll
-ls
-cp OPENAI_API_KEY key
-lv OPENAI_API_KEY.env
-lv
-python3 openai-test.py 
-exit
-ls
-ll
-update
-reboot
-update
-reboot
-ping google.com
-ping youtube.com
-ping youtube.be
-ping cloudflare,com
-ping cloudflare.com
-ping cloud9.com
-reboot
-LL
-ll
-lv
-flatpak --help
-flatpak --list
-flatpak list
-flatpak repair org.gimp.Gimp
-flatpak update
-flatpak remove org.gimp.Gimp
-flatpak uninstall org.gimp.Gimp
-flatpak remove gimp
-flatpak install gimp
-z .var/app/
-ls
-z org.squidwol.halloy
-z org.squidowl.halloy
-ls
-z config
-ls
-z halloy/
-ls
-cp config.template.yaml config.yaml
-lv config.yaml 
-lv
-z hexc
-ls
-ll
-cat chanopt.conf 
 cat hexchat.conf 
 cat Fedora.hct 
 z hallow
@@ -998,3 +630,371 @@ lv
 vl
 lv
 syncos
+syncos
+lv
+lv
+update
+flatpak update all
+flatpak update
+reboot
+lv
+flatpak install spotify
+sudo bash <(curl -sSL https://raw.githubusercontent.com/SpotX-CLI/SpotX-Linux/main/install.sh) -P /var/lib/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify/
+bash <(curl -sSL https://raw.githubusercontent.com/SpotX-CLI/SpotX-Linux/main/install.sh) -P /var/lib/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify/
+bash <(curl -sSL https://raw.githubusercontent.com/SpotX-CLI/SpotX-Linux/main/install.sh) -ce
+bash <(curl -sSL https://raw.githubusercontent.com/SpotX-CLI/SpotX-Linux/main/install.sh) -ce -p /home/david/.var/app/com.spotify.Client
+z down
+ls
+git clone https://github.com/Nuzair46/SpotX-Linux.git
+ls
+cd SpotX-Linux/
+ls
+chmod +x install.sh 
+sudo ./install.sh 
+sudo ./install.sh -p https://github.com/Nuzair46/SpotX-Linux.git
+sudo ./install.sh -p /home/david/.var/app/com.spotify.Client
+lv install.sh 
+sudo ./install.sh 
+su
+bash <(curl -sSL https://spotx-official.github.io/run.sh) --installdeb
+bash <(curl -sSL https://raw.githubusercontent.com/SpotX-CLI/SpotX-Linux/main/install.sh) -P /var/lib/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify/
+bash <(curl -sSL https://raw.githubusercontent.com/SpotX-CLI/SpotX-Linux/main/install.sh) -P /var/lib/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify/ -f
+sudo bash <(curl -sSL https://raw.githubusercontent.com/SpotX-CLI/SpotX-Linux/main/install.sh) -P /var/lib/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify/ -f
+flatpak install flathub com.spotify.Client
+flatpak run com.spotify.Client
+killall spotify
+killall flatpak run com.spotify.Client
+flatpak remove spotify
+search spotify
+install python3-spotipy.noarch
+flatpak install flathub com.spotify.Client
+bash <(curl -sSL https://raw.githubusercontent.com/SpotX-CLI/SpotX-Linux/main/install.sh) -P /var/lib/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify/ -f
+bash <(curl -sSL https://raw.githubusercontent.com/SpotX-CLI/SpotX-Linux/main/uninstall.sh)
+sudo dnf copr enable atim/spotify-tui -y && sudo dnf install spotify-tui
+update
+spotify-tui
+spt
+flatpak remove spotify
+sudo dnf copr remove atim/spotify-tui
+sudo dnf remove spotify-tui
+install spotify
+search spotify
+install lpf-spotify-client.x86_64
+sudo ueermod-a -G pkg-build david
+sudo uermod-a -G pkg-build david
+sudo usermod-a -G pkg-build david
+sudo usermod -a -G pkg-build david
+exec su - david
+update
+reboot
+ll
+search spotify
+remove lpf-spotify-client.x86_64
+sudo uermod -r -G pkg-build david
+sudo usermod -r -G pkg-build david
+rpm --help
+sudo rpm -e --nodeps lpf-spotify-client.x86_64
+lv
+/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=spotify --file-forwarding --socket=wayland com.spotify.Client --enable-features=WaylandWindowDecorations --ozone-platform=wayland --ozone-platform-hint=auto --enable-webrtc-pipewire-capturer @@u %U @@
+hyprprop
+flatpak list
+flatpak run com.Spotify --enable-features=UseOzonePlatform --ozone-platform=wayland
+flatpak run com.spotify.Client --enable-features=UseOzonePlatform --ozone-platform=wayland
+search xlib
+/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=spotify --file-forwarding --socket=wayland com.spotify.Client --enable-features=WaylandWindowDecorations --ozone-platform=wayland --ozone-platform-hint=auto --enable-webrtc-pipewire-capturer @@u %U @@
+g down
+ls
+install Spotube-linux-x86_64.rpm 
+install mpv mpv-devel libappindicator-gtk3 libappindicator-gtk3-devel libsecret libsecret-devel jsoncpp jsoncpp-devel libnotify libnotify-devel
+install Spotube-linux-x86_64.rpm 
+search libmpv
+install mpv-devel.x86_64
+flatpak install com.github.KRTirtho.Spotube
+zik
+hyprprop
+lv
+z down
+ls
+cd SpotX-Linux/
+ls
+lv install.sh 
+sudo ./install.sh 
+sudo ./install.sh -f 
+sudo ./install.sh -f -P /home/david/.var/app/com.spotify.Client/
+./install.sh 
+ls
+cat readme.md 
+z down
+ls
+cd SpotX-Linux/
+ls
+sudo ./install.sh -f -P /var/lib/flatpak/app/com.spotify.Client
+sudo ./install.sh -f -P /var/lib/flatpak/app/com.spotify.Client/current/active/
+sudo ./install.sh -f -P /var/lib/flatpak/app/com.spotify.Client/
+sudo ./install.sh -f -P /var/lib/flatpak/app/com.spotify.Client
+su
+cd ..
+ls
+fm
+search xpui
+flatpak install flathub org.telegram.desktop
+ls
+ flatpak install flathub org.telegram.desktop com.spotify.Client
+ flatpak info com.spotify.Client
+cd /var/lib
+ls
+cd flatpak/
+ls
+ll
+ls app
+cd app/com.spotify.Client/
+ls
+pwd
+fm
+ls
+cd current/
+ls
+cd active/
+ls
+zik
+update
+sudo dnf --enablerepo=rawhide --releasever=rawhide distro-sync
+sudo dnf install dnf-plugin-system-upgrade
+sudo dnf --enablerepo=40 --releasever=40 distro-sync
+sudo dnf --enablerepo=rawhide --releasever=rawhide distro-sync
+sudo dnf makecache
+sudo dnf --enablerepo=https://mirrors.fedoraproject.org/metalink?repo=rawhide&arch=$basearch --releasever=rawhide distro-sync
+sudo dnf --enablerepo=https://mirrors.fedoraproject.org/metalink?repo=rawhide&arch=$basearch distro-sync --releasever=rawhide
+sudo dnf --enablerepo=rawhide list available
+sudo dnf repolist
+curl -s https://download.fedoraproject.org/pub/fedora/linux/development/rawhide/Everything/x86_64/os/repodata/repomd.xml | grep location
+update
+sudo dnf makecache
+sudo dnf --releasever=rawhide distro-sync
+update
+sudo dnf install dnf-plugin-system-upgrade
+sudo dnf system-upgrade download --releasever=40
+sudo dnf --refresh upgrade
+sudo dnf system-upgrade download --releasever=40
+sudo dnf system-upgrade download --releasever=40 --allowerasing
+sudo dnf system-upgrade download --releasever=40 --allowerasing --skip-broken
+sudo dnf remove libva-intel-media-driver
+sudo dnf remove intel-media-driver
+sudo dnf remove libva-intel-media-driver libva gstreamer1-plugins-bad-free libva-utils vlc-plugin-gstreamer
+sudo dnf remove libva-intel-media-driver libva gstreamer1-plugins-bad-free libva-utils vlc-plugin-gstreamer --noautoremove
+sudo rpm -e --nodeps libva-intel-media-driver libva gstreamer1-plugins-bad-free libva-utils
+sudo rpm -e --nodeps libva gstreamer1-plugins-bad-free libva-utils
+sudo dnf system-upgrade download --releasever=40 --allowerasing
+sudo rpm -e --nodeps libva-intel-media-driver-24.1.3-1.fc40.x86_64
+cd /etc/yum.repos.d/
+ls
+lv rpmfusion-nonfree.repo 
+sudo vim rpmfusion-nonfree.repo 
+sudo dnf system-upgrade download --releasever=40 --allowerasing --skip-broken
+sudo dnf clean all
+sudo dnf system-upgrade download --releasever=40 --allowerasing --skip-broken
+sudo vim rpmfusion-nonfree.repo 
+sudo dnf clean all
+sudo dnf system-upgrade download --releasever=40 --allowerasing --skip-broken
+sudo dnf system-upgrade reboot
+update
+ls
+ll
+g
+ls
+ll
+ls
+ll
+z Downloads/
+ls
+ll
+fm
+flatpak update
+update
+cd /etc/yum.repos.d/
+ll
+vim rpmfusion-nonfree.repo.rpmsave 
+sudo vim rpmfusion-nonfree.repo.rpmsave 
+ls
+sudo dnf clean all
+update
+reboot
+sudo dnf install remove-retired-packages
+remove-retired-packages
+sudo dnf repoquery --unsatisfied
+sudo dnf repoquery --duplicates
+sudo dnf remove --duplicates
+sudo dnf list extras
+su
+cd /etc/yum
+cd /etc/yum.repos.d/
+ls
+ll
+rm rpmfusion*
+sudo rm rpmfusion*
+ls
+z down
+ls
+ll
+install *.rpm
+install rpmfusion-free-release-branched.noarch.rpm 
+install rpmfusion-nonfree-release-branched.noarch.rpm 
+update
+sudo dnf clean all
+update
+reboot
+update
+ls
+ll
+lv
+search breeze
+install plasma-breeze-qt6.x86_64
+search adwaita
+install adwaita-qt6.x86_64
+reboot
+search qt6ct
+install qt6ct
+lvbash
+reboot
+lv
+search ventoy
+g app
+g
+g Applications/
+la
+ls
+./balenaEtcher-1.7.9-ia32.AppImage 
+chmod balenaEtcher-1.7.9-ia32.AppImage etcher.AppImage
+g dow
+ls
+ll
+./balenaEtcher-1.18.11-x64.AppImage 
+ls
+mv balenaEtcher-1.18.11-x64.AppImage ~/Applications/
+reboot
+search kvantum
+install kvantum-qt6.x86_64
+balooctl disable
+reboot
+lv
+sudo dnf groupupdate multimedia
+radeontop
+remove radeontop
+update
+reboot
+install i2c-tools
+sudo modprobe i2c-dev
+sudo groupadd --system i2c
+sudo usermod $USER -aG i2c
+sudo touch /etc/modules-load.d/i2c.conf && sudo sh -c 'echo "i2c-dev" >> /etc/modules-load.d/i2c.conf'
+install openrgb
+sudo dnf install automake gcc-c++ qt5-qtbase-devel qt5-linguist hidapi-devel libusbx-devel mbedtls-devel
+g dow
+git clone https://gitlab.com/CalcProgrammer1/OpenRGB
+cd OpenRGB/
+qmake-qt5 OpenRGB.pro
+make -j$(nproc)
+ls
+cd ..
+ls
+ll
+fm
+g conf
+lv dolphinrc 
+rm dolphinrc 
+g torrents
+g Ext 750 Torr
+g Ext 750 
+ls
+g Torrents/
+ls
+ll
+g 200
+ls
+z conf
+ls
+mkdir audio_plugins
+g dow
+ls
+ll
+chmod =x Ardour-8.4.0-x86_64.run 
+./Ardour-8.4.0-x86_64.run 
+sudo ./Ardour-8.4.0-x86_64.run 
+governor
+search governor
+cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors
+cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+search info audacity
+search FFTW
+search info fftw.x86_64
+dnf info fftw
+install fftw
+search calf
+install calf dssi-calf lv2-calf-plugins lv2-calf-plugins-gui
+install calf dssi-calf-plugins lv2-calf-plugins lv2-calf-plugins-gui
+ls swh
+search swh
+install ladspa-swh-plugins
+search gvst
+search muse
+install lame
+mkdir --help
+mkdir -p ~/.config/pipewire/pipewire.conf.d/
+lv ~/.config/pipewire/pipewire.conf.d/99-input-denoising.conf
+systemctl restart --user pipewire.service
+search dssi
+install dssi.x86_64 dssi-examples.x86_64 zynaddsubfx-dssi.x86_64 dssi-amsynth-plugin.x86_64
+su
+g dow
+ls
+ll
+g
+ls
+g conf
+g audio_plugins/
+ls
+cp rnnoise/ /usr/share/audacity/plug-ins/
+cp -r rnnoise/ /usr/share/audacity/plug-ins/
+sudo cp -r rnnoise/ /usr/share/audacity/plug-ins/
+zik
+reboot
+lv
+update
+reboot
+remove kvantum
+waybar
+reboot
+fla flatpak list
+flatpak list
+flatpak remove com.github.KRTirtho.Spotube
+flatpak remove com.spotify.Client
+install zsh
+sudo chsh /bin/zsh
+zsh
+exit
+ll
+zsh
+chsh -l
+man chsh
+sudo chsh -s /usr/bin/zsh
+exit
+ll
+$SHELL
+sdf
+sudo chsh -s /usr/bin/zsh
+sudo useradd -D -s /bin/zsh
+/bin/ls -l /usr/bin/zsh
+chsh -s $(which zsh)
+sdfasfd
+asdsad
+fm
+exit
+zsh
+sudo chsh -s /usr/bin/zsh david
+chsh list
+chsh --list
+exit
+echo $SHELL
+su

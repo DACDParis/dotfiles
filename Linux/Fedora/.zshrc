@@ -1,13 +1,16 @@
+fpath+=~/.zfunc
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
-bindkey -e
+setopt notify
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/david/.zshrc'
 
 autoload -Uz compinit
+
 ZSH_COMPDUMP=${ZSH_COMPDUMP:-${ZDOTDIR:-~}/.zcompdump}
 
 # cache .zcompdump for about a day
@@ -22,53 +25,40 @@ fi
     zcompile "$ZSH_COMPDUMP"
   fi
 } &!
+
 compinit
 # End of lines added by compinstall
-
+#
 export PATH="$HOME/bin:$PATH"
+
+#PS1='\n \[\e[38;5;27m\]\u \[\e[38;5;249m\]\w \[\e[32m\]$(git branch 2>/dev/null | grep '"'"'*'"'"' | colrm 1 2)\n \[\e[38;5;27m\]  \[\e[38;5;27m\]> \[\e[0m\]'
+
 export PATH="$HOME/.npm-global/bin:$PATH"
-export PATH=”$HOME/.cargo/bin:$PATH”
+export PATH=”/home/david/.cargo/bin:$PATH”
 export GOPATH=$HOME/go
-export PATH="/$HOME/.config/emacs/bin:$PATH"
-
-export PATH="/$HOME/.local/bin/lvim:$PATH"
-#export EDITOR="/$HOME/.local/bin/lvim"
-
-export ALTERNATE_EDITOR=""
-export EDITOR="emacsclient -t"                  # $EDITOR opens in terminal
-export VISUAL="emacsclient -c -a emacs"         # $VISUAL opens in GUI mode
-
-export QT_QPA_PLATFORMTHEME=qt5ct
-export LIBVA_DRIVER_NAME=iHD
-
-export PATH="$HOME/.local/bin:$PATH"
-export EDITOR=$HOME/.local/bin/lvim
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_MUSIC_DIR="$HOME/Music"
-export XDG_PICTURES_DIR="$HOME/Pictures"
-
 PATH="/$HOME/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/$HOME/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/$HOME/perl5"; export PERL_MM_OPT;
 
-alias lv="/$HOME/.local/bin/lvim"
-alias slv="sudo /$HOME/.local/bin/lvim"
-alias mounted="cd /run/media/david/"
-alias em="emacsclient --create-frame --alternate-editor="""
 
-alias la="ls -a"
-alias ll="ls -la"
-alias kicat="kitty icat "
-alias rma="rm -fr "
+export EDITOR="/$HOME/.local/bin/lvim"
+alias lv="/home/david/.local/bin/lvim"
+alias slv="sudo /home/david/.local/bin/lvim"
+alias lvzsh="/home/david/.local/bin/lvim ~/.zshrc"
+alias szsh="source ~/.zshrc"
 alias install="sudo dnf5 install"
+alias search="sudo dnf5 search"
 alias update="sudo dnf5 update"
 alias remove="sudo dnf5 remove"
-alias search="sudo dnf5 search"
-alias szsh="source /$HOME/.zshrc"
-
+alias zik="ncmpcpp -c PATH=~/.config/ncmpcpp/config"
+alias l="ls -lah"
+alias ll="ls -lah"
+alias g="z"
+alias fm="yazi"
+alias cat="bat"
+alias pdf="nohup $HOME/Applications/Sioyek/sioyek > /dev/null 2>&1 &"
 alias -s {txt,conf,md}=/$HOME/.local/bin/lvim
 
 # Extracts any archive(s) (if unp isn't installed)
@@ -79,7 +69,7 @@ ex () {
 				*.tar.bz2)   tar xvjf $archive    ;;
 				*.tar.gz)    tar xvzf $archive    ;;
 				*.bz2)       bunzip2 $archive     ;;
-				*.rar)       rar x $archive       ;;
+				*.rar)       unrar x $archive       ;;
 				*.gz)        gunzip $archive      ;;
 				*.tar)       tar xvf $archive     ;;
 				*.tbz2)      tar xvjf $archive    ;;
@@ -95,16 +85,24 @@ ex () {
 	done
 }
 
-powerline-daemon -q
-. /usr/share/powerline/zsh/powerline.zsh
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
-#Antidote plugin manager
-# Lazy-load antidote and generate the static load file only when needed
-zsh_plugins=${ZDOTDIR:-$HOME}/.zsh_plugins
-if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
-  (
-    source /$HOME/.antidote/antidote.zsh
-    antidote bundle <${zsh_plugins}.txt >${zsh_plugins}.zsh
-  )
-fi
-source ${zsh_plugins}.zsh
+eval "$(zoxide init bash)"
+eval $(thefuck --alias fck)
+eval "$(starship init zsh)"
+
+export FZF_DEFAULT_OPTS="--history=$HOME/.fzf_history"
+
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#Yazi Shell wrapper of Bash / Zsh
+function ya() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}

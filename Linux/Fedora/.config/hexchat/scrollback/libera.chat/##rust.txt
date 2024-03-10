@@ -2449,3 +2449,1052 @@ T 1709725914 18<25bertptrs18>	There's the Wake trait that takes Arc<Self
 T 1709725971 18<25Widdershins18>	&arc so you don't have to mess with the count by cloning it
 T 1709725990 18<25bertptrs18>	Exactly
 T 1709726114 18<25bertptrs18>	but rather than making an arbitrary decision on what makes sense, the standard just allows all combinations
+T 1709728181 19*	Now talking on 22##rust
+T 1709728181 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1709728181 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1709731269 18<20mkoncek118>	*const () is a synonym for *const std::ffi::c_void?
+T 1709731352 18<25Mutabah18>	no, although they are sometimes used interchangably
+T 1709731367 18<25Mutabah18>	`()` is an empty tuple, a zero-sized type`
+T 1709731388 18<25Mutabah18>	`c_void` is the de-facto representation of C's `void` type, and is iirc an enum
+T 1709732011 18<25bertptrs18>	that's a strange representation of void https://doc.rust-lang.org/src/core/ffi/mod.rs.html#209-224
+T 1709732128 18<20j`ey18>	one variant I can maybe understand... but 2??
+T 1709732132 18<25Mutabah18>	See the comment above
+T 1709732156 18<20j`ey18>	ah
+T 1709732231 18<25bertptrs18>	I read the comment but I don't know enough LLVM internals to make sense of it
+T 1709732895 18<20mkoncek118>	do i need the futures create to await a future? is there nothing like block_on in the vanilla Rust?
+T 1709733134 18<25bertptrs18>	there isn't
+T 1709733160 18<20mkoncek118>	well, async_std has one
+T 1709733161 18<25bertptrs18>	you can try my minimal executor, beul, which is 84 lines and does the absolute minimum
+T 1709733169 18<25bertptrs18>	async std isn't std
+T 1709733179 18<20mkoncek118>	i know but i am already using it
+T 1709733209 18<25bertptrs18>	you asked about vanilla ¯\_(ツ)_/¯
+T 1709733357 18<25bertptrs18>	std doesn't offer one because it is unclear what a general purpose executor should do
+T 1709733380 18<25bertptrs18>	tokio and async_std both offer much more than just futures execution, and most of the things they offer only work on their own runtimes
+T 1709733853 18<20mkoncek118>	well... execute an asynchronous function as a synchronous one in the current thread is not an unreasonable request is it?
+T 1709733869 18<25bertptrs18>	it doesn't sound unreasonable
+T 1709733886 18<25bertptrs18>	but tokio::time::sleep() cannot be executed by any runtime other than tokio
+T 1709733936 18<25bertptrs18>	and it's not the only one, many futures require some specialized plumbing from their runtime to do anything useful
+T 1709733955 18<26danieldg18>	mkoncek1: by the time you have a non-trivial future, you already need some kind of reactor running to cause the wakeups
+T 1709733971 18<20mkoncek118>	i am starting to wonder if i should try to use async at all
+T 1709733988 18<26danieldg18>	so delegating the wait to that just makes sense.  Tokio, for example, supports a single-thread model which would deadlock forever if you had and used that method.
+T 1709734036 18<25bertptrs18>	std needs to be very conservative in what it adds, because everything included stays forever. it's not impossible that one day std does have an executor, but until people agree what it should do, it won't be added any time soon
+T 1709734068 18<26danieldg18>	it's very likely it would end up pluggable like the allocator in std anyway
+T 1709734118 18<25bertptrs18>	I have my doubts, since the allocator story isn't moving either
+T 1709734123 18<26danieldg18>	there are more reasons to want to change how task scheduling works than changing how allocation works after all
+T 1709734138 18<26danieldg18>	I'm talking about GlobalAlloc which has been stable for quite a while
+T 1709734156 18<26danieldg18>	and has already switched between jemalloc and system malloc
+T 1709734160 18<25bertptrs18>	Ah yeah that works, mostly
+T 1709734224 18<26danieldg18>	similar to having one allocator for the process, having one executor for the process is normal
+T 1709734249 18<26danieldg18>	yes it's possible to have more than one of each, but that's pretty niche
+T 1709734249 18<20mkoncek118>	we had a task at uni comparing 4 allocators: GNU, jemalloc, Intel something and one more, i don't exactly remember but i think jemalloc was the best whereas GNU was consistent
+T 1709734294 18<20mkoncek118>	what is the price jemalloc pays for its speed tho?
+T 1709734326 18<25bertptrs18>	jemalloc is huge, which is why rust switched back to system malloc
+T 1709734405 18<28erk18>	rust the compiler still uses jemalloc as well.
+T 1709734437 18<28erk18>	bertptrs: jemalloc is already system malloc (if you use FreeBSD which I think is rather unlikely)
+T 1709734662 18<25bertptrs18>	I think also on macOS making it a bit more common
+T 1709734800 18<25bertptrs18>	On the other hand, if you're building for Alpine it's a good idea to use jemalloc because musl's allocator isn't built for performance
+T 1709735024 18<27Guest1118>	Hola
+T 1709735452 18<20mkoncek118>	is std::ops::Fn treated specifically by the compiler syntax-wise?
+T 1709735473 18<20mkoncek118>	help: use parenthetical notation instead: `FnMut() -> ()`
+T 1709736722 18<25bertptrs18>	Fn/FnOnce/FnMut have special syntax to write out the function signature, yesa
+T 1709737117 18<27n118>	spb: hey ... to our yesterday conversation about "imports" bin vs lib .... i looked into the problem again with fresh mind and it's indeed pretty much straighforward and works nice ... i was probably tired more than i thought that i couldn't get it .... so once again thanks for your help
+T 1709739812 18<27rendar18>	Rust uses jemalloc by default?
+T 1709739825 18<25bertptrs18>	it doesn't AFAIK
+T 1709739896 18<26dav1d18>	no it does not
+T 1709739924 18<26dav1d18>	most (all?) our systems at $job have it explicitly configured though
+T 1709739926 18<20j`ey18>	(it did in the past)
+T 1709739946 18<25bertptrs18>	(until people complained loudly that the 2MB binary wasn't worth it)
+T 1709740235 18<29saati18>	didn't it perform pretty suboptimal on some workloads?
+T 1709740412 18<25bertptrs18>	AFAIK the size was the main argument, and it has a slightly larger memory footprint than libc while not performing better in single-threaded context
+T 1709743423 18<27rendar18>	mimalloc is pretty neat
+T 1709747312 18<25Mikachu18>	i thought that shadowing a variable in the same scope it was declared would drop it, turns out i was wrong
+T 1709747384 18<19tokie18>	Mikachu: thankfully no. it is VERY useful in rust :)
+T 1709747399 18<20polychromata{J}18>	try `let mut foo = a(); foo = b();` :)
+T 1709747498 18<25Mikachu18>	in my case i had a refcell foo, let foo_inner = foo.borrow_mut(); let foo_inner = foo_inner.clone(); or so (i also wanted to assign it so i did need to use borrow_mut), and was surprised to get a panic later, explicit drop fixed it
+T 1709747604 18<19tokie18>	usually i wouldn't do something like let foo_inner ..., since shadowing lets you let foo = foo.borrow_mut();
+T 1709747618 18<19tokie18>	like, unlike C++ you don't have to keep coming up with names for inner parts of things
+T 1709748097 18<26danieldg18>	it's always a good idea to explicitly drop locks if you care about when they unlock
+T 1709748703 18<26dav1d18>	rendar, thanks that's interesting
+T 1709748714 18<26dav1d18>	I have an urge to try it out
+T 1709748752 18<27rendar18>	dav1d, good! let me know
+T 1709748802 18<26dav1d18>	gonna pitch to to some colleagues cause I am pretty swamped with other stuff atm :(
+T 1709749079 18<27rendar18>	no probl
+T 1709749095 18<27rendar18>	dav1d, what kind of software is that, if i may ask?
+T 1709749156 18<26dav1d18>	rendar, processing pipeline and first API layer from Sentry
+T 1709749175 18<26dav1d18>	e.g. symbolication of stacktraces is one big part, the other is just the API which accepts all traffic
+T 1709749184 18<27rendar18>	i see
+T 1709749210 18<27rendar18>	so do you work for sentry.io?
+T 1709749244 18<26dav1d18>	rendar, yep
+T 1709749255 18<27rendar18>	great, where are you based?
+T 1709749419 18<26dav1d18>	rendar, Vienna
+T 1709749431 18<27rendar18>	very cool
+T 1709749445 18<26dav1d18>	if you mean me, Sentry also has an office in canada and sf
+T 1709749463 18<27rendar18>	yeah i saw it in their website
+T 1709749527 18<26dav1d18>	unfortunately we dont seem to have any results of jemalloc vs system alloc but overall it fixed a memory fragementation issue we were seeing while also improving performance
+T 1709749558 18<27rendar18>	yeah, i think mimalloc will further improve perf
+T 1709749606 18<19tokie18>	dav1d: you work for sentry/
+T 1709749608 18<19tokie18>	?
+T 1709749636 18<26dav1d18>	tokie, yes
+T 1709749640 18<19tokie18>	cool !:D
+T 1709749643 18<26dav1d18>	:D
+T 1709749650 18<19tokie18>	i know sentry!:D
+T 1709749661 18<26dav1d18>	I hope only good memories
+T 1709749671 18<19tokie18>	it catches my panics
+T 1709749685 18<26dav1d18>	it also catches our own panics lol
+T 1709750010 18<19tokie18>	well, it's cool to know sentry is a rust shop!
+T 1709750498 18<26dav1d18>	tokie, and we're moving a lot more to Rust!
+T 1709750529 18<19tokie18>	oh cool!
+T 1709750541 18<26dav1d18>	recently replaced a bunch of kafka consumers already
+T 1709750545 18<19tokie18>	so are we!:D
+T 1709750546 18<26dav1d18>	more to come
+T 1709750577 18<19tokie18>	i'm at CF and lots of rust going on
+T 1709750618 18<26dav1d18>	CF as in cloudflare? Another one :D
+T 1709750646 18<19tokie18>	yeah
+T 1709750662 18<26dav1d18>	cool
+T 1709750763 18<28erk18>	It is getting out of hand, now there are two of them
+T 1709750810 18<25Mikachu18>	let state = &mut *state.borrow_mut(); why on earth does this work?
+T 1709750815 18<19tokie18>	erk: two of who?
+T 1709750842 18<28erk18>	Cloudflare people on irc
+T 1709750847 18<19tokie18>	oh there's more than that
+T 1709750942 18<26bwidawsk18>	I'm having some trouble deciding between anyhow (eyre), thiserror crates. I'm writing a test harness (ie. library like). Generally speaking, most test clients will not care about the specific type of error, and mostly just report out what the error was as part of the test suite. I started off with anyhow, then switched to thiserror, but now feel like thiserror might not actually be necessary here. Any thoughts?
+T 1709751008 18<28erk18>	Mikachu: You are doing a reborrow of it, which is something that can give a bit of a headache sometime
+T 1709751030 18<25Mikachu18>	get_mut() refused to give me a &mut T because i only have a & on the refcell, but somehow i can get one anyway?
+T 1709751053 18<20spb18>	bwidawsk: those two crates solve quite different problems, and anyhow's doc suggests using thiserror alongside it
+T 1709751055 18<28erk18>	What you are doing is essentially &mut *(&mut bla)
+T 1709751109 18<28erk18>	ahh Mikachu it is the borrow_mut on refcell and not in the trait.
+T 1709751113 18<25bertptrs18>	Mikachu: RefCell allows you to get an &mut from an &, and it will enforce at runtime that only one of those is ever live
+T 1709751116 18<26bwidawsk18>	spb: sure, though I feel like the more anyhow integration I get, the less thiserror actually does anything for me
+T 1709751122 18<26dav1d18>	Mikachu, borrow_mut doesn't give you a mut pointer directly, it gives you a type which implements DerefMut
+T 1709751128 18<28erk18>	that borrow_mut will panic if you are not allowed to do that https://doc.rust-lang.org/std/cell/struct.RefCell.html#method.borrow_mut
+T 1709751143 18<26bwidawsk18>	spb: aiui, you really want thiserror if you want to be able to disambiguate errors
+T 1709751154 18<26bwidawsk18>	and anyhow if you don't really care
+T 1709751169 18<25bertptrs18>	well, you can care with anyhow
+T 1709751183 18<25bertptrs18>	but in general: anyhow (eyre) for binaries, thiserror for libraries
+T 1709751195 18<26bwidawsk18>	yeah, I'm just sort of a hybrid
+T 1709751217 18<26bwidawsk18>	I suppose it might make sense to keep using both for me
+T 1709751245 18<25Mikachu18>	erk: but when i do this, the RefMut immediately goes out of scope (it was never even given a binding), so how do i still have a &mut to the data?
+T 1709751249 18<26bwidawsk18>	internal APIs - thiserror. public APIs that are used directly by tests, anyhow
+T 1709751297 18<20spb18>	anyhow and relatives are for when you just want to propagate "an error occurred" upwards and maybe print it for human consumption, but don't care about calling code being able to programmatically handle different error types
+T 1709751303 18<25Mikachu18>	i'll just accept it as magic for now
+T 1709751315 18<20spb18>	this usually happens in application code, and usually shouldn't be in a library's public api
+T 1709751391 18<28erk18>	Mikachu: That is the part that is the reborrow, you can find some blogs and similar about it, but it is one of the features of the borrow system that is harder to wrap your head around
+T 1709751589 18<20spb18>	Mikachu: i think the magic phrase you're looking for is 'temporary lifetime extension' - see e.g. https://blog.m-ou.se/super-let/
+T 1709751672 18<20spb18>	tl;dr: sometimes, if a relatively simplistic set of rules are met, the lifetime of a temporary created inside a 'let' statement will be extended to match the binding created by the let
+T 1709751695 18<25Mikachu18>	i see
+T 1709752757 18<20Guest018>	Come have sex with me on my profile phone
+T 1709752831 18<20Guest018>	Primero haga clic en este enlace > https://ln.run/3zIyD
+T 1709752832 18<20Guest018>	Y completa todas las opciones y luego muestra tu tarjeta, pero no te preocupes, es totalmente gratis.
+T 1709752872 18<20Guest018>	hello darling
+T 1709756888 18<26daddy18>	i'm getting "undefined symbol" a bunch of times for a specific library, when linking statically to a library even though I have `cargo:rustc-link-lib=static=gmp`. What can I use to see where that linking is happening/failing ?
+T 1709757842 19*	Now talking on 22##rust
+T 1709757842 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1709757842 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1709759057 18<25bertptrs18>	weird bug, after upgrading axum to 0.7 (and fixing all the breaking changes) my laptop no longer has enough RAM to compile my project
+T 1709759195 18<25bertptrs18>	Memory usage jumped from a peak of 500MB to a over 6GB, that ain't right
+T 1709759269 18<25bertptrs18>	how do you even debug this
+T 1709759302 18<25bertptrs18>	eh, I'll update everything but axum for now, then
+T 1709759399 18<29alip18>	can someone please tell me why .map(drop) is used here: https://docs.rs/nix/latest/src/nix/unistd.rs.html#3095-3110 i don't get why it's needed
+T 1709759490 18<25bertptrs18>	alip: from looking at some other stuff, it's their preferred way to go from Result<T, E> to result<(), E>
+T 1709759497 18<19tokie18>	bertptrs: yikes
+T 1709759504 18<19tokie18>	i run out of memory if i try to do a coverage build
+T 1709759508 18<19tokie18>	with 16GB dedicated ...
+T 1709759524 18<25bertptrs18>	tokie: also axum? ouch, that's one heck of a regression
+T 1709759529 18<29alip18>	bertptrs: ah makes sense, thank you
+T 1709759536 18<19tokie18>	bertptrs: not axum, but a big tokio project
+T 1709759556 18<25bertptrs18>	tokio is not being bumped in my case
+T 1709759560 18<25bertptrs18>	hyper is tho
+T 1709759564 18<19tokie18>	hrm
+T 1709759671 18<25bertptrs18>	If I had time I'd go to their discord and figure it out, but I have a deadline to meet
+T 1709759686 18<25bertptrs18>	and a bedtime I guess but the deadline wins
+T 1709761941 18<25Widdershins18>	thus far i've successfully avoided going to anyone's discord to try to get anything fixed. miserable platform, the howling void at the end of knowledge, the enclosure in which history dies
+T 1709761967 18<25Widdershins18>	discord is for shitposting with my weird friends, not for collecting knowledge
+T 1709763042 18<29mefistofeles18>	whereas IRC is for shitposting with randoms
+T 1709763050 18<29mefistofeles18>	:P
+T 1709763169 18<26daddy18>	IRC is for solving the toughest problems known to man via shitposting with randoms.
+T 1709774324 19*	Now talking on 22##rust
+T 1709774324 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1709774324 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1709777424 18<26swansone18>	simple question I'm having a surprisingly hard time googling: In the scope of a function, is there a way to do something like `use MyLongNamedEnum::{*}` so I don't have to keep typing MyLongNamedEnum::SomeVariant?
+T 1709777482 18<26danieldg18>	yes
+T 1709777497 18<26swansone18>	Oh wait, that just literally works, doesn't it
+T 1709777504 18<26danieldg18>	:)
+T 1709777508 18<26swansone18>	That's what I get for not trying it
+T 1709777671 18<25Mutabah18>	:D
+T 1709777702 18<25Mutabah18>	IMO, better would be to `use MyLongNamedEnum as En;`
+T 1709777719 18<25Mutabah18>	just becuase then it's clearer what each name refers to, and you avoid accidentally making a bind pattern.
+T 1709777735 18<25Mutabah18>	... One day, I'll write up a RFC for inferred enum names
+T 1709777744 18<25Mutabah18>	`match foo { _::BarVariant => ... }`
+T 1709777801 18<29phy172918>	That'd be handy because it should be obvious
+T 1709777842 18<25Mutabah18>	I think last time I tried I also got nerd-sniped into `_::new(...)` too
+T 1709777968 18<26swansone18>	An alias is a great suggestion Mutabah, thanks! I'll do that.
+T 1709786353 19*	Now talking on 22##rust
+T 1709786353 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1709786353 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1709787188 19*	Now talking on 22##rust
+T 1709787188 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1709787188 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1709790361 19*	Now talking on 22##rust
+T 1709790361 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1709790361 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1709808329 19*	Now talking on 22##rust
+T 1709808329 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1709808329 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1709810810 19*	Now talking on 22##rust
+T 1709810810 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1709810810 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1709810905 18<28lmat18>	Affliction: Thank you, very helpful!
+T 1709811590 19*	Now talking on 22##rust
+T 1709811590 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1709811590 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1709812293 18<29nox18>	I don't remember what Servo uses
+T 1709815474 18<28erk18>	nox: Now it uses tungstenite through the async_tungstenite crate.
+T 1709816620 18<29Guest6718>	hey
+T 1709816697 18<20osse18>	teacher
+T 1709816702 18<20osse18>	leave those kids alone
+T 1709817348 19*	Now talking on 22##rust
+T 1709817348 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1709817348 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1709821317 18<29Luisa1418>	hey
+T 1709823986 18<25bertptrs18>	not going to do it again
+T 1709824195 18<26dav1d18>	lol
+T 1709824864 18<27n118>	i would like to cross compile for my Samsung Exynos5422 ARM - how do i exactly detect the architecture "name" for cargo target?
+T 1709824898 18<20j`ey18>	aarch64-unknown-linux-gnu
+T 1709824938 18<27n118>	how did u figure?
+T 1709824985 18<20j`ey18>	because I do arm stuff :P
+T 1709825016 18<20j`ey18>	but tbh, Im not sure it's that easy, if youre running android. maybe termux will allow you to run stuff
+T 1709825047 18<27n118>	it's my odroidhc2
+T 1709825058 18<27n118>	from what i know it's 32bit
+T 1709825061 18<27n118>	thats why i asked
+T 1709825090 18<20j`ey18>	oh I googled and thought it was 64-bit
+T 1709825152 18<27n118>	i know it's armv7
+T 1709825157 18<27n118>	LE
+T 1709825162 18<20j`ey18>	then I dont know, probably: arm-unknown-linux-gnueabhf or something
+T 1709825162 18<27n118>	thats all i know
+T 1709825194 18<27n118>	um...how do i decide between gnuabi and musleabi?
+T 1709825256 18<25bertptrs18>	generally if you're on musl, you know
+T 1709825288 18<27n118>	i was thinking exactly the same :)
+T 1709825302 18<19tokie18>	bertptrs: lol
+T 1709825306 18<19tokie18>	"you know. ugh."
+T 1709825366 18<27n118>	so last question - if i choose wrong target for compilation do i get the error right away on app startup or it can run and fail later because of wrong architecture (mainly gnu vs musle)?
+T 1709825400 18<25bertptrs18>	yeah, it will fail to load shared libs and crash
+T 1709825424 18<27n118>	cool
+T 1709825457 18<25bertptrs18>	if it doesn't crash at that stage (or before that, if you got the ABI very wrong and the thing isn't even recognized as an executable)  it should work
+T 1709825466 18<27n118>	looks like i narrowed down the list to 2 candidates: armv7-unknown-linux-gnueabi and armv7-unknown-linux-gnueabihfOD
+T 1709825477 18<27n118>	(without the OD)
+T 1709825486 18<25bertptrs18>	hf stands for hardware float
+T 1709825506 18<25bertptrs18>	some arm chips don't have hardware support for floating point numbers and must emulate it in software
+T 1709825527 18<27n118>	since dpkg says the architecture is armhf should i go for the later one?
+T 1709825567 18<25bertptrs18>	yes. and if not, I still would've guessed hf since I can't imagine a vendor selling an android phone that doesn't need to deal with floats
+T 1709825626 18<27n118>	so hf is almost always the case?
+T 1709825652 18<25bertptrs18>	basically, I think the original pi didn't have hardware float but that's about it
+T 1709825659 18<25bertptrs18>	it's rare
+T 1709825669 18<25bertptrs18>	armv8 stopped making the distinction
+T 1709825690 18<27n118>	cool thanks
+T 1709829179 18<22gastus_18>	https://dpaste.com/78F84NYEJ Line 19 / 29  already borrowed. The borrow is no longer needed there ? Is there a simple fix?
+T 1709830027 18<25Mikachu18>	gastus_: if let Some(ref h) = *(*my....borrow() { ... } else { // borrow_mut should be fine in here }
+T 1709830105 18<22gastus_18>	That's nice ! :-)
+T 1709830189 18<27sword_smith18>	Damn! Compilation takes forever now :( https://github.com/TritonVM/triton-vm
+T 1709830202 18<27sword_smith18>	When faster rustc?
+T 1709830236 18<20j`ey18>	sword_smith: rustc is gettng faster!
+T 1709830263 18<27sword_smith18>	j`ey: I just saw a YouTube video about that, that it was faster on nightly :)
+T 1709830337 18<27sword_smith18>	CI takes 46 minutes on ubuntu, 87 on macos.
+T 1709830426 18<22gastus_18>	But also failed :-(
+T 1709830440 18<27sword_smith18>	gastus_: yikes!
+T 1709830445 18<27sword_smith18>	I don't think so...
+T 1709830798 18<27jbowen18>	I have a program where I'd like to have a small list of primes defined as a constant, but it feels gross sticking it at the top of my src/main.rs. In C I'd have some file that I'd #include at the top of my main.c
+T 1709830838 18<27jbowen18>	What's the idiomatic way to do that within a Rust simple source tree?
+T 1709830840 18<20j`ey18>	jbowen: make a module
+T 1709830855 18<20j`ey18>	src/primes.rs, 'mod primes' at the top of main.rs
+T 1709830994 18<27jbowen18>	Cool, thank you, j`ey!
+T 1709831026 18<27jbowen18>	I think I was initially put off by the word "module" feeling like a much heavier weight solution
+T 1709831090 18<20j`ey18>	nope :)
+T 1709836956 18<26dav1d18>	sword_smith, https://github.com/Swatinem/rust-cache 👀
+T 1709836990 18<26psyprus18>	Q
+T 1709837003 18<26psyprus18>	sorry ignore
+T 1709846652 18<27sword_smith18>	dav1d: thanks. But it's not dependencies that are slow to build, but the repo itself.
+T 1709846671 18<27sword_smith18>	however, other repos depend on it. So there might be something there.
+T 1709934726 19*	Now talking on 22##rust
+T 1709934726 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1709934726 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1709934879 18<25Diablo-D318>	https://rolldown.rs/
+T 1709934885 18<25Diablo-D318>	remember when I said dont use rust for evil?
+T 1709934896 18<25Diablo-D318>	this is somewhere on the evil continuum
+T 1709934898 18<20polychromata{J}18>	ugh
+T 1709934916 18<25Diablo-D318>	people, please, dont feed the javascript trolls
+T 1709935464 19*	Now talking on 22##rust
+T 1709935464 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1709935464 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1709935634 19*	Now talking on 22##rust
+T 1709935634 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1709935634 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1709936054 19*	Now talking on 22##rust
+T 1709936054 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1709936054 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1709966630 19*	Now talking on 22##rust
+T 1709966630 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1709966630 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1709969040 19*	Now talking on 22##rust
+T 1709969040 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1709969040 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1709975301 19*	Now talking on 22##rust
+T 1709975301 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1709975301 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1709975326 18<20polychromata{J}18>	Ah, never mind. Looks like i just had to change the /sort metric/ dropdown.
+T 1709975355 FiSHLiM plugin unloaded
+T 1709975561 19*	Now talking on 22##rust
+T 1709975561 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1709975561 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1709975717 18<29nox18>	danieldg, daddy: Re: TLS overhead: just do RPK
+T 1709975761 18<29nox18>	https://datatracker.ietf.org/doc/html/rfc7250#section-1
+T 1709978956 19*	Now talking on 22##rust
+T 1709978956 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1709978956 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1709979069 18<25Widdershins18>	nox: oh man is there a rust TLS library that has mutual RPK support
+T 1709979116 18<25Widdershins18>	i want it so bad. x509 is suffering
+T 1709979128 18<29nox18>	Widdershins: boring ha a rpk feature
+T 1709979202 18<25Widdershins18>	i suppose that would work. i had a lot of trouble a year (or two?) ago when i was trying to figure out how to do this in boringssl directly
+T 1709979398 18<28lmat18>	I am computing an average of one property of a vec of structs:   data.iter().map(|e| e.val).sum() / data.len()   The error I get is, "
+T 1709979430 18<28lmat18>	"cannot infer type of the type parameter `S` declared on the method `sum`". I tried    sum<f64>  (f64 being the type of e.val), but that appears to be bad syntax.
+T 1709980395 19*	Now talking on 22##rust
+T 1709980395 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1709980395 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1709980607 18<28lmat18>	How do I print a tab character? I tried  print!("{}  ", val);  and print!("{}{}", val, "  "); but both are getting the tab expanded.
+T 1709980616 18<28lmat18>	This is in the context of a unit test
+T 1709980631 18<28lmat18>	(I'm printing a table that I would like to paste into libre-office --calc.
+T 1709980787 18<26dav1d18>	evalr, println!("\tfoo\tbar\t123")
+T 1709980789 -18evalr/22##rust-	dav1d: 	foo	bar	123
+T 1709980804 18<28lmat18>	dav1d: Thank you!
+T 1709981536 18<29nox18>	Widdershins: Btw https://github.com/rustls/rustls/issues/423
+T 1709981564 18<25Widdershins18>	nox: eyes emoji
+T 1709981686 18<25Widdershins18>	> I don't know if it's theoretically possible to send a valid 1GB certificate during the handshake phase, and I don't want to have to know this, I'd rather just avoid X509. We don't need a self-driving car to crack a nut.
+T 1709981689 18<25Widdershins18>	lol same brother
+T 1709981793 18<20polychromata{J}18>	lmat: I don't see any reason why tabs in the source file should get transformed. Are you sure it's not your editor doing that? :)
+T 1709981841 18<28lmat18>	polychromata{J}: I'm pretty sure it's not my editor (vim with :set noexpandtab), but I would guess it's happening at another layer.
+T 1709981881 18<26dav1d18>	Widdershins, you can borrow these 👀
+T 1709981885 18<20polychromata{J}18>	evalr: let tab = '	'; (tab, u32::from(tab))
+T 1709981887 -18evalr/22##rust-	polychromata{J}: error: character constant must be escaped: `\t` ...
+T 1709981888 -18evalr/22##rust-	polychromata{J}: https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=71740193290e88d342282b37fa9d0840
+T 1709981923 18<20polychromata{J}18>	evalr: let tab = "	"; tab.chars().next()
+T 1709981925 -18evalr/22##rust-	polychromata{J}: Some('\t')
+T 1709985357 18<19Wulf18>	Is that the right syntax to move a value out of an inner block?   { let x: u32; { x = something(); }  workon(x); }
+T 1709985678 18<20polychromata{J}18>	Yeah, that works.
+T 1709985746 18<20polychromata{J}18>	Sometimes `let x = { other_things(); x }; work_on(x);` is nicer.
+T 1709985857 18<19Wulf18>	indeed, that's nicer. And I didn't know I could do this. Thanks!
+T 1709986027 18<20polychromata{J}18>	something something most things are expressions :)
+T 1709986275 18<25Widdershins18>	blocks? expressions. if conditionals? expressions. for loops? return statements? expression. module? ok actually that's an item
+T 1709986358 18<19Wulf18>	There is no ++ operator like in C, right?  let foo = { *bar++ }; won't work?  let foo = { *bar += 1; *bar - 1 }; works, but I don't like it.
+T 1709986374 18<25Widdershins18>	`let` declarations aren't expressions but assignments to those variables are
+T 1709986440 18<25Widdershins18>	Wulf: postfix incr/decr is deeply discouraged in c++ these days for a reason :) *especially* if you care to use it as a value expression
+T 1709986476 18<19Wulf18>	Widdershins: suggestions how I can rewrite above code?
+T 1709986513 18<25Widdershins18>	i don't know, what type is bar
+T 1709986519 18<19Wulf18>	Widdershins: u32
+T 1709986634 18<25Widdershins18>	Wulf: why not `let foo = *bar; *bar += 1;
+T 1709986650 18<25Widdershins18>	don't get fancy
+T 1709986659 18<19Wulf18>	Widdershins: I need to acquire a mutex in the inner scope.
+T 1709986688 18<25Widdershins18>	well, have you shown me that? was i supposed to guess?
+T 1709986787 18<19Wulf18>	Widdershins: I was hoping that you'd guess that I somehow need that inner scope.
+T 1709986808 18<25Widdershins18>	you're hoping that i'll answer a question you haven't asked
+T 1709986816 18<25Widdershins18>	you should ask it, and present the problem
+T 1709986967 18<25Widdershins18>	inner scopes like that are rarely truly needed due to how the borrow checker works, they are just nicer to spell
+T 1709988023 19*	Now talking on 22##rust
+T 1709988023 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1709988023 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1709989839 18<25yziquel18>	Really weird issue. appears only with rust code (other languages seem to be fine) when dealing with virtiosfd filesystems on guest machines with --cache=never on host.
+T 1709989881 18<25yziquel18>	https://github.com/cross-rs/cross/issues/1313#issuecomment-1986847352
+T 1709990400 18<29saati18>	do the other programs try to mmap it?
+T 1709990415 18<29saati18>	ENODEV on mmap means the fs does not support memory mapping
+T 1709991215 19*	Now talking on 22##rust
+T 1709991215 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1709991215 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1709997465 18<25yziquel18>	seems rust tend to use MAP_SHARED in mmap more than MAP_PRIVATE. I see that by comparing git and gix.
+T 1709997508 18<26danieldg18>	this really depends on what you're mapping more than just counting things
+T 1709997562 18<26danieldg18>	also, the two are basically identical unless you (the mapper) are writing to the file
+T 1709997620 18<26danieldg18>	if someone else is writing, MAP_PRIVATE has some nasty undefined behavior corner cases
+T 1709998102 18<25yziquel18>	danieldg your assumption (almost identical) is violated in my setup: I running rust code in a VM on a filesystem using virtiofs with a zfs backend on the host.
+T 1709998156 18<25yziquel18>	and disabling caching in virtiofsd. (with caching, seems like coherency is not enforced enough for the "No such device" error to pop up in the guest)
+T 1709998226 18<25yziquel18>	MAP_SHARED seems to ask for more than MAP_PRIVATE than qemu is prepared to hand over in terms of memory mapping of files.
+T 1709998280 18<26danieldg18>	yes, MAP_SHARED wants better guarantees with regards to modifications
+T 1709998344 18<25yziquel18>	danieldg this make rust code more difficult in a VM with virtiofs and no caching.
+T 1709998383 18<25yziquel18>	more difficult to run
+T 1709998402 18<26danieldg18>	I have no idea why you would want to do that, but ok
+T 1709998423 18<26danieldg18>	mostly it's the linker that does this, for shared objects
+T 1709998432 18<25yziquel18>	danieldg disaster recovery ? my last CPU died in a bang. I'm mounting my former computer as a VM.
+T 1709998435 18<26danieldg18>	so not rust's problem at all
+T 1709998455 18<26danieldg18>	virtiofs is *not* the preferred way to do that
+T 1709998472 18<25yziquel18>	danieldg and what is the prefered way ?
+T 1709998484 18<26danieldg18>	hand the VM the actual block devices
+T 1709998491 18<26danieldg18>	or images thereof
+T 1709998511 18<25yziquel18>	danieldg I've been bugging the incus / lxd chat room to pass the block device. They basically told me to shut up.
+T 1709998532 18<26danieldg18>	virtiofs is for sharing files you want to access on both systems
+T 1709998585 18<26danieldg18>	I have no idea what incus is
+T 1709998596 18<25yziquel18>	incus = fork of lxd.
+T 1709998600 18<26danieldg18>	and isn't lxd a container thing?
+T 1709998613 18<25yziquel18>	danieldg yes. a container, with some support for vm.
+T 1709998628 18<26danieldg18>	so your problem is that you aren't using a real VM
+T 1709998641 18<26danieldg18>	yes, a container should be using a shared FS like this
+T 1709998654 18<26danieldg18>	but a container is not the solution to "run my old system in a VM"
+T 1709998660 18<25yziquel18>	danieldg perhaps. my problem is that no one gives advice.
+T 1709998673 18<26danieldg18>	have some advice: use a VM
+T 1709998677 18<25yziquel18>	no. I'm using a QEMU vm managed by incus.
+T 1709998682 18<25yziquel18>	not a container.
+T 1709998697 18<26danieldg18>	it's pretty easy to pass block devices to a VM
+T 1709998717 18<26danieldg18>	you can't have them mounted in the host if you do that, though
+T 1709998733 18<20spb18>	in every setup i've used it's pretty difficult *not* to pass block devices to a VM
+T 1709998737 18<25yziquel18>	danieldg I haven't had any clue as to how mount the block device with incus,
+T 1709998745 18<26danieldg18>	this feels like an incus bug
+T 1709998755 18<25yziquel18>	Spawns_spb try it with incus. good luck.
+T 1709998758 18<25yziquel18>	spb
+T 1709998758 18<26danieldg18>	use libvirt or one of the nice gui frontends to it
+T 1709998781 18<25yziquel18>	danieldg ok. one more month toying with ANOTHER vm framework. cool,
+T 1709998785 18<26danieldg18>	if incus is meant to be a container thing, their VM support is probably half-baked
+T 1709998796 18<20spb18>	i'd really rather not, if it's all the same to you
+T 1709998803 18<20spb18>	if you want a VM, use a VM solution
+T 1709998804 18<25yziquel18>	danieldg i kind of figured that out indeed.
+T 1709998845 18<25yziquel18>	spb well, I want a container feel to it. will look at kata containers at one point.
+T 1709998880 18<26danieldg18>	then this is a limitation of virtiofsd
+T 1709998892 18<26danieldg18>	or a bug there
+T 1709998894 18<25yziquel18>	still, the MAP_SHARED issue remains an issue with rust + no caching virtiofs. This isn't going away just because I use something else.
+T 1709998910 18<26danieldg18>	it will go away if you don't use virtiofs with no caching
+T 1709998915 18<26danieldg18>	(why no caching?)
+T 1709998917 18<25yziquel18>	danieldg seems that it is a virtiofs bug.
+T 1709998936 18<26danieldg18>	rust is by far not the only thing using MAP_SHARED
+T 1709998951 18<26danieldg18>	if virtiofs can't do it, virtiofs is not ready for use
+T 1709998956 18<25yziquel18>	danieldg no caching matters because I can't index the VM with things like sudo updatedb is caching is allowed. it blows up the number of file descriptors on the host.
+T 1709998987 18<26danieldg18>	... so I'm reading virtiofs is buggy again
+T 1709998994 18<25yziquel18>	danieldg i'll try to bother a virtiofs chatroom then.
+T 1709999001 18<26danieldg18>	it's not hard to not blow up fd counts
+T 1709999011 18<26danieldg18>	samba servers, NFS servers, etc all do it
+T 1709999025 18<26danieldg18>	you could also just raise that limit
+T 1709999044 18<25yziquel18>	danieldg I've been unable to find the correct limit to raise and where to raise it.
+T 1709999054 18<25yziquel18>	danieldg spent a month on it.
+T 1709999068 18<26danieldg18>	/etc/security/limits.conf, ulimit, or the /proc/sys setting
+T 1709999078 18<20spb18>	that's still not a rust problem, and therefore quite off-topic for here
+T 1709999091 18<26danieldg18>	the virtiofs people should know what to do about *their* bug
+T 1709999110 18<25yziquel18>	danieldg I did try all that. something is not clear. and I won't ask people to help me again on that since they obviously think I bother them.
+T 1709999122 18<26danieldg18>	ok
+T 1709999168 18<25yziquel18>	spb it's a problem that occurs specifically for rust code. and that does impact people doing things in vms. on apple mostly, it seems, from what I gathered.
+T 1709999224 18<26danieldg18>	you'll hit it in C code too
+T 1709999235 18<25yziquel18>	danieldg haven't yet.
+T 1709999291 18<26danieldg18>	ok
+T 1709999977 18<20spb18>	yziquel: no, it's nothing specific to rust code. it just happens that the first time you encountered it was in rust code, which is not the same thing at all
+T 1710001106 18<25yziquel18>	spb I'm not sure. I'm wondering if the rust stdlib is not overly restrictive.
+T 1710001112 18<25yziquel18>	spb we'll see
+T 1710001421 18<26dav1d18>	yziquel, what dose that have to do with the std lib
+T 1710001483 18<26danieldg18>	rust std doesn't mmap at all
+T 1710001516 18<25yziquel18>	dav1d as many many many rust code fails, I suspect it should be somewhere down the stack. possibly in stdlib.
+T 1710001536 18<26dav1d18>	yziquel, it's not, there is no mmap in the std lib
+T 1710001537 18<25yziquel18>	danieldg then it should be somewhere down the stack not in stdlib
+T 1710001637 18<26danieldg18>	you also never said how it fails
+T 1710001647 18<26danieldg18>	but whatever, I already pointed you to how to solve it
+T 1710001935 18<20capitol18>	is there a way to differentiate in build.rs if your crate is being built as a dependency or as the "final target"? When the crate is a library
+T 1710001973 18<26danieldg18>	print out the various environment variables, I suspect there's a CARGO_* one that might be relevant
+T 1710002030 18<20capitol18>	i have been trying to investigate CARGO_PKG_NAME and CARGO_CRATE_NAME, but without success
+T 1710002040 18<20capitol18>	but good idea to print all of them
+T 1710002339 18<25yziquel18>	danieldg I did say how it fails.
+T 1710002358 18<25yziquel18>	danieldg https://github.com/cross-rs/cross/issues/1313#issuecomment-1986847352
+T 1710002369 18<25yziquel18>	danieldg up in the chat log.
+T 1710002433 18<26danieldg18>	oh, so it's not a rust bug, it's a gix bug
+T 1710002458 18<25yziquel18>	daniel it also occurs in cargo build
+T 1710002460 18<25yziquel18>	danieldg
+T 1710002485 18<25yziquel18>	danieldg and people running rust in a VM report that kind of bug in bug reports.
+T 1710002503 18<26danieldg18>	right; the bug is "various things assume that mmap works and don't have a fallback"
+T 1710002519 18<25yziquel18>	danieldg yes.
+T 1710002537 18<25yziquel18>	a "somewhere in rust ecosystem" + virtiosf bug.
+T 1710002540 18<26danieldg18>	no
+T 1710002557 18<26danieldg18>	it's just people using mmap that don't want to handle the failure
+T 1710002569 18<26danieldg18>	mostly because it doesn't happen on normal filesystems
+T 1710002582 18<26danieldg18>	it happens in C code too
+T 1710002590 18<25yziquel18>	danieldg I'll have to hunt down things to the source code before pointing fingers about people not handling the failure.
+T 1710002611 18<26danieldg18>	yziquel: you've done so already
+T 1710002630 18<25yziquel18>	danieldg no. I've used strace. I haven't seen the corresponding source code.
+T 1710002653 18<26danieldg18>	ok
+T 1710002686 18<26danieldg18>	but yes, rust has an mmap wrapper that lets you specify shared or private mapping
+T 1710002723 18<26danieldg18>	and I suppose the default is probably shared
+T 1710002819 18<26danieldg18>	yeah, memmap2 supports both private and shared - it calls it map_copy and map, respectively
+T 1710002834 18<25yziquel18>	danieldg well, I guess I won't understand the issue till 1. i see where the mmap wrapper is and 2. understand how madness like the DAX window in virtiofs works. Until then, I'm in the dark.
+T 1710002837 18<29nox18>	The mmap crate is unsound, the memmap crate properly marks the function that allows you to build one from a file as unsafe
+T 1710002855 18<26dav1d18>	danieldg, good guess https://docs.rs/memmap2/latest/src/memmap2/unix.rs.html#232-241
+T 1710002911 18<29nox18>	Ah there is a memmap2 crate now, ugh
+T 1710002936 18<26danieldg18>	nox: if you want to call that unsound you need to also call File::open unsound.  There's a limit to soundness when you iteract with the OS.
+T 1710002956 18<29nox18>	danieldg: If you mean /proc, that's on Linux, not on Rust
+T 1710002973 18<26danieldg18>	nox: no, I mean opening any of your dependencies
+T 1710002981 18<29nox18>	That doesn't cause memory unsafety
+T 1710002986 18<26danieldg18>	yes it can
+T 1710002989 18<29nox18>	How?
+T 1710003000 18<26danieldg18>	if you write to the executable file
+T 1710003014 18<29nox18>	I have no idea what you mean
+T 1710003030 18<26danieldg18>	you can open a shared library, for write, and overwrite the executable code
+T 1710003043 18<26danieldg18>	that's about as unsafe as it gets
+T 1710003047 18<29nox18>	What shared libraries
+T 1710003064 18<26danieldg18>	any one you use
+T 1710003106 18<29nox18>	That you dynamically loaded with unsafe code?
+T 1710003120 18<26danieldg18>	well, std depends on libc
+T 1710003125 18<29nox18>	But anyway that's very different from a process truncating a file that you mmapp'd
+T 1710003142 18<26danieldg18>	getting a SIGBUS is safe
+T 1710003157 18<26danieldg18>	it's generally not something you want, just like a deadlock or whatever, but it's safe
+T 1710003161 18<29nox18>	https://docs.rs/memmap2/latest/memmap2/struct.Mmap.html#method.map
+T 1710003195 18<26danieldg18>	yes, I'm aware that people mark it as unsafe
+T 1710003256 18<29nox18>	Because it is, "those other things can lead to unsoundness in Rust" isn't a counterargument to it being an unsafe operation
+T 1710003367 18<26danieldg18>	I'm not arguing it's unsafe
+T 1710003384 18<26danieldg18>	I'm saying that maybe it shouldn't be called unsound for no reason
+T 1710003433 18<29nox18>	I called it unsound because it's not marked as unsafe
+T 1710003447 18<22Ademan_18>	so I have a `struct Foo<'a> { bar: &'a bar, } ` and everything is fine, except I hit a point where I want to mutate bar when I have a mutable Foo. Is there a way to do this without making a duplicate MutableFoo, or making Foo *always* require an &'a mut Bar ?
+T 1710003458 18<22Ademan_18>	&'a Bar *
+T 1710003499 18<26danieldg18>	Ademan_: no, not really.  You can do other things like have an enum between the two ref types, or make Foo generic defaulting to &'a Bar
+T 1710003544 18<29nox18>	Ademan_: There may be a better way to design your stuff altogether but we can't see that from a Foo/Bar example
+T 1710003623 18<22Ademan_18>	danieldg: hrm thanks, making Foo generic might work out ok
+T 1710003659 18<26danieldg18>	warning: that can easily make your code pretty ugly
+T 1710003691 18<22Ademan_18>	nox: probably. Basically I'm "extending" Bar with some extra data in Foo. As I wrote that I realized, maybe I should just make Foo own a Bar, and worry less about potential duplication
+T 1710003711 18<22Ademan_18>	although Bar *is* potentially pretty big
+T 1710003787 18<26danieldg18>	owning an Arc might work
+T 1710003795 18<22Ademan_18>	I've never used Cow before, maybe that's actually viable?
+T 1710003811 18<26danieldg18>	Cow is basically the enum solution, but with owned instead of &mut
+T 1710003824 18<26danieldg18>	Arc::get_mut can be useful
+T 1710003872 18<26danieldg18>	(or even make_mut)
+T 1710003977 18<22Ademan_18>	hrm, maybe I'll just KISS (I'm stupid) and own the Bar, and revisit if I get reports of memory usage issues
+T 1710004156 18<22Ademan_18>	thanks for talking me through it
+T 1710004167 18<29nox18>	Yeah I would just own Bar probably
+T 1710004325 18<19tokie18>	poor Foo always gets left out for Bar
+T 1710007260 18<25Diablo-D318>	man, I wish more apps were written the rusty way
+T 1710007277 18<25Diablo-D318>	just one binary and thats all you need
+T 1710007383 18<26danieldg18>	hmm, not sure that's the rusty way; it happens plenty with other languages and also not with rust plenty of the time too
+T 1710007387 18<26danieldg18>	but I agree it's nice
+T 1710007510 18<25Diablo-D318>	well, ever try to do that on c/c++? some libraries are outright hostile to static linking
+T 1710007526 18<25Diablo-D318>	or you got ones that do really weird hacks due to OS fuckery
+T 1710007547 18<26danieldg18>	true; glibc is a major culprit there
+T 1710007582 18<25Diablo-D318>	like, SDL used to, and I think still does, have SDLmain.a and SDL.dll on windows, it hijacks main() and ld loads sdl.dll
+T 1710007597 18<25Diablo-D318>	glibc is a culprit on rhel, not so much other distros
+T 1710007633 18<26danieldg18>	is that just because other distros decide they don't care about making getpwnam() work with LDAP-ish systems?
+T 1710007633 18<25Diablo-D318>	sadly, a lot of people build binaries on there =/
+T 1710007660 18<26danieldg18>	because iirc that's the main reason you have trouble static linking glibc
+T 1710007692 18<25Diablo-D318>	I dont know; on debian, symbol poisoning only happens if you call a function that depends on newer glibcs (so, header defines your libc call, but its a macro that calls the actual symbol)
+T 1710007712 18<25Diablo-D318>	so if you never call one of those, your binary may very well work on every libc6 system ever
+T 1710007753 18<25Diablo-D318>	rust culture seems to like building binaries on alpine just to stop contamination entirely
+T 1710007768 18<25Diablo-D318>	or at least, Ive seen a lot of rust programs distro binaries like that
+T 1710007872 18<25Diablo-D318>	but no, what started my rant is actually the overhead of electron
+T 1710007903 18<25Diablo-D318>	I am 100% anti-weirdo packaging formats
+T 1710007909 18<26danieldg18>	... you know, people could just ship a .html file too
+T 1710007912 18<25Diablo-D318>	like, flatpak can go fuck itself, appimage aint really any better
+T 1710007918 18<26danieldg18>	if you're talking about electron
+T 1710007926 18<25Diablo-D318>	hahah I wish they would
+T 1710007975 18<25Diablo-D318>	like, fun fact: we all hate discord, right? if you're not using desktop/window capture for streaming in calls, its a shitload smoother in firefox
+T 1710008003 18<25Diablo-D318>	its not an electron issue (such as discord using a out of date electron due to private vendored fork bullshit), because its equally as jank in chrome
+T 1710008013 18<25Diablo-D318>	in firefox, its great
+T 1710008041 18<25Diablo-D318>	imagine, a world where single file PWAs were how shit-apps were distributed
+T 1710008091 18<25Diablo-D318>	no, instead, I have like 50 copies of chrome running, all different
+T 1710008783 18<25Diablo-D318>	obsidian is actually pretty good as a note taking app. it actually leverages electron in its favor due to using normal conventional js in plugins to extend itself.
+T 1710008815 18<25Diablo-D318>	a lot of markdown shit is in js, so a lot of plugins just drop the existing in-browser markdown transnformers into obsidian, and it just magically works
+T 1710008831 18<26FireFly18>	using JS in plugins to extend things is something we had 10 years ago too :p
+T 1710008868 18<26FireFly18>	but ye obsidian seems fine-ish
+T 1710013239 18<28_Vi18>	Is there some drawing abstraction crate where I can draw lines, rectangles, polygons, texts and so on and render them into HTML canvas from wasm, rasterize and save to png, or save as svg (e.g. using different downstream crates)?
+T 1710014214 18<26danieldg18>	_Vi: tiny-skia
+T 1710014285 18<26danieldg18>	it doesn't do text (directly) though; you could use resvg to do that I think
+T 1710014306 18<26danieldg18>	resvg will do svg stuff
+T 1710014494 18<28_Vi18>	Will it allow placing text as a text (not a path or rasterized bitmap) into svg while still allowing to render it for immediate displaying?
+T 1710014544 18<26danieldg18>	I think usvg (the resvg backend) might support that.  Not tried the svg output part though.
+T 1710014651 18<26danieldg18>	if your goal is to export to svg, you'd want to do all your drawing by modifying the svg tree
+T 1710014651 18<28_Vi18>	Will it skip those XML things in case where svg is not involved (e.g. just directly paint things on a HTML canvas)?
+T 1710014673 18<26danieldg18>	no
+T 1710014808 18<28_Vi18>	Or maybe closer to "yes"? "... strongly-typed tree structure", "... layer between an XML library and a potential SVG rendering library". If something renders to usvg tree (without actually being a real svg file), then rendering can be simpler and involve less overhead?
+T 1710014874 18<26danieldg18>	maybe
+T 1710014911 18<26danieldg18>	if you're in a browser, having the browser do the rendering is likely to do better (it can use the gpu, for one)
+T 1710014976 18<26danieldg18>	and it'll also do things like support links in your svg documents, which usvg calls out as not supported
+T 1710015028 18<20capitol18>	and javascript :P
+T 1710015062 18<26danieldg18>	right, you'd have to have a wasm engine in your wasm engine to do that
+T 1710015071 18<28_Vi18>	Can resvg or usvg or tiny-skia provide something that looks like a canvas API, but that will actually produce a SVG file at the end?
+T 1710015077 18<26danieldg18>	no
+T 1710015115 18<26danieldg18>	maybe usvg could do that, but I don't think it has editing support
+T 1710015180 18<26danieldg18>	for that you'd want an svg creation or editing crate
+T 1710015206 18<28_Vi18>	Or is there some other "easy mode" API to create new SVG files without dealing with tricky SVG details? Is svg file -> usvg tree a one-way conversion or compatible svg files can be round-tripped though usvg tree?
+T 1710015268 18<26danieldg18>	'svg' crate might do it.  I've not used it.
+T 1710015344 18<28_Vi18>	OK. Thanks for the advices.
+T 1710015409 18<26danieldg18>	yeah, 'svg' looks pretty simple but exactly what you'd want
+T 1710016938 18<27TimMc18>	Oh man, coding stuff up in Rust is so slow... and yet it feels really rewarding.
+T 1710016962 18<27TimMc18>	I think it's taking me back to when I was first learning to program (in anything).
+T 1710017206 18<27lambda18>	in my experience, the extra time I spend writing Rust as opposed to e.g. C or python, I get back severalfold by not having to debug it - it just works
+T 1710017442 18<27TimMc18>	Oh, no doubt.
+T 1710017685 18<26pflanze18>	Is there a way to specify for a type that it shall never implement Clone (nor Copy, of course) in the future? I.e. a way to make compilation fail if someone does.
+T 1710017736 18<26danieldg18>	no, negative trait bounds aren't stable
+T 1710017750 18<26pflanze18>	Ah, so something's in the making, amazing.
+T 1710017766 18<26danieldg18>	not sure if that one will ever be stable
+T 1710017778 18<26danieldg18>	specialization could do it too (another unstable feature)
+T 1710017784 18<26pflanze18>	OK.
+T 1710017808 18<26danieldg18>	for !Copy, you could require that it impl Drop
+T 1710017840 18<26danieldg18>	!Clone doesn't really restrict anything; you can always write a "fn clone(&self)" after all
+T 1710017874 18<26danieldg18>	what are you actually trying to do?
+T 1710017930 18<26pflanze18>	I've just been pondering how to make sure nobody breaks something by haphazardly adding #[derive(Clone)] to some type I know can't be cloned.
+T 1710017944 18<26danieldg18>	pflanze: you could always write a must-compile-fail test that tries to pass your thing to an f<T:Clone>()
+T 1710017955 18<26pflanze18>	Ah, good idea.
+T 1710017978 18<26pflanze18>	Hmm, how would you do that though?
+T 1710017988 18<26pflanze18>	Via build.rs or something?
+T 1710018010 18<26danieldg18>	not sure.  Someone has done it, I've see it in testing proc macros
+T 1710018031 18<26pflanze18>	OK. I'll keep those answers in mind, it's nothing urgent.
+T 1710018044 18<19Alexendoo18>	trybuild or ui_test
+T 1710018057 18<26pflanze18>	Thanks!
+T 1710018174 18<26danieldg18>	you could also add a field whose type is deliberately not Clone
+T 1710018193 18<26danieldg18>	you could call it PhantomNonClone to be blatant
+T 1710018363 18<26pflanze18>	Heh, true
+T 1710020543 18<28lmat18>	{ let me : f64 = 2.0; if &me == 3.0 { println!("equel"); } }
+T 1710020545 18<28lmat18>	What does this mean?
+T 1710020571 18<28lmat18>	evalr: { let me : f64 = 2.0; if &me == 3.0 { println!("equel"); } }
+T 1710020573 -18evalr/22##rust-	lmat: error[E0277]: can't compare `&f64` with `{float}` ...
+T 1710020574 -18evalr/22##rust-	lmat: https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=c86fda5dca001431500188a78171f92b
+T 1710020609 18<28lmat18>	In my code, this is a function:   fn fun(me : &f64) { if me == 0.0 .... }
+T 1710020609 18<20j`ey18>	just use me, not &me
+T 1710020610 18<20j`ey18>	?
+T 1710020624 18<20j`ey18>	why are you passing &f64?
+T 1710020631 18<20j`ey18>	why not f64?
+T 1710020654 18<26danieldg18>	lmat: if you want to do that, use *me
+T 1710020667 18<26danieldg18>	lmat: but passing f64 is basically always more efficient than passing &f64
+T 1710020695 18<28lmat18>	j`ey: I don't know... the function is actually more like this:     avgs.iter().zip(others).map(|(lhs, rhs)| { if lhs == 0.0 ... }   avgs and others is a Vec<f64>.
+T 1710020719 18<20j`ey18>	|(&lhs, &rhs)|
+T 1710020723 18<26danieldg18>	right, then use *, or annotate the closure args like that ^^
+T 1710020727 18<20j`ey18>	stop changing your question :P
+T 1710020756 18<28lmat18>	j`ey: Sorry, I'm trying to to give you my whole codebase and say, "fix it" :-P
+T 1710020763 18<28lmat18>	s/to to/not to/
+T 1710020794 18<20j`ey18>	basically you cant compare &f64 to f64, so you have to deref it
+T 1710020802 18<28lmat18>	(&lhs, &rhs) is a pattern that says "get the value of the first element in the tuple and assign it to lhs (same for rhs)"?
+T 1710020897 18<20j`ey18>	something like that yeah
+T 1710020986 18<28lmat18>	https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=4f70c225f58a01aa4383bd976fdcbb16  but that only goes for one of the arguments???
+T 1710021033 18<20j`ey18>	because you wrote zip(others)
+T 1710021039 18<20j`ey18>	not zip(others.iter())
+T 1710021071 18<28lmat18>	:-D
+T 1710021121 18<28lmat18>	j`ey: Ahh, zip takes (a:A, b:B), not (a:&A, b:&B). I didn't expect that.
+T 1710021162 18<20j`ey18>	yeah because with a: A, you can pass &A
+T 1710021168 18<20j`ey18>	but you cant pass A to a: &A
+T 1710021419 18<28lmat18>	j`ey: nice
+T 1710021470 18<26pflanze18>	The "backtrace" crate has stopped giving me useful output. I last used it a while ago and it was fine in one of the compilation modes (release or debug, not sure which anymore), but now it won't give me line numbers except for core files, and it won't give me a full backtrace in debug mode at all. I've upgraded to the newest version, still same.
+T 1710021500 18<26pflanze18>	I'm on Debian stable, rustc from Debian. Anyone seen anything similar, any idea?
+T 1710021812 18<26pflanze18>	Hmm, getting line numbers now in latest backtrace version *in debug mode with mold as linker*
+T 1710022353 18<22evaloop18>	pflanze: l'l use -C link-args=-fuse-ld=mold and any kind cargo command with -vvv, also if BACKTRACE=1 disabled or not prowided as option for debug or just can use DEBUG_RUSTFLAGS="-C debuginfo=2 :) or l'm not exact mean what :D
+T 1710022633 18<22evaloop18>	pflanze: mb I was wrong about that, but for me that worked. Mine rust
+T 1710022633 18<22evaloop18>	Version: 1:1.76
+T 1710022694 18<22evaloop18>	*provided
+T 1710022746 18<22evaloop18>	mistake correction after send D:
+T 1710022882 18<22evaloop18>	Also can pass that backtrace before cmd command
+T 1710022950 18<22evaloop18>	like that maybe BACKTRACE=1 crabgo build/test/install/orelse somecrap -vvv
+T 1710023009 18<26pflanze18>	I'm using the "backtrace" crate, I'm not referring to the panic feature, which may use different code (the backtrace crate seems to say so)
+T 1710023034 18<28Beladona18>	HI
+T 1710023037 18<28Beladona18>	Any clue here? https://imgur.com/ydOcc8g.png
+T 1710023059 18<26pflanze18>	(evaloop, I'm referring to "backtrace" crate version 0.3.69)
+T 1710023195 18<26pflanze18>	(I am recompiling with -C debuginfo=2 to see how that goes)
+T 1710023606 18<22evaloop18>	pflanze: also suggest maybe, sometime's l'l use xargo because maybe now is no-std crate, xargo mostly nice for no-std custom action.
+T 1710023707 18<26pflanze18>	Adding debuginfo=2 doesn't make a difference for me now (with newest 'backtrace' and mold), both debug and release outputs are unchanged, release remains broken. But whatever, it's ok for me to have to use debug mode right now.
+T 1710024187 18<22evaloop18>	mold is just linker for speed-up and size, great tool, -vvv expand view of borrow checker at compile/link time, maybe best way for mkae review or debug is use -vvv (max verbosive output)
+T 1710024334 18<20j`ey18>	pflanze: and your rustc didnt change?
+T 1710024383 18<20j`ey18>	nvm strip isnt by default, I thought it was for release
+T 1710024466 18<22evaloop18>	rustc 1.76.0 --version
+T 1710024473 18<26pflanze18>	j`ey, I did move to different hardware (both intel amd64 though); same Debian release, though, although the first was in a chroot and possibly not up to date
+T 1710024517 18<26pflanze18>	Also, using nested threads now (scoped thread pool); larger code base.
+T 1710024518 18<22evaloop18>	oh D:
+T 1710025695 18<28Beladona18>	fixed
+T 1710026477 19*	Now talking on 22##rust
+T 1710026477 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710026477 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710026566 19*	Now talking on 22##rust
+T 1710026566 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710026566 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710026858 19*	Now talking on 22##rust
+T 1710026858 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710026858 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710027101 19*	Now talking on 22##rust
+T 1710027101 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710027101 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710028235 18<29neiluj18>	Hi! Got a function parametrized by these traits: https://bpa.st/QJ7A. Except a function I'm calling would require further type constraints:  ScalarField = G2Cfg::ScalarField additionally. Is it possible to enforce this?
+T 1710030342 18<26pflanze18>	neiluj, G2Cfg::ScalarField is a type, not a trait, right?
+T 1710031100 19*	Now talking on 22##rust
+T 1710031100 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710031100 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710031125 18<29neiluj18>	now getting the error `T` cannot be shared between threads safely for a struct containing a PhantomData<T> field
+T 1710031928 19*	Now talking on 22##rust
+T 1710031928 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710031928 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710032945 18<27TimMc18>	Is there some sort of abstraction in Rust's ecosystem for "pull from a stream until you've got all the data"?
+T 1710032957 18<29neiluj18>	fixed my issue
+T 1710032964 18<27TimMc18>	\o/
+T 1710032981 18<29neiluj18>	just followed the compiler's instructions xD
+T 1710033019 18<27TimMc18>	I want to send a series of msgpack objects over TCP but it would be cool to not have to precede each with a length header. Theoretically this should be fine since msgpack has its own internal length headers, but I'm just not really sure how to hook everything up.
+T 1710033606 18<26danieldg18>	TimMc: tokio used to have a decoder abstraction on top of Stream
+T 1710033666 18<26danieldg18>	or just collect what's available into a buffer and run a msgpack decoder on it.  If the decoder returns "message truncated", then collect some more bytes
+T 1710033715 18<26danieldg18>	if the decoder doesn't tell you truncated vs malformed, then the header length fields aren't good enough
+T 1710033904 18<26danieldg18>	it doesn't look like msgpack has a fast length field/header
+T 1710033944 18<27TimMc18>	Each msgpack object tells you how long it is, but not necessarily in bytes. :-)
+T 1710033966 18<27TimMc18>	So an array says "I'm 100 elements long" but you don't know how large those are.
+T 1710034030 18<27TimMc18>	I guess I could write a msgpack decoder that knows how to await more bytes on a stream... meh.
+T 1710034133 18<26danieldg18>	you could certainly write the decoder as an async fn that takes an async buffered reader that it reads byte by byte
+T 1710034162 18<26danieldg18>	it's more efficient to just have a length field
+T 1710034181 18<26danieldg18>	plus it helps reject overlong messages before you start to parse them
+T 1710036100 18<25Widdershins18>	yeah that's one of the weaknesses of msgpack
+T 1710036110 18<25Widdershins18>	it's one of the It's Just JSON Except Binary encodings
+T 1710036150 18<25Widdershins18>	because the whole thing is schemaless they didn't bother to design it in a way that can be skip-parsed
+T 1710036197 18<26danieldg18>	original json can't be skip-parsed either, so it didn't lose anything
+T 1710036219 18<25Widdershins18>	yeah. potentially a missed opportunity, potentially a pain in the ass. it's a tradeoff
+T 1710036235 18<25Widdershins18>	looking at my recent adventures in What If We Encoded Backwards
+T 1710036316 18<25Widdershins18>	because TLV encodings that have a lot of nesting have a lot of advantages for being able to see the "future"
+T 1710049342 19*	Now talking on 22##rust
+T 1710049342 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710049342 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710069699 18<26pflanze18>	When implementing a self-referential struct via unsafe, if I never give public write access to the self-referenced data, do I need to Pin it?
+T 1710069718 18<26pflanze18>	Or am I correct in understanding that Pin just prevents swap in the case that it must be writable?
+T 1710069756 18<26pflanze18>	I.e. Pin isn't also acting as some kind of move prevention indication to the compiler itself, or is it?
+T 1710069875 18<25Mutabah18>	pflanze: `Pin` prevents you from getting `&mut` effectively
+T 1710069888 18<25Mutabah18>	while still allowing ownership
+T 1710069901 18<25Mutabah18>	it ensures reference/pointer stability
+T 1710069951 18<26pflanze18>	I have experience with C and C++, so I understand the pointer stability.
+T 1710069969 18<26pflanze18>	But I get pointer stability by using Box, not Pin.
+T 1710069990 18<25Mutabah18>	Pin is how unsafe code can assume a pointer is stable, without needing it to be on the heap
+T 1710069990 18<26pflanze18>	Pin is just to prevent the contents of the box from being replaced. Right?
+T 1710070019 18<25Mutabah18>	If you make a `Pin<&mut T>` you promise that the `T` won't change addresses until it is dropped
+T 1710070022 18<26pflanze18>	Hmm, okay, I haven't tried to not put things onto the heap.
+T 1710070119 18<26pflanze18>	My understanding was that Pin prevents the API users from messing up. Not me promising.
+T 1710070149 18<25Mutabah18>	It's both kinda
+T 1710070195 18<25Mutabah18>	`Pin::new_unchecked` is where you promise, and then the user (API or whoever) of the `Pin<Ptr>` can assume that they can take the address/raw-pointer and it'll stay valid until the data is dropped
+T 1710071243 18<26pflanze18>	Is there any problem with my unsafe usage here?: https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=9cb76688f8417ad91003ff0ff5724af2
+T 1710071319 18<20j`ey18>	miri thinks so
+T 1710071322 18<26pflanze18>	(My followup question will be, I could leave away the Pin here and the external API would still be safe, no? Although I'll admit the Pin may be useful to protect to some extent from people changing the insides of StringSplit's implementation)
+T 1710071372 18<26pflanze18>	How are you running miri if it's simple enough to say (if it's involved, I'll go read the docs)
+T 1710071400 18<20j`ey18>	click miri on the playground :P
+T 1710071409 18<26pflanze18>	Aha, ok :)
+T 1710071410 18<20j`ey18>	tools -> Miri
+T 1710071417 18<26pflanze18>	Now, miri of course won't tell whether my API *could* be misused.
+T 1710071435 18<20j`ey18>	miri thinks there *is* a problem
+T 1710071445 18<26pflanze18>	Oh!
+T 1710071840 18<26pflanze18>	Is there something fundamentally unsafe in my program (i.e. if I used ASAN instead and tried to mis-use the API could I trigger an ASAN violation?), or is it "just" that I should do things slightly differently so that miri is happy?
+T 1710073164 18<25narodnik218>	is there a way to specify a trait const usize which is a multiple of some value?
+T 1710073208 18<25narodnik218>	struct Foo<const N: usize> where N = 2^k for some k
+T 1710073218 18<25narodnik218>	or is the only way to make k the parameter?
+T 1710073376 18<29saati18>	if it has private fields you could assert it's popcount is 1 in all it's constructors
+T 1710078258 18<25Widdershins18>	you could also just specify the power-of-2 instead
+T 1710078293 18<25Widdershins18>	maybe that would look worse though
+T 1710078420 18<29saati18>	still have to ensure it's lower than 64
+T 1710078782 18<25yziquel18>	Hi. I just rebuilt rust and cargo from source. anyone knows where the binaries are ?
+T 1710078805 18<25yziquel18>	there are multiple cargo binaries. stage0, stage 2, etc... what's that ?
+T 1710079061 18<20j`ey18>	stage0 is built with the existing cargo binary, stage1 is built by stage0
+T 1710079591 18<19Alexendoo18>	https://rustc-dev-guide.rust-lang.org/building/bootstrapping.html
+T 1710079620 18<19Alexendoo18>	they'll be in build/host/stage1
+T 1710079897 18<19Alexendoo18>	bootstrap prints a message telling you what rustup link command to use, usually you want that so you don't have to set LD_LIBRARY_PATH (or whatever platform equivalent) yourself
+T 1710081229 18<25yziquel18>	Alexendoo for cargo binary, I only see build/x86_64-unknown-linus/[stage0/bin/cargo|stage0-sysroot/bin/cargo|stage2-tools-bin/cargo] and one in src/tools/rust-installer/test/inage3/bin/cargo. No stage 1.
+T 1710081244 18<25yziquel18>	I did ./x.py build after a ./configure on a raw git checkout.
+T 1710081601 18<19Alexendoo18>	cargo is not built by default
+T 1710081778 18<25yziquel18>	urgh. I'd need to build cargo, Alexendoo. Does ./x.py build do incremental builds ? seems so.
+T 1710081851 18<25yziquel18>	not quite incremental...
+T 1710081878 18<19Alexendoo18>	Not by default, but e.g. the compiler profile has it on
+T 1710081976 18<19Alexendoo18>	What are you after build wise?
+T 1710082050 18<25yziquel18>	Alexendoo I want to fix a virtualisation issue with rustc as it misbhaves it a given setup for an os level reason. I'm hunting down all the wrong calls in the rust codebase.
+T 1710082062 18<25yziquel18>	on a given setup.
+T 1710082081 18<26dav1d18>	you're looking at the wrong thing
+T 1710082096 18<25yziquel18>	dav1d tell me more.
+T 1710082115 18<26dav1d18>	you're building the compiler when your binary produced by the compiler is failing
+T 1710082128 18<26dav1d18>	the compiler doesn't magically add mmap calls to binaries
+T 1710082139 18<25yziquel18>	dav1d no. it is the compiler itself that fails.
+T 1710082150 18<25yziquel18>	dav1d since 2016.
+T 1710082151 18<26dav1d18>	ah okay, my bad, misremembering the issue then
+T 1710082179 18<19Alexendoo18>	You wouldn't need to build cargo in that case, rustup will fall back to your own cargo when you use rustup link
+T 1710082199 18<25yziquel18>	Alexendoo I need to build cargo because I need to run cargo build to test.
+T 1710082199 18<26dav1d18>	thought your problem was gix or w/e
+T 1710082207 18<19Alexendoo18>	you can set `profile = "compiler"
+T 1710082207 18<19Alexendoo18>	` in config.toml to get incremental and other things
+T 1710082225 18<25yziquel18>	dav1d my problem is across the whole rust ecosystem.
+T 1710082236 18<19Alexendoo18>	cargo +stage1 build will work if you use rustup link without building cargo
+T 1710082255 18<26dav1d18>	yeah the source is gonna be the memmap* crates
+T 1710082277 18<25yziquel18>	dav1d yes.
+T 1710082309 18<25yziquel18>	Alexendoo what will rustup do for me ??
+T 1710082309 18<26danieldg18>	yziquel: just make an LD_PRELOAD hook for mmap that changes everything to MAP_PRIVATE
+T 1710082357 18<26dav1d18>	^
+T 1710082366 18<19Alexendoo18>	yziquel: https://rustc-dev-guide.rust-lang.org/building/how-to-build-and-run.html#creating-a-rustup-toolchain
+T 1710082376 18<25yziquel18>	danieldg intervene on the github issue if you claim this does not need fixing. For now, I'm fixing it if only for me. here you go: https://github.com/rust-lang/rust/issues/122262
+T 1710082381 18<26danieldg18>	or, you know, just learn how to use libvirt.  That's *way* less effort than changing every program you use to not use MAP_SHARED
+T 1710082398 18<25yziquel18>	danieldg or, you know, fix your 2016-old bug.
+T 1710082405 18<26danieldg18>	not my bug
+T 1710082415 18<25yziquel18>	danieldg bug in rust.
+T 1710082428 18<25yziquel18>	anyway. coffee. flame war -> guthub issue. thx.
+T 1710082466 18<26dav1d18>	jfc
+T 1710083390 18<29saati18>	lol sure a shitty fs not supporting MAP_SHARED is a rustc bug
+T 1710083517 18<26danieldg18>	I'm actually surprised it supports mmap at all
+T 1710083578 18<26danieldg18>	I guess it'd have to if you wanted to run binaries off it
+T 1710083649 18<25yziquel18>	saati it's not a rust bug. It's a bug that impacts anyone wanting to virtualise. and there are many.
+T 1710083661 18<25yziquel18>	saati you can keep denying it has an impact. It has one.
+T 1710083680 18<26danieldg18>	yziquel: 99.9% of people who virtualize don't hit this bug
+T 1710083681 18<25yziquel18>	saati and it may be a riust bug. to me, it's 1/3 a rust bug, 2/3 a virtiofs bug.
+T 1710083701 18<25yziquel18>	danieldg indeed. and the happy few who do do not recognise it.
+T 1710083754 18<25yziquel18>	danieldg it hits various filesystems since 2016. vboxfs. virtiofs with --cache=never (which is becoming the default in kata containers), and people iusing github actions use workarounds they just copy paste.
+T 1710083817 18<25yziquel18>	danieldg and i hit it. so i fix it.
+T 1710083839 18<26danieldg18>	right, I think it's a good feature to add
+T 1710083843 18<26danieldg18>	but it's more of a feature than a bug
+T 1710083883 18<26danieldg18>	it's a workaround for filesystems that don't support MAP_SHARED
+T 1710083988 18<20polychromata{J}18>	pflanze: i think your Pin doesn't cover enough—you need to pin the big string and the little strings together
+T 1710083999 18<26danieldg18>	but that's nitpciking I guess
+T 1710084002 18<20polychromata{J}18>	and i think the first error is about your 'static lie?
+T 1710084053 18<20polychromata{J}18>	but i can't speak to whether it's a violation or a flaunt of the unsafe rules
+T 1710084157 18<25yziquel18>	danieldg for your sore eyes that will make you cry tears of blood: 99% of people who virtualise do not hit this bug, I did. https://github.com/openzfs/zfs/issues/14989
+T 1710084194 18<25yziquel18>	https://github.com/openzfs/zfs/issues/14989#issuecomment-1980137649
+T 1710084252 18<25yziquel18>	shitty CPU. Just throw the computer through the window.
+T 1710084341 18<26danieldg18>	yeah, that's a bug: if you use a register you didn't tell the kernel to save/restore, then of course it can get corrupted
+T 1710084366 18<26danieldg18>	no different than using a thing protected by a lock without locking it
+T 1710084367 18<25yziquel18>	danieldg no. It's a bug in the CPU. Not in ZFS. Intel is at fault. Not openzfs.
+T 1710084380 18<26danieldg18>	huh
+T 1710084389 18<26danieldg18>	ah
+T 1710084463 18<25yziquel18>	intel defecated on themselves when implementing avx512f and fell short of their specs on a vmexit event.
+T 1710084480 18<26danieldg18>	well that looks like one of the dumber errata I've seen
+T 1710084502 18<26danieldg18>	usually such things require more moving parts to break stuff
+T 1710084528 18<26danieldg18>	I guess vmexit is probably complex enough for them to screw it up
+T 1710084572 18<25yziquel18>	yeah. well, so is MAP_SHARED on virtiofs where the memory mapping goes through qemu's own memory.
+T 1710084594 18<26danieldg18>	that's merely a missing feature
+T 1710084600 18<25yziquel18>	¨...
+T 1710085734 18<25yziquel18>	I still do not see how to build cargo from the rust source repo.
+T 1710085734 18<28Vorpal18>	I'm trying to figure out a good approach to error handling in command line programs and libraries for command line programs. Anyhow is great, but leads to type-erased errors. That is not always appropriate. thiserror is cumbersome and I haven't gotten backtrace reporting to work great on stable rust for nested errors. That last issue (good error causes with backtraces on stable rust) I consider an absolute requirement. If it weren't for that, snafu would look
+T 1710085736 18<28Vorpal18>	pretty good for example.
+T 1710085759 18<28Vorpal18>	so, anyone have any suggestions for what to use?
+T 1710085868 18<28Vorpal18>	I tried error-stack, but I ran into two major issues: It doesn't play well with other error reporting (so transitioning gradually to it is difficult). It has some support for converting anyhow errors, but that looses backtraces. Also I couldn't figure out how to use an error stack report as an Error type for a TryFrom trait impl
+T 1710085890 18<19tokie18>	why do you need backtraces ?
+T 1710085909 18<28Vorpal18>	tokie: I consider them essential for debugging and for bug reports.
+T 1710085986 18<25yziquel18>	Vorpal indeed.
+T 1710086024 18<28Vorpal18>	So yeah, anyhow is great (and it is easy to attach additional context on the way up), but not great if there are some cases that you actually want to handle instead of just report.
+T 1710086067 18<26dav1d18>	Vorpal, you can downcast errors with anyhow
+T 1710086074 18<19tokie18>	yeah, i would go with anyhow
+T 1710086075 18<26dav1d18>	in case you havent seen
+T 1710086094 18<19tokie18>	i've found in practice the "i may need to distinguish between errors!" never usually happens
+T 1710086117 18<19tokie18>	but i write daemons and not command-line programs, so maybe it's more common ...
+T 1710086138 18<28Vorpal18>	dav1d: hm I do remember seeing something about it, but didn't try it out since it looked hackish. Not good for a public API in a library (I'm making a tool + a reusable library for some of the functionality of that tool).
+T 1710086164 18<28Vorpal18>	[16:54] <tokie> i've found in practice the "i may need to distinguish between errors!" never usually happens <-- rare, but certain IO errors. That is usually handled locally though
+T 1710086171 18<26dav1d18>	Vorpal, then there isn't much left other than writing your own error types, with our without thiserror
+T 1710086178 18<19tokie18>	Vorpal: lol, yeah, i was about to write that
+T 1710086216 18<28Vorpal18>	another issue with anyhow is that it's error type can't be serialised. As I will be splitting some functionality into a part that is executed via sudo and then doing unix socket IPC back and forth this kind of matters down the road
+T 1710086235 18<28Vorpal18>	very niche thing, I know
+T 1710086285 18<28Vorpal18>	dav1d: is there a way to get backtraces to work well with thiserror though? Essentially I want the full on anyhow error handler with "foo, caused by bar, caused by quux, here is a helpful stacktrace if you ran with RUST_BACKTRACE=1"
+T 1710086305 18<19tokie18>	Vorpal: not so niche! are we coworkers? lol
+T 1710086379 18<28Vorpal18>	tokie: I'm basically doing a rewrite of https://github.com/CyberShadow/aconfmgr in rust (and with pluggable support for other distros, not just arch). Or that is the plan. So far I wrote some more basic tools that I will need (https://github.com/VorpalBlade/paketkoll)
+T 1710086403 18<28Vorpal18>	but yeah I use anyhow there, and I'm running into the serialisation issue
+T 1710086438 18<28Vorpal18>	as well as, the paketkoll_core library having anyhow in it's public API (that API is very much WIP currently)
+T 1710086443 18<19tokie18>	ohh god, that's all bash
+T 1710086445 18<19tokie18>	good luck
+T 1710086478 18<28Vorpal18>	tokie: despite it being bash (I'm probably going with rhai for user config) it actually works extremely well.
+T 1710086569 18<28Vorpal18>	I wish the provider API got stabilised. Then all of this would just work with snafu etc.
+T 1710086600 18<26dav1d18>	Vorpal, pretty sure you'd have to capture the backtrace yourself. But tbh might just write the error types yourself without thiserror
+T 1710086616 18<26dav1d18>	also neat seeing something from CyberShadow
+T 1710086625 18<28Vorpal18>	oh? you know them?
+T 1710086646 18<28Vorpal18>	so much boiler plate. Maybe I'll make my own macro to generate error types. Wait a sec...
+T 1710086668 18<26dav1d18>	yeah from my time doing D
+T 1710086680 18<26dav1d18>	Vorpal, it's not that bad tbh
+T 1710086700 18<26dav1d18>	but yeah nothing a macro_rules cant solve
+T 1710086708 18<28Vorpal18>	mhm
+T 1710086742 18<26dav1d18>	but thiserror also has #[backtrace], but I've never used it
+T 1710086819 18<28Vorpal18>	think you still have to capture the backtrace yourself (or take it from a source error)
+T 1710086844 18<19tokie18>	most of the stuff i write uses thiserror to format errors, but they eventually bubble up into a boxed error like anyhow anyway
+T 1710086845 18<19tokie18>	so sorta a mix
+T 1710086851 18<26dav1d18>	yep
+T 1710086852 18<19tokie18>	but thiserror is nice for formatting the text
+T 1710086861 18<26dav1d18>	but you can use it to generate the boilerplate
+T 1710086863 18<28Vorpal18>	it indeed is
+T 1710086864 18<19tokie18>	yep
+T 1710086904 18<28Vorpal18>	not sure how to extract the causes and backtraces in the end (like when you return anyhow::Result from main)
+T 1710086905 18<19tokie18>	just panic and let sentry manage the backtraces
+T 1710086910 18<19tokie18>	:x
+T 1710086916 18<28Vorpal18>	hah, nah thanks
+T 1710086994 18<28Vorpal18>	Error handling in closures is awkward. I use rayon a lot in this project, so I keep running into that.
+T 1710087025 18<19tokie18>	oh wow
+T 1710087066 18<28Vorpal18>	Speaking of rayon: sensible backtraces is something it doesn't have. Something I notice when profiling with perf and try to find my own code in the mess of workstealing schedulers. Basically top down flamegraphs are unusuable
+T 1710087077 18<28Vorpal18>	tokie: hm?
+T 1710087169 18<19tokie18>	i just never see anyone using rayon. it's nice to see a use case !:P
+T 1710087246 18<28Vorpal18>	tokie: doing many independent things as fast as possible is a use case
+T 1710087282 18<28Vorpal18>	which perfectly fits what paketkoll is doing (loading package metadata from many separate files, calculating checksums, walking the the whole file system, etc)
+T 1710087643 18<27TimMc18>	Oh man, my 300 line program worked perfectly on the first run!
+T 1710087654 18<27TimMc18>	(Well, the first run where I didn't fat-finger the command line, haha)
+T 1710087670 18<25yziquel18>	TimMc that's the kind of experience I initially had with OCaml before rust.
+T 1710088508 18<25yziquel18>	fed up with these annoying git submodules.
+T 1710088577 18<28Vorpal18>	yziquel: would you say that ocaml (or other MLs) have anything to offer if I learned Rust first?
+T 1710088606 18<25yziquel18>	Vorpal you want a theological debate ?
+T 1710088704 18<28Vorpal18>	yziquel: nah, just wondering if it has any neat ideas. I believe that learning more languages makes you a better programmer in all of them
+T 1710088720 18<25yziquel18>	My opinion: I wish rust syntax was more ocaml like and ocaml could tackle the metal more. ocaml is quicker to develop prototype and has a nicer type-reasoning-feel to it. but it can't reason about lifetimes. Though it does not support some unique keywords allowing for type level resource management.
+T 1710088722 18<28Vorpal18>	I don't code in scheme, but I think learning a LISP made me think differently
+T 1710088727 18<27gastus18>	Vorpal: lanugage + ecosystem + knowledge => time to complete a task. You don't teven know your task.
+T 1710088737 18<25yziquel18>	it does now support
+T 1710088766 18<25yziquel18>	gastus there are other reasons to dive into a language. Languages are not only tools.
+T 1710088769 18<28Vorpal18>	hm, interesting
+T 1710088798 18<25yziquel18>	Vorpal I'd say library support is richer in rust. But I wish rust had ocaml's gc.
+T 1710088803 18<25yziquel18>	as an option.
+T 1710088826 18<28Vorpal18>	yziquel: as someone who do command line tools as well as full on embedded I'm so happy rust doesn't have a GC
+T 1710088879 18<28Vorpal18>	at dayjob we are starting to eye rust (currently C++). With a GC that flat out wouldn't be an option (hard realtime, industrial equipment controller software)
+T 1710088881 18<25yziquel18>	Vorpal yes. but I'd rather it have an OPTIONAL gc. though that would impact the ecosystem and it would be less friendly to embedded. so....
+T 1710088904 18<27gastus18>	So Java OO (+ weaving, pointcutns), Python/JS (dynamic), TS = learn that you can type dynamic stuff so is good for tasks requiring such. Haskell/Nix => lazy expressions, Rust, borrowing, urweb shows how crazy you can go about type level, Nim shows that you can have multiple GC implementations within one language.
+T 1710088909 18<28Vorpal18>	yziquel: it wouldn't be optional. Because a ton of crates you would want to use would suddenly depend on it
+T 1710088913 18<25yziquel18>	Vorpal it is possible to have real time concurrent gcs. you just do not find them around much. except in the litterature.
+T 1710088918 18<28Vorpal18>	yziquel: it would be worse than the async/blocking split
+T 1710088948 18<27gastus18>	Talking about no GC: https://github.com/fitzgen/bumpalo seems to a link also talking about nightly option to pass allocator.
+T 1710088953 18<25yziquel18>	Vorpal I disagree.
+T 1710088971 18<25yziquel18>	gastus yes, I'm about to start using bumpaloo for my gc-like requirements
+T 1710089002 18<27gastus18>	The question I have is more like how to write code which can do both. Like let X = fun(); and have fun use a throw away allocator. Like with with_throw_away do .. code here  and once the block is done have all data erased.
+T 1710089013 18<25yziquel18>	gastus I need heavily recursive data structure, and rust rules that out without something like bumpaloo anyway.
+T 1710089026 18<28Vorpal18>	bumpalo is not a GC, it is a bump arena allocator.
+T 1710089032 18<27gastus18>	The pattern of rewriting libraries (haskell with / without monad) js (with without async) .. rust (with different GC) feels annoying.
+T 1710089061 18<25yziquel18>	gastus I believe GC should be available but optional. But only later than now, as that would otherwise submerge the ecosystem with gc compatible libs and embedded world would be left dangling.
+T 1710089065 18<28Vorpal18>	seems quite different to me. I have tried bumpalo in one single-threaded project that did lots of small allocations. Couldn't measure any statistically signficant speedup, so gave up on that
+T 1710089134 18<27gastus18>	And that's what I was told, too. I wrote my .so file which rewrote malloc. Same for me. So looks like the typcial malloc implementaions do a good job.
+T 1710089139 18<25yziquel18>	Vorpal try writing a custom lambda-calculus semi-compiled semi-interpreted nonsense. you'll see you'll need hairy memory management and bumpaloo is much like the small heap of ocaml's garbage collector anyway.
+T 1710089142 18<28Vorpal18>	also bumpalo doesn't play nice with rayon from what I can tell. You could have a bump allocator per thread (bumpalo-heard implements this) but with rayon you don't really know which thread you are on at any time (and you are supposed to get the allocator at the start since that is expensive). Maybe with a thread local, but eww.
+T 1710089188 18<20nullie18>	hi, which library can I use to make Cookie header from cookie values?
+T 1710089188 18<28Vorpal18>	yziquel: yeah never done that, I have written a BrainFuck compiler, but that is quite different memory management wise
+T 1710089192 18<25yziquel18>	Vorpal there is bumpaloo herd. or something like that for rayon support. Not on my roadmap for the moment.
+T 1710089207 18<28Vorpal18>	yziquel: I just mentioned it?
+T 1710089228 18<25yziquel18>	Vorpal ah. yes.
+T 1710089313 18<28Vorpal18>	so yeah bumpalo-heard doesn't fit rayon par_iter() workflow. If you are managing your own long-lived scoped threads I think it could work though
+T 1710089340 18<25yziquel18>	Vorpal I have other things in mind for that kind of stuff. but i'll say no more.
+T 1710089341 18<28Vorpal18>	and I can't even begin to imagine the horrors of trying to deal with this in thread locals. The borrow checker won't be happy
+T 1710089394 18<28Vorpal18>	yziquel: I ended up using lasso for a thread safer string interner instead. That works surprisingly well for heavily reused strings
+T 1710089409 18<28Vorpal18>	thread safe* (I wonder what thread safer is!)
+T 1710089509 18<25yziquel18>	Vorpal I don't believe rust's type checker should be force into doing some kind of LTA+ analysis.
+T 1710089524 18<28Vorpal18>	LTA+?
+T 1710089566 18<28Vorpal18>	brb, my 3D printer just signaled it finished
+T 1710089805 18<25yziquel18>	LTA+ is an old specification language (and more) in which you can reason about temporal assignments and prove stuff about distributed computing. Like byzantine problems solutions such as Paxos or Raft. Rust's borrow checker is cool for type systems and language, but does not rise IMO to the standard of such old technologies.
+T 1710089810 18<25yziquel18>	Vorpal
+T 1710089850 18<19tokie18>	Vorpal: i wrote a scheme compiler and i write very little scheme ! i think just implementing scheme is an interesting exercise
+T 1710089867 18<28Vorpal18>	yziquel: the thing with the borrow checker is that it is (somewhat) quick. I suspect the more complicated the slower it would be. Possibly undecidable even.
+T 1710089876 18<28Vorpal18>	thanks to Rice's theorem
+T 1710089881 18<25yziquel18>	Vorpal dunno. depends.
+T 1710089908 18<25yziquel18>	many fragments of logic are suprisingly decidable.
+T 1710089956 18<25yziquel18>	Much can be combined with Nelson-Oppen. so...
+T 1710090189 18<25yziquel18>	Can't build rust because I can't fetch the gccjit git submodule. I'm feeling more and more murderous.
+T 1710090252 18<28Vorpal18>	that is a weird non-standard backend isn't it?
+T 1710090261 18<28Vorpal18>	you surely shouldn't need that for standard rust
+T 1710090286 18<25yziquel18>	Vorpal. dunno. I tried the build instructions. ./x setup and ./x check. "can't fetch gccjit".
+T 1710090336 18<25yziquel18>	Vorpal trying ./configure and ./x.py build. we'll see if it changes something.
+T 1710090341 18<25yziquel18>	i hate these opaque build systems.
+T 1710090400 18<25yziquel18>	seems to build something. but I want to get cargo to be built. I still do not know how to do that.
+T 1710090569 18<25yziquel18>	and you have to log in to get to zulip. i'm annoyed.
+T 1710090793 18<28Vorpal18>	yziquel: had to deal with hand written Makefiles earlier today, even worse
+T 1710090811 18<25yziquel18>	Makefiles have been getting better nowadays.
+T 1710091560 18<25yziquel18>	too long to build
+T 1710091788 18<25yziquel18>	too long to build
+T 1710093800 18<29neiluj18>	Hi! seeing that a portion of my application can take up to 80ms to acquire a lock on a mutex, is there a way to avoid waiting too long?
+T 1710093814 18<20nullie18>	 Can I get raw HTTP request bytes from reqwest::Request?
+T 1710093839 18<22rbox18>	 neiluj wait until the mutex is not locked b efore acquiring it
+T 1710093919 18<25bertptrs18>	neiluj: std mutex doesn't offer anything useful for it, but parking_lot offers try_lock_for and try_lock_until which both effectively support some timeout
+T 1710094005 18<26dav1d18>	neiluj, you can with a Condvar
+T 1710094022 18<26dav1d18>	which has a wait_timeout method
+T 1710094062 18<25bertptrs18>	dav1d: that requires you already having the guard
+T 1710094151 18<26dav1d18>	bertptrs, I guess it's tricky
+T 1710094163 18<25bertptrs18>	it does something entirely unrelated, rather
+T 1710094174 18<26dav1d18>	you'd have the guard, unlock it with the condvar just to wait on it, probably not what you'd want
+T 1710094233 18<26dav1d18>	yeah brainfart, thought you could make it work
+T 1710094240 18<25yziquel18>	how does cargo select the rustc software to run ? how coupled is it to it ?
+T 1710094276 18<25yziquel18>	yziquel because if I have to run cargo to debug rustc, I need to control that selection. otherwise, it's useless trying to make a fix and build it if i can'trun it.
+T 1710094477 18<26dav1d18>	yziquel, RUSTC env var
+T 1710094510 18<26dav1d18>	(or override it in .cargo/config.toml)
+T 1710094818 18<29neiluj18>	oh nice thanks bertptrs!
+T 1710094903 18<29neiluj18>	thanks rbox, too!
+T 1710097355 18<25OwlWizard18>	ive just read about rust's matching and i have to say this seems like one of the most powerful parts of the langugae
+T 1710097412 18<22rbox18>	its not that differnt from like switch
+T 1710097418 18<25bertptrs18>	matching is so good most many major languages have started to incorporate it as well
+T 1710097425 18<25bertptrs18>	rbox: it's much more powerful than a switch
+T 1710097428 18<20polychromata{J}18>	It's pretty hecking different from switch as in C.
+T 1710097433 18<20polychromata{J}18>	Or even switch as in JavaScript.
+T 1710097444 18<25bertptrs18>	python and java introduced their own matching recently (ish)
+T 1710097450 18<22rbox18>	guess i'm not that easily impressed
+T 1710097450 18<20polychromata{J}18>	Rust didn't introduce it, though; Haskell and probably similar languages have had it for a while. :)
+T 1710097466 18<25bertptrs18>	it's pretty common in functional langauges, yes
+T 1710097476 18<20polychromata{J}18>	In every other language i try to use, i miss match{} /so bad./
+T 1710097498 18<25OwlWizard18>	i find the match guard feature to be extremely cool
+T 1710097519 18<20polychromata{J}18>	Swift actually beat Rust to that one by several years, heh.
+T 1710097565 18<25bertptrs18>	If swift wasn't so hard to get working under linux I'd probably like it a lot. it makes a lot of nice choices
+T 1710097565 18<20spb18>	matching is only the same as a switch statement if you never use enums with fields
+T 1710097572 18<25OwlWizard18>	iirc the point of rust isnt to invent everything
+T 1710097576 18<20j`ey18>	r nesting
+T 1710097580 18<20j`ey18>	*or
+T 1710097589 18<20spb18>	can't nest if your enums have no fields
+T 1710097679 18<25bertptrs18>	even then you can still match on for example chars much more elegantly than it would be with a switch-case
+T 1710097729 18<25bertptrs18>	match c { 'a'..='z' => Type::LowerCase, 'A'..='Z' => Type::UpperCase … etc
+T 1710098049 18<20polychromata{J}18>	Is there a way to impl AsyncRead for a type where the data comes not from an underlying reader but rather from other tasks that push data in by calling async methods with /borrowed/ buffers?
+T 1710098082 18<20polychromata{J}18>	I can conceptualise this in terms of rawpointers, and i feel like it's sound, but to write it with safe code i think i'd need like a channel over references with lifetimes i couldn't write.
+T 1710098174 18<20polychromata{J}18>	Essentially the problem is transporting the borrow from the push method to where poll_read can get at it.
+T 1710098220 18<25bertptrs18>	a VecDeque of pushed data and a mutex to guard it?
+T 1710098351 18<26danieldg18>	polychromata{J}: you have to transfer ownership out of the writing task
+T 1710098360 18<25bertptrs18>	Maybe I'm misunderstanding the problem
+T 1710098362 18<26danieldg18>	even with unsafe you'd have to do that
+T 1710098441 18<26danieldg18>	a shared buffer is a good way to do it, and pretty easy to do safely if you don't need to hold a lock on the buffer for long periods
+T 1710098460 18<26danieldg18>	(that is, nothing like calling AsyncRead to fill the buffer)
+T 1710098499 18<20polychromata{J}18>	bertptrs: That's the simple solution, right. The thing is that it introduces a third, intermediate buffer—and if my choice of size for this third buffer is too small for the usecase, it'll spin in async executor code a lot unnecessarily when it could have just copied straight from the source buffer to the sink buffer.
+T 1710098541 18<26danieldg18>	polychromata{J}: move the buffer's ownership instead of the data
+T 1710098557 18<20polychromata{J}18>	It's not an owned buffer.
+T 1710098557 18<25bertptrs18>	polychromata{J}: you know what they same about the time to start optimizing
+T 1710098568 18<25bertptrs18>	they say*
+T 1710098727 18<20polychromata{J}18>	Unsafely, i could make the method that pushes data return a future that borrows the buffer, passes a rawpointer to it, wakes tasks that are waiting to read, and resolves after receiving a signal that the reads are done.
+T 1710098774 18<20polychromata{J}18>	…maybe i should actually write this out and reframe my question as “how do i make this /safe/”?
+T 1710098805 18<26danieldg18>	polychromata{J}: and if your push method gets cancelled halfway through?
+T 1710098825 18<26danieldg18>	I bet that path is what would make things unable to be safe
+T 1710098914 18<20polychromata{J}18>	hmmm.
+T 1710098991 18<26danieldg18>	it's basically the same as sending a reference to another thread, which is unsafe without scoped threads
+T 1710099030 18<26danieldg18>	in fact futures usually can run on another thread
+T 1710099041 18<20polychromata{J}18>	Right. The thing is, the actual sharing is so short in scope that i figured there must be way to make it work?
+T 1710099059 18<20polychromata{J}18>	The sharing only needs to last for the length of one poll_read call.
+T 1710099069 18<20polychromata{J}18>	And that just copies a buffer.
+T 1710099090 18<26danieldg18>	Arc<Mutex<Buffer>>
+T 1710099101 18<20polychromata{J}18>	…where buffer = &[u8]
+T 1710099116 18<26danieldg18>	no, Buffer = Vec<u8>
+T 1710099120 18<20polychromata{J}18>	hence my “references with lifetimes i couldn't write”
+T 1710099161 18<26danieldg18>	this is a reason the bytes::Bytes buffers are owned
+T 1710099162 18<20polychromata{J}18>	See, but then i'm allocating a Vec, which takes us back to “introduces a third, intermediate buffer”
+T 1710099242 18<26danieldg18>	so you can't get ownership of the first *or* last buffer in any way?
+T 1710099327 18<26danieldg18>	then yeah, I agree, you can do it with unsafe but not with safe lifetimes
+T 1710099333 18<20polychromata{J}18>	Right. The push calls work on borrowed data (&[u8], which is borrowed from some other struct, which is borrowed from something else), and poll_read reads into a borrowed buffer
+T 1710099429 18<26danieldg18>	basically during the copy operation, you must ensure that both buffers are valid, but no single rust function will have more than one available as a parameter
+T 1710099447 18<25bertptrs18>	You could try to lazily use the buffer. have asyncread mark the entire struct as "I've got a dest buffer for you", and then when a push comes, check if there's a reader waiting, if so, copy to reader, else copy to intermediate
+T 1710099468 18<25bertptrs18>	Do some destructor magic to ensure the state remains valid
+T 1710099484 18<26danieldg18>	that's one way to do it with unsafe, eys
+T 1710099546 18<26danieldg18>	you can actually do it both ways: have enum ChannelState { ReaderHere(*const [u8]), WriterHere(*mut [u8]), OnlyDataHere(Vec<u8>), Empty }
+T 1710099602 18<26danieldg18>	the push-data transitions Empty->ReaderHere; on Drop it copies and moves to OnlyDataHere
+T 1710099612 18<25bertptrs18>	I think you have to have the buffer always, to deal with over and underflowing buckets
+T 1710099622 18<26danieldg18>	the writer (not poll_read, an actual async read) can do the same
+T 1710099684 18<26danieldg18>	if you insist on poll_read and poll_write, it's impossible; if you get async fn read+async fn write, you can use the full enum; one async + one poll is only that direction 'Here'
+T 1710099717 18<26danieldg18>	it sounds like you have async write + poll_read right now
+T 1710099725 18<20polychromata{J}18>	Yep.
+T 1710099731 18<20polychromata{J}18>	Hmmmmm.
+T 1710099773 18<20polychromata{J}18>	Alright. Thank you! ^.^
+T 1710099787 18<26danieldg18>	and the ChannelState must go in an Arc<Mutex<, with Drop on a guard held by the writer locking the mutex
+T 1710099809 18<20polychromata{J}18>	…oh, there /is/ still a mutex involved.
+T 1710099812 18<26danieldg18>	yep
+T 1710099819 18<20polychromata{J}18>	…that makes sense.
+T 1710099831 18<26danieldg18>	atomics aren't good enough for this
+T 1710099840 18<26danieldg18>	you need a wait capability
+T 1710099857 18<20polychromata{J}18>	Yeah.
+T 1710100704 18<28Vorpal18>	I tried the coz profiler (https://github.com/plasma-umass/coz) which seemed interesting, the idea is it that it can find things that won't stand out in other profilers. A pain to set up (bit rotted academic code, had to get various patches from PRs to make it work on modern Arch Linux with modern DWARF-5). But it found something that hadn't been on my radar. It told me that several functions in some [u8] with hex data -> decoded [u8] functions were slow. So I
+T 1710100705 18<28Vorpal18>	went ahead and switched out the hex decoding to the faster-hex crate. Runtime went from 287 ms to 268 ms. So it works.
+T 1710100757 18<28Vorpal18>	Quite a pain to manually add "progress points" etc to the code, and set it up as a looping thing.
+T 1710100783 18<20capitol18>	this sounds like a nice blog post :)
+T 1710100804 18<20nullie18>	Vorpal: is it even statistically significant improvement?
+T 1710100886 18<28Vorpal18>	nullie: yes it is. My stdev is ~4 ms according to hyperfine
+T 1710100897 18<28Vorpal18>	so 20 ms is well outside that
+T 1710100966 18<28Vorpal18>	nullie: I'm writing a command line program that runs quite quickly (in this configuration, where it trust filesystem mtimes, when it check checksums this would not be statistically significant)
+T 1710100972 18<20nullie18>	so less than required for declaring disovery?
+T 1710100973 18<28Vorpal18>	https://github.com/vorpalblade/paketkoll in case you are interested
+T 1710101093 18<28Vorpal18>	nullie: it is a repeatable improvement that is outside noise. If I rerun the hyperfine I get the same result. A single hyperfine run is indeed not 5 sigma as in science. But repeatability (across two different computers) I believe improves on that. Not sure how to do the maths on that though.
+T 1710101197 18<28Vorpal18>	I also make sure to vary the test order between old and new (to try to minimise effects that are temporal such as CPU boost). I turn off as much CPU boosting and clock frequency scaling that I can in Linux also.
+T 1710103399 18<20polychromata{J}18>	How do you lock an async mutex in a poll method?
+T 1710103407 18<20polychromata{J}18>	tokio::sync::Mutex doesn't have a poll_lock()
+T 1710103431 18<20polychromata{J}18>	Does the lock() future cancel the lock attempt if you drop it?
+T 1710103463 18<20polychromata{J}18>	Do i…poll it, pass the context through, and then forget the future if it wasn't ready? that seems like a bad idea
+T 1710103571 18<20polychromata{J}18>	There's an issue on the futures repo that was closed as a duplicate of another issue…which added `lock_owned()`? But i don't see how Arc<Mutex> vs &Mutex helps; there's still no poll_lock()
+T 1710103611 18<26danieldg18>	polychromata{J}: don't use an async mutex for this
+T 1710103623 18<26danieldg18>	use a *normal* mutex
+T 1710103640 18<20polychromata{J}18>	And just count on there being low contention?
+T 1710103645 18<26danieldg18>	you can't lock an async mutex in drop anyway, and that's also what you need
+T 1710103654 18<26danieldg18>	count on? no
+T 1710103713 18<26danieldg18>	you only hold the mutex momentarily by the push op, and during memcpy on the read
+T 1710103770 18<26danieldg18>	neither of those are long operations, so contention isn't the problem
+T 1710103791 18<26danieldg18>	also, only two users, so not much contention
+T 1710103836 18*	20polychromata{J} nods slowly.
+T 1710109467 19*	Now talking on 22##rust
+T 1710109467 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710109467 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710109475 18<26pflanze18>	This version of my StringSplit runs cleanly with miri: https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=1f9d4c4353bc997f45ad5c1403409c88
+T 1710109491 18<26pflanze18>	It uses another Pin<Box< >> around the whole thing.
+T 1710109508 18<26pflanze18>	I don't see a good reason for that need, though.
+T 1710109573 18<26danieldg18>	agreed, that seems unneeded
+T 1710109771 18<26pflanze18>	Actually, none of the Pin:s are needed now.
+T 1710109796 18<26pflanze18>	miri is happy with just the outer Box. I guess that might change if I move it around outside, though.
+T 1710109810 18<26danieldg18>	the outer box isn't needed either
+T 1710109821 18<25Widdershins18>	i think it might be
+T 1710109832 18<25Widdershins18>	hmmm
+T 1710109834 18<26danieldg18>	why?  Other than being a miri limitation
+T 1710109863 18<25Widdershins18>	mostly that, miri gets pissy about pointer tagging
+T 1710109883 18<26danieldg18>	ok? That's not used here
+T 1710109884 18<25Widdershins18>	i think it isn't effectively different with it

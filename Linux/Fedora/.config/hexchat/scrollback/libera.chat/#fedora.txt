@@ -997,3 +997,359 @@ T 1709719235 18<28fedbot18>	*** F39-20240301 updated lives available: ht
 T 1709721485 18<24squarebracket18>	i can't seem to install both qemu and podman, why is that?
 T 1709721511 18<24squarebracket18>	the static and non-static qemu conflict with each other
 T 1709726435 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1709728181 19*	Now talking on 22#fedora
+T 1709728181 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1709728181 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1709728181 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1709733637 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1709735490 18<22bkeys18>	Hi all, I'm trying to boot up my desktop using an AMD RX 6400; and it shows up fine but once it comes time to boot up the actual environment, the fan stops spinning and I lose signal to the monitor (it performs fine with the UEFI)
+T 1709740838 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1709748040 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1709755240 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1709757842 19*	Now talking on 22#fedora
+T 1709757842 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1709757842 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1709757842 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1709760406 18<28Exa18>	Hello, I'm considering installing Kinoite for my parent's new computer.  I've never used Fedora or any of its flavours, but I like the idea of immutable filesystems and using flatpak as main packaging distribution.  Is there anything I should know about it?  How is it easy for someone not good with computers to make updates on this distro?  I guess the flatpak part uses discover?  What about the operating 
+T 1709760411 18<28Exa18>	system part?  For the record, their current computer has Xubuntu, but the transition from XFCE to KDE should be good.  Thanks.
+T 1709760556 18<19dowdle18>	Exa: I haven't used the immutable (now they call it Atomic I think?) flavors myself... but hey... maybe try it in a VM or something to get some experience with it.  Only graphical apps are in flatpaks so if you want any command line stuff, you'll need to use toolbox and/or distrobox.
+T 1709760557 18<26Khaytsus18>	Exa: It's pretty much made for such use cases.. it's nearly unbreakable.  And yes, KDE Discover will keep the system up to date.
+T 1709760791 18<28Exa18>	dowdle: I already bought the new computer so I'll try first on real hardware myself anyway, but I wanted to get some thoughts cleared on irc first (I got the iso downloaded on my bt client already so I'm going to burn it on my usb key right now)
+T 1709760812 18<28Exa18>	Khaytsus: thank you, this is what I expected
+T 1709760884 18<28Exa18>	I'm just wondering how system updates work, since I would not be able to try it if I just install latest version.  is there any chance I could find a video, for example?  I'm expecting it to be different from vanilla fedora updates, but maybe it uses the same interface?  or maybe I could check for silverblue videos?
+T 1709760933 18<19dowdle18>	Exa: You might could get a previous release and upgrade it to the current release?
+T 1709760943 18<28Exa18>	yeah I could do that in a VM
+T 1709760955 18<19dowdle18>	I wonder if they have an F40 pre-release to upgrade to from F39?
+T 1709760992 18<19dowdle18>	Exa: I believe it uses rpm-ostree under the hood... which I believe is very similar to say... git... where it only has to replace changed files.
+T 1709761044 18<28Exa18>	I'm downloading 38 too.  maybe I'll have to install it without a network interface, so I don't have updates during installation, if that exists??
+T 1709761051 18<19dowdle18>	Exa: And it keeps the previous release so you can switch back to it if, for some reason you don't like the upgrade.  I don't think that happens so it's a solution looking for a problem :)
+T 1709761075 18<28Exa18>	I guess the immutable part helps with that
+T 1709761087 18<19dowdle18>	Exa: Not being package based, I don't think there is an option for updates-during-install... but I could be wrong.
+T 1709761154 18<28Exa18>	if I like it, I could even try the sway flavour for myself :P
+T 1709761165 18<19dowdle18>	Exa: And even with Fedora live media, there isn't an upgrade-during-install option... because those aren't package-based (for the install).
+T 1709761364 18<28Exa18>	thank you for your answers, I'll do some tests
+T 1709761842 18<29bigceezy118>	Hello, just updated to Fedora 39 on KDE 5.27 and keep getting SELinux Alert browser messages every couple of seconds.  I disabled this before, but its back after update.  Anyone know how to make it go away?  It is the most annoying thing!
+T 1709761932 18<24kjetilho18>	it is not normal to get SELinux alerts.  you have some broken software?  the alert browser should tell you what software that is.
+T 1709762057 18<29bigceezy118>	It is mostly systemd-resolved regarding /etc/hosts...constantly
+T 1709762187 18<24kjetilho18>	aha.  try restorecon -R /etc
+T 1709762272 18<24kjetilho18>	you may have used an editor on /etc/hosts which somehow removed the selinux label on /etc/hosts
+T 1709762389 18<29bigceezy118>	That seems to have done the trick!  Thank you so much, I owe you a beer :)
+T 1709762441 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1709762550 18<24kjetilho18>	yay :)
+T 1709763623 18<24trn_18>	Is there any way I can possibly see if anyone is going to work on https://bugzilla.redhat.com/show_bug.cgi?id=2263907 or https://bugzilla.redhat.com/show_bug.cgi?id=2263904 before the release?  It's been almost a month and I don't see them acknowledged, and I'd hate for two packages I use that work now to be broken in the next release. :(
+T 1709774324 19*	Now talking on 22#fedora
+T 1709774324 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1709774324 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1709774324 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1709776842 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1709781889 18<19Batzy18>	Does anyone know in GNOME wayland how one could configure a shortcut to type in a command which would then be run (specifically for an ncurses application)
+T 1709782055 18<22rbox18>	type in a command?
+T 1709782208 18<19Batzy18>	yes
+T 1709782238 18<19Batzy18>	like an application launcher, but you specify the name of the binary and the arguments via typing them in?
+T 1709782299 18<19Batzy18>	if you open up a terminal and do this, the terminal needs to persist
+T 1709782638 18<24DAKSH18>	I'm not able to ssh using Yubikey after I upgraded to F39. Somehow I am not able to figure out why system not able to find public key.
+T 1709782739 18<22rbox18>	Batzy: huh?
+T 1709782799 18<24DAKSH18>	https://paste.centos.org/view/a967d726 Am I missing something?
+T 1709782828 18<22rbox18>	how did you configure it to use a yubikey
+T 1709782956 18<24DAKSH18>	rbox I followed this tutorial way back https://ultrabug.fr/Tech%20Blog/2017/2017-05-16-hardening-ssh-authentication-using-yubikey-32/ And from then I kept upgrading Fedora so didn't require to make much changes. But this time I decided to Fresh install the os and I am stuck.
+T 1709782993 18<22rbox18>	so maybe something about what those instructiosn did changed
+T 1709782997 18<22rbox18>	you should look for more up to date instructions
+T 1709783082 18<24DAKSH18>	I suppose so. I think some how Fedora is not pointing toward pub key while trying to connect. I tried exporting ssh key, but did not work out.
+T 1709784042 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1709784227 18<19Batzy18>	i cant tell what is remotely ambiguous about what i said..
+T 1709784955 18<24chrisawi18>	Batzy: so you want to be returned to a shell after exiting the TUI app?
+T 1709786353 19*	Now talking on 22#fedora
+T 1709786353 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1709786353 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1709786353 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1709787188 19*	Now talking on 22#fedora
+T 1709787188 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1709787188 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1709787188 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1709790361 19*	Now talking on 22#fedora
+T 1709790361 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1709790361 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1709790361 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1709808329 19*	Now talking on 22#fedora
+T 1709808329 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1709808329 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:04 2023)
+T 1709808329 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1709810810 19*	Now talking on 22#fedora
+T 1709810810 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1709810810 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1709810810 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1709811590 19*	Now talking on 22#fedora
+T 1709811590 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1709811590 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1709811590 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1709812846 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1709813294 18<24CellBE_Boy18>	ahh back in good old PPC Fedora on my Playstation 3 - this really is my happy place :-)
+T 1709816624 18<29Guest6718>	hey
+T 1709817348 19*	Now talking on 22#fedora
+T 1709817348 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1709817348 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1709817348 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1709820046 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1709827248 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1709834449 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1709841650 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1709848850 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1709856051 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1709934726 19*	Now talking on 22#fedora
+T 1709934726 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1709934726 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1709934726 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1709934974 18<27SponiX18>	glad to see I'm not the only one following the Fedora 40 branch
+T 1709935261 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1709935464 19*	Now talking on 22#fedora
+T 1709935464 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1709935464 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1709935464 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1709935547 18<22pragmaticenigma18>	I fell off the branch :P
+T 1709935634 19*	Now talking on 22#fedora
+T 1709935634 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1709935634 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1709935634 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1709936054 19*	Now talking on 22#fedora
+T 1709936054 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1709936054 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:04 2023)
+T 1709936054 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1709936064 18<26DTE18>	uhm...let me see if vimeo works
+T 1709936146 18<26DTE18>	uhm...other websites says "file is corrupted"
+T 1709966630 19*	Now talking on 22#fedora
+T 1709966630 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1709966630 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1709966630 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1709968158 18<29homeuser18>	I've got a fresh F39 Plasma install updated as of ~!0m ago. I'm having problems with `dnf group install "Electronic Lab"`. Is this the approp. chan to discuss?
+T 1709969040 19*	Now talking on 22#fedora
+T 1709969040 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1709969040 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1709969040 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1709971268 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1709975301 19*	Now talking on 22#fedora
+T 1709975301 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1709975301 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1709975301 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1709975561 19*	Now talking on 22#fedora
+T 1709975561 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1709975561 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1709975561 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1709978469 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1709978956 19*	Now talking on 22#fedora
+T 1709978956 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1709978956 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1709978956 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1709980395 19*	Now talking on 22#fedora
+T 1709980395 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1709980395 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1709980395 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1709985670 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1709988023 19*	Now talking on 22#fedora
+T 1709988023 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1709988023 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1709988023 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1709989368 18<29ray2118>	hello, I installed feodra 39 by vmware fusion on mac M1/. but the display didn;t work well, I can not change the display solution. It;s now 1024*768.  anyone can help? thanks
+T 1709989377 18<29ray2118>	The open-vm-tools package is installed, but din;t help
+T 1709990065 18<19mort18>	does Fedora have something like the /bin/linux-version command?
+T 1709990236 18<22madmax18>	mort, cat /etc/fedora-release
+T 1709990265 18<19mort18>	this is for scripts which run linux-version, not for my own interactive purposes
+T 1709990300 18<19mort18>	but meh it seems to be pretty debian-specific, I should probably just use a container
+T 1709990593 18<22madmax18>	ray21, and it is specific problem of vmware software check option there nothing to do with fedora 
+T 1709991215 19*	Now talking on 22#fedora
+T 1709991215 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1709991215 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1709991215 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1709992267 18<29ray2118>	madmax , thanks
+T 1709992871 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1710000073 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1710004148 18<24AbusedNewcomer2718>	hello anyone active online
+T 1710004256 18<19mort18>	hi
+T 1710004343 18<24AbusedNewcomer2718>	oh at last. I have couple of questions and tired asking or googling them. 1. I cant enable shortcuts on desktop in newest fedora from what I understand? 2. How can I access veracrypt volumes on fedora with graphical interface without command line? 3. Why does LUKS encrypt instantly terabytes and it took 72 hours on veracrypt with strongest
+T 1710004343 18<24AbusedNewcomer2718>	encryption and data forensics protection?
+T 1710005343 18<24AbusedNewcomer2718>	in veracrypt Im stuck in loop of entering passwords and veracrypt not mounting
+T 1710007274 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1710014475 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1710020119 18<24AbusedNewcomer2718>	such active chat
+T 1710020343 18<19RayTracer18>	for question 1 you maybe should state which desktop environment you're using
+T 1710020400 18<19RayTracer18>	however, I don't use desktop shortcuts, and I don't use veracrypt so no answers from me, sorry
+T 1710020834 18<29janos18>	yeah i don't have a desktop period, so...
+T 1710020861 18<29janos18>	it's not about being an active chat or not. if someone is not around who knows the answer to your question, then nothing will be forthcoming
+T 1710020865 18<29janos18>	also it's the weekend
+T 1710020879 18<29janos18>	i'm here mostly during working hours
+T 1710021374 18<24kjetilho18>	I never heard of veracrypt - and dnf search doesn't find anything, so ...
+T 1710021383 18*	24kjetilho is a happy LUKS user
+T 1710021675 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1710024023 18<28potash18>	how am i supposed to install nvidia drivers
+T 1710024029 18<28potash18>	what is the recommended method
+T 1710024630 18<19RayTracer18>	I think https://rpmfusion.org/Howto/NVIDIA
+T 1710024915 18<28potash18>	i did that and now i get a black screen on boot
+T 1710025009 18<24kjetilho18>	oh, you don't like dark mode?
+T 1710025017 18<24kjetilho18>	sorry, bad joke.
+T 1710025463 18<27xx18>	I'm installing a package using dnf for the first time, and it's asking me some question about adding a key
+T 1710025469 18<27xx18>	what should I do? Is this expected?
+T 1710025506 18<22rbox18>	depends on what its saying
+T 1710025512 18<27xx18>	https://0x0.st/HhTu.txt
+T 1710025541 18<22rbox18>	you hae to accept the key the first time you use a repo
+T 1710025602 18<27xx18>	that's... weird. Why isn't that key automatically trusted, since I already installed fedora using presumably that repository.
+T 1710025656 18<28potash18>	kjetilho lmao
+T 1710025664 18<22rbox18>	you dindt install it from the live image?
+T 1710025682 18<27xx18>	I installed it from Fedora-Everything-netinst-x86_64-39-1.5.iso
+T 1710025688 18<22rbox18>	so everything was in it
+T 1710025692 18<28potash18>	i also installed from live image but first dnf update after reboot asked me to trust the key too
+T 1710025700 18<22rbox18>	then it dindt use the repo
+T 1710025711 18<27xx18>	but it's netinst
+T 1710025719 18<22rbox18>	oh netinst, i dint see that part
+T 1710025735 18<22rbox18>	but you dindt trust it inside of your image
+T 1710025739 18<22rbox18>	it was trusted b y the installer
+T 1710026476 19*	Now talking on 22#fedora
+T 1710026477 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1710026477 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1710026477 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1710026566 19*	Now talking on 22#fedora
+T 1710026566 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1710026566 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1710026566 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1710026858 19*	Now talking on 22#fedora
+T 1710026858 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1710026858 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1710026858 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1710027100 19*	Now talking on 22#fedora
+T 1710027101 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1710027101 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1710027101 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1710028877 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1710029759 18<24nothingeleven18>	hello
+T 1710031100 19*	Now talking on 22#fedora
+T 1710031100 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1710031100 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1710031100 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1710031928 19*	Now talking on 22#fedora
+T 1710031928 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1710031928 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1710031928 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1710033398 18<28potash18>	lsmod | grep nouveau returning is a sign that i didnt install the nvidia driver properly right
+T 1710033434 18<22rorym18>	potash: did you reboot after?
+T 1710033441 18<28potash18>	many times
+T 1710033460 18<28potash18>	i ran the three commands under https://rpmfusion.org/Howto/NVIDIA#Current_GeForce.2FQuadro.2FTesla
+T 1710033490 18<28potash18>	modinfo -F version nvidia returns too
+T 1710033515 18<28potash18>	lsmod | grep nvidia only returns nvidia_wmi_ec_backlight though
+T 1710033519 18<28potash18>	no nvidia driver
+T 1710033522 18<28potash18>	and nouveau is loaded
+T 1710033585 18<28potash18>	do i need to rebuild dracut or something
+T 1710034670 18<28potash18>	steam does not launch
+T 1710034720 18<20thingfish18>	hmm...all I do is 'dnf install akmod-nvidia' and like magic it works.
+T 1710034777 18<20thingfish18>	after install, you reboot and it builds.  And half the time freezes, requiring a hard reset. :P
+T 1710034788 18<20thingfish18>	but it installs fine, eventually.
+T 1710034815 18<22rbox18>	oh oh... it's magic
+T 1710034825 18<20thingfish18>	yes!
+T 1710034840 18<20thingfish18>	now who did that song...
+T 1710034877 18<20thingfish18>	ELO maybe
+T 1710034912 18<22rorym18>	Pilot in 1975
+T 1710035142 18<28potash18>	thingfish i ran dnf reinstall akmod-nvidia, rebooted, and still didnt work
+T 1710035165 18<20thingfish18>	you got me. Sorry, I'm sure no guru.
+T 1710035191 18<28potash18>	thanks for trying
+T 1710035320 18<20thingfish18>	I assume you did a standard workstation install?
+T 1710035346 18<28potash18>	kde spin
+T 1710035349 18<28potash18>	otherwise standard
+T 1710035352 18<20thingfish18>	oh
+T 1710035354 18<20thingfish18>	hmm
+T 1710035361 18<28potash18>	on x11
+T 1710035372 18<28potash18>	wayland gives a black screen only
+T 1710035380 18<20thingfish18>	oh okay hmm I just tried that out yesterday in fact
+T 1710035384 18<20thingfish18>	yes
+T 1710035391 18<20thingfish18>	I got the black screen too.
+T 1710035404 18<20thingfish18>	but chose X11 and all was good.
+T 1710035418 18<28potash18>	can you run lsmod | grep nouveau
+T 1710035426 18<20thingfish18>	sure
+T 1710035455 18<20thingfish18>	nothing
+T 1710035463 18<28potash18>	i get a lot
+T 1710035475 18<28potash18>	clearly something has gone wrong
+T 1710035487 18<20thingfish18>	I'd say that's an accurate assessment.
+T 1710035625 18<28potash18>	typing sudo reboot causes the machine to freeze
+T 1710035632 18<20thingfish18>	ugh
+T 1710035633 18<28potash18>	no reboot occurs until i manually kill it
+T 1710035656 18<28potash18>	this is a laptop
+T 1710035682 18<20thingfish18>	I'm curious what the vanilla workstation install does on your system. 
+T 1710035691 18<20thingfish18>	you know, the GNOME one.
+T 1710035710 18<28potash18>	do you suspect the problem is with kde?
+T 1710035732 18<20thingfish18>	well it's one thing to check, one more thing to cross off the list and narrow things down.
+T 1710035766 18<20thingfish18>	you probably also have an integrated GPU in the laptop, don't you?
+T 1710035787 18<20thingfish18>	at least that is quite common.
+T 1710035809 18<20thingfish18>	like an Intel-Nvidia pairing
+T 1710036043 18<20thingfish18>	oh wait! When I tried KDE yesterday, that was on Arch.  So never mind.
+T 1710036077 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1710036356 18<28potash18>	i have an amd cpu gpu combo
+T 1710036375 18<28potash18>	i have run sudo akmods --force && sudo dracut --force
+T 1710036385 18<28potash18>	now i get a kernel panic when logging in to x11 session
+T 1710036395 18<28potash18>	and wayland session just hangs, not even black screen
+T 1710036401 18<20thingfish18>	lovely
+T 1710036405 18<28potash18>	indeed lol
+T 1710036701 18<20thingfish18>	so let me get this clear: you don't have an Nvidia GPU?
+T 1710036725 18<20thingfish18>	you said you have an AMD CPU/GPU combo.
+T 1710037128 18<28potash18>	i have an amd cpu with integrated graphics, and an nvidia on top of that
+T 1710037140 18<28potash18>	i removed the akmod-nvidia package, rebooted
+T 1710037144 18<20thingfish18>	ah okay
+T 1710037146 18<28potash18>	it doesnt even boot anymore
+T 1710037149 18<28potash18>	just hangs
+T 1710037161 18<20thingfish18>	yeehaw
+T 1710037180 18<28potash18>	i have not had such a difficult linux installation so far
+T 1710037200 18<20thingfish18>	I personally have no experience with laptops and Linux.
+T 1710037210 18<20thingfish18>	just desktops here.
+T 1710037237 18<28potash18>	its lovely on servers, i just want to be able to run it on my laptop too but it wont let me
+T 1710037328 18<22rbox18>	Khaytsus: so i think i've freed up enough space i can backup my /home to my other drive and reinstall fedora fresh, this time giving it enough space for /boot
+T 1710037379 18<26Khaytsus18>	My boot is 500, I'm sure that will be a problem some day
+T 1710037475 18<22rbox18>	i have 508 used right now
+T 1710037505 18<22rbox18>	i think if your rescue initramfs is small, thats where the savings are
+T 1710049342 19*	Now talking on 22#fedora
+T 1710049342 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1710049342 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:04 2023)
+T 1710049342 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1710049448 18<20rudrab18>	Hi. for the first time I am thinking of a laptop with a dedicated GPU with intel arc. My use case is inkscape, gimp and sometimes blender+pitivi.
+T 1710049462 18<20rudrab18>	sorry, darktable also.
+T 1710049506 18<20rudrab18>	I know f39 supports intel arc. Is that enough or do I have to look for if those allpications are supported too?
+T 1710050480 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1710057680 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1710064882 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1710072082 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1710072135 18<25NthDegree18>	Does anyone have any recommendations for a GUI (or CLI if there's no other choice) which allows me to allocate different apps to different audio outputs when using GNOME?
+T 1710072277 18<25NthDegree18>	Also, is there a way to set up autoswitching of bluetooth outputs between headset and handsfree modes depending on whether the microphone is engaged?
+T 1710073028 18<20felsokning18>	Hello! I'm writing/developing an Octopus Deploy Worker Tool container for Fedora to be used by Octopus Deploy/Calamari during deployments. The only pertitent fact from this is this is all within a container context. Inside the container, I am pulling a particular tool, umoci, from github (releases haven't been published in like two years - but it's still actively developed) and using make to create it. This works locally by `docker build -t <tag> 
+T 1710073028 18<20felsokning18>	.` AND via `docker-compose...`. I am building Alpine, Arch, Debian, and Fedora images (not related but showing this only affects Fedora).
+T 1710073087 18<20felsokning18>	However, when I build these images git github actions using an ubuntu runner (to publish to docker hub), Fedora breaks because go is missing?
+T 1710073107 18<20felsokning18>	#8 154.8 bash: line 1: go: command not found
+T 1710073116 18<20felsokning18>	#8 155.0 bash: line 1: go-md2man: command not found
+T 1710073142 18<25NthDegree18>	felsokning, is gcc-go or golang-bin installed?
+T 1710073168 18<20felsokning18>	No -- but they're not installed via local dockerfile, either; it's the same dockerfile.
+T 1710073286 18<20felsokning18>	Dockerfile steps: && git clone https://github.com/opencontainers/umoci.git \ && cd umoci \ && make -si DESTDIR=/ install > /dev/null \ && cd / \ && rm -rf umoci
+T 1710073569 18<25NthDegree18>	that suggests the Fedora image doesn't include golang and needs to be explicitly pulled in
+T 1710073971 18<20felsokning18>	Does this mean that Build Kit is fudging things behind the scenes by including go references (internally) -- or masking them, like it does grep or the like?
+T 1710074535 18<27xx18>	https://github.com/rpm-software-management/dnf still references the freenode channel
+T 1710074544 18<25NthDegree18>	felsokning, not sure on that front, you might need to experiment a bit, Fedora's image is very minimal
+T 1710079282 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1710081806 18<20esv18>	hey folks, I keep getting 404 errors while trying to update my system to F39
+T 1710081809 18<20esv18>	https://mirrors.fedoraproject.org/metalink?repo=fedora-modular-source-39&arch=x86_64 (IP: 2600:1f14:fad:5c02:7c8a:72d0:1c58:c189)
+T 1710081862 18<20esv18>	I'm thinking of disabling ipv6 on my pc and test again but I'd think it's something you might want to look at
+T 1710082093 18<25NthDegree18>	esv, https://fedoraproject.org/wiki/Changes/RetireModularity
+T 1710082110 18<25NthDegree18>	isn't that repo meant to be dead at this point?
+T 1710082150 18<25NthDegree18>	that repo existed in Fedora 38 but I believe it got retired in 39
+T 1710082281 18*	25NthDegree just wants to say right now, ChangeSets and all the documentation regarding technical decisions is so awesome, please don't ever stop documenting this Fedora! <3
+T 1710082666 18<20esv18>	got it, thnx
+T 1710086484 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1710093684 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1710095807 18<28potash18>	https://rpmfusion.org/Howto/CUDA is this up to date
+T 1710095840 18<28potash18>	following https://rpmfusion.org/Howto/NVIDIA#CUDA i installed xorg-x11-drv-nvidia-cuda however nvcc is missing
+T 1710097446 18<28potash18>	freecad does not have a package?
+T 1710097510 18<28potash18>	looks like its unmaintained https://packages.fedoraproject.org/pkgs/freecad/freecad/
+T 1710097516 18<28potash18>	how can i adopt maintenance of a package?
+T 1710099340 18<25NthDegree18>	potash, try asking in #fedora-devel and see what they say =)
+T 1710099359 18<28potash18>	NthDegree for which question
+T 1710099367 18<25NthDegree18>	the unmaintained package
+T 1710099370 18<28potash18>	thanks
+T 1710099708 18<25NthDegree18>	Flathub packages it too, just in case you want a convenient way to test side-by-side in case you encounter bugs
+T 1710100885 18<28fedbot18>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+T 1710109467 19*	Now talking on 22#fedora
+T 1710109467 22*	Topic for 22#fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+T 1710109467 22*	Topic for 22#fedora set by 26Southern_Gentlem!~notfred@fedora/Southern-Gentlem (24Tue Dec  5 19:08:03 2023)
+T 1710109467 -18ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+T 1710109719 18<27brettgilio18>	Evening all.
+T 1710109719 18<27brettgilio18>	Evening all.

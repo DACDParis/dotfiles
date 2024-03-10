@@ -830,3 +830,207 @@ Mar 06 11:19:27 <plundra>	So a preference/tast or maybe even philosophical quest
 Mar 06 11:20:10 <plundra>	Question being, any input in the matter? :) What would be more obvious in function if you stumbled upon it?
 Mar 06 11:21:01 <plundra>	I like not having to enable an additional unit, and not needing an [Install] section etc, as well as not needing to disable two units to disable the "function"
 Mar 06 11:21:29 <plundra>	Although having it as a "regular" standalone service might look more explicit.
+**** BEGIN LOGGING AT Wed Mar  6 13:29:43 2024
+
+Mar 06 13:29:41 *	Now talking on #systemd
+Mar 06 13:29:41 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 06 13:29:41 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+Mar 06 16:50:25 <Jannik2099>	oomctl shows Memory: Used: 0B Total: 0B , which is of course wrong - any ideas?
+Mar 06 16:50:38 <Jannik2099>	this is on kernel 6.7 with unified cgroup hierarchy and memory accounting enabled
+Mar 06 18:19:08 <twb>	I have a batch job that reads /etc/foo/foo.json and writes /var/lib/foo/foo.html.  Can I use a .path to watch the source file and invoke the batch job if/when the source file changes?
+Mar 06 18:19:45 <twb>	(Right now this is actually re-rendering the HTML every single time someone requests it, which feels silly.)
+Mar 06 18:22:30 <twb>	PathChanged= looks reasonable, I don't think the file will ever change while systemd *isn't* running.  Not sure if it'll fire if the file exists before the .path itself exists, but I'll try it and see
+**** BEGIN LOGGING AT Wed Mar  6 21:44:03 2024
+
+Mar 06 21:44:02 *	Now talking on #systemd
+Mar 06 21:44:02 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 06 21:44:02 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** ENDING LOGGING AT Wed Mar  6 23:44:24 2024
+
+**** BEGIN LOGGING AT Thu Mar  7 02:18:47 2024
+
+Mar 07 02:18:44 *	Now talking on #systemd
+Mar 07 02:18:44 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 07 02:18:44 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+Mar 07 04:04:28 <cwegener>	Can I use the variables from `EnvironmentFile=` as arguments to `Environment=` ?
+Mar 07 04:05:06 <twb>	cwegener: I don't remember.  It should be easy enough to write a test unit
+Mar 07 04:12:25 <cwegener>	Yup. that's what I'm doing now ... so far the answer seems "no" ... I'll keep trying a bit harder. :)
+Mar 07 04:14:13 <edu4rdshl>	cwegener, you can't
+Mar 07 05:32:11 <twb>	OK so... I have a socket-activate daemon that works with ProtectSystem=full but crashes without any error messages with ProtectSystem=strict.
+Mar 07 05:32:32 <twb>	Adding "strace -e trace=file" to ExecStart= doesn't work, because I guess it's too locked down for that
+Mar 07 05:33:02 <twb>	How do I work out what file it's trying to write to?  It *ought* to be writing only to fd3 (the systemd-managed socket) plus /run/postgresql/<some socket>
+Mar 07 05:33:18 <twb>	But ProtectSystem=strict ReadWritePaths=/run fails with the same behaviour
+**** BEGIN LOGGING AT Thu Mar  7 05:39:14 2024
+
+Mar 07 05:39:13 *	Now talking on #systemd
+Mar 07 05:39:13 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 07 05:39:13 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+Mar 07 05:39:20 <twb>	Aha, I cranked up the log level of the daemon, and now it tells me: FileNotFoundError: [Errno 2] No usable temporary directory found in ['/tmp', '/var/tmp', '/usr/tmp', '/']
+Mar 07 05:42:04 <twb>	And that's ultimately coming from https://github.com/python/cpython/blob/3.11/Lib/tempfile.py#L224-L226
+Mar 07 05:42:28 <twb>	Oh I am not setting PrivateTmp=!
+Mar 07 05:42:32 <twb>	Mystery solved
+Mar 07 05:46:26 <twb>	And that happened because I started with DynamicUser=yes (which implies PrivateTmp=yes), but then had to remove it
+**** BEGIN LOGGING AT Thu Mar  7 05:53:08 2024
+
+Mar 07 05:53:08 *	Now talking on #systemd
+Mar 07 05:53:08 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 07 05:53:08 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Thu Mar  7 06:46:02 2024
+
+Mar 07 06:46:01 *	Now talking on #systemd
+Mar 07 06:46:01 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 07 06:46:01 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Thu Mar  7 11:45:31 2024
+
+Mar 07 11:45:29 *	Now talking on #systemd
+Mar 07 11:45:29 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 07 11:45:29 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Thu Mar  7 12:26:51 2024
+
+Mar 07 12:26:50 *	Now talking on #systemd
+Mar 07 12:26:50 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 07 12:26:50 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Thu Mar  7 12:39:51 2024
+
+Mar 07 12:39:50 *	Now talking on #systemd
+Mar 07 12:39:50 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 07 12:39:50 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+Mar 07 12:48:35 <gdamjan>	use Restart= in the service
+**** BEGIN LOGGING AT Thu Mar  7 14:15:49 2024
+
+Mar 07 14:15:48 *	Now talking on #systemd
+Mar 07 14:15:48 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 07 14:15:48 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+Mar 07 15:11:30 <birkoff>	if RestartSec=3 and ...MaxDelaySec=300 and ...Steps=10  then is it possible to know the exact steps values that will be used ? i.e. from 3 to 300 in 10 steps can have several combinations
+Mar 07 15:29:11 <gdamjan>	hah, first time I see RestartSteps=
+Mar 07 15:36:56 <yhndnzj>	birkoff: https://github.com/systemd/systemd/blob/v255/src/core/service.c#L322
+Mar 07 17:01:46 <birkoff>	i've edited both ~/.gdbinit and /etc/gdb/gdbinit with some configuration but coredumpctl gdb ... doesn't seem to apply it nonetheless
+Mar 07 17:47:55 <cek>	it seems calling `mailx` from `ExecStart` doesn't work. why and why no logging for that?
+Mar 07 17:52:43 <grawity>	how did you run it, where did you look and what did you see?
+Mar 07 17:55:23 <cek>	exactly the https://unix.stackexchange.com/questions/314329/mailx-not-sending-email-when-run-as-a-systemd-service
+Mar 07 17:55:38 <cek>	obnoxious piece of garbage.
+**** BEGIN LOGGING AT Fri Mar  8 22:52:06 2024
+
+Mar 08 22:52:06 *	Now talking on #systemd
+Mar 08 22:52:06 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 08 22:52:06 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Fri Mar  8 23:04:26 2024
+
+Mar 08 23:04:24 *	Now talking on #systemd
+Mar 08 23:04:24 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 08 23:04:24 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Fri Mar  8 23:07:14 2024
+
+Mar 08 23:07:14 *	Now talking on #systemd
+Mar 08 23:07:14 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 08 23:07:14 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Fri Mar  8 23:14:16 2024
+
+Mar 08 23:14:14 *	Now talking on #systemd
+Mar 08 23:14:14 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 08 23:14:14 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Sat Mar  9 07:43:52 2024
+
+Mar 09 07:43:50 *	Now talking on #systemd
+Mar 09 07:43:50 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 09 07:43:50 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Sat Mar  9 08:24:01 2024
+
+Mar 09 08:24:00 *	Now talking on #systemd
+Mar 09 08:24:00 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 09 08:24:00 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+Mar 09 08:34:55 <helmut>	hi. is there a reasonable way to combine a simple .service unit and a .path unit such that the unit is activated after the last path event? (i.e. when path activates while .service is running, those activations would be accumulated into a single reactivation of the .service unit after it finishes)
+**** BEGIN LOGGING AT Sat Mar  9 10:08:22 2024
+
+Mar 09 10:08:21 *	Now talking on #systemd
+Mar 09 10:08:21 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 09 10:08:21 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** ENDING LOGGING AT Sat Mar  9 10:09:15 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 10:12:43 2024
+
+Mar 09 10:12:41 *	Now talking on #systemd
+Mar 09 10:12:41 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 09 10:12:41 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Sat Mar  9 11:09:19 2024
+
+Mar 09 11:09:16 *	Now talking on #systemd
+Mar 09 11:09:16 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 09 11:09:16 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Sat Mar  9 11:33:16 2024
+
+Mar 09 11:33:15 *	Now talking on #systemd
+Mar 09 11:33:15 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 09 11:33:15 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+Mar 09 11:59:59 <pgnd>	I need a service restriction on devices, limiting access to: /dev/uinput & all of the /dev/input/eventX, where X={0-20}. Iiuc, wildcards, e.g.:
+Mar 09 11:59:59 <pgnd>	DeviceAllow = /dev/uinput /dev/input/event*
+Mar 09 11:59:59 <pgnd>	are NOT allowed.  is there available shorthand for listing all 'X' here? or muse list explicitly?
+Mar 09 12:09:44 <foul_owl>	grawity: thank you!
+Mar 09 12:12:02 <foul_owl>	That fixed it. It was wine + some windows app that seemed to be leaking hundreds of connections
+Mar 09 12:37:27 <pgnd>	aha
+**** ENDING LOGGING AT Sat Mar  9 13:31:10 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 13:40:24 2024
+
+Mar 09 13:40:23 *	Now talking on #systemd
+Mar 09 13:40:23 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 09 13:40:23 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Sat Mar  9 14:33:36 2024
+
+Mar 09 14:33:35 *	Now talking on #systemd
+Mar 09 14:33:35 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 09 14:33:35 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+Mar 09 15:12:33 <grawity>	foul_owl: that might be a Wine bug of some sort, since it's more likely that Wine translates some Windows API to a DBus-based API than the app itself using DBus; watching bus traffic in bustle or dbus-monitor --user for repeated identical calls might reveal what it's doing
+**** BEGIN LOGGING AT Sun Mar 10 00:21:17 2024
+
+Mar 10 00:21:17 *	Now talking on #systemd
+Mar 10 00:21:17 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 10 00:21:17 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Sun Mar 10 00:22:46 2024
+
+Mar 10 00:22:46 *	Now talking on #systemd
+Mar 10 00:22:46 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 10 00:22:46 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Sun Mar 10 00:27:38 2024
+
+Mar 10 00:27:38 *	Now talking on #systemd
+Mar 10 00:27:38 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 10 00:27:38 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Sun Mar 10 00:31:41 2024
+
+Mar 10 00:31:41 *	Now talking on #systemd
+Mar 10 00:31:41 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 10 00:31:41 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Sun Mar 10 01:38:21 2024
+
+Mar 10 01:38:20 *	Now talking on #systemd
+Mar 10 01:38:20 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 10 01:38:20 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Sun Mar 10 01:52:09 2024
+
+Mar 10 01:52:08 *	Now talking on #systemd
+Mar 10 01:52:08 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 10 01:52:08 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** ENDING LOGGING AT Sun Mar 10 04:26:38 2024
+
+**** BEGIN LOGGING AT Sun Mar 10 06:42:23 2024
+
+Mar 10 06:42:22 *	Now talking on #systemd
+Mar 10 06:42:22 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 10 06:42:22 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+Mar 10 16:59:53 <lxsameer>	hey folks, is it possible to add a incremental number to log entries for each boot? 
+Mar 10 17:02:29 <lxsameer>	nvm
+Mar 10 18:12:22 <ZLima12>	lxsameer: you found -b for journalctl?
+Mar 10 19:19:47 <ndim>	When I add or remove a udev rules files, udev picks that up without explicitly notifying it with "udev control --reload".
+Mar 10 19:20:25 <ndim>	However, when I run "--action=add --subsystem-match=usb --attr-match=idVendor=05fc --attr-match=idProduct=0030" afterwards, I cannot be certain whether udev applies the ruleset from before or after adding/removing the rule file.
+Mar 10 19:21:32 <ndim>	Does adding a "udevadm control --reload" between adding/removing the file and the "udevadm trigger" ensure the trigger happens with the new ruleset?
+Mar 10 22:54:23 <Eryn_FL>	hey peeps
+Mar 10 22:54:43 <Eryn_FL>	i am trying to get my samba shares to mount at boot but some will mount but then the rest will fail 
+Mar 10 22:54:47 <Eryn_FL>	https://paste.debian.net/1310190/
+Mar 10 22:54:53 <Eryn_FL>	is this right way to do this?
+Mar 10 22:55:07 <Eryn_FL>	mostly my after and wanter ^
+**** BEGIN LOGGING AT Sun Mar 10 23:24:28 2024
+
+Mar 10 23:24:27 *	Now talking on #systemd
+Mar 10 23:24:27 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 10 23:24:27 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)

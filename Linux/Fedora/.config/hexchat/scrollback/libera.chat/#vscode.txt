@@ -277,3 +277,111 @@ T 1709686297 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28
 T 1709705791 19*	Now talking on 22#vscode
 T 1709705791 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
 T 1709705791 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1709728181 19*	Now talking on 22#vscode
+T 1709728181 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1709728181 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1709736474 18<20FueraDeServicio18>	Hi. I'm trying to avoid having a word highlighted with transparency when I click on it in the editor area. I would like it to only do this when I double-click, regardless of the case.
+T 1709736486 18<20FueraDeServicio18>	this is an example: https://imgur.com/MybrOZd
+T 1709736504 18<20FueraDeServicio18>	could somebody help me, please? thanks in advance!
+T 1709738168 18<26[twisti]18>	FueraDeServicio: there are two colours, one for clicked on, another for selected, so you should be able to change the 'selected' variant to be transparent
+T 1709738217 18<26[twisti]18>	i think its either editor.selectionBackground or editor.selectionHighlightBackground, maybe play around with those
+T 1709738514 18<20FueraDeServicio18>	Thanks for your help [twisti]. Actually, I think that disabling editor.occurrencesHighlight is enough for me. Now it only highlights only when I doble-clic on the word, and marks any existing repetition
+T 1709738545 18<20FueraDeServicio18>	enyway, I will save your idea just in case it's not actually whan I'm looking for
+T 1709738555 18<20FueraDeServicio18>	thanks enyway for your help :)
+T 1709757842 19*	Now talking on 22#vscode
+T 1709757842 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1709757842 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1709774324 19*	Now talking on 22#vscode
+T 1709774324 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1709774324 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1709786353 19*	Now talking on 22#vscode
+T 1709786353 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1709786353 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1709787188 19*	Now talking on 22#vscode
+T 1709787188 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1709787188 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1709790361 19*	Now talking on 22#vscode
+T 1709790361 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1709790361 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1709808329 19*	Now talking on 22#vscode
+T 1709808329 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1709808329 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1709810810 19*	Now talking on 22#vscode
+T 1709810810 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1709810810 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1709811590 19*	Now talking on 22#vscode
+T 1709811590 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1709811590 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1709817348 19*	Now talking on 22#vscode
+T 1709817348 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1709817348 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1709934726 19*	Now talking on 22#vscode
+T 1709934726 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1709934726 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1709935464 19*	Now talking on 22#vscode
+T 1709935464 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1709935464 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1709935634 19*	Now talking on 22#vscode
+T 1709935634 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1709935634 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1709936054 19*	Now talking on 22#vscode
+T 1709936054 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1709936054 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1709966630 19*	Now talking on 22#vscode
+T 1709966630 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1709966630 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1709969040 19*	Now talking on 22#vscode
+T 1709969040 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1709969040 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1709975301 19*	Now talking on 22#vscode
+T 1709975301 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1709975301 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1709975561 19*	Now talking on 22#vscode
+T 1709975561 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1709975561 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1709978956 19*	Now talking on 22#vscode
+T 1709978956 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1709978956 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1709980395 19*	Now talking on 22#vscode
+T 1709980395 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1709980395 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1709988023 19*	Now talking on 22#vscode
+T 1709988023 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1709988023 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1709991215 19*	Now talking on 22#vscode
+T 1709991215 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1709991215 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710020639 18<26acalbaza18>	having trouble getting extensions to install inside my devcontainer when its built. however, i can install them directly. is it supposed to work this way?! 
+T 1710021016 18<29rawtaz18>	is it supposed to work in what way?
+T 1710021042 18<29rawtaz18>	if you are asking "am i supposed to be able to install extensions in my devcontainer?" then the answer is yes.
+T 1710021049 18<26acalbaza18>	having to explicitly install extensions for my devcontainer rather than having them install when it builds
+T 1710021070 18<29rawtaz18>	i dont do that. i put them in the devcontianer config and they install as they shoudld
+T 1710021155 18<26acalbaza18>	i have them defined in my devcontainer.json, but they don't install for some reason... ~/.vscode-server/extensions/extensions.json is empty after rebuilding.
+T 1710021194 18<29rawtaz18>	okay. i guess you did something wrong or there is a bug in vs code or the devcontainer extension then
+T 1710021206 18<29rawtaz18>	it worked for me last time i used it, thats really all i know at this point in time :)
+T 1710026477 19*	Now talking on 22#vscode
+T 1710026477 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710026477 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710026566 19*	Now talking on 22#vscode
+T 1710026566 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710026566 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710026858 19*	Now talking on 22#vscode
+T 1710026858 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710026858 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710027101 19*	Now talking on 22#vscode
+T 1710027101 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710027101 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710031100 19*	Now talking on 22#vscode
+T 1710031100 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710031100 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710031928 19*	Now talking on 22#vscode
+T 1710031928 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710031928 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710049342 19*	Now talking on 22#vscode
+T 1710049342 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710049342 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710089645 18<28jmcgee18>	hello
+T 1710089684 18<28jmcgee18>	2 questions about devcontainers.  is there a way to set devcontainers to have a default devcontainer for all projects? is there a way to set it so all projects automatically open in said devcontainer?
+T 1710109467 19*	Now talking on 22#vscode
+T 1710109467 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710109467 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)

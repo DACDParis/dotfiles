@@ -1103,3 +1103,356 @@ T 1709711493 18<22iz18>	also, as mk-fg said, pcq is like a hedge against
 T 1709719895 18<20dnosng18>	so, is im in sequrity?
 T 1709719952 18<28calmclam18>	sir this is a wendys
 T 1709720795 18<20dnosng18>	calmclam: very funy, did u know some port-chaker for my phone anrdoid, root free
+T 1709728181 19*	Now talking on 22#security
+T 1709728181 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709728181 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709730389 18<25mwebsec18>	y0
+T 1709730413 18<25mwebsec18>	anyone from here has been accepted into synack redteam ?
+T 1709730455 18<28calmclam18>	no. did you apply?
+T 1709730471 18<28calmclam18>	(speaking only for myself)
+T 1709730497 18<25mwebsec18>	yea i did
+T 1709730498 18<25mwebsec18>	a week ago
+T 1709730512 18<25mwebsec18>	still no reply
+T 1709730554 18<28calmclam18>	nice. fortune favors the bold
+T 1709730647 18<25mwebsec18>	:D
+T 1709732616 18<25mwebsec18>	they processing slow my application
+T 1709732628 18<25mwebsec18>	but i will go through the fast track process because i got several certs
+T 1709732638 18<25mwebsec18>	i will chose the web route
+T 1709732651 18<25mwebsec18>	i chose the web route*
+T 1709733156 18<25harrykar18>	mwebsec: anyone from here has been accepted into synack redteam ?> what's about?
+T 1709733341 18<25mwebsec18>	just wanted to ask how long does it take for them to reply to the submitted application
+T 1709733341 18<25mwebsec18>	:D
+T 1709733421 18<25harrykar18>	mwebsec: can expand a bit please?
+T 1709733431 18<25mwebsec18>	i applied week and a half ago
+T 1709733452 18<25mwebsec18>	still no reply. i chose web route due to me having web app cert so that would fast track my application
+T 1709733705 18<28calmclam18>	i think at least one person wrote a blog about their experience joining them but i don't have a link
+T 1709733823 18<25mwebsec18>	okay
+T 1709750465 18<28snoriman18>	hi! i'm about to deploy a nodejs based app on a VPS and would love to hear some common practices that I should take into account. Currently I'm thinking about using Arch Linux (because I've been using that for a while). I want to install my nodejs app in /srv and use systemd to keep it running.
+T 1709750498 18<28snoriman18>	I've read somewhere that it might be a good idea to create a system user and run the project/app under that name
+T 1709750512 18<28snoriman18>	is this typical?
+T 1709751024 18<28luca0N18>	snoriman: Arch Linux is a rolling release distro, wouldn't recommend it for servers. and yes, creating dedicated user accounts for running programs is typical on Linux
+T 1709751054 18<28luca0N18>	some programs will outright prevent you from running them as root, for instance
+T 1709751078 18<28snoriman18>	ok thanks!
+T 1709751099 18<28luca0N18>	no worries!
+T 1709751664 18<28snoriman18>	luca0N: I was thinking to use git and clone a repos + tag for this app. When I create another user for this app, then I think this user also needs to be able to access my repository. Or is there a way to work around this?
+T 1709751964 18<28luca0N18>	snoriman: I'm not too familiar with npm, but I'd imagine you could set up an internal repo and deploy tagged versions there (or, heck, even publish them on npm if you're comfortable releasing it to the general public). if this isn't possible, then you could write a shell script to accomplish this
+T 1709751986 18<28luca0N18>	since you've mentioned Arch Linux, you could even create a PKGBUILD for your app.
+T 1709751999 18<28snoriman18>	ok yeah, I thought maybe there is a "trick" for this.
+T 1709752014 18<28snoriman18>	yeah I might look into pkgbuild or something like that
+T 1709752023 18<28luca0N18>	I'm not too familiar with nodejs, perhaps there's a proper way to go about this
+T 1709752031 18<28luca0N18>	since this is #security, I'd highly recommend signing releases
+T 1709752149 18<22n0xx18>	will the project be build on production?
+T 1709752233 18<28snoriman18>	n0xx: yes, well typically you run a nodejs based service simply with `nodejs service.js`
+T 1709755478 18<19pedrowiski18>	Do you guys consider surfshark a good vpn?
+T 1709756060 18<26hays18>	I want to have some files hosted on the web without dealing with http authentication. I was thinking i can force TLS and put them in a directory like /.f0jf03jf0e3jdejpeojlsfljf34lkfm3/files_here and that should be pretty safe.. is there something i'm missing in terms of people finding that?
+T 1709756198 18<20EdFletcher18>	same strategy is used by huge sites like github to create "secret" urls so yeah, i think you're fine
+T 1709756269 18<26hays18>	maybe these show up in the access logs right? maybe that's a slight concern?
+T 1709756394 18<25mwebsec18>	if the long string of characters url is referenced in a web page, then looking at html source of the page, attacker can copy the url and bruteforce files
+T 1709756420 18<26hays18>	true good point
+T 1709756479 18<26hays18>	i kind of want to turn off port 80 but i think it needs to be attending for letsencrypt
+T 1709756482 18<26danieldg18>	web browser history will also contain it, as will any MITM proxies (common for many company-provided networks)
+T 1709756504 18<26danieldg18>	you *can* configure letsenrypt to use other methods but they're harder
+T 1709756603 18<26hays18>	ahh interesting point about proxies
+T 1709757842 19*	Now talking on 22#security
+T 1709757842 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709757842 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709757950 18<22frenchboy[m]18>	hays: it also depends on how long you want to keep the server on if it's just for an hour probability of someone compromising an intermediary proxy or a client that already has the url in his history is incredibly low but if you keep it running for years you have to account for that
+T 1709758166 18<22iz18>	i think consider the use-case here -- what are you hosting these files for?  who are you giving the url to?  will they need continual access or just for a bit?
+T 1709758385 18<26en4rab18>	wilsonfisk, opening no touch exit sensors with a modulated IR torch, its hilariously funny to do in real life through the glass in a door when you are on the other side of the sensor https://www.youtube.com/watch?v=g8V6AG4Bsew
+T 1709759063 18<29LeeAdama18>	is the linkedin outage a cyberattack or a sysadmin fuck up?
+T 1709760206 18<19wasamasa18>	nobody's gonna miss linkedin
+T 1709760326 18<19wasamasa18>	it's a special kinda scourge
+T 1709761654 18<25mwebsec18>	:D
+T 1709774324 19*	Now talking on 22#security
+T 1709774324 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709774324 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709778511 18<24nullvalue18>	sorry im late, i came as soon as i wanted
+T 1709778962 18<28calmclam18>	nobody ever expects nullvalue
+T 1709779155 18<24nullvalue18>	yeah tht explains why exciting stuff dont happen much when im around
+T 1709779166 18*	24nullvalue greets calmclam properlly
+T 1709779178 18*	28calmclam tips hat
+T 1709779189 18<24nullvalue18>	what cha workin on,...want some coffee!!
+T 1709779204 18<28calmclam18>	sure
+T 1709779226 18<28calmclam18>	i'm trying to understand the javascript execution model. It's surprisingly complex for what most people consider a simple laungage.
+T 1709779234 18*	24nullvalue hands over a d[_] to calmclam 
+T 1709779241 18*	28calmclam sips
+T 1709779260 18<24nullvalue18>	oh, man i hate the long syntax'ng of that language with all my heart
+T 1709779261 18<24nullvalue18>	lol
+T 1709779291 18<28calmclam18>	I don't like it either.
+T 1709779292 18<24nullvalue18>	maybe thats the complication you are facing as well
+T 1709779317 18<28calmclam18>	They've added all kinds of crap to it in the last 10 years as well
+T 1709779397 18<28calmclam18>	I don't think the web could have settled on a more obtuse language if they tried. It's shocking, shocking that so many "applications" are built on it.
+T 1709779468 18<24nullvalue18>	i agree
+T 1709779469 18<28calmclam18>	ty
+T 1709779579 18<26danieldg18>	at least wasm is an attempt to get away from it, but it's rather slow to actually happen
+T 1709779582 18<24nullvalue18>	should ask the other parties "why has this happened" why did you let it happen even?
+T 1709779603 18<24nullvalue18>	ah see wasm happened too
+T 1709779609 18<26danieldg18>	but yeah, js is the ultimate "nothing more permanent than a temporary fix"
+T 1709779713 18<28calmclam18>	WASM is kind of like the new java. We'll see how it goes. It at least is being designed with security in mind from the outset, although time will tell how effective it is.
+T 1709779750 18<22n0xx18>	I'm so scared of js
+T 1709779852 18<28calmclam18>	As for js, I read a piece on its history. Aparently it was designed and implemented over a few weekends by an expert language designer working for netscape at the time. I'm pretty sure they had no idea it would try to fill this role. It was probably meant for putting scrolling marquees in the status bar and not much else.
+T 1709779876 18<28calmclam18>	We don't even have status bars anymore.
+T 1709779887 18<24nullvalue18>	heh n0xx
+T 1709779904 18<24nullvalue18>	dont worry js will not hurt you!! :P
+T 1709779923 18<24nullvalue18>	well maybe you eyes a bit, but thts abt it lol
+T 1709779926 18<22n0xx18>	it hurt me many times
+T 1709779934 18<24nullvalue18>	awww
+T 1709779937 18*	28calmclam gets out the HR dolls
+T 1709779952 18<24nullvalue18>	tell us in the doll where js hurted you
+T 1709784010 18<22monkeydonkeyping18>	Hello
+T 1709784189 18<22monkeydonkeyping18>	?
+T 1709784871 18<22monkeydonkeyping18>	DO you guys actually use ASM ? attack surface management ? which only does passive scans
+T 1709785509 18<24nullvalue18>	no we do it from scratch no management tools involved
+T 1709786353 19*	Now talking on 22#security
+T 1709786353 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709786353 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709787188 19*	Now talking on 22#security
+T 1709787188 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709787188 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709790361 19*	Now talking on 22#security
+T 1709790361 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709790361 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709808329 19*	Now talking on 22#security
+T 1709808329 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709808329 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709810810 19*	Now talking on 22#security
+T 1709810810 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709810810 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709811590 19*	Now talking on 22#security
+T 1709811590 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709811590 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709817348 19*	Now talking on 22#security
+T 1709817348 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709817348 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709821439 18<29OurRoyalGabe18>	oh yeah I am almost an Akuvox installer
+T 1709821472 18<29OurRoyalGabe18>	I don't know what I learned about more on the journey, setting up the doorbell or simplified Chinese
+T 1709850828 18<25mwebsec18>	another day another dollar
+T 1709850835 18<25mwebsec18>	found 4 stored xss in cms
+T 1709850848 18<25mwebsec18>	(~_-)
+T 1709855306 18<26insecurity18>	cool
+T 1709855324 18<26insecurity18>	mwebsec: bounty?
+T 1709855341 18<25mwebsec18>	not quite
+T 1709855353 18<25mwebsec18>	jsut downloaded opensource cms and pentest in my lab
+T 1709855363 18<25mwebsec18>	i do that every friday
+T 1709855390 18<25mwebsec18>	its not quite friday yet,but sure i will have some fun tomorrow. glad to have checked the xss as complete for this pentest
+T 1709855480 18<25mwebsec18>	i also got checkmarx scan running to scan its codebase for any flaws that i miss whilst testing :D
+T 1709857533 18<26insecurity18>	cool!
+T 1709857539 18<26insecurity18>	which cms did you download?
+T 1709934726 19*	Now talking on 22#security
+T 1709934726 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709934726 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709935463 19*	Now talking on 22#security
+T 1709935463 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709935463 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709935633 19*	Now talking on 22#security
+T 1709935633 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709935633 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709936054 19*	Now talking on 22#security
+T 1709936054 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709936054 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709936062 18<24jennie18>	alright, ignore my latter question, I have thinkpad, how can I make sure no one can get in when computer is OFF
+T 1709936088 18<25xorAxAx18>	jennie: with or without internal battery?
+T 1709936163 18<24jennie18>	i dont think so this laptop has internal battery but the main battery is also under laptop bottom panel which has 10+ screws
+T 1709936200 18<25xorAxAx18>	then the answer is "yes"
+T 1709936211 18<24jennie18>	what can I do now :(
+T 1709936213 18<25xorAxAx18>	then you can shut down the laptop in the BIOS settings
+T 1709936224 18<24jennie18>	which setting is it?
+T 1709936270 18<25xorAxAx18>	not sure, you will recognize it when you see it
+T 1709936280 18<24jennie18>	whats the name of that setting?
+T 1709966630 19*	Now talking on 22#security
+T 1709966630 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709966630 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709969040 19*	Now talking on 22#security
+T 1709969040 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709969040 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709975301 19*	Now talking on 22#security
+T 1709975301 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709975301 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709975561 19*	Now talking on 22#security
+T 1709975561 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709975561 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709978956 19*	Now talking on 22#security
+T 1709978956 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709978956 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709980395 19*	Now talking on 22#security
+T 1709980395 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709980395 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709988023 19*	Now talking on 22#security
+T 1709988023 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709988023 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709990414 18<28APic18>	;=P
+T 1709991215 19*	Now talking on 22#security
+T 1709991215 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1709991215 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1709993038 18<25mwebsec18>	y0
+T 1709993186 18*	28calmclam tips hat
+T 1710002626 18<25mwebsec18>	hi
+T 1710002631 18<25mwebsec18>	calmclam
+T 1710003271 18<22iz18>	hehe mats1
+T 1710005366 18<19mats118>	it was two years ago, i remember being banned from ##economics was around then
+T 1710005441 18<19mats118>	rmah was upset about the discussion of slavery
+T 1710005469 18<19mats118>	which, incidentally, us has been continuously practising without interruption since its inception, https://apnews.com/article/prison-to-plate-inmate-labor-investigation-c6f0eb4747963283316e494eadf08c4e
+T 1710005485 18<19mats118>	https://www.theguardian.com/us-news/2022/sep/27/slavery-loophole-unpaid-labor-in-prisons
+T 1710005974 18<19mats118>	a multibillion slave empire powering the supply chain, with the support of the ostensibly democratic electorate and all of its interest groups -- shareholders and unions, ie, state/county/municipal employee unions (AFSCME), service employee unions (SEIU), law enforcement and corrections officers unions (such as CCPOA), nurses (NNU), national union of healthcare workers (NUHW), teamsters, etc
+T 1710005987 18<19mats118>	multibillion dollar slave empire*
+T 1710006093 18<22eson12318>	question, so whenever there is a newly discovered CVE or one that you guys just met in a day, how do you guys figure out a way to simulate its PoC ? what i usually do is "CVE PoC" Or "CVE exploit" on Google and *hopefully* a post will appear but some CVE do not have that available so is there any reliable source where it explains all existing one and provide a snippet of code or PoC ?
+T 1710006121 18<19mats118>	no
+T 1710006154 18<22eson12318>	oh :(
+T 1710007286 18<22iz18>	i don't feel like i was still in that channel in 2022, but i suppose maybe i was.. anyway, still holding my nflx
+T 1710007343 18<22iz18>	if the cve was a "responsible disclosure" and it's being posted at the same time/after a patch is released, you can bindiff the patch
+T 1710008409 18<22eson12318>	iz: sorry but i don't get when u say "bindiff"
+T 1710008423 18<22eson12318>	is that an english word or sth
+T 1710008521 18<22iz18>	it's a reverse engineering thing, there's an ida plugin called that, which can be used to help find the differences between two binaries.  you bindiff the unpatched version with the patched version and find what changed in the patch to figure out exactly how the vuln works and to make a poc or whatever
+T 1710008766 18<22eson12318>	oh, yea i guess that works too
+T 1710008774 18<22eson12318>	might take time but still better than nothing
+T 1710008867 18<22eson12318>	iz: also what is "nflx" ? google said it's netflix but i don't think so :D
+T 1710008915 18<22iz18>	yeah, it's referring to netflix stock
+T 1710008986 18<22iz18>	mats1 and i were kinda off on a bit of a tangent, but like he said, this is #security and nflx is a security ;b
+T 1710010493 18<25mwebsec18>	simply the best
+T 1710011018 18<25mwebsec18>	pow pow
+T 1710012620 22*	26ChanServ gives channel operator status to 18ajak
+T 1710012655 22*	26ajak removes quiet on 18*!*@conductor.oxasploits.com
+T 1710012663 22*	26ajak removes channel operator status from 18ajak
+T 1710014430 18<29mjacob18>	gnrp: sorry, i didn't see your answer. i deliberately left "securely" a bit vague. for the sake of starting the discussion, one of the requirements should be that only the application which has stored the tokens can access them.
+T 1710024793 18<26phonixgeist18>	I have my openvpn with chroot-jail running as a service in debian, and now I am trying to add it to apparmor. I created my openvpn profile in apparmor but is conflicting with chroot. i am getting this error: --- chroot to '/.vpn-jail/' failed: Operation not permitted (errno=1) --- On my openvpn profile I added the jail folder to de list but not sure what to do now to make it work... any ideas what am i missing?
+T 1710026476 19*	Now talking on 22#security
+T 1710026476 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710026476 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710026565 19*	Now talking on 22#security
+T 1710026565 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710026565 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710026857 19*	Now talking on 22#security
+T 1710026857 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710026857 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710027100 19*	Now talking on 22#security
+T 1710027100 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710027100 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710028696 18<25kurahaupo18>	phoenixgeist: chroot & fchroot are privileged syscalls, and therefore you need to allow them in the profile for OpenVPN
+T 1710028836 18<25kurahaupo18>	Or perhaps in a profile for "start container"
+T 1710031100 19*	Now talking on 22#security
+T 1710031100 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710031100 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710031928 19*	Now talking on 22#security
+T 1710031928 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710031928 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710037109 18<20houseparty18>	Found my first bug. I actually didn't think of it as that but the guy for the server I found it on hinted I should seek the bounty
+T 1710037132 18<20houseparty18>	!!! ... over, I think, 27K insecure passwords in plaintext going back to the 2009 rockyou breach
+T 1710049342 19*	Now talking on 22#security
+T 1710049342 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710049342 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710050175 18*	28calmclam sprays houseparty with champagne
+T 1710052332 18<27BGL18>	every day but also every other day: Ivanti! - but also every day and night
+T 1710052358 18<27BGL18>	also CISA barely a year ago, Ivanti? and now CISA every day Ivanti!
+T 1710052459 18<27BGL18>	previously yes but then no, and now definitely no but at the same time still yes
+T 1710052548 18<27BGL18>	i sure wish there was an agency that could provide the least technical security advice possible, described at a higher level than executive summaries
+T 1710052670 18<27BGL18>	out with numbers, graphs, trends
+T 1710052739 18<27BGL18>	let's just start snapping our fingers, clapping and banging on pots as a means of relaying important information
+T 1710052879 18<27BGL18>	we're way ahead guys, but also my teams/zoom calls aren't connecting to India anymore? please help
+T 1710054621 18*	28calmclam throws a telephone booth at BGL
+T 1710054786 18*	27BGL sets up shop in a telephone booth
+T 1710054831 18*	28calmclam hands BGL a box of Cap'n Crunch cereal
+T 1710055291 18<24oxagast18>	3
+T 1710056378 18*	27BGL opens the box, and finds a special toy?
+T 1710057096 18<22eson12318>	just a random situation pop up in my head that idk whether it has happened but is there anyhow i can inspect whether a device is a legitimate one or it's a spoofed device which looks like a speaker, etc but actually records my audio and secretly send it through 4G to the attacker ?
+T 1710057115 18<22eson12318>	i mean it can still be faked to look exactly like the valid one
+T 1710057172 18<22eson12318>	sometime i bring weird devices or people i just met send me as gifts but still wanna make sure :P
+T 1710057182 18<27BGL18>	yeah, the water test
+T 1710057193 18<22eson12318>	water test ?
+T 1710057433 18<22eson12318>	nope, still not a clue on Google
+T 1710057681 18<27BGL18>	basically you measure vibrations from a nearby glass of water for exfiltration attacks
+T 1710058403 18<22eson12318>	BGL: you mean like see if the water surface slightly ripples ?
+T 1710072933 18<29godSend2318>	hey all
+T 1710072951 18<25NthDegree18>	hi ^.^
+T 1710073067 18<29godSend2318>	hi
+T 1710073069 18<29godSend2318>	what up
+T 1710073070 18<28calmclam18>	hi
+T 1710073421 18<29godSend2318>	?
+T 1710073715 18<25mwebsec18>	y0
+T 1710073732 18<25NthDegree18>	Not much, just weighing up which is worse: Trying to write some custom services to block apps from interfering with each other on Windows.. or living with the hackjob I had to scrape together to get acceptable VAAPI on Linux >_>
+T 1710073836 18<25NthDegree18>	You've gotta love it when Microsoft has servicing criteria of "an unauthorized user mode process cannot access or tamper with the code and data of another process" for their process boundary, yet everything running as the same user account can tamper with code and data of other processes running as the same user account
+T 1710073907 18<29godSend2318>	ooh
+T 1710073945 18<28calmclam18>	yeah, key word there is "unauthorized"
+T 1710074056 18<25NthDegree18>	that's the shocking part, you'd assume that they'd at least set the DACLs on processes to not allow such access by default, but instead, everything is authorised out of the box
+T 1710074064 18<28calmclam18>	and the tiny asterisk next to it that says "everything is authorized" lol
+T 1710074148 18<28calmclam18>	I wonder if they've done the analysis to see what it would break. They did something similar with user account control to enforce user consent before using admin privilege and it was a shitshown.
+T 1710074265 18<28calmclam18>	I wouldn't be surprised if win32 libraries reach into other processes all the time to implement its functionality
+T 1710074353 18<25NthDegree18>	it's difficult to tell because KeePassXC revokes most of its own DACLs but can't alter process ownership to add the final lock on it
+T 1710074413 18<25NthDegree18>	and we know some DVD players do a similar thing with a proper lock on top (Protected Process) to protect the interests of Hollywood
+T 1710074422 18<28calmclam18>	The ACL model isn't really suited for fine-grained access control so I'm not surprised they just don't deal with it
+T 1710074562 18<28calmclam18>	oh right i forgot about that
+T 1710074665 18<28calmclam18>	modern apps get their own special security acls too, i wonder if they are protected from the win32 side
+T 1710074703 18<28calmclam18>	i stopped learning about that stuff after vista
+T 1710074713 18<25NthDegree18>	from what I can tell, old-fashioned win32 apps get protected from the effects of constrained modern apps, but not the other way round
+T 1710074725 18<28calmclam18>	ah, that's unfortunate.
+T 1710074799 18<29housemate18>	cam
+T 1710074803 18<29housemate18>	lacan
+T 1710074859 18<28calmclam18>	NthDegree: So you are developing security software for Windows and linux?
+T 1710074914 18<25NthDegree18>	I wouldn't say developing anything as much as experimenting to see if I can harden my system to a level where the contents of my password manager can't be immediately stolen by any other running app without my knowledge
+T 1710074925 18<28calmclam18>	cool
+T 1710074944 18<28calmclam18>	It's a shame more of windows isn't source available, especially now that it's mostly worthless (IMHO)
+T 1710074997 18<29godSend2318>	anybody know how to order something on amazon and get it redirected to a locker instead of an address?
+T 1710075057 18<28calmclam18>	NthDegree: I'm not sure you'll be able to success, but good luck lol
+T 1710075147 18<25NthDegree18>	calmclam: well, it seems on Linux, cross-process memory accesses are guarded by ptrace checks, meaning the memory protections I want to accomplish on Windows work with a simple kernel.yama.ptrace_scope=3 in sysctl
+T 1710075165 18*	28calmclam nods
+T 1710075186 18<25NthDegree18>	and the window messaging isolation is provided for free by Wayland compositors (for better or worse, depending on use case)
+T 1710075233 18<29BurningMemory18>	you should probably know that setting ptrace scope to 3 locks up the variable as well
+T 1710075282 18<28calmclam18>	I'd also be worried about clipboard access if you're using it for passwords
+T 1710075332 18<25NthDegree18>	yeah, I avoid the clipboard side of things by having it use the browser integration instead, which can be made to prompt for permission every time it wants a credential
+T 1710075430 18<29BurningMemory18>	good password managers wipe the clipboard after a certain time period anyways
+T 1710075471 18<25NthDegree18>	that's true, plus I need to do some tests but I think Wayland clients can't see clipboard changes until they're foregrounded
+T 1710075540 18<29BurningMemory18>	i just read the messages above. so, you're looking to harden your system?
+T 1710075630 18<29housemate18>	* Topic for #MEDICINE is: Take caution because that would be incredible. Taking a intangible thing... JUST FUCKING EYE-BALL THE ACID PUSSY!
+T 1710075742 18<25NthDegree18>	yeah, just to a basic level so when I'm running $random_software that it can't do obviously bad things so invisibly, with the assumption that I don't need absolute perfection, just for basic constraints to work as intended
+T 1710075768 18<29BurningMemory18>	it depends on how far you want to go and what your distribution is
+T 1710075804 18<29housemate18>	I am smoing cyproheptadine, it is oay, in-fact.
+T 1710075830 18<29BurningMemory18>	also, not running random software is a good start
+T 1710075831 18<29housemate18>	appoogies my between 'h' and ''' are broien...
+T 1710076036 18<25NthDegree18>	by random software I mean things like video games, where its provenance is tied to either large dodgy corporations or small indie dev teams with very lax security
+T 1710076061 18<25NthDegree18>	I'm using Fedora and I've got an opensnitch policy layered atop firewalld to stop the Internet being used as a backchannel, got ptrace restrictions on the go and am mostly using Wayland-native apps
+T 1710076120 18<29BurningMemory18>	well, i can suggest you some documentation on hardening your system, but what fedora does by default is sufficient for desktop usage. the biggest vulnerability is always the user
+T 1710076164 18<25NthDegree18>	I'm also going to try my hand at bwrap'ing everything which speaks to the Internet, since Red Hat has all but given up on confining desktop apps with custom SELinux policies (and the work to add all the necessary granular types to existing policy would be way too much of a ballache)
+T 1710076169 18<29BurningMemory18>	as far as i know though, stuff like steam you can use in flatpaks, with which you can restrict filesystem access
+T 1710076200 18<29BurningMemory18>	fedora uses the unconfined policy by default on desktop flavors
+T 1710076250 18<29BurningMemory18>	oh sorry, it's called "targeted"
+T 1710076271 18<28calmclam18>	NthDegree: nice
+T 1710076322 18<29BurningMemory18>	well, if you're very paranoid you can just use qubeos and live in a forest :)
+T 1710076403 18<25NthDegree18>	while Joanna Rutkowska put in a lot of work to add isolation, I couldn't give up smooth video playback (and working VAAPI) when browsing the web, that would be way too overkill
+T 1710076449 18<29BurningMemory18>	again, everything depends on your use case
+T 1710077548 18<25NthDegree18>	mine is more a case of wanting general computing to be a little less fragile, it doesn't have to be perfect, just not a complete shitshow
+T 1710079128 18<29housemate18>	https://executingreality.com/pdfs/lobby/THE_FUTURE.pdf
+T 1710079157 18<25xorAxAx18>	whats that, a pdfjs 0day bait? :)
+T 1710079182 18<19katia18>	just javascript.alert("lol")
+T 1710079238 18<25xorAxAx18>	ah
+T 1710079375 18<25xorAxAx18>	for just that, 13 kB is a lot
+T 1710079400 18<25xorAxAx18>	my earlier idea was to build a CV PDF that prints differently than shows on the screen - that would be cool
+T 1710079462 18<19katia18>	(nah idk if it is that)
+T 1710079466 18<19katia18>	:')
+T 1710079491 18<19katia18>	that does sound cool
+T 1710079506 18<19katia18>	imagine it's the same thing but flipped 90°
+T 1710079518 18<19katia18>	or 85°
+T 1710079553 18<28calmclam18>	or it prints the pdf bytes instead of its interpreted contents
+T 1710079623 18<25xorAxAx18>	nah, it would force color print and print a celeb photo but keep the same phone number
+T 1710079636 18<28calmclam18>	lol
+T 1710079638 18<25xorAxAx18>	(here, they want to see photos in the CV)
+T 1710079666 18<19katia18>	ò_ò nosy!
+T 1710079669 18<25NthDegree18>	maybe just have a webserver change the MIME type if the file is viewed twice, so that the second time it gets viewed it shows up as raw plaintext xD
+T 1710079676 18<25xorAxAx18>	i just checked, couldnt find any useful pdf assembler not written in js
+T 1710079679 18<28calmclam18>	brad pit from fight club?
+T 1710079688 18<25xorAxAx18>	NthDegree: but it should trigger on print
+T 1710079698 18<25xorAxAx18>	to approach companies with a "print first" policy
+T 1710079748 18<25xorAxAx18>	calmclam: nah, was considering adriana lima
+T 1710079759 18<25xorAxAx18>	the phone number would need to be special though
+T 1710079777 18<25xorAxAx18>	to get a heads up for the disguise preps
+T 1710079827 18<25xorAxAx18>	i mean, if people print, you dont want to work there anyhow :} i mean, even if they claim they have good reasons to print, they should fix their machines first
+T 1710079977 18<25NthDegree18>	it might be worth using built-in PDF DRM (but without the problematic encryption) to block printing for those lowest common denominator folks, since Microsoft Edge is partnering to have Adobe Acrobat's PDF engine added
+T 1710080032 18<25xorAxAx18>	NthDegree: but i dont want to block it, its their decision whether they want to print
+T 1710080117 18<25NthDegree18>	ah, fair enough
+T 1710099602 18<19mats118>	there's "optional content groups" in PDFs
+T 1710099657 18<19mats118>	and print-only layers in adobe indesign
+T 1710099694 18<19mats118>	and js support
+T 1710099720 18<19mats118>	and probably ten other ways
+T 1710100212 18<25xorAxAx18>	mats1: interesting. so it doesnt even need js fiddling
+T 1710100638 18<19mats118>	its a thirty year old format with everything under the sun supported
+T 1710109467 19*	Now talking on 22#security
+T 1710109467 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710109467 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)

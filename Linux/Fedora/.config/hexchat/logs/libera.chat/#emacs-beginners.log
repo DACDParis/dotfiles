@@ -575,3 +575,168 @@ Mar 06 08:09:57 <bpalmer>	so you add lsp-deferred to c-ts-mode-hook ?
 Mar 06 08:10:58 <piyush_24>	I do
 Mar 06 08:11:21 <piyush_24>	I just checked, apparently lsp-deferred is an optimization option, to not enable lsp until required
 Mar 06 08:13:12 <bpalmer>	ok, and C-h v c-ts-mode-hook RET shows that it is there?
+**** BEGIN LOGGING AT Wed Mar  6 13:29:43 2024
+
+Mar 06 13:29:41 *	Now talking on #emacs-beginners
+Mar 06 13:29:41 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 06 13:29:41 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** BEGIN LOGGING AT Wed Mar  6 21:44:04 2024
+
+Mar 06 21:44:02 *	Now talking on #emacs-beginners
+Mar 06 21:44:02 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 06 21:44:02 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** ENDING LOGGING AT Wed Mar  6 23:44:24 2024
+
+**** BEGIN LOGGING AT Thu Mar  7 02:18:47 2024
+
+Mar 07 02:18:44 *	Now talking on #emacs-beginners
+Mar 07 02:18:44 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 07 02:18:44 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+Mar 07 04:04:30 <r-ragul>	I use nvm to manage node versions. I added the path to emacs 'exec-path'. eshell finds my node executable but eglot couldn't. How to resolve this?
+Mar 07 04:11:11 <bpalmer>	eglot couldn't, or the lsp it's talking to couldn't?
+Mar 07 04:11:50 <bpalmer>	exec-path is used for emacs to find tools, but subprocesses it creats do not inherit it.
+Mar 07 04:11:56 <bpalmer>	*creates
+Mar 07 04:12:10 <bpalmer>	for that, you may want to use setenv to change the PATH variable.
+Mar 07 04:16:51 <r-ragul>	Thanks for your response, I will try it out.
+Mar 07 04:18:13 <bpalmer>	if the lsp server is being started outside of emacs, you may need to set the path in your config files.
+**** BEGIN LOGGING AT Thu Mar  7 05:39:14 2024
+
+Mar 07 05:39:13 *	Now talking on #emacs-beginners
+Mar 07 05:39:13 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 07 05:39:13 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** BEGIN LOGGING AT Thu Mar  7 05:53:09 2024
+
+Mar 07 05:53:08 *	Now talking on #emacs-beginners
+Mar 07 05:53:08 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 07 05:53:08 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** BEGIN LOGGING AT Thu Mar  7 06:46:02 2024
+
+Mar 07 06:46:01 *	Now talking on #emacs-beginners
+Mar 07 06:46:01 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 07 06:46:01 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** BEGIN LOGGING AT Thu Mar  7 11:45:31 2024
+
+Mar 07 11:45:29 *	Now talking on #emacs-beginners
+Mar 07 11:45:29 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 07 11:45:29 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** BEGIN LOGGING AT Thu Mar  7 12:26:52 2024
+
+Mar 07 12:26:50 *	Now talking on #emacs-beginners
+Mar 07 12:26:50 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 07 12:26:50 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** BEGIN LOGGING AT Thu Mar  7 12:39:51 2024
+
+Mar 07 12:39:50 *	Now talking on #emacs-beginners
+Mar 07 12:39:50 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 07 12:39:50 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** BEGIN LOGGING AT Thu Mar  7 14:15:49 2024
+
+Mar 07 14:15:48 *	Now talking on #emacs-beginners
+Mar 07 14:15:48 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 07 14:15:48 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** BEGIN LOGGING AT Fri Mar  8 22:52:07 2024
+
+Mar 08 22:52:06 *	Now talking on #emacs-beginners
+Mar 08 22:52:06 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 08 22:52:06 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** BEGIN LOGGING AT Fri Mar  8 23:04:26 2024
+
+Mar 08 23:04:24 *	Now talking on #emacs-beginners
+Mar 08 23:04:24 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 08 23:04:24 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** BEGIN LOGGING AT Fri Mar  8 23:07:14 2024
+
+Mar 08 23:07:14 *	Now talking on #emacs-beginners
+Mar 08 23:07:14 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 08 23:07:14 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** BEGIN LOGGING AT Fri Mar  8 23:14:16 2024
+
+Mar 08 23:14:14 *	Now talking on #emacs-beginners
+Mar 08 23:14:14 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 08 23:14:14 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** BEGIN LOGGING AT Sat Mar  9 07:43:52 2024
+
+Mar 09 07:43:50 *	Now talking on #emacs-beginners
+Mar 09 07:43:50 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 09 07:43:50 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** BEGIN LOGGING AT Sat Mar  9 08:24:01 2024
+
+Mar 09 08:24:00 *	Now talking on #emacs-beginners
+Mar 09 08:24:00 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 09 08:24:00 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** BEGIN LOGGING AT Sat Mar  9 10:08:22 2024
+
+Mar 09 10:08:21 *	Now talking on #emacs-beginners
+Mar 09 10:08:21 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 09 10:08:21 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** ENDING LOGGING AT Sat Mar  9 10:09:15 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 10:12:43 2024
+
+Mar 09 10:12:41 *	Now talking on #emacs-beginners
+Mar 09 10:12:41 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 09 10:12:41 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** BEGIN LOGGING AT Sat Mar  9 11:09:20 2024
+
+Mar 09 11:09:16 *	Now talking on #emacs-beginners
+Mar 09 11:09:16 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 09 11:09:16 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** BEGIN LOGGING AT Sat Mar  9 11:33:17 2024
+
+Mar 09 11:33:15 *	Now talking on #emacs-beginners
+Mar 09 11:33:15 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 09 11:33:15 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** ENDING LOGGING AT Sat Mar  9 13:31:10 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 13:40:25 2024
+
+Mar 09 13:40:23 *	Now talking on #emacs-beginners
+Mar 09 13:40:23 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 09 13:40:23 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** BEGIN LOGGING AT Sat Mar  9 14:33:36 2024
+
+Mar 09 14:33:35 *	Now talking on #emacs-beginners
+Mar 09 14:33:35 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 09 14:33:35 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** BEGIN LOGGING AT Sun Mar 10 00:21:17 2024
+
+Mar 10 00:21:17 *	Now talking on #emacs-beginners
+Mar 10 00:21:17 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 10 00:21:17 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** BEGIN LOGGING AT Sun Mar 10 00:22:46 2024
+
+Mar 10 00:22:46 *	Now talking on #emacs-beginners
+Mar 10 00:22:46 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 10 00:22:46 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** BEGIN LOGGING AT Sun Mar 10 00:27:38 2024
+
+Mar 10 00:27:38 *	Now talking on #emacs-beginners
+Mar 10 00:27:38 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 10 00:27:38 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** BEGIN LOGGING AT Sun Mar 10 00:31:41 2024
+
+Mar 10 00:31:41 *	Now talking on #emacs-beginners
+Mar 10 00:31:41 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 10 00:31:41 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** BEGIN LOGGING AT Sun Mar 10 01:38:21 2024
+
+Mar 10 01:38:20 *	Now talking on #emacs-beginners
+Mar 10 01:38:20 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 10 01:38:20 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** BEGIN LOGGING AT Sun Mar 10 01:52:09 2024
+
+Mar 10 01:52:08 *	Now talking on #emacs-beginners
+Mar 10 01:52:08 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 10 01:52:08 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** ENDING LOGGING AT Sun Mar 10 04:26:38 2024
+
+**** BEGIN LOGGING AT Sun Mar 10 06:42:23 2024
+
+Mar 10 06:42:22 *	Now talking on #emacs-beginners
+Mar 10 06:42:22 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 10 06:42:22 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)
+**** BEGIN LOGGING AT Sun Mar 10 23:24:28 2024
+
+Mar 10 23:24:27 *	Now talking on #emacs-beginners
+Mar 10 23:24:27 *	Topic for #emacs-beginners is: See https://emacswiki.org/emacs/EmacsBeginnersChannel for tips, code of conduct | Go ahead and ask your Emacs question. People will reply if they can. It might take a while, so please be patient. | Treat people with respect. No sexism, racism, homophobia, or discrimination of any kind. | http://emacswiki.org/emacs/EmacsNewbie
+Mar 10 23:24:27 *	Topic for #emacs-beginners set by bandali!~bandali@gnu/bandali (Fri May 21 14:51:32 2021)

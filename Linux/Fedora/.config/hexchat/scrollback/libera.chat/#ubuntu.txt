@@ -2761,3 +2761,577 @@ T 1709722088 18<25yziquel18>	Because the apt sources of ubuntu pro are n
 T 1709724767 18<24david_18>	hello
 T 1709724859 18<29whiskey7618>	\o
 T 1709725297 18<25yziquel18>	Is there a way for apt to show which kernel image provides a given version of the zfs kernel module ?
+T 1709728181 19*	Now talking on 22#ubuntu
+T 1709728181 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1709728181 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1709728181 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1709728435 18<22DocMors18>	OK I'll answer myself, yes there will be FDE but it still counts as experimental
+T 1709731834 18<19nikolam18>	How do I torch all lxd configuration in Ubuntu and start over? I used to have a configuration on top of zfs volume and now I don't remember what I was doing but can't make it with  sudo lxd init to set it up
+T 1709731868 18<19nikolam18>	It fails to create bridged interface , I also have VirtualBox install on same Xubuntu 22.04 host
+T 1709732409 18<19nikolam18>	Error: Failed to create local member network "lxdbr1" in project "default": The DNS and DHCP service exited prematurely: exit status 2 ("dnsmasq: failed to create listening socket for 10.234.138.1: Address already in use")
+T 1709733128 18<20leftyfb18>	nikolam: sudo snap remove --purge lxd
+T 1709733932 18<22BluesKaj18>	Hi all
+T 1709736686 18<19nikolam18>	leftyfb, Unfortunately I get again similar message, Error: Failed to create local member network "lxdbr0" in project "default": The DNS and DHCP service exited prematurely: exit status 2 ("dnsmasq: failed to create listening socket for 10.63.68.1: Address already in use")
+T 1709737736 18<19nikolam18>	Error: Failed to create local member network "lxdbr0" in project "default": The DNS and DHCP service exited prematurely: exit status 2 ("dnsmasq: failed to create listening socket for 10.17.187.1: Address already in use") when trying  sudo lxd init -v
+T 1709750000 18<22Kangarooo18>	I have now bug- alt+tab not working. alt looks like not registering. for what to report bug?
+T 1709750041 18<22Kangarooo18>	oh no, looks like alt seperate works. how to check if keys work?
+T 1709750046 18<22Kangarooo18>	just combo not owkirng
+T 1709753312 18<29nick__18>	halo
+T 1709754971 18<25itadmin18>	yo
+T 1709757842 19*	Now talking on 22#ubuntu
+T 1709757842 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1709757842 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1709757842 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1709759712 18<19crash1418>	Hi, I upgraded my server from Ubuntu 18.04 to 20 over ssh and it completed without any errors. Once I disconnected I wasn't able to connect back and when I restarted the server, I get the following error (a kernel panic) https://imgur.com/a/1KCqpmX What is happening and how can I fix this?
+T 1709759815 18<29sarnold18>	yikes
+T 1709759960 18<26plastikman18>	You have backups, right
+T 1709760023 18<29sarnold18>	it sure looks like the *important* error probably scrolled off screen :(
+T 1709760032 18<29sarnold18>	try the safe mode boot option?
+T 1709760045 18<24EriC^^18>	older kernel perhaps using grub?
+T 1709760177 18<26plastikman18>	Sounds to me like there is a missing initramfs or some other driver. try to boot with a recovery kernel as others have states
+T 1709774324 19*	Now talking on 22#ubuntu
+T 1709774324 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1709774324 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1709774324 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1709785268 18<28Nautilus18>	it's been a while since I've used wget so I'm wondering if this would be a good contemporary user agent to use:
+T 1709785269 18<28Nautilus18>	--user-agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/113.0"
+T 1709785393 18<22rbox18>	what does good mean
+T 1709785445 18<27oerheks18>	current is 123.0 ?
+T 1709785577 18<28Nautilus18>	sorry, that's the old one from my notes, yes am looking for a good current user agent
+T 1709785609 18<28Nautilus18>	good, I can't say specify for sure. Just something reliable?
+T 1709785658 18<27oerheks18>	get your current one?
+T 1709785671 18<28Nautilus18>	just give it a go with --user-agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/123.0" then?  (note 123.0)
+T 1709785678 18<27oerheks18>	https://www.whatismybrowser.com/detect/what-is-my-user-agent/
+T 1709785805 18<28Nautilus18>	Ah thanks, it's : Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0
+T 1709786353 19*	Now talking on 22#ubuntu
+T 1709786353 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1709786353 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1709786353 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1709787188 19*	Now talking on 22#ubuntu
+T 1709787188 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1709787188 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1709787188 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1709790361 19*	Now talking on 22#ubuntu
+T 1709790361 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1709790361 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1709790361 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1709808329 19*	Now talking on 22#ubuntu
+T 1709808329 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1709808329 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1709808329 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1709810810 19*	Now talking on 22#ubuntu
+T 1709810810 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1709810810 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1709810810 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1709810878 18<24RhineDevil18>	Hi, I tried to do apt update on a xenial ubuntu image in docker and got this: https://paste.debian.net/hidden/a51154a9/, ubuntu-archive-keyring.gpg and ubuntu-master-keyring.gpg are in /usr/share/keyrings as they should
+T 1709811590 19*	Now talking on 22#ubuntu
+T 1709811590 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1709811590 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1709811590 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1709814256 18<29wildv1per18>	import socket
+T 1709814261 18<29wildv1per18>	import threading
+T 1709814284 18<29wildv1per18>	def handle_client(client_socket):
+T 1709814296 18<29wildv1per18>	# Modify this function to handle client connections
+T 1709814296 18<29wildv1per18>	    pass
+T 1709814304 18<29wildv1per18>	def main():
+T 1709814305 18<29wildv1per18>	    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+T 1709814305 18<29wildv1per18>	    server.bind(("0.0.0.0", 8888))
+T 1709814305 18<29wildv1per18>	    server.listen(5)
+T 1709814305 18<29wildv1per18>	    print("[*] Listening on 0.0.0.0:8888")
+T 1709814305 22*	26Drone sets quiet on 18*!*@2600:6c44:6900:e8a:4191:2b:9ccf:a993
+T 1709814384 22*	26Drone removes quiet on 18*!*@2600:6c44:6900:e8a:4191:2b:9ccf:a993
+T 1709814605 18<19younder18>	Did you 'hear' anything? python programmer?
+T 1709814702 18<27stenno18>	listening to 0.0.0.0 is.. pragmatic
+T 1709815097 18<19younder18>	Look a like that old code challenge where you where you write a echo protocol server that can handle at least 5 clients. Well a first poke at it..
+T 1709815305 18<27stenno18>	my first python program i ever wrote was a socket server and client
+T 1709815313 18<27stenno18>	still was in school then so it was around 2003 or so
+T 1709815329 18<27stenno18>	coming from C++, it was really amazing
+T 1709815345 18<27stenno18>	in python you could just do things without having to spend 200 SLOC to declare a connection or w/e
+T 1709815764 18<25m0n0p18>	Hello, I have this exact same problem https://bugs.launchpad.net/ubuntu/+source/emacsen-common/+bug/1990804  But I didn't find any solution, is anyone here able to help me ? thanks
+T 1709815765 -18ubottu/22#ubuntu-	Launchpad bug 1990804 in emacsen-common (Ubuntu) "package cmake-data 3.22.1-1ubuntu1.22.04.1 failed to install/upgrade: installed cmake-data package post-installation script subprocess returned error exit status 1" [Undecided, Expired]
+T 1709815932 18<27oerheks18>	m0n0p, update please, jammy-updates give  3.22.1-1ubuntu1.22.04.2
+T 1709816037 18<27oerheks18>	not sure there is a fix in it, or in cmake itself..
+T 1709816043 18<25m0n0p18>	oerheks: everything is up to date
+T 1709816052 18<25m0n0p18>	if you mean: apt update && apt upgrade
+T 1709816065 18<27oerheks18>	https://packages.ubuntu.com/jammy-updates/cmake-data
+T 1709816074 18<25m0n0p18>	I cannot install cmake
+T 1709816079 18<27oerheks18>	apt dist-upgrade, yes
+T 1709816087 18<20ioria18>	m0n0p, apt-cache policy cmake-data
+T 1709816142 18<25m0n0p18>	cmake-data:
+T 1709816143 18<25m0n0p18>	  Installé : 3.22.1-1ubuntu1.22.04.2
+T 1709816143 18<25m0n0p18>	  Candidat : 3.22.1-1ubuntu1.22.04.2
+T 1709816143 18<25m0n0p18>	 Table de version :
+T 1709816143 18<25m0n0p18>	 *** 3.22.1-1ubuntu1.22.04.2 500
+T 1709816143 18<25m0n0p18>	        500 http://fr.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages
+T 1709816143 22*	26Drone sets quiet on 18*!*@219.250.229.179
+T 1709816156 18<27stenno18>	lol
+T 1709816209 18<20ioria18>	m0n0p, wait a minute , then paste 'sudo apt install --reinstall cmake-data | nc termbin.com 9999'
+T 1709816209 22*	26Drone removes quiet on 18*!*@219.250.229.179
+T 1709816456 18<25m0n0p18>	https://termbin.com/eou9 with sudo apt install --reinstall cmake-data 2>&1 | nc termbin.com 9999 sorry for earlier
+T 1709816561 18<20ioria18>	m0n0p, dpkg -l | grep -v ^ii | grep -v ^rc | nc termbin.com 9999
+T 1709816647 18<25m0n0p18>	ioria, https://termbin.com/viub
+T 1709816733 18<20ioria18>	m0n0p, sudo mv /var/lib/dpkg/info/cmake-data* /tmp
+T 1709816793 18<25m0n0p18>	ioria, okay and then ?
+T 1709816796 18<20ioria18>	m0n0p, sudo apt install --reinstall cmake-data
+T 1709816829 18<25m0n0p18>	E: Internal Error, No file name for cmake-data:amd64
+T 1709816859 18<25m0n0p18>	ioria,
+T 1709816873 18<27oerheks18>	maybe without * ??
+T 1709816937 18<20ioria18>	m0n0p, sudo dpkg --configure -a | nc termbin.com 9999
+T 1709817001 18<25m0n0p18>	ioria, https://termbin.com/kbme
+T 1709817007 18<25m0n0p18>	I reran it, and no output
+T 1709817348 19*	Now talking on 22#ubuntu
+T 1709817348 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1709817348 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1709817348 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1709817358 18<20ioria18>	m0n0p, it's correctly installed afaict
+T 1709817407 18<25m0n0p18>	ioria, Amazing thank you very much. Also why you did that :sudo mv /var/lib/dpkg/info/cmake-data* /tmp ?
+T 1709817430 18<20ioria18>	m0n0p, they are probably corrupted, and now have been replaced
+T 1709817446 18<25m0n0p18>	okay
+T 1709817459 18<20ioria18>	m0n0p, ls /var/lib/dpkg/info/cmake-data*
+T 1709817489 18<25m0n0p18>	ioria, "/var/lib/dpkg/info/cmake-data*": No such file or directory (os error 2)
+T 1709817785 18<20ioria18>	m0n0p, sudo apt --fix-broken install
+T 1709817822 18<25m0n0p18>	ioria, no errors 0 mis à jour, 0 nouvellement installés, 0 à enlever et 0 non mis à jour.
+T 1709817838 18<20ioria18>	m0n0p, i think it's ok then
+T 1709817854 18<25m0n0p18>	ioria, ok thanks
+T 1709817864 18<20ioria18>	m0n0p, no problem
+T 1709817894 18<19younder18>	I'm afraid your OS has picked up French..
+T 1709817958 18<27oerheks18>	Oui?
+T 1709818128 18<28ogra_18>	younder, some call that "encryption" ... could be worse, could be chinese or so 😉
+T 1709818461 18<25m0n0p18>	younder, and cmake bailed lol
+T 1709818554 18<22BluesKaj18>	Hi all
+T 1709819182 18<20sem18>	Hi BluesKaj
+T 1709819208 18<20sem18>	hey everybody -- today before work, I will sudo apt install kubuntu-desktop ! :D and also whatever you do to install wayland
+T 1709819255 18<20sem18>	I have already taken the precaution of creating a new user who will only log into kubuntu and never log into lubuntu
+T 1709819490 18<22BluesKaj18>	hi sem
+T 1709819531 18<20sem18>	hey! First thing I am websearching during this install: what does kubuntu use enfc for, and is it ok that it is insecure
+T 1709819546 18<20sem18>	i know its spelled differently but I forget what it was
+T 1709819638 18<20sem18>	i wish i remembered what it was called lol.. clicked through too quick
+T 1709820040 18<20sem18>	now i am making sure to install sudo apt install plasma-workspace-wayland
+T 1709821287 18<29Luisa1418>	hey
+T 1709823791 18<26plastikman18>	!ask
+T 1709823791 18<19ubottu18>	Please don't ask to ask a question, simply ask the question (all on ONE line and in the channel, so that others can read and follow it easily). If anyone knows the answer they will most likely reply. :-) See also !patience
+T 1709823887 18<27leftleg_18>	Omg Richie Hawtin is here
+T 1709824179 18<25silv3r_m00n18>	hi there, on this acer swift laptop i have ubuntu installed / and home are on separate partitions, and home is encrypted. during upgrade process things got messed up and its not booting anymore. is is possible to reinstall the root with fresh ubuntu and use the same encrypted home drive, since i have the password ?
+T 1709825599 18<26plastikman18>	I dont see why not, but i cant say for sure.
+T 1709825630 18<26plastikman18>	why not boot to a live cd, copy the data off the drive then attemt the re-install.
+T 1709831732 22*	26Drone removes ban on 18$a:bparker
+T 1709833297 18<24krushia18>	is there an ubuntu equivalent to https://snapshot.debian.org/ ?
+T 1709833428 18<27oerheks18>	old packages https://old-releases.ubuntu.com/ubuntu/
+T 1709833442 18<27oerheks18>	old versions of the iso https://old-releases.ubuntu.com/releases/
+T 1709833488 18<27oerheks18>	looking for mrwthumbnail ??
+T 1709833538 18<24krushia18>	i think i just found it
+T 1709833544 18<27oerheks18>	:-)
+T 1709833554 18<24krushia18>	package is apparently named "mrwtoppm-utils"
+T 1709833569 18<24krushia18>	not to be confused with "mrwtoppm" lol
+T 1709833593 18<27oerheks18>	good spot!
+T 1709833604 18<24krushia18>	thanks for the link though
+T 1709834673 18<27szstr18>	How to uh hmm do bluetooth through command line? connect then get an aymaj?
+T 1709834717 18<27szstr18>	or wait uh connect then send audio iconed thing
+T 1709835785 18<27oerheks18>	szstr, scan connect trust https://medium.com/@muffwaindan/connect-and-use-wireless-usb-and-bluetooth-mouse-and-or-keyboard-on-linux-b23b1a35057b
+T 1709835810 18<27oerheks18>	the trust part is hardly to find in any manual
+T 1709835847 18<27oerheks18>	i use bluez, to connect, and then use the normal gui thingy
+T 1709837556 18<29atreo18>	people, i am trying to write a script that auto sets up my ubuntu environment   (how can i from the terminal change the distro settings)  like turn off bluetooth, add keyboard shortcuts, add a profile picture etc...   where are these settings saved?
+T 1709837608 18<20leftyfb18>	atreo: gsettings if you're running gnome
+T 1709837660 18<29atreo18>	leftyfb: is it under ./config  ?
+T 1709837678 18<20leftyfb18>	atreo: it's a tool, not a configuration file
+T 1709837762 18<29atreo18>	leftyfb: you miss understood what i am trying to do,   i am trying to perform these settings changes from the terminal  (so i can save it into a script)
+T 1709837853 18<20leftyfb18>	atreo: gsettings is a command line tool that will do exactly what you're looking for
+T 1709837860 18<29atreo18>	leftyfb: oh
+T 1709837867 18<29atreo18>	hmmm ok,   let me try to read about it
+T 1709837947 18<29atreo18>	leftyfb: i can't seem to understand the manual page,    how can i add keyboard shortcuts using gsettings?
+T 1709838018 18<29atreo18>	it seems to be talking about key strokes
+T 1709838147 18<20leftyfb18>	keyboard shortcuts are a 2 part process
+T 1709838202 18<20leftyfb18>	gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
+T 1709838233 18<20leftyfb18>	that's part 1
+T 1709838244 18<20leftyfb18>	then defining the details of the custom sortuct
+T 1709838246 18<20leftyfb18>	shortcut*
+T 1709838253 18<20leftyfb18>	    - gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "nautilus"
+T 1709838254 18<20leftyfb18>	    - gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "nautilus"
+T 1709838254 18<20leftyfb18>	    - gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "<Super>e"
+T 1709838273 18<29atreo18>	leftyfb: ohhh   ok i think i see how this works
+T 1709838288 18<29atreo18>	ok let me try to understand what you just wrote     give me 5 minutes :-)
+T 1709838318 18<20leftyfb18>	atreo: if you add another shortcut, you need to run the 1st command again but append the 2nd custom shortcut (custom1)
+T 1709838335 18<19ghost18>	hi
+T 1709838469 18<29atreo18>	leftyfb: ok how do i findout what keyboard shortcuts i already have?    so i can reverse engineer the commands you just wrote
+T 1709838533 18<20leftyfb18>	gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings
+T 1709838598 18<29atreo18>	leftyfb: i see
+T 1709838664 18<29atreo18>	i see i have three shortcuts (as expected)  nice    custom0 custom1 custom2
+T 1709838672 18<29atreo18>	hwo do i print their content?
+T 1709838738 18<20leftyfb18>	gsettings get org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name
+T 1709838742 18<20leftyfb18>	command and binding
+T 1709838837 18<29atreo18>	leftyfb: woow  there was no way i could have figured this out myself
+T 1709838841 18<29atreo18>	ok let me take notes
+T 1709839188 18<27Guest3818>	does anyone have experience with this LUKS Encryption guide for Ubuntu ? <LINK> https://help.ubuntu.com/community/Full_Disk_Encryption_Howto_2019 </LINK>
+T 1709839268 18<27Guest3818>	after following this guide step by step I and rebooting I boot into ubuntu without GUI
+T 1709839321 18<29atreo18>	leftyfb: when i run the commands the previous one gets deleted, i am confused
+T 1709839353 18<29atreo18>	leftyfb: this is my script:  https://paste.debian.net/1309804/
+T 1709839467 18<20leftyfb18>	atreo: I explained that to you. You need to append the new shortcuts
+T 1709839479 18<29atreo18>	leftyfb: oh
+T 1709839520 18<29atreo18>	leftyfb: what is the append flag?
+T 1709839575 18<29atreo18>	oh wait
+T 1709839577 18<20leftyfb18>	gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/'], etc, etc, etc"
+T 1709839582 18<29atreo18>	you mean   "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/'], , , "
+T 1709839585 18<29atreo18>	ohhhhhh ok i get it
+T 1709839590 18<20leftyfb18>	you define that first
+T 1709839675 18<29atreo18>	leftyfb: it works    wow this is amazing !!!! :-)
+T 1709839716 18<20leftyfb18>	atreo: btw, look into ansible. That's how I setup my ubuntu environment, install all packages, configure everything and restore from backup
+T 1709839763 18<29atreo18>	leftyfb: interesting, it is a program that you install or is it within ubuntu itself?
+T 1709839781 18<20leftyfb18>	atreo: sudo apt install ansible
+T 1709839786 18<29atreo18>	leftyfb: ok
+T 1709839836 18<29atreo18>	leftyfb: but i want to stick with gsettings    how do i know how to configure the rest of the settings?  like Region & Langauge    and adding a user picture etc...    where are you getting/reading this complex information from?
+T 1709839847 18<20leftyfb18>	atreo: ansible will use gsettings
+T 1709839926 18<20leftyfb18>	atreo: dconf and dconf-editor are good tools to navigate and edit(not recommended) all the settings
+T 1709839943 18<29atreo18>	i see
+T 1709839966 18<19younder18>	ansible is a program written in python. It is a provisioner. It install software based on scripts. Unlike shellscripts it is designed to enure that everything is just installed one so that if you run the script again and fix a mistake the stuff that was ok gets skipped and the stuff you corrected runs again (indepotent)
+T 1709840052 18<19younder18>	There are many others like it puppet, chef, saltstack..
+T 1709840252 18<29atreo18>	leftyfb: i like this basic control of it in gsettings     how did you know the commands?   for example   how can i figure out the schema for (Region & Langauge)?
+T 1709840341 18<20leftyfb18>	atreo: sudo update-locale LANG=$new_language
+T 1709840369 18<29atreo18>	leftyfb: oh no, i don't use my local lanuage and format, because it is screwed up   i used the UK one
+T 1709840407 18<20leftyfb18>	atreo: you asked how you set your language. That's how
+T 1709840414 18<29atreo18>	oh
+T 1709840416 18<20leftyfb18>	for timezone: timedatectl set-timezone $timezone
+T 1709840426 18<20leftyfb18>	with sudo
+T 1709840429 18<29atreo18>	i see
+T 1709840535 18<29atreo18>	leftyfb: how do i find out what is my current  (update-locale)  settings?
+T 1709840587 18<29atreo18>	since langauge is LAN   what is format?    FOR? FORM? FORMAT?
+T 1709840596 18<29atreo18>	*LANG
+T 1709840678 18<29atreo18>	leftyfb: its ok i figured it out
+T 1709841019 18<29atreo18>	leftyfb: ok how about appearance settings scheme?  to change it from light to dark, where is that schema?
+T 1709841142 18<19ravage18>	gsettings get org.gnome.desktop.interface gtk-theme
+T 1709841231 18<29atreo18>	ravage: leftyfb   i am getting the hang of it       gsettings set org.gnome.desktop.interface gtk-theme "Yaru-dark"    right?
+T 1709841311 18<19ravage18>	yes. or for a specific accent color Yaru-blue-dark
+T 1709841334 18<29atreo18>	ravage: nice
+T 1709841358 18<29atreo18>	ravage: ok    here is an important question     gsettings get org.gnome.desktop.notifications KEY    how do i know what are all the available keys are?
+T 1709841675 18<29atreo18>	ravage: its ok   i fiured it out    list-keys
+T 1709841741 18<28bprompt18>	atreo: https://unix.stackexchange.com/questions/11164/how-do-i-browse-for-available-gsettings-options
+T 1709841753 18<29atreo18>	bprompt:    thanks :-)
+T 1709841758 18<28bprompt18>	np
+T 1709841784 18<29atreo18>	this is exciting   i am slowly scripting my ubuntu enviroment  so i can be up and running automatically    NIIIICE
+T 1709842843 18<29atreo18>	ravage: leftyfb in the nautilus there is a list-view   but i cannot find how to setup (Expandible forlders in list view)
+T 1709843569 18<24chives18>	Anyone familiar with the terminals in linux?  I'm wondering if i can start one for screen that when it terminates so does the terminal?
+T 1709843674 18<24chives18>	so that if i detach screen remotely i dont have extra sessions
+T 1709843777 18<29tomreyn18>	you can write and install an xdg desktop file which runs gnu screen and executes it in a terminal emulator
+T 1709844893 18<25Square18>	This is probably an easy question. I have a second partition set up. But, it seems i need to access (as in clicking it) it in nautilus/filemanager every time i restart my computer for Steam being able to see/discover it.
+T 1709844922 18<25Square18>	s/being/to be/
+T 1709844923 18<27oerheks18>	put it in fstab?
+T 1709844933 18<27oerheks18>	with proper permissions for steam
+T 1709844950 18<25Square18>	hmm.. not that i can remember. Never used fstab
+T 1709844954 18<27oerheks18>	https://askubuntu.com/questions/1489018/grant-steam-snap-access-to-second-hard-drive
+T 1709844962 18<25Square18>	thanks
+T 1709845035 18<27oerheks18>	Steam snap should have the removable drive permission by default.
+T 1709845047 18<27oerheks18>	see settings > applications > steam
+T 1709845066 18<25Square18>	okok. There was no mention of this mount in fstab, so maybe that's it
+T 1709845075 18<27oerheks18>	maybe one bit wrong, and wont automount
+T 1709845075 18<28bprompt18>	Square: you can list  your devices with -> lsblk <- once you know which device it's, you can use -> sudo blkid <-  to get its UUID to  be used in the /etc/fstab file for "automounting"
+T 1709845117 18<25Square18>	Gotcha. I'll try to use this info to make it work next reboot
+T 1709847649 18<27oerheks18>	yes!
+T 1709851725 18<27szstr18>	Best music .deb to download?
+T 1709852459 18<28bprompt18>	szstr: music player?
+T 1709852533 18<27szstr18>	music content
+T 1709852629 18<28bprompt18>	szstr:  youtube.com   or lastfm.com or pick any radio of choice
+T 1709852634 18<28bprompt18>	hehe
+T 1709852754 18<27szstr18>	Hmm what ayt about mana client or that Joba coded mmo download the client, just listen to the musziak
+T 1709852980 18<27szstr18>	Runesca3e!
+T 1709853072 18<20leftyfb18>	szstr: what is your ubuntu support question in clear English?
+T 1709853332 18<27szstr18>	Where can I get free cash?
+T 1709853378 18<26jeremy3118>	szstr: Try a different chat?
+T 1709853415 18<27szstr18>	Well yeah
+T 1709853590 18<20leftyfb18>	they've been trolling here for a couple months now
+T 1709856802 18<25itadmin18>	hello
+T 1709934726 19*	Now talking on 22#ubuntu
+T 1709934726 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1709934726 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1709934726 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1709935463 19*	Now talking on 22#ubuntu
+T 1709935463 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1709935463 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1709935464 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1709935633 19*	Now talking on 22#ubuntu
+T 1709935633 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1709935633 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1709935634 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1709936054 19*	Now talking on 22#ubuntu
+T 1709936054 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1709936054 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1709936054 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1709966630 19*	Now talking on 22#ubuntu
+T 1709966630 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1709966630 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1709966630 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1709969040 19*	Now talking on 22#ubuntu
+T 1709969040 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1709969040 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1709969040 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1709975301 19*	Now talking on 22#ubuntu
+T 1709975301 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1709975301 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1709975301 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1709975561 19*	Now talking on 22#ubuntu
+T 1709975561 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1709975561 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1709975561 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1709978956 19*	Now talking on 22#ubuntu
+T 1709978956 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1709978956 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1709978956 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1709980395 19*	Now talking on 22#ubuntu
+T 1709980395 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1709980395 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1709980395 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1709982305 18<20Jungler7818>	Hello
+T 1709982401 18<25danza18>	o/
+T 1709982403 18<27little18>	hi
+T 1709982420 18<20Jungler7818>	what is this irc normally used for?
+T 1709988023 19*	Now talking on 22#ubuntu
+T 1709988023 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1709988023 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1709988023 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1709990736 18<24gnuser18>	Hi. I've a litle problem with the shortcuts. When I pulse crtl+alt+ins open terminnology but ever in the first virtual desktop. Can you help me?
+T 1709990760 18<24gnuser18>	I've use enlightenment
+T 1709990913 18<22BluesKaj18>	Hi all
+T 1709991215 19*	Now talking on 22#ubuntu
+T 1709991215 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1709991215 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1709991215 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1709995643 18<19applepear18>	hello
+T 1710000193 18<25yziquel18>	I need to install a package without running its scripts. Specifically, I need to install the plocate package, to get the updatedb executable, but it insists on running the updatedb scripts. which creates a sevee problem on my VM. How do I install a package without running its postinst scripts ?
+T 1710000319 18<27oerheks18>	unpack it, and copy them manually? you might run into other issues, why would it create severe problems?
+T 1710000818 18<25yziquel18>	oerheks installing plocate starts updatedb. i'm on VM with virtiofs. the updatedb script just takes FOREVER (now that it does not blow up the number of file descriptors on the host). I've been on that on and off for a month. I just need to install updatebd without running it. and then try to run it in a way I can debug. As of today, either I
+T 1710000819 18<25yziquel18>	install updatedb, it runs, and it screws up my system. Either I don't install it and... i can't debug it.
+T 1710000839 18<25yziquel18>	so i need a way to stop the post-install script from running.
+T 1710001366 18<20leftyfb18>	yziquel: make an alias for "updatedb" that does nothing
+T 1710001589 18<25yziquel18>	leftyfb alias ? unclear.
+T 1710001659 18<20leftyfb18>	export alias updatedb='/bin/true'
+T 1710002053 18<25yziquel18>	leftyfb tried it. doesn't work. post-inst script still runs and updatebd is launched.
+T 1710002122 18<19cmk18>	whats up
+T 1710002151 18<20leftyfb18>	yziquel: you might have to set the alias as root
+T 1710002172 18<25yziquel18>	leftyfb unclear what that means to me. I speak only french and english.
+T 1710006003 18<27oerheks18>	i guess the 1st time plocate scans your whole system, that can take a while, just once.
+T 1710006721 18<22Guest867718>	hallo alle zusammen
+T 1710006736 18<27oerheks18>	:-)
+T 1710006868 18<29]BaTMaN[18>	hello le salon
+T 1710006929 18<19daniel18>	was macht ihr so grade ?
+T 1710006940 18<27oerheks18>	i bet the name daniel is registered already.
+T 1710006946 18<27oerheks18>	read the topic?
+T 1710006953 18<27oerheks18>	ubuntu support
+T 1710009998 18<24webchat4618>	Hey all. I need help. I am not very tech savy. Is it possible to run Ubuntu over windows op sys? I was following tutorials and lost my SU commands and not am stuck. I called HP (new laptop) and windows support and they all say Linux is not supported
+T 1710010083 18<22rbox18>	what does "lost my su commands" mean
+T 1710010091 18<24webchat4618>	superuser commands
+T 1710010099 18<22rbox18>	yes... still says nothing
+T 1710010128 18<27oerheks18>	your 1st account has sudo rights .. forgot password?
+T 1710010158 18<27oerheks18>	or tell us what tutorials you followed?
+T 1710010163 18<24webchat4618>	I was downloading Unbuntu and gnome GUI and the online instructions had me doing SU commands like $ sudo apt update
+T 1710010208 18<24webchat4618>	I have been unable to get back into the cmd screen to install, Im not that savy
+T 1710010216 18<20ioria18>	webchat46, now you're sounding a chatbot
+T 1710010226 18<24webchat4618>	not bothead
+T 1710010244 18<24kostkon18>	!password | webchat46
+T 1710010244 18<19ubottu18>	webchat46: Forgot your password? See https://help.ubuntu.com/community/LostPassword What's the root password? See !sudo. Don't see *** in password prompts? That's normal. Sudo doesn't ask for your password? It remembers you for several minutes. Please use strong passwords, see https://help.ubuntu.com/community/StrongPasswords
+T 1710010333 18<24webchat4618>	I have my pwsrd, thats not my issue.
+T 1710010348 18<22rbox18>	you still havne't told us what the issue is
+T 1710010380 18<27oerheks18>	can you clarify 'lost my SU commands' ?
+T 1710010383 18<24webchat4618>	I am stuck trying to get back cmd screen to enter commands to finish ubuntu downloads
+T 1710010394 18<24kostkon18>	webchat46, become a bit more articulate if that is possible
+T 1710010428 18<24webchat4618>	NM I will keep search for a dummies guide lol I am not that tech savy
+T 1710010444 18<22rbox18>	yes, you've mentioend that a few times
+T 1710010461 18<22akik18>	webchat46: so you forgot your password or what?
+T 1710010480 18<27oerheks18>	ctrl alt t opens terminal again, but if you closed it, the command used has stopped.
+T 1710010481 18<24kostkon18>	well so long
+T 1710010493 18<27oerheks18>	oh
+T 1710012937 18<25anadon18>	I'm looking to add the packages for ROCm 6  (https://launchpad.net/ubuntu/+source/rocm-compilersupport) to my 23.10 install ahread of the 24.04 release.  I do not see information to add repository information so those packages will be picked up.  How should I be adding them?
+T 1710013242 18<22rbox18>	thats because those packages are already part of the regular ubuntu repos
+T 1710013247 18<22rbox18>	nothing to add
+T 1710013500 18<25anadon18>	The 5.3 ones are in 23.10.  I want to install PyTorch which requires 5.7+.
+T 1710013525 18<22rbox18>	well ther eis 5.2 and 6.0
+T 1710013548 18<22rbox18>	you could manually download the .deb files
+T 1710013551 18<22rbox18>	and hope they dont break eveythitng
+T 1710013552 18<22rbox18>	lol
+T 1710013575 18<25anadon18>	I was hoping for not that...
+T 1710013579 18<25anadon18>	Ick.
+T 1710013635 18<27oerheks18>	you noticed that 24.04 LTS gives v6 ?
+T 1710013656 18<22rbox18>	well you could add the repo with the 6
+T 1710013660 18<22rbox18>	but thats just gonna break everyhting
+T 1710013660 18<22rbox18>	lol
+T 1710013667 18<27oerheks18>	yeah, probably
+T 1710013678 18<22rbox18>	not probably
+T 1710013678 18<22rbox18>	it will
+T 1710013681 18<27oerheks18>	one could test 24.04 already..
+T 1710014323 18<25anadon18>	How stable is it even, yet?
+T 1710014393 18<22rbox18>	well its already march 9th and april is next month...
+T 1710014406 18<22rbox18>	i'd be pretty worried if it was still crashy and buggy
+T 1710014770 18<25anadon18>	But this is my primary system.  Looks like for the net two months, I'll be pinned to using PyTorch's CPU implementation.
+T 1710014792 18<22rbox18>	you could copmile it yosuelf
+T 1710014793 18<22rbox18>	lol
+T 1710014799 18<25anadon18>	boi
+T 1710014812 18<25anadon18>	ain't nobody got the time for dat
+T 1710017371 18<20houseparty18>	Can someone advise on a good strategy to handle packages which are frequently uninstalled by apt. I am not doing anything like dpkg -r or apt remove ... I also run an apt-mark manual script through a cronjob. Nonetheless, certain packages get remove periodically then I have to rerun an install script. In particular, I'm fighting with Discord. It is
+T 1710017371 18<20houseparty18>	not playing fair.
+T 1710017772 18<28bprompt18>	hmmm
+T 1710017783 18<28bprompt18>	houseparty: that's kinda odd, apt removing stuff?
+T 1710018133 18<20houseparty18>	yeah, I had to avoid the hostility in #linux
+T 1710018172 18<20houseparty18>	Rage fits... Yeah, it's odd... apt-mark manual should fix it but it's not...
+T 1710018241 18<28bprompt18>	houseparty: well, seems to be an assumption you may be making, for something else, no?   I mean, I haven't had that happenning with Apt
+T 1710018272 18<20houseparty18>	It might be Discord doing it... Discord won't launch on Jammy - at least on this host - unless I update it. Discord tells me to download the .deb binary, so I do... Or actually, I cancel it and run a script that does the same thing the binary would do if I were to install it manually
+T 1710018277 18<20houseparty18>	OK
+T 1710018407 18<28bprompt18>	houseparty: I don't use Discord myself, hmmm so hmm, sounds like a discord issue though, not an Apt one, did you install it using "snap" or as a .deb install?
+T 1710018426 18<20houseparty18>	So, I don't know if it will work... maybe I can do this: https://bpa.st/QCEQ
+T 1710018429 18<19ravage18>	the discord snap works fine 🙂
+T 1710018473 18<20houseparty18>	It's the deb... Oh, I can try the Snap... I didn't know there is one. I think Discord says to use the deb so that's probably why I started doing it but you're right thinking that. The snap is the preferred method on Ubuntu.
+T 1710018523 18<28bprompt18>	houseparty: try removing fully the .deb version first, no need for any remainders
+T 1710018523 18<19ravage18>	it is usually better than a PPA. and always better than installing single deb files you have to update manually
+T 1710018533 18<20houseparty18>	I use this script ... it works perfectly except for I have to run it about once a month:
+T 1710018533 18<20houseparty18>	https://bpa.st/CRIQ. I wrote that.
+T 1710018564 18<20houseparty18>	The trap cleanup function is cool because it removes unnecessary folders and it keeps the program directory tidy that way.
+T 1710018708 18<20houseparty18>	Maybe I tried the snap at some point and it broke so I quit using it. But that is my fault ... I tinker a lot and I probably broke it, hehe. Anyway, thank you. I appreciate your help.
+T 1710018931 18<20houseparty18>	Yeah, I confirmed it. And sorry for the noise... Discord once you to use the Deb. And I have no idea why. I am actually curious. I'm going to contact one of their devs as I'm sure they have a reason. My guess is that if you use the deb it will work on all Debian based distros as the snap won't work when or if snap is not installed.
+T 1710018936 18<20houseparty18>	*wants
+T 1710019058 18<26jeremy3118>	For Discord you might be better of using the browser version
+T 1710019130 18<20houseparty18>	Yeah, I agree jeremy31. Thanks for saying that. I have a friend who does that. I think for most popular apps, that's how he rolls. I guess I just run so many tabs that I like the apps. I am glad you said that ... If the snap doesn't do what I want, I think that will be the next step.
+T 1710019203 18<20houseparty18>	Do you guys get annoyed when the app developers don't list the snap info in the download sections of their websites?
+T 1710019401 18<28bprompt18>	houseparty: may just be an oversight, or a webpage not lately updated
+T 1710019405 18<26jeremy3118>	That discord deb seems to update about twice a week, then it updates again when you run the program
+T 1710019608 18<20houseparty18>	Yeah, that's what I'm saying... who's going to put up with that, haha.
+T 1710019656 18<20houseparty18>	So they think a Linux user wants to deal with that. They're causing noob panic... the great noob scare - as opposed to the great recession or great depression.
+T 1710019680 18<20houseparty18>	I'm not a noob but I tell a lot of people to switch to Linux and they don't want to deal with that
+T 1710023941 18<19baggy18>	when i imstall ubuntu from store it says WELCOME TO UBUNTU... Preparing Ubuntu.. how lond should i wait
+T 1710024027 18<19baggy18>	is it down
+T 1710024035 18<19baggy18>	or it my end
+T 1710024132 18<27oerheks18>	install ubuntu from store?
+T 1710024171 18<20leftyfb18>	!wsl | baggy
+T 1710024171 18<19ubottu18>	baggy: Windows 10 and newer have a feature called "Windows Subsystem for Linux", which allows it to run Ubuntu (and other Linux distro) userspace programs without porting/recompliation. For installation instructions, see https://msdn.microsoft.com/en-us/commandline/wsl/install_guide
+T 1710025370 18<19baggy18>	how long does prep take
+T 1710025376 18<19baggy18>	over an hour?
+T 1710025390 18<19baggy18>	fist time doing this
+T 1710025611 18<19ravage18>	no it should not take that long
+T 1710025632 18<19ravage18>	but we cant really help much with that here. the whole setup process is managed by windows
+T 1710025655 18<19baggy18>	thanks
+T 1710025688 18<19baggy18>	ill load
+T 1710025734 18<28bprompt18>	baggy: go make dinner, and come back :)
+T 1710026476 19*	Now talking on 22#ubuntu
+T 1710026476 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710026476 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710026477 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710026565 19*	Now talking on 22#ubuntu
+T 1710026565 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710026565 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710026566 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710026857 19*	Now talking on 22#ubuntu
+T 1710026857 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710026857 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710026858 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710026938 18<25src18>	any1 familiar w/ sw arrays on linux, more particularly mdadm? I have two nvme drives in my machine, one of which contains my ubuntu install (luks + encryption), can I use the second nvme as a mirrored drive (raid 1) via mdadm?
+T 1710026985 18<22rbox18>	src: https://letmegooglethat.com/?q=linux+convert+non+raid+to+raid+1
+T 1710026991 18<25src18>	I'm unsure whether it's a problem that I want to a) mirror the very drive that is my root drive and contains my install and b) mirror a drive which is encrypted (and want my mirrored drive to obviously be as well)
+T 1710027100 19*	Now talking on 22#ubuntu
+T 1710027100 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710027100 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710027101 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710027184 18<19ravage18>	the combination of RAID and encryption is not supported by the installer
+T 1710027199 18<19ravage18>	learned that the hard way with my 24.04 setup 🙂
+T 1710027209 18<20houseparty18>	You're recommending a type 1 hypervisor for Windows on a Linux channel - in response to WSL? And don't get me wrong, I love WSL ...
+T 1710027237 18<19ravage18>	who is "you" ?
+T 1710027305 18<28bprompt18>	"you" is not the "other" =)
+T 1710027356 18<19ravage18>	src: i ended up manually setting up my system with debootstrap. i now have 24.04 with an encrypted software RAID 1. it seems to be the only way to do that. i got a little further with the server installer. but even that did not really want to cooperate all the way through
+T 1710027394 18<28bprompt18>	houseparty: the question pertained to installing Linux on a windows10 machine through the MS store, thus the need for the hypervisor
+T 1710027426 18<25src18>	ravage: ty for the input, damn I hoped it'd be more straight forward than that... :/
+T 1710027430 18<28bprompt18>	24.04?   you're early by a month =)
+T 1710027444 18<20houseparty18>	Oh, I was unaware of the context.I can see where you were going with it now that you said that.
+T 1710027447 18<19ravage18>	i always test LTS releases to report bugs
+T 1710027472 18<20houseparty18>	I like Hyper-V but it is a pain to maintain... the networking can get wonky - and more so for me since I use a lot of VMs
+T 1710027476 18<19ravage18>	but the version does not really matter. same with every version starting with 22.04
+T 1710027491 18<20houseparty18>	I spent around two hours yesterday messing with Hyper-V.
+T 1710027527 18<28bprompt18>	ravage: can you update from a beta to an final version?
+T 1710027559 18<19ravage18>	yes. you just do your usual package updates
+T 1710027565 18<25src18>	ravage: alright, I'll simply partition the second nvme, and run a backup script to sync various files; it won't serve as a drop in replacement in case of the first nvme dying, but will be backup nonetheless
+T 1710027565 18<28bprompt18>	I mean, most I OSes, you have to toss the testing version and do a full i install of the final
+T 1710027596 18<25src18>	ravage: and the second nvme can be encrypted w/out problem and I dodge a lot of work
+T 1710027615 18<19ravage18>	src: sounds like a good plan
+T 1710027629 18<25src18>	I've got an external nvme case for two nvmes anyways
+T 1710027650 18<25src18>	I could always plug one out there and insert into my machine if the system nvme broke
+T 1710027656 18<20houseparty18>	You can update anything but - and I don't know how long anyone here has been using anyone - changing some things may break other things. Even then, few things, aside from breaking grub are unfixable.
+T 1710027690 18<25src18>	ravage: big thanks btw, was difficult to find conrecte info on software raid w/ an encrypted system drive
+T 1710027708 18<19ravage18>	yw, sorry that i dont have better news 🙂
+T 1710027718 18<28bprompt18>	" how long anyone here has been using anyone"?    well, forever, I use "anyone" at the supermarket for checking out for example :P
+T 1710027944 18<20houseparty18>	And you can fix grub but if the system won't even boot that's a lot of work.
+T 1710028623 18<25applecuckoo18>	Hi! I seem to have broken my networking, since I can no longer connect to WiFi. Running Ubuntu 23.10 with an Intel AX201.
+T 1710028676 18<25applecuckoo18>	I’ve tested the Wifi on a live image, so I’ve definitely bricked something within my installation.
+T 1710028889 18<25applecuckoo18>	The only command that might’ve caused the damage would be sudo ifconfig enx8038fddb072f 192.168.0.1
+T 1710029073 18<22rbox18>	thats not persistent
+T 1710029707 18<24nothingeleven18>	hello?
+T 1710031100 19*	Now talking on 22#ubuntu
+T 1710031100 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710031100 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710031100 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710031928 19*	Now talking on 22#ubuntu
+T 1710031928 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710031928 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710031928 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710040052 18<20esv18>	hey folks, does the autoinstall feature only works for ubuntu server?
+T 1710040343 18<20houseparty18>	Cant' see why it would not work and if it does not, write a bash script.
+T 1710040355 18<20houseparty18>	Or... I'm always bored... You can query me and if I have time, I'll do it
+T 1710040504 18<20esv18>	did you get to install ubuntu on win10?
+T 1710040510 18<20esv18>	why not use WSL?
+T 1710040949 18<20esv18>	so basically, I'm trying to leverage to automatically install an Ubuntu 22.04 desktop using autoinstall, but the install process seems to be ignored
+T 1710041003 18<20esv18>	here is how I am doing it: https://dpaste.com/6B2WEFEFU
+T 1710041177 18<20esv18>	interesting, it seems I'm doing it wrong.
+T 1710041198 FiSHLiM plugin unloaded
+T 1710049342 19*	Now talking on 22#ubuntu
+T 1710049342 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710049342 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710049342 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710050361 18<25webchat9218>	Hello. My device is Lenovo ThinkPad L480. I installed a single boot Ubuntu 20.04.4 from a bootable USB on my system. There was a glitch with Bluetooth connectivity, so I upgraded the firmware, and suddenly the system switched off.
+T 1710050448 18<25webchat9218>	When I tried to boot the following error comes: (A7) Me FW Downgrade - Request MeSpiLock failed.
+T 1710050562 18<25webchat9218>	Any help available?
+T 1710051591 18<19misra18>	what is this program for?
+T 1710051610 18<22akik18>	this program is for chatting
+T 1710051684 18<19misra18>	thanks, this is my firts experience using lubuntu i'm just exploring apps included
+T 1710051833 18<22Bashing-om18>	misra: You have landed in the Ubuntu support channel :D
+T 1710052199 18<28diogeness18>	misra: first experience counts :)
+T 1710052371 18<20tanath18>	misra: you might be familiar with discord. this is similar, using irc protocols & servers. it's what discord's design is based on, and has been around longer than the web
+T 1710052412 18<22akik18>	which program on ubuntu is configured to join here?
+T 1710053837 18<19misra18>	thank you guys, i appreciate your kind messages
+T 1710054311 18<19misra18>	see ya later
+T 1710054311 18<19misra18>	take care
+T 1710054311 18<19misra18>	bye
+T 1710057205 18<22akik18>	why can't i update the firefox snap while firefox is running?
+T 1710057249 18<19ravage18>	technical limitation. just not possible
+T 1710057343 18<22akik18>	it was silly to put it into a snap in the first place
+T 1710076084 18<22BluesKaj18>	Hi all
+T 1710082609 18<29archie18>	what's /usr/libexec/fwupd/fwupd? it's using 102mb on my ubuntu server and that seems abnormally high
+T 1710082847 18<22tsimpson18>	fwupd is an open-source daemon for managing the installation of firmware updates on Linux-based systems
+T 1710089286 18<25cbreak18>	tried kubuntu-wayland a bit, but it seems still much slower than kubuntu-x11
+T 1710089386 18<22rbox18>	so dont use it?
+T 1710089487 18<29archie18>	rbox: why not?
+T 1710089509 18<22rbox18>	he just said its slower
+T 1710089563 18<29archie18>	what if they like kubuntu-wayland more and are open to diagnose the cause of the slowness?
+T 1710094151 18<25cbreak18>	I think wayland will be the future, since X11 is clearly on its last legs
+T 1710094165 18<25cbreak18>	and seems to be deprecated in more and more distros
+T 1710094201 18<25cbreak18>	the main difference in performance I've noticed in 3D games via Wine
+T 1710094243 18<25cbreak18>	but the rest of the GUI also feels slower. (Nothing obvious though, the frame rate counter indicates expected 60 FPS)
+T 1710094261 18<25cbreak18>	I'll probably try again with KDE 6
+T 1710095791 18<24s218>	hey
+T 1710095961 18<28bprompt18>	s2: Hay Bartender!!! said the horse at the bar
+T 1710096097 18<29bartosz18>	hello
+T 1710096144 18<29bartosz18>	i search program to index disk usb and catalog it
+T 1710096303 18<22rbox18>	what does catalog mean
+T 1710096319 18<20ioria18>	we'll never know
+T 1710096620 18<28bprompt18>	hehe
+T 1710096634 18<28bprompt18>	rbox: sounded like "rsync" something
+T 1710097842 18<26ic5618>	bartosz: the traditional unix tools for such tasks are find(1), ls(1), and file(1).  The choice depends on your preferred output format.  For example, supposing the "disk" in question is mounted at /media/usb0 , you might try: cd /media/usb0 && find . |sed 's|./||' |sort  The sort(1) command is necessary because find(1), unlike ls(1), traverses directories as written to disk, without sorting.  The sed(1)
+T 1710097848 18<26ic5618>	command reduces the output.  There are faster ways to accomplish that; this is more legible for a novice.  The other option, "ls -lR", produces pretty output but not helpful for searches.  file(1) can be used in a loop to produce information about each file.  Eg save the sorted find(1) output to a file, then do something like this: (while read j; do printf '%s\t' $j; file $j; done) <f1 >f2
+T 1710097898 18<22rbox18>	he quit ages ago...
+T 1710097907 18<28bprompt18>	ic56: ahemm, he kinda left a while back =)
+T 1710097912 18<26ic5618>	rbox: ah. thanks
+T 1710097940 18<28bprompt18>	ic56: your connection maybe caught in a DST timewarp, either that or just laggy =)
+T 1710097945 18<26ic5618>	I don't watch who's on or not.  The answer benefits lurkers anyway.
+T 1710098041 18<26ic5618>	thanks, bprompt.
+T 1710098366 18<28xrandr18>	Hello. Does anyone know if samba4 (latest version) can support the domainf unctional level of windows 2012?
+T 1710098397 18<22rbox18>	sounds like a question fro the sama docuemtnation
+T 1710098427 18<28xrandr18>	tried asking in #samba yesterday, and no one answered.
+T 1710098634 18<28bprompt18>	xrandr: https://wiki.samba.org/index.php/Raising_the_Functional_Levels#Supported_Functional_Levels
+T 1710098681 18<28xrandr18>	ty
+T 1710099552 18<22Kangarooo18>	i just on kubuntu had like 10 notifications that need to reboot for updates to take effect
+T 1710099593 18<28bprompt18>	Kangarooo: turn off notifications =)
+T 1710109467 19*	Now talking on 22#ubuntu
+T 1710109467 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710109467 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710109467 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService

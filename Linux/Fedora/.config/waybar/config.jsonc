@@ -7,19 +7,14 @@
   "gtk-layer-shell": true,
   "height": 12,
   "modules-left": [
-    "custom/weather",
     "hyprland/workspaces"
   ],
   "modules-center": [
     "hyprland/window"
   ],
   "modules-right": [
-    // "network",
     "mpd",
     "bluetooth",
-    "custom/power_profile",
-    "battery",
-    "backlight",
     "pulseaudio",
     "pulseaudio#microphone",
     "temperature",
@@ -83,52 +78,20 @@
     "interval": 60,
     "format": "{:%a %d-%m-%Y %H:%M}",
     "max-length": 25
-
-  },
-
-    "temperature": {
-    "on-click": "btop",
-    "on-click-right": "nvtop",
+},
+  "temperature": {
+    "thermal-zone": 1,
+    "hwmon-path": [
+      "/sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input",
+      "/sys/class/thermal/thermal_zone0/temp"
+    ],
+    "critical-threshold": 80,
+    "format-critical": "{temperatureC}°C ",
+    "format": "{temperatureC}°C "
   },
   "tray": {
     "icon-size": 10,
     "spacing": 10
-  },
-  "backlight": {
-    "device": "intel_backlight",
-    "format": "{icon} {percent}%",
-    "format-icons": [
-      "󰃞",
-      "󰃟",
-      "󰃠"
-    ],
-    "on-scroll-up": "~/.config/waybar/scripts/brightness --inc",
-    "on-scroll-down": "~/.config/waybar/scripts/brightness --dec",
-    "min-length": 6
-  },
-  "battery": {
-    "states": {
-      "good": 95,
-      "warning": 30,
-      "critical": 20
-    },
-    "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
-    "format-alt": "{time} {icon}",
-    "format-icons": [
-      "󰂎",
-      "󰁺",
-      "󰁻",
-      "󰁼",
-      "󰁽",
-      "󰁾",
-      "󰁿",
-      "󰂀",
-      "󰂁",
-      "󰂂",
-      "󰁹"
-    ]
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",

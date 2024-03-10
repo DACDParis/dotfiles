@@ -720,3 +720,255 @@ Mar 06 01:51:37 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (T
 Mar 06 07:16:31 *	Now talking on #tmux
 Mar 06 07:16:31 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
 Mar 06 07:16:31 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Wed Mar  6 13:29:43 2024
+
+Mar 06 13:29:41 *	Now talking on #tmux
+Mar 06 13:29:41 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 06 13:29:41 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Wed Mar  6 21:44:03 2024
+
+Mar 06 21:44:02 *	Now talking on #tmux
+Mar 06 21:44:02 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 06 21:44:02 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** ENDING LOGGING AT Wed Mar  6 23:44:24 2024
+
+**** BEGIN LOGGING AT Thu Mar  7 02:18:47 2024
+
+Mar 07 02:18:44 *	Now talking on #tmux
+Mar 07 02:18:44 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 07 02:18:44 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+Mar 07 03:06:14 <slim>	foul_owl: -S designates the start line of the capture, -10 is starting from 10 lines in the history to the end of your visible pane
+Mar 07 03:10:58 <slim>	i would pipe it through tail, probably
+Mar 07 03:12:02 <slim>	now that you mention it, not sure theres an easy/graceful way to do that
+Mar 07 03:12:10 <slim>	can think of a few hacky ways, maybe
+Mar 07 03:22:01 <slim>	tmux capture-pane -p| tail -n 10
+Mar 07 03:22:14 <slim>	tmux capture-pane -p -S $(($LINES-10))
+Mar 07 03:22:27 <slim>	:capture-pane -S '#{e|-|:#{pane_height},10}'
+Mar 07 03:22:45 <slim>	caveat being that output needs to be at the bottom of the visible pane
+Mar 07 03:23:03 <slim>	hacky at best, feel like i'm overlooking something dreadfully obvious
+Mar 07 03:23:18 <slim>	maybe someone else has a better idea, shrug
+**** BEGIN LOGGING AT Thu Mar  7 05:39:14 2024
+
+Mar 07 05:39:13 *	Now talking on #tmux
+Mar 07 05:39:13 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 07 05:39:13 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Thu Mar  7 05:53:08 2024
+
+Mar 07 05:53:08 *	Now talking on #tmux
+Mar 07 05:53:08 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 07 05:53:08 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Thu Mar  7 06:46:02 2024
+
+Mar 07 06:46:01 *	Now talking on #tmux
+Mar 07 06:46:01 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 07 06:46:01 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Thu Mar  7 11:45:31 2024
+
+Mar 07 11:45:29 *	Now talking on #tmux
+Mar 07 11:45:29 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 07 11:45:29 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Thu Mar  7 12:26:51 2024
+
+Mar 07 12:26:50 *	Now talking on #tmux
+Mar 07 12:26:50 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 07 12:26:50 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+Mar 07 12:32:08 <birkoff>	tmux is crashing a lot lately
+**** BEGIN LOGGING AT Thu Mar  7 12:39:51 2024
+
+Mar 07 12:39:50 *	Now talking on #tmux
+Mar 07 12:39:50 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 07 12:39:50 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+Mar 07 13:30:07 <mingdao>	me, neither
+Mar 07 13:30:15 <mingdao>	I don't think tmux has every crashed for me.
+Mar 07 13:32:20 <depesz>	birkoff: is it repetable?
+**** BEGIN LOGGING AT Thu Mar  7 14:15:49 2024
+
+Mar 07 14:15:48 *	Now talking on #tmux
+Mar 07 14:15:48 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 07 14:15:48 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+Mar 07 17:11:45 <birkoff>	depesz: i dont have a methodical case, but it happened to me more than several times already
+Mar 07 17:12:40 <birkoff>	mostly SEGV dumps
+Mar 07 17:13:21 <depesz>	no idea, sorry.
+Mar 07 17:14:52 <mingdao>	birkoff: Do they show up in `coredumpctl list` ?
+Mar 07 17:15:03 <birkoff>	mingdao: yes obviously I run systemd
+Mar 07 18:00:54 <Demosthenex>	sorry to hear that.
+Mar 07 19:32:26 <Elodin>	Hi, when opening tmux i get a https://termbin.com/o0g46
+Mar 07 19:32:40 <Elodin>	this execute line
+Mar 07 19:43:47 <Elodin>	same happens without any configuration
+Mar 07 19:52:59 <mingdao>	Elodin: What VT are you using?
+Mar 07 19:53:21 <Elodin>	urxvt
+Mar 07 19:53:27 <mingdao>	Elodin: That sounds like a rxvt-unicode bug, although you've got some other special stuff there.
+Mar 07 19:53:51 <Elodin>	truly since then i installed kitty and it worked fine
+Mar 07 19:54:12 <Elodin>	i might downgrade urxvt and see if it goes back to the way it was
+Mar 07 19:56:16 <mingdao>	Elodin: It is a bug in the command.C file.  This is a patch that I used on one build I have locally:  https://cvsweb.openbsd.org/cgi-bin/cvsweb/~checkout~/ports/x11/rxvt-unicode/patches/patch-src_command_C?rev=1.6&content-type=text/t-type=text/plain
+Mar 07 19:56:32 <mingdao>	Elodin: What Linux distro are you using?
+Mar 07 19:56:41 <Elodin>	mingdao: archlinux
+Mar 07 19:58:03 <mingdao>	Same here.
+Mar 07 19:58:20 <mingdao>	Let me see which I am running on this Arch workstation.
+Mar 07 20:00:46 <mingdao>	I'm running rxvt-unicode-truecolor-wide-glyphs (9.31-5) with a PKGBUILD that I build locally.
+Mar 07 20:00:59 <mingdao>	I have IgnorePkg   =  rxvt-unicode-truecolor-wide-glyphs-debug rxvt-unicode-truecolor-wide-glyphs
+Mar 07 20:01:07 <mingdao>	So it doesn't automatically get updated.
+Mar 07 20:01:30 <mingdao>	I spoke to susi recently about it.  Let me go back and read which pkg they use on Arch.
+Mar 07 20:01:47 <mingdao>	<susi> I'm using https://aur.archlinux.org/packages/rxvt-unicode-truecolor-wide-glyphs
+Mar 07 20:02:22 <mingdao>	That is what my rxvt-unicode-truecolor-wide-glyphs-9.31-5 started from, but I added a couple of patches, so I am not letting it automatically update atm.
+Mar 07 20:02:46 <Elodin>	damn
+Mar 07 20:05:50 <Elodin>	this might be too much for me
+Mar 07 20:06:35 <mingdao>	Which version of rxvt-unicode do you have where it outputs https://termbin.com/o0g46 ?
+Mar 07 20:06:59 <mingdao>	I have reported it to the Arch maintainer, but not response.
+Mar 07 20:07:08 <mingdao>	The Arch PKGBUILD is a few months old.
+Mar 07 20:07:26 <Elodin>	interesting by installing the latest rxvt-unicode-truecolor-wide-glyphs
+Mar 07 20:07:29 <mingdao>	This has been fixed by rxvt-unicode upstream, but Arch is behind.
+Mar 07 20:07:31 <Elodin>	it fixed
+Mar 07 20:07:46 <mingdao>	The rxvt-unicode-truecolor-wide-glyphs package from AUR?
+Mar 07 20:07:50 <Elodin>	yes
+Mar 07 20:08:09 <mingdao>	I forget why I have held back from that one.
+Mar 07 20:08:25 <mingdao>	Elodin: Glad you got rid of that color sequence line.
+Mar 07 20:08:48 <Elodin>	yeah, but like you said it yourself... something held you back from this
+Mar 07 20:08:50 <Elodin>	haha
+Mar 07 20:08:58 <mingdao>	It wasn't a huge bother to me, because I could issue ctrl+u twice on the end of the line, and it cleared the screen.
+Mar 07 20:10:14 <Elodin>	i guess i should build it from the head then cuz all my other goodies stopped working
+Mar 07 20:11:32 <mingdao>	Elodin: This https://0x0.st/H7FH.txt is mingdao@workstation ~/software/rxvt-unicode-truecolor-wide-glyphs $ ls -1
+Mar 07 20:11:49 <mingdao>	patch-src_command.patch is my patch from https://cvsweb.openbsd.org/cgi-bin/cvsweb/~checkout~/ports/x11/rxvt-unicode/patches/patch-src_command_C?rev=1.6
+Mar 07 20:12:48 <mingdao>	I have mingdao@workstation ~/Arch/rxvt-unicode   from mingdao@workstation ~/Arch/ git clone https://github.com/exg/rxvt-unicode.git
+Mar 07 20:14:32 <mingdao>	This is the repo of exg, who is the one really maintaining rxvt-unicode now, rather than schmorp.
+Mar 07 20:15:29 <mingdao>	I'll just quote from what they told me.
+Mar 07 20:15:59 <mingdao>	< mingdao> exg: Is there a git mirror of http://cvs.schmorp.de/rxvt-unicode/ ?
+Mar 07 20:16:04 <mingdao>	< exg> mingdao: yes I maintain one https://github.com/exg/rxvt-unicode
+Mar 07 20:16:37 <mingdao>	When I get the time I'm going to make a PKGBUILD for that, and use it, updating it periodically via `git update`.
+Mar 07 20:18:43 <Elodin>	i suppose i would downgrade the packages i'm using? But i get libperl.so errors
+Mar 07 20:18:56 <Elodin>	sad cuz i dont know if im capable of following the instructions
+Mar 07 20:19:19 <mingdao>	Elodin: Ask about it in #rxvt-unicode
+Mar 07 20:19:41 <mingdao>	exg is in that channel
+Mar 07 20:19:52 <Elodin>	thanks
+Mar 07 20:19:55 <Elodin>	for everything
+Mar 07 20:20:00 <mingdao>	Show your link https://termbin.com/o0g46 and ask how to fix it.
+Mar 07 20:20:06 <mingdao>	yw
+Mar 07 20:21:23 <mingdao>	We shall see what we shall see.
+Mar 07 20:23:02 <mingdao>	I would tell them that you changed from the Arch repo package rxvt-unicode-9.31-4 to the AUR package rxvt-unicode-truecolor-wide-glyphs-9.31-7 and it no longer happens.
+Mar 07 20:26:01 <mingdao>	Elodin: Notice in #rxvt-unicode the /topic has "please wait up to 24 hours for a response to your question!"  Just stay joined to the channel and see.
+**** BEGIN LOGGING AT Fri Mar  8 22:52:06 2024
+
+Mar 08 22:52:06 *	Now talking on #tmux
+Mar 08 22:52:06 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 08 22:52:06 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Fri Mar  8 23:04:26 2024
+
+Mar 08 23:04:24 *	Now talking on #tmux
+Mar 08 23:04:24 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 08 23:04:24 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Fri Mar  8 23:07:14 2024
+
+Mar 08 23:07:14 *	Now talking on #tmux
+Mar 08 23:07:14 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 08 23:07:14 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Fri Mar  8 23:14:16 2024
+
+Mar 08 23:14:14 *	Now talking on #tmux
+Mar 08 23:14:14 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 08 23:14:14 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Sat Mar  9 07:43:52 2024
+
+Mar 09 07:43:50 *	Now talking on #tmux
+Mar 09 07:43:50 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 09 07:43:50 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Sat Mar  9 08:24:01 2024
+
+Mar 09 08:24:00 *	Now talking on #tmux
+Mar 09 08:24:00 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 09 08:24:00 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Sat Mar  9 10:08:22 2024
+
+Mar 09 10:08:21 *	Now talking on #tmux
+Mar 09 10:08:21 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 09 10:08:21 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** ENDING LOGGING AT Sat Mar  9 10:09:15 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 10:12:43 2024
+
+Mar 09 10:12:41 *	Now talking on #tmux
+Mar 09 10:12:41 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 09 10:12:41 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Sat Mar  9 11:09:19 2024
+
+Mar 09 11:09:16 *	Now talking on #tmux
+Mar 09 11:09:16 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 09 11:09:16 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Sat Mar  9 11:33:17 2024
+
+Mar 09 11:33:15 *	Now talking on #tmux
+Mar 09 11:33:15 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 09 11:33:15 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+Mar 09 11:38:28 <mindhunter>	I have been using ranger image previews inside tmux and it appears to be working fine with alacritty. But when I switch tmux windows when I am on a particular image preview, the image still lingers in the next window. Can I prevent this? 
+Mar 09 12:36:42 <birkoff>	Why does this not work: `choose-tree -f "#{==:#{session_name},#{client_session}}"`  while this does: `choose-tree -f "#{==:#{session_name},some_session_name}"`
+Mar 09 12:54:11 <birkoff>	tried also with comparing #{session_name} to itself 
+**** ENDING LOGGING AT Sat Mar  9 13:31:10 2024
+
+**** BEGIN LOGGING AT Sat Mar  9 13:40:24 2024
+
+Mar 09 13:40:23 *	Now talking on #tmux
+Mar 09 13:40:23 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 09 13:40:23 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+Mar 09 14:18:56 <birkoff>	is it possible to keep the colors when a pane dies ? 
+**** BEGIN LOGGING AT Sat Mar  9 14:33:36 2024
+
+Mar 09 14:33:35 *	Now talking on #tmux
+Mar 09 14:33:35 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 09 14:33:35 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+Mar 09 15:48:17 <slim>	birkoff: the choose-tree doesn't work as expected due to how variable substitution is handled, use a run-shell with added #'s
+Mar 09 15:48:29 <birkoff>	slim: tried that too
+Mar 09 15:48:49 <slim>	ie. run -C 'choose-tree -f "##{==:##{session_name},#{client_session}}"'
+Mar 09 15:48:51 <slim>	that doesn't work ?
+Mar 09 15:54:08 <slim>	birkoff: works as expected with client_session and session_name on my end with that syntax, what unexpected output are you getting?
+Mar 09 15:56:10 <birkoff>	didnt double hash #{client_session}
+Mar 09 15:56:16 <birkoff>	did*
+Mar 09 15:57:28 <slim>	right on, so all good then? what did you mean by keep the colors when pane dies?
+Mar 09 15:58:26 <birkoff>	if I have a an application that is showing colors like diff in a dead panel it turns "black&white"
+Mar 09 15:58:39 <birkoff>	i.e. when it dies
+Mar 09 16:03:18 <slim>	hrmm, not sure what handles dead pane style tbh - do you have a custom window-style setting?
+Mar 09 16:04:37 <slim>	do non-active panes have different sytles from your window-active-style ?
+Mar 09 17:15:29 <sybariten>	Hmm hmm hmm , is it common for people to remap ctrl-b in tmux to ctrl-a instead? I have ctrl-b in one instance and have changed it to ctrl-a in another, and the latter is sooo much nicer. However, i just realized i am not able to do the bash key shortcut for "beginning of line"...
+Mar 09 17:15:52 <jakllsch>	you do know about escaping the prefix right?
+Mar 09 21:07:06 <sybariten>	jakllsch: no, not sure about that one
+Mar 09 21:23:47 <jakllsch>	^B ^B should get you a ^B into the actual pane
+**** BEGIN LOGGING AT Sun Mar 10 00:21:17 2024
+
+Mar 10 00:21:17 *	Now talking on #tmux
+Mar 10 00:21:17 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 10 00:21:17 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Sun Mar 10 00:22:46 2024
+
+Mar 10 00:22:46 *	Now talking on #tmux
+Mar 10 00:22:46 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 10 00:22:46 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Sun Mar 10 00:27:38 2024
+
+Mar 10 00:27:38 *	Now talking on #tmux
+Mar 10 00:27:38 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 10 00:27:38 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Sun Mar 10 00:31:41 2024
+
+Mar 10 00:31:41 *	Now talking on #tmux
+Mar 10 00:31:41 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 10 00:31:41 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Sun Mar 10 01:38:21 2024
+
+Mar 10 01:38:20 *	Now talking on #tmux
+Mar 10 01:38:20 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 10 01:38:20 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Sun Mar 10 01:52:09 2024
+
+Mar 10 01:52:08 *	Now talking on #tmux
+Mar 10 01:52:08 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 10 01:52:08 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** ENDING LOGGING AT Sun Mar 10 04:26:38 2024
+
+**** BEGIN LOGGING AT Sun Mar 10 06:42:23 2024
+
+Mar 10 06:42:22 *	Now talking on #tmux
+Mar 10 06:42:22 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 10 06:42:22 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Sun Mar 10 23:24:28 2024
+
+Mar 10 23:24:27 *	Now talking on #tmux
+Mar 10 23:24:27 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 10 23:24:27 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
