@@ -1,214 +1,343 @@
-{ config, pkgs, ...}: 
+{ config, pkgs, lib,...}: 
 
 {
 
-  programs.hyprland = {
+  home.packages = with pkgs; [
+    wofi
+    grim
+    grimblast
+    cairo
+    meson
+    swaybg
+    waybar
+    swaynotificationcenter
+    swappy
+    sway
+    swaytools
+    nwg-look
+    libsForQt5.qt5ct
+    opensnitch 
+    opensnitch-ui
+    openrgb-with-all-plugins
+    adwaita-qt
+    libadwaita
+    wl-clipboard
+    cliphist
+    polkit_gnome
+    swww
+    waybar-mpris
+    mpdris2
+    vimPlugins.vim-wayland-clipboard
+    xdg-desktop-portal-hyprland
+    pamixer
+    playerctl
+
+  ];
+
+  wayland.windowManager.hyprland = {
     enable = true;
-  };
+    xwayland = {
+      enable = true;
+    };
+    package = pkgs.hyprland;
+    extraConfig = ''
+    exec-once = sleep 1
+    exec-once = killall xdg-desktop-portal-hyprland
+    exec-once = killall xdg-desktop-portal-wlr
+    exec-once = killall xdg-desktop-portal
+    exec-once = killall xdg-desktop-portal-kde
+    exec-once = killall xdg-desktop-portal-gtk
+    exec-once = killall xdg-desktop-portal-gnome
+    exec-once = xdg-desktop-portal-hyprland &
+    exec-once = sleep 2
+    exec-once = xdg-desktop-portal &
+
+    # exec-once = /$HOME/.config/hypr/xdg-portal-hyprland.sh
+    
+    # use the command `hyprctl monitors` to get the info.
+    
+    # Single Monitor iGPU
+    # monitor=HDMI-A-1,disable
+    # monitor=DP-3,2560x1080@60,0x0,1
+    
+    # LG on the left
+    #monitor=DP-4,1920x1080@180,2560x0,1, bitdepth, 10 
+    #monitor=DP-5,2560x1080@60,0x0,1 
   
-  
-  programs.xwayland.enable = true;
-  services.xserver.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.displayManager.sddm.wayland.enable = true;
+    # Multi Monitor 
+    monitor=HDMI-A-4,3840x2160@60,0x0,1, bitdepth, 10
+    #monitor=HDMI-A-4,disable
+    monitor=DP-5,2560x1080@60,3840x0,1 
+    monitor=DP-4,1920x1080@180,6400x0,1, bitdepth, 10 
+    
+    workspace=DP-5,1
+    workspace=DP-2,2
+    workspace=DP-5,3
+    workspace=DP-5,4
+    workspace=DP-5,5
+    workspace=DP-5,6
+    workspace=DP-5,8
+    workspace=HDMI-A-4,9
+    workspace=special:scratchpad, on-created-empy:discord
+    
+    # Some default env vars
+    env=XCURSOR_SIZE,10
+    env=QT_QPA_PLATFORMTHEME,qt5ct
+    env=XDG_SESSION_TYPE,wayland
+    env=QT_QPA_PLATFORM,wayland;xcb
+    # env=GDK_BACKEND,wayland,x11
+    env=WLR_NO_HARDWARE_CURSORS,1
+    env=GLFW_IM_MODULE=ibus
+    # env=LIBVA_DRIVER_NAME,iHD
+    
+    env = WLR_DRM_NO_ATOMIC,1
+    env=XDG_CURRENT_DESKTOP=Hyprland
+    env=XDG_SESSION_DESKTOP=Hyprland
+    
+    $mainMod = SUPER
+    
+    # Startup
+    exec-once = waybar 
+    exec-once = mpd 
+    exec-once = ~/.dotfiles/modules/misc/gnome_polkit.sh 
+    exec-once = ~/.dotfiles/modules/misc/fans.sh
+    exec-once = swaync -style ~/.config/hypr/swaync/style.css --config ~/.config/sway/swaync/config.json 
+#    exec-once = polkit-kde-authentication-agent-1 &
+    exec-once = dbus-update-activation-environment --systemd --all  &  ##WAYLAND_DISPLAY XDG_CURRENT_DESKTOP QT_QPA_PLATFORMTHEME GTK_THEME
+    exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP QT_QPA_PLATFORMTHEME GTK_THEME &
+    # exec-once = openrgb &
+#    exec-once = ~/.dotfiles/modules/misc/wallpaper.sh
+    # exec-once = dunst
+    # exec-once = blueman &
+    exec-once = nm-applet 
+#    exec-once = kitty --detach discordo 
+#    exec-once = hexchat 
+    exec-once = QT_QPA_PLATFORM=xcb opensnitch-ui 
+    exec-once = wl-paste --watch cliphist store
+    
+    exec-once = [workspace 8 ] qbittorrent 
+    exec-once = [workspace 6 ] thunderbird
+    exec-once = [workspace 4 ] discord
+    # exec-once = [workspace 4 ] flatpak run com.spotify.Client 
+    # exec-once = [workspace 4 ] flatpak run im.riot.Riot
+    # exec-once = [workspace 1 ] google-chrome  
+    exec-once = [workspace 1 ] vivaldi 
+    # exec-once = [workspace 1 ] floorp
+    exec-once = [workspace 1 ] kitty  
+    
+    input {
+      kb_layout = us,fr
+      kb_options = ctrl:swapcaps, grp:alt_space_toggle
+    
+      follow_mouse = 1
+      sensitivity = 0
+    }
+    
+    misc {
+      disable_hyprland_logo = true
+      disable_splash_rendering = true
+      mouse_move_enables_dpms = true
+      no_direct_scanout = true
+    }
+    
+    binds {
+      workspace_back_and_forth = true
+    }
+    
+    general {
+    #  allow_tearing = true
+      gaps_in = 3
+      gaps_out = 7
+      border_size = 2
+      col.active_border = rgb(2f88FC)
+      col.inactive_border = rgba(595959aa)
+    
+      layout = master
+    }
+    
+    #dwindle {
+    #  pseudotile = true
+    #  smart_split = true
+    #  force_split = 2
+    #  smart_resizing = true
+    #  preserve_split = true
+    #}
+    
+    master {
+    new_is_master = false
+    #  mfact = 0.5
+    }
+    
+    decoration {
+    #  rounding = 6
+    #  blur = true
+    #  blur_size = 3
+    #  blur_passes = 1
+    #  blur_new_optimizations = true
+    
+    #  active_opacity = 1.0
+    #  inactive_opacity = 0.7
+    #  fullscreen_opacity = 1.0
+    #
+      #drop_shadow = true
+      #shadow_range = 4
+      #shadow_render_power = 3
+      #col.shadow = rgba(1a1a1aee)
+    
+      dim_inactive = true
+      dim_strength = 0.2
+    }
+    
+    blurls = waybar
+    animations {
+      enabled = false
+    #
+    #  bezier = myBezier, 0.05, 0.9, 0.1, 1.05
+    #
+    #  animation = windows, 1, 7, myBezier
+    #  animation = windowsOut, 1, 7, default, popin 80%
+    #  animation = border, 1, 10, default
+    #  animation = fade, 1, 7, default
+    #  animation = workspaces, 1, 6, default
+    }
+    
+    # Example windowrule v2
+    windowrulev2 = workspace 6, class:^(thunderbird)$
+    windowrulev2 = workspace 8, class:^(org.qbittorrent.qBittorrent)$
+    windowrulev2 = workspace 5, class:^(Spotify)$
+    windowrulev2 = workspace 5, class:^(com.github.wwmm.easyeffects)$
+    windowrulev2 = workspace 4, class:^(Element)$
+    windowrulev2 = workspace 4, class:^(discord)$
+    windowrulev2 = workspace 4, class:^(discordo)$
+    windowrulev2 = workspace 4, class:^(HexChat)$
+    
+    windowrulev2 = float,class:^(NoiseTorch)$,title:^(NoiseTorch)$
+    windowrulev2 = float,class:^(org.qbittorrent.qBittorrent), title:(*qBittorrent*)$
+    windowrulev2 = float,class:^(openrgb)$,title:^(OpenRGB)$
+    windowrulev2 = float,class:^(org.kde.dolphin)$,title:^(Extract — Dolphin)$
+    windowrulev2 = float,class:^(org.kde.dolphin)$,title:^(File Already Exists — Dolphin)$
+    windowrulev2 = float,class:^(kcm_kaccounts)$
+    windowrulev2 = float,class:^(com.github.wwmm.easyeffects)$,title:^(Easy Effects)$
+    windowrulev2 = float,class:^(lsp-plugins)$,title:^(Parametrischer Entzerrer x32 LeftRight)$
+    windowrulev2 = float,class:^(soffice)$,title:^(Extension Manager)$
+    windowrulev2 = float,class:^(thunar)$,title:^(File Operation Progress)$
+    windowrulev2 = float,class:^(thunar)$,title:^(Confirm to replace files)$
+    windowrulev2 = float,class:^(nm-connection-editor)$
+    windowrule=float,org.kde.polkit-kde-authentication-agent-1
+    
+    bind = $mainMod, Q, killactive
+    bind = $mainMod, A, exec, kitty lvim 
+    bind = $mainMod ALT1, w, exec, google-chrome
+    bind = $mainMod, z, exec, vivaldi
+    bind = $mainMod, agrave, exec, /$HOME/.dotfiles/modules/misc/exit_hyprland.sh
+    bind = $mainMod, F, fullscreen
+    bind = $mainMod, Return, exec, kitty
+    bind = $mainMod  SHIFT, Return, exec, kitty tmux
+    bind = $mainMod, x, exec, dolphin 
+    bind = $mainMod ALT1, x, exec, kitty fm 
+    bind = $mainMod, d, exec, kitty --detach discordo 
+    bind = $mainMod, Space, exec, wofi -show
+    bind = $mainMod SHIFT, R, exec, hyprctl reload
+    
+    bind = $mainMod SHIFT, M, exec, hyprctl dispatch splitratio -0.1
+    bind = $mainMod, M, exec, hyprctl dispatch splitratio 0.1
+    
+    bind = $mainMod, Escape, exec, hyprctl kill
+    bind = $mainMod, V, togglefloating,
+    bind = $mainMod, P, pseudo
+    
+    # Special Keys
+    bind = , XF86Tools, exec, vlc
+    bind = , xf86audioraisevolume, exec, pamixer -i 3 
+    bind = , xf86audiolowervolume, exec, pamixer -d 3
+    bind = , xf86audiomute, exec, pamixer -t
+    bind = , xf86audioplay, exec, playerctl -a play-pause
+    bind = , xf86audionext, exec, playerctl -a position 5+
+    bind = , xf86audioprev, exec, playerctl -a position 5-
+    
+    # Move windows
+    bind = $mainMod SHIFT, left, movewindow, l
+    bind = $mainMod SHIFT, right, movewindow, r
+    bind = $mainMod SHIFT, up, movewindow, u
+    bind = $mainMod SHIFT, down, movewindow, d
+    
+    # Move focus with mainMod + arrow keys
+    bind = $mainMod, left, movefocus, l
+    bind = $mainMod, right, movefocus, r
+    bind = $mainMod, up, movefocus, u
+    bind = $mainMod, down, movefocus, d
 
- #wayland.windowManager.hyprland = {
-  #  enable = true;
-  #  xwayland = {
-  #    enable = true;
-  #    hidpi = true;
-  #  };
-  #  package = pkgs.hyprland;
-  #  extraConfig = ''
-  #    #-- Monitors ----------------------------------------------------
-  #    # Configure your Display resolution, offset, scale and Monitors here, use `hyprctl monitors` to get the info.
-  #    # See: https://wiki.hyprland.org/Configuring/Monitors/
+    # Vim Keys Mouvements
+    #Move windows
+    bind = $mainMod SHIFT, H, movewindow, l
+    bind = $mainMod SHIFT, L, movewindow, r
+    bind = $mainMod SHIFT, K, movewindow, u
+    bind = $mainMod SHIFT, J, movewindow, d
 
-  #    # Startup
-  #    exec-once = waybar
-  #    exec-once = foot --server
-  #    exec-once = firefox
-  #    exec-once = signal-desktop --enable-features=UseOzonePlatform --ozone-platform=wayland
-  #    exec-once = nm-applet --indicator
-  #    exec-once = dunst
-  #    exec-once = ferdium
-  #    exec-once = kanshi
-  #    exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-  #    exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-
-  #    # Startup / XWayland
-  #    # See: https://wiki.hyprland.org/Configuring/XWayland/
-  #    exec-once=xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2
-
-  #    $ws1 = 1:web
-  #    $ws2 = 2:dev
-  #    $ws3 = 3:im
-  #    $ws4 = 4:signal
-  #    $ws5 = 5:doc
-  #    $ws6 = 6
-  #    $ws7 = 7
-  #    $ws8 = 8
-  #    $ws9 = 9
-  #    $ws0 = 0
-
-  #    monitor=,preferred,auto,1
-
-  #    workspace=,name:$ws1
-
-  #    #-- Input ----------------------------------------------------
-  #    # Configure mouse and touchpad here.
-  #    input {
-  #      kb_layout = us
-  #      kb_options = caps:escape,compose:menu
-  #      kb_variant = altgr-intl
-  #      kb_model =
-  #      kb_rules =
-  #      follow_mouse = 1
-  #      sensitivity = 0
-  #      touchpad {
-  #        natural_scroll = no
-  #      }
-  #    }
-
-  #    #-- General ----------------------------------------------------
-  #    # General settings like MOD key, Gaps, Colors, etc.
-  #    # See: https://wiki.hyprland.org/Configuring/Variables/#general
-  #    general {
-  #      gaps_in = 5
-  #      gaps_out = 5
-
-  #      border_size = 1
-  #      no_border_on_floating = false
-  #      col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
-  #      col.inactive_border = rgba(595959aa)
-
-  #      layout = master
-  #    }
-
-  #    #-- Decoration ----------------------------------------------------
-  #    # Decoration settings like Rounded Corners, Opacity, Blur, etc.
-  #    # See: http://wiki.hyprland.org/Configuring/Variables/#decoration
-  #    decoration {
-  #      rounding = 10
-  #      multisample_edges = 0
-
-  #      blur = yes
-  #      blur_size = 3
-  #      blur_passes = 1
-  #      blur_new_optimizations = on
-
-  #      drop_shadow = yes
-  #      shadow_range = 4
-  #      shadow_render_power = 3
-  #      col.shadow = rgba(1a1a1aee)
-  #    }
-
-  #    #-- Animations ---------------------------------------------------
-  #    # See: https://wiki.hyprland.org/Configuring/Variables/#animations
-  #    # See: https://wiki.hyprland.org/Configuring/Animations/
-  #    animations {
-  #      enabled = yes
-
-  #      bezier = myBezier, 0.05, 0.9, 0.1, 1.05
-
-  #      animation = windows, 1, 7, myBezier
-  #      animation = windowsOut, 1, 7, default, popin 80%
-  #      animation = border, 1, 10, default
-  #      animation = fade, 1, 7, default
-  #      animation = workspaces, 1, 6, default
-  #    }
-
-  #    #-- Dwindle ----------------------------------------------------
-  #    # See: https://wiki.hyprland.org/Configuring/Dwindle-Layout/
-  #    dwindle {
-  #      pseudotile = yes
-  #      preserve_split = yes
-  #    }
-
-  #    #-- Master ----------------------------------------------------
-  #    # See: https://wiki.hyprland.org/Configuring/Master-Layout/
-  #    master {
-  #      new_is_master = true
-  #    }
-
-  #    gestures {
-  #        # See https://wiki.hyprland.org/Configuring/Variables/ for more
-  #        workspace_swipe = off
-  #    }
-
-  #    # Example per-device config
-  #    # See https://wiki.hyprland.org/Configuring/Keywords/#executing for more
-  #    device:epic mouse V1 {
-  #        sensitivity = -0.5
-  #    }
-
-  #    # Example windowrule v1
-  #    # windowrule = float, ^(kitty)$
-  #    # Example windowrule v2
-  #    # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
-  #    # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
-
-  #    windowrulev2 = workspace name:$ws1,fullscreen,class:^(firefox|Chromium)$
-  #    # make firefox share indicator float
-  #    windowrulev2 = float,nofullscreen,class:firefox,title:^Firefox — Sharing Indicator$
-
-  #    windowrulev2 = workspace name:$ws2,class:^(xterm|urxvt|aterm|URxvt|XTerm|Alacritty|Emacs|foot)$
-  #    windowrulev2 = workspace name:$ws3,class:^(Kopete|Pidgin|gajim|rambox|Dino|.gam-wrapped|Daily|birdie|evolution|Ferdi|Ferdium)$
-  #    windowrulev2 = workspace name:$ws4,class:^(signal)$
-  #    windowrulev2 = workspace name:$ws5,class:^(Evince|GVim|keepassx|libreoffice)$
-
-  #    # See https://wiki.hyprland.org/Configuring/Keywords/ for more
-  #    $mainMod = SUPER
-
-  #    # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-  #    bind = $mainMod, Q, exec, footclient
-  #    bind = $mainMod, C, killactive,
-  #    bind = $mainMod, M, exit,
-  #    #bind = $mainMod, E, exec, dolphin
-  #    bind = $mainMod, V, togglefloating,
-  #    bind = $mainMod, F, fullscreen, 1
-  #    bind = $mainMod, R, exec, wofi --show run --gtk-dark
-  #    bind = $mainMod, P, pseudo, # dwindle
-  #    bind = $mainMod, J, togglesplit, # dwindle
-
-  #    # Move focus with mainMod + arrow keys
-  #    bind = $mainMod, left, movefocus, l
-  #    bind = $mainMod, right, movefocus, r
-  #    bind = $mainMod, up, movefocus, u
-  #    bind = $mainMod, down, movefocus, d
-
-  #    # Switch workspaces with mainMod + [0-9]
-  #    bind = $mainMod, 1, workspace, name:$ws1
-  #    bind = $mainMod, 2, workspace, name:$ws2
-  #    bind = $mainMod, 3, workspace, name:$ws3
-  #    bind = $mainMod, 4, workspace, name:$ws4
-  #    bind = $mainMod, 5, workspace, name:$ws5
-  #    bind = $mainMod, 6, workspace, name:$ws6
-  #    bind = $mainMod, 7, workspace, name:$ws7
-  #    bind = $mainMod, 8, workspace, name:$ws8
-  #    bind = $mainMod, 9, workspace, name:$ws9
-  #    bind = $mainMod, 0, workspace, name:$ws0
-
-  #    # Move active window to a workspace with mainMod + SHIFT + [0-9]
-  #    bind = $mainMod SHIFT, 1, movetoworkspace, name:$ws1
-  #    bind = $mainMod SHIFT, 2, movetoworkspace, name:$ws2
-  #    bind = $mainMod SHIFT, 3, movetoworkspace, name:$ws3
-  #    bind = $mainMod SHIFT, 4, movetoworkspace, name:$ws4
-  #    bind = $mainMod SHIFT, 5, movetoworkspace, name:$ws5
-  #    bind = $mainMod SHIFT, 6, movetoworkspace, name:$ws6
-  #    bind = $mainMod SHIFT, 7, movetoworkspace, name:$ws7
-  #    bind = $mainMod SHIFT, 8, movetoworkspace, name:$ws8
-  #    bind = $mainMod SHIFT, 9, movetoworkspace, name:$ws9
-  #    bind = $mainMod SHIFT, 0, movetoworkspace, name:$ws0
-
-  #    # Scroll through existing workspaces with mainMod + scroll
-  #    bind = $mainMod, mouse_down, workspace, e+1
-  #    bind = $mainMod, mouse_up, workspace, e-1
-
-  #    # Move/resize windows with mainMod + LMB/RMB and dragging
-  #    bindm = $mainMod, mouse:272, movewindow
-  #    bindm = $mainMod, mouse:273, resizewindow
-  #  '';
-  #};
+    # Vim Keys - Move focus with mainMod + arrow keys
+    bind = $mainMod, H, movefocus, l
+    bind = $mainMod, L, movefocus, r
+    bind = $mainMod, K, movefocus, u
+    bind = $mainMod, J, movefocus, d
+    
+    # Special workspace
+    bind = $mainMod SHIFT, U, movetoworkspace, special
+    bind = $mainMod, U, togglespecialworkspace,
+    
+    # Scroll through existing workspaces with mainMod + scroll
+    bind = $mainMod, mouse_down, workspace, e+1
+    bind = $mainMod, mouse_up, workspace, e-1
+    bind = $mainMod, period, workspace, e+1
+    bind = $mainMod, comma, workspace, e-1
+    
+    # Move/resize windows with mainMod + LMB/RMB and dragging
+    bindm = $mainMod, mouse:272, movewindow
+    bindm = $mainMod, mouse:273, resizewindow
+    
+    # Qwerty
+    # Switch workspaces with mainMod + [0-9]
+    bind = $mainMod, 1, workspace, 1
+    bind = $mainMod, 2, workspace, 2
+    bind = $mainMod, 3, workspace, 3
+    bind = $mainMod, 4, workspace, 4
+    bind = $mainMod, 5, workspace, 5
+    bind = $mainMod, 6, workspace, 6
+    bind = $mainMod, 7, workspace, 7
+    bind = $mainMod, 8, workspace, 8
+    
+    # Qwerty
+    # Move active window and follow to workspace
+    bind = $mainMod CTRL, 1, movetoworkspace, 1
+    bind = $mainMod CTRL, 2, movetoworkspace, 2
+    bind = $mainMod CTRL, 3, movetoworkspace, 3
+    bind = $mainMod CTRL, 4, movetoworkspace, 4
+    bind = $mainMod CTRL, 5, movetoworkspace, 5
+    bind = $mainMod CTRL, 6, movetoworkspace, 6
+    bind = $mainMod CTRL, 7, movetoworkspace, 7
+    bind = $mainMod CTRL, 8, movetoworkspace, 8
+    #bind = $mainMod CTRL, 9, movetoworkspace, 9
+    #bind = $mainMod CTRL, 0, movetoworkspace, 10
+    #bind = $mainMod CTRL, bracketleft, movetoworkspace, -1
+    #bind = $mainMod CTRL, bracketright, movetoworkspace, +1
+    
+    # Qwerty
+    # Move active window to a workspace with mainMod + SHIFT + [0-9]
+    bind = $mainMod SHIFT, 1, movetoworkspacesilent, 1
+    bind = $mainMod SHIFT, 2, movetoworkspacesilent, 2
+    bind = $mainMod SHIFT, 3, movetoworkspacesilent, 3
+    bind = $mainMod SHIFT, 4, movetoworkspacesilent, 4
+    bind = $mainMod SHIFT, 5, movetoworkspacesilent, 5
+    bind = $mainMod SHIFT, 6, movetoworkspacesilent, 6
+    bind = $mainMod SHIFT, 7, movetoworkspacesilent, 7
+    bind = $mainMod SHIFT, 8, movetoworkspacesilent, 8
+    #bind = $mainMod SHIFT, 9, movetoworkspacesilent, 9
+    #bind = $mainMod SHIFT, 0, movetoworkspacesilent, 10
+    #bind = $mainMod SHIFT, bracketleft, movetoworkspacesilent, -1
+    #bind = $mainMod SHIFT, bracketright, movetoworkspacesilent, +1
+ 
+    
+        
+    '';
+ }; 
 
 }

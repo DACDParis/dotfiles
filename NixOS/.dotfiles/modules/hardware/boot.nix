@@ -2,9 +2,14 @@
 {
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
- 
+
+
+
+#  boot.initrd.kernelModules = [ "amdgpu" ]; 
+  
+#  boot.kernetModules = [ "i2c-dev" ];
+  
+
   # Set your time zone.
   time.timeZone = "Europe/Paris";
   
@@ -23,4 +28,4 @@
     LC_TIME = "fr_FR.UTF-8";
   };
 
-}
+} 

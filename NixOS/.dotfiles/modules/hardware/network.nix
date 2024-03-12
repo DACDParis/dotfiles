@@ -14,10 +14,10 @@
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+   };
 
   # List services that you want to enable:
 
@@ -28,9 +28,20 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall = {
+  enable = true;
+  extraCommands = ''iptables -t raw -A OUTPUT -p udp -m udp --dport 137 -j CT --helper netbios-ns'';
+  allowedTCPPorts = [ 22 80 443 65055 8080];
+  allowedUDPPorts = [ 65055 ];
+  allowedUDPPortRanges = [
+    { from = 4000; to = 4007; }
+    { from = 8000; to = 8080; }
+  ];
+};
 
-  networking.nameservers = [ "1.1.1.1" ];
+
+
+  networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
   
 
 }
