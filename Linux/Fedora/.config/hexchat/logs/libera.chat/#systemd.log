@@ -1034,3 +1034,65 @@ Mar 10 22:55:07 <Eryn_FL>	mostly my after and wanter ^
 Mar 10 23:24:27 *	Now talking on #systemd
 Mar 10 23:24:27 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
 Mar 10 23:24:27 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Mon Mar 11 00:20:38 2024
+
+Mar 11 00:20:36 *	Now talking on #systemd
+Mar 11 00:20:36 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 11 00:20:36 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Mon Mar 11 00:24:22 2024
+
+Mar 11 00:24:21 *	Now talking on #systemd
+Mar 11 00:24:21 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 11 00:24:21 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Mon Mar 11 01:59:29 2024
+
+Mar 11 01:59:28 *	Now talking on #systemd
+Mar 11 01:59:28 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 11 01:59:28 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Mon Mar 11 05:24:02 2024
+
+Mar 11 05:24:01 *	Now talking on #systemd
+Mar 11 05:24:01 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 11 05:24:01 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Mon Mar 11 06:07:45 2024
+
+Mar 11 06:07:44 *	Now talking on #systemd
+Mar 11 06:07:44 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 11 06:07:44 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Mon Mar 11 11:18:06 2024
+
+Mar 11 11:18:05 *	Now talking on #systemd
+Mar 11 11:18:05 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 11 11:18:05 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+Mar 11 13:52:44 <rburton>	I'm running the systemd tests, we use prefix-map to remap __FILE__ etc and the test fails
+Mar 11 13:53:04 <rburton>	FAIL: test-log
+Mar 11 13:53:04 <rburton>	__FILE__: /usr/src/debug/systemd/255.4/src/test/test-log.c
+Mar 11 13:53:04 <rburton>	RELATIVE_SOURCE_PATH: ../git
+Mar 11 13:53:04 <rburton>	PROJECT_FILE: c/debug/systemd/255.4/src/test/test-log.c
+Mar 11 13:53:04 <rburton>	Assertion 'startswith(__FILE__, RELATIVE_SOURCE_PATH "/")' failed at c/debug/systemd/255.4/src/test/test-log.c:30, function test_file(). Aborting.
+Mar 11 13:56:32 <rburton>	is this test expected to fail in this setup? __FILE__  definitely won't start with the relative source path.
+Mar 11 14:00:30 <bluca>	yes, see https://github.com/systemd/systemd/pull/12926
+Mar 11 14:03:01 <rburton>	feels like the test could detect this and skip? is the actual test_file() check really needed?
+Mar 11 14:10:40 <bluca>	it's needed to enforce that the macro produces sensible results
+Mar 11 14:12:43 <bluca>	as you can see in the result you pasted, it doesn't - PROJECT_FILE is supposed to be src/test/test-log.c
+Mar 11 14:46:42 <rburton>	ok i wonder what the hell happened there :)
+Mar 11 14:51:01 <rburton>	Also, should test/systemd-runtest.env be installed?
+Mar 11 14:53:23 <bluca>	we do not install it in debian/ubuntu, not even in the systemd-test package
+Mar 11 14:53:42 <rburton>	ok
+Mar 11 14:54:04 <rburton>	just noticed a test prints a non-fatal error that it can't find it
+Mar 11 15:05:47 <rburton>	bluca: aha https://github.com/systemd/systemd/issues/27978
+Mar 11 15:06:08 <rburton>	similar issue at least
+Mar 11 15:13:52 <bluca>	looks like it
+Mar 11 15:14:42 <rburton>	it appears the current logic assumes that both __FILE__ hasn't been remapped and the build tree is under the source tree
+Mar 11 15:15:36 <bluca>	no oot build works too, see commit message https://github.com/systemd/systemd/commit/a0b15b41771a262d042dbb6ac32a7f9614100714
+Mar 11 15:20:10 <rburton>	ok, just the remapping
+**** BEGIN LOGGING AT Tue Mar 12 00:38:03 2024
+
+Mar 12 00:38:02 *	Now talking on #systemd
+Mar 12 00:38:02 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 12 00:38:02 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Tue Mar 12 00:55:46 2024
+
+Mar 12 00:55:45 *	Now talking on #systemd
+Mar 12 00:55:45 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 12 00:55:45 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)

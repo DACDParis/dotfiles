@@ -721,3 +721,51 @@ Mar 10 17:54:44 <jmcgee>	2 questions about devcontainers.  is there a way to set
 Mar 10 23:24:27 *	Now talking on #vscode
 Mar 10 23:24:27 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
 Mar 10 23:24:27 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+**** BEGIN LOGGING AT Mon Mar 11 00:20:38 2024
+
+Mar 11 00:20:36 *	Now talking on #vscode
+Mar 11 00:20:36 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 11 00:20:36 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+**** BEGIN LOGGING AT Mon Mar 11 00:24:22 2024
+
+Mar 11 00:24:21 *	Now talking on #vscode
+Mar 11 00:24:21 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 11 00:24:21 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+**** BEGIN LOGGING AT Mon Mar 11 01:59:29 2024
+
+Mar 11 01:59:28 *	Now talking on #vscode
+Mar 11 01:59:28 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 11 01:59:28 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+**** BEGIN LOGGING AT Mon Mar 11 05:24:02 2024
+
+Mar 11 05:24:01 *	Now talking on #vscode
+Mar 11 05:24:01 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 11 05:24:01 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+**** BEGIN LOGGING AT Mon Mar 11 06:07:46 2024
+
+Mar 11 06:07:44 *	Now talking on #vscode
+Mar 11 06:07:44 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 11 06:07:44 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+**** BEGIN LOGGING AT Mon Mar 11 11:18:07 2024
+
+Mar 11 11:18:05 *	Now talking on #vscode
+Mar 11 11:18:05 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 11 11:18:05 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+Mar 11 11:22:52 <[twisti]>	any way to use vscode to connect to a remote system via ssh without leaving the vscode server binaries on the remote system ?
+Mar 11 17:55:58 <rawtaz>	[twisti]: Remote: SSH - does that leave binaries on the remote system? i thought it just shuffled files over SSH or SFTP.
+Mar 11 18:09:08 <[twisti]>	rawtaz: yeah, it installs vscode on the remote somewhere, i forgot where. maybe ~/.vscode ?
+Mar 11 18:59:02 <rawtaz>	[twisti]: TIL :>
+Mar 11 18:59:13 <rawtaz>	it sure says right on https://code.visualstudio.com/docs/remote/ssh
+Mar 11 18:59:51 <rawtaz>	perhaps you want to use something like https://marketplace.visualstudio.com/items?itemName=liximomo.sftp instead
+Mar 11 19:07:32 <rawtaz>	[twisti]: i must say im not very keen on having vs code execute stuff on my servers.
+Mar 11 22:41:28 <[twisti]>	ill check it out, thanks
+**** BEGIN LOGGING AT Tue Mar 12 00:38:03 2024
+
+Mar 12 00:38:02 *	Now talking on #vscode
+Mar 12 00:38:02 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 12 00:38:02 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+**** BEGIN LOGGING AT Tue Mar 12 00:55:46 2024
+
+Mar 12 00:55:45 *	Now talking on #vscode
+Mar 12 00:55:45 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 12 00:55:45 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)

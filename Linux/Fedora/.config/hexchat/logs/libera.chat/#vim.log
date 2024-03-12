@@ -1978,3 +1978,205 @@ Mar 10 17:39:53 <pid1400>	works! thank you lopid
 Mar 10 23:24:27 *	Now talking on #vim
 Mar 10 23:24:27 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
 Mar 10 23:24:27 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Mon Mar 11 00:20:38 2024
+
+Mar 11 00:20:36 *	Now talking on #vim
+Mar 11 00:20:36 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 11 00:20:36 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Mon Mar 11 00:24:22 2024
+
+Mar 11 00:24:21 *	Now talking on #vim
+Mar 11 00:24:21 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 11 00:24:21 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Mon Mar 11 01:59:29 2024
+
+Mar 11 01:59:28 *	Now talking on #vim
+Mar 11 01:59:28 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 11 01:59:28 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Mon Mar 11 05:24:02 2024
+
+Mar 11 05:24:01 *	Now talking on #vim
+Mar 11 05:24:01 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 11 05:24:01 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Mon Mar 11 06:07:45 2024
+
+Mar 11 06:07:44 *	Now talking on #vim
+Mar 11 06:07:44 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 11 06:07:44 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+Mar 11 10:33:42 <hackinghorn>	hi
+Mar 11 10:33:53 <hackinghorn>	good morning, all
+Mar 11 10:35:17 <hackinghorn>	I'm wondering if 'gf' and other commands that open other files in the same window have a quick way to open them in a split
+Mar 11 10:36:30 <hackinghorn>	oh ctrl+w f I think
+**** BEGIN LOGGING AT Mon Mar 11 11:18:06 2024
+
+Mar 11 11:18:05 *	Now talking on #vim
+Mar 11 11:18:05 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 11 11:18:05 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+Mar 11 16:06:34 <FakuVe>	hi there . Is there a way to remove a quickfix list out of the quickfixlist stack?
+Mar 11 16:07:13 <FakuVe>	So say I create one qfList with :vimgrep
+Mar 11 16:07:32 <FakuVe>	Then I see this outputs 1
+Mar 11 16:07:34 <FakuVe>	echo getqflist({'nr' : 0}).nr
+Mar 11 16:07:43 <FakuVe>	I want to remove that qfList
+Mar 11 16:08:00 <FakuVe>	in order to create otherone newer with a :vimgrep command
+Mar 11 16:08:05 <FakuVe>	and do echo getqflist({'nr' : 0}).nr
+Mar 11 16:08:10 <FakuVe>	and get again 1
+Mar 11 16:10:08 <romainl>	why is that list bothering you?
+Mar 11 16:10:22 <FakuVe>	Cause grepadd is not working properly
+Mar 11 16:10:29 <FakuVe>	and I need to update this list
+Mar 11 16:10:42 <FakuVe>	I wanted to update the ocurrences on this list
+Mar 11 16:11:16 <FakuVe>	Put in the new ocurrences , takeout the no-longer ocurrences
+Mar 11 16:11:40 <FakuVe>	At the same time I am doing quite a lot of stuff with the qfList
+Mar 11 16:11:45 <FakuVe>	so Its custom formated
+Mar 11 16:12:02 <FakuVe>	And already opened in a new tab
+Mar 11 16:12:38 <FakuVe>	I need to create the logic to remove that quickfix list , close the tab. create a new quickfix list to open it on a new tab
+Mar 11 16:12:39 <romainl>	:h setqflist-action
+Mar 11 16:12:39 <digmbot>	:help setqflist-action -> http://vimhelp.appspot.com/builtin.txt.html#setqflist-action
+Mar 11 16:12:50 <FakuVe>	yeah I know
+Mar 11 16:12:59 <FakuVe>	I am looking at it constantly
+Mar 11 16:13:06 <romainl>	and?
+Mar 11 16:13:56 <FakuVe>	well yeah
+Mar 11 16:13:58 <FakuVe>	the problem
+Mar 11 16:14:25 <FakuVe>	the problem is that I am using vimgrep to create that new qfList
+Mar 11 16:14:48 <FakuVe>	So In this case I should do my own custom setqflist
+Mar 11 16:14:59 <romainl>	yes
+Mar 11 16:15:04 <FakuVe>	which is difficult
+Mar 11 16:15:10 <FakuVe>	I guess
+Mar 11 16:15:10 <romainl>	no
+Mar 11 16:15:30 <FakuVe>	I just want to check for the following ocurrences
+Mar 11 16:15:37 <romainl>	it's a list of dicts, easy-peasy
+Mar 11 16:15:42 <FakuVe>	"/ (X)$/"
+Mar 11 16:16:05 <FakuVe>	So to match those lines with that pattern
+Mar 11 16:16:17 <romainl>	yeah?
+Mar 11 16:17:17 <FakuVe>	https://termbin.com/vz7p
+Mar 11 16:17:24 <FakuVe>	This is my custom function I am using
+Mar 11 16:17:29 <FakuVe>	In order to get what I wanted
+Mar 11 16:17:44 <romainl>	wall of code
+Mar 11 16:19:05 <FakuVe>	If you can see i am formatting the Qf list
+Mar 11 16:19:16 <FakuVe>	In order to not to include linenumbers of matches
+Mar 11 16:19:28 <FakuVe>	and remove the entry occurences as well
+Mar 11 16:19:37 <romainl>	sorry but I don't have time to read so much code right now
+Mar 11 16:19:43 <FakuVe>	ok
+Mar 11 16:19:53 <FakuVe>	Thanks anyways
+Mar 11 16:20:40 <romainl>	I'm just not sure why you want that dance with the lists when creating a new list is so easy.
+Mar 11 16:21:05 <FakuVe>	because I need to be closing it an opening it back
+Mar 11 16:21:15 <FakuVe>	and I just want to automate it to a keypress
+Mar 11 16:21:23 <romainl>	that is what I don't get
+Mar 11 16:21:27 <FakuVe>	and have this qfList in a separated tab
+Mar 11 16:21:33 <FakuVe>	Well , automation
+Mar 11 16:21:48 <FakuVe>	If I am gonna have to refresh this every 30 seconds
+Mar 11 16:22:11 <FakuVe>	and I have to open it manually in a newtab each time I need it
+Mar 11 16:22:17 <FakuVe>	It is just not useful to me 
+Mar 11 16:22:30 <romainl>	context is lacking, here
+Mar 11 16:23:00 <FakuVe>	Basically I have textfiles that have a lot of " (X)$"
+Mar 11 16:23:16 <FakuVe>	at the end of the lines . I want to check all of them like with grep
+Mar 11 16:23:27 <romainl>	"check"?
+Mar 11 16:23:30 <FakuVe>	and been able to navigate through it using a quickfix list
+Mar 11 16:23:40 <FakuVe>	So far the functionality works
+Mar 11 16:23:48 <FakuVe>	It works like a charm
+Mar 11 16:23:57 <romainl>	you don't need a custom function for that
+Mar 11 16:24:12 <FakuVe>	The problem is that , when I introduce more " (X)$" and I want to refresh the qfList
+Mar 11 16:24:19 <FakuVe>	I have to do all this cumbersome process
+Mar 11 16:24:29 <FakuVe>	Thats why I am trying to write a function to do that for me
+Mar 11 16:24:55 <romainl>	to do what? add a " (X)$" and refresh the list?
+Mar 11 16:25:15 <FakuVe>	yeah , in my doucment I am adding " (X)$"
+Mar 11 16:25:24 <FakuVe>	then I want to refresh the qfList
+Mar 11 16:25:59 <FakuVe>	Note that I am using a custom formatting function for that qfList too . I dont want the entries nor the ocurrences to be shown
+Mar 11 16:26:15 <FakuVe>	Also I want this qfList to be oppened in the nextab
+Mar 11 16:26:24 <romainl>	what does the list show, then?
+Mar 11 16:26:37 <FakuVe>	the lines of the ocurrences
+Mar 11 16:27:09 <FakuVe>	Also the buffer in which the qfList is opened maintains the ft of the Original file
+Mar 11 16:27:55 <FakuVe>	I have done it with the function I have pasted in the link
+Mar 11 16:28:01 <FakuVe>	The problem is when refreshing
+Mar 11 16:29:11 <FakuVe>	It is pretty confusing
+Mar 11 16:29:17 <FakuVe>	One question.
+Mar 11 16:29:37 <FakuVe>	If a qfList is opened in a buffer
+Mar 11 16:30:05 <FakuVe>	If I do a setqflist to modify such a qfList , will the buffer change accordingly?
+Mar 11 16:33:44 <FakuVe>	it looks like no
+Mar 11 16:34:04 <FakuVe>	That is the main limiation , anyways
+Mar 11 16:34:07 <FakuVe>	Thank you
+Mar 11 16:34:57 <FakuVe>	my question is also , there is no way to remove a qfList from stack
+Mar 11 16:35:03 <FakuVe>	from the stack of qfList
+Mar 11 16:35:10 <FakuVe>	which I guess is no
+Mar 11 17:15:40 <romainl>	the only qf-related functions are setqflist() getqflist() setloclist() and getloclist()
+Mar 11 17:16:42 <romainl>	and again, from your description it is not clear why you would want to remove a list when it is so cheap to make a new one
+Mar 11 17:17:57 <romainl>	is there a confusion between the notions of "quickfix list" and "quickfix window" by any chance?
+Mar 11 19:32:45 <cek>	How can I delete a highlighted by search text?
+Mar 11 19:32:58 <lopid>	replace it with nothing
+Mar 11 21:03:07 <FakuVe>	Cannot I declare an uninitialized variable , such as a string?
+Mar 11 21:03:23 <FakuVe>	w:myVar: string   # This wont let me do it
+Mar 11 21:03:40 <FakuVe>	whereas 
+Mar 11 21:03:46 <FakuVe>	w:myVar = 'Pepe'    # This is alright
+Mar 11 21:23:01 <carbonfiber>	How did people browse/explore files and directories using vi/vim before netrw existed? did netrw have a predecessor?
+Mar 11 21:32:42 <nickspoon>	I assume people just used :e, :find, :grep, :tag etc.
+Mar 11 22:05:55 <FakuVe>	in trim({text} [, {mask} [, {dir}]])
+Mar 11 22:06:15 <FakuVe>	the mask is it a pattern?
+Mar 11 22:06:28 <FakuVe>	What is it considered as a mask here?
+Mar 11 22:07:12 <nickspoon>	There are some pretty good examples in that help topic
+Mar 11 22:07:49 <FakuVe>	ok yeah 
+Mar 11 22:07:56 <FakuVe>	I was looking for other function
+Mar 11 22:09:14 <FakuVe>	I was looking for matchstr() ^___^
+Mar 11 22:19:08 <CrazyTux[m]>	Hey guys working with Arabic (RTL) language and its driving me crazy I've read :help arabic and I'm unable to modify some text without it jumping around all over the place, same thing is happening in vscode as well, any suggestions?
+Mar 11 22:19:09 <digmbot>	:help arabic -> http://vimhelp.appspot.com/options.txt.html#%27arabic%27
+Mar 11 22:20:42 <nickspoon>	I don't have any experience with RTL sorry but if the same thing is happening in vscode then that sounds weird? There's zero connection between vim and vscode...
+Mar 11 22:24:06 <CrazyTux[m]>	Yea... any Arabic speakers here that can give me a hand? :)
+Mar 11 22:46:23 <FakuVe>	So I have got in $HOME/.vim/autoload/dan.vim a function definition to be used widely across my files
+Mar 11 22:46:30 <FakuVe>	but I have migrated to vim9script
+Mar 11 22:46:53 <FakuVe>	what I used to define as
+Mar 11 22:47:11 <FakuVe>	function dan#closeloclist()
+Mar 11 22:47:15 <FakuVe>	now is defined as
+Mar 11 22:47:23 <FakuVe>	export def DanCloseloclist()
+Mar 11 22:47:39 <FakuVe>	How can I access this function from other files?
+Mar 11 22:47:55 <FakuVe>	I am doing call DanCloseloclist()
+Mar 11 22:48:16 <FakuVe>	E117: Unknown function: DanCloseloclist
+Mar 11 22:49:55 <nickspoon>	you import it with    import autoload 'dan.vim' as dan   ... then:   dan.DanCloseloclist()
+Mar 11 22:51:42 <nickspoon>	Actually I don't think you'll need the  "as dan"  bit
+Mar 11 22:51:57 <FakuVe>	So it is not autoloaded anymore?
+Mar 11 22:52:12 <nickspoon>	> import autoload ...
+Mar 11 22:52:13 <FakuVe>	I need the import statement?
+Mar 11 22:52:34 <nickspoon>	You need the import statement but it's still autoloaded
+Mar 11 22:52:51 <FakuVe>	right
+Mar 11 22:53:26 <nickspoon>	See :h import-autoload
+Mar 11 22:53:26 <digmbot>	:help import-autoload -> http://vimhelp.appspot.com/vim9.txt.html#import-autoload
+Mar 11 22:55:02 <FakuVe>	E1094: Import can only be used in a script
+Mar 11 22:56:23 <FakuVe>	So I cannot fire this from the ex-command console
+Mar 11 22:58:40 <FakuVe>	my days...
+Mar 11 23:00:09 <nickspoon>	You still can, use the legacy format
+Mar 11 23:00:22 <nickspoon>	:call dan#DanCloseloclist()
+Mar 11 23:01:08 <FakuVe>	alright
+Mar 11 23:01:12 <FakuVe>	way easier
+Mar 11 23:01:44 <FakuVe>	I dont know how are people gonna test their functions if they get those erros
+Mar 11 23:02:06 <FakuVe>	even If you just want to call the function , you wont be able
+Mar 11 23:12:26 <m_ben>	FakuVe: slightly more efficient: import autoload '../autoload/dan.vim' assuming you put it in a script file located in plugin/*.vim
+Mar 11 23:22:20 <m_ben>	FakuVe: I test it by putting that import statement inside a plugin/ file and run ":source %" while editing that file and voilà :)
+Mar 11 23:23:35 <FakuVe>	cheerz hehe
+Mar 11 23:30:59 <m_ben>	in after/ftplugin/vim.vim: nnoremap <buffer> g<cr> <cmd>source %<cr>
+Mar 11 23:35:28 <habamax>	:%source if you have unsaved vim file
+Mar 11 23:38:01 <m_ben>	and for visual selection: xnoremap <buffer> g<cr> <esc>:vim9cmd :'<,'>source<cr>
+Mar 11 23:45:55 <habamax>	I have similar as a global map (to eval things everywhere)
+Mar 11 23:46:20 <habamax>	it actually is an operator <space>vip or <space>vv
+Mar 11 23:49:47 <m257>	What is a good C lsp for neovim. Right now I am using clangd.
+Mar 11 23:52:12 <habamax>	probably the same as for vim or emacs, clangd
+Mar 11 23:52:23 <habamax>	but to be 100% sure, ask #neovim
+Mar 11 23:56:54 <FakuVe>	I have got an issue translating a function to vim9script I have posted on reddit
+Mar 11 23:57:00 <FakuVe>	https://www.reddit.com/r/vim/comments/1bch6q1/need_to_nest_a_function_in_vim9script_but_unable/
+Mar 11 23:57:17 <FakuVe>	If anyone wants to take a look , I am disconnecting this. Almost done this functionality
+Mar 11 23:57:20 <FakuVe>	thanks all
+**** BEGIN LOGGING AT Tue Mar 12 00:38:03 2024
+
+Mar 12 00:38:02 *	Now talking on #vim
+Mar 12 00:38:02 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 12 00:38:02 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Tue Mar 12 00:55:46 2024
+
+Mar 12 00:55:45 *	Now talking on #vim
+Mar 12 00:55:45 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 12 00:55:45 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+Mar 12 01:07:57 <m_ben>	FakuVe: remove the quotes from 'LocFormatting'
+Mar 12 02:03:01 <trevdev>	Heya guys.  I had been automatically sending payments to register@moolenaar.net for months. I cannot recall the last time I got a confirmation from Bram, automated or otherwise, may he rest in peace.  I just wanna know if that money is actually doing any work or if I need to update something?  My donation total also does not line up with what
+Mar 12 02:03:01 <trevdev>	I've donated.
+Mar 12 02:22:17 <habamax>	try asking vim_dev maillist, trevdev
+Mar 12 02:31:20 <trevdev>	habamax: I mailed vim@vim.org and I don't see my question in vim_use.  I will try vim-dev
+Mar 12 02:32:32 <nickspoon>	I believe new email addresses get approved before they get through, so if it's the first time you've posted to the mailing list it may take a day or two to come through
+Mar 12 02:34:46 <trevdev>	Thanks.  I did send a message a couple of days ago, I'll just check in later
+Mar 12 02:52:05 <habamax>	I don't think Christian has access to the fund and any donations, but he might know details on who is in charge
+Mar 12 02:53:21 <habamax>	And actually, whatever you will ask in Discussions on github will also be sent to vim_dev https://github.com/vim/vim/discussions

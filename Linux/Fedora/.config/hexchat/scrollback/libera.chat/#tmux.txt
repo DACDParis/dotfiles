@@ -636,3 +636,34 @@ T 1710049342 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/deve
 T 1710109467 19*	Now talking on 22#tmux
 T 1710109467 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
 T 1710109467 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710112836 19*	Now talking on 22#tmux
+T 1710112836 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710112836 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710113061 19*	Now talking on 22#tmux
+T 1710113061 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710113061 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710118768 19*	Now talking on 22#tmux
+T 1710118768 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710118768 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710131041 19*	Now talking on 22#tmux
+T 1710131041 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710131041 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710133664 19*	Now talking on 22#tmux
+T 1710133664 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710133664 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710152285 19*	Now talking on 22#tmux
+T 1710152285 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710152285 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710165361 18<29dorfen18>	hi, can anyone help me in getting the statusbar to have a transparent background? set status-bg default just turns the background green
+T 1710165629 18<28jakllsch18>	define transparent
+T 1710165636 18<24demure18>	dorfen: https://man.openbsd.org/OpenBSD-current/man1/tmux.1#fg=colour
+T 1710165832 18<24demure18>	so, you might be able to use bg=default
+T 1710165915 18<29dorfen18>	I was actually just quite stupid and had a theme overwrite the settings after i defined them.. Just a skill issue on my part :)
+T 1710173766 18<26hasp18>	hi! i want to bind '|' key to split window vertically but ":bind | split-window -v" is splitting window horizontally instead.
+T 1710173797 18<26hasp18>	am i doing something wrong?
+T 1710200282 19*	Now talking on 22#tmux
+T 1710200282 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710200282 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710201345 19*	Now talking on 22#tmux
+T 1710201345 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710201345 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)

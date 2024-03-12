@@ -1,0 +1,44 @@
+add_newline = true
+format = """
+[ ](bg:#202020 fg:#5993FF)\
+$directory\
+$nodejs\
+$rust\
+$golang\
+$php\
+$character"""
+
+[directory]
+style = "fg:#C8C8C8 bg:#202020"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = ""
+style = "bg:#C8C8C8"
+format = '[[$symbol ](bg:#2D2E31 fg:#C8C8C8)[$branch ](fg:#5993FF bg:#2D2E31)]($style)'
+
+[git_status]
+style = "bg:#394260"
+format = '[[($all_status$ahead_behind )](fg:#5993FF bg:#2D2E31)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#212736"
+format = '[[$symbol ($version) ](fg:#C8C8C8 bg:#2D2E31)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#212736"
+format = '[[$symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'

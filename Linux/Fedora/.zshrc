@@ -1,12 +1,12 @@
 fpath+=~/.zfunc
 
-# Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
 setopt notify
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
+
 zstyle :compinstall filename '/home/david/.zshrc'
 
 autoload -Uz compinit
@@ -43,6 +43,8 @@ PERL_MB_OPT="--install_base \"/$HOME/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/$HOME/perl5"; export PERL_MM_OPT;
 
 
+export PATH="/$HOME/scripts:$PATH"
+export PATH="/$HOME/.config/emacs/bin:$PATH"
 export EDITOR="/$HOME/.local/bin/lvim"
 alias lv="/home/david/.local/bin/lvim"
 alias slv="sudo /home/david/.local/bin/lvim"
@@ -93,7 +95,7 @@ eval "$(starship init zsh)"
 
 export FZF_DEFAULT_OPTS="--history=$HOME/.fzf_history"
 
-
+#ZSH Plugins
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

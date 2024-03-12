@@ -2439,3 +2439,317 @@ Mar 10 23:24:27 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu
 Mar 10 23:24:27 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
 Mar 10 23:24:27 *	Channel #MacOSX url: https://osxwiki.net/
 Mar 10 23:30:27 <Brains>	Ha.
+**** BEGIN LOGGING AT Mon Mar 11 00:20:38 2024
+
+Mar 11 00:20:36 *	Now talking on #MacOSX
+Mar 11 00:20:36 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 11 00:20:36 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 11 00:20:36 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 11 00:20:36 *	Channel #MacOSX url: https://osxwiki.net/
+**** BEGIN LOGGING AT Mon Mar 11 00:24:22 2024
+
+Mar 11 00:24:21 *	Now talking on #MacOSX
+Mar 11 00:24:21 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 11 00:24:21 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 11 00:24:21 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 11 00:24:21 *	Channel #MacOSX url: https://osxwiki.net/
+**** BEGIN LOGGING AT Mon Mar 11 01:59:29 2024
+
+Mar 11 01:59:28 *	Now talking on #MacOSX
+Mar 11 01:59:28 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 11 01:59:28 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 11 01:59:28 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 11 01:59:28 *	Channel #MacOSX url: https://osxwiki.net/
+**** BEGIN LOGGING AT Mon Mar 11 05:24:02 2024
+
+Mar 11 05:24:01 *	Now talking on #MacOSX
+Mar 11 05:24:01 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 11 05:24:01 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 11 05:24:01 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 11 05:24:01 *	Channel #MacOSX url: https://osxwiki.net/
+Mar 11 06:05:57 <swift110-mobile>	Hmmm
+**** BEGIN LOGGING AT Mon Mar 11 06:07:45 2024
+
+Mar 11 06:07:44 *	Now talking on #MacOSX
+Mar 11 06:07:44 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 11 06:07:44 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 11 06:07:44 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 11 06:07:44 *	Channel #MacOSX url: https://osxwiki.net/
+**** BEGIN LOGGING AT Mon Mar 11 11:18:07 2024
+
+Mar 11 11:18:05 *	Now talking on #MacOSX
+Mar 11 11:18:05 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 11 11:18:05 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 11 11:18:05 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 11 11:18:05 *	Channel #MacOSX url: https://osxwiki.net/
+Mar 11 12:42:56 <D1nger>	Hello folks, I'm developing a VSCode extension for the Serverless Workflow specification but there seems to be a bug on MacOS. As I don't have access to any Mac device, could someone be so kind to test it for me ? The PR for the extension with the issue is there: https://github.com/serverlessworkflow/vscode-extension/pull/26 and the process to test the extension is documented here: https://pastebi
+Mar 11 12:45:20 <hjf_>	Hi all. I have a 2020 intel mbp with 16G of ram. Freshly rebooted and running Docker, Rider, VS Code, Slack, and Chrome, it says it's using 9.5G out of 16G of ram. but 2GB out of 3GB of swap used. Why is it swapping if it has enough memory?
+Mar 11 12:47:23 <MacinMan>	How's it going ?
+Mar 11 13:01:46 <MacinMan>	I set up an install of Mojave on an external drive and have set up some 32 bit games and such. I wanted to get my passwords from current Safari into the older version but it doesn't seem to have the import option for passwords. Just bookmarks, which I have done.  Anyway to get the passwords imported ?I can open the csv file in BBEdit and get  the passwords that way, but there should be an easier way to import directly.
+Mar 11 13:02:48 <MacinMan>	The version of Safari installed is 14.x
+Mar 11 13:25:22 <MacinMan>	well I solved the password issue.  Safari 14 doesn't have the option but Safari 15 does, which is in Catalina. So I had to create a Catalina VM anyway to install GOG Galaxy to install the games then move them to Mojave. So now I can easily copy logins from the VM to the host.
+Mar 11 13:27:01 <MacinMan>	I can also set up Firefox ESR which many site logins as well
+Mar 11 13:30:18 <setnan>	wow lot of questions this noon cet :) hjf_: imho "enough memory" doesn't mean anything relevant from macOS mem handling perspective. At some point, macOS considers (perhaps under pressure at a brief moment) that some resources in ram can be swapped to disk, until its owner requests it
+Mar 11 13:37:35 <setnan>	(… and since these resources will stay on disk until the owner accesses it, delay can be long, more real ram is available to other process/apps, pretty smart i think)
+Mar 11 13:50:32 *	ChanServ gives channel operator status to cirrusbonsai
+Mar 11 15:58:42 <MacinMan>	I'm back
+Mar 11 15:59:31 <MacinMan>	utterer: did steam drop Mojave, or do they still support it?
+Mar 11 16:00:01 <utterer>	official support ended feb 15th 2024 - https://help.steampowered.com/en/faqs/view/743F-2E0E-C9A5-C375
+Mar 11 16:00:42 <utterer>	also most of the games in your GOG account can most likely be downloaded directly from GOG.com through the web browser under offline installers
+Mar 11 16:01:58 <MacinMan>	utterer: they can but the ones the Gog galaxy installs are newer versions even if they are 32 bit. So I created a Catalina vm with fusion 11.5.7 installed Gog galaxy in that install the games then copy them to Mojave 
+Mar 11 16:02:28 <utterer>	everyone oen I have gotten is the exact same version etween offline or GOG client so I guess there are exceptions
+Mar 11 16:06:53 <MacinMan>	utterer: well I don't think Dragonsphere is maintained anymore by GOG it was never updated to a 64-bit runtime most of my other games have been
+Mar 11 16:07:12 <MacinMan>	And it doesn't seem to work with ScummVM
+Mar 11 16:07:27 <MacinMan>	or I could play it that way
+Mar 11 16:08:29 <utterer>	yep I am looking at the Dragonsphere offline installer on gog.com. same version as the GOG Galaxy
+Mar 11 16:09:00 <MacinMan>	Maybe they updated it then since the last time I checked
+Mar 11 16:14:01 <utterer>	i think you asked the other day about Vectornator or whatever it turned to - i deleted it I didn't try the subscription version I have no interest.  Anything I may need to do with vectors I can get done with Pixelmator at this point
+Mar 11 16:15:07 <MacinMan>	I didn't realize pixelmator did vectors now too
+Mar 11 16:22:40 <MacinMan>	utterer: I also was able to still download a copy of boxer 1.4.0 and have it set up too, to create double clickable dos games
+Mar 11 16:25:22 <utterer>	why don't your repackage the games that didn't have their versions of boxer updated on GOG to the latest version isntead of having multiple OSes just to play a game?
+Mar 11 16:26:26 <MacinMan>	I tried to pull the game out of the container and had people here help too a while back as the plan was to just run it in dosbox. And we couldn't get it to work
+Mar 11 16:56:48 <uxfi>	MacinMan, hi sir
+Mar 11 16:57:01 <MacinMan>	Hi uxfiboy
+Mar 11 17:04:16 <uxfi>	cold day
+Mar 11 17:11:27 <swift110-mobile>	Hey uxfi
+Mar 11 17:11:57 <swift110-mobile>	Hello all
+Mar 11 17:12:00 <uxfi>	hi swift110-mobile 
+Mar 11 17:12:01 <uxfi>	hru
+Mar 11 17:12:44 <swift110-mobile>	Good afternoon folks
+Mar 11 17:12:57 <swift110-mobile>	How r u Uxfii
+Mar 11 17:13:03 <swift110-mobile>	lol
+Mar 11 17:13:16 <uxfi>	swift110-mobile, https://www.youtube.com/watch?v=-ABH4ezD2RQ
+Mar 11 17:13:17 <uxfi>	live
+Mar 11 17:18:19 <MacinMan>	utterer: the other reason I wanted to keep an older version around is I like the older UI layout too in little ways so since Apple doesn't give many options to change the UI anymore it's nice to boot into a different one from time to time
+Mar 11 17:18:45 <hjf_>	setnan: yes but i need all of these processes to be on RAM. i don't need osx to be swapping first thing in the morning.
+Mar 11 17:19:16 <MacinMan>	One little change I like is how the Notification Center separated notifications and widgets  pre Big Sur. 
+Mar 11 17:22:34 <MacinMan>	What's the gear icon in textual do? I click it and it doesn't seem t odd anything
+Mar 11 17:22:38 <utterer>	Yes I think you mention it every time you make a new Mojave boot drive lol
+Mar 11 17:22:40 <MacinMan>	the one at the boittom
+Mar 11 17:24:02 <utterer>	probably a full afternoon of tinkering and research with Boxer  and the old GOG release can probably get it up and running.  All the assets are there and in place if it works with dosbox on the older os
+Mar 11 17:24:27 <utterer>	but if it is easier to install a whole new OS and boot into it to play then thats fine too
+Mar 11 17:25:01 <MacinMan>	i don't remember who helped me but he was pretty knowable this was a few years back
+Mar 11 17:25:11 <MacinMan>	It was either when Catalina was current or big sur
+Mar 11 17:28:55 <MacinMan>	i guess the whole thing is when I've taken a step back to look at things, macOS hasn't really changed all that much. Yes there are updates / security patches, etc but getting stuff done in the Mac UI isn't all that different. Plus having an older Mac I've been looking for ways to make it useful having an older Mac so I don't feel like I have to rush to get a new one. Just to keep up
+Mar 11 17:29:34 <swift110-mobile>	So the hard drive that I have in my 2010 MacBook, I would really like to use as an external drive for my 2015 MacBook Pro
+Mar 11 17:30:24 <swift110-mobile>	At the moment, I’m not sure if I’m gonna be able to bring the old MacBook to life and died on me again and so I’m considering just taking a drive out and making use of space especially since it’s the amount of storage I have the MacBook Pro 2015
+Mar 11 17:32:48 <utterer>	realize that it is going to be a 14 year old hard drive that you will be using as an external drive unless you replaced it at some point after that
+Mar 11 17:33:53 <MacinMan>	swift110-mobile: does it have a really nice whine to it? My G3's stock hard drive had the classic metallic whine to it and it combined with the fans always used to make me fall asleep in a quiet room 
+Mar 11 17:35:00 <swift110-mobile>	utterer: it’s a relatively new SSD 500 GB
+Mar 11 17:35:11 <utterer>	you are gtg then
+Mar 11 17:35:35 <swift110-mobile>	When I got the 2010 MacBook, I researched how to make upgrades to it and I put in 16 gigs of ram swapped out the original hard drive for a brand new one and then put Catalina on the machine instead of El Capitan or whatever was on there before
+Mar 11 17:36:45 <swift110-mobile>	I know I’m gonna need some kind of enclosure cause I wanted to look nice and I want access to my old files and stuff that I have on the on the Drive itself.
+Mar 11 17:37:12 <swift110-mobile>	I would love to have another machine to just plop the drive in and that way I can just use it like normal and have access to the operating system
+Mar 11 17:37:52 <MacinMan>	utterer: so what's your legacy OS of choice for your games? Mac OS 9?
+Mar 11 17:38:36 <MacinMan>	I used to have a 9.0.4 DVD retail I think I got rid of it in the move
+Mar 11 17:38:48 <MacinMan>	all my legacy stuff went in the trash to save space
+Mar 11 17:39:14 <utterer>	There were some great games in Mac OS 7-9 but using it is more of a novelty for me while I have the machine but it only does OS 9
+Mar 11 17:40:02 <utterer>	I have a power computing machine at my moms house that would run mac OS 7 - 8 but really not too interested in anything on it now that Scumm is out on iPad / iPhone through app store.  I mostly like the old Sierra / LucasArts games from the era
+Mar 11 17:40:35 <utterer>	the other ones I played, doom, quake, duke nukem all have modern mac OS engine ports with the data files
+Mar 11 17:41:22 <swift110-mobile>	Like to be honest with you if I saw a really cheap MacBook, I would pick it up in a heartbeat and just drop the hard drive in there or even if I got one for free cause I don’t know if I can do anything with this original machine
+Mar 11 17:46:34 <utterer>	but I do like the nostalgia of going back to the old computer and OS in the pre Mac OS sense.  Since Mac OS X just onward and upward, no interest in going back to older OS X releases personally
+Mar 11 17:49:21 <MacinMan>	utterer: I think using a computer would be pretty boring, if we were all forced to use them the same way
+Mar 11 17:55:02 <utterer>	i never said anything otherwise
+Mar 11 17:55:19 <utterer>	i find a computer pretty boring constantly installing and reinstalling different OSes
+Mar 11 17:55:42 <utterer>	I don't want to have to think about what is running and what version I just want to hit the ground running
+Mar 11 17:58:15 <uxfi>	utterer, hi
+Mar 11 18:08:02 <MacinMan>	utterer: it's more the direction apple has taken as a company that makes me feel that way more.  I do agree with you though about just using things. Most of the time I'm that way too. Sometimes though, things to the point where things are so stable I just need to do a bit of tinkering to make things a bit more exciting .
+Mar 11 18:13:49 <MacinMan>	utterer: I'm watching a video  by Louis Roman ranting about the Roku change 
+Mar 11 18:14:17 <MacinMan>	https://www.youtube.com/watch?v=AddtrV6UFFs&t=136s
+Mar 11 18:22:31 <swift110-mobile>	Do you boot from your external Mojave Drive? MacinMan
+Mar 11 18:22:33 <utterer>	i have a roku powered TV but never used one of the roku features once
+Mar 11 18:22:47 <utterer>	and i have Pi Hole block all of the Rolu telemetry 
+Mar 11 18:22:59 <swift110-mobile>	So I have a Roku as well but it’s separate from my TV. Thank goodness and I need to set up a pie hole as well so thank you for reminding me of.
+Mar 11 18:23:05 <MacinMan>	swift110-mobile: yes and Monterey is on the Fusion drive
+Mar 11 18:24:09 <swift110-mobile>	MacinMan: can you please elaborate about your set up like what are you using to put your drive into and how does the fusion drive work? Maybe I’m a little slow right now.
+Mar 11 18:25:04 <MacinMan>	swift110-mobile: the Fusion drive is Apple's stock configuration combining and SSD and mechanical drive for  a balance of mass storage and speed in older Macs before SSDs got larger
+Mar 11 18:25:25 <MacinMan>	Sorry "an SSD"
+Mar 11 18:26:04 <swift110-mobile>	Ok
+Mar 11 18:26:34 <utterer>	i wish they still sold generic dumb TV's outside of the pro-AV / corporate installation market but as long as I can block it
+Mar 11 18:26:45 <swift110-mobile>	What external enclosure are you using for the Monterey os
+Mar 11 18:27:05 <swift110-mobile>	utterer: I’m sure they exist
+Mar 11 18:27:16 <MacinMan>	swift110-mobile: Monterey is on the internal drives inside the iMac
+Mar 11 18:27:27 <swift110-mobile>	I knew there was a reason I was skeptical about having a Roku built into my machine because I don’t trust people being reliable
+Mar 11 18:28:16 <swift110-mobile>	OK, I misunderstood but I’m trying to do is to be able to boot from my Catalina Drive in my MacBook 2015 without physically putting the Drive into the regular hard drive thing I wanna actually be able to boot  externally
+Mar 11 18:28:49 <MacinMan>	swift110-mobile: I'll be back in a bit need to make a call and don't want to have the computer talking in the background
+Mar 11 18:29:22 <swift110-mobile>	Not a problem at all it’s always good to see you
+Mar 11 18:31:53 <utterer>	they exist but hard to get in a larger size from anyplace other than a pro-av / corporate sales vendor
+Mar 11 18:33:01 <utterer>	and then from there it is usually more expensive because the smart TV's are subsidized by the smart provider in a lot of cases
+Mar 11 18:33:20 <swift110-mobile>	Interesting so do you feel more comfortable getting a webOS TV then?
+Mar 11 18:34:26 <MacinMan>	swift110-mobile: I'll try back later no one's answering. I just need to talk to someone from the bank I want to close my old checking account at. I can't go into the branch anymore because they don't exist here. So that's why I changed
+Mar 11 18:35:23 <MacinMan>	I don't need two accounts I had called the lady Friday to have her do it then, but she never called back so I'll see if she calls back later today
+Mar 11 18:36:26 <MacinMan>	swift110-mobile: anyway a Fusion drive is a RAID config where it takes the most access stuff and puts it on the SSD for speed and least used stuff is stored on the mechanical drive
+Mar 11 18:36:54 <MacinMan>	So it cycles things around so the most recently and common used data is the fastest 
+Mar 11 18:37:25 <utterer>	I personally would love a TV that just has HDMI inputs and thats it.  bring your own content.  No OS other than the GUI to set display and picture settings like mid 2000 era flatscreens but my backup is just not using the smart features and blocking them out
+Mar 11 18:37:40 <swift110-mobile>	nice
+Mar 11 18:37:53 <utterer>	as much as I complain though I do like some modern niceities like homekit integration
+Mar 11 18:38:06 <swift110-mobile>	thats what i have a regular lg 32" tv i connect to macbook pro via hdmi
+Mar 11 18:38:10 <utterer>	i can say siri play playstation and it will turn on the tv, set the input, turn on my PS5, and turn the lights off
+Mar 11 18:38:23 <swift110-mobile>	thats cool
+Mar 11 20:10:45 <MacinMan>	utterer: by the way, I am pleased that my setup on this portable drive leaves me 883.3 GB free out of a 1 TB drive that's the os, some apps / games, and one VM
+Mar 11 20:12:15 <utterer>	Were you expecting a different result?
+Mar 11 20:12:38 <MacinMan>	I actually was. I was expecting less free space with all the stuff I put on it
+Mar 11 20:24:52 <utterer>	most of those GOG games are at least from an era limited to CD sizes
+Mar 11 20:26:19 <MacinMan>	utterer: true, but I installed the latest Xcode for Mojave and command line tools so even with the size of all that
+Mar 11 20:26:39 <MacinMan>	I always install Xcode to have the unix command line tools if I want to build source
+Mar 11 20:26:56 <utterer>	i wound up getting rid of Xcode and just keeping the command line tools because I am not going to be programming any mac / ios apps i have realized
+Mar 11 20:40:15 <MacinMan>	i tried that, but HomeBrew complained
+Mar 11 20:40:18 <MacinMan>	So I keep it
+Mar 11 20:53:47 <swift110-mobile>	I love homebrew and yes Xcode is necessary with it
+Mar 11 20:55:52 <MacinMan>	swift110-mobile: one of my biggest frustrations with macOS is I can't just treat it like any other Unix / unix based os when it comes to the tools. Seems like it always has to go back to apple versions of tools being present
+Mar 11 20:56:12 <swift110-mobile>	Yeah
+Mar 11 20:57:17 <isley>	i only have cli tools installed with macports and it works fine. 
+Mar 11 20:57:20 <MacinMan>	Well even if I wanted to do development doesn't apple still lock things down
+Mar 11 20:57:41 <swift110-mobile>	Isley interesting
+Mar 11 20:57:51 <MacinMan>	isley: they're two different projects
+Mar 11 20:58:04 <isley>	yeah, the less shitty one is the one i use 
+Mar 11 20:58:07 <isley>	for reasons like this 
+Mar 11 20:58:33 <MacinMan>	isley: really? I always used to run into broken packages with macports when I used it years back
+Mar 11 20:59:11 <isley>	yes, really. 
+Mar 11 20:59:30 <MacinMan>	isley: plus I wanted home-brew because it goes into /usr/local which is a standard location for building sourc
+Mar 11 20:59:32 <isley>	i think the only thing i install that cares about the full xcode is mpv so i just build that from source. 
+Mar 11 20:59:33 <MacinMan>	e
+Mar 11 20:59:58 <isley>	sorry i have to laugh to myself for a moment about the idea of homebrew using standard locations 
+Mar 11 21:00:12 <MacinMan>	Why?
+Mar 11 21:00:34 <MacinMan>	linux either installs to /usr, or /usr/local
+Mar 11 21:00:58 <MacinMan>	I think FreeBSD is the same
+Mar 11 21:01:10 <MacinMan>	i haven't used FreeBSD in a few years though
+Mar 11 21:01:32 <isley>	well, for one, there's nothing weird or non-standard about using /opt and two it's the obviously better location on a system like macos as evidenced by which project had issues when sip was introduced and which didn't. 
+Mar 11 21:02:07 <swift110-mobile>	 I’ve never used FreeBSD
+Mar 11 21:02:17 <swift110-mobile>	I did check out Solaris years ago
+Mar 11 21:02:45 <MacinMan>	swift110-mobile: you should try FreeBSD if you want a no hand holding challenge to set up your os
+Mar 11 21:02:49 <swift110-mobile>	I do really really like homebrew and will be watching some YouTube videos about it as well today
+Mar 11 21:02:53 <isley>	I used solaris a little bit at work back in like 2005 it was pretty horrible other than zfs which was awesome. 
+Mar 11 21:03:03 <swift110-mobile>	MacinMan: interesting I can always add it to my ventoy stick
+Mar 11 21:03:19 <swift110-mobile>	Haiku os is interesting as well and so is freedom
+Mar 11 21:03:30 <swift110-mobile>	Free dos
+Mar 11 21:04:20 <MacinMan>	Well macOS, at least Mac OS X was a combination of nextstep and FreeBSD technologies. They use the BSD tools instead of GNU I rthink
+Mar 11 21:04:29 <MacinMan>	it's been a while so my info could be outdated
+Mar 11 21:04:44 <swift110-mobile>	that sounds right MacinMan
+Mar 11 21:05:29 <swift110-mobile>	So the thing is, I like having variety of operating systems as it gives me flexibility to see how each other does things like at this point I have a Windows laptop. I got machines running Lennox MacBook Pro. Things are really nice right about now.
+Mar 11 21:05:38 <utterer>	cli tools only has been working in homebrew for me
+Mar 11 21:05:51 <Brains>	o7
+Mar 11 21:06:04 <MacinMan>	Hi Brains 
+Mar 11 21:06:07 <utterer>	maybe I am using packages that dont't require xcode or something
+Mar 11 21:06:11 <swift110-mobile>	And my Vento stick is a USB drive. That’s at least 120 gigs so plenty of space for operating systems.
+Mar 11 21:06:20 <swift110-mobile>	Hi Brains
+Mar 11 21:06:34 <swift110-mobile>	Ventoy not vento
+Mar 11 21:07:10 <MacinMan>	swift110-mobile: I used to have Snow Leopard running in Fusion I created the serverVersion.plist so it made client look like server and it worked really well.  That was when apple required the server version to put Mac OS X in a VM
+Mar 11 21:07:28 <MacinMan>	Now, these days, I doubt they care
+Mar 11 21:07:35 <MacinMan>	Brains: might know more
+Mar 11 21:07:47 <MacinMan>	He keeps up with apple licensing 
+Mar 11 21:08:05 <yans>	I use Latest MacOS in VM
+Mar 11 21:08:13 <yans>	Sierra or something
+Mar 11 21:08:21 <swift110-mobile>	Cool Hans
+Mar 11 21:08:30 <yans>	+homebrew, cause without homebrew its worth nothing
+Mar 11 21:08:32 <MacinMan>	yans: Sonoma ?
+Mar 11 21:08:41 <swift110-mobile>	Cool yans how do you use macOS in Gm?
+Mar 11 21:08:43 <swift110-mobile>	Gm
+Mar 11 21:08:48 <swift110-mobile>	Stupid auto correct
+Mar 11 21:08:51 <yans>	BLOOwift110-mobile: cool, depends
+Mar 11 21:08:59 <yans>	swift110-mobile: it is
+Mar 11 21:09:02 *	Brains always turns the autocarrot off.
+Mar 11 21:09:19 *	yans take another drink
+Mar 11 21:09:20 <swift110-mobile>	Yeah, I’m using my iPad to do talk to text and it does good for the most part when it gets it wrong my goodness
+Mar 11 21:09:36 <swift110-mobile>	Yans I had a little whisky earlier and slept
+Mar 11 21:09:50 <MacinMan>	Brains: did apple ever remove the server requirement for VMs when talking Snow Leopard / Leopard?
+Mar 11 21:09:50 <yans>	I drink four-roses
+Mar 11 21:10:00 <yans>	bloody noses like red roses swift110-mobile
+Mar 11 21:11:12 <Brains>	MacinMan: Nup. 10.7 standard (aka 'Client') and upwards can be VMed. Current SLA allows for two simultaneous running instances of macOS/OSX per physical Mac.
+Mar 11 21:12:21 <MacinMan>	Brains: oh well, I still have my snow leopard / leopard discs in .cdr format got rid of the physical discs when I moved
+Mar 11 21:12:39 <Brains>	Oh - Big Sur can't be VM'd but that's because of how it was built. 12+ is no-worries & will work in any VM product that uses the Apple hypervisor.
+Mar 11 21:12:50 <swift110-mobile>	So how are you guys using macOS x in a VM?
+Mar 11 21:13:08 <swift110-mobile>	I used utm at one time
+Mar 11 21:13:12 <MacinMan>	Brains: really? I put Big Sur into Vmware without issues
+Mar 11 21:14:07 <Brains>	It sorta-works Intel-on-Intel with older Fusions, but it wasn't good enough to be stable for admin/deploy duties.
+Mar 11 21:15:04 <MacinMan>	Brains: oh, ok. I do know Big Sur, or newer is required to use the AppleGPU flags for 3D acceleration in VMs
+Mar 11 21:15:07 <yans>	swift110-mobile: https://i.imgur.com/psiZ8hr.jpeg
+Mar 11 21:15:10 <Brains>	I still have Snowkitty in a Fusion VM on this Mac, but I haven't fired it up in well over a year.
+Mar 11 21:15:31 <yans>	swift110-mobile: i start with bigsur, but i can update to any version if i want to
+Mar 11 21:15:43 <Brains>	Used to be how I could still use Eudora for email, but now I use Gyaz & that's actively maintained.
+Mar 11 21:15:47 <yans>	running on thinkpad, via VM
+Mar 11 21:15:58 <yans>	Archlinux is Host
+Mar 11 21:16:08 <Brains>	We don't talk about that here, yans.
+Mar 11 21:16:09 <yans>	or FreeBSD, whatever
+Mar 11 21:16:31 <yans>	<swift110-mobile> So how are you guys using macOS x in a VM?
+Mar 11 21:16:43 <MacinMan>	Brains: do you even have a current Mac? I know you were always outspoken about using a modern os and preferring legacy
+Mar 11 21:17:45 <Brains>	yans: Don't ever mention that you're using non-Apple hardware to host/run macOS, VM or otherwise. Its against SLA, and could even earn you a ban if the chan owner catches you talking about it :)
+Mar 11 21:18:02 <yans>	Brains: oh, i didnt know that
+Mar 11 21:18:24 <yans>	But i thought he was asking about VM
+Mar 11 21:18:26 <yans>	so...
+Mar 11 21:18:30 <Brains>	MacinMan: Nothing built after mid-2012, and I don't use a modern macOS until the build-number stops moving :)
+Mar 11 21:18:38 <yans>	We should help eachother
+Mar 11 21:19:19 <MacinMan>	yans: it's legal to virtualize macOS on a physical Mac. Just not on non apple configurations
+Mar 11 21:19:46 <yans>	Ok, so Mac as host and client only
+Mar 11 21:20:45 <Brains>	Apple software on Apple hardware only. You can put Windows onto a MacBook Pro, put macOS into a HYPER-V VM and be completely SLA-compliant.
+Mar 11 21:20:48 <MacinMan>	Brains: with that topic in mind though, I honestly thought no one cared about Hackintosh anymore.  You just weren't guaranteed support if you asked
+Mar 11 21:21:56 <Brains>	Even the hackintossers are disappearing, why bother putting the effort in when FruitCo could drop x86_64 support soon?
+Mar 11 21:22:00 <yans>	Iam my own support
+Mar 11 21:22:59 <MacinMan>	Brains: well I took some time to try open core which is on a physical Mac. No one seems to complain about that. It just isn't guaranteed to work. So I went back to a supported os
+Mar 11 21:23:33 <MacinMan>	It actually worked well for me except a few minor things graphically
+Mar 11 21:24:03 <Brains>	OCLP works exceptionally well as long as you don't use it with the current macOS, and the gap between macOS n-1 and the Mac's last-officially-supported isn't too great.
+Mar 11 21:24:58 <MacinMan>	Brains: this iMac 17,1 supports Monterey as the last OS and I did Ventura and Sonoma. Both seem to do ok
+Mar 11 21:26:06 <Brains>	Current-macOS is always a work in progress, doubly so with OCLP. Mykola himself recommends always staying a version behind unless you're actively testing for him.
+Mar 11 21:27:51 <MacinMan>	Brains: putting Sonoma in a Fusion VM has worked too since a lot of the tasks for updated software aren't too demanding right now
+Mar 11 21:28:52 <Brains>	Aye, and macOS 15 will likely work there as well, but its rumoured that will be the last macOS that'll work on Intel Macs.
+Mar 11 21:29:36 <MacinMan>	I keep hearing rumblings from the OCLP thread on Macrumors that Sonoma might be the last
+Mar 11 21:31:08 <Brains>	Sonoma will be the last that can be OCLP'd, because there's one officially supported iMac that doesn't have a T2 chip. 15 will likely drop that iMac, once the OS requires a T2 then Myk won't be able to work his magic.
+Mar 11 21:32:15 <Brains>	If Apple do not drop that 2020 iMac from 15's supported-machines list, then OCLP can be made to work with 15.
+Mar 11 21:32:46 <MacinMan>	People seem to think Apple wants to ditch Intel ASAP
+Mar 11 21:32:52 <MacinMan>	or as fast as possible
+Mar 11 21:34:41 <Brains>	They do, but there's a lot of 2018+ Intel Macs still in wide use purely because they're x86-based. 15 will still boot on an Intel Mac (as long as it has a T2) but that'll likely be the last.
+Mar 11 21:38:16 <MacinMan>	quite a few of my programs still work on Mojave and I set that up for 32bit compatibility
+Mar 11 21:39:06 <MacinMan>	There are a few I need Monterey or newer from but it's not too many and I even have a few that need Ventura or better now
+Mar 11 21:41:53 <swift110-mobile>	oh wow
+Mar 11 21:43:22 <MacinMan>	i have the text editor called Smultron and for whatever reason the developer set the minimal requirements for the latest version to Sonoma, or newer.  For a text editor, I really don't get why 
+Mar 11 21:54:50 <MacinMan>	Brains: these system requirements for the Mac make no sense. https://secondlife.com/system-requirements. It says Mac OS X 11.  There is no such thing unless they mean El Capitan 
+Mar 11 21:59:33 <Brains>	Ahh, but Big Sur still reported itself as "Mac OS X" as its embedded 'product family'.
+Mar 11 21:59:57 <Brains>	It also reported 10.16 depending on which variable you looked at.
+Mar 11 22:02:25 <MacinMan>	Brains: well the latest version is running on Mojave so that's older than Big Sur. 
+Mar 11 22:03:15 <Brains>	So whichever intern they've got keeping their site current is lazy and/or couldn't give a shit because "no-one games on a Mac" :)
+Mar 11 22:03:29 *	Brains prefers Real Life to Second Life anyway
+Mar 11 22:04:05 <MacinMan>	I don't really play it. I just use it to test the GPU
+Mar 11 22:09:27 <circuitbone>	https://usercontent.irccloud-cdn.com/file/AwnZBpHr/IMG_2523.jpeg
+Mar 11 22:11:46 <dskull>	finally upgraded to mojave 10.14 - diggin this dark mode
+**** BEGIN LOGGING AT Tue Mar 12 00:38:03 2024
+
+Mar 12 00:38:02 *	Now talking on #MacOSX
+Mar 12 00:38:02 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 12 00:38:02 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 12 00:38:02 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 12 00:38:02 *	Channel #MacOSX url: https://osxwiki.net/
+**** BEGIN LOGGING AT Tue Mar 12 00:55:46 2024
+
+Mar 12 00:55:45 *	Now talking on #MacOSX
+Mar 12 00:55:45 *	Topic for #MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+Mar 12 00:55:45 *	Topic for #MacOSX set by Cpuroast!~Cpuroast@user/cpuroast (Thu Mar  7 20:09:19 2024)
+Mar 12 00:55:45 -ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+Mar 12 00:55:45 *	Channel #MacOSX url: https://osxwiki.net/
+Mar 12 01:30:36 <swift110-mobile>	Cool dskull
+Mar 12 01:38:22 <swift110-mobile>	I’m upgrading homebrew on my MacBook Pro
+Mar 12 01:38:33 <swift110-mobile>	Haven’t done this in ages
+Mar 12 02:39:07 <Brains>	https://pbs.twimg.com/media/GIbqqJrbEAAZk1O.jpg
+Mar 12 02:40:58 <jaybe>	Brains: wtf is that?
+Mar 12 02:41:44 <swift110-mobile>	lol
+Mar 12 02:41:48 <Brains>	Geonematodium arraknis extract, 60mg.
+Mar 12 02:41:52 <pick>	Please Help, on Monterey OS, from time to time I accidentally hit the touchpad in such a way that the windows on the screen move a little (kind of like starting a zoom in or out) and freeze. After that I can move my mouse but clicking does not change focus. keyboard is unresponsive although I can open Force Quit Apps with Cmd-Option-Esc. However
+Mar 12 02:41:52 <swift110-mobile>	The dune movie
+Mar 12 02:41:53 <pick>	click on it cannot change the selection.
+Mar 12 02:42:07 <swift110-mobile>	Pick stop hitting the wrong button then
+Mar 12 02:42:55 <pick>	The swift one doesn't understand the difference between a button and touchpad.
+Mar 12 02:43:19 <Brains>	pick: Go into System Settings > Trackpad & turn off gestures you don't use (especially pinch-to-zoom).
+Mar 12 02:44:06 <Brains>	swift110-mobile: Apple trackpads haven't *had* a button for years, they're all force-touch & multitouch these days.
+Mar 12 02:44:24 <pick>	sometimes closing the lid and opening it unfreezes the system, but today not
+Mar 12 02:44:49 <Brains>	What 'Book do you have, pick?
+Mar 12 02:45:37 <swift110-mobile>	It was a joke, bro
+Mar 12 02:45:55 <swift110-mobile>	I use a MacBook Pro every single day believe me I know about the touchpad
+Mar 12 02:46:39 <Brains>	Then you need to add smileys to your "jokes" ;)
+Mar 12 02:46:59 <Fishman>	^^^
+Mar 12 02:47:33 <pick>	Ah a second suspend broke the magic spell
+Mar 12 02:48:22 <pick>	Brains: One of the last releases of the 2017 Air. Don't know when it was manufactured but bought from apple around 2019.
+Mar 12 02:50:14 <pick>	Brains: What's the hardware angle here?
+Mar 12 02:50:35 <Brains>	Ahh, its a combination of Monterey and its sub-par Metal2 routines for the Intel Graphics. Not much you can do about it, just disable as many trackpad gestures as you can. And remember to restart the machine regularly.
+Mar 12 02:52:19 <pick>	Ah so it's a known bugginess.  I don't know the history, has Apple recently switched to Intel graphics?
+Mar 12 02:53:46 <Brains>	They've been using Intel's integrated graphics cores for many years. All but the very first MacBooks & MacBookk Airs only have integrated Intel graphics.
+Mar 12 03:00:29 <NDPMacBook>	RAISE SHIELDS: https://arstechnica.com/science/2024/03/shields-up-new-ideas-might-make-active-shielding-viable/
+Mar 12 03:03:38 <Brains>	Shields *up* Kyaptin?

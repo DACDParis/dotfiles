@@ -490,3 +490,57 @@ Mar 10 06:42:22 *	Now talking on #grafana
 **** BEGIN LOGGING AT Sun Mar 10 23:24:28 2024
 
 Mar 10 23:24:27 *	Now talking on #grafana
+**** BEGIN LOGGING AT Mon Mar 11 00:20:38 2024
+
+Mar 11 00:20:36 *	Now talking on #grafana
+**** BEGIN LOGGING AT Mon Mar 11 00:24:22 2024
+
+Mar 11 00:24:21 *	Now talking on #grafana
+**** BEGIN LOGGING AT Mon Mar 11 01:59:29 2024
+
+Mar 11 01:59:28 *	Now talking on #grafana
+**** BEGIN LOGGING AT Mon Mar 11 05:24:02 2024
+
+Mar 11 05:24:01 *	Now talking on #grafana
+**** BEGIN LOGGING AT Mon Mar 11 06:07:46 2024
+
+Mar 11 06:07:44 *	Now talking on #grafana
+Mar 11 10:58:46 <MrTrick>	I want to see a count of visits grouped/aggregated by day. 🤔 but I'm seeing a sliding window kind of result, not a bucket kind of result. Is that possible?
+Mar 11 11:04:21 <MrTrick>	(err, using loki)
+Mar 11 11:12:50 <hmht>	MrTrick: I don't have a perfect solution yet, but maybe: You have the count_over_time(... [1d]) time, and there's a "step" time in the query options. Setting the "step" to 1d might be more like what you want, you'll probably want to put the count_over_time back to [$__auto] when you switch to that.
+Mar 11 11:17:01 <hmht>	The buckets will be aligned to your dashboard's range instead of midnight. Haven't figured out how to do that yet.
+**** BEGIN LOGGING AT Mon Mar 11 11:18:07 2024
+
+Mar 11 11:18:05 *	Now talking on #grafana
+Mar 11 11:18:47 <hmht>	Yeah there's a collapsable box called "options" under your query, there you can set the Step
+Mar 11 11:19:17 <hmht>	the [] denotes the window, as you figured out already, so it's not what you want here.
+Mar 11 11:19:21 <MrTrick>	I see only Legend, Type, Resolution. And changing resolution doesn't mean much
+Mar 11 11:20:53 <hmht>	huh. I'm on Grafana 10.3.3 and I don't have Resolution
+Mar 11 11:22:18 <MrTrick>	hmm, this is... v9.3.6
+Mar 11 11:22:37 <MrTrick>	eep, Jan 26 2023.
+Mar 11 11:23:00 <MrTrick>	aand the infra team are mostly on holidays right now.
+Mar 11 11:23:36 <hmht>	So you tried setting resolution to 1d and count_over_time to [$__auto] ?
+Mar 11 11:24:15 <MrTrick>	resolution is 1/1, 1/2, ... 1/10. No idea what that's supposed to mean. All it seems to do is make the bars thinner
+Mar 11 11:28:37 <hmht>	Hm, I don't think this is something you can fix inside the query
+Mar 11 11:29:05 <MrTrick>	I have a problem with grafana. It and my brain don't seem to function in the same way. :-D 
+Mar 11 11:30:09 <MrTrick>	"how many calls to the API are my customers making each day?" seems like a reasonable question, but I can't figure out how to make grafana do that. Short of exporting all the lines and sending it through a python script.
+Mar 11 11:32:02 <selckin>	sum(increase(requests[24h]))
+Mar 11 11:33:03 <selckin>	guess sum_over_time is better
+Mar 11 11:37:24 <MrTrick>	selckin: what is that going to do?
+Mar 11 11:37:41 <hmht>	I think everything has to be compatible with the selectable range of the dashboard, so stuff like "per day" is a bit weird.
+Mar 11 11:37:43 <MrTrick>	I get a graph, but still it's not grouped by time
+Mar 11 11:48:51 <hmht>	MrTrick: you might have "Query Options" on the datasource in a dashboard panel editor, where you can give the panel a separate relative time or time shift.
+Mar 11 11:49:03 <hmht>	lets you make a separate panel for today, yesterday, day before, etc.
+Mar 11 11:49:06 <hmht>	https://grafana.com/docs/grafana/latest/panels-visualizations/query-transform-data/#query-options
+Mar 11 11:52:26 <MrTrick>	I'll take a look. Panel per day is not workable, though.
+Mar 11 11:57:02 <hmht>	reading further: might also be possible with "transformations", but not sure how that works yet https://grafana.com/docs/grafana/latest/panels-visualizations/query-transform-data/transform-data/#create-heatmap
+Mar 11 12:00:52 <MrTrick>	thanks, I'll see how I go
+Mar 11 21:35:13 <Santzes>	Hey, kinda new to grafana, when I set Relative Time to 24h in query options, then I press run query (or go to the dashboard), I see 24h values flash for half a second,and then the graph gets overridden with the time range selected in the main range selection? How could I make it stick? For this test it's just raw values with no functions
+Mar 11 21:35:16 <Santzes>	https://youtu.be/cuVtGwDomHc like this
+**** BEGIN LOGGING AT Tue Mar 12 00:38:03 2024
+
+Mar 12 00:38:02 *	Now talking on #grafana
+**** BEGIN LOGGING AT Tue Mar 12 00:55:46 2024
+
+Mar 12 00:55:45 *	Now talking on #grafana
+Mar 12 01:56:29 <altker128>	Hey all.  I'm curious, is there any kind of 'GUI' or interactive builder that lets you help create the entries that you populate a Grafana dashboard with?

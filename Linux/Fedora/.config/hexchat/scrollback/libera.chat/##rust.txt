@@ -3498,3 +3498,654 @@ T 1710109834 18<26danieldg18>	why?  Other than being a miri limitation
 T 1710109863 18<25Widdershins18>	mostly that, miri gets pissy about pointer tagging
 T 1710109883 18<26danieldg18>	ok? That's not used here
 T 1710109884 18<25Widdershins18>	i think it isn't effectively different with it
+T 1710109925 18<26pflanze18>	miri didn't accept it without the outer Box
+T 1710109925 18<25Widdershins18>	pointer tags as in attributes of the pointers at the IR level, not bit stuffing
+T 1710109973 18<25Widdershins18>	pflanze: does removing the pin around the box and just including a phantompinned in the struct also satisfy miri
+T 1710110003 18<26pflanze18>	Removing the pin around the box is fine as I mentioned. The box must stay.
+T 1710110014 18<26pflanze18>	Phantompinned?
+T 1710110047 18<26danieldg18>	just boxing seems worthless to me - you can unbox outside your module with safe code
+T 1710110072 18<26danieldg18>	no idea why miri would insist on that
+T 1710110076 18<26pflanze18>	BTW if I box it, return it, then on the user side remove it from the box, miri complains, too
+T 1710110107 18<26danieldg18>	sounds like a miri limitation then
+T 1710110113 18<26pflanze18>	miri is runtime only, so it insists that the pointer (the Box<str>) isn't moved, apparently
+T 1710110178 18<26pflanze18>	I'm going through a pointer into the inner box (into the str), and apparently miri thinks that this entails going through the original pointer to the str (the one in the Box), and if this is moved, it is unhappy? Not sure.
+T 1710110237 18<26pflanze18>	This seems like about the most basic example, so I'd be confused if miri accidentally doesn't handle this right.
+T 1710110313 18<26pflanze18>	But Rust has a thing where a Box can't be moved if there's a reference inside, too, right? Or is it special cased for Vec or something, I don't remember.
+T 1710110321 18<26pflanze18>	*a reference to inside
+T 1710110476 18<26danieldg18>	that's not special cased for either - if you have a ref to a thing, you can't move that thing
+T 1710110477 18<26pflanze18>	Confirmed, definitely can't move a Box when a reference to the thing it holds exists.
+T 1710110502 18<26pflanze18>	So, doesn't miri just follow the same rules?
+T 1710110547 18<26pflanze18>	Box is moved, hence my reference to its inside is now void.
+T 1710110553 18<25Widdershins18>	i think there's basically no strict legal limitation that the contents of a box cannot move when the box moves
+T 1710110575 18<26danieldg18>	except that it's impossible for it to do so
+T 1710110575 18<26pflanze18>	Well, why does the outer Box help, then? :)
+T 1710110581 18<25Widdershins18>	in practice it's the always the case today, but it's not allowed to be relied on
+T 1710110595 18<25Widdershins18>	because then you aren't moving the inner box
+T 1710110613 18<26pflanze18>	Yep, but if moving the outer box could mean that the inner Box is moved, then...?
+T 1710110638 18<25Widdershins18>	like i think the fact that the inner box *doesn't actually* move is coming into play there
+T 1710110657 18<26pflanze18>	But the inner box only doesn't move because the outer box protects it from being moved.
+T 1710110665 18<26pflanze18>	Which is the point you're trying to contest.
+T 1710110676 18<25Widdershins18>	it's not legally required to
+T 1710110698 18<25Widdershins18>	and miri is an empirical emulator
+T 1710110706 18<26pflanze18>	Ok.
+T 1710110718 18<26pflanze18>	But the whole point of Box is so that the inner parts *aren't* moved, no?
+T 1710110779 18<26pflanze18>	Besides dyn Box, and self-referential types, fair enough.
+T 1710111085 18<25Widdershins18>	the point of box is that it "owns" the data and is responsible for deleting it when it's dropped
+T 1710111097 18<25Widdershins18>	which is a semantic that miri doesn't know about
+T 1710111125 18<25Widdershins18>	miri cares only whether the referred to data is guaranteed to stay in place or not
+T 1710111149 18<26pflanze18>	Sure, but owning the data and being responsible is the case without Box, too.
+T 1710111184 18<25Widdershins18>	i think miri does have a concept of the box containing the only unique pointer to the data
+T 1710111187 18<26pflanze18>	Apparently miri also cares that the pointer I was going through to retrieve mine is staying in place.
+T 1710111204 18<25Widdershins18>	which is what causes its destination to be potentially invalid..?
+T 1710111277 18<26pflanze18>	Yes, I guess it derives from the pointer move that the lifetime of the pointed-to thing might have changed, hence "bad".
+T 1710111297 18<26pflanze18>	(Pure guess)
+T 1710111348 18<26pflanze18>	It doesn't know that if my inner Box disappears that this is when also the references disappear. (But then why not look at it lazily, what actually happens?)
+T 1710111384 18<25Widdershins18>	soooooomething like that. miri currently operates on "stacked borrows" and when you move a box nothing else can be borrowing from that unique pointer, so the contents of the box could potentially actually be somewhere else after that move in some allowed optimization
+T 1710111398 18<25Widdershins18>	having a pin inside the referenced structure prevents that optimization
+T 1710111413 18<26pflanze18>	Anyway, my current hypothesis is that miri simply follows the borrowchecker rules dynamically, in some way. Even if not strictly making sense, perhaps.
+T 1710111429 18<25Widdershins18>	that's more or less exactly what miri does
+T 1710111438 18<25Widdershins18>	though it follows a different, slightly stricter interpretation
+T 1710111449 18<25Widdershins18>	though the difference between one and the other is very narrow
+T 1710111470 18<25Widdershins18>	it is one of the lifetime-agnostic models that does provide the same guarantees
+T 1710111546 18<26pflanze18>	"having a pin inside the referenced structure prevents that optimization": why? how?
+T 1710111566 18<26pflanze18>	Also miri still complained even if I have Pin inside (and outside)
+T 1710111629 18<25Widdershins18>	pin declares that it will not move
+T 1710111630 18<26pflanze18>	(I mean, Pin outside is irrelevant; as soon as I have a Box outside, miri is happy)
+T 1710111686 18<26pflanze18>	I thought Pin is purely a library thing, with no effect on the compiler?
+T 1710111698 18<26danieldg18>	it is
+T 1710111859 18<26pflanze18>	Basically the self-referential data structure solution concept is: move the data structure (both pointed-at thing and pointers) inside a Box and Pin that to make sure nobody unboxes it; that makes the address not change. In my case, I have a str that needs boxing anyway, but I have to do that additionally.
+T 1710111865 18<26pflanze18>	At least, to make miri happy.
+T 1710111909 18<26pflanze18>	I also seem to remember having read that one of the self-referential infrastructure crate talked about boxing as solution to some reported UB.
+T 1710111913 18<26pflanze18>	Might have been exactly this.
+T 1710111953 18<26pflanze18>	(solution as in bug fix; the crate existed for year(s) before already)
+T 1710111972 18<25Widdershins18>	if i'm playing with this i'm noticing that you're effectively reimplementing Yoke here
+T 1710111978 18<25Widdershins18>	which is super duper tricky
+T 1710112118 18<25Widdershins18>	https://manishearth.github.io/blog/2022/08/03/zero-copy-1-not-a-yoking-matter/
+T 1710112235 18<25Diablo-D318>	hey guys, I remember someone making a matrix client in rust, but google is being a bitch, anyone know which one Im talking about?
+T 1710112241 18<25Diablo-D318>	it doesnt seem to be on matrix.org's list of clients either
+T 1710112357 18<26pflanze18>	Diablo-D3, the element.io people work on matrix-rust-sdk, and use it to implement iOS and Android apps (and possible parts of the web app, not sure)
+T 1710112399 18<25Diablo-D318>	no, not them (also I thought they discontinued that specific sdk, since they're all js weirdos and allergic to actual code)
+T 1710112564 18<26pflanze18>	Diablo-D3, the last commit to that repo was from a day ago. Also, https://element.io/blog/element-x-ignition/
+T 1710112836 19*	Now talking on 22##rust
+T 1710112836 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710112836 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710113061 19*	Now talking on 22##rust
+T 1710113061 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710113061 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710113076 18<26pflanze18>	Widdershins, I tried owning_ref a while ago. Yoke just confuses me, it seems to be doing the same thing, with more complicated wording and interfaces?
+T 1710113164 18<25Widdershins18>	yeah that's similar
+T 1710113199 18<26pflanze18>	(But Yoke has 1M+ downloads and release in the last months, owning_ref is mostly unused.)
+T 1710113260 18<25Widdershins18>	yoke seems very well thought out to me
+T 1710113486 18<26pflanze18>	There are also fortify, self_cell, and pared
+T 1710115258 18<20spb18>	i'm fairly sure the 'mostly unused' thing is because owning_ref was shown to be unsound quite a long time ago
+T 1710115332 18<26danieldg18>	yeah, if you put a Cell in it you can extend lifetimes you shouldn't
+T 1710115550 18<25Widdershins18>	i'm trying to rewrite this with yoke and yeah there's one little thing that i can't figure out to solve a lifetime compliant
+T 1710115555 18<25Widdershins18>	complaint* even
+T 1710116398 18<22rbox18>	Which statement is the best explanation for why Rust does not allow string indexing?
+T 1710116401 18<22rbox18>	Indexing strings would make Rust too easy to use, and Rust developers need job security
+T 1710116402 18<22rbox18>	HAHA!
+T 1710116450 18<19tokie18>	is that from a poll?
+T 1710116471 18<22rbox18>	https://rust-book.cs.brown.edu
+T 1710116578 18<25Mutabah18>	rbox: Strings don't have good indexing boundaries that apply in all situations
+T 1710116594 18<25Mutabah18>	do you want code units (UTF-8 bytes), codepoints, or graphemes?
+T 1710116599 18<25Mutabah18>	it all depends on context...
+T 1710116608 18<22rbox18>	well yes, i know what the correct answer to the equsetion was
+T 1710116609 18<25Mutabah18>	and with UTF-8, finding the latter two is O(n)
+T 1710116615 18<22rbox18>	i just thought that answer was hilarious
+T 1710116619 18<25Mutabah18>	Ooooh
+T 1710116630 18<25Mutabah18>	Your link wasn't quite clear
+T 1710116636 18<26danieldg18>	clearly it should impl Index using an enum that allows all of those
+T 1710116638 18<19tokie18>	it's because rust programmers want paid better
+T 1710116638 18<22rbox18>	it was a mulitple choice question
+T 1710116963 18<25Widdershins18>	ah! it lets you use `Vec` as the yokeable type but it doesn't implement yokeable quite right for it
+T 1710117371 18<25Widdershins18>	well, miri still doesn't like it
+T 1710117530 18<26danieldg18>	I'm no longer convinced that's a valuable opinion
+T 1710117576 18<26danieldg18>	miri likes it -> maybe it's good, or maybe you didn't test it enough; miri doesn't like it -> maybe it's good, just assumes things miri doesn't model
+T 1710117915 18<25Widdershins18>	it's certainly *a* test that catches a pretty wide class of things that wouldn't otherwise be caught. when it gets nuanced though it's really messy
+T 1710117939 18<26danieldg18>	right, it's very useful in finding things you should look at
+T 1710118026 18<25Widdershins18>	https://github.com/unicode-org/icu4x/issues/2095
+T 1710118055 18<25Widdershins18>	newer default checks in miri seem to have issues with yoke regardless in this way
+T 1710118065 18<25Widdershins18>	though they do have a goal to make it satisfy miri in general
+T 1710118115 18<25Widdershins18>	the whole concept just turns out to be annoyingly difficult to express!
+T 1710118387 18<25Widdershins18>	more here https://github.com/rust-lang/unsafe-code-guidelines/issues/194
+T 1710118768 19*	Now talking on 22##rust
+T 1710118768 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710118768 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710120367 18<26danieldg18>	hmm.  That means that none of the solutions with Box are valid at all
+T 1710120395 18<26danieldg18>	(assuming the worst-case noalias)
+T 1710121359 18<20LuxuryMode18>	In my FromRequest impl, when I examine `request.uri().query()`, I can see that there are params present. However, when I attempt to extract these parameters using `request.extensions().get::<Query<HashMap<String, String>>>()`, I consistently receive `None` and do not get any parameters. Any idea what I might be doing wrong here? Here is a snippet of the relevant code: https://gist.github.com/rust-play/71ae1883158be0e76515a457e7d2d715
+T 1710121537 18<20LuxuryMode18>	Also works fine when I use directly as an extractor, i.e. `async fn my_handler(params: Query<HashMap<String, String>>...`
+T 1710131041 19*	Now talking on 22##rust
+T 1710131041 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710131041 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710133664 19*	Now talking on 22##rust
+T 1710133664 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710133664 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710141890 18<20osse18>	I thought having three class to .flatten() in a row was a bit much. But then I remembered .and_then() exists. Praise be.
+T 1710152285 19*	Now talking on 22##rust
+T 1710152285 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710152285 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710153903 18<19safsf18>	quieres ver videos para adultos
+T 1710153914 18<19Lumpio-18>	¿que?
+T 1710153923 18<19safsf18>	¿Chat por cámara?
+T 1710153938 18<19Lumpio-18>	no gracias
+T 1710153944 18<19safsf18>	¿Yo por cámara?
+T 1710153948 18<19safsf18>	chatear por cámara?
+T 1710153962 18<19Lumpio-18>	no
+T 1710153988 18<19safsf18>	Primero haga clic en este enlace > https://yourgirlsarcade.life/?u=vtgk60r&o=d7gpk40
+T 1710153988 18<19safsf18>	Y completa todas las opciones y luego muestra tu tarjeta, pero no te preocupes, es totalmente gratis.
+T 1710154004 18<19Lumpio-18>	Bruh nobody is looking for that here
+T 1710154023 18<19safsf18>	Primero haga clic en este enlace > https://yourgirlsarcade.life/?u=vtgk60r&o=d7gpk40
+T 1710154024 18<19safsf18>	Y completa todas las opciones y luego muestra tu tarjeta, pero no te preocupes, es totalmente gratis.
+T 1710154045 18<19safsf18>	Primero haga clic en este enlace > https://yourgirlsarcade.life/?u=vtgk60r&o=d7gpk40
+T 1710154046 18<19safsf18>	Y completa todas las opciones y luego muestra tu tarjeta, pero no te preocupes, es totalmente gratis.
+T 1710154131 18<19safsf18>	Mi nombre de usuario es {Ella_Jennings}
+T 1710154132 18<19safsf18>	No se requiere información de tarjeta, solo configure su cuenta https://yourgirlsarcade.life/?u=vtgk60r&o=d7gpk40
+T 1710154228 18<19safsf18>	Ven a mi telgram >> @mariyacs
+T 1710154234 18<19safsf18>	Ven a mi telgram >> @mariyacs
+T 1710154605 18<25gahr18>	hi - new to rust, reading the book. I was curious about this example here: https://github.com/rust-lang/book/blob/main/listings/ch04-understanding-ownership/no-listing-19-slice-error/src/main.rs
+T 1710154629 18<25gahr18>	it made me wonder: how does the compiler infers that the slice returned is linked in any way to the string ref passed in?
+T 1710154644 18<25gahr18>	then I changed the body of the first word to be if s.is_empty() { "empty" } else { "full" }
+T 1710154648 18<25gahr18>	and it still errors out the same way
+T 1710154680 18<25gahr18>	then I added an explicit lifetime and the error went away
+T 1710154680 18<25gahr18>	fn first_word<'a>(s: &String) -> &'a str {
+T 1710154702 18<25gahr18>	so, does rust assumes that the lifetime of the return value depends on the lifetime of the argument, *unless told otherwise*?
+T 1710154712 18<20j`ey18>	yes
+T 1710154731 18<25gahr18>	where can I read more about it? I.e., under which situations it does so?
+T 1710154756 18<25gahr18>	I guess if I return a slice into some other container, i.e., not into a string
+T 1710154758 18<20j`ey18>	probably later on in the book?
+T 1710154765 18<28null_ptr18>	https://doc.rust-lang.org/reference/lifetime-elision.html
+T 1710154767 18<25gahr18>	heh ok I'll probably ahve to wait
+T 1710154919 18<25gahr18>	thanks!
+T 1710155264 18<25gahr18>	oh, so because both param and output lifetimes are elided, rust infers one for the param and assigns it to the output
+T 1710155267 18<25gahr18>	that makes sense
+T 1710155485 18<20polychromata{J}18>	That should actually be `-> &'static str` :3
+T 1710155547 18<20polychromata{J}18>	<'a> -> &'a _ is almost never what you want: the caller can pick any lifetime and you'll return a reference with that lifetime?
+T 1710155612 18<25gahr18>	I can't answer that yet, still on chapter 4 :)
+T 1710155726 18<25gahr18>	is 'static a special lifetime?
+T 1710155794 18<20polychromata{J}18>	Yeah.
+T 1710155805 18<20polychromata{J}18>	It's a…keyword?
+T 1710155808 18<20polychromata{J}18>	…is that right?
+T 1710155810 18<29saati18>	https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html?highlight=static#the-static-lifetime
+T 1710155980 18<20polychromata{J}18>	https://doc.rust-lang.org/reference/keywords.html#weak-keywords yep, weak keyword
+T 1710157516 18<25gahr18>	alright I'll just continue reading the book, thanks all!
+T 1710157549 18<20polychromata{J}18>	Send us any more questions! :3
+T 1710158418 18<25elichai218>	Hi, I'm trying to do `println!("cargo:rustc-cfg=c_api");` in a build.rs and I see `--cfg c_api` in the build command, but the cfg is not enabled (I tried `#[cfg(c_api)] compile_error!("c_api")`)
+T 1710158446 18<29neiluj18>	Hi! got an async function f that takes an Arc<lock_api::RwLock<RawRwLock, myType>>, but when calling this function in a new thread: tokio::task::spawn(async move { f(a) }) I get the error future created by async block is not `Send`
+T 1710158459 18<29neiluj18>	not sure what is wrong here
+T 1710158728 18<20spb18>	neiluj: somewhere in your async function, or somewhere down its call tree, you're creating a value of a type that isn't Send and which lives across an 'await'
+T 1710158751 18<20spb18>	the detailed error message gives you more information to track it down, but takes a bit of careful unravelling to make sense of it
+T 1710159013 18<29neiluj18>	many thanks spb, so basically I pass an Arc to the RwLock to the async function running in a dedicated tokio task, but use it elsewhere: let a=RwLock::new(..); tokio::task::spawn(aync move {f(a)}); g(a);
+T 1710159039 18<29neiluj18>	and f mutates a by writing to it
+T 1710159115 18<29neiluj18>	but I didn't have this error with a mutex instead of the RwLock
+T 1710159171 18<29neiluj18>	oh just removed an tokio::time::sleep(..).await; and the code compiled
+T 1710159173 18<29neiluj18>	:)
+T 1710159263 18<29neiluj18>	the full error was future is not `Send` as this value is used across an await, so the .await made the returned future not Send somehow
+T 1710159369 18<29saati18>	Sleep is Send, you have something else there that's not send but you drop it before the next await point
+T 1710159618 18<29neiluj18>	thanks, will look into it
+T 1710159941 18<20spb18>	neiluj: the reason this happens is that every time you await something, the async function can pause execution until the thing you're awaiting is ready. in the case of something you pass to tokio::spawn, the next time it wakes up might be on a different thread than the one on which it paused
+T 1710159972 18<20spb18>	what this means is that any local variable in the function which is used on both sides of an await needs to be Send because it might be created on one thread and used on another
+T 1710160267 18<29saati18>	or if you really need !Send values you can start a single threaded executor instead
+T 1710160827 18<20polychromata{J}18>	neiluj: You can't hold sync locks across an await, because the guards are !Send
+T 1710160902 18<20polychromata{J}18>	You have to unlock to await, and then (because of a compiler limitation) you have to structure your code so that the await happens outside of the scope that the lock was held in (just drop() or unlock() will produce the same error otherwise)
+T 1710160979 18<20polychromata{J}18>	In the simplest case, `{ let guard = mutex.lock(); drop(guard); future.await; }` won't work, but `{ { let guard = mutex.lock(); } future.await; }` will
+T 1710161103 18<20polychromata{J}18>	(Something about constructing the type for the async fn state machine happening in a pass before the liveness control flow analysis)
+T 1710161108 18<29saati18>	holding a lock across an await is just asking for low performance and deadlocks anyway
+T 1710164113 18<29neiluj18>	thanks a lot for the explanations, indeed the lock spanned across the sleep that was awaited
+T 1710164122 18<29neiluj18>	it is no longer the case now
+T 1710165648 18<25gahr18>	polychromata{J}: thanks, will do!
+T 1710166046 18<29neiluj18>	argh, using a library relying on an older version of a framework I'm using, can't convert the returned types of the library to the new ones from the framework
+T 1710168620 18<28lmat18>	I think I can get an element of a vec using notation like  my_vec[0];? Where can I find documentation on this operator[]?
+T 1710168679 18<20osse18>	lmat: Vec implements the Index trait, which provides that operator
+T 1710168708 18<28lmat18>	osse: Oh, nice seeing you here! I didn't know you were a rustacean...makes sense though.
+T 1710168724 18<20osse18>	<3
+T 1710168742 18<28lmat18>	osse: Looking at that trait, it looks like there is no operator[] separate from fn index, right?
+T 1710168774 18<28lmat18>	So fn index should be about the same as fn get?
+T 1710168835 18<20osse18>	Same as get() except it panics
+T 1710168843 18<28lmat18>	sweet, thanks!
+T 1710170160 18<28lmat18>	How does  my_slice[1..2] work? It looks like 1..2 will create a std::ops::Range, so it's like  my_slice[std::ops::Range{start: 1, end: 2}], and [] is index, so   my_slice.index(std::ops::Range{start: 1, end: 2});  but I don't see any index instance member function that takes a range.
+T 1710170191 18<20j`ey18>	lmat: https://doc.rust-lang.org/std/primitive.slice.html#impl-Index%3CI%3E-for-%5BT%5D
+T 1710170203 18<20j`ey18>	-> https://doc.rust-lang.org/std/slice/trait.SliceIndex.html
+T 1710170218 18<28lmat18>	j`ey: Ah! There they are!
+T 1710170244 18<28lmat18>	(I used std::ops::Range{start: 1, end: 2} "directly" because I don't see a ::new like I do in std::ops::RangeInclusive)
+T 1710172006 18<22evaloop18>	Guys, about mold linker, after some update, mold cannot worked anymore
+T 1710172041 18<22evaloop18>	-C link-arg=-fuse-ld=/usr/bin/mold
+T 1710172135 18<22evaloop18>	him disappear from debug autput
+T 1710172158 18<22evaloop18>	-flto=fat,-O3
+T 1710172184 18<22evaloop18>	DEBUG_RUSTFLAGS="-C debuginfo=2"
+T 1710172260 18<22evaloop18>	also I have in $PATH d mold
+T 1710172260 18<22evaloop18>	ld.mold
+T 1710172260 18<22evaloop18>	mold
+T 1710172337 18<22evaloop18>	so, for now need manualy add string to build toml that can be work?
+T 1710174874 18<22evaloop18>	how actualy fully disable -C linker-plugin-lto? I set -C linker-plugin-lto=false and that can't work why?
+T 1710175371 18<22evaloop18>	also passing -C linker-plugin-lto=false worked, but what mold has gone from output
+T 1710179490 18<22evaloop18>	oh lol, rustc boot section : linker-flavor
+T 1710179490 18<22evaloop18>	This flag controls the linker flavor used by rustc. If a linker is given with the -C linker flag, then the linker flavor is inferred from the value provided. If no linker is given then the linker flavor is used to determine the linker to use. Every rustc target defaults to some linker flavor. Valid options are:
+T 1710179490 18<22evaloop18>	em: use Emscripten emcc.
+T 1710179490 18<22evaloop18>	gcc: use the cc executable, which is typically gcc or clang on many systems.
+T 1710179491 18<22evaloop18>	ld: use the ld executable.
+T 1710179493 18<22evaloop18>	msvc: use the link.exe executable from Microsoft Visual Studio MSVC.
+T 1710179495 18<22evaloop18>	wasm-ld: use the wasm-ld executable, a port of LLVM lld for WebAssembly.
+T 1710179497 18<22evaloop18>	ld64.lld: use the LLVM lld executable with the -flavor darwin flag for Apple's ld.
+T 1710179499 18<22evaloop18>	ld.lld: use the LLVM lld executable with the -flavor gnu flag for GNU binutils' ld.
+T 1710179501 18<22evaloop18>	lld-link: use the LLVM lld executable with the -flavor link flag for Microsoft's link.exe.
+T 1710179539 18<22evaloop18>	and . . . not any word about mold, no way :(
+T 1710179587 18<20j`ey18>	it can use 'ld'
+T 1710179603 18<20j`ey18>	since its meant to have the same CLI options
+T 1710179635 18<22evaloop18>	ok, ld, fine :|
+T 1710179707 18<20j`ey18>	thats just the 'flavor', not what is actually used
+T 1710184498 18<25Widdershins18>	i suppose you could symlink mold as ld
+T 1710184553 18<25Widdershins18>	hm
+T 1710185307 18<25Widdershins18>	oh it goes in config.toml not Cargo.toml
+T 1710185325 18<28lmat18>	What's the point of building NOT a release build?
+T 1710185336 18<25Widdershins18>	lmat: lots of reasons
+T 1710185338 18<28lmat18>	In other words, why would I want to turn optimizations off?
+T 1710185346 18<25Widdershins18>	because it builds faster
+T 1710185356 18<25Widdershins18>	release mode also disables debug
+T 1710185361 18<28lmat18>	Widdershins: What is debug?
+T 1710185375 18<20j`ey18>	debug information
+T 1710185381 18<20j`ey18>	stuff that gdb can use etc
+T 1710185381 18<28lmat18>	Widdershins: (I'm a software developer, and I know what debugging is, I just don't know what it has to do with rust.)
+T 1710185382 18<25Widdershins18>	debugging symbols and information
+T 1710185389 18<28lmat18>	j`ey: I can debug rust in gdb?
+T 1710185392 18<20j`ey18>	yes
+T 1710185393 18<25Widdershins18>	yes?
+T 1710185399 18<28lmat18>	j`ey: Enough said, thank you!
+T 1710185403 18<25Widdershins18>	it works pretty much the same
+T 1710185415 18<25Widdershins18>	rust builds objects very much like c/++ do
+T 1710185419 18<28lmat18>	Widdershins: same as C++, I assume
+T 1710185428 18<25Widdershins18>	it mangles names differently but after the code is emitted it's almost identical
+T 1710185439 18<28lmat18>	I've been using println! (with a "todo" to implement proper logging), but maybe a debugger will be useful someday!
+T 1710185471 18<25Widdershins18>	there's also stuff like the debug_assert! macro that only emits code in #[cfg(debug)]
+T 1710185535 18<25Widdershins18>	frequently tests will always be run in debug. a library of mine builds 30 seconds faster and only runs tests 5 seconds slower for example
+T 1710185554 18<25Widdershins18>	even though the tests are running like 100x faster in release, it doesn't save time
+T 1710185583 18<25Widdershins18>	if this isn't what you want you can change optimization modes, debug settings, etc. in the "dev" and "release"
+T 1710185587 18<25Widdershins18>	profiles, in cargo.toml
+T 1710185598 18<28lmat18>	Makes sense, thanks for the pointers!
+T 1710185607 18<25Widdershins18>	so *by default* the dev profile does little optimization, no LTO, etc. but you can change that
+T 1710185616 18<25Widdershins18>	https://doc.rust-lang.org/cargo/reference/profiles.html
+T 1710185671 18<28lmat18>	Widdershins: Right, to cook up your own custom profile. nice.
+T 1710185673 18<26dav1d18>	lmat, I have yet to actually need a debugger to debug something in Rust
+T 1710185703 18<26dav1d18>	it would have been useful plenty of times but never useful enough where I would have "required" it
+T 1710185712 18<25Widdershins18>	i've used it because it's super extremely easy to do in jetbrains ides
+T 1710185713 18<28lmat18>	dav1d: Right, the compiler pretty much takes care of any typos and "simple" errors. What is left is high-level aggregate-type errors which logging seems to address nicely.
+T 1710185722 18<25Widdershins18>	i literally just click the beetle icon instead of the play button
+T 1710185723 18<26dav1d18>	Yeah, really comfortable
+T 1710185740 18<26dav1d18>	and I used to always launch with debugger when I was doing Java for $work
+T 1710185740 18<25Widdershins18>	i will learn a debugger console when i have to :)
+T 1710185747 18<25Widdershins18>	which so far is never
+T 1710185754 18<25Widdershins18>	i have already forgotten pdb
+T 1710185758 18<28lmat18>	Widdershins: Makes sense. I use vim and tmux, so I would have to `cd target/debug && cgdb ./my_app` or whatever
+T 1710185766 18<26dav1d18>	yeah jetbrains is nice when it comes to debugging
+T 1710185777 18<26dav1d18>	lmat, vim or neovim?
+T 1710185781 18<28lmat18>	dav1d: vim.
+T 1710185788 18<25Widdershins18>	lmat: i would say you could at least give a shot at the ides, jetbrains has a best-in-class first-class vim mode
+T 1710185800 18<26dav1d18>	kk, there is a cool neovim plugin with debugger integration which I wanna setup
+T 1710185800 18<25Widdershins18>	but that's just me. some people hate it ymmv
+T 1710185804 18<28lmat18>	dav1d: I haven't found a reason to switch to nvim. When I heard that Bram died, I considered it, but it looks like vim development carries on as usual.
+T 1710185816 18<28lmat18>	dav1d: That could be really sweet!
+T 1710185817 18<26dav1d18>	I already had it working somewhat but wasnt comfortable enough yet for me
+T 1710185856 18<28lmat18>	Widdershins: I've used ideas. I've used Jetbrains IntelliJ, eclipse, Microsoft Visual Studio (a long time ago), arduino. I hate all of them.
+T 1710185865 18<26dav1d18>	lmat, https://github.com/rcarriga/nvim-dap-ui
+T 1710185868 18<28lmat18>	oops s/ideas/ides/
+T 1710185869 18<25Widdershins18>	evaloop: where did you try putting your rustflags config? i'm able to get rustc to use any linker i want, by putting it in "./.cargo/config.toml" with, for example, `[target.'cfg(all())'] \n linker = "/usr/bin/wabl"` and then it fails because it can't find /usr/bin/wabl
+T 1710185900 18<25Widdershins18>	lmat: something for everyone i guess. i've always got huge mileage out of having an ide
+T 1710185912 18<26dav1d18>	IntelliJ is awesome
+T 1710185941 18<25Widdershins18>	if your editing is vim brained you can do that there too but i've always been a mouse, keyboard, multi-cursor, ide rename, and regex replace type of guy
+T 1710185945 18<25Widdershins18>	and it's never slowed me down
+T 1710185976 18<25Widdershins18>	and all the searches, outlines, jump to definition and list usages keys are top notch stuff to have
+T 1710185983 18<28lmat18>	but it takes so long to start up...
+T 1710185985 18<25Widdershins18>	not to mention diff views and three-way resolver ui my god
+T 1710185991 18<25Widdershins18>	it really doesn't though
+T 1710186010 18<28lmat18>	Widdershins: "it's never slowed me down" ... that's sort of meaningless.
+T 1710186010 18<25Widdershins18>	i mean compared to a terminal yeah but you can also just not close it
+T 1710186019 18<25Widdershins18>	no it isn't?
+T 1710186046 18<25Widdershins18>	that's the whole justification for doing it a different way: ease and expediency
+T 1710186056 18<28lmat18>	Widdershins: What matters to me is: would it slow me down. If you've "always been a ... ide ... type of guy", and it's "never slowed you down", there's no control group, my friend.
+T 1710186090 18<25Widdershins18>	that's why i didn't say you should personally do it. nobody has a control group because everyone is n=1
+T 1710186090 18<26dav1d18>	<lmat> but it takes so long to start up... | I never understood this complaint. It's a onetime cost, you don't even have to close it ever! And from my experience, it's not significantly slower than rust analyzer for me
+T 1710186106 18<28lmat18>	Widdershins: The important comparison is: you can type 130 wpm, you know vim, grep, and tmux like the back of your hand, you're just as comfortable working 500 miles away from your computer as right next to it, THEN you switch to IDEs and it never slows you down. That would be meaningful ;-)
+T 1710186115 18<28lmat18>	Widdershins: yeah.
+T 1710186159 18<25Widdershins18>	i type 140wpm, i know idea grep and tmux like the back of my hand, and i never have to work 500 miles away from my computer and if i did i have a laptop with just as much ram
+T 1710186186 18<25Widdershins18>	and i've never run into a task that takes me meaningfully longer to solve than doing it the vim way would be
+T 1710186207 18<25Widdershins18>	software development is not the process of text production. most of your time is thinking and communicating anyway
+T 1710186220 18<25Widdershins18>	as long as your editor is low friction and lets you do the text transforms you want it's fine
+T 1710186235 18<25Widdershins18>	i was just suggesting it since it sounds like there are a few useful things missing from your tooling setup
+T 1710186238 18<28lmat18>	dav1d: If I only work on one project, okay, but I have maybe 8 clients. Is it so snappy that I can have maybe 5 of them running all the time with no sweat? Also, I use tmux to hold each client's work (tmux at -t <client1>; connects me back to that client's terminal session with vim, grep, less, or whatever tools I was running last time.) And I can access it all remotely just as easily as locally <3
+T 1710186257 18<25Widdershins18>	don't ask me how many ide windows i have running at any given moment
+T 1710186271 18<28lmat18>	Widdershins: yup, good reasoning.
+T 1710186279 18<22evaloop18>	Widdershins: that options in/from makepkg.conf, I'm cannot put any in config.toml, maybe because in another one project toml file writed author, and so, I think maybe better use global config, for compile software, but maybe I was wrong, and something won't know about that. ofc
+T 1710186373 18<25Widdershins18>	evaloop: https://doc.rust-lang.org/cargo/reference/config.html i was able to make this do things so ymmv
+T 1710186381 18<25Widdershins18>	it will look in the global config too
+T 1710186404 18<25Widdershins18>	it seems you can provide rustc flags, i think
+T 1710186456 18<25Widdershins18>	anyway lmat the startup time being really fast is nice and all. i find ides very snappy nowadays and even though people complain that it uses 3 gigs instead of 10 megabytes i would also observe that that's 3 gigabytes of ram mostly lying fallow
+T 1710186461 18<25Widdershins18>	ram is meant to be used
+T 1710186491 18<25Widdershins18>	as long as your pagecache is not starving it's great
+T 1710186521 18<28lmat18>	sure, most of the time that's fine...until it isn't
+T 1710186535 18<25Widdershins18>	when's that tho
+T 1710186563 18<25Widdershins18>	i have like a hundred browser tabs, 3 ides, and numerous miscellania open and i'm sitting at like 16% resident ram
+T 1710186586 18<28lmat18>	Widdershins: Depends...never know! I write several financial applications and sometimes they like a lot of RAM..
+T 1710186643 18<25Widdershins18>	i've had memory leaks eat 33 gigabytes of ram before and it was mostly just annoying
+T 1710186643 18<22evaloop18>	Widdershins: wow, great, THX for expensive answer
+T 1710186661 18<25Widdershins18>	haha
+T 1710186674 18<25Widdershins18>	it's cheaper than it used to be! i find it a very expedient solution
+T 1710186687 18<25Widdershins18>	i do this for a living after all
+T 1710186715 18<25Widdershins18>	you can get away with like 16 gigs of ram no problem
+T 1710186729 18<25Widdershins18>	which is like 'found in a trash can' type of memory capacity these days
+T 1710186766 18<20spb18>	unless you're a mac user, then it's mortgage your house type
+T 1710186768 18<25Widdershins18>	i don't give the ide jvms half that much
+T 1710186781 18<25Widdershins18>	oh god yeah i mean if you're a mac user you kinda brought that on yourself though right
+T 1710186903 18<28lmat18>	spb: :-D
+T 1710186940 18<25Widdershins18>	i feel real bad for people who actually feel trapped in the mac ecosystem. it seems nightmarish
+T 1710186970 18<29saati18>	i'm afraid in a decade it will be like that for everyone, ram will move in package and there won't be upgrades separate from the cpu
+T 1710186990 18<28lmat18>	saati: Why?
+T 1710187307 18<29saati18>	lmat: ram outside the package won't be able to give the latencies and bandwith of silicon interposers and other new in package interconnects
+T 1710187346 18<28lmat18>	saati: Oh, I see
+T 1710187368 18<25Widdershins18>	saati: are they gonna upcharge by 20x though
+T 1710187374 18<25Widdershins18>	(yes)
+T 1710187379 18<26dav1d18>	lmat, I have no intention to tell you what you should use, though I feel like there is some misconceptions here. I've ran IntelliJ (Java/Go/Python projects) consistently with 4+ windows open, each having somewhere between 3-6 projects loaded with 24gb of RAM
+T 1710187384 18<25Widdershins18>	so i don't think it will win
+T 1710187386 18<26dav1d18>	and a piece of shit cpu
+T 1710187411 18<28lmat18>	dav1d: Rock on, my man!
+T 1710187416 18<26dav1d18>	and plenty of RAM to spare for chrome
+T 1710187421 18<28lmat18>	dav1d: And you leave it open for weeks? ^_^
+T 1710187425 18<25Widdershins18>	maybe that's a tragedy but there's massive consumer value for the interchangeability
+T 1710187453 18<25Widdershins18>	lmat: yeah why not. the heap is sandboxed so they actually have to fix memory leaks
+T 1710187462 18<26dav1d18>	lmat, usually only the first instance loads slower, new instances are almost instant. But yeah I tend to just leave the laptop in standby/hibernation
+T 1710187494 18<28lmat18>	dav1d: And a very important aspect to me is remote access. I have a machine at home that is much more powerful than any of my laptops and I SSH to it to do any coding while I'm out. What would that look like with an IDE like that?
+T 1710187502 18<26dav1d18>	these times are over, pretty much exclusively on vim now, but not because of memory consumption or startup times
+T 1710187536 18<25Widdershins18>	they're working on it, maybe in a couple years it'll be buttery smooth to attach remotely
+T 1710187553 18<26dav1d18>	lmat, the intellij remote stuff is actually surprisingly good
+T 1710187562 18<26dav1d18>	not made for this specifically but it is quite good
+T 1710187572 18<25Widdershins18>	dav1d: not vim mode? wait you're *no longer* using the ides?
+T 1710187612 18<26dav1d18>	Widdershins, nah, purely vim now. Once upon a time I decided to learn vim and do all my rust projects exclusively in vim and if I miss a feature, I'll add it to vim. Now I gave up all the other shit but Rust -> Only vim left
+T 1710187646 18<25Widdershins18>	ahh, the dotfile horizon
+T 1710187653 18<26dav1d18>	although I do miss Intellij at times with the builtin db browser, rest client, easy debugging, ...
+T 1710187667 18<19tokie18>	i use rust rover
+T 1710187672 18<26dav1d18>	and obviously excellent editing, but that's just a given
+T 1710187680 18<19tokie18>	correction: i'm using rust rover with the remote stuff
+T 1710187683 18<19tokie18>	it mostly works OK
+T 1710187785 18<24SoF18>	does Rust do any loop unrolling before LLVM?
+T 1710188245 18<25Widdershins18>	i doubt it
+T 1710188254 18<25Widdershins18>	it's just an IR emitter
+T 1710188795 18<20j`ey18>	Widdershins: nah theyre adding more optimisations to 'MIR' now
+T 1710188807 18<20j`ey18>	(not sure if that includes loop unrolling though, doubt it)
+T 1710188818 18<25Widdershins18>	:o
+T 1710188860 18<25Widdershins18>	needs more layers https://blog.rust-lang.org/2016/04/19/MIR.html
+T 1710188876 18<20polychromata{J}18>	lmat: You can instantiate types directly like that if all their fields are pub.
+T 1710188910 18<28lmat18>	polychromata{J}: I was surprised there's no "new" like there is for the other type :-D
+T 1710188923 18<25Widdershins18>	proc macros -> macros -> rust -> HIR -> MIR -> IR -> machine code -> ucode
+T 1710189073 18<20polychromata{J}18>	It would be kind of redundant. :)
+T 1710189089 18<20polychromata{J}18>	You do see that sometimes.
+T 1710189429 18<20j`ey18>	Widdershins: of course LLVM IR actually has 2-3 stages of IR too :P
+T 1710189737 18<25Widdershins18>	j`ey: https://twitter.com/at_tcsc/status/1573770109537386496
+T 1710189821 18<20j`ey18>	hehe
+T 1710195009 18<27TimMc18>	Can I bundle an existing non-Rust executable into a Rust binary so that I can call either one, somehow?
+T 1710195067 18<27TimMc18>	(I'd like to take an existing Go program and include its functionality in my program.)
+T 1710195284 18<20j`ey18>	probably not that easy, maybe better to just require they have it in PATH
+T 1710195418 18<22Arnavion18>	include_bytes + memfd_create + fexecve
+T 1710195558 18<20polychromata{J}18>	snrk
+T 1710195963 18<27TimMc18>	This would be for a single, standalone binary.
+T 1710196024 18<27TimMc18>	Arnavion: That would just be jumping into a big byte array, right? :-)
+T 1710196030 18<20j`ey18>	baically yeah
+T 1710196037 18<22Arnavion18>	Yes
+T 1710196063 18<27TimMc18>	I mean, I'm not above doing something like that. :-P
+T 1710196086 18<20j`ey18>	could also write it out to a tmp file
+T 1710196087 18<22Arnavion18>	The cross-platform way would be to create a tempfile and executing that and hoping you don't get TOCTOUd
+T 1710196089 18<20j`ey18>	and then exec it
+T 1710196158 18<22Arnavion18>	... and, depending on the method used to create said tempfile, that the underlying filesystem isn't mounted noexec
+T 1710196685 18<27TimMc18>	...I kind of want to try this just to see what exciting things happen.
+T 1710196715 18<25yziquel18>	Is it possible to implement a cyclic chained list in safe rust (i don't mind bumpalo). if you ask me why, it's a very specific kind of datastructure that is supposed to be "intepreted" very fast. I really need the cyclicity.
+T 1710196750 18<25yziquel18>	i don't mind using an arena like bumpalo. i just want to know if it is possible in safe rust or if unsafety is required
+T 1710196925 18<25Widdershins18>	yziquel: the common way is to refer to indices in a vec and do it that way
+T 1710196946 18<25Widdershins18>	otherwise it is technically possible to do safely with pointers and so on it's just really hard
+T 1710196967 18<25yziquel18>	Widdershins it will boil down to that, but i do not the pattern matching as that structure will end up rather involved.
+T 1710196982 18<25Widdershins18>	you do what the pattern matching?
+T 1710197025 18<25yziquel18>	implement a weird generalisation of lambda calculus verging towards logic programming. the structures i need for that are involved and cyclic.
+T 1710197065 18<25Widdershins18>	that's fine
+T 1710197093 18<25yziquel18>	before going full array of pointers with weird semantics, i need to prototype it with cyclic algebraic datatypes to make it understandable.
+T 1710197116 18<25Widdershins18>	i'm saying you don't need pointers if you just use indices
+T 1710197117 18<25yziquel18>	any safe rust implementation of cyclic chained list would be a good prototype to build upon.
+T 1710197132 18<25yziquel18>	Widdershins i will need pointers.
+T 1710197141 18<25Widdershins18>	you can represent a structure without making its ownership physically dependent on the cycles
+T 1710197148 18<25Widdershins18>	you don't ever "need" the pointers
+T 1710197162 18<25yziquel18>	sigh. i do need the pointers for what i intend.
+T 1710197167 18<25Widdershins18>	which is?
+T 1710197186 18<25yziquel18>	an abstract execution machine for that calculus. with pointers.
+T 1710197209 18<25Widdershins18>	if your hidden premise is that you have to use pointers and not any other method then that's cheating
+T 1710197226 18<25yziquel18>	? why. that's my spec.
+T 1710197241 18<25Widdershins18>	you have a collection of objects that want to refer to each other, yes?
+T 1710197312 18<25yziquel18>	Widdershins more than that. for now, i need cyclic algebraic data types to prototype. Later, I'll need vectors of pointers and rather involved treatment of them.
+T 1710197332 18<25Widdershins18>	you're skipping a step mate
+T 1710197336 18<25yziquel18>	?
+T 1710197371 18<25yziquel18>	Widdershins which step ?
+T 1710197380 18<25Widdershins18>	the step where you think about whether pointers are required or not
+T 1710197394 18<25Widdershins18>	because you can get the exact same effect in other ways, without worrying about unsafety
+T 1710197423 18<25yziquel18>	Widdershins pointers WILL be required.
+T 1710197438 18<25yziquel18>	it's the whole point of the exercise.
+T 1710197440 18<25Widdershins18>	you keep saying this but until i know why they're required i can't really say anything new
+T 1710197539 18<25yziquel18>	Widdershins because I intend to generalise Krivine's machine for semantics of lambda calculus as it pertains to set theory (see Luminy slides 2004 and later) and adapt it to a logic programming setting by revisiting some works in logic about existential quantification as dual to the substitutional fragment of first order logic. And that machine
+T 1710197539 18<25yziquel18>	will need pointers.
+T 1710197563 18<25yziquel18>	I tend to be annoyed by people always questioning what I plan to do.
+T 1710197570 18<25yziquel18>	I already have a mother.
+T 1710197606 18<25Widdershins18>	you've come here to ask how to do something safely, and i offered a way to do something that has the exact same effect and is trivially safe
+T 1710197635 18<25yziquel18>	What I have asked is: cyclic chained list in safe rust. nothing else.
+T 1710197647 18<25Widdershins18>	if this is a school assignment that you flunk if you don't use pointers i suggest not using rust because it's very easy to create extremely invalid programs doing pointer dances like that
+T 1710197656 18<25yziquel18>	Widdershins no. it's research.
+T 1710197670 18<25yziquel18>	Widdershins i'm a logician by training.
+T 1710197675 18<25Widdershins18>	rust's guarantees can make programs invalid and invoke UB much sooner when doing pointer traversal than e.g. c++
+T 1710197679 18<25yziquel18>	i want to implement some ideas of mine.
+T 1710197700 18<25yziquel18>	I want to try the pointer dance.
+T 1710197722 18<20j`ey18>	any actual (raw) pointer in rust is unsafe
+T 1710197768 18<25yziquel18>	j`ey whch is precisely why I'm asking about cyclic algebraic datatypes safe.
+T 1710197774 18<25Widdershins18>	well i'll warn you it's a real pain. the safer-ish way is to use Rc<RefCell<T>> instead of pointers, such that it will actually immediately explode with runtime checks if you do something invalid
+T 1710197783 18<25yziquel18>	if there is an example of a cyclic chained list, I take it.
+T 1710197790 18<20spb18>	what you are doing requires pointers, if you are using 'pointer' as shorthand for 'a way to persistently reference another object of a given type without lifetime bounds'
+T 1710197809 18<20spb18>	but there are ways to do that which are not literally `*const T`
+T 1710197809 18<25yziquel18>	Widdershins i know it's a pain. already in OCaml it's a pain.
+T 1710197889 18<25Widdershins18>	well if you are set upon using exactly pointers and nothing else you can certainly write that code
+T 1710197892 18<25yziquel18>	spb if i need a thunk of unsafety to tie the cyclicity, I'm fine with it. If I can do it safely, I'm more fine with it. I intend to eschew most lifetime issues by using an arena like bumpalo.
+T 1710197937 18<25yziquel18>	Widdershins I want an algebraic data types whose representation is pointers. not indices with lookups.
+T 1710197939 18<25Widdershins18>	unsafety still requires following the rules, it is only for the purpose of enforcing the unbreakable rules that define a valid rust program in ways that the compiler cannot check for you
+T 1710197962 18<25Widdershins18>	and it can get very difficult to do that correctly
+T 1710197986 18<25yziquel18>	Widdershins I did a C level binding with OCaml and R with two GC's stepping over one another. I'm well aware that unsafety has rules.
+T 1710197988 18<25Widdershins18>	subtle things that cause references to coexist illegally can make the program invalid or even misbehave even if they don't appear to interact
+T 1710198063 18<25yziquel18>	Widdershins ok. now. anyone knows of a not too ugly implementation of cyclic chained list in rust ?
+T 1710198077 18<25Widdershins18>	the main thing you get performancewise by using pointers instead of indices is that deleting incrementally doesn't leave allocated dead space in the backing array. otherwise indices pointing to indices is, performance-wise, pretty much equivalent
+T 1710198095 18<25Widdershins18>	maybe you want https://rust-unofficial.github.io/too-many-lists/
+T 1710198115 18<25yziquel18>	Widdershins memory management will be a later stage. my machine is quite simple but hairy in details such as that.
+T 1710198135 18<20j`ey18>	from a quick crates.io look it doesnt look like there is, but maybe there's better search terms
+T 1710198151 18<25Widdershins18>	ok well good luck with the contraption
+T 1710198152 18<25yziquel18>	Widdershins i skimmed over too many lists. i haven't seen cyclic chained list. will reread.
+T 1710198167 18<20j`ey18>	https://crates.io/crates/cdl-list-rs uses rc/refcell
+T 1710198331 18<25Widdershins18>	the deque in https://rust-unofficial.github.io/too-many-lists/fourth-layout.html is effectively cyclic, the List type has pretty much the same fields as the Node type does
+T 1710198413 18<25yziquel18>	j`ey I'm fine using RefCell if I need to build the structure. What I want in the end is an immutable algebraic data type. cyclic.
+T 1710198438 18<25yziquel18>	I really need 1. immutable 2. algebraic 3. cyclic. But only as end result.
+T 1710198452 18<25yziquel18>	lifetime can be tied to a wider arena to avoid issues.
+T 1710198524 18<25yziquel18>	Widdershins reference counted. not what I want.
+T 1710198547 18<27TimMc18>	yziquel: Any chance you can just avoid garbage collection and let program termination take care of everything for you? :-P
+T 1710198549 18<19LDericher18>	please check out another borrow/lifetime issue I'm currently facing, any suggestions? https://bpa.st/2CDQ
+T 1710198814 18<19LDericher18>	I don't get why the buffer "escapes the closure body" if I only use an immutable borrow, once
+T 1710198827 18<25Widdershins18>	LDericher: it's not once, it's inside a loop so it'll live on to the next iteration
+T 1710198867 18<25Widdershins18>	and you're reassigning tx at which point it must be cleaned up because there's nowhere else to put it, but the new tx you're assigning to it depends on the old one
+T 1710198880 18<25Widdershins18>	that's what it looks like
+T 1710198894 18<25yziquel18>	TimMc no garbage collection matters. I just want to construct an immutable circular chained list.
+T 1710199031 18<25yziquel18>	from what I see, I have to fool the compiler with unsafety. i hate that, but i see no other way around it.
+T 1710199104 18<26dav1d18>	LDericher, what type is xfer and is it tied to the reference that was passed in?
+T 1710199157 18<19LDericher18>	xfer holds references to both the "tx" used to transfer and the "buffer" it's transmitting
+T 1710199232 18<26dav1d18>	LDericher, what does xfer.wait() return, a TX which is still tied to the buffer?
+T 1710199268 18<19LDericher18>	wait() returns the (buffer, tx), both untied
+T 1710199301 18<25yziquel18>	Is it possible, in unsafe rust to cast struct with a mutable pointer to the same struct without the mutability of the pointer ?
+T 1710199309 18<25yziquel18>	or in safe rust even ?
+T 1710199386 18<20j`ey18>	*mut T I think can be used in place of *const T already?
+T 1710199437 18<20j`ey18>	evalr: fn bar(a: *const u32){} fn foo(a: *mut u32) {bar(a)}
+T 1710199439 -18evalr/22##rust-	j`ey: ()
+T 1710199461 18<20j`ey18>	but https://doc.rust-lang.org/std/primitive.pointer.html#method.cast_const also exists
+T 1710199536 18<26dav1d18>	Widdershins, am I missing something, if the new tx is not tied to the buffer, it should be fine right?
+T 1710199598 18<25Widdershins18>	i think xfer is borrowing tx...?
+T 1710199626 18<25Widdershins18>	i'm not sure :/
+T 1710199628 18<26dav1d18>	Yeah, but the wait should consume it and return a new tx without a lifetime to the buffer?
+T 1710199739 18<26dav1d18>	Looks fine to me, but clearly it's not, hard to guess without actual type info. Already past my bed time, gl
+T 1710199767 18<25Widdershins18>	yeah need to see more of the crate for this
+T 1710199998 18<25yziquel18>	Widdershins this seems to allow what I need, though I'd like to see if it works with Enums and not only structs. https://github.com/dtolnay/readonly
+T 1710200032 18<25Widdershins18>	enums work the same as structs
+T 1710200072 18<20j`ey18>	also seems quite unrelated to anything you talked about
+T 1710200085 18<25Widdershins18>	yeah this is about visibility
+T 1710200146 18<19LDericher18>	Widdershins, I pushed the crate to my git, the last commit is the changes I'm trying to make: https://code.yavook.de/jmm/bluepill-rust-blinky/src/branch/irc
+T 1710200282 19*	Now talking on 22##rust
+T 1710200282 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710200282 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710200283 18<20polychromata{J}18>	<yziquel> I tend to be annoyed by people always questioning what I plan to do.
+T 1710200283 18<20polychromata{J}18>	<yziquel> I already have a mother.
+T 1710200283 18<20polychromata{J}18>	off-topic, but i feel like somecreature should mention that this is not normal
+T 1710200291 18<20polychromata{J}18>	you are gently encouraged to surround yourself with people who respect your autonomy. things tend to be much better that way.
+T 1710200305 18<20polychromata{J}18>	(speaking from personal experience)
+T 1710200310 18<25yziquel18>	polychromata{J} you want to go down that lane ?
+T 1710200350 18<20polychromata{J}18>	depends on what you mean by that? i'll be in ##rust-offtopic
+T 1710200384 18<25Widdershins18>	cdhowie: as far as i can tell based on its implementation (which is very funny btw) there's no reason it *can't* work on enums
+T 1710200424 18<20cdhowie18>	Widdershins: i don't see how it could work with enums at all
+T 1710201345 19*	Now talking on 22##rust
+T 1710201345 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710201345 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710201393 18<20polychromata{J}18>	like a lot of std types do that, things like `pub struct Foo(crate::sys::imp::Foo);`, where that module is #[cfg] based on platform. or something like that
+T 1710201394 18<25Widdershins18>	explicit privacy is a thing, including by convention a la python's prefixing with an underscore (or with two underscores, for the magic mangle)
+T 1710201406 18<25Widdershins18>	buuuut we're down the other road now a good ways with rust
+T 1710201475 18<25Widdershins18>	perhaps you could put `pub(partial)` as the visibility of the enum, and then the variants and fields therein would only have visibility as declared
+T 1710201640 18<25yziquel18>	Is OnceCell a way to tie the knot of an immutable cyclic (singly) linked list ?
+T 1710201678 18<26danieldg18>	it could be, though you need to solve the freeing problem too
+T 1710201699 18<25yziquel18>	danieldg i plan to use bumpalo to eschew that problem.
+T 1710201737 18<25yziquel18>	doable ?
+T 1710201758 18<26danieldg18>	sure
+T 1710201777 18<26danieldg18>	you could use a normal cell too
+T 1710201780 18<25yziquel18>	danieldg good to know. that will save me some time w/r investigation.
+T 1710201787 18<26danieldg18>	but yeah, oncecell is probably nicer
+T 1710201815 18<25yziquel18>	danieldg an normal cell has a runtime penalty, no ?
+T 1710201868 18<26danieldg18>	no, it's just more annoying to use
+T 1710201882 18<26danieldg18>	unless the type is Copy
+T 1710201908 18<26danieldg18>	Cell<Option<T>> and OnceCell<T> are basically identical if T is copy
+T 1710201920 18<26danieldg18>	other than the ability to write multiple times w/ Cell
+T 1710201973 18<20cdhowie18>	RefCell<T> has a runtime penalty (unless the optimizer can prove the refcounting redundant), but Cell<T> does not
+T 1710201979 18<25yziquel18>	and i get get a T out of it, if i understand right ?
+T 1710201988 18<26danieldg18>	you get &T
+T 1710201988 18<25yziquel18>	i can get
+T 1710202000 18<25yziquel18>	danieldg ok. just what I need.
+T 1710202007 18<25yziquel18>	i'll try it.
+T 1710202512 18<25Widdershins18>	i think OnceCell<&'a Self> would work to populate a cyclic network of direct references between values as long as all of the values' ownerships outlive 'a
+T 1710202529 18<25Widdershins18>	and it maintains a trivial drop
+T 1710202599 18<25Widdershins18>	actually would 'a have to be exactly equal to the lifetime of their ownership. is that allowed? maybe 'a has to outlive the ownership and you must be forced to drop them all before 'a is done actually
+T 1710202611 18<25yziquel18>	Widdershins kind of what i plan to do for my cyclic lambda terms.
+T 1710202651 18<25Widdershins18>	you could actually make the ownership arbitrarily extensible with constant references using the dumb clown thing i made the other week that i keep bringing back up
+T 1710202656 18<26danieldg18>	Widdershins: I think you end up with &'a Node<'a> for everything
+T 1710202666 18<25Widdershins18>	danieldg: yeah
+T 1710202674 18<26danieldg18>	it might forbid you from implementing Drop on Node
+T 1710202706 18<25Widdershins18>	i can imagine that would be the case
+T 1710202908 18<25Widdershins18>	is this allowed at all? i don't know how it's possible to take apart e.g. a btree of these when deleting a single one would invalidate literally all the rest and make them un-look-at-able
+T 1710202922 18<26danieldg18>	actually maybe that would just be bumpalo's stipulation, it doesn't Drop at all
+T 1710202955 18<26danieldg18>	that makes it much simpler
+T 1710204472 18<25yziquel18>	Where is the value retrieved by OnceCell.get() allocated in memory ?
+T 1710204486 18<26danieldg18>	inside the cell itself
+T 1710204493 18<26danieldg18>	you can look at the impl
+T 1710204506 18<26danieldg18>	it's a thin wrapper around UnsafeCell<Option<T>>
+T 1710204748 18<25yziquel18>	https://docs.rs/once_cell/latest/once_cell/#lateinit
+T 1710204760 18<25yziquel18>	but not quite what i seek.
+T 1710204778 18<26danieldg18>	yziquel: this is in std now
+T 1710204825 18<26danieldg18>	clarify your question then
+T 1710204885 18<25Widdershins18>	wondering if there's a reachable soundness hole around this
+T 1710204888 18<25yziquel18>	wel, i wonder. thinking.
+T 1710204930 18<25Widdershins18>	or if there's some dance that has to happen or straight up precludes what I'm thinking of
+T 1710204943 18<25Widdershins18>	taking a nap will look later
+T 1710204982 18<26danieldg18>	Widdershins: I think it could only happen with Drop impls, but yeah, it does feel like you could get to dead objects after making a self-referential struct
+T 1710205025 18<25Widdershins18>	if you put them in 2 vecs, make a cycle, and drop one vec. what then
+T 1710205049 18<25Widdershins18>	is that illegal, do you have to drop both. are the refs present but unlookable
+T 1710205070 18<26danieldg18>	this is related to #[may_dangle]
+T 1710205115 18<25yziquel18>	danield it seems it works. the memory layout is just pointers to pointers to pointers. no overhead. what i was looking for.
+T 1710205117 18<20cdhowie18>	Widdershins: The compiler should not let you do that.  That's effectively a textbook self-referential struct.
+T 1710205125 18<25yziquel18>	danieldg it seems it works. the memory layout is just pointers to pointers to pointers. no overhead. what i was looking for.
+T 1710205227 18<26danieldg18>	Widdershins: yep, it rejects it
+T 1710205247 18<25Widdershins18>	danieldg: where does the crime occur exactly
+T 1710205253 18<26danieldg18>	on drop
+T 1710205275 18<25Widdershins18>	do you have to drop both vecs or is the whole thing illegal
+T 1710205284 18<26danieldg18>	evalr: use std::cell::OnceCell; struct S<'a>(OnceCell<&'a S<'a>>); let x = S(OnceCell::new()); x.0.set(&x); drop(x); impl<'a> Drop for S<'a> { fn drop(&mut self) {}}
+T 1710205286 -18evalr/22##rust-	danieldg: error[E0597]: `x` does not live long enough ...
+T 1710205287 -18evalr/22##rust-	danieldg: https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=5896d72b18bb347398fa9b37707bf7c7
+T 1710205308 18<26danieldg18>	having more than one x just makes it longer
+T 1710205339 18<25Widdershins18>	i don't need an impl drop though I'm just wondering how they can be owned
+T 1710205359 18<20cdhowie18>	They'd be owned by the arena
+T 1710205361 18<26danieldg18>	if you remove the impl Drop it'll compile
+T 1710205378 18<26danieldg18>	evalr: use std::cell::OnceCell; struct S<'a>(OnceCell<&'a S<'a>>); let x = std::mem::ManuallyDrop::new(S(OnceCell::new())); x.0.set(&x); impl<'a> Drop for S<'a> { fn drop(&mut self) {}}
+T 1710205380 -18evalr/22##rust-	danieldg: ()
+T 1710205387 18<26danieldg18>	that one kinda surprised me
+T 1710205417 18<26danieldg18>	it's fine but I expected rustc to reject it anyway
+T 1710205436 18<25Widdershins18>	hah
+T 1710205475 18<25Widdershins18>	you have to forget it? or can you actually do the drop because you have to do it unsafely
+T 1710205492 18<26danieldg18>	you have to forget it if you want to be safe
+T 1710205494 18<25yziquel18>	danieldg lateinit is not in stdlib.
+T 1710205503 18<25yziquel18>	i think
+T 1710205525 18<26danieldg18>	yziquel: lateinit is just a "how do I use this", not an actual feature
+T 1710205537 18<25yziquel18>	stupid me
+T 1710205890 18<25yziquel18>	ok. got it. perfect. happy evening.
+T 1710206275 18<26danieldg18>	evalr: #![feature(dropck_eyepatch)] use std::cell::OnceCell; struct S<'a>(OnceCell<&'a S<'a>>); let x = S(OnceCell::new()); x.0.set(&x); unsafe impl<#[may_dangle] 'a> Drop for S<'a> { fn drop(&mut self) {}}
+T 1710206277 -18evalr/22##rust-	danieldg: error[E0554]: `#![feature]` may not be used on the stable releas ...
+T 1710206278 -18evalr/22##rust-	danieldg: https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=9f6a30f272664760faa91cbe66e4b4e0
+T 1710206285 18<26danieldg18>	evalr: --unstable #![feature(dropck_eyepatch)] use std::cell::OnceCell; struct S<'a>(OnceCell<&'a S<'a>>); let x = S(OnceCell::new()); x.0.set(&x); unsafe impl<#[may_dangle] 'a> Drop for S<'a> { fn drop(&mut self) {}}
+T 1710206287 -18evalr/22##rust-	danieldg: error: expected one of `!`, `.`, `::`, `;`, `?`, `{`, `}`, or an ...
+T 1710206287 -18evalr/22##rust-	danieldg: https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=85e1c619e50b0f35d243829b1fefa800
+T 1710206297 18<26danieldg18>	evalr: --nightly #![feature(dropck_eyepatch)] use std::cell::OnceCell; struct S<'a>(OnceCell<&'a S<'a>>); let x = S(OnceCell::new()); x.0.set(&x); unsafe impl<#[may_dangle] 'a> Drop for S<'a> { fn drop(&mut self) {}}
+T 1710206299 -18evalr/22##rust-	danieldg: ()
+T 1710206373 18<26danieldg18>	so you can actually do the drop, you just have to promise not to look at the ref when you are in the drop impl
+T 1710207178 18<25Widdershins18>	danieldg: ohhh
+T 1710207555 18<25Widdershins18>	yeah ok so
+T 1710207577 18<25Widdershins18>	i can use the circus impl to add vecs full of self-referential whatsits
+T 1710207597 18<26danieldg18>	yep
+T 1710207612 18<25Widdershins18>	but nothing self-referential or containing anything self-referential can be moved or dropped except in-place
+T 1710207614 18<26danieldg18>	rustc will stop you if you do it wrong
+T 1710207626 18<26danieldg18>	also yes
+T 1710207652 18<26danieldg18>	self-referential things are annoying to use because of this
+T 1710207670 18<25Widdershins18>	and if dropping is all done implicitly i guess that is sufficient to prove that it happens automatically, effectively instantaneously, and by the book
+T 1710207674 18<25yziquel18>	seems a cool discussion.
+T 1710207737 18<25Widdershins18>	for some reason i thought labeled blocks could be named as lifetimes
+T 1710207763 18<26danieldg18>	they do use the same syntax
+T 1710207794 18<25Widdershins18>	it would make sense to have 'a: { .. } and anything in that block could name 'a as "promised to live at least as long as the end of this block"
+T 1710207804 18<25yziquel18>	yes
+T 1710207805 18<25Widdershins18>	seems that can't be spelled though
+T 1710207818 18<25Widdershins18>	'a is just a label here, and lifetimes can only be created via parameter
+T 1710207933 18<25Widdershins18>	i guess fair enough since encouraging people to spell explicit lifetimes can only bake in the current borrowck model annoyingly hard
+T 1710208068 18<25Widdershins18>	https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=107daf6585e4fe9259be22d109207e61
+T 1710208643 18<25Widdershins18>	those could probably be Box<[ScaryClown]> but it's surprisingly annoying to turn Box<[T; N]> into Box<[T]>. unless i'm forgetting an easy way to do it
+T 1710208660 18<26danieldg18>	I think it's just an as?
+T 1710208696 18<25Widdershins18>	:o you can `as` a Box?
+T 1710208732 18<25Widdershins18>	or do you `as` the sized array in place without taking it as a reference
+T 1710208740 18<25Widdershins18>	i wasn't aware you could do either of those things
+T 1710208770 18<26danieldg18>	it's the same as making a Box<dyn Foo>
+T 1710208773 18<26danieldg18>	which is also via as
+T 1710208774 18<25Widdershins18>	wow you can as the box
+T 1710208781 18<25Widdershins18>	is this a compiler carve-out
+T 1710208802 18<26danieldg18>	it's an unsizing coersion
+T 1710208818 18<26danieldg18>	I think it just works for things that are generic with <T:?Sized>
+T 1710208864 18<25Widdershins18>	interesting... and that goes straight through the generics and makes it a different concrete type you're holding?
+T 1710208880 18<26danieldg18>	basically it just widens the pointer
+T 1710208911 18<25Widdershins18>	yeah but if this isn't special for box that's wild, since you could use that to widen any generic pointers within any struct
+T 1710208921 18<26danieldg18>	it might require CoerceUnsized
+T 1710208936 18<26danieldg18>	no, you don't widen the pointer *in* the struct
+T 1710208946 18<26danieldg18>	you widen the pointer to the struct
+T 1710208962 18<25Widdershins18>	you get a new struct with the same values and the same pointer but now the pointer is wide
+T 1710208980 18<25Widdershins18>	i can as the box without any features
+T 1710209026 18<25Widdershins18>	vec also automatically coerces to Box<[T]> apparently, but Box<[T; N]> does not
+T 1710209038 18<25Widdershins18>	or at least whatever `vec!` spits out does
+T 1710209041 18<25Diablo-D318>	[19:16:04] <pflanze> Diablo-D3, the last commit to that repo was from a day ago. Also, https://element.io/blog/element-x-ignition/
+T 1710209059 18<25Diablo-D318>	I guess its good news they didnt fuck this up
+T 1710209252 18<25Diablo-D318>	btw, apparently I may have been thinking of fractal
+T 1710209318 18<25Diablo-D318>	sadly, its gnome's own client
+T 1710209319 18<25Widdershins18>	danieldg: not having any luck applying it to a type containing a ref
+T 1710209325 18<25Diablo-D318>	so thats super doa
+T 1710209336 18<25Widdershins18>	even with the feature
+T 1710209383 18<25Widdershins18>	or do you have to impl the feature
+T 1710209386 18<25Widdershins18>	trait*
+T 1710209412 18<26danieldg18>	Widdershins: I think you have to have the boxlike impml CoerceUnsized
+T 1710209508 18<25Widdershins18>	> implement CoerceUnsized<Ptr<U>> for Ptr<T> where T: Unsize<U>, U: ?Sized
+T 1710209517 18<25Widdershins18>	i see how it is ok
+T 1710209648 18<25Widdershins18>	and it won't let you implement it on an enum. bummer
+T 1710210049 18<25Widdershins18>	so the coercion only works if it always knows precisely what to do, you can't have branches in there
+T 1710210402 18<29cowboy86118>	hey hey
+T 1710210885 18<25Widdershins18>	haha
+T 1710210894 18<25Widdershins18>	pro tip: don't actually derive Debug for a self-referential type

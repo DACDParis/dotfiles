@@ -3335,3 +3335,284 @@ T 1710109467 19*	Now talking on 22#ubuntu
 T 1710109467 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
 T 1710109467 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
 T 1710109467 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710112836 19*	Now talking on 22#ubuntu
+T 1710112836 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710112836 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710112836 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710113061 19*	Now talking on 22#ubuntu
+T 1710113061 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710113061 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710113061 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710118768 19*	Now talking on 22#ubuntu
+T 1710118768 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710118768 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710118768 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710131041 19*	Now talking on 22#ubuntu
+T 1710131041 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710131041 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710131041 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710133664 19*	Now talking on 22#ubuntu
+T 1710133664 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710133664 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710133664 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710152285 19*	Now talking on 22#ubuntu
+T 1710152285 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710152285 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710152285 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710152784 18<28OnkelTem18>	Hi folks. When I start executing iproute2 commands, NetworkManager stops seeing my ethernet interface because it assigns a different UUID to the one I bring up with iproute2
+T 1710152808 18<28OnkelTem18>	What should I do? Should I disable NM from managing my ethernet?
+T 1710152871 18<28OnkelTem18>	I just don't get why if I do like: `dhclient enp7s0` NM doesn't "see it" as a valid "Wired connection 1" that it knows
+T 1710152906 18<28OnkelTem18>	So in fact I now have two interfaces: https://termbin.com/u83u
+T 1710152958 18<28OnkelTem18>	(until I manually run the "Wired connection 1" one from NM UI, and then my enp7s0 intrface disappears as you see)
+T 1710154080 18<28ogra_18>	OnkelTem, why not use the correct tools ? if you use NM you suld also use its cli tools to manipulate routes to not make different technologies clash ... nmcli can very well do everything you'd do with "ip route .."
+T 1710154150 18<28OnkelTem18>	ogra_: I don't think it can do what I need. But I agree that I shouldn't make different things to clash
+T 1710154195 18<28OnkelTem18>	I'm reading now about so called "Netplan". I don't get is it natural to Ubuntu? Will it play nice with NM?
+T 1710154202 18<28OnkelTem18>	Is it under or above it or what
+T 1710154252 18<28ogra_18>	netplan is a frontend to configure networking ... it can use systemd-networkd or netplan as its backends
+T 1710154257 18<28ogra_18>	bah
+T 1710154277 18<28ogra_18>	it can use systemd-networkd or *NM* as its backends
+T 1710154342 18<28ogra_18>	so yes, it might be an option to do what you want by using the very frontend (which makes internally sure that the technologies do not clash)
+T 1710154354 18<28OnkelTem18>	netplan is a frontend? It didn't look like one when I was reading its tutorial LOL
+T 1710154366 18<28OnkelTem18>	but ok, I'm not arguing I just don't know
+T 1710154368 18<28ogra_18>	it is a "generator"
+T 1710154385 18<28ogra_18>	to either generate NM or networkd configs ...
+T 1710154427 18<28OnkelTem18>	Ok, so NM is more than its UI, isn't it? Because when I talk about NM, I think only about its UI and I definitely don't remember things I need to configure via iproute2
+T 1710154438 18<28ogra_18>	https://netplan.readthedocs.io/en/stable/
+T 1710154453 18<28OnkelTem18>	yeah, I'm reading it
+T 1710154516 18<28OnkelTem18>	What I need is: creata a bridge, add there my "eth0", then create a pair of veth-s, place one into the bridge and another one - into a namespaced network created via `ip netns`
+T 1710154533 18<28OnkelTem18>	then inside that netns I should bring up an OpenVPN connection
+T 1710154565 18<28OnkelTem18>	I think I can do at least hafl of this job using netplan, and finish the rest via iproute2
+T 1710154579 18<28OnkelTem18>	namely - make a bridge
+T 1710154587 18<28OnkelTem18>	using netplan
+T 1710154619 18<28ogra_18>	i dont think you should need or use iproute at all, netplan should surely offer all you need
+T 1710154635 18<28OnkelTem18>	ok, thanks. I continue reading the docs then.
+T 1710154678 18<28ogra_18>	(it is definitely doing bridging fine on millions of cloud installs out there... I'd be surprised if it would require additional tools)
+T 1710155591 18<19nikolam18>	hi.  I tried to create iSCSI initiator (client) on XUbuntu 22.04 , for iSCS target (server) that is already working well in MS windows. it doe snot require authentication at the moment. but sudo iscsiadm -m discovery -t st -p IP_address does not give nothing..
+T 1710155926 18<28OnkelTem18>	ogra_: seems like I cannot use network manager as a backend if I'm gonna configure something in netplan
+T 1710155955 18<28OnkelTem18>	The examples section https://netplan.readthedocs.io/en/stable/examples/ shows that they always change "renderer" to networkd whenever there's a need configure something
+T 1710156087 18<19cbreak_18>	OnkelTem: you can use network manager as backend
+T 1710156116 18<19cbreak_18>	I do that.
+T 1710156143 18<28OnkelTem18>	cbreak_: so you still have some configuration like below the renderer line?
+T 1710156148 18<19cbreak_18>	yes
+T 1710156151 18<28OnkelTem18>	thanks!
+T 1710156194 18<28OnkelTem18>	Ok, I ran through Netplan docs and I didn't find there anything about namespaces. Seems like I cannot configure my setup with netplan only, iproute2 is still needed
+T 1710156210 18<19cbreak_18>	looks aproximately like this: https://gist.github.com/cbreak-black/9ff7cc1fbb61d6ceb799ece3c832ff08
+T 1710156223 18<28OnkelTem18>	cool!
+T 1710156226 18<19cbreak_18>	since I want to use ipv6 auto configure, but also a static IP
+T 1710156241 18<19cbreak_18>	no idea about namespaces
+T 1710156251 18<28OnkelTem18>	what is the point/difference then between those two backends - networkd and NM?
+T 1710156260 18<19cbreak_18>	I think the different renderers support different things. With networkd, I couldn't get it to work
+T 1710156276 18<28OnkelTem18>	I see
+T 1710156343 18<19cbreak_18>	you want to hard-code routing entries?
+T 1710156398 18<19cbreak_18>	https://netplan.readthedocs.io/en/latest/netplan-yaml/#routing
+T 1710156414 18<28ogra_18>	OnkelTem, two backends -> simply to support server and desktop likewise ... server does usually not install NM
+T 1710156453 18<28ogra_18>	(unless your server has a mobile 4G/5G connection you wont really need NM)
+T 1710156535 18<28OnkelTem18>	cbreak_: No, my routing is dead simple. I just want to create an isolated network namespace where I run OpenVPN from. This way, I should be able run any program via the vpn connection by just prefixing with `ip netns exec MyVpnNS`
+T 1710156562 18<28OnkelTem18>	E.g. $ ip netns exec MyVpnNS google-chrome-stable
+T 1710156607 18<25cbreak18>	hmm... I use lxc for that
+T 1710156621 18<28OnkelTem18>	a container, I see
+T 1710156622 18<25cbreak18>	I have lxc containers that use different VPNs for everything inside
+T 1710156629 18<28OnkelTem18>	a *full* contauner, right?
+T 1710156643 18<25cbreak18>	well... it's just an LXC contatiner, not a real VM
+T 1710156649 18<28OnkelTem18>	never used lxc, honestly. I think it just makes all that isolation inside
+T 1710156661 18<28OnkelTem18>	with netns
+T 1710156671 18<25cbreak18>	it shares the kernel with the outside
+T 1710156672 18<28OnkelTem18>	sure, I understand, it's like docker
+T 1710156683 18<25cbreak18>	but somehow, wireguard still works despite being kernel space
+T 1710156742 18<25cbreak18>	but starting transmission-daemon inside is easy, and starting firefox inside (with x11 and so on) also works with a bit of configuration
+T 1710156789 18<28OnkelTem18>	hm, maybe I should also consider this. As using netns directly isn't convered/documented well in the internet
+T 1710156811 18<19nikolam18>	I wonder why iscsiadm -m discovery -t st -p IP_adress doe snot give any results, where iSCSi target from the same server is working just fine with initiator running on MS Win 10.
+T 1710156819 18<28OnkelTem18>	cbreak: what would you recommend to read first?
+T 1710156838 18<28OnkelTem18>	goal 1: run browser inside LXC container
+T 1710156911 18<28OnkelTem18>	also, I would like not to use another user id for this. (If I reckoned it an option, I could have configured just user-id based routing)
+T 1710156984 18<25cbreak18>	I think I followed https://blog.simos.info/running-x11-software-in-lxd-containers/
+T 1710156994 18<28OnkelTem18>	cbreak: thanks!
+T 1710157452 18<28OnkelTem18>	Ok, my netplan version is 106, and virtual-ethernets appear only on 107
+T 1710157458 18<28OnkelTem18>	so I need to update netplan somehow
+T 1710157470 18<28OnkelTem18>	Kubuntu 22.04 here
+T 1710157507 18<19ravage18>	not a good (net)plan probably. wait a little longer for 24.04
+T 1710157524 18<28OnkelTem18>	I cannot wait, I need to configure virtual ethernets
+T 1710157571 18<19ravage18>	22.04 does not provide the version you want
+T 1710157595 18<28OnkelTem18>	I know, I expect there's a PPA or something
+T 1710157703 18<28OnkelTem18>	ok, seems like netplan cannot do even that now. So I can use only its bridge functionality out of my long setup
+T 1710157863 18<28OnkelTem18>	And it doesn't seem like NetworkManager support namespaces
+T 1710158170 18<25cbreak18>	seems I have 0.107-5 from 23.10
+T 1710160905 18<22BluesKaj18>	Hi all
+T 1710167653 18<22Code_Bleu18>	Just curious what people are using for patch management of Ubuntu servers?  I'm currently needing an opensource/free solution at the moment.  Preferrabley something more than me just writing Ansible or Puppet to manage it.  Something with Lifecycle management..etc.
+T 1710169251 18<28ogra_18>	Code_Bleu, what do you mean by "patch management" ? Ubuntu is a binary distro, "patch management" happens on a per-package level, all you need to do is to make sure to keep your packages up to date to be on the latest patchlevel ...
+T 1710169628 18<22Code_Bleu18>	ogra_: management of updating packages
+T 1710169706 18<28ogra_18>	ah, right ... well, there is the unattended-updates package pre-installed that lets you configure a lot of actions around this, not sure you actually *need* an external tool for it
+T 1710169771 18<28ogra_18>	(see: man unattended-upgrades )
+T 1710169836 18<22Code_Bleu18>	ogra_: for example: I have 200 servers, I want to be able to see that 98 of them have the same package on an old version and be able to setup a lifecycle to update those in my development environment first, then staging...then prod.  A proper lifecycle deployment of updating of software packages.
+T 1710169929 18<19pick18>	Hello, I see that one can apt install package=version , is there a way to apt upgrade to a newer but not the newest version?
+T 1710169986 18<20leftyfb18>	pick: you just answered your own question
+T 1710170029 18<19pick18>	so apt upgrade  package=version  should work?
+T 1710170033 18<20leftyfb18>	yes
+T 1710170108 18<19pick18>	thanks google was throwing out a cloud of chaff results about apt install
+T 1710170281 18<19pick18>	I'm not clear on the format tho.... if 'apt list -a --upgradable' returns results like package/xenial 7.0.0 amd64, do I just use  'apt upgrade  package=7.0.0' or do I have to include the xenial somehow ?
+T 1710170295 18<19pick18>	or the amd64 ?
+T 1710170306 18<20leftyfb18>	pick: 16.04 is multiple years End of Life
+T 1710170394 18<19pick18>	oh, its a third party repository, checking if they have jammy
+T 1710170418 18<20leftyfb18>	there's no guarantee any of this is going to work with a 3rd party repo
+T 1710170489 18<19pick18>	the current installed version is labelled xenial, maybe its just the minimum requirement
+T 1710170507 18<19pick18>	it works fine.
+T 1710170545 18<27oerheks18>	good luck with that, it might be a honeypot now.
+T 1710170546 18<19pick18>	in any case do I put xenial or amd64 or just  'apt upgrade  package=7.0.0'
+T 1710170708 18<19pick18>	the developers release a new version every week or two, but they are all labelled xenial
+T 1710170855 18<20leftyfb18>	pick: apt-cache policy <package name>
+T 1710170862 18<20leftyfb18>	get the available versions from there
+T 1710171021 18<19pick18>	hmm the list looks similar.  but how do I assemble a working URL from the pieces there?
+T 1710171039 18<20leftyfb18>	sudo apt install package=version
+T 1710171092 18<19pick18>	oh so I don't have to roll my own URL from .....org/desktop/apt xenial/main amd64 Packages
+T 1710171118 18<20leftyfb18>	URL?
+T 1710171126 18<20leftyfb18>	sudo apt install package=version
+T 1710171131 18<20leftyfb18>	sudo apt install package-name=version
+T 1710171156 18<19pick18>	so apt install also works as an apt upgrade
+T 1710171167 18<20leftyfb18>	or downgrade, yes
+T 1710171440 18<19pick18>	thank you very much ...  now I see that man apt-get is clearer about this than man apt, which is correct but ambiguous to the uninformed.
+T 1710172698 18<24milktoast18>	I've used dd with hdd and it always worked.. now ssd are physically different.... so, can I dd from and 120GB ssd to a 1TB ssd?  Trying to increase the size of a Laptop and keep the OS, software and data.
+T 1710172734 18<20leftyfb18>	yes
+T 1710172753 18<24milktoast18>	great. thanks
+T 1710172807 18<27oerheks18>	be aware after that DD action, the UUID changes of your partitions ?
+T 1710172859 18<24milktoast18>	other than mounting, what else would that effect?
+T 1710172907 18<27oerheks18>	your grub mismatches, use blkid to identify the new ones
+T 1710172910 18<20leftyfb18>	just mounting, of it's part of some volume or array
+T 1710172924 18<27oerheks18>	*if the os is on that disk
+T 1710173371 18<24milktoast18>	got disconnected ...
+T 1710173372 18<24milktoast18>	hmm, now I'm thinking.. if I DD 120GB onto a 1TB, will the 120GB be the first partition or ?? ... will I need to make other partitions after the 120GB
+T 1710173372 18<24milktoast18>	or is there a better way to clone the small SSD to the large SSD
+T 1710173445 18<20leftyfb18>	milktoast: it will go a LOT easier if you just consider your target a blank slate. dd your source to the target, then use partition and filesystem tools to resize to utilize the entire drive
+T 1710173459 18<20leftyfb18>	milktoast: dd the entire drive, not partitions
+T 1710173617 18<24milktoast18>	leftyfb: .. that is what I was thinking. It is blank.
+T 1710173663 18<24swift110-mobile18>	Good afternoon. Are you guys using mate’
+T 1710173674 18<29p3lim18>	how can I test the match targets for the autoinstall/curtin storage options? e.g. it says in the docs that it's supposed to use "ID_VENDOR" from udev for the "match" keypair, but I can't seem to get it working
+T 1710173861 18<24swift110-mobile18>	The Linux User Space podcast did a great job detailing the history of Mate’ in episode 4:14
+T 1710173981 18<20leftyfb18>	!chat | swift110-mobile
+T 1710173981 18<19ubottu18>	swift110-mobile: #ubuntu is the Ubuntu support channel, for all Ubuntu-related support questions. Please use #ubuntu-offtopic for other topics (though our !guidelines apply there too). Thanks!
+T 1710174349 18<24swift110-mobile18>	Ok
+T 1710176765 18<19martti18>	ugm, I have a question. we installed a couple of virtual machines with ubuntu 22.04 around october last year. our installation scripts use `openssl genrsa 4096` to create a private key, but around that time it seems like there was a switch of default format, from PKCS#1 to PKCS#8, which basically means that the type of key was dropped from the envelope.
+T 1710176888 18<19martti18>	strangely, after one case of `-----BEGIN PRIVATE KEY-----` on oct 3, there were 4 more installs that got `-----BEGIN RSA PRIVATE KEY-----`, but I suppose our installation method hasn't changed.
+T 1710178458 18<22jongsta18>	should there be instructions on this site for how to fix the vulnerability? https://ubuntu.com/security/CVE-2023-5178
+T 1710178459 -18ubottu/22#ubuntu-	A use-after-free vulnerability was found in drivers/nvme/target/tcp.c` in `nvmet_tcp_free_crypto` due to a logical bug in the NVMe/TCP subsystem in the Linux kernel. This issue may allow a malicious user to cause a use-after-free and double-free problem, which may permit remote code execution or lead to local privilege escalation. <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-5178>
+T 1710178481 18<22jongsta18>	or are we supposed to know you just upgrade it to a newer, unaffected, version?
+T 1710178518 18<27stenno18>	wait that sounds really serious
+T 1710178669 18<27oerheks18>	jongsta, basicly yes. all kernels are patched,or ignored as the available update is not vulnerable.
+T 1710178683 18<22jongsta18>	ok
+T 1710178711 18<22jongsta18>	i haven't had to fix vulns in a while but for some reason i feel like i recall a section in these types of articles that explains how to fix the problem
+T 1710178718 18<22jongsta18>	and i'm not seeing that with this one at least
+T 1710178738 18<22jongsta18>	a simple "Remediation: upgrade kernel to unaffected version" would be enough
+T 1710178779 18<27oerheks18>	the post is released when the updates are in place, usually
+T 1710178800 18<27oerheks18>	for volunteers here, that list is handy to answer questions
+T 1710185357 18<29yug18>	hi there
+T 1710185425 18<28bprompt18>	allo
+T 1710185808 18<25toddc18>	!support
+T 1710185809 18<19ubottu18>	#ubuntu is the Ubuntu support channel, for all Ubuntu-related support questions. Please use #ubuntu-offtopic for other topics (though our !guidelines apply there too). Thanks!
+T 1710185839 18<25toddc18>	please ask if you have a question
+T 1710186127 18<28bprompt18>	!ask | toddc
+T 1710186127 18<19ubottu18>	toddc: Please don't ask to ask a question, simply ask the question (all on ONE line and in the channel, so that others can read and follow it easily). If anyone knows the answer they will most likely reply. :-) See also !patience
+T 1710189220 18<22eatyourglory18>	!patience
+T 1710189220 18<19ubottu18>	Don't feel ignored and repeat your question quickly; if nobody knows your answer, nobody will answer you. While you wait, try searching https://help.ubuntu.com or https://ubuntuforums.org or https://askubuntu.com/
+T 1710189230 18<22eatyourglory18>	This bot is pretty useful
+T 1710189262 18<19ravage18>	yes. and you can test it in a PM too 🙂
+T 1710189271 18<22eatyourglory18>	Oh, sorry I didn’t know that
+T 1710189346 18<22eatyourglory18>	If my question isn’t Kubuntu specific but rather ubuntu in general, should I ask here or in #kubuntu ?
+T 1710189380 18<19ravage18>	all ubuntu questions are ok here
+T 1710189405 18<19ravage18>	*buntu i mean 🙂
+T 1710189411 18<28bprompt18>	eatyourglory: yes, and yes
+T 1710189445 18<28bprompt18>	eatyourglory:  if you were to install Ubuntu desktop and afterwards KDE desktop and QT, you simply will be running Kubuntu
+T 1710189492 18<22eatyourglory18>	then why is there a kubuntu channel in the first place?
+T 1710189526 18<28bprompt18>	eatyourglory: to cover issues with the Kubuntu flavor of Ubuntu :)
+T 1710189559 18<22eatyourglory18>	Thanks a lot!
+T 1710189614 18<28bprompt18>	eatyourglory: and to be fair, most if not all questions at #kubuntu are about KDE , not ubuntu per se
+T 1710193323 18<29chonkin18>	I am on Ubuntu 20.04.1   with a KDE Plasma 5.12.8 .    This computer has a Nvidia  RTX 3070 in it (unfotunately).  The symptom I am having is that after every large compilation the  GUI elements become either frozen or extremely laggy.  This lag is so bad it makes the computer unusable, and I have written a bash script to automate rebooting it after every compile.    Today I want ot try to solve this problem once-and-for-all by replacing the
+T 1710193323 18<29chonkin18>	Nvidia driver
+T 1710193333 18<19baggy18>	 Gtk-WARNING **: 15:28:38.939: Unable to locate theme engine in module_path: "pixmap", how may this be done
+T 1710193528 18<27oerheks18>	minimum driver would be 460
+T 1710193552 18<29chonkin18>	here is the current situation on this machine https://dpaste.com/2VY87TNDB
+T 1710193607 18<27oerheks18>	i would upgrade to 22.04, and use HWE
+T 1710193609 18<27oerheks18>	!hwe
+T 1710193609 18<19ubottu18>	The Ubuntu LTS enablement stacks provide newer kernel and X support for existing LTS releases, see https://wiki.ubuntu.com/Kernel/LTSEnablementStack
+T 1710193618 18<27oerheks18>	also available for 20.04 AFAIK
+T 1710193653 18<29chonkin18>	oerheks   my boss put this computer together.  He should have considered an AMD option for the GPU.  But he went with an RTX3070,  kind of sending me down the creek
+T 1710194166 18<29chonkin18>	I believe that the problem with the  GUI lags could be solved by trying a different (likely more recent) driver.  What role does the LTS Enablement play here?   The directions show that they want me to simply go back to the same driver that is already on here via `ubuntu-drivers list`
+T 1710194373 18<27oerheks18>	newer mesa, kernel, .. 20.04 is pretty ancient today fot such good hardware
+T 1710194379 18<27oerheks18>	c/for
+T 1710194391 18<27oerheks18>	try hwe
+T 1710194411 18<27oerheks18>	or better upgrade to 22.04, and add hwe on that
+T 1710195332 18<29chonkin18>	oerheks,   okay I have this.  what is next step?   https://dpaste.com/2JH9SPWM7
+T 1710195449 18<27oerheks18>	upgrade to 22.04? 3rd time
+T 1710195466 18<27oerheks18>	you just have kernel 5.15.0-97
+T 1710195495 18<27oerheks18>	22.04 would do 6.5.0-25
+T 1710200282 19*	Now talking on 22#ubuntu
+T 1710200282 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710200282 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710200282 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710201344 19*	Now talking on 22#ubuntu
+T 1710201344 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710201344 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710201345 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710201362 18<19baggy18>	i know how to use xstart
+T 1710201369 18<19baggy18>	u know prob
+T 1710201375 18<20arraybolt318>	baggy: not sure you'll find any buyers here :P What exactly are you trying to do that requires startx?
+T 1710201383 18<19baggy18>	wsl
+T 1710201387 18<19baggy18>	ubuntu
+T 1710201388 18<20arraybolt318>	ohhh
+T 1710201392 18<20arraybolt318>	ok one sec
+T 1710201500 18<19baggy18>	startx
+T 1710201503 18<19baggy18>	i meant
+T 1710201506 18<19baggy18>	https://www.howtogeek.com/409115/how-to-delete-files-and-directories-in-the-linux-terminal/
+T 1710201520 18<20arraybolt318>	why exactly are you using startx in WSL? You can run graphical applications from the Start Menu after installing them.
+T 1710201527 18<19baggy18>	change to 11??
+T 1710201529 18<19baggy18>	i think
+T 1710201577 18<20arraybolt318>	startx is generally only used to start a full desktop, and even then only in very specific weird situations.
+T 1710201597 18<20arraybolt318>	According to https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps WSL2 does not support running a full Linux desktop.
+T 1710201628 18<19baggy18>	_XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+T 1710201634 18<19baggy18>	what is that suppose to mean
+T 1710201645 18<20arraybolt318>	I don't know, I don't know what you're trying to do.
+T 1710201656 18<19baggy18>	i dint do it yet
+T 1710201659 18<20arraybolt318>	Go back just a bit. You're trying to launch an entire DE within WSL. Why?
+T 1710201662 18<19baggy18>	be cayse it slow
+T 1710201669 18<19baggy18>	right?
+T 1710201669 18<24kostkon18>	baggy, file perms? use chown?
+T 1710201671 18<20arraybolt318>	Launching a whole DE in WSL isn't possible.
+T 1710201678 18<20arraybolt318>	kostkon: I think they probably shouldn't do that right now.
+T 1710201690 18<20arraybolt318>	You could cause damage trying to "fix" something that isn't broken.
+T 1710201691 18<24kostkon18>	arraybolt3, good call
+T 1710201701 18<20arraybolt318>	This doesn't work because it isn't designed to work yet.
+T 1710201711 18<19baggy18>	i thojught ur suppose to chnage the file name
+T 1710201713 18<19baggy18>	didnt try
+T 1710201716 18<20arraybolt318>	baggy: if your apps are slow, maybe you're missing the GPU drivers needed?
+T 1710201743 18<20arraybolt318>	See https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps - it recommends you install drivers to enable virtual GPU so that you can have hardware accelerated graphics for your Linux apps.
+T 1710201749 18<19baggy18>	i read it could slow it
+T 1710201752 18<20arraybolt318>	That should fix any "slowness" you notice, as much as can be fixed anyway.
+T 1710201754 18<19baggy18>	the tree
+T 1710201769 18<19baggy18>	i treed it
+T 1710201777 18<19baggy18>	and i thought it was wrong
+T 1710201803 18<20arraybolt318>	You're giving very little details and very vague explanations. Right now without knowing what you're trying to do, it's impossible to tell for sure how to make it work.
+T 1710201809 18<20arraybolt318>	Why are you using `tree`?
+T 1710201831 18<20arraybolt318>	And how big of a directory are you trying to look at anyway?
+T 1710201836 18<19baggy18>	_XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+T 1710201847 18<19baggy18>	at startx
+T 1710201856 18<20arraybolt318>	startx won't work. Abandon startx.
+T 1710201864 18<20arraybolt318>	WSL2 explicitly does not support it.
+T 1710201874 18<20arraybolt318>	Whatever you're doing can be done without it.
+T 1710201876 18<24kostkon18>	baggy, are you following some kind of tutorial on how to enable x11 in wsl
+T 1710201911 18<19baggy18>	ubuntu-desktop-installer
+T 1710201911 18<19baggy18>	        ├── 1276
+T 1710201912 18<19baggy18>	        ├── 1286
+T 1710201912 18<19baggy18>	        ├── common
+T 1710201912 18<19baggy18>	        └── current -> 1286
+T 1710201933 18<20arraybolt318>	If you're just trying to look at all the files in a directory, use `tree` and don't worry about "slowness". If you use it on an absolutely massive directory and the slowness is noticable, install the GPU drivers, then install a hardware-accelerated terminal, launch it from the Start Menu, and use that.
+T 1710201968 18<19baggy18>	wsl
+T 1710201971 18<20arraybolt318>	99% of the time though, so-called "slowness" is so negligible you won't care.
+T 1710202023 18<19baggy18>	no change then
+T 1710202025 18<19baggy18>	ok
+T 1710202028 18<19baggy18>	sure?
+T 1710202041 18<20arraybolt318>	Pretty sure at least.
+T 1710202073 18<20arraybolt318>	(depending on what you're asking if I'm sure about - I'm definitely sure you shouldn't try to fix that odd _XSERVTransmkdir error, and I'm also sure you don't need startx to be able to use tree.)
+T 1710202339 18<19baggy18>	i never really tried ubuntu except in the past.. :) https://www.howtogeek.com/409115/how-to-delete-files-and-directories-in-the-linux-terminal/ is the tutorial for basics
+T 1710202353 18<19baggy18>	now i get some simple commands
+T 1710210977 18<19Tingo18>	Hi..
+T 1710211015 18<19Tingo18>	Hi, # openssl s_client IP:Port -tls1_2 -trace
+T 1710211029 18<19Tingo18>	How can i check which SecLevel is used from above command ?
+T 1710211478 18<22pragmaticenigma18>	Tingo, Unless you explicately set the SecLevel, it is either set by a configuration file, or going to be negotiated at time of connection

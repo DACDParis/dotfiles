@@ -1,0 +1,28 @@
+[Added Associations]
+application/pdf=Sioyek.desktop;
+audio/flac=vlc.desktop;
+audio/mp4=vlc.desktop;
+inode/directory=org.kde.dolphin.desktop;
+video/mpeg=vlc.desktop;
+x-scheme-handler/geo=google-maps-geo-handler.desktop;openstreetmap-geo-handler.desktop;
+x-scheme-handler/http=vivaldi-stable.desktop;
+x-scheme-handler/https=vivaldi-stable.desktop;
+x-scheme-handler/mailto=org.mozilla.Thunderbird.desktop;
+x-scheme-handler/tel=org.kde.kdeconnect.handler.desktop;
+video/x-matroska=vlc.desktop;
+audio/x-mpegurl=vlc.desktop;
+application/xspf+xml=code.desktop;
+text/markdown=lvim.desktop;
+
+[Default Applications]
+application/pdf=Sioyek.desktop;
+audio/flac=vlc.desktop;
+audio/mp4=vlc.desktop;
+inode/directory=org.kde.dolphin.desktop;
+text/html=vivaldi-stable.desktop
+video/mpeg=vlc.desktop;
+x-scheme-handler/geo=google-maps-geo-handler.desktop;
+x-scheme-handler/http=vivaldi-stable.desktop;
+x-scheme-handler/https=vivaldi-stable.desktop;
+x-scheme-handler/mailto=org.mozilla.Thunderbird.desktop;
+x-scheme-handler/tel=org.kde.kdeconnect.handler.desktop;

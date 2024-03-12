@@ -477,3 +477,108 @@ T 1710049342 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon F
 T 1710109467 19*	Now talking on 22#openssh
 T 1710109467 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
 T 1710109467 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1710112836 19*	Now talking on 22#openssh
+T 1710112836 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1710112836 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1710113061 19*	Now talking on 22#openssh
+T 1710113061 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1710113061 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1710118768 19*	Now talking on 22#openssh
+T 1710118768 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1710118768 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1710131041 19*	Now talking on 22#openssh
+T 1710131041 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1710131041 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1710133664 19*	Now talking on 22#openssh
+T 1710133664 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1710133664 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1710152285 19*	Now talking on 22#openssh
+T 1710152285 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1710152285 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1710178720 18<25pagios18>	hello all, i am trying to copy a file from an old linux runing old ssh to a stoeage share that support ssh and getting exec request failed on channel 0 after suppling the password
+T 1710179175 18<19Han18>	pagios, have you googled the error message?
+T 1710179318 18<25pagios18>	yes didnt understand it 
+T 1710179504 18<25pagios18>	i have only 3 pts
+T 1710179662 18<20BasketCase18>	what the heck is a storage share that supports ssh?
+T 1710179708 18*	20BasketCase bets it is a case of an scp so old that it actually talks scp
+T 1710180316 18<24aloo_shu18>	pagios: knowing the actual command used to attempt copying, might help. and whether you can have a shell session, and only copying fails, or both fail
+T 1710180406 18<25pagios18>	destination is a storagebox, so i dont need a shell 
+T 1710180416 18<25pagios18>	i am able to ssh now but cant create directories etc
+T 1710180517 18<24aloo_shu18>	quick workaround put everything into a tarball
+T 1710180595 18<25pagios18>	well its a bit complicaed since its a filesystem i am copying lot of diretories that wll constantly change
+T 1710180775 18<24aloo_shu18>	sounds like a job for rsync or another dedicated sync tool
+T 1710181016 18<25pagios18>	23tjk.instn rsync built on top of ssh ?
+T 1710181030 18<20BasketCase18>	no, rsync can run over ssh
+T 1710181039 18<25another|18>	is it hetzner?
+T 1710181375 18<25another|18>	in which case https://docs.hetzner.com/robot/storage-box/access/access-ssh-rsync-borg
+T 1710184251 18<25pagios18>	why is borg better than rsync for backups /
+T 1710184283 18<20BasketCase18>	rsync is not a backup system
+T 1710184445 18<25pagios18>	i am using it to backup is it something bad?
+T 1710184474 18<25pagios18>	i am mostly looking for integrity
+T 1710184478 18<22Piru18>	this entirely depends on your definition of backup
+T 1710184488 18<20BasketCase18>	it isn't a backup system, borg is
+T 1710184504 18<20BasketCase18>	rsync can be a component of a backup system
+T 1710185265 18<25pagios18>	BasketCase: question about ransomeware and borg, for example say you are on backup3 (incremental of backup1) and a ransomeware hit at that point in time.  the ransomeware encrypts all the files and now borg detects that the file changed and uploades backup4 which is HUGE since everything changed. BUT does it mean i. can still rollback tup bakcup 1 --> 3 safely ?  which means there is no way to overwrite old backups already closed by borg ?
+T 1710185351 18<20BasketCase18>	I don't know borg but I would assume so
+T 1710185599 18<19xiaomiao18>	pagios: yes
+T 1710185611 18<19xiaomiao18>	as long as you didn't delete the backup server-side you can restore it
+T 1710185631 18<25pagios18>	xiaomiao:  but if i delete a file on source, it will delete on destiantion too no? 
+T 1710185639 18<25pagios18>	like the rsync --delete
+T 1710185669 18<25pagios18>	so if ransomeware deletes, creates new files (encrypted ones) on source, will i still be able to resotre from borg remote?
+T 1710185699 18<19xiaomiao18>	pagios: but it keeps the old snapshots
+T 1710185704 18<19xiaomiao18>	they are referenced by name
+T 1710185712 18<25pagios18>	so i can think of it like git
+T 1710185718 18<19xiaomiao18>	yes, roughly
+T 1710185729 18<19xiaomiao18>	each backup is similar to a commit
+T 1710185762 18<25pagios18>	but in this case i would need much more storage its not like if i have 1TB at source i need 1TB at destination
+T 1710185780 18<19xiaomiao18>	well you can compress, and it deduplicates
+T 1710185789 18<20BasketCase18>	but if you run out of space backing up stuff you can't use who cares?
+T 1710185792 18<19xiaomiao18>	for my notebook it's usually about 1GB/week delta
+T 1710185824 18<19xiaomiao18>	so you need the size of the source, plus the size of the difference between the different points in time
+T 1710185868 18<25pagios18>	so just to confirm, saw you copied 1TB, then you deleted that 1TB from source, you will always retain that 1TB in the backups if you wanna go back to those later on, unless i explicitly run sometimes a force or something eight?
+T 1710185888 18<25pagios18>	my thing is that i am deeling with emails here
+T 1710185895 18<25pagios18>	a lot of delete and new stuff
+T 1710185899 18<25pagios18>	daily..
+T 1710185913 18<19xiaomiao18>	you can expire old backups and then reclaim the space
+T 1710185926 18<20BasketCase18>	if you have multiple backups you should be able to restore any of them
+T 1710185939 18<19xiaomiao18>	I usually keep only monthly backups for older stuff, deleting the intermediate ones every now and then
+T 1710185969 18<25pagios18>	i am mostly concerned about ransomwares
+T 1710185988 18<25pagios18>	and i see its benefit now...
+T 1710186003 18<25pagios18>	the ransomeware can alter the latest image nothing more 
+T 1710186010 18<25pagios18>	even if it stays for a month there
+T 1710186031 18<20BasketCase18>	unless it infects the backup system
+T 1710186049 18<25pagios18>	even if it does
+T 1710186073 18<25pagios18>	unless the attacker purposely deletes those old backups
+T 1710186094 18<20BasketCase18>	or encrypts them
+T 1710186112 18<20BasketCase18>	ransomware is usually automated.  it encrypts everything it can.
+T 1710186118 18<25pagios18>	yes 
+T 1710186138 18<25pagios18>	unless an ATP lands on it 
+T 1710186159 18<19xiaomiao18>	that's why backups are nice in a "pull" config where the backup server connects to the victim
+T 1710186193 18<20BasketCase18>	right, if you push your backups you can also destroy them
+T 1710186235 18<25pagios18>	protect the backup server and let it pull from the victim , at most it pulls encrypted stuff which is reversible
+T 1710186244 18<19xiaomiao18>	depends - it wouldn't  be hard to make borg server block deletes
+T 1710186252 18<19xiaomiao18>	but that takes effort :)
+T 1710186333 18<29henk18>	pull or push is not really important. just because you push your backups does not necessarily mean you can destroy existing ones.
+T 1710186443 18<25pagios18>	xiaomiao: question, on the storagebox its a limited shell ,  no crontab. do you think if i run borg server there i can create a daily backup inside it instead of relying on crotnab? idea is to have borg server pull the backup from the server
+T 1710186484 18<19xiaomiao18>	pagios: no idea
+T 1710186562 18<24aloo_shu18>	if the side that you are trusting more, is the only one that can initiate a session, that would seem like less details to take care of, doesn't meant you couldn't lock down and sandbox what the less trusted side can do if it is allowed to initiate sessions
+T 1710186648 18<29henk18>	borg actually has an "append-only" mode but it does have its limits and some "stupid" restrictions, see https://github.com/borgbackup/borg/issues/2251. I can’t find a reference but I think restic also has a mode like this.
+T 1710186723 18<29henk18>	pagios: I don’t think borg server can pull but for borg question you should ask better in #borgbackup 
+T 1710186730 18<25pagios18>	thanks a lot 
+T 1710186748 18<19xiaomiao18>	could just do filesystem snapshots to make deletions less likely
+T 1710186755 18<19xiaomiao18>	paranoia is a lifestyle!
+T 1710186878 18<25pagios18>	storage $$$ heh
+T 1710187161 18<25pagios18>	i think a good solution is to enable snapshoting on the storgebox
+T 1710187177 18<25pagios18>	in this case its an indpenedant higher level activity that the attacker cant reach
+T 1710187193 18<25pagios18>	since snapshot folders wouldnt be visible anyways
+T 1710187213 18<19xiaomiao18>	nah hardware cheap
+T 1710187231 18<25pagios18>	i can in this case force a delete on storagebox
+T 1710187238 18<25pagios18>	since i already took a snapshot
+T 1710187256 18<25pagios18>	maybe its enough to use rsync in this case lol
+T 1710187268 18<25pagios18>	since the snapshot would be handled from storage box automatically
+T 1710200282 19*	Now talking on 22#openssh
+T 1710200282 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1710200282 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)
+T 1710201345 19*	Now talking on 22#openssh
+T 1710201345 22*	Topic for 22#openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+T 1710201345 22*	Topic for 22#openssh set by 26Han!~han@user/han (24Mon Feb 20 08:50:37 2023)

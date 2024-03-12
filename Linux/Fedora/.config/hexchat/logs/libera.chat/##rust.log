@@ -3701,3 +3701,670 @@ Mar 10 23:30:34 <danieldg>	why?  Other than being a miri limitation
 Mar 10 23:31:03 <Widdershins>	mostly that, miri gets pissy about pointer tagging
 Mar 10 23:31:23 <danieldg>	ok? That's not used here
 Mar 10 23:31:24 <Widdershins>	i think it isn't effectively different with it
+Mar 10 23:32:05 <pflanze>	miri didn't accept it without the outer Box
+Mar 10 23:32:05 <Widdershins>	pointer tags as in attributes of the pointers at the IR level, not bit stuffing
+Mar 10 23:32:53 <Widdershins>	pflanze: does removing the pin around the box and just including a phantompinned in the struct also satisfy miri
+Mar 10 23:33:23 <pflanze>	Removing the pin around the box is fine as I mentioned. The box must stay.
+Mar 10 23:33:34 <pflanze>	Phantompinned?
+Mar 10 23:34:07 <danieldg>	just boxing seems worthless to me - you can unbox outside your module with safe code
+Mar 10 23:34:32 <danieldg>	no idea why miri would insist on that
+Mar 10 23:34:36 <pflanze>	BTW if I box it, return it, then on the user side remove it from the box, miri complains, too
+Mar 10 23:35:07 <danieldg>	sounds like a miri limitation then
+Mar 10 23:35:13 <pflanze>	miri is runtime only, so it insists that the pointer (the Box<str>) isn't moved, apparently
+Mar 10 23:36:18 <pflanze>	I'm going through a pointer into the inner box (into the str), and apparently miri thinks that this entails going through the original pointer to the str (the one in the Box), and if this is moved, it is unhappy? Not sure.
+Mar 10 23:37:17 <pflanze>	This seems like about the most basic example, so I'd be confused if miri accidentally doesn't handle this right.
+Mar 10 23:38:33 <pflanze>	But Rust has a thing where a Box can't be moved if there's a reference inside, too, right? Or is it special cased for Vec or something, I don't remember.
+Mar 10 23:38:41 <pflanze>	*a reference to inside
+Mar 10 23:41:16 <danieldg>	that's not special cased for either - if you have a ref to a thing, you can't move that thing
+Mar 10 23:41:17 <pflanze>	Confirmed, definitely can't move a Box when a reference to the thing it holds exists.
+Mar 10 23:41:42 <pflanze>	So, doesn't miri just follow the same rules?
+Mar 10 23:42:27 <pflanze>	Box is moved, hence my reference to its inside is now void.
+Mar 10 23:42:33 <Widdershins>	i think there's basically no strict legal limitation that the contents of a box cannot move when the box moves
+Mar 10 23:42:55 <danieldg>	except that it's impossible for it to do so
+Mar 10 23:42:55 <pflanze>	Well, why does the outer Box help, then? :)
+Mar 10 23:43:01 <Widdershins>	in practice it's the always the case today, but it's not allowed to be relied on
+Mar 10 23:43:15 <Widdershins>	because then you aren't moving the inner box
+Mar 10 23:43:33 <pflanze>	Yep, but if moving the outer box could mean that the inner Box is moved, then...?
+Mar 10 23:43:58 <Widdershins>	like i think the fact that the inner box *doesn't actually* move is coming into play there
+Mar 10 23:44:17 <pflanze>	But the inner box only doesn't move because the outer box protects it from being moved.
+Mar 10 23:44:25 <pflanze>	Which is the point you're trying to contest.
+Mar 10 23:44:36 <Widdershins>	it's not legally required to
+Mar 10 23:44:58 <Widdershins>	and miri is an empirical emulator
+Mar 10 23:45:06 <pflanze>	Ok.
+Mar 10 23:45:18 <pflanze>	But the whole point of Box is so that the inner parts *aren't* moved, no?
+Mar 10 23:46:19 <pflanze>	Besides dyn Box, and self-referential types, fair enough.
+Mar 10 23:51:25 <Widdershins>	the point of box is that it "owns" the data and is responsible for deleting it when it's dropped
+Mar 10 23:51:37 <Widdershins>	which is a semantic that miri doesn't know about
+Mar 10 23:52:05 <Widdershins>	miri cares only whether the referred to data is guaranteed to stay in place or not
+Mar 10 23:52:29 <pflanze>	Sure, but owning the data and being responsible is the case without Box, too.
+Mar 10 23:53:04 <Widdershins>	i think miri does have a concept of the box containing the only unique pointer to the data
+Mar 10 23:53:07 <pflanze>	Apparently miri also cares that the pointer I was going through to retrieve mine is staying in place.
+Mar 10 23:53:24 <Widdershins>	which is what causes its destination to be potentially invalid..?
+Mar 10 23:54:37 <pflanze>	Yes, I guess it derives from the pointer move that the lifetime of the pointed-to thing might have changed, hence "bad".
+Mar 10 23:54:57 <pflanze>	(Pure guess)
+Mar 10 23:55:48 <pflanze>	It doesn't know that if my inner Box disappears that this is when also the references disappear. (But then why not look at it lazily, what actually happens?)
+Mar 10 23:56:24 <Widdershins>	soooooomething like that. miri currently operates on "stacked borrows" and when you move a box nothing else can be borrowing from that unique pointer, so the contents of the box could potentially actually be somewhere else after that move in some allowed optimization
+Mar 10 23:56:38 <Widdershins>	having a pin inside the referenced structure prevents that optimization
+Mar 10 23:56:53 <pflanze>	Anyway, my current hypothesis is that miri simply follows the borrowchecker rules dynamically, in some way. Even if not strictly making sense, perhaps.
+Mar 10 23:57:09 <Widdershins>	that's more or less exactly what miri does
+Mar 10 23:57:18 <Widdershins>	though it follows a different, slightly stricter interpretation
+Mar 10 23:57:29 <Widdershins>	though the difference between one and the other is very narrow
+Mar 10 23:57:50 <Widdershins>	it is one of the lifetime-agnostic models that does provide the same guarantees
+Mar 10 23:59:06 <pflanze>	"having a pin inside the referenced structure prevents that optimization": why? how?
+Mar 10 23:59:26 <pflanze>	Also miri still complained even if I have Pin inside (and outside)
+Mar 11 00:00:29 <Widdershins>	pin declares that it will not move
+Mar 11 00:00:30 <pflanze>	(I mean, Pin outside is irrelevant; as soon as I have a Box outside, miri is happy)
+Mar 11 00:01:26 <pflanze>	I thought Pin is purely a library thing, with no effect on the compiler?
+Mar 11 00:01:38 <danieldg>	it is
+Mar 11 00:04:19 <pflanze>	Basically the self-referential data structure solution concept is: move the data structure (both pointed-at thing and pointers) inside a Box and Pin that to make sure nobody unboxes it; that makes the address not change. In my case, I have a str that needs boxing anyway, but I have to do that additionally.
+Mar 11 00:04:25 <pflanze>	At least, to make miri happy.
+Mar 11 00:05:09 <pflanze>	I also seem to remember having read that one of the self-referential infrastructure crate talked about boxing as solution to some reported UB.
+Mar 11 00:05:13 <pflanze>	Might have been exactly this.
+Mar 11 00:05:53 <pflanze>	(solution as in bug fix; the crate existed for year(s) before already)
+Mar 11 00:06:12 <Widdershins>	if i'm playing with this i'm noticing that you're effectively reimplementing Yoke here
+Mar 11 00:06:18 <Widdershins>	which is super duper tricky
+Mar 11 00:08:38 <Widdershins>	https://manishearth.github.io/blog/2022/08/03/zero-copy-1-not-a-yoking-matter/
+Mar 11 00:10:35 <Diablo-D3>	hey guys, I remember someone making a matrix client in rust, but google is being a bitch, anyone know which one Im talking about?
+Mar 11 00:10:41 <Diablo-D3>	it doesnt seem to be on matrix.org's list of clients either
+Mar 11 00:12:37 <pflanze>	Diablo-D3, the element.io people work on matrix-rust-sdk, and use it to implement iOS and Android apps (and possible parts of the web app, not sure)
+Mar 11 00:13:19 <Diablo-D3>	no, not them (also I thought they discontinued that specific sdk, since they're all js weirdos and allergic to actual code)
+Mar 11 00:16:04 <pflanze>	Diablo-D3, the last commit to that repo was from a day ago. Also, https://element.io/blog/element-x-ignition/
+**** BEGIN LOGGING AT Mon Mar 11 00:20:38 2024
+
+Mar 11 00:20:36 *	Now talking on ##rust
+Mar 11 00:20:36 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 11 00:20:36 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+**** BEGIN LOGGING AT Mon Mar 11 00:24:23 2024
+
+Mar 11 00:24:21 *	Now talking on ##rust
+Mar 11 00:24:21 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 11 00:24:21 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 11 00:24:36 <pflanze>	Widdershins, I tried owning_ref a while ago. Yoke just confuses me, it seems to be doing the same thing, with more complicated wording and interfaces?
+Mar 11 00:26:04 <Widdershins>	yeah that's similar
+Mar 11 00:26:39 <pflanze>	(But Yoke has 1M+ downloads and release in the last months, owning_ref is mostly unused.)
+Mar 11 00:27:40 <Widdershins>	yoke seems very well thought out to me
+Mar 11 00:31:26 <pflanze>	There are also fortify, self_cell, and pared
+Mar 11 01:00:58 <spb>	i'm fairly sure the 'mostly unused' thing is because owning_ref was shown to be unsound quite a long time ago
+Mar 11 01:02:12 <danieldg>	yeah, if you put a Cell in it you can extend lifetimes you shouldn't
+Mar 11 01:05:50 <Widdershins>	i'm trying to rewrite this with yoke and yeah there's one little thing that i can't figure out to solve a lifetime compliant
+Mar 11 01:05:55 <Widdershins>	complaint* even
+Mar 11 01:19:58 <rbox>	Which statement is the best explanation for why Rust does not allow string indexing?
+Mar 11 01:20:01 <rbox>	Indexing strings would make Rust too easy to use, and Rust developers need job security
+Mar 11 01:20:02 <rbox>	HAHA!
+Mar 11 01:20:50 <tokie>	is that from a poll?
+Mar 11 01:21:11 <rbox>	https://rust-book.cs.brown.edu
+Mar 11 01:22:58 <Mutabah>	rbox: Strings don't have good indexing boundaries that apply in all situations
+Mar 11 01:23:14 <Mutabah>	do you want code units (UTF-8 bytes), codepoints, or graphemes?
+Mar 11 01:23:19 <Mutabah>	it all depends on context...
+Mar 11 01:23:28 <rbox>	well yes, i know what the correct answer to the equsetion was
+Mar 11 01:23:29 <Mutabah>	and with UTF-8, finding the latter two is O(n)
+Mar 11 01:23:35 <rbox>	i just thought that answer was hilarious
+Mar 11 01:23:39 <Mutabah>	Ooooh
+Mar 11 01:23:50 <Mutabah>	Your link wasn't quite clear
+Mar 11 01:23:56 <danieldg>	clearly it should impl Index using an enum that allows all of those
+Mar 11 01:23:58 <tokie>	it's because rust programmers want paid better
+Mar 11 01:23:58 <rbox>	it was a mulitple choice question
+Mar 11 01:29:23 <Widdershins>	ah! it lets you use `Vec` as the yokeable type but it doesn't implement yokeable quite right for it
+Mar 11 01:36:11 <Widdershins>	well, miri still doesn't like it
+Mar 11 01:38:50 <danieldg>	I'm no longer convinced that's a valuable opinion
+Mar 11 01:39:36 <danieldg>	miri likes it -> maybe it's good, or maybe you didn't test it enough; miri doesn't like it -> maybe it's good, just assumes things miri doesn't model
+Mar 11 01:45:15 <Widdershins>	it's certainly *a* test that catches a pretty wide class of things that wouldn't otherwise be caught. when it gets nuanced though it's really messy
+Mar 11 01:45:39 <danieldg>	right, it's very useful in finding things you should look at
+Mar 11 01:47:06 <Widdershins>	https://github.com/unicode-org/icu4x/issues/2095
+Mar 11 01:47:35 <Widdershins>	newer default checks in miri seem to have issues with yoke regardless in this way
+Mar 11 01:47:45 <Widdershins>	though they do have a goal to make it satisfy miri in general
+Mar 11 01:48:35 <Widdershins>	the whole concept just turns out to be annoyingly difficult to express!
+Mar 11 01:53:07 <Widdershins>	more here https://github.com/rust-lang/unsafe-code-guidelines/issues/194
+**** BEGIN LOGGING AT Mon Mar 11 01:59:30 2024
+
+Mar 11 01:59:28 *	Now talking on ##rust
+Mar 11 01:59:28 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 11 01:59:28 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 11 02:26:07 <danieldg>	hmm.  That means that none of the solutions with Box are valid at all
+Mar 11 02:26:35 <danieldg>	(assuming the worst-case noalias)
+Mar 11 02:42:39 <LuxuryMode>	In my FromRequest impl, when I examine `request.uri().query()`, I can see that there are params present. However, when I attempt to extract these parameters using `request.extensions().get::<Query<HashMap<String, String>>>()`, I consistently receive `None` and do not get any parameters. Any idea what I might be doing wrong here? Here is a snippet of the relevant code: https://gist.github.com/rust-play/71ae1883158be0e76515a457e7d2d715
+Mar 11 02:45:37 <LuxuryMode>	Also works fine when I use directly as an extractor, i.e. `async fn my_handler(params: Query<HashMap<String, String>>...`
+**** BEGIN LOGGING AT Mon Mar 11 05:24:03 2024
+
+Mar 11 05:24:01 *	Now talking on ##rust
+Mar 11 05:24:01 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 11 05:24:01 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+**** BEGIN LOGGING AT Mon Mar 11 06:07:46 2024
+
+Mar 11 06:07:44 *	Now talking on ##rust
+Mar 11 06:07:44 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 11 06:07:44 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 11 08:24:50 <osse>	I thought having three class to .flatten() in a row was a bit much. But then I remembered .and_then() exists. Praise be.
+**** BEGIN LOGGING AT Mon Mar 11 11:18:07 2024
+
+Mar 11 11:18:05 *	Now talking on ##rust
+Mar 11 11:18:05 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 11 11:18:05 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 11 11:45:03 <safsf>	quieres ver videos para adultos
+Mar 11 11:45:14 <Lumpio->	¿que?
+Mar 11 11:45:23 <safsf>	¿Chat por cámara?
+Mar 11 11:45:38 <Lumpio->	no gracias
+Mar 11 11:45:44 <safsf>	¿Yo por cámara?
+Mar 11 11:45:48 <safsf>	chatear por cámara?
+Mar 11 11:46:02 <Lumpio->	no
+Mar 11 11:46:28 <safsf>	Primero haga clic en este enlace > https://yourgirlsarcade.life/?u=vtgk60r&o=d7gpk40
+Mar 11 11:46:28 <safsf>	Y completa todas las opciones y luego muestra tu tarjeta, pero no te preocupes, es totalmente gratis.
+Mar 11 11:46:44 <Lumpio->	Bruh nobody is looking for that here
+Mar 11 11:47:03 <safsf>	Primero haga clic en este enlace > https://yourgirlsarcade.life/?u=vtgk60r&o=d7gpk40
+Mar 11 11:47:04 <safsf>	Y completa todas las opciones y luego muestra tu tarjeta, pero no te preocupes, es totalmente gratis.
+Mar 11 11:47:25 <safsf>	Primero haga clic en este enlace > https://yourgirlsarcade.life/?u=vtgk60r&o=d7gpk40
+Mar 11 11:47:26 <safsf>	Y completa todas las opciones y luego muestra tu tarjeta, pero no te preocupes, es totalmente gratis.
+Mar 11 11:48:51 <safsf>	Mi nombre de usuario es {Ella_Jennings}
+Mar 11 11:48:52 <safsf>	No se requiere información de tarjeta, solo configure su cuenta https://yourgirlsarcade.life/?u=vtgk60r&o=d7gpk40
+Mar 11 11:50:28 <safsf>	Ven a mi telgram >> @mariyacs
+Mar 11 11:50:34 <safsf>	Ven a mi telgram >> @mariyacs
+Mar 11 11:56:45 <gahr>	hi - new to rust, reading the book. I was curious about this example here: https://github.com/rust-lang/book/blob/main/listings/ch04-understanding-ownership/no-listing-19-slice-error/src/main.rs
+Mar 11 11:57:09 <gahr>	it made me wonder: how does the compiler infers that the slice returned is linked in any way to the string ref passed in?
+Mar 11 11:57:24 <gahr>	then I changed the body of the first word to be if s.is_empty() { "empty" } else { "full" }
+Mar 11 11:57:28 <gahr>	and it still errors out the same way
+Mar 11 11:58:00 <gahr>	then I added an explicit lifetime and the error went away
+Mar 11 11:58:00 <gahr>	fn first_word<'a>(s: &String) -> &'a str {
+Mar 11 11:58:22 <gahr>	so, does rust assumes that the lifetime of the return value depends on the lifetime of the argument, *unless told otherwise*?
+Mar 11 11:58:32 <j`ey>	yes
+Mar 11 11:58:51 <gahr>	where can I read more about it? I.e., under which situations it does so?
+Mar 11 11:59:16 <gahr>	I guess if I return a slice into some other container, i.e., not into a string
+Mar 11 11:59:18 <j`ey>	probably later on in the book?
+Mar 11 11:59:25 <null_ptr>	https://doc.rust-lang.org/reference/lifetime-elision.html
+Mar 11 11:59:27 <gahr>	heh ok I'll probably ahve to wait
+Mar 11 12:01:59 <gahr>	thanks!
+Mar 11 12:07:44 <gahr>	oh, so because both param and output lifetimes are elided, rust infers one for the param and assigns it to the output
+Mar 11 12:07:47 <gahr>	that makes sense
+Mar 11 12:11:25 <polychromata{J}>	That should actually be `-> &'static str` :3
+Mar 11 12:12:27 <polychromata{J}>	<'a> -> &'a _ is almost never what you want: the caller can pick any lifetime and you'll return a reference with that lifetime?
+Mar 11 12:13:32 <gahr>	I can't answer that yet, still on chapter 4 :)
+Mar 11 12:15:26 <gahr>	is 'static a special lifetime?
+Mar 11 12:16:34 <polychromata{J}>	Yeah.
+Mar 11 12:16:45 <polychromata{J}>	It's a…keyword?
+Mar 11 12:16:48 <polychromata{J}>	…is that right?
+Mar 11 12:16:50 <saati>	https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html?highlight=static#the-static-lifetime
+Mar 11 12:19:40 <polychromata{J}>	https://doc.rust-lang.org/reference/keywords.html#weak-keywords yep, weak keyword
+Mar 11 12:45:16 <gahr>	alright I'll just continue reading the book, thanks all!
+Mar 11 12:45:49 <polychromata{J}>	Send us any more questions! :3
+Mar 11 13:00:18 <elichai2>	Hi, I'm trying to do `println!("cargo:rustc-cfg=c_api");` in a build.rs and I see `--cfg c_api` in the build command, but the cfg is not enabled (I tried `#[cfg(c_api)] compile_error!("c_api")`)
+Mar 11 13:00:46 <neiluj>	Hi! got an async function f that takes an Arc<lock_api::RwLock<RawRwLock, myType>>, but when calling this function in a new thread: tokio::task::spawn(async move { f(a) }) I get the error future created by async block is not `Send`
+Mar 11 13:00:59 <neiluj>	not sure what is wrong here
+Mar 11 13:05:28 <spb>	neiluj: somewhere in your async function, or somewhere down its call tree, you're creating a value of a type that isn't Send and which lives across an 'await'
+Mar 11 13:05:51 <spb>	the detailed error message gives you more information to track it down, but takes a bit of careful unravelling to make sense of it
+Mar 11 13:10:13 <neiluj>	many thanks spb, so basically I pass an Arc to the RwLock to the async function running in a dedicated tokio task, but use it elsewhere: let a=RwLock::new(..); tokio::task::spawn(aync move {f(a)}); g(a);
+Mar 11 13:10:39 <neiluj>	and f mutates a by writing to it
+Mar 11 13:11:55 <neiluj>	but I didn't have this error with a mutex instead of the RwLock
+Mar 11 13:12:51 <neiluj>	oh just removed an tokio::time::sleep(..).await; and the code compiled
+Mar 11 13:12:53 <neiluj>	:)
+Mar 11 13:14:23 <neiluj>	the full error was future is not `Send` as this value is used across an await, so the .await made the returned future not Send somehow
+Mar 11 13:16:09 <saati>	Sleep is Send, you have something else there that's not send but you drop it before the next await point
+Mar 11 13:20:18 <neiluj>	thanks, will look into it
+Mar 11 13:25:41 <spb>	neiluj: the reason this happens is that every time you await something, the async function can pause execution until the thing you're awaiting is ready. in the case of something you pass to tokio::spawn, the next time it wakes up might be on a different thread than the one on which it paused
+Mar 11 13:26:12 <spb>	what this means is that any local variable in the function which is used on both sides of an await needs to be Send because it might be created on one thread and used on another
+Mar 11 13:31:07 <saati>	or if you really need !Send values you can start a single threaded executor instead
+Mar 11 13:40:27 <polychromata{J}>	neiluj: You can't hold sync locks across an await, because the guards are !Send
+Mar 11 13:41:42 <polychromata{J}>	You have to unlock to await, and then (because of a compiler limitation) you have to structure your code so that the await happens outside of the scope that the lock was held in (just drop() or unlock() will produce the same error otherwise)
+Mar 11 13:42:59 <polychromata{J}>	In the simplest case, `{ let guard = mutex.lock(); drop(guard); future.await; }` won't work, but `{ { let guard = mutex.lock(); } future.await; }` will
+Mar 11 13:45:03 <polychromata{J}>	(Something about constructing the type for the async fn state machine happening in a pass before the liveness control flow analysis)
+Mar 11 13:45:08 <saati>	holding a lock across an await is just asking for low performance and deadlocks anyway
+Mar 11 14:35:13 <neiluj>	thanks a lot for the explanations, indeed the lock spanned across the sleep that was awaited
+Mar 11 14:35:22 <neiluj>	it is no longer the case now
+Mar 11 15:00:48 <gahr>	polychromata{J}: thanks, will do!
+Mar 11 15:07:26 <neiluj>	argh, using a library relying on an older version of a framework I'm using, can't convert the returned types of the library to the new ones from the framework
+Mar 11 15:50:20 <lmat>	I think I can get an element of a vec using notation like  my_vec[0];? Where can I find documentation on this operator[]?
+Mar 11 15:51:19 <osse>	lmat: Vec implements the Index trait, which provides that operator
+Mar 11 15:51:48 <lmat>	osse: Oh, nice seeing you here! I didn't know you were a rustacean...makes sense though.
+Mar 11 15:52:04 <osse>	<3
+Mar 11 15:52:22 <lmat>	osse: Looking at that trait, it looks like there is no operator[] separate from fn index, right?
+Mar 11 15:52:54 <lmat>	So fn index should be about the same as fn get?
+Mar 11 15:53:55 <osse>	Same as get() except it panics
+Mar 11 15:54:03 <lmat>	sweet, thanks!
+Mar 11 16:16:00 <lmat>	How does  my_slice[1..2] work? It looks like 1..2 will create a std::ops::Range, so it's like  my_slice[std::ops::Range{start: 1, end: 2}], and [] is index, so   my_slice.index(std::ops::Range{start: 1, end: 2});  but I don't see any index instance member function that takes a range.
+Mar 11 16:16:31 <j`ey>	lmat: https://doc.rust-lang.org/std/primitive.slice.html#impl-Index%3CI%3E-for-%5BT%5D
+Mar 11 16:16:43 <j`ey>	-> https://doc.rust-lang.org/std/slice/trait.SliceIndex.html
+Mar 11 16:16:58 <lmat>	j`ey: Ah! There they are!
+Mar 11 16:17:24 <lmat>	(I used std::ops::Range{start: 1, end: 2} "directly" because I don't see a ::new like I do in std::ops::RangeInclusive)
+Mar 11 16:46:46 <evaloop>	Guys, about mold linker, after some update, mold cannot worked anymore
+Mar 11 16:47:21 <evaloop>	-C link-arg=-fuse-ld=/usr/bin/mold
+Mar 11 16:48:55 <evaloop>	him disappear from debug autput
+Mar 11 16:49:18 <evaloop>	-flto=fat,-O3
+Mar 11 16:49:44 <evaloop>	DEBUG_RUSTFLAGS="-C debuginfo=2"
+Mar 11 16:51:00 <evaloop>	also I have in $PATH d mold
+Mar 11 16:51:00 <evaloop>	ld.mold
+Mar 11 16:51:00 <evaloop>	mold
+Mar 11 16:52:17 <evaloop>	so, for now need manualy add string to build toml that can be work?
+Mar 11 17:34:34 <evaloop>	how actualy fully disable -C linker-plugin-lto? I set -C linker-plugin-lto=false and that can't work why?
+Mar 11 17:42:51 <evaloop>	also passing -C linker-plugin-lto=false worked, but what mold has gone from output
+Mar 11 18:51:30 <evaloop>	oh lol, rustc boot section : linker-flavor
+Mar 11 18:51:30 <evaloop>	This flag controls the linker flavor used by rustc. If a linker is given with the -C linker flag, then the linker flavor is inferred from the value provided. If no linker is given then the linker flavor is used to determine the linker to use. Every rustc target defaults to some linker flavor. Valid options are:
+Mar 11 18:51:30 <evaloop>	em: use Emscripten emcc.
+Mar 11 18:51:30 <evaloop>	gcc: use the cc executable, which is typically gcc or clang on many systems.
+Mar 11 18:51:31 <evaloop>	ld: use the ld executable.
+Mar 11 18:51:33 <evaloop>	msvc: use the link.exe executable from Microsoft Visual Studio MSVC.
+Mar 11 18:51:35 <evaloop>	wasm-ld: use the wasm-ld executable, a port of LLVM lld for WebAssembly.
+Mar 11 18:51:37 <evaloop>	ld64.lld: use the LLVM lld executable with the -flavor darwin flag for Apple's ld.
+Mar 11 18:51:39 <evaloop>	ld.lld: use the LLVM lld executable with the -flavor gnu flag for GNU binutils' ld.
+Mar 11 18:51:41 <evaloop>	lld-link: use the LLVM lld executable with the -flavor link flag for Microsoft's link.exe.
+Mar 11 18:52:19 <evaloop>	and . . . not any word about mold, no way :(
+Mar 11 18:53:07 <j`ey>	it can use 'ld'
+Mar 11 18:53:23 <j`ey>	since its meant to have the same CLI options
+Mar 11 18:53:55 <evaloop>	ok, ld, fine :|
+Mar 11 18:55:07 <j`ey>	thats just the 'flavor', not what is actually used
+Mar 11 20:14:58 <Widdershins>	i suppose you could symlink mold as ld
+Mar 11 20:15:53 <Widdershins>	hm
+Mar 11 20:28:27 <Widdershins>	oh it goes in config.toml not Cargo.toml
+Mar 11 20:28:45 <lmat>	What's the point of building NOT a release build?
+Mar 11 20:28:56 <Widdershins>	lmat: lots of reasons
+Mar 11 20:28:58 <lmat>	In other words, why would I want to turn optimizations off?
+Mar 11 20:29:06 <Widdershins>	because it builds faster
+Mar 11 20:29:16 <Widdershins>	release mode also disables debug
+Mar 11 20:29:21 <lmat>	Widdershins: What is debug?
+Mar 11 20:29:35 <j`ey>	debug information
+Mar 11 20:29:41 <j`ey>	stuff that gdb can use etc
+Mar 11 20:29:41 <lmat>	Widdershins: (I'm a software developer, and I know what debugging is, I just don't know what it has to do with rust.)
+Mar 11 20:29:42 <Widdershins>	debugging symbols and information
+Mar 11 20:29:49 <lmat>	j`ey: I can debug rust in gdb?
+Mar 11 20:29:52 <j`ey>	yes
+Mar 11 20:29:53 <Widdershins>	yes?
+Mar 11 20:29:59 <lmat>	j`ey: Enough said, thank you!
+Mar 11 20:30:03 <Widdershins>	it works pretty much the same
+Mar 11 20:30:15 <Widdershins>	rust builds objects very much like c/++ do
+Mar 11 20:30:19 <lmat>	Widdershins: same as C++, I assume
+Mar 11 20:30:28 <Widdershins>	it mangles names differently but after the code is emitted it's almost identical
+Mar 11 20:30:39 <lmat>	I've been using println! (with a "todo" to implement proper logging), but maybe a debugger will be useful someday!
+Mar 11 20:31:11 <Widdershins>	there's also stuff like the debug_assert! macro that only emits code in #[cfg(debug)]
+Mar 11 20:32:15 <Widdershins>	frequently tests will always be run in debug. a library of mine builds 30 seconds faster and only runs tests 5 seconds slower for example
+Mar 11 20:32:34 <Widdershins>	even though the tests are running like 100x faster in release, it doesn't save time
+Mar 11 20:33:03 <Widdershins>	if this isn't what you want you can change optimization modes, debug settings, etc. in the "dev" and "release"
+Mar 11 20:33:07 <Widdershins>	profiles, in cargo.toml
+Mar 11 20:33:18 <lmat>	Makes sense, thanks for the pointers!
+Mar 11 20:33:27 <Widdershins>	so *by default* the dev profile does little optimization, no LTO, etc. but you can change that
+Mar 11 20:33:36 <Widdershins>	https://doc.rust-lang.org/cargo/reference/profiles.html
+Mar 11 20:34:31 <lmat>	Widdershins: Right, to cook up your own custom profile. nice.
+Mar 11 20:34:33 <dav1d>	lmat, I have yet to actually need a debugger to debug something in Rust
+Mar 11 20:35:03 <dav1d>	it would have been useful plenty of times but never useful enough where I would have "required" it
+Mar 11 20:35:12 <Widdershins>	i've used it because it's super extremely easy to do in jetbrains ides
+Mar 11 20:35:13 <lmat>	dav1d: Right, the compiler pretty much takes care of any typos and "simple" errors. What is left is high-level aggregate-type errors which logging seems to address nicely.
+Mar 11 20:35:22 <Widdershins>	i literally just click the beetle icon instead of the play button
+Mar 11 20:35:23 <dav1d>	Yeah, really comfortable
+Mar 11 20:35:40 <dav1d>	and I used to always launch with debugger when I was doing Java for $work
+Mar 11 20:35:40 <Widdershins>	i will learn a debugger console when i have to :)
+Mar 11 20:35:47 <Widdershins>	which so far is never
+Mar 11 20:35:54 <Widdershins>	i have already forgotten pdb
+Mar 11 20:35:58 <lmat>	Widdershins: Makes sense. I use vim and tmux, so I would have to `cd target/debug && cgdb ./my_app` or whatever
+Mar 11 20:36:06 <dav1d>	yeah jetbrains is nice when it comes to debugging
+Mar 11 20:36:17 <dav1d>	lmat, vim or neovim?
+Mar 11 20:36:21 <lmat>	dav1d: vim.
+Mar 11 20:36:28 <Widdershins>	lmat: i would say you could at least give a shot at the ides, jetbrains has a best-in-class first-class vim mode
+Mar 11 20:36:40 <dav1d>	kk, there is a cool neovim plugin with debugger integration which I wanna setup
+Mar 11 20:36:40 <Widdershins>	but that's just me. some people hate it ymmv
+Mar 11 20:36:44 <lmat>	dav1d: I haven't found a reason to switch to nvim. When I heard that Bram died, I considered it, but it looks like vim development carries on as usual.
+Mar 11 20:36:56 <lmat>	dav1d: That could be really sweet!
+Mar 11 20:36:57 <dav1d>	I already had it working somewhat but wasnt comfortable enough yet for me
+Mar 11 20:37:36 <lmat>	Widdershins: I've used ideas. I've used Jetbrains IntelliJ, eclipse, Microsoft Visual Studio (a long time ago), arduino. I hate all of them.
+Mar 11 20:37:45 <dav1d>	lmat, https://github.com/rcarriga/nvim-dap-ui
+Mar 11 20:37:48 <lmat>	oops s/ideas/ides/
+Mar 11 20:37:49 <Widdershins>	evaloop: where did you try putting your rustflags config? i'm able to get rustc to use any linker i want, by putting it in "./.cargo/config.toml" with, for example, `[target.'cfg(all())'] \n linker = "/usr/bin/wabl"` and then it fails because it can't find /usr/bin/wabl
+Mar 11 20:38:20 <Widdershins>	lmat: something for everyone i guess. i've always got huge mileage out of having an ide
+Mar 11 20:38:32 <dav1d>	IntelliJ is awesome
+Mar 11 20:39:01 <Widdershins>	if your editing is vim brained you can do that there too but i've always been a mouse, keyboard, multi-cursor, ide rename, and regex replace type of guy
+Mar 11 20:39:05 <Widdershins>	and it's never slowed me down
+Mar 11 20:39:36 <Widdershins>	and all the searches, outlines, jump to definition and list usages keys are top notch stuff to have
+Mar 11 20:39:43 <lmat>	but it takes so long to start up...
+Mar 11 20:39:45 <Widdershins>	not to mention diff views and three-way resolver ui my god
+Mar 11 20:39:51 <Widdershins>	it really doesn't though
+Mar 11 20:40:10 <lmat>	Widdershins: "it's never slowed me down" ... that's sort of meaningless.
+Mar 11 20:40:10 <Widdershins>	i mean compared to a terminal yeah but you can also just not close it
+Mar 11 20:40:19 <Widdershins>	no it isn't?
+Mar 11 20:40:46 <Widdershins>	that's the whole justification for doing it a different way: ease and expediency
+Mar 11 20:40:56 <lmat>	Widdershins: What matters to me is: would it slow me down. If you've "always been a ... ide ... type of guy", and it's "never slowed you down", there's no control group, my friend.
+Mar 11 20:41:30 <Widdershins>	that's why i didn't say you should personally do it. nobody has a control group because everyone is n=1
+Mar 11 20:41:30 <dav1d>	<lmat> but it takes so long to start up... | I never understood this complaint. It's a onetime cost, you don't even have to close it ever! And from my experience, it's not significantly slower than rust analyzer for me
+Mar 11 20:41:46 <lmat>	Widdershins: The important comparison is: you can type 130 wpm, you know vim, grep, and tmux like the back of your hand, you're just as comfortable working 500 miles away from your computer as right next to it, THEN you switch to IDEs and it never slows you down. That would be meaningful ;-)
+Mar 11 20:41:55 <lmat>	Widdershins: yeah.
+Mar 11 20:42:39 <Widdershins>	i type 140wpm, i know idea grep and tmux like the back of my hand, and i never have to work 500 miles away from my computer and if i did i have a laptop with just as much ram
+Mar 11 20:43:06 <Widdershins>	and i've never run into a task that takes me meaningfully longer to solve than doing it the vim way would be
+Mar 11 20:43:27 <Widdershins>	software development is not the process of text production. most of your time is thinking and communicating anyway
+Mar 11 20:43:40 <Widdershins>	as long as your editor is low friction and lets you do the text transforms you want it's fine
+Mar 11 20:43:55 <Widdershins>	i was just suggesting it since it sounds like there are a few useful things missing from your tooling setup
+Mar 11 20:43:58 <lmat>	dav1d: If I only work on one project, okay, but I have maybe 8 clients. Is it so snappy that I can have maybe 5 of them running all the time with no sweat? Also, I use tmux to hold each client's work (tmux at -t <client1>; connects me back to that client's terminal session with vim, grep, less, or whatever tools I was running last time.) And I can access it all remotely just as easily as locally <3
+Mar 11 20:44:17 <Widdershins>	don't ask me how many ide windows i have running at any given moment
+Mar 11 20:44:31 <lmat>	Widdershins: yup, good reasoning.
+Mar 11 20:44:39 <evaloop>	Widdershins: that options in/from makepkg.conf, I'm cannot put any in config.toml, maybe because in another one project toml file writed author, and so, I think maybe better use global config, for compile software, but maybe I was wrong, and something won't know about that. ofc
+Mar 11 20:46:13 <Widdershins>	evaloop: https://doc.rust-lang.org/cargo/reference/config.html i was able to make this do things so ymmv
+Mar 11 20:46:21 <Widdershins>	it will look in the global config too
+Mar 11 20:46:44 <Widdershins>	it seems you can provide rustc flags, i think
+Mar 11 20:47:36 <Widdershins>	anyway lmat the startup time being really fast is nice and all. i find ides very snappy nowadays and even though people complain that it uses 3 gigs instead of 10 megabytes i would also observe that that's 3 gigabytes of ram mostly lying fallow
+Mar 11 20:47:41 <Widdershins>	ram is meant to be used
+Mar 11 20:48:11 <Widdershins>	as long as your pagecache is not starving it's great
+Mar 11 20:48:41 <lmat>	sure, most of the time that's fine...until it isn't
+Mar 11 20:48:55 <Widdershins>	when's that tho
+Mar 11 20:49:23 <Widdershins>	i have like a hundred browser tabs, 3 ides, and numerous miscellania open and i'm sitting at like 16% resident ram
+Mar 11 20:49:46 <lmat>	Widdershins: Depends...never know! I write several financial applications and sometimes they like a lot of RAM..
+Mar 11 20:50:43 <Widdershins>	i've had memory leaks eat 33 gigabytes of ram before and it was mostly just annoying
+Mar 11 20:50:43 <evaloop>	Widdershins: wow, great, THX for expensive answer
+Mar 11 20:51:01 <Widdershins>	haha
+Mar 11 20:51:14 <Widdershins>	it's cheaper than it used to be! i find it a very expedient solution
+Mar 11 20:51:27 <Widdershins>	i do this for a living after all
+Mar 11 20:51:55 <Widdershins>	you can get away with like 16 gigs of ram no problem
+Mar 11 20:52:09 <Widdershins>	which is like 'found in a trash can' type of memory capacity these days
+Mar 11 20:52:46 <spb>	unless you're a mac user, then it's mortgage your house type
+Mar 11 20:52:48 <Widdershins>	i don't give the ide jvms half that much
+Mar 11 20:53:01 <Widdershins>	oh god yeah i mean if you're a mac user you kinda brought that on yourself though right
+Mar 11 20:55:03 <lmat>	spb: :-D
+Mar 11 20:55:40 <Widdershins>	i feel real bad for people who actually feel trapped in the mac ecosystem. it seems nightmarish
+Mar 11 20:56:10 <saati>	i'm afraid in a decade it will be like that for everyone, ram will move in package and there won't be upgrades separate from the cpu
+Mar 11 20:56:30 <lmat>	saati: Why?
+Mar 11 21:01:47 <saati>	lmat: ram outside the package won't be able to give the latencies and bandwith of silicon interposers and other new in package interconnects
+Mar 11 21:02:26 <lmat>	saati: Oh, I see
+Mar 11 21:02:48 <Widdershins>	saati: are they gonna upcharge by 20x though
+Mar 11 21:02:54 <Widdershins>	(yes)
+Mar 11 21:02:59 <dav1d>	lmat, I have no intention to tell you what you should use, though I feel like there is some misconceptions here. I've ran IntelliJ (Java/Go/Python projects) consistently with 4+ windows open, each having somewhere between 3-6 projects loaded with 24gb of RAM
+Mar 11 21:03:04 <Widdershins>	so i don't think it will win
+Mar 11 21:03:06 <dav1d>	and a piece of shit cpu
+Mar 11 21:03:31 <lmat>	dav1d: Rock on, my man!
+Mar 11 21:03:36 <dav1d>	and plenty of RAM to spare for chrome
+Mar 11 21:03:41 <lmat>	dav1d: And you leave it open for weeks? ^_^
+Mar 11 21:03:45 <Widdershins>	maybe that's a tragedy but there's massive consumer value for the interchangeability
+Mar 11 21:04:13 <Widdershins>	lmat: yeah why not. the heap is sandboxed so they actually have to fix memory leaks
+Mar 11 21:04:22 <dav1d>	lmat, usually only the first instance loads slower, new instances are almost instant. But yeah I tend to just leave the laptop in standby/hibernation
+Mar 11 21:04:54 <lmat>	dav1d: And a very important aspect to me is remote access. I have a machine at home that is much more powerful than any of my laptops and I SSH to it to do any coding while I'm out. What would that look like with an IDE like that?
+Mar 11 21:05:02 <dav1d>	these times are over, pretty much exclusively on vim now, but not because of memory consumption or startup times
+Mar 11 21:05:36 <Widdershins>	they're working on it, maybe in a couple years it'll be buttery smooth to attach remotely
+Mar 11 21:05:53 <dav1d>	lmat, the intellij remote stuff is actually surprisingly good
+Mar 11 21:06:02 <dav1d>	not made for this specifically but it is quite good
+Mar 11 21:06:12 <Widdershins>	dav1d: not vim mode? wait you're *no longer* using the ides?
+Mar 11 21:06:52 <dav1d>	Widdershins, nah, purely vim now. Once upon a time I decided to learn vim and do all my rust projects exclusively in vim and if I miss a feature, I'll add it to vim. Now I gave up all the other shit but Rust -> Only vim left
+Mar 11 21:07:26 <Widdershins>	ahh, the dotfile horizon
+Mar 11 21:07:33 <dav1d>	although I do miss Intellij at times with the builtin db browser, rest client, easy debugging, ...
+Mar 11 21:07:47 <tokie>	i use rust rover
+Mar 11 21:07:52 <dav1d>	and obviously excellent editing, but that's just a given
+Mar 11 21:08:00 <tokie>	correction: i'm using rust rover with the remote stuff
+Mar 11 21:08:03 <tokie>	it mostly works OK
+Mar 11 21:09:45 <SoF>	does Rust do any loop unrolling before LLVM?
+Mar 11 21:17:25 <Widdershins>	i doubt it
+Mar 11 21:17:34 <Widdershins>	it's just an IR emitter
+Mar 11 21:26:35 <j`ey>	Widdershins: nah theyre adding more optimisations to 'MIR' now
+Mar 11 21:26:47 <j`ey>	(not sure if that includes loop unrolling though, doubt it)
+Mar 11 21:26:58 <Widdershins>	:o
+Mar 11 21:27:40 <Widdershins>	needs more layers https://blog.rust-lang.org/2016/04/19/MIR.html
+Mar 11 21:27:56 <polychromata{J}>	lmat: You can instantiate types directly like that if all their fields are pub.
+Mar 11 21:28:30 <lmat>	polychromata{J}: I was surprised there's no "new" like there is for the other type :-D
+Mar 11 21:28:43 <Widdershins>	proc macros -> macros -> rust -> HIR -> MIR -> IR -> machine code -> ucode
+Mar 11 21:31:13 <polychromata{J}>	It would be kind of redundant. :)
+Mar 11 21:31:29 <polychromata{J}>	You do see that sometimes.
+Mar 11 21:37:09 <j`ey>	Widdershins: of course LLVM IR actually has 2-3 stages of IR too :P
+Mar 11 21:42:17 <Widdershins>	j`ey: https://twitter.com/at_tcsc/status/1573770109537386496
+Mar 11 21:43:41 <j`ey>	hehe
+Mar 11 23:10:09 <TimMc>	Can I bundle an existing non-Rust executable into a Rust binary so that I can call either one, somehow?
+Mar 11 23:11:07 <TimMc>	(I'd like to take an existing Go program and include its functionality in my program.)
+Mar 11 23:14:44 <j`ey>	probably not that easy, maybe better to just require they have it in PATH
+Mar 11 23:16:58 <Arnavion>	include_bytes + memfd_create + fexecve
+Mar 11 23:19:18 <polychromata{J}>	snrk
+Mar 11 23:26:03 <TimMc>	This would be for a single, standalone binary.
+Mar 11 23:27:04 <TimMc>	Arnavion: That would just be jumping into a big byte array, right? :-)
+Mar 11 23:27:10 <j`ey>	baically yeah
+Mar 11 23:27:17 <Arnavion>	Yes
+Mar 11 23:27:43 <TimMc>	I mean, I'm not above doing something like that. :-P
+Mar 11 23:28:06 <j`ey>	could also write it out to a tmp file
+Mar 11 23:28:07 <Arnavion>	The cross-platform way would be to create a tempfile and executing that and hoping you don't get TOCTOUd
+Mar 11 23:28:09 <j`ey>	and then exec it
+Mar 11 23:29:18 <Arnavion>	... and, depending on the method used to create said tempfile, that the underlying filesystem isn't mounted noexec
+Mar 11 23:38:05 <TimMc>	...I kind of want to try this just to see what exciting things happen.
+Mar 11 23:38:35 <yziquel>	Is it possible to implement a cyclic chained list in safe rust (i don't mind bumpalo). if you ask me why, it's a very specific kind of datastructure that is supposed to be "intepreted" very fast. I really need the cyclicity.
+Mar 11 23:39:10 <yziquel>	i don't mind using an arena like bumpalo. i just want to know if it is possible in safe rust or if unsafety is required
+Mar 11 23:42:05 <Widdershins>	yziquel: the common way is to refer to indices in a vec and do it that way
+Mar 11 23:42:26 <Widdershins>	otherwise it is technically possible to do safely with pointers and so on it's just really hard
+Mar 11 23:42:47 <yziquel>	Widdershins it will boil down to that, but i do not the pattern matching as that structure will end up rather involved.
+Mar 11 23:43:02 <Widdershins>	you do what the pattern matching?
+Mar 11 23:43:45 <yziquel>	implement a weird generalisation of lambda calculus verging towards logic programming. the structures i need for that are involved and cyclic.
+Mar 11 23:44:25 <Widdershins>	that's fine
+Mar 11 23:44:53 <yziquel>	before going full array of pointers with weird semantics, i need to prototype it with cyclic algebraic datatypes to make it understandable.
+Mar 11 23:45:16 <Widdershins>	i'm saying you don't need pointers if you just use indices
+Mar 11 23:45:17 <yziquel>	any safe rust implementation of cyclic chained list would be a good prototype to build upon.
+Mar 11 23:45:32 <yziquel>	Widdershins i will need pointers.
+Mar 11 23:45:41 <Widdershins>	you can represent a structure without making its ownership physically dependent on the cycles
+Mar 11 23:45:48 <Widdershins>	you don't ever "need" the pointers
+Mar 11 23:46:02 <yziquel>	sigh. i do need the pointers for what i intend.
+Mar 11 23:46:07 <Widdershins>	which is?
+Mar 11 23:46:26 <yziquel>	an abstract execution machine for that calculus. with pointers.
+Mar 11 23:46:49 <Widdershins>	if your hidden premise is that you have to use pointers and not any other method then that's cheating
+Mar 11 23:47:06 <yziquel>	? why. that's my spec.
+Mar 11 23:47:21 <Widdershins>	you have a collection of objects that want to refer to each other, yes?
+Mar 11 23:48:32 <yziquel>	Widdershins more than that. for now, i need cyclic algebraic data types to prototype. Later, I'll need vectors of pointers and rather involved treatment of them.
+Mar 11 23:48:52 <Widdershins>	you're skipping a step mate
+Mar 11 23:48:56 <yziquel>	?
+Mar 11 23:49:31 <yziquel>	Widdershins which step ?
+Mar 11 23:49:40 <Widdershins>	the step where you think about whether pointers are required or not
+Mar 11 23:49:54 <Widdershins>	because you can get the exact same effect in other ways, without worrying about unsafety
+Mar 11 23:50:23 <yziquel>	Widdershins pointers WILL be required.
+Mar 11 23:50:38 <yziquel>	it's the whole point of the exercise.
+Mar 11 23:50:40 <Widdershins>	you keep saying this but until i know why they're required i can't really say anything new
+Mar 11 23:52:19 <yziquel>	Widdershins because I intend to generalise Krivine's machine for semantics of lambda calculus as it pertains to set theory (see Luminy slides 2004 and later) and adapt it to a logic programming setting by revisiting some works in logic about existential quantification as dual to the substitutional fragment of first order logic. And that machine
+Mar 11 23:52:19 <yziquel>	will need pointers.
+Mar 11 23:52:43 <yziquel>	I tend to be annoyed by people always questioning what I plan to do.
+Mar 11 23:52:50 <yziquel>	I already have a mother.
+Mar 11 23:53:26 <Widdershins>	you've come here to ask how to do something safely, and i offered a way to do something that has the exact same effect and is trivially safe
+Mar 11 23:53:55 <yziquel>	What I have asked is: cyclic chained list in safe rust. nothing else.
+Mar 11 23:54:07 <Widdershins>	if this is a school assignment that you flunk if you don't use pointers i suggest not using rust because it's very easy to create extremely invalid programs doing pointer dances like that
+Mar 11 23:54:16 <yziquel>	Widdershins no. it's research.
+Mar 11 23:54:30 <yziquel>	Widdershins i'm a logician by training.
+Mar 11 23:54:35 <Widdershins>	rust's guarantees can make programs invalid and invoke UB much sooner when doing pointer traversal than e.g. c++
+Mar 11 23:54:39 <yziquel>	i want to implement some ideas of mine.
+Mar 11 23:55:00 <yziquel>	I want to try the pointer dance.
+Mar 11 23:55:22 <j`ey>	any actual (raw) pointer in rust is unsafe
+Mar 11 23:56:08 <yziquel>	j`ey whch is precisely why I'm asking about cyclic algebraic datatypes safe.
+Mar 11 23:56:14 <Widdershins>	well i'll warn you it's a real pain. the safer-ish way is to use Rc<RefCell<T>> instead of pointers, such that it will actually immediately explode with runtime checks if you do something invalid
+Mar 11 23:56:23 <yziquel>	if there is an example of a cyclic chained list, I take it.
+Mar 11 23:56:30 <spb>	what you are doing requires pointers, if you are using 'pointer' as shorthand for 'a way to persistently reference another object of a given type without lifetime bounds'
+Mar 11 23:56:49 <spb>	but there are ways to do that which are not literally `*const T`
+Mar 11 23:56:49 <yziquel>	Widdershins i know it's a pain. already in OCaml it's a pain.
+Mar 11 23:58:09 <Widdershins>	well if you are set upon using exactly pointers and nothing else you can certainly write that code
+Mar 11 23:58:12 <yziquel>	spb if i need a thunk of unsafety to tie the cyclicity, I'm fine with it. If I can do it safely, I'm more fine with it. I intend to eschew most lifetime issues by using an arena like bumpalo.
+Mar 11 23:58:57 <yziquel>	Widdershins I want an algebraic data types whose representation is pointers. not indices with lookups.
+Mar 11 23:58:59 <Widdershins>	unsafety still requires following the rules, it is only for the purpose of enforcing the unbreakable rules that define a valid rust program in ways that the compiler cannot check for you
+Mar 11 23:59:22 <Widdershins>	and it can get very difficult to do that correctly
+Mar 11 23:59:46 <yziquel>	Widdershins I did a C level binding with OCaml and R with two GC's stepping over one another. I'm well aware that unsafety has rules.
+Mar 11 23:59:48 <Widdershins>	subtle things that cause references to coexist illegally can make the program invalid or even misbehave even if they don't appear to interact
+Mar 12 00:01:03 <yziquel>	Widdershins ok. now. anyone knows of a not too ugly implementation of cyclic chained list in rust ?
+Mar 12 00:01:17 <Widdershins>	the main thing you get performancewise by using pointers instead of indices is that deleting incrementally doesn't leave allocated dead space in the backing array. otherwise indices pointing to indices is, performance-wise, pretty much equivalent
+Mar 12 00:01:35 <Widdershins>	maybe you want https://rust-unofficial.github.io/too-many-lists/
+Mar 12 00:01:55 <yziquel>	Widdershins memory management will be a later stage. my machine is quite simple but hairy in details such as that.
+Mar 12 00:02:15 <j`ey>	from a quick crates.io look it doesnt look like there is, but maybe there's better search terms
+Mar 12 00:02:31 <Widdershins>	ok well good luck with the contraption
+Mar 12 00:02:32 <yziquel>	Widdershins i skimmed over too many lists. i haven't seen cyclic chained list. will reread.
+Mar 12 00:02:47 <j`ey>	https://crates.io/crates/cdl-list-rs uses rc/refcell
+Mar 12 00:05:31 <Widdershins>	the deque in https://rust-unofficial.github.io/too-many-lists/fourth-layout.html is effectively cyclic, the List type has pretty much the same fields as the Node type does
+Mar 12 00:06:53 <yziquel>	j`ey I'm fine using RefCell if I need to build the structure. What I want in the end is an immutable algebraic data type. cyclic.
+Mar 12 00:07:18 <yziquel>	I really need 1. immutable 2. algebraic 3. cyclic. But only as end result.
+Mar 12 00:07:32 <yziquel>	lifetime can be tied to a wider arena to avoid issues.
+Mar 12 00:08:44 <yziquel>	Widdershins reference counted. not what I want.
+Mar 12 00:09:07 <TimMc>	yziquel: Any chance you can just avoid garbage collection and let program termination take care of everything for you? :-P
+Mar 12 00:09:09 <LDericher>	please check out another borrow/lifetime issue I'm currently facing, any suggestions? https://bpa.st/2CDQ
+Mar 12 00:13:34 <LDericher>	I don't get why the buffer "escapes the closure body" if I only use an immutable borrow, once
+Mar 12 00:13:47 <Widdershins>	LDericher: it's not once, it's inside a loop so it'll live on to the next iteration
+Mar 12 00:14:27 <Widdershins>	and you're reassigning tx at which point it must be cleaned up because there's nowhere else to put it, but the new tx you're assigning to it depends on the old one
+Mar 12 00:14:40 <Widdershins>	that's what it looks like
+Mar 12 00:14:54 <yziquel>	TimMc no garbage collection matters. I just want to construct an immutable circular chained list.
+Mar 12 00:17:11 <yziquel>	from what I see, I have to fool the compiler with unsafety. i hate that, but i see no other way around it.
+Mar 12 00:18:24 <dav1d>	LDericher, what type is xfer and is it tied to the reference that was passed in?
+Mar 12 00:19:17 <LDericher>	xfer holds references to both the "tx" used to transfer and the "buffer" it's transmitting
+Mar 12 00:20:32 <dav1d>	LDericher, what does xfer.wait() return, a TX which is still tied to the buffer?
+Mar 12 00:21:08 <LDericher>	wait() returns the (buffer, tx), both untied
+Mar 12 00:21:41 <yziquel>	Is it possible, in unsafe rust to cast struct with a mutable pointer to the same struct without the mutability of the pointer ?
+Mar 12 00:21:49 <yziquel>	or in safe rust even ?
+Mar 12 00:23:06 <j`ey>	*mut T I think can be used in place of *const T already?
+Mar 12 00:23:57 <j`ey>	evalr: fn bar(a: *const u32){} fn foo(a: *mut u32) {bar(a)}
+Mar 12 00:23:59 -evalr/##rust-	j`ey: ()
+Mar 12 00:24:21 <j`ey>	but https://doc.rust-lang.org/std/primitive.pointer.html#method.cast_const also exists
+Mar 12 00:25:36 <dav1d>	Widdershins, am I missing something, if the new tx is not tied to the buffer, it should be fine right?
+Mar 12 00:26:38 <Widdershins>	i think xfer is borrowing tx...?
+Mar 12 00:27:06 <Widdershins>	i'm not sure :/
+Mar 12 00:27:08 <dav1d>	Yeah, but the wait should consume it and return a new tx without a lifetime to the buffer?
+Mar 12 00:28:59 <dav1d>	Looks fine to me, but clearly it's not, hard to guess without actual type info. Already past my bed time, gl
+Mar 12 00:29:27 <Widdershins>	yeah need to see more of the crate for this
+Mar 12 00:33:18 <yziquel>	Widdershins this seems to allow what I need, though I'd like to see if it works with Enums and not only structs. https://github.com/dtolnay/readonly
+Mar 12 00:33:52 <Widdershins>	enums work the same as structs
+Mar 12 00:34:32 <j`ey>	also seems quite unrelated to anything you talked about
+Mar 12 00:34:45 <Widdershins>	yeah this is about visibility
+Mar 12 00:35:46 <LDericher>	Widdershins, I pushed the crate to my git, the last commit is the changes I'm trying to make: https://code.yavook.de/jmm/bluepill-rust-blinky/src/branch/irc
+**** BEGIN LOGGING AT Tue Mar 12 00:38:03 2024
+
+Mar 12 00:38:02 *	Now talking on ##rust
+Mar 12 00:38:02 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 12 00:38:02 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 12 00:38:03 <polychromata{J}>	<yziquel> I tend to be annoyed by people always questioning what I plan to do.
+Mar 12 00:38:03 <polychromata{J}>	<yziquel> I already have a mother.
+Mar 12 00:38:03 <polychromata{J}>	off-topic, but i feel like somecreature should mention that this is not normal
+Mar 12 00:38:11 <polychromata{J}>	you are gently encouraged to surround yourself with people who respect your autonomy. things tend to be much better that way.
+Mar 12 00:38:25 <polychromata{J}>	(speaking from personal experience)
+Mar 12 00:38:30 <yziquel>	polychromata{J} you want to go down that lane ?
+Mar 12 00:39:10 <polychromata{J}>	depends on what you mean by that? i'll be in ##rust-offtopic
+Mar 12 00:39:44 <Widdershins>	cdhowie: as far as i can tell based on its implementation (which is very funny btw) there's no reason it *can't* work on enums
+Mar 12 00:40:24 <cdhowie>	Widdershins: i don't see how it could work with enums at all
+**** BEGIN LOGGING AT Tue Mar 12 00:55:46 2024
+
+Mar 12 00:55:45 *	Now talking on ##rust
+Mar 12 00:55:45 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 12 00:55:45 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 12 00:56:33 <polychromata{J}>	like a lot of std types do that, things like `pub struct Foo(crate::sys::imp::Foo);`, where that module is #[cfg] based on platform. or something like that
+Mar 12 00:56:34 <Widdershins>	explicit privacy is a thing, including by convention a la python's prefixing with an underscore (or with two underscores, for the magic mangle)
+Mar 12 00:56:46 <Widdershins>	buuuut we're down the other road now a good ways with rust
+Mar 12 00:57:55 <Widdershins>	perhaps you could put `pub(partial)` as the visibility of the enum, and then the variants and fields therein would only have visibility as declared
+Mar 12 01:00:40 <yziquel>	Is OnceCell a way to tie the knot of an immutable cyclic (singly) linked list ?
+Mar 12 01:01:18 <danieldg>	it could be, though you need to solve the freeing problem too
+Mar 12 01:01:39 <yziquel>	danieldg i plan to use bumpalo to eschew that problem.
+Mar 12 01:02:17 <yziquel>	doable ?
+Mar 12 01:02:38 <danieldg>	sure
+Mar 12 01:02:57 <danieldg>	you could use a normal cell too
+Mar 12 01:03:00 <yziquel>	danieldg good to know. that will save me some time w/r investigation.
+Mar 12 01:03:07 <danieldg>	but yeah, oncecell is probably nicer
+Mar 12 01:03:35 <yziquel>	danieldg an normal cell has a runtime penalty, no ?
+Mar 12 01:04:28 <danieldg>	no, it's just more annoying to use
+Mar 12 01:04:42 <danieldg>	unless the type is Copy
+Mar 12 01:05:08 <danieldg>	Cell<Option<T>> and OnceCell<T> are basically identical if T is copy
+Mar 12 01:05:20 <danieldg>	other than the ability to write multiple times w/ Cell
+Mar 12 01:06:13 <cdhowie>	RefCell<T> has a runtime penalty (unless the optimizer can prove the refcounting redundant), but Cell<T> does not
+Mar 12 01:06:19 <yziquel>	and i get get a T out of it, if i understand right ?
+Mar 12 01:06:28 <danieldg>	you get &T
+Mar 12 01:06:28 <yziquel>	i can get
+Mar 12 01:06:40 <yziquel>	danieldg ok. just what I need.
+Mar 12 01:06:47 <yziquel>	i'll try it.
+Mar 12 01:15:12 <Widdershins>	i think OnceCell<&'a Self> would work to populate a cyclic network of direct references between values as long as all of the values' ownerships outlive 'a
+Mar 12 01:15:29 <Widdershins>	and it maintains a trivial drop
+Mar 12 01:16:39 <Widdershins>	actually would 'a have to be exactly equal to the lifetime of their ownership. is that allowed? maybe 'a has to outlive the ownership and you must be forced to drop them all before 'a is done actually
+Mar 12 01:16:51 <yziquel>	Widdershins kind of what i plan to do for my cyclic lambda terms.
+Mar 12 01:17:31 <Widdershins>	you could actually make the ownership arbitrarily extensible with constant references using the dumb clown thing i made the other week that i keep bringing back up
+Mar 12 01:17:36 <danieldg>	Widdershins: I think you end up with &'a Node<'a> for everything
+Mar 12 01:17:46 <Widdershins>	danieldg: yeah
+Mar 12 01:17:54 <danieldg>	it might forbid you from implementing Drop on Node
+Mar 12 01:18:26 <Widdershins>	i can imagine that would be the case
+Mar 12 01:21:48 <Widdershins>	is this allowed at all? i don't know how it's possible to take apart e.g. a btree of these when deleting a single one would invalidate literally all the rest and make them un-look-at-able
+Mar 12 01:22:02 <danieldg>	actually maybe that would just be bumpalo's stipulation, it doesn't Drop at all
+Mar 12 01:22:35 <danieldg>	that makes it much simpler
+Mar 12 01:47:52 <yziquel>	Where is the value retrieved by OnceCell.get() allocated in memory ?
+Mar 12 01:48:06 <danieldg>	inside the cell itself
+Mar 12 01:48:13 <danieldg>	you can look at the impl
+Mar 12 01:48:26 <danieldg>	it's a thin wrapper around UnsafeCell<Option<T>>
+Mar 12 01:52:28 <yziquel>	https://docs.rs/once_cell/latest/once_cell/#lateinit
+Mar 12 01:52:40 <yziquel>	but not quite what i seek.
+Mar 12 01:52:58 <danieldg>	yziquel: this is in std now
+Mar 12 01:53:45 <danieldg>	clarify your question then
+Mar 12 01:54:45 <Widdershins>	wondering if there's a reachable soundness hole around this
+Mar 12 01:54:48 <yziquel>	wel, i wonder. thinking.
+Mar 12 01:55:30 <Widdershins>	or if there's some dance that has to happen or straight up precludes what I'm thinking of
+Mar 12 01:55:43 <Widdershins>	taking a nap will look later
+Mar 12 01:56:22 <danieldg>	Widdershins: I think it could only happen with Drop impls, but yeah, it does feel like you could get to dead objects after making a self-referential struct
+Mar 12 01:57:05 <Widdershins>	if you put them in 2 vecs, make a cycle, and drop one vec. what then
+Mar 12 01:57:29 <Widdershins>	is that illegal, do you have to drop both. are the refs present but unlookable
+Mar 12 01:57:50 <danieldg>	this is related to #[may_dangle]
+Mar 12 01:58:35 <yziquel>	danield it seems it works. the memory layout is just pointers to pointers to pointers. no overhead. what i was looking for.
+Mar 12 01:58:37 <cdhowie>	Widdershins: The compiler should not let you do that.  That's effectively a textbook self-referential struct.
+Mar 12 01:58:45 <yziquel>	danieldg it seems it works. the memory layout is just pointers to pointers to pointers. no overhead. what i was looking for.
+Mar 12 02:00:27 <danieldg>	Widdershins: yep, it rejects it
+Mar 12 02:00:47 <Widdershins>	danieldg: where does the crime occur exactly
+Mar 12 02:00:53 <danieldg>	on drop
+Mar 12 02:01:15 <Widdershins>	do you have to drop both vecs or is the whole thing illegal
+Mar 12 02:01:24 <danieldg>	evalr: use std::cell::OnceCell; struct S<'a>(OnceCell<&'a S<'a>>); let x = S(OnceCell::new()); x.0.set(&x); drop(x); impl<'a> Drop for S<'a> { fn drop(&mut self) {}}
+Mar 12 02:01:26 -evalr/##rust-	danieldg: error[E0597]: `x` does not live long enough ...
+Mar 12 02:01:27 -evalr/##rust-	danieldg: https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=5896d72b18bb347398fa9b37707bf7c7
+Mar 12 02:01:48 <danieldg>	having more than one x just makes it longer
+Mar 12 02:02:19 <Widdershins>	i don't need an impl drop though I'm just wondering how they can be owned
+Mar 12 02:02:39 <cdhowie>	They'd be owned by the arena
+Mar 12 02:02:41 <danieldg>	if you remove the impl Drop it'll compile
+Mar 12 02:02:58 <danieldg>	evalr: use std::cell::OnceCell; struct S<'a>(OnceCell<&'a S<'a>>); let x = std::mem::ManuallyDrop::new(S(OnceCell::new())); x.0.set(&x); impl<'a> Drop for S<'a> { fn drop(&mut self) {}}
+Mar 12 02:03:00 -evalr/##rust-	danieldg: ()
+Mar 12 02:03:07 <danieldg>	that one kinda surprised me
+Mar 12 02:03:37 <danieldg>	it's fine but I expected rustc to reject it anyway
+Mar 12 02:03:56 <Widdershins>	hah
+Mar 12 02:04:35 <Widdershins>	you have to forget it? or can you actually do the drop because you have to do it unsafely
+Mar 12 02:04:52 <danieldg>	you have to forget it if you want to be safe
+Mar 12 02:04:54 <yziquel>	danieldg lateinit is not in stdlib.
+Mar 12 02:05:03 <yziquel>	i think
+Mar 12 02:05:25 <danieldg>	yziquel: lateinit is just a "how do I use this", not an actual feature
+Mar 12 02:05:37 <yziquel>	stupid me
+Mar 12 02:11:30 <yziquel>	ok. got it. perfect. happy evening.
+Mar 12 02:17:55 <danieldg>	evalr: #![feature(dropck_eyepatch)] use std::cell::OnceCell; struct S<'a>(OnceCell<&'a S<'a>>); let x = S(OnceCell::new()); x.0.set(&x); unsafe impl<#[may_dangle] 'a> Drop for S<'a> { fn drop(&mut self) {}}
+Mar 12 02:17:57 -evalr/##rust-	danieldg: error[E0554]: `#![feature]` may not be used on the stable releas ...
+Mar 12 02:17:58 -evalr/##rust-	danieldg: https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=9f6a30f272664760faa91cbe66e4b4e0
+Mar 12 02:18:05 <danieldg>	evalr: --unstable #![feature(dropck_eyepatch)] use std::cell::OnceCell; struct S<'a>(OnceCell<&'a S<'a>>); let x = S(OnceCell::new()); x.0.set(&x); unsafe impl<#[may_dangle] 'a> Drop for S<'a> { fn drop(&mut self) {}}
+Mar 12 02:18:07 -evalr/##rust-	danieldg: error: expected one of `!`, `.`, `::`, `;`, `?`, `{`, `}`, or an ...
+Mar 12 02:18:07 -evalr/##rust-	danieldg: https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=85e1c619e50b0f35d243829b1fefa800
+Mar 12 02:18:17 <danieldg>	evalr: --nightly #![feature(dropck_eyepatch)] use std::cell::OnceCell; struct S<'a>(OnceCell<&'a S<'a>>); let x = S(OnceCell::new()); x.0.set(&x); unsafe impl<#[may_dangle] 'a> Drop for S<'a> { fn drop(&mut self) {}}
+Mar 12 02:18:19 -evalr/##rust-	danieldg: ()
+Mar 12 02:19:33 <danieldg>	so you can actually do the drop, you just have to promise not to look at the ref when you are in the drop impl
+Mar 12 02:32:58 <Widdershins>	danieldg: ohhh
+Mar 12 02:39:15 <Widdershins>	yeah ok so
+Mar 12 02:39:37 <Widdershins>	i can use the circus impl to add vecs full of self-referential whatsits
+Mar 12 02:39:57 <danieldg>	yep
+Mar 12 02:40:12 <Widdershins>	but nothing self-referential or containing anything self-referential can be moved or dropped except in-place
+Mar 12 02:40:14 <danieldg>	rustc will stop you if you do it wrong
+Mar 12 02:40:26 <danieldg>	also yes
+Mar 12 02:40:52 <danieldg>	self-referential things are annoying to use because of this
+Mar 12 02:41:10 <Widdershins>	and if dropping is all done implicitly i guess that is sufficient to prove that it happens automatically, effectively instantaneously, and by the book
+Mar 12 02:41:14 <yziquel>	seems a cool discussion.
+Mar 12 02:42:17 <Widdershins>	for some reason i thought labeled blocks could be named as lifetimes
+Mar 12 02:42:43 <danieldg>	they do use the same syntax
+Mar 12 02:43:14 <Widdershins>	it would make sense to have 'a: { .. } and anything in that block could name 'a as "promised to live at least as long as the end of this block"
+Mar 12 02:43:24 <yziquel>	yes
+Mar 12 02:43:25 <Widdershins>	seems that can't be spelled though
+Mar 12 02:43:38 <Widdershins>	'a is just a label here, and lifetimes can only be created via parameter
+Mar 12 02:45:33 <Widdershins>	i guess fair enough since encouraging people to spell explicit lifetimes can only bake in the current borrowck model annoyingly hard
+Mar 12 02:47:48 <Widdershins>	https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=107daf6585e4fe9259be22d109207e61
+Mar 12 02:57:23 <Widdershins>	those could probably be Box<[ScaryClown]> but it's surprisingly annoying to turn Box<[T; N]> into Box<[T]>. unless i'm forgetting an easy way to do it
+Mar 12 02:57:40 <danieldg>	I think it's just an as?
+Mar 12 02:58:16 <Widdershins>	:o you can `as` a Box?
+Mar 12 02:58:52 <Widdershins>	or do you `as` the sized array in place without taking it as a reference
+Mar 12 02:59:00 <Widdershins>	i wasn't aware you could do either of those things
+Mar 12 02:59:30 <danieldg>	it's the same as making a Box<dyn Foo>
+Mar 12 02:59:33 <danieldg>	which is also via as
+Mar 12 02:59:34 <Widdershins>	wow you can as the box
+Mar 12 02:59:41 <Widdershins>	is this a compiler carve-out
+Mar 12 03:00:02 <danieldg>	it's an unsizing coersion
+Mar 12 03:00:18 <danieldg>	I think it just works for things that are generic with <T:?Sized>
+Mar 12 03:01:04 <Widdershins>	interesting... and that goes straight through the generics and makes it a different concrete type you're holding?
+Mar 12 03:01:20 <danieldg>	basically it just widens the pointer
+Mar 12 03:01:51 <Widdershins>	yeah but if this isn't special for box that's wild, since you could use that to widen any generic pointers within any struct
+Mar 12 03:02:01 <danieldg>	it might require CoerceUnsized
+Mar 12 03:02:16 <danieldg>	no, you don't widen the pointer *in* the struct
+Mar 12 03:02:26 <danieldg>	you widen the pointer to the struct
+Mar 12 03:02:42 <Widdershins>	you get a new struct with the same values and the same pointer but now the pointer is wide
+Mar 12 03:03:00 <Widdershins>	i can as the box without any features
+Mar 12 03:03:46 <Widdershins>	vec also automatically coerces to Box<[T]> apparently, but Box<[T; N]> does not
+Mar 12 03:03:58 <Widdershins>	or at least whatever `vec!` spits out does
+Mar 12 03:04:01 <Diablo-D3>	[19:16:04] <pflanze> Diablo-D3, the last commit to that repo was from a day ago. Also, https://element.io/blog/element-x-ignition/
+Mar 12 03:04:19 <Diablo-D3>	I guess its good news they didnt fuck this up
+Mar 12 03:07:32 <Diablo-D3>	btw, apparently I may have been thinking of fractal
+Mar 12 03:08:38 <Diablo-D3>	sadly, its gnome's own client
+Mar 12 03:08:39 <Widdershins>	danieldg: not having any luck applying it to a type containing a ref
+Mar 12 03:08:45 <Diablo-D3>	so thats super doa
+Mar 12 03:08:56 <Widdershins>	even with the feature
+Mar 12 03:09:43 <Widdershins>	or do you have to impl the feature
+Mar 12 03:09:46 <Widdershins>	trait*
+Mar 12 03:10:12 <danieldg>	Widdershins: I think you have to have the boxlike impml CoerceUnsized
+Mar 12 03:11:48 <Widdershins>	> implement CoerceUnsized<Ptr<U>> for Ptr<T> where T: Unsize<U>, U: ?Sized
+Mar 12 03:11:57 <Widdershins>	i see how it is ok
+Mar 12 03:14:08 <Widdershins>	and it won't let you implement it on an enum. bummer
+Mar 12 03:20:49 <Widdershins>	so the coercion only works if it always knows precisely what to do, you can't have branches in there
+Mar 12 03:26:42 <cowboy861>	hey hey
+Mar 12 03:34:45 <Widdershins>	haha
+Mar 12 03:34:54 <Widdershins>	pro tip: don't actually derive Debug for a self-referential type

@@ -1456,3 +1456,110 @@ T 1710100638 18<19mats118>	its a thirty year old format with everything 
 T 1710109467 19*	Now talking on 22#security
 T 1710109467 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
 T 1710109467 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710112836 19*	Now talking on 22#security
+T 1710112836 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710112836 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710113061 19*	Now talking on 22#security
+T 1710113061 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710113061 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710118768 19*	Now talking on 22#security
+T 1710118768 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710118768 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710131041 19*	Now talking on 22#security
+T 1710131041 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710131041 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710133664 19*	Now talking on 22#security
+T 1710133664 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710133664 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710152285 19*	Now talking on 22#security
+T 1710152285 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710152285 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710152467 18<25mwebsec18>	y0
+T 1710154385 18<28calmclam18>	wazzup
+T 1710161542 18<19Dex2x18>	Anyone still got the link for that website that shows all the possible route and certifications to take?
+T 1710161575 18<19Dex2x18>	I think it was this one https://pauljerimy.com/security-certification-roadmap/
+T 1710161618 18<19Dex2x18>	Is GIAC or eccounsil better to use?
+T 1710161639 18<19Dex2x18>	In terms of your certification meaning something to find a job ?
+T 1710166079 18<25mwebsec18>	hey calmclam
+T 1710166085 18<25mwebsec18>	giac of course
+T 1710166109 18<25mwebsec18>	but more expensive to get the course materials
+T 1710166261 18<19Dex2x18>	oh really?
+T 1710166451 18<25mwebsec18>	sure
+T 1710166453 18<25mwebsec18>	GPEN
+T 1710166455 18<25mwebsec18>	GWAPT
+T 1710166457 18<25mwebsec18>	GXPN
+T 1710166468 18<25mwebsec18>	all good certifications, but the course fees are expensive
+T 1710166529 18<19Dex2x18>	Well will see if my company pays for it, I just need to find one that is more geared towards software development or architecture
+T 1710166895 18<25mwebsec18>	checkout the sans website
+T 1710166905 18<25mwebsec18>	it has tons of courses that lead to giac certification
+T 1710166965 18<19Dex2x18>	sans? never heard of it, will have a look
+T 1710167054 18<19Dex2x18>	GWEB might be good to start
+T 1710168150 18<25mwebsec18>	giac provides the certifications for the sans courses
+T 1710168154 18<25mwebsec18>	https://www.sans.org
+T 1710168196 18<25mwebsec18>	if you need hands on certification then probably oswe or oswa are good. they are certifications from offensive security and are at more reasonable pricing than  sans courses
+T 1710179231 18<26hays18>	i really dont like how some services are now refusing to authenticate you if you are on a VPN
+T 1710180311 18<28calmclam18>	Agreed.
+T 1710180338 18<28calmclam18>	I also don't like that some services are not refusing to authenticate you if you have non-standard browser preferences set that alter the javascript environment.
+T 1710180348 18<28calmclam18>	are now*
+T 1710185054 18<28gnrp18>	I love it. There has never been anything better in the world.
+T 1710185078 18<28gnrp18>	I especially love it when recaptcha or cloudflare puts you in endless loops when they don't like your origin
+T 1710185170 18<29BlueyHealer18>	Good thing Cloudflare likes to announce ita presence via not letting you in with JS off.
+T 1710185692 18<25pagios18>	question about ransomeware and borg, for example say you are on backup3 (incremental of backup1) and a ransomeware hit at that point in time.  the ransomeware encrypts all the files and now borg detects that the file changed and uploades backup4 which is HUGE since everything changed. BUT does it mean i. can still rollback tup bakcup 1 --> 3 safely ?  which means there is no way to overwrite old backups already closed by borg ?
+T 1710185793 18<22yans18>	Hi! Anyone heard about IPVM calculator?
+T 1710186482 18<28gnrp18>	pagios: Depending on which backups you clean up, yes, sure. That's what it is for
+T 1710186557 18<25pagios18>	gnrp:  i have a storagebox with limited shell on it. cant run crontab. can i run a borg server and have the daily schedules setup in it ? internally instead of crontab
+T 1710186616 18<28gnrp18>	pagios: afaik, no. But I am not really a borg expert. They are on libera, though, afair
+T 1710195638 18<24HiccupJul18>	How can I prove ownership of a website using a digital signature? If I sign a file using my private key and post the signed file and public key, couldn't someone else just copy and paste the same data onto their site?
+T 1710195892 18<27xx18>	the file contents are important
+T 1710195913 18<27xx18>	worst you could do is sign a message saying "Yes" with your private key
+T 1710196170 18<24HiccupJul18>	So the message could say, e.g. "[domain or file sha256] is owned by [public key]"?
+T 1710196221 18<24HiccupJul18>	but i'm not sure how that'd work with a dynamic site, that could be exist on multiple domains
+T 1710196236 18<24HiccupJul18>	although maybe https should play some part in this
+T 1710196530 18<28gnrp18>	HiccupJul: You are mixing up two things
+T 1710196574 18<28gnrp18>	posting your own content on a website proves control over it. Ownership can probably best be proven with the domain whois.
+T 1710196582 18<28gnrp18>	there is no need for cryptography there
+T 1710196634 18<24HiccupJul18>	that's true
+T 1710196634 18<28gnrp18>	you rather want to prove that you are *not* in control of another website, even if it claims so?
+T 1710196646 18<24HiccupJul18>	yes, i suppose so
+T 1710196734 18<24HiccupJul18>	well maybe not exactly. i want to prove ownership of a website, that isn't necessarily hosted by me.
+T 1710196737 18<28gnrp18>	you have a bootstrap problem there. Since there is no canonical way to disprove ownership, you would have to make an authoritative statement on *how* websites from you are marked
+T 1710196764 18<24HiccupJul18>	yeah i see what you mean. at that statement would itself need to be trusted
+T 1710196767 18<24HiccupJul18>	*and that
+T 1710196774 18<28gnrp18>	and you would have to publish that authoritative statement in some trusted way... if you start from your own website, it would be easy
+T 1710196799 18<28gnrp18>	say something like "you'll find signatures here" and then just make a pgp signature of the index file there
+T 1710196808 18<24HiccupJul18>	yeah
+T 1710196900 18<24HiccupJul18>	although there's the question of how that could work on dynamic sites. i know HTTPS, which can cover all data on a website, uses public key cryptography, so maybe that can be taken advantage of?
+T 1710196942 18<28gnrp18>	HiccupJul: x509 certificates in https *normally* only prove that you are in control of the webserver, they do not refer to a person
+T 1710196986 18<24HiccupJul18>	yeah
+T 1710197017 18<24HiccupJul18>	i guess you'd need to sign every single HTTPs response, as a http header or something
+T 1710197025 18<24HiccupJul18>	every single HTTP response
+T 1710197065 18<28gnrp18>	you would need to do that with a private (personal) key, rather than one for www for the domain
+T 1710197079 18<24HiccupJul18>	i'm not sure this is doable for dynamic content, because the owner can't manually authorise every single dynamic response
+T 1710197125 18<28gnrp18>	you can discuss about the consequences, but you could just load your personal key there
+T 1710197149 18<28gnrp18>	whoever does not have control over that server or another computer where your personal key is stored, wouldn't be able to generate the same signatures
+T 1710197173 18<24HiccupJul18>	personal key = private key?
+T 1710197214 18<28gnrp18>	private key, yes. But I mean personal = referring to your person, and not a computer
+T 1710197265 18<24HiccupJul18>	i suppose in this scenario, i wouldn't want to trust any of the mirror owners either
+T 1710197370 18<24HiccupJul18>	so i guess its not doable for a dynamic site
+T 1710197409 18<28gnrp18>	no clue what you mean with mirror owners, or what your mirroring scheme is
+T 1710197443 18<28gnrp18>	if these mirrors are not supposed to produce the dynamic content themselves, you can surely still do it
+T 1710197573 18<24HiccupJul18>	i think i was getting sidetracked about the mirroring. that wouldn't make sense.
+T 1710197646 18<24HiccupJul18>	i'm more thinking, if i had a wiki, and for some reason that went down, i'd want continuity between it and the new location for it. i guess having a public key which use to sign messages with date + current owned domain(s) would be enough.
+T 1710197656 18<24HiccupJul18>	*which i use
+T 1710197802 18<24HiccupJul18>	does that seem right?
+T 1710197841 18<28gnrp18>	yes. But does it really matter if other websites reproduce your content and your signature?
+T 1710197859 18<28gnrp18>	I mean, I could take your text, put the right signature below it, and post it everywhere. But whatever modification I'd want to make would not be valid
+T 1710197887 18<24HiccupJul18>	yeah other websites reproducing the content is fine
+T 1710197891 18<24HiccupJul18>	i was getting confused before
+T 1710197918 18<28gnrp18>	then what you are describing is really just a cryptographic signature as has been in use for decades
+T 1710197921 18<24HiccupJul18>	yeah
+T 1710197945 18<24HiccupJul18>	i guess most services handle continuity just by having an out-of-band thing (social media account or whatever) to post the new domain
+T 1710197960 18<24HiccupJul18>	although most wouldn't have any issue like this lol
+T 1710197995 18<28gnrp18>	I don't know what services you are referring to. I'd say most services don't care about continuity anyway
+T 1710198029 18<24HiccupJul18>	just any website. you don't want your users going to some copycat and getting scammed
+T 1710200282 19*	Now talking on 22#security
+T 1710200282 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710200282 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710201344 19*	Now talking on 22#security
+T 1710201344 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710201344 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)

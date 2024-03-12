@@ -1359,3 +1359,71 @@ Mar 10 22:54:32 <buf>	maybe this http://b0at.tx0.org/xchat/addons/scripts/startu
 Mar 10 23:24:27 *	Now talking on #hexchat
 Mar 10 23:24:27 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
 Mar 10 23:24:27 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+Mar 10 23:32:16 <buf>	btw do_startup-1.pl does exactly what i wanted, so it was right, a script did exist :)
+Mar 11 00:04:08 <JanC>	even if it wouldn't be exactly what you need, there often is a script that is close enough that you can modify it or use a technique in it in your own script
+**** BEGIN LOGGING AT Mon Mar 11 00:20:38 2024
+
+Mar 11 00:20:36 *	Now talking on #hexchat
+Mar 11 00:20:36 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 11 00:20:36 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** BEGIN LOGGING AT Mon Mar 11 00:24:22 2024
+
+Mar 11 00:24:21 *	Now talking on #hexchat
+Mar 11 00:24:21 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 11 00:24:21 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+Mar 11 01:01:16 <serenity_waterfa>	clarification on what fuck facebook usage is
+Mar 11 01:01:39 <sney>	that doesn't sound like a hexchat question
+Mar 11 01:02:43 <serenity_waterfa>	oops well does hexchat do log ur messages or is it completely wiped when i end my session
+Mar 11 01:04:29 <sney>	depends on whether you have logging enabled. settings->preferences->logging "enable logging of conversations to disk" 
+Mar 11 01:05:02 <sney>	you should always assume whatever you type on irc is being logged by someone else, though.
+Mar 11 01:06:18 <serenity_waterfa>	fair. How popular is this compared to other IRCs
+Mar 11 01:06:41 <serenity_waterfa>	I dont use this one normally
+Mar 11 01:07:31 <sney>	I think it's pretty popular as gui clients go, it supports scripting in a few languages and there are a lot of existing scripts for it. runs on *nix and windows 
+Mar 11 01:08:37 <serenity_waterfa>	Thanks this was very usefull I appreciate it
+Mar 11 01:08:38 <JanC>	there is also the scrollback
+Mar 11 01:08:40 <sney>	np
+Mar 11 01:09:14 <JanC>	well
+Mar 11 01:09:18 <sney>	lol
+**** BEGIN LOGGING AT Mon Mar 11 01:59:29 2024
+
+Mar 11 01:59:28 *	Now talking on #hexchat
+Mar 11 01:59:28 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 11 01:59:28 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** BEGIN LOGGING AT Mon Mar 11 05:24:02 2024
+
+Mar 11 05:24:01 *	Now talking on #hexchat
+Mar 11 05:24:01 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 11 05:24:01 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** BEGIN LOGGING AT Mon Mar 11 06:07:46 2024
+
+Mar 11 06:07:44 *	Now talking on #hexchat
+Mar 11 06:07:44 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 11 06:07:44 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** BEGIN LOGGING AT Mon Mar 11 11:18:07 2024
+
+Mar 11 11:18:05 *	Now talking on #hexchat
+Mar 11 11:18:05 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 11 11:18:05 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+Mar 11 12:07:00 <henry_>	suo
+Mar 11 12:07:14 <henry_>	whats`up?
+Mar 11 12:07:57 <henry_>	hi
+Mar 11 12:09:53 <henry_>	Hi
+Mar 11 18:06:42 <pc>	hello
+Mar 11 18:09:39 <sney>	hi
+Mar 11 21:10:17 <emaaan>	why is hexchat rip
+Mar 11 21:10:41 <sney>	click the link in the topic
+Mar 11 21:10:58 <emaaan>	k
+Mar 11 21:14:17 *	emaaan slaps ComputerTech with a python
+Mar 11 21:14:21 <emaaan>	why didnt you step up and take the project as your own? poopster.
+Mar 11 22:04:24 <SolitonX>	:(
+Mar 11 22:07:09 <DasBrain^Hex>	lol @emaaan 
+**** BEGIN LOGGING AT Tue Mar 12 00:38:03 2024
+
+Mar 12 00:38:02 *	Now talking on #hexchat
+Mar 12 00:38:02 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 12 00:38:02 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)
+**** BEGIN LOGGING AT Tue Mar 12 00:55:46 2024
+
+Mar 12 00:55:45 *	Now talking on #hexchat
+Mar 12 00:55:45 *	Topic for #hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+Mar 12 00:55:45 *	Topic for #hexchat set by sney!~sney@sney.ca (Fri Feb  9 22:12:05 2024)

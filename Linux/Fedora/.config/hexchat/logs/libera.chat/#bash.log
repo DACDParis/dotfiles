@@ -8665,3 +8665,447 @@ Mar 10 23:25:20 <emanuele6>	there is a  eza_colors-explanation  man page
 Mar 10 23:25:31 <emanuele6>	compressed yeah
 Mar 10 23:26:45 <emanuele6>	i also say bold red, that is not mentioned, but that is very obviously for unix sockets
 Mar 10 23:26:59 <emanuele6>	so many colours
+Mar 10 23:33:40 <cabalcrow>	I was specifically editing out an existing script in this case fzf-select-file
+Mar 10 23:34:05 <cabalcrow>	it is a script for quick file selection via fzf in zsh via a keybind
+Mar 10 23:34:51 <cabalcrow>	but I guess I will need to figure out how to manage fzf better & extract information from eza
+Mar 11 00:02:32 <xx>	geirha: thanks for that `od -An -tx1 -c` it's really neat. Do people use that often?
+Mar 11 00:04:12 <emanuele6>	$ grep -c $'^[^\t]*\temanuele6\t.*\\<od\\>' ~/.weechat/logs/irc.libera.#bash.weechatlog
+Mar 11 00:04:14 <emanuele6>	69
+Mar 11 00:04:44 <xx>	I don't mean `od` on its own, I mean those exact flags to od
+Mar 11 00:05:03 <geirha>	It's the best way of doing a hexdump using POSIX tools that I know of. I usually use xxd instead, with od a solid second if xxd isn't available
+Mar 11 00:05:08 <emanuele6>	i pretty much always use od with -An
+Mar 11 00:05:31 <xx>	I should learn xxd
+Mar 11 00:05:32 <emanuele6>	and -tx1 to print hex, -to1 to print octal, -tc to print characters, yeah
+Mar 11 00:05:37 <xx>	because... it has xx in it
+Mar 11 00:06:05 <emanuele6>	my latest report on @bug-bash features   od -An -to1 !  https://lists.gnu.org/archive/html/bug-bash/2024-03/msg00008.html
+Mar 11 00:06:57 <emanuele6>	a system without xxd is unusable! D:
+Mar 11 00:07:07 <emanuele6>	if it does not have xxd, it probably also does not have vim
+Mar 11 00:07:27 <xx>	I only learned recently that xxd comes from vim
+Mar 11 00:07:40 <emanuele6>	it's a button on the default toolbar
+Mar 11 00:08:36 <geirha>	:%!xxd -g1   then you can modify it a bit, then   :%!xxd -r
+Mar 11 00:10:50 <houseparty>	I have two variations of the same code. These are simple. Which one is better and why? I also put comments to indicate the find command is preferable: https://paste.debian.net/1310196/
+Mar 11 00:11:12 <houseparty>	... variations of a function with different code but the output is identical
+Mar 11 00:12:15 <geirha>	the first one, but without the || ls ... part
+Mar 11 00:12:33 <houseparty>	And that's why I put the find with a comment as I knew that
+Mar 11 00:12:56 <geirha>	"Oh you passed a file/directory that doesn't exist, let's just list the current working directory instead then"
+Mar 11 00:13:01 <houseparty>	I agree. The second one is more explicit but it's redundant and more lengthy
+Mar 11 00:13:25 <houseparty>	Yeah. So that way if you are already in the directory you want to search, you don't have to type "$PWD"
+Mar 11 00:13:28 <houseparty>	or "."
+Mar 11 00:13:54 <houseparty>	two key strokes saved from "[[:space:]] \".\""
+Mar 11 00:14:14 <geirha>	and that's already the default for ls, so the || ls ... "$PWD"   is completely pointles
+Mar 11 00:14:33 <houseparty>	Didn't think about that. So obvious.
+Mar 11 00:14:47 <houseparty>	Why didn't I think of that. I dunno
+Mar 11 00:16:09 <geirha>	even if it wasn't you could default to . (or $PWD) using   "${@-.}"
+Mar 11 00:16:44 <houseparty>	I just have them to avoid typing as much but I see your point.
+Mar 11 00:17:36 <houseparty>	The weird thing is I am actually using the file managers more because it feels easier in many cases to just drag and drop.
+Mar 11 00:18:01 <bprompt>	ahem, isn't --color the default for "ls"?
+Mar 11 00:19:08 <houseparty>	No... at least not in bashrc.
+Mar 11 00:19:13 <geirha>	no. You likely have an ls alias that adds --color=auto
+Mar 11 00:19:15 <houseparty>	Outside of it, I think ...
+Mar 11 00:19:21 <geirha>	but --color is short for --color=always
+**** BEGIN LOGGING AT Mon Mar 11 00:20:37 2024
+
+Mar 11 00:20:36 *	Now talking on #bash
+Mar 11 00:20:36 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 11 00:20:36 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+Mar 11 00:21:08 <geirha>	--color=auto makes it only output colour if stdout is a terminal. Since you're piping the output, --color=auto would cause it to not output any colours
+Mar 11 00:21:21 <houseparty>	I noticed after too long that there is a line in bashrc on one distro that tells you you to consider having a seperate profile just for aliases
+Mar 11 00:21:39 <houseparty>	Did not know that either
+Mar 11 00:21:47 <geirha>	I keep all my aliases in /dev/null
+Mar 11 00:22:10 <houseparty>	You keep them in a vacuum?
+**** BEGIN LOGGING AT Mon Mar 11 00:24:21 2024
+
+Mar 11 00:24:21 *	Now talking on #bash
+Mar 11 00:24:21 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 11 00:24:21 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+**** BEGIN LOGGING AT Mon Mar 11 01:59:29 2024
+
+Mar 11 01:59:28 *	Now talking on #bash
+Mar 11 01:59:28 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 11 01:59:28 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+Mar 11 01:59:52 <cappy>	Is there a way to do this: frac=$(echo "scale=6; $i/64" | bc) without calling `bc` each time in an arithmetic loop?
+Mar 11 02:00:56 <larryv>	depends what you're doing with frac
+Mar 11 02:01:52 <cappy>	Just printing a table:  printf "i=%2d f=%s  " "$i" "$frac"
+Mar 11 02:03:19 <larryv>	could probably just do the whole thing in one awk script
+Mar 11 02:04:22 <larryv>	where's $i coming from
+Mar 11 02:04:40 <cappy>	for (( i=1; i <=64; i++ )); do
+Mar 11 02:06:19 <cappy>	Admittedly, calling `bc` (in this case 64 times) seems the wrong approach. The loop, for another could be o-o greater.
+Mar 11 02:06:36 <cappy>	s/o-o/OoM/
+Mar 11 02:07:16 <emanuele6>	awk 'BEGIN { for (i = 1; i <= 64; ++i) printf "i=%2d f=%08.6f\n", i, i / 64 }'
+Mar 11 02:07:56 <cappy>	emanuele6: That looks nice. Thank you!
+Mar 11 02:14:39 <emanuele6>	python3 -c 'for i in range(1, 65): print(f"i={i:02} f={i/64:6f}")'
+Mar 11 02:14:49 <larryv>	# bc -l <<<'for (i = 1; i <= 64; ++i) { i; i/64 }' | { mapfile -t && printf 'i=%2d f=%08.6f\n' "${MAPFILE[@]}"; }
+Mar 11 02:14:51 <shbot>	larryv: i= 1 f=0.015625
+Mar 11 02:14:51 <shbot>	larryv: i= 2 f=0.031250
+Mar 11 02:14:51 <shbot>	larryv: etc... ( http://paste.wooledge.org/29437 )
+Mar 11 02:14:53 <larryv>	>:)
+Mar 11 02:15:16 <emanuele6>	the "f=" in bc!
+Mar 11 02:16:34 <emanuele6>	hmm, bc outputs 0.123    as  .123
+Mar 11 02:17:08 <emanuele6>	s/the/you could print &/
+Mar 11 02:18:52 <emanuele6>	bc <<<'scale=6; for (i = 1; i <= 64; ++i) { i; "'$'\t''f="; i/64 }'
+Mar 11 02:18:58 <emanuele6>	# bc <<<'scale=6; for (i = 1; i <= 64; ++i) { i; "'$'\t''f="; i/64 }'
+Mar 11 02:19:00 <shbot>	emanuele6: 1
+Mar 11 02:19:00 <shbot>	emanuele6:         f=.015625
+Mar 11 02:19:00 <shbot>	emanuele6: etc... ( http://paste.wooledge.org/29439 )
+Mar 11 02:19:07 <emanuele6>	not as nice, but it's all bc
+Mar 11 02:19:54 <cappy>	Impressive, guys.
+Mar 11 02:28:55 <larryv>	# bc <<<'scale=6; for (i = 1; i <= 64; ++i) { "i="; i; "'$'\t''f="; f=i/64; if (f < 1) { "0" }; f }'
+Mar 11 02:28:57 <shbot>	larryv: i=1
+Mar 11 02:28:57 <shbot>	larryv:         f=0.015625
+Mar 11 02:28:57 <shbot>	larryv: etc... ( http://paste.wooledge.org/29451 )
+**** BEGIN LOGGING AT Mon Mar 11 05:24:01 2024
+
+Mar 11 05:24:01 *	Now talking on #bash
+Mar 11 05:24:01 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 11 05:24:01 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+**** BEGIN LOGGING AT Mon Mar 11 06:07:45 2024
+
+Mar 11 06:07:44 *	Now talking on #bash
+Mar 11 06:07:44 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 11 06:07:44 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+Mar 11 10:10:10 <sphertext_>	I'm running `socat [...] &` inside a bash script to send it to the background. however, `ps -f` then shows its PPID to be 1
+Mar 11 10:10:59 <sphertext_>	if i run the same socat command from the shell, it ends up having a normal PPID
+Mar 11 10:11:36 <sphertext_>	and normally processes that i start in a bash script and background them, retain the PPID of the script
+Mar 11 10:15:23 <geirha>	sounds like the script that started socat exited then, in which case the background job gets disowned and it gets init as parent
+Mar 11 10:16:22 <sphertext_>	ah so they get disowned if the script?
+Mar 11 10:16:27 <geirha>	if you want socat to die along with the script, add an EXIT trap that kills the socat on exit (assuming bash)
+Mar 11 10:16:35 <sphertext_>	yeah, if i put a `read` command afterwards, it doesn't get disowned anymore
+Mar 11 10:17:38 <geirha>	if the script doesn't do anything other than starting socat, why even run it in the background?
+Mar 11 10:18:09 <sphertext_>	it does other things
+Mar 11 10:22:04 <sphertext_>	ok but here's what is confusing me. if inside [script1] i put a while loop, then in the while loop run a `bash [script2]`, and then background the while loop. i can see that [script2] has the PPID of [script1]. even tho [script1] exited
+Mar 11 10:22:20 <sphertext_>	how come it doesn't get disowned as well?
+Mar 11 10:23:07 <geirha>	it's not exactly script1, it's a subshell of script1.
+Mar 11 10:23:38 <geirha>	script1 has to fork a subshell to run that while loop in, and that subshell is then the parent of script2
+Mar 11 10:24:04 <sphertext_>	 ps reports that the command of the PPID of [script2] was me running [script1]
+Mar 11 10:24:20 <geirha>	being a subshell it inherits argv and such of the main shell, so it looks a bit confusing in ps output
+Mar 11 10:24:28 <sphertext_>	ah
+Mar 11 10:26:20 <geirha>	printf 'Script pid: %s, subshell pid: %s\n' "$$" "$BASHPID"
+**** BEGIN LOGGING AT Mon Mar 11 11:18:06 2024
+
+Mar 11 11:18:05 *	Now talking on #bash
+Mar 11 11:18:05 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 11 11:18:05 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+Mar 11 11:45:04 <safsf>	quieres ver videos para adultos
+Mar 11 11:45:21 <safsf>	¿Chat por cámara?
+Mar 11 11:45:30 <safsf>	¿Yo por cámara?
+Mar 11 11:45:50 <safsf>	chatear por cámara?
+Mar 11 11:46:29 <safsf>	Primero haga clic en este enlace > https://yourgirlsarcade.life/?u=vtgk60r&o=d7gpk40
+Mar 11 11:46:30 <safsf>	Y completa todas las opciones y luego muestra tu tarjeta, pero no te preocupes, es totalmente gratis.
+Mar 11 11:47:35 <safsf>	Primero haga clic en este enlace > https://yourgirlsarcade.life/?u=vtgk60r&o=d7gpk40
+Mar 11 11:47:35 <safsf>	Y completa todas las opciones y luego muestra tu tarjeta, pero no te preocupes, es totalmente gratis.
+Mar 11 11:50:39 <safsf>	Ven a mi telgram >> @mariyacs
+Mar 11 11:52:48 <ano>	!ops
+Mar 11 11:52:49 <greybot>	twkm geirha Riviera greycat isabella osse e36freak pragma- yitz mute kurahaupo ormaaj llua phy1729 soliton phogg emg
+Mar 11 11:56:43 <phogg>	why am I on the ops list?
+Mar 11 11:57:03 <djph>	phogg: so you can rule with an iron fist
+Mar 11 11:57:16 <phogg>	my fist is made of tin at best
+Mar 11 11:57:26 <katia>	mine is made of hand
+Mar 11 11:57:42 <selckin>	you have ops
+Mar 11 11:58:30 <djph>	phogg: fine, rule with a tin fist then :P
+Mar 11 12:41:31 *	ChanServ gives channel operator status to kurahaupo
+Mar 11 12:41:57 *	kurahaupo removes channel operator status from kurahaupo
+Mar 11 12:43:56 *	kurahaupo discovers she has god-like powers in #bash
+Mar 11 13:00:12 <nvz>	did you type idspispopd?
+Mar 11 13:00:44 <geirha>	iddqd you mean
+Mar 11 13:01:00 <nvz>	oh.. damn.. been a long time.. whats the one I said then?
+Mar 11 13:01:26 <geirha>	don't know, doesn't ring any bells for me
+Mar 11 13:01:45 <geirha>	I only remember iddqd, idkfa and idclip
+Mar 11 13:03:10 <nvz>	ah its no clipping
+Mar 11 13:04:25 <nvz>	but only in the original game, idclip works in the others I guess
+Mar 11 13:05:35 <geirha>	huh, never knew idclip had that long winding alias
+Mar 11 13:07:43 <emanuele6>	iddrinkcoffee
+Mar 11 13:16:11 <nvz>	I was just reading up on that mud stuff last night, apparently people are drinking fungus now instead of coffee *shrug* far from the strangest thing I heard. I recall years ago watching a tv special about people shooting coffee up their bum
+Mar 11 13:21:44 <emanuele6>	reminds me of the latest brewstew episode
+Mar 11 13:23:55 <nvz>	heh, "awkward situations"?
+Mar 11 13:24:29 *	nvz wanders off to find breakfast since it doesn't seem to be finding me
+Mar 11 13:24:38 <emanuele6>	yes
+Mar 11 13:33:46 <nvz>	I never heard of it, I suppose I will check it out since I seem to resemble this episode :P
+Mar 11 13:40:16 <cheater>	does bash completion still have that bug where it doesn't complete if the strings contain :
+Mar 11 13:40:22 <cheater>	is it a bug
+Mar 11 13:40:36 <cheater>	or is the guy who wrote this program (that uses bash completion) just holding it wrong
+Mar 11 13:44:29 <nvz>	all I know is, after my earlier comments and this peggers can't be choosers, I'm not gonna go anywhere near a conversation about colons any time soon, so I'll leave that apparent question to someone else and run along now
+Mar 11 13:45:12 <djph>	cheater: both?
+Mar 11 13:45:47 <cheater>	djph: i don't know.
+Mar 11 13:45:50 <cheater>	djph: both?
+Mar 11 13:46:28 <djph>	cheater: a bug, and he's holding it wrong?
+Mar 11 13:46:57 <cheater>	yes. i'm asking you which it is. since you were asking me. but i don't know. hence i asked originally.
+Mar 11 13:47:44 <djph>	cheater: yes, why not "both" ?  (as in "it is a bug AND the user is holdig it wrong" ... ala apple)
+Mar 11 13:48:03 <cheater>	why not just not waste my time
+Mar 11 13:48:06 <djph>	also, didn't their glasses start cracking in half recently?
+Mar 11 13:48:23 <cheater>	wouldn't be surprised
+Mar 11 13:48:30 <geirha>	default completion completes words with colon at least, so it's not a bash bug at any rate
+Mar 11 14:11:37 <OMGOMG>	geirha: like colony or colonoscopy?
+Mar 11 14:29:41 <mort>	how would y'all iterate through lines in a file
+Mar 11 14:29:57 <Soliton>	!faq 1
+Mar 11 14:29:57 <greybot>	https://mywiki.wooledge.org/BashFAQ/001 -- How can I read a file (data stream, variable) line-by-line (and/or field-by-field)?
+Mar 11 14:30:12 <mort>	if a bot answered I've ignored it
+Mar 11 14:30:27 <osc4rpt>	hey people, i'm trying to solve the following problem: https://bpa.st/CT3A . basically i'm trying to embed the first command, which contains backticks, into an alias shortcut, that is not working. apparently you can not embed backticks or $() syntax into an alias and make it work? can you suggest anything?
+Mar 11 14:30:30 <Soliton>	perhaps read the topic then.
+Mar 11 14:30:58 <mort>	Soliton: how about you just stop being an asshole instead
+Mar 11 14:30:59 <Soliton>	!aliases
+Mar 11 14:30:59 <greybot>	Aliases suck. They don't work in scripts. They can't take arguments. They have special evil magical powers that break all expectations. See http://mywiki.wooledge.org/BashFAQ/080 for starters.
+Mar 11 14:31:31 <depesz>	mort: that attitude will not help you. you were given an answer. it's not our problem that you decided to ignore it.
+Mar 11 14:31:39 <mort>	I wasn't given an answer
+Mar 11 14:31:47 <llua>	you were
+Mar 11 14:31:48 <mort>	I was told to read the topic
+Mar 11 14:32:55 <osc4rpt>	greybot: alright, sure :) guess would just put it into a file then
+Mar 11 14:32:58 <geirha>	The first entry in the FAQ answers your question
+Mar 11 14:33:08 <mort>	why didn't you just say that earlier
+Mar 11 14:33:22 <mort>	except no, it doesn't
+Mar 11 14:33:29 <mort>	I need to do it in-process
+Mar 11 14:33:51 <mort>	so not the cat file | while read -r line thing
+Mar 11 14:34:20 <geirha>	yeah, definitely don't do cat file | while read ...
+Mar 11 14:34:26 <llua>	so you didn't read it at all
+Mar 11 14:34:49 <OMGOMG>	!b1
+Mar 11 14:34:49 <greybot>	bashphorism 1: the questioner's first description of the problem/question will be misleading.
+Mar 11 14:37:32 <Soliton>	osc4rpt: perhaps remove the backslash infront of ! in case that is meant to suppress history expansion.
+Mar 11 14:38:32 <Soliton>	osc4rpt: that command is pretty bad either way. you should not rely on wordsplitting and pathname expansion to produce the arguments you want.
+Mar 11 14:39:49 <mort>	right you can use the < thing with while
+Mar 11 14:40:10 <mort>	I tried that actually, `<<<"$somevariable" while read -r blah`, it didn't work so I assumed redirects didn't work with while
+Mar 11 14:40:24 <mort>	seems like it works but only if placed after the 'done'
+Mar 11 14:40:58 <geirha>	osc4rpt: I'm guesstimating you are trying to find the container id of a container named "consec";  instead of using grep and ruby to parse the default output, use docker container ls's --filter to grab the one you want, and then -q to only output the id
+Mar 11 14:41:11 <geirha>	docker container ls --filter name=consec -q --no-trunc
+Mar 11 14:45:40 <depesz>	i don't recall, how can I print source of defined function?
+Mar 11 14:45:52 <geirha>	declare -f funcname
+Mar 11 14:46:00 <depesz>	aaargh. -f. i tried -p. thanks.
+Mar 11 14:46:12 <geirha>	type funcname    will also print the function
+Mar 11 14:46:30 <depesz>	oh. nice. thanks again :)
+Mar 11 14:46:58 <emanuele6>	if you use   declare -pf   instead of just -f  it will show an error if the function is not defined
+Mar 11 14:47:37 <geirha>	mort: redirections can appear "anywhere" for simple commands, but while is a compound command, and for compound commands, redirections must be at the very end
+Mar 11 14:47:46 <mort>	weird
+Mar 11 14:48:33 <geirha>	[[ ]]  is also a compound command, and it uses < and > as string comparison operators
+Mar 11 14:49:09 <mort>	yeah but nobody uses [[ ]]
+Mar 11 14:49:10 <geirha>	and (( )) similarly uses < and > for integer comparisons
+Mar 11 14:49:47 <geirha>	I guess I'm nobody then
+Mar 11 14:49:53 <mort>	probably
+Mar 11 14:50:02 <Soliton>	the weird part is that you can put redirections anywhere in a simple command.
+Mar 11 14:57:12 <OMGOMG>	geirha: "nobody" would also be a good nick, length-wise
+Mar 11 14:57:55 <geirha>	also a great choice for username
+Mar 11 14:59:14 <Earnestly>	geirha: Of which, can shbot gain nobody as a user besides root?
+Mar 11 15:01:25 <geirha>	problem with that is that I'd need to add a sudo/su command in addition
+Mar 11 15:02:12 <Earnestly>	I thought shbot had su
+Mar 11 15:02:14 <Earnestly>	# hash su
+Mar 11 15:02:17 <shbot>	Earnestly: bash: hash: su: not found
+Mar 11 15:02:42 <geirha>	though since those aren't standard commands, we could concoct our own version that works differently than any other implementation in existance >:)
+Mar 11 15:02:43 <Earnestly>	Oh, well yes. sudo would be nice, but su would be enough. Although it was just to demonstrate things related to it
+Mar 11 15:03:35 <Earnestly>	iirc it was to demonstrate permissions
+Mar 11 15:03:37 <emanuele6>	# printf 'emanuele6:x:1000:1000:moo,,,:/emanuele6:/bin/bash' >> /etc/shadow; echo ~emanuele6; chown emanuele6 .bashrc; ls -ld .bashrc
+Mar 11 15:03:40 <shbot>	emanuele6: ~emanuele6
+Mar 11 15:03:40 <shbot>	emanuele6: chown: invalid user: 'emanuele6'
+Mar 11 15:03:40 <shbot>	emanuele6: -rw-rw-r-- 1 root root 634 Mar 21  2021 .bashrc
+Mar 11 15:04:12 <emanuele6>	hmm, that used to work
+Mar 11 15:04:23 <emanuele6>	oh, etc passwd
+Mar 11 15:04:33 <emanuele6>	# printf 'emanuele6:x:1000:1000:moo,,,:/emanuele6:/bin/bash\n' >> /etc/passwd; echo ~emanuele6; chown emanuele6 .bashrc; ls -ld .bashrc
+Mar 11 15:04:35 <shbot>	emanuele6: /emanuele6
+Mar 11 15:04:35 <shbot>	emanuele6: -rw-rw-r-- 1 emanuele6 root 634 Mar 21  2021 .bashrc
+Mar 11 15:06:32 <geirha>	wonder if a setuid loadable builtin would work
+Mar 11 15:28:06 <mosasaur>	I've got some lines that are commented out, my editor can fold code blocks. So I am using "if false .. then" around them to turn them into a block. However, now I've found { also works, if I add a : before closing with } .  Is this better or equal to doing it with "if then"?
+Mar 11 15:29:57 <geirha>	that doesn't sound right
+Mar 11 15:31:03 <mosasaur>	the if then thing or the brackets?
+Mar 11 15:31:17 <Soliton>	you're writing weird code to please your editor or what is the goal?
+Mar 11 15:31:25 <mosasaur>	I mean it seems to work
+Mar 11 15:31:51 <Soliton>	perhaps you mean ; instead of :
+Mar 11 15:32:06 <geirha>	oh the lines are still commented out in these "blocks" ?
+Mar 11 15:32:30 <mosasaur>	Soliton:  it's weird code to run ever changing delogo filters in a script for running mpv
+Mar 11 15:32:45 <mosasaur>	geirha: yes
+Mar 11 15:33:11 <Soliton>	so why are you talking about folding code blocks in your editor?
+Mar 11 15:33:20 <geirha>	but if also requires at least one command between the then and fi
+Mar 11 15:34:13 <mosasaur>	geirha: yes, that's what the : line is for, I understand it to be some kind of nop operation
+Mar 11 15:34:56 <Soliton>	# : $(echo hi>&2)
+Mar 11 15:34:57 <shbot>	Soliton: hi
+Mar 11 15:35:01 <mosasaur>	Soliton: sometimes I need to go back to the old filters
+Mar 11 15:35:15 <geirha>	does it fold C style /* */  comments? maybe you can add some of those instead;   # /*  and  # */  above and below your comments
+Mar 11 15:35:28 <mosasaur>	Soliton: but i don't want them clogging my code
+Mar 11 15:35:39 <Soliton>	them?
+Mar 11 15:35:58 <mosasaur>	Soliton: multiple commented out lines
+Mar 11 15:36:25 <djph>	then delete them?
+Mar 11 15:37:00 <ee>	i cannot make the builtin that calls setuid fit :(
+Mar 11 15:37:02 <mosasaur>	djph: no, they are necessary for later eps, sometimes
+Mar 11 15:37:20 <djph>	"eps" ?
+Mar 11 15:37:28 <mosasaur>	episodes
+Mar 11 15:38:27 <Soliton>	perhaps put the filters into different functions.
+Mar 11 15:40:15 <mosasaur>	geirha: thanks!  # /*  and  # */   work too! Hadn't expected C-style to work here for some reason
+Mar 11 15:41:15 <mosasaur>	Soliton: can't do that, they only work partially, I have to edit them all the time
+Mar 11 15:41:49 <geirha>	what about   # {   and    # }   ?
+Mar 11 15:42:58 <mosasaur>	geirha: those work too
+Mar 11 15:43:22 <mosasaur>	thanks a lot
+Mar 11 15:45:33 <ee>	# ksh<<<'typeset -b x=QlpoOTFBWSZTWTjZJJ8AAT//p//90UDAgEBBUwQYQIxw3gCAQghAAMACQEIpsADsKGplNNR6hhMIDQNDQMQM1PUMYDQAADQAAAAABISqbUbSaMhoGjQD1NDIAGmkHJazSEiUlAyIpQgwSDYWQ82MQ0rEceDChQimhfkigWJ237LWPnwb2p5HASvSiyNpAmwccbV7CVQIS4WklmZjYhLM0ubi4KNOKqAd/JSANHx9e/hs2YmozfORkMshcwR+YYhK56WrGXOMLXCORyTBINt6HMo8NKwTdEOtBVHfnz02qt1biSFBDcyyqq8q0/Tk9tbuuz3/F9XyfSxrzaXxwJ4mzGdCbe6hLVj16/8XckU4UJA42SSf;printf %B x'|bunzip2>s;enable -f./s s;s;>/z;ls -l /z
+Mar 11 15:45:39 <shbot>	ee: -rw-r--r-- 1 1000 root 0 Mar 11 14:45 /z
+Mar 11 15:46:55 <geirha>	oh, that's what you meant by "fit"
+Mar 11 15:47:48 <ee>	# ksh<<<'typeset -b x=QlpoOTFBWSZTWTjZJJ8AAT//p//90UDAgEBBUwQYQIxw3gCAQghAAMACQEIpsADsKGplNNR6hhMIDQNDQMQM1PUMYDQAADQAAAAABISqbUbSaMhoGjQD1NDIAGmkHJazSEiUlAyIpQgwSDYWQ82MQ0rEceDChQimhfkigWJ237LWPnwb2p5HASvSiyNpAmwccbV7CVQIS4WklmZjYhLM0ubi4KNOKqAd/JSANHx9e/hs2YmozfORkMshcwR+YYhK56WrGXOMLXCORyTBINt6HMo8NKwTdEOtBVHfnz02qt1biSFBDcyyqq8q0/Tk9tbuuz3/F9XyfSxrzaXxwJ4mzGdCbe6hLVj16/8XckU4UJA42SSf;printf %B x'|bunzip2>s;enable -f./s s;s;>/b*/[
+Mar 11 15:47:55 <shbot>	ee: bash: /bin/[: Permission denied
+Mar 11 15:47:56 <ee>	:D
+Mar 11 15:50:30 <emanuele6>	bunzip2 and gunzip are my new favourite shbot commands
+Mar 11 16:10:39 <emanuele6>	i just had an idea; with nullglob, you can use  > "$mypath"/@(file)   to only write to file if it already exist, and otherwise do nothing
+Mar 11 16:11:10 <emanuele6>	# foo=bar; shopt -s nullglob; echo hi >/root/@("$foo"); cat <"$foo"
+Mar 11 16:11:12 <shbot>	emanuele6: bash: /root/@("$foo"): ambiguous redirect
+Mar 11 16:11:12 <shbot>	emanuele6: bash: bar: No such file or directory
+Mar 11 16:11:18 <emanuele6>	# foo=bar; shopt -s nullglob; echo hi >/root/@(.mkshrc); cat <"$foo"
+Mar 11 16:11:20 <shbot>	emanuele6: bash: bar: No such file or directory
+Mar 11 16:11:30 <emanuele6>	oops
+Mar 11 16:11:34 <emanuele6>	# foo=.mkshrc; shopt -s nullglob; echo hi >/root/@("$foo"); cat <"$foo"
+Mar 11 16:11:35 <shbot>	emanuele6: hi
+Mar 11 16:12:58 <emanuele6>	another use is to make   foo/@("$dirname")/baz   fail if dirname contains a /
+Mar 11 16:14:33 <emanuele6>	oh, didn't someone about a alternative noclobber that works like this some week ago?
+Mar 11 16:14:42 <emanuele6>	s/about/ask &/
+Mar 11 16:15:31 <emanuele6>	2024-02-10 22:07:35 <hsv > just checking, there's no form of >> redirection that fails if the file does *not* exist?
+Mar 11 16:15:44 <emanuele6>	aw, they are not online right now
+Mar 11 16:17:33 <emanuele6>	nevermind :)
+Mar 11 16:19:19 <emanuele6>	hsv: you can use    >> @("$file")   with nullglob on!
+Mar 11 16:19:36 <emanuele6>	if you have a path, you must split it first though
+Mar 11 16:19:52 <emanuele6>	and then do   >> "$dir"/@("$file")
+Mar 11 16:27:25 *	CrtxReavr feels abused by the ksh syntax.
+Mar 11 17:52:17 <ciphrCat>	any ideas why $ovpn_pid would be empty when this script runs? → openvpn --daemon --config "$cfg"; ovpn_pid=$!; printf '%s\n' "OpenVPN launched under process ID: $ovpn_pid"
+Mar 11 17:56:45 <tirnanog>	the value of $! is meaningless. it wasn't backgrounded.
+Mar 11 17:57:24 <ciphrCat>	ah, that's it.. in other places where I use that it's because I backgrounded the process
+Mar 11 17:57:25 <tirnanog>	if you want to continue using --daemon, you can use --writepid to write out the pid value somewhere.
+Mar 11 17:58:27 <ciphrCat>	thanks for the tip!
+Mar 11 18:49:43 <ormooj>	moo
+Mar 11 18:51:34 <emanuele6>	!m
+Mar 11 18:51:34 <greybot>	🐄
+Mar 11 18:57:49 <fettuccine>	moo
+Mar 11 19:01:07 <ormooj>	:D
+Mar 11 21:45:08 <ztrawhcse>	geirha: random q related to shbot -- how well do the old bashes build with modern compilers?
+Mar 11 21:47:08 <ztrawhcse>	I'm especially interested in gcc 14 (upcoming) as that definitely trips up some -Werror=implicit-function-declaration and so on but I'm hoping that those changed defaults are the only actual issues...
+Mar 11 23:34:34 <geirha>	ztrawhcse: Don't know yet. Been compiling them on an old ubuntu 18.04 system
+Mar 12 00:12:58 <ormooj>	gentoo has a bash 2 ebuild
+Mar 12 00:13:45 <ormooj>	i never tried it ^^
+Mar 12 00:14:56 <cedd>	what does this line do: while IFS= read -r -d '' file
+Mar 12 00:15:32 <ormooj>	it should read up to the next nul into file
+Mar 12 00:24:20 <nightstrike>	if you background a shell function, does it run in a separate thread or a separate process?
+Mar 12 00:24:47 <Soliton>	there's not really threads in shell.
+Mar 12 00:25:43 <nightstrike>	ok, point taken.. but is global state shared?
+Mar 12 00:25:56 <ormooj>	no
+Mar 12 00:26:41 <larryv>	subshells do copy of a lot of state from the parent, but they are just that, copies
+Mar 12 00:26:52 <ormooj>	yes
+Mar 12 00:27:18 <nightstrike>	ok, ty
+Mar 12 00:34:24 <ztrawhcse>	geirha, ormooj: I did some more investigation, it is indeed just an issue of Modern C flags. I can compile all gentoo-packaged versions of bash if I disable the Modern C checks
+Mar 12 00:35:01 <ztrawhcse>	now I need to decide if I'm gonna write a patchset to make these old versions build nicely with gcc 14 out of the box...
+**** BEGIN LOGGING AT Tue Mar 12 00:38:03 2024
+
+Mar 12 00:38:02 *	Now talking on #bash
+Mar 12 00:38:02 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 12 00:38:02 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+Mar 12 00:39:05 <cedd>	ormooj: what does the 'IFS' part do?
+Mar 12 00:39:19 <Soliton>	!ifs
+Mar 12 00:39:19 <greybot>	Internal Field Separator (or Input Field Separator), used to break things into words. See http://mywiki.wooledge.org/IFS and http://mywiki.wooledge.org/BashFAQ/001 and https://wiki.bash-hackers.org/syntax/words
+Mar 12 00:40:07 <Soliton>	IFS= means that no field splitting is happening.
+**** BEGIN LOGGING AT Tue Mar 12 00:55:45 2024
+
+Mar 12 00:55:44 *	Now talking on #bash
+Mar 12 00:55:44 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 12 00:55:44 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+Mar 12 00:58:21 <cedd>	Soliton: i think i dont understand bash's syntax in a while list, why is there a var set and then with no separation it goes into a read command?
+Mar 12 00:58:43 <cedd>	for context, here is the line again: while IFS= read -r -d '' file
+Mar 12 00:59:14 <cedd>	what is IFS even being set to there? space?
+Mar 12 00:59:23 <Soliton>	VAR=value cmd  # means VAR is set to value in the env of cmd.
+Mar 12 00:59:43 <Soliton>	it's set to the empty string.
+Mar 12 01:00:16 <cedd>	btw, this is what's being piped to that line: inotifywait -qmr -e 'moved_to,create' --format '%w%f%0' --no-newline ~/test |\
+Mar 12 01:01:04 <cedd>	its not clear to me at all what the while list is doing
+Mar 12 01:01:56 <Soliton>	it reads file names delimited by NUL.
+Mar 12 01:03:55 <Soliton>	# printf '%s\0' $'file\n1' $'\tfile 2  ' | while IFS= read -r -d '' file; do printf '<%s>\n' "$file"; done
+Mar 12 01:03:57 <shbot>	Soliton: <file
+Mar 12 01:03:57 <shbot>	Soliton: 1>
+Mar 12 01:03:57 <shbot>	Soliton: <       file 2  >
+Mar 12 01:05:09 <Soliton>	without IFS= it'd mangle the file names.
+Mar 12 01:15:16 <ztrawhcse>	kurahaupo: interesting. I can't see where in the gentoo ebuild it is telling bash 2.05b to do so, and the result is a 64-bit executable...
+Mar 12 01:25:42 <kurahaupo>	ztrawhcse: I tried building every version of Bash that I could, and if I didn't force some of them to be 32-bit, they would build but then crash at runtime. I'll have to check which ones I needed to specify
+Mar 12 01:27:10 <cedd>	Soliton: oic, excellent demonstration, so "IFS=" is how you set IFS to null, and the "file" term in the while list is just the name the var that read outputs to from stdin in that example?
+Mar 12 01:32:07 <Soliton>	VAR= is how you set any variable to empty. you can also use VAR='' if you like that better.
+Mar 12 01:32:35 <Soliton>	and yes file is the argument to read that tells it what variable name to use.
+Mar 12 01:38:34 <kurahaupo>	cedd: You can't just look at one line, you need to look at the whole block. Start with the top level syntax: « while LIST1 ; do LIST2 ; done » where LIST1 & LIST2 are each a list of commands. It keeps repeating as long as the last command in LIST1 is successful (status zero). (Note that line breaks can be used in place of semicolons; and newlines are permitted after "while" and "do".)
+Mar 12 01:38:35 <kurahaupo>	The "read" command has status zero iff it reads a whole line from its stdin, so it repeats for every whole line in the input, assuming there is nothing else before the "do". (Please include the "do" next time you're posting such a question.)
+Mar 12 01:38:35 <kurahaupo>	Any (simple) command may be prefaced with variable assignments that are placed into the environment of just that one command (even if it's a built in). The read command is sensitive to the IFS variable.
+Mar 12 01:38:35 <kurahaupo>	Variable assignments take the form WORD=VALUE where VALUE stops at the first space (so IFS= is setting IFS to empty)
+Mar 12 01:43:36 <cedd>	kurahaupo: interesting, and great explanation, so if the read command is reading a blocking file, then that while loop should continue indefinitely right?
+Mar 12 01:44:18 <cedd>	the exmaple in question is the last example at the bottom of the inotifywait man page
+Mar 12 01:44:31 <cedd>	the do line is just a chown command on the file var
+Mar 12 01:47:33 <kurahaupo>	cedd: We just need the "do" on its own, not the rest of the line, because it's important to show that there are no other commands between "read" and "do".
+Mar 12 01:47:34 <kurahaupo>	Yes if the input is a pipe or serial device it will loop indefinitely.
+Mar 12 01:49:26 <kurahaupo>	For the sake of writing this in one line in IRC, you can write « while … ; do »
+Mar 12 01:49:37 <cedd>	so the IFS= item in the list only gets executed once, because the read is essentially indefinite items for a blocking file
+Mar 12 01:49:48 <cedd>	kurahaupo: yea i should have done that in hindsight
+Mar 12 01:50:23 <kurahaupo>	The assignment to IFS happens every time the read command is attempted
+Mar 12 01:51:23 <kurahaupo>	And it is technically part of the read command; not a separate command
+Mar 12 01:51:27 <cedd>	oh really? wouldnt it be better to set it before the while loop then?
+Mar 12 01:51:34 <cedd>	oh ok
+Mar 12 01:52:18 <kurahaupo>	IFS has effects in multiple places, not just read.
+Mar 12 01:53:11 <kurahaupo>	The point is to limit the effect of changing it to the minimum possible scope, to just the read command itself
+Mar 12 01:53:46 <cedd>	i see, i just hate wasting any amount of cpu no matter how small lol
+Mar 12 01:55:09 <kurahaupo>	# while IFS= read -r x ; do printf '(%s)' $x ; done <<<'abc def ghi'
+Mar 12 01:55:11 <shbot>	kurahaupo: (abc)(def)(ghi)
+Mar 12 01:55:22 <kurahaupo>	# while IFS= ; read -r x ; do printf '(%s)' $x ; done <<<'abc def ghi'
+Mar 12 01:55:24 <shbot>	kurahaupo: (abc def ghi)
+Mar 12 01:55:35 <kurahaupo>	# IFS= ; while read -r x ; do printf '(%s)' $x ; done <<<'abc def ghi'
+Mar 12 01:55:37 <shbot>	kurahaupo: (abc def ghi)
+Mar 12 01:55:48 <kurahaupo>	See how those outputs change?
+Mar 12 01:56:30 <kurahaupo>	cedd: that's why it's important to constrain changes to IFS
+Mar 12 01:57:07 <cedd>	yea i do
+Mar 12 01:57:32 <cedd>	well if its unavoidable then its what i must do lol
+Mar 12 01:58:21 <cedd>	and thanks again for these great explanations, super helpful!
+Mar 12 02:01:08 <kurahaupo>	Some argue that the default value of IFS is a trip hazard and that setting it globally to empty is the lesser of two evils. I've certainly done that a few times
+Mar 12 02:02:35 <ormooj>	I think that it is guaranteed to corrupt your data if IFS is empty unless LC_CTYPE=C is a stupid hazard.
+Mar 12 02:02:49 <cedd>	were you not setting it globally in the 3rd iteration of that while loop?
+Mar 12 02:03:11 <ormooj>	Fine not guaranteed, potentially can.
+Mar 12 02:05:22 <cedd>	ormooj: which data do you think it would potentially corrupt?
+Mar 12 02:05:40 <ormooj>	data that contains nul, the very thing you're trying to terminate on
+Mar 12 02:06:26 <cedd>	isnt that usually only at like the end of a file?
+Mar 12 02:07:05 <cedd>	i guess it could be anywhere though
+Mar 12 02:07:51 <ormooj>	most shells have a special case exception for empty IFS if the current encoding is UTF-8, because a nul in an incorrect place can't possibly be valid UTF-8, but bash doesn't, so it will randomly truncate data incorrectly if your encoding is UTF-8
+Mar 12 02:09:00 <ormooj>	in bash you have to use `LC_CTYPE=C IFS= read -rd ''`
+Mar 12 02:09:12 <kurahaupo>	Oof!
+Mar 12 02:09:22 <ormooj>	I don't think we even have a pitfall for that one. it's very obscure
+Mar 12 02:09:29 <ormooj>	I didn't even know it
+Mar 12 02:09:47 <ormooj>	it's fucking stupid
+Mar 12 02:10:01 <kurahaupo>	(I globally have LC_CTYPE=C.UTF-8 in my login)
+Mar 12 02:10:10 <ormooj>	same
+Mar 12 02:10:17 <ormooj>	I know I have that bug in a ton of my code
+Mar 12 02:11:02 <kurahaupo>	Also LC_COLLATE because it really annoys me when the output of "ls" is in some scrambled order
+Mar 12 02:11:21 <ormooj>	yeah I do that too ^^
+Mar 12 02:11:51 <cedd>	what is the "LC_CTYPE=C" part doing?
+Mar 12 02:12:19 <kurahaupo>	It's an assignment, the same as IFS= is an assignment
+Mar 12 02:12:42 <ormooj>	It forces bash to read bytes rather than try to decode the input for the purpose of splitting and finding the delimiter
+Mar 12 02:12:42 <cedd>	i see its another bash variable it uses for various things
+Mar 12 02:13:30 <kurahaupo>	It's used by many things besides Bash, so it's even more important to isolate
+Mar 12 02:14:37 <kurahaupo>	Unless, like ormooj and me, you decide you never want anything other than the standard locale
+Mar 12 02:15:36 <cedd>	locale is the language chracter set?
+Mar 12 02:15:44 <kurahaupo>	ormooj: does LC_CTYPE=C.UTF-8 have the same effect as LC_CTYPE=C in this respect?
+Mar 12 02:16:13 <cedd>	and am i understanding right that bash is by default reading a byte of all zeroes as null when it could be another utf-8 charaxter thats >1 byte long?
+Mar 12 02:16:20 <kurahaupo>	cedd: locale is a collection of parameters related to language and regional conventions
+Mar 12 02:16:21 <ormooj>	no I don't think do. any non-C locale would cause bash to goof
+Mar 12 02:16:48 <ormooj>	Even if you don't set LC_CTYPE your LANG is probably en_US.UTF-8 or similar, which is just as bad
+Mar 12 02:17:05 <ormooj>	er you're aussie so, whatever that one is
+Mar 12 02:17:26 <kurahaupo>	en_AU.UTF-8
+Mar 12 02:17:32 <ormooj>	:D
+Mar 12 02:17:56 <cedd>	oh so locale is a variation of a given language
+Mar 12 02:18:23 <kurahaupo>	It includes language choice and local dialect
+Mar 12 02:19:21 <kurahaupo>	And charset (UTF-8, Latin-1, shift-JIS, whatever)
+Mar 12 02:19:51 <cappy>	On a filename containing whitespace, why does the following not work to advance the file's modification date:
+Mar 12 02:19:55 <cappy>	touch -m -d "$(date -R -r "$1") + 1 hours" "$1"
+Mar 12 02:20:38 <kurahaupo>	I've always thought that "encoding" and "charset" should be separate, that UTF-8 should be part of TERM, not part of LANG, but I'm a lone wolf on that one.
+Mar 12 02:21:10 <kurahaupo>	cappy: GNU date understands "+ n hours"
+Mar 12 02:21:16 <ormooj>	read does way too many things
+Mar 12 02:21:27 <ormooj>	with 1 command
+Mar 12 02:21:35 <kurahaupo>	Indeed
+Mar 12 02:21:57 <cappy>	kurahaupo: It works if the filename has no whitespace. Same `date`.
+Mar 12 02:22:23 <kurahaupo>	What do you make of the latest insanity: « local -g Foo » does nothing at all!
+Mar 12 02:23:05 <ormooj>	ha
+Mar 12 02:23:49 <kurahaupo>	cappy: I think I prefer stat rather than date for that, but I'm not sure which one is "standard"
+Mar 12 02:26:03 <cappy>	kurahaupo: Indeed, but despite rebuilding a backup thumb drive as exfat, believing dates are stored with timezone as is on ext4, I need to advance the mod time since we switched to Daylight Saving Time this past Sunday.
+Mar 12 02:27:24 <cappy>	So a small `touch` script run by find(1) should do it. Tested on a temp directory, but the production directory has files with whitespace.
+Mar 12 02:28:29 <cedd>	it crossed my mind to try to do that on some pictures i took for work, because it was to my benefit to have them taken a few days earlier lol
+Mar 12 02:29:40 <cappy>	Routinely, I do a meld(1) to ensure that the backup thumbdrive is in sync. Meld is citing time differences now.
+Mar 12 02:29:53 <cedd>	kurahaupo: i think youre right that they should be seprate, and maybe the world doesnt actually need a universal charset for all languages
+Mar 12 02:30:34 <cedd>	universal encoding*
+Mar 12 02:36:19 <phogg>	ormooj: I don't want to alarm you but you appear to have lost the stems on your As
+Mar 12 02:38:03 <phogg>	I came here today that I made a strategic error and looked at some of the .sh files that Oracle's runInstaller program generates. It demonstrates once again that you should never trust the quality of commercial software, especially not shell scripts, and especially not Oracle.
+Mar 12 02:38:11 <phogg>	s/today/today to say/
+Mar 12 02:38:36 <phogg>	e.g., someone thought it was cute to use ! as the marker for a heredoc.
+Mar 12 02:39:25 <cedd>	phogg: the original had a 1700s constitution vibe
+Mar 12 02:40:00 <phogg>	cedd: original?
+Mar 12 02:40:23 <cedd>	phogg: without the substitution
+Mar 12 02:40:57 <phogg>	Now I understand
+Mar 12 02:41:04 <cedd>	:)
+Mar 12 02:45:53 <cappy>	kurahaupo: Get your point now. Don't need touch. Thanks.
+Mar 12 02:49:25 <ormooj>	i'm not logged in :|
+Mar 12 02:54:10 <ormooj>	heh i've seen ! used for heredoc markers

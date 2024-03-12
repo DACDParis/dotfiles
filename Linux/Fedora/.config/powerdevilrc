@@ -1,0 +1,14 @@
+[AC][SuspendAndShutdown]
+AutoSuspendAction=0
+LidAction=0
+PowerButtonAction=0
+PowerDownAction=0
+
+[Activities][219b40b8-af78-41c4-af28-9b306aed7eb6]
+InhibitScreenManagement=true
+
+[BatteryManagement]
+BatteryCriticalAction=1
+
+[General]
+pausePlayersOnSuspend=false

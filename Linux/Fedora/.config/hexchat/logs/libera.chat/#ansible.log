@@ -1376,3 +1376,95 @@ Mar 10 23:24:27 *	Now talking on #ansible
 Mar 10 23:24:27 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
 Mar 10 23:24:27 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
 Mar 10 23:24:27 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Mon Mar 11 00:20:37 2024
+
+Mar 11 00:20:36 *	Now talking on #ansible
+Mar 11 00:20:36 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 11 00:20:36 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 11 00:20:36 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Mon Mar 11 00:24:22 2024
+
+Mar 11 00:24:21 *	Now talking on #ansible
+Mar 11 00:24:21 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 11 00:24:21 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 11 00:24:21 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Mar 11 01:45:09 <newpy>	I have a collection with a playbooks/ directory but I can't run the playbook from command-line via something like `ansible-playbook local.collection_name.pb_name`
+Mar 11 01:45:33 <newpy>	the collection is in ./ansible_collections/local/my_collection
+**** BEGIN LOGGING AT Mon Mar 11 01:59:29 2024
+
+Mar 11 01:59:28 *	Now talking on #ansible
+Mar 11 01:59:28 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 11 01:59:28 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 11 01:59:28 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Mar 11 02:22:04 <flowerysong>	The most common causes for this are the playbook not having a valid name (most especially people like to put `-` in them) or the collection directory not being in the search path (e.g. if you're relying on playbook adjacency, which doesn't work for calling a playbook inside it.)
+**** BEGIN LOGGING AT Mon Mar 11 05:24:02 2024
+
+Mar 11 05:24:01 *	Now talking on #ansible
+Mar 11 05:24:01 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 11 05:24:01 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 11 05:24:01 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Mon Mar 11 06:07:45 2024
+
+Mar 11 06:07:44 *	Now talking on #ansible
+Mar 11 06:07:44 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 11 06:07:44 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 11 06:07:44 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Mar 11 11:04:37 <eleitl>	Hi -- I've got an AAP question, hope this is appropriate here. I'm looking for any documentation on the redhat.rhel_idm.ipahost module. Just general pointers on where to find information about RHEL stuff would be very useful. Thanks.
+Mar 11 11:06:54 <oblikoamorale>	AAP as in Ansible Automation Platform? contact your support.   this channel's topic is ansible-core.  AAP somewhat overlaps with AWX, so you may try asking #ansible-awx
+Mar 11 11:07:11 <eleitl>	Thank you very much.
+Mar 11 11:14:58 <cla>	I think the question is about supported collection by redhat, which would be this in community: https://docs.ansible.com/ansible/latest/collections/community/general/ipa_host_module.html
+**** BEGIN LOGGING AT Mon Mar 11 11:18:06 2024
+
+Mar 11 11:18:05 *	Now talking on #ansible
+Mar 11 11:18:05 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 11 11:18:05 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 11 11:18:05 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+Mar 11 11:22:04 <oblikoamorale>	I don't see redhat.rhel_idm collection anywhere in the open internets
+Mar 11 11:22:29 <oblikoamorale>	perhaps rhel_idm was renamed indeed
+Mar 11 11:37:34 <cla>	Its here: https://catalog.redhat.com/software/collection/redhat/rhel_idm
+Mar 11 11:37:56 <cla>	But yes, it's not open.
+Mar 11 15:11:38 <emper0r>	hi, i need a little help with JSON filter, i'm trying to implement this part https://developer.hashicorp.com/vault/api-docs/secret/identity/oidc-provider#create-or-update-a-scope and this is my snippet code, with error output. https://dpaste.com/DVK6BGMMB
+Mar 11 15:15:29 <trilogy>	How can I define a Jinja macro in a vars file?
+Mar 11 15:19:15 <trilogy>	Actually my real problem is: I have a big list of objects that are used in playbooks. These objects are largely redundant. I'd like to make a default, then my list would just use that default and override fields as necessary. I'm trying to figure out how to do that in valid YAML
+Mar 11 15:27:07 <oblikoamorale>	emper0r: what you're passing to the module and what it expects is different. they use json based templating arguments, which are not valid json until templating occurs.  do you know there's hashi vault collection? https://docs.ansible.com/ansible/latest/collections/community/hashi_vault/index.html
+Mar 11 15:30:00 <emper0r>	oblikoamorale: i'm using it
+Mar 11 15:30:12 <oblikoamorale>	trilogy: you can use yaml anchors since they are processed on yaml parsing stage. you can also employ arbitrary jinja expressions as variable values. I believe that's enough for you to go on. jinja macros are also possible within single expression context (or template)
+Mar 11 15:30:52 <oblikoamorale>	emper0r: cool, just highlighting the obvious
+Mar 11 15:31:31 <trilogy>	oblikoamorale: is there a way to use anchors without it yelling about redefining the same variable?
+Mar 11 15:32:18 <oblikoamorale>	I don't know, I don't use them. https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_advanced_syntax.html#yaml-anchors-and-aliases-sharing-variable-values
+Mar 11 15:37:24 <emper0r>	oblikoamorale: sorry not understand what you mean with highlights?
+Mar 11 15:41:28 <oblikoamorale>	it means I pointed out the apparent wrong things that caught my eye
+Mar 11 15:44:59 <emper0r>	oblikoamorale:  with this  name: !unsafe '{{identity.entity.name}}' and this debug msg: "{{item_identity_oidc_scope.value.template|to_json}}" the output is json format correct, the issue is when need to write into vault, need escape \" so adding regex filter this "{{item_identity_oidc_scope.value.template|to_json|regex_replace('\"', '\\\\\"')}}" the output is ok msg: '{\"name\":
+Mar 11 15:45:06 <emper0r>	\"{{identity.entity.name}}\"}' but still write is same error :S
+Mar 11 15:46:16 <emper0r>	 hvac.exceptions.InvalidRequest: error parsing template JSON: invalid character '\\'
+Mar 11 15:46:17 <oblikoamorale>	it's different to what hashivault expects. if you look closely at their docs page, it should be: '{\"name\": {{identity.entity.name}} }'
+Mar 11 15:46:36 <oblikoamorale>	as I said it's not a valid json so to_json here is useless
+Mar 11 15:46:45 <emper0r>	ah
+Mar 11 15:46:58 <emper0r>	ok i'll remove it
+Mar 11 15:47:00 <oblikoamorale>	and I don't know how to deal with hashivault, it's just what caught my eye in your paste
+Mar 11 15:49:04 <emper0r>	mm i trying to implement the template scope dinamicly using var, template: name: !unsafe '{{identity.entity.name}}' if i don't add ' got an error. so i guess have to try using directly on role wihtout set dynamically
+Mar 11 15:49:39 <emper0r>	to avoid it like doc  '{\"name\": {{identity.entity.name}} }'
+Mar 11 16:00:55 <emper0r>	oblikoamorale: ... any idea?  name: !unsafe '{ "name": {{identity.entity.name}} }'  in the task template:    "{{item_identity_oidc_scope.value.template|b64encode|default('')}}" and the error output now is  hvac.exceptions.InvalidRequest: error parsing template JSON: invalid character '\'' looking for beginning of object key string, on post https://vault
+Mar 11 16:01:43 <emper0r>	where is that \ ?
+Mar 11 16:03:12 <oblikoamorale>	dunno. my advice is to try sending manually crafted strings, and when you get request working, compare them to what jinja templating generates
+Mar 11 16:04:55 <emper0r>	vault read identity/oidc/scope/name   -> template       { "name": {{identity.entity.name}} }
+Mar 11 16:07:22 <emper0r>	i guess can try using a jinja template and save into localhost to try add it using uri like manually ... maybe works in that way. because directly from variable the ' going in error.
+Mar 11 16:08:19 <oblikoamorale>	my understanding is when you figure out the exact string you need to send, you can convince jinja to render it correctly. It seems like the easiest way
+Mar 11 16:08:40 <oblikoamorale>	doing it in the opposite order may be a painful guessing game
+Mar 11 16:48:16 <emper0r>	oblikoamorale: now works.. was the first and last ' from start
+Mar 11 17:18:32 <emper0r>	oblikoamorale: thx..
+Mar 11 17:18:36 <emper0r>	c'y
+Mar 11 17:18:38 <emper0r>	o/
+Mar 11 19:40:48 *	ChanServ gives channel operator status to webknjaz
+**** BEGIN LOGGING AT Tue Mar 12 00:38:03 2024
+
+Mar 12 00:38:02 *	Now talking on #ansible
+Mar 12 00:38:02 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 12 00:38:02 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 12 00:38:02 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+**** BEGIN LOGGING AT Tue Mar 12 00:55:46 2024
+
+Mar 12 00:55:44 *	Now talking on #ansible
+Mar 12 00:55:44 *	Topic for #ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+Mar 12 00:55:44 *	Topic for #ansible set by sivel!~sivel@ansible/staff/sivel (Tue Feb 27 19:30:00 2024)
+Mar 12 00:55:45 -ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat

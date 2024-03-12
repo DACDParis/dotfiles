@@ -1040,3 +1040,79 @@ T 1710109467 19*	Now talking on 22#ansible
 T 1710109467 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
 T 1710109467 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
 T 1710109467 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710112836 19*	Now talking on 22#ansible
+T 1710112836 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710112836 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710112836 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710113061 19*	Now talking on 22#ansible
+T 1710113061 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710113061 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710113061 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710117909 18<26newpy18>	I have a collection with a playbooks/ directory but I can't run the playbook from command-line via something like `ansible-playbook local.collection_name.pb_name`
+T 1710117933 18<26newpy18>	the collection is in ./ansible_collections/local/my_collection
+T 1710118768 19*	Now talking on 22#ansible
+T 1710118768 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710118768 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710118768 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710120124 18<19flowerysong18>	The most common causes for this are the playbook not having a valid name (most especially people like to put `-` in them) or the collection directory not being in the search path (e.g. if you're relying on playbook adjacency, which doesn't work for calling a playbook inside it.)
+T 1710131041 19*	Now talking on 22#ansible
+T 1710131041 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710131041 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710131041 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710133664 19*	Now talking on 22#ansible
+T 1710133664 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710133664 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710133664 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710151477 18<19eleitl18>	Hi -- I've got an AAP question, hope this is appropriate here. I'm looking for any documentation on the redhat.rhel_idm.ipahost module. Just general pointers on where to find information about RHEL stuff would be very useful. Thanks.
+T 1710151614 18<19oblikoamorale18>	AAP as in Ansible Automation Platform? contact your support.   this channel's topic is ansible-core.  AAP somewhat overlaps with AWX, so you may try asking #ansible-awx
+T 1710151631 18<19eleitl18>	Thank you very much.
+T 1710152098 18<28cla18>	I think the question is about supported collection by redhat, which would be this in community: https://docs.ansible.com/ansible/latest/collections/community/general/ipa_host_module.html
+T 1710152285 19*	Now talking on 22#ansible
+T 1710152285 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710152285 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710152285 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710152524 18<19oblikoamorale18>	I don't see redhat.rhel_idm collection anywhere in the open internets
+T 1710152549 18<19oblikoamorale18>	perhaps rhel_idm was renamed indeed
+T 1710153454 18<28cla18>	Its here: https://catalog.redhat.com/software/collection/redhat/rhel_idm
+T 1710153476 18<28cla18>	But yes, it's not open.
+T 1710166298 18<27emper0r18>	hi, i need a little help with JSON filter, i'm trying to implement this part https://developer.hashicorp.com/vault/api-docs/secret/identity/oidc-provider#create-or-update-a-scope and this is my snippet code, with error output. https://dpaste.com/DVK6BGMMB
+T 1710166529 18<25trilogy18>	How can I define a Jinja macro in a vars file?
+T 1710166755 18<25trilogy18>	Actually my real problem is: I have a big list of objects that are used in playbooks. These objects are largely redundant. I'd like to make a default, then my list would just use that default and override fields as necessary. I'm trying to figure out how to do that in valid YAML
+T 1710167227 18<19oblikoamorale18>	emper0r: what you're passing to the module and what it expects is different. they use json based templating arguments, which are not valid json until templating occurs.  do you know there's hashi vault collection? https://docs.ansible.com/ansible/latest/collections/community/hashi_vault/index.html
+T 1710167400 18<27emper0r18>	oblikoamorale: i'm using it
+T 1710167412 18<19oblikoamorale18>	trilogy: you can use yaml anchors since they are processed on yaml parsing stage. you can also employ arbitrary jinja expressions as variable values. I believe that's enough for you to go on. jinja macros are also possible within single expression context (or template)
+T 1710167452 18<19oblikoamorale18>	emper0r: cool, just highlighting the obvious
+T 1710167491 18<25trilogy18>	oblikoamorale: is there a way to use anchors without it yelling about redefining the same variable?
+T 1710167538 18<19oblikoamorale18>	I don't know, I don't use them. https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_advanced_syntax.html#yaml-anchors-and-aliases-sharing-variable-values
+T 1710167844 18<27emper0r18>	oblikoamorale: sorry not understand what you mean with highlights?
+T 1710168088 18<19oblikoamorale18>	it means I pointed out the apparent wrong things that caught my eye
+T 1710168299 18<27emper0r18>	oblikoamorale:  with this  name: !unsafe '{{identity.entity.name}}' and this debug msg: "{{item_identity_oidc_scope.value.template|to_json}}" the output is json format correct, the issue is when need to write into vault, need escape \" so adding regex filter this "{{item_identity_oidc_scope.value.template|to_json|regex_replace('\"', '\\\\\"')}}" the output is ok msg: '{\"name\":
+T 1710168306 18<27emper0r18>	\"{{identity.entity.name}}\"}' but still write is same error :S
+T 1710168376 18<27emper0r18>	 hvac.exceptions.InvalidRequest: error parsing template JSON: invalid character '\\'
+T 1710168377 18<19oblikoamorale18>	it's different to what hashivault expects. if you look closely at their docs page, it should be: '{\"name\": {{identity.entity.name}} }'
+T 1710168396 18<19oblikoamorale18>	as I said it's not a valid json so to_json here is useless
+T 1710168405 18<27emper0r18>	ah
+T 1710168418 18<27emper0r18>	ok i'll remove it
+T 1710168420 18<19oblikoamorale18>	and I don't know how to deal with hashivault, it's just what caught my eye in your paste
+T 1710168544 18<27emper0r18>	mm i trying to implement the template scope dinamicly using var, template: name: !unsafe '{{identity.entity.name}}' if i don't add ' got an error. so i guess have to try using directly on role wihtout set dynamically
+T 1710168579 18<27emper0r18>	to avoid it like doc  '{\"name\": {{identity.entity.name}} }'
+T 1710169255 18<27emper0r18>	oblikoamorale: ... any idea?  name: !unsafe '{ "name": {{identity.entity.name}} }'  in the task template:    "{{item_identity_oidc_scope.value.template|b64encode|default('')}}" and the error output now is  hvac.exceptions.InvalidRequest: error parsing template JSON: invalid character '\'' looking for beginning of object key string, on post https://vault
+T 1710169303 18<27emper0r18>	where is that \ ?
+T 1710169392 18<19oblikoamorale18>	dunno. my advice is to try sending manually crafted strings, and when you get request working, compare them to what jinja templating generates
+T 1710169495 18<27emper0r18>	vault read identity/oidc/scope/name   -> template       { "name": {{identity.entity.name}} }
+T 1710169642 18<27emper0r18>	i guess can try using a jinja template and save into localhost to try add it using uri like manually ... maybe works in that way. because directly from variable the ' going in error.
+T 1710169699 18<19oblikoamorale18>	my understanding is when you figure out the exact string you need to send, you can convince jinja to render it correctly. It seems like the easiest way
+T 1710169720 18<19oblikoamorale18>	doing it in the opposite order may be a painful guessing game
+T 1710172096 18<27emper0r18>	oblikoamorale: now works.. was the first and last ' from start
+T 1710173912 18<27emper0r18>	oblikoamorale: thx..
+T 1710173916 18<27emper0r18>	c'y
+T 1710173918 18<27emper0r18>	o/
+T 1710182448 22*	26ChanServ gives channel operator status to 18webknjaz
+T 1710200282 19*	Now talking on 22#ansible
+T 1710200282 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710200282 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710200282 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710201344 19*	Now talking on 22#ansible
+T 1710201344 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710201344 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710201345 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat

@@ -813,3 +813,124 @@ Mar 10 06:42:22 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:
 Mar 10 23:24:27 *	Now talking on #openssh
 Mar 10 23:24:27 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
 Mar 10 23:24:27 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Mon Mar 11 00:20:38 2024
+
+Mar 11 00:20:36 *	Now talking on #openssh
+Mar 11 00:20:36 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 11 00:20:36 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Mon Mar 11 00:24:22 2024
+
+Mar 11 00:24:21 *	Now talking on #openssh
+Mar 11 00:24:21 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 11 00:24:21 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Mon Mar 11 01:59:29 2024
+
+Mar 11 01:59:28 *	Now talking on #openssh
+Mar 11 01:59:28 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 11 01:59:28 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Mon Mar 11 05:24:02 2024
+
+Mar 11 05:24:01 *	Now talking on #openssh
+Mar 11 05:24:01 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 11 05:24:01 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Mon Mar 11 06:07:46 2024
+
+Mar 11 06:07:44 *	Now talking on #openssh
+Mar 11 06:07:44 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 11 06:07:44 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Mon Mar 11 11:18:07 2024
+
+Mar 11 11:18:05 *	Now talking on #openssh
+Mar 11 11:18:05 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 11 11:18:05 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+Mar 11 18:38:40 <pagios>	hello all, i am trying to copy a file from an old linux runing old ssh to a stoeage share that support ssh and getting exec request failed on channel 0 after suppling the password
+Mar 11 18:46:15 <Han>	pagios, have you googled the error message?
+Mar 11 18:48:38 <pagios>	yes didnt understand it 
+Mar 11 18:51:44 <pagios>	i have only 3 pts
+Mar 11 18:54:22 <BasketCase>	what the heck is a storage share that supports ssh?
+Mar 11 18:55:08 *	BasketCase bets it is a case of an scp so old that it actually talks scp
+Mar 11 19:05:16 <aloo_shu>	pagios: knowing the actual command used to attempt copying, might help. and whether you can have a shell session, and only copying fails, or both fail
+Mar 11 19:06:46 <pagios>	destination is a storagebox, so i dont need a shell 
+Mar 11 19:06:56 <pagios>	i am able to ssh now but cant create directories etc
+Mar 11 19:08:37 <aloo_shu>	quick workaround put everything into a tarball
+Mar 11 19:09:55 <pagios>	well its a bit complicaed since its a filesystem i am copying lot of diretories that wll constantly change
+Mar 11 19:12:55 <aloo_shu>	sounds like a job for rsync or another dedicated sync tool
+Mar 11 19:16:56 <pagios>	23tjk.instn rsync built on top of ssh ?
+Mar 11 19:17:10 <BasketCase>	no, rsync can run over ssh
+Mar 11 19:17:19 <another|>	is it hetzner?
+Mar 11 19:22:55 <another|>	in which case https://docs.hetzner.com/robot/storage-box/access/access-ssh-rsync-borg
+Mar 11 20:10:51 <pagios>	why is borg better than rsync for backups /
+Mar 11 20:11:23 <BasketCase>	rsync is not a backup system
+Mar 11 20:14:05 <pagios>	i am using it to backup is it something bad?
+Mar 11 20:14:34 <pagios>	i am mostly looking for integrity
+Mar 11 20:14:38 <Piru>	this entirely depends on your definition of backup
+Mar 11 20:14:48 <BasketCase>	it isn't a backup system, borg is
+Mar 11 20:15:04 <BasketCase>	rsync can be a component of a backup system
+Mar 11 20:27:45 <pagios>	BasketCase: question about ransomeware and borg, for example say you are on backup3 (incremental of backup1) and a ransomeware hit at that point in time.  the ransomeware encrypts all the files and now borg detects that the file changed and uploades backup4 which is HUGE since everything changed. BUT does it mean i. can still rollback tup bakcup 1 --> 3 safely ?  which means there is no way to overwrite old backups already closed by borg ?
+Mar 11 20:29:11 <BasketCase>	I don't know borg but I would assume so
+Mar 11 20:33:19 <xiaomiao>	pagios: yes
+Mar 11 20:33:31 <xiaomiao>	as long as you didn't delete the backup server-side you can restore it
+Mar 11 20:33:51 <pagios>	xiaomiao:  but if i delete a file on source, it will delete on destiantion too no? 
+Mar 11 20:33:59 <pagios>	like the rsync --delete
+Mar 11 20:34:29 <pagios>	so if ransomeware deletes, creates new files (encrypted ones) on source, will i still be able to resotre from borg remote?
+Mar 11 20:34:59 <xiaomiao>	pagios: but it keeps the old snapshots
+Mar 11 20:35:04 <xiaomiao>	they are referenced by name
+Mar 11 20:35:12 <pagios>	so i can think of it like git
+Mar 11 20:35:18 <xiaomiao>	yes, roughly
+Mar 11 20:35:29 <xiaomiao>	each backup is similar to a commit
+Mar 11 20:36:02 <pagios>	but in this case i would need much more storage its not like if i have 1TB at source i need 1TB at destination
+Mar 11 20:36:20 <xiaomiao>	well you can compress, and it deduplicates
+Mar 11 20:36:29 <BasketCase>	but if you run out of space backing up stuff you can't use who cares?
+Mar 11 20:36:32 <xiaomiao>	for my notebook it's usually about 1GB/week delta
+Mar 11 20:37:04 <xiaomiao>	so you need the size of the source, plus the size of the difference between the different points in time
+Mar 11 20:37:48 <pagios>	so just to confirm, saw you copied 1TB, then you deleted that 1TB from source, you will always retain that 1TB in the backups if you wanna go back to those later on, unless i explicitly run sometimes a force or something eight?
+Mar 11 20:38:08 <pagios>	my thing is that i am deeling with emails here
+Mar 11 20:38:15 <pagios>	a lot of delete and new stuff
+Mar 11 20:38:19 <pagios>	daily..
+Mar 11 20:38:33 <xiaomiao>	you can expire old backups and then reclaim the space
+Mar 11 20:38:46 <BasketCase>	if you have multiple backups you should be able to restore any of them
+Mar 11 20:38:59 <xiaomiao>	I usually keep only monthly backups for older stuff, deleting the intermediate ones every now and then
+Mar 11 20:39:29 <pagios>	i am mostly concerned about ransomwares
+Mar 11 20:39:48 <pagios>	and i see its benefit now...
+Mar 11 20:40:03 <pagios>	the ransomeware can alter the latest image nothing more 
+Mar 11 20:40:10 <pagios>	even if it stays for a month there
+Mar 11 20:40:31 <BasketCase>	unless it infects the backup system
+Mar 11 20:40:49 <pagios>	even if it does
+Mar 11 20:41:13 <pagios>	unless the attacker purposely deletes those old backups
+Mar 11 20:41:34 <BasketCase>	or encrypts them
+Mar 11 20:41:52 <BasketCase>	ransomware is usually automated.  it encrypts everything it can.
+Mar 11 20:41:58 <pagios>	yes 
+Mar 11 20:42:18 <pagios>	unless an ATP lands on it 
+Mar 11 20:42:39 <xiaomiao>	that's why backups are nice in a "pull" config where the backup server connects to the victim
+Mar 11 20:43:13 <BasketCase>	right, if you push your backups you can also destroy them
+Mar 11 20:43:55 <pagios>	protect the backup server and let it pull from the victim , at most it pulls encrypted stuff which is reversible
+Mar 11 20:44:04 <xiaomiao>	depends - it wouldn't  be hard to make borg server block deletes
+Mar 11 20:44:12 <xiaomiao>	but that takes effort :)
+Mar 11 20:45:33 <henk>	pull or push is not really important. just because you push your backups does not necessarily mean you can destroy existing ones.
+Mar 11 20:47:23 <pagios>	xiaomiao: question, on the storagebox its a limited shell ,  no crontab. do you think if i run borg server there i can create a daily backup inside it instead of relying on crotnab? idea is to have borg server pull the backup from the server
+Mar 11 20:48:04 <xiaomiao>	pagios: no idea
+Mar 11 20:49:22 <aloo_shu>	if the side that you are trusting more, is the only one that can initiate a session, that would seem like less details to take care of, doesn't meant you couldn't lock down and sandbox what the less trusted side can do if it is allowed to initiate sessions
+Mar 11 20:50:48 <henk>	borg actually has an "append-only" mode but it does have its limits and some "stupid" restrictions, see https://github.com/borgbackup/borg/issues/2251. I can’t find a reference but I think restic also has a mode like this.
+Mar 11 20:52:03 <henk>	pagios: I don’t think borg server can pull but for borg question you should ask better in #borgbackup 
+Mar 11 20:52:10 <pagios>	thanks a lot 
+Mar 11 20:52:28 <xiaomiao>	could just do filesystem snapshots to make deletions less likely
+Mar 11 20:52:35 <xiaomiao>	paranoia is a lifestyle!
+Mar 11 20:54:38 <pagios>	storage $$$ heh
+Mar 11 20:59:21 <pagios>	i think a good solution is to enable snapshoting on the storgebox
+Mar 11 20:59:37 <pagios>	in this case its an indpenedant higher level activity that the attacker cant reach
+Mar 11 20:59:53 <pagios>	since snapshot folders wouldnt be visible anyways
+Mar 11 21:00:13 <xiaomiao>	nah hardware cheap
+Mar 11 21:00:31 <pagios>	i can in this case force a delete on storagebox
+Mar 11 21:00:38 <pagios>	since i already took a snapshot
+Mar 11 21:00:56 <pagios>	maybe its enough to use rsync in this case lol
+Mar 11 21:01:08 <pagios>	since the snapshot would be handled from storage box automatically
+**** BEGIN LOGGING AT Tue Mar 12 00:38:03 2024
+
+Mar 12 00:38:02 *	Now talking on #openssh
+Mar 12 00:38:02 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 12 00:38:02 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)
+**** BEGIN LOGGING AT Tue Mar 12 00:55:46 2024
+
+Mar 12 00:55:45 *	Now talking on #openssh
+Mar 12 00:55:45 *	Topic for #openssh is: Just upgraded? Read https://www.openssh.com/releasenotes.html#9.2 | https://www.openssh.com/manual.html | Debugging sshd on an alternate port: /usr/sbin/sshd -dDp222 | http://mywiki.wooledge.org/SshKeys | http://mywiki.wooledge.org/SshTunnel | https://sanitarium.net/unix_stuff/sftp_chroot.html
+Mar 12 00:55:45 *	Topic for #openssh set by Han!~han@user/han (Mon Feb 20 08:50:37 2023)

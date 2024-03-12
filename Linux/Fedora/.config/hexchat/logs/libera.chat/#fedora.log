@@ -1689,3 +1689,137 @@ Mar 10 23:24:27 *	Topic for #fedora set by Southern_Gentlem!~notfred@fedora/Sout
 Mar 10 23:24:27 -ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
 Mar 10 23:28:39 <brettgilio>	Evening all.
 Mar 10 23:28:39 <brettgilio>	Evening all.
+**** BEGIN LOGGING AT Mon Mar 11 00:20:37 2024
+
+Mar 11 00:20:36 *	Now talking on #fedora
+Mar 11 00:20:36 *	Topic for #fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+Mar 11 00:20:36 *	Topic for #fedora set by Southern_Gentlem!~notfred@fedora/Southern-Gentlem (Tue Dec  5 19:08:04 2023)
+Mar 11 00:20:36 -ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+**** BEGIN LOGGING AT Mon Mar 11 00:24:22 2024
+
+Mar 11 00:24:21 *	Now talking on #fedora
+Mar 11 00:24:21 *	Topic for #fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+Mar 11 00:24:21 *	Topic for #fedora set by Southern_Gentlem!~notfred@fedora/Southern-Gentlem (Tue Dec  5 19:08:04 2023)
+Mar 11 00:24:21 -ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+Mar 11 01:01:27 <fedbot>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+Mar 11 01:34:08 <choirboy>	I've set my search domain in /etc/systemd/resolved.conf. I restarted systemd-resolved, I even rebooted. I can do "host mymachine" and it does resolve mymachine.mydomain to the correct IP address. But when I try "ping mymachine," it comes back and says "ping: mymachine: Name or service not known"
+Mar 11 01:34:35 <choirboy>	I'm sure I'm doing something silly, but I can't figure out what.
+Mar 11 01:37:26 <choirboy>	the search domain IS set in /run/systemd/resolve/stub-resolv.conf, if it matters.
+**** BEGIN LOGGING AT Mon Mar 11 01:59:29 2024
+
+Mar 11 01:59:28 *	Now talking on #fedora
+Mar 11 01:59:28 *	Topic for #fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+Mar 11 01:59:28 *	Topic for #fedora set by Southern_Gentlem!~notfred@fedora/Southern-Gentlem (Tue Dec  5 19:08:03 2023)
+Mar 11 01:59:28 -ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+Mar 11 03:01:29 <fedbot>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+**** BEGIN LOGGING AT Mon Mar 11 05:24:02 2024
+
+Mar 11 05:24:01 *	Now talking on #fedora
+Mar 11 05:24:01 *	Topic for #fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+Mar 11 05:24:01 *	Topic for #fedora set by Southern_Gentlem!~notfred@fedora/Southern-Gentlem (Tue Dec  5 19:08:04 2023)
+Mar 11 05:24:01 -ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+**** BEGIN LOGGING AT Mon Mar 11 06:07:45 2024
+
+Mar 11 06:07:44 *	Now talking on #fedora
+Mar 11 06:07:44 *	Topic for #fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+Mar 11 06:07:44 *	Topic for #fedora set by Southern_Gentlem!~notfred@fedora/Southern-Gentlem (Tue Dec  5 19:08:03 2023)
+Mar 11 06:07:44 -ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+Mar 11 07:01:31 <fedbot>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+Mar 11 07:19:24 <hjdkx>	I installed fedora39 with the recommend disk partion. I'm looking for a tutorial how to reinstall it and keep home subvolume
+Mar 11 09:01:32 <fedbot>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+Mar 11 09:30:35 <stemid>	there's no sound in my flatpak vlc but flatseal says it has pulseaudio access. is this a known issue maybe?
+Mar 11 09:30:38 <stemid>	on atomic fedora
+Mar 11 11:01:33 <fedbot>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+Mar 11 11:08:20 <skdnn>	where is grub.cfg located in fedora?
+**** BEGIN LOGGING AT Mon Mar 11 11:18:06 2024
+
+Mar 11 11:18:05 *	Now talking on #fedora
+Mar 11 11:18:05 *	Topic for #fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+Mar 11 11:18:05 *	Topic for #fedora set by Southern_Gentlem!~notfred@fedora/Southern-Gentlem (Tue Dec  5 19:08:04 2023)
+Mar 11 11:18:05 -ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+Mar 11 12:39:06 <pwntips>	skdnn: /etc/grub2.cfg
+Mar 11 13:01:35 <fedbot>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+Mar 11 15:01:36 <fedbot>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+Mar 11 16:30:17 <marloi>	Hello. I'm currently running version 35. What's the best path to upgrade to 39? Can i go directly to 38 then to 39?
+Mar 11 16:31:52 <rorym>	marloi: the upgrade system can only skip one release. so you cant go from 35 to 39. 
+Mar 11 16:32:08 <kjetilho>	35->37->39
+Mar 11 16:32:14 <marloi>	OK, thanks!
+Mar 11 16:32:34 <kjetilho>	remember to read the release notes :)
+Mar 11 17:01:37 <fedbot>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+Mar 11 17:10:58 <marloi>	I keep getting this error: "java-latest-openjdk-headless-1:21.0.1.0.12-1.rolling.fc37.x86_64 ... [Failure writing output to destination]"
+Mar 11 17:13:21 <dowdle>	marloi: Are you running Fedora 37?
+Mar 11 17:13:41 <marloi>	No, I'm trying to upgrade from 35 to 37
+Mar 11 17:15:54 <dowdle>	marloi: If it appears that's the only package giving you trouble, I'd recommend removing it and taking note of what deps it might take with it... and then just manually install that stuff post upgrade.  You aren't low on disk space I hope?
+Mar 11 17:16:47 <marloi>	I have 32GB free
+Mar 11 17:19:27 <dowdle>	marloi: And once you get to F37, you can work your way to F39... as F37 is EOLed and F38 will be EOLed in May/June.
+Mar 11 17:19:45 <marloi>	Yes, that's what I'm trying to do
+Mar 11 17:21:01 <marloi>	How do I figure out what package java-latest-openjdk-headless-1:21.0.1.0.12-1.rolling.fc37.x86_64 references so I can remove it?
+Mar 11 17:22:58 <Southern_Gentlem>	so how are you upgrading 
+Mar 11 17:23:06 <Southern_Gentlem>	cli or gui
+Mar 11 17:23:57 <marloi>	cli
+Mar 11 17:24:26 <Southern_Gentlem>	exclude all third party repos 
+Mar 11 17:25:07 <Southern_Gentlem>	and folow the post-upgrade task each release 
+Mar 11 17:25:09 <Southern_Gentlem>	https://docs.fedoraproject.org/en-US/quick-docs/upgrading-fedora-offline/
+Mar 11 17:25:19 <Khaytsus>	Leave rpm fusion alone, but any random repost you may need to do some cleanup 
+Mar 11 17:26:20 <marloi>	OK, will cleanup and reboot. Brb
+Mar 11 18:20:04 <marloi>	Hi. It seems this is my problem: At least 6938MB more space needed on the / filesystem. 
+Mar 11 18:20:26 <marloi>	Is there something I can simply rm from here? https://paste.centos.org/view/fe2918ee
+Mar 11 18:21:04 <Southern_Gentlem>	so do you have your data backed up
+Mar 11 18:21:54 <Southern_Gentlem>	i would delete those snaps
+Mar 11 18:22:48 <Southern_Gentlem>	but thats not going to get you the 6G you need
+Mar 11 18:22:59 <marloi>	right
+Mar 11 18:23:34 <dragonmaster>	Any chance you have free space in the fedora volume group?
+Mar 11 18:23:46 <Southern_Gentlem>	backup your data and do a clean install your / needs to be bigger 
+Mar 11 18:24:30 <Southern_Gentlem>	he has some but it would take it from /home 
+Mar 11 18:24:43 <Southern_Gentlem>	so eitther way he nneds to back up 
+Mar 11 18:25:25 <Southern_Gentlem>	then he can can look at resizing 
+Mar 11 18:25:35 <dragonmaster>	I wouldn't consider that "free space", but that's moot
+Mar 11 18:25:53 <Khaytsus>	marloi: do ncu -x /
+Mar 11 18:25:54 <dragonmaster>	I was thinking unallocated space int he VG
+Mar 11 18:25:56 <Khaytsus>	ncdu -x /
+Mar 11 18:26:34 <xkahn>	Short term, I would look at logs to see if there are things to get rid of
+Mar 11 18:26:38 <Khaytsus>	53G in / is..  a lot.  Must be a lot of stuff in /var I'm betting.  Perhaps VMs or containers.
+Mar 11 18:26:54 <xkahn>	Right /var is where you need to start
+Mar 11 18:27:17 <Khaytsus>	I owuld start at / personally, I mean, I even suggested it ;)
+Mar 11 18:27:22 <kjetilho>	my prefered command is: du -mx --threshold 500M /
+Mar 11 18:27:36 <xkahn>	I'd start with (as root): du -sh /var/*
+Mar 11 18:27:41 <Khaytsus>	I use du a lot, but ncdu really makes it fast to drill into things
+Mar 11 18:27:46 *	kjetilho hates -h
+Mar 11 18:28:12 <kjetilho>	yeah, I like the old KDE visualiser, too.
+Mar 11 18:28:21 <marloi>	My /var is 16.5GiB
+Mar 11 18:28:26 <xkahn>	Well, sometimes I do: du -s /var/* | sort -n
+Mar 11 18:28:44 <Khaytsus>	Again, ncdu can help you find the biggest directories but do what you like
+Mar 11 18:29:19 <marloi>	I'm running ncdu now but I'm not sure what I'm looking for exactly
+Mar 11 18:29:56 <Khaytsus>	Just let it run and start digging into directories
+Mar 11 18:31:08 <xkahn>	Wow. ncdu is awesome! Nice tip. :)
+Mar 11 18:31:53 <marloi>	My /var/lib/neo4j is taking up 5GiB and I have recently uninstalled neo4j, so I'm not sure what that is... Can I just rm that dir?
+Mar 11 18:31:55 <Khaytsus>	I love it..  looking for files of N size, and just du etc are still handy tools
+Mar 11 18:32:17 <Southern_Gentlem>	and majority of you /var is the files you downloaded to upgrade 
+Mar 11 18:32:18 <Khaytsus>	marloi: Might make sure you didn't forget to remove something but yeah if you don't need it, nuke it
+Mar 11 18:32:59 <Khaytsus>	ANd yeah don't do any "cleanup" in the dnf cache stuff, like Southern_Gentlem said that probably contains a few gigs of packages that are nearly ready to install to update.
+Mar 11 18:33:11 <Khaytsus>	You don't want to have to download them again :)
+Mar 11 19:01:38 <fedbot>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***
+Mar 11 23:09:38 <shook_queen>	Can files lose their "link"? I made a hard link with ``ln ~/FOO ~/BAR``; ln -l showed a "2" as expected, but after rebooting showed a "1" for both files and ~/BAR appears to now just be an old copy of ~/FOO 
+Mar 11 23:10:27 <shook_queen>	I meant ls -l
+Mar 11 23:10:56 <Khaytsus>	No..  a hard link is literally a reference to the other inode.  It's _not_ a copy.
+Mar 11 23:12:45 <kjetilho>	shook_queen: that's very mysterious.  perhaps you had an editor open which auto-saved onto BAR when you quit/rebooted?
+Mar 11 23:13:26 <kjetilho>	(it varies quite a lot if editors respect/preserve hardlinks or not.)
+Mar 11 23:14:15 <shook_queen>	kjetilho: That's possible, I hadn't thought of that, thanks
+Mar 11 23:15:35 <kjetilho>	np
+Mar 11 23:15:37 <Khaytsus>	Yeah this is true, a lot of editors create a temporary file and copy it over.
+Mar 11 23:15:50 <Khaytsus>	Which if they don't do it right, blows away selinux contexts etc
+Mar 11 23:16:17 <Khaytsus>	My favorite editor is bad about this very thing, I wrote a wrapper script long ago to handle it
+**** BEGIN LOGGING AT Tue Mar 12 00:38:03 2024
+
+Mar 12 00:38:02 *	Now talking on #fedora
+Mar 12 00:38:02 *	Topic for #fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+Mar 12 00:38:02 *	Topic for #fedora set by Southern_Gentlem!~notfred@fedora/Southern-Gentlem (Tue Dec  5 19:08:03 2023)
+Mar 12 00:38:02 -ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+**** BEGIN LOGGING AT Tue Mar 12 00:55:46 2024
+
+Mar 12 00:55:44 *	Now talking on #fedora
+Mar 12 00:55:45 *	Topic for #fedora is: Fedora Linux F38 and F39 end-user support || Nobara not supported || Please READ: https://tinyurl.com/Fchanfaq || Common bugs: https://discussion.fedoraproject.org/tags/c/ask/common-issues/82/none/f39/ || Only Use Fedora, rpmfusion and Copr Repos || IRC Feedback: https://tinyurl.com/fedoraircsig || Updated F39 Live isos: https://tinyurl.com/Live-respins
+Mar 12 00:55:45 *	Topic for #fedora set by Southern_Gentlem!~notfred@fedora/Southern-Gentlem (Tue Dec  5 19:08:03 2023)
+Mar 12 00:55:45 -ChanServ-	[#fedora] Any advice you read here is provided by individual community members. You should use it at your OWN RISK. This advice is owned by each individual, and does NOT represent the views of Libera.Chat, Fedora or Red Hat. This channel may be logged.
+Mar 12 01:49:12 *	ChanServ gives voice to fedbot
+Mar 12 03:02:18 <fedbot>	*** F39-20240301 updated lives available: https://tinyurl.com/Live-respins2 Built by the Fedora Respin Sig more info #fedora-respins ***

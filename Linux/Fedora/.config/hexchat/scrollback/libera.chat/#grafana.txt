@@ -154,3 +154,41 @@ T 1710031100 19*	Now talking on 22#grafana
 T 1710031928 19*	Now talking on 22#grafana
 T 1710049342 19*	Now talking on 22#grafana
 T 1710109467 19*	Now talking on 22#grafana
+T 1710112836 19*	Now talking on 22#grafana
+T 1710113061 19*	Now talking on 22#grafana
+T 1710118768 19*	Now talking on 22#grafana
+T 1710131041 19*	Now talking on 22#grafana
+T 1710133664 19*	Now talking on 22#grafana
+T 1710151126 18<28MrTrick18>	I want to see a count of visits grouped/aggregated by day. 🤔 but I'm seeing a sliding window kind of result, not a bucket kind of result. Is that possible?
+T 1710151461 18<28MrTrick18>	(err, using loki)
+T 1710151970 18<20hmht18>	MrTrick: I don't have a perfect solution yet, but maybe: You have the count_over_time(... [1d]) time, and there's a "step" time in the query options. Setting the "step" to 1d might be more like what you want, you'll probably want to put the count_over_time back to [$__auto] when you switch to that.
+T 1710152221 18<20hmht18>	The buckets will be aligned to your dashboard's range instead of midnight. Haven't figured out how to do that yet.
+T 1710152285 19*	Now talking on 22#grafana
+T 1710152327 18<20hmht18>	Yeah there's a collapsable box called "options" under your query, there you can set the Step
+T 1710152357 18<20hmht18>	the [] denotes the window, as you figured out already, so it's not what you want here.
+T 1710152361 18<28MrTrick18>	I see only Legend, Type, Resolution. And changing resolution doesn't mean much
+T 1710152453 18<20hmht18>	huh. I'm on Grafana 10.3.3 and I don't have Resolution
+T 1710152538 18<28MrTrick18>	hmm, this is... v9.3.6
+T 1710152557 18<28MrTrick18>	eep, Jan 26 2023.
+T 1710152580 18<28MrTrick18>	aand the infra team are mostly on holidays right now.
+T 1710152616 18<20hmht18>	So you tried setting resolution to 1d and count_over_time to [$__auto] ?
+T 1710152655 18<28MrTrick18>	resolution is 1/1, 1/2, ... 1/10. No idea what that's supposed to mean. All it seems to do is make the bars thinner
+T 1710152917 18<20hmht18>	Hm, I don't think this is something you can fix inside the query
+T 1710152945 18<28MrTrick18>	I have a problem with grafana. It and my brain don't seem to function in the same way. :-D 
+T 1710153009 18<28MrTrick18>	"how many calls to the API are my customers making each day?" seems like a reasonable question, but I can't figure out how to make grafana do that. Short of exporting all the lines and sending it through a python script.
+T 1710153122 18<28selckin18>	sum(increase(requests[24h]))
+T 1710153183 18<28selckin18>	guess sum_over_time is better
+T 1710153444 18<28MrTrick18>	selckin: what is that going to do?
+T 1710153461 18<20hmht18>	I think everything has to be compatible with the selectable range of the dashboard, so stuff like "per day" is a bit weird.
+T 1710153463 18<28MrTrick18>	I get a graph, but still it's not grouped by time
+T 1710154131 18<20hmht18>	MrTrick: you might have "Query Options" on the datasource in a dashboard panel editor, where you can give the panel a separate relative time or time shift.
+T 1710154143 18<20hmht18>	lets you make a separate panel for today, yesterday, day before, etc.
+T 1710154146 18<20hmht18>	https://grafana.com/docs/grafana/latest/panels-visualizations/query-transform-data/#query-options
+T 1710154346 18<28MrTrick18>	I'll take a look. Panel per day is not workable, though.
+T 1710154622 18<20hmht18>	reading further: might also be possible with "transformations", but not sure how that works yet https://grafana.com/docs/grafana/latest/panels-visualizations/query-transform-data/transform-data/#create-heatmap
+T 1710154852 18<28MrTrick18>	thanks, I'll see how I go
+T 1710189313 18<27Santzes18>	Hey, kinda new to grafana, when I set Relative Time to 24h in query options, then I press run query (or go to the dashboard), I see 24h values flash for half a second,and then the graph gets overridden with the time range selected in the main range selection? How could I make it stick? For this test it's just raw values with no functions
+T 1710189316 18<27Santzes18>	https://youtu.be/cuVtGwDomHc like this
+T 1710200282 19*	Now talking on 22#grafana
+T 1710201345 19*	Now talking on 22#grafana
+T 1710204989 18<27altker12818>	Hey all.  I'm curious, is there any kind of 'GUI' or interactive builder that lets you help create the entries that you populate a Grafana dashboard with?

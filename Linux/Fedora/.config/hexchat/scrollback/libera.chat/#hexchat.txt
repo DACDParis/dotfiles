@@ -989,3 +989,55 @@ T 1710107672 18<22buf18>	maybe this http://b0at.tx0.org/xchat/addons/scr
 T 1710109467 19*	Now talking on 22#hexchat
 T 1710109467 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
 T 1710109467 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1710109936 18<22buf18>	btw do_startup-1.pl does exactly what i wanted, so it was right, a script did exist :)
+T 1710111848 18<27JanC18>	even if it wouldn't be exactly what you need, there often is a script that is close enough that you can modify it or use a technique in it in your own script
+T 1710112836 19*	Now talking on 22#hexchat
+T 1710112836 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1710112836 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1710113061 19*	Now talking on 22#hexchat
+T 1710113061 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1710113061 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1710115276 18<26serenity_waterfa18>	clarification on what fuck facebook usage is
+T 1710115299 18<27sney18>	that doesn't sound like a hexchat question
+T 1710115363 18<26serenity_waterfa18>	oops well does hexchat do log ur messages or is it completely wiped when i end my session
+T 1710115469 18<27sney18>	depends on whether you have logging enabled. settings->preferences->logging "enable logging of conversations to disk" 
+T 1710115502 18<27sney18>	you should always assume whatever you type on irc is being logged by someone else, though.
+T 1710115578 18<26serenity_waterfa18>	fair. How popular is this compared to other IRCs
+T 1710115601 18<26serenity_waterfa18>	I dont use this one normally
+T 1710115651 18<27sney18>	I think it's pretty popular as gui clients go, it supports scripting in a few languages and there are a lot of existing scripts for it. runs on *nix and windows 
+T 1710115717 18<26serenity_waterfa18>	Thanks this was very usefull I appreciate it
+T 1710115718 18<27JanC18>	there is also the scrollback
+T 1710115720 18<27sney18>	np
+T 1710115754 18<27JanC18>	well
+T 1710115758 18<27sney18>	lol
+T 1710118768 19*	Now talking on 22#hexchat
+T 1710118768 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1710118768 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1710131041 19*	Now talking on 22#hexchat
+T 1710131041 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1710131041 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1710133664 19*	Now talking on 22#hexchat
+T 1710133664 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1710133664 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1710152285 19*	Now talking on 22#hexchat
+T 1710152285 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1710152285 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1710155220 18<27henry_18>	suo
+T 1710155234 18<27henry_18>	whats`up?
+T 1710155277 18<27henry_18>	hi
+T 1710155393 18<27henry_18>	Hi
+T 1710176802 18<25pc18>	hello
+T 1710176979 18<27sney18>	hi
+T 1710187817 18<29emaaan18>	why is hexchat rip
+T 1710187841 18<27sney18>	click the link in the topic
+T 1710187858 18<29emaaan18>	k
+T 1710188057 18*	29emaaan slaps ComputerTech with a python
+T 1710188061 18<29emaaan18>	why didnt you step up and take the project as your own? poopster.
+T 1710191064 18<25SolitonX18>	:(
+T 1710191229 18<28DasBrain^Hex18>	lol @emaaan 
+T 1710200282 19*	Now talking on 22#hexchat
+T 1710200282 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1710200282 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)
+T 1710201345 19*	Now talking on 22#hexchat
+T 1710201345 22*	Topic for 22#hexchat is: RIP HexChat 2009-2024 | Final Release News: https://hexchat.github.io/news/2.16.2.html | https://hexchat.github.io | Documentation: https://hexchat.rtfd.org | Want to identify before joining channels? See https://libera.chat/guides/sasl | Do not randomly PM people
+T 1710201345 22*	Topic for 22#hexchat set by 26sney!~sney@sney.ca (24Fri Feb  9 22:12:05 2024)

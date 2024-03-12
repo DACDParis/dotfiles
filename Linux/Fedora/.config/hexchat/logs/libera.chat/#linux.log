@@ -27891,3 +27891,2000 @@ Mar 10 23:24:27 *	Topic for #linux is: Welcome to #linux! Help & support for any
 Mar 10 23:24:27 *	Topic for #linux set by Khaytsus (Thu Aug  3 13:54:32 2023)
 Mar 10 23:24:28 <Mus1>	some passwords require 8 characters so Snow White, Doc, Grumpy, Happy, Sleepy, Bashful, Sneezy, and Dopey
 Mar 10 23:24:47 <VelvetBlueEyes>	xD
+Mar 10 23:37:38 <pedrowiski>	Is always somewhere from scorpions kind of a copy of simple man by lynyrd skynyrd?
+Mar 10 23:38:09 <Khaytsus>	pedrowiski: .....wat?
+Mar 10 23:38:27 <rascul>	i don't like scorpions
+Mar 10 23:38:54 <circuitbone>	https://github.com/Pedrowiski/Simple-C-bot/blob/https/github.com/Pedrowiski/molotov/bot.c
+Mar 10 23:39:42 <pedrowiski>	circuitbone: lel thats not me tho
+Mar 10 23:39:55 *	circuitbone applies the ignorotron lasers
+Mar 10 23:40:24 <yustin>	petro-whiskey ?
+Mar 10 23:49:45 <tusko>	bc
+Mar 10 23:58:57 <ski>	dc
+Mar 10 23:59:12 <preach>	fgsfds
+Mar 10 23:59:20 <nyoz>	hi
+Mar 10 23:59:55 <ski>	lo
+Mar 11 00:00:03 <nyoz>	I am under Ubuntu 23.10 and I have a brovi e3372-325 modem
+Mar 11 00:00:07 <nyoz>	I made it to work but
+Mar 11 00:00:21 <nyoz>	everytime I reboot the usb network card changes name and ip
+Mar 11 00:00:33 <nyoz>	this modem works as an usb router where you set DMZ IP
+Mar 11 00:00:51 <nyoz>	and that IP of my pc, I cannot assign it fixed because the usb network card changes name after each reboot
+Mar 11 00:01:08 <nyoz>	so it is frustrating to always update the ip to the DMZ menu of the usb router
+Mar 11 00:01:18 <nyoz>	I tried upnp but doesn't work
+Mar 11 00:01:28 <jasassin>	nyoz are you using dhcp?
+Mar 11 00:01:42 <nyoz>	I think if I can figure out how to give it a simple name like usb0 then I can configure usb0 with static ip and job done
+Mar 11 00:01:46 <jasassin>	if you are you can set it up in dhcpd.conf and if not you can set it static in the client
+Mar 11 00:01:49 <nyoz>	yes it uses dhcp
+Mar 11 00:02:11 <jasassin>	nyoz what is the router model number?
+Mar 11 00:02:12 <nyoz>	the problem is how to know the name of the usb network card if it changes every time I reboot?
+Mar 11 00:02:21 <nyoz>	is brovi E3372-325
+Mar 11 00:02:33 <jasassin>	it's the dhcp server you need or you can set it static
+Mar 11 00:02:42 <jasassin>	whaton the client
+Mar 11 00:02:47 <nyoz>	I have nothing in the menu of the modem to set dhcp settings
+Mar 11 00:03:08 <nyoz>	in the client the usb card now has this name enxca69d6fa581b
+Mar 11 00:03:17 <nyoz>	it always starts with enx
+Mar 11 00:03:30 <jasassin>	you are using pppd?
+Mar 11 00:03:34 <nyoz>	no
+Mar 11 00:03:52 <nyoz>	this usb modem is actually a router, it has an android inside
+Mar 11 00:03:55 <oerheks>	 You can assign static names to devices using udev and the mac addresses of the ports. Create /etc/udev/rules.d/99-persistent-net.rules.
+Mar 11 00:04:09 <preach>	an android
+Mar 11 00:04:36 <nyoz>	yes it is strange but inside this usb stick there is android
+Mar 11 00:04:59 <jasassin>	modem.... kinda threw me there
+Mar 11 00:05:22 <nyoz>	I had problems with usb_mode_switch, now solved
+Mar 11 00:05:27 <nyoz>	the internet connection works
+Mar 11 00:06:03 <nyoz>	so I should add something like this  SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="01:23:45:67:89:ab", ATTR{type}=="1", KERNEL=="eth*", NAME="eth0" ???
+Mar 11 00:06:21 <jasassin>	isn't linux grand
+Mar 11 00:08:03 <Khaytsus>	I've really never seen a USB device show up as a random name each time
+Mar 11 00:08:03 <nyoz>	the mac address changes at every time I unplug and replug the usb stick, or every reboot
+Mar 11 00:08:24 <Khaytsus>	You sure this device isn't just junk?
+Mar 11 00:08:36 <Khaytsus>	It should have a mac address... that isn't random
+Mar 11 00:08:39 <nyoz>	the connection works stable..
+Mar 11 00:08:48 *	rbox randomly creaets Khaytsus's mac
+Mar 11 00:09:01 <nyoz>	I dunno guys it-s a weird problem, I cannot configure this in static if it changes everytime its name
+Mar 11 00:09:13 <nyoz>	if I take device id of usb?
+Mar 11 00:09:18 <Khaytsus>	So brovi e3372-325  looks like an LTE modem..  what would you have any control over it's IP?
+Mar 11 00:09:25 <nyoz>	for example its iserial is fixed to 12456789ABCD
+Mar 11 00:10:19 <nyoz>	I need my usb IP fixed so I can activate the DMZ of the usb stick to foward to my ip. I Have special internet connection that enables me public ip and ability to open nat ports
+Mar 11 00:10:35 <Khaytsus>	It's a cellular device.  You are NOT going to have control over its IP
+Mar 11 00:10:43 <nyoz>	no, I know
+Mar 11 00:10:47 <nyoz>	I need control over the USB IP
+Mar 11 00:10:54 <Khaytsus>	You what/
+Mar 11 00:10:58 <nyoz>	I mean
+Mar 11 00:11:04 <nyoz>	if I have static usb ip
+Mar 11 00:11:12 <Khaytsus>	You're not going to have a static IP.
+Mar 11 00:11:13 <nyoz>	I can enable the DMZ in the router menu of usb stick
+Mar 11 00:11:38 <nyoz>	it is not a matter of static WAN IP
+Mar 11 00:11:41 <nyoz>	this is not static
+Mar 11 00:11:53 <nyoz>	I need static enx12345678  IP
+Mar 11 00:12:07 <nyoz>	where 12346789 changes every time I reboot
+Mar 11 00:12:19 <Khaytsus>	You mean a static device name
+Mar 11 00:12:24 <nyoz>	yes exactly
+Mar 11 00:12:31 <Khaytsus>	I don't understand why that would change.  I said that earlier.
+Mar 11 00:12:44 <nyoz>	if I have static usb-network name
+Mar 11 00:12:49 <nyoz>	I can make it a fixed lan ip
+Mar 11 00:12:54 <nyoz>	like 192.168.1.3
+Mar 11 00:13:04 <nyoz>	so then I can make 192.168.1.1 to DMZ to 192.168.1.3
+Mar 11 00:13:18 <preach>	why is it even using a different interface name? are you plugging into different usb ports every time or something?
+Mar 11 00:13:31 <nyoz>	the problem is it changes with a simple reboot
+Mar 11 00:13:44 <preach>	but why
+Mar 11 00:13:53 <Khaytsus>	I'v never seen a USB device do that.  I have a USB Ethernet adapter, it's lways the same devicename.
+Mar 11 00:14:37 <nyoz>	because the usb-router works this way, I spent 3 days with usb_mode_switch to make it works....I dunno guys I am here asking for solutions
+Mar 11 00:15:13 <Khaytsus>	Yes, it's one of those goofy things that show up as a driver ISO disk by default and the WIndows drivers switch it. So you have to do that in Linux.
+Mar 11 00:15:15 <nyoz>	maybe the simpler solution would be to make a script that catches from ifconfig the name of usb network, that is always enxSOMETHING
+Mar 11 00:15:20 <nyoz>	and configure it to a fixed lan ip
+Mar 11 00:15:31 <oerheks>	i gave you the persistent trick
+Mar 11 00:15:35 <nyoz>	that then will match the IP assigned in the DMZ option menu of usb router
+Mar 11 00:15:47 <oerheks>	so the adapter name would not change
+Mar 11 00:15:58 <nyoz>	you mean /etc/udev/rules.d/99-persistent-net.rules ?
+Mar 11 00:16:09 <oerheks>	yes
+Mar 11 00:16:39 <nyoz>	I don-t have that file, how should I generate it? gonna google a bit
+Mar 11 00:16:55 <oerheks>	yes, creat it.
+Mar 11 00:16:59 <oerheks>	c/create
+Mar 11 00:18:14 <preach>	what distro doesn't do this already?
+Mar 11 00:18:32 <nyoz>	ubuntu 23.10 I have
+Mar 11 00:18:57 <nyoz>	I am new to udev
+**** BEGIN LOGGING AT Mon Mar 11 00:20:36 2024
+
+Mar 11 00:20:36 *	Now talking on #linux
+Mar 11 00:20:36 *	Topic for #linux is: Welcome to #linux! Help & support for any Linux distribution or related topic -- Rules/Info: https://linux.chat -- Forum: https://linux.forum -- Pastebin: https://paste.linux.chat/ -- @linux.social on Mastodon: https://linux.social -- Need an op? !ops <reason> or join #linux-ops
+Mar 11 00:20:36 *	Topic for #linux set by Khaytsus (Thu Aug  3 13:54:32 2023)
+Mar 11 00:20:43 <oerheks>	nyoz, this tutor talks about -70 https://www.baeldung.com/linux/regenerate-persistent-net-rules
+Mar 11 00:21:18 <oerheks>	read fully, then you get the idea
+Mar 11 00:22:35 <bray90820>	Hey can someone help me geet the GPD Win 4 LTE Module working on the steamdeck it appears to works on the mainline kernal and shows up under lsusb on the steamdeck
+Mar 11 00:22:42 <nyoz>	ok I think this line can be the solution SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:11:22:33:44:55", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="eth*", NAME="eth0"
+Mar 11 00:22:50 <nyoz>	dev_id may be the solution?
+Mar 11 00:23:01 <nyoz>	mac address is not a solution since it changes everytime
+**** BEGIN LOGGING AT Mon Mar 11 00:24:21 2024
+
+Mar 11 00:24:21 *	Now talking on #linux
+Mar 11 00:24:21 *	Topic for #linux is: Welcome to #linux! Help & support for any Linux distribution or related topic -- Rules/Info: https://linux.chat -- Forum: https://linux.forum -- Pastebin: https://paste.linux.chat/ -- @linux.social on Mastodon: https://linux.social -- Need an op? !ops <reason> or join #linux-ops
+Mar 11 00:24:21 *	Topic for #linux set by Khaytsus (Thu Aug  3 13:54:32 2023)
+Mar 11 00:24:22 <preach>	has a lot of good information about how to debug what's going on with the whole process
+Mar 11 00:25:09 <nyoz>	oh wait I got something
+Mar 11 00:25:14 <preach>	also at the bottom notice it has a link to a systemd article that states: "Starting with v197 systemd/udev will automatically assign predictable, stable network interface names for all local Ethernet, WLAN and WWAN interfaces. This is a departure from the traditional interface naming scheme ("eth0", "eth1", "wlan0", ...), but should fix real problems."
+Mar 11 00:25:14 <nyoz>	this is from dmesg
+Mar 11 00:26:08 <nyoz>	rndis_host 1-2:1.0 enxca69d6fa581b: renamed from usb0
+Mar 11 00:26:23 <nyoz>	so I have to see where this rename gets out
+Mar 11 00:28:59 <nyoz>	I will reconnect
+Mar 11 00:46:48 <taiPEI24K>	hi
+Mar 11 00:46:51 <taiPEI24K>	i'm new here
+Mar 11 00:48:05 *	rbox gives taiPEI24K a gold star
+Mar 11 00:48:28 <taiPEI24K>	whats a gold s
+Mar 11 00:48:32 <taiPEI24K>	gold star*
+Mar 11 00:48:52 <rbox>	you know, like when you're in kindergarden, and you do somethign good
+Mar 11 00:48:54 <rbox>	you get a gold star
+Mar 11 00:48:57 <taiPEI24K>	oh yea I know that
+Mar 11 00:49:20 <taiPEI24K>	i'm really enjoying Linux, im new to it. ON Ubuntu rn, use it for comp sci. i like it a lot :)
+Mar 11 00:49:58 <rbox>	https://www.youtube.com/watch?v=28GLa9T2CtI
+Mar 11 00:55:08 <Elw3>	ah yea the ubuntu stage
+Mar 11 00:55:14 <Elw3>	incoming neckbeard
+Mar 11 00:55:25 <Elw3>	or ponytail
+Mar 11 00:55:29 <Elw3>	likely booth
+Mar 11 00:56:21 <plebe>	If it was not for linux I would have given up on computers years ago
+Mar 11 00:59:01 <Elw3>	one can not givea up on computers man
+Mar 11 00:59:18 <Elw3>	i mean, where you watch porn on then?
+Mar 11 01:00:48 <oerheks>	drones and live streaming to onlyfans 🤣
+Mar 11 01:01:40 <bcn_>	Is there a channel for people into ciphers and decoding things, solving crypto riddles?  anyone recognise the format of the data in the "geom" fields here: https://kubra.io/regions/4289ae5e-64eb-4100-8074-81d9b36b30ee/c3038883-3310-4172-a9b6-f9222f5d501b/serviceareas.json  I think it has to do with describing paths or polygons on a land map
+Mar 11 01:03:10 <rbox>	bcn_: this isn't the yellow pages of irc
+Mar 11 01:04:22 <oerheks>	bcn_, post it on reddit r/Decryption
+Mar 11 01:05:31 <nyoz>	hi again guys, I solved my problem!
+Mar 11 01:05:36 <nyoz>	just adding the right udev rule
+Mar 11 01:05:44 <nyoz>	thanks!
+Mar 11 01:05:50 <oerheks>	:-)
+Mar 11 01:05:58 <oerheks>	have fun!
+Mar 11 01:06:08 <nyoz>	thanks you too!
+Mar 11 01:06:11 <nyoz>	love linux :D
+Mar 11 01:06:14 <nyoz>	bye
+Mar 11 01:07:10 <bray90820>	Hey can someone help me geet the GPD Win 4 LTE Module working on the steamdeck it appears to works on the mainline kernal and shows up under lsusb on the steamdeck
+Mar 11 01:07:13 <bcn_>	I don't think it's encrypted.  if you looked at a png file in a text editor it might LOOK just encrypted.  cipher was a bad word choice on my part.  there's too much regularity in the data to be encrypted. I just need help identifying the format it's in
+Mar 11 01:07:19 <bray90820>	I believe it's a kernel issue but Not sure
+Mar 11 01:08:21 <rbox>	bray90820: what does dmesg say when you plug it in
+Mar 11 01:10:19 <bray90820>	Do you want me to plug it in and  just do a "sudo dmesg >> output.txt"
+Mar 11 01:10:23 <bray90820>	rbox:
+Mar 11 01:16:40 <nvz>	bray90820: sudo dmesg | tail -n 10 | nc termbin.com 9999
+Mar 11 01:16:58 <bray90820>	Bleh Ok
+Mar 11 01:17:16 <nvz>	bray90820: there is no reason to use full dmesg output or a double redirect when not appending a file
+Mar 11 01:17:46 <nvz>	bray90820: many of those devices have multiple modes and use a usb modeswitching
+Mar 11 01:22:11 <bray90820>	nvz: nc command not found
+Mar 11 01:22:55 <nvz>	bray90820: I was just trying to simplify the pasting, if you don't have netcat installed obviously, that won't work. Its a standard package on most systems
+Mar 11 01:23:23 <MangoFetish>	HELLo
+Mar 11 01:23:31 <nvz>	MangoFetish: hello
+Mar 11 01:23:35 <ZLima12>	bray90820: You need to install netcat
+Mar 11 01:23:36 <MangoFetish>	What do you guys think of Lubuntu as it is now
+Mar 11 01:23:42 <MangoFetish>	is it good, abandonware, etc
+Mar 11 01:23:58 <oerheks>	polling is of no use here
+Mar 11 01:24:13 <MangoFetish>	Im asking for peoples  opinions
+Mar 11 01:24:23 <MangoFetish>	What censorship are you suggesting?
+Mar 11 01:24:40 <MangoFetish>	Humans, please answer my question
+Mar 11 01:24:43 <oerheks>	what would you do with 2174 answers ...
+Mar 11 01:25:03 <rbox>	MangoFetish: its fine?
+Mar 11 01:25:13 <rbox>	MangoFetish: if you like it... go for it
+Mar 11 01:25:27 <GenericPlayer>	*GIGGLES*
+Mar 11 01:25:28 <MangoFetish>	great, thats one answer, next
+Mar 11 01:25:43 <nvz>	MangoFetish: my opinion is, that all linux distros are capable of being modified and that you choose a distro because of the priorities and particular goals of the distribution. Find one that matches what you're looking for and set it up how you want. I wouldnt use some spinoff of a spinoff kinda distro they generally lack good support
+Mar 11 01:26:02 <oerheks>	best answer is just given 🤣
+Mar 11 01:26:28 <MangoFetish>	nvz, do you consider Lubuntu one of those spinoff of a spinoff distros?
+Mar 11 01:26:37 <MangoFetish>	I mean it is a spinoff of Ubuntu
+Mar 11 01:26:46 <MangoFetish>	Do u think its fine tho?
+Mar 11 01:26:59 <apn>	Is Ubuntu fine?
+Mar 11 01:27:06 <nvz>	MangoFetish: I am a Debian user and have been for 20+ years because I read https://www.debian.org/intro/why_debian and https://www.debian.org/social_contract and I agreed with those ideas 100%
+Mar 11 01:27:42 <rbox>	MangoFetish: its all ubuntu
+Mar 11 01:27:48 <GenericPlayer>	Lubuntu is just same as Ubuntu but DE.
+Mar 11 01:27:50 <MangoFetish>	True
+Mar 11 01:28:01 <MangoFetish>	I really dont like Ubuntus default DE
+Mar 11 01:28:13 <nvz>	MangoFetish: yes its clearly a spinoff of ubuntu which is a spinoff of debian and from an outside perspective all it offers is making an LXQt desktop which you could achieve with Debian by selecting LXQt in th intall
+Mar 11 01:28:19 <MangoFetish>	Lxqt is liteweight perfection
+Mar 11 01:28:26 <MangoFetish>	really, thats true lol
+Mar 11 01:28:32 <MangoFetish>	I do like apt-get though
+Mar 11 01:28:54 <nvz>	MangoFetish: thats the wrong way to approach linux and distros in general is to think of it as the out of box experience rather than the underlying distro's community goals and priorities
+Mar 11 01:28:57 <rbox>	if you likse lxqt, then use it
+Mar 11 01:28:58 <MangoFetish>	Ubuntu gets newer versions of software though right? Debian looks like 10 years old last time I used it
+Mar 11 01:29:00 <rbox>	problem solved
+Mar 11 01:29:09 <nvz>	MangoFetish: in the long run what you will find is far more important is the community behind a distro
+Mar 11 01:29:17 <MangoFetish>	well yes
+Mar 11 01:29:28 <MangoFetish>	so Lubuntu is fine then because its at its base Debian
+Mar 11 01:29:38 <GenericPlayer>	Uh-huh
+Mar 11 01:29:45 <rbox>	MangoFetish: i'll give you a hint... ubuntu just takes debian packages
+Mar 11 01:29:47 <nvz>	MangoFetish: yet its far removed from debian and cannot be supported by the debian community
+Mar 11 01:30:00 <MangoFetish>	Why does Debian community not support Ubuntu
+Mar 11 01:30:03 <rbox>	and debian 13 was rleased in june last year
+Mar 11 01:30:04 <MangoFetish>	:O
+Mar 11 01:30:06 <rbox>	so not exactly 10 years old
+Mar 11 01:30:12 <rbox>	becasue ubuntu isn't debian?
+Mar 11 01:30:18 <MangoFetish>	Yeah but the UI looks and feels like a early 2000s OS lol
+Mar 11 01:30:21 <nvz>	MangoFetish: cause they can't its a totally different distro, why can't ubuntu users just use debian?
+Mar 11 01:30:21 <rbox>	why doesn't fedora community support arch?
+Mar 11 01:30:29 <rbox>	MangoFetish: "the ui"?
+Mar 11 01:30:31 <rbox>	gnome is gnome
+Mar 11 01:30:34 <MangoFetish>	I mean supported is a vague word
+Mar 11 01:30:51 <MangoFetish>	I think that uhhh guys check out this book
+Mar 11 01:30:54 <nvz>	rbox: debian 12, not 13 is the current stable
+Mar 11 01:31:06 <MangoFetish>	https://www.packtpub.com/product/mastering-linux-security-and-hardening-third-edition/9781837630516
+Mar 11 01:31:13 <MangoFetish>	How elite is this book?
+Mar 11 01:31:25 <rbox>	the most 3l3test
+Mar 11 01:31:46 <MangoFetish>	wow its got free chapters
+Mar 11 01:31:53 <MangoFetish>	seriously though I was just wondering how good this book iz
+Mar 11 01:32:04 <MangoFetish>	Is there a more modern, updated book that outclasses it?
+Mar 11 01:32:17 <rbox>	its from last year...
+Mar 11 01:32:24 <rbox>	you want somethign pritned yesterday?
+Mar 11 01:32:31 <MangoFetish>	no, within the year is fine
+Mar 11 01:32:39 <rbox>	any book is going to be out of date before it pritns
+Mar 11 01:32:42 <MangoFetish>	I just mean, what other books are in this class
+Mar 11 01:32:54 <MangoFetish>	what other linux security books are top quality
+Mar 11 01:32:57 <MangoFetish>	that u guys reccomend
+Mar 11 01:32:58 *	nvz withdraws from the tediously pointless conversation
+Mar 11 01:33:12 <MangoFetish>	We are trying to learn a list of books here, its not pointless
+Mar 11 01:33:35 <stability>	choice of distro makes a big difference for sercurity
+Mar 11 01:34:35 <MangoFetish>	yes, alright assuming a standard user using Debian or Ubuntu
+Mar 11 01:34:46 <MangoFetish>	alright I can tell the hive-mind is being tired today
+Mar 11 01:34:53 <MangoFetish>	I'll just use an AI search engine...
+Mar 11 01:34:56 <apn>	MangoFetish, where did you get that assumption from?
+Mar 11 01:35:07 <MangoFetish>	I just touched grass I thought a lively discussion would blossom
+Mar 11 01:35:17 <MangoFetish>	well nobody is providing suggestions for books lol
+Mar 11 01:35:42 <GenericPlayer>	If the one book could include all Linux distros security? That book is 'The One Book' like The One Ring.
+Mar 11 01:36:00 <MangoFetish>	ok
+Mar 11 01:36:02 <MangoFetish>	Like, generic
+Mar 11 01:36:06 <MangoFetish>	liek the book I linked
+Mar 11 01:36:08 <cedd>	i have a sticky bit set on a folder with a few files in it, and when i "rm -r <dir>" that folder as a user who isnt the owner of that dir, it rightly says "permission deined". But when I then look whats inside the dir I was preventd from deleting, all the files inside it have been deleted.
+Mar 11 01:36:39 <cedd>	is this the expected behavior of the sticky bit?
+Mar 11 01:36:48 <oerheks>	cedd, that is because the -R part, deleted files first, then folder, that got denied.
+Mar 11 01:37:03 <oerheks>	yes, if you set sticky to the files too, it would not happen
+Mar 11 01:38:02 <rbox>	the sticky icky
+Mar 11 01:38:37 <cedd>	oerheks: hmm, this is a server where the files are created by users. Is there a way to get all files that are created by other users to have a sticky bit set on them?
+Mar 11 01:39:10 <MangoFetish>	right that makes sense oer
+Mar 11 01:39:19 <MangoFetish>	you make me so happi senpai
+Mar 11 01:39:24 <MangoFetish>	with your perfect answers
+Mar 11 01:39:35 <cedd>	my problem is I have users who are very old and bad at computers (they constantly move folders into other folders and delete entire important folders all the time). I'm trying to make it impossible for them to make these accidents.
+Mar 11 01:40:10 <rbox>	don't give them write access
+Mar 11 01:40:11 <rbox>	probelm solved
+Mar 11 01:40:29 <cedd>	they need to be able to add their own files though
+Mar 11 01:40:52 <bray90820>	Ok Finally I got it
+Mar 11 01:41:05 <bray90820>	nvz: https://pastebin.com/raw/gLZipDUs
+Mar 11 01:41:18 <AndyCap>	cedd: sticky bit doesn't mean no deletion, it just means that you can't delete other users files even if you're allowed to write to the directory
+Mar 11 01:41:40 <rbox>	then give them t heir own directory
+Mar 11 01:42:20 <cedd>	AndyCap: I see. Is there a way I can set things up so all files that are added to these stickied directories are chown'd to another user so they cant then accidentally delete everything they add to it by accident later? lol
+Mar 11 01:42:40 <bray90820>	rbox: that pastebin was ment for you as well
+Mar 11 01:42:59 <cedd>	robo: they problem is they're going to accidentally delete their own directory at some point... its incredibly frustrating... lol
+Mar 11 01:43:25 <cedd>	i essentially need to create a digital straight jacket for them so they dont hurt themselves
+Mar 11 01:43:50 <rbox>	bray90820: well it looks like its showing up as wwan0... seems like its working
+Mar 11 01:44:02 <rbox>	err, wwp4s0f3u1i4
+Mar 11 01:44:24 <bray90820>	rbox: I can't seem to find it in any settings or anything
+Mar 11 01:44:52 <rbox>	bray90820: that does sound like a pickle... sounds like you should read your dists docuemtnation
+Mar 11 01:44:59 <cedd>	im thinking maybe i can have a shell script poll these dirs for new files and then chown them to another user as soon as theyre detected
+Mar 11 01:45:34 *	ChanServ gives channel operator status to litharge
+Mar 11 01:45:35 *	litharge removes ban on *!*@broadband-46-242-9-59.ip.moscow.rt.ru
+Mar 11 01:45:35 *	litharge removes channel operator status from litharge
+Mar 11 01:45:44 <aesthetics>	at work we used to have a server that'd autocommit changes and git push every time files from a specific directory were modified; dunno if something like this could work, cedd
+Mar 11 01:45:50 <aesthetics>	(no idea how that worked)
+Mar 11 01:47:13 <cedd>	it would be cool if there was a hook that the os calls when a new file is created that this functionality could be plugged in
+Mar 11 01:47:38 <stability>	nvz: i'd only want to add accessibility as an explicit line item to the social contract
+Mar 11 01:47:39 <cedd>	unfortunately id likely have to mod the kernel to get something like that i suspect
+Mar 11 01:48:15 <cedd>	that would be cleaner than polling with a shell script
+Mar 11 01:48:35 <oerheks>	cedd, there is no mechnism or tool that sets sticky bit automaticly, one can watch a folder and backup a file ..
+Mar 11 01:48:44 <oerheks>	inotify can do that
+Mar 11 01:48:54 <oerheks>	https://www.webhosting.uk.com/kb/how-to-watch-a-directory-for-new-file-creation-in-linux/
+Mar 11 01:49:33 <nvz>	stability: I have nothing to say on that matter because 1) I have no idea what you're talking about and 2) far as I'm concerned they violated the social contract and the debian project can go suck eggs. I just continue to use it cause its still a good distro and I maintain my own stuff and don't share it with them
+Mar 11 01:49:39 <cedd>	oerheks: backing up a file would be too much, a simple chown to another user would be less costly right?
+Mar 11 01:50:05 <oerheks>	that could be done too, i guess
+Mar 11 01:50:08 <nvz>	I've already fixed bugs in a dozen or so packages I use since the last release
+Mar 11 01:50:29 <stability>	i hesitate to ask...
+Mar 11 01:50:30 <cedd>	also i thought the sticky bit on a file was deprecated and only indicates loading to a swap drive on systems that still support that
+Mar 11 01:51:22 <MangoFetish>	guys check out this programming AI
+Mar 11 01:51:25 <MangoFetish>	Phind
+Mar 11 01:51:29 <MangoFetish>	https://www.phind.com/
+Mar 11 01:51:35 <rbox>	MangoFetish: we dont need your spam
+Mar 11 01:51:42 <MangoFetish>	Its not spam omg its a really useful AI wtf
+Mar 11 01:51:54 <rbox>	this isn't #aispam
+Mar 11 01:52:00 <cedd>	AI is lame
+Mar 11 01:52:12 <cedd>	what are you, from December 2023?
+Mar 11 01:52:21 <rbox>	MangoFetish: you knwo waht the ysay... if you're not smart enough to do something without ai, you probably shoudn't be doing it
+Mar 11 01:52:38 <cedd>	rbox: great advice
+Mar 11 01:52:44 <MangoFetish>	Its an assistant, like a smart friend
+Mar 11 01:52:58 <cedd>	the world doesnt need another assistant
+Mar 11 01:53:02 <cedd>	we have enough
+Mar 11 01:53:25 <MangoFetish>	Alright fine
+Mar 11 01:53:29 <MangoFetish>	judge it without even trying it
+Mar 11 01:53:35 <cedd>	we will, thank you
+Mar 11 01:54:06 <cedd>	tell me, does it even dust my NFT collection?
+Mar 11 01:54:25 <stability>	i have not followed the ai topic.  not clear on what it can and cannot do, or what effects it will have.  i tried it once and wasn't impressed with its gigo.  but was close to passing the turing test.  but that is an arbitrary standard.
+Mar 11 01:54:33 <MangoFetish>	Bored Ape NFTs are so worthless lol
+Mar 11 01:54:45 <cedd>	im handing them down to my grandchildren...
+Mar 11 01:55:08 *	nvz again withdraws from this tediously pointless conversation
+Mar 11 01:55:27 <Disconsented>	Yeah.. this is pretty off topic, lets move on from this thanks.
+Mar 11 01:55:42 <MangoFetish>	Alright so what is Linux doing to catch up on security to Windows 11?
+**** BEGIN LOGGING AT Mon Mar 11 01:59:28 2024
+
+Mar 11 01:59:28 *	Now talking on #linux
+Mar 11 01:59:28 *	Topic for #linux is: Welcome to #linux! Help & support for any Linux distribution or related topic -- Rules/Info: https://linux.chat -- Forum: https://linux.forum -- Pastebin: https://paste.linux.chat/ -- @linux.social on Mastodon: https://linux.social -- Need an op? !ops <reason> or join #linux-ops
+Mar 11 01:59:28 *	Topic for #linux set by Khaytsus (Thu Aug  3 13:54:32 2023)
+Mar 11 01:59:37 <furrykef>	You said "Windows", so yeah, I can believei t
+Mar 11 02:00:09 <cedd>	i mean technically the behavior is the same when doing it directly on the server as the same user
+Mar 11 02:00:48 <espresso>	They (large language models) are edging out g* for usefulness and linux research, but are imperfect early days. perplexity.ai doesn't hallucinate like chatgpt, for example, so I thought that worth a mention. Anyway..
+Mar 11 02:00:55 <cedd>	it just seems like the standard permission set should have some configuration to handle this use case
+Mar 11 02:01:26 <cedd>	but it... doesnt
+Mar 11 02:01:41 <cedd>	"write without deletion"
+Mar 11 02:01:47 <cedd>	theres no way to achieve that with permissions
+Mar 11 02:01:56 <cedd>	not even ACLs
+Mar 11 02:02:28 <stability>	what is g*
+Mar 11 02:02:32 <preach>	what would even be the point
+Mar 11 02:02:40 <preach>	if you can write you can empty it to zero bytes
+Mar 11 02:02:42 <cedd>	honestly that would be a great use for +0666
+Mar 11 02:03:05 <cedd>	+0666 and +0222 are currently uselss placeholders
+Mar 11 02:03:26 <rascul>	can chmod -w on the dir to stop delete but then you can't create files either
+Mar 11 02:03:28 <furrykef>	The only problem is, using it will spawn Satan
+Mar 11 02:03:39 <cedd>	rascul: and therein lies the problem
+Mar 11 02:03:47 <rascul>	and if you can write to the file you can just overwrite it all anyway
+Mar 11 02:03:52 <cedd>	furrykef: sacrifices must be made
+Mar 11 02:04:02 <espresso>	stability: google. (and maybe 'edging out'/'increasingly useful vs') Anyway, can read much about machine intelligence on Wikipedia for one
+Mar 11 02:04:48 <cedd>	+0222 should be write without delete
+Mar 11 02:04:57 <cedd>	im declaring it here now
+Mar 11 02:05:09 <Bahhumbug>	I'm declaring the moon is made of cheese.
+Mar 11 02:05:11 <stability>	is there a good one that you do not have to subscribe to that you could use instead of google?
+Mar 11 02:05:19 <Bahhumbug>	I suspect neither of us is correct.
+Mar 11 02:05:22 <furrykef>	Anyway, I'm a little new to shell scripting and stuff. I'm trying to chop off the last digit(s) of a version number so 12.34.56.78 becomes just 12.34.56
+Mar 11 02:05:25 <furrykef>	So I wrote this: echo 12.34.56.78 | sed -re 's/(\d+\.\d+\.d+).*/\1/'
+Mar 11 02:05:36 <furrykef>	But it still outputs 12.34.56.78. What am I doing wrong? And is there a better way?
+Mar 11 02:05:49 <espresso>	stability: perplexity.ai I just mentioned, and another was just mentioned
+Mar 11 02:06:07 <preach>	you can do it simpler
+Mar 11 02:06:48 <preach>	$ echo 12.34.56.78 | perl -pe 's/\.\d+$//'
+Mar 11 02:06:48 <preach>	12.34.56
+Mar 11 02:07:22 <preach>	sed doesn't understand \d
+Mar 11 02:07:29 <furrykef>	This is for an Arch PKGBUILD and I don't think using perl here would be appropriate
+Mar 11 02:07:30 <furrykef>	Ahh...
+Mar 11 02:07:44 <preach>	and the + must be escaped in sed too
+Mar 11 02:08:08 <furrykef>	Huh? Why?
+Mar 11 02:08:13 <rascul>	echo 12.34.56.78 | { IFS=. read a b c d; echo $a.$b.$c; }
+Mar 11 02:08:13 <preach>	because reasons
+Mar 11 02:08:18 <preach>	sed 's/\.[0-9]\+$//'
+Mar 11 02:08:23 <preach>	would be the equivalent to my perl one
+Mar 11 02:08:38 <preach>	try it
+Mar 11 02:08:49 <preach>	with and without the \ for the +
+Mar 11 02:09:11 <preach>	the slash method also randomly doesn't work on osx
+Mar 11 02:09:14 <rascul>	mine works in dash
+Mar 11 02:09:23 <preach>	but -E fixes both of those issues
+Mar 11 02:09:51 <preach>	also welcome to #codegolf
+Mar 11 02:10:11 <cedd>	can someone point me in the direction for what would be a good approach to creating a background listener on a set of folders that will automatically chown any new files it finds to another user?
+Mar 11 02:10:15 <furrykef>	This PKGBUILD is for Arch only, so I don't need to worry about osx
+Mar 11 02:10:25 <preach>	cedd: inotify
+Mar 11 02:10:44 <preach>	or you could change the group ownership of the folder in the first place
+Mar 11 02:10:48 <thegassyninja>	+1 inotify-send
+Mar 11 02:10:55 <cedd>	preach: i thought that created a backup, also couldnt this be done with a background shell script or am i crazy?
+Mar 11 02:11:10 <samhain666>	Can someone help me with mdadm/nvme issues?
+Mar 11 02:11:29 <preach>	you thought what created a backup?
+Mar 11 02:11:35 <cedd>	inotify
+Mar 11 02:11:44 <preach>	no
+Mar 11 02:12:08 <cedd>	*looking inotify up now*
+Mar 11 02:12:20 <espresso>	samhain666: seems linux-related.. you can just ask
+Mar 11 02:12:34 <furrykef>	This seems to do what I want: echo $pkgver | sed -re 's/([0-9]+\.[0-9]+\.[0-9]+).*/\1/'
+Mar 11 02:12:45 <furrykef>	Doesn't seem the + need to be escaped
+Mar 11 02:13:06 <rascul>	cedd see inotifywait man page
+Mar 11 02:13:16 <cedd>	rascul: ty
+Mar 11 02:13:19 <rascul>	examples section
+Mar 11 02:13:28 <cedd>	kk
+Mar 11 02:14:35 <cedd>	man ive been learning about linux permissions for the past 2 days, probably long overdue, but all this to prevent senior citizens from destroying everything
+Mar 11 02:14:42 <nvz>	heh
+Mar 11 02:14:52 <samhain666>	So I made a change in my asus bios and for some reason the raid controller sees the disk, but not the array.  The raid utility in the bios shows me 3 arrays and not 4.  If I disable raid in the bios it sees all 4 drives, but once I enable raid only 3 show.  In my arch linux system I have a hyper m.2 card with 4 nvme drives at raid 0.  Yes I have a backup of the data before you ask.
+Mar 11 02:15:13 <samhain666>	I am trying to use nvme-cli to troubleshoot further, but i'm not really sure where to start looking
+Mar 11 02:15:14 <Khaytsus>	samhain666: If you're using mobo raid junk, you're not using mdadm
+Mar 11 02:15:21 <samhain666>	I'm using mdadm
+Mar 11 02:15:27 <Khaytsus>	Why are you looking at bios stuff?
+Mar 11 02:15:45 <samhain666>	I just have raid enabled on the pci slot since asus says if your using the hyper m.2 card you have to enable raid
+Mar 11 02:15:56 <Bahhumbug>	Err....
+Mar 11 02:16:02 *	Khaytsus blinks
+Mar 11 02:16:04 <Bahhumbug>	That doesn't seem right.
+Mar 11 02:16:23 <Disconsented>	What motherboard _model_?
+Mar 11 02:16:28 <rascul>	it doesn't seem left, either
+Mar 11 02:16:43 <samhain666>	The bios controller only sees 3 out of the 4 drives.
+Mar 11 02:17:05 <samhain666>	This user reported a similar issue
+Mar 11 02:17:07 <samhain666>	https://rog-forum.asus.com/t5/other-motherboards/raid-lost-after-bios-update/td-p/493789
+Mar 11 02:17:20 <cappy>	cedd: Have you looked at the chattr(1) settings?
+Mar 11 02:17:23 <Disconsented>	Dont use fake RAID, its just pain and suffering
+Mar 11 02:18:16 <cedd>	cappy: omg this could be it, thanks for the tip!
+Mar 11 02:18:47 <Khaytsus>	I'm afraid samhain666 has probably been using fake (mobo) raid, off.
+Mar 11 02:18:49 <Khaytsus>	oof
+Mar 11 02:19:11 <samhain666>	?
+Mar 11 02:19:23 <samhain666>	Yes, mdadm
+Mar 11 02:20:12 <Disconsented>	If you don't see the drives in your firmware, this  really doesn't have much to do with #linux
+Mar 11 02:20:41 <samhain666>	I see the drive when I disable nvme raid in the bios
+Mar 11 02:21:12 <Disconsented>	Then disable it..
+Mar 11 02:21:32 <samhain666>	The odd thing is that the other 3 drrives show the device number and partition, but one drive isn't showing the namespace or partition
+Mar 11 02:21:49 <samhain666>	Its like it got deleted out of nowhere
+Mar 11 02:22:27 <cappy>	cedd: You may have to toggle immutable after you write or append. Then it cannot be deleted.
+Mar 11 02:22:31 <samhain666>	One thing I noticed from running nvme-cli is that the drive that doesn't have the namespace and partition is on a different firmware level compared to the other 3 that have the same versions
+Mar 11 02:23:05 <cedd>	cappy: yea, im thinking i might still need inotify since the files im trying to protect are going to be created by the users and dont exist yet
+Mar 11 02:23:09 <samhain666>	I'm not sure if that is causing the bios to not read the drive properly once raid is enabled
+Mar 11 02:24:29 <samhain666>	https://www.reddit.com/r/ASUS/comments/icevkc/supportbios_update_made_my_disk_disappear/
+Mar 11 02:24:36 <samhain666>	This is another user having the same issue
+Mar 11 02:24:48 <Bahhumbug>	samhain666: I'll be blunt.  With fakeraid you get to keep all the pieces when it breaks.
+Mar 11 02:25:01 <cappy>	cedd: inotifywait -q -m -r -e modify,delete,create,move "$1"  , or something like it?
+Mar 11 02:26:04 <cedd>	cappy: ill add that to my notes to test, i still have to read through the inotify manpage to get an idea how it works
+Mar 11 02:26:19 <cappy>	cedd: Good hunting!
+Mar 11 02:26:36 <cedd>	cappy: ty and thanks for the help!
+Mar 11 02:26:49 <cappy>	cedd: yw
+Mar 11 02:29:38 <espresso>	samhain666: perhaps in #hardware they could be more experienced with the model/situation..
+Mar 11 02:31:27 <preach>	beware of #hardware...
+Mar 11 02:36:14 <kawal>	Heya, What Tux says to the macbook? <tux> Did you know there is no kernel in an apple?
+Mar 11 02:36:27 <Khaytsus>	Bahhumbug: Helped a friend track down an exact motherboard once years ago when his died and he was using fakeraid...  He got lucky on price, but he was down about 8 days
+Mar 11 02:36:47 <Khaytsus>	kawal: um..  let's not and say we did
+Mar 11 02:38:14 <EdFletcher>	finally got my pinebook pro running again, yay! armbian FTW. forgot how slow this thing is 😆
+Mar 11 02:39:26 <cedd>	Khaytsus: damn thats a throwback
+Mar 11 02:39:36 <cedd>	took me back to AIM
+Mar 11 02:39:50 *	preach laughs in M2
+**** BEGIN LOGGING AT Mon Mar 11 05:24:01 2024
+
+Mar 11 05:24:00 *	Now talking on #linux
+Mar 11 05:24:01 *	Topic for #linux is: Welcome to #linux! Help & support for any Linux distribution or related topic -- Rules/Info: https://linux.chat -- Forum: https://linux.forum -- Pastebin: https://paste.linux.chat/ -- @linux.social on Mastodon: https://linux.social -- Need an op? !ops <reason> or join #linux-ops
+Mar 11 05:24:01 *	Topic for #linux set by Khaytsus (Thu Aug  3 13:54:32 2023)
+**** BEGIN LOGGING AT Mon Mar 11 06:07:44 2024
+
+Mar 11 06:07:44 *	Now talking on #linux
+Mar 11 06:07:44 *	Topic for #linux is: Welcome to #linux! Help & support for any Linux distribution or related topic -- Rules/Info: https://linux.chat -- Forum: https://linux.forum -- Pastebin: https://paste.linux.chat/ -- @linux.social on Mastodon: https://linux.social -- Need an op? !ops <reason> or join #linux-ops
+Mar 11 06:07:44 *	Topic for #linux set by Khaytsus (Thu Aug  3 13:54:32 2023)
+Mar 11 07:26:56 <rascul>	i'm linuxing real hard right now
+Mar 11 07:27:47 <rascul>	who wants to linux with me?
+Mar 11 07:28:04 <irc_standardnick>	rascul, is that code word for pipewire is screwing with your bluetooth modules now?
+Mar 11 07:28:19 <rascul>	i'm not even bluetoothing right now
+Mar 11 07:28:32 <rascul>	i'm going raw
+Mar 11 07:29:47 <irc_standardnick>	Watt distro you on?
+Mar 11 07:29:56 <rascul>	all the distros
+Mar 11 07:30:41 <rascul>	i get around beach boys style
+Mar 11 07:31:33 <rascul>	https://www.youtube.com/watch?v=ruKCw797JM4
+Mar 11 07:34:10 <irc_standardnick>	lol
+Mar 11 07:36:31 <rascul>	i just want to spread the linux on everyone
+Mar 11 07:36:41 <rascul>	everybody can linux with us
+Mar 11 07:36:48 <mlu>	you rascul! :D
+Mar 11 07:36:55 <rascul>	i am
+Mar 11 07:36:55 *	mlu depenguinizes rascul 
+Mar 11 07:37:06 <rascul>	i don't even penguin
+Mar 11 07:37:10 <mlu>	me chucks rascul thru some broken windows
+Mar 11 07:37:31 *	mlu claps his hands like a BSD daemon
+Mar 11 07:37:41 <rascul>	wow did i just get beastied?
+Mar 11 07:39:28 *	mlu poisons rascul like a pufferfish and waves an orange flag
+Mar 11 07:39:49 <rascul>	i can linux my way out of this
+Mar 11 07:39:58 *	rascul linuxes super hard
+Mar 11 07:40:32 *	mlu dries rascul out like a dangerous solaris
+Mar 11 07:40:45 <rascul>	thanks, it was too humid in here
+Mar 11 07:40:51 *	rascul linuxes even harder
+Mar 11 07:41:41 *	luna_ is listening to ULS and just updated 2 computers to 6.8 this one missed network drivers/modules and got roll backed to 6.7.9
+Mar 11 07:44:01 <rascul>	keep on rollin
+Mar 11 08:31:52 <paprika>	test
+Mar 11 08:32:18 <rascul>	fail
+Mar 11 08:40:35 <jim>	paprika, what's up?
+Mar 11 09:00:06 <paprika>	A lot of work jim
+Mar 11 09:02:56 <rascul>	it works if you work it
+Mar 11 09:27:05 <Guestmodinfo>	hi
+Mar 11 09:27:56 <susi>	luna_: why back to the ancients?
+Mar 11 09:29:13 <susi>	there's already v6.8
+Mar 11 09:33:19 <luna_>	susi: my ethernet card in that computer does not support 6.8 as it needs an out of tree blob
+Mar 11 09:34:08 <luna_>	and to be honest as its used as a server it uses linux-lts but both my desktop and laptop is using 6.8
+Mar 11 09:44:36 <n4dir>	does the 6.8 kernel do things older (ancient) kernels didn't do?
+Mar 11 09:45:57 <oerheks>	yes, support for iris xe
+Mar 11 09:46:23 <oerheks>	many have been waiting for this feature
+Mar 11 09:48:36 <n4dir>	for the ones who didn't older kernels probably don't seem ancient
+Mar 11 10:09:38 <triptych>	 /msg enyc hello
+Mar 11 10:09:40 <triptych>	oops
+Mar 11 10:10:48 <susi>	haha, busted!
+Mar 11 10:10:59 <triptych>	im a bit silly
+Mar 11 10:11:19 <mrkubax10>	command fail
+Mar 11 10:18:31 <evaloop>	:D
+Mar 11 10:33:05 <anonymou1>	Hi. I’m currently thinking about switching my system from X11-based to Wayland-based. But there is one use case that I don’t see covered yet: auto-type from password managers. My web searches about this topic didn’t lead to anything really. Can someone give me a pointer?
+Mar 11 10:33:46 <monr0e>	keepass has KPUInput
+Mar 11 10:37:00 <hexnewbie>	anonymou1: That has nothing to do with Wayland
+Mar 11 10:37:03 <oerheks>	anonymou1, i have no issues with keyring and passwords for services and websites
+Mar 11 10:37:12 <monr0e>	wayland doesn't have a direct solution for cross-window input like that, so any password manager needs to use /dev/uinput
+Mar 11 10:37:29 <hexnewbie>	anonymou1: It's covered by PAM, and the DE.
+Mar 11 10:37:43 <hexnewbie>	Oh, wait, you mean auto-type into password fields, not auto-unlock
+Mar 11 10:37:59 <monr0e>	hexnewbie: x11 and windows both provide APIs for cross-window keypresses
+Mar 11 10:38:15 <monr0e>	anonymou1 https://keepass.info/help/kb/autotype_wayland.html
+Mar 11 10:38:17 <oerheks>	auto fill, no problems
+Mar 11 10:38:39 <oerheks>	go try yourself, anonymou1
+Mar 11 10:40:48 <anonymou1>	monr0e: Thank you, that is actually what I was looking for. Sadly though, this solution seems a bit hacky.
+Mar 11 10:41:09 <monr0e>	That's just a way;and thing tbh
+Mar 11 10:41:20 <monr0e>	Wayland is surprisingly immature for its age
+Mar 11 10:42:37 <oerheks>	'hacky' on wayland, not on X11?
+Mar 11 10:42:51 <oerheks>	get over it 🤣
+Mar 11 10:42:57 <anonymou1>	Considering that more and more distros are about to switch to Wayland (or have already done so) as the default, this bothers me a bit.
+Mar 11 10:43:51 <n4dir>	the main question is if the distro you use does it.
+Mar 11 10:43:53 <anonymou1>	oerheks: As I understand it, X11 provides a proper protocol/API to send keystrokes to a window, while Wayland currently relies on using the low-level method of uinput.
+Mar 11 10:44:06 <anonymou1>	n4dir: Gentoo. :D So I’m on my own.
+Mar 11 10:44:10 <neoncortex>	oerheks: it is so good that you need force people to use it xD
+Mar 11 10:44:19 <n4dir>	lol
+Mar 11 10:44:35 <djph>	it's like systemd all over again --> sure they handled their use-cases, but then once "everyone" uses it you see all the things they've thus-far not run into
+Mar 11 10:44:40 <n4dir>	the other day i booted a distro with Wayland, and something bothered me, so i logged out and back in to X11
+Mar 11 10:44:41 <monr0e>	To be fair, there isn't really a clean solution for a GUI like that. Xorg is hacky by its very nature, splitting itself up into a server/client model and doing a lot of stuff in weird and wonderful ways. Oh, and it hasn't really been updated in what, ten years? Twenty?
+Mar 11 10:45:00 <monr0e>	I can't do remote apps properly on wayland
+Mar 11 10:45:09 <monr0e>	cant on x11 either, but they at least run
+Mar 11 10:46:07 <n4dir>	i just love the idea having to relearn something most basic at minimun all 2 years.
+Mar 11 10:46:16 <anonymou1>	I think it's obvious that X11 needs a proper replacement. The question is if Wayland is mature enough to be one. And my impression so far is: on a good way, but not yet.
+Mar 11 10:46:18 <djph>	n4dir: eh?
+Mar 11 10:46:20 <n4dir>	it works? ok, let's change that
+Mar 11 10:46:37 <xiaomiao>	monr0e: amusingly, wayland is now about as old as xorg when people started saying it was old and needed replacing
+Mar 11 10:46:57 <djph>	xiaomiao: the difference is, X11 was being used for all that time :P
+Mar 11 10:47:03 <xiaomiao>	anonymou1: I'd say wayland is excellent for domain-specific appliances (i.e. in-car entertainment system)
+Mar 11 10:47:03 <monr0e>	which is why it's concerning that it isn't more well rounded
+Mar 11 10:47:29 <n4dir>	djph: from the top of my head, rather early for me, version changes gnome, kde, ifconfig/ip, systemd, pipewire.
+Mar 11 10:47:34 <monr0e>	I'm somewhat concerned about the shift myself. I can only hope that it spurs proper development
+Mar 11 10:47:48 <anonymou1>	I wish arewewaylandyet.com would be updated frequently again.
+Mar 11 10:47:48 <n4dir>	i want lilo back !
+Mar 11 10:48:05 <xiaomiao>	n4dir: elilo for ia64, that was excellent
+Mar 11 10:48:06 <djph>	n4dir: ah, yeah that makes sense now.  Wasn't sure what you were getting at with "relearn basics"
+Mar 11 10:48:22 <xiaomiao>	I really don't like the hacky mess of UEFI, it gives EFI a bad name
+Mar 11 10:48:33 <neoncortex>	like I get it, code may get old, and complicated.  Maybe just reimplement it in a sane way?  It is obvious that making each wm implement the graphics server is not a good idea, since it will fragment everything.
+Mar 11 10:48:34 <n4dir>	djph: perhaps i was unclear.
+Mar 11 10:48:58 <monr0e>	I want a proper all-in-one solution that provides the basic window and desktop managers/environments, and then allows templating and styling on top. That would fix SO MANY of the shitty incompatibilities with the likes of GTK apps and whatnot
+Mar 11 10:49:15 <xiaomiao>	neoncortex: as usual, the first 80% take 80% of the time, and so do the remaining 20%
+Mar 11 10:49:18 <anonymou1>	Oh my gosh, what did I start here. :D
+Mar 11 10:49:19 <OnkelTem>	Hi folks. I've just learned about one-more-brilliant-idea - the NetPlan on Ubuntu. When they're going to stop inventing new entities? How the heck we're supposed to learn Linux configuration in such circumstances?
+Mar 11 10:49:27 <xiaomiao>	few people want to do the boring work of making things work well
+Mar 11 10:49:47 <neoncortex>	yeah.
+Mar 11 10:49:54 <xiaomiao>	OnkelTem: learning never stops. also, things like netplan are purely optional
+Mar 11 10:50:10 <n4dir>	sure learning can stop
+Mar 11 10:50:13 <monr0e>	heh anonymou1 don't be embarrassed, discussions like this are actually helpful. They make it much clearer what the actual UX issues are
+Mar 11 10:50:48 <OnkelTem>	xiaomiao: I hope so. Because now when I have my name resolution dead, I don't really know if I should worry about netplan
+Mar 11 10:50:49 <n4dir>	oh, i forgot that snap/flatpack stuff. Also weird
+Mar 11 10:52:54 <djph>	n4dir: eh, I took "basics" more towards storage/interconnects (NVMe vs SATA or DP vs HDMI, etc)
+Mar 11 10:53:13 <OnkelTem>	So I was playing with iproute2 on Ubuntu and after I put my eth0 into br0, resolution was broken. Any idas what I should verify in the first place?
+Mar 11 10:53:22 <n4dir>	djph: oh. Hardware is beyond me anyway. But yeah, that sure confuses me too
+Mar 11 10:53:38 <djph>	OnkelTem: does br0 have an IP address?
+Mar 11 10:53:57 <n4dir>	though, as far it is me, it probably makes much more sense than the stuff i had in mind. djph
+Mar 11 10:54:17 <OnkelTem>	djph: not from the start. I first add eth0 into br0 and then I run dhclient br0. So yeah, it finally gets its IP address, but DNS doesn't work anymore
+Mar 11 10:55:15 <djph>	OnkelTem: Have a local DNS resolver (systemd, dnsmasq)?
+Mar 11 10:55:29 <djph>	* on that machine, I mean
+Mar 11 10:56:44 <OnkelTem>	djph: erm... I didn't change anything, so it's a regular ubuntu resolver. /etc/resolv.conf is managed by systemd-resolved
+Mar 11 10:57:54 <djph>	restart that service, as it's probaby using invalid details now.
+Mar 11 10:58:24 <OnkelTem>	oh, thank djph :)
+Mar 11 10:58:26 <OnkelTem>	s
+Mar 11 10:58:32 <OnkelTem>	I'll try.
+Mar 11 11:05:41 <elektrinis>	some help with cloudflare tunnel needed... http works fine, but other protocols do not :(
+Mar 11 11:05:42 <elektrinis>	https://mega.nz/file/Fkh3xDJR#2GWHR9QKu3eOcMh1sqMtA5ti2AnC-bLalZ7Hn8NLw30
+Mar 11 11:05:50 <elektrinis>	(screenshot)
+Mar 11 11:06:31 <oerheks>	hacking cloudflare? no..
+Mar 11 11:06:37 <hexnewbie>	That requires javascript
+Mar 11 11:06:55 <monr0e>	You're probably best off asking in #cloudflare
+Mar 11 11:07:14 <elektrinis>	will do, thanks
+**** BEGIN LOGGING AT Mon Mar 11 11:18:06 2024
+
+Mar 11 11:18:05 *	Now talking on #linux
+Mar 11 11:18:05 *	Topic for #linux is: Welcome to #linux! Help & support for any Linux distribution or related topic -- Rules/Info: https://linux.chat -- Forum: https://linux.forum -- Pastebin: https://paste.linux.chat/ -- @linux.social on Mastodon: https://linux.social -- Need an op? !ops <reason> or join #linux-ops
+Mar 11 11:18:05 *	Topic for #linux set by Khaytsus (Thu Aug  3 13:54:32 2023)
+Mar 11 11:19:59 <OnkelTem>	djph: it worked, but unreliable. Basically, I've got into situation when NetworkManager didn't see my enp7s0 interface because it had a different UUID
+Mar 11 11:21:24 <djph>	yay, network mangler :)
+Mar 11 11:21:40 <OnkelTem>	https://termbin.com/u83u
+Mar 11 11:21:58 <OnkelTem>	so basically, I had two things with different UUID :)
+Mar 11 11:22:19 <OnkelTem>	but they're the same device
+Mar 11 11:22:51 <OnkelTem>	I'm not sure how I can do iproute2 stuff w/o making NM unhappy
+Mar 11 11:23:59 <OnkelTem>	And name resolution is somehow connected with NM being happy
+Mar 11 11:29:19 <[twisti]>	i have a bunch of system (user) timers which i have manually stopped. is there a way to see which ones are enabled ?
+Mar 11 11:30:33 <lopid>	systemd?
+Mar 11 11:32:45 <[twisti]>	right, sorry, should have been a d at the end of the `system` before `(user)` ;)
+Mar 11 11:33:26 <lopid>	systemctl --type=timer
+Mar 11 11:35:50 <bibo>	:test test
+Mar 11 11:36:27 <bibo>	PRIVMSG _qw :hey hey
+Mar 11 12:09:51 <Masklin>	Is there a package that adds volume normalisation/compression to the audio driver's capabilities?
+Mar 11 12:11:19 <alian5687>	Masklin: I get away with doing it on the player. Example: vlc has it
+Mar 11 12:13:16 <Masklin>	alian5687, that makes sense. I would like to use it even when browsing YouTube for example.
+Mar 11 12:17:01 <neoncortex>	maybe with jack?  It may be possible to plug the main output in an output of a program, like zynaddsubfx, or something like that.  I have never did it, just a wild guess.
+Mar 11 12:18:06 <nvz>	I recall even pulseaudio having a plugin for this years ago
+Mar 11 12:18:55 <Masklin>	neoncortex, is that jack as in "Jack-Audio Connection Kit"?
+Mar 11 12:19:00 <Masklin>	Is that a recursive name?
+Mar 11 12:19:36 <Masklin>	nvz, I have pulseaudio already, I guess it's my system default (openSUSE).
+Mar 11 12:20:58 <nvz>	Masklin: yeah well, I noticed on my system, debian 12, it still said pulseaudio but was actually using pipewire.
+Mar 11 12:22:24 <Masklin>	Hmmm I have pipewire too, nvz. :(
+Mar 11 12:22:31 <Masklin>	How do I tell which one is actually being used?
+Mar 11 12:23:00 <Masklin>	The device name is just some generic HD Audio controller mumbo
+Mar 11 12:29:40 <alian5687>	Masklin: yeah, I looked for something like that (global) but gave up. Anyway, I noticed that Youtube videos have considerably different volume levels so not sure you'll get any compression across videos to work that well but worth a try anyway. I use compression when I watch a video late at night so it doesn't wake up the neighbors when it starts shooting or something in the video.
+Mar 11 12:30:27 <alian5687>	definitely possible to have it global but I have never seen it at the driver level, who knows?
+Mar 11 12:33:55 <nvz>	Masklin: then you probably dont need/want jack
+Mar 11 12:34:46 <nvz>	Masklin: jack was something built to address things back when we used just ALSA, now that we have pulseaudio, it has a LADSPA (Linux Audio Developer’s Simple Plugin API) sink which can apply effects, and pipewire pretty much does all pulse and jack do and has similar
+Mar 11 12:35:17 <nvz>	Masklin: thats what you need to look for is a LADSPA plugin that normalizes and how to enable that in your pulseaudio/pipewire setup
+Mar 11 12:36:50 <nvz>	Masklin: I'm pretty sure I replaced pipewire with pulse on my system trying to work out something I was having issues with. I'd have to revert it back to dig around myself. However I know pipewire supplies a pw-jack/pw-jack-connect tool to connect to clients
+Mar 11 12:37:11 <nvz>	I haven't spent much if any time getting to know exactly how pipewire works
+Mar 11 12:42:02 <Masklin>	Alright, thanks nvz, alian5687.
+Mar 11 12:42:47 <Masklin>	On my gaming PC I have an ASUS soundcard with a tool that normalises the volume of everything that passes through the driver, so yes it must be possible.
+Mar 11 12:43:26 <Masklin>	Guess I'll Google around on pipewire plugins. Wish me luck eh.
+Mar 11 12:44:03 <yustin>	pw-jack will give you access to ladspa plugins
+Mar 11 12:44:29 <nvz>	Masklin: I'm a bit groggy, an unfocused but I am lookin around myself cause this is something I've wanted before and never bothered to look into :P
+Mar 11 12:44:59 <nvz>	Masklin: I have the swh-plugins package which may have something useful
+Mar 11 12:47:25 <nvz>	Masklin: I seem to have something in my Applications > Sound & Video called PulseEffects which is a GUI for enabling and configuring effects, and it has both an auto gain and a compressor
+Mar 11 12:48:06 <yustin>	get a calfcompressor or similar and connect all the stuff in qpwgraph
+Mar 11 12:48:19 <nvz>	Masklin: https://github.com/wwmm/pulseeffects  provided by the pulseeffects package in Debian
+Mar 11 12:52:16 <nvz>	Masklin: there is also a Loudness Compensator in here "which applies equal loudness contour corrections to the input signal. This is a measure of sound pressure level (SPL), over the frequency spectrum, for which a listener perceives a constant loudness when presented with pure steady tones."
+Mar 11 12:54:06 <nvz>	Masklin: sounds to me like a combination of Auto Gain and Loudness Compensator would achieve normalization.
+Mar 11 12:56:21 <nvz>	I can't offhand think of a good test case for it, to play with it and see how it works
+Mar 11 12:56:38 <nvz>	all my brain wants to think about is breakfast :P
+Mar 11 12:58:59 <nvz>	I tell my brain, lets normalize volume and it tells me.. Bacon & Eggs! https://www.amazon.com/Danelectro-DJ-16-Bacon-Distortion-Effects/dp/B0002CZYV6/
+Mar 11 13:04:26 <Masklin>	Thank you so much nvz! I don't have PulseEffects but let's see if I can get my hands on it...
+Mar 11 13:07:03 <Masklin>	nvz, seems pulseeffects is now EasyEffects?
+Mar 11 13:07:12 <Masklin>	Neither is in my official repos...
+Mar 11 13:08:48 <nvz>	Masklin: seems EasyEffects is a pipewire-only successor of pulseeffects
+Mar 11 13:09:14 <Masklin>	Indeed, indeed.
+Mar 11 13:09:55 <nvz>	and it would seem both are in Debian 12 (current stable)
+Mar 11 13:11:55 <nvz>	I never really used Suse or OpenSuse. I took the CompTIA Linux+ back in like 2008 cause someone else was willing to pay for it, then CompTIA contacted me to help with the new cert and I got the updated one for free also. That cert was based on Suse..
+Mar 11 13:12:54 <Masklin>	The rolling release openSUSE has easyeffects, but I don't use the rolling... I guess I finally need to learn how Flatpak works.
+Mar 11 13:13:35 <nvz>	heh, flatpak is pretty simple. I'm not really a fan of any of these things.. but I much prefer flatpak to snap.
+Mar 11 13:13:38 <hangint3n>	mornig all
+Mar 11 13:14:28 <bibo>	PRIVMSG a51 :he he
+Mar 11 13:28:30 <Masklin>	Got it working nvz, now I just need to understand the millions of settings in the Compressor effect
+Mar 11 13:32:50 <monr0e>	Rather than launching virt-manager all the time, is there a shortcut I can use to go straight to the vm?
+Mar 11 13:41:50 <BluesKaj>	Hi all
+Mar 11 13:42:35 <vlt>	ayecee: It totally worked in my test environment: I can `dmsetup remove <dev>` mid-merge, re-create it and let it finish without any corruption. The merge even continues where it left off last time. And such an interrupted merge could be created as a (non-merge) snapshot again and it kept all is data (md5sum checked).
+Mar 11 13:45:00 <ballsxd>	hey all, i have a corsair k68 keyboard which has multimedia keys for volume management. Since i switched from windows nearly 2 years ago i basically forgot about these keys even existing because of it not working out of the box. given corsair's proprietary attitude, is it even possible to make these keys work on linux?
+Mar 11 13:46:41 <Masklin>	How do I know whether I'm running pulseaudio or pipewire or something else?
+Mar 11 13:46:50 <Masklin>	There is no service running for either of those two, at least.
+Mar 11 13:47:04 <Masklin>	If I check with lsmod, it just says the audio device is made by AMD:
+Mar 11 13:47:13 *	Masklin is helpless
+Mar 11 13:47:14 <MacGyver>	Do you have audio?
+Mar 11 13:47:22 <MacGyver>	What makes you think *anything* is running?
+Mar 11 13:47:43 <triptych>	if he does have audio running cant he just check with
+Mar 11 13:47:49 <triptych>	"pulseaudio"
+Mar 11 13:47:51 <triptych>	or
+Mar 11 13:47:52 <triptych>	"pipewire"
+Mar 11 13:47:54 <triptych>	inthe terminal
+Mar 11 13:48:02 <MacGyver>	No, because that will just start a daemon.
+Mar 11 13:48:03 <triptych>	dont they come with controls?
+Mar 11 13:48:12 <triptych>	ah'
+Mar 11 13:49:11 <Masklin>	MacGyver, yes I have audio. And both pipewire and pulseaudio are *installed* as in, the packages are in place, and it seems they're installed by default, I didn't tinker (yet).
+Mar 11 13:51:17 <Masklin>	Hmm
+Mar 11 13:56:39 <Sheifu>	Hi
+Mar 11 13:56:41 <Sheifu>	 I'm having trouble in running "WeeChat" in Windows using Cygwin, where can I find help?
+Mar 11 13:57:19 <H4ndy>	just use WSL if you're on Windows 10 and 11 to avoid any incompatibility problems with cygwin
+Mar 11 13:57:37 <peetaur>	if you can get by pretending it's a completley normal linux (not about eg. the cygwin libs being different, etc.) then you can ask here ...otherwise I don't know
+Mar 11 13:57:58 <Sheifu>	ok thnks
+Mar 11 13:58:16 <peetaur>	and yeah wsl is said to be good enough to replace cygwin these days ...but I never tried it (I always have more than enough linux that I don't need to put WSL there and actually use windows more instead of avoid it :D)
+Mar 11 13:59:29 <Sheifu>	Using WSL is bit cumbersome, adds a lot of additional luggage as it requires turning on Intel VT-X in BIOS and then further it needs Hyper-V
+Mar 11 13:59:33 <ski>	there's also a #cygwin channel
+Mar 11 14:00:45 <peetaur>	oh ...well that' sounds all fine unless you normally use those (eg. in virtualbox) and it blocks it forcing you to only use hyper-v for all
+Mar 11 14:01:45 <peetaur>	but it's your choice, and the suggestion remains...for things you can't tell are any different between linux (gnu utils, openssh from openbsd, etc.) and cygwin (the same), this is still the right place
+Mar 11 14:01:47 <Sheifu>	peetuar, is there a separete specific version of UBUNTU or anyother flavor tailored for WSL
+Mar 11 14:02:16 *	peetaur knows almost nothing about WSL
+Mar 11 14:08:09 <Sheifu>	Now who can tell that if is there are separete specific editions of UBUNTU or anyother Linux flavors tailored for WSL
+Mar 11 14:10:29 <Southern_Gentlem>	i think there is Fedora for WSL
+Mar 11 14:10:45 <potash>	there is not however you can download the fedora cloud container image and import it into wsl
+Mar 11 14:11:06 <Southern_Gentlem>	but you can always run vbox and put whatever linux you want
+Mar 11 14:11:34 <Sheifu>	vbox has crappy graphics
+Mar 11 14:11:56 <Khaytsus>	Sheifu: I'm not sure we have any good answers for you.  this isn't a weecaht, nor a WSL channel.
+Mar 11 14:12:13 <Khaytsus>	You ask in #weechat?  Maybe someone there has ran it in cygwin.
+Mar 11 14:12:31 <potash>	wsl is linux in a vm so i'd say its relevant
+Mar 11 14:12:40 <potash>	plus there are no other important chats happening so why not
+Mar 11 14:12:44 <Sheifu>	Well, Khaytsus, i'm actually looking for a little info for solutions to use Linux on Windows
+Mar 11 14:12:45 <potash>	better than an inactive channel
+Mar 11 14:12:59 <Khaytsus>	Sheifu: You already know the solutions
+Mar 11 14:13:27 <spine-o-saurus>	any ideas how to get around those nasty websites that prevent clipboard pasting?
+Mar 11 14:13:37 <Sheifu>	Khaytsus, Okay, Thanks
+Mar 11 14:13:44 <hodapp>	spine-o-saurus: look up Don't Fuck With Paste
+Mar 11 14:13:50 <Khaytsus>	spine-o-saurus: There's an extension for Chrome for it, no idea about other browsers.  And what hodapp said.
+Mar 11 14:14:07 <spine-o-saurus>	is that for firefox?
+Mar 11 14:14:15 <hodapp>	I've only used it there
+Mar 11 14:14:49 <Sheifu>	Firefox provides a control to disable this pesk in "about:config"
+Mar 11 14:15:11 <hodapp>	Sheifu: oh, that's built-in now?
+Mar 11 14:15:38 <Sheifu>	Yeah. I viewed in Arkenfox or some other firefox customization script
+Mar 11 14:15:51 <hodapp>	what key? do you remember?
+Mar 11 14:16:01 <Sheifu>	let me look, need a bit time
+Mar 11 14:16:31 <Khaytsus>	To enable paste on all sites in Firefox, you can toggle dom.events.asyncClipboard.clipboardItem from false to true in the about:config editor
+Mar 11 14:16:52 <spine-o-saurus>	Sheifu: editor.truncate_user_pastes?
+Mar 11 14:18:30 <Sheifu>	I believe "user_pref("dom.event.contextmenu.enabled", false)" prevents Websites to Block right-click or otherwise mess with context menu
+Mar 11 14:19:53 <spine-o-saurus>	no, i just tried that and it doesnt work
+Mar 11 14:20:10 <Sheifu>	you need to restart the browser
+Mar 11 14:21:10 <Sheifu>	If you happen to provide me with the link of the site, i can check if its working on my browser
+Mar 11 14:21:45 <spine-o-saurus>	https://users.wix.com/signin/signup/password?view=sign-up&sendEmail=true&loginCompName=SignUp_H&referralInfo=SignUp_H&postSignUp=https%3A%2F%2Fwww.wix.com%2Fnew%2Fintro%2F&postLogin=https%3A%2F%2Fmanage.wix.com%2Faccount%2Froute&originUrl=https%3A%2F%2Fwww.wix.com%2Ffree%2Fweb-hosting&loginDialogContext=signup&forceRender=true
+Mar 11 14:22:05 <spine-o-saurus>	the confirm email is blocked from pasting
+Mar 11 14:22:41 <Masklin>	nvz, I got it working finally, I had to replace pulseaudio with pipewire by installing some weird package made specifically for the switch? *shrug*
+Mar 11 14:22:51 <Sheifu>	It is working, I can right-clikc and see context menu and also paste
+Mar 11 14:23:14 <spine-o-saurus>	Sheifu: but does it actually paste? mine doesnt allow
+Mar 11 14:24:23 <Sheifu>	Yeah it does allow to paste
+Mar 11 14:24:38 <Sheifu>	Wait i'll paste the link of screenshot
+Mar 11 14:26:31 <Sheifu>	spine-o-saurus: here check it: https://pomf2.lain.la/f/1ilgdjpi.png
+Mar 11 14:26:44 <spine-o-saurus>	hmm,nvm. it only works when drag + drop
+Mar 11 14:39:05 <MacGyver>	Masklin: Sorry, got called away.
+Mar 11 14:40:21 <MacGyver>	Masklin: `pgrep -a pulse` and `pgrep -a pipewire` should list whether either of those is (or both are) running.
+Mar 11 14:41:00 <Khaytsus>	pactl info is the best place to look..  It'll list pipewire here if it's pipewire.
+Mar 11 14:41:17 <Khaytsus>	It shows something like "server name: pulseaudio (pipewire)" as I recall
+Mar 11 14:41:38 <Masklin>	"2479 /usr/bin/pipewire-pulse"
+Mar 11 14:41:40 <Masklin>	Is all I get
+Mar 11 14:41:53 <Masklin>	Funny how the answer is a bit like "both":
+Mar 11 14:42:05 <Khaytsus>	No.  I'ts not both.
+Mar 11 14:42:39 <potash>	how can i find bad sectors in a mounted drive without destroying data on it
+Mar 11 14:42:54 <potash>	s/drive/disk
+Mar 11 14:43:08 <Khaytsus>	potash: badblocks has a non-destuctive mode
+Mar 11 14:43:15 <Khaytsus>	You do need to run it without the disk mounted, of course
+Mar 11 14:43:35 <[twisti]>	with systemd, can i set up a semaphore kind of system where out of x services, only one will run at a time, and if another is already running wait for it to finish ?
+Mar 11 14:43:51 <Masklin>	Khaytsus, that's why I said "a bit like".
+Mar 11 14:53:57 <triptych>	off topic , but is there a way to hide the joined and quit messages
+Mar 11 14:53:58 <triptych>	im on hexchat
+Mar 11 14:55:00 <Khaytsus>	Settings -> Preferences -> Chatting -> General
+Mar 11 15:04:52 <triptych>	khaytsus thank you
+Mar 11 15:14:25 <Anjor>	For future reference, they are called "parts" and "joins" by most people. "ignore parts/joins" is the search term you'll need for future reference.
+Mar 11 15:15:09 <ski>	(parts, joins, and quits)
+Mar 11 15:15:18 *	peetaur wishes there was a fold/hide but not delete all traces ....such spam, but it's relevant info for knowing when someone was or wasn't there
+Mar 11 15:15:36 <ski>	iirc glirc does that
+Mar 11 15:15:50 <H4ndy>	Yeah it's a client feature, most should be able to do it by now
+Mar 11 15:17:14 <H4ndy>	Here's a script for HexChat to make the message more smart: https://github.com/TingPing/plugins/blob/master/HexChat/smartparts.lua (have not tried myself - they have a collection of scripts for Hexchat)
+Mar 11 15:17:51 <Anjor>	weechat also has a smart filter to allow part/join messages from people who recenetly spoke, etc.
+Mar 11 15:22:59 <ballsxd>	hey all, i have a corsair k68 keyboard which has multimedia keys for volume management. Since i switched from windows nearly 2 years ago i basically forgot about these keys even existing because of it not working out of the box. given corsair's proprietary attitude, is it even possible to make these keys work on linux?
+Mar 11 15:23:01 <H4ndy>	oh, HexChat is now unmaintained
+Mar 11 15:23:15 <stenno>	people on windows will be devastated
+Mar 11 15:23:28 <ballsxd>	so am i :(
+Mar 11 15:23:39 <potash>	i use thelounge on docker on raspberry pi
+Mar 11 15:23:45 <potash>	web based client always online
+Mar 11 15:24:47 <Anjor>	ballsxd: You should be able to bind some sort of command to the keys, presuming your systems recognizes the input.
+Mar 11 15:25:03 <H4ndy>	stenno can always fall back to mIRC (:
+Mar 11 15:25:14 *	stenno slaps H4ndy with a trout oslt
+Mar 11 15:25:38 <plebe>	I use hexchat too.
+Mar 11 15:26:37 <H4ndy>	potash: same, but on a 2$ VPS
+Mar 11 15:26:50 <potash>	linux is sadly still not very usable on the desktop but its still great
+Mar 11 15:26:52 <Anjor>	$2? Why the high price?
+Mar 11 15:27:05 <Anjor>	Linux is PERFECT for the desktop. What are you talking about?
+Mar 11 15:27:10 <AntonoiCarpio>	If fedora stops shipping xorg, does that also means it will stop shipping xwayland?
+Mar 11 15:27:12 <Anjor>	Linux offers the most complete desktop experience.
+Mar 11 15:27:16 <plebe>	how is it not a usable desktop?
+Mar 11 15:27:25 <hodapp>	it's 2024, who uses desktops anymore
+Mar 11 15:27:42 <djph>	hodapp: the 4% of people using "Linux"
+Mar 11 15:27:43 <potash>	i need to do cad at school
+Mar 11 15:27:46 <Anjor>	desktop != desktop environment
+Mar 11 15:27:52 <rascul>	i am the 4%
+Mar 11 15:27:55 <ski>	ballsxd : does `xev' recognize them ?
+Mar 11 15:28:03 <djph>	well, assuming that's not including "Android" users :|
+Mar 11 15:28:11 <Anjor>	rascul: We should make 4%er patches
+Mar 11 15:28:29 <potash>	only 4% of the population account for 50% of the bug reports
+Mar 11 15:28:53 <kfrench>	4%?  When did that happen?
+Mar 11 15:28:54 <Anjor>	4% of the DESKTOP users are Linux users.  99% of servers...
+Mar 11 15:29:10 <potash>	like last month
+Mar 11 15:29:14 <AntonoiCarpio>	I love Linux, it's my gateway to my real os, google chrome
+Mar 11 15:29:16 <potash>	i remember it was on hackernes
+Mar 11 15:29:27 <Anjor>	https://gs.statcounter.com/os-market-share/desktop/worldwide
+Mar 11 15:29:44 <Anjor>	"According to StatCounter's data, by the end of February 2024, Linux has achieved a 4.03% desktop market share."
+Mar 11 15:29:47 <kfrench>	So, the Year of the Linux Desktop has finally arrived.
+Mar 11 15:29:52 <AntonoiCarpio>	A Linux distro that boots immediately to Chrome is all I need
+Mar 11 15:30:11 *	stenno uses matrix moves to evade 'year of linux desktop' jokes
+Mar 11 15:30:15 *	Anjor célébrons
+Mar 11 15:30:15 <stenno>	oh no too late
+Mar 11 15:30:18 <user71>	does 'market share' mean those users that have paid?
+Mar 11 15:30:59 <neoncortex>	I cant wait to see when gimp will start to use a super cool feature of the gnome wayland compositor, and inkscape using a super cool feature from kde compositor, and then you will have to log in gnome to use gimp, and into kde to use inkscape!
+Mar 11 15:30:59 <AntonoiCarpio>	Imagine a paid Linux distro with dedicated support
+Mar 11 15:31:05 <AntonoiCarpio>	Oh wait nvm that's Zorin
+Mar 11 15:31:56 <Anjor>	ChromeOS has 2.27% of market share.  That should technically be a part of the Linux numbers but isn't.  It's more like +6%, not 4%
+Mar 11 15:32:21 <AntonoiCarpio>	Yeah it's lame ChromeOS is distinct from the stats
+Mar 11 15:32:30 <Anjor>	Also, more than 6% is "unknown" and we can presume that at least 45 of that 6% is Linux users.
+Mar 11 15:32:31 <plebe>	I have done everything I need except use a OBD automobile diagnostic tool with linux since 2006
+Mar 11 15:32:59 <Anjor>	at least 4% of that 6%*
+Mar 11 15:33:26 <AntonoiCarpio>	Anjor: there are plenty of bsd users out there, so probably lower than that (assuming the others is because it uses some weird user agent or something)
+Mar 11 15:33:51 <Anjor>	No, the abberations come from the vast amount of TempleOS users.
+Mar 11 15:33:54 <neoncortex>	plebe: thats of my interest: you cant use OBD with linux?
+Mar 11 15:34:59 <plebe>	I could get the program to run under wine but communication didnt happen
+Mar 11 15:35:08 <ballsxd>	ski: i think it does. ive never used xev before but a brief explanation appears when i press the keys
+Mar 11 15:35:17 <neoncortex>	I see.
+Mar 11 15:35:24 <AntonoiCarpio>	I think it's easier if you can pass it through a windows vm
+Mar 11 15:35:30 <plebe>	I just quit messing with it since I only use it a few times a year
+Mar 11 15:35:49 <Anjor>	Just need the correct faultcodes and some code to do its magic
+Mar 11 15:36:14 <Gurkenglas>	running `perf` says "/usr/bin/perf: line 13: exec: perf_6.1: not found", but reading /usr/bin/perf suggests that the intention was to give me a more actionable error message. Am I missing something?
+Mar 11 15:36:19 <Anjor>	And one of these: https://www.amazon.ca/FT232RL-FT232RQ-Diagnostic-Interface-Switch/dp/B0B4B31Q6G
+Mar 11 15:37:11 <plebe>	autoenginuity is what I was using. I have an ancel tablet for new stuff but need the AE for my old diesel
+Mar 11 15:37:13 <Gurkenglas>	(dpkg -S perf says linux-base, dpkg --list says my linux-base is 4.6.)
+Mar 11 15:37:36 <AntonoiCarpio>	Woah 4.6 is old
+Mar 11 15:38:23 <AntonoiCarpio>	Close to a decade kernel version
+Mar 11 15:39:09 <ztt8271>	AntonoiCarpio: linux-base is not the kernel
+Mar 11 15:39:38 <ztt8271>	AntonoiCarpio: the package providing the kernel is called linux-image
+Mar 11 15:39:52 <Southern_Gentlem>	AntonoiCarpio, but is it still maintained kernel.org
+Mar 11 15:40:06 <treefrob>	the package name depends on the distro
+Mar 11 15:40:34 <ztt8271>	treefrob: yes, but he mentioned linux-base, which is a debian package
+Mar 11 15:40:40 <treefrob>	ah, missed that
+Mar 11 15:40:45 <Heliumcopter>	Salutations.
+Mar 11 15:41:01 <Anjor>	Salut, Heliumcopter.
+Mar 11 15:41:13 <Southern_Gentlem>	AntonoiCarpio, yes 4.19 is the oldest longterm kernel
+Mar 11 15:43:12 <Heliumcopter>	Southerm_Gentlem: No, 4.4 is the oldest LTS Kernel.
+Mar 11 15:45:41 <rascul>	who is maintaining 4.4?
+Mar 11 15:45:54 <Heliumcopter>	rascul: No one.
+Mar 11 15:46:14 <ski>	ballsxd : presumably, they'll be bound to things like `XF86AudioPlay',`XF86Mail',`XF86Search',&c. .. so, just bind those in your WM / DE ?
+Mar 11 15:46:40 <Anjor>	"as of February 3rd, 2022, the Linux 4.4 kernel branch will no longer be supported with further maintenance updates that usually provide bug fixes and security patches"
+Mar 11 15:46:51 <Heliumcopter>	Anjor: Yes.
+Mar 11 15:47:22 <Anjor>	You can still use Linux 4.19 LTS until December 2024, Linux 5.4 LTS until December 2025, Linux 5.10 LTS until December 2026.
+Mar 11 15:47:34 <Heliumcopter>	Anjor: Did he mean the oldest STILL MAINTAINED LTS kernel?
+Mar 11 15:47:36 <Gurkenglas>	specifically it looks like line 12, `shopt -s execfail`, failed to stop the next line, `exec perf_6.1`, from exiting the script
+Mar 11 15:48:57 <neoncortex>	I bet there is someone still using 2.6 out there.  It was like 2.6 for a decade.
+Mar 11 15:49:07 <Heliumcopter>	I do! (On a VM)
+Mar 11 15:49:20 <Anjor>	I use 2.6.something!
+Mar 11 15:49:20 <ztt8271>	neoncortex: yeah, especially 2.6.32
+Mar 11 15:49:38 <AntonoiCarpio>	No need to bet on it. RHEL probably has it on their support  list or something lol
+Mar 11 15:49:49 <ztt8271>	2.6.32 was the eternal kernel. rhel had it for years.
+Mar 11 15:50:08 <Gurkenglas>	oof, apt install linux-perf gets me /usr/bin/perf_5.10, but uname -r starts with 6.1
+Mar 11 15:50:19 <neoncortex>	ztt8271: yeah, it took a long time.
+Mar 11 15:50:25 <AntonoiCarpio>	A 2.6 kernel that has security updates and new device support? RHEL is srs business
+Mar 11 15:50:35 <Anjor>	I have an old Toshiba Satellite laptop of some sort that uses an old spin of DSL for its i586 support.  That laptop runs on 2.6
+Mar 11 15:51:01 <Heliumcopter>	Oh no.
+Mar 11 15:51:20 <Anjor>	Italy down. I repeat: ITALY DOWN.
+Mar 11 15:52:18 <neoncortex>	Italy down?
+Mar 11 15:54:04 <Anjor>	Took openSUSE Tumbleweed for a test drive. It offers the most complete, refreshing KDE experience I've had in a very long time. Everything just works. I'm more of a minimalist (no DE), but I wouldn't hesitate to recommend openSUSE to people new to *nix.
+Mar 11 15:58:32 <Anjor>	neoncortex: Heliucopter left the chat with an "oh no" message, and they are connected from an Italian network. I interpreted the "oh no" message as an automated quit messsage in case internet drops.
+Mar 11 15:58:45 <Anjor>	No Internet in Italy = ITALY DOWN
+Mar 11 15:58:57 <neoncortex>	I see, got it =D
+Mar 11 15:59:01 <Anjor>	Jokes aren't funny when you have to explain them.
+Mar 11 15:59:44 <luna_>	https://pastebin.com/haYePFJg can anyone on GNOME 45 help me test this PKGBUILD? can't test it myself as i use GNOME 46 RC1 on Arch
+Mar 11 15:59:53 <triptych>	what is italy down
+Mar 11 16:00:07 <Gurkenglas>	How would I search all the debian repositories for a package, to help me decide what repositories to add to /etc/apt/sources.list?
+Mar 11 16:00:08 <neoncortex>	Anjor: is that things are so weird that I immediately thought of a tragedy, war, or something.  Im sorry xD
+Mar 11 16:07:30 <Gurkenglas>	I think I figured out the issue: uname -r says 6.1.75-1.qubes.fc37.x86_64, but that is the kernel version of the *host*, and dpkg -l says that linux-image is on 5.10, so uname -r is just misleading and that's why perf is confused
+Mar 11 16:07:59 <Gurkenglas>	Is this QubesOS devs being silly in making uname -r misleading, or perf devs being silly because uname -r is not supposed to be how you figure out the kernel version?
+Mar 11 16:09:15 <MacGyver>	por que no los dos!
+Mar 11 16:09:41 <MacGyver>	Do you also know how you're gonna fix it?
+Mar 11 16:09:54 <Gurkenglas>	probably im gonna try just running perf_5.10 instead of perf
+Mar 11 16:09:55 <ananke>	Gurkenglas: likely you're not looking at the right package
+Mar 11 16:10:38 <Gurkenglas>	quite possibly. what should I use to capture stack samples to make some flame graphs?
+Mar 11 16:43:25 <dTal>	wow exFAT sucks ass
+Mar 11 16:43:37 <user71>	why is that?
+Mar 11 16:43:54 <dTal>	Trying to back up my music collection to SD card, and apparently forbidden characters include : and ?
+Mar 11 16:44:23 <dTal>	So, "Pirates of the Carribean: The Curse of the Black Pearl" is invalid
+Mar 11 16:44:39 <user71>	solution is to automatically sanitize the names. You could try 'detox'
+Mar 11 16:44:40 <Namarrgon>	it inherited these limitations from its fat* predecessors
+Mar 11 16:44:45 <ski>	FAT ?
+Mar 11 16:44:48 <dTal>	"What's This?" from Nightmare before Christmas, also forbidden
+Mar 11 16:45:18 *	ski recalls using "¿" in some file name
+Mar 11 16:45:53 <Namarrgon>	if you have to put backups on *fat* then tar the files up first
+Mar 11 16:46:25 <dTal>	Namarrgon: of course FAT32 has file size limitations
+Mar 11 16:46:43 <Thuryn>	: ? * \ /    several others
+Mar 11 16:46:45 <Namarrgon>	sure but exfat extends them a fair bit
+Mar 11 16:47:08 <dTal>	Why can't we just use non-broken filesystems in this the year of our lord 2024
+Mar 11 16:47:11 <Thuryn>	quotation marks
+Mar 11 16:47:34 <Thuryn>	well, format it with one
+Mar 11 16:47:52 <dTal>	disallowing colons, questions marks, and quotes is ridiculous in an age where filenames are often movie titles
+Mar 11 16:47:58 <Thuryn>	why do you have to use *fat on the card?
+Mar 11 16:48:11 <dTal>	I just want it to be readable generally
+Mar 11 16:48:13 <ztt8271>	dTal: are you forced to use vfat filesystem on that SD card? if not, use ext2/3/4 instead.
+Mar 11 16:48:26 <Sheifu>	!ops
+Mar 11 16:48:37 <dTal>	if I used a unix filesystem it wouldn't work when I plugged it into a windows computer
+Mar 11 16:48:51 <H4ndy>	I'd say if you want interoperability, deal with the limitations
+Mar 11 16:48:55 <Khaytsus>	Sheifu:.. Yes?
+Mar 11 16:49:07 <Thuryn>	the union of "generally readable" and "doesn't suck" is the null set
+Mar 11 16:49:08 <ztt8271>	dTal: well, that's the price for being nice to windows
+Mar 11 16:49:19 <xx>	dTal: exfat can use : and other characters, but you need to enable a special option when mounting
+Mar 11 16:49:30 <xx>	it's windows-compatible by default
+Mar 11 16:49:47 <dTal>	xx: oh really? and what happens if you put such a disk into Windows?
+Mar 11 16:49:47 <neoncortex>	not defending fat, but movie file names are ridiculous.
+Mar 11 16:50:06 <dTal>	neoncortex: Why?
+Mar 11 16:50:12 <xx>	dTal: it surprisingly works on latest windows but some versions can have problems
+Mar 11 16:50:28 <neoncortex>	because people put everything on there, emojis and what not.
+Mar 11 16:50:35 <dTal>	neoncortex: so?
+Mar 11 16:51:09 <neoncortex>	so its not good, because you have to take it in account if you scripting, depending on the tools you are using.
+Mar 11 16:51:14 <dTal>	xx: That's really good to know. So I can remount this disk with the options and rsync, saving the 50 gigabytes of transfer I've already done. Thanks
+Mar 11 16:51:25 <stenno>	rsync is great
+Mar 11 16:51:31 <neoncortex>	s/you/you are
+Mar 11 16:51:41 <xx>	you are technically walking in 'going against the spec' territory, so no guarantee it will keep on working
+Mar 11 16:51:41 <dTal>	neoncortex: filenames can contain arbitrary characters, thems the rules, if your script doesn't like it your script is broken
+Mar 11 16:52:08 <Khaytsus>	I quote all paths and filename in my scripts
+Mar 11 16:52:18 <Khaytsus>	Because it'll bite you eventually if not
+Mar 11 16:52:25 <dTal>	to quote Amazon devops guidelines: if something is painful, do it often
+Mar 11 16:52:47 <ballsxd>	ski: thanks for the rec, it indeed works. probably won't be using it for it's intended purpose but it's cool that i can customize it's purpose :)
+Mar 11 16:52:50 <Khaytsus>	Automate it :P
+Mar 11 16:52:52 <stenno>	what kind of advice is that, dTal
+Mar 11 16:53:05 <neoncortex>	the problem is matching 😃😎❿ with regex xD
+Mar 11 16:53:14 <dTal>	stenno: contextual advice
+Mar 11 16:53:26 <ski>	ballsxd : "it" being the media keys ?
+Mar 11 16:53:32 <ski>	or `xev' ?
+Mar 11 16:53:40 <Khaytsus>	I've never seen a movie with random enojis in it.... But who knows what your source is.
+Mar 11 16:53:43 <ballsxd>	ski: the media keys
+Mar 11 16:53:57 <ballsxd>	i'm not sure if i could re purpose them on windows, but as it seems i can do it on linux
+Mar 11 16:54:11 <dTal>	stenno: it doesn't mean hit your head against the wall, it means "fix pain points instead of avoiding them, because the longer you avoid them the more painful it will be when you are forced to confront them"
+Mar 11 16:54:19 <ballsxd>	i had no use for muting/adjusting volume anyway
+Mar 11 16:54:27 <stenno>	aah great, that makes more sense
+Mar 11 16:54:48 <Khaytsus>	I have a repurposed numpad for things like media control
+Mar 11 16:55:05 <Khaytsus>	Mapping with xbindkeys or such
+Mar 11 16:55:15 <neoncortex>	Khaytsus: thats not only movies, youtube videos also have emoji in their names, sometimes.
+Mar 11 16:55:17 <ballsxd>	i have 7 new keys for which i need to find a purpose now
+Mar 11 16:55:52 <stenno>	encoding: one of the 2 important programming problems, together with cache invalidation and off-by-one errors
+Mar 11 16:55:59 <Khaytsus>	I hate when keyboards don't include a sysreq key
+Mar 11 16:56:02 <ballsxd>	i guess i can launch my webbrowser with "one click of a button"
+Mar 11 16:56:22 <dTal>	stenno: so for example, if eg renewing SSL certificates is annoying and can cause outages, set them to expire every 3 months instead of 10 years. Kicking the can down the road works for now but you're going to have a hell of a time in 10 years - better to have a well practiced process in place
+Mar 11 16:56:33 <ballsxd>	or shut my pc off with pressing a button on my keyboard lol
+Mar 11 16:56:39 <Khaytsus>	Both of my programmable ones have no way to program a key to sysreq
+Mar 11 16:56:41 <stenno>	dTal: yeah i agree, i try to follow this
+Mar 11 16:56:49 <n4dir>	no clue if my keyboards have a sysreq key or not.
+Mar 11 16:56:51 <stenno>	i have been bitten in the behind by technical debt
+Mar 11 16:57:10 <Anjor>	print scrn is often sysreq
+Mar 11 16:57:21 <Khaytsus>	I know that..
+Mar 11 16:57:28 <kfrench>	dTal: Agreed.  Promoting some of those low priority tasks to every day tasks can be very helpful to avoid huge pain later.
+Mar 11 16:57:49 <dTal>	and I argue that trying to avoid "funny" characters in your filenames in order to be friendly to poorly written scripts is similarly kicking the can down the road - eventually you will be bitten by a funny filename
+Mar 11 16:57:51 *	ski bound `<SysReq>' to open a terminal window
+Mar 11 16:58:02 <n4dir>	"Druck S-Abf" key. Whatever the heck that might be. I will stop looking, it only confuses me
+Mar 11 16:58:24 <Khaytsus>	I always have terminals and browser open heh
+Mar 11 16:58:31 <Anjor>	Systemabfrage
+Mar 11 16:58:41 <n4dir>	Anjor: oh. lol. Funny
+Mar 11 16:59:02 <ssm_>	dTal: instead just makes me wish it was standardized for filesystems to reject or modify bad characters in filenames
+Mar 11 16:59:05 <n4dir>	would make a funny nickname "s-abf"
+Mar 11 16:59:06 <ballsxd>	super + enter here
+Mar 11 16:59:18 *	ski also bound `<Alt>-<Tab>' to produce a backtab
+Mar 11 16:59:39 <stenno>	define 'bad character'
+Mar 11 16:59:46 <stenno>	i assume all non-printing characters are bad
+Mar 11 16:59:59 <Anjor>	Jar-Jar Binks
+Mar 11 17:00:04 <ski>	`NUL', i guess ?
+Mar 11 17:00:10 <stenno>	null is non-printing indeed
+Mar 11 17:00:11 <ssm_>	stenno: newlines, unicode, some escapes, etc
+Mar 11 17:00:19 <ballsxd>	👍?
+Mar 11 17:00:19 <stenno>	ssm_: so no umlauts?
+Mar 11 17:01:00 <stenno>	or rather, any character that is not standard ascii ?
+Mar 11 17:01:08 <dTal>	ssm_: That's discriminatory, there is no such thing as a "bad" character
+Mar 11 17:01:13 <stenno>	i go with dTal there
+Mar 11 17:01:14 <dTal>	stenno: and that's racist
+Mar 11 17:01:15 <stenno>	yeah..
+Mar 11 17:01:23 <stenno>	dTal: errr what is?
+Mar 11 17:01:35 <stenno>	??????
+Mar 11 17:01:37 <Anjor>	jar Jar Binks
+Mar 11 17:01:44 <dTal>	well, not racist per se :p
+Mar 11 17:01:49 <stenno>	what the fuck
+Mar 11 17:01:55 <Anjor>	Jar Jar Binks is a bad character.
+Mar 11 17:02:00 <dTal>	stenno: disallowing umlauts etc. We agree
+Mar 11 17:02:09 <ssm_>	dTal: dang I hate being racism, my bad
+Mar 11 17:02:31 <neoncortex>	because you may be chinese and use chinese characters in your filenames, or some other language with weird characters, I assume.
+Mar 11 17:02:33 <Khaytsus>	Please watch the language
+Mar 11 17:03:17 <stenno>	sorry, i got caught off-guard here
+Mar 11 17:03:32 <stenno>	sometimes a joke doesn't translate well into text form
+Mar 11 17:03:40 <ssm_>	I was thinking more about unicode control characters that reverse characters and the like
+Mar 11 17:03:45 <dTal>	stenno: yeah sorry was sort of firing from the hip rhetorically speaking
+Mar 11 17:03:49 <stenno>	all well
+Mar 11 17:03:50 <ssm_>	common in windowz scams
+Mar 11 17:03:55 <stenno>	ssm_: so, non-printing characters?
+Mar 11 17:03:58 <ssm_>	yeah
+Mar 11 17:04:04 <Anjor>	Some people are incapable of spotting a joke.
+Mar 11 17:04:09 <Anjor>	You know the type.
+Mar 11 17:04:14 <dTal>	Anjor: lol good one
+Mar 11 17:04:18 <stenno>	LMAO
+Mar 11 17:04:22 <stenno>	lol
+Mar 11 17:04:33 <neoncortex>	'the type'.  Thats discrimination.
+Mar 11 17:04:38 *	neoncortex hides
+Mar 11 17:04:54 <Anjor>	Sorry, I meant THOSE PEOPLE.
+Mar 11 17:05:01 <n4dir>	do english even "fire from the hip" ?
+Mar 11 17:05:24 <stenno>	unfortunately, the printability of a unicode character is not a property in itself
+Mar 11 17:05:41 <stenno>	what i want to say is that it is really difficult to identify non-printing characters
+Mar 11 17:05:56 <stenno>	pretty sure you have to hardcode that list
+Mar 11 17:06:23 <neoncortex>	you will have to check the hex range.
+Mar 11 17:07:25 <neoncortex>	for example, to match emojis in bash: https://stackoverflow.com/questions/47693493/check-if-emoji-exist-in-a-string-bash
+Mar 11 17:07:35 <stenno>	there is not a hex range that matches all non-printing characters
+Mar 11 17:07:43 <stenno>	and of course, emojis are multibyte printing characters
+Mar 11 17:07:56 <neoncortex>	then you have to hardcode, yes =D
+Mar 11 17:08:00 <stenno>	yeah
+Mar 11 17:08:18 <Khaytsus>	I wonder if the rename (one of many!) scripts can strip such nonsense (emoji) out of filenames
+Mar 11 17:08:20 <MacGyver>	Multibyte and multiwide.
+Mar 11 17:08:51 <stenno>	there are disgusting ways to figure it out, like printing the actual text, then estimating from the width of the printed text if a character was printed
+Mar 11 17:09:11 <stenno>	at least you can easily identify multibyte characters in utf8
+Mar 11 17:09:20 <neoncortex>	so, for practicability, the implicit standard is using [a-zA-Z0-9_-] in file names.  That is what I was trying to say to dTal.
+Mar 11 17:09:31 <stenno>	and .
+Mar 11 17:09:36 <neoncortex>	oh, yes.
+Mar 11 17:09:39 <stenno>	and %
+Mar 11 17:09:42 <Khaytsus>	Well that isn't very nice to real wide characters
+Mar 11 17:09:50 <live2>	has anyone come across the annoyance where the file is named '...ing'? it's hidden because of the first dot. how did you rename it?
+Mar 11 17:09:57 <stenno>	plus-sized characters
+Mar 11 17:10:06 <Khaytsus>	live2: same way you would any other?
+Mar 11 17:10:08 <ski>	and `~',`#'
+Mar 11 17:10:28 <stenno>	and +,=
+Mar 11 17:10:34 <neoncortex>	ski: dont come close to my file system xD
+Mar 11 17:10:44 <ski>	live2 : `mv ...ing foobar' ?
+Mar 11 17:10:47 <Khaytsus>	Always fun when a filename has - at the start, gotta remember the --
+Mar 11 17:10:59 <ski>	neoncortex : Emacs generates such files, automatically
+Mar 11 17:11:02 <stenno>	that reminds me of a terry pratchett book
+Mar 11 17:11:04 <live2>	Khaytsus, how did you rename it whilst keeping the '...ing' filename? *
+Mar 11 17:11:13 <stenno>	... probably means _very_ hidden
+Mar 11 17:11:14 <espresso>	ntfs another option that's generally portable, modern and fault-tolerant
+Mar 11 17:11:15 <neoncortex>	ah yes, the backup files.
+Mar 11 17:11:22 <ski>	and autosave
+Mar 11 17:11:30 <live2>	to keep the '...ing', is there any solution?
+Mar 11 17:11:33 <dTal>	I'm sorry, if your filesystem rules disallow files called "Pirates of the Carribean: The Curse of the Black Pearl.mp4" then it sucks
+Mar 11 17:11:34 <Khaytsus>	live2: if you are renaming it why would it keep the old name
+Mar 11 17:11:51 <Khaytsus>	That doesn't make sense
+Mar 11 17:12:05 <dTal>	this isn't the 80s, filenames are arbitrary text keys in a key-value store
+Mar 11 17:12:09 <Anjor>	live2: You want a file named "...ing" to not be hidden. Is that the problem? You want a filename that begins with a dot to not hide, correct?
+Mar 11 17:12:09 <Khaytsus>	And no you can't 'unhide' a single file
+Mar 11 17:12:25 <MacGyver>	dTal: Eh, I kinda get that : is a legacy separator.
+Mar 11 17:12:29 <dTal>	if your 80s scripting language struggles with that, then it sucks too
+Mar 11 17:12:32 <neoncortex>	maybe you will need mc, or some file manager.
+Mar 11 17:12:35 <Khaytsus>	Why is the file names that at all, seems pretty silly
+Mar 11 17:12:40 <n4dir>	...name sounds like a pretty silly filename to me
+Mar 11 17:12:43 <live2>	yes, that's the question. to make it not hidden whilst keeping the original filename, if possible.
+Mar 11 17:12:47 <Khaytsus>	No
+Mar 11 17:13:13 <ski>	"hidden" is not a property of the file, but of tools that displays files
+Mar 11 17:13:18 <Anjor>	"." U+002E Full Stop Unicode Character?
+Mar 11 17:13:28 <Khaytsus>	Yep it's just a long held convention
+Mar 11 17:13:44 <Khaytsus>	Anjor: that'll make bad worse heh
+Mar 11 17:13:55 <Anjor>	(U+2024) then
+Mar 11 17:14:07 <MacGyver>	If only scripting had proper typing instead of everything being a string depending on your correct handling of unicode and escapes and whatnot at all points that reference a file.
+Mar 11 17:14:09 <Khaytsus>	live2: Why is the file named that exactly?
+Mar 11 17:14:18 <dTal>	Yeah the solution to this seems contextual
+Mar 11 17:14:33 <Khaytsus>	Feels xy
+Mar 11 17:14:51 <live2>	oh, okay then. it's a minor annoyance. Anjor thanks for the solution but i'd rather keep it "normal". it's a movie Khaytsus.
+Mar 11 17:15:01 *	ski idly recalls having some trouble with a file named `Echoing....mod'
+Mar 11 17:15:03 <Khaytsus>	Uh.. What
+Mar 11 17:15:25 <Khaytsus>	Anyway, name it something sane or whatever
+Mar 11 17:15:30 <ski>	(Win98, or so)
+Mar 11 17:15:49 <stenno>	thats not 8.3 though
+Mar 11 17:16:02 <Khaytsus>	Or linux
+Mar 11 17:16:07 <stenno>	also true
+Mar 11 17:16:19 <live2>	thanks everyone. yes, i will.
+Mar 11 17:16:56 <ztt8271>	Another encoding foo: Putting utf-8 chars in wifi ESSIDs is making the clients do some guesswork. The is no encoding information at all in ESSIDs.
+Mar 11 17:17:14 <Khaytsus>	ztt8271: Why in the world would you do that
+Mar 11 17:17:25 <Khaytsus>	Please tell me not for 'security'
+Mar 11 17:17:42 <ztt8271>	Khaytsus: Many people do ... no, not for security.
+Mar 11 17:17:53 <skdnn>	macs couldn't have : in paths
+Mar 11 17:18:08 <ztt8271>	Khaytsus: They do it just because their router's web interface allows it
+Mar 11 17:18:15 <MacGyver>	Don't you want a WiFi network called 📶?
+Mar 11 17:18:17 <Khaytsus>	Doubt
+Mar 11 17:18:24 <stenno>	all bytes of multibyte characters start with 1 in utf-8
+Mar 11 17:19:08 <live2>	haha, very interesting
+Mar 11 17:19:09 <skdnn>	you shouldn't use terms 'start' and 'finish' with bytes
+Mar 11 17:19:19 <stenno>	fair
+Mar 11 17:19:42 <stenno>	most significat bit is 1 for all bytes of multibyte characters
+Mar 11 17:19:43 <ztt8271>	stenno: i guess you mean the highest bit (bit 7) by that?
+Mar 11 17:19:46 <stenno>	yes
+Mar 11 17:19:55 <stenno>	bit 8
+Mar 11 17:19:58 <stenno>	er like
+Mar 11 17:20:00 <stenno>	argh lol
+Mar 11 17:20:02 <djph>	bit 7
+Mar 11 17:20:08 <ztt8271>	stenno: i start counting at 0
+Mar 11 17:20:29 <stenno>	https://en.wikipedia.org/wiki/UTF-8#Encoding this is what i mean
+Mar 11 17:20:34 <stenno>	oh ok
+Mar 11 17:21:07 <stenno>	talking about off-by-one errors earlier :P
+Mar 11 17:21:08 *	ski . o O ( "Sign of the character that bit me." )
+Mar 11 17:21:28 <ztt8271>	stenno: there are many other encodings which also use bit 7 set to 1. iso-8859-1 for example.
+Mar 11 17:21:51 <Khaytsus>	If it were four bits would it just be a nibble?
+Mar 11 17:21:51 <stenno>	is that latin-1 ?
+Mar 11 17:22:01 <stenno>	ah yes
+Mar 11 17:22:03 <ztt8271>	stenno: yes, i think so
+Mar 11 17:22:16 <stenno>	but latin-1 is just a single byte, right
+Mar 11 17:22:30 <stenno>	not multibyte
+Mar 11 17:22:53 <ski>	Latin-2,..
+Mar 11 17:23:08 <stenno>	it's like CP-437
+Mar 11 17:23:49 <stenno>	latin 2 is also only 1 byte! :D
+Mar 11 17:25:13 <FlorianBad>	Is there a simple way to know if an ethernet interface (e.g. eth0) has a cable connected to it (w/ a device on the other side of course) even if nothing is configured correctly yet?
+Mar 11 17:25:34 <spine-o-saurus>	how come when I run cat list | sed '/^$/p' it only deletes half of the duplicate line entries?
+Mar 11 17:25:39 <djph>	FlorianBad: as in detecting a link?
+Mar 11 17:25:40 <Khaytsus>	FlorianBad: ethtool
+Mar 11 17:26:25 <FlorianBad>	Khaytsus, oh nice! So that would be "Linked detected: yes"  ?
+Mar 11 17:26:30 <Khaytsus>	Yrs
+Mar 11 17:26:37 <peetaur>	FlorianBad: ethtool but link has to be up (part of "configured correctly")
+Mar 11 17:27:55 <FlorianBad>	peetaur, hmm yes I just realized that. But I guess there's no harm in doing an `ifconfig eth0 up` even if there's nothing there?
+Mar 11 17:28:05 <Khaytsus>	Two devices linked but doesn't require networking being configured
+Mar 11 17:28:24 <Khaytsus>	And no you can bang it up if you like
+Mar 11 17:28:40 <Khaytsus>	Really still manually doing such thinga on 2024?
+Mar 11 17:29:43 <FlorianBad>	ok that works I can just up-it and then ethtool, thanks a lot :)
+Mar 11 17:30:20 <Khaytsus>	No need, ethtool tells you if there is a physical link
+Mar 11 17:30:33 <Khaytsus>	Regardless of networking up or configured
+Mar 11 17:31:18 <luna_>	tested myself now, but guess i have to tell the package to only use one version of libsoup did not work better with GNOME 45.4
+Mar 11 17:32:15 <Khaytsus>	No libsoup for you
+Mar 11 17:32:51 <antumbera>	could anyone recommend an amd laptop that runs well with linux?
+Mar 11 17:33:05 <Khaytsus>	Why wouldn't they all just work?
+Mar 11 17:33:27 <ssm_>	antumbera: frame.work amd mainboard, whenever it comes out
+Mar 11 17:33:35 <Khaytsus>	Look up the wifi and Bluetooth chipsets but otherwise
+Mar 11 17:33:48 <espresso>	https://wiki.archlinux.org/title/Laptop may help
+Mar 11 17:36:36 <Joao_>	hello!
+Mar 11 17:37:49 <Joao_>	anyone knows or is there a way to choose an http adress instead of :port for a server service?
+Mar 11 17:38:00 <Joao_>	sorry for my poor english!
+Mar 11 17:38:33 <Khaytsus>	If you're not using the standard port no you would have to specify it
+Mar 11 17:38:51 <Khaytsus>	Http assumes 80 https assumes 443
+Mar 11 17:39:49 <Joao_>	yes, but for example, for my wordpress website I have to do redejoao.org:37268
+Mar 11 17:40:01 <Joao_>	cant substitute the port?
+Mar 11 17:40:11 <stenno>	nope
+Mar 11 17:40:21 <Joao_>	damn it!
+Mar 11 17:40:22 <stenno>	also you shouldn't, even if you could
+Mar 11 17:40:48 <Joao_>	feels weird to share a link with a port number in it!
+Mar 11 17:41:35 <Joao_>	was hoping for something like: redejoao.org/homepage
+Mar 11 17:41:45 <Khaytsus>	Joao_: You could redirect in the firewall, or use nginx or some other tool to do it
+Mar 11 17:42:02 <Khaytsus>	if redejoao.org/homepage had a redirect to redejoao.org:37268 sure I guess
+Mar 11 17:42:04 <stenno>	just a reverse proxy would probably do it, yeah
+Mar 11 17:42:06 <Joao_>	ok... so there is a way to do it!
+Mar 11 17:42:09 <stenno>	well
+Mar 11 17:42:12 <stenno>	not directly
+Mar 11 17:42:36 <Khaytsus>	I use nginx to point to a pile of containers I run here, all on random ports..  they're all just https : // whatever.mydomain.com
+Mar 11 17:42:53 <Khaytsus>	there are various similar tools, probably can even do it directly in apache
+Mar 11 17:42:57 <Joao_>	I have apache2
+Mar 11 17:43:00 <stenno>	ProxyPass
+Mar 11 17:43:06 <stenno>	and ProxyPassReverse
+Mar 11 17:43:17 <Joao_>	ok... will google about it!
+Mar 11 17:43:25 <Khaytsus>	Joao_: Why not just run apache on the normal port?
+Mar 11 17:43:41 <stenno>	could get interesting with certificates though
+Mar 11 17:43:42 <Joao_>	I have several services...
+Mar 11 17:43:57 <Joao_>	wordpress site is in a container
+Mar 11 17:44:03 <Khaytsus>	Joao_: So you probably want something like nginx in front of them all and doing the redirection and certificate pinning
+Mar 11 17:44:18 <Khaytsus>	nginx would listen on 80 and 443 and do the proxying for you
+Mar 11 17:44:24 <Joao_>	 so.. nginx is better than apache?
+Mar 11 17:44:30 <stenno>	they both can do the same thing
+Mar 11 17:44:43 <stenno>	i guess nginx is supposed to be more lightweight?
+Mar 11 17:44:45 <Khaytsus>	Again, apache can probably do it, offhnad I don't know.
+Mar 11 17:44:55 <stenno>	YES IT CAN.
+Mar 11 17:44:59 <Khaytsus>	Cool
+Mar 11 17:45:04 <stenno>	WITH ProxyPass and ProxyPassReverse
+Mar 11 17:45:09 <stenno>	as i mentioned
+Mar 11 17:45:21 <Joao_>	ok... I am going to google about it.. thanks for helping!
+Mar 11 17:45:41 <Khaytsus>	Sorry stenno, that's basically the same as nginx so I missed the context
+Mar 11 17:48:58 <stenno>	sorry, all good
+Mar 11 17:50:10 <Khaytsus>	stenno: I just do all the things here, apache, nginx, containers..  Even have apache in a few containers I'm sure!
+Mar 11 17:50:41 <stenno>	about a year ago i learned about ssh tunnelling and now i am using it everywhere
+Mar 11 17:50:55 <stenno>	it's really cool if you can tell your customer that you only need a single port to be opened
+Mar 11 17:50:56 <Khaytsus>	At one point I realized I had FOUR mysql/mariadb's running and I was like okay this is craziness, time to actually configure these containers to use my host mariadb :D
+Mar 11 17:51:31 <stenno>	4 separate installations?
+Mar 11 17:51:33 <Khaytsus>	I really should roll everything into nginx..  I have 3-4 things that still run in apache, I just haven't taken the time to do it.
+Mar 11 17:51:41 <Khaytsus>	stenno: host + 3 containers
+Mar 11 17:51:43 <stenno>	same actually
+Mar 11 17:51:58 <stenno>	i wonder if should finally look into snap/flatpack
+Mar 11 17:52:16 <stenno>	we use apache here but it's basically legacy, we should really move to apache
+Mar 11 17:52:18 <stenno>	errr
+Mar 11 17:52:20 <stenno>	move to nginx lol
+Mar 11 17:52:26 <Khaytsus>	Just lazy container usage...  stand it up, it works, cool.  It set up its own mariadb, but..  heh
+Mar 11 17:52:54 <Khaytsus>	I really need to figure out phpfm or wahtever it is..  I've NEVER gotten it to work.
+Mar 11 17:53:00 <stenno>	yep
+Mar 11 17:53:12 <Khaytsus>	Like my nextcloud container could be faster, I think?  But I Just can't get it to play nice.
+Mar 11 17:53:30 <stenno>	php-fpm is a livesaver, i think mod_php is discouraged nowdays
+Mar 11 17:54:27 <stenno>	now it will show how good my automating works, to replace mod_php with php-fpm
+Mar 11 17:54:41 <Khaytsus>	Yeah, every time I try it I just get errors, I don't recall what..  I'm sure it's user error.
+Mar 11 17:55:08 <stenno>	hehe
+Mar 11 17:55:53 <stenno>	nginx with php-fpm is how php should be run nowadays i'd say
+Mar 11 17:59:31 <luna_>	works now after some fighting got help in #archlinux-aur
+Mar 11 18:00:38 <Khaytsus>	stenno: Yeah, it's just one of those things that I probably need to set it up in I dunno, a VM, on the laptop, something..  so i can fart around with it and figure it out without my nextcloud being offline
+Mar 11 18:01:08 <stenno>	i have a vmware fusion license from work, thats helpful for stuff like that :>
+Mar 11 18:01:37 <Khaytsus>	Well, sure, I could do that in libvirt trivially
+Mar 11 18:01:47 <stenno>	we use nextcloud too, i just migrated it from an ancient server to a newer one
+Mar 11 18:01:57 <stenno>	i am sure you can, but i probably can't :P
+Mar 11 18:02:12 <Khaytsus>	I tend to update mine kinda slow, but keep on the latest major.
+Mar 11 18:02:26 <Khaytsus>	I got two behind once and updated and had to do some fixing
+Mar 11 18:02:41 <stenno>	i have a challenge where i need to update a linux system without it having interent
+Mar 11 18:02:55 <Khaytsus>	I mean to be clear, it's just a garbage heap of stuff that really doesn't matter for the most part, but...
+Mar 11 18:03:09 <stenno>	so i can push stuff from another machine (which has internet) onto it, buti have to figure out exactly which packages to download from that server
+Mar 11 18:03:13 <stenno>	or upload, rather
+Mar 11 18:03:53 <Khaytsus>	Uggh, work wanted me to update python on a really old ubuntu once, I was like let's just migrate this to a new box..   and in doing so, found that the application was horribly broken of course
+Mar 11 18:04:17 <Khaytsus>	But doing it offline?  ew why
+Mar 11 18:04:27 <brjl>	"Really old" =  >12.xx?
+Mar 11 18:04:30 <djph>	stenno: are box-with-internet and box-without interconnected?
+Mar 11 18:04:52 <stenno>	djph: i can connect via ssh to box without internet, but i cannot get back from the non-internet to the internet one
+Mar 11 18:05:05 <Khaytsus>	I knew a guy that had a computer literally in the woods..  he had some crazy system of collecting packages and putting them on CD or such (this was quite a while back) to update it.
+Mar 11 18:05:10 <stenno>	so i have to push from the internet one to the non-internet one
+Mar 11 18:05:20 <Khaytsus>	brjl: I don't recall, it was 14 I think, but not an LTS?  It was horribly out of date.
+Mar 11 18:05:37 <stenno>	i kinda know how to do offline updates, but it is difficult once i put it into an actual program
+Mar 11 18:05:40 <stenno>	for automation
+Mar 11 18:05:41 <djph>	stenno: so firewall between the two drops everything (ish) originating from non-internet-host ?
+Mar 11 18:05:49 <stenno>	djph: basically, yeah
+Mar 11 18:06:06 <brjl>	Running production software on old, non-LTS, versions of Ubuntu is a *bad* idea.
+Mar 11 18:06:20 <Khaytsus>	stenno: Well, it becomes a game of JUST ONE THING MISSING..  then repeat
+Mar 11 18:06:27 <stenno>	:x
+Mar 11 18:06:35 <Khaytsus>	brjl: I think that's abundantly clear
+Mar 11 18:06:44 <dTal>	surely if you automate that it's functionally the same as having the "offline" computer "online, but proxied and firewalled through the actually 'online' computer"
+Mar 11 18:06:47 <brjl>	I mean, I'm sure it wasn't old when it was implemented. But using non-LTS versions is just asking for problems in the future
+Mar 11 18:06:55 <djph>	stenno: ouch, that's quite a thorn
+Mar 11 18:06:56 <Khaytsus>	brjl: thanks cap'n obvious
+Mar 11 18:07:08 <brjl>	But lemme guess: You weren't the one who put it there in the first place :þ
+Mar 11 18:07:39 <Khaytsus>	I was not. Heck nobody even knew it "existed" until someone was auditing VMs and was like, what does this one do?  Oh.
+Mar 11 18:07:56 <Khaytsus>	It was set up like some 6 years prior by someone who left 5 years ago
+Mar 11 18:08:05 <brjl>	hahahaha tale as old as time
+Mar 11 18:08:06 <stenno>	djph: we would have to re-negotiate dozens of ipsec connections if we wanted to talk to the online-server
+Mar 11 18:08:24 <Khaytsus>	This is why you really should audit your systems..  We had no excuse, we only had like 10 VMs
+Mar 11 18:11:35 <stenno>	thats why i mentioned ssh tunnels earlier - we can now run services on our remote machines that are all behind some strict ipsec rules, all through the same port
+Mar 11 18:12:23 <stenno>	it makes the customer happy and also my bosses because i can just say 'we can do that now' and we don't even need to talk to our customers about it, it just works
+Mar 11 18:13:29 <Khaytsus>	stenno: What do you use, tailscale or such?
+Mar 11 18:14:14 <stenno>	just normal openvpn
+Mar 11 18:14:33 <stenno>	i have a tailscale client to _somewhere_ lol, but we never used it
+Mar 11 18:14:38 <stenno>	also fortigate
+Mar 11 18:14:42 <ajb_>	Zerotier
+Mar 11 18:15:14 <stenno>	i don't really understand enough about all this vpn magic, we kinda rely on external people for this ^_^"
+Mar 11 18:15:19 <ajb_>	Spin up VPS all over with ZT on it, have a couple that way
+Mar 11 18:15:41 <ajb_>	main one is in Azure, another in VPS in Sweden for reasons :)
+Mar 11 18:16:22 <Khaytsus>	I've heard of more and more people using tailscale to test production things that aren't internet facing just yet
+Mar 11 18:16:25 <stenno>	i got thrown in this world as a humble programmer, i am learning as i am going ;)
+Mar 11 18:16:56 <ajb_>	I haven't really reviewed Tailscale, but believe it's very similar, maybe a bit more polished than ZT
+Mar 11 18:17:21 <ajb_>	Actually testing ZT using SSO now, for a replacement to Fortigate stuff that has public facing
+Mar 11 18:17:27 <ajb_>	and failing insurance reviews
+Mar 11 18:18:13 <stenno>	thankfully i can depend on the knowledge of others here hehe, but we have some wild infrastructure
+Mar 11 18:19:33 <Khaytsus>	stenno: As long as your wild stuff doesn't get fixed when it's time for real production use ;)
+Mar 11 18:19:42 <pagios>	hello all, so i did mount.cifs a storage remotely on my linux machine, how can i know the filesystem of that storage? i dea i would like to copy symbolic links, and use chmod and linux perms
+Mar 11 18:19:45 <ajb_>	I love building shit, and automation :D
+Mar 11 18:19:53 <Khaytsus>	"protoduction"  Prototype it, it works, don't touch it!
+Mar 11 18:19:55 <swift110-mobile>	stenno: which distro are your asking
+Mar 11 18:19:55 <stenno>	i want to stay away from this, i am focusing on ansible automation now
+Mar 11 18:20:04 <stenno>	distro?
+Mar 11 18:20:20 <stenno>	just talking general network stuff i guess, but we are using ubuntu 22.04 lts
+Mar 11 18:20:25 <stenno>	server
+Mar 11 18:20:49 <swift110-mobile>	Ok I use Solus
+Mar 11 18:21:07 <stenno>	never heard of it
+Mar 11 18:21:17 <pagios>	getting this rsync: chown "/opt2/." failed: Permission denied (13)
+Mar 11 18:21:20 <stenno>	seems like it's... optimized for desktop /
+Mar 11 18:21:55 <pagios>	i am running root btw
+Mar 11 18:22:04 <pagios>	did a chmod 777 /opt2 to test, same same
+Mar 11 18:22:40 <Khaytsus>	pagios: running rsync as root on both sides?
+Mar 11 18:22:55 <Khaytsus>	Not something you want to do typically, but, if you really need to maintain uid/gid/permissions you have to
+Mar 11 18:23:03 <stenno>	are you using -og and --chown ?
+Mar 11 18:23:27 <pagios>	its a local rsync you know i  mounted the remote on /opt2
+Mar 11 18:23:33 <pagios>	so rsync avHK opt opt2
+Mar 11 18:24:41 <stenno>	what if you pass -og too
+Mar 11 18:24:52 <stenno>	hmm
+Mar 11 18:25:10 <pagios>	the symlinks  should copy file ?
+Mar 11 18:25:42 <pagios>	it seems to be refusing to create ownership of files on opt2
+Mar 11 18:25:53 <pagios>	how can i make the mount aware of permissions on my local sys
+Mar 11 18:25:57 <pagios>	i remember there was a way
+Mar 11 18:26:27 <pagios>	if i go to /opt2 i am seeing a number like 4543543 as owner of the files
+Mar 11 18:26:30 <pagios>	and not root
+Mar 11 18:26:48 <stenno>	so what if you pass -og
+Mar 11 18:26:51 <pagios>	so i think i should mount.cifs with some params
+Mar 11 18:26:57 <stenno>	as this keeps the owner and the group
+Mar 11 18:27:13 <pagios>	but i dunno what
+Mar 11 18:27:13 <pagios>	i just did mount.cifs -u user/pass //remote/share
+Mar 11 18:27:53 <pagios>	to rsync ?
+Mar 11 18:27:56 <pagios>	or mount.cifs
+Mar 11 18:28:21 <Khaytsus>	You're trying to rsync POSIX stuff to cifs?  Welp
+Mar 11 18:28:42 <pagios>	yes
+Mar 11 18:28:59 <pagios>	its like you know those storage boxes
+Mar 11 18:29:06 <pagios>	they porvide ssh, cifs etc
+Mar 11 18:29:13 <pagios>	i am using cifs
+Mar 11 18:29:37 <Khaytsus>	So.. cifs does not have POSIX uid/permissions/acls
+Mar 11 18:29:45 <stenno>	ba dum
+Mar 11 18:29:58 <pagios>	so better enable ssh on that box ?
+Mar 11 18:30:47 <pagios>	Khaytsus:  but will cifs support copying symbloic links for example ?
+Mar 11 18:32:29 <Khaytsus>	Doubt it
+Mar 11 18:35:33 <pagios>	so whats the best way ?
+Mar 11 18:35:37 <pagios>	exec request failed on channel 0 when trying to ssh
+Mar 11 18:43:05 <haspp>	hi! i want to bind '|' key to split tmux window vertically but ":bind | split-window -v" is splitting the window horizontally instead.
+Mar 11 18:45:02 <Anjor>	Ctrl + b + %
+Mar 11 18:45:58 <ski>	haspp : `-v' splits vertically, for me
+Mar 11 18:46:12 <haspp>	hmm
+Mar 11 18:46:39 <ski>	(iow, splits along the vertical axis, with one of the new windows above the other new one)
+Mar 11 18:46:43 <neoncortex>	it was not tmux split-window -h ?
+Mar 11 18:47:45 <neoncortex>	-v will split vertically, in the sense that it will create two vertical windows, in effect, splitting horizontally xD
+Mar 11 18:48:10 <Anjor>	Do you want two columns, or two rows?
+Mar 11 18:48:13 <ski>	what is a vertical window ?
+Mar 11 18:48:41 <haspp>	neoncortex: oh god thank you! -h is the right flag
+Mar 11 18:48:47 <neoncortex>	=D
+Mar 11 18:48:49 <stenno>	lol
+Mar 11 18:48:52 <ski>	oh, so you wanted to split horizontally
+Mar 11 18:49:00 <stenno>	that would have happened to me too
+Mar 11 18:50:14 <Anjor>	A lack of common standards has its weaknesses.
+Mar 11 18:51:39 <ssm_>	what standard would tmux follow if it followed one
+Mar 11 18:51:47 <ssm_>	assuming you're talking about tmux
+Mar 11 18:51:48 <ski>	`M-x split-window-vertically' (also `C-x 2') in Emacs also splits with one window above the other one; while `M-x split-window-horizontally' (also `C-x 3') splits with one window to the left of the other one
+Mar 11 18:52:12 <djph>	weird...
+Mar 11 18:52:30 <ski>	seems pretty straightforward, to me
+Mar 11 18:52:46 <ski>	you specify the axis you want to split along ..
+Mar 11 18:52:51 <neoncortex>	it makes sense, splitting horzontally creates two vertical windows (thats what I was trying to say ..)
+Mar 11 18:53:36 <djph>	ski: I would read "Split Horizontally" as "Split along the horizontal axis"
+Mar 11 18:53:52 <haspp>	ough who impelmented this...
+Mar 11 18:53:53 <ski>	exactly, djph
+Mar 11 18:54:09 <ski>	so, after splitting horizontally, you'd have one window to the left, and one to the right
+Mar 11 18:54:26 <haspp>	s/impelment/implement
+Mar 11 18:54:34 <ski>	take your scissor, and divide the horizontal axis in two
+Mar 11 18:54:56 <OwlWizard>	do any of you know wether raid can be paired with lvm?
+Mar 11 18:55:57 <peetaur>	OwlWizard: almost everything can be paired with almost everything... raid your raids if you want (but whether it makes sense is another topic .....and yes LVM on top of raid makes great sense; raid on top of LVM maybe does...for having more raid levels)
+Mar 11 18:56:49 <peetaur>	what I do is just make a few partitions for the raid levels (eg. raid1 for boot, raid10 or whatever for the rest, or zfs for the rest), and lvm on top (other than zfs)
+Mar 11 18:57:09 <OwlWizard>	peetaur. yea im looking for a fs to have more redundancy and im currently debating wether to go with zfs or the combination of raid,lvm and luks
+Mar 11 18:57:43 <peetaur>	how much data is there? if it's like a 36 disk 4U box I would say go for zfs :)  but for small things maybe it's overkill (complexity with benefit but maybe not enough)
+Mar 11 18:58:27 <OwlWizard>	yea just a personal desktop. i just heard that zfs is good to stop data corruption over time
+Mar 11 19:00:56 <gog>	yeah i've done lvm inside of an mdadm volume, it works great
+Mar 11 19:01:27 <gog>	you can also use lvm to do the mirroring or striping itself
+Mar 11 19:01:44 <OwlWizard>	can i boot lvm from grub? zfs as root kinda needs a different bootloader
+Mar 11 19:02:00 <gog>	iirc grub has a module for lvm volumes
+Mar 11 19:02:49 <gog>	there just has to be enough space for grub-install to embed it. alternatively for UEFI systems the EFI System Partition cannot be within an LVM volume
+Mar 11 19:03:05 <gog>	so grub will put modules there
+Mar 11 19:05:16 <brjl>	OwlWizard: I boot LVM from grub. You just need to configure grub to do so
+Mar 11 19:06:22 <gog>	keep in mind it's been awhile since i had a system with a multiple spinning disks. i now just have one big NVME SSD
+Mar 11 19:06:46 <OwlWizard>	gog, im wanting to boot from 2 ssd's
+Mar 11 19:06:53 <gog>	and those don't benefit as much from striping because one can saturate an x1 PCIe
+Mar 11 19:07:06 <gog>	imo go with lvm then
+Mar 11 19:07:45 <Southern_Gentlem>	just  remember when the ssd fail they are a total fail
+Mar 11 19:07:53 <gog>	yeah
+Mar 11 19:08:09 <OwlWizard>	gog, i want raid for ault tolerance not speed
+Mar 11 19:08:11 <Southern_Gentlem>	backup backup backup
+Mar 11 19:08:42 <gog>	are the SSD's identical?
+Mar 11 19:08:47 <gog>	in geometry
+Mar 11 19:08:47 <OwlWizard>	gog, yes
+Mar 11 19:09:00 <OwlWizard>	gog not yet
+Mar 11 19:09:23 <OwlWizard>	i currently only have my install on one of them
+Mar 11 19:09:58 <OwlWizard>	Southern_Gentlem, backup and raid are two different things
+Mar 11 19:10:07 <OwlWizard>	and im not looking for backups
+Mar 11 19:11:42 <Southern_Gentlem>	drive failures and backups are though
+Mar 11 19:12:55 <OwlWizard>	ok, but that doesnt change that i still would rather have fault tolerance
+Mar 11 19:12:59 <peetaur>	OwlWizard: if you read the docs, they'll say you can boot healthy or degraded on ext4 on mdadm (metadata 0.90, 1.0, 1.1, 1.2; raid 0, 1, 10, 5, 6, etc.) on lvm .....but in my experience only metadata 0.90 or 1.0 and raid 1 or 10 are reliable.
+Mar 11 19:13:44 <peetaur>	and that's why I said raid1 on boot before...   rootfs can be anything else... the initramfs has the job of supporting it and can do anything you configure (eg. maybe a hook script to run a degraded nearly failed raid ...but grub has nothing to do with it so can't fail there)
+Mar 11 19:15:52 <peetaur>	for a machine sitting in front of you it's not so bad ...but if you have to ssh in to fix some boot problem that's just every day stuff like a disk died (happens all the time if you have enough machines), I find it absurd and too much hassle if it can't just boot.
+Mar 11 19:16:46 <gog>	yeah i'd set up a server a bit differently than a workstation
+Mar 11 19:38:00 <chowbok>	Hi folks, I'm running mpd on a headless server. When I had it just set up with ALSA (i.e., no pulseaudio or pipewire), it worked fine, but now that I've installed pulse, set to run system-wide, I have no sound. The only sink I see is null. My goal is to get it to work with Bluetooth.
+Mar 11 19:39:33 <apathor>	chowbok: is it running as your user or as root?
+Mar 11 19:40:22 <chowbok>	As a dedicated pulse user
+Mar 11 19:42:46 <neoncortex>	pkill -9 pulseaudio as your normal user?
+Mar 11 19:43:16 <n4dir>	 i think some init voodoo is involved to stop pulse
+Mar 11 19:43:22 <neoncortex>	or pulseaudio -k
+Mar 11 19:43:33 <n4dir>	though i would not know why he would want to stop it.
+Mar 11 19:43:48 <n4dir>	the distro might be good to know
+Mar 11 19:43:58 <chowbok>	I have a systemd service defined, I can stop it with that if I need to.
+Mar 11 19:44:02 <chowbok>	Arch
+Mar 11 19:44:17 <chowbok>	Arch Linux Arm, actually.
+Mar 11 19:44:18 <n4dir>	and you did look at alsamixer?
+Mar 11 19:44:19 <neoncortex>	n4dir: in slackware, once in a while it happens that after I log in, I have no sink besides null, so killing pulseaudio somehow solves it.
+Mar 11 19:44:41 <n4dir>	neoncortex: ah. got you, i think. audio is weird
+Mar 11 19:46:12 <n4dir>	the other day i installed, pavucontrol, or however the pulse-mixer is called, showed it as runnning, but no sound. alsamixer from terminal solved the problem. Weird
+Mar 11 19:46:16 <chowbok>	alsamixer just shows me PulseAudio as the "card"
+Mar 11 19:46:23 <n4dir>	never hurts to look at alsamixer
+Mar 11 19:46:36 <chowbok>	It is unmuted and turned up
+Mar 11 19:46:40 <n4dir>	chowbok: can't you choose it if you hit F6 (iirc)
+Mar 11 19:46:50 <chowbok>	Choose what?
+Mar 11 19:46:57 <n4dir>	ah, i see. Well. damn. That would have been to easy (choose the soundcard)
+Mar 11 19:48:12 <skdnn>	how does journald rotate logs?
+Mar 11 19:48:42 <skdnn>	I have a feeling it's broken
+Mar 11 19:49:34 <chowbok>	skdnn: The settings are /etc/systemd/journald.conf
+Mar 11 19:49:47 <ioria>	skdnn, how bit is it ? sudo du -sh /var/log/journald
+Mar 11 19:51:22 <skdnn>	it's empty lol
+Mar 11 19:52:03 <chowbok>	Empty or missing completely?
+Mar 11 19:52:10 <ioria>	not persistent then
+Mar 11 19:52:13 <skdnn>	journals are taking 30 mb
+Mar 11 19:52:33 <skdnn>	it is present but has no directives
+Mar 11 19:52:52 <chowbok>	What's taking 30MB then?
+Mar 11 19:58:10 <bombastick>	does Debian by default do log rotation for everything? If I leave a server unattended for 5 years, will it run out of disk space?
+Mar 11 19:59:27 <ballsxd>	try it
+Mar 11 19:59:56 <skdnn>	journals
+Mar 11 20:00:00 <chowbok>	systemd defaults to rotating logs when space in the partition falls below a certain percent
+Mar 11 20:00:49 <chowbok>	skdnn: If /var/log/journal is empty, where's the 30MB? /run/log/journal?
+Mar 11 20:01:05 <skdnn>	journald.conf is empty
+Mar 11 20:02:25 <Thuryn>	bombastick, the short answer is no.  you need to check to make sure your logs are being rotated.
+Mar 11 20:05:04 <bombastick>	aw snap
+Mar 11 20:07:23 <trolltechQti>	if I have a variable foo=( bar b:a\r ) how can I protect the second string ?
+Mar 11 20:08:36 <lopid>	?
+Mar 11 20:09:04 <lopid>	protect from whom?
+Mar 11 20:09:06 <trolltechQti>	i have an array with urls
+Mar 11 20:09:34 <trolltechQti>	but all the special characters let it fail
+Mar 11 20:09:49 <lopid>	single quote them
+Mar 11 20:10:10 <trolltechQti>	ty
+Mar 11 20:10:47 <chowbok>	Any thoughts on my Pulse issue?
+Mar 11 20:13:10 <n4dir>	chowbok: you could wait, or ask again, you could also try #opensourcemusicians or #lau. I also recall the arch wiki being good, but you've probably been there already. Good luck
+Mar 11 20:13:20 <ssm_>	trolltechQti: not sure what you're doing, but setting IFS=$(printf '\n') is a (almost) perfect way to sanitize fields in shell
+Mar 11 20:13:59 <lopid>	…
+Mar 11 20:14:20 <ssm_>	delimits by newlines, which works always, unless you're dealing with something like a filename with a newline character in it
+Mar 11 20:23:35 <alian5687>	ssm_: IFS="
+Mar 11 20:23:42 <alian5687>	" works too
+Mar 11 20:23:57 <ssm_>	I tried that I think, and it didn't work in ksh
+Mar 11 20:24:05 <ssm_>	either way, $(printf '\n') looks cleaner
+Mar 11 20:24:19 <alian5687>	ssm_: sure agreed
+Mar 11 20:24:20 <ssm_>	and is more obvious in terms of what you're doing to anyone reading your script
+Mar 11 20:27:49 <Guest25>	o
+Mar 11 20:27:58 <Guest25>	i'd like freedom plz
+Mar 11 20:28:08 <Guest25>	Ryban you are a monster
+Mar 11 20:28:33 <Guest25>	I've found a few ... interesting things. cgal
+Mar 11 20:28:40 <Guest25>	files in mirrors
+Mar 11 20:28:49 <Guest25>	 and plenty of the like.
+Mar 11 20:28:58 <Guest25>	oh and cheatsheets
+Mar 11 20:29:07 <geirha>	$(printf '\n')  expands to an empty string
+Mar 11 20:31:19 <geirha>	trolltechQti: perhaps you read those urls from a source using windows-line endings (CRLF), in which case you probably want to remove those CRs as they are not meant to be part of the data
+Mar 11 20:31:45 <pagios>	hello all, anyone familiar with borg backu ?
+Mar 11 20:32:13 <Disconsented>	suppose someone says yes
+Mar 11 20:34:48 <pagios>	question about ransomeware and borg, for example say you are on backup3 (incremental of backup1) and a ransomeware hit at that point in time.  the ransomeware encrypts all the files and now borg detects that the file changed and uploades backup4 which is HUGE since everything changed. BUT does it mean i. can still rollback tup bakcup 1 --> 3 safely ?  which means there is no way to overwrite old backups already closed by borg ?
+Mar 11 20:35:28 <Heliumcopter>	Hello again. After some technical difficulties I am back.
+Mar 11 20:36:42 <Heliumcopter>	Are there any actually damaging viruses for GNU/Linux?
+Mar 11 20:37:11 <Anjor>	Yes.
+Mar 11 20:37:12 <ssm_>	geirha: printf '\n' | vis -l == \$, which is a newline according to vis(1)
+Mar 11 20:37:37 <Heliumcopter>	Anjor: What are they?
+Mar 11 20:38:05 <mechap>	has anyone successfully compiled wayfire ?
+Mar 11 20:38:15 <trolltechQti>	Heliumcopter, not sure if logofail would be dangerous if you used one ...
+Mar 11 20:38:15 <geirha>	ssm_: $(cmd) captures the output of cmd, and removes all trailing newlines. printf '\n' outputs a trailing newline, so you end up with an empty string
+Mar 11 20:38:32 <Heliumcopter>	trolltechQti: Would that be?
+Mar 11 20:38:44 <ssm_>	geirha: let me test in some other shells
+Mar 11 20:39:00 <trolltechQti>	Heliumcopter, its not exactly targeting linux but it targets the bios logo picture
+Mar 11 20:39:11 <geirha>	you'll find that behavior in all bourne-style shells
+Mar 11 20:39:27 <Heliumcopter>	trolltechQti: Interesting, could you please explain to me how does it works?
+Mar 11 20:40:30 <trolltechQti>	Heliumcopter, it uses a code execution but inside the picture data ... but most vendors are supplying bios updates already ...
+Mar 11 20:41:08 <Disconsented>	pagios> In general, the point of incremental backups is that you're only uploading changes. So, yes, if you restore an backup before the ransomware attack you'll get clean data back.
+Mar 11 20:41:29 <Heliumcopter>	trolltechQti: Does it also affects Libreboot (Coreboot)?
+Mar 11 20:41:57 <Disconsented>	However, ransomware sometimes shows up with a time delay, thus effectively running silently and consequently infecting backups
+Mar 11 20:42:01 <trolltechQti>	Heliumcopter, https://arstechnica.com/security/2023/12/just-about-every-windows-and-linux-device-vulnerable-to-new-logofail-firmware-attack/
+Mar 11 20:42:19 <Heliumcopter>	trolltechQti: Thank you.
+Mar 11 20:42:55 <trolltechQti>	Heliumcopter, it affects only uefi systems ... libreboot isnt exactly uefi
+Mar 11 20:43:18 <ssm_>	geirha: I think you're right, but it still works because IFS will do no splitting if set to NULL
+Mar 11 20:43:25 <ssm_>	so you can just do IFS=''
+Mar 11 20:43:33 <Heliumcopter>	trolltechQti: I just read that.
+Mar 11 20:43:42 <Heliumcopter>	Thanks anyways
+Mar 11 20:44:54 <geirha>	ssm_: doesn't really fix the problem though, just moves it a bit
+Mar 11 20:45:54 <geirha>	the proper solution is to use quotes, which inhibit both word-splitting and pathname expansion. IFS='' only disables word-splitting
+Mar 11 20:47:25 <ssm_>	use quotes?
+Mar 11 20:48:05 <geirha>	Such as "${foo[@]}" instead of ${foo[@]} or ${foo[*]}
+Mar 11 20:48:06 <ssm_>	wait I get what you mean
+Mar 11 20:48:11 <ssm_>	yeah
+Mar 11 20:48:23 <ssm_>	I thought you meant use quotes on IFS which is what I was doing
+Mar 11 20:49:23 <ssm_>	shouldn't "${foo[*]}" inhibit both?, @ should still retain word splitting
+Mar 11 20:49:49 <ssm_>	unless arrays don't behave like @ and * normally do
+Mar 11 20:50:10 <geirha>	"${foo[@]}" expands to each element as separate word/argument, while "${foo[*]}" joins all the arguments into a single word
+Mar 11 20:50:18 <ssm_>	yeah
+Mar 11 20:51:15 <geirha>	${foo[@]} without quotes will expand to each element as a separate word, then each of those words are split into more words (based on IFS), then those words are replaced by matching filenames if they contain any *, ? or [...]
+Mar 11 20:51:34 <ssm_>	actually just IFS= works too
+Mar 11 20:52:30 <ssm_>	for the input "foo bar" "baz", $@ and $* == "foo" "bar" "baz", "$@" == "foo bar" "baz", and "$*" == "foo bar baz"
+Mar 11 20:54:35 <ssm_>	geirha: thanks for correcting me
+Mar 11 20:55:28 <Darkpaw>	OML, that’s a lotta people
+Mar 11 20:55:55 <Darkpaw>	Hi.
+Mar 11 20:55:58 <Darkpaw>	Lol
+Mar 11 20:56:02 <Darkpaw>	Wassup
+Mar 11 20:56:05 <ssm_>	lot of joins? I have those off
+Mar 11 20:56:07 <ssm_>	bots?
+Mar 11 20:57:49 <ski>	(lot of people ? .. where ?)
+Mar 11 20:58:15 <Darkpaw>	People in people thing. Unless they’re all bots.
+Mar 11 20:58:25 <ssm_>	are you a bot?
+Mar 11 20:58:25 <ski>	we're all bots, in here
+Mar 11 20:58:29 <ski>	you too
+Mar 11 20:58:35 <ssm_>	better than being a human
+Mar 11 20:58:49 <ssm_>	dead internet theory has extended to irc
+Mar 11 20:59:07 <Darkpaw>	What? Lol
+Mar 11 20:59:21 <EdFletcher>	beep boop 🤖 🦾 🦿
+Mar 11 20:59:33 <Darkpaw>	Bop Bloing
+Mar 11 20:59:43 <Darkpaw>	We should do some sort of rp
+Mar 11 20:59:50 *	ssm_ is stuck in an infinite loop dividing by zero
+Mar 11 20:59:52 <Heliumcopter>	ssm_: What is the "Dead Internet theory" ?
+Mar 11 21:00:50 <ssm_>	conspiracy theory that the web, mostly large corporate websites, mostly consist of bots and not actual people
+Mar 11 21:01:04 <Darkpaw>	Eeeeeenterestingk
+Mar 11 21:01:08 <Heliumcopter>	ssm_: That might actually be possible.
+Mar 11 21:01:21 <Thuryn>	ssm_, we could prove/fix it:  put a paywall in front of stuff
+Mar 11 21:01:24 <Darkpaw>	Yeah, oml
+Mar 11 21:01:31 <Thuryn>	take away the free+anonymous accounts
+Mar 11 21:01:33 <Darkpaw>	Ig
+Mar 11 21:01:36 <Thuryn>	dem bots will dry up
+Mar 11 21:01:52 <silly>	or it'll be the other way around...
+Mar 11 21:02:18 <Thuryn>	what's "the other way around"
+Mar 11 21:02:20 <ssm_>	it's actually popular enough to have a wiki entry https://en.wikipedia.org/wiki/Dead_Internet_theory
+Mar 11 21:02:30 <ssm_>	written by bots O_O
+Mar 11 21:02:42 <silly>	bots get to sign up for free, whereas us won't be able to join
+Mar 11 21:02:54 <Darkpaw>	Fancy
+Mar 11 21:03:15 <Darkpaw>	I think that’s actually a really good idea, haha.
+Mar 11 21:03:52 <Xeah>	Y’all wanna do a Roleplay?
+Mar 11 21:04:02 <Thuryn>	no
+Mar 11 21:04:12 <Xeah>	Naur
+Mar 11 21:04:29 <ski>	let's roleplay that you have an issue with some Linux command, and we try to figure out what's the problem
+Mar 11 21:04:41 <Xeah>	Sure, lol
+Mar 11 21:04:53 <Xeah>	COMMAND
+Mar 11 21:05:04 <Heliumcopter>	O.K. so when I run ls -a, the command returns with error 256
+Mar 11 21:05:11 <Xeah>	I have literally no idea what I’m doing, lol
+Mar 11 21:05:27 <Heliumcopter>	Me neither.
+Mar 11 21:05:27 <ssm_>	Heliumcopter: congratulations on breaking ls
+Mar 11 21:05:31 <silly>	i have no problems with my linuxes :(
+Mar 11 21:05:44 <ski>	shouldn't the process status be truncated to a byte, anyway ?
+Mar 11 21:05:59 <ssm_>	Heliumcopter: do other commands work?
+Mar 11 21:06:03 <ssm_>	what if you change directories
+Mar 11 21:06:18 <Heliumcopter>	ssm_: Well, uname -r returns with error code 2
+Mar 11 21:06:23 <Xeah>	Ima go join a different server. I have a friend waiting.
+Mar 11 21:06:34 <Xeah>	Bye y’all!
+Mar 11 21:06:47 <stenno>	bye
+Mar 11 21:06:51 <Heliumcopter>	Bye.
+Mar 11 21:06:54 <ssm_>	buy
+Mar 11 21:07:16 <Xeah>	*leaves in the best inexperienced way*
+Mar 11 21:07:27 <Heliumcopter>	ssm_: But I do not think the fact that I was playing corrupting commands files might affect the malfunctioning of my commands.
+Mar 11 21:07:55 <ssm_>	corrupting commands files?
+Mar 11 21:08:14 <Heliumcopter>	ssm_: Yes
+Mar 11 21:08:44 <ssm_>	what is that?
+Mar 11 21:09:01 <Foxboron>	124
+Mar 11 21:09:12 <ssm_>	255
+Mar 11 21:09:27 <stenno>	that doom clone?
+Mar 11 21:09:38 <Heliumcopter>	ssm_: Commands are stored in files (From what I know) in /bin, so I partically corrupted all of them by removing 30% of the text
+Mar 11 21:09:47 <stenno>	psdoom
+Mar 11 21:10:10 <stenno>	https://psdoom.sourceforge.net/
+Mar 11 21:10:32 <stenno>	actually i should have probably not linked that, sorry
+Mar 11 21:10:42 <ssm_>	Heliumcopter: oh you're doing this on purpose
+Mar 11 21:11:25 <Heliumcopter>	ssm_: I am. I am roleplaying, but if you want me to stop, I will stop right now. I will anyways stop now.
+Mar 11 21:13:07 <ballsxd>	*music stops*
+Mar 11 21:13:46 <Heliumcopter>	ballsxd: What were you listening to?
+Mar 11 21:14:07 <skdnn>	one pleasant part in using linux is uninstalling trash packages
+Mar 11 21:14:10 <ballsxd>	nothing Heliumcopter i was just going along with the story
+Mar 11 21:14:41 <Heliumcopter>	ballsxd: I am actually listening to the Byelorussian SSR national anthem.
+Mar 11 21:15:26 <ballsxd>	well, i hope you're having fun
+Mar 11 21:16:03 <ballsxd>	i might put up Shpongle soon
+Mar 11 21:16:14 <Heliumcopter>	ballsxd: It depends on your definition of fun, but we cannot talk about it here because our arguments must stick to the GNU/Linux topic.
+Mar 11 21:18:31 <ballsxd>	you mean... GNU+Linux?
+Mar 11 21:19:05 <ballsxd>	well, i'm listening from a server which is hosted on GNU/Linux. So i think it counts
+Mar 11 21:19:53 <Heliumcopter>	ballsxd: GNU+Linux can also be called GNU/Linux; it means the same thing.
+Mar 11 21:20:05 <ssm_>	I'm listening to https://www.youtube.com/watch?v=7eK0JVH4Cfk
+Mar 11 21:20:31 <terzievk>	How to format a flash drive when fdisk says `no medium found`?
+Mar 11 21:20:32 <ssm_>	on loop, for the past 20 years
+Mar 11 21:20:59 <ballsxd>	that's a pretty long time ssm_
+Mar 11 21:21:08 <ballsxd>	i'm not sure if i would be able to do that
+Mar 11 21:21:15 <Heliumcopter>	Even if it is a bit to name the O.S. along with the kernel, peopl do not usually say MacOS/XNU or Windows/NT, but that is partially justified by the fact that Linux is a third-party component.
+Mar 11 21:21:43 <Heliumcopter>	a bit strange*
+Mar 11 21:22:00 <MacGyver>	ssm_: Wow, that's some achievement. Especially the part where due to relativity you managed to listen to it for longer than youtube has existed in my frame of reference.
+Mar 11 21:22:16 <terzievk>	Tried `eject -t` and the gnome disks gui without any luck
+Mar 11 21:23:12 <Heliumcopter>	terzievk: If that is possible, plug in and out the drive.
+Mar 11 21:24:46 <ssm_>	MacGyver: eventually you come to the realization that the universe is lugia's stomach, and we're all just stuck inside it alone
+Mar 11 21:25:17 <Heliumcopter>	ssm_ Who is lugia?
+Mar 11 21:25:53 <ssm_>	I will not delve further into this topic as in tends to invoke large quantities of psychic damage
+Mar 11 21:26:17 <neoncortex>	ssm_: out mission is gtfo?
+Mar 11 21:26:46 <Heliumcopter>	ssm: I can take that, I read Hawking, Schumpeter and Einstein.
+Mar 11 21:27:57 <terzievk>	Heliumcopter: plugging it back does nothing. All I find is /dev/disk/by-id/usb-NAND_USB2DISK-0:0
+Mar 11 21:28:17 <Heliumcopter>	terzievk: can you mount it?
+Mar 11 21:29:22 <terzievk>	Heliumcopter: nope
+Mar 11 21:30:00 <Heliumcopter>	terzievk: Show me your last 10 lines of dmesg
+Mar 11 21:32:37 <Heliumcopter>	hentai: I do not know if your name does respect the Rules.
+Mar 11 21:35:55 <terzievk>	Heliumcopter:  what paster to use? ix.io is down...
+Mar 11 21:36:37 <mdogg>	You can use https://paste.disconsented.com/
+Mar 11 21:36:52 <Heliumcopter>	terzievk: bpa.st
+Mar 11 21:36:59 <Disconsented>	Probably better to use https://paste.linux.chat/
+Mar 11 21:37:11 <mdogg>	10-4
+Mar 11 21:38:52 <terzievk>	https://paste.linux.chat/?83be5d08117a8186#CGbbX5wcP2hm8BKXxHAvpqWUuD2nshJDmFQeFkN7JqKj
+Mar 11 21:41:19 <terzievk>	How to pass an hour back to `dmesg --since [time]` btw?
+Mar 11 21:44:46 <terzievk>	  sorry got disconnected
+Mar 11 21:47:37 <ioria>	terzievk, i'd use journalctl e.g.  journalctl --since "1 hour ago"
+Mar 11 21:48:23 <mdogg>	Might need to run journalctl with sudo to see all the messages.
+Mar 11 21:49:26 <nvz>	terzievk: --since "1 hour ago"
+Mar 11 21:49:44 <ioria>	but first of all, fix your connection terzievk
+Mar 11 21:49:59 <nvz>	ioria: maybe thats what they're trying to do, and maybe they don't use systemd
+Mar 11 21:50:18 <ioria>	yeah, we don't know
+Mar 11 21:50:40 <ballsxd>	and maybe they dont even use sudo
+Mar 11 21:50:44 <Khaytsus>	Maybe systemd crashes their system.
+Mar 11 21:50:49 <ballsxd>	who knows
+Mar 11 21:50:50 <mdogg>	heh
+Mar 11 21:51:03 <nvz>	I just spent a few minutes on an online chat support for a service, and the guy was trying to wrap up the chat session and didnt even answer the one question I asked
+Mar 11 21:51:22 <nvz>	so, all I'm saying is, maybe we should answer the question asked before jumping to conclusions
+Mar 11 21:52:03 *	Khaytsus gets out his Jump to Conclusions mat
+Mar 11 21:52:08 <nvz>	xD
+Mar 11 21:53:39 <terzievk>	sorry for the disconnect...
+Mar 11 21:53:47 <nvz>	I for one had stopped using sudo when I was still supporting debian, because sudo isn't installed by default unless you choose not to set a rootpw in the install, but pkexec is part of the base system. Here however its a general linux support, so yeah, it would probably be wise to try take care as to making assumptions about things a user may not have
+Mar 11 21:54:34 <nvz>	inexpereinced users may wind up down a rabbit hole trying to find or install stuff they don't need or want because you didn't just answer the question as it was asked
+Mar 11 21:54:36 <stuv>	hey folks, is there a way i can stream videos with lynx or another browser that supports the console and just use vga mode or so like in the old days ?
+Mar 11 21:54:48 *	Khaytsus blinks
+Mar 11 21:55:43 <nvz>	stuv: yes, you will need some sort of commandline video player an output method that will work on the console like framebuffer or aalib (text), and you will also need a means of getting the stream URI for the video
+Mar 11 21:55:49 *	wantyapps winks at Khaytsus
+Mar 11 21:56:09 <nvz>	stuv: I for example use yewtube and mplayer or cvlc for such things on youtube.
+Mar 11 21:56:56 <terzievk>	here's the broken flash drive dmesg from the past hour https://paste.linux.chat/?b0a6add4484cc480#FjYvyLRaC2EoGXYbErnqvGqyLcs79y4tjJjdqFNn4urN
+Mar 11 21:57:25 <nvz>	stuv: most sites don't make the URI of their videos easily available, which is the bigger problem. Which is why apps like yewtube (for Youtube) and pianobar (for Pandora) and such exist
+Mar 11 21:57:35 <militantorc>	If I am logged in to an encrypted system and I do a dd of a partition to an external drive will the output be encrypted or plain
+Mar 11 21:58:15 <nvz>	if you dd the container, it will be encrupted, obviously
+Mar 11 21:58:32 <nvz>	however if you dd the /dev/mapper device of the open partition, it will be unencrypted
+Mar 11 21:59:22 <nvz>	I've never done such a thing, so I don't know what you will end up with doing so, but I'd imagine you'd just wind up with an image of the filesystem if you were to use if=/dev/mapper/my_crypt_mapper
+Mar 11 22:02:08 <carbonfiber>	Using the ed text editor, is it then possible to write a line to a shell, and the read the result into a buffer, using a single command? So that "1w ! sh > tmp.txt" followed by "r ! tmp.txt" can be replaced with a single command that does not use a temporary file?
+Mar 11 22:03:22 <nvz>	terzievk: idk what your issue is specifically, but those messages seem to be merely the kernel logging that the hardware found and corrected an error on the PCIe bus. It could be something related to a bad connection, but it doesn't necessarily mean anything is wrong with the device, just that the PCIe bus had encountered an error with the device, and was able to correct the problem, the fact that it continues
+Mar 11 22:03:28 <nvz>	to occur over and over suggests you could have an issue with the connection or something
+Mar 11 22:03:56 <militantorc>	nvz, then i guess its better to just tarball the files as backup procedure
+Mar 11 22:04:06 <militantorc>	instead of the raw partition
+Mar 11 22:04:22 <nvz>	terzievk: were it me, I'd remove and inspect the device throwing the errors, and clean its contacts and re-insert it first and see if the problem continues
+Mar 11 22:04:50 <Khaytsus>	Where's neoncortex, someone's asking about ed!
+Mar 11 22:04:57 <Khaytsus>	YOUR TIME IS NOW
+Mar 11 22:05:04 <mdogg>	Zzzzz
+Mar 11 22:05:36 <mdogg>	Is he the other 'ed' user?
+Mar 11 22:05:57 <nvz>	militantorc: I can't say, I have no idea what your situation is like. Why you are backing up, how much space you have to do so, etc..  typically a file based approach is more desireable as you can do it incrementally, only backup what you need to backup, etc. however there are cases where I'd prefer a backup of a whole drive or partition
+Mar 11 22:06:09 <Khaytsus>	There's two?
+Mar 11 22:07:09 <mdogg>	I assume so since carbonfiber uses it also.
+Mar 11 22:07:15 <nvz>	on an unrelated note, I can sure notice a difference when I've slept and ate and my brain is operating properly as opposed to how I usually feel when I'm sitting here :P
+Mar 11 22:07:23 <militantorc>	nvz, 1tb hard drive to external media
+Mar 11 22:07:36 <militantorc>	i think i'll go with tar of files now because its fresh and has not much files atm
+Mar 11 22:07:47 <militantorc>	but after a density threshold i prefer disk image
+Mar 11 22:08:02 <mdogg>	You are my density.
+Mar 11 22:08:04 <nvz>	militantorc: well yeah, that sounds like a good assessment. I wouldnt waste 1TB of space backing up a mostly empty drive, that sounds silly
+Mar 11 22:08:21 <JeffH>	Is there a way to convert a rhel7 rpm to an rhel8 rpm?
+Mar 11 22:08:59 <Khaytsus>	JeffH: does it not just install?
+Mar 11 22:09:15 <nvz>	militantorc: the only reason I typically do a block-based backup is when I'm actually trying to preserve the entire state of the machine because I'm about to do something significantly risky, I have never really used such a method for routine or permanent backups, just as a failsafe before I do something stupid.
+Mar 11 22:09:53 <terzievk>	nvz: I noticed those messages a few years back and tried figuring it out and asking questions here but it appeared to be above my head and figured why bother when my laptop seems to work fine
+Mar 11 22:10:36 <militantorc>	nvz, i do before upgrading/installing os
+Mar 11 22:11:03 <JeffH>	Khaytsus: having problems installing our home grown rpm. Thought I’d convert it to rhel8 and try installing that if conversion was easy.
+Mar 11 22:11:31 <nvz>	terzievk: yeah well I personally don't like anything that is spewing to my logs it makes managing the system challenging when something is flooding the logs. The error in and of itself like I said, and you also say, isn't serious. It may however indicate some sort of connectivity issue or interference that may be mildly effecting system performance as well as cluttering your logs
+Mar 11 22:11:32 <Khaytsus>	... wat?  You'd just build it using C8.  But..  can you not just install it?
+Mar 11 22:12:59 <nvz>	terzievk: you really should do something to address your connectivity issues, if you cannot fix your actual internet connection, you could at least explore options of an IRC bouncer or using a remote system. I pay $30/yr for a vps where I run my irc client and connect to it remotely. If you keep popping in and out like that it may result in you being banned from things
+Mar 11 22:16:23 <mdogg>	I hide join/parts but admittedly that sometimes works against me.
+Mar 11 22:17:31 <terzievk>	nvz:  Those are a few good points. I have some free time and I can see what I can do about it and maybe learn something along the way. As long as the connection... I used to have set up closing the lid on my laptop to do nothing but since the new gnome update it seems to hibernate/sleep and it's been a pain in the ass...
+Mar 11 22:18:48 <twainwek>	how can i get certs for a domain that doesn't have access to port 80.... AND doesn't have api to dns?
+Mar 11 22:19:10 <twainwek>	i mean i can get it once or twice manually, but i want an automated way of renewal
+Mar 11 22:20:51 <ballsxd>	is there a way for me to clone my entire (boot) SSD while it's running? i really like clonezilla but i can't turn my system off that often to make meaningful backups
+Mar 11 22:21:58 <nvz>	terzievk: well what I had done before I got a vps is just confiured my router with custom firmware and ran my irc client on my router so it stayed connected all the time and I could just hop on and off as needed
+Mar 11 22:23:32 <mdogg>	If it's a laptop and it's plugged in to AC power the majority of the time, you should be able to configure it so that the only thing that is allowed to sleep is an external monitor.
+Mar 11 22:24:23 <terzievk>	nvz:  I didn't even know one could do that
+Mar 11 22:24:59 <nvz>	terzievk: yeah there are lots of options, folks in #librea know a lot about the various options if you wanna ask about setting up a bouncer or such.
+Mar 11 22:25:44 <mdogg>	The bouncer wouldn't do much good if the machine it is configured on goes to sleep every 2 minutes, though.
+Mar 11 22:25:44 *	ballsxd starts bouncing around
+Mar 11 22:26:51 <hodapp>	ballsxd: on a running system that's really hard to do properly, unless it's something like Alpine or on something that allows snapshotting of the FS or volume, like LVM or btrfs or ZFS
+Mar 11 22:27:28 <ballsxd>	hodapp: it's just your plain old ext4, nothing fancy
+Mar 11 22:27:52 <mdogg>	ballsxd: I agree with hodapp.  The only real way to do that on a running system (that I know) is by using something like Snapper on btrfs.
+Mar 11 22:28:08 <ballsxd>	is it any easier to copy just entire / then?
+Mar 11 22:28:36 <mdogg>	/ is constantly changing.
+Mar 11 22:28:37 <hodapp>	you might be able to get away with imaging the FS while using it, and it'll probably just fsck it on bootup if you actually try to ever *use* that backup, but uhhhh I don't recommend it
+Mar 11 22:29:36 <ballsxd>	oh well, i guess i can keep it at /home and /etc for the daily backups and do the rest whenever possible
+Mar 11 22:29:59 <ballsxd>	possibly /var aswell.
+Mar 11 22:30:03 <terzievk>	mdogg:  maybe that's related https://gitlab.gnome.org/GNOME/gnome-tweaks/-/commit/782c881ee8c46a3170d192a47b9070514adbafb2 ... idk. Gnome does gnome things
+Mar 11 22:30:03 <mdogg>	Those would be the most important things to backup anyway.  Especially /home.
+Mar 11 22:30:28 <hodapp>	ballsxd: if you really want to do live backups, look at having root on btrfs or ZFS or something, and make a snapshot and then back up from the snapshot instead
+Mar 11 22:30:31 <hodapp>	might be able to do this with LVM, not sure
+Mar 11 22:30:51 <treefrob>	I would use a logical backup tool (tar, for example) on a mounted / filesystem
+Mar 11 22:31:16 <treefrob>	as long as it's *relatively* idle, you can get away with it
+Mar 11 22:31:39 <treefrob>	tar will complain about some files (mostly logs) changing while it read them
+Mar 11 22:31:45 <ballsxd>	hodapp: thanks for the suggestion. however i believe the hassle will outweigh the result. especially when i can make smaller backups without making drastic change
+Mar 11 22:32:29 <treefrob>	ballsxd, see above
+Mar 11 22:32:38 <ballsxd>	i did
+Mar 11 22:32:42 <ballsxd>	i'm thinking of a response
+Mar 11 22:32:55 <treefrob>	ah
+Mar 11 22:33:32 <treefrob>	imaging (block level device copy) is problematic on a mounted and used filesystem. you are guaranteed an inconsistent filesystem
+Mar 11 22:33:47 <ballsxd>	i think ill stick to the trusted rsync for daily home directory backups then
+Mar 11 22:33:59 <ballsxd>	and do a full drive backup whenever i get the chance
+Mar 11 22:34:26 <mdogg>	FYI - if anyone  is interested in a drawing tablet, someone posted this link in #openSUSE and stated that it works out-of-the-box without any drivers, and the stylus doesn't require batteries.   https://www.amazon.ca/dp/B092VM5CVF
+Mar 11 22:34:44 <treefrob>	amazon ... yuck
+Mar 11 22:34:59 <mdogg>	I'm sure it's available other places.
+Mar 11 22:35:27 <treefrob>	yeah, that's it. it's so *convenient* to make amazonk your go-to source for everything
+Mar 11 22:36:09 <akk>	I have an old wacom grafire but I never used it much ... although it was theoretically supported, it took so much fiddling to get pressure working (and even then, it didn't work very well) that it wasn't worth it
+Mar 11 22:36:12 <mdogg>	I get at least 1 delivery from Amazon every week.
+Mar 11 22:36:17 <treefrob>	help Jeff Bezos "earn" his $7,990,868/hour!
+Mar 11 22:36:51 <mdogg>	Whatever.  My point was about the tablet, not the website.
+Mar 11 22:39:09 <akk>	Are tablets plug and play now? When I was last fiddling with them, you had to have it plugged in when you started X and loaded libgtk or it wouldn't see pressure.
+Mar 11 22:39:21 <hodapp>	treefrob: hey you show some respect, dr. bezos didn't cheat on his wife just so you can stand there and have the right to talk smack about him
+Mar 11 22:40:18 <Khaytsus>	...
+Mar 11 22:40:26 <Al-Khwarizmi>	Hello, not sure if I asked this here before my client crashed. I have my chromebook finaly running linux. How do I figure out the read/write speed of the sd card slot. Not the sd card itself?
+Mar 11 22:40:29 <mdogg>	akk: I'm not sure if they are all P&P now.  My initial thought was that this would be a much nicer alternative to purchasing an Apple stylus to accomplish the same thing on an iPad.
+Mar 11 22:41:42 <baggy>	 Gtk-WARNING **: 15:28:38.939: Unable to locate theme engine in module_path: "pixmap", how may i fix this
+Mar 11 22:42:22 <dostoyevsky2>	My new spam filter on top of gmail is just: if I that from address's domain name never showed up in my inbox in the last 10 years -> spam
+Mar 11 22:42:48 <mdogg>	lol
+Mar 11 22:42:57 <stenno>	actually reasonable
+Mar 11 22:43:20 <mdogg>	Except every new site will be marked as SPAM.
+Mar 11 22:45:11 <mdogg>	Al-Khwarizmi: My thought is, measure the read/write speed of several cards.  Even if the slot says it is capable of something else, if it is just theory then it doesn't really matter.
+Mar 11 22:46:23 <citrus95>	Hi, i have a little problem. Every time i boot/reboot my pc i get the grub command line interface, and if i run 'boot' it tells me i have to load the kernel first. I found i way to boot from there, but i don't know how to not get that grub thing every time
+Mar 11 22:46:35 <dostoyevsky2>	mdogg: I am fine with that... also, I occasionally look into the spam folder, as sometimes gmail also moves some mail there... not sure if I should automatically move emails already tagged as spam to the inbox if it's from a known address in the inbox, sometimes people catch virusses and send malicious emails
+Mar 11 22:48:21 <Al-Khwarizmi>	mdogg: Need to figure out what card to buy lol
+Mar 11 22:49:27 <mdogg>	dostoyevsky2: If your SPAM policy works for you then I wouldn't change it.  At least you aren't doing something heavy-handed like automatically deleting everything marked as SPAM.  You will find that at times, Google flags some email domains as SPAM even though you have dealt with them in the past and that is because they aren't complying with Google's security policy, such as 1024-bit, etc.
+Mar 11 22:50:04 <mdogg>	And to be honest, I run my own email server and I'm able to comply with Google's policy so to me, everybody should be able to do that if I can.
+Mar 11 22:50:22 <hodapp>	have considered it
+Mar 11 22:52:11 <baggy>	can i change quassel skin
+Mar 11 22:52:19 <dostoyevsky2>	mdogg: My approach is a bit more like mutt in my own email client: No automatic decoding of attachments or any images (even though it's a web app), so if I want to open an attachment it's forwarded to a quarantine vm... or at least converted to a pdf/jpg there
+Mar 11 22:52:42 <mdogg>	Oh wow.
+Mar 11 22:53:19 <mdogg>	I don't do any of that.  Keep in mind that you aren't gong to be as susceptible to viruses/malware in a Linux environment as you would be in a Windows environment.
+Mar 11 22:53:32 <baggy>	ill get it
+Mar 11 22:55:17 <OwlWizard>	im currently reading thru lvm's wikipedia page and they talk about doing stuff on and offline. they are talking about power not internet right?
+Mar 11 22:56:14 <mdogg>	Can you link the article and paragraph, OwlWizard?
+Mar 11 22:56:34 <OwlWizard>	https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux)
+Mar 11 22:56:39 <OwlWizard>	at basic functionality
+Mar 11 22:56:52 <dostoyevsky2>	mdogg: I think if I were to enable images/links in html email I'd be susceptible to phishing attacks than if I need to c&p links manually in order to open them, it's a minor inconvenience but improves security by a lot
+Mar 11 22:57:17 <mdogg>	OwlWizard: Ah, in that case the word "online" refers to while the disk/partition is mounted.
+Mar 11 22:57:31 <OwlWizard>	mdogg, i thought so but wanted to be sure
+Mar 11 22:57:45 <OwlWizard>	just imagine having to connect to a server to do stuff with your own disk
+Mar 11 22:58:35 <mdogg>	They could have defined 'online' in an earlier section of that article, I reckon.
+Mar 11 23:00:00 <OwlWizard>	another thing that hasnt been clear. does one raid logical volumes or the physical volumes?
+Mar 11 23:00:31 <OwlWizard>	i meant physical partitions instead of logical volumes
+Mar 11 23:01:13 <mdogg>	In this context, logical volumes can be used to create RAID volumes.
+Mar 11 23:01:32 <mdogg>	So the RAID volume is made up of logical volumes.
+Mar 11 23:02:14 <mdogg>	That's the difference between hardware and software RAID>
+Mar 11 23:02:58 <OwlWizard>	so if i got this right. im going to partition my disk's then group those into logical volumes. and then raid those volumes?
+Mar 11 23:04:38 <mdogg>	If you're using something like btrfs, you can use that to create your volumes for a RAID array, and yes they will be logical volumes.
+Mar 11 23:05:54 <OwlWizard>	im mostly talking about linux lvm rather than btrfs
+Mar 11 23:06:16 <OwlWizard>	or ist btrfs supposed to be installed ontop of that?
+Mar 11 23:06:53 <mdogg>	That makes it easy in case you have say, 6 hard drives in RAID-1.  If a single disk in the array fails, you can tell btrfs which disk failed and that you will be pulling it out.  BTRFS will then move data around so you can remove DISK-x.  Then you can leave it like that or when you replace Disk-x, you can tell btrfs that you did that and it will move data around to accommodate the new replacement.
+Mar 11 23:08:12 <mdogg>	Well, I like using btrfs because it's native to Linux and it can be setup as a typical software RAID volume.
+Mar 11 23:08:16 <mdogg>	But zfs can also be used.
+Mar 11 23:09:24 <OwlWizard>	isnt lvm its own thing?
+Mar 11 23:09:35 <OwlWizard>	like im not talking about zfs or btrfs
+Mar 11 23:09:59 <mdogg>	Logical volumes are it's own thing, yes.
+Mar 11 23:11:05 <mdogg>	Check out this article at the bottom --> https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux)#Caveats
+Mar 11 23:12:45 <mdogg>	The only way to really understand this is to play around with it.
+Mar 11 23:13:27 <OwlWizard>	i have read the caveats already
+Mar 11 23:14:00 <OwlWizard>	the thing is that im a noob when it coms to stuff like this but i dont really know what exactly to do about it
+Mar 11 23:15:10 <mdogg>	All you can do is start using it.  Make sure you have a backup just in case things get harry and go south.  Everybody was a noob at everything at some point.
+Mar 11 23:16:46 <OwlWizard>	so the most basic thing would be to software raid, my 2 ssd's and put ext4 ont that, i just thought that logical volumes looked neat
+Mar 11 23:17:00 <mdogg>	In openSUSE, by default the OS now likes to create a logical volume for /home under the root partition.  It's labeled @/home.  The advantage is that if root gets too small and @home is pretty big, users have the option of moving space from @/home to their root partition or visa versa.
+Mar 11 23:18:05 <mdogg>	The disadvantage is that if the root partition gets screwed up or if the user bricks the OS by doing something they shouldn't have, their @/home partition with all their data is also impacted because it's a logical volume under the root partition.
+Mar 11 23:19:46 <OwlWizard>	i guess ill just do the normal raid thing with ext4 on that
+Mar 11 23:20:42 <Khaytsus>	Make sure you're doing raid in LInux, not some mobo hardware raid
+Mar 11 23:21:21 <OwlWizard>	Khaytsus, yea i have heard of that
+Mar 11 23:21:47 <OwlWizard>	its just that i dont have time to go deep into linux and learn alot of stuff but want redundancy
+Mar 11 23:22:17 <hexnewbie>	Setting up Linux MD RAID is quite straight-forward-ish, even some installers let you do it
+Mar 11 23:23:06 <OwlWizard>	i think the debian installer gives you the option. i now only need to get a drive to backup my install onto
+Mar 11 23:24:03 <Khaytsus>	OwlWizard: Another thing to rememeber.. no matter what RAID you set up, RAID is not backup.  If you delete a file, it's gone.  If your array dies for some reason, etc.  You need to have backups too.
+Mar 11 23:24:48 <OwlWizard>	Khaytsus, im aware of that and i definitly need to do better when it comes to doing backups
+Mar 11 23:24:56 <Khaytsus>	Cool
+Mar 11 23:25:16 <Khaytsus>	Some people are like, but, mirror is a backup, if a drive dies it's still fine!  etc..
+Mar 11 23:25:27 <OwlWizard>	a mirror is for hardware failure
+Mar 11 23:25:32 <OwlWizard>	not backup
+Mar 11 23:25:40 <Khaytsus>	Yes, RAID is all about uptime really.
+Mar 11 23:25:51 <Khaytsus>	And striping etc.....  improve speed.
+Mar 11 23:26:36 <OwlWizard>	i want to learn way more about linux but at the moment most of my time is taking up with learning to code
+Mar 11 23:26:37 <hexnewbie>	OwlWizard: You'd probably still have to have LVM involved, though, since you are likely to want to, ahem, partition the RAID (and LVM is much more flexible choice than partitions)
+Mar 11 23:27:05 <hexnewbie>	But in that case it mostly acts as glorified partitioning until you need some of its more advanced features
+Mar 11 23:27:09 <mdogg>	OwlWizard: Do you run a Linux distro right now?
+Mar 11 23:27:17 <OwlWizard>	yup debian
+Mar 11 23:27:22 <OwlWizard>	debian 12 to be exact
+Mar 11 23:27:24 <mdogg>	Oh ok.
+Mar 11 23:28:35 <mdogg>	It doesn't matter so much the distribution.  A lot of people come in here asking questions or saying, "I'm asking because I want to learn more about Linux" but they don't actually run Linux.  And really, the only way to learn Linux (or anything) is to immerse yourself in it, as you seem to be doing.
+Mar 11 23:29:20 <OwlWizard>	yup im learning over time
+Mar 11 23:29:38 <OwlWizard>	i also try not to use it like i would windows
+Mar 11 23:30:52 <mdogg>	When I first began to understand Linux was that I cannot think of it or use it like Windows.
+Mar 11 23:31:05 <plebe>	I used Debian for 14 years exclusively. Great distro
+Mar 11 23:31:06 <Anjor>	mdogg: The dirtibution doesn't matter, but the "desktop environemnt" influences which packages might be used.  That makes a big difference in user experience.  For example, I have been testing OpenSUSE for KDE, but I am almost exclusivly a gtk guy who hates qt and KDE apps.  The experience between a KDE user's experience and someone like me is night and day.
+Mar 11 23:31:38 <OwlWizard>	im a gnome user who is kind of exited for Cosmic
+Mar 11 23:31:54 <mdogg>	Anjor makes a good point.  It is important to try different desktop environments and also, the CLI.
+Mar 11 23:31:55 <Khaytsus>	Distribution does matter...  Theirs is fine.  Some people buy into one-off small time distributions and wind up at a dead end.
+Mar 11 23:32:07 <ssm_>	I used linux back during the american revolution
+Mar 11 23:32:10 <OwlWizard>	mdogg, im using the cli to code
+Mar 11 23:32:26 <treefrob>	the best way to learn about Linux is to run into a roadblock trying to use it and find the way through/around
+Mar 11 23:32:55 <mdogg>	And I have to say, Khaytsus makes a good point as well.  I should not have said the at the distribution doesn't matter so much for the very reason he cited.
+Mar 11 23:33:11 <plebe>	Learning is slowed now days. Back in the day you had no choice but to learn and use command line
+Mar 11 23:33:37 <plebe>	first time I saw a debian "installer" wtf
+Mar 11 23:33:45 <mdogg>	"I tried using Linux, I installed "dogg Linux" and my experience sucked, so that's why I don't like Linux."
+Mar 11 23:33:53 <terzievk>	nvz: Ironically after calling out my disconnects those cluttering journalctl messages are from the wifi/bluetooth adapter. Got it disconnected and they were gone. Googling it shows some people disable pcie_aspm to stop it
+Mar 11 23:34:27 <MacGyver>	plebe: In my experience Linux installers are a very effective tool at getting people to learn the command line, across all distributions.
+Mar 11 23:34:28 <OwlWizard>	treefrob, yea i accidentally formatted a drive with the efi partition on it as i had no idea what it was
+Mar 11 23:34:44 <nvz>	terzievk: hmm.. so are you saying you were able to resolve both issues then and they were the same issue?
+Mar 11 23:35:04 <MacGyver>	plebe: But maybe that's my own fault for not following the happy path :P
+Mar 11 23:36:55 <ssm_>	plebe: friends should let friends dump windows users into a tty as their first linux experience
+Mar 11 23:37:04 <Khaytsus>	No they should not
+Mar 11 23:37:07 <terzievk>	nvz: more like neither. The disconnects were from closing the lid and some gnome updates I didn't handle/get used to. The messages are still there when the wifi adapter is connected. You think I should get "in there" and clean the pins?
+Mar 11 23:37:09 <mdogg>	hahaha
+Mar 11 23:37:31 <Khaytsus>	terzievk: clean what?
+Mar 11 23:37:42 <plebe>	today you can install linux just as easy or easier then windows and have a 100% working desktop without even knowing what the terminal or command line even looks like
+Mar 11 23:38:08 <ssm_>	plebe: I wish this was true
+Mar 11 23:38:11 <DAVe>	wsg
+Mar 11 23:38:18 <DAVe>	hello?
+Mar 11 23:38:29 <Khaytsus>	What in the world does "wsg" mean
+Mar 11 23:38:33 <DAVe>	hallo
+Mar 11 23:38:42 <DAVe>	it means whats good
+Mar 11 23:38:48 *	Khaytsus blinks
+Mar 11 23:38:52 <DAVe>	it means 'whats good'
+Mar 11 23:39:02 <Khaytsus>	Then say that, I guess.....
+Mar 11 23:39:05 <bigmac>	KILL YOUR SELF OR I WILL RAPE ALL OF U GUYS
+Mar 11 23:39:05 <bigmac>	KILL YOUR SELF OR I WILL RAPE ALL OF U GUYS
+Mar 11 23:39:06 <bigmac>	KILL YOUR SELF OR I WILL RAPE ALL OF U GUYS
+Mar 11 23:39:06 <bigmac>	KILL YOUR SELF OR I WILL RAPE ALL OF U GUYS
+Mar 11 23:39:16 <DAVe>	alr banned lol
+Mar 11 23:39:18 <DAVe>	rip bozo fr
+Mar 11 23:39:20 <ssm_>	bigmac: planning on it
+Mar 11 23:39:20 <nvz>	terzievk: well.. if you have a lead on a power management related solution in software, thats worth exploring first. but I'd certainly want to run it down if it were my machine just cause as I said before when you got things flooding your logs it makes system administration more of a headache cause it floods away more important information
+Mar 11 23:39:30 <terzievk>	Khaytsus:  my wifi adapter "pins"
+Mar 11 23:39:34 <DAVe>	🤓🤓🤓
+Mar 11 23:39:34 <DAVe>	🤓🤓🤓
+Mar 11 23:39:35 <DAVe>	🤓🤓🤓
+Mar 11 23:39:35 <DAVe>	🤓🤓🤓
+Mar 11 23:39:36 <DAVe>	🤓🤓🤓
+Mar 11 23:39:37 <DAVe>	🤓🤓🤓
+Mar 11 23:39:38 <DAVe>	🤓🤓🤓
+Mar 11 23:39:38 *	ChanServ gives channel operator status to Khaytsus
+Mar 11 23:39:40 <mdogg>	DAVe: STOP
+Mar 11 23:39:49 <Khaytsus>	was pretty sure tht was the same idiot as the other day
+Mar 11 23:39:52 <treefrob>	careful, he's leet
+Mar 11 23:39:53 <mdogg>	oh
+Mar 11 23:40:13 <mdogg>	What's leet?
+Mar 11 23:40:18 <plebe>	l337
+Mar 11 23:40:23 <mdogg>	What's that?
+Mar 11 23:40:27 <ssm_>	I'm glad my hexchat doesn't support emojis
+Mar 11 23:40:29 <stenno>	i am really glad the channel i am operating has +r
+Mar 11 23:40:35 <stenno>	makes stuff easier
+Mar 11 23:40:46 <treefrob>	if you ask me, DAVe came to watch the reaction to his alter ego bigmac
+Mar 11 23:40:51 <nvz>	mdogg: means they're an idiot who takes pride in being just smart enough to be effectively a PITA
+Mar 11 23:40:53 *	She slides out from under the floorboards.
+Mar 11 23:41:01 <MacGyver>	ssm_: On the off-chance that that wasn't some morbid retort, please get professional help if you're having those thoughts.
+Mar 11 23:41:10 <mdogg>	Hi She
+Mar 11 23:41:17 <nvz>	She: what were you doing under the floorboards? :P
+Mar 11 23:41:19 <mdogg>	Haven't seen you in forever.
+Mar 11 23:41:31 <ssm_>	MacGyver: not gonna trauma dump here, but no, my mental state is not good
+Mar 11 23:41:40 <uwharrie>	http://catb.org/jargon/html/E/elite.html
+Mar 11 23:41:55 <She>	It's my home. I live under everyone's floorboards. Allegedly.
+Mar 11 23:41:59 <ssm_>	and I am getting help
+Mar 11 23:42:09 <mdogg>	Well, that's good.
+Mar 11 23:42:47 <mdogg>	You're welcome to live above them.  I'm sure it would be more comfortable.
+Mar 11 23:43:41 *	Khaytsus sets ban on $g:*!*@131.242.0.0/16
+Mar 11 23:43:42 <nvz>	She: if thats your crableg..
+Mar 11 23:45:35 <terzievk>	nvz: if that's https://paste.linux.chat/?2ee4ba10e0a802b4#4z5F2nXAHnt3yS6SaJsHkjyeYRpVyiNprm2VRK7S1Xaq the recurring message I get how do I actually find the mentioned error message?
+Mar 11 23:45:35 <Khaytsus>	You're never more than 18 inches from a spider
+Mar 11 23:45:38 *	Khaytsus removes channel operator status from Khaytsus
+Mar 11 23:45:50 <wantyapps>	Khaytsus: You unmuted?
+Mar 11 23:48:25 <stenno>	that was a subnet ban
+Mar 11 23:49:09 <ssm_>	Khaytsus: The Breathers hiding in your walls are closer
+Mar 11 23:49:37 <mdogg>	The mouth breathers.
+Mar 11 23:50:19 <mdogg>	With them in my walls and She in my floorboards, I feel surrounded.
+Mar 11 23:50:20 <ssm_>	interdimensional demons beyond your comprehension
+Mar 11 23:53:13 <NullP01ter>	what distros would be considered KISS ?
+Mar 11 23:53:40 <nullie>	I have white menubar in vscode even though I seem to have dark mode enabled for gtk3 and gtk4. What could be wrong?
+Mar 11 23:54:02 <r_m_m>	Hi. I'm new to Docker. When I do uname on my host machine I see kernel version 6.1.0-18-amd64. When I do uname inside my container I see 6.6.16-linuxkit. I thought that containers shared the hosts kernel. Why does it show different kernel versions?
+Mar 11 23:54:11 <jim>	NullP01ter, possibly none, with any, you'd still have to learn some stuff
+Mar 11 23:54:38 <ssm_>	NullP01ter: alpine
+Mar 11 23:54:52 <loganlee>	guys subnet mask of 16 has usable hosts of: 2^16-2=65534 hosts? is this correct?
+Mar 11 23:54:59 <jim>	I've heard ok things in that regard about ubuntu
+Mar 11 23:55:15 <ssm_>	the real question is if KISS linux is KISS
+Mar 11 23:55:20 <ssm_>	or is it all for show
+Mar 11 23:55:30 <NullP01ter>	ssm_ and by extension postmarketOS ?
+Mar 11 23:55:52 <ssm_>	NullP01ter: postmarketOS is switching to systemd by default which makes me grr angry grr anger
+Mar 11 23:55:56 <nvz>	terzievk: I don't know if you /can/ get the actual error. Its a hardware error that has been corrected. I'm not sure if the kernel is even aware of anything more than that.
+Mar 11 23:55:57 <ssm_>	because I like openrc
+Mar 11 23:56:05 <ssm_>	but they'll let you recompile to change it
+Mar 11 23:56:13 <ssm_>	and sxmo will still ship openrc by default
+Mar 11 23:57:12 <ssm_>	I like phosh though because it support dvorak, and sxmo's keyboard does not without recompiling (and setting up all the keys manually I believe)
+Mar 11 23:57:24 <NullP01ter>	with 9.996 million git objects is the kernel even KISS anymore?
+Mar 11 23:57:48 <ssm_>	something something linus quote about giving up his dreams of linux ever being a microkernel
+Mar 11 23:58:04 <ssm_>	what would make a kernel kiss
+Mar 11 23:58:08 <ssm_>	kiss is more an interface thing
+Mar 11 23:58:24 <NullP01ter>	minimalism is an everything thing
+Mar 11 23:58:58 <ssm_>	I care more about portability than minimalism personally
+Mar 12 00:00:00 <NullP01ter>	but at a point, bloat becomes dead "portability" weight.
+Mar 12 00:01:00 <terzievk>	nvz:  oh... How to proceed then?
+Mar 12 00:01:33 <ssm_>	if you learn portable tooling you can bring your setup anywhere
+Mar 12 00:01:36 <ssm_>	except windowz
+Mar 12 00:02:05 <MacGyver>	Even windows.
+Mar 12 00:02:09 <MacGyver>	WSL2 is a thing.
+Mar 12 00:02:32 <ssm_>	I mean, it's a vm, I can't really call linux windows if I run a windows vm on it
+Mar 12 00:02:43 <ssm_>	wsl 1 is a compat layer I guess
+Mar 12 00:03:35 <NullP01ter>	abstraction layer
+Mar 12 00:04:33 <NullP01ter>	is community primary reason of Alpine over TinyCore?
+Mar 12 00:05:48 <nvz>	terzievk: idk you said you read about a module that sounded to me like it has to do with power management, that you could remove/blacklist to make the error go away. I suggested checking the connections and reseating the hardware, if need be cleaning the contacts with compressed air or contact cleaner..
+Mar 12 00:07:09 <ssm_>	NullP01ter: I don't know anything about TinyCore, Alpine just feels good to use, I don't know
+Mar 12 00:07:37 <terzievk>	nvz: fair. I'll go poweroff and clean the contacts and make sure the error doesn't clutter if nothing better comes up. Thanks!
+Mar 12 00:08:01 <ssm_>	I could not use alpine for years and come back to it and still know how to use 70% of its tooling
+Mar 12 00:08:18 <nvz>	terzievk: sometimes things that are socketed only need be remove and reinserted
+Mar 12 00:08:33 <mdogg>	Pencil eraser's are good at cleaning contacts.
+Mar 12 00:08:56 <terzievk>	mdogg:  good to know
+Mar 12 00:09:15 <nvz>	terzievk: but that stuff you read about that module may also be correct. It could be some quirk about the way the card handles power management, as you seemed to indicate it seems related to opening/closing the lid when your laptop sleep/resume.
+Mar 12 00:10:11 <nvz>	terzievk: it may just be a hardware bug that can only be addressed in software, by a patch or removing some power management module or disabiling power management of the device by some module parameter
+Mar 12 00:11:05 <nvz>	I've seen plenty of hardware bugs in laptop hardware in my years.. I'm just glad my current hardware doesn't seem to have any issues
+Mar 12 00:11:36 <terzievk>	nvz: but is it worth getting "rid" of the error to disable the power optimization module? Or just make sure the error doesn't show up in the journalctl?
+Mar 12 00:13:16 <nvz>	terzievk: I can't really answer that. Were it me I'd want both.. I'd want the spewing messages gone, and I'd want the best power saving.. but I'd just try a different card.. lately I been using Intel 7260 wifi/bt cards I have them in both mPCIe and m.2 versions, they are cheap, power manage well, and I have no issues with them in linux. I use them in all my laptops, thin clients, etc.
+Mar 12 00:13:48 <nvz>	terzievk: its up to you really, you said earlier you didn't really care about it.. everything worked, so you just been ignoring it
+Mar 12 00:15:58 <terzievk>	It would be kinda cool to "fix" it after literal clean up. I don't really notice it so it's no biggie anyways. Thanks again nvz :)
+Mar 12 00:16:47 <plebe>	pci=noaer will get rid of that error
+Mar 12 00:20:01 <nvz>	plebe: without any performance issues? like making it consume more power or something?
+Mar 12 00:20:33 *	nvz doesn't readily know what AER is
+Mar 12 00:23:12 <NullP01ter>	Advanced Error Reporting The AER driver only attaches to Root Ports and RCECs that support the PCIe AER capability
+Mar 12 00:23:58 <NullP01ter>	nvz: https://www.kernel.org/doc/html/latest/PCI/pcieaer-howto.html
+Mar 12 00:25:37 <nvz>	ah well, then sounds like a no-brainer to shut that off if you have a correctable issue going on
+Mar 12 00:26:10 <nvz>	can just put that in /etc/default/grub  GRUB_COMMANDLINE_LINUX or whatever the pci=noaer thing
+Mar 12 00:26:32 <mdogg>	Or just hide errors completely.
+Mar 12 00:28:36 <CrisPBacon>	so uh
+Mar 12 00:28:44 <CrisPBacon>	some wanted me to unban them
+Mar 12 00:28:51 <CrisPBacon>	even tho i cant
+Mar 12 00:30:48 <mdogg>	CrisPBacon: Just forget about it.  Some people reach out to whomever they can.
+Mar 12 00:30:57 <CrisPBacon>	mk
+Mar 12 00:31:59 <plebe>	pci=noaer just stops the reporting. All the errors are corrected or correctable. Just stops it from filling the log
+Mar 12 00:32:58 <nvz>	sounds to me more like something that should default to being off.. but w/e
+Mar 12 00:33:39 <nvz>	one I used to have a lot on machines before were spurrious interrupts @.@
+Mar 12 00:33:51 <plebe>	this is my cmdline_linux "i8042.nopnp amdgpu.runpm=0 pci=noaer"
+Mar 12 00:34:36 <nvz>	plebe: whats the deal with the amdgpu? you havin some sort of issue?
+Mar 12 00:35:39 <nvz>	my father has some sort of AMD graphics in his machine and is occasionally experiencing lockups on Xorg.. its more a soft lockup near as I can tell, where the mouse will still move but not really click. I am not seeing anything in his logs on this end..
+**** BEGIN LOGGING AT Tue Mar 12 00:38:03 2024
+
+Mar 12 00:38:02 *	Now talking on #linux
+Mar 12 00:38:02 *	Topic for #linux is: Welcome to #linux! Help & support for any Linux distribution or related topic -- Rules/Info: https://linux.chat -- Forum: https://linux.forum -- Pastebin: https://paste.linux.chat/ -- @linux.social on Mastodon: https://linux.social -- Need an op? !ops <reason> or join #linux-ops
+Mar 12 00:38:02 *	Topic for #linux set by Khaytsus (Thu Aug  3 13:54:32 2023)
+Mar 12 00:38:20 <superkuh>	I was going to say mine was triggered by specific hardware accelerated applications and killing the application could return mouse clicks (sometimes).
+Mar 12 00:38:28 <superkuh>	If you could keyboard into a console.
+Mar 12 00:38:38 <nvz>	I have seen similar issues to what he describes on my machine, but I use an intel igpu, and my issues typically only crop up when I'm changing profiles from moving into and out of my dock and pluggin in external displays
+Mar 12 00:39:13 <nvz>	he's using a desktop on a big f'n tv as a monitor..
+Mar 12 00:39:25 <nvz>	doesnt do the sorts of things I do
+Mar 12 00:39:33 <plebe>	i used a 32 inch tv for years. loved it
+Mar 12 00:39:43 <nvz>	I think he's using a 50"
+Mar 12 00:39:48 <plebe>	dang
+Mar 12 00:40:27 <nvz>	yeah and its only like 6ft or so away and only like 1080p
+Mar 12 00:40:36 <nvz>	apparently he doesn't see the greatest
+**** BEGIN LOGGING AT Tue Mar 12 00:55:45 2024
+
+Mar 12 00:55:44 *	Now talking on #linux
+Mar 12 00:55:44 *	Topic for #linux is: Welcome to #linux! Help & support for any Linux distribution or related topic -- Rules/Info: https://linux.chat -- Forum: https://linux.forum -- Pastebin: https://paste.linux.chat/ -- @linux.social on Mastodon: https://linux.social -- Need an op? !ops <reason> or join #linux-ops
+Mar 12 00:55:44 *	Topic for #linux set by Khaytsus (Thu Aug  3 13:54:32 2023)
+Mar 12 00:56:59 <mdogg>	I inadvertently pasted certain passwords in channels before.
+Mar 12 00:57:39 <djph>	mdogg: was it hunter2?
+Mar 12 00:57:44 <mdogg>	damnit
+Mar 12 00:58:19 <mdogg>	That and $ummer3
+Mar 12 00:58:25 <Ad0>	loadkeys doesn't do shit
+Mar 12 00:58:34 <djph>	Horse Battery Staple Correct ?
+Mar 12 00:59:46 <OERIAS>	damn!
+Mar 12 00:59:52 <OERIAS>	my OS/2 server crashed
+Mar 12 01:00:02 <mdogg>	Problem with HPFS?
+Mar 12 01:00:24 <OERIAS>	no, it's the Workplace Shell
+Mar 12 01:00:42 <mdogg>	Well, I guess you live and learn.
+Mar 12 01:02:59 <espresso>	potash: oh I see.. AutoFS, not automount
+Mar 12 01:03:22 <potash>	my experience with it has so far been quite bad
+Mar 12 01:03:31 <potash>	perhaps i should have used automount
+Mar 12 01:03:36 <potash>	but i already got it working
+Mar 12 01:04:56 <mdogg>	Sit Ubu, sit!
+Mar 12 01:09:37 <germ>	are there any tools to dump a PC's bios on linux? The GPU I have and possibly the board I am using lacks support for windows.
+Mar 12 01:09:59 <germ>	they are lenovo thinkistation p520 units that were used as google stadia nodes
+Mar 12 01:10:28 <mdogg>	You can check the current version of your BIOS by running 'sudo dmidecode -s bios-version'
+Mar 12 01:10:56 <germ>	right but I want to back up the bios and flash it to a different p520
+Mar 12 01:11:10 <mdogg>	ah
+Mar 12 01:11:37 <germ>	it may just be a custom splash screen in the bios but I don't know if google cooked anything extra into these units
+Mar 12 01:11:54 <germ>	so I wanted to create my own by backing up the unique bios and flashing it to a random extra p520 board I picked up for cheap
+Mar 12 01:12:48 <mdogg>	Well, I'm not someone who can help you with that.  Perhaps someone else can comment.
+Mar 12 01:12:58 <oerheks>	old, but should work https://unix.stackexchange.com/questions/126132/how-to-dump-bios-data-to-a-file
+Mar 12 01:13:30 <oerheks>	flashrom -r <outputfile>
+Mar 12 01:13:38 <espresso>	germ: and there's https://support.lenovo.com/us/en/downloads/ds542408-flash-bios-update-thinkstation-p520p520c
+Mar 12 01:14:11 <oerheks>	flashrom is in the universe repo/ubuntu
+Mar 12 01:14:42 <germ>	I'm using gentoo but I can get an ubuntu usb made
+Mar 12 01:14:47 <germ>	thank you very kindly espressoand oerheks
+Mar 12 01:14:57 <oerheks>	look in your packet manager
+Mar 12 01:24:09 <dostoyevsky2>	any idea how cloud-init transfers the public ssh keys to a new linux installation if booted from the iso?
+Mar 12 01:24:19 <dostoyevsky2>	s/booted/installed/
+Mar 12 01:24:40 <ananke>	dostoyevsky2: cloud-init would be fetching it, not transferring it
+Mar 12 01:24:54 <dostoyevsky2>	ananke: where does it fetch it from?
+Mar 12 01:26:08 <ananke>	dostoyevsky2: what's your cloud provider in the first place?
+Mar 12 01:27:36 <ananke>	dostoyevsky2: perahps more to the point: https://cloudinit.readthedocs.io/en/latest/reference/datasources.html
+Mar 12 01:28:11 <dostoyevsky2>	169.254.169.254 <- I saw this address in a cloud-init script...
+Mar 12 01:29:00 <ananke>	dostoyevsky2: that's not answering the question
+Mar 12 01:34:28 <dostoyevsky2>	ananke: why would that matter?  Is cloud-init provider-specific?
+Mar 12 01:35:22 <dostoyevsky2>	I was able to fetch my public key via "http://169.254.169.254/latest/meta-data/public-keys" as I saw in some random cloud-init script, though... seems standard
+Mar 12 01:36:39 <ananke>	dostoyevsky2: yes, it's very much provider specific. that url is not magical and ubiquituous. it's something that the cloud/provider/hypervisor/etc has to provide
+Mar 12 01:37:28 <ananke>	for example the url you're listing is AWS specific
+Mar 12 01:38:45 <ananke>	and works out of the box without special things only if you use IMDSv1.
+Mar 12 01:48:31 <Nocsy__>	Hello?
+Mar 12 01:49:27 <akk>	Any ublock origin users? Anyone know where its prefs are stored for firefox on linux? I'm striking out web searching for that, lots of people point to dirs with names like extension-data where no such dir exists in my firefox profile.
+Mar 12 01:51:44 <theamazing0>	could it maybe be in the extension storage?
+Mar 12 01:52:50 <akk>	theamazing0: Where is that? It doesn't seem to be in any of the places people normally point to.
+Mar 12 01:55:16 <theamazing0>	about:debugging - > This Firefox -> Inspect (uBlock Origin) -> Storage -> Extension Storage
+Mar 12 01:55:40 <theamazing0>	but a quick glance looks like theres not much data there
+Mar 12 01:56:42 <akk>	yeah, nothing there for me
+Mar 12 01:57:22 <akk>	which might be right -- my problem is that I moved aside prefs.js while testing something, and when I restored the old prefs.js, UBO had forgotten all of its settings
+Mar 12 01:57:48 <akk>	so I'd like to restore them from a backup, but for that I'd need to know where they are
+Mar 12 01:58:39 <akk>	I had it set to block JS by default, then I had whitelists for quite a long list of sites
+Mar 12 01:59:14 <akk>	and I'd really like not to have to start over
+Mar 12 02:04:09 <akk>	If I just copy ~/.mozilla/firefox/profilename from a backup, it reverts to default settings, both for UBO and for firefox color, which makes me suspect maybe all extensions have lost their settings
+Mar 12 02:06:18 <espresso>	<profile>/storage/default/moz-extension+++<extensionID>^userContextId=4294967295/idb/3647222921wleabcEoxlt-eengsairo.sqlite  ..is a mouthful
+Mar 12 02:06:41 <rbox>	that's what she said?
+Mar 12 02:12:50 <akk>	I hate these extension uuids, they make it so hard to figure out which extension is which
+Mar 12 02:14:01 <Khaytsus>	I know in Chrome you can look at the list of extensions and it matches up, not srue about Firefox
+Mar 12 02:15:02 <akk>	recursive grep -i ublock told me which extension it was. It has cache and idb subdirs
+Mar 12 02:16:57 <akk>	But my most recent backup, in profilename/storage, only has ls-archive.sqlite and an empty dir called to-be-removed, it doesn't have any of those moz-extension-UUID dirs
+Mar 12 02:17:47 <superkuh>	I forgot to sudo when I was doing a HDD archiving, rsync -a -P /media/superkuh/device1 /home/superkuh/blob/recovery and some files were not copied because of mounted permissions. Is there a way to re-do it with sudo that will be faster by checking what is already there first? Or should I just delete and re-archive?
+Mar 12 02:17:48 <akk>	same with an older backup
+Mar 12 02:18:25 <akk>	superkuh: I always archive with rsync -a, that way it only copies the things that still need it
+Mar 12 02:18:55 <akk>	but if you didn't do that the first time, you might have to use rsync -a --size-only because the ownership and file times will be different
+Mar 12 02:19:18 <superkuh>	I did use -a. I just forgot to have root permissions for the process.
+Mar 12 02:19:37 <akk>	good, then another -a with root should only copy the files that didn't get copied last time
+Mar 12 02:19:45 <superkuh>	Okay. I'll try that then.
+Mar 12 02:19:46 <akk>	but you can check to be sure, by adding -n
+Mar 12 02:19:52 <superkuh>	-n ?
+Mar 12 02:20:04 <akk>	-n means don't actually copy anything, just print out what would be copied
+Mar 12 02:20:09 <superkuh>	Ah, dry run short.
+Mar 12 02:20:12 <superkuh>	Thanks!
+Mar 12 02:29:32 <akk>	huh, turns out my backup script isn't backing up that stuff in .mozilla/firefox/PROFILENAME/storage/default
+Mar 12 02:29:50 <akk>	so I guess this is my fault, I need to figure out why that wasn't being backed up.
+Mar 12 02:30:27 <Khaytsus>	I'm bad about excluding stuff that gets big or something, then later regretting it heh
+Mar 12 02:30:28 <espresso>	https://wiki.archlinux.org/title/Rsync#Full_system_backup is the setup I use, adding --delete for a mirror and --exclude-from=omit.txt
+Mar 12 02:35:00 <Khaytsus>	I use restic for backups, but there are many  methods
+Mar 12 02:36:45 <akk>	Khaytsus: yeah, that's exactly what happened, so many directories in the firefox profile are huge and unimportant (cache stuff)
+Mar 12 02:37:15 *	wigums puts .cache in ramdisk
+Mar 12 02:37:56 <akk>	probably a good idea
+Mar 12 02:41:07 <akk>	enough excitement for one day, time to veg a little and tackle starting over with UBO tomorrow.
+Mar 12 02:46:25 <espresso>	https://wiki.archlinux.org/title/Profile-sync-daemon | https://wiki.archlinux.org/title/Firefox/Profile_on_RAM
+Mar 12 02:57:40 <monkeyPlus>	hey. https://pastebin.com/hFNnjAww ...why are the addresses on gdb, if i havent run the program yet
+Mar 12 03:02:06 <preach>	monkeyPlus: I don't understand what you said or what you're trying to show
+Mar 12 03:02:16 <preach>	can you elaborate please
+Mar 12 03:02:40 <monkeyPlus>	ok.so...i ran gdb on a file, without executing it, used disas main, and it showed that output
+Mar 12 03:02:52 <espresso>	er, yeah, it's a disassembly of main()
+Mar 12 03:03:02 <monkeyPlus>	yeah, but what are those addresses?
+Mar 12 03:03:12 <espresso>	virtual offsets
+Mar 12 03:03:38 <monkeyPlus>	but like, they relate with the elf file?
+Mar 12 03:03:38 <preach>	yes
+Mar 12 03:03:38 <monkeyPlus>	ah ok
+Mar 12 03:03:38 <preach>	the offset into the binary
+Mar 12 03:03:40 <monkeyPlus>	ah..cool
+Mar 12 03:03:40 <monkeyPlus>	thks
+Mar 12 03:04:15 <espresso>	what was getting me was thinking you got that output *without* typing disas :P
+Mar 12 03:04:24 <preach>	yea
+Mar 12 03:04:40 <preach>	and the hex numbers are just the opcodes that the assembly uses underneath i.e. the actual bytes in the binary at those offsets
+Mar 12 03:05:14 <preach>	maybe you meant to "break main" instead ?
+Mar 12 03:06:21 <monkeyPlus>	so every file, has similiar offsets...but a file on filesystem, is different
+Mar 12 03:06:36 <monkeyPlus>	like they can't be equal...
+Mar 12 03:08:33 <monkeyPlus>	ah ok, so elf files are different between source and binary?
+Mar 12 03:13:42 <monkeyPlus>	how does filesystem ,uses same address, for diffferent files?! there is a mapping between text section, and file on filesystme?!
+Mar 12 03:13:42 <espresso>	monkeyPlus: well the source would be .c, .cpp, .h, .py, whatever like on github, right? gdb works only on compiled binaries, showing virtual offsets (starting at 0) since that's more useful than starting at 0xBAADF00D. binary will be the same in RAM as on FS
+Mar 12 03:15:46 <espresso>	monkeyPlus: text used by the program will be compiled into the binaries, which you can find if you look enough
+Mar 12 03:15:46 <gry>	>>> Pop!_OS is a free and open-source Linux distribution, based on Ubuntu, and featuring a customized GNOME desktop environment known as COSMIC. The distribution is developed by American Linux computer manufacturer System76. Pop!_OS is primarily built to be bundled with the computers built by System76, but can also be downloaded and installed on most computers <today i realized this vendor likes linux
+Mar 12 03:19:12 <espresso>	monkeyPlus: if you mean the disassembly "text", that's the https://wikipedia.org/wiki/Assembly_language translation of the machine language instructions actually in the binary.
+Mar 12 03:19:39 <hojasuelta>	Khaytsus: The optics paper you mentioned the other day... Lenses for astronomy?
+Mar 12 03:21:23 <mdogg>	They were originally designed for the Hubble.
+Mar 12 03:21:41 <espresso>	monkeyPlus: or possibly you know that stuff and I missed your point :P
+Mar 12 03:21:55 *	wigums wears glasses originally designed for the hubble
+Mar 12 03:22:41 <monkeyPlus>	so...text must be relative to file on file system (since its stored there..but it says its on 0x080491c4..so its not related to filesystem at all...)
+Mar 12 03:24:23 <espresso>	monkeyPlus: I think those addresses are offsets from beginning of the binary (whether in ram or fs, same). Unless somehow inspecting real RAM
+Mar 12 03:25:08 <monkeyPlus>	say file A = [ .text section offset 0x080490ac..nothing to do with file...cant use offset ... 080490ac doesnt belong to file] ..right ?!
+Mar 12 03:26:37 <Khaytsus>	nvz: optics paper wut?
+Mar 12 03:26:39 <Khaytsus>	erm hojasuelta
+Mar 12 03:26:43 <Khaytsus>	Wasn't me
+Mar 12 03:27:01 <nvz>	o.O
+Mar 12 03:28:56 <nvz>	Khaytsus: but I saw you standin on the corner...
+Mar 12 03:28:58 <hojasuelta>	Khaytsus: when I mentioned the retro flux encabulator
+Mar 12 03:29:19 <hojasuelta>	i thought it was you who posted some info on what you were working on... and I made that joke... and then you posted the academic paper url?
+Mar 12 03:29:27 <Khaytsus>	uh
+Mar 12 03:29:27 <hojasuelta>	about lenses or optics or physics
+Mar 12 03:29:33 <hojasuelta>	oops must have been someone else
+Mar 12 03:32:05 <espresso>	monkeyPlus: Oh, if you want to use the actual runtime addresses, 'starti' should map the file to the OS then break..
+Mar 12 03:32:20 <monkeyPlus>	ok cool
+Mar 12 03:33:20 <Khaytsus>	hojasuelta: Anjor responded with some url
+Mar 12 03:33:40 <hojasuelta>	Khaytsus: ahhh whoa youre awesome.  i was too lazy to search for it lol
+Mar 12 03:33:53 <Khaytsus>	I was too lazy too ,but then I got around to it
+Mar 12 03:33:53 <hojasuelta>	thanks!
+Mar 12 03:34:25 <hojasuelta>	Anjor: Just curious-- you using linux in a build involving optics / lenses?
+Mar 12 03:34:37 <mdogg>	lol
+Mar 12 03:35:18 <Khaytsus>	Do you think telescope manufacturers have a good PR firm for the optics?
+Mar 12 03:36:31 <ariavne>	I haven't seen one that does...
+Mar 12 03:40:23 <loganlee>	is bigmac banned now?
+Mar 12 03:40:24 <loganlee>	lol
+Mar 12 03:40:40 <hodapp>	whaa
+Mar 12 03:40:48 *	Khaytsus blinks
+Mar 12 03:40:49 <loganlee>	the troll guy
+Mar 12 03:41:20 *	Khaytsus blinks more
+Mar 12 03:41:28 <ariavne>	Khaytsus, you should seem an optometrist soon
+Mar 12 03:41:32 <ariavne>	While you still can
+Mar 12 03:41:38 <ariavne>	*see
+Mar 12 03:41:42 <rbox>	ariavne: hes under duress
+Mar 12 03:41:43 <ariavne>	dang ruined it
+Mar 12 03:41:48 <rbox>	ariavne: hes trying to send us coded messages
+Mar 12 03:41:58 <Khaytsus>	be sure to drink your ovaltine
+Mar 12 03:42:02 <rbox>	HAHA
+Mar 12 03:42:02 <kfrench_>	rbox: Blink twice if you have dry eyes.
+Mar 12 03:42:03 <ariavne>	oh scrapplejacks. I don't know blinkscode
+Mar 12 03:46:53 <ariavne>	...did... did they... die?

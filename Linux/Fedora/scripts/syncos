@@ -1,6 +1,9 @@
 #!/bin/bash
 
 rsync -avr --delete-during --mkpath $HOME/.config/dolphinrc $HOME/Git/dotfiles/Linux/Fedora/.config/
+rsync -avr --delete-during --mkpath $HOME/.config/alacritty $HOME/Git/dotfiles/Linux/Fedora/.config/
+rsync -avr --delete-during --mkpath $HOME/.config/Code/User $HOME/Git/dotfiles/Linux/Fedora/.config/
+rsync -avr --delete-during --mkpath $HOME/.config/Thunar $HOME/Git/dotfiles/Linux/Fedora/.config/
 rsync -avr --delete-during --mkpath $HOME/.config/doom $HOME/Git/dotfiles/Linux/Fedora/.config/
 rsync -avr --delete-during --mkpath $HOME/.config/dunst $HOME/Git/dotfiles/Linux/Fedora/.config/
 rsync -avr --delete-during --mkpath $HOME/.config/easyeffects $HOME/Git/dotfiles/Linux/Fedora/.config/
@@ -11,7 +14,7 @@ rsync -avr --delete-during --mkpath $HOME/.config/hypr $HOME/Git/dotfiles/Linux/
 rsync -avr --delete-during --mkpath $HOME/.config/i3 $HOME/Git/dotfiles/Linux/Fedora/.config/
 rsync -avr --delete-during --mkpath $HOME/.config/kdedefaults $HOME/Git/dotfiles/Linux/Fedora/.config/
 rsync -avr --delete-during --mkpath $HOME/.config/kitty $HOME/Git/dotfiles/Linux/Fedora/.config/
-rsync -avr --delete-during --mkpath $HOME/.config/libreoffice $HOME/Git/dotfiles/Linux/Fedora/.config/
+rsync -avr --delete-during --mkpath $HOME/.config/libreoffice/4/user $HOME/Git/dotfiles/Linux/Fedora/.config/
 rsync -avr --delete-during --mkpath $HOME/.config/lvim $HOME/Git/dotfiles/Linux/Fedora/.config
 rsync -avr --delete-during --mkpath $HOME/.config/mpd $HOME/Git/dotfiles/Linux/Fedora/.config/
 rsync -avr --delete-during --mkpath $HOME/.config/nano $HOME/Git/dotfiles/Linux/Fedora/.config/
@@ -24,14 +27,23 @@ rsync -avr --delete-during --mkpath $HOME/.config/qt5ct $HOME/Git/dotfiles/Linux
 rsync -avr --delete-during --mkpath $HOME/.config/ranger $HOME/Git/dotfiles/Linux/Fedora/.config/
 rsync -avr --delete-during --mkpath $HOME/.config/rofi $HOME/Git/dotfiles/Linux/Fedora/.config/
 rsync -avr --delete-during --mkpath $HOME/.config/sway $HOME/Git/dotfiles/Linux/Fedora/.config/
-rsync -avr --delete-during --mkpath $HOME/.config/Thunar $HOME/Git/dotfiles/Linux/Fedora/.config/
 rsync -avr --delete-during --mkpath $HOME/.config/warp-terminal $HOME/Git/dotfiles/Linux/Fedora/.config/
 rsync -avr --delete-during --mkpath $HOME/.config/waybar $HOME/Git/dotfiles/Linux/Fedora/.config/
 rsync -avr --delete-during --mkpath $HOME/.config/wofi $HOME/Git/dotfiles/Linux/Fedora/.config/
 rsync -avr --delete-during --mkpath $HOME/.config/xsettingsd $HOME/Git/dotfiles/Linux/Fedora/.config/
 rsync -avr --delete-during --mkpath $HOME/.config/yazi $HOME/Git/dotfiles/Linux/Fedora/.config/
+rsync -avr --delete-during --mkpath $HOME/.config/mimeapps.list $HOME/Git/dotfiles/Linux/Fedora/.config/
+# KDE Related
+rsync -avr --delete-during --mkpath $HOME/.config/krusaderrc $HOME/Git/dotfiles/Linux/Fedora/.config/
+rsync -avr --delete-during --mkpath $HOME/.config/kwinrc $HOME/Git/dotfiles/Linux/Fedora/.config/
+rsync -avr --delete-during --mkpath $HOME/.config/plasma-localerc $HOME/Git/dotfiles/Linux/Fedora/.config/
+rsync -avr --delete-during --mkpath $HOME/.config/powerdevilrc $HOME/Git/dotfiles/Linux/Fedora/.config/
+rsync -avr --delete-during --mkpath $HOME/.config/powermanagementprofilesrc $HOME/Git/dotfiles/Linux/Fedora/.config/
+
+rsync -avr --delete-during --mkpath $HOME/.config/starship.toml $HOME/Git/dotfiles/Linux/Fedora/.config/
 rsync -avr --delete-during --mkpath $HOME/scripts $HOME/Git/dotfiles/Linux/Fedora/
 rsync -avr --delete-during --mkpath $HOME/.local/share/lunarvim/lvim/lua/lvim/core/which-key.lua $HOME/Git/dotfiles/Linux/Fedora/.local/share/lunarvim/lvim/lua/lvim/core/
+rsync -avr --delete-during --mkpath $HOME/.local/bin $HOME/Git/dotfiles/Linux/Fedora/.local/bin/
 rsync -avr --delete-during --mkpath $HOME/.bash_history $HOME/Git/dotfiles/Linux/Fedora/
 rsync -avr --delete-during --mkpath $HOME/.bash_logout $HOME/Git/dotfiles/Linux/Fedora/
 rsync -avr --delete-during --mkpath $HOME/.bash_profile $HOME/Git/dotfiles/Linux/Fedora/

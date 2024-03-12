@@ -698,3 +698,49 @@ T 1710107707 18<28Eryn_FL18>	mostly my after and wanter ^
 T 1710109467 19*	Now talking on 22#systemd
 T 1710109467 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
 T 1710109467 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710112836 19*	Now talking on 22#systemd
+T 1710112836 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710112836 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710113061 19*	Now talking on 22#systemd
+T 1710113061 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710113061 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710118768 19*	Now talking on 22#systemd
+T 1710118768 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710118768 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710131041 19*	Now talking on 22#systemd
+T 1710131041 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710131041 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710133664 19*	Now talking on 22#systemd
+T 1710133664 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710133664 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710152285 19*	Now talking on 22#systemd
+T 1710152285 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710152285 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710161564 18<27rburton18>	I'm running the systemd tests, we use prefix-map to remap __FILE__ etc and the test fails
+T 1710161584 18<27rburton18>	FAIL: test-log
+T 1710161584 18<27rburton18>	__FILE__: /usr/src/debug/systemd/255.4/src/test/test-log.c
+T 1710161584 18<27rburton18>	RELATIVE_SOURCE_PATH: ../git
+T 1710161584 18<27rburton18>	PROJECT_FILE: c/debug/systemd/255.4/src/test/test-log.c
+T 1710161584 18<27rburton18>	Assertion 'startswith(__FILE__, RELATIVE_SOURCE_PATH "/")' failed at c/debug/systemd/255.4/src/test/test-log.c:30, function test_file(). Aborting.
+T 1710161792 18<27rburton18>	is this test expected to fail in this setup? __FILE__  definitely won't start with the relative source path.
+T 1710162030 18<27bluca18>	yes, see https://github.com/systemd/systemd/pull/12926
+T 1710162181 18<27rburton18>	feels like the test could detect this and skip? is the actual test_file() check really needed?
+T 1710162640 18<27bluca18>	it's needed to enforce that the macro produces sensible results
+T 1710162763 18<27bluca18>	as you can see in the result you pasted, it doesn't - PROJECT_FILE is supposed to be src/test/test-log.c
+T 1710164802 18<27rburton18>	ok i wonder what the hell happened there :)
+T 1710165061 18<27rburton18>	Also, should test/systemd-runtest.env be installed?
+T 1710165203 18<27bluca18>	we do not install it in debian/ubuntu, not even in the systemd-test package
+T 1710165222 18<27rburton18>	ok
+T 1710165244 18<27rburton18>	just noticed a test prints a non-fatal error that it can't find it
+T 1710165947 18<27rburton18>	bluca: aha https://github.com/systemd/systemd/issues/27978
+T 1710165968 18<27rburton18>	similar issue at least
+T 1710166432 18<27bluca18>	looks like it
+T 1710166482 18<27rburton18>	it appears the current logic assumes that both __FILE__ hasn't been remapped and the build tree is under the source tree
+T 1710166536 18<27bluca18>	no oot build works too, see commit message https://github.com/systemd/systemd/commit/a0b15b41771a262d042dbb6ac32a7f9614100714
+T 1710166810 18<27rburton18>	ok, just the remapping
+T 1710200282 19*	Now talking on 22#systemd
+T 1710200282 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710200282 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710201345 19*	Now talking on 22#systemd
+T 1710201345 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710201345 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)

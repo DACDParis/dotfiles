@@ -1642,3 +1642,189 @@ T 1710088793 18<20pid140018>	works! thank you lopid
 T 1710109467 19*	Now talking on 22#vim
 T 1710109467 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
 T 1710109467 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710112836 19*	Now talking on 22#vim
+T 1710112836 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710112836 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710113061 19*	Now talking on 22#vim
+T 1710113061 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710113061 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710118768 19*	Now talking on 22#vim
+T 1710118768 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710118768 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710131041 19*	Now talking on 22#vim
+T 1710131041 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710131041 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710133664 19*	Now talking on 22#vim
+T 1710133664 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710133664 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710149622 18<24hackinghorn18>	hi
+T 1710149633 18<24hackinghorn18>	good morning, all
+T 1710149717 18<24hackinghorn18>	I'm wondering if 'gf' and other commands that open other files in the same window have a quick way to open them in a split
+T 1710149790 18<24hackinghorn18>	oh ctrl+w f I think
+T 1710152285 19*	Now talking on 22#vim
+T 1710152285 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710152285 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710169594 18<22FakuVe18>	hi there . Is there a way to remove a quickfix list out of the quickfixlist stack?
+T 1710169633 18<22FakuVe18>	So say I create one qfList with :vimgrep
+T 1710169652 18<22FakuVe18>	Then I see this outputs 1
+T 1710169654 18<22FakuVe18>	echo getqflist({'nr' : 0}).nr
+T 1710169663 18<22FakuVe18>	I want to remove that qfList
+T 1710169680 18<22FakuVe18>	in order to create otherone newer with a :vimgrep command
+T 1710169685 18<22FakuVe18>	and do echo getqflist({'nr' : 0}).nr
+T 1710169690 18<22FakuVe18>	and get again 1
+T 1710169808 18<28romainl18>	why is that list bothering you?
+T 1710169822 18<22FakuVe18>	Cause grepadd is not working properly
+T 1710169829 18<22FakuVe18>	and I need to update this list
+T 1710169842 18<22FakuVe18>	I wanted to update the ocurrences on this list
+T 1710169876 18<22FakuVe18>	Put in the new ocurrences , takeout the no-longer ocurrences
+T 1710169900 18<22FakuVe18>	At the same time I am doing quite a lot of stuff with the qfList
+T 1710169905 18<22FakuVe18>	so Its custom formated
+T 1710169922 18<22FakuVe18>	And already opened in a new tab
+T 1710169958 18<22FakuVe18>	I need to create the logic to remove that quickfix list , close the tab. create a new quickfix list to open it on a new tab
+T 1710169959 18<28romainl18>	:h setqflist-action
+T 1710169959 18<25digmbot18>	:help setqflist-action -> http://vimhelp.appspot.com/builtin.txt.html#setqflist-action
+T 1710169970 18<22FakuVe18>	yeah I know
+T 1710169979 18<22FakuVe18>	I am looking at it constantly
+T 1710169986 18<28romainl18>	and?
+T 1710170036 18<22FakuVe18>	well yeah
+T 1710170038 18<22FakuVe18>	the problem
+T 1710170065 18<22FakuVe18>	the problem is that I am using vimgrep to create that new qfList
+T 1710170088 18<22FakuVe18>	So In this case I should do my own custom setqflist
+T 1710170099 18<28romainl18>	yes
+T 1710170104 18<22FakuVe18>	which is difficult
+T 1710170110 18<22FakuVe18>	I guess
+T 1710170110 18<28romainl18>	no
+T 1710170130 18<22FakuVe18>	I just want to check for the following ocurrences
+T 1710170137 18<28romainl18>	it's a list of dicts, easy-peasy
+T 1710170142 18<22FakuVe18>	"/ (X)$/"
+T 1710170165 18<22FakuVe18>	So to match those lines with that pattern
+T 1710170177 18<28romainl18>	yeah?
+T 1710170237 18<22FakuVe18>	https://termbin.com/vz7p
+T 1710170244 18<22FakuVe18>	This is my custom function I am using
+T 1710170249 18<22FakuVe18>	In order to get what I wanted
+T 1710170264 18<28romainl18>	wall of code
+T 1710170345 18<22FakuVe18>	If you can see i am formatting the Qf list
+T 1710170356 18<22FakuVe18>	In order to not to include linenumbers of matches
+T 1710170368 18<22FakuVe18>	and remove the entry occurences as well
+T 1710170377 18<28romainl18>	sorry but I don't have time to read so much code right now
+T 1710170383 18<22FakuVe18>	ok
+T 1710170393 18<22FakuVe18>	Thanks anyways
+T 1710170440 18<28romainl18>	I'm just not sure why you want that dance with the lists when creating a new list is so easy.
+T 1710170465 18<22FakuVe18>	because I need to be closing it an opening it back
+T 1710170475 18<22FakuVe18>	and I just want to automate it to a keypress
+T 1710170483 18<28romainl18>	that is what I don't get
+T 1710170487 18<22FakuVe18>	and have this qfList in a separated tab
+T 1710170493 18<22FakuVe18>	Well , automation
+T 1710170508 18<22FakuVe18>	If I am gonna have to refresh this every 30 seconds
+T 1710170531 18<22FakuVe18>	and I have to open it manually in a newtab each time I need it
+T 1710170537 18<22FakuVe18>	It is just not useful to me 
+T 1710170550 18<28romainl18>	context is lacking, here
+T 1710170580 18<22FakuVe18>	Basically I have textfiles that have a lot of " (X)$"
+T 1710170596 18<22FakuVe18>	at the end of the lines . I want to check all of them like with grep
+T 1710170607 18<28romainl18>	"check"?
+T 1710170610 18<22FakuVe18>	and been able to navigate through it using a quickfix list
+T 1710170620 18<22FakuVe18>	So far the functionality works
+T 1710170628 18<22FakuVe18>	It works like a charm
+T 1710170637 18<28romainl18>	you don't need a custom function for that
+T 1710170652 18<22FakuVe18>	The problem is that , when I introduce more " (X)$" and I want to refresh the qfList
+T 1710170659 18<22FakuVe18>	I have to do all this cumbersome process
+T 1710170669 18<22FakuVe18>	Thats why I am trying to write a function to do that for me
+T 1710170695 18<28romainl18>	to do what? add a " (X)$" and refresh the list?
+T 1710170715 18<22FakuVe18>	yeah , in my doucment I am adding " (X)$"
+T 1710170724 18<22FakuVe18>	then I want to refresh the qfList
+T 1710170759 18<22FakuVe18>	Note that I am using a custom formatting function for that qfList too . I dont want the entries nor the ocurrences to be shown
+T 1710170775 18<22FakuVe18>	Also I want this qfList to be oppened in the nextab
+T 1710170784 18<28romainl18>	what does the list show, then?
+T 1710170797 18<22FakuVe18>	the lines of the ocurrences
+T 1710170829 18<22FakuVe18>	Also the buffer in which the qfList is opened maintains the ft of the Original file
+T 1710170875 18<22FakuVe18>	I have done it with the function I have pasted in the link
+T 1710170881 18<22FakuVe18>	The problem is when refreshing
+T 1710170951 18<22FakuVe18>	It is pretty confusing
+T 1710170957 18<22FakuVe18>	One question.
+T 1710170977 18<22FakuVe18>	If a qfList is opened in a buffer
+T 1710171005 18<22FakuVe18>	If I do a setqflist to modify such a qfList , will the buffer change accordingly?
+T 1710171224 18<22FakuVe18>	it looks like no
+T 1710171244 18<22FakuVe18>	That is the main limiation , anyways
+T 1710171247 18<22FakuVe18>	Thank you
+T 1710171297 18<22FakuVe18>	my question is also , there is no way to remove a qfList from stack
+T 1710171303 18<22FakuVe18>	from the stack of qfList
+T 1710171310 18<22FakuVe18>	which I guess is no
+T 1710173740 18<28romainl18>	the only qf-related functions are setqflist() getqflist() setloclist() and getloclist()
+T 1710173802 18<28romainl18>	and again, from your description it is not clear why you would want to remove a list when it is so cheap to make a new one
+T 1710173877 18<28romainl18>	is there a confusion between the notions of "quickfix list" and "quickfix window" by any chance?
+T 1710181965 18<20cek18>	How can I delete a highlighted by search text?
+T 1710181978 18<26lopid18>	replace it with nothing
+T 1710187387 18<22FakuVe18>	Cannot I declare an uninitialized variable , such as a string?
+T 1710187403 18<22FakuVe18>	w:myVar: string   # This wont let me do it
+T 1710187420 18<22FakuVe18>	whereas 
+T 1710187426 18<22FakuVe18>	w:myVar = 'Pepe'    # This is alright
+T 1710188581 18<27carbonfiber18>	How did people browse/explore files and directories using vi/vim before netrw existed? did netrw have a predecessor?
+T 1710189162 18<29nickspoon18>	I assume people just used :e, :find, :grep, :tag etc.
+T 1710191155 18<22FakuVe18>	in trim({text} [, {mask} [, {dir}]])
+T 1710191175 18<22FakuVe18>	the mask is it a pattern?
+T 1710191188 18<22FakuVe18>	What is it considered as a mask here?
+T 1710191232 18<29nickspoon18>	There are some pretty good examples in that help topic
+T 1710191269 18<22FakuVe18>	ok yeah 
+T 1710191276 18<22FakuVe18>	I was looking for other function
+T 1710191354 18<22FakuVe18>	I was looking for matchstr() ^___^
+T 1710191948 18<20CrazyTux[m]18>	Hey guys working with Arabic (RTL) language and its driving me crazy I've read :help arabic and I'm unable to modify some text without it jumping around all over the place, same thing is happening in vscode as well, any suggestions?
+T 1710191949 18<25digmbot18>	:help arabic -> http://vimhelp.appspot.com/options.txt.html#%27arabic%27
+T 1710192042 18<29nickspoon18>	I don't have any experience with RTL sorry but if the same thing is happening in vscode then that sounds weird? There's zero connection between vim and vscode...
+T 1710192246 18<20CrazyTux[m]18>	Yea... any Arabic speakers here that can give me a hand? :)
+T 1710193583 18<22FakuVe18>	So I have got in $HOME/.vim/autoload/dan.vim a function definition to be used widely across my files
+T 1710193590 18<22FakuVe18>	but I have migrated to vim9script
+T 1710193613 18<22FakuVe18>	what I used to define as
+T 1710193631 18<22FakuVe18>	function dan#closeloclist()
+T 1710193635 18<22FakuVe18>	now is defined as
+T 1710193643 18<22FakuVe18>	export def DanCloseloclist()
+T 1710193659 18<22FakuVe18>	How can I access this function from other files?
+T 1710193675 18<22FakuVe18>	I am doing call DanCloseloclist()
+T 1710193696 18<22FakuVe18>	E117: Unknown function: DanCloseloclist
+T 1710193795 18<29nickspoon18>	you import it with    import autoload 'dan.vim' as dan   ... then:   dan.DanCloseloclist()
+T 1710193902 18<29nickspoon18>	Actually I don't think you'll need the  "as dan"  bit
+T 1710193917 18<22FakuVe18>	So it is not autoloaded anymore?
+T 1710193932 18<29nickspoon18>	> import autoload ...
+T 1710193933 18<22FakuVe18>	I need the import statement?
+T 1710193954 18<29nickspoon18>	You need the import statement but it's still autoloaded
+T 1710193971 18<22FakuVe18>	right
+T 1710194006 18<29nickspoon18>	See :h import-autoload
+T 1710194006 18<25digmbot18>	:help import-autoload -> http://vimhelp.appspot.com/vim9.txt.html#import-autoload
+T 1710194102 18<22FakuVe18>	E1094: Import can only be used in a script
+T 1710194183 18<22FakuVe18>	So I cannot fire this from the ex-command console
+T 1710194320 18<22FakuVe18>	my days...
+T 1710194409 18<29nickspoon18>	You still can, use the legacy format
+T 1710194422 18<29nickspoon18>	:call dan#DanCloseloclist()
+T 1710194468 18<22FakuVe18>	alright
+T 1710194472 18<22FakuVe18>	way easier
+T 1710194504 18<22FakuVe18>	I dont know how are people gonna test their functions if they get those erros
+T 1710194526 18<22FakuVe18>	even If you just want to call the function , you wont be able
+T 1710195146 18<19m_ben18>	FakuVe: slightly more efficient: import autoload '../autoload/dan.vim' assuming you put it in a script file located in plugin/*.vim
+T 1710195740 18<19m_ben18>	FakuVe: I test it by putting that import statement inside a plugin/ file and run ":source %" while editing that file and voilà :)
+T 1710195815 18<22FakuVe18>	cheerz hehe
+T 1710196259 18<19m_ben18>	in after/ftplugin/vim.vim: nnoremap <buffer> g<cr> <cmd>source %<cr>
+T 1710196528 18<22habamax18>	:%source if you have unsaved vim file
+T 1710196681 18<19m_ben18>	and for visual selection: xnoremap <buffer> g<cr> <esc>:vim9cmd :'<,'>source<cr>
+T 1710197155 18<22habamax18>	I have similar as a global map (to eval things everywhere)
+T 1710197180 18<22habamax18>	it actually is an operator <space>vip or <space>vv
+T 1710197387 18<27m25718>	What is a good C lsp for neovim. Right now I am using clangd.
+T 1710197532 18<22habamax18>	probably the same as for vim or emacs, clangd
+T 1710197543 18<22habamax18>	but to be 100% sure, ask #neovim
+T 1710197814 18<22FakuVe18>	I have got an issue translating a function to vim9script I have posted on reddit
+T 1710197820 18<22FakuVe18>	https://www.reddit.com/r/vim/comments/1bch6q1/need_to_nest_a_function_in_vim9script_but_unable/
+T 1710197837 18<22FakuVe18>	If anyone wants to take a look , I am disconnecting this. Almost done this functionality
+T 1710197840 18<22FakuVe18>	thanks all
+T 1710200282 19*	Now talking on 22#vim
+T 1710200282 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710200282 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710201345 19*	Now talking on 22#vim
+T 1710201345 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710201345 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710202077 18<19m_ben18>	FakuVe: remove the quotes from 'LocFormatting'
+T 1710205381 18<24trevdev18>	Heya guys.  I had been automatically sending payments to register@moolenaar.net for months. I cannot recall the last time I got a confirmation from Bram, automated or otherwise, may he rest in peace.  I just wanna know if that money is actually doing any work or if I need to update something?  My donation total also does not line up with what
+T 1710205381 18<24trevdev18>	I've donated.
+T 1710206537 18<22habamax18>	try asking vim_dev maillist, trevdev
+T 1710207080 18<24trevdev18>	habamax: I mailed vim@vim.org and I don't see my question in vim_use.  I will try vim-dev
+T 1710207152 18<29nickspoon18>	I believe new email addresses get approved before they get through, so if it's the first time you've posted to the mailing list it may take a day or two to come through
+T 1710207286 18<24trevdev18>	Thanks.  I did send a message a couple of days ago, I'll just check in later
+T 1710208325 18<22habamax18>	I don't think Christian has access to the fund and any donations, but he might know details on who is in charge
+T 1710208401 18<22habamax18>	And actually, whatever you will ask in Discussions on github will also be sent to vim_dev https://github.com/vim/vim/discussions

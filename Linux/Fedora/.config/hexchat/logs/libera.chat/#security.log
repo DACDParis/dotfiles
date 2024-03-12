@@ -1792,3 +1792,126 @@ Mar 10 20:57:18 <mats1>	its a thirty year old format with everything under the s
 Mar 10 23:24:27 *	Now talking on #security
 Mar 10 23:24:27 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
 Mar 10 23:24:27 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Mon Mar 11 00:20:37 2024
+
+Mar 11 00:20:36 *	Now talking on #security
+Mar 11 00:20:36 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 11 00:20:36 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Mon Mar 11 00:24:21 2024
+
+Mar 11 00:24:21 *	Now talking on #security
+Mar 11 00:24:21 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 11 00:24:21 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Mon Mar 11 01:59:29 2024
+
+Mar 11 01:59:28 *	Now talking on #security
+Mar 11 01:59:28 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 11 01:59:28 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Mon Mar 11 05:24:01 2024
+
+Mar 11 05:24:01 *	Now talking on #security
+Mar 11 05:24:01 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 11 05:24:01 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Mon Mar 11 06:07:44 2024
+
+Mar 11 06:07:44 *	Now talking on #security
+Mar 11 06:07:44 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 11 06:07:44 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Mon Mar 11 11:18:06 2024
+
+Mar 11 11:18:05 *	Now talking on #security
+Mar 11 11:18:05 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 11 11:18:05 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 11 11:21:07 <mwebsec>	y0
+Mar 11 11:53:05 <calmclam>	wazzup
+Mar 11 13:52:22 <Dex2x>	Anyone still got the link for that website that shows all the possible route and certifications to take?
+Mar 11 13:52:55 <Dex2x>	I think it was this one https://pauljerimy.com/security-certification-roadmap/
+Mar 11 13:53:38 <Dex2x>	Is GIAC or eccounsil better to use?
+Mar 11 13:53:59 <Dex2x>	In terms of your certification meaning something to find a job ?
+Mar 11 15:07:59 <mwebsec>	hey calmclam
+Mar 11 15:08:05 <mwebsec>	giac of course
+Mar 11 15:08:29 <mwebsec>	but more expensive to get the course materials
+Mar 11 15:11:01 <Dex2x>	oh really?
+Mar 11 15:14:11 <mwebsec>	sure
+Mar 11 15:14:13 <mwebsec>	GPEN
+Mar 11 15:14:15 <mwebsec>	GWAPT
+Mar 11 15:14:17 <mwebsec>	GXPN
+Mar 11 15:14:28 <mwebsec>	all good certifications, but the course fees are expensive
+Mar 11 15:15:29 <Dex2x>	Well will see if my company pays for it, I just need to find one that is more geared towards software development or architecture
+Mar 11 15:21:35 <mwebsec>	checkout the sans website
+Mar 11 15:21:45 <mwebsec>	it has tons of courses that lead to giac certification
+Mar 11 15:22:45 <Dex2x>	sans? never heard of it, will have a look
+Mar 11 15:24:14 <Dex2x>	GWEB might be good to start
+Mar 11 15:42:30 <mwebsec>	giac provides the certifications for the sans courses
+Mar 11 15:42:34 <mwebsec>	https://www.sans.org
+Mar 11 15:43:16 <mwebsec>	if you need hands on certification then probably oswe or oswa are good. they are certifications from offensive security and are at more reasonable pricing than  sans courses
+Mar 11 18:47:11 <hays>	i really dont like how some services are now refusing to authenticate you if you are on a VPN
+Mar 11 19:05:11 <calmclam>	Agreed.
+Mar 11 19:05:38 <calmclam>	I also don't like that some services are not refusing to authenticate you if you have non-standard browser preferences set that alter the javascript environment.
+Mar 11 19:05:48 <calmclam>	are now*
+Mar 11 20:24:14 <gnrp>	I love it. There has never been anything better in the world.
+Mar 11 20:24:38 <gnrp>	I especially love it when recaptcha or cloudflare puts you in endless loops when they don't like your origin
+Mar 11 20:26:10 <BlueyHealer>	Good thing Cloudflare likes to announce ita presence via not letting you in with JS off.
+Mar 11 20:34:52 <pagios>	question about ransomeware and borg, for example say you are on backup3 (incremental of backup1) and a ransomeware hit at that point in time.  the ransomeware encrypts all the files and now borg detects that the file changed and uploades backup4 which is HUGE since everything changed. BUT does it mean i. can still rollback tup bakcup 1 --> 3 safely ?  which means there is no way to overwrite old backups already closed by borg ?
+Mar 11 20:36:33 <yans>	Hi! Anyone heard about IPVM calculator?
+Mar 11 20:48:02 <gnrp>	pagios: Depending on which backups you clean up, yes, sure. That's what it is for
+Mar 11 20:49:17 <pagios>	gnrp:  i have a storagebox with limited shell on it. cant run crontab. can i run a borg server and have the daily schedules setup in it ? internally instead of crontab
+Mar 11 20:50:16 <gnrp>	pagios: afaik, no. But I am not really a borg expert. They are on libera, though, afair
+Mar 11 23:20:38 <HiccupJul>	How can I prove ownership of a website using a digital signature? If I sign a file using my private key and post the signed file and public key, couldn't someone else just copy and paste the same data onto their site?
+Mar 11 23:24:52 <xx>	the file contents are important
+Mar 11 23:25:13 <xx>	worst you could do is sign a message saying "Yes" with your private key
+Mar 11 23:29:30 <HiccupJul>	So the message could say, e.g. "[domain or file sha256] is owned by [public key]"?
+Mar 11 23:30:21 <HiccupJul>	but i'm not sure how that'd work with a dynamic site, that could be exist on multiple domains
+Mar 11 23:30:36 <HiccupJul>	although maybe https should play some part in this
+Mar 11 23:35:30 <gnrp>	HiccupJul: You are mixing up two things
+Mar 11 23:36:14 <gnrp>	posting your own content on a website proves control over it. Ownership can probably best be proven with the domain whois.
+Mar 11 23:36:22 <gnrp>	there is no need for cryptography there
+Mar 11 23:37:14 <HiccupJul>	that's true
+Mar 11 23:37:14 <gnrp>	you rather want to prove that you are *not* in control of another website, even if it claims so?
+Mar 11 23:37:26 <HiccupJul>	yes, i suppose so
+Mar 11 23:38:54 <HiccupJul>	well maybe not exactly. i want to prove ownership of a website, that isn't necessarily hosted by me.
+Mar 11 23:38:57 <gnrp>	you have a bootstrap problem there. Since there is no canonical way to disprove ownership, you would have to make an authoritative statement on *how* websites from you are marked
+Mar 11 23:39:24 <HiccupJul>	yeah i see what you mean. at that statement would itself need to be trusted
+Mar 11 23:39:27 <HiccupJul>	*and that
+Mar 11 23:39:34 <gnrp>	and you would have to publish that authoritative statement in some trusted way... if you start from your own website, it would be easy
+Mar 11 23:39:59 <gnrp>	say something like "you'll find signatures here" and then just make a pgp signature of the index file there
+Mar 11 23:40:08 <HiccupJul>	yeah
+Mar 11 23:41:40 <HiccupJul>	although there's the question of how that could work on dynamic sites. i know HTTPS, which can cover all data on a website, uses public key cryptography, so maybe that can be taken advantage of?
+Mar 11 23:42:22 <gnrp>	HiccupJul: x509 certificates in https *normally* only prove that you are in control of the webserver, they do not refer to a person
+Mar 11 23:43:06 <HiccupJul>	yeah
+Mar 11 23:43:37 <HiccupJul>	i guess you'd need to sign every single HTTPs response, as a http header or something
+Mar 11 23:43:45 <HiccupJul>	every single HTTP response
+Mar 11 23:44:25 <gnrp>	you would need to do that with a private (personal) key, rather than one for www for the domain
+Mar 11 23:44:39 <HiccupJul>	i'm not sure this is doable for dynamic content, because the owner can't manually authorise every single dynamic response
+Mar 11 23:45:25 <gnrp>	you can discuss about the consequences, but you could just load your personal key there
+Mar 11 23:45:49 <gnrp>	whoever does not have control over that server or another computer where your personal key is stored, wouldn't be able to generate the same signatures
+Mar 11 23:46:13 <HiccupJul>	personal key = private key?
+Mar 11 23:46:54 <gnrp>	private key, yes. But I mean personal = referring to your person, and not a computer
+Mar 11 23:47:45 <HiccupJul>	i suppose in this scenario, i wouldn't want to trust any of the mirror owners either
+Mar 11 23:49:30 <HiccupJul>	so i guess its not doable for a dynamic site
+Mar 11 23:50:09 <gnrp>	no clue what you mean with mirror owners, or what your mirroring scheme is
+Mar 11 23:50:43 <gnrp>	if these mirrors are not supposed to produce the dynamic content themselves, you can surely still do it
+Mar 11 23:52:53 <HiccupJul>	i think i was getting sidetracked about the mirroring. that wouldn't make sense.
+Mar 11 23:54:06 <HiccupJul>	i'm more thinking, if i had a wiki, and for some reason that went down, i'd want continuity between it and the new location for it. i guess having a public key which use to sign messages with date + current owned domain(s) would be enough.
+Mar 11 23:54:16 <HiccupJul>	*which i use
+Mar 11 23:56:42 <HiccupJul>	does that seem right?
+Mar 11 23:57:21 <gnrp>	yes. But does it really matter if other websites reproduce your content and your signature?
+Mar 11 23:57:39 <gnrp>	I mean, I could take your text, put the right signature below it, and post it everywhere. But whatever modification I'd want to make would not be valid
+Mar 11 23:58:07 <HiccupJul>	yeah other websites reproducing the content is fine
+Mar 11 23:58:11 <HiccupJul>	i was getting confused before
+Mar 11 23:58:38 <gnrp>	then what you are describing is really just a cryptographic signature as has been in use for decades
+Mar 11 23:58:41 <HiccupJul>	yeah
+Mar 11 23:59:05 <HiccupJul>	i guess most services handle continuity just by having an out-of-band thing (social media account or whatever) to post the new domain
+Mar 11 23:59:20 <HiccupJul>	although most wouldn't have any issue like this lol
+Mar 11 23:59:55 <gnrp>	I don't know what services you are referring to. I'd say most services don't care about continuity anyway
+Mar 12 00:00:29 <HiccupJul>	just any website. you don't want your users going to some copycat and getting scammed
+**** BEGIN LOGGING AT Tue Mar 12 00:38:03 2024
+
+Mar 12 00:38:02 *	Now talking on #security
+Mar 12 00:38:02 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 12 00:38:02 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Tue Mar 12 00:55:45 2024
+
+Mar 12 00:55:44 *	Now talking on #security
+Mar 12 00:55:44 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 12 00:55:44 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)

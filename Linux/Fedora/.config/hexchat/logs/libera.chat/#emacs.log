@@ -12342,3 +12342,1356 @@ Mar 10 23:29:49 <edrx>	here if I run (describe-package 'eev)
 Mar 10 23:29:49 <edrx>	and then type M-x kl on the resulting buffer I get this message in the echo area: "Copied to the kill ring: (find-epackage-links 'eev)"
 Mar 10 23:30:21 <edrx>	and M-x kl after (describe-function 'eev-mode)
 Mar 10 23:30:41 <edrx>	gives the message "Copied to the kill ring: (find-efunction-links 'eev-mode)"
+Mar 10 23:31:44 <edrx>	e3d3: is it easy to you to take screenshots and send links to them?
+Mar 10 23:32:10 <e3d3>	edrx: not really
+Mar 10 23:32:15 <edrx>	e3d3: aaah, let me show you something that I find very neat...
+Mar 10 23:32:24 <edrx>	ok, let's forget the screenshots then
+Mar 10 23:33:00 <e3d3>	edrx: I'm testing if it is due to trying to use it in org-mode, org src-blocks, org comment lines etc. Org is my main mode
+Mar 10 23:34:25 <edrx>	if you run this (find-eev "eev-htests.el" "tests")
+Mar 10 23:34:45 <e3d3>	edrx: opens the elisp file
+Mar 10 23:35:02 <edrx>	you'll go to the file shown in the left window of this screenshot: https://i.ibb.co/C70BCn8/sshot.png
+Mar 10 23:35:10 <e3d3>	edrx (find-epackage-links 'eev)
+Mar 10 23:35:18 <e3d3>	opens the elisp-hyperlinks buffer
+Mar 10 23:35:31 <edrx>	the region - in blue - shows my usual way of testing M-x kl
+Mar 10 23:36:05 <edrx>	e3d3: yes - its line 9 contains this:
+Mar 10 23:36:06 <edrx>	# (find-epackage 'eev)
+Mar 10 23:36:36 <edrx>	that link goes to the (describe-package 'eev)
+Mar 10 23:36:37 <edrx>	buffer
+Mar 10 23:37:30 <edrx>	I thought that in that case making M-x kl generate (find-epackage-links 'eev)
+Mar 10 23:37:45 <edrx>	was more useful than making it generate (find-epackage 'eev)
+Mar 10 23:38:54 <edrx>	same for (find-efunctiondescr 'eev-mode)
+Mar 10 23:39:16 <edrx>	M-x kl there generates (find-efunction-links 'eev-mode)
+Mar 10 23:39:25 <edrx>	instead of (find-efunctiondescr 'eev-mode)
+Mar 10 23:40:28 <edrx>	btw, compare
+Mar 10 23:40:29 <edrx>	(find-efunctiondescr 'eev-mode)
+Mar 10 23:40:45 <edrx>	with (describe-function 'eev-mode)
+Mar 10 23:41:15 <edrx>	the `describe-function' has a return value that takes many lines in the echo area
+Mar 10 23:42:03 <e3d3>	edrx: eev requires some effort to start. The amount of links with still unknown commands is overwhelming for me, makes it very hard to focus and recognise what I need, or where I am. So I be even slower than normal to answer, try etc.
+Mar 10 23:42:20 <edrx>	the rationale is here: (find-eval-intro "4. Elisp hyperlinks")
+Mar 10 23:42:48 <edrx>	e3d3: oops, sorry - I'm not expecting you to answer in real time =/
+Mar 10 23:43:42 <edrx>	(and I'm also not expecting that you will try everything that I say)
+Mar 10 23:46:02 <e3d3>	edrx: the eev intro is nice, and maybe even great with a those smart links, but as soon as I see buffers that contain only eev code than I quickly become disoriented and need to rewind again. Same for some of the video's I downloaded. So I really need to take my time to experience the eev method.
+Mar 10 23:46:20 <edrx>	...an htmlized version of the rationale is here: http://anggtwu.net/eev-intros/find-eval-intro.html#4
+Mar 10 23:46:41 <edrx>	e3d3: sure!
+Mar 10 23:48:21 <edrx>	e3d3: when I ask questions on IRC channels usually at least 90% of the answers are infos that I don't understand but that I save to reread later - some day, hopefully, etc... same for manuals, other docs, source code, etc
+Mar 10 23:48:47 <e3d3>	edrx: is that the same version as included with eev install ? And do you mind if I replace 'try' with a normal install of eev via `package-install' ? With `company-mode' disabled the input issue in the rcirc buffer didn't repeat so far.
+Mar 10 23:48:51 <edrx>	I'm doing the same
+Mar 10 23:49:20 <wasamasa>	I do wonder
+Mar 10 23:49:32 <wasamasa>	isn't it about time for eev to promote itself all over emacswiki
+Mar 10 23:49:40 <wasamasa>	or for hyperbole or anything else with a big scope
+Mar 10 23:50:39 <corwin>	I can't say much as there's much more of the Windows build junk I should add/fix there, still.  But yea, that'd be swell.
+Mar 10 23:50:51 <edrx>	e3d3: if eev is interfering with other packages then the best way is to just "install" it, in this sense:
+Mar 10 23:50:53 <edrx>	(find-eev-levels-intro "1. Installing")
+Mar 10 23:50:53 <edrx>	http://anggtwu.net/eev-intros/find-eev-levels-intro.html#1
+Mar 10 23:51:16 <edrx>	wasamasa: I think that I need more self-esteem before doing that =/
+Mar 10 23:51:36 <wasamasa>	I'm mostly joking since that's what icicles did on emacswiki
+Mar 10 23:52:10 <edrx>	wasamasa: I remember vaguely seeing mentions to icicles everywhere there...
+Mar 10 23:52:12 <corwin>	Let other's ability to summarily revert your changes lead you to boldness!
+Mar 10 23:52:54 <wasamasa>	yeah, it was wild how one could basically not run into it
+Mar 10 23:53:20 <edrx>	e3d3: in more details: the best way is to install it with (package-vc-install "https://github.com/edrx/eev")
+Mar 10 23:53:43 <edrx>	e3d3: and run M-x eev-beginner when you want to use it
+Mar 10 23:54:41 <edrx>	e3d3: I don't know that are the standard ways to run git-pull on packages installed with package-vc-install, but I'm using this with a friend:
+Mar 10 23:55:07 <e3d3>	edrx: just installed it via package-install, got no warnings
+Mar 10 23:55:12 <pkal>	edrx: Do you mean "package-vc-upgrade"?
+Mar 10 23:55:35 <pkal>	That updates the checkout and rebuilds it
+Mar 10 23:55:39 <edrx>	pkal: possibly!
+Mar 10 23:56:03 <edrx>	e3d3: (find-eev-reload-links)
+Mar 10 23:56:54 <e3d3>	edrx: done; I see the elisp hyperlinks buffer again, but in a much more human readable format
+Mar 10 23:57:21 <edrx>	e3d3: with?
+Mar 10 23:58:40 <e3d3>	some starred lines, shell commands and common lisp code
+Mar 10 23:59:19 <e3d3>	I mean elisp, not common lisp
+Mar 11 00:00:32 <e3d3>	edrx: btw I don't use/have git
+Mar 11 00:02:07 <e3d3>	besides for nagging developers when my yaks are grazing :)
+Mar 11 00:04:40 <edrx>	e3d3: don't use AND don't have?
+Mar 11 00:04:48 <edrx>	e3d3: what OS/distro?
+Mar 11 00:04:54 <e3d3>	antiX
+Mar 11 00:05:46 <e3d3>	edrx: what about the "don't use/have" ?
+Mar 11 00:06:53 <edrx>	e3d3: I know relatively little git, but I thought that nowadays it would be very rare to not have it installed...
+Mar 11 00:07:25 <e3d3>	edrx: I'm not so main stream. I also don't have a video player installed
+Mar 11 00:08:19 <edrx>	pkal: I'm using something much more low-level than package-vc-upgrade with a friend... (screenshot soon)
+Mar 11 00:08:33 <edrx>	e3d3: you have wget, right?
+Mar 11 00:09:02 <e3d3>	edrx: yes I use wget instead
+Mar 11 00:10:12 <e3d3>	or I download files in a GUI browser
+Mar 11 00:11:02 <edrx>	e3d3: in my machine `find-angg' and `find-es' point to certain local directories, but if you run M-x find-angg you will get a message explaining how you can redefine find-angg and find-es to make them use find-wget to access the public copies of my files in my webpage
+Mar 11 00:12:42 <edrx>	e3d3: run the three defuns here: https://0x0.st/Hh1_.txt
+Mar 11 00:12:46 <e3d3>	edrx: does eev need that access ?
+Mar 11 00:12:57 <edrx>	e3d3: access to what?
+Mar 11 00:13:18 <e3d3>	the public copies of my files in my webpage, like you said above
+Mar 11 00:13:31 <e3d3>	my = your
+Mar 11 00:13:41 <edrx>	"need" no
+Mar 11 00:13:54 <edrx>	but it's a fun feature
+Mar 11 00:14:45 <edrx>	e3d3: it is explained here: http://anggtwu.net/eev-maxima.html#find-angg-es-links
+Mar 11 00:15:12 <reiayanami>	corwin: What do you think would be needed for my hypothetical eww previewer? Not much I imagine, just interpret the html/css code block with eww
+Mar 11 00:15:28 <e3d3>	okay. I'm normally most of the time offline and prefer to see most of what I download before I download it, but still make a lot of exceptions.
+Mar 11 00:16:08 <edrx>	e3d3: you're going to be online for the next 5 minutes, I guess
+Mar 11 00:16:31 <edrx>	e3d3: find-wget, find-angg and find-es don't save anything that they download
+Mar 11 00:16:59 <e3d3>	edrx: ?
+Mar 11 00:17:09 <e3d3>	not to /tmp
+Mar 11 00:17:10 <edrx>	e3d3: I hate when programs download files without telling me all the steps of what they are doing, so eev never does that
+Mar 11 00:17:19 <edrx>	e3d3: no, not even to /tmp
+Mar 11 00:18:12 <edrx>	e3d3: try this: (find-wgeta-elisp "http://anggtwu.net/eev-current/eev-plinks.el" "find-wget")
+Mar 11 00:18:23 <e3d3>	edrx: doesn't matter much. My real point is that I try to trust & use nothing unless proven okay
+Mar 11 00:19:05 <e3d3>	edrx: including no stuff that only resides in temporary memory
+Mar 11 00:19:08 <reiayanami>	corwin: M-x browse-url-of-buffer can render C-c ' code block, but it doesn't open it in eww
+**** BEGIN LOGGING AT Mon Mar 11 00:20:37 2024
+
+Mar 11 00:20:36 *	Now talking on #emacs
+Mar 11 00:20:36 *	Topic for #emacs is: Beware the IDEs of March. | Before helping, we need your Emacs/OS version & Kit | Emacs questions take priority over chit-chat | pastebin: https://bpa.st/+emacs-lisp | No Public Logging, racism, sexism, xenophobia, botwanking, or other asshattery
+Mar 11 00:20:36 *	Topic for #emacs set by e1f!~user@user/e1f (Tue Mar  5 16:12:43 2024)
+Mar 11 00:21:19 <e3d3>	edrx: Its huge :)
+Mar 11 00:21:54 <edrx>	e3d3: what are your limits? is this ok for you?
+Mar 11 00:22:01 <edrx>	lynx http://anggtwu.net/
+Mar 11 00:22:03 <e3d3>	edrx: Maybe I invoke wget once or twice a year by myself, but allow it many times in scripts etc.
+Mar 11 00:22:15 <edrx>	that will use some temporary memory
+Mar 11 00:23:03 <edrx>	e3d3: is this ok for you? (find-eevsh "ls -lAF")
+**** BEGIN LOGGING AT Mon Mar 11 00:24:22 2024
+
+Mar 11 00:24:21 *	Now talking on #emacs
+Mar 11 00:24:21 *	Topic for #emacs is: Beware the IDEs of March. | Before helping, we need your Emacs/OS version & Kit | Emacs questions take priority over chit-chat | pastebin: https://bpa.st/+emacs-lisp | No Public Logging, racism, sexism, xenophobia, botwanking, or other asshattery
+Mar 11 00:24:21 *	Topic for #emacs set by e1f!~user@user/e1f (Tue Mar  5 16:12:43 2024)
+Mar 11 00:24:29 <edrx>	e3d3: and you avoid functions whose source code is, say, more than 30 lines?
+Mar 11 00:24:30 <e3d3>	Recently I started using more links with elisp or shell commands, for example (info "(elisp) Top") instead of [[info:elisp#Top]] but I don't want to add things that are not meaningful outside emacs.
+Mar 11 00:24:50 <edrx>	"add" to what?
+Mar 11 00:25:57 <corwin>	reiayanami: neat, thank.  maybe I'll try creating a function that let binds that around the call and to add a "Show in eww" option (in addition to O for open in browser) for exporting HTML.
+Mar 11 00:26:12 <edrx>	e3d3: are you ok with putting elisp hyperlinks in your notes? then your notes will have parts that don't work outside of emacs...
+Mar 11 00:26:14 <e3d3>	edrx: I'm a bad hobby-programmer and prefer short but still understandable. How much I invest in understanding depends on the need for it.
+Mar 11 00:26:35 <reiayanami>	corwin: Yeah I'm thinking something similar. I'm programming in NextJS, and I'd like to offer a front-end that is dead simple for those of us using eww / gemini protocol.
+Mar 11 00:26:41 <wasamasa>	lulz: https://github.com/douo/magit-gptcommit
+Mar 11 00:26:58 <wasamasa>	"I see you're writing a commit, would you like some help with that?"
+Mar 11 00:27:15 <e3d3>	edrx: adding elisp to my notes is okay as long as I think I will understand without too much effort, if I abandon emacs etc.
+Mar 11 00:27:34 <reiayanami>	wasamasa: give to to the jrs... or me after 12 hours. better than "add"
+Mar 11 00:27:53 <edrx>	e3d3: please tell me if this makes sense to you:
+Mar 11 00:28:01 <edrx>	(defun find-wget00 (url) (find-callprocess00 `(,ee-wget-program "-q" "-O" "-" ,url)))
+Mar 11 00:28:12 <wasamasa>	I still find it hilarious how readily people abandon any illusion of engineering
+Mar 11 00:28:16 <reiayanami>	I wrote a hook to automatically pull up git commit after my emacs config was changed. This had all manner of bugs and did not work as intended
+Mar 11 00:28:52 <wasamasa>	it's even funnier when people write papers about this trying to justify how it's still engineering if you use an auto-generated commit message
+Mar 11 00:28:54 <e3d3>	edrx: yes a command to invoke wget, via an eev process function
+Mar 11 00:29:40 <edrx>	e3d3: yes - it calls wget asking it to output to stdout the contents of a page and retuns that contents as a string
+Mar 11 00:29:51 <corwin>	Recent behavioral analysis concludes most mad science lacks proper controls and analytical rigor and is, at best, mad engineering.
+Mar 11 00:30:05 <edrx>	e3d3: find-wget uses that and shows the result in a temporary buffer
+Mar 11 00:30:12 <reiayanami>	Is there a keyboard shortcut to go to the next HTML element in eww? I have eww-next-link but I'm trying to jump from the headline to the text input to the text submit button
+Mar 11 00:30:39 <e3d3>	edrx: but I'm afraid that understanding it requires searching maybe gone eev documention instead of only still available elisp documentation
+Mar 11 00:31:03 <e3d3>	edrx: in the future, in the afterlive without emacs
+Mar 11 00:34:00 <corwin>	New python and c treesitter DLLs on my site, just now.  That makes seven packages that updated today; I wonder if there's a breaking change to tree-sitter, itself.
+Mar 11 00:35:22 <e3d3>	edrx: but for the same and more reasons am I interested in eev. To decrease my org dependency, trying different ways of literal programming.
+Mar 11 00:36:21 *	e3d3 \o/ coffee
+Mar 11 00:37:04 <edrx>	e3d3: I got disconnected =(
+Mar 11 00:37:10 <edrx>	e3d3: my last messages are here: https://0x0.st/Hh1v.txt
+Mar 11 00:37:47 <e3d3>	edrx: my last line was: but for the same and more reasons am I interested in eev. To decrease my org dependency, trying different ways of literal programming. Then I saw that you're gone and yelled \o/ coffee.
+Mar 11 00:38:19 <edrx>	e3d3: thanks! I didn't receive it...
+Mar 11 00:38:50 <e3d3>	edrx: It seems I got all your messages
+Mar 11 00:40:21 <edrx>	you can get a local copy of (most of) my notes with: (find-wgetrecursive-links "http://anggtwu.net/e/")
+Mar 11 00:40:42 <edrx>	it doesn't download anything by itself, it just shows a temporary buffer
+Mar 11 00:40:46 <e3d3>	wasamasa: I really need to buy a battery powerd coffee machine. Do you get provision from .. parkside ?
+Mar 11 00:43:34 <reiayanami>	i need provisions of caffeine. Does anyone here still drink bawls, considering trying it
+Mar 11 00:44:43 <edrx>	reiayanami: drinks with guarana are quite common here (brazil)
+Mar 11 00:44:46 <wasamasa>	e3d3: lol, no idea who that is
+Mar 11 00:48:35 <reiayanami>	corwin: I'm liking this hyper minimal workflow. It keeps the html / css crap minimal and simplistic, gets rid of the bikeshedding and shiny object effect. It orients focus towards the middleware and backend which is where it matters
+Mar 11 00:48:55 <e3d3>	wasamasa: np, if you don't have a nice deal I'll buy it online. I can't get it out of my head. Thanks :)
+Mar 11 00:49:40 <corwin>	reiayanami: this speaks to me.
+Mar 11 00:49:45 <reiayanami>	JohnGalt / grym: you online?
+Mar 11 00:49:56 <codermattie>	reiayanami: yeah
+Mar 11 00:50:36 <reiayanami>	codermattie: I'm working on trying something similar to what you did. When you said you have examples in org-mode as the tests, could you share a snippet with wgetpaste or something
+Mar 11 00:51:49 <wasamasa>	e3d3: I merely have been forced to learn how to drill holes and such because I've moved places and my girlfriend insisted on having nicer lights
+Mar 11 00:52:32 <e3d3>	wasamasa: so you can insist on her bringing coffee
+Mar 11 00:53:22 <wasamasa>	you won't believe this one, but she also convinced me to get an electric coffee grinder rather than the manual one
+Mar 11 00:53:38 <wasamasa>	because screw making coffee the hard way
+Mar 11 00:54:58 <codermattie>	reiayanami: I have a script for starts to run tangle from the command line
+Mar 11 00:55:21 <codermattie>	reiayanami: just a sec, my erc is down on this machine, have to use pastepipe
+Mar 11 00:55:26 <e3d3>	wasamasa: I have the same battery packs, and taste for coffee as my DIY neighbors, and this seems one of the last things we miss in our tool box, beside a belt for coffee/pads, a grinder, milk & sugger, cookies
+Mar 11 00:55:30 <wasamasa>	slowly, but surely, it's looking less and less like a bachelor's place
+Mar 11 00:55:37 <reiayanami>	codermattie: Thanks
+Mar 11 00:57:04 <technomancy>	high-quality burr grinders dropped in price by almost an order of magnitude over the past decade somehow
+Mar 11 00:57:29 <e3d3>	wasamasa: I once said to a new girlfriend that moved in okay when she asked to redecorate the house, came back and laughed for at least 1 hour how I could have been so stupid, start liking it, and kept changing it for ever for her crazy ideas.
+Mar 11 00:59:04 <Viking667>	'llo all.
+Mar 11 00:59:15 <corwin>	hi Viking667
+Mar 11 00:59:38 <Viking667>	Just a quick question for you matrix users, does ement work under 29.1? It's been a wee while since I fired that up.
+Mar 11 00:59:39 <e3d3>	wasamasa: climbing up the roof with a mobile coffee machine could have saved my relation
+Mar 11 01:00:19 <Viking667>	"Woe is us, I'm goi... huh? You've got coffee??"
+Mar 11 01:00:20 <codermattie>	reiayanami: https://pastebin.com/MBCmiug1
+Mar 11 01:00:40 <corwin>	Viking667: I'm not sure how much ement/#emacs cross-over there.  It might be worth using some other matrix client just to ask AP that in Matrix's #emacs.
+Mar 11 01:01:09 <codermattie>	reiayanami: the idea is that you can run the test suite from the command line, with that script you can do so, so you edit the .org , and then from the command line update the test suite file, and run the tests
+Mar 11 01:01:49 <codermattie>	reiayanami: it should be pretty efficient, and since it's CLI you can script it
+Mar 11 01:02:04 <codermattie>	reiayanami: a simple Makefile would make it painless
+Mar 11 01:02:09 <Viking667>	You could even run that from within emacs itself
+Mar 11 01:02:38 <codermattie>	Viking667: I have massive workflow automation so I need both
+Mar 11 01:02:42 <reiayanami>	codermattie: Thanks for the share, I was actually wondering more if you could just explain what you meant by having examples as the test code. I'm guessing what you meant is that the begin_example and end_example blocks contain the integration tests for the #+begin_src #+end_src codeblocks?
+Mar 11 01:02:52 <codermattie>	yeah
+Mar 11 01:03:01 <codermattie>	reiayanami: I might have an example
+Mar 11 01:03:12 <reiayanami>	lol
+Mar 11 01:03:20 <codermattie>	at least I got pastepipe installed though...
+Mar 11 01:04:45 <codermattie>	I dont have any examples yet, I will create some
+Mar 11 01:05:54 <codermattie>	reiayanami: Ill get back at you later, I have a good project to start with
+Mar 11 01:06:12 <reiayanami>	codermattie: It's cool, IRC moves slow so no worries
+Mar 11 01:07:07 <codermattie>	reiayanami: Im trying to get a workflow to build docker images out of python stuff
+Mar 11 01:08:00 <reiayanami>	codermattie: I have some experience with docker, let me know more specifics when you're ready
+Mar 11 01:08:43 <RickAstley>	fixed username
+Mar 11 01:09:19 <codermattie>	RickAstley: Thanks for the kind offer!
+Mar 11 01:10:18 <RickAstley>	codermattie: np :^)
+Mar 11 01:12:54 <Viking667>	corwin: and I wasn't strictly asking about whether #emacs was mirrored on matrix (it's not). I was just asking if ement worked well (enough) under 29.x to use regularly.
+Mar 11 01:13:14 <Viking667>	And yes, there are probably better clients to use, such as non-Emacs clients.
+Mar 11 01:13:55 <codermattie>	man, eyedrops are a coder's best friend :)
+Mar 11 01:14:19 <corwin>	Viking667: I got your point; sorry if my comment was unclear.  I mean only to say that I seem to see more matrix related questions go unanswered in her than otherwise.
+Mar 11 01:21:30 <e3d3>	edrx: only to inform: "M-x kl" doesn't work with https://github.com/lewang/le_emacs_libs/blob/master/keep-buffers.el That is: `kl' kills its protected buffers.
+Mar 11 01:21:42 <e3d3>	edrx: I'm going to part IRC but have 2 little questions: 1) Does eev shell terminal has some elisp features in it, like emacs eshell, shell etc. ? 2) can M-e replace C-x C-e completely ?
+Mar 11 01:25:31 <RickAstley>	anyone have tips on managing tangle locations in org-mode source code blocks. Ideally I'd like the :tangle stuff to have some kind of company-mode autocomplete maybe integrated with projectile so I can tab through common codebases
+Mar 11 01:25:53 <RickAstley>	Or maybe I'm thinking of :export ...
+Mar 11 01:28:45 <bremner>	RickAstley: I suspect tangle. export is about documents (pdf, html)
+Mar 11 01:30:19 <RickAstley>	bremner: yeah I'm pretty sure that's right, wonder if there's company mode for babel especially tangle directories for the project directories
+Mar 11 01:30:51 <bremner>	melpa is large, my knowledge is small
+Mar 11 01:31:10 <RickAstley>	:)
+Mar 11 01:49:46 <Viking667>	corwin: cool, thank you for that clarification. Settling in okay here, some paintings up on wall, some tables put where we need them. Computer room's a PITA for zoombuggy to get into/out-of.
+Mar 11 01:50:50 <Viking667>	Old fence is out, new fence is going in. Waiting on quotes for driveway to replace the one we've got, as it's also a PITA for a wheelchair to deal with.
+Mar 11 01:51:27 <Viking667>	aaaaanyhow, gotta go do stuff.
+Mar 11 01:53:35 <quiliro`>	I have asked here before.  But wonder if any newcommers have been able to automatically add visited channels to the autojoin list in erc
+Mar 11 01:54:22 <Viking667>	"automatically"? Or "manual, with autojoin after you set each channel"?
+Mar 11 01:55:40 <Viking667>	If it's the latter, erc-autojoin-channels-alist seems to be altered by joining a channel.
+**** BEGIN LOGGING AT Mon Mar 11 01:59:29 2024
+
+Mar 11 01:59:28 *	Now talking on #emacs
+Mar 11 01:59:28 *	Topic for #emacs is: Beware the IDEs of March. | Before helping, we need your Emacs/OS version & Kit | Emacs questions take priority over chit-chat | pastebin: https://bpa.st/+emacs-lisp | No Public Logging, racism, sexism, xenophobia, botwanking, or other asshattery
+Mar 11 01:59:28 *	Topic for #emacs set by e1f!~user@user/e1f (Tue Mar  5 16:12:43 2024)
+Mar 11 02:00:05 <Viking667>	I found it with M-x customize-group RET erc RET
+Mar 11 02:00:23 <Viking667>	then wandered down to erc-autojoin
+Mar 11 02:01:01 <quiliro>	 it is not a variable; it is a group
+Mar 11 02:01:14 <Viking667>	yes.
+Mar 11 02:01:38 <Viking667>	but the erc-autojoin-mode is a var, as far as I can tell.
+Mar 11 02:01:43 <quiliro>	the variable `erc-autojoin-mode' is true
+Mar 11 02:03:20 <Viking667>	Okay, so that means that on your first join, erc should check the erc-autojoin-channels-alist and join those channels. After you join, you joining channels is tracked by that var somehow, I don't know how. C-h v erc-autojoin-channels-alist seems to have some details in that last paragraph.
+Mar 11 02:15:40 <earthToAdam>	I am trying to use (widen) within (save-excursion (save-restriction ...)) so that helm can search the entire buffer (behind the scenes). But the save- commands are just being ignored. Here is a pastebin https://pastebin.com/GgWmzcaZ
+Mar 11 02:15:49 <earthToAdam>	Any idea what I might be doing wrong?
+Mar 11 02:17:38 <earthToAdam>	So the idea is, I have an org-mode buffer, which is narrowed to a subtree. I then run my helm command, to pull up a list of all headers in the buffer. helm needs (widen) so it can see everything to build the list. But, I would like this widening to be invisible. And for some reason, the save- commands are not working.
+Mar 11 02:19:10 <Viking667>	Can't help with helm, I don't use it.
+Mar 11 02:25:29 <earthToAdam>	No worries. Someone in here must.
+Mar 11 02:37:12 <bdunahu>	quiliro`: do you mean you don't want to have to update erc-autojoin-channels-alist manually?
+Mar 11 02:39:09 <bdunahu>	there is the erc-join-hook and erc-part-hook, I would if you could run a function to append to that list somehow?
+Mar 11 02:46:37 <quiliro`>	I remember it used to do it automatically
+Mar 11 02:46:51 <quiliro`>	I erased the variable
+Mar 11 02:47:03 <quiliro`>	to nil
+Mar 11 02:47:13 <quiliro`>	the autojoin list
+**** BEGIN LOGGING AT Mon Mar 11 05:24:02 2024
+
+Mar 11 05:24:01 *	Now talking on #emacs
+Mar 11 05:24:01 *	Topic for #emacs is: Beware the IDEs of March. | Before helping, we need your Emacs/OS version & Kit | Emacs questions take priority over chit-chat | pastebin: https://bpa.st/+emacs-lisp | No Public Logging, racism, sexism, xenophobia, botwanking, or other asshattery
+Mar 11 05:24:01 *	Topic for #emacs set by e1f!~user@user/e1f (Tue Mar  5 16:12:43 2024)
+**** BEGIN LOGGING AT Mon Mar 11 06:07:45 2024
+
+Mar 11 06:07:44 *	Now talking on #emacs
+Mar 11 06:07:44 *	Topic for #emacs is: Beware the IDEs of March. | Before helping, we need your Emacs/OS version & Kit | Emacs questions take priority over chit-chat | pastebin: https://bpa.st/+emacs-lisp | No Public Logging, racism, sexism, xenophobia, botwanking, or other asshattery
+Mar 11 06:07:44 *	Topic for #emacs set by e1f!~user@user/e1f (Tue Mar  5 16:12:43 2024)
+Mar 11 06:18:12 <twb>	Let's replace first-level tech support with an LLM and see if anyone EVEN NOTICES
+Mar 11 06:27:12 <bpalmer>	rudybot: Don't say a word. I'd like to talk to your manager.
+Mar 11 06:27:13 <rudybot>	bpalmer: "Emacs is a word processor, a mail client, a todo-list, a chat client, an integrated development environment, a desktop window manager, a web browser … " <- I gave an equivalent of this talk where I added "sociopolitical statement" to this list =)
+Mar 11 06:27:28 <bpalmer>	never mind, I don't want to talk to that manager.
+Mar 11 06:28:36 <sham1>	I wonder if one was to add that ramble onto one's CV or whatever, whether it'd give you better or worse odds of getting a job
+Mar 11 06:31:36 <bpalmer>	I suppose it depends on the rest of the cover letter.
+Mar 11 06:34:33 <bpalmer>	huh. Florida banned "woke meat" last year (that is, apparently, food products cultivated in a laboratory from animal cells)
+Mar 11 06:40:16 <bpalmer>	Tron: Ares will be the sequel to Tron: Legacy, which might be the most exciting film in the 2000s to feature emacs on screen.
+Mar 11 07:00:18 <dcb>	and yet, no sequel to Tron 2.0
+Mar 11 07:15:05 <bpalmer>	Let's vote in a lenient MCP who won't clamp down as strictly as some.
+Mar 11 07:15:45 <bpalmer>	wow, Tron 2.0 had the real film voice actors.
+Mar 11 07:16:13 *	bpalmer hadn't known this game existed.
+Mar 11 07:23:58 <texnomancy_>	I thought woke meat meant it was sentient
+Mar 11 07:27:28 <dcb>	I started to like its gameplay only after finishing it for the third time
+Mar 11 07:31:07 <twb>	bpalmer: but it's still legal to hunt slaves and irishmen for *sport*, right?
+Mar 11 07:31:17 <twb>	bpalmer: you just can't eat them after
+Mar 11 07:59:39 <bpalmer>	the most dangerous game crossover
+Mar 11 08:10:33 <twb>	What's the most "valuable" copyright / IP that's still owned by an individual human?
+Mar 11 08:10:59 <twb>	I'm guessing harry potter
+Mar 11 08:12:47 <bpalmer>	Do you consider the Tolkien estate "owned by an individual human" or not?
+Mar 11 08:12:59 <twb>	That's an estate, innit?
+Mar 11 08:13:01 <bpalmer>	The Tolkien world is not a work-for-hire, but the human is no longer living.
+Mar 11 08:13:22 <twb>	"owned" in the sense of who you have to buy copyrights from
+Mar 11 08:13:29 <twb>	not "owned" in the sense of moral rights
+Mar 11 08:14:06 <bpalmer>	Well ,now it's owned by a trust or company; except that 'Exclusive worldwide rights to motion picture, merchandising, stage and other rights in certain literary works of J. R. R. Tolkien including The Hobbit and The Lord of the Rings were sold by Tolkien himself to United Artists in 1969'
+Mar 11 08:15:01 <bpalmer>	at any rate, probably books and literary productions are the most common intellectual product not produced as work-for-hire , so certainly Tolkien's and Rowling's works are up there.
+Mar 11 08:15:17 <twb>	You seem to be saying that in some way, some of Tolkien's works are copyrighted by a specific human -- which one?
+Mar 11 08:15:35 <twb>	Who *created* the work is irrelevant, it's just a question of who has the rights now
+Mar 11 08:15:38 <bpalmer>	Stephen King has more intellectual property available , so it's a matter of whether many lesser valued works can collectively overweigh a larger work
+Mar 11 08:16:25 <bpalmer>	JRR Tolkien owned the copyright to all of his works.
+Mar 11 08:17:23 <twb>	*owned*, not *owns*
+Mar 11 08:22:08 <johnjaye>	I've been looking into the D language a bit and it fixes a lot of oddities in C
+Mar 11 08:22:17 <johnjaye>	so why don't we just dump C and use D
+Mar 11 08:22:39 <johnjaye>	like you can do signed overflow and it's not marked as "undefined behavior"
+Mar 11 08:22:43 <johnjaye>	and you can detect it as well
+Mar 11 08:24:35 <bkhl>	The creators of D thinks we should "just" do that: https://dlang.org/spec/betterc.html
+Mar 11 08:28:00 <twb>	inertia
+Mar 11 08:28:34 <bpalmer>	if you're doing betterC , you're still not getting all the advantages of D
+Mar 11 08:29:15 <twb>	If your problem is "C is bad" then either fix C or use something entirely better, not just a hard fork
+Mar 11 08:29:16 <bkhl>	No, but you can use it for some low level programming that's otherwise not possible.
+Mar 11 08:29:43 <twb>	I mean... surely C2x fixes a lot of shit that was in C89
+Mar 11 08:29:50 <bkhl>	So a lot more achievable to use for stuff like firmware/kernel programming right now, as opposed to other popular memory safe languages.
+Mar 11 08:29:54 <bpalmer>	that's going to be a tough sell: "we're moving to a newer, bigger house with a flowering backyard, and a chain link fence letting you see a big swimming pool and every playground equipment available, but don't you go climbing that fence!"
+Mar 11 08:31:25 <johnjaye>	Just from a day of looking over it and writing hello world I am confident it's better than C.
+Mar 11 08:31:26 <bkhl>	OTOH you do get some big advantages still like macros instead of C preprocessor.
+Mar 11 08:32:22 <bkhl>	johnjaye: I also played around with it at some point and really like it, but like bpalmer thinks it's not obvious how they would convince the world that it's worth the switch.
+Mar 11 08:32:49 <bkhl>	Maybe more realistic to keep pushing for features inspired by D (and other languages with more memory safety) into C.
+Mar 11 08:33:15 <twb>	I feel like if D was a good choice it would've been adopted 20 years ago
+Mar 11 08:33:28 <twb>	It'd have been as popular then as rust is now
+Mar 11 08:33:46 <twb>	or C++ and ObjC for the people with that particular kind of brain damage
+Mar 11 08:34:52 <johnjaye>	well not necessarily. C has so much infrastructure that it's got the intertia factor
+Mar 11 08:35:02 <bkhl>	I don't think that's necessarily so, various languages and features have gained popularity after being niche for long periods of time.
+Mar 11 08:35:14 <johnjaye>	The only reason i think Rust is making inroads is Mozilla has corporate backing it.
+Mar 11 08:35:25 <bkhl>	I say that as someone that was into Python 1-2 decades before it exploded.
+Mar 11 08:35:43 <tazjin>	nobody seems to actually use D
+Mar 11 08:35:51 <johnjaye>	 why did it explode
+Mar 11 08:35:54 <tazjin>	I know more people using Common Lisp to earn money than D
+Mar 11 08:36:15 <tazjin>	met a guy at a party who used D in a startup and he said it looked nice on paper, but in practice lots of things didn't work and the standard library was wonky
+Mar 11 08:36:48 <bkhl>	johnjaye: it had a few different boosts, first with e.g. Django, and then later (much bigger) with Numpy/Pytorch/etc.
+Mar 11 08:36:59 <vuori>	That was my impression of D too when I considered it for something
+Mar 11 08:37:24 <bkhl>	Basically it became a popular language for using certain libraries that had a lot of hype, a few times in different domains.
+Mar 11 08:37:27 <johnjaye>	oh that would suck. i was looking for something like "C but without the preprocessor but with generics and lambdas and optional memory safety and also not a list of Undefined Behavior 200 entries long"
+Mar 11 08:37:31 <johnjaye>	D seems to be very close to this
+Mar 11 08:38:18 <johnjaye>	bkhl: that fits my completely rudimentary pleb view of python so nice to know it is actually true
+Mar 11 08:38:26 <johnjaye>	people just like it because muh pytorch.
+Mar 11 08:38:39 <tazjin>	johnjaye: why not just, and hear me out here
+Mar 11 08:38:40 <tazjin>	java
+Mar 11 08:38:41 <bkhl>	The really big boom was when the various numeric/statistical tools became popular to use in it.
+Mar 11 08:38:48 <tazjin>	java is pretty good actually :p
+Mar 11 08:38:57 <bkhl>	Probably a relatively easy path is to make it big in academia for something like that.
+Mar 11 08:39:26 <johnjaye>	i just want C but without stupid undefined behavior basically
+Mar 11 08:39:26 <bkhl>	Like D I could imagine getting a boost like that if it could replace the stuff where usually people use C++ or Fortran in academia now.
+Mar 11 08:40:03 <bkhl>	So basically what people do with with Python+Numpy but without the slow "frontend" but ideally equal convenience.
+Mar 11 08:40:12 <johnjaye>	yeah the problem with C++ is that objects are overrated. but java is too rigid about forcing you to use objects all the time for no reason
+Mar 11 08:40:40 <johnjaye>	er i mean java objects are overrated.
+Mar 11 08:40:47 <bkhl>	D has an advantage I think there because if you use it for "trivial" things it can feel a lot like 'fast Python'
+Mar 11 08:40:57 <johnjaye>	c++ has super complicated layers of template metaprogramming. which to be fair D has operator overloading so it's not perfect
+Mar 11 08:41:17 <johnjaye>	is it like that static python where you type everything.
+Mar 11 08:44:06 <bkhl>	johnjaye: that's the type of stuff I've seen a bunch of in "mathy" academic C++ programs. D has templates too but they are much nicer to use.
+Mar 11 08:44:35 <vuori>	Apropos of the current crop of C alternatives, this just scrolled by: https://tech.lgbt/@fay59/112073961841740378 . I haven't had a lot of need to do things at the "systems programming" level recently, but trying out Rust and such at a hobby level has been pretty effectively de-emphasized for me by this style of holier-than-thou advocacy
+Mar 11 08:45:05 <bkhl>	johnjaye: not really, D has implicity typing in a lot of places.
+Mar 11 08:45:55 <bkhl>	or type inferrence I should say.
+Mar 11 08:48:50 <APic>	Good Morning!
+Mar 11 08:48:53 <APic>	,BotSnack
+Mar 11 08:48:54 *	fsbot beams
+Mar 11 08:57:58 <bpalmer>	kotlin may have gotten big enough that it's worth looking at that instead of java.
+Mar 11 08:58:18 <jdek>	I like C :(
+Mar 11 08:58:43 <bpalmer>	as it's java-esque but doesn't make you put everything into a class. (See, e.g., the "Simple" tab at https://kotlinlang.org/ )
+Mar 11 08:59:45 <bpalmer>	If I were going to be writing programs for android, that's probably a language I would try to pick up as that seems to have become semi-official
+Mar 11 09:00:01 <bpalmer>	(in the same way that swift became viable to compete with objective C)
+Mar 11 09:01:22 <bkhl>	Java 21 has this stuff: https://openjdk.org/jeps/445
+Mar 11 09:02:20 <bpalmer>	interesting, I hadn't been following the changes.
+Mar 11 09:06:46 <zenny>	Hi, asking again, I am trying to create a list like in https://termbin.com/yel6. How can one sort the ordered list alphabetically in such a way that only the subitems and sub-sub-items are only assigned an ordered list numbers? Appreciate any input. Thanks
+Mar 11 09:08:59 <corwin>	If you don't end up getting suggestions here you might email help-gnu-emacs@gnu.org (which is the users' list, for general questions). You don't need to be subscribed (although you might need to watch the archive if you aren't; sometimes people like to reply without CCing, sending back to the list only).
+Mar 11 09:50:38 <Viking667>	hm, that's interesting. Autojoin works.
+Mar 11 09:59:45 <Viking667>	time I went and played a game, I guess.
+Mar 11 10:59:21 <angry_vincent>	i want to use this: https://www.emacswiki.org/emacs/EbuildMode, https://gitweb.gentoo.org/proj/ebuild-mode.git/tree/. But for some reasons, i do not use gentoo distribution. where my emacs is but i do deal with ebuilds on remote machine which is gentoo derivative. how do i use ebuild mode on my emacs, then? i know that i can grab *.el files into .elisp dir but that's the only thing i know. nothing about how to configure and load them
+Mar 11 11:09:02 <alcor>	angry_vincent: You might want to look into `package-install-file', passing it the tar.xz Archive for ebuild-mode
+Mar 11 11:10:46 <alcor>	angry_vincent: That aside, I would expect the mode to work even on remote files via TRAMP. TRAMP is a powerful remote access facility that allows for comfortable editing of files on remote systems, and any locally-installed modes usually work on remote files just as well as they do on local files.
+Mar 11 11:11:15 <angry_vincent>	i use tramp, yes
+Mar 11 11:13:03 <alcor>	Try M-x package-install-file <RET> <path to the tarball for ebuild-mode>; That should install the elisp for the mode into your elisp load path.
+Mar 11 11:16:16 <alcor>	If that does not work, you will have to add the *.el files to your elisp load path and load them manually. Xah Lee has a short guide on that on http://xahlee.info/emacs/emacs/emacs_installing_packages.html
+**** BEGIN LOGGING AT Mon Mar 11 11:18:06 2024
+
+Mar 11 11:18:05 *	Now talking on #emacs
+Mar 11 11:18:05 *	Topic for #emacs is: Beware the IDEs of March. | Before helping, we need your Emacs/OS version & Kit | Emacs questions take priority over chit-chat | pastebin: https://bpa.st/+emacs-lisp | No Public Logging, racism, sexism, xenophobia, botwanking, or other asshattery
+Mar 11 11:18:05 *	Topic for #emacs set by e1f!~user@user/e1f (Tue Mar  5 16:12:43 2024)
+Mar 11 11:31:35 <twb>	bpalmer: if you're writing for android don't you just make a web app because having to make native apps with different langauges and different toolkits is Too Hard
+Mar 11 11:35:29 <amirny2205>	hi! what's the state of art between project.el and projectile? which one should I use? thanks
+Mar 11 11:39:15 <zenny>	corwin: Thanks I write to the mailing list as you suggested. Cheers
+Mar 11 11:42:06 <pkal>	amirny2205: project.el is built-in and does most of what you want.
+Mar 11 11:43:33 <amirny2205>	pkal: thanks ; how does it compare to projectile? the info on the website might be outdated
+Mar 11 11:44:38 <pkal>	what website?
+Mar 11 11:44:57 <amirny2205>	https://docs.projectile.mx/projectile/projectile_vs_project.html
+Mar 11 11:48:42 <pkal>	Highly biased, I'd say.  I haven't used projectile (horrible name btw) for a few years now, so I cannot really comment on the differences.  I've contributed to project.el and like the API.  Being built-in also means that more packages tend to make use of it, than with some third-party packages.
+Mar 11 11:49:15 <amirny2205>	thanks pkal
+Mar 11 11:49:55 <alcor>	project.el automatically detects git projects, which is what I usually want in 99% of all cases
+Mar 11 11:53:01 <pkal>	In general, I'd recommend trying out built-in packages first.  If something is missing, it might be worth trying to implement it yourself (e.g. project didn't have project-compile, so I wrote a patch) or create a feature request.  It is usually not that difficult to extend the code, it's just that the maintainers didn't know about that use-case.
+Mar 11 11:56:46 <jbe>	rudybot: what is the deal with airplane food? why would airplanes even need to eat?
+Mar 11 11:56:47 <rudybot>	jbe: in the 70s, there were disaster movies about skyscrapers, airplanes and ships. but no one thought of making one with two or more of those elements– airplane crashing into a skyscraper, ship crashing into a skyscraper or airplane crashing into a skyscraper built on a ship
+Mar 11 12:00:54 <jbe>	I suppose oil rigs are basically ship skyscrapers
+Mar 11 12:45:04 <RickAstley>	my org-mode has been kind of borked for like a year and a half, the rendering for headlines and TODO entries just ... stops. I have to manually refresh the buffer. I've recompiled my entire OS, recompiled org-mode, deleted .emacs.d ... let me see if it's only in exwm or also effects -nw
+Mar 11 12:46:35 <alcor>	Recompiling the whole OS to solve a rendering issue in org-mode seems a bit, well, drastic.
+Mar 11 12:46:58 <RickAstley>	alcor: I use gentoo so it's a regular thing
+Mar 11 12:47:12 <landgraf>	alcor: unless the whole OS is kernel+emacs :D
+Mar 11 12:48:29 <alcor>	Isn't exwm just a window manager? It shouldn't affect buffer rendering in any way. A compositor *might* have some effect on that, but that is unlikely.
+Mar 11 12:54:17 <RickAstley>	alcor: Yes, I just remember the problems began to start around that time. What I recall is it isn't exwm itself, but perspective-exwm, a package that allows using perspective.el across multiple monitors on exwm. Perhaps I no longer need this, as I've swapped the multi-monitors for a single 680x480 CRT
+Mar 11 12:57:41 <alcor>	Ah, the real retro-computing experience.
+Mar 11 13:07:35 <RickAstley>	I liked persp-exwm but it was kind of unstable, could never get perspectives to save either which kinda sucked. Nice being able to go back to vanilla persp, I'll see if the org mode is fixed for the next few hours
+Mar 11 13:18:43 <RickAstley>	how do i go to the file at cursor in eamcs
+Mar 11 13:18:46 <RickAstley>	magit*
+Mar 11 13:19:33 <tazjin>	RickAstley: RET ?
+Mar 11 13:19:59 <RickAstley>	tazjin: derp
+Mar 11 13:20:06 <tazjin>	RickAstley: you're welcome
+Mar 11 13:20:13 <RickAstley>	how to do it in another frame
+Mar 11 13:21:45 <bpalmer>	twb: that's probably my preference, but there is something to be said for native UIs
+Mar 11 13:22:08 <bpalmer>	or, at the very least, a toolkit like flutter that papers over things
+Mar 11 13:22:17 <RickAstley>	Is there a way to get like a running list of all the called emacs commands
+Mar 11 13:23:32 <bpalmer>	RickAstley: command-history isn't a complete list but a list of the commands that "read arguments from terminal" --  perhaps that's enough for you?
+Mar 11 13:24:19 <RickAstley>	bpalmer: yes ty, would like to have this like a running tape somewhere. Anyway to add corresponding keybindings on the right side of the buffer?
+Mar 11 13:27:23 <bpalmer>	RickAstley: you'd probably have to write something to automatically refresh a buffer displaying the variable
+Mar 11 13:27:45 <bpalmer>	it wouldn't be hard (you could use an idle timer for this), but I don't know of anything that does it already
+Mar 11 13:29:03 <RickAstley>	bpalmer: ty I'll bookmark this
+Mar 11 13:30:27 <ndegruchy>	Gotta love when security tells you that your Windows-deployed copy of curl.exe is malware. 👏
+Mar 11 13:31:30 <bremner>	maybe they mean Window
+Mar 11 13:31:34 <e1f>	it is, from their point of view. they don't know where you dot it from
+Mar 11 13:31:35 <bremner>	s
+Mar 11 13:31:44 <e1f>	got*
+Mar 11 13:32:03 <ndegruchy>	e1f: it comes with windows, since like 4 years ago
+Mar 11 13:34:05 <e1f>	ah ok, i wasn't aware. you should mention it to them, then
+Mar 11 13:34:41 <e1f>	their whitelist must be 5+ years old
+Mar 11 13:35:15 <bremner>	keeping up with windows seems like IT's job?
+Mar 11 13:35:30 <rpav>	heh is zap-to-char really so commonly used it deserves a toplevel binding
+Mar 11 13:35:31 <ndegruchy>	I did. It's just comical that this big, "eNtErPrIsE" malware scanning tool doesn't have hashes for all the tools that are included in Windows
+Mar 11 13:35:38 <bpalmer>	curl comes with windows? Is that actual curl, or a powershell alias like wget?
+Mar 11 13:35:49 <ndegruchy>	actual, real deal curl
+Mar 11 13:35:52 <spikemaster>	RickAstley: M-x view-lossage might be waht you want.
+Mar 11 13:36:26 <ndegruchy>	bpalmer: https://curl.se/windows/microsoft.html
+Mar 11 13:37:07 <e1f>	at this stage i suggest talking to your supervisor who can then talk to their supervisor
+Mar 11 13:37:48 <ndegruchy>	I pointed out that the tool was built into windows for many years and that shut them up, but it came up again late last week
+Mar 11 13:38:30 <e1f>	new guy hired
+Mar 11 13:38:42 <rpav>	there's always the "it says my computer is infected with curl.exe! quick, check your computer!"
+Mar 11 13:38:43 <ndegruchy>	Their nastygram also included a malware link trying to exploit an old issue in an old version of Notepad++ so their database has shit filtering for junk
+Mar 11 13:38:43 <bpalmer>	RickAstley: something like (require 'cl-lib) (defun rickastley/refresh-command-history-buffer () (with-current-buffer (get-buffer-create "*Command history*") (erase-buffer) (cl-prettyprint command-history)))
+Mar 11 13:39:14 <bpalmer>	RickAstley: and then (run-with-idle-timer 2 t 'rickastley/refresh-command-history-buffer)
+Mar 11 13:39:22 <e1f>	i suggest asking him to check his computer too and he will find it's also infected
+Mar 11 13:39:32 <bpalmer>	that will cause the buffer to be updated every 2 seconds. Then you just have to deal with putting it in a side window
+Mar 11 13:39:59 <ndegruchy>	e1f: I would sincerely doubt that your average security team goon even /knows/ what curl is, let alone what it's used for
+Mar 11 13:40:03 <bpalmer>	first came curved monitors, now come curly computers
+Mar 11 13:40:26 <e1f>	ndegruchy: agreed, hence my suggestion
+Mar 11 13:40:41 <ndegruchy>	I would be shocked that they even know how to use the command line, only seeing it as some scary black box thing
+Mar 11 13:41:11 <bpalmer>	good thing command.exe is a blue box
+Mar 11 13:41:34 <e1f>	they are essentially droids
+Mar 11 13:41:49 <ndegruchy>	Most of the security goons I've had interaction with personally couldn't figure out the difference between an HDMI cord and a DisplayPort cord
+Mar 11 13:41:49 <bpalmer>	you see purple unicorns?
+Mar 11 13:43:27 *	ndegruchy wonders if he starts using Emacs on his work machine, what kind of flags would be going off
+Mar 11 13:49:02 <RickAstley>	ci/cd for emacs config... If emacs -nw doesn't return error then merge to master?
+Mar 11 13:51:19 <rpav>	RickAstley: there is --script .. does that not load your config
+Mar 11 13:51:24 <rpav>	or --eval 'expr'
+Mar 11 13:51:43 <rpav>	probably --script FILE running a bunch of checks would be decent though
+Mar 11 13:52:14 <rpav>	...it doesn't load configs D:
+Mar 11 13:53:37 <alcor>	Configs are elisp code. They can be loaded via `load' or `load-file'.
+Mar 11 13:53:56 <rpav>	actually manually (load "~/.emacs.d/init.el") doesn't seem far off tough
+Mar 11 13:54:25 <rpav>	alcor: yeah but emacs does a _lot_ of init and magical bs
+Mar 11 13:59:36 <alcor>	iirc, most of that magic was related to finding the init file, and ensuring that early-init.el was loaded before the init.el
+Mar 11 14:00:41 <alcor>	Emacs manual section 42.1.2 The Init File does not seem to suggest that loading the initfile is anything other than a `load' though.
+Mar 11 14:02:53 <tazjin>	ndegruchy: your security goons don't seem to be very good at their job :p
+Mar 11 14:03:07 <ndegruchy>	tazjin: understatement of the century
+Mar 11 14:03:56 <alcor>	have you considered that their job might be gooning rather than security? :)
+Mar 11 14:05:31 <ndegruchy>	ew
+Mar 11 14:10:11 <e1f>	you can't argue with a security droid, hence my suggestion of the supervisor route
+Mar 11 14:10:34 <e1f>	they are trained to ignore user-arguments
+Mar 11 14:22:29 <bpalmer>	consider whether you want to talk to a supervisor, hypervisor, metavisor, controlvisor, or altvisor
+Mar 11 14:25:33 <jbe>	what about the sousvisor?
+Mar 11 14:29:35 <bpalmer>	no sous for you
+Mar 11 14:34:34 <hodapp>	why's it lieutenant and not soustenant
+Mar 11 14:35:30 <hodapp>	also the German word for janitor/custodian, 'Hausmeister', is like 9000% more dignified and badass
+Mar 11 14:36:33 <jbe>	lieutenant is just a placeholder name
+Mar 11 14:37:10 <bpalmer>	hey, New York has supers
+Mar 11 14:37:23 <bpalmer>	Blame the rest of the US for not copying those yankees
+Mar 11 14:40:59 <jbe>	who custodes the custodians
+Mar 11 14:41:44 <rpav>	who barbs the barbers
+Mar 11 14:42:02 <jbe>	though I guess etymologically janitor is related to Janus, the good of doors
+Mar 11 14:42:07 <jbe>	god even
+Mar 11 14:45:25 <hodapp>	whoa
+Mar 11 14:45:30 <hodapp>	I knew about Janus but never considered that
+Mar 11 14:45:35 <grym>	jan itor
+Mar 11 14:45:40 <grym>	famed hospital staffer
+Mar 11 14:45:54 <quiliro>	so germans have masters and USAans have a god for doors?
+Mar 11 14:46:03 <grym>	"1580s, "an usher in a school," later "doorkeeper" (1620s), from Latin ianitor "doorkeeper, porter," from ianua "door, entrance, gate," from ianus "arched passageway, arcade" (see Janus) + agent suffix -tor. "
+Mar 11 14:46:11 <hodapp>	I have some devices that handle RFID badge stuff at the makerspace and the ones that handle doors have hostnames janus & juno
+Mar 11 14:46:44 <hodapp>	I decided that the one I'm doing now which handles a gate on a death-trap freight elevator from the 1900s should be called charon, as in the boatman to the underworld
+Mar 11 14:46:54 <hodapp>	seemed appropriate given the elevator's status
+Mar 11 14:47:12 <grym>	do you know any lienz cossacks
+Mar 11 14:48:01 <rpav>	hodapp: haha, i can only imagine that in context of the inevitable liability suit
+Mar 11 14:49:09 <hodapp>	>_>\
+Mar 11 14:49:23 <rpav>	"'no one knew' the elevator was bad? the badge reader is literally called 'charon'!"
+Mar 11 14:53:41 <bpalmer>	best character in the john wick universe
+Mar 11 14:54:38 *	ndegruchy observes, with horror, that gnuplot litters his $HOME with a .gnuplot_history folder
+Mar 11 15:07:59 <a51>	my C-x r d is highjacked how to know which setting is responsible ? I have to M-x delete-rectable to delete
+Mar 11 15:09:56 <grym>	a51: C-h k C-x r d
+Mar 11 15:13:15 <a51>	I wanted to know why C-x r d does not work, maybe in my settings C-h k C-x r d shows the doc, is it possible to know where in my settings it is used ?
+Mar 11 15:14:14 <alcor>	a51: C-h k should show the function that key is bound to.
+Mar 11 15:16:28 <grym>	(and therefore, what mode)
+Mar 11 15:16:37 <a51>	it is worse becase C-x r deletes the whole line instead of rectangle
+Mar 11 15:16:59 <grym>	C-h m and possibly ,,which-key are also going to be helpful
+Mar 11 15:17:01 <fsbot>	Added note [2] for  term "which-key"
+Mar 11 15:17:17 <grym>	,forget which-key 3
+Mar 11 15:17:18 <fsbot>	err..[fsi-forget] Number should be "all" or lie between 0 and 2
+Mar 11 15:17:24 <grym>	,forget which-key 2
+Mar 11 15:17:27 <fsbot>	Forgot note 2 for term which-key: ["going to be helpful"]
+Mar 11 15:18:02 <a51>	rect.el
+Mar 11 15:19:40 <a51>	alcor: emacs -Q C-x r d works perfect
+Mar 11 15:23:47 <Necktwi>	yep autojoin worked once i removed irc.
+Mar 11 15:23:55 *	hodapp blinks
+Mar 11 15:24:07 <hodapp>	an email just floated into my inbox telling me I was granted access to... an HPE Cray EX
+Mar 11 15:24:18 <hodapp>	which is kinda weird since I... didn't ask for this
+Mar 11 15:24:51 <alcor>	It might be a scam 🤷
+Mar 11 15:25:39 <hodapp>	it came through the normal channels for the cluster I'm already on
+Mar 11 15:26:21 <edrx>	rpav: I use zap-to-char several times a day
+Mar 11 15:26:59 <rpav>	edrx: got any context? i can't imagine how i'd use it at all
+Mar 11 15:29:30 <alcor>	I use M-z for removing until closing pairs delimiting characters - e.g. delete until the ")" or "}".
+Mar 11 15:29:49 <alcor>	*or delimiting characters
+Mar 11 15:29:55 <edrx>	rpav: usually to mark all characters until a specific delimiter... for example M-z : C-y
+Mar 11 15:30:11 <grym>	recently i learned you can combine zap and avy
+Mar 11 15:30:15 <edrx>	then the region will be everything until the next :
+Mar 11 15:30:57 <rpav>	edrx: ah huh
+Mar 11 15:31:23 <rpav>	alcor: that's what i usually use C-k and paredit for
+Mar 11 15:33:29 <alcor>	rpav: You must mean C-M-k aka `kill-sexp' but `zap-to-char' is still useful for modes that aren't sexp/tree-aware
+Mar 11 15:36:38 <rpav>	paredit-delete-line; i have it bound to C-k
+Mar 11 15:38:27 <rpav>	although i think there's something that actually-actually kills to the end of the block, for multiline blocks, but i rarely do that or i'd bind it
+Mar 11 15:39:18 <alcor>	`kill-paragraph' maybe? I'm aware it exists, but never used it.
+Mar 11 15:40:06 <rpav>	dunno, if i really want i'd probably hold C-k until it got to the delimiter; usually i kill the entire block instead, or the end delimiter is a line or two away
+Mar 11 15:44:11 <ndegruchy>	kill-sexp ?
+Mar 11 15:45:36 <rpav>	i have that (actuall delete-sexp, which doesn't kill-ring it) on M-d
+Mar 11 15:45:47 <alcor>	Yes, that (kill-sexp) kills the sexp at point. Starting from Emacs 28+, it also works for tree-sitter modes. In that case it kills the tree node at point.
+Mar 11 15:47:54 *	ndegruchy didn't compile in tree-sitter
+Mar 11 15:48:09 <quiliro>	why is the command called `zap-to-char' instead of `kill-to-char' ?
+Mar 11 15:48:32 <bremner>	,hysterical
+Mar 11 15:48:33 <fsbot>	Critical flame failure, flamethrower explodes, dousing bremner with napalm. bremner runs around screaming. bremner looks on and laughs.
+Mar 11 15:48:38 <bremner>	ow
+Mar 11 15:49:07 <bremner>	quiliro: in emacs kill usually implies it can be yanked
+Mar 11 15:49:18 <quiliro>	oh!
+Mar 11 15:49:26 <quiliro>	nice to know
+Mar 11 15:50:01 <quiliro>	but the docstring says: Kill up to and including ARGth occurrence of CHAR.
+Mar 11 15:50:15 <quiliro>	so it _is_ a kill
+Mar 11 15:51:06 <ndegruchy>	Make a wrapper function or alias
+Mar 11 15:51:14 <tazjin>	quiliro: zap sounds cool
+Mar 11 15:51:14 <rpav>	it's emacs; consistency is a passing fancy
+Mar 11 15:51:26 <ndegruchy>	there are so many weirdly named functions in emacs.
+Mar 11 15:51:36 <quiliro>	and in fact, you can yank it!
+Mar 11 15:52:02 <quiliro>	OK...sound like good explanations...
+Mar 11 15:52:36 <quiliro>	zap...poom...bang!
+Mar 11 15:52:39 <rpav>	i mean `kill` and `yank` alone are just like ??
+Mar 11 15:52:39 <fsbot>	Highly likely!
+Mar 11 15:52:55 <quiliro>	I remember the original batman tv series
+Mar 11 15:53:02 <rpav>	obviously properly necromantic functions should be `kill` and `raise`
+Mar 11 15:53:59 <ndegruchy>	and the kill ring would be a crypt
+Mar 11 15:54:22 <quiliro>	very symbolic, yes
+Mar 11 15:54:54 <quiliro>	symbols are very important to humans...they would be useful in emacs
+Mar 11 15:55:25 <quiliro>	and easier for newbies
+Mar 11 15:55:34 <rpav>	,(symbolp 'foo)
+Mar 11 15:55:35 <fsbot>	t  ..(symbol)
+Mar 11 15:55:59 <quiliro>	I have spent many years in emacs...and just now I understand more or less what zap really means
+Mar 11 15:56:16 <quiliro>	I remember zapping in TV
+Mar 11 15:56:24 <quiliro>	so I related it to that
+Mar 11 15:56:55 <quiliro>	but now I see, it could mean that...but more specifically is just a plain old kill
+Mar 11 15:57:29 <quiliro>	or cut/copy (for a more symbolic name)
+Mar 11 16:00:30 <quiliro>	there is only `zap-to-char' and `zap-up-to-char' with the word char in the available functions for my emacs
+Mar 11 16:02:09 <quiliro>	wouldn't the former be better renamed to `kill-to-char' and created an alias named `zap-to-char' ?
+Mar 11 16:02:36 <quiliro>	(and the later, similarly)
+Mar 11 16:06:16 *	ndegruchy forgot how good Restclient.el is
+Mar 11 16:15:37 <lechner>	Hi, how may I activate ini-generic-mode, please?     https://www.emacswiki.org/emacs/IniMode
+Mar 11 16:15:44 <rpav>	ugh, spending an hour trying to track down a problem fixed by rebooting
+Mar 11 16:19:09 <rpav>	(that is, an issue apparently caused by extended uptime.. vram fragmentation seems likely)
+Mar 11 16:19:43 <rpav>	lechner: huh, the page claims it's bundled, but i don't have it
+Mar 11 16:20:43 <rpav>	opening test.ini opens it in conf-mode; i'm not sure if this is suitable or not
+Mar 11 16:25:11 <lechner>	rpav / Yeah, thanks for checking! I also could not find it.
+Mar 11 16:42:30 <grym>	,zap
+Mar 11 16:42:31 <fsbot>	try:  zap-to-char zap-to-regexp zap-up-to-char zapata zaphod zappa-emacs-fix zappa-fix ZapToChar ZapToCharUsage ZapToISearch zaptoregexp ZapUpToChar
+Mar 11 16:42:36 <grym>	,zappa-fix
+Mar 11 16:42:37 <fsbot>	Shut up and play yer guitar some more!
+Mar 11 16:43:34 <grym>	good advice
+Mar 11 16:43:56 <grym>	man knew what he was about, so, not too surprising
+Mar 11 16:45:15 <quiliro>	why does eww hang emacs on certain web pages?
+Mar 11 16:45:32 <quiliro>	how can I get more information from emacs?
+Mar 11 16:46:14 <ndegruchy>	,zaphod
+Mar 11 16:46:15 <fsbot>	emacs is just this program, you know
+Mar 11 16:46:37 <danse-nr3>	,zaphod
+Mar 11 16:46:38 <fsbot>	emacs is just this program, you know
+Mar 11 16:47:05 <corwin>	that one probably *should* be a list it picks from, but it isn't.
+Mar 11 16:47:26 <ndegruchy>	,frood
+Mar 11 16:47:27 <fsbot>	The entire CHINESE WOMEN'S VOLLEYBALL TEAM all share ONE personality -- and have since BIRTH!!
+Mar 11 16:47:34 <quiliro>	I don't have those commands...only zap-["up-"]to-char
+Mar 11 16:47:36 <grym>	,hoopy
+Mar 11 16:47:37 <fsbot>	You will remember something that you should not have forgotten.
+Mar 11 16:47:47 <ndegruchy>	,towel
+Mar 11 16:47:48 <fsbot>	ndegruchy: You GUI-using quiche-eater!
+Mar 11 16:48:03 <grym>	quiliro: none of these are emacs commands
+Mar 11 16:48:17 <corwin>	,shit-#emacs-says
+Mar 11 16:48:18 <fsbot>	the plural of regex is regrets
+Mar 11 16:48:30 <corwin>	hahahaha
+Mar 11 16:48:36 <quiliro>	,zaptoregexp
+Mar 11 16:48:37 <fsbot>	quiliro: [->] zap-to-regexp is [0] at http://tsdh.wordpress.com/2007/06/22/zapping-to-strings-and-regexps/
+Mar 11 16:48:37 <fsbot>	[1] http://paste.lisp.org/display/59010
+Mar 11 16:48:37 <fsbot>	[2] http://paste.lisp.org/display/70641
+Mar 11 16:48:37 <rpav>	that's a good one
+Mar 11 16:49:02 <corwin>	"It's funny because it's true"
+Mar 11 16:49:35 <rpav>	quite
+Mar 11 16:50:10 <quiliro>	I get Service Unavailable from both paste.lisp.org urls
+Mar 11 16:52:06 <grym>	me too
+Mar 11 16:52:09 <quiliro>	nice way to learn elisp https://tsdh.wordpress.com/2007/06/22/zapping-to-strings-and-regexps/
+Mar 11 16:52:23 <quiliro>	simple useful examples
+Mar 11 16:53:32 <grym>	!g what used to live at http://paste.lisp.org/display/59010
+Mar 11 16:53:34 <fsbot>	🤖[g] Sorry, I can't access external links. I'm here to provide information and assistance within the chat. If you have any specific questions or need help with something else, feel free to ask!
+Mar 11 16:53:47 <grym>	nice dodge
+Mar 11 16:54:11 <quiliro>	gpt can't do the basics?  better use a search engine then
+Mar 11 16:54:22 <grym>	the hell you say!
+Mar 11 16:54:33 <grym>	(i expected that to fail)
+Mar 11 16:54:44 <quiliro>	is there a free software search engine made in lisp?
+Mar 11 16:54:46 <grym>	i just wanted to see in which way it would fail
+Mar 11 16:54:58 <grym>	i suspect that there is not
+Mar 11 16:55:09 <rpav>	grym: i feel like that summarizes life as a software developer
+Mar 11 16:55:21 <grym>	rudybot: as everyone knows, (g)awk is the language of AI
+Mar 11 16:55:22 <rudybot>	grym: AI in awk: http://www.wra1th.plus.com/awk/awkfri.txt (and also, http://www.gnu.org/software/gawk/manual/gawkinet/ )
+Mar 11 16:55:28 <grym>	just so
+Mar 11 16:55:28 <rpav>	"i expected it to fail; i wanted to see how"
+Mar 11 16:55:30 <grym>	rpav: yep
+Mar 11 16:55:38 <grym>	rpav: saruman-mode
+Mar 11 16:55:40 <quiliro>	i am in love with lisp...I hope make a trio with my fiancee!
+Mar 11 16:55:52 <e1f>	is the german "schindulder" slang for something?
+Mar 11 16:56:00 <technomancy>	keep it in yr pants please
+Mar 11 16:56:10 <e1f>	google's translation doesn't make sense
+Mar 11 16:56:30 <grym>	i'm still sad that the monty python easter egg went away
+Mar 11 17:01:29 <kompowiec2>	https://i.imgur.com/vrGIjrm.jpeg
+Mar 11 17:01:29 <kompowiec2>	schrodinger termux... and I supposedly did everything according to the instructions. https://old.reddit.com/r/emacs/comments/16hwjby/how_to_get_graphical_not_termuxbased_emacs_on/
+Mar 11 17:02:01 <bpalmer>	lechner: add ini-generic-mode to generic-extras-enable-list  and then (re)load generic-x , and you'll get ini-generic-mode defined.
+Mar 11 17:05:39 <Necktwi>	i'm trying to setup erc over tor, i've configure sasl external with certificates and added libera onion torrc and started erc-tls with pelladium.libera.chat
+Mar 11 17:05:41 <rpav>	i feel like a hand-crank + train whistle pull ("h-<TrainWhistle>") would make kicking off a compile feel more significant
+Mar 11 17:06:12 <Necktwi>	but when i do erc-tls `Debugger entered--Lisp error: (error "pelladium.libera.chat/6697 Non-recoverable error")`
+Mar 11 17:07:21 <Necktwi>	https://dpaste.com/45XZG5AZC
+Mar 11 17:11:34 <corwin>	rpav: I will update you when my USB train-whistle project launches on indiegogo
+Mar 11 17:11:42 <rpav>	corwin: sold
+Mar 11 17:12:12 <corwin>	Maybe semi-truck whistles too, for cargo cultists.
+Mar 11 17:12:20 <e1f>	there's no host called pelladium.libera.chat
+Mar 11 17:12:33 <corwin>	Hmm, fairly sure there ustawas
+Mar 11 17:13:25 <e1f>	maybe it's palladium as the hosts are named after elements
+Mar 11 17:14:48 <Necktwi>	i've added mapping in torrc as per https://libera.chat/guides/connect#accessing-liberachat-via-tor
+Mar 11 17:15:40 <Necktwi>	oops
+Mar 11 17:15:40 <e1f>	pretty sure the error is the hostname typo
+Mar 11 17:18:39 <Necktwi>	elf, i've renamed to palladium but still it says same
+Mar 11 17:19:02 <rpav>	you're accessing it via tor?
+Mar 11 17:19:30 <Necktwi>	yes
+Mar 11 17:19:37 <Necktwi>	with torsocks
+Mar 11 17:20:14 <rpav>	sounds like an extra layer of potential problems
+Mar 11 17:21:20 <rpav>	i.e. making sure you can connect at all normally is probably a good place to start
+Mar 11 17:27:23 <corwin>	,,erc-sasl
+Mar 11 17:27:24 <fsbot>	erc-sasl is [0] https://elpa.gnu.org/packages/doc/erc.html#SASL
+Mar 11 17:27:24 <fsbot>	[1] EmacsWiki: Erc SASL https://www.emacswiki.org/emacs/ErcSASL
+Mar 11 17:27:24 <fsbot>	[2] included since ERC 5.5; for upgrading, see https://elpa.gnu.org/devel/doc/erc.html#Upgrading (make sure to delete all traces of any existing erc-sasl.el{,c,n}, etc. before restarting Emacs)
+Mar 11 17:32:06 <a51>	C-x r d did not work earlier ... sorry to have wasted time by asking why ... in my config I had cua-mode enabeled
+Mar 11 17:55:25 <RickAstley>	Necktwi: use proxychains not torsocks
+Mar 11 17:55:49 <RickAstley>	And yes it's palladium not pellidium
+Mar 11 17:57:01 <Necktwi>	yeah i changed pelladium to palladium but still its the same
+Mar 11 17:57:12 <RickAstley>	Use proxychains not torsocks
+Mar 11 17:57:19 <Necktwi>	ok will try proxychains
+Mar 11 17:58:14 <RickAstley>	unless you REALLY need to avoid all potential data leaks eg you're going to be leaking some kind of sensitive data on irc
+Mar 11 17:58:33 <RickAstley>	but since you have to verify identity with libera probably not your use case anyways
+Mar 11 17:58:46 <Necktwi>	ok
+Mar 11 17:59:22 <RickAstley>	proxychains has less security profile but not important here in the majority of use cases. I'm assuming you're using tor only because you don't want to have your location or IP broadcast to everyone on the network. Proxychains will do that
+Mar 11 18:01:08 <quiliro>	with tor, the libera admins still know who connects to whom ... so it is useless
+Mar 11 18:01:17 <Necktwi>	RickAstley: can i use Transparent Tor proxy?
+Mar 11 18:01:34 <quiliro>	for there to be privacy, no one but the parties should know
+Mar 11 18:01:53 <RickAstley>	quiliro: it's not useless. Not having your IP exposed for any random person to come knock on your modem/router is a legitimate benefit
+Mar 11 18:02:11 <quiliro>	ok
+Mar 11 18:02:21 <Necktwi>	i don't generally pm in irc
+Mar 11 18:02:47 <Necktwi>	RickAstley: yeah
+Mar 11 18:03:13 <quiliro>	but an IP address is simple...just a number...anyone can just try all IPs
+Mar 11 18:03:38 <RickAstley>	Necktwi: Yes, the problem you're experiencing is likely due to problems with torsocks and liberachat tls, iirc there's a bug with it on github
+Mar 11 18:03:41 <Necktwi>	i followed https://wiki.gentoo.org/wiki/Tor, what is the section in it related to proxychains?
+Mar 11 18:04:00 <Necktwi>	RickAstley: oh!!
+Mar 11 18:04:18 <RickAstley>	quiliro: They can and do lol, but security is filtering out that crap and listening to the stuff that is someone targeting you in particular (not the automated noise)
+Mar 11 18:05:01 <RickAstley>	no broadcast ip, no weirdo from a flamewar harassing me :D
+Mar 11 18:06:58 <kompowiec2>	ok i got it, code from page no include setenv for SHELL
+Mar 11 18:17:56 <RickAstley>	ugh, C-c ' returns `wrong type arg stringp in all org code blocks`
+Mar 11 18:18:19 <RickAstley>	`wrong type arg stringp` in all code blocks *
+Mar 11 18:30:56 <bartk>	I declare .emacs bankruptcy!
+Mar 11 18:31:53 <sham1>	Time to start over
+Mar 11 18:32:20 *	corwin chants "one of us"
+Mar 11 18:32:54 <sham1>	Also, I just wanted you to know that you can't just say the word "bankruptcy" and expect anything to happen.
+Mar 11 18:33:28 <corwin>	Quite correct. You have to stare at the mirror in a dark room until a red dot appears, first.
+Mar 11 18:38:41 <RickAstley>	based and dark room in front of a mirror pilled
+Mar 11 18:39:46 <RickAstley>	the issue was trying to call that weird function from CMU that puts line numbers in source code blocks. Did anyone ever package something that does that in a polished way
+Mar 11 18:48:42 <RickAstley>	is anyone here using tabs? I feel like I'm going to just start using spaces but it feels so wrong. But it's hard to get tabs to work nicely with emacs
+Mar 11 18:48:49 <RickAstley>	iirc there was a study that people who use spaces earn more money
+Mar 11 18:49:30 <RickAstley>	Maybe the true sigma male move is to just remap space to the tab key
+Mar 11 18:49:33 <corwin>	I offered to switch for a modest raise.  Nothing, so far.
+Mar 11 18:51:18 <ju`>	I tried tabs but decided to go space again when realized  there is very few support even in dev ambients, like when tried to edit files in github/gitlab
+Mar 11 18:53:13 <rpav>	i don't remember the year or decade i last used tabs, though i think i have a copy of https://store.steampowered.com/app/508440/Totally_Accurate_Battle_Simulator/ somewhere
+Mar 11 18:53:17 <rpav>	also never used
+Mar 11 18:54:23 <technomancy>	rudybot: tabs are for makefiles
+Mar 11 18:54:23 <rudybot>	technomancy: tabs are for makefiles
+Mar 11 18:54:39 <technomancy>	great minds think alike
+Mar 11 18:56:58 <ju`>	heh
+Mar 11 18:58:04 <stooven>	Remap space to tab key? That is evil
+Mar 11 19:00:05 <rpav>	you still generally need spaces later in the line for tokenization, after indentation and initial tokens
+Mar 11 19:00:20 <rpav>	i mean you could use tabs there too but
+Mar 11 19:00:46 <rpav>	clearly the way towards broad agreement is set tabstop size to 1 and use whichever you prefer ;D
+Mar 11 19:10:26 <catern>	hmm I have a bunch of let-bindings and I want to save-excursion over all the let-bindings, but *not* over the body of the let...
+Mar 11 19:11:40 <ju`>	there is another problem with tabs, there is no consensus in how you use it.
+Mar 11 19:11:41 <ju`>	Use just tabs , tabs but space to indent comments, there is too much "I prefer to do on my way"
+Mar 11 19:11:41 <ju`>	In the I just go with whatever the project I'm working on asks and the headaches go away
+Mar 11 19:12:53 <sham1>	Tabs for indentation, spaces for alignment
+Mar 11 19:13:50 <corwin>	Tabs for industry, spaces for integrity
+Mar 11 19:14:27 <corwin>	(Not really.  The whole thing is just silly.)
+Mar 11 19:14:49 <hodapp>	tabs in the streets, spaces in the sheets
+Mar 11 19:14:50 <sham1>	Just provide a formatter config file and/or .editorconfig and it's all fine
+Mar 11 19:15:00 <technomancy>	the whole concept is just absurd to begin with. why should it be so important that people could customize how deeply things are indented?
+Mar 11 19:15:10 <sham1>	It might not be a style you *like*, but it's consistent
+Mar 11 19:15:12 <technomancy>	you can't change the bracket placement on a per-user basis
+Mar 11 19:15:24 <sham1>	Oh you can
+Mar 11 19:15:32 <technomancy>	I mean you can but it's obviously stupid
+Mar 11 19:16:06 <sham1>	The point in arguing about indentation style is that you of course want for a project to look consistent and coherent with itself
+Mar 11 19:16:24 <spikemaster>	i love tab indentation, space alignment. But... most editors don't support that out of the box, not even Emacs.
+Mar 11 19:16:50 <rpav>	the deeper issue is using dumb textual bytes that have to be parsed to represent things, and essentially ascii art to make it readable
+Mar 11 19:16:54 <waerloga>	still goes wonky if your spaces for alignment exceed the users desired tab indentation
+Mar 11 19:17:19 <technomancy>	it's just so much complexity for zero benefit
+Mar 11 19:17:28 <rpav>	then the ascii art and the bytes have to get along
+Mar 11 19:17:39 <waerloga>	which is the main reason why I ended up with spaces (vs tabs)
+Mar 11 19:17:45 <sham1>	rpav: problem: text is a *really* useful medium of information interchange, even outside of computers. I mean, that's sort of why it was invented all over the world over and over again
+Mar 11 19:17:55 <spikemaster>	i'm on team tab 100%. except for lisp where i'm on team spaces only 100%
+Mar 11 19:18:32 <rpav>	sham1: kind of; it's mostly that it's the incredibly dumb lowest common denominator and there's a distinct lack of imagination around how we could do better
+Mar 11 19:19:04 <rpav>	also there's not a lot of agreement even around text; unicode tries, but most things ignore it
+Mar 11 19:19:29 <rpav>	text itself is incredibly complicated in all dimensions; so it's not actually as simple as it seems _to begin with_
+Mar 11 19:19:38 <sham1>	Do they? Most people nowadays interact with systems that almost invariably accept unicode text encoded in one of the unicode ways
+Mar 11 19:19:48 <sham1>	Usually UTF-8
+Mar 11 19:19:59 <rpav>	yeah and most things in the middle ignore it as much as possible
+Mar 11 19:20:02 <technomancy>	if you actually want to decouple the bytes from the way it looks, you need to switch to proper structural editing and bring back interlisp vibes
+Mar 11 19:20:09 <rpav>	a few frontends deal with it
+Mar 11 19:20:43 <rpav>	technomancy: yeah, of course i'm very interested in this and implying such directions
+Mar 11 19:21:01 <sham1>	Structural editing is nice as long as everyone has the same setup. When someone decides that the One True Setup isn't for them, you immediately get problems. There's a reason why LabVIEW hasn't taken over the world despite being quite nice
+Mar 11 19:21:09 <sham1>	And of course network effect also works against LabVIEW
+Mar 11 19:21:10 <sham1>	And so on
+Mar 11 19:21:24 <corwin>	When the data is intended for direct load that's one thing.  When the data is intended to be fed to an editor used by a developer to update instructions for the compiler/interperter... the whole thing remains silly seeming.
+Mar 11 19:21:36 <rpav>	eh nah the problem i've seen is all the structural things are too rigid
+Mar 11 19:21:41 <sham1>	That too
+Mar 11 19:22:24 <sham1>	It works as long as your stuff is well-formed
+Mar 11 19:22:30 <rpav>	i think the real secret is showing that actually writing structural editing is a lot simpler than it seems, though _slightly_ more work up front than plain text, but _way_ less complexity after that
+Mar 11 19:22:32 <technomancy>	the main problem with investigating new structural editing approaches is that paredit is too good of a local maximum
+Mar 11 19:22:45 <sham1>	Also, even with structural editors, you end up defining the structure by using text, for example via keyboards
+Mar 11 19:22:53 <rpav>	sham1: nah that's part of the "too rigid" part; a good structural editor should feel like editing text, and allow errors
+Mar 11 19:23:23 <rpav>	well right, you _input_ characters, but the computer figures out how to interpret them, or you interactively assist it at point of entry
+Mar 11 19:23:31 <sham1>	Okay, but if that's the case then what's the difference between what we have and the counterfactual? That what we have on the disk is an AST as opposed to source code?
+Mar 11 19:23:37 <rpav>	rather than point of parsing
+Mar 11 19:24:18 <rpav>	sham1: right; the difference is when you enter junk, the editor immediately knows and shows you, but it doesn't _prevent_ it, because occasionally having an intermediate junk state is useful
+Mar 11 19:24:19 <Necktwi>	RickAstley: i'm able to connnect with proxy chains
+Mar 11 19:25:00 <rpav>	sham1: and also you don't need escaping and other textual disambiguation, and you can alter the presentation on demand
+Mar 11 19:25:19 <Necktwi>	but if i'm emacserver and emacsclient then connecting to irc waits indefinitely
+Mar 11 19:25:28 <Necktwi>	i'm using*
+Mar 11 19:25:28 <rpav>	like you like () or {} or whatever for delimiters; theme your data
+Mar 11 19:26:04 <technomancy>	you don't even need bracket delimiters
+Mar 11 19:26:07 <technomancy>	https://p.hagelb.org/anarres.png
+Mar 11 19:26:12 <Necktwi>	how to test i'm using tor now?
+Mar 11 19:26:46 <rpav>	technomancy: you don't, but you might or might not like it for visual distinction if you're colorblind or don't want rainbows
+Mar 11 19:27:14 <technomancy>	sure; the point is you have more flexibility
+Mar 11 19:27:22 <rpav>	you definitely do
+Mar 11 19:27:33 <technomancy>	if you want colors, great; if you want a tmux-friendly version, you can have [] and {} etc
+Mar 11 19:27:44 <technomancy>	s/colors/colorful boxes/
+Mar 11 19:27:47 <rpav>	yeah
+Mar 11 19:27:53 <technomancy>	I've implemented this
+Mar 11 19:28:17 <sham1>	What do you do when someone wants to use a different editor?:
+Mar 11 19:28:28 <corwin>	Pity them.
+Mar 11 19:28:40 <JohnGalt>	corwin: good answer!
+Mar 11 19:28:50 <rpav>	sham1: the idea is not to force someone to use a specific editor, too
+Mar 11 19:28:51 <technomancy>	sham1: my version stores the code as text; you just don't interact with it as such
+Mar 11 19:29:28 <rpav>	this is why i think the first step is demonstrating how it's actually really easy to _implement_, and even have emacs/vim frontend it
+Mar 11 19:29:35 <johnw>	lol
+Mar 11 19:29:36 <sham1>	So you still get into indentation battles since other people will still see the text, except now in the worst case you get machine-generated goop that requires a formatter just to *read*
+Mar 11 19:30:14 <rpav>	ah but it already requires a formatter just to read
+Mar 11 19:30:15 <sham1>	You have to make sure that your tool outputs something readable
+Mar 11 19:30:20 <corwin>	I think we are talking about a display properties based solution, so no goop in the files.
+Mar 11 19:30:22 <rpav>	you're just really used to the formatter and assume it's magically a given
+Mar 11 19:30:25 <technomancy>	sham1: well, I only implemented it for fennel, which doesn't have multiple indentation styles
+Mar 11 19:30:39 <corwin>	(Or was I misunderstanding?)
+Mar 11 19:30:53 <technomancy>	generalizing it across languages is nearly impossible
+Mar 11 19:30:54 <rpav>	except e.g. unicode is not only not a given, it's incredibly complex outside the simple case, and very few do it fully right
+Mar 11 19:31:06 <sham1>	technomancy: how do you make sure that the s-expressions are written nicely? Pretty-printer?
+Mar 11 19:31:25 <sham1>	Most unicode is the simple case
+Mar 11 19:31:26 <technomancy>	sham1: I have to make extensions to the standard pretty-printer, but yes
+Mar 11 19:32:20 <Necktwi>	hey
+Mar 11 19:32:22 <technomancy>	the main problem is it's not actually better than paredit
+Mar 11 19:32:47 <sham1>	Another problem is that, as said, it's pretty much impossible to generalise across languages
+Mar 11 19:32:53 <sham1>	I wish I could work in a Lisp, but I can't
+Mar 11 19:32:54 <technomancy>	or rather the improvement over paredit is marginal while the loss of magit/eshell/etc is a huge loss
+Mar 11 19:33:20 <sham1>	If I started to commit like clojure or whatever into our repo, I'd get crucified
+Mar 11 19:33:53 <technomancy>	well, martyrs can often be very highly regarded
+Mar 11 19:33:55 <rpav>	there's not really "conversion" though i suppose one could augment existing compilers
+Mar 11 19:34:10 <rpav>	like you're not _going_ to edit existing code this way
+Mar 11 19:34:37 <rpav>	the first step is to provide the tool for general data
+Mar 11 19:36:08 <corwin>	let's separate presentation and content completely and put "formatting hints" into a sep file while reducing code down to minimal (hinted?) formats according to the given language specifications
+Mar 11 19:36:38 <spikemaster>	css for code
+Mar 11 19:36:59 <rpav>	corwin: huh that might be a possibility too though that _would_ require a very understanding editor
+Mar 11 19:37:31 *	sham1 grumbles in source maps
+Mar 11 19:38:12 <corwin>	seems to me raising the bar for editors being responsible to their users for obeying our various expectations (vs making code authors responsible for finding reasonable choices that are okay with everyone) is the problem space.
+Mar 11 19:38:56 <corwin>	(So, maybe high expectations for the editors that would try to implement this is just fine?)
+Mar 11 19:39:40 <corwin>	Could apply to how programs are broken up into files, too.
+Mar 11 19:40:11 <sham1>	Being able to codify and automate these sorts of things is what usually ends the debate on these things. If you can enforce a code style in a project then you're just golden
+Mar 11 19:40:51 <sham1>	I agree with the idea of structural editing, it's just that unless you are in a Lisp then it gets infinitely more difficult to even use that stuff nicely
+Mar 11 19:41:16 <corwin>	It does seem like there's a semantic standard missing.
+Mar 11 19:41:49 <rpav>	imo the idea would be more to make a new structure-based _language_, rather than trying to structurally-edit existing things
+Mar 11 19:42:34 <corwin>	ok, I see.  a meta-programming language created by an Emacs user (or several) is something I'd look at, fwiw.
+Mar 11 19:42:47 *	technomancy ahems
+Mar 11 19:43:41 <rpav>	technomancy: urls
+Mar 11 19:44:25 <technomancy>	rpav: https://fennel-lang.org
+Mar 11 19:44:33 <rpav>	err
+Mar 11 19:45:04 <rpav>	technomancy: fennel isn't really structural in nature though
+Mar 11 19:45:15 <rpav>	like it still reads from text right?
+Mar 11 19:45:28 <rpav>	yeah
+Mar 11 19:45:44 <technomancy>	I was replying to "a meta-programming language created by an Emacs user"
+Mar 11 19:45:56 <spikemaster>	does fennel use luajit or "official" lua?
+Mar 11 19:46:01 <technomancy>	but yeah, fennel is typically written as text but doesn't have to be
+Mar 11 19:46:07 <technomancy>	rpav: https://git.sr.ht/~technomancy/anarres
+Mar 11 19:46:09 <rpav>	looks neat at a glance though .. like the kind of things i'd immediately want from a new lisp
+Mar 11 19:46:16 <technomancy>	spikemaster: works with both
+Mar 11 19:46:25 <sham1>	Would be weird if fennel couldn't be used both with PUC-Rio lua and luajit
+Mar 11 19:46:45 <corwin>	technomancy: OK, so: I do clearly need to investigate fennel.
+Mar 11 19:46:47 <rpav>	sham1: one could always _compile_ to lua
+Mar 11 19:46:57 <rpav>	lua and C are both pretty good targets imo
+Mar 11 19:47:30 <rpav>	mostly because you can write some weirdass new language no one has a compiler for, and distribute lua or C and no one needs your toolchain
+Mar 11 19:47:39 <technomancy>	sham1: if we compiled to bytecode we would get some neat benefits; fewer bugs around line numbering. in that case it would be either/or rather than both. but the compiler outputs source for maximum compatibility.
+Mar 11 19:48:10 <sham1>	And having only one backend is nice since it lessens the effort
+Mar 11 19:52:18 <sham1>	Anyway, if anyone here uses mu4e on fedora, I'm currently pushing 1.12.1 of mu to the repos. I really need to be more vigilant about that
+Mar 11 19:52:30 <corwin>	technomancy: not sure I'm up for learning lua to use this; I have in mind something more akin to parrot (from the early Perl6 conceptual phase, anyway; I'm not conversant on how raku works), where we can "compile down" to mostly anything.
+Mar 11 19:52:32 <sham1>	Missing multiple versions at a time
+Mar 11 19:52:52 <technomancy>	corwin: fair enough. but lua is *really* easy to learn.
+Mar 11 19:52:57 <rpav>	sham1: the curse of making something people use
+Mar 11 19:52:58 <technomancy>	like ... an afternoon and you should be good
+Mar 11 19:53:14 <corwin>	technomancy: I did say I wasn't sure; I'm not ruling it out either.
+Mar 11 19:53:38 <rpav>	lua is probably worth learning a little and yea it is pretty easy
+Mar 11 19:53:43 <sham1>	rpav: this is mostly just me being lazy. I'd have to probably set up an RSS thing or whatever to remind me whenever a package I maintain gets updates upstream
+Mar 11 19:53:59 <technomancy>	corwin: yeah. I think the JVM sucked a lot of the oxygen out of the room from people pursuing a parrot-like approach but there's a lot of things it's just not good at.
+Mar 11 19:54:34 <rpav>	3 major gotchas: 1-based array indexing, global-by-default (assumes global unless declared local), and no default-return (e.g. `function(x) x+1; end` returns nothing)
+Mar 11 19:54:48 <technomancy>	rpav: fennel fixes the 2nd and 3rd of those
+Mar 11 19:55:02 <rpav>	technomancy: yeah i was about to say hah
+Mar 11 19:55:19 <rpav>	it may sortof-fix the first since it looks like you provide some richer iteration
+Mar 11 19:55:22 <sham1>	Probably doesn't fix the nil silliness
+Mar 11 19:55:35 <RickAstley>	anyone here using sdl2 with org-mode, when I compile my code using org-babel it freezes my screen when rendering the SDL_WINDOW
+Mar 11 19:55:36 <technomancy>	the first one is very rarely a problem since you pull things out of data structures using destructuring and iterators
+Mar 11 19:55:40 <spikemaster>	as a WoW player i appreciate lua
+Mar 11 19:55:57 <technomancy>	sham1: it does have nils unfortunately but it at least doesn't have the nil silliness where "I put nothing in the list and now it's longer than it was before"
+Mar 11 19:56:05 <technomancy>	the way most lisps do
+Mar 11 19:56:54 <technomancy>	plus fennel's pattern matching includes a lot of implicit nil checks that results in safer code than you'd get in lua
+Mar 11 19:57:31 <corwin>	In my mind rendering interpreter/compiler dependant code is like rendering architecture dependent code: optimization could be involved but it isn't implicitly about optimization.  It's about portability.
+Mar 11 19:57:50 <technomancy>	aaaaanyway come join #fennel so I don't have to keep peddling my wares in the wrong channel
+Mar 11 19:58:07 <corwin>	Yeah, I'll rejoin over there I think.  Thanks for the shout.
+Mar 11 19:58:16 <weary-traveler>	i'm struggling with trying to directly use citeproc-render-item . anyone here familiar with the citeproc library and/or have some reference code regd citeproc-render-item i can study?
+Mar 11 20:17:38 <johnjaye>	spikemaster: lua... is used in WoW/
+Mar 11 20:25:54 <rpav>	all the ui stuff
+Mar 11 20:25:58 <rpav>	also ESO!
+Mar 11 20:28:11 <rpav>	i think i had more fun modding ESO than playing it 🤣
+Mar 11 20:31:12 <bremner>	OK, fennel is cool and all, but does it run org-mode?
+Mar 11 20:33:06 <ndegruchy>	Yeah, WoW had lots of Lua mods for the UI.
+Mar 11 20:34:30 <technomancy>	bremner: we had a talk on that at the last fennelconf!
+Mar 11 20:34:51 <technomancy>	second-to-last rather
+Mar 11 20:35:17 <technomancy>	https://git.sr.ht/~technomancy/fennel-mode/tree/main/item/ob-fennel.el
+Mar 11 20:36:02 <technomancy>	(video at https://conf.fennel-lang.org/2022)
+Mar 11 20:36:08 <weary-traveler>	the name seems to suggests an org-babel extension. i.e., running /in/ org-mode. i interpreted "run org-mode" as being something else
+Mar 11 20:36:21 <technomancy>	oh, I'm not an org-mode user, so maybe
+Mar 11 20:36:46 <weary-traveler>	huh. interesting.
+Mar 11 20:37:04 <weary-traveler>	technomancy: markdown for all ze notes?
+Mar 11 20:37:30 <ndegruchy>	I was going to claim to be the only emacs user who doesn't really care about org-mode, but technomancy probably has me beat
+Mar 11 20:37:48 <bremner>	Let's compete for who is the most apathetic
+Mar 11 20:38:02 <technomancy>	weary-traveler: yes, plus just being generally very disorganized
+Mar 11 20:38:04 <weary-traveler>	the winner is one who doesn't bother to compete
+Mar 11 20:42:04 <sham1>	I'm also quite apathetic about org-mode. I can see why it'd be useful but I never got into it for whatever reason and frankly I feel like it's overhyped
+Mar 11 20:43:16 <technomancy>	markdown isn't good, but at least everyone knows it's not good
+Mar 11 20:43:32 <ndegruchy>	I just write text files
+Mar 11 20:43:37 <sham1>	Yeah, and at least there's some sort of a spec unlike with asciidoc
+Mar 11 20:43:52 <sham1>	Where asciidoc is just "do whatever the python tool and asciidoctor do"
+Mar 11 20:43:57 <JohnGalt>	markdown isn't pretty but it's fast
+Mar 11 20:44:25 <sham1>	At least nowadays AsciiDoc is getting an actual spec finally, which would be nice
+Mar 11 20:44:37 <alcor>	Markdown is as pretty/ugly as you want it to be, it can be okay with a good stylesheet
+Mar 11 20:45:04 <sham1>	ReStructuredText does have a spec, so that's good
+Mar 11 20:45:12 <bremner>	markdown has style sheets?
+Mar 11 20:45:20 <sham1>	Well when you compile to HTML
+Mar 11 20:46:45 <cvandusen>	bremner: language, please
+Mar 11 20:47:35 <bremner>	Le markdown a les documents supplementaire de chiqueté??
+Mar 11 20:47:36 <fsbot>	Improbable!
+Mar 11 20:47:41 <bremner>	domage.
+Mar 11 20:47:59 <technomancy>	lol
+Mar 11 20:48:34 <ndegruchy>	dressage
+Mar 11 20:48:46 <bremner>	not that there is anything wrong with that
+Mar 11 20:51:02 <weary-traveler>	i think, per org-mode spec, any text file is a valid Org file. i.e., the parser ought not to error
+Mar 11 20:51:38 <weary-traveler>	rudybot: does an org file by any other name smell just as sweet?
+Mar 11 20:51:39 <rudybot>	weary-traveler: a rose by any other name would smell as sweet; and a turd is still unwelcome in the punchbowl.
+Mar 11 20:51:40 <ram_man>	Can you make it so a window closes when you close its last tab?
+Mar 11 20:52:22 <weary-traveler>	by window do you mean "frame"?
+Mar 11 20:52:38 <ram_man>	No, I mean an emacs window.
+Mar 11 20:53:13 <rpav>	presumably tabs are window and not frame-based
+Mar 11 20:53:31 <sham1>	Many other editors do that as well
+Mar 11 20:53:34 <rpav>	assuming we're not talking about whitespace (;
+Mar 11 20:53:45 <JohnGalt>	ram_man: I didn't know emacs had tabs
+Mar 11 20:53:45 <sham1>	Anyway, I presumably you could have the window close when the tab bar empties
+Mar 11 20:54:06 <rpav>	tabs are apparently not window-based
+Mar 11 20:54:38 <JohnGalt>	ram_man: do you use blackbox or fluxbox?
+Mar 11 20:54:52 <sham1>	(info "(emacs) Tab Bars")
+Mar 11 20:55:13 <weary-traveler>	ram_man: i'm lost. tabs as in tab-bar-mode are per-frame. within one frame one can multiple tabs. within one tab, one can have multiple windows
+Mar 11 20:55:24 <rpav>	^^
+Mar 11 20:55:31 <sham1>	Also
+Mar 11 20:55:33 <rpav>	and that is really weird actually
+Mar 11 20:55:36 <sham1>	(info "(emacs) Tab Line")
+Mar 11 20:55:48 <sham1>	global-tab-line-mode is per-window for all windows
+Mar 11 20:55:50 <weary-traveler>	the last tab in a frame can't be closed, but you could create your own binding that detects that and closes the frame instead
+Mar 11 20:56:22 <rpav>	yeah that .. not sure if there is a hook that gets called when you attempt to close the last tab, but you could always advise/hijack the function that does
+Mar 11 20:57:19 <JohnGalt>	wow never knew about tabs
+Mar 11 20:57:43 <rpav>	tabs are a highly dubious ui mechanic
+Mar 11 20:57:50 <ram_man>	I am not talking about frames. I am talking about windows.
+Mar 11 20:57:59 <rpav>	i actually disable the tab bar in firefox in favor of something more like buffer-menu ;P
+Mar 11 20:58:11 <rpav>	ram_man: do you understand the difference between frame and window in emacs
+Mar 11 20:58:46 <ram_man>	Yes. I understand the difference. I am talking about Windows. Not frames.
+Mar 11 20:58:49 <rpav>	if you're using some tab mechanism _other_ than tab-bar-mode, it would be useful to specify
+Mar 11 20:58:59 <rpav>	ram_man: you're not indicating any understanding thereof
+Mar 11 20:59:03 <sham1>	tab-line it is then
+Mar 11 20:59:24 <weary-traveler>	probably
+Mar 11 20:59:41 <rpav>	ah tab-line is built in
+Mar 11 20:59:58 <rpav>	and the sane behavior
+Mar 11 21:01:10 <bpalmer>	what is sanity?
+Mar 11 21:01:15 <rpav>	ram_man: it appears you can customize tab-line-close-function, but you'll probably have to make your own or find a prewritten one to close the window, if that's what you're using
+Mar 11 21:01:53 <ram_man>	Yes, I am using tab-line. Thank you.
+Mar 11 21:01:57 <rpav>	bpalmer: (tab-line-mode 0)
+Mar 11 21:05:44 <bpalmer>	rudybot: I wanted to open a tab at the bar, but they don't allow laptops
+Mar 11 21:05:45 <rudybot>	bpalmer: Does anyone have any experience with internation flights and laptops? I want to bring my friend in Mexico a laptop but I want to bring my own also... I am afraid they won't allow this.
+Mar 11 21:10:05 <cvandusen>	rudybot: bots crossing international borders is larger issue
+Mar 11 21:10:06 <rudybot>	cvandusen: Crossing borders are horrible.
+Mar 11 21:10:40 <sham1>	Borders crossing borders
+Mar 11 21:11:23 <cvandusen>	Welcome to Venn Diagram!
+Mar 11 21:11:56 <ndegruchy>	*Euler
+Mar 11 21:12:06 <e1f>	don't cross the beams!
+Mar 11 21:19:24 <weary-traveler>	citeproc is hard to make sense of. the item-getters, fun-creators. sigh
+Mar 11 21:25:27 <johnw>	citeproc will create fun for me?
+Mar 11 21:25:30 <johnw>	this is nice
+Mar 11 21:32:07 <weary-traveler>	heh
+Mar 11 21:32:34 <weary-traveler>	johnw: you'll have to come with your own popcorn, but as an observer there may be amusement to be had, yes
+Mar 11 21:36:03 <quiliro>	When I discovered that Emacs makes it possible and easier for the user to understand its code to the core and even modify it, that startled me.  But at first, it was a steep learning curve.  Now I think that Emacs structure is very simple to understand in its interface and in its commands.  Nevertheless, I feel there are better ways to explain it such that it is easy to start, instead of it being cryptic for nonprogrammers.
+Mar 11 21:36:40 <quiliro>	I am motivated to write such a document.
+Mar 11 21:37:00 <dcb>	for something even simpler you could try `ed`
+Mar 11 21:37:10 <quiliro>	But I do not know where to start....probably in the beginning!
+Mar 11 21:37:21 <quiliro>	at the beginning
+Mar 11 21:37:57 <JohnGalt>	In the beginning was the command line, and UNIX saw that it was good
+Mar 11 21:38:01 <quiliro>	I do not want something simpler.
+Mar 11 21:38:25 <dcb>	in the beginning, there was clay and a piece of stone
+Mar 11 21:38:26 <quiliro>	I want the simplicity in Emacs to be perceivable to newbies.
+Mar 11 21:38:50 <JohnGalt>	dangle features in front of them and they will learn
+Mar 11 21:39:03 <cvandusen>	One cannot perceive what is not there.
+Mar 11 21:39:19 <dcb>	"simplicity" and "emacs" is an interesting combo
+Mar 11 21:39:48 <quiliro>	I think that the simplicity of Emacs is because of the lisp
+Mar 11 21:39:58 <quiliro>	at least that is what I mean
+Mar 11 21:40:03 <bpalmer>	hmm, stephenson allowed cryptonomicon.com to expire, it seems -- that's where he used to host the "In the Beginning was the Command Line" essay
+Mar 11 21:40:19 <JohnGalt>	I used to have the book
+Mar 11 21:40:20 <cvandusen>	This word "simplicity", it does not mean what you think it means.
+Mar 11 21:40:25 <JohnGalt>	I think Ill go buy it
+Mar 11 21:40:47 <quiliro>	that a command can be run without necesarily using its keybinding is beautiful
+Mar 11 21:40:52 <dcb>	we could let the domain for crypto-bros
+Mar 11 21:41:22 <quiliro>	simplicity=not complicated
+Mar 11 21:41:38 <bpalmer>	well, maybe it's somethign else; the domain works, but as a website, it redirects to a site complaining about the ldap database
+Mar 11 21:42:23 <alcor>	I got sold on Emacs when I figured out it's like Smalltalk, but for Lisp. It's platform for running Lisp programs masquerading as a text editor. A portable Lisp machine, if you want.
+Mar 11 21:42:58 <quiliro>	not complicated means that it uses an arrangement of basic concepts and complex structures to make more complex things
+Mar 11 21:43:28 <quiliro>	alcor: yes, exactly
+Mar 11 21:44:22 <quiliro>	but new users have never used software like that...they just use appliances which do not allow the user to change them...they are disposable softwares
+Mar 11 21:44:24 <JohnGalt>	I got the command line book! going on my fundamentals shelf
+Mar 11 21:45:54 <quiliro>	with disposable software, you either use it because it gives you what you need or not use it....either way, some day that software is going to the trash because you cannot make it do what you want
+Mar 11 21:46:35 <quiliro>	Emacs lends itself to change, not only because it is free (libre) software...but because of the beauty of lisp.
+Mar 11 21:46:40 <alcor>	Maybe it would be interesting to have a guide approaching Emacs from this angle – i.e. as an extensible, introspectible, lisp-based programming platform with a fairly decent text editor.
+Mar 11 21:47:48 <quiliro>	yes...technically...but with words that connect better with the newbie with Emacs via their current needs
+Mar 11 21:48:21 <quiliro>	not their future ones
+Mar 11 21:49:43 <quiliro>	for example: I need to learn to scrape the video url of youtube (invidious) urls.  Since Emacs is programable, I can make it do that with eLisp!
+Mar 11 21:50:09 <bpalmer>	there's something to be said for disposable software. Tailored to exactly the needs and discarded; after all, software biodegrades quite rapidly.
+Mar 11 21:50:14 <quiliro>	once I know the requiered
+Mar 11 21:51:10 <quiliro>	it degrades if nobody needs it
+Mar 11 21:51:21 <JohnGalt>	bitrot
+Mar 11 21:51:30 <quiliro>	but if it is needed, it gets polished
+Mar 11 21:51:55 <JohnGalt>	obsolete
+Mar 11 21:51:58 <quiliro>	as long as it is libre software...it not possible with nonlibre
+Mar 11 21:52:34 <quiliro>	yes, JohnGalt
+Mar 11 21:53:12 <quiliro>	I do not have experience with programming...but it would be interesting to know which is the opinion of programmers.
+Mar 11 21:53:24 <technomancy>	especially if you use compostable functions
+Mar 11 21:53:48 <quiliro>	LOL
+Mar 11 21:54:45 <alcor>	Programmer here, we totally like image-based, introspectable systems. Jacking into a running system and fixing/extending it live in production is pretty great actually.
+Mar 11 21:54:56 <JohnGalt>	I include a self-destruct, standard practice for alien presences
+Mar 11 21:56:15 <bremner>	alcor: I think "we" is maybe not including all programmers. Or even all lisp programmers.
+Mar 11 21:56:47 <bremner>	there's a great rant by a scheme guy about how images are a trap
+Mar 11 21:56:53 <technomancy>	"we" is "programmers with correct opinions"
+Mar 11 21:56:56 <technomancy>	by definition
+Mar 11 21:57:00 <alcor>	^
+Mar 11 21:57:00 <bremner>	oh well, fair enough
+Mar 11 21:58:37 <JohnGalt>	let me get some more tin-foil for that rant, I need to tune in pluto
+Mar 11 21:59:43 <alcor>	Writing "serious software" in elisp should be encouraged. Imagine running your webapp on Emacs Elisp. If there's a problem, you simply jack into that Emacs, open an Elisp buffer, hack in a few forms with the fix and C-x e it, while TRAMPing into a remote server where save these forms for a patch you'll commit soon via magit.
+Mar 11 22:00:31 <bpalmer>	,elnode
+Mar 11 22:00:32 <fsbot>	bpalmer: elnode is [0] an asynchronous web server written in Emacs Lisp.
+Mar 11 22:00:32 <fsbot>	[1] http://www.emacswiki.org/emacs/Elnode
+Mar 11 22:00:32 <fsbot>	[2] updated fork available on https://github.com/jcaw/elnode
+Mar 11 22:00:54 <alcor>	I know, unfortunately it abandoned :(
+Mar 11 22:01:09 <alcor>	Last commit is from 5 years ago
+Mar 11 22:01:39 <edgar-rft>	what means no new bugs in the last 5 years :-)
+Mar 11 22:02:22 <tazjin>	alcor: that's what common lisp is for
+Mar 11 22:02:23 <tazjin>	or erlang
+Mar 11 22:02:31 <tazjin>	both of which are, of course, very comfortable to write in emacs
+Mar 11 22:03:18 <JohnGalt>	slime is the answer you seek
+Mar 11 22:03:19 <bpalmer>	rudybot: what are the best languages for BEAM and emacs?
+Mar 11 22:03:20 <rudybot>	bpalmer: I'm not interested in Elixir itself, but I like the idea of more languages on the BEAM VM
+Mar 11 22:03:33 <technomancy>	RIP joxa.org
+Mar 11 22:03:50 <technomancy>	I never got to use it but it looks a lot better than LFE
+Mar 11 22:03:55 <tazjin>	what's wrong with LFE
+Mar 11 22:04:07 <technomancy>	it's a lisp-2
+Mar 11 22:04:48 <technomancy>	I mean you can argue lisp-2 is good but it's a very strange choice for a language you're going to be doing strictly FP coding in
+Mar 11 22:05:25 <bpalmer>	Conjecture: lisp-N > lisp-(- N 1) for all N.
+Mar 11 22:05:28 <tazjin>	the argument makes sense, though it hasn't really gotten in my way
+Mar 11 22:05:34 <tazjin>	but I actually rather like actual Erlang itself
+Mar 11 22:05:55 <bpalmer>	Every time I start messing with erlang, I accidentally prolog myself.
+Mar 11 22:06:42 <technomancy>	erlang is fine but it's by far the most awkward FP language I've ever used for higher-order functions
+Mar 11 22:07:48 <edgar-rft>	rudybot: I only give low orders to my functions
+Mar 11 22:07:48 <rudybot>	edgar-rft: i was only following orders....
+Mar 11 22:08:10 <technomancy>	rudybot: don't hassle my HOFs
+Mar 11 22:08:11 <rudybot>	technomancy: HOFs exist in elisp, they're just not as convenient.
+Mar 11 22:08:38 <sham1>	Erlang is quite fun
+Mar 11 22:08:41 <bpalmer>	,lfe is lisp-flavored erlang; see https://lfe.io
+Mar 11 22:08:42 <fsbot>	ERROR: [set term] lfe is already something else.. Use ’is also’..
+Mar 11 22:08:42 <fsbot>	 Currently: lisp-flavored erlang .. + other notes
+Mar 11 22:08:46 <bpalmer>	,lfe
+Mar 11 22:08:46 <fsbot>	lfe is [0] lisp-flavored erlang
+Mar 11 22:08:46 <fsbot>	[1] http://github.com/rvirding/lfe
+Mar 11 22:09:28 <technomancy>	I do appreciate that LFE has "utterly terrifying" as part of its sales pitch
+Mar 11 22:10:00 <alcor>	Having to type "funcall" isn't super-inconvenient though. CLers and Elispers seem to be able to live with that.
+Mar 11 22:10:16 <technomancy>	alcor: yeah but elisp is unabashedly imperative
+Mar 11 22:10:55 <sham1>	So is CL in many ways
+Mar 11 22:11:04 <mwnaylor>	Here's my JohnGalt inspired function that returns a fortune. https://pastebin.com/f0BjPNfF
+Mar 11 22:11:48 <sham1>	cl-case would make that a lot nicer IMO
+Mar 11 22:12:30 <tazjin>	or pcase, but rms doesn't like pcase)
+Mar 11 22:12:49 <wasamasa>	what was that about a cond* on the mailing list
+Mar 11 22:12:50 <edgar-rft>	or nested IFs :-)
+Mar 11 22:12:50 <bpalmer>	mwnaylor: as a minor refactoring, you repeat the call-process a lot, but with a different argument at the end
+Mar 11 22:12:55 <wasamasa>	I recall RMS participating in the discussions
+Mar 11 22:12:59 <bpalmer>	refactoring suggestion, at least.
+Mar 11 22:13:01 <wasamasa>	motivated by having a pcase alternative
+Mar 11 22:13:08 <tazjin>	wasamasa: he wrote the thing
+Mar 11 22:13:22 <wasamasa>	seriously?
+Mar 11 22:13:22 <fsbot>	I know, right?
+Mar 11 22:13:32 <wasamasa>	maybe I should stop making fun of his magit questions then
+Mar 11 22:14:02 <bpalmer>	mwnaylor: also, you may want with-temp-buffer
+Mar 11 22:14:08 <sham1>	Wait, why doesn't RMS like pcase
+Mar 11 22:14:45 <tazjin>	wasamasa: yes, https://mail.gnu.org/archive/html/emacs-devel/2024-01/msg00653.html
+Mar 11 22:14:56 <tazjin>	sham1: because he thinks that some of the clause syntax is too strange
+Mar 11 22:15:22 <wasamasa>	I mean, he's right
+Mar 11 22:15:31 <wasamasa>	the pcase syntax uses a lot of seemingly needless backquotes
+Mar 11 22:15:50 <wasamasa>	which is kinda weird, especially when compared to other pattern matchers
+Mar 11 22:15:51 <tazjin>	the thing is that pcase has been around .. for a while
+Mar 11 22:15:54 <tazjin>	so it's not going away
+Mar 11 22:16:09 <tazjin>	so it's a cost/benefit analysis for having yet another thing
+Mar 11 22:16:22 <tazjin>	what the right answer is, well, I don't know :p
+Mar 11 22:17:45 <bpalmer>	cl.el had been around ... for a while and then some. So by precedent pcase can be shoved into the deprecated corner
+Mar 11 22:17:51 <technomancy>	elisp has so many rough edges that there's no way to make a really satisfying pattern match implementation
+Mar 11 22:18:04 <sham1>	But cl.el is deprecated, so cl-lib.el it is instead
+Mar 11 22:18:14 <corwin>	counterpoint: fuck that.
+Mar 11 22:18:18 <mekeor>	rms should rtfm about pcase and move on
+Mar 11 22:19:09 <corwin>	(I'm completely on my own about being salty about the cl vs cl-lib thing afaik. That's entirely fine with me.  Don't encourage me.)
+Mar 11 22:20:04 <mwnaylor>	😠 killed my #emacs buffer....
+Mar 11 22:20:56 <bpalmer>	sham1: for once, cl-lib is something separate. (I'm not a pcase fan, but I'm not even all that set. I just think if cl.el gets deprecated, then everything is up for deprecation)
+Mar 11 22:21:27 <mwnaylor>	bpalmer: good suggestions. I guess within the with-temp-buffer, I'd supply (current-buffer) for the output of call-process?
+Mar 11 22:21:37 <bpalmer>	mwnaylor: yep
+Mar 11 22:22:23 <mwnaylor>	I threw it together to get it working. Didn't take it to the next step to make it clean.
+Mar 11 22:23:19 <mwnaylor>	I
+Mar 11 22:24:44 <mwnaylor>	had thought about the temporary buffer thing, but didn't make the connection when searching for the function.
+Mar 11 22:44:45 <mwnaylor>	Thanks to bpalmer, here's a cleaner version. Thanks for the constructive criticism. https://pastebin.com/aTWahp9t
+Mar 11 22:49:53 <JordiGH>	I wonder, does Zuck still use Emacs?
+Mar 11 22:50:28 *	cvandusen opens the door to hell and asks
+Mar 11 22:50:31 <hodapp>	M-x lizard-mode
+Mar 11 22:50:54 <hodapp>	supports keys that are easier for a quickly-flicking tongue to hit in quick succession
+Mar 11 23:01:16 <bpalmer>	mwnaylor: excellent.
+Mar 11 23:01:44 <technomancy>	JordiGH: he probably switched to vscode for better metaverse support
+Mar 11 23:01:48 <bpalmer>	I think others had also suggested case/cl-case, to save on having to type (eq category X) each time
+Mar 11 23:03:43 <bpalmer>	or, since pcase is in the air, (pcase X ('safe "all") ('maybe-offensive "-a") ...)
+Mar 11 23:37:11 <mwnaylor>	My formatting of the `cond' clause may not match style of old time lispers, but it does match Clojure suggested style.
+Mar 11 23:50:50 <mwnaylor>	Is there an elisp equivalent of the Clojure `condp'?
+Mar 11 23:51:21 <sham1>	What does that do
+Mar 11 23:53:31 <mwnaylor>	Best I understand, it's a combination a cond and a map/filter. (Maybe)
+Mar 11 23:54:54 <mwnaylor>	condp followed by an expression. The cases in the condp are values (aka constants).
+Mar 11 23:55:36 <mwnaylor>	https://clojuredocs.org/clojure.core/condp
+Mar 12 00:07:08 <bpalmer>	that's basically case/cl-case , looks like
+Mar 12 00:07:14 <technomancy>	condp is extraordinarily weird
+Mar 12 00:07:31 <technomancy>	but a lot of really weird shit made it in to clojure very early on
+Mar 12 00:09:43 <mwnaylor>	I'll have to look into case/cl-case. Many concepts seem to transcend all the lisp dialects. The tough part is get the mental mappings for the functions/macros that get the job done.
+Mar 12 00:11:17 <bpalmer>	rudybot: put away that map. Do you want to look like a tourist? Just take a shortcut through Crime Alley
+Mar 12 00:11:17 <rudybot>	bpalmer: hear, hear, local knowledge makes traveling worthwhile, the tourist traps are for farangi, small towns and back alley eateries are where its at
+Mar 12 00:12:29 <mwnaylor>	Ferengi??
+Mar 12 00:12:30 <fsbot>	Ask yourself, do you really want to know?
+Mar 12 00:13:53 <edgar-rft>	fsbot: I asked myself and I really want to know
+Mar 12 00:13:53 <fsbot>	am awesome
+Mar 12 00:14:38 <edgar-rft>	fsbot: thank you for nothing
+Mar 12 00:14:39 <fsbot>	no problem, edgar-rft
+Mar 12 00:15:30 <mwnaylor>	How we ask questions w/o triggering a 'bot  ? The punctuation seems to be the trigger.
+Mar 12 00:16:14 <edgar-rft>	just use single instead of double questions marks :-)
+Mar 12 00:16:14 <mwnaylor>	OK, maybe extra spaces break the parser.
+Mar 12 00:17:14 <mwnaylor>	edgar-rft: thx. Been on irc for several years now, still learning how to navigate.
+Mar 12 00:17:46 <mwnaylor>	Assuming that bots are channel specific.
+Mar 12 00:18:51 <edgar-rft>	yes, bots *are* channel specific and #emacs bots are way more stupid than bots in other channels :-)
+Mar 12 00:19:48 <mwnaylor>	I'm often tempted to /ignore bots.
+Mar 12 00:20:11 <mwnaylor>	BTW, is there a timeout on /ignore?
+Mar 12 00:20:38 <edgar-rft>	fsbot *can* give useful info, it can print help texts for buitin emacs functions and variables for example
+Mar 12 00:20:38 <fsbot>	PM me and type ,help
+Mar 12 00:20:49 <technomancy>	ERC supports timeout on /ignore as of very recently
+Mar 12 00:22:28 <mwnaylor>	I'm using erc. Current version is ERC 5.5.0.29.1 (IRC client for GNU Emacs 29.2).
+Mar 12 00:24:00 <mwnaylor>	How do I find out about the /ignore options?
+Mar 12 00:25:14 <technomancy>	well, if you run `/ignore RickAstly' and it asks you how long you want to ignore for, then you've got a new enough erc
+Mar 12 00:26:29 <mwnaylor>	That works. I get the query for the duration.
+Mar 12 00:32:22 <bpalmer>	what's the default timeout?
+Mar 12 00:33:44 <technomancy>	indefinite I think
+Mar 12 00:34:29 <bpalmer>	interesting. I'd in some ways prefer a default like '1 hour'
+Mar 12 00:34:32 <mwnaylor>	What is the way to cancel an /ignore?
+Mar 12 00:34:52 <technomancy>	bpalmer: I think it makes sense to keep it consistent with previous behavior by default
+Mar 12 00:34:55 <bpalmer>	in erc, /unignore
+Mar 12 00:35:36 <quiliro>	I recently discovered /unignore too
+Mar 12 00:35:54 <quiliro>	I usually do not need it!
+Mar 12 00:36:39 <quiliro>	(since I close Emacs every day and I do not permanently ignore people)
+**** BEGIN LOGGING AT Tue Mar 12 00:38:03 2024
+
+Mar 12 00:38:02 *	Now talking on #emacs
+Mar 12 00:38:02 *	Topic for #emacs is: Beware the IDEs of March. | Before helping, we need your Emacs/OS version & Kit | Emacs questions take priority over chit-chat | pastebin: https://bpa.st/+emacs-lisp | No Public Logging, racism, sexism, xenophobia, botwanking, or other asshattery
+Mar 12 00:38:02 *	Topic for #emacs set by e1f!~user@user/e1f (Tue Mar  5 16:12:43 2024)
+Mar 12 00:38:30 <quiliro>	you could use customize also, mwnaylor
+Mar 12 00:40:30 <mwnaylor>	quiliro: had to rejoin #emacs. Pls explain customize. Assuming there's a timeout custom variable in the erc package?
+**** BEGIN LOGGING AT Tue Mar 12 00:55:46 2024
+
+Mar 12 00:55:44 *	Now talking on #emacs
+Mar 12 00:55:44 *	Topic for #emacs is: Beware the IDEs of March. | Before helping, we need your Emacs/OS version & Kit | Emacs questions take priority over chit-chat | pastebin: https://bpa.st/+emacs-lisp | No Public Logging, racism, sexism, xenophobia, botwanking, or other asshattery
+Mar 12 00:55:44 *	Topic for #emacs set by e1f!~user@user/e1f (Tue Mar  5 16:12:43 2024)
+Mar 12 00:55:56 <quiliro>	tested the value of `erc-ignore-list' after /ignore
+Mar 12 00:56:01 <mwnaylor>	Since customize is a current topic, I'm looking into the use of the `defcustom' macro.
+Mar 12 00:56:02 <quiliro>	but it is not modified
+Mar 12 01:05:29 <edgar-rft>	,df defcustom
+Mar 12 01:05:30 <fsbot>	defcustom is a Lisp macro in ‘custom.el’.
+Mar 12 01:05:30 <fsbot>	(defcustom SYMBOL STANDARD DOC &rest ARGS)
+Mar 12 01:05:30 <fsbot>	Declare SYMBOL as a customizable variable.
+Mar 12 01:05:30 <fsbot>	SYMBOL is the variable name; it should not be quoted. ;;[ ,more / ,dump]
+Mar 12 01:07:36 <edgar-rft>	defcustom in the Elisp manual -> https://www.gnu.org/software/emacs/manual/html_node/elisp/Variable-Definitions.html
+Mar 12 01:09:08 <edgar-rft>	there's probably an info version of the Elisp manual coming with your Emacs but I have no info version here, so I leave it to others to fiddle out the link :-)
+Mar 12 01:11:41 <quiliro>	(info "(elisp) Variable Definitions")
+Mar 12 01:13:54 <edgar-rft>	thank you
+Mar 12 01:14:16 <mwnaylor>	I'm reading the relevant portions of the elisp info. For a big topic like this, I've learned the hard way that skimming through just once is a recipe for failure.
+Mar 12 01:16:33 <twb>	Can I "look up" foo.example.com on https://www.certificate-transparency.org/ and see a log of what was issued and when?
+Mar 12 01:19:00 <RickAstley>	How to get rainbow parens to showup in org-src blocks?
+Mar 12 01:23:51 <grym>	RickAstley: C-c ' perhaps
+Mar 12 01:25:16 <bpalmer>	Good grief, people in excel just put up with functions like =SUBTOTAL(103, A1:a7)  where 103 is a magic number badly documented in some table
+Mar 12 01:25:20 <RickAstley>	grym: I have that working, I mean in the src blocks itself
+Mar 12 01:25:34 <RickAstley>	also anyone using clojure with org-babel literate programming? Not sure if any best practices
+Mar 12 01:26:18 <bpalmer>	"103 is like 3 but ignores manually hidden cells"
+Mar 12 01:27:27 <edgar-rft>	rudybot: tell bpalmer all about your secret numbers
+Mar 12 01:27:27 <rudybot>	edgar-rft: yeah, the pythogoreans had to keep irrational numbers a secret.
+Mar 12 01:28:11 <bpalmer>	that's only fair, as irrational numbers are proof of the universe's inherent insanity.
+Mar 12 01:28:40 <grym>	irrationals are fine, it's the reals that are the real kicker
+Mar 12 01:29:01 <mwnaylor>	bpalmer: working on my own major mode, extending org-mode, just to make dealing w/ spreadsheets more bearable. Hate excel & VBa, but have to deal with both when excel is the only option. VBa (excel and word) sucks so badly that I fall more in love with elisp extensions to any emacs major mode.
+Mar 12 01:29:50 <grym>	huh, til "There is no standard notation for the set of irrational numbers, but the notations Q^_, R-Q, or R\Q, where the bar, minus sign, or backslash indicates the set complement of the rational numbers Q over the reals R, could all be used. "
+Mar 12 01:30:23 <bpalmer>	I've never really used org-tbl  , as it's always seemed like it's cramming too much into a bit of text.
+Mar 12 01:31:03 <grym>	i once heard someone describe \phi as "the most irrational irrational"
+Mar 12 01:31:57 <bpalmer>	what was the argument?
+Mar 12 01:31:58 <fsbot>	Yes, but we're standardizing on XML.
+Mar 12 01:34:20 <grym>	the continued fraction expansion is really obviously "a screamingly recursive descent"
+Mar 12 01:36:14 <bpalmer>	ah, right. ( https://blogs.sas.com/content/iml/2014/03/14/continued-fraction-expansion-of-pi.html )
+Mar 12 01:37:18 <grym>	right, and \phi's is 1+ (1/ 1 + (1/ 1+ (....
+Mar 12 01:37:39 <bpalmer>	(aye, that's mentioned at the very bottom, along with e and sqrt(2))
+Mar 12 01:37:48 <grym>	ah, got it
+Mar 12 01:37:53 <alephnull>	seems pretty rational to me
+Mar 12 01:38:25 <kickingvegas>	2
+Mar 12 01:38:31 <kickingvegas>	derp
+Mar 12 01:39:29 <grym>	alephnull: you can't write that as a/b though
+Mar 12 01:40:28 <alephnull>	It's just 1s. Almost rational then.
+Mar 12 01:40:54 <grym>	in ohio, perhaps it's 1.61
+Mar 12 01:41:37 <bpalmer>	judybot: in ohio,
+Mar 12 01:41:39 <judybot>	bpalmer: a person is arrested if they ____ _____ ______ .
+Mar 12 01:42:24 <grym>	hey at least it's not indiana
+Mar 12 01:45:14 <bpalmer>	rudybot: which great lake's emanations produce the most erratic behavior?
+Mar 12 01:45:15 <rudybot>	bpalmer: eh?  Try "rudybot: help".
+Mar 12 01:46:28 <grym>	have you _been_ to gary
+Mar 12 01:46:55 <weary-traveler>	bpalmer: is 103 a reference to a function?
+Mar 12 01:48:14 <bpalmer>	weary-traveler: for the subtotal function, 3 is the value that says to use the "COUNTA" function.  100 + x means "X, but skip manually hidden cells"
+Mar 12 01:48:48 <bpalmer>	SUBTOTAL apparently is what you use if there may be a filter on the table hiding rows.
+Mar 12 01:49:54 <bpalmer>	So, all said, SUBTOTAL(103, A1:A100)  is used to count how many rows exist respecting automatic filters and manually hidden cells. For example, you might have a filter on the table to only show transactions within the year 2024, whereas the unfiltered table shows multiple  years
+Mar 12 02:00:31 <weary-traveler>	right, so not only do we have numerical references to functions. offsets in said numerical references have special meaning. lovely.
+Mar 12 02:02:09 <weary-traveler>	rudybot: it's all godel numbering and category theory anyway right?
+Mar 12 02:02:10 <rudybot>	weary-traveler: I mean you could use godel numbering to encode something saner but at such cost!
+Mar 12 02:04:38 *	edgar-rft prefers nudel numbering
+Mar 12 02:05:22 <edgar-rft>	I think that's noodle numbering in english :-)
+Mar 12 02:09:13 <Aurora_v_kosmose>	vterm is pretty nice. Sure is nice that Debian has packaged it now.
+Mar 12 02:14:01 <grym>	then it can be old and out of date too!
+Mar 12 02:14:02 <grym>	great
+Mar 12 02:14:22 <weary-traveler>	M-x shell is helpful in that it provides a shell buffer with Emacs bindings and facilities. what's the advantage of things like vterm (as opposed to a regular terminal in, say, tmux)?
+Mar 12 02:14:31 <Aurora_v_kosmose>	grym: Sure. Doesn't really matter, I'm mostly using it to handle legacy TUI programs.
+Mar 12 02:15:02 <Aurora_v_kosmose>	weary-traveler: C-c C-t gives you back the read-only state with full Emacs binding.
+Mar 12 02:15:57 <Aurora_v_kosmose>	Neither eshell or shell handle TUI particularly well. And while term technically does... it's *slow*.
+Mar 12 02:16:14 <weary-traveler>	Aurora_v_kosmose: i see. so maybe a little more convenient than copying text over from tmux
+Mar 12 02:16:59 <Aurora_v_kosmose>	weary-traveler: I would actually be more interested in dtach & detached.el as far as remote programs go, too.
+Mar 12 02:17:33 <twb>	weary-traveler: I think the use case is "I'm already doing 95% of things in emacs, I don't want to start an external terminal emulator"
+Mar 12 02:17:36 <Aurora_v_kosmose>	Persistent remote program management~
+Mar 12 02:17:42 <weary-traveler>	remote? i use tmux locally
+Mar 12 02:17:47 <twb>	weary-traveler: if you're already running *emacs* in a terminal emulator, then it's moot
+Mar 12 02:18:01 <Aurora_v_kosmose>	weary-traveler: You can use it for local stuff too, of course.
+Mar 12 02:18:27 <twb>	Also moot if all your CLI tools work in TERM=dumb (in which case M-x shell or eshell).
+Mar 12 02:18:32 <Aurora_v_kosmose>	The "ssh + tmux attach" workflow is just common-enough that I mentioned it first.
+Mar 12 02:18:33 <weary-traveler>	twb: i use graphical emacs, but usually have tilda or yaquake with tmux. which means proper terminal is a keybinding away
+Mar 12 02:18:54 <twb>	weary-traveler: yeah IMO you're not the target market, then
+Mar 12 02:19:34 <Aurora_v_kosmose>	In my case, Emacs does legitimately represent the majority of the UIs I use.
+Mar 12 02:20:06 <Aurora_v_kosmose>	And once I finally finish setting up Guix to work with my setup, then Nyxt will be replacing much of Firefox's uses, so Emacs-like will cover nearly everything.
+Mar 12 02:21:25 <Aurora_v_kosmose>	In truth I would like to have a truly Lisp-first environment like Interlisp was meant to provide but...  it seems unlikely I'll get that.
+Mar 12 02:23:17 <weary-traveler>	twb: makes sense why i've never understood the appeal then
+Mar 12 02:23:44 <Aurora_v_kosmose>	In short, you could say I use a unix-like system in spite for lack of better alternatives.
+Mar 12 02:24:19 <weary-traveler>	Aurora_v_kosmose: i've been curious about nyxt, but enjoy my firefox addons too much
+Mar 12 02:24:41 <weary-traveler>	teradactyl on firefox is good enough. coupled with emacs-edit-server
+Mar 12 02:24:45 <Aurora_v_kosmose>	weary-traveler: Yeah, support for WebExtensions is upcoming, but not ready last I checked.
+Mar 12 02:25:30 <Aurora_v_kosmose>	weary-traveler: I find myself limited in the functionality Firefox allows. The WebExtension APIs are purposely crippled and having day-long compile cycles just to fix a feature I want is completely unacceptable
+Mar 12 02:25:41 <twb>	I mean... I don't care about extensions, except that "block ads" is an extension for some reason
+Mar 12 02:25:45 <weary-traveler>	oh good to know they're working on webextensions support
+Mar 12 02:26:09 <weary-traveler>	twb: what else would you want to browse the intertubes for after all
+Mar 12 02:26:17 <Aurora_v_kosmose>	twb: Blocking ads and umatrix-like are the two main things I care about.
+Mar 12 02:26:30 <Aurora_v_kosmose>	The latter could and probably should just be implemented in Common Lisp directly.
+Mar 12 02:26:41 <twb>	"just"
+Mar 12 02:27:18 <Aurora_v_kosmose>	twb: It helps that the hooks required to make it work are almost all implemented already.
+Mar 12 02:27:18 <Aurora_v_kosmose>	What remains is the work of wiring things up together.
+Mar 12 02:28:11 <weary-traveler>	Aurora_v_kosmose: what are some of the material restrictions in webextension api?
+Mar 12 02:28:52 <Aurora_v_kosmose>	weary-traveler: You cannot initiate or listen to any network connections not based on HTTP, WebSockets or WebRTC.
+Mar 12 02:29:07 <Aurora_v_kosmose>	weary-traveler: So if you want to do anything with databases or other p2p stuff? You're fucked.
+Mar 12 02:29:59 <weary-traveler>	i'm not sure i'm convinced the browser would be the best place for "database or other p2p stuff"
+Mar 12 02:32:13 <Aurora_v_kosmose>	weary-traveler: What about saving various documents you come across in a sane manner in a reliable & storage-rich location?
+Mar 12 02:32:30 <twb>	Doesn't all browser-based ptp stuff actually work nowadays by pretending to be RTC
+Mar 12 02:32:34 <twb>	Specifically because of those
+Mar 12 02:33:22 <JordiGH>	I can't believe that Kingdom Hearts II has two Rikus?
+Mar 12 02:34:18 <twb>	I'm still annoyed that "just play an H.265 UDP multicast stream" support was removed from browsers in favour of "download 2s snippets linked from an .m3u, over unicast tcp stream" *AND THEN* they dropped support for that *AS WELL* so you have to go reimplement it using client-side js
+Mar 12 02:34:21 <weary-traveler>	detached.el looks interesting
+Mar 12 02:36:23 <Aurora_v_kosmose>	twb: Yes, which makes it supremely annoying to interact with using anything non-browser based.
+Mar 12 02:36:37 <Aurora_v_kosmose>	And having to implement things in JS is just gross.
+Mar 12 02:36:53 <weary-traveler>	Aurora_v_kosmose: the save dialog / save link as not being sufficient why? i'm not sure i understand what's meant by "reliable & storage-rich location"
+Mar 12 02:37:23 <Aurora_v_kosmose>	weary-traveler: Tagged/database filesystems never caught on.
+Mar 12 02:37:34 <twb>	I quite like that htmx.js lets me *use* js without having to *write* js, for normal website stuff
+Mar 12 02:37:39 <Aurora_v_kosmose>	So I get neither metadata that way nor any transactional reliability on IO.
+Mar 12 02:38:47 <Aurora_v_kosmose>	Tagsistant and its ilk are nice but... they're nowhere near as good as an actual database filesystem.
+Mar 12 02:39:24 <twb>	It does feel very weird that you're trying to implement, like, /bin/psql as a webext
+Mar 12 02:39:38 <weary-traveler>	Aurora_v_kosmose: do you have an example of some of the metadata that you care about? i'm all in favor of a db as a fs. my db ends up being org files that may reference content that i've saved and note additional details
+Mar 12 02:40:23 <Aurora_v_kosmose>	weary-traveler: Arbitrary tags and notes. Similar to Zotero.
+Mar 12 02:41:00 <Aurora_v_kosmose>	With it not requiring persistent local storage.
+Mar 12 02:41:09 <weary-traveler>	yeah, that goes in an org file as needed
+Mar 12 02:41:47 <Aurora_v_kosmose>	org-files have some serious scalability issues past a few thousand lines.
+Mar 12 02:41:54 <Aurora_v_kosmose>	org-roam would work a lot better if it was reworked to use sqlite as a backing store.
+Mar 12 02:41:55 <weary-traveler>	huh interesting. my preference is to use local storage and then track it in git
+Mar 12 02:42:48 <twb>	+1 for "sqlite all the things" as a default position
+Mar 12 02:43:03 <twb>	https://www.sqlite.org/fasterthanfs.html
+Mar 12 02:43:13 <mekeor>	make obarray a sqlite table xD
+Mar 12 02:43:24 <twb>	You can also do version control on top of sqlite, but it's kind of dank.  https://fossil-scm.org/home/doc/trunk/www/hashpolicy.wiki
+Mar 12 02:43:35 <weary-traveler>	pretty sure the scalability issues in org-files requires significantly more than a few thousand lines. i think it's at maybe a few hundred thousand lines
+Mar 12 02:43:54 <Aurora_v_kosmose>	weary-traveler: On HDDs, no, they show up way earlier.
+Mar 12 02:44:05 <twb>	Aurora_v_kosmose: HDDs as in spinning rust?
+Mar 12 02:44:18 <Aurora_v_kosmose>	yes.
+Mar 12 02:44:31 <weary-traveler>	Aurora_v_kosmose: on HDD should probably mmap the file first
+Mar 12 02:44:52 <twb>	I've had good results in general by moving the dirents to SSD
+Mar 12 02:44:59 <twb>	I don't use org tho
+Mar 12 02:45:01 <Aurora_v_kosmose>	I hesitate as to whether org-roam should use the Emacs 29+ SQLite support or Emacsql, given the latter would also enable trivially switching over to conventional databases as needed.
+Mar 12 02:45:32 <Aurora_v_kosmose>	weary-traveler: That works to a point. If you're trying to find entries related to a set of tags... it takes a while to traverse everything.
+Mar 12 02:45:39 <twb>	https://manpages.debian.org/bookworm/zfsutils-linux/zpoolconcepts.7.en.html#special
+Mar 12 02:46:13 <Aurora_v_kosmose>	My hacked up download manager for a few things manages to get faster responses despite storing significantly more data than I currently have in org files.
+Mar 12 02:46:31 <Aurora_v_kosmose>	(Indexing matters)
+Mar 12 02:46:46 <twb>	Aurora_v_kosmose: that sounds like the fundamental issue is "org lacks (or is bad at) indexing"
+Mar 12 02:47:01 <twb>	snap
+Mar 12 02:47:40 <xristos>	Org is not meant for indexing, you can build your own on top (I use sqlite)
+Mar 12 02:47:45 <Aurora_v_kosmose>	twb: Well, org-roam (or something additional or parallel to it) could fairly easily add tags and whatnot to the database.
+Mar 12 02:48:07 <xristos>	before I moved to sqlite, I was grepping ~50MB of org files which was fine
+Mar 12 02:48:13 <twb>	xristos: IME org DOES all kinds of crazy shit, whether it was "meant to" or not :P
+Mar 12 02:48:30 <Aurora_v_kosmose>	heh
+Mar 12 02:49:01 <twb>	The largest dataset I regularly grep is about 1TB and I had to optimize the grep pipeline significantly to improve the time from 3 weeks to 3 hours
+Mar 12 02:49:32 <Aurora_v_kosmose>	Still nontrivial
+Mar 12 02:49:48 <twb>	If it was not text/plain but rather structured data, I think it'd be about 10-100TB
+Mar 12 02:50:07 <twb>	But that's from memory and my memory is bad.  I haven't done a size estimate for a long time
+Mar 12 02:50:19 <Aurora_v_kosmose>	zgrep-ish shenanigans?
+Mar 12 02:51:05 <Aurora_v_kosmose>	Though some filesystems (namely btrfs) do have settings for transparent compression that can work even on databases.
+Mar 12 02:51:17 <twb>	I'm using that already
+Mar 12 02:52:57 <twb>	29M     du -h ~/.mozilla/firefox/*/places.sqlite; 70M     du -h ~/.mozilla/firefox/*/places.sqlite --apparent-size
+Mar 12 02:54:13 <Aurora_v_kosmose>	What about compsize?
+Mar 12 02:54:22 <Aurora_v_kosmose>	Since this tells you about sparse files, not transparent compression.
+Mar 12 02:54:46 <twb>	That's with default settings.  Here's one that's actually tuned: 487M sudo du -sch /var/lib/mysql/; 1.5G sudo du --apparent-size -sch /var/lib/mysql/
+Mar 12 02:54:47 <Aurora_v_kosmose>	(Unless your distro patched btrfs, I guess)
+Mar 12 02:54:57 <twb>	Aurora_v_kosmose: no, that tells you about compression as well on ZFS
+Mar 12 02:55:11 <weary-traveler>	ah zfs not btrfs
+Mar 12 02:55:13 <Aurora_v_kosmose>	Ah, with btrfs it ignores compression.
+Mar 12 02:55:19 <twb>	I can't be arsed running spaceanal.tcl
+Mar 12 02:56:57 <twb>	If I ask zfs, I see this: https://paste.rs/lLPrn -- note journal and collectd (rrd)
+Mar 12 02:58:45 <twb>	Obviously anything that's already compressed (e.g. movies, photos, music) will not benefit at all.
+Mar 12 02:59:01 <Aurora_v_kosmose>	Some of those datasets compress notably better than others, with noticeable variance even between SQL servers.
+Mar 12 03:00:03 <twb>	Aurora_v_kosmose: you can get 20% space saving in postgres just by reordering your columns
+Mar 12 03:00:23 <Aurora_v_kosmose>	One of my gripes with ZFS is that it very much assumes enterprise budgets available to the user.
+Mar 12 03:00:23 <Aurora_v_kosmose>	twb: Oh?
+Mar 12 03:00:26 <twb>	Aurora_v_kosmose: if you *don't* do that, then you'd see an artificially high transparent compression ratio
+Mar 12 03:00:29 <weary-traveler>	encryption is off on heavy but on on every subdir. is that because heavy is a mount-point or symlink?
+Mar 12 03:00:53 <twb>	weary-traveler: "heavy" root dataset doesn't contain anything except other datasets, you can't mount it
+Mar 12 03:01:10 <weary-traveler>	i see
+Mar 12 03:01:30 <twb>	The naming scheme I'm using is "<host where the pool lives>/<host whose data this is>/..."
+Mar 12 03:01:38 <weary-traveler>	is dataset a zfs term? something like btrfs subvolume?
+Mar 12 03:02:09 <Aurora_v_kosmose>	weary-traveler: Yesn't. It *is* a proper term in ZFS parlance, but I was using it in a generic fashion.
+Mar 12 03:02:10 <twb>	Whereas normally people has RPOOL/ and BPOOL/ and then RPOOL/ is the local host's data right away, which then makes things hard if you want to have backups of another host, with different policies
+Mar 12 03:02:49 <twb>	weary-traveler: yes "dataset" includes both filesystems (containing files, equivalent to ext4 layer) and volumes (containing blocks, equivalent to LVM or md layer).
+Mar 12 03:04:16 <twb>	Aurora_v_kosmose: you're absolutely right that ZFS doesn't scale down to 128MB eMMC
+Mar 12 03:04:31 <twb>	Aurora_v_kosmose: it works perfectly fine on a pair of 2TB HDDs tho
+Mar 12 03:05:12 <twb>	And I replaced btrfs with zfs on my single-disk laptop and have had fewer issues, although I was forced to manage the partition table by hand, like a SAVAGE
+Mar 12 03:05:20 <weary-traveler>	okay citeproc, let's try and decipher your internals take#2
+Mar 12 03:05:37 <twb>	So ZFS won't protect me from doing "sudo cp porn.iso /dev/nvme0n1" on my laptop
+Mar 12 03:05:51 <weary-traveler>	btw, anyonw here familiar with how to use citeproc-render-item
+Mar 12 03:06:07 <Aurora_v_kosmose>	twb: Not actually what I meant. It handles downgrades (from lack of budget sufficient to replace with same-size) horribly badly with significant persistent performance degradation.
+Mar 12 03:06:23 <Aurora_v_kosmose>	twb: Its handling of slower drives without a *lot* of tuning is also subpar.
+Mar 12 03:06:40 <Aurora_v_kosmose>	It also assumes sufficient money to upgrade whole vdevs at once.
+Mar 12 03:07:07 <Aurora_v_kosmose>	Else it wastes the storage entirely.
+Mar 12 03:07:52 <twb>	Ah yes you cannot move to a smaller drive at all AFAIK
+Mar 12 03:07:53 <Aurora_v_kosmose>	btrfs' block-based slicing allows it to spread things on a gygabyte basis across the pool based on device policies.
+Mar 12 03:08:13 <Aurora_v_kosmose>	*gigabyte
+Mar 12 03:08:44 <Aurora_v_kosmose>	twb: You can now, with significant downsides.
+Mar 12 03:09:34 <twb>	I don't think I've ever *wanted* to replace, say, a 2×1TB 5200rpm with a 2×512MB 7200rpm, or replace only 1 disk each year across 2 years
+Mar 12 03:10:13 <Aurora_v_kosmose>	Nope, but having a sale on refurbished/used 8TBs or 12TBs means that you might well never be able to get a similarly good deal for the rest of the decade.
+Mar 12 03:10:15 <twb>	To me that sounds like less of an "I'm poor" issue and more of an "I'm weird" issue :-)
+Mar 12 03:10:29 <Aurora_v_kosmose>	And buying them new is an utterly unacceptable prospect.
+Mar 12 03:11:04 <twb>	You'd buy an HDD with 5000 power-on hours already on the clock?
+Mar 12 03:11:09 <twb>	That sounds super crazy to me
+Mar 12 03:11:16 <twb>	*50,000
+Mar 12 03:12:16 <Aurora_v_kosmose>	Drives that haven't failed before then usually aren't going to fail any time soon.
+Mar 12 03:12:19 <Aurora_v_kosmose>	In contrast, a shit-ton of drives fail within their first year when new.
+Mar 12 03:13:02 <Aurora_v_kosmose>	Considering how I don't really trust manufacturers not to keep copies of data for whatever reason, sending a faulty drive for repairs or replacement isn't an option.
+Mar 12 03:13:03 <twb>	RMA them?
+Mar 12 03:13:12 <twb>	Oh I see
+Mar 12 03:13:28 <twb>	If the data in encrypted why would you care
+Mar 12 03:13:57 <Aurora_v_kosmose>	Never know when a fatal flaw in commonly used encryption implementations might be found and vindicate cold storage of encrypted data.
+Mar 12 03:14:55 <twb>	Fair.  PBKDF2 being cracked was a recent surprise to many
+Mar 12 03:14:56 <Aurora_v_kosmose>	Going by historical precedent, that is a much more likely thing than the underlying cryptographic algorithms being directly broken.
+Mar 12 03:15:10 <twb>	https://mjg59.dreamwidth.org/66429.html
+Mar 12 03:15:53 <Aurora_v_kosmose>	Ah yeah. Though that was most likely bruteforced.
+Mar 12 03:16:01 <Aurora_v_kosmose>	Not so much cracked, but indeed it has now become irrelevant security-wise.
+Mar 12 03:16:10 <twb>	Yes it wasn't resistant to brute-force cracking
+Mar 12 03:18:15 <Aurora_v_kosmose>	I wonder if various distros' packages of cryptsetup have been updated in response to this.
+Mar 12 03:18:34 <Aurora_v_kosmose>	I've taken to just explicitly giving the argument to luksFormat just in case.
+Mar 12 03:20:32 <Aurora_v_kosmose>	All drives I acquire though, whether new or not, I run through badblocks to see if they reasonably can be relied on to some degree.
+Mar 12 03:20:45 <Aurora_v_kosmose>	That's hardly guaranteed to catch faults, but it'll at least eliminate the obviously broken.
+Mar 12 03:21:35 <Aurora_v_kosmose>	SSDs (which I can't afford at useful sizes anyway) would complicate this, since wear-leveling would hide any such problem.
+Mar 12 03:22:17 <weary-traveler>	doubt cryptsetup default would be updated to something that grub2 can't handle
+Mar 12 03:22:37 <Aurora_v_kosmose>	Hm, grub sure needs to catch.
+Mar 12 03:22:37 <Aurora_v_kosmose>	*catch up
+Mar 12 03:23:56 <weary-traveler>	not really feasible. systemd-boot would be the more feasible approach
+Mar 12 03:24:55 <weary-traveler>	grub2 doesn't even have the hardware acceleration for some of the primitives, which is why decrypting in grub2 takes quite a bit longer than via the initrd
+Mar 12 03:24:57 <Aurora_v_kosmose>	Is that at least standalone?
+Mar 12 03:25:42 <Aurora_v_kosmose>	That isn't really a problem, I think.
+Mar 12 03:26:26 <weary-traveler>	it's not a problem. but it's indicative of how easily/quickly features can be added to grub2
+Mar 12 03:27:23 <Aurora_v_kosmose>	I don't really get it. A pure software-based approach would be a lot faster to implement than bothering with portable hardware-accelerated code.
+Mar 12 03:27:46 <Aurora_v_kosmose>	(Not faster to run, obviously)
+Mar 12 03:31:32 <cowboy8625>	hey hey!
+Mar 12 03:31:36 <Aurora_v_kosmose>	hewwo
+Mar 12 03:31:50 <cowboy8625>	how goes it?
+Mar 12 03:33:36 <Aurora_v_kosmose>	Not bad.
+Mar 12 03:34:53 <hodapp>	https://thenewstack.io/nvidia-wants-to-rewrite-the-software-development-stack/ siiiiiiiiiigh
+Mar 12 03:35:35 <twb>	with LLMs?
+Mar 12 03:35:51 <hodapp>	yes
+Mar 12 03:36:18 <Aurora_v_kosmose>	Because of course, *more* unreliability is exactly what we need⸮
+Mar 12 03:36:41 <Aurora_v_kosmose>	Do they realize how farcical this makes them look?
+Mar 12 03:36:43 <hodapp>	Aurora_v_kosmose: then who better to provide it than NVIDIA?
+Mar 12 03:36:59 <twb>	Just replace "AI" with "bitcoin" in your mind
+Mar 12 03:37:08 <Aurora_v_kosmose>	hodapp: Yeah, their reputation is already bad-enough without actively working to make it worse.
+Mar 12 03:37:17 <hodapp>	would would I use my mind to do that when I could use an LLM to do it?
+Mar 12 03:37:53 <twb>	hodapp: one hopes your neural net is bigger
+Mar 12 03:38:22 <twb>	Obvious corrolary: steal babies and use them as neural nets for the LLM.  Can discard all but the head
+Mar 12 03:38:34 <twb>	See also: the original plot of The Matrix
+Mar 12 03:38:37 <Aurora_v_kosmose>	Doesn't just need to be bigger, also just better.
+Mar 12 03:38:42 <Aurora_v_kosmose>	The average whale or elephant has *significantly* more brain mass than us apes.
+Mar 12 03:38:47 <hodapp>	is The Matrix considered woke now?
+Mar 12 03:38:55 <hodapp>	cuz the creators said it was all about being trans
+Mar 12 03:39:10 <Aurora_v_kosmose>	"Why not both?"
+Mar 12 03:40:11 <twb>	"mass" isn't the same as nuurons
+Mar 12 03:41:14 <Aurora_v_kosmose>	twb: True, but in any case the number of interconnections is what seems to have an outsized impact.
+Mar 12 03:41:30 <twb>	mmm
+Mar 12 03:41:36 <weary-traveler>	is there already an ml-chain coin? if not, opportunity missed
+Mar 12 03:41:41 <twb>	This is about where my subject-matter expertise breaks down
+Mar 12 03:42:31 <Aurora_v_kosmose>	Mine as well, unfortunately.
+Mar 12 03:43:19 <hodapp>	problem with biological neural networks is that there's all sorts of dumb rules about renting/buying them
+Mar 12 03:43:35 <hodapp>	"blah blah blah you can't do that" "blah blah blah they need to sleep sometimes" "blah blah blah you hurt its feelings"
+Mar 12 03:43:48 <Aurora_v_kosmose>	The hardware to make and use them is also absurdly expensive.
+Mar 12 03:44:07 <hodapp>	yeah there's lots of weird rules about buying that too
+Mar 12 03:44:17 <hodapp>	people get *really* touchy
+Mar 12 03:44:18 <Aurora_v_kosmose>	hodapp: Sentients are already using that mass, make your own.
+Mar 12 03:45:01 <twb>	https://qntm.org/lena
+Mar 12 03:50:36 <Aurora_v_kosmose>	> English Is the New Programming Language | Holy shit abandon all hope. Have they not *seen* the absurd mess legal books are in attempting (in vain) to make the language non-ambiguous?
+Mar 12 03:51:45 <Aurora_v_kosmose>	> “My point is that programming has changed in a way that is probably less valuable,” | Indeed, people write dead programs in static languages now, mostly.
+Mar 12 03:52:34 <Aurora_v_kosmose>	AI isn't going to change that, it'll make it worse.
+Mar 12 03:53:05 <Aurora_v_kosmose>	> Generative AI will be more of an operating system, and humans can tell computers in plain language to create applications. Large language models (LLMs) will help humans run their ideas through computers, Huang said. | Wow, it's like a knockoff Lisp Machine dreamed up by a drunk.
+Mar 12 03:53:15 <weary-traveler>	tbf making it worse is changing
+Mar 12 03:53:17 <Aurora_v_kosmose>	(Worse than the original thing in basically all ways.)
+Mar 12 03:53:20 <weary-traveler>	https://news.opensuse.org/2023/12/20/systemd-fde/
+Mar 12 03:53:48 <Aurora_v_kosmose>	Modernizing Lisp Machines would be a step forward.

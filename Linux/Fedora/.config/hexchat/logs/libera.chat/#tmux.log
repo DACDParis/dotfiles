@@ -972,3 +972,50 @@ Mar 10 06:42:22 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (T
 Mar 10 23:24:27 *	Now talking on #tmux
 Mar 10 23:24:27 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
 Mar 10 23:24:27 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Mon Mar 11 00:20:38 2024
+
+Mar 11 00:20:36 *	Now talking on #tmux
+Mar 11 00:20:36 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 11 00:20:36 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Mon Mar 11 00:24:22 2024
+
+Mar 11 00:24:21 *	Now talking on #tmux
+Mar 11 00:24:21 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 11 00:24:21 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Mon Mar 11 01:59:29 2024
+
+Mar 11 01:59:28 *	Now talking on #tmux
+Mar 11 01:59:28 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 11 01:59:28 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Mon Mar 11 05:24:02 2024
+
+Mar 11 05:24:01 *	Now talking on #tmux
+Mar 11 05:24:01 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 11 05:24:01 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Mon Mar 11 06:07:46 2024
+
+Mar 11 06:07:44 *	Now talking on #tmux
+Mar 11 06:07:44 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 11 06:07:44 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Mon Mar 11 11:18:07 2024
+
+Mar 11 11:18:05 *	Now talking on #tmux
+Mar 11 11:18:05 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 11 11:18:05 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+Mar 11 14:56:01 <dorfen>	hi, can anyone help me in getting the statusbar to have a transparent background? set status-bg default just turns the background green
+Mar 11 15:00:29 <jakllsch>	define transparent
+Mar 11 15:00:36 <demure>	dorfen: https://man.openbsd.org/OpenBSD-current/man1/tmux.1#fg=colour
+Mar 11 15:03:52 <demure>	so, you might be able to use bg=default
+Mar 11 15:05:15 <dorfen>	I was actually just quite stupid and had a theme overwrite the settings after i defined them.. Just a skill issue on my part :)
+Mar 11 17:16:06 <hasp>	hi! i want to bind '|' key to split window vertically but ":bind | split-window -v" is splitting window horizontally instead.
+Mar 11 17:16:37 <hasp>	am i doing something wrong?
+**** BEGIN LOGGING AT Tue Mar 12 00:38:03 2024
+
+Mar 12 00:38:02 *	Now talking on #tmux
+Mar 12 00:38:02 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 12 00:38:02 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Tue Mar 12 00:55:46 2024
+
+Mar 12 00:55:45 *	Now talking on #tmux
+Mar 12 00:55:45 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 12 00:55:45 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)

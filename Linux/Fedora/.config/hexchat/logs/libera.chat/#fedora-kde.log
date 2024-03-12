@@ -687,3 +687,46 @@ Mar 10 07:05:00 <SponiX>	close enough?
 Mar 10 23:24:27 *	Now talking on #fedora-kde
 Mar 10 23:24:27 *	Topic for #fedora-kde is: Fedora KDE | https://fedoraproject.org/wiki/SIGs/KDE | Main Chat: https://matrix.to/#/#kde:fedoraproject.org | https://getfedora.org/code-of-conduct | Stable: https://spins.fedoraproject.org/kde/download/index.html | Updated Stable: https://dl.fedoraproject.org/pub/alt/live-respins/ | Meeting: Every Mon 1300 US/Eastern
 Mar 10 23:24:27 *	Topic for #fedora-kde set by Son_Goku!sid611935@fedora/centos.hyperscale.ngompa (Sat Feb 17 14:01:11 2024)
+**** BEGIN LOGGING AT Mon Mar 11 00:20:38 2024
+
+Mar 11 00:20:36 *	Now talking on #fedora-kde
+Mar 11 00:20:36 *	Topic for #fedora-kde is: Fedora KDE | https://fedoraproject.org/wiki/SIGs/KDE | Main Chat: https://matrix.to/#/#kde:fedoraproject.org | https://getfedora.org/code-of-conduct | Stable: https://spins.fedoraproject.org/kde/download/index.html | Updated Stable: https://dl.fedoraproject.org/pub/alt/live-respins/ | Meeting: Every Mon 1300 US/Eastern
+Mar 11 00:20:36 *	Topic for #fedora-kde set by Son_Goku!sid611935@fedora/centos.hyperscale.ngompa (Sat Feb 17 14:01:11 2024)
+**** BEGIN LOGGING AT Mon Mar 11 00:24:22 2024
+
+Mar 11 00:24:21 *	Now talking on #fedora-kde
+Mar 11 00:24:21 *	Topic for #fedora-kde is: Fedora KDE | https://fedoraproject.org/wiki/SIGs/KDE | Main Chat: https://matrix.to/#/#kde:fedoraproject.org | https://getfedora.org/code-of-conduct | Stable: https://spins.fedoraproject.org/kde/download/index.html | Updated Stable: https://dl.fedoraproject.org/pub/alt/live-respins/ | Meeting: Every Mon 1300 US/Eastern
+Mar 11 00:24:21 *	Topic for #fedora-kde set by Son_Goku!sid611935@fedora/centos.hyperscale.ngompa (Sat Feb 17 14:01:11 2024)
+**** BEGIN LOGGING AT Mon Mar 11 01:59:29 2024
+
+Mar 11 01:59:28 *	Now talking on #fedora-kde
+Mar 11 01:59:28 *	Topic for #fedora-kde is: Fedora KDE | https://fedoraproject.org/wiki/SIGs/KDE | Main Chat: https://matrix.to/#/#kde:fedoraproject.org | https://getfedora.org/code-of-conduct | Stable: https://spins.fedoraproject.org/kde/download/index.html | Updated Stable: https://dl.fedoraproject.org/pub/alt/live-respins/ | Meeting: Every Mon 1300 US/Eastern
+Mar 11 01:59:28 *	Topic for #fedora-kde set by Son_Goku!sid611935@fedora/centos.hyperscale.ngompa (Sat Feb 17 14:01:11 2024)
+**** BEGIN LOGGING AT Mon Mar 11 05:24:02 2024
+
+Mar 11 05:24:01 *	Now talking on #fedora-kde
+Mar 11 05:24:01 *	Topic for #fedora-kde is: Fedora KDE | https://fedoraproject.org/wiki/SIGs/KDE | Main Chat: https://matrix.to/#/#kde:fedoraproject.org | https://getfedora.org/code-of-conduct | Stable: https://spins.fedoraproject.org/kde/download/index.html | Updated Stable: https://dl.fedoraproject.org/pub/alt/live-respins/ | Meeting: Every Mon 1300 US/Eastern
+Mar 11 05:24:01 *	Topic for #fedora-kde set by Son_Goku!sid611935@fedora/centos.hyperscale.ngompa (Sat Feb 17 14:01:11 2024)
+**** BEGIN LOGGING AT Mon Mar 11 06:07:46 2024
+
+Mar 11 06:07:44 *	Now talking on #fedora-kde
+Mar 11 06:07:44 *	Topic for #fedora-kde is: Fedora KDE | https://fedoraproject.org/wiki/SIGs/KDE | Main Chat: https://matrix.to/#/#kde:fedoraproject.org | https://getfedora.org/code-of-conduct | Stable: https://spins.fedoraproject.org/kde/download/index.html | Updated Stable: https://dl.fedoraproject.org/pub/alt/live-respins/ | Meeting: Every Mon 1300 US/Eastern
+Mar 11 06:07:44 *	Topic for #fedora-kde set by Son_Goku!sid611935@fedora/centos.hyperscale.ngompa (Sat Feb 17 14:01:11 2024)
+Mar 11 09:41:04 <CRCinAU>	Has anyone run the android device emulator in F40?
+Mar 11 09:41:23 <CRCinAU>	I keep getting a crash on it with the message: [37948:37948:20240311,193902.165125:ERROR elf_dynamic_array_reader.h:64] tag not found
+Mar 11 09:41:31 <CRCinAU>	apparently, that's a QT thing?
+**** BEGIN LOGGING AT Mon Mar 11 11:18:07 2024
+
+Mar 11 11:18:05 *	Now talking on #fedora-kde
+Mar 11 11:18:05 *	Topic for #fedora-kde is: Fedora KDE | https://fedoraproject.org/wiki/SIGs/KDE | Main Chat: https://matrix.to/#/#kde:fedoraproject.org | https://getfedora.org/code-of-conduct | Stable: https://spins.fedoraproject.org/kde/download/index.html | Updated Stable: https://dl.fedoraproject.org/pub/alt/live-respins/ | Meeting: Every Mon 1300 US/Eastern
+Mar 11 11:18:05 *	Topic for #fedora-kde set by Son_Goku!sid611935@fedora/centos.hyperscale.ngompa (Sat Feb 17 14:01:11 2024)
+**** BEGIN LOGGING AT Tue Mar 12 00:38:03 2024
+
+Mar 12 00:38:02 *	Now talking on #fedora-kde
+Mar 12 00:38:02 *	Topic for #fedora-kde is: Fedora KDE | https://fedoraproject.org/wiki/SIGs/KDE | Main Chat: https://matrix.to/#/#kde:fedoraproject.org | https://getfedora.org/code-of-conduct | Stable: https://spins.fedoraproject.org/kde/download/index.html | Updated Stable: https://dl.fedoraproject.org/pub/alt/live-respins/ | Meeting: Every Mon 1300 US/Eastern
+Mar 12 00:38:02 *	Topic for #fedora-kde set by Son_Goku!sid611935@fedora/centos.hyperscale.ngompa (Sat Feb 17 14:01:11 2024)
+**** BEGIN LOGGING AT Tue Mar 12 00:55:46 2024
+
+Mar 12 00:55:45 *	Now talking on #fedora-kde
+Mar 12 00:55:45 *	Topic for #fedora-kde is: Fedora KDE | https://fedoraproject.org/wiki/SIGs/KDE | Main Chat: https://matrix.to/#/#kde:fedoraproject.org | https://getfedora.org/code-of-conduct | Stable: https://spins.fedoraproject.org/kde/download/index.html | Updated Stable: https://dl.fedoraproject.org/pub/alt/live-respins/ | Meeting: Every Mon 1300 US/Eastern
+Mar 12 00:55:45 *	Topic for #fedora-kde set by Son_Goku!sid611935@fedora/centos.hyperscale.ngompa (Sat Feb 17 14:01:11 2024)

@@ -1,321 +1,3 @@
-T 1709074261 18<27JAA18>	For -f with multiple files IIRC.
-T 1709074273 18<28emanuele618>	stdbuf only works for non-statically linked programs that use glibc
-T 1709074304 18<28emanuele618>	and only for things that use stdio functions to read/write; not if the program uses something else to print
-T 1709074340 18<28emanuele618>	ormaaj: you can use it to change the buffering of bash (for printf/echo)
-T 1709074366 18<28emanuele618>	but it generally works on most tools, at least if they are written in C, use stdio, and are not built statically
-T 1709074425 18<27JAA18>	That makes sense, yeah.
-T 1709074456 18<27larryv18>	clarkk: you can probably augment the awk script to get the same effect as grep -v. as an aside, single quotes would REALLY help you there.
-T 1709074575 18<28emanuele618>	# type stdbuf
-T 1709074576 18<25shbot18>	emanuele6: bash: type: stdbuf: not found
-T 1709074589 18<28emanuele618>	hmm, shbot does not have it
-T 1709074593 18<20cappy18>	http://www.pixelbeat.org/programming/stdio_buffering/
-T 1709074610 18<28emanuele618>	ormaaj: try   stdbuf -o0 bash -c '{ enable fdflags; fdflags -s+direct 1; printf abcdef;} | while dd status=none count=1; do printf \\n; done' | sed '/f/q'    vs without stdbuf -o0
-T 1709074637 18<25ormaaj18>	Oh heh it says gnu tee screws with the buffering itself. Funny I'm usually using tee when I want to change how things buffer
-T 1709074661 18<22clarkk18>	actually, I pasted the wrong command, due to all the troubleshooting I've already done. This is it. tee won't work without stdbuf  `ping -DO 8.8.8.8 | stdbuf -oL awk -F "[][]" "/^\[/{print strftime(\"%Y-%m-%d %H:%M:%S\", \$2), \$3; next} 1" | tee -a network-ping.txt`
-T 1709074760 18<25ormaaj18>	that sucks. Normally the exact time you want to control is is when you need to split some output into multiple channels, and tee is like pretty much the main way to do that
-T 1709074926 18<22clarkk18>	larryv, do you mean like this, using single quotes?  ping -DO 8.8.8.8 | stdbuf -oL awk -F '[][]' '/^\[/{print strftime("%Y-%m-%d %H:%M:%S", $2), $3; next} 1' | tee -a network-ping.txt
-T 1709074926 18<25ormaaj18>	:o interesting
-T 1709074990 18<22clarkk18>	larryv, if I try to add in the filter, it breaks tee.  ping -DO 8.8.8.8 | stdbuf -oL awk -F '[][]' '/^\[/{if($3 !~ /bytes from /) print strftime("%Y-%m-%d %H:%M:%S", $2), $3; next} 1' | tee -a network-ping.txt
-T 1709075096 18<25ormaaj18>	emanuele6: why does the direct pipe matter in that case?
-T 1709075260 18<22clarkk18>	emanuele6, sorry, I didn't see your message. That returns bash: line 1: enable: fdflags: not a shell builtin
-T 1709075451 18<28emanuele618>	ormaaj: with a direct pipe every write() is boxed in a packet, and every read() only reads one packet. if it were not a direct pipe, write()s would just accumulate in the pipe's buffer, and when a process read()s the pipe, the kernel will just give it as much data from the buffer as it can. so it would not show the difference
-T 1709075485 18<28emanuele618>	clarkk: well, it sounds like you don't have fdflags
-T 1709075553 18<22clarkk18>	emanuele6, I can't find it in the apt repo, on debian 12
-T 1709075601 18<28emanuele618>	it should be the bash-builtins package if you want it
-T 1709075626 18<25ormaaj18>	Many distros don't bother to include them or have bash configured to use them by default.
-T 1709075636 18<28emanuele618>	another way to see the difference more explicitly without a direct pipe is  strace -qqefd=1 -ewrite stdbuf -o0 bash -c 'printf abc' >/dev/null    vs without  stdbuf -o0
-T 1709075745 18<28emanuele618>	with -o0 bash (or any other compatible program) writes one character at the time, with -o10  in chunk of 10 character, with -oL up to a newline (except if the line is too long), etc
-T 1709075795 18<28emanuele618>	note that i have noticed some time ago that bash printf is "bugged", and always flushes the buffer after a newline even if the buffering is not -oL, so maybe use  /bin/printf  to see how it is actually supposed to work
-T 1709076214 18<25ormaaj18>	Does it have a separate effect on the read and write ends or does setting the flag on either end affect functions on both ends?
-T 1709076239 18<28emanuele618>	it affects both ends
-T 1709076314 18<28emanuele618>	well, really it does not actually
-T 1709076331 18<25ormaaj18>	:O
-T 1709076349 18<28emanuele618>	but if you set on the write end, it seems to be enough
-T 1709076350 18<25ormaaj18>	!coffee
-T 1709076350 18<29greybot18>	c[_]
-T 1709076473 18<28emanuele618>	# enable fdflags; (sleep 1; printf x; printf y) | (fdflags -s+direct 0; sleep 2; dd count=1)
-T 1709076476 18<25shbot18>	emanuele6: xy0+1 records in
-T 1709076476 18<25shbot18>	emanuele6: 0+1 records out
-T 1709076476 18<25shbot18>	emanuele6: 2 bytes copied, 0.00692369 s, 0.3 kB/s
-T 1709076507 18<28emanuele618>	setting it on the read end does nothing; the only one that matters is the write end i think
-T 1709076715 18<28emanuele618>	afaics if you set direct on a write end after there is already some data on the pipe, the pipe does not start behaving like a direct pipe until it gets emptied
-T 1709077191 18<28emanuele618>	and if you have a direct pipe already, but you open a second write end to that pipe that does not have O_DIRECT, if you write with the non-direct end first, and then the direct end; the packet contains what was written by the non-direct end followed by what was written by the direct end
-T 1709077243 18<28emanuele618>	if you write the other way around, the packet only contains what was written by the direct end, but the next packet will be prefixed by what was written by the non-direct end
-T 1709077282 18<28emanuele618>	and if the read end reads while the pipe only contains stuff written by the non-direct end, it still returns and reads the stuff written by the non-direct end
-T 1709077329 18<28emanuele618>	so probably O_DIRECT makes write() inject some magic end of packet marker in the pipe, that is why it only matters on the write end
-T 1709082580 19*	Now talking on 22#bash
-T 1709082580 22*	Topic for 22#bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
-T 1709082580 22*	Topic for 22#bash set by 26ormaaj!~ormaaj@user/ormaaj (24Fri Feb 16 23:57:24 2024)
-T 1709082583 18<22pj18>	okay
-T 1709082622 18<28emanuele618>	the first substitution command always only expands literal code of your script, so it is always safe as long as you only expand those values before the next substitution
-T 1709082692 18<22pj18>	okay, yeah this is completely out of my league, heh.
-T 1709082694 18<25ormaaj18>	(where "their arguments" is the entire remainder of the script)
-T 1709082766 18<28emanuele618>	like this https://0x0.st/HRj_.txt
-T 1709082805 18<28emanuele618>	err,  importas -ui c c   https://0x0.st/HRjL.txt
-T 1709082898 18<25ormaaj18>	:O
-T 1709083232 18<25ormaaj18>	double multisubstitute cute
-T 1709164962 19*	Now talking on 22#bash
-T 1709164962 22*	Topic for 22#bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
-T 1709164962 22*	Topic for 22#bash set by 26ormaaj!~ormaaj@user/ormaaj (24Fri Feb 16 23:57:24 2024)
-T 1709164978 18<24bxsx18>	It would be very nice if I break the loop on the first occurrence, but I don't it, well, still not that bad..
-T 1709165065 18<24bxsx18>	larryv: any real difference between setting the flag to 1 or true?
-T 1709165078 18<27larryv18>	why bother with a flag? just use the loop variable
-T 1709165086 18<24bxsx18>	ahhhhhh
-T 1709165096 18<24bxsx18>	it's not cleared after the loop?
-T 1709165114 18<27larryv18>	no
-T 1709165115 18<27larryv18>	# shopt -s nullglob; f=; for f in .*; do :; done; declare -p f
-T 1709165117 18<25shbot18>	larryv: declare -- f=".mkshrc"
-T 1709165123 18<27larryv18>	# shopt -s nullglob; f=; for f in foo*; do :; done; declare -p f
-T 1709165124 18<25shbot18>	larryv: declare -- f=""
-T 1709165176 18<27larryv18>	it's not cleared before the loop either, which is why you have to do it yourself
-T 1709165190 18<27larryv18>	# shopt -s nullglob; f=x; for f in foo*; do :; done; declare -p f
-T 1709165191 18<25shbot18>	larryv: declare -- f="x"
-T 1709165197 18<24bxsx18>	I see
-T 1709165220 18<24bxsx18>	no, the nullglob makes a lot of sense
-T 1709165299 18<24bxsx18>	s/no/now
-T 1709165368 18<24bxsx18>	larryv: thanks
-T 1709165377 18<27larryv18>	np
-T 1709165458 18<24bxsx18>	I guess in the final solution it would the [[ -z $f ]] or should I use declare -p for that (I'm assuming you used that only to demo the output now?)
-T 1709165496 18<27larryv18>	yeah, that was just for show. you would do something like if [[ -z $f ]]; then echo oh no; exit 1; fi
-T 1709165582 20*	Disconnected (20)
-T 1709165736 19*	Now talking on 22#bash
-T 1709165736 22*	Topic for 22#bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
-T 1709165736 22*	Topic for 22#bash set by 26ormaaj!~ormaaj@user/ormaaj (24Fri Feb 16 23:57:24 2024)
-T 1709171987 18<19sphertext18>	i've tested the code for the mac osx -exec bug in the find utility on 10.14 and it's still broken. even tho the wiki claims it's been fixed after 10.8 https://mywiki.wooledge.org/UsingFind#Nasty_OS_X_bug
-T 1709172054 18<19sphertext18>	wait no
-T 1709172116 18<19sphertext18>	well i tried copy pasting the commands in a script instead of writing them by hands and i got the correct outcome
-T 1709172130 18<19sphertext18>	so i made a mistake the first time
-T 1709172512 18<19sphertext18>	ok i found the problem. it's unrelated to the mac osx bug
-T 1709172945 18<24alguien18>	how do i terminate the pipe (only) as soon as one part fails?
-T 1709172981 18<24alguien18>	i can get get the error code of the failing part with `set -o pipefail`, but it still seems to execute the rest of the pipe
-T 1709173422 18<22tirnanog18>	that's how they work; they are fully asynchronous in nature. the question is: why is it a problem in your case? a program attempting to read from its end of a closed pipe will encounter EOF, whereas a program attempting to write to its end of a closed pipe will receieve SIGPIPE.
-T 1709173428 18<22tirnanog18>	alguien: ^
-T 1709173511 18<24alguien18>	hm, maybe it isn't a problem then, thanks
-T 1709173571 18<22tirnanog18>	as a silly little example, if you run seq 1 1000000 | head -n1, it will get nowhere near writing one million lines.
-T 1709173625 18*	24alguien nods
-T 1709173661 18<22tirnanog18>	https://termbin.com/v4d3u
-T 1709173746 18<22tirnanog18>	also, try man 7 pipe. if you don't have it: https://www.man7.org/linux/man-pages/man7/pipe.7.html
-T 1709173753 18<24alguien18>	Prob was I tested with find nonexistent | echo yes, and I always got yes
-T 1709173762 18<24alguien18>	but that's not equivalent to what i'm doing
-T 1709173778 18<22tirnanog18>	I don't know what you expected to happen there. echo doesn't read anything.
-T 1709173782 18<24alguien18>	my real RHS is read, and it will just not read anything
-T 1709173789 18<22tirnanog18>	for example?
-T 1709173799 18<22tirnanog18>	this sounds like !faq disappear, honestly.
-T 1709173808 18<24alguien18>	!faq disappear
-T 1709173808 18<29greybot18>	https://mywiki.wooledge.org/BashFAQ/024 -- I set variables in a loop that's in a pipeline. Why do they disappear after the loop terminates? Or, why can't I pipe data to read?
-T 1709173824 18<24alguien18>	nah, that was an earlier topic :)
-T 1709173831 18<22tirnanog18>	what then?
-T 1709173849 18<22cornfeedhobo18>	can someone suggest a good way to do a non-regex search-and-replace within a file?
-T 1709173851 18<24alguien18>	you answered my question
-T 1709173877 18<24alguien18>	cornfeedhobo, non-interactive vi
-T 1709173896 18<22tirnanog18>	perl is very good at it.
-T 1709173898 18<22tirnanog18>	https://mywiki.wooledge.org/BashFAQ/021#Just_Tell_Me_What_To_Do
-T 1709173905 18<22cornfeedhobo18>	na, vi is too heavy. i need it to work in build container.
-T 1709173911 18<22tirnanog18>	thanks to its quotemeta (\Q) functionality.
-T 1709173926 18<22cornfeedhobo18>	perl is also an option that is commonly offered, but also not well suited to portability
-T 1709173932 18<22tirnanog18>	awk then.
-T 1709173944 18<24alguien18>	ed is posix
-T 1709173951 18<22tirnanog18>	actually, it's awkward in awk (ha).
-T 1709173953 18<24alguien18>	but i think it's complicated
-T 1709173966 18<22cornfeedhobo18>	yeah, awk makes it difficult
-T 1709173967 18<22tirnanog18>	"non-regex" was a component of the question.
-T 1709173975 18<24alguien18>	sed has a switch i think, but i don' think it's posix
-T 1709173980 18<22cornfeedhobo18>	it's really this non-regex that makes it hard
-T 1709173997 18<22cornfeedhobo18>	which is surprising somewhat... like why isn't there a common tool or flag for this
-T 1709174008 18<22tirnanog18>	well, how about bash then. it won't be as fast, but you can do line=${line//"$literal"/...} easily enough.
-T 1709174016 18<22cornfeedhobo18>	but i also haven't had to deal with this before, so there's that :p
-T 1709174019 18<19sphertext18>	re: the current question.. i had this idea but idk how to take it from here. the last echo could be substituted with kill, but idk how to choose a process id
-T 1709174021 18<19sphertext18>	# set -o pipefail; echo f | grep b  | { ! [[ "$?" -eq 0 ]] && echo b ; }
-T 1709174023 18<25shbot18>	sphertext: no output
-T 1709174025 18<22tirnanog18>	not actually a literal but treating the content of the var literally there.
-T 1709174026 18<24alguien18>	cornfeedhobo, agreed
-T 1709174074 18<19sphertext18>	# set -o pipefail; echo "f" | grep b | { ! [[ "$?" -eq 0 ]] && echo g ; }
-T 1709174076 18<25shbot18>	sphertext: no output
-T 1709174076 18<22cornfeedhobo18>	yeah, i could read in the entire file and do the replace with native bash
-T 1709174083 18<19sphertext18>	dunno why it's not working
-T 1709174109 18<22tirnanog18>	# printf 'foo baboon bar baboon\n' > input; needle=baboon; while read -r; do REPLY=${REPLY//"$needle"/orangutan}; printf '%s\n' "$REPLY"; done < input > output; cat output
-T 1709174111 18<25shbot18>	tirnanog: foo orangutan bar orangutan
-T 1709174120 18<19sphertext18>	oh the `set-o pipefail` doesn't register
-T 1709174134 18<19sphertext18>	if you run `set -o pipefail` as a separate command, then it will work
-T 1709174136 18<22tirnanog18>	follow it up with a conditional mv and there you go.
-T 1709174138 18<22cornfeedhobo18>	yeah, that's probably what i'll do, since the files aren't ever going to be that large
-T 1709174142 18<22tirnanog18>	right. perfect then.
-T 1709174183 18<22cornfeedhobo18>	thanks for the sounding board. I thought I was limited in my options, but needed a sanity check
-T 1709174238 18<24alguien18>	cornfeedhobo, surely you're still missing a simple utility that would be able to do that?
-T 1709174264 18<24alguien18>	sphertext, what will and what doesn't?
-T 1709174284 18<22tirnanog18>	sphertext: it's not clear what you even expect $? to be there. it's a brand new subshell, it will have whatever value the parent shell had before it forked.
-T 1709174305 18<22tirnanog18>	# false; true | true | echo "$?"
-T 1709174308 18<25shbot18>	tirnanog: 1
-T 1709174309 18<19sphertext18>	how do you `set -o` ?
-T 1709174315 18<19sphertext18>	in one line
-T 1709174321 18<22tirnanog18>	whatever it is you think you're doing there, it probably needs rethinking.
-T 1709174330 18<19sphertext18>	i think it works
-T 1709174341 18<19sphertext18>	but i don't know how to `set -o pipefail` in the same line
-T 1709174350 18<22tirnanog18>	no it doesn't.
-T 1709174356 18<22tirnanog18>	see above.
-T 1709174356 18<22cornfeedhobo18>	alguien: it sounds like one doesn't exist, other than bash itself. to be fair, i probably should have asked in ##workingset
-T 1709174393 18<24alguien18>	have to add that channel to autojoins i always forget its name
-T 1709174400 18<19sphertext18>	if you run `set -o pipefail` and then ` false | { ! [[ "$?" -eq 0 ]] && echo failed ; }` you will get the outcome
-T 1709174403 18<22tirnanog18>	if you want to know the exit status from a given portion of a pipline, issue the pipeline *first* then use PIPESTATUS.
-T 1709174404 18<24alguien18>	i always think it's #posixset
-T 1709174410 18<22tirnanog18>	no you bloody won't.
-T 1709174423 18<19sphertext18>	why is it printing "failed" then?
-T 1709174469 18<22tirnanog18>	# true | false; declare -p PIPESTATUS
-T 1709174471 18<25shbot18>	tirnanog: declare -a PIPESTATUS=([0]="0" [1]="1")
-T 1709174482 18<22tirnanog18>	that's how you get the status from a particular part of a pipeline.
-T 1709174545 18<19sphertext18>	i ran the command `false | { ! [[ "$?" -eq 0 ]] && echo failed ; }` on my machine and it printed `failed`, i can show you the screen shot. but i'm getting unreliable results now, idk why
-T 1709174557 18<22tirnanog18>	because you're not listening. that's why.
-T 1709174618 18<22tirnanog18>	as I said earlier, the value of $? will initially be whatever it was when the parent shell forked, within all of the subshells implied by the pipeline.
-T 1709174644 18<19sphertext18>	so it doesn't get updated by whatever happens in the pipe?
-T 1709174646 18<22tirnanog18>	so doing foo | [[ "$?" -eq .. ]] in any capacity is nonsense code. all you're doing is testing the vaue of the _parent's_ copy of $? there.
-T 1709174652 18<22tirnanog18>	just don't do this. it's completely wrong.
-T 1709174678 18<22tirnanog18>	the value of $? will be meaningful after the pipeline has concluded execution.
-T 1709174686 18<22tirnanog18>	that's where pipefail has a clear effect.
-T 1709174701 18<22tirnanog18>	but just use PIPESTATUS if you need the exit status of anything but the final component of the pipeline.
-T 1709174704 18<19sphertext18>	ok so it just gets inherited from the parent shell and won't be updated until the pipe finishes
-T 1709174712 18<22tirnanog18>	it's not even that.
-T 1709174727 18<22tirnanog18>	you have to understand that every single portion of a pipeline implies its on subshell.
-T 1709174747 18<22tirnanog18>	if you do "foo | bar", there are two subshells. if you do "foo | bar | baz" there are three subshells.
-T 1709174756 18<22tirnanog18>	all of them inherit the execution environment of the parent initially.
-T 1709174778 18<19sphertext18>	ok i get it
-T 1709174778 18<22tirnanog18>	each will manipulate $? in its own right. but each subshell will eventually die and the changes it makes are immaterial.
-T 1709174791 18<22tirnanog18>	it is how the parent shell sets $? (and PIPESTATUS) that you care about.
-T 1709174808 18<19sphertext18>	so all the subshells of a pipe are spawned by the original parent shell? they're not sub-subshells
-T 1709174828 18<22tirnanog18>	yes. I mean, you could make more still.
-T 1709174866 18<22tirnanog18>	# echo "parent = $$; left subshell = $BASHPID" >&2 | echo "parent = $$; right subshell = $BASHPID" >&2
-T 1709174868 18<25shbot18>	tirnanog: parent = 44; right subshell = 52
-T 1709174868 18<25shbot18>	tirnanog: parent = 44; left subshell = 51
-T 1709174875 18<22tirnanog18>	those are pid numbers.
-T 1709174895 18<26lockywolf18>	sphertext: you can pipe into a subshell
-T 1709174955 18<22tirnanog18>	so all you have to ask yourself is "do I need anything other than the exit status of the right-most part of the pipeline". if the answer is no, you don't need pipefail, nor PIPESTATUS. if yes, then they have a use.
-T 1709175006 18<22tirnanog18>	(pipefail can also have side effects if over-used or used blithely - it's often perfectly normal to expect for the 'left-most' parts to fail)
-T 1709175016 18<22tirnanog18>	feeding something through head is a great example.
-T 1709175079 18<22tirnanog18>	as with anything, it depends on the exact use case, though.'
-T 1709175096 18<19sphertext18>	so you need to do a check of PIPESTATUS in every element of the pipe if you want to interrupt it whenever one element fails
-T 1709175113 18<19sphertext18>	also, how do you interrupt it after the test shows an element has failed?
-T 1709175125 18<22tirnanog18>	well, if you genuinely consider any element failing to be an error, pipefail will do that.
-T 1709175137 18<19sphertext18>	do you kill the parent shell?
-T 1709175140 18<22tirnanog18>	but be careful with it. it's one of those things that may look neat at first, but it's often not appropriate.
-T 1709175146 18<19sphertext18>	so that it stops executing the rest of the pipe
-T 1709175165 18<22tirnanog18>	PIPESTATUS lets you just examine any of its exit status values and do as you place.
-T 1709175222 18<22tirnanog18>	there is no such thing as "stop executing the rest of the pipe". disavoid yourself of this notion immediately. you can expect for programs to terminate sooner than they otherwise might have, perhaps.
-T 1709175237 18<22tirnanog18>	consider the seq | head example given earlier: https://termbin.com/v4d3u
-T 1709175256 18<22tirnanog18>	you can stop neither seq nor head running there, but seq does finish quite early, owing to the pipe error.
-T 1709175264 18<22tirnanog18>	er, disavow, even.
-T 1709175277 18<26lockywolf18>	what about   echo test0 | ( set -e ; cat - ; ls /fail ; echo test1   | (cat - ; echo test2 ; ) )
-T 1709175293 18<26lockywolf18>	the pipe will terminate after ls /fail
-T 1709175299 18<22tirnanog18>	if you think it's important that programs execute strictly sequentially, you shouldn't even be using a pipe.
-T 1709175307 18<22tirnanog18>	because pipes are async. always.
-T 1709175329 18<22tirnanog18>	but that's what makes them so amazing.
-T 1709175419 18<22tirnanog18>	you don't "interrupt". you just exit the subshell in question.
-T 1709175438 18<22tirnanog18>	stop reading. close your end of the pipe.
-T 1709175438 18<19sphertext18>	`false | { ! [[ ${PIPESTATUS[${#PIPESTATUS[@]}-1]} -eq 0 ]] && killpipe ; }`
-T 1709175447 18<19sphertext18>	so this is not possible, nor recommended?
-T 1709175448 18<22tirnanog18>	no. this is complete nonsense.
-T 1709175461 18<22tirnanog18>	if you don't want to consume any more data, stop reading and exit!
-T 1709175485 18<22tirnanog18>	please look at the earlier paste and try to understand what's going on there.
-T 1709175496 18<22tirnanog18>	seq gets a broken pipe eventually and that is _fine_
-T 1709175503 18<22tirnanog18>	head closed its end of the pipe.
-T 1709175521 18<22tirnanog18>	because it exited after reading one line.
-T 1709175545 18<22tirnanog18>	also, man 7 pipe (please)
-T 1709175609 18<22tirnanog18>	you check PIPESTATUS only when the entire pipeline is don.
-T 1709175618 18<22tirnanog18>	if it is needed at all.
-T 1709175755 18<22tirnanog18>	at best, a writer may be able to fill up the pipe buffer (16 x page size on Linux, by default - so 64 KiB on x86_64). at that point, if the reading end is closed, it will get a signal. that's what you see happening with seq in the paste. it never gets to actually write 1 million numbers.
-T 1709175805 18<22tirnanog18>	which is a good thing, of course. it would be silly if it were allowed to go all the way to the end.
-T 1709175828 18<22tirnanog18>	anyway, this is explained in pipe(7).
-T 1709176122 18<22tirnanog18>	I should add: there are certain, specific cases in which cleaning up after tasks can be useful. but they should be dealt with as and when they arise. most of the time, there is no need to bring homebrew process management into it (and even then, a simple trap can be a solution).
-T 1709178712 18<25ormaaj18>	sphertext: Stupid thing about bash # 3 trillion and one - it forcibly calls wait when the command of the last pipe element completes, and no sooner. Therefore PIPESTATUS is not accessible from that command AND the forced wait will block further execution until all of the subshells are waited on. So it is impossible to access statuses from any command that can read from the pipe. Bash doesn't even
-T 1709178712 18<25ormaaj18>	give you their pids.
-T 1709178746 18<25ormaaj18>	 $ shopt -s lastpipe; function pp { exec -- getpid -E p print -rf '%-2s %s\n' -u "$2" -- "$1" \$p; }; ${| local -; set +m; { pp 0a 3 | pp 1 4 | printf '%-2s %s\n' 0b "${ jobs -p; }" 3 "$BASHPID"; } 3>&1 4>&1; }
-T 1709178746 18<25ormaaj18>	0b 3642770
-T 1709178747 18<25ormaaj18>	3  3375217
-T 1709178747 18<25ormaaj18>	1  3642771
-T 1709178747 18<25ormaaj18>	0a 3642770
-T 1709178793 18<25ormaaj18>	you can get the pid of the first element from jobs, but the ones in the middle are inaccessible.
-T 1709178806 18<25ormaaj18>	basically pipelines suck.
-T 1709179408 18<28emanuele618>	>:(
-T 1709179624 18<25ormaaj18>	Almost like it's written by one whose Cranium Has Emptyness Throughout
-T 1709180769 18*	25ormaaj is mean D:
-T 1709180781 18<28emanuele618>	not by someone with an Outstanding Roasted Mixture Awesome Arabica Jar
-T 1709180948 18<29cult18>	Is it possible to use ${@} properly in an alias or does it cause problems? Ideally I want to use something like alias foo='echo "${@:-bar}"' but bar is always printed with or without args
-T 1709180972 18<28emanuele618>	aliases just replace text
-T 1709180974 18<25ormaaj18>	it can be done
-T 1709180992 18<25ormaaj18>	ha wow
-T 1709181008 18<28emanuele618>	you could define a function in the alias and call that immediately; that is the usual technique for when you need to accept arguments
-T 1709181063 18<28emanuele618>	'f () { something "$@"; echo hi ;}; f'    e.g. in git aliases
-T 1709181064 18<29cult18>	Hmm yes I had a function initially but I was wondering why doing it this way results in the weird behaviour. I'd expect just "bar" if no args and a list of args otherwise. But "foo 1 2 3" will print "bar 1 2 3"
-T 1709181138 18<28emanuele618>	i don't remember what @:- does in bash; i know it is unspecified in standard sh
-T 1709181163 18<28emanuele618>	# a=(1 2 3); set -- "${@:-foo}"; echo -E set -- "${@@Q}"
-T 1709181164 18<25shbot18>	emanuele6: set -- 'foo'
-T 1709181168 18<28emanuele618>	# a=(); set -- "${@:-foo}"; echo -E set -- "${@@Q}"
-T 1709181169 18<25shbot18>	emanuele6: set -- 'foo'
-T 1709181184 18<25ormaaj18>	it's lame :(. Takes the overall result and flattens it, and expands the alternate if the resulting string is empty.
-T 1709181187 18<28emanuele618>	it just always expands to foo, it ieems
-T 1709181192 18<28emanuele618>	oh, oops
-T 1709181201 18<28emanuele618>	# set -- 1 2 3; set -- "${@:-foo}"; echo -E set -- "${@@Q}"
-T 1709181202 18<25shbot18>	emanuele6: set -- '1' '2' '3'
-T 1709181206 18<28emanuele618>	# set --; set -- "${@:-foo}"; echo -E set -- "${@@Q}"
-T 1709181207 18<25shbot18>	emanuele6: set -- 'foo'
-T 1709181224 18<28emanuele618>	so it expands to 'foo' if there are no arguments; that is what it does
-T 1709181240 18<27larryv18>	# set ''; set -- "${@:-foo}"; echo -E set -- "${@@Q}"
-T 1709181241 18<25shbot18>	larryv: set -- 'foo'
-T 1709181246 18<25ormaaj18>	It's really like [[ $@ ]]
-T 1709181251 18<28emanuele618>	oh, it is like  ${!@}
-T 1709181280 18<28emanuele618>	if the concatenation of the arguments is empty, it expands to 'foo'
-T 1709181285 18<25ormaaj18>	yep
-T 1709181300 18<29cult18>	It seems to do that even if there are arguments though, or is that because I'm using it in an alias?
-T 1709181303 18<28emanuele618>	# IFS=; set '' a; set -- "${@:-foo}"; echo -E set -- "${@@Q}"
-T 1709181305 18<25shbot18>	emanuele6: set -- '' 'a'
-T 1709181309 18<28emanuele618>	# IFS=; set '' ''; set -- "${@:-foo}"; echo -E set -- "${@@Q}"
-T 1709181311 18<25shbot18>	emanuele6: set -- '' ''
-T 1709181319 18<29cult18>	As I said "foo 1 2 3" will output "bar 1 2 3" when I would expect just "1 2 3"
-T 1709181329 18<28emanuele618>	and it is @, not *, so it is never empty if there are more than two arguments
-T 1709181356 18<25ormaaj18>	Not a very useful behavior IMO
-T 1709181410 18<28emanuele618>	cult: that is not what "${@:-foo}" does; if you want to expand something else if there are no arguments, you would use something like    "${1-foo}" "${@:2}"
-T 1709181415 18<25ormaaj18>	(it's so unuseful it could probably be changed since nobody uses it, at least not if they know what it actually does)
-T 1709181479 18<25ormaaj18>	!ormaajrotate
-T 1709181479 18<29greybot18>	# f() { echo "${@:2}"; ${!1+f $(($1+1)) "${!#}" "${@:2:$#-2}"}; }; f 3 {a..c}
-T 1709181481 18<25shbot18>	greybot: a b c
-T 1709181481 18<25shbot18>	greybot: c a b
-T 1709181481 18<25shbot18>	greybot: b c a
-T 1709181735 18<28emanuele618>	cult: if you are saying you don't understand why your alias prints   bar 1 2 3    it is because the alias just replaces the text in the command
-T 1709181750 18<28emanuele618>	i said it earlier
-T 1709181788 18<28emanuele618>	foo 1 2 3    will run    echo "${@:-bar}" 1 2 3   because that is what is in the foo alias
-T 1709181828 18<27JAA18>	Aliases are insanely stupid.
-T 1709181836 18<28emanuele618>	evidently your shell does not have any non-empty arguments, so it expands bar
-T 1709181845 18<28emanuele618>	JAA: no u >:(
-T 1709181855 18<27larryv18>	D:
-T 1709181863 18<28emanuele618>	# set --; echo "${@:-bar}" 1 2 3
-T 1709181864 18<25shbot18>	emanuele6: bar 1 2 3
-T 1709181868 18<28emanuele618>	# set -- foo bar; echo "${@:-bar}" 1 2 3
-T 1709181870 18<25shbot18>	emanuele6: foo bar 1 2 3
-T 1709181876 18<27JAA18>	:-)
-T 1709181878 18<28emanuele618>	# set -- zzz yyy; echo "${@:-bar}" 1 2 3
-T 1709181879 18<25shbot18>	emanuele6: zzz yyy 1 2 3
-T 1709181895 18<28emanuele618>	# set -- zzz yyy; f () { echo "${@:-bar}";}; f 1 2 3
-T 1709181896 18<25shbot18>	emanuele6: 1 2 3
-T 1709181917 18<27JAA18>	TIL (or rather, realised) what that function trick is about though. Thanks, I hate it.
-T 1709181972 18<28emanuele618>	with a function, or an alias that defines a function and calls it, the arguments are 1 2 3, but "${@:-bar}" is still wrong; you want  "${1-bar}" "${@:2}"
-T 1709182014 18<28emanuele618>	JAA: if bash embraced eval, and dynamic scoping like tcl, we would have an apply builtin, and we would not need this :D
-T 1709182028 18*	27JAA slaps emanuele6 around a bit with a large trout
-T 1709182054 18<28emanuele618>	hmm, i thought of a cool use for "${@:-}" earlier
-T 1709182078 18<28emanuele618>	it is "$*", but it ignores IFS, and always uses space
-T 1709182090 18<28emanuele618>	could be useful in a pinch
-T 1709182129 18<27JAA18>	Hmm, yeah
-T 1709182194 18<28emanuele618>	ormaaj: now, you can't change this behaviour because we would notice muhahaha
-T 1709182206 18<29cult18>	emanuele6: thank you that makes sense now!
-T 1709182218 18<27JAA18>	Well, it'd still be multiple values though, not one, unless you remove the quotes.
-T 1709182227 18<27JAA18>	If you have args, that is.
-T 1709182256 18<28emanuele618>	if you don't have arguments, or have an empty argument "${@:-}" expands to '' which is correct
-T 1709182279 18<28emanuele618>	and if you have more than one argument, the delimiter is space, so it is still correct because the result is non-empty
-T 1709182298 18<27JAA18>	# set -- 1 2 3; printf '%q ' "${@:-}"
-T 1709182300 18<25shbot18>	JAA: 1 2 3
-T 1709182310 18<27JAA18>	That's three args, not 1\ 2\ 3.
-T 1709182313 18<28emanuele618>	what the heck
-T 1709182322 18<28emanuele618>	then what does it do?
-T 1709182332 18<28emanuele618>	# set -- 1 2 3; printf '%q ' "${@:+baz}"
-T 1709182334 18<25shbot18>	emanuele6: baz
-T 1709182334 18<27JAA18>	Same as "$@", no?
 T 1709182367 18<28emanuele618>	so it is the same as "$@" if [[ $@ ]] ? wow
 T 1709182378 18<28emanuele618>	that does not make any sense
 T 1709182412 18<27JAA18>	Seems reasonable enough to me.
@@ -5004,3 +4686,431 @@ T 1710109520 18<28emanuele618>	there is a  eza_colors-explanation  man p
 T 1710109531 18<28emanuele618>	compressed yeah
 T 1710109605 18<28emanuele618>	i also say bold red, that is not mentioned, but that is very obviously for unix sockets
 T 1710109619 18<28emanuele618>	so many colours
+T 1710110020 18<27cabalcrow18>	I was specifically editing out an existing script in this case fzf-select-file
+T 1710110045 18<27cabalcrow18>	it is a script for quick file selection via fzf in zsh via a keybind
+T 1710110091 18<27cabalcrow18>	but I guess I will need to figure out how to manage fzf better & extract information from eza
+T 1710111752 18<27xx18>	geirha: thanks for that `od -An -tx1 -c` it's really neat. Do people use that often?
+T 1710111852 18<28emanuele618>	$ grep -c $'^[^\t]*\temanuele6\t.*\\<od\\>' ~/.weechat/logs/irc.libera.#bash.weechatlog
+T 1710111854 18<28emanuele618>	69
+T 1710111884 18<27xx18>	I don't mean `od` on its own, I mean those exact flags to od
+T 1710111903 18<24geirha18>	It's the best way of doing a hexdump using POSIX tools that I know of. I usually use xxd instead, with od a solid second if xxd isn't available
+T 1710111908 18<28emanuele618>	i pretty much always use od with -An
+T 1710111931 18<27xx18>	I should learn xxd
+T 1710111932 18<28emanuele618>	and -tx1 to print hex, -to1 to print octal, -tc to print characters, yeah
+T 1710111937 18<27xx18>	because... it has xx in it
+T 1710111965 18<28emanuele618>	my latest report on @bug-bash features   od -An -to1 !  https://lists.gnu.org/archive/html/bug-bash/2024-03/msg00008.html
+T 1710112017 18<28emanuele618>	a system without xxd is unusable! D:
+T 1710112027 18<28emanuele618>	if it does not have xxd, it probably also does not have vim
+T 1710112047 18<27xx18>	I only learned recently that xxd comes from vim
+T 1710112060 18<28emanuele618>	it's a button on the default toolbar
+T 1710112116 18<24geirha18>	:%!xxd -g1   then you can modify it a bit, then   :%!xxd -r
+T 1710112250 18<20houseparty18>	I have two variations of the same code. These are simple. Which one is better and why? I also put comments to indicate the find command is preferable: https://paste.debian.net/1310196/
+T 1710112272 18<20houseparty18>	... variations of a function with different code but the output is identical
+T 1710112335 18<24geirha18>	the first one, but without the || ls ... part
+T 1710112353 18<20houseparty18>	And that's why I put the find with a comment as I knew that
+T 1710112376 18<24geirha18>	"Oh you passed a file/directory that doesn't exist, let's just list the current working directory instead then"
+T 1710112381 18<20houseparty18>	I agree. The second one is more explicit but it's redundant and more lengthy
+T 1710112405 18<20houseparty18>	Yeah. So that way if you are already in the directory you want to search, you don't have to type "$PWD"
+T 1710112408 18<20houseparty18>	or "."
+T 1710112434 18<20houseparty18>	two key strokes saved from "[[:space:]] \".\""
+T 1710112454 18<24geirha18>	and that's already the default for ls, so the || ls ... "$PWD"   is completely pointles
+T 1710112473 18<20houseparty18>	Didn't think about that. So obvious.
+T 1710112487 18<20houseparty18>	Why didn't I think of that. I dunno
+T 1710112569 18<24geirha18>	even if it wasn't you could default to . (or $PWD) using   "${@-.}"
+T 1710112604 18<20houseparty18>	I just have them to avoid typing as much but I see your point.
+T 1710112656 18<20houseparty18>	The weird thing is I am actually using the file managers more because it feels easier in many cases to just drag and drop.
+T 1710112681 18<28bprompt18>	ahem, isn't --color the default for "ls"?
+T 1710112748 18<20houseparty18>	No... at least not in bashrc.
+T 1710112753 18<24geirha18>	no. You likely have an ls alias that adds --color=auto
+T 1710112755 18<20houseparty18>	Outside of it, I think ...
+T 1710112761 18<24geirha18>	but --color is short for --color=always
+T 1710112836 19*	Now talking on 22#bash
+T 1710112836 22*	Topic for 22#bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+T 1710112836 22*	Topic for 22#bash set by 26ormaaj!~ormaaj@user/ormaaj (24Fri Feb 16 23:57:24 2024)
+T 1710112868 18<24geirha18>	--color=auto makes it only output colour if stdout is a terminal. Since you're piping the output, --color=auto would cause it to not output any colours
+T 1710112881 18<20houseparty18>	I noticed after too long that there is a line in bashrc on one distro that tells you you to consider having a seperate profile just for aliases
+T 1710112899 18<20houseparty18>	Did not know that either
+T 1710112907 18<24geirha18>	I keep all my aliases in /dev/null
+T 1710112930 18<20houseparty18>	You keep them in a vacuum?
+T 1710113061 19*	Now talking on 22#bash
+T 1710113061 22*	Topic for 22#bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+T 1710113061 22*	Topic for 22#bash set by 26ormaaj!~ormaaj@user/ormaaj (24Fri Feb 16 23:57:24 2024)
+T 1710118768 19*	Now talking on 22#bash
+T 1710118768 22*	Topic for 22#bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+T 1710118768 22*	Topic for 22#bash set by 26ormaaj!~ormaaj@user/ormaaj (24Fri Feb 16 23:57:24 2024)
+T 1710118792 18<20cappy18>	Is there a way to do this: frac=$(echo "scale=6; $i/64" | bc) without calling `bc` each time in an arithmetic loop?
+T 1710118856 18<27larryv18>	depends what you're doing with frac
+T 1710118912 18<20cappy18>	Just printing a table:  printf "i=%2d f=%s  " "$i" "$frac"
+T 1710118999 18<27larryv18>	could probably just do the whole thing in one awk script
+T 1710119062 18<27larryv18>	where's $i coming from
+T 1710119080 18<20cappy18>	for (( i=1; i <=64; i++ )); do
+T 1710119179 18<20cappy18>	Admittedly, calling `bc` (in this case 64 times) seems the wrong approach. The loop, for another could be o-o greater.
+T 1710119196 18<20cappy18>	s/o-o/OoM/
+T 1710119236 18<28emanuele618>	awk 'BEGIN { for (i = 1; i <= 64; ++i) printf "i=%2d f=%08.6f\n", i, i / 64 }'
+T 1710119276 18<20cappy18>	emanuele6: That looks nice. Thank you!
+T 1710119679 18<28emanuele618>	python3 -c 'for i in range(1, 65): print(f"i={i:02} f={i/64:6f}")'
+T 1710119689 18<27larryv18>	# bc -l <<<'for (i = 1; i <= 64; ++i) { i; i/64 }' | { mapfile -t && printf 'i=%2d f=%08.6f\n' "${MAPFILE[@]}"; }
+T 1710119691 18<25shbot18>	larryv: i= 1 f=0.015625
+T 1710119691 18<25shbot18>	larryv: i= 2 f=0.031250
+T 1710119691 18<25shbot18>	larryv: etc... ( http://paste.wooledge.org/29437 )
+T 1710119693 18<27larryv18>	>:)
+T 1710119716 18<28emanuele618>	the "f=" in bc!
+T 1710119794 18<28emanuele618>	hmm, bc outputs 0.123    as  .123
+T 1710119828 18<28emanuele618>	s/the/you could print &/
+T 1710119932 18<28emanuele618>	bc <<<'scale=6; for (i = 1; i <= 64; ++i) { i; "'$'\t''f="; i/64 }'
+T 1710119938 18<28emanuele618>	# bc <<<'scale=6; for (i = 1; i <= 64; ++i) { i; "'$'\t''f="; i/64 }'
+T 1710119940 18<25shbot18>	emanuele6: 1
+T 1710119940 18<25shbot18>	emanuele6:         f=.015625
+T 1710119940 18<25shbot18>	emanuele6: etc... ( http://paste.wooledge.org/29439 )
+T 1710119947 18<28emanuele618>	not as nice, but it's all bc
+T 1710119994 18<20cappy18>	Impressive, guys.
+T 1710120535 18<27larryv18>	# bc <<<'scale=6; for (i = 1; i <= 64; ++i) { "i="; i; "'$'\t''f="; f=i/64; if (f < 1) { "0" }; f }'
+T 1710120537 18<25shbot18>	larryv: i=1
+T 1710120537 18<25shbot18>	larryv:         f=0.015625
+T 1710120537 18<25shbot18>	larryv: etc... ( http://paste.wooledge.org/29451 )
+T 1710131041 19*	Now talking on 22#bash
+T 1710131041 22*	Topic for 22#bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+T 1710131041 22*	Topic for 22#bash set by 26ormaaj!~ormaaj@user/ormaaj (24Fri Feb 16 23:57:24 2024)
+T 1710133664 19*	Now talking on 22#bash
+T 1710133664 22*	Topic for 22#bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+T 1710133664 22*	Topic for 22#bash set by 26ormaaj!~ormaaj@user/ormaaj (24Fri Feb 16 23:57:24 2024)
+T 1710148210 18<26sphertext_18>	I'm running `socat [...] &` inside a bash script to send it to the background. however, `ps -f` then shows its PPID to be 1
+T 1710148259 18<26sphertext_18>	if i run the same socat command from the shell, it ends up having a normal PPID
+T 1710148296 18<26sphertext_18>	and normally processes that i start in a bash script and background them, retain the PPID of the script
+T 1710148523 18<24geirha18>	sounds like the script that started socat exited then, in which case the background job gets disowned and it gets init as parent
+T 1710148582 18<26sphertext_18>	ah so they get disowned if the script?
+T 1710148587 18<24geirha18>	if you want socat to die along with the script, add an EXIT trap that kills the socat on exit (assuming bash)
+T 1710148595 18<26sphertext_18>	yeah, if i put a `read` command afterwards, it doesn't get disowned anymore
+T 1710148658 18<24geirha18>	if the script doesn't do anything other than starting socat, why even run it in the background?
+T 1710148689 18<26sphertext_18>	it does other things
+T 1710148924 18<26sphertext_18>	ok but here's what is confusing me. if inside [script1] i put a while loop, then in the while loop run a `bash [script2]`, and then background the while loop. i can see that [script2] has the PPID of [script1]. even tho [script1] exited
+T 1710148940 18<26sphertext_18>	how come it doesn't get disowned as well?
+T 1710148987 18<24geirha18>	it's not exactly script1, it's a subshell of script1.
+T 1710149018 18<24geirha18>	script1 has to fork a subshell to run that while loop in, and that subshell is then the parent of script2
+T 1710149044 18<26sphertext_18>	 ps reports that the command of the PPID of [script2] was me running [script1]
+T 1710149060 18<24geirha18>	being a subshell it inherits argv and such of the main shell, so it looks a bit confusing in ps output
+T 1710149068 18<26sphertext_18>	ah
+T 1710149180 18<24geirha18>	printf 'Script pid: %s, subshell pid: %s\n' "$$" "$BASHPID"
+T 1710152285 19*	Now talking on 22#bash
+T 1710152285 22*	Topic for 22#bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+T 1710152285 22*	Topic for 22#bash set by 26ormaaj!~ormaaj@user/ormaaj (24Fri Feb 16 23:57:24 2024)
+T 1710153904 18<19safsf18>	quieres ver videos para adultos
+T 1710153921 18<19safsf18>	¿Chat por cámara?
+T 1710153930 18<19safsf18>	¿Yo por cámara?
+T 1710153950 18<19safsf18>	chatear por cámara?
+T 1710153989 18<19safsf18>	Primero haga clic en este enlace > https://yourgirlsarcade.life/?u=vtgk60r&o=d7gpk40
+T 1710153990 18<19safsf18>	Y completa todas las opciones y luego muestra tu tarjeta, pero no te preocupes, es totalmente gratis.
+T 1710154055 18<19safsf18>	Primero haga clic en este enlace > https://yourgirlsarcade.life/?u=vtgk60r&o=d7gpk40
+T 1710154055 18<19safsf18>	Y completa todas las opciones y luego muestra tu tarjeta, pero no te preocupes, es totalmente gratis.
+T 1710154239 18<19safsf18>	Ven a mi telgram >> @mariyacs
+T 1710154368 18<24ano18>	!ops
+T 1710154369 18<29greybot18>	twkm geirha Riviera greycat isabella osse e36freak pragma- yitz mute kurahaupo ormaaj llua phy1729 soliton phogg emg
+T 1710154603 18<22phogg18>	why am I on the ops list?
+T 1710154623 18<29djph18>	phogg: so you can rule with an iron fist
+T 1710154636 18<22phogg18>	my fist is made of tin at best
+T 1710154646 18<19katia18>	mine is made of hand
+T 1710154662 18<28selckin18>	you have ops
+T 1710154710 18<29djph18>	phogg: fine, rule with a tin fist then :P
+T 1710157291 22*	26ChanServ gives channel operator status to 18kurahaupo
+T 1710157317 22*	26kurahaupo removes channel operator status from 18kurahaupo
+T 1710157436 18*	25kurahaupo discovers she has god-like powers in #bash
+T 1710158412 18<29nvz18>	did you type idspispopd?
+T 1710158444 18<24geirha18>	iddqd you mean
+T 1710158460 18<29nvz18>	oh.. damn.. been a long time.. whats the one I said then?
+T 1710158486 18<24geirha18>	don't know, doesn't ring any bells for me
+T 1710158505 18<24geirha18>	I only remember iddqd, idkfa and idclip
+T 1710158590 18<29nvz18>	ah its no clipping
+T 1710158665 18<29nvz18>	but only in the original game, idclip works in the others I guess
+T 1710158735 18<24geirha18>	huh, never knew idclip had that long winding alias
+T 1710158863 18<28emanuele618>	iddrinkcoffee
+T 1710159371 18<29nvz18>	I was just reading up on that mud stuff last night, apparently people are drinking fungus now instead of coffee *shrug* far from the strangest thing I heard. I recall years ago watching a tv special about people shooting coffee up their bum
+T 1710159704 18<28emanuele618>	reminds me of the latest brewstew episode
+T 1710159835 18<29nvz18>	heh, "awkward situations"?
+T 1710159869 18*	29nvz wanders off to find breakfast since it doesn't seem to be finding me
+T 1710159878 18<28emanuele618>	yes
+T 1710160426 18<29nvz18>	I never heard of it, I suppose I will check it out since I seem to resemble this episode :P
+T 1710160816 18<24cheater18>	does bash completion still have that bug where it doesn't complete if the strings contain :
+T 1710160822 18<24cheater18>	is it a bug
+T 1710160836 18<24cheater18>	or is the guy who wrote this program (that uses bash completion) just holding it wrong
+T 1710161069 18<29nvz18>	all I know is, after my earlier comments and this peggers can't be choosers, I'm not gonna go anywhere near a conversation about colons any time soon, so I'll leave that apparent question to someone else and run along now
+T 1710161112 18<29djph18>	cheater: both?
+T 1710161147 18<24cheater18>	djph: i don't know.
+T 1710161150 18<24cheater18>	djph: both?
+T 1710161188 18<29djph18>	cheater: a bug, and he's holding it wrong?
+T 1710161217 18<24cheater18>	yes. i'm asking you which it is. since you were asking me. but i don't know. hence i asked originally.
+T 1710161264 18<29djph18>	cheater: yes, why not "both" ?  (as in "it is a bug AND the user is holdig it wrong" ... ala apple)
+T 1710161283 18<24cheater18>	why not just not waste my time
+T 1710161286 18<29djph18>	also, didn't their glasses start cracking in half recently?
+T 1710161303 18<24cheater18>	wouldn't be surprised
+T 1710161310 18<24geirha18>	default completion completes words with colon at least, so it's not a bash bug at any rate
+T 1710162697 18<25OMGOMG18>	geirha: like colony or colonoscopy?
+T 1710163781 18<19mort18>	how would y'all iterate through lines in a file
+T 1710163797 18<27Soliton18>	!faq 1
+T 1710163797 18<29greybot18>	https://mywiki.wooledge.org/BashFAQ/001 -- How can I read a file (data stream, variable) line-by-line (and/or field-by-field)?
+T 1710163812 18<19mort18>	if a bot answered I've ignored it
+T 1710163827 18<29osc4rpt18>	hey people, i'm trying to solve the following problem: https://bpa.st/CT3A . basically i'm trying to embed the first command, which contains backticks, into an alias shortcut, that is not working. apparently you can not embed backticks or $() syntax into an alias and make it work? can you suggest anything?
+T 1710163830 18<27Soliton18>	perhaps read the topic then.
+T 1710163858 18<19mort18>	Soliton: how about you just stop being an asshole instead
+T 1710163859 18<27Soliton18>	!aliases
+T 1710163859 18<29greybot18>	Aliases suck. They don't work in scripts. They can't take arguments. They have special evil magical powers that break all expectations. See http://mywiki.wooledge.org/BashFAQ/080 for starters.
+T 1710163891 18<24depesz18>	mort: that attitude will not help you. you were given an answer. it's not our problem that you decided to ignore it.
+T 1710163899 18<19mort18>	I wasn't given an answer
+T 1710163907 18<28llua18>	you were
+T 1710163908 18<19mort18>	I was told to read the topic
+T 1710163975 18<29osc4rpt18>	greybot: alright, sure :) guess would just put it into a file then
+T 1710163978 18<24geirha18>	The first entry in the FAQ answers your question
+T 1710163988 18<19mort18>	why didn't you just say that earlier
+T 1710164002 18<19mort18>	except no, it doesn't
+T 1710164009 18<19mort18>	I need to do it in-process
+T 1710164031 18<19mort18>	so not the cat file | while read -r line thing
+T 1710164060 18<24geirha18>	yeah, definitely don't do cat file | while read ...
+T 1710164066 18<28llua18>	so you didn't read it at all
+T 1710164089 18<25OMGOMG18>	!b1
+T 1710164089 18<29greybot18>	bashphorism 1: the questioner's first description of the problem/question will be misleading.
+T 1710164252 18<27Soliton18>	osc4rpt: perhaps remove the backslash infront of ! in case that is meant to suppress history expansion.
+T 1710164312 18<27Soliton18>	osc4rpt: that command is pretty bad either way. you should not rely on wordsplitting and pathname expansion to produce the arguments you want.
+T 1710164389 18<19mort18>	right you can use the < thing with while
+T 1710164410 18<19mort18>	I tried that actually, `<<<"$somevariable" while read -r blah`, it didn't work so I assumed redirects didn't work with while
+T 1710164424 18<19mort18>	seems like it works but only if placed after the 'done'
+T 1710164458 18<24geirha18>	osc4rpt: I'm guesstimating you are trying to find the container id of a container named "consec";  instead of using grep and ruby to parse the default output, use docker container ls's --filter to grab the one you want, and then -q to only output the id
+T 1710164471 18<24geirha18>	docker container ls --filter name=consec -q --no-trunc
+T 1710164740 18<24depesz18>	i don't recall, how can I print source of defined function?
+T 1710164752 18<24geirha18>	declare -f funcname
+T 1710164760 18<24depesz18>	aaargh. -f. i tried -p. thanks.
+T 1710164772 18<24geirha18>	type funcname    will also print the function
+T 1710164790 18<24depesz18>	oh. nice. thanks again :)
+T 1710164818 18<28emanuele618>	if you use   declare -pf   instead of just -f  it will show an error if the function is not defined
+T 1710164857 18<24geirha18>	mort: redirections can appear "anywhere" for simple commands, but while is a compound command, and for compound commands, redirections must be at the very end
+T 1710164866 18<19mort18>	weird
+T 1710164913 18<24geirha18>	[[ ]]  is also a compound command, and it uses < and > as string comparison operators
+T 1710164949 18<19mort18>	yeah but nobody uses [[ ]]
+T 1710164950 18<24geirha18>	and (( )) similarly uses < and > for integer comparisons
+T 1710164987 18<24geirha18>	I guess I'm nobody then
+T 1710164993 18<19mort18>	probably
+T 1710165002 18<27Soliton18>	the weird part is that you can put redirections anywhere in a simple command.
+T 1710165432 18<25OMGOMG18>	geirha: "nobody" would also be a good nick, length-wise
+T 1710165475 18<24geirha18>	also a great choice for username
+T 1710165554 18<27Earnestly18>	geirha: Of which, can shbot gain nobody as a user besides root?
+T 1710165685 18<24geirha18>	problem with that is that I'd need to add a sudo/su command in addition
+T 1710165732 18<27Earnestly18>	I thought shbot had su
+T 1710165734 18<27Earnestly18>	# hash su
+T 1710165737 18<25shbot18>	Earnestly: bash: hash: su: not found
+T 1710165762 18<24geirha18>	though since those aren't standard commands, we could concoct our own version that works differently than any other implementation in existance >:)
+T 1710165763 18<27Earnestly18>	Oh, well yes. sudo would be nice, but su would be enough. Although it was just to demonstrate things related to it
+T 1710165815 18<27Earnestly18>	iirc it was to demonstrate permissions
+T 1710165817 18<28emanuele618>	# printf 'emanuele6:x:1000:1000:moo,,,:/emanuele6:/bin/bash' >> /etc/shadow; echo ~emanuele6; chown emanuele6 .bashrc; ls -ld .bashrc
+T 1710165820 18<25shbot18>	emanuele6: ~emanuele6
+T 1710165820 18<25shbot18>	emanuele6: chown: invalid user: 'emanuele6'
+T 1710165820 18<25shbot18>	emanuele6: -rw-rw-r-- 1 root root 634 Mar 21  2021 .bashrc
+T 1710165852 18<28emanuele618>	hmm, that used to work
+T 1710165863 18<28emanuele618>	oh, etc passwd
+T 1710165873 18<28emanuele618>	# printf 'emanuele6:x:1000:1000:moo,,,:/emanuele6:/bin/bash\n' >> /etc/passwd; echo ~emanuele6; chown emanuele6 .bashrc; ls -ld .bashrc
+T 1710165875 18<25shbot18>	emanuele6: /emanuele6
+T 1710165875 18<25shbot18>	emanuele6: -rw-rw-r-- 1 emanuele6 root 634 Mar 21  2021 .bashrc
+T 1710165992 18<24geirha18>	wonder if a setuid loadable builtin would work
+T 1710167286 18<22mosasaur18>	I've got some lines that are commented out, my editor can fold code blocks. So I am using "if false .. then" around them to turn them into a block. However, now I've found { also works, if I add a : before closing with } .  Is this better or equal to doing it with "if then"?
+T 1710167397 18<24geirha18>	that doesn't sound right
+T 1710167463 18<22mosasaur18>	the if then thing or the brackets?
+T 1710167477 18<27Soliton18>	you're writing weird code to please your editor or what is the goal?
+T 1710167485 18<22mosasaur18>	I mean it seems to work
+T 1710167511 18<27Soliton18>	perhaps you mean ; instead of :
+T 1710167526 18<24geirha18>	oh the lines are still commented out in these "blocks" ?
+T 1710167550 18<22mosasaur18>	Soliton:  it's weird code to run ever changing delogo filters in a script for running mpv
+T 1710167565 18<22mosasaur18>	geirha: yes
+T 1710167591 18<27Soliton18>	so why are you talking about folding code blocks in your editor?
+T 1710167600 18<24geirha18>	but if also requires at least one command between the then and fi
+T 1710167653 18<22mosasaur18>	geirha: yes, that's what the : line is for, I understand it to be some kind of nop operation
+T 1710167696 18<27Soliton18>	# : $(echo hi>&2)
+T 1710167697 18<25shbot18>	Soliton: hi
+T 1710167701 18<22mosasaur18>	Soliton: sometimes I need to go back to the old filters
+T 1710167715 18<24geirha18>	does it fold C style /* */  comments? maybe you can add some of those instead;   # /*  and  # */  above and below your comments
+T 1710167728 18<22mosasaur18>	Soliton: but i don't want them clogging my code
+T 1710167739 18<27Soliton18>	them?
+T 1710167758 18<22mosasaur18>	Soliton: multiple commented out lines
+T 1710167785 18<29djph18>	then delete them?
+T 1710167820 18<25ee18>	i cannot make the builtin that calls setuid fit :(
+T 1710167822 18<22mosasaur18>	djph: no, they are necessary for later eps, sometimes
+T 1710167840 18<29djph18>	"eps" ?
+T 1710167848 18<22mosasaur18>	episodes
+T 1710167907 18<27Soliton18>	perhaps put the filters into different functions.
+T 1710168015 18<22mosasaur18>	geirha: thanks!  # /*  and  # */   work too! Hadn't expected C-style to work here for some reason
+T 1710168075 18<22mosasaur18>	Soliton: can't do that, they only work partially, I have to edit them all the time
+T 1710168109 18<24geirha18>	what about   # {   and    # }   ?
+T 1710168178 18<22mosasaur18>	geirha: those work too
+T 1710168202 18<22mosasaur18>	thanks a lot
+T 1710168333 18<25ee18>	# ksh<<<'typeset -b x=QlpoOTFBWSZTWTjZJJ8AAT//p//90UDAgEBBUwQYQIxw3gCAQghAAMACQEIpsADsKGplNNR6hhMIDQNDQMQM1PUMYDQAADQAAAAABISqbUbSaMhoGjQD1NDIAGmkHJazSEiUlAyIpQgwSDYWQ82MQ0rEceDChQimhfkigWJ237LWPnwb2p5HASvSiyNpAmwccbV7CVQIS4WklmZjYhLM0ubi4KNOKqAd/JSANHx9e/hs2YmozfORkMshcwR+YYhK56WrGXOMLXCORyTBINt6HMo8NKwTdEOtBVHfnz02qt1biSFBDcyyqq8q0/Tk9tbuuz3/F9XyfSxrzaXxwJ4mzGdCbe6hLVj16/8XckU4UJA42SSf;printf %B x'|bunzip2>s;enable -f./s s;s;>/z;ls -l /z
+T 1710168339 18<25shbot18>	ee: -rw-r--r-- 1 1000 root 0 Mar 11 14:45 /z
+T 1710168415 18<24geirha18>	oh, that's what you meant by "fit"
+T 1710168468 18<25ee18>	# ksh<<<'typeset -b x=QlpoOTFBWSZTWTjZJJ8AAT//p//90UDAgEBBUwQYQIxw3gCAQghAAMACQEIpsADsKGplNNR6hhMIDQNDQMQM1PUMYDQAADQAAAAABISqbUbSaMhoGjQD1NDIAGmkHJazSEiUlAyIpQgwSDYWQ82MQ0rEceDChQimhfkigWJ237LWPnwb2p5HASvSiyNpAmwccbV7CVQIS4WklmZjYhLM0ubi4KNOKqAd/JSANHx9e/hs2YmozfORkMshcwR+YYhK56WrGXOMLXCORyTBINt6HMo8NKwTdEOtBVHfnz02qt1biSFBDcyyqq8q0/Tk9tbuuz3/F9XyfSxrzaXxwJ4mzGdCbe6hLVj16/8XckU4UJA42SSf;printf %B x'|bunzip2>s;enable -f./s s;s;>/b*/[
+T 1710168475 18<25shbot18>	ee: bash: /bin/[: Permission denied
+T 1710168476 18<25ee18>	:D
+T 1710168630 18<28emanuele618>	bunzip2 and gunzip are my new favourite shbot commands
+T 1710169839 18<28emanuele618>	i just had an idea; with nullglob, you can use  > "$mypath"/@(file)   to only write to file if it already exist, and otherwise do nothing
+T 1710169870 18<28emanuele618>	# foo=bar; shopt -s nullglob; echo hi >/root/@("$foo"); cat <"$foo"
+T 1710169872 18<25shbot18>	emanuele6: bash: /root/@("$foo"): ambiguous redirect
+T 1710169872 18<25shbot18>	emanuele6: bash: bar: No such file or directory
+T 1710169878 18<28emanuele618>	# foo=bar; shopt -s nullglob; echo hi >/root/@(.mkshrc); cat <"$foo"
+T 1710169880 18<25shbot18>	emanuele6: bash: bar: No such file or directory
+T 1710169890 18<28emanuele618>	oops
+T 1710169894 18<28emanuele618>	# foo=.mkshrc; shopt -s nullglob; echo hi >/root/@("$foo"); cat <"$foo"
+T 1710169895 18<25shbot18>	emanuele6: hi
+T 1710169978 18<28emanuele618>	another use is to make   foo/@("$dirname")/baz   fail if dirname contains a /
+T 1710170073 18<28emanuele618>	oh, didn't someone about a alternative noclobber that works like this some week ago?
+T 1710170082 18<28emanuele618>	s/about/ask &/
+T 1710170131 18<28emanuele618>	2024-02-10 22:07:35 <hsv > just checking, there's no form of >> redirection that fails if the file does *not* exist?
+T 1710170144 18<28emanuele618>	aw, they are not online right now
+T 1710170253 18<28emanuele618>	nevermind :)
+T 1710170359 18<28emanuele618>	hsv: you can use    >> @("$file")   with nullglob on!
+T 1710170376 18<28emanuele618>	if you have a path, you must split it first though
+T 1710170392 18<28emanuele618>	and then do   >> "$dir"/@("$file")
+T 1710170845 18*	22CrtxReavr feels abused by the ksh syntax.
+T 1710175937 18<25ciphrCat18>	any ideas why $ovpn_pid would be empty when this script runs? → openvpn --daemon --config "$cfg"; ovpn_pid=$!; printf '%s\n' "OpenVPN launched under process ID: $ovpn_pid"
+T 1710176205 18<22tirnanog18>	the value of $! is meaningless. it wasn't backgrounded.
+T 1710176244 18<25ciphrCat18>	ah, that's it.. in other places where I use that it's because I backgrounded the process
+T 1710176245 18<22tirnanog18>	if you want to continue using --daemon, you can use --writepid to write out the pid value somewhere.
+T 1710176307 18<25ciphrCat18>	thanks for the tip!
+T 1710179383 18<26ormooj18>	moo
+T 1710179494 18<28emanuele618>	!m
+T 1710179494 18<29greybot18>	🐄
+T 1710179869 18<25fettuccine18>	moo
+T 1710180067 18<26ormooj18>	:D
+T 1710189908 18<27ztrawhcse18>	geirha: random q related to shbot -- how well do the old bashes build with modern compilers?
+T 1710190028 18<27ztrawhcse18>	I'm especially interested in gcc 14 (upcoming) as that definitely trips up some -Werror=implicit-function-declaration and so on but I'm hoping that those changed defaults are the only actual issues...
+T 1710196474 18<24geirha18>	ztrawhcse: Don't know yet. Been compiling them on an old ubuntu 18.04 system
+T 1710198778 18<26ormooj18>	gentoo has a bash 2 ebuild
+T 1710198825 18<26ormooj18>	i never tried it ^^
+T 1710198896 18<25cedd18>	what does this line do: while IFS= read -r -d '' file
+T 1710198932 18<26ormooj18>	it should read up to the next nul into file
+T 1710199460 18<29nightstrike18>	if you background a shell function, does it run in a separate thread or a separate process?
+T 1710199487 18<27Soliton18>	there's not really threads in shell.
+T 1710199543 18<29nightstrike18>	ok, point taken.. but is global state shared?
+T 1710199556 18<26ormooj18>	no
+T 1710199601 18<27larryv18>	subshells do copy of a lot of state from the parent, but they are just that, copies
+T 1710199612 18<26ormooj18>	yes
+T 1710199638 18<29nightstrike18>	ok, ty
+T 1710200064 18<27ztrawhcse18>	geirha, ormooj: I did some more investigation, it is indeed just an issue of Modern C flags. I can compile all gentoo-packaged versions of bash if I disable the Modern C checks
+T 1710200101 18<27ztrawhcse18>	now I need to decide if I'm gonna write a patchset to make these old versions build nicely with gcc 14 out of the box...
+T 1710200282 19*	Now talking on 22#bash
+T 1710200282 22*	Topic for 22#bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+T 1710200282 22*	Topic for 22#bash set by 26ormaaj!~ormaaj@user/ormaaj (24Fri Feb 16 23:57:24 2024)
+T 1710200345 18<25cedd18>	ormooj: what does the 'IFS' part do?
+T 1710200359 18<27Soliton18>	!ifs
+T 1710200359 18<29greybot18>	Internal Field Separator (or Input Field Separator), used to break things into words. See http://mywiki.wooledge.org/IFS and http://mywiki.wooledge.org/BashFAQ/001 and https://wiki.bash-hackers.org/syntax/words
+T 1710200407 18<27Soliton18>	IFS= means that no field splitting is happening.
+T 1710201344 19*	Now talking on 22#bash
+T 1710201344 22*	Topic for 22#bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+T 1710201344 22*	Topic for 22#bash set by 26ormaaj!~ormaaj@user/ormaaj (24Fri Feb 16 23:57:24 2024)
+T 1710201501 18<25cedd18>	Soliton: i think i dont understand bash's syntax in a while list, why is there a var set and then with no separation it goes into a read command?
+T 1710201523 18<25cedd18>	for context, here is the line again: while IFS= read -r -d '' file
+T 1710201554 18<25cedd18>	what is IFS even being set to there? space?
+T 1710201563 18<27Soliton18>	VAR=value cmd  # means VAR is set to value in the env of cmd.
+T 1710201583 18<27Soliton18>	it's set to the empty string.
+T 1710201616 18<25cedd18>	btw, this is what's being piped to that line: inotifywait -qmr -e 'moved_to,create' --format '%w%f%0' --no-newline ~/test |\
+T 1710201664 18<25cedd18>	its not clear to me at all what the while list is doing
+T 1710201716 18<27Soliton18>	it reads file names delimited by NUL.
+T 1710201835 18<27Soliton18>	# printf '%s\0' $'file\n1' $'\tfile 2  ' | while IFS= read -r -d '' file; do printf '<%s>\n' "$file"; done
+T 1710201837 18<25shbot18>	Soliton: <file
+T 1710201837 18<25shbot18>	Soliton: 1>
+T 1710201837 18<25shbot18>	Soliton: <       file 2  >
+T 1710201909 18<27Soliton18>	without IFS= it'd mangle the file names.
+T 1710202516 18<27ztrawhcse18>	kurahaupo: interesting. I can't see where in the gentoo ebuild it is telling bash 2.05b to do so, and the result is a 64-bit executable...
+T 1710203142 18<25kurahaupo18>	ztrawhcse: I tried building every version of Bash that I could, and if I didn't force some of them to be 32-bit, they would build but then crash at runtime. I'll have to check which ones I needed to specify
+T 1710203230 18<25cedd18>	Soliton: oic, excellent demonstration, so "IFS=" is how you set IFS to null, and the "file" term in the while list is just the name the var that read outputs to from stdin in that example?
+T 1710203527 18<27Soliton18>	VAR= is how you set any variable to empty. you can also use VAR='' if you like that better.
+T 1710203555 18<27Soliton18>	and yes file is the argument to read that tells it what variable name to use.
+T 1710203914 18<25kurahaupo18>	cedd: You can't just look at one line, you need to look at the whole block. Start with the top level syntax: « while LIST1 ; do LIST2 ; done » where LIST1 & LIST2 are each a list of commands. It keeps repeating as long as the last command in LIST1 is successful (status zero). (Note that line breaks can be used in place of semicolons; and newlines are permitted after "while" and "do".)
+T 1710203915 18<25kurahaupo18>	The "read" command has status zero iff it reads a whole line from its stdin, so it repeats for every whole line in the input, assuming there is nothing else before the "do". (Please include the "do" next time you're posting such a question.)
+T 1710203915 18<25kurahaupo18>	Any (simple) command may be prefaced with variable assignments that are placed into the environment of just that one command (even if it's a built in). The read command is sensitive to the IFS variable.
+T 1710203915 18<25kurahaupo18>	Variable assignments take the form WORD=VALUE where VALUE stops at the first space (so IFS= is setting IFS to empty)
+T 1710204216 18<25cedd18>	kurahaupo: interesting, and great explanation, so if the read command is reading a blocking file, then that while loop should continue indefinitely right?
+T 1710204258 18<25cedd18>	the exmaple in question is the last example at the bottom of the inotifywait man page
+T 1710204271 18<25cedd18>	the do line is just a chown command on the file var
+T 1710204453 18<25kurahaupo18>	cedd: We just need the "do" on its own, not the rest of the line, because it's important to show that there are no other commands between "read" and "do".
+T 1710204454 18<25kurahaupo18>	Yes if the input is a pipe or serial device it will loop indefinitely.
+T 1710204566 18<25kurahaupo18>	For the sake of writing this in one line in IRC, you can write « while … ; do »
+T 1710204577 18<25cedd18>	so the IFS= item in the list only gets executed once, because the read is essentially indefinite items for a blocking file
+T 1710204588 18<25cedd18>	kurahaupo: yea i should have done that in hindsight
+T 1710204623 18<25kurahaupo18>	The assignment to IFS happens every time the read command is attempted
+T 1710204683 18<25kurahaupo18>	And it is technically part of the read command; not a separate command
+T 1710204687 18<25cedd18>	oh really? wouldnt it be better to set it before the while loop then?
+T 1710204694 18<25cedd18>	oh ok
+T 1710204738 18<25kurahaupo18>	IFS has effects in multiple places, not just read.
+T 1710204791 18<25kurahaupo18>	The point is to limit the effect of changing it to the minimum possible scope, to just the read command itself
+T 1710204826 18<25cedd18>	i see, i just hate wasting any amount of cpu no matter how small lol
+T 1710204909 18<25kurahaupo18>	# while IFS= read -r x ; do printf '(%s)' $x ; done <<<'abc def ghi'
+T 1710204911 18<25shbot18>	kurahaupo: (abc)(def)(ghi)
+T 1710204922 18<25kurahaupo18>	# while IFS= ; read -r x ; do printf '(%s)' $x ; done <<<'abc def ghi'
+T 1710204924 18<25shbot18>	kurahaupo: (abc def ghi)
+T 1710204935 18<25kurahaupo18>	# IFS= ; while read -r x ; do printf '(%s)' $x ; done <<<'abc def ghi'
+T 1710204937 18<25shbot18>	kurahaupo: (abc def ghi)
+T 1710204948 18<25kurahaupo18>	See how those outputs change?
+T 1710204990 18<25kurahaupo18>	cedd: that's why it's important to constrain changes to IFS
+T 1710205027 18<25cedd18>	yea i do
+T 1710205052 18<25cedd18>	well if its unavoidable then its what i must do lol
+T 1710205101 18<25cedd18>	and thanks again for these great explanations, super helpful!
+T 1710205268 18<25kurahaupo18>	Some argue that the default value of IFS is a trip hazard and that setting it globally to empty is the lesser of two evils. I've certainly done that a few times
+T 1710205355 18<26ormooj18>	I think that it is guaranteed to corrupt your data if IFS is empty unless LC_CTYPE=C is a stupid hazard.
+T 1710205369 18<25cedd18>	were you not setting it globally in the 3rd iteration of that while loop?
+T 1710205391 18<26ormooj18>	Fine not guaranteed, potentially can.
+T 1710205522 18<25cedd18>	ormooj: which data do you think it would potentially corrupt?
+T 1710205540 18<26ormooj18>	data that contains nul, the very thing you're trying to terminate on
+T 1710205586 18<25cedd18>	isnt that usually only at like the end of a file?
+T 1710205625 18<25cedd18>	i guess it could be anywhere though
+T 1710205671 18<26ormooj18>	most shells have a special case exception for empty IFS if the current encoding is UTF-8, because a nul in an incorrect place can't possibly be valid UTF-8, but bash doesn't, so it will randomly truncate data incorrectly if your encoding is UTF-8
+T 1710205740 18<26ormooj18>	in bash you have to use `LC_CTYPE=C IFS= read -rd ''`
+T 1710205752 18<25kurahaupo18>	Oof!
+T 1710205762 18<26ormooj18>	I don't think we even have a pitfall for that one. it's very obscure
+T 1710205769 18<26ormooj18>	I didn't even know it
+T 1710205787 18<26ormooj18>	it's fucking stupid
+T 1710205801 18<25kurahaupo18>	(I globally have LC_CTYPE=C.UTF-8 in my login)
+T 1710205810 18<26ormooj18>	same
+T 1710205817 18<26ormooj18>	I know I have that bug in a ton of my code
+T 1710205862 18<25kurahaupo18>	Also LC_COLLATE because it really annoys me when the output of "ls" is in some scrambled order
+T 1710205881 18<26ormooj18>	yeah I do that too ^^
+T 1710205911 18<25cedd18>	what is the "LC_CTYPE=C" part doing?
+T 1710205939 18<25kurahaupo18>	It's an assignment, the same as IFS= is an assignment
+T 1710205962 18<26ormooj18>	It forces bash to read bytes rather than try to decode the input for the purpose of splitting and finding the delimiter
+T 1710205962 18<25cedd18>	i see its another bash variable it uses for various things
+T 1710206010 18<25kurahaupo18>	It's used by many things besides Bash, so it's even more important to isolate
+T 1710206077 18<25kurahaupo18>	Unless, like ormooj and me, you decide you never want anything other than the standard locale
+T 1710206136 18<25cedd18>	locale is the language chracter set?
+T 1710206144 18<25kurahaupo18>	ormooj: does LC_CTYPE=C.UTF-8 have the same effect as LC_CTYPE=C in this respect?
+T 1710206173 18<25cedd18>	and am i understanding right that bash is by default reading a byte of all zeroes as null when it could be another utf-8 charaxter thats >1 byte long?
+T 1710206180 18<25kurahaupo18>	cedd: locale is a collection of parameters related to language and regional conventions
+T 1710206181 18<26ormooj18>	no I don't think do. any non-C locale would cause bash to goof
+T 1710206208 18<26ormooj18>	Even if you don't set LC_CTYPE your LANG is probably en_US.UTF-8 or similar, which is just as bad
+T 1710206225 18<26ormooj18>	er you're aussie so, whatever that one is
+T 1710206246 18<25kurahaupo18>	en_AU.UTF-8
+T 1710206252 18<26ormooj18>	:D
+T 1710206276 18<25cedd18>	oh so locale is a variation of a given language
+T 1710206303 18<25kurahaupo18>	It includes language choice and local dialect
+T 1710206361 18<25kurahaupo18>	And charset (UTF-8, Latin-1, shift-JIS, whatever)
+T 1710206391 18<20cappy18>	On a filename containing whitespace, why does the following not work to advance the file's modification date:
+T 1710206395 18<20cappy18>	touch -m -d "$(date -R -r "$1") + 1 hours" "$1"
+T 1710206438 18<25kurahaupo18>	I've always thought that "encoding" and "charset" should be separate, that UTF-8 should be part of TERM, not part of LANG, but I'm a lone wolf on that one.
+T 1710206470 18<25kurahaupo18>	cappy: GNU date understands "+ n hours"
+T 1710206476 18<26ormooj18>	read does way too many things
+T 1710206487 18<26ormooj18>	with 1 command
+T 1710206495 18<25kurahaupo18>	Indeed
+T 1710206517 18<20cappy18>	kurahaupo: It works if the filename has no whitespace. Same `date`.
+T 1710206543 18<25kurahaupo18>	What do you make of the latest insanity: « local -g Foo » does nothing at all!
+T 1710206585 18<26ormooj18>	ha
+T 1710206629 18<25kurahaupo18>	cappy: I think I prefer stat rather than date for that, but I'm not sure which one is "standard"
+T 1710206763 18<20cappy18>	kurahaupo: Indeed, but despite rebuilding a backup thumb drive as exfat, believing dates are stored with timezone as is on ext4, I need to advance the mod time since we switched to Daylight Saving Time this past Sunday.
+T 1710206844 18<20cappy18>	So a small `touch` script run by find(1) should do it. Tested on a temp directory, but the production directory has files with whitespace.
+T 1710206909 18<25cedd18>	it crossed my mind to try to do that on some pictures i took for work, because it was to my benefit to have them taken a few days earlier lol
+T 1710206980 18<20cappy18>	Routinely, I do a meld(1) to ensure that the backup thumbdrive is in sync. Meld is citing time differences now.
+T 1710206993 18<25cedd18>	kurahaupo: i think youre right that they should be seprate, and maybe the world doesnt actually need a universal charset for all languages
+T 1710207034 18<25cedd18>	universal encoding*
+T 1710207379 18<22phogg18>	ormooj: I don't want to alarm you but you appear to have lost the stems on your As
+T 1710207483 18<22phogg18>	I came here today that I made a strategic error and looked at some of the .sh files that Oracle's runInstaller program generates. It demonstrates once again that you should never trust the quality of commercial software, especially not shell scripts, and especially not Oracle.
+T 1710207491 18<22phogg18>	s/today/today to say/
+T 1710207516 18<22phogg18>	e.g., someone thought it was cute to use ! as the marker for a heredoc.
+T 1710207565 18<25cedd18>	phogg: the original had a 1700s constitution vibe
+T 1710207600 18<22phogg18>	cedd: original?
+T 1710207623 18<25cedd18>	phogg: without the substitution
+T 1710207657 18<22phogg18>	Now I understand
+T 1710207664 18<25cedd18>	:)
+T 1710207953 18<20cappy18>	kurahaupo: Get your point now. Don't need touch. Thanks.
+T 1710208165 18<26ormooj18>	i'm not logged in :|
+T 1710208450 18<26ormooj18>	heh i've seen ! used for heredoc markers
