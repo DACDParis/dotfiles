@@ -2180,3 +2180,345 @@ Mar 12 02:32:32 <nickspoon>	I believe new email addresses get approved before th
 Mar 12 02:34:46 <trevdev>	Thanks.  I did send a message a couple of days ago, I'll just check in later
 Mar 12 02:52:05 <habamax>	I don't think Christian has access to the fund and any donations, but he might know details on who is in charge
 Mar 12 02:53:21 <habamax>	And actually, whatever you will ask in Discussions on github will also be sent to vim_dev https://github.com/vim/vim/discussions
+**** BEGIN LOGGING AT Tue Mar 12 07:33:43 2024
+
+Mar 12 07:33:41 *	Now talking on #vim
+Mar 12 07:33:41 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 12 07:33:41 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+Mar 12 08:03:37 <King_julian>	Hi good people , me again ... anyone running vim with YouCompleteme plugin on Debian Bullseye ? since I upgraded the plug recently, it stopped working requiring Vim 8.2.3995+ , but bullseye only have 8.2. I also dont see a higher vim package in backports for Debian and a bit scared I mess up something on my Vim. Seems i have 2 options , upgrade vim at your my own risk of messing up something or add the previous version of the 
+Mar 12 08:03:38 <King_julian>	YouCompleteMe plug... I am thinking the later is best, but just wanna check what the experts say. 
+Mar 12 08:04:32 <habamax>	I would just build vim from source
+Mar 12 08:05:00 *	habamax re-builds vim everyday
+Mar 12 08:06:50 <King_julian>	Thanks Haba,I have never done so, so do you think it's a simple and not problematic  ? I am using this machine as my main desktop, so don't really want to mess up anything 
+Mar 12 08:06:56 <habamax>	https://github.com/habamax/.vim/blob/90d835ba2a805aade11d14ecc5fa8146a7d21c05/doc/habamax.txt#L15
+Mar 12 08:07:19 <habamax>	never had problems building/using it
+Mar 12 08:07:28 <habamax>	but ymmv
+Mar 12 08:08:07 <habamax>	you need to build and install it locally
+Mar 12 08:08:46 <habamax>	--prefix in configure is for that
+Mar 12 08:10:29 <King_julian>	Tx Haba, looks simple enough . and will my normal vimrc still remain there and apply  ? 
+Mar 12 08:13:43 <habamax>	should be ok
+Mar 12 08:26:10 <King_julian>	TX Haba, Haba do I leave my sources as bullseye in apt/sources.list
+Mar 12 08:30:01 <habamax>	maybe, depends on you, I have deleted stock vim and just use the one I built
+Mar 12 12:27:57 <hackinghorn>	hi
+Mar 12 12:28:13 <hackinghorn>	how do I go to file (gf) but in a split
+Mar 12 12:28:28 <hackinghorn>	I can :sp then 'gf' tho
+Mar 12 12:29:37 <ttkap>	didnt you find your answer yesterday already ? :D
+Mar 12 12:30:04 <hackinghorn>	hey you remember me!
+Mar 12 12:30:22 <hackinghorn>	that was in a new window, and is ctrl+w f
+Mar 12 12:31:00 <hackinghorn>	my way of learning vim feels really inefficient
+Mar 12 12:34:09 <hackinghorn>	I keep asking questions for smallest keybinds
+Mar 12 12:34:42 <hackinghorn>	I guess :sp gf is good enough
+Mar 12 12:35:02 <hackinghorn>	thats okay I think
+Mar 12 12:35:12 <hackinghorn>	if I need 1 quick look then gf
+Mar 12 13:22:35 <ttkap>	for me ctrl-w f and :sp gf do the same thing
+Mar 12 15:46:01 <waterkip>	question: is there a way for vim to know it is in a git directory and to get the path of that directory? Something like this: https://paste.debian.net/1310442/
+Mar 12 15:54:57 <lopid>	vim should be in a directory in your path, preferably one for the system 
+Mar 12 15:55:25 <waterkip>	yeah....
+Mar 12 16:17:22 <waterkip>	fixed it: https://paste.debian.net/1310450/
+Mar 12 16:45:01 <cabalcrow>	does vim's regex supports conditionals?
+Mar 12 16:46:49 <tirnanog>	no.
+Mar 12 16:47:46 <tirnanog>	:help perl-patterns
+Mar 12 16:47:46 <digmbot>	:help perl-patterns -> http://vimhelp.appspot.com/pattern.txt.html#perl-patterns
+Mar 12 16:48:31 <waterkip>	what does that mean, regex support conditionals?
+Mar 12 16:48:58 <cabalcrow>	some do like perl/pcre
+Mar 12 16:51:32 <cabalcrow>	tirnanog: thanks!
+**** BEGIN LOGGING AT Tue Mar 12 17:00:35 2024
+
+Mar 12 17:00:31 *	Now talking on #vim
+Mar 12 17:00:31 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 12 17:00:31 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+Mar 12 18:26:59 <OMGOMG>	why does :cd .. print the new current directory, but following it up with @: does not?
+Mar 12 18:49:07 <PhilAlbano>	hey
+Mar 12 18:49:18 <PhilAlbano>	I had gvim 7.4 on windows
+Mar 12 18:49:30 <PhilAlbano>	installed by installer
+Mar 12 18:50:36 <lopid>	dang
+Mar 12 18:50:42 <PhilAlbano>	I noticed today several running processes named Au_.exe, Bu_.exe, Cu_.exe ... till Iu_.exe and all of them had ViM icon uninstaller
+Mar 12 18:51:06 <japh>	lol
+Mar 12 18:51:28 <ttkap>	welcome to 2013 I guess
+Mar 12 18:52:28 <PhilAlbano>	in C:\windows\temp\ found several .tmp files ns<some letters and digits>.tmp, most of them 6kB of size and inside of each was text from gvim installer
+Mar 12 18:53:41 <japh>	is this a case of https://daniel.haxx.se/blog/tag/email/
+Mar 12 18:56:05 <PhilAlbano>	text like: CAREFUL: If you have created something there that you want to keep, click No Would you like to remove ý€€? It contains your Vim configuration files!
+Mar 12 18:56:30 <PhilAlbano>	then looks like for some reason something fire up gvim uninstaller??
+Mar 12 18:56:43 <PhilAlbano>	but how it could be run by itself?
+Mar 12 18:56:43 <lopid>	are you insured?
+Mar 12 18:57:54 <japh>	there is no such string in the vim source code
+Mar 12 18:58:36 <PhilAlbano>	insured? why?
+Mar 12 18:59:33 <lopid>	maybe a plugin?
+Mar 12 18:59:50 <PhilAlbano>	no plugins installed, it was clean gvim
+Mar 12 19:03:08 <PhilAlbano>	what I found so far is that gvim uses NSIS installer and it creates such things during uninstallation process
+Mar 12 19:03:20 <PhilAlbano>	but I did not launch such
+Mar 12 19:04:03 <lopid>	maybe your son. he is at that mischievous age
+Mar 12 20:49:24 <FakuVe>	cheers m_ben
+Mar 12 20:49:38 <FakuVe>	I have a broad question
+Mar 12 20:50:53 <FakuVe>	Is there any way I can set vim in a mode such as a readonly mode
+Mar 12 20:51:03 <FakuVe>	I express my idea
+Mar 12 20:51:28 <FakuVe>	I dont want insert mode to be allowed to modify the buffer
+Mar 12 20:51:45 <FakuVe>	but just modify the file with a single keymap
+Mar 12 20:51:58 <FakuVe>	(only allow one kind of modification
+Mar 12 20:52:36 <FakuVe>	I know is not exactly like readonly mode , cause that mode lets you edit the buffer
+Mar 12 20:52:41 <FakuVe>	But not save it
+Mar 12 20:53:33 <FakuVe>	Well I can remap i to no to have any effect? innit? haha
+Mar 12 21:06:10 <nickspoon>	I don't really understand the actual goal so it's hard to answer, but I'd probably just  :set nomodifiable  and then have my "edit the buffer" mapping make it modifiable again for that action
+Mar 12 21:15:02 <kenzu>	hello guys
+Mar 12 21:15:50 <kenzu>	pretty noob question... I don't quite know /substitute
+Mar 12 21:16:25 <kenzu>	what would be the syntax to remove in file all '10 px'
+Mar 12 21:16:37 <lopid>	:%s/10 px//g
+Mar 12 21:18:00 <kenzu>	that simple
+Mar 12 21:18:09 <kenzu>	I was searching the wrong way
+Mar 12 21:18:21 <kenzu>	thanks for your quick answer lopid 
+Mar 12 23:48:09 <King_julian>	msg habamax Hi Haba , I tried the vim upgrade you recommended earlier https://github.com/habamax/.vim/blob/90d835ba2a805aade11d14ecc5fa8146a7d21c05/doc/habamax.txt#L15 , now when I start vim it shows nvim and my vimrc is not taking effect. I am confused what happened here ?  
+Mar 12 23:56:09 <nickspoon>	?? That recommandation is for building vim, where are you getting nvim from?
+Mar 13 02:55:27 <quesker>	with vim in a terminal what is a good way to mouse select multiple pages at once?  no mouse mode or anything just regular terminal select
+Mar 13 03:05:08 <quesker>	hmm looks like not possible
+Mar 13 03:05:14 <hleneto>	quesker, V for visual line mode, then PgUp and PgDn.
+Mar 13 03:13:46 <quesker>	oh sorry I mean for system clipboard.  but I figured out just use cat instead
+Mar 13 03:17:03 <quesker>	my question was poorly worded oops
+**** ENDING LOGGING AT Wed Mar 13 06:35:42 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 06:38:06 2024
+
+Mar 13 06:38:05 *	Now talking on #vim
+Mar 13 06:38:05 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 13 06:38:05 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** ENDING LOGGING AT Wed Mar 13 06:38:17 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 15:36:13 2024
+
+Mar 13 15:36:12 *	Now talking on #vim
+Mar 13 15:36:12 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 13 15:36:12 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Wed Mar 13 16:17:17 2024
+
+Mar 13 16:17:16 *	Now talking on #vim
+Mar 13 16:17:16 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 13 16:17:16 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+Mar 13 16:34:49 <Dan39>	Hello all, I'm using a fresh, unconfigured vim, besides the RHEL 8 default system-wide vimrc. Unfortunately my senior coworker uses 2 space indentation for python coding. I've found out that I can't just set ts=2 sw=2 in vimrc because the filetype plugin overrides that. I found a StackExchange page saying I can create a file ~/.vim/after/ftplugin/python.vim and setlocal ts=2 sw=2 in there. It seems to
+Mar 13 16:34:51 <Dan39>	work, but only if a user vimrc doesn't exist. As soon as I create even an empty ~/.vim/vimrc my autoindent (filetype plugin?) seems to break. Any ideas why? Or is there a better way to change my python indentation to 2 spaces instead of 4? Maybe I can copy/overwrrite the entire filetype plugin for vim? I guess I could edit the system-wide file, but that seems like a bad idea since it is part of a
+Mar 13 16:34:53 <Dan39>	distro package.
+Mar 13 16:39:34 <tanath>	the ftplugin will set that for all python files. i'd use editorconfig for that project https://github.com/editorconfig/editorconfig-vim
+Mar 13 16:44:02 <Dan39>	setting it for all files is fine, at this point i've just given in to coding everything at work with 2 space indentation
+Mar 13 16:45:46 <Dan39>	but i'm still curious why having both the /after/ftplugin/python.vim and vimrc files existing at same time seems to break auto indent
+Mar 13 16:46:40 <tanath>	iirc there are some things things that change just by having a vimrc. might be one of them
+Mar 13 16:47:20 <tanath>	but editorconfig is a good way to have project settings apply
+Mar 13 16:47:51 <Dan39>	wait... i wonder if the system-wide vimrc has a conditional to not load itself if a user vimrc exists...
+Mar 13 16:48:53 <Dan39>	nevermind, doesn't look like it. unless vim itself is doing htat
+Mar 13 16:49:21 <tanath>	should be vim. i read something like that in the help somewhere
+Mar 13 16:49:23 <igemnace>	Dan39: what exactly breaks when you create a vimrc file?
+Mar 13 16:49:37 <igemnace>	there is :h defaults.vim that might be tripping you up
+Mar 13 16:49:38 <digmbot>	:help defaults.vim -> http://vimhelp.appspot.com/starting.txt.html#defaults%2Evim
+Mar 13 16:49:58 <Dan39>	auto indent breaks
+Mar 13 16:50:19 <igemnace>	do you perhaps not have :filetype plugin indent on in any runtime files of your own? maybe your defaults.vim is doing that. it isn't loaded if there is a user vimrc
+Mar 13 16:51:13 <igemnace>	can remedy that by adding the above into your vimrc, or sourcing defaults.vim in your own vimrc like in the above help (eventually the former should pay off more)
+Mar 13 16:51:23 <Dan39>	that must be it
+Mar 13 16:54:08 <Dan39>	that fixed it, thanks igemnace 
+Mar 13 16:54:14 <igemnace>	\o/
+Mar 13 16:54:18 <Dan39>	how new is vim 8.0?
+Mar 13 16:54:29 <igemnace>	uhh
+Mar 13 16:54:33 <igemnace>	8 years?
+Mar 13 16:54:34 <tanath>	there's security issues fixed in 9.1
+Mar 13 16:54:35 <igemnace>	old
+Mar 13 16:54:54 <Dan39>	what i mean is, the doc says this behavior was added in 8.0
+Mar 13 16:55:22 <Dan39>	so maybe thats why on old distros i could create a user vimrc and only add a couple settings and still have my defaults.vim stuff working
+Mar 13 16:55:58 <Dan39>	*shrug*
+Mar 13 16:56:13 <igemnace>	ah, defaults.vim itself was only introduced around that time (patches after 7.4, formally in 8.0)
+Mar 13 16:56:29 <igemnace>	there wasn't a defaults.vim to load before that
+Mar 13 16:56:48 <igemnace>	might've been a system vimrc that did that for you automatically, that then changed when defaults.vim rolled out?
+Mar 13 16:57:11 <igemnace>	did that for you -> turned on autoindent and filetype plugin indent on, i mean
+Mar 13 16:57:27 <Dan39>	right
+Mar 13 17:00:56 <Dan39>	my system-wide has "filetype plugin on" and defaults.vim has "filetype plugin indent on"
+**** ENDING LOGGING AT Wed Mar 13 17:02:39 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 17:15:30 2024
+
+Mar 13 17:15:29 *	Now talking on #vim
+Mar 13 17:15:29 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 13 17:15:29 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Wed Mar 13 17:31:45 2024
+
+Mar 13 17:31:44 *	Now talking on #vim
+Mar 13 17:31:44 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 13 17:31:44 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Wed Mar 13 18:43:10 2024
+
+Mar 13 18:43:09 *	Now talking on #vim
+Mar 13 18:43:09 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 13 18:43:09 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Wed Mar 13 23:52:50 2024
+
+Mar 13 23:52:48 *	Now talking on #vim
+Mar 13 23:52:48 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 13 23:52:48 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Thu Mar 14 02:26:03 2024
+
+Mar 14 02:26:01 *	Now talking on #vim
+Mar 14 02:26:01 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 14 02:26:01 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+Mar 14 02:33:21 <tully>	% command doesn't jump to matching quote? Is there a way to do that?
+Mar 14 02:38:33 <habamax>	it doesn't
+Mar 14 02:39:49 <habamax>	where to jump here? "hello " world "
+Mar 14 02:40:24 <habamax>	it should syntax aware, but then what to do when syntax is off
+Mar 14 02:41:06 <habamax>	I would just use f"
+Mar 14 02:41:44 <tully>	 Makes sense
+Mar 14 02:42:31 <tully>	I wonder if it works for euro style quotes « » 😆 
+Mar 14 02:42:55 <tully>	Nope...
+Mar 14 03:43:57 <waterkip>	for themese, what is the group name for diacritics?
+Mar 14 03:49:41 <habamax>	:h group-name - default group names
+Mar 14 03:49:42 <digmbot>	:help group-name -> http://vimhelp.appspot.com/syntax.txt.html#group-name
+Mar 14 03:49:57 <habamax>	there is no diacritics group
+Mar 14 03:50:23 <waterkip>	is is special or special char?
+Mar 14 03:51:21 <habamax>	might be anything, depends on what you mean by diacritics group
+Mar 14 03:51:34 <waterkip>	so, you do :dig
+Mar 14 03:52:11 <habamax>	do you mean how digraph symbols are highlighted?
+Mar 14 03:52:30 <waterkip>	you see something like I" �, what is the I" and what is the � for the colorscheme?
+Mar 14 03:54:22 <habamax>	SpecialKey for digraph symbols
+Mar 14 03:55:30 <habamax>	I" is Normal
+Mar 14 03:57:31 <waterkip>	doesn't seem to work
+Mar 14 04:01:22 <habamax>	https://asciinema.org/a/MM2nyQNE9FmerHBgsMeefB21s
+Mar 14 04:06:15 <waterkip>	i have something odd
+Mar 14 04:06:35 <waterkip>	when do :hi it states: links to Whitespace
+Mar 14 04:07:10 <waterkip>	when I then do :hi specialkey guifg=red it doesn't and the :dig shows red
+Mar 14 04:08:16 <habamax>	if your colorscheme links it to Whitespace :hi SpecialKey will show it links to Whitespace
+Mar 14 04:08:22 <waterkip>	the color scheme has a if not nvim link specialkey to whitespace
+Mar 14 04:10:37 <ceux>	i want to map a command to toggle multiple ettings on and off
+Mar 14 04:11:13 <ceux>	 map <C-k> set nu! boo!?
+Mar 14 04:14:57 <habamax>	nnoremap <C-k> :set nu! cul!<CR>
+Mar 14 04:15:33 <ceux>	yeah that worked.  perf
+Mar 14 04:45:14 <waterkip>	habamax: thnx, I forked the colorscheme to remove nvim support and now it works like a charm
+Mar 14 05:09:38 <habamax>	waterkip, great
+Mar 14 06:43:14 <trevdev>	How's everybody?
+Mar 14 08:13:37 <King_julian>	@nickspoon and @habamax just an update re 2 days ago discussion), I finally got my vim install to work , I think it was failing because in my config I added  some of these interpreter steps like --enable-rubyinterp=yes , after I removed those the make completed. And oh I didn't realize I had to reload bash (exec bash -l). Anyways. I eventually used this approach : https://github.com/ycm-core/YouCompleteMe/wiki/Building-Vim-from-s
+Mar 14 08:13:38 <King_julian>	ource , hopefully my Youcompleteme will now work again, will try reinstall today again. Tx guys for all the patience and help
+Mar 14 08:28:46 <habamax>	np
+**** ENDING LOGGING AT Thu Mar 14 09:59:27 2024
+
+**** BEGIN LOGGING AT Thu Mar 14 10:06:39 2024
+
+Mar 14 10:06:38 *	Now talking on #vim
+Mar 14 10:06:38 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 14 10:06:38 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Thu Mar 14 10:11:09 2024
+
+Mar 14 10:11:08 *	Now talking on #vim
+Mar 14 10:11:08 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 14 10:11:08 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Thu Mar 14 10:15:56 2024
+
+Mar 14 10:15:54 *	Now talking on #vim
+Mar 14 10:15:54 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 14 10:15:54 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Thu Mar 14 10:34:17 2024
+
+Mar 14 10:34:17 *	Now talking on #vim
+Mar 14 10:34:17 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 14 10:34:17 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** ENDING LOGGING AT Thu Mar 14 10:35:41 2024
+
+Mar 14 11:48:52 <nerdypepper>	a little thought experiment: would it be possible to implement "anonymous enum returns" with just macros? i am thinking something like `-> Result<T, Err1 | Err2 | Err3>`
+Mar 14 11:49:33 <nerdypepper>	internally, it could create an enum type, it would just be impossible to name this type in code 
+Mar 14 11:49:52 <nerdypepper>	oops, meant to post that in #rust, apologies
+Mar 14 15:03:17 <jclsn>	Is there a way to make Vim show the eol at the end of the file?
+Mar 14 15:09:37 <lopid>	other than ':set list'?
+Mar 14 15:09:54 <nedbat>	jclsn: I thought listchars might have a way, but it doesn't.
+Mar 14 16:46:39 <skered>	When plug or coc run update they open a split.  I might be able configure each to us somethign isn't a split (existing buffer, tab, new buffer) however is it possible to set vim to open splits as something else (pervious list).
+Mar 14 16:47:08 <romainl>	"to open splits as something else"?
+Mar 14 16:47:39 <skered>	If something trys to :split it's a new buffer, or exsiting buffer, or tab
+Mar 14 16:48:06 <skered>	If not then I'll try to check for setting for each.
+Mar 14 16:49:07 <romainl>	not clearer but :h 'switchbuf' might be of interest
+Mar 14 16:49:07 <digmbot>	:help 'switchbuf' -> http://vimhelp.appspot.com/options.txt.html#%27switchbuf%27
+Mar 14 16:51:34 <skered>	Thanks I'll take a look
+Mar 14 17:16:53 <ceux>	jesus looking at my vim config and it was last updated in like 2011
+Mar 14 17:16:59 <ceux>	apparently vundle is no longer in vogue??
+Mar 14 17:17:36 <romainl>	why do you show your vimrc to jesus? don't you think he has better things to do?
+Mar 14 17:17:46 <ceux>	probably has a sick vimrc
+Mar 14 17:18:03 <ceux>	nnoremap <C-p> :!smite %
+Mar 14 17:19:00 <romainl>	vundle is indeed no longer in vogue
+Mar 14 17:19:21 <ceux>	ok, so i was looking at the native vim8 package stuff, it seems, well not obtuse, but definitely.. engineered
+Mar 14 17:19:32 <romainl>	vim-plug has taken the crown
+Mar 14 17:19:33 <ceux>	is there a frontend someone has written to manage my packages utilizing that storage system
+Mar 14 17:19:50 <ceux>	romainl: and i am still good to just stick plugin files in .vim/plugin/myplugin.vim?
+Mar 14 17:20:05 <romainl>	still works, still messy
+Mar 14 17:20:22 <ceux>	yeah, i just meant for 'my' plugins
+Mar 14 17:20:29 <ceux>	just ones i have written that are single files.
+Mar 14 17:20:29 <romainl>	the package stuff is the bee's knees
+Mar 14 17:20:46 <ceux>	sure, so basically, install vplug, it'll use the new package system?
+Mar 14 17:21:22 <romainl>	not sure, I don't use a plugin manager and thus not plug
+Mar 14 17:21:32 <ceux>	I see, so you manage them manually?
+Mar 14 17:21:53 <romainl>	"manage" is a big word
+Mar 14 17:22:22 <romainl>	but yes
+Mar 14 17:22:25 <ceux>	lol, i mean pull down updates and create new ones
+Mar 14 17:22:55 <ceux>	sorry, i have been such a long time user of vim but i woefully under use it...
+Mar 14 17:23:05 <ceux>	what is in my vimrc : vmap <leader>Y "*y
+Mar 14 17:23:17 <ceux>	is that, in visual "Y" takes my selection and yanks it to the x11 buffer?
+Mar 14 17:23:56 <romainl>	<leader>Y, not Y
+Mar 14 17:24:14 <ceux>	what's leader in this case?
+Mar 14 17:24:40 <romainl>	simple question, complicated subject
+Mar 14 17:25:06 <romainl>	if you let mapleader to something in your vimrc then it is that something
+Mar 14 17:25:19 <romainl>	if not, it's \ by default
+Mar 14 17:26:36 <ceux>	i dont have map leader defined anywhere...
+**** BEGIN LOGGING AT Fri Mar 15 03:40:52 2024
+
+Mar 15 03:40:51 *	Now talking on #vim
+Mar 15 03:40:51 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 15 03:40:51 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** BEGIN LOGGING AT Fri Mar 15 03:45:00 2024
+
+Mar 15 03:45:00 *	Now talking on #vim
+Mar 15 03:45:00 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 15 03:45:00 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+**** ENDING LOGGING AT Fri Mar 15 03:45:01 2024
+
+**** ENDING LOGGING AT Fri Mar 15 05:52:58 2024
+
+**** BEGIN LOGGING AT Fri Mar 15 06:03:29 2024
+
+Mar 15 06:03:26 *	Now talking on #vim
+Mar 15 06:03:26 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 15 06:03:26 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+Mar 15 06:23:07 <quesker>	this is weird, z<enter> is not putting this line at the top
+Mar 15 06:34:22 <habamax>	set scrolloff?
+Mar 15 06:40:21 <quesker>	ah.  scrolloff=5.  lame
+Mar 15 06:40:25 <quesker>	thanks
+Mar 15 06:41:00 <quesker>	more distro arrogance
+Mar 15 06:54:01 <pid1400>	i want to add the keybinding CTRL+SHIFT+C inside vim, such that, if im editing a file at /home/user/doc.txt , and i hit CTRL+SHIFT+C, /home/user/doc.txt is copied
+Mar 15 06:54:09 <pid1400>	how do i achieve that?
+Mar 15 07:13:18 <pid1400>	lopid ping
+Mar 15 09:47:38 <pid1400>	i want to add the keybinding CTRL+SHIFT+C inside vim, such that, if im editing a file at /home/user/doc.txt , and i hit CTRL+SHIFT+C, /home/user/doc.txt is copied how do i achieve that?
+Mar 15 09:51:39 <igemnace>	pid1400: nnoremap <C-S-c> :let @+ = @%<CR>
+Mar 15 09:52:03 <igemnace>	though, <C-S-c> will likely only work on gvim (haven't kept up with whether that's possible now on terminal)
+Mar 15 11:52:58 <gyrow>	I'm trying to figure out how to use "coc", I've been used to ^n to select autocompletions but if I set suggest.noselect to true, it still selects the first item in the list of autocompletions? I don't see what I'm doing wrong
+Mar 15 12:15:18 *	Disconnected ()
+**** ENDING LOGGING AT Fri Mar 15 12:15:18 2024
+
+**** BEGIN LOGGING AT Fri Mar 15 12:17:55 2024
+
+Mar 15 12:17:55 *	Now talking on #vim
+Mar 15 12:17:55 *	Topic for #vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+Mar 15 12:17:55 *	Topic for #vim set by jamessan (Tue Jan  2 18:53:57 2024)
+Mar 15 12:33:34 <m0norail>	Hi. I have created my first Vim plugin and I am looking for feedback: https://github.com/qadzek/vim-md-link It converts inline links [foo](http://foo.com) to reference links [foo][5] in Markdown documents.
+Mar 15 12:33:53 <m0norail>	It would be awesome if someone would be willing to review the code or just try the plugin. I have written some Vimscript before, but never a plugin.  It was my first time adding autoloading, writing a :help page, creating tests etc., so I am sure there is a lot that can be improved.
+Mar 15 13:29:11 <FakuVe>	Hi there , can anyone help me doing a simple toggle on a ../autoload/file.vim ?
+Mar 15 13:29:56 <FakuVe>	I have got the following in a file in ../autoload/dan.vim https://termbin.com/azkl
+Mar 15 13:30:52 <FakuVe>	I am trying to call the function by :cal dan#ToggleXConceal E107: Missing parentheses: dan#ToggleXConceal
+Mar 15 13:31:45 <lopid>	have you tried adding parens?
+Mar 15 13:33:01 <FakuVe>	Where
+Mar 15 13:35:29 <lopid>	to the function call
+Mar 15 13:36:06 <lopid>	:help E107
+Mar 15 13:36:06 <digmbot>	:help E107 -> http://vimhelp.appspot.com/userfunc.txt.html#E107
+Mar 15 13:36:50 <FakuVe>	oh yeah. Thanks
+Mar 15 13:37:50 <FakuVe>	How can you do a toggle? I need to store a global variable isnt it?
+Mar 15 13:40:01 <lopid>	on an option? :help set-!
+Mar 15 13:40:02 <digmbot>	:help set-! -> http://vimhelp.appspot.com/options.txt.html#%3Aset-%21
+Mar 15 13:41:03 <lopid>	if it's a 0/1 variable, you can just 1 - var
+Mar 15 13:42:18 <FakuVe>	Alright cheers
+Mar 15 14:16:02 <FakuVe>	lopid: not an option , a custom toggle...
+Mar 15 14:19:23 <FakuVe>	its ok I got it
+Mar 15 15:01:46 <dbungert>	m0norail: love seeing the no built-in keybindings, giving suggestions on keybindings instead
+Mar 15 15:03:25 <tsenko>	in the help pages .. how to follow a marked word like ... Filter {motion} text lines
+Mar 15 15:03:31 <tsenko>	how to go to motion 
+Mar 15 15:04:16 <igemnace>	tsenko: <C-]>
+Mar 15 15:07:04 <m0norail>	dbungert: Yeah, I have experienced issues too many times because of predefined key bindings, so I've decided to just give some suggestions.
+Mar 15 15:12:57 <tsenko>	igemnace: thanks 
+Mar 15 15:15:06 <tsenko>	how do i pass a visual sellection through an external command and then replace the selection with the result ... like  echo <visual select> | uconv -x latn-cyrl
+Mar 15 15:16:13 <osse>	tsenko: Linewise it's easy:  :'<,'>!uconv -x latn-cyrl  
+Mar 15 15:16:17 <osse>	Not linewise is tricky
+Mar 15 15:23:33 <tsenko>	osse: thanks alot .. tha's what i wantet .. buddha bless you

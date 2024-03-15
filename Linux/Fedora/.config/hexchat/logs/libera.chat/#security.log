@@ -1915,3 +1915,234 @@ Mar 12 00:38:02 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Su
 Mar 12 00:55:44 *	Now talking on #security
 Mar 12 00:55:44 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
 Mar 12 00:55:44 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Tue Mar 12 07:33:42 2024
+
+Mar 12 07:33:41 *	Now talking on #security
+Mar 12 07:33:41 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 12 07:33:41 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 12 08:56:01 <gnrp>	Wulf: Should be fine. When it's not queried directly, there isn't much that normally asks for the second level domain
+Mar 12 08:56:38 <gnrp>	however, as always, "it depends". There might be weird services or outdated software which does. One cannot make a general statement about that without knowing all the services that otherwise run on the domain
+Mar 12 08:58:49 <Wulf>	gnrp: I'm also worried about how browsers might behave when they visit '<domain>', that server sends strange headers and then the browser visits 'internal.<domain>'.
+Mar 12 10:53:58 <gnrp>	Wulf: As I said, it is a question of what other services you are running otherwise that could be affected
+Mar 12 10:54:42 <gnrp>	surely there are *many* new attack vectors anyway by outsourcing the website, and there might be services which really don't deal well with the main domain being somewhere else. But in general, I'd say it is fine
+Mar 12 10:55:23 <gnrp>	Wulf: When you see a danger in visiting the website and then being referred somewhere else... well, that issue is much more on a social level, probably. When the website says "You are all laid off. Please report to the civil office" then that is certainly a problem
+Mar 12 14:09:06 <nsh>	anyone know how VPN provider browser extensions work? the Hola one was pretty dubious but that was a while ago and haven't seen much coverage of them since
+Mar 12 14:32:07 <luna_>	https://www.nuug.no/aktiviteter/20240312-freebsd-and-absurdity-of-security/ FreeBSD and Security talk in Oslo later today in 4 hours not sure if its in English or Norweigan however
+Mar 12 14:48:53 *	calmclam gets the popcorn maker ready
+Mar 12 16:25:38 <ice9>	anybody interested about technology that targets human body?
+Mar 12 16:25:54 <gnrp>	ice9: You mean like a hammer?
+Mar 12 16:36:46 <Wulf>	or clothing? no, not really interested ;-)
+Mar 12 16:37:05 <xorAxAx>	ice9: you mean brain interfaces?
+Mar 12 16:56:23 <hirogen>	hi there
+Mar 12 16:56:32 <hirogen>	looking for a vendor to sell us cyberArk in the Uk London ?
+Mar 12 16:58:46 <hirogen>	oh i hear MS are doing their own EPM solution soon?
+**** BEGIN LOGGING AT Tue Mar 12 17:00:34 2024
+
+Mar 12 17:00:31 *	Now talking on #security
+Mar 12 17:00:31 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 12 17:00:31 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 12 18:18:58 <Peppi^>	Hello anyone here deal with DMARC?
+Mar 12 18:21:11 <luna_>	https://www.youtube.com/watch?v=DkepLbF5eKg
+Mar 12 19:28:35 <thumbs>	Lovely link without context.
+**** ENDING LOGGING AT Wed Mar 13 06:35:42 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 06:38:06 2024
+
+Mar 13 06:38:05 *	Now talking on #security
+Mar 13 06:38:05 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 13 06:38:05 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** ENDING LOGGING AT Wed Mar 13 06:38:17 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 15:36:13 2024
+
+Mar 13 15:36:12 *	Now talking on #security
+Mar 13 15:36:12 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 13 15:36:12 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Wed Mar 13 16:17:17 2024
+
+Mar 13 16:17:16 *	Now talking on #security
+Mar 13 16:17:16 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 13 16:17:16 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** ENDING LOGGING AT Wed Mar 13 17:02:39 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 17:15:30 2024
+
+Mar 13 17:15:29 *	Now talking on #security
+Mar 13 17:15:29 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 13 17:15:29 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Wed Mar 13 17:31:45 2024
+
+Mar 13 17:31:44 *	Now talking on #security
+Mar 13 17:31:44 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 13 17:31:44 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Wed Mar 13 18:43:10 2024
+
+Mar 13 18:43:09 *	Now talking on #security
+Mar 13 18:43:09 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 13 18:43:09 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Wed Mar 13 23:52:50 2024
+
+Mar 13 23:52:48 *	Now talking on #security
+Mar 13 23:52:48 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 13 23:52:48 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Thu Mar 14 02:26:03 2024
+
+Mar 14 02:26:01 *	Now talking on #security
+Mar 14 02:26:01 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 14 02:26:01 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 14 06:47:40 <big-MAC>	test
+Mar 14 06:47:46 <big-MAC>	someone try dosing my ip address please
+Mar 14 07:31:46 <big-MAC>	https://inv.schizo.services/watch?v=08Vt4VkDH4A
+**** ENDING LOGGING AT Thu Mar 14 09:59:27 2024
+
+**** BEGIN LOGGING AT Thu Mar 14 10:06:38 2024
+
+Mar 14 10:06:38 *	Now talking on #security
+Mar 14 10:06:38 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 14 10:06:38 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Thu Mar 14 10:11:09 2024
+
+Mar 14 10:11:08 *	Now talking on #security
+Mar 14 10:11:08 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 14 10:11:08 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Thu Mar 14 10:15:55 2024
+
+Mar 14 10:15:54 *	Now talking on #security
+Mar 14 10:15:54 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 14 10:15:54 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** BEGIN LOGGING AT Thu Mar 14 10:34:17 2024
+
+Mar 14 10:34:17 *	Now talking on #security
+Mar 14 10:34:17 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 14 10:34:17 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** ENDING LOGGING AT Thu Mar 14 10:35:41 2024
+
+Mar 14 12:09:39 <hirogen>	any contacts here to purchase cyberArc EPM licences ? looking for a good price, UK based. or emea i guess if possible
+Mar 14 12:23:50 <big-MAC>	guys try ddosing my ip please
+Mar 14 12:23:52 <big-MAC>	schizo.services
+Mar 14 12:23:54 <big-MAC>	lots of open ports
+Mar 14 12:24:04 <big-MAC>	open pentest
+Mar 14 12:35:03 <nsh>	big-MAC, how might we know its yours and you're not just inviting attacks on somebody else's infrastructure
+Mar 14 12:41:13 <nsh>	+?
+Mar 14 12:48:19 <big-MAC>	good question
+Mar 14 13:08:46 <tomreyn>	also, pushing large amounts of data to some ip address would not just affect that very endpoint but also the infrastructure around it. so if this was legitimate you'd need to get and present a permit to the organization offering to test the infra's ability to filter the traffic.
+Mar 14 13:12:25 <big-MAC>	oh
+Mar 14 13:14:40 <big-MAC>	depends on the laws though
+Mar 14 13:14:57 <big-MAC>	no such laws here
+Mar 14 14:58:15 *	calmclam releases the hamburglar on big-MAC
+Mar 14 17:04:57 *	big-MAC eats
+Mar 14 17:12:06 <thumbs>	big-MAC: How about no, and stop asking?
+Mar 14 17:12:18 <big-MAC>	why?
+Mar 14 17:13:17 <big-MAC>	its literally my own infra but i cant figure out how to uncloak myself in order to show my ip
+Mar 14 17:13:47 <calmclam>	This big-MAC has found itself in a pickle
+Mar 14 17:14:10 <big-MAC>	there
+Mar 14 17:14:11 <big-MAC>	that was me
+Mar 14 17:14:16 <big-MAC>	nslookup schizo.services
+Mar 14 17:14:29 <calmclam>	.t
+Mar 14 17:14:31 <EmmyNoether>	Hustle Athletics - Lekker (Posij Remix) - Invidious
+Mar 14 17:15:02 <thumbs>	big-MAC: We have no way to know that your claims are true, and targetting a third party is illegal.
+Mar 14 17:15:23 <thumbs>	big-MAC: This is not the right channel, nor network, for this.
+Mar 14 18:28:29 <goonmorning>	hello
+Mar 14 18:28:43 <goonmorning>	What was hmac called in 2002?
+Mar 14 18:32:08 <big-MAC>	md5?
+Mar 14 18:32:15 <big-MAC>	sha-1?
+Mar 14 18:34:25 <tomreyn>	"The definition and analysis of the HMAC construction was first published in 1996 in a paper by Mihir Bellare, Ran Canetti, and Hugo Krawczyk, and they also wrote RFC 2104 in 1997." https://en.wikipedia.org/wiki/HMAC
+Mar 14 18:34:54 *	calmclam awards tomreyn 100 points and control of the board
+Mar 14 18:35:35 <tomreyn>	yippie, finally a reason to live!
+Mar 14 18:36:59 <goonmorning>	Well, that should be technically right ...
+Mar 14 18:37:43 <tomreyn>	what makes you think it was called differently before 2002?
+Mar 14 18:44:25 <goonmorning>	It is a similar reason we see stars that are no longer exist.
+Mar 14 18:51:28 <calmclam>	far out man
+Mar 14 18:51:30 <tomreyn>	so you're reading RFC 2104 from outside milky way?
+Mar 14 18:53:17 <tomreyn>	that or NIST FIPS report 198
+Mar 14 18:56:02 <goonmorning>	That's not bad. Thank you, bye.
+Mar 14 19:02:22 <frenchboy[m]>	I love fortinet homepage press propaganda and then in the psirt advisory you get a sqli that can give rce
+Mar 14 19:03:03 <big-MAC>	u saw that boa webserver CVE that claims sql injection is possible
+Mar 14 19:03:09 <big-MAC>	but boa doesnt even use SQL
+Mar 14 19:05:23 <big-MAC>	https://www.cvedetails.com/cve/CVE-2022-44117/
+Mar 14 19:26:36 <tomreyn>	big-MAC: are you aware that you can request updates to CVE records at cve.org?
+Mar 14 19:26:45 <big-MAC>	no
+Mar 14 19:26:52 <tomreyn>	well, now you are
+Mar 14 19:26:53 <big-MAC>	i dont care enough anyways
+Mar 14 19:27:09 <tomreyn>	a pity
+Mar 14 19:27:36 <big-MAC>	you could do it!
+Mar 14 19:28:01 <tomreyn>	you could have done it in the time you brought it up here.
+Mar 14 19:28:26 <calmclam>	sounds like big-MAC's special sauce has turned yellow
+Mar 14 19:28:42 <big-MAC>	what color was the sauce originally?
+Mar 14 19:32:04 <tomreyn>	back in the day people on the internet actually contributed towards common goals, such as fostering troves of information we're still benefitting from today. those were the times.
+Mar 14 19:32:54 *	big-MAC *coughs* wikipedia *coughs*
+Mar 14 19:37:00 <BlueyHealer>	You are saying this as if the phenomenon you're talking about is over. I think it's bigger than it used to be, just seems smaller because it is a lesser *share* of overall content online.
+Mar 14 19:38:44 <big-MAC>	i'd like to think im experiencing the 1990's over here in libera.chat
+Mar 14 19:40:15 <BlueyHealer>	I mean outside of IRC as well. Also Libera seems to be fairly strict.
+Mar 14 19:40:45 <BlueyHealer>	IRC is too small to count, let's be honest.
+Mar 14 19:43:26 *	calmclam fires up winnuke
+Mar 14 19:50:40 <tomreyn>	BlueyHealer: you're right, fortunately, sorry about the negativity. science and open source publishing etc. are growing, are not over at all. there are just too many who nowadays grow up with a misunderstanding of what it means to be 'cool' and what makes you stand out (in a positive way).
+Mar 14 19:54:22 <big-MAC>	what in the fuck are you going on about
+Mar 14 19:54:26 <big-MAC>	are you on drugs?
+Mar 14 19:54:52 <big-MAC>	psychological issues?
+Mar 14 19:55:53 *	calmclam is super-sized fried
+Mar 14 19:57:44 <tomreyn>	fortunately, too, often times those misunderstandings seem to be just tied to a certain period in life, and things can go better later thanks to exposure to education.
+Mar 14 19:58:46 <tomreyn>	please excuse me while i return to inhaling O² drugs.
+Mar 14 19:59:21 <calmclam>	O^2 is for squares
+Mar 14 19:59:49 <tomreyn>	you got me there.
+Mar 15 03:32:47 <hays>	tomreyn: no agree things are trending badly. everything is commercialized, GPL is constantly weakening in terms of how much its used, and i sense that free distros of Linux are struggling a bit
+Mar 15 03:33:48 <hays>	companies are using publishing findings as a recruiting tool in AI; they have no commitment to free information. this was recently made clear with openAI emails
+Mar 15 03:34:44 <hays>	the browser situation is getting worse. firefox support is getting dropped in (usually corporate) web software
+Mar 15 03:35:18 <hays>	chrome and the others have tracking in them, or are run by a cryptobro.
+Mar 15 03:35:55 <hays>	stallman was basically pushed out of his own organization
+**** BEGIN LOGGING AT Fri Mar 15 03:40:51 2024
+
+Mar 15 03:40:51 *	Now talking on #security
+Mar 15 03:40:51 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 15 03:40:51 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 15 03:44:24 <rbatty>	isn't he back now?
+**** BEGIN LOGGING AT Fri Mar 15 03:45:00 2024
+
+Mar 15 03:45:00 *	Now talking on #security
+Mar 15 03:45:00 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 15 03:45:00 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+**** ENDING LOGGING AT Fri Mar 15 03:45:01 2024
+
+Mar 15 03:47:42 <hays>	rbatty that would be interesting news
+Mar 15 03:52:51 <hays>	yes he's back. glad to hear that, i think. i mean, i also hope he's learned something because really at his age he should have some more wisdom about some of these other topics he got in trouble about. but i like him in power because he's demonstrated a real, unwavering commitment to open source
+**** ENDING LOGGING AT Fri Mar 15 05:52:58 2024
+
+**** BEGIN LOGGING AT Fri Mar 15 06:03:28 2024
+
+Mar 15 06:03:26 *	Now talking on #security
+Mar 15 06:03:26 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 15 06:03:26 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 15 06:45:06 <big-MAC>	ive 4 established tcp connections to my sshd daemon
+Mar 15 06:45:35 <big-MAC>	when i whois the ip address its the funniest shit ever
+Mar 15 06:45:39 <big-MAC>	whois 39.104.114.67
+Mar 15 06:57:06 <big-MAC>	what in the fuck could be happening?
+Mar 15 07:19:48 <Wulf>	big-MAC: how is the whois output funny in any way? I must have missed the joke.
+Mar 15 07:20:39 <big-MAC>	CHINA
+Mar 15 07:21:17 <Wulf>	lol... now I get it, China!  huh... no, still not getting it.
+Mar 15 07:21:52 <Wulf>	Yes, they've got internet in China.
+Mar 15 07:23:59 <big-MAC>	THE CHINESE COMMUNIST PARTY IS TARGETING ME
+Mar 15 07:24:00 <big-MAC>	THE CHINESE COMMUNIST PARTY IS TARGETING ME
+Mar 15 07:24:00 <big-MAC>	THE CHINESE COMMUNIST PARTY IS TARGETING ME
+Mar 15 07:26:25 <Wulf>	I wish they actually did.
+Mar 15 07:27:39 <big-MAC>	BUT
+Mar 15 07:27:40 <big-MAC>	THEY ARE
+Mar 15 07:27:45 <big-MAC>	WINNIE THE POOH LOVES ME
+Mar 15 12:15:18 *	Disconnected ()
+**** ENDING LOGGING AT Fri Mar 15 12:15:18 2024
+
+**** BEGIN LOGGING AT Fri Mar 15 12:17:55 2024
+
+Mar 15 12:17:55 *	Now talking on #security
+Mar 15 12:17:55 *	Topic for #security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+Mar 15 12:17:55 *	Topic for #security set by ajak!ajak@gentoo/developer/ajak (Sun Sep  3 18:00:58 2023)
+Mar 15 14:09:04 <calmclam>	oh bother
+Mar 15 15:19:46 <calmclam>	big-MAC: Someone must have taken you up on your ddos request, mcdonalds is down
+Mar 15 15:20:10 <big-MAC>	where
+Mar 15 15:20:22 <calmclam>	worldwide
+Mar 15 15:22:31 <big-MAC>	proof?
+Mar 15 15:23:20 *	calmclam hands big-MAC a signed affidavit from ronald mcdonald
+Mar 15 15:24:05 *	big-MAC hands calmclam a bunch of calmly cooked butter clams
+Mar 15 15:24:15 <calmclam>	:O
+Mar 15 15:25:42 <calmclam>	you monster
+Mar 15 15:26:17 *	calmclam has suffered a big-MAC attac
+Mar 15 15:26:18 <big-MAC>	im hungry now

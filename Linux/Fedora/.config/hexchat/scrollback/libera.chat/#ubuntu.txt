@@ -3616,3 +3616,681 @@ T 1710210977 18<19Tingo18>	Hi..
 T 1710211015 18<19Tingo18>	Hi, # openssl s_client IP:Port -tls1_2 -trace
 T 1710211029 18<19Tingo18>	How can i check which SecLevel is used from above command ?
 T 1710211478 18<22pragmaticenigma18>	Tingo, Unless you explicately set the SecLevel, it is either set by a configuration file, or going to be negotiated at time of connection
+T 1710212163 18<20sem18>	I intend to install ubuntu on a partition of an SSD, and install grub to that disk, and select it from BIOS when I want to boot ubuntu. Does that sound reasonable?
+T 1710212181 18<22rbox18>	sure
+T 1710212186 18<20sem18>	The other dual-boot problem that I know to head off is to tell Ubuntu to leave the RTC in local time, not UTC
+T 1710212197 18<20sem18>	because that will confuse windows
+T 1710212205 18<20sem18>	if i don't do that
+T 1710212239 18<20sem18>	do you all know of any good trustworthy references for dual boot best practices in this day and age?
+T 1710212258 18<22rbox18>	best practice is to just get rid of windows
+T 1710212260 18<22rbox18>	:P
+T 1710212332 18<20sem18>	thanks that's very helpful
+T 1710212438 18<22Bashing-om18>	!dualboot
+T 1710212438 18<19ubottu18>	Dual boot instructions: x86/AMD64: https://help.ubuntu.com/community/DualBoot/Windows - Macs: https://help.ubuntu.com/community/MacBookPro https://help.ubuntu.com/community/YabootConfigurationForMacintoshPowerPCsDualBoot
+T 1710212451 18<26KernelPanicXD18>	yo
+T 1710212558 18<20sem18>	I appreciate it! Thanks Bashing-om
+T 1710212630 18<22Bashing-om18>	sem: No problem - welcome :D
+T 1710225221 19*	Now talking on 22#ubuntu
+T 1710225221 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710225221 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710225221 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710232320 18<25silv3r_m00n18>	hi there, i put a 256gb sata ssd in an enclosure and installed ubuntu on it using full drive encryption. now i am able to use ubuntu portably across multiple machine and it feels quite productive. are there any other things that can be done to improve this kind of a setup
+T 1710232562 18<26ikonia18>	improve in what way
+T 1710232584 18<26ikonia18>	personally I don't think booting one install on multiple machines is a good model
+T 1710232628 18<22akik18>	if it works, it works
+T 1710232939 18<22akik18>	silv3r_m00n: ?
+T 1710233530 18<22tjon18>	ελληνικα μονο παιδια .ειμαι νεος
+T 1710233836 18<24swift110-mobile18>	Hey all
+T 1710248853 18<22BluesKaj18>	Hi all
+T 1710250072 18<27johnfg18>	hi folks
+T 1710250309 18<27johnfg18>	I'm getting an error from the snap-store, about it not being able to update.  Unable to update "Snap Store":  (null): cannot refresh "snap-store": snap "snap-store" has running apps (ubuntu-software), pids: 2014.
+T 1710250343 18<19ravage18>	try "kill 2014" in a terminal
+T 1710250671 18<27johnfg18>	Got it done.  Some weirdness there, but I guess it's resolved.
+T 1710259231 19*	Now talking on 22#ubuntu
+T 1710259231 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710259231 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710259231 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710263015 18<20sem18>	Hey all, my graphics are all glitched out, but I still have a mouse that moves around
+T 1710263033 18<20sem18>	Going to virtual terminals doesn't unglitch the screen or remove the mouse
+T 1710263073 18<20sem18>	It kind of acts like it's on the lock screen with a slideshow, but all glitched out
+T 1710263147 18<20sem18>	https://cdn.discordapp.com/attachments/969760851101880366/1217156507238404186/d2ccf0dc-0a98-430f-9557-dbc02570cd3c.jpg?ex=66030055&is=65f08b55&hm=90ee696496bf52a0cd2155194eda9e9c8c3d73858acca2b6e6a931b8fbc803a1&
+T 1710263157 18<20sem18>	Uuh hold on
+T 1710263202 18<20sem18>	Without tracking: https://cdn.discordapp.com/attachments/969760851101880366/1217156507238404186/d2ccf0dc-0a98-430f-9557-dbc02570cd3c.jpg
+T 1710263227 18<20sem18>	I guess you need those parts of the url after all
+T 1710263263 18<20sem18>	My question is: will any of the sysreg shortcuts get me back to a virtual console
+T 1710263508 18<20sem18>	I'm un glitched! Alt-Sysreg-f worked to invoke the OOM killer it just took a long time
+T 1710266128 18<19Sora18>	i'm trying to run some proprietary gpu software in a vnc but get errors cuda_error_not_initialized and it's only able to detect mesa, not the nvidia graphics card
+T 1710266138 18<19Sora18>	how do i run this software under the gpu
+T 1710266154 18<19Sora18>	nvidia-smi shows correct driver and cuda version and my gpu
+T 1710267282 18<22akik18>	p
+T 1710269973 18<24Guest994718>	Bitcoin .. Captialsim .. ich glaube Powershell ist C++ oder C# .. wie Linux Konsole .. terminal ..
+T 1710269977 18<24Guest994718>	eigentlich Neo
+T 1710270007 18<27stenno18>	diggi hier wird englisch gesprochen
+T 1710270030 18<20leftyfb18>	Guest9947: this is a support channel
+T 1710270042 18<29mkou_18>	yes gespoken uch bin der maumeister und ... Neo is pu$$ y
+T 1710270091 18<28bprompt18>	!de | Guest9947
+T 1710270091 18<19ubottu18>	Guest9947: In den meisten Ubuntu-Kanälen wird nur Englisch gesprochen. Für deutschsprachige Hilfe besuche bitte #ubuntu-de. Einfach "/join #ubuntu-de" eingeben. Danke für Dein Verständnis!
+T 1710270108 18<27stenno18>	didn't know this trigger, nice
+T 1710270149 18<28bprompt18>	!fr | stenno  // =)
+T 1710270149 18<19ubottu18>	stenno  // =): Nous sommes desoles mais ce canal est en anglais uniquement. Si vous avez besoin d'aide ou voulez discuter en français, veuillez taper «/join #ubuntu-fr» ou «/join #ubuntu-qc». Merci.
+T 1710270163 18<27stenno18>	tres bien
+T 1710270165 18<24mkou18>	can you please help me find the name of that terminal that is loading from the either side of the screen and pops out on a shortcut key
+T 1710270220 18<28bprompt18>	hmmmmm, is a kde app IIRC, I used it, didn't like it too much
+T 1710270244 18<24mkou18>	its not that one
+T 1710270255 18<28bprompt18>	eh?
+T 1710270274 18<28bprompt18>	mkou: are you referring to Yakuake?
+T 1710270310 18<24mkou18>	the name was close to termux
+T 1710270324 18<24mkou18>	but its not the one termux
+T 1710270338 18<28bprompt18>	well, yakuake does that =P
+T 1710270376 18<24mkou18>	its not yakuake
+T 1710270385 18<24mkou18>	but I will check it, might be good
+T 1710270425 18<28bprompt18>	yakuake slides IN/OUT of the edges
+T 1710270475 18<24mkou18>	left and right side possible?
+T 1710270491 18<28bprompt18>	mkou:  yeap, is configurable from what I recall
+T 1710270568 18<24mkou18>	ill give it a chance, but I really wish to find the one I used, the name was very close to termux
+T 1710270611 18<24mkou18>	checked all "top 10 terminals" guides, no luck yet  :D
+T 1710270642 18<28bprompt18>	hehe, and google's search AI help blows, heheh, doesn't show much
+T 1710270680 18<24mkou18>	naturally shifted to duck 6-7 years ago
+T 1710270720 18<24mkou18>	occasionally do a search on google, when on a fresh install and cant believe my eyes :D
+T 1710270724 18<20leftyfb18>	mkou: tilda
+T 1710270729 18<24mkou18>	leftyfb,
+T 1710270730 18<24mkou18>	yes
+T 1710270735 18<24mkou18>	i think it was tilda
+T 1710270735 18<24mkou18>	man
+T 1710270820 18<28bprompt18>	ahemm, tilda is not even close to termux :P
+T 1710270829 18<28bprompt18>	I mean, name wise
+T 1710270867 18<24mkou18>	no its not tilda, saw it in the top 10 suggestions
+T 1710270923 18<24mkou18>	leave it, I will find it eventually and will share it here, you will love it
+T 1710271091 18<28bprompt18>	mkou: were you running it before? was it installed?
+T 1710271102 18<28bprompt18>	I mean, you can check logs
+T 1710271178 18<24mkou18>	was long time ago
+T 1710271185 18<24mkou18>	maybe an year
+T 1710271197 18<24mkou18>	did few fresh installs since then
+T 1710271242 18<28bprompt18>	mkou: then check your local hypnotist then =)
+T 1710271250 18<24mkou18>	but do you know what Im thinking
+T 1710271281 18<28bprompt18>	mkou:  yes, yakuake does that, slide from the edges in and out
+T 1710271294 18<24mkou18>	ill try it
+T 1710271362 18<24mkou18>	but listen, if cat is printing a file's content, while grep is searching for a string through files
+T 1710271381 18<24mkou18>	right, so cat file | grep string
+T 1710271395 18<24mkou18>	should be much better than just grep string
+T 1710271409 18<20leftyfb18>	why?
+T 1710271418 18<20leftyfb18>	grep string file
+T 1710271418 18<24mkou18>	in terms of loading too much in the server
+T 1710271435 18<20leftyfb18>	cat | grep spawns 2 processes
+T 1710271441 18<20leftyfb18>	grep is only 1
+T 1710271447 18<20leftyfb18>	cat | grep is pointless
+T 1710271465 18<24mkou18>	I know, grep file string does what cat | grep string does,
+T 1710271479 18<20leftyfb18>	except with twice the number of processes running
+T 1710271488 18<24mkou18>	but m
+T 1710271555 18<24mkou18>	but if you cat the file and grep from it, you are grepping one file
+T 1710271577 18<20leftyfb18>	if you grep a file you are grepping one file
+T 1710271578 18<24mkou18>	if you grep a directory, you are searching thought files and directories
+T 1710271584 18<24mkou18>	so grep is heavier than cat + grep
+T 1710271592 18<20leftyfb18>	huh?
+T 1710271610 18<24mkou18>	I am not arguing , just trying to understand it
+T 1710271657 18<20leftyfb18>	why would you compare cat | grep a file to grepping an entire directory structure recursively?
+T 1710271670 18<20leftyfb18>	obviously cat file is only 1 file and grep -R will search all files
+T 1710271685 18<20leftyfb18>	but if you already know the file name, then just use grep on the file name
+T 1710271696 18<20leftyfb18>	if you don't know the file name, then cat isn't going to work regardless
+T 1710271731 18<20leftyfb18>	unless you find | xargs | cat every file and then grep, which would be more resource intensive than just recursive grep
+T 1710271754 18<24mkou18>	grep <string> from while in any directory vs cat file | grep <string>  from the print
+T 1710271789 18<20leftyfb18>	grep <string> file
+T 1710271852 18<20leftyfb18>	you seem to want to compare apples and oranges here
+T 1710271864 18<24mkou18>	mhm ok
+T 1710271905 18<20leftyfb18>	obviously if you grep every file in a directory structure it's going to take more resources/time than cat file | grep <string>. But you seem to keep ignoring the fact that you know the filename and can just use grep <string> file
+T 1710271960 18<24mkou18>	yep make sens now
+T 1710273681 18<19fox18>	hello
+T 1710273800 18<28bprompt18>	jello
+T 1710273817 18<28bprompt18>	!ask | fox
+T 1710273817 18<19ubottu18>	fox: Please don't ask to ask a question, simply ask the question (all on ONE line and in the channel, so that others can read and follow it easily). If anyone knows the answer they will most likely reply. :-) See also !patience
+T 1710277175 18<19Tingo18>	Hi
+T 1710277237 18<19Tingo18>	$ openssl s_client -connect IP:Port -tls1_2 -trace
+T 1710277272 18<19Tingo18>	how can i know that which Level of Communcation was it ? or By Default which Level used?
+T 1710277341 18<19Tingo18>	or it depends on RSA Key Size e.g 4096 ?
+T 1710277351 18<19Tingo18>	of Server*
+T 1710277505 18<19Tingo18>	AnyOne ?
+T 1710278139 18<22akik18>	Tingo: try with curl: curl --tlsv1.2 --tls-max 1.2 -v https://www.google.com/ 2>&1 |less
+T 1710278231 18<19Tingo18>	Thanks for reply, Curl will show that which SecLevel was used in between communications ?
+T 1710278269 18<19Tingo18>	actually i am testing few things locally in between my own OpenSSL Server and Client..
+T 1710278291 18<19Tingo18>	# openssl s_server -key www.key_no_pass -cert www.cert -accept 4433 -tls1_2
+T 1710278314 18<19Tingo18>	$ openssl s_client -connect IP:4433 -tls1_2
+T 1710278505 18<19Tingo18>	i want to traceout that which SecLevel (0-6) was used by default or normally in between Communcation..
+T 1710278983 18<19Tingo18>	# openssl ciphers -s -v DEFAULT:@SECLEVEL=2
+T 1710278989 18<19Tingo18>	# openssl ciphers -s -v DEFAULT:@SECLEVEL=1
+T 1710279098 18<28bprompt18>	Tingo: tried ##openssl yet?
+T 1710279118 18<19Tingo18>	No one was replying their..
+T 1710279146 18<28bprompt18>	Tingo: there's also #openssl, yes they're different
+T 1710279209 18<28bprompt18>	Tingo: there's also a #libressl channel
+T 1710279223 18<19Tingo18>	i try to find out myself : $ openssl s_client -connect IP:4433 -tls1_2 -trace
+T 1710279237 18<19Tingo18>	$ openssl s_client -connect 10.0.0.20:4433 -tls1_2 -debug
+T 1710279975 18<19Tingo18>	hmm its in between 1 -2 (3-6) are too strict Ciphers..
+T 1710280300 18<27ZaY18>	hi
+T 1710280315 18<27ZaY18>	I install applications on ubun and I want to uninstall them
+T 1710280317 18<27ZaY18>	please
+T 1710280447 18<19Tingo18>	$ sudo apt purge Application_Name
+T 1710280460 18<19Tingo18>	which kind of application is it ?
+T 1710280567 18<27ZaY18>	i need to uninstall server and anop
+T 1710280571 18<27ZaY18>	please
+T 1710280609 18<19Tingo18>	Which Type of Applications are those ?
+T 1710280718 18<27ZaY18>	urealircd and anope
+T 1710280800 18<27ZaY18>	E: Unable to locate package anope-2.0.15
+T 1710280809 18<27ZaY18>	E: Couldn't find any package by glob 'anope-2.0.15'
+T 1710280927 18<19Tingo18>	hope so you have been compiled urealircd App ?
+T 1710281042 18<19Tingo18>	hmm.. its compiled/build based apps, so find out its Source code folder which was used for compiling it..
+T 1710281101 18<19Tingo18>	$ cd /Path/to/Source/urealircd/
+T 1710281120 18<19Tingo18>	$ sudo make uninstall all
+T 1710281127 18<27stenno18>	uhm
+T 1710281150 18<27ZaY18>	ok
+T 1710281156 18<19Tingo18>	$ cd /Path/to/Source/anope/
+T 1710281160 18<19Tingo18>	$ make uninstall all
+T 1710281161 18<27stenno18>	Tingo: stop
+T 1710281176 18<19Tingo18>	$ sudo make uninstall all
+T 1710281200 18<19Tingo18>	opss .. did i said wronge ?
+T 1710281272 18<27ZaY18>	make: *** No rule to make target 'uninstall'. Stop.
+T 1710281466 18<19Tingo18>	do you know where did you installed unrealircd App ? i meant in which folder is it..?
+T 1710281655 18<27stenno18>	Tingo: for help with ircd, probably ask in #libera directly
+T 1710281695 18<27ZaY18>	I want to uninstall all applications on ~/home/ubuntu
+T 1710282307 18<27oerheks18>	If one build it right, there is an Uninstall
+T 1710284613 18<24derek-shnosh18>	Ubuntu 23.10, Gnome 45.2, Kernel 6.5.0-25-generic... all of the sudden my USB-C connected display is not working. This is what I gleaned from journalctl: https://dpaste.com/BYM48EM4J
+T 1710284679 18<27oerheks18>	derek-shnosh, does it get solved with pull and plug in again?
+T 1710284689 18<24derek-shnosh18>	oerheks: no, it does not.
+T 1710284698 18<27oerheks18>	happens sometimes with my system too, dvi and hdmi.
+T 1710284731 18<24derek-shnosh18>	Also, my two other displays and NIC on my Dell dock are not working, but all USB devices connected to the dock are.
+T 1710284744 18<27oerheks18>	oke, then i have no clue. found nothing usefull here in logs
+T 1710284757 18<27oerheks18>	ah, dock, important info.
+T 1710284779 18<24derek-shnosh18>	Hold on though.
+T 1710284801 18<24derek-shnosh18>	One display is direct connected to my USB-C, cable just goes from USB-C to HDMI (no dongle, full cable).
+T 1710284810 18<24derek-shnosh18>	The other two displays are on the dock (diff USB-C port).
+T 1710284964 18<22pragmaticenigma18>	derek-shnosh: Have you tried powering down everything, including the dock... then turning things back on again?
+T 1710284996 18<24derek-shnosh18>	pragmaticenigma: Yes I have. Even left everything disconnected and unplugged for an hour while running errands.
+T 1710285036 18<27oerheks18>	pragmaticenigma, for me it happens with cold boot too
+T 1710285064 18<22pragmaticenigma18>	just making sure the tried and true wasn't so tried and true
+T 1710285065 18<22pragmaticenigma18>	:)
+T 1710285066 18<24derek-shnosh18>	Typically I have to reseat the direct connected USB-C cable on boot, or power cycle the dock, to get the displays working... now they just won't.
+T 1710285131 18<22pragmaticenigma18>	derek-shnosh: what about process of elimination? or removing everything and then re-adding one at a time?
+T 1710285170 18<24derek-shnosh18>	I have, yes. Disconnected Dell dock, disconnected USB-C <> HDMI cable.
+T 1710285181 18<24derek-shnosh18>	Then reconnect just the single display USB-C <> HDMI.
+T 1710285188 18<24derek-shnosh18>	Sorry, its USB-C <> DP
+T 1710285365 18<22pragmaticenigma18>	I'm stumped... hopefully the machine standalone works okay
+T 1710285604 18<24derek-shnosh18>	pragmaticenigma: it does... but, my productivity pixel real estate is severely diminished.
+T 1710285616 18<24derek-shnosh18>	missing out on 2x 2K displays and 1x 4K.
+T 1710285769 18<24derek-shnosh18>	Going to boot off live USB and see if it persists.
+T 1710287036 18<24derek-shnosh18>	Well this is very frustrating.
+T 1710287809 18<24derek-shnosh18>	pragmaticenigma & oerheks : Culprit was hardware somehow (Lenovo Slim 7 ProX)... With the laptop on, I held the power button down for like 30s to perform a "power drain". Then powered it backup and loaded BIOS defaults and let it boot. Displays are working again.
+T 1710287879 18<24derek-shnosh18>	Was prompted by this thread: https://forums.lenovo.com/t5/Lenovo-Yoga-Series-Laptops/Lenovo-Slim-7-ProX-14ARH7-not-detecting-my-external-monitor/m-p/5233873
+T 1710288010 18<22pragmaticenigma18>	derek-shnosh: Lenovo machine with a Dell docking station?
+T 1710288831 18<24derek-shnosh18>	pragmaticenigma: yeah, already had it readily avail from my work laptop.
+T 1710288865 18<24derek-shnosh18>	The issue wasn't the dock though because one of the displays (with the USB-C <> DP cable) is directly connected to the laptop on another USB-C port... it wasn't working either.
+T 1710288933 18<26tv_18>	hi
+T 1710288959 18<24derek-shnosh18>	Didn't want to undo all my cable mgmt, dock is snap-velcro'ed to the bottom of the desk corner. https://i.imgur.com/NnDRm6m.jpeg
+T 1710289015 18<22pragmaticenigma18>	derek-shnosh: well there's your problem... the dock is upside down, all the electrons fell out
+T 1710289024 18<24derek-shnosh18>	>.<
+T 1710289035 18<24derek-shnosh18>	Actually still right side up ;)
+T 1710289040 18<26tv_18>	opa blz
+T 1710289074 18<22pragmaticenigma18>	derek-shnosh: my former employers dell dock had powered fan, does yours as well?
+T 1710289102 18<24derek-shnosh18>	pragmaticenigma: I think so... it's a WD22TB4 dock, I hear it spin up when I first power it on.
+T 1710289215 18<22pragmaticenigma18>	I miss mine... new employer just got a cheapo Lenovo dock with DisplayLink... so no display until the machine is fully booted :(
+T 1710290410 18<27oerheks18>	Derailed, good spot!
+T 1710290426 18<27oerheks18>	err derek-shnosh
+T 1710308285 19*	Now talking on 22#ubuntu
+T 1710308285 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710308285 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710308285 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710340572 19*	Now talking on 22#ubuntu
+T 1710340572 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710340572 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710340572 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710343036 19*	Now talking on 22#ubuntu
+T 1710343036 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710343036 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710343036 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710343675 18<24Zed18>	Since I am unable to buy the service directly from Microsoft I called Canonical directly. I was told by sales that I would get a quote in a day or so. I have been going back and fourth with them since February 20th but I still don't have a quote much less a contract.
+T 1710343706 18<20leftyfb18>	Zed: you'll still need to work with Canonical
+T 1710343708 18<22lotuspsychje18>	Zed: this channel holds only volunteers from the ubuntu community
+T 1710343710 18<25Menzador18>	Zed: We're the community support channel. You're going to have to wait for Canonical themselves to get back to you
+T 1710343729 18<20leftyfb18>	Zed: nobody else provides Ubuntu Pro services
+T 1710343739 18<26plastikman18>	I have experience with the sales cycle at Canonical, its slow.
+T 1710343777 18<26plastikman18>	but as stated here, you have no choice but to get the ESM packages from canonical.  you can set up an airgapped package repo (with the help of canonical) for these systems
+T 1710343803 18<26plastikman18>	or, if you are feeling spicy, just set up a "personal" ubuntu pro sub and do a "pro attach xxxxx" on that system
+T 1710343837 18<22lotuspsychje18>	plastikman: this is not really the place to discuss that
+T 1710343858 18<22akik18>	huh
+T 1710343864 18<24Zed18>	I understand all this. My question was phrased improperly. Is there any other way to get /all/ the available security patches...
+T 1710343878 18<26plastikman18>	no
+T 1710343878 18<22akik18>	you can't talk about ubuntu on #ubuntu. crazy
+T 1710343879 18<20leftyfb18>	none that are supported here
+T 1710343928 18<22lotuspsychje18>	akik: we try to divide ubuntu support issues, with user experiences/discussions into the right channels
+T 1710346529 19*	Now talking on 22#ubuntu
+T 1710346529 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710346529 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710346529 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710346600 18<27librton18>	ubuntu installation stucked at help & support, how about an hour now. Is there any way to figure out what was/is wrong?
+T 1710346922 18<27stenno18>	is it trying to install updates?
+T 1710347334 18<20ioria18>	librton, switch to tty
+T 1710347504 19*	Now talking on 22#ubuntu
+T 1710347504 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710347504 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710347504 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710347527 18<27librton18>	It shows my installation hdd there /dev/sda which I don't wanna overwrite
+T 1710347545 18<20ioria18>	librton, what is that ? windows
+T 1710347548 18<25Menzador18>	Destination, but that's more for legacy installations. Usually it'll detect whether it's in EFI mode and find the EFI system partition (ESP)
+T 1710347563 18<25Menzador18>	So it's still best to select whichever disk holds the ESP
+T 1710347572 18<25Menzador18>	It won't overwrite your disk
+T 1710347594 18<25Menzador18>	It's telling what legacy argument to pass to the [ grub-install ] command
+T 1710347628 18<20ioria18>	librton, but you said 'stuck at help & support'
+T 1710347656 18<27librton18>	Thanks Menzador , I'm not sure if this old hp 600B G1 supports efi but I've created 800Mb partition just in case
+T 1710347673 18<27librton18>	ioria: yes, I've restarted the system already
+T 1710351789 19*	Now talking on 22#ubuntu
+T 1710351789 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710351789 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710351789 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710354184 18<27librton18>	ioria: bank ... with failure to grub installation to /dev/sdc
+T 1710354209 18<27librton18>	maybe I'll give it a try with another distro to see how it works
+T 1710354423 18<20ioria18>	librton, how did you do the usb-installer ?
+T 1710354443 18<20ioria18>	librton, with what program ?
+T 1710354993 18<28lbracher18>	Hello! Out of nowhere my bluetooth adapter disappears and I'm not able to recover it restarting the service. How could I diagnose what is happening? TIA!
+T 1710355524 18<27librton18>	ioria: I've 500GB SATA hdd with bunch of linux & windows iso under Ventoy
+T 1710355606 18<27librton18>	now I'm trying lmde and stuck again after the partitioning point saying "The EFI partition is too small. it must be at least 35MB" where in fact I didn't bother making efi partition knowing this is dos hdd and windows 7 on the other side of it
+T 1710355652 18<20ioria18>	librton, you can't install on the same disk in bios and efi mode
+T 1710355723 18<27librton18>	the windows partition is no longer booting after the second attempt of ubuntu, beside I didn't ask any of the linux distro to install/use EFI mode
+T 1710355777 18<27librton18>	I'm not sure which isn't compatible with which because I didn't find any EFI related options with the CMOS BIOS Step of this pC
+T 1710355777 18<20ioria18>	librton, i would do again the the installer with rufus (or etcher)
+T 1710355791 18<27librton18>	not sure if it supports it
+T 1710355851 18<20ioria18>	what ?
+T 1710356908 18<27librton18>	what is the difference between partition flags boot and bls_boot in GParted?
+T 1710356924 18<27librton18>	which should be given to efi partition?
+T 1710357171 18<27librton18>	I think the because the installation distro sees an EFI partition on the source of installation media then it's automatically assuming that this is going to be EFI installation which later ends up meeting an old DOS filesystem on the destination hdd
+T 1710357184 18<27JanC18>	https://www.gnu.org/software/parted/manual/html_node/set.html
+T 1710357258 18<27librton18>	so yes, there is no issue with both distro iso(s) and using an imaged usb with dd may solve the issue
+T 1710358883 18<27librton18>	tried couple of other failing distros but slackware seems to getting it
+T 1710358927 18<27librton18>	viva la alto penguino
+T 1710370368 19*	Now talking on 22#ubuntu
+T 1710370368 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710370368 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710370368 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710379561 19*	Now talking on 22#ubuntu
+T 1710379561 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710379561 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710379561 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710381237 18<28chance18>	hi'
+T 1710381244 18<28chance18>	hello
+T 1710381247 18<27oerheks18>	hi
+T 1710381256 18<28chance18>	lmao
+T 1710381260 18<28chance18>	lol
+T 1710381273 18<28chance18>	skill issue
+T 1710381278 18<27oerheks18>	!topic
+T 1710381278 18<19ubottu18>	Please read the channel topic whenever you enter, as it contains important information. To view it at any time after joining, simply type /topic
+T 1710381282 18<28chance18>	200 pump
+T 1710381311 18<28chance18>	full boxed
+T 1710381317 18<28chance18>	shit on
+T 1710381323 18<28chance18>	shit on
+T 1710381336 18<27oerheks18>	...
+T 1710381349 18<28chance18>	lol
+T 1710381392 18<28chance18>	 200 pump
+T 1710381393 18<28chance18>	full boxed
+T 1710381393 18<28chance18>	shit on
+T 1710381394 18<28chance18>	shit on
+T 1710381424 18<28chance18>	it soo bigg step dad
+T 1710381440 18<28chance18>	ewe
+T 1710381462 18<28chance18>	shit onnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+T 1710381463 18<28chance18>	nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+T 1710381463 18<28chance18>	nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+T 1710381464 18<28chance18>	nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+T 1710381464 18<28chance18>	nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+T 1710381465 18<28chance18>	nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+T 1710381465 22*	26Drone sets quiet on 18*!*@131.242.30.44
+T 1710381711 18<27preach18>	saying "skill issue" is so incredibly rude and condescending
+T 1710381711 22*	26Drone removes quiet on 18*!*@131.242.30.44
+T 1710383109 18<29mybalzitch18>	y
+T 1710383122 18<29mybalzitch18>	preach: agreed
+T 1710383154 18<27oerheks18>	🤪
+T 1710392008 18<19C4mbone18>	#sp
+T 1710392320 18<27mosfet18>	I'm having some trouble getting oracle virtual box to render on my second display. host system is ubuntu 22.04 Jammy, Anyone else run into this issue that found a fix? I've exhaused the 1st few linuxsuperuser guides I could find thus far
+T 1710393308 18<22militantorc18>	is sbcl have readline support
+T 1710397564 18<29klaasvakie18>	Hi, I need some help trying to figure who to report this bug to. I have a USB barcode scanner that presents itself as a USB keyboard. On a Ubuntu 22.04 Gnome Xorg session it works prefectly, on a Wayland session I sometimes see bitflips in the data I get. I can reproduce this reliably and it is not arch specific, I can reproduce it on arm and x86.
+T 1710407198 19*	Now talking on 22#ubuntu
+T 1710407198 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710407198 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710407198 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710407468 19*	Now talking on 22#ubuntu
+T 1710407468 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710407468 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710407468 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710407754 19*	Now talking on 22#ubuntu
+T 1710407754 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710407754 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710407754 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710408857 19*	Now talking on 22#ubuntu
+T 1710408857 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710408857 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710408857 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710410243 18<26makara218>	hi. I've left it a bit late and now I can't seem to update from lobster to minotaur. What do I need to do?
+T 1710410313 18<19ravage18>	!eolupgrade | makara2
+T 1710410313 18<19ubottu18>	makara2: End-Of-Life is when security updates and support for an Ubuntu release stop. Make sure to update Ubuntu before it goes EOL so you get updates promptly for newly-discovered security vulnerabilities. See https://help.ubuntu.com/community/EOL and https://wiki.ubuntu.com/Releases for more info. Looking to upgrade from an EOL release? See https://help.ubuntu.com/community/EOLUpgrades
+T 1710410389 18<25yziquel18>	makara1 I did manage to upgrade cleanly from lunar to minotaur recently.
+T 1710410405 18<25yziquel18>	makara1 like max two weeks ago.
+T 1710410408 18<19ravage18>	you could also give 24.04 an early try with a fresh installation. but keep in mind that is not released yet and must expect bugs
+T 1710410431 18<25yziquel18>	makara2
+T 1710410451 18<26makara218>	great. Thank you. Bookmarked
+T 1710411065 18<26makara218>	i get `E: The repository 'https://old-releases.ubuntu.com/ubuntu lunar Release' does not have a Release file.`
+T 1710411078 18<26makara218>	or `E: The repository 'http://old-releases.ubuntu.com/ubuntu lunar Release' does not have a Release file.`
+T 1710411127 18<19ravage18>	https://archive.ubuntu.com/ubuntu/dists/ still exists
+T 1710411134 18<19ravage18>	you dont need to change the sources yet
+T 1710411166 18<19ravage18>	i mean http://archive.ubuntu.com/ubuntu/dists/ without the s 🙂
+T 1710411200 18<19ravage18>	you should be able to use the main server to get updates for lunar
+T 1710411265 18<26makara218>	ok I'll try that. But its clear from https://wiki.ubuntu.com/Releases that lobster is EOL and yet there are no entries for it in http://old-releases.ubuntu.com/ubuntu/dists/
+T 1710414318 18<27aiena18>	In some screen shots (maybe older) I see the gnome option to add "WIndows printer via SAMBA" but I cannot find that option I am using ubuntu 22.04
+T 1710414363 18<27aiena18>	how do I get this option in gnome I can see it in the cups web UI and can almost get it to work that way but dont know how to specify authentication. Was hoping configuring it via gnome might make it easier
+T 1710414394 18<27aiena18>	I am refering to as seen here https://askubuntu.com/questions/1075251/how-to-connect-to-a-network-samba-printer-in-ubuntu
+T 1710414401 18<27aiena18>	any ideas how to do this in 22.04?
+T 1710414451 18<19ravage18>	did you try "Add printer" in the system settings?
+T 1710414464 18<27aiena18>	yes it does not give me the multiple options specified there
+T 1710414474 18<19ravage18>	you can just enter any network address thats supported there. it usually also just detects all LAN printers
+T 1710414486 18<27aiena18>	I don't know how to get that dialog with multiple printer options
+T 1710414539 18<27aiena18>	it does n ot list my printer but using smblient I can see it
+T 1710414578 18<27aiena18>	I am ok with using the cups webUI but don't know how to make cups at least ask for auth or specify auth directly
+T 1710414653 18<27aiena18>	hmm
+T 1710414810 18<19ravage18>	i dont have any printer connected and im on 24.04 already. but maybe the part about authentication here is useful: https://wiki.itrss.mst.edu/dokuwiki/pub/install_samba_printers
+T 1710415053 18<27aiena18>	ravage, thanks I am trying that. The gnome wizard managed to list my printer but cups fails with the auth required message
+T 1710415058 18<27aiena18>	so trying your suggestion
+T 1710418962 18<24RickyRat500518>	Hello all. I have been asked to "enabling debug messages with these kernel parameters:
+T 1710418962 18<24RickyRat500518>	  drm.debug=0xff loglevel=8" I'm not sure how do do this.
+T 1710419238 18<29tomreyn18>	!bootparm | RickyRat5005
+T 1710419263 18<29tomreyn18>	!kernelparm | RickyRat5005
+T 1710419263 18<19ubottu18>	RickyRat5005: To add a one-time or permanent kernel boot parameter see https://wiki.ubuntu.com/Kernel/KernelBootParameters
+T 1710419357 18<24RickyRat500518>	Do I just put that line in anywhere in /etc/default/grub ?
+T 1710419417 18<24RickyRat500518>	!pastebin
+T 1710419418 18<19ubottu18>	For posting multi-line texts into the channel, please use https://dpaste.com | To post !screenshots use https://imgur.com | !pastebinit to paste directly from command line | Make sure you give us the URL for your paste - see also the channel topic.
+T 1710419455 18<29tomreyn18>	RickyRat5005: you add it to the end of the GRUB_CMDLINE_LINUX_DEFAULT line, separated by a blank space from what's already there, before the trailing double quote '"'
+T 1710419469 18<29tomreyn18>	and run    sudo update-grub
+T 1710419584 18<29tomreyn18>	so if you currently have    GRUB_CMDLINE_LINUX_DEFAULT="somethingelse quiet splash"    then you make it    GRUB_CMDLINE_LINUX_DEFAULT="somethingelse drm.debug=0xff loglevel=8"
+T 1710419599 18<24RickyRat500518>	GRUB_CMDLINE_LINUX_DEFAULT="drm.debug=0xff loglevel=8"
+T 1710419608 18<24RickyRat500518>	It's empty now.
+T 1710419615 18<29tomreyn18>	(you'd remove "quiet" and "splash" for debugging)
+T 1710419657 18<29tomreyn18>	the line you just posted should be fine
+T 1710419749 18<24RickyRat500518>	ok, thank you.
+T 1710419777 18<24RickyRat500518>	I think I did it right!
+T 1710420097 18<29tomreyn18>	RickyRat5005: cat /proc/cmdline    would show
+T 1710420122 18<24RickyRat500518>	BOOT_IMAGE=/boot/vmlinuz-6.5.0-25-generic root=UUID=3ea98830-6da6-49cf-b34a-00412e832e62 ro drm.debug=0xff loglevel=8
+T 1710420128 18<24RickyRat500518>	Cool. TY
+T 1710420251 18<29tomreyn18>	you're welcome
+T 1710421139 18<22BluesKaj18>	Hi all
+T 1710424181 18<25Elliria18>	I could be wrong, but I'm under the impression that the Firefox Snap is a direct connection between Mozilla and us and is a way to bypass the operating system's way of updating. My friend's Snap and my Snap update automatically. My friend uses Ubuntu 22.04 LTS and his Firefox Snap is at revision 3936. I use Kubuntu 22.04 LTS and my Firefox Snap is at revision 3836. When I asked about that, he said that Ubuntu updates better than Kubuntu.
+T 1710424182 18<25Elliria18>	Is that true or is there some other reason why our Firefox Snaps are at different revisions?
+T 1710424346 18<28ogra_18>	Elliria, as you noted, snaps are completely distinct from the host OS ... so they should be on the same revision ... that said, the firefox snap uses phased updates so the rollout goes in chunks and not to everyone at the same time ... also note that revisions differ between architectures
+T 1710424623 18<25Elliria18>	Ah, okay. He's using ARM64 and I'm using x86. He also looked at the Firefox version rather than the revision and it looks like I've got version 123.0 and he has 123.0.1. Interesting.
+T 1710424728 18<28ogra_18>	i see rev 3936 on arm64 in the latest/stable channel ...
+T 1710424761 18<28ogra_18>	and 3941 on amd64 ... both using the 123.0.1-1 version string
+T 1710424831 18<28ogra_18>	(note that channels can also have different revisions, so it matters which channel you are tracking for a snap)
+T 1710424890 18<25Elliria18>	How do you know which channel you're tracking and is that controllable?
+T 1710424911 18<28ogra_18>	snap info firefox ... looks at the "tracking:" line
+T 1710424962 18<28ogra_18>	you can always use snap refresh to switch to a different channel (see "snap refresh --help" ... and in general you should take a look at "snap help", snaps have many useful builtin features)
+T 1710425000 18<25Elliria18>	Interesting. Mine is: latest/stable/ubuntu-22.04
+T 1710425030 18<25Elliria18>	I'll have to ask what his is just out of curiosity at this point. We kind of like to geek out and examine our operating systems for the heck of it.
+T 1710425044 18<28ogra_18>	😄
+T 1710425104 18<25Elliria18>	These 'buntus are fascinating creatures and can do so very much that they're endlessly entertaining when it comes to figuring them out.
+T 1710426377 18<24iconoclast_hero18>	https://support.google.com/chrome/thread/8654678/initial-lag-when-starting-to-scroll-with-hardware-acceleration-enabled?hl=en
+T 1710426389 18<24iconoclast_hero18>	is there a way to disable GPU switching as described here?
+T 1710426489 18<24iconoclast_hero18>	i.e., i'm trying to get at a solution similar to this one: "To stop the initial scroll lag caused by the graphics switching between GPUs try the following (in Windows 10). You can still leave hardware acceleration on in Chrome but just fix the system to one graphics card. To do this, type or search "display settings" from the start menu (or right click the desktop and select it). Then at the bottom select "Graphics settings".
+T 1710426489 18<24iconoclast_hero18>	 I used  the "Classic app" setting and browsed for Chrome in program files. Then I changed the options from "System default" to "Power saving" though you can try "High performance" if you like but my Intel 630 integrated GPU was able to drive video in 4K at 60 fps no problem so did not need to use the high performance nvidia GPU. This should give smooth video with hardware acceleration but stop the initial scroll lag. However
+T 1710426489 18<24iconoclast_hero18>	, It may not stop other forms of scroll lag. You may also be able to assign a specific GPU to an app using other Intel or nvidia apps under Control Panel."
+T 1710426519 18<24iconoclast_hero18>	it seems that disabling HW switching in chrome as helped with the problem, but i'd like to take a crack at it from this direction as well
+T 1710426539 18<24iconoclast_hero18>	$ uname -a Linux < > 6.7.6-060706-generic #202402230933 SMP PREEMPT_DYNAMIC Fri Feb 23 09:43:37 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+T 1710426572 18<28ogra_18>	well, first of all you should switch to a proper kernel ... this one is not supported
+T 1710426589 18<28ogra_18>	(i'm surprised your nvidia driver would even work with this)
+T 1710426632 18<25Daniel18>	I have a live cd cd-rom added to a server with ubuntu 22.04, I am using apt-cdrom ident, it sees it, I can manually mount it but apt-cdrom add failes with no cd-rom could be autodetected
+T 1710426729 18<25Daniel18>	fails
+T 1710427081 18<24iconoclast_hero18>	wrong machine
+T 1710427100 18<24iconoclast_hero18>	$ uname -a Linux < > 6.5.0-21-generic #21~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Feb  9 13:32:52 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+T 1710427181 18<24iconoclast_hero18>	should it matter, screenfetch reports GPU: Intel Corporation UHD Graphics 620 (rev 07) Intel Corporation Sunrise Point-LP Integrated Sensor Hub (rev 21)
+T 1710427247 18<24iconoclast_hero18>	also what i pasted inre an nvidia card is someone else's example trying to resolve the issue with chrome on Windows...doesn't apply to me as I have neither nvidia nor microsoft.
+T 1710427268 18<24iconoclast_hero18>	i do have chrome on linux though and the scroll lag is hella annoying.
+T 1710427331 18<24iconoclast_hero18>	so what I'm trying to do is apparently adjust the switching between graphics modes in Ubuntu similar to what was done in that quotation in windows.
+T 1710428208 18<26plastikman18>	So youo dont have 2 graphics chips?
+T 1710428405 18<28ogra_18>	iconoclast_hero, what they describe is the driver switch between intel and nvidia on a hybrid card ... if you dont have such a card you can obviously not swithc between the two hybrid cores in it ...
+T 1710428443 18<24iconoclast_hero18>	i have a problem with chrome lagging.
+T 1710428450 18<26plastikman18>	Please dont post another massive wall of text, but it woudl be helpful to post some details about your machine
+T 1710428457 18<24iconoclast_hero18>	this is a solution that has worked for someone.
+T 1710428471 18<26plastikman18>	with a totally different setup than you
+T 1710428489 18<24iconoclast_hero18>	plastikman how to I solve the scrolling issue with my setup?
+T 1710428506 18<26plastikman18>	well, since i have no idea what your setup is, i cant help.
+T 1710428508 18<20leftyfb18>	iconoclast_hero: does the problem happen with firefox?
+T 1710428509 18<24iconoclast_hero18>	telling me things i already know doesn't help much.
+T 1710428516 18<24iconoclast_hero18>	i don't use firefox
+T 1710428523 18<26plastikman18>	that is not what was asked
+T 1710428525 18<24iconoclast_hero18>	i've uninstalled it where possible
+T 1710428533 18<20leftyfb18>	sudo snap install firefox
+T 1710428536 18<20leftyfb18>	use it to test
+T 1710428542 18<20leftyfb18>	remove it when we are done testing
+T 1710428594 18<24iconoclast_hero18>	ok, while i take care of that, what is a fair test?
+T 1710428616 18<20leftyfb18>	iconoclast_hero: replicate the issue on firefox
+T 1710428616 18<24iconoclast_hero18>	i have quite a few tabs in chrome open, but they should be put to sleep
+T 1710428639 18<20leftyfb18>	define "quite a few"
+T 1710428647 18<24iconoclast_hero18>	i had an extension that did that before chrome implemented it and i turned that feature on
+T 1710428651 18<24iconoclast_hero18>	dozens
+T 1710428678 18<24iconoclast_hero18>	probably less than 100
+T 1710428716 18<20leftyfb18>	I also have somewhere between 50 and 100 tabs
+T 1710428733 18<24iconoclast_hero18>	also firefox isn't lagging with one tab open
+T 1710428735 18<24iconoclast_hero18>	and i opened...
+T 1710428738 18<20leftyfb18>	I don't think the number of tabs, especially if they're sleeping, it going to affect the scrolling
+T 1710428742 18<24iconoclast_hero18>	https://getpocket.com/collections/can-you-really-improve-your-breathing-yes-you-can?utm_source=pocket-newtab-en-us
+T 1710428756 18<20leftyfb18>	ok, now try chromium
+T 1710428766 18<24iconoclast_hero18>	i don't think quantity of open tabs will cause an issue either but i thought i'd menton it.
+T 1710428772 18<24iconoclast_hero18>	apt install chromium?
+T 1710428779 18<28ogra_18>	snap ...
+T 1710429087 18<24iconoclast_hero18>	with a single tab open, the lagging is not happening in chromium either.
+T 1710429112 18<20leftyfb18>	iconoclast_hero: try opening a private window in google chrome
+T 1710429125 18<20leftyfb18>	incognito mode
+T 1710429151 18<24iconoclast_hero18>	yeah
+T 1710429189 18<20leftyfb18>	can you replicate the issue in a new incognito mode window?
+T 1710429190 18<24iconoclast_hero18>	don't observe an issue, but chrome has the HW acceleration turned off
+T 1710429226 18<20leftyfb18>	ok, then the issue is more than likely with an extension you have installed or something wrong with your profile
+T 1710429226 18<27jars9918>	I've been having a problem with Ubuntu 22.04: The Sharing: Remote Desktop Password isn't getting remembered.  Every time I go in there to see if it's set correctly, it's set to some new, random string.  Has anyone else seen this issue?  I don't seem to have it on my 23.10 system
+T 1710429303 18<24iconoclast_hero18>	leftyfb, there's two variables there.
+T 1710429316 18<20leftyfb18>	2 potential causes
+T 1710429350 18<24iconoclast_hero18>	until i turn the HW Acceeration back on, restart chrome, replicate the scrolling issue, then open the incognito window, i haven't ruled anything out.
+T 1710429363 18<24iconoclast_hero18>	but i have another place to look when it happens again.
+T 1710429406 18<20leftyfb18>	iconoclast_hero: wait, are you saying everything is fine when you disable HW acceleration regardless of being in incognito mode?
+T 1710429426 18<24iconoclast_hero18>	this has been going on for a long time.
+T 1710429439 18<24iconoclast_hero18>	months, maybe 12 of them?
+T 1710429457 18<20leftyfb18>	iconoclast_hero: please answer the question
+T 1710429468 18<24iconoclast_hero18>	i looked into it today and saw that there are a couple of ways to address it.
+T 1710429468 18<24iconoclast_hero18>	one of them is to turn off the acceleration in chrome.
+T 1710429475 18<24iconoclast_hero18>	i did that and it seemed to solve the problem.
+T 1710429481 18<20leftyfb18>	yay!
+T 1710429490 18<24iconoclast_hero18>	as I said, I want to try this other method mentioned in the post
+T 1710429505 18<20leftyfb18>	why? You already solved the problem
+T 1710429508 18<24iconoclast_hero18>	see if there's a difference, you know the ol' A B testing
+T 1710429523 18<24iconoclast_hero18>	thoroughness?
+T 1710429533 18<24iconoclast_hero18>	see if the other solution is preferable?
+T 1710429544 18<28ashafq18>	Firefox on snap doesn't open any file dialog. Is xdg-portal broken on Ubuntu 22.04?
+T 1710429562 18<28ashafq18>	Is there some permissions missing from snap on firefox?
+T 1710429580 18<24iconoclast_hero18>	if you go back to what i said at the beginning, i pretty clearly stated that, "it seems that disabling HW switching in chrome as helped with the problem, but i'd like to take a crack at it from this direction as well"
+T 1710429587 18<28ashafq18>	or install xdg-desktop-portal-gnome?
+T 1710429632 18<20leftyfb18>	ashafq: are you running Firefox over SSH?
+T 1710429658 18<28ashafq18>	leftyfb: no
+T 1710429736 18<28ashafq18>	leftyfb: firefox on gnome session (wayland)
+T 1710429838 18<28ogra_18>	the default gnome desktop should have the right portals installed
+T 1710429886 18<27jars9918>	Has anyone else had issues with the built-in Remote Desktop password on 22.04?
+T 1710429978 18<29tomreyn18>	the answer to this question should be available on launchpad.net
+T 1710430071 18<29tomreyn18>	somewhere over here https://bugs.launchpad.net/ubuntu/+source/gnome-remote-desktop
+T 1710430164 18<29tomreyn18>	jars99: if your issue is not yet reported there, you could run    ubuntu-bug gnome-remote-desktop   to file a bug yourself.
+T 1710430180 18<27jars9918>	ok, thanks
+T 1710430182 18<24iconoclast_hero18>	on a different front: i have a ram drive/cache and initially i wanted that to exist when the machine started but that evolved to saving the contents on shutdown/reboot and restoring the contents upon restart.
+T 1710430182 18<24iconoclast_hero18>	i wrote two scripts (though i can probably combine them), the restore/dir create script is here: https://pastebin.com/raw/Bsnh4WBr
+T 1710430202 18<29tomreyn18>	jars99: please make sure your system is fully updated before you do.
+T 1710430210 18<27jars9918>	will do
+T 1710430233 18<24iconoclast_hero18>	if i just symlink that script to /etc/rc3.d/S01restorecache without the info block at the beginning, will it just run at startup as is?
+T 1710430239 18<24iconoclast_hero18>	(assuming +x)
+T 1710430276 18<24iconoclast_hero18>	and is there no rc.local in ubuntu or does that created from scratch in every install?
+T 1710430369 18<29tomreyn18>	ubuntu uses systemd, you should learn how to use it rather than trying to do things the old way.
+T 1710430433 18<24iconoclast_hero18>	thank you tomreyn, buy my questions are still unanswered.
+T 1710430500 18<19failer018>	wh
+T 1710430510 18<19failer018>	anyone here?
+T 1710430631 18<20leftyfb18>	iconoclast_hero: use a systemd unit
+T 1710430670 18<24iconoclast_hero18>	maybe i'm asking the wrong questions.
+T 1710430677 18<24iconoclast_hero18>	how do I not use systemd to do this?
+T 1710430694 18<24iconoclast_hero18>	i just want to run a script and not figure out a whole system process.
+T 1710430744 18<24iconoclast_hero18>	the problem isn't even system d.
+T 1710430767 18<20leftyfb18>	iconoclast_hero: it's really not that difficult. https://medium.com/@benmorel/creating-a-linux-service-with-systemd-611b5c8b91d6
+T 1710430787 18<20leftyfb18>	iconoclast_hero: Sysv is considered deprecated
+T 1710430800 18<24iconoclast_hero18>	it's difficult when i have to re-learn how to do it every time.
+T 1710430810 18<24iconoclast_hero18>	i just want to run a f'n script.
+T 1710430820 18<24iconoclast_hero18>	i don't want to know what all the system details are.
+T 1710430824 18<24iconoclast_hero18>	autoexec.bat
+T 1710430844 18<20leftyfb18>	and I gave you a tutorial on how to do it
+T 1710430949 18<26plastikman18>	iconoclast_hero: systemd is here to stay, learn it.  if you dont want systemd then check out one of the others taht dont use it
+T 1710430952 18<24iconoclast_hero18>	i just want to run a script.
+T 1710430967 18<20tanath18>	i think this is easier/simpler to follow https://wiki.archlinux.org/title/Systemd/User#Writing_user_units
+T 1710430972 18<27preach18>	tomreyn: leftyfb: iconoclast_hero: ubuntu already comes with a rc-local.service unit that enables running /etc/rc.local on startup as long as it's chmod +x
+T 1710430985 18<27preach18>	no need to learn anything
+T 1710430994 18<24iconoclast_hero18>	BINGO.
+T 1710431008 18<22akik18>	systemd will remove sysv init script support soon
+T 1710431019 18<27preach18>	oh hi akik
+T 1710431027 18<27preach18>	long time no see
+T 1710431029 18<20leftyfb18>	you better hope your script doesn't lock up, because if it does, your system will fail to finish booting
+T 1710431045 18<20leftyfb18>	rc.local is not a good idea for such things
+T 1710431046 18<22akik18>	i tried talking to lennart to keep rc.local but he wasn't in the mood
+T 1710431063 18<27preach18>	not surprised
+T 1710431067 18<29tomreyn18>	preach: that's a less than ideal compatibility layer, i'd say, and thus don't recommend.
+T 1710431096 18<27preach18>	leftyfb: Type=forking ftw
+T 1710431122 18<27preach18>	tomreyn: it's no different than making one yourself, I see no problem with it. people can always copy the old unit if it does get removed
+T 1710431140 18<20leftyfb18>	preach: you don't even need that in a normal service file if nothing is dependent on your custom script
+T 1710431144 18<27preach18>	"using systemd" is still the same as making your own identical rc-local.service anyway.
+T 1710431158 18<27preach18>	so complaining about having an rc-local.service is silly IMO
+T 1710431184 18<24iconoclast_hero18>	hey preach...  if i leave off that info block in that script in rc3.d will it still run at startup?
+T 1710431192 18<20tanath18>	iconoclast_hero: if you're going to continue using linux, some systemd familiarity is worth learning. systemd is basically everywhere, and the non-systemd options are not as user-friendly
+T 1710431193 18<24iconoclast_hero18>	i just really want to know the answer to that question.
+T 1710431205 18<24iconoclast_hero18>	right, i have written systemd stuff
+T 1710431207 18<24iconoclast_hero18>	i'll show you
+T 1710431209 18<22akik18>	and rc.local in systemd isn't even being ran last
+T 1710431236 18<20leftyfb18>	iconoclast_hero: in the time you originally asked the question, you could have easily tested it and come to a conclusion
+T 1710431243 18<24iconoclast_hero18>	https://github.com/iconoclasthero/mpdignore
+T 1710431248 18<27preach18>	iconoclast_hero: sorry I missed that part of the conversation, not sure what you're referring to
+T 1710431253 18<20leftyfb18>	or written and enabled your own systemd unit file
+T 1710431257 18<24iconoclast_hero18>	there's a systemd process i've made, it's not the point.
+T 1710431259 18<27preach18>	leftyfb: no need to be rude
+T 1710431276 18<24iconoclast_hero18>	i asked a question so that i could learn something about a subject i was interested in and the answer was your question is wrong
+T 1710431293 18<27preach18>	iconoclast_hero: that's typical IRC unfortunately
+T 1710431300 18<24iconoclast_hero18>	@preach https://pastebin.com/raw/Bsnh4WBr
+T 1710431302 18<27preach18>	everyone always asks the wrong question, whether that's true or not
+T 1710431343 18<27preach18>	and if you want to do something in a way others don't agree with, you're still asking the wrong question
+T 1710431357 18<24iconoclast_hero18>	and @leftyfb, i'm really trying hard not to reboot that system right now.
+T 1710431371 18<24iconoclast_hero18>	otherwise i wouldn't've asked.
+T 1710431374 18<20leftyfb18>	iconoclast_hero: how do you expect to test your script on boot?
+T 1710431376 18<27preach18>	iconoclast_hero: if you're using systemd then yea that block does nothing
+T 1710431381 18<27preach18>	that's for an older init system
+T 1710431497 18<27preach18>	if they don't want to reboot then they aren't interested in "testing it at boot" right now, simple as
+T 1710431523 18<24iconoclast_hero18>	wow, preach, have you ever watched key and peale?
+T 1710431528 18<24iconoclast_hero18>	i need you to be my luther.
+T 1710431540 18<27preach18>	I refuse to watch
+T 1710431564 18<27preach18>	they basically took chappelle's show and made it worse
+T 1710431577 18<24iconoclast_hero18>	well, if you wish to understand the reference: https://www.youtube.com/watch?v=HkAK9QRe4ds
+T 1710431606 18<27preach18>	and I just don't like them I don't think they're funny :/ but to each their own
+T 1710431686 18<24iconoclast_hero18>	well, thanks for answering the questions i asked.  i appreciate that people are trying to help, but there's a point at which you're not doing anyone any good arguing about which solution to use
+T 1710431701 18<24iconoclast_hero18>	all this systemd discussion was a waste of everyone's time.  just answer the question asked.
+T 1710431730 18<27preach18>	iconoclast_hero: 1000% agree
+T 1710431760 18<27preach18>	terminally online linux nerds are often jaded and elitist
+T 1710431827 18<24iconoclast_hero18>	this happened to me when I was trying to stop a gravity loop in a domestic hot water recirculation loop
+T 1710431847 18<24iconoclast_hero18>	the discussion became about whether it was cromulent to return the water to the base of the HW tank or not.
+T 1710431926 18<29tomreyn18>	we would not be doing you or us any good if we were to invest time into telling you how you can make something work with outdated, soon-to-be-unsupported (and already likely to break things) approaches which don't fit current mechanisms used in ubuntu.
+T 1710432019 18<29tomreyn18>	(and considering *this* elitist is a misinterpretation, i would say.)
+T 1710432049 18<20leftyfb18>	and against CoC
+T 1710432071 18<24iconoclast_hero18>	if it is a system that is currently functional in ubuntu then it is still a supported system regardless of plans that have not yet come to fruition to eliminate it.
+T 1710432099 18<26plastikman18>	Im not sure any of this is even helpful.
+T 1710432119 18<24iconoclast_hero18>	it isn't.  i really tried hard not to respond.
+T 1710432173 18<22akik18>	it's schrödinger's startup script
+T 1710432281 18<27preach18>	23:58 < tomreyn> we would not be doing you or us any good <- I disagree, if someone doesn't want to learn a different method _right now_, it's not your place to try to convince them when they obviously don't want to be. I think you do more harm than good by arguing about it.
+T 1710432374 18<20leftyfb18>	preach: except when they come back here in a couple years after sysV has been completely deprecated asking why their script stopped working. It happens all the time. It's really fun having the same conversation and troubleshooting the same problem with the same person multiple times
+T 1710432403 18<26plastikman18>	I mean, systemd _just_ came out.
+T 1710432409 18<20leftyfb18>	preach: also, I consider it my place to provide support the way I feel the most beneficial to everyone
+T 1710432434 18<20leftyfb18>	plastikman: Ubuntu moved to systemd in 2015
+T 1710432441 18<26plastikman18>	leftyfb: it was a joke.
+T 1710432452 18<26plastikman18>	that means its been 9 year.
+T 1710432481 18<20leftyfb18>	it's been almost 10 years. Yes, I believe telling people to learn systemd over sysV to solve a problem is the right method of support
+T 1710432491 18<27preach18>	leftyfb: arguing fundamental things like this when they tell you they're not interested though, gets nobody anywhere, now OR later
+T 1710432509 18<27preach18>	you don't have to respond if you aren't interested in helping them with the way they want to do it
+T 1710432517 18<27preach18>	that's no reason to tell them they're wrong
+T 1710432565 18<27preach18>	yes you can say you should learn systemd, but if they say they're not interested, I think you should leave it at that if you don't want to help them with the way they want to do it
+T 1710432578 18<27preach18>	all this arguing is pointless
+T 1710432580 18<20leftyfb18>	you provide support the way you choose
+T 1710432583 18<27preach18>	and just turns people off to even asking for help
+T 1710432591 18<29tomreyn18>	preach: iconoclast has previously been very reluctant to adopt current mechanisms, and has been seeking support about outdated mechanisms here. that's not something we forbid, but something we should discourage and instead tell about the current mechanisms to enable them to have a good ubuntu experience IMO. we can continue this conversation in #ubuntu-offtopic, if you would like to.
+T 1710432603 18<27preach18>	I think way more people are turned away from irc support channels than those who inconvenience you by not wanting to learn systemd
+T 1710432626 18<27preach18>	simply due to people's attitudes
+T 1710432660 18<27preach18>	anyway I've said my 2c
+T 1710434748 18<28ashafq18>	leftyfb: have I misconfigured firefox snap somehow?
+T 1710434888 18<20leftyfb18>	ashafq: I'm not sure. I have a semi-similar problem but in my case, I run google-chrome over X forwarding (with xorg of course) and when it opens a dialog, the dialog opens on the target machine, not over X forwarding
+T 1710434972 18<28ashafq18>	leftyfb: :(
+T 1710439987 18<27oerheks18>	:-)
+T 1710440433 18<19harish18>	hi
+T 1710443937 18<20escola18>	oi
+T 1710446576 18<19shr18>	h
+T 1710451855 18<28xFCFFDFFFFEFFFAF18>	welcome to official windows support channel
+T 1710451950 18<26jeremy3118>	!offtopic| xFCFFDFFFFEFFFAF
+T 1710451950 18<19ubottu18>	xFCFFDFFFFEFFFAF: #ubuntu is the Ubuntu support channel, for all Ubuntu-related support questions. Please use #ubuntu-offtopic for other topics (though our !guidelines apply there too). Thanks!
+T 1710451967 18<28xFCFFDFFFFEFFFAF18>	sry, wrong HWND
+T 1710456990 18<29eelstrebor18>	is there something wrong with the repositories? apt update shows updates available but apt upgrade can't seem to get them
+T 1710457032 18<27oerheks18>	nope https://status.canonical.com/
+T 1710457049 18<26jeremy3118>	Some must be working as I am updating now
+T 1710457070 18<27oerheks18>	change to main, and try again?
+T 1710457086 18<29eelstrebor18>	i tried with and without my vpn running - no go
+T 1710457095 18<27oerheks18>	if you get a message snap-store update, killall snap-store && snap refresh
+T 1710457136 18<29eelstrebor18>	Failed to fetch http://security.ubuntu.com/ubuntu/pool/universe/t/texlive-bin/texlive-binaries_2021.20210626.59705-1ubuntu0.2_amd64.deb  Connection failed [IP: 91.189.91.39 80]
+T 1710457214 18<25toddc18>	!phasedupdated | eel
+T 1710457262 18<29krytarik18>	!phasedupdates
+T 1710457262 18<29eelstrebor18>	snap-store update - Authorization required, but no authorization protocol specified
+T 1710457262 18<19ubottu18>	Since Ubuntu 21.04, APT may hold back some updates on some systems while they are being phased in. This is called "phased updates". See https://ubottu.com/y/phased and https://help.ubuntu.com/community/PhasedUpdates for more info.
+T 1710457299 18<29eelstrebor18>	krytarik, that's not my issue
+T 1710457320 18<29krytarik18>	Just typo correcting here. :P
+T 1710457343 18<29tomreyn18>	"Connection failed [IP: 91.189.91.39 80]" suggests that your system (the one looking for updates) resolved security.ubuntu.com as 91.189.91.39 but was unable to setup a TCP connection to the HTTP port (80) on 91.189.91.39
+T 1710457366 18<27oerheks18>	maybe the server was just in sync, try again?
+T 1710457434 18<29eelstrebor18>	i've been trying for 2 days
+T 1710457440 18<29tomreyn18>	security.ubuntu.com resolves (slightly) differently for me, but this is likely just due to it being a CDN
+T 1710457456 18<29tomreyn18>	try using httpS rather than httP
+T 1710457519 18<29tomreyn18>	ah no, it does not seem to support HTTPS
+T 1710457588 18<29eelstrebor18>	https has been working for me for several months
+T 1710457600 18<27oerheks18>	change to main, and try again?
+T 1710457610 18<29tomreyn18>	eelstrebor: for security.ubuntu.com?
+T 1710457663 18<27oerheks18>	does this file exist? cat /var/run/reboot-required
+T 1710457771 18<29krytarik18>	You know, it is mildly curious that "apt update" does seem connect to security.u.c successfully, but "apt upgrade" does not.
+T 1710458101 18<29tomreyn18>	do we know that "apt update" connected to security.u.c successfully, though? i haven't seen output suggesting so.
+T 1710458140 18<29tomreyn18>	oh they're gone
+T 1710458146 18<29krytarik18>	Well, the package URL is current at least.
+T 1710458188 18<29tomreyn18>	this one has probably been current since 2021 ;)
+T 1710458219 18<29krytarik18>	lol
+T 1710458393 18<29tomreyn18>	no, you're right, this one was just packaged two days ago
+T 1710470451 19*	Now talking on 22#ubuntu
+T 1710470451 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710470451 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710470451 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710470700 19*	Now talking on 22#ubuntu
+T 1710470700 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710470700 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710470700 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710472771 18<26Valmet18>	damn
+T 1710479006 19*	Now talking on 22#ubuntu
+T 1710479006 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710479006 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710479006 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710487249 18<27Guest1118>	Hi how do i get a list of chatrooms to join?
+T 1710487597 18<25toddc18>	!alias | Guest453
+T 1710487632 18<25toddc18>	wrong looking
+T 1710487686 18<19ravage18>	i think its !alis 🙂
+T 1710487724 18<27Unit19318>	Or, you could actually just talk to the user.  But he's gone.
+T 1710488607 18<20Guest45318>	hi
+T 1710488638 18<20Guest45318>	with the 'mktemp' program are the temporary dirrects semi permanent or on reboot they are lost?
+T 1710493391 18<27jakubby18>	Hey amd calls for `linux-modules-extra-$(uname -r)` to use RoCM. Is there anyway to always install the extra-modules for the most current kernel? Like is the case with kernel headers?
+T 1710493413 18<27jakubby18>	I don't want things to break just because of some lacking module interdependency
+T 1710493447 18<27jakubby18>	linux-modules-extra-generic doesn't exist and quick inspection with tabulator shows that only linux-modules-extra-<version>-generic exists
+T 1710493464 18<27jakubby18>	ubuntu 22.04
+T 1710493503 18<19ravage18>	if you use the generic kernel which is the default then thats the package you need
+T 1710493636 18<28ogra_18>	just make sure to install linux-generic ... thats the metapackage that pulls in everything (i.e. the linux-image-generic package ... which in turn depends on linux-modules-extra-$VERSION-generic)
+T 1710493664 18<27jakubby18>	I see had no idea it works like that, thanks
+T 1710501318 20*	Disconnected (20)
+T 1710501475 19*	Now talking on 22#ubuntu
+T 1710501475 22*	Topic for 22#ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+T 1710501475 22*	Topic for 22#ubuntu set by 26krytarik (24Sun Jan 28 15:23:05 2024)
+T 1710501476 -18ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+T 1710504096 18<22BluesKaj18>	Hi all
+T 1710504230 18<22hwpplayer118>	hi BluesKaj
+T 1710504244 18<22hwpplayer118>	whats up ? BluesKaj

@@ -1563,3 +1563,182 @@ T 1710200282 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/
 T 1710201344 19*	Now talking on 22#security
 T 1710201344 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
 T 1710201344 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710225221 19*	Now talking on 22#security
+T 1710225221 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710225221 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710230161 18<28gnrp18>	Wulf: Should be fine. When it's not queried directly, there isn't much that normally asks for the second level domain
+T 1710230198 18<28gnrp18>	however, as always, "it depends". There might be weird services or outdated software which does. One cannot make a general statement about that without knowing all the services that otherwise run on the domain
+T 1710230329 18<19Wulf18>	gnrp: I'm also worried about how browsers might behave when they visit '<domain>', that server sends strange headers and then the browser visits 'internal.<domain>'.
+T 1710237238 18<28gnrp18>	Wulf: As I said, it is a question of what other services you are running otherwise that could be affected
+T 1710237282 18<28gnrp18>	surely there are *many* new attack vectors anyway by outsourcing the website, and there might be services which really don't deal well with the main domain being somewhere else. But in general, I'd say it is fine
+T 1710237323 18<28gnrp18>	Wulf: When you see a danger in visiting the website and then being referred somewhere else... well, that issue is much more on a social level, probably. When the website says "You are all laid off. Please report to the civil office" then that is certainly a problem
+T 1710248946 18<26nsh18>	anyone know how VPN provider browser extensions work? the Hola one was pretty dubious but that was a while ago and haven't seen much coverage of them since
+T 1710250327 18<26luna_18>	https://www.nuug.no/aktiviteter/20240312-freebsd-and-absurdity-of-security/ FreeBSD and Security talk in Oslo later today in 4 hours not sure if its in English or Norweigan however
+T 1710251333 18*	28calmclam gets the popcorn maker ready
+T 1710257138 18<22ice918>	anybody interested about technology that targets human body?
+T 1710257154 18<28gnrp18>	ice9: You mean like a hammer?
+T 1710257806 18<19Wulf18>	or clothing? no, not really interested ;-)
+T 1710257825 18<25xorAxAx18>	ice9: you mean brain interfaces?
+T 1710258983 18<20hirogen18>	hi there
+T 1710258992 18<20hirogen18>	looking for a vendor to sell us cyberArk in the Uk London ?
+T 1710259126 18<20hirogen18>	oh i hear MS are doing their own EPM solution soon?
+T 1710259231 19*	Now talking on 22#security
+T 1710259231 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710259231 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710263938 18<20Peppi^18>	Hello anyone here deal with DMARC?
+T 1710264071 18<26luna_18>	https://www.youtube.com/watch?v=DkepLbF5eKg
+T 1710268115 18<22thumbs18>	Lovely link without context.
+T 1710308285 19*	Now talking on 22#security
+T 1710308285 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710308285 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710340572 19*	Now talking on 22#security
+T 1710340572 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710340572 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710343036 19*	Now talking on 22#security
+T 1710343036 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710343036 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710346529 19*	Now talking on 22#security
+T 1710346529 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710346529 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710347504 19*	Now talking on 22#security
+T 1710347504 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710347504 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710351789 19*	Now talking on 22#security
+T 1710351789 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710351789 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710370368 19*	Now talking on 22#security
+T 1710370368 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710370368 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710379561 19*	Now talking on 22#security
+T 1710379561 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710379561 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710395260 18<22big-MAC18>	test
+T 1710395266 18<22big-MAC18>	someone try dosing my ip address please
+T 1710397906 18<22big-MAC18>	https://inv.schizo.services/watch?v=08Vt4VkDH4A
+T 1710407198 19*	Now talking on 22#security
+T 1710407198 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710407198 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710407468 19*	Now talking on 22#security
+T 1710407468 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710407468 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710407754 19*	Now talking on 22#security
+T 1710407754 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710407754 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710408857 19*	Now talking on 22#security
+T 1710408857 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710408857 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710414579 18<20hirogen18>	any contacts here to purchase cyberArc EPM licences ? looking for a good price, UK based. or emea i guess if possible
+T 1710415430 18<22big-MAC18>	guys try ddosing my ip please
+T 1710415432 18<22big-MAC18>	schizo.services
+T 1710415434 18<22big-MAC18>	lots of open ports
+T 1710415444 18<22big-MAC18>	open pentest
+T 1710416103 18<26nsh18>	big-MAC, how might we know its yours and you're not just inviting attacks on somebody else's infrastructure
+T 1710416473 18<26nsh18>	+?
+T 1710416899 18<22big-MAC18>	good question
+T 1710418126 18<29tomreyn18>	also, pushing large amounts of data to some ip address would not just affect that very endpoint but also the infrastructure around it. so if this was legitimate you'd need to get and present a permit to the organization offering to test the infra's ability to filter the traffic.
+T 1710418345 18<22big-MAC18>	oh
+T 1710418480 18<22big-MAC18>	depends on the laws though
+T 1710418497 18<22big-MAC18>	no such laws here
+T 1710424695 18*	28calmclam releases the hamburglar on big-MAC
+T 1710432297 18*	22big-MAC eats
+T 1710432726 18<22thumbs18>	big-MAC: How about no, and stop asking?
+T 1710432738 18<22big-MAC18>	why?
+T 1710432797 18<22big-MAC18>	its literally my own infra but i cant figure out how to uncloak myself in order to show my ip
+T 1710432827 18<28calmclam18>	This big-MAC has found itself in a pickle
+T 1710432850 18<22big-MAC18>	there
+T 1710432851 18<22big-MAC18>	that was me
+T 1710432856 18<22big-MAC18>	nslookup schizo.services
+T 1710432869 18<28calmclam18>	.t
+T 1710432871 18<29EmmyNoether18>	Hustle Athletics - Lekker (Posij Remix) - Invidious
+T 1710432902 18<22thumbs18>	big-MAC: We have no way to know that your claims are true, and targetting a third party is illegal.
+T 1710432923 18<22thumbs18>	big-MAC: This is not the right channel, nor network, for this.
+T 1710437309 18<19goonmorning18>	hello
+T 1710437323 18<19goonmorning18>	What was hmac called in 2002?
+T 1710437528 18<22big-MAC18>	md5?
+T 1710437535 18<22big-MAC18>	sha-1?
+T 1710437665 18<29tomreyn18>	"The definition and analysis of the HMAC construction was first published in 1996 in a paper by Mihir Bellare, Ran Canetti, and Hugo Krawczyk, and they also wrote RFC 2104 in 1997." https://en.wikipedia.org/wiki/HMAC
+T 1710437694 18*	28calmclam awards tomreyn 100 points and control of the board
+T 1710437735 18<29tomreyn18>	yippie, finally a reason to live!
+T 1710437819 18<19goonmorning18>	Well, that should be technically right ...
+T 1710437863 18<29tomreyn18>	what makes you think it was called differently before 2002?
+T 1710438265 18<19goonmorning18>	It is a similar reason we see stars that are no longer exist.
+T 1710438688 18<28calmclam18>	far out man
+T 1710438690 18<29tomreyn18>	so you're reading RFC 2104 from outside milky way?
+T 1710438797 18<29tomreyn18>	that or NIST FIPS report 198
+T 1710438962 18<19goonmorning18>	That's not bad. Thank you, bye.
+T 1710439342 18<22frenchboy[m]18>	I love fortinet homepage press propaganda and then in the psirt advisory you get a sqli that can give rce
+T 1710439383 18<22big-MAC18>	u saw that boa webserver CVE that claims sql injection is possible
+T 1710439389 18<22big-MAC18>	but boa doesnt even use SQL
+T 1710439523 18<22big-MAC18>	https://www.cvedetails.com/cve/CVE-2022-44117/
+T 1710440796 18<29tomreyn18>	big-MAC: are you aware that you can request updates to CVE records at cve.org?
+T 1710440805 18<22big-MAC18>	no
+T 1710440812 18<29tomreyn18>	well, now you are
+T 1710440813 18<22big-MAC18>	i dont care enough anyways
+T 1710440829 18<29tomreyn18>	a pity
+T 1710440856 18<22big-MAC18>	you could do it!
+T 1710440881 18<29tomreyn18>	you could have done it in the time you brought it up here.
+T 1710440906 18<28calmclam18>	sounds like big-MAC's special sauce has turned yellow
+T 1710440922 18<22big-MAC18>	what color was the sauce originally?
+T 1710441124 18<29tomreyn18>	back in the day people on the internet actually contributed towards common goals, such as fostering troves of information we're still benefitting from today. those were the times.
+T 1710441174 18*	22big-MAC *coughs* wikipedia *coughs*
+T 1710441420 18<29BlueyHealer18>	You are saying this as if the phenomenon you're talking about is over. I think it's bigger than it used to be, just seems smaller because it is a lesser *share* of overall content online.
+T 1710441524 18<22big-MAC18>	i'd like to think im experiencing the 1990's over here in libera.chat
+T 1710441615 18<29BlueyHealer18>	I mean outside of IRC as well. Also Libera seems to be fairly strict.
+T 1710441645 18<29BlueyHealer18>	IRC is too small to count, let's be honest.
+T 1710441806 18*	28calmclam fires up winnuke
+T 1710442240 18<29tomreyn18>	BlueyHealer: you're right, fortunately, sorry about the negativity. science and open source publishing etc. are growing, are not over at all. there are just too many who nowadays grow up with a misunderstanding of what it means to be 'cool' and what makes you stand out (in a positive way).
+T 1710442462 18<22big-MAC18>	what in the fuck are you going on about
+T 1710442466 18<22big-MAC18>	are you on drugs?
+T 1710442492 18<22big-MAC18>	psychological issues?
+T 1710442553 18*	28calmclam is super-sized fried
+T 1710442664 18<29tomreyn18>	fortunately, too, often times those misunderstandings seem to be just tied to a certain period in life, and things can go better later thanks to exposure to education.
+T 1710442726 18<29tomreyn18>	please excuse me while i return to inhaling O² drugs.
+T 1710442761 18<28calmclam18>	O^2 is for squares
+T 1710442789 18<29tomreyn18>	you got me there.
+T 1710469967 18<26hays18>	tomreyn: no agree things are trending badly. everything is commercialized, GPL is constantly weakening in terms of how much its used, and i sense that free distros of Linux are struggling a bit
+T 1710470028 18<26hays18>	companies are using publishing findings as a recruiting tool in AI; they have no commitment to free information. this was recently made clear with openAI emails
+T 1710470084 18<26hays18>	the browser situation is getting worse. firefox support is getting dropped in (usually corporate) web software
+T 1710470118 18<26hays18>	chrome and the others have tracking in them, or are run by a cryptobro.
+T 1710470155 18<26hays18>	stallman was basically pushed out of his own organization
+T 1710470451 19*	Now talking on 22#security
+T 1710470451 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710470451 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710470664 18<26rbatty18>	isn't he back now?
+T 1710470700 19*	Now talking on 22#security
+T 1710470700 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710470700 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710470862 18<26hays18>	rbatty that would be interesting news
+T 1710471171 18<26hays18>	yes he's back. glad to hear that, i think. i mean, i also hope he's learned something because really at his age he should have some more wisdom about some of these other topics he got in trouble about. but i like him in power because he's demonstrated a real, unwavering commitment to open source
+T 1710479006 19*	Now talking on 22#security
+T 1710479006 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710479006 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710481506 18<22big-MAC18>	ive 4 established tcp connections to my sshd daemon
+T 1710481535 18<22big-MAC18>	when i whois the ip address its the funniest shit ever
+T 1710481539 18<22big-MAC18>	whois 39.104.114.67
+T 1710482226 18<22big-MAC18>	what in the fuck could be happening?
+T 1710483588 18<19Wulf18>	big-MAC: how is the whois output funny in any way? I must have missed the joke.
+T 1710483639 18<22big-MAC18>	CHINA
+T 1710483677 18<19Wulf18>	lol... now I get it, China!  huh... no, still not getting it.
+T 1710483712 18<19Wulf18>	Yes, they've got internet in China.
+T 1710483839 18<22big-MAC18>	THE CHINESE COMMUNIST PARTY IS TARGETING ME
+T 1710483840 18<22big-MAC18>	THE CHINESE COMMUNIST PARTY IS TARGETING ME
+T 1710483840 18<22big-MAC18>	THE CHINESE COMMUNIST PARTY IS TARGETING ME
+T 1710483985 18<19Wulf18>	I wish they actually did.
+T 1710484059 18<22big-MAC18>	BUT
+T 1710484060 18<22big-MAC18>	THEY ARE
+T 1710484065 18<22big-MAC18>	WINNIE THE POOH LOVES ME
+T 1710501318 20*	Disconnected (20)
+T 1710501475 19*	Now talking on 22#security
+T 1710501475 22*	Topic for 22#security is: Computer, Network & Physical Security | Don't ask to ask - Include your threat model https://ssd.eff.org/module/your-security-plan | FDE isn't everything https://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+T 1710501475 22*	Topic for 22#security set by 26ajak!ajak@gentoo/developer/ajak (24Sun Sep  3 18:00:58 2023)
+T 1710508144 18<28calmclam18>	oh bother
+T 1710512386 18<28calmclam18>	big-MAC: Someone must have taken you up on your ddos request, mcdonalds is down
+T 1710512410 18<22big-MAC18>	where
+T 1710512422 18<28calmclam18>	worldwide
+T 1710512551 18<22big-MAC18>	proof?
+T 1710512600 18*	28calmclam hands big-MAC a signed affidavit from ronald mcdonald
+T 1710512645 18*	22big-MAC hands calmclam a bunch of calmly cooked butter clams
+T 1710512655 18<28calmclam18>	:O
+T 1710512742 18<28calmclam18>	you monster
+T 1710512777 18*	28calmclam has suffered a big-MAC attac
+T 1710512778 18<22big-MAC18>	im hungry now

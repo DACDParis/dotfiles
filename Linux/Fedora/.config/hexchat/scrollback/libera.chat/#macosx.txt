@@ -2401,3 +2401,587 @@ T 1710208339 18<19pick18>	Ah so it's a known bugginess.  I don't know t
 T 1710208426 18<25Brains18>	They've been using Intel's integrated graphics cores for many years. All but the very first MacBooks & MacBookk Airs only have integrated Intel graphics.
 T 1710208829 18<24NDPMacBook18>	RAISE SHIELDS: https://arstechnica.com/science/2024/03/shields-up-new-ideas-might-make-active-shielding-viable/
 T 1710209018 18<25Brains18>	Shields *up* Kyaptin?
+T 1710225221 19*	Now talking on 22#MacOSX
+T 1710225221 22*	Topic for 22#MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+T 1710225221 22*	Topic for 22#MacOSX set by 26Cpuroast!~Cpuroast@user/cpuroast (24Thu Mar  7 20:09:19 2024)
+T 1710225221 -18ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+T 1710225221 22*	Channel 22#MacOSX url: 24https://osxwiki.net/
+T 1710243135 18<24Cpuroast18>	dskull: why not Catalina or later?
+T 1710251213 18<25NDPZenBook18>	I have discovered that GRAPE JUICE is possibly habit forming. I can't stop drinking the stuff.
+T 1710252546 18<24swift110-mobile18>	Hmm
+T 1710252559 18<24swift110-mobile18>	White grape juice is amazing
+T 1710258175 18<24Cpuroast18>	NDPMacBook: let it ferment for a bit and you have something very good too :)
+T 1710258703 18<24mane18>	I got some new poetry
+T 1710258808 18<24mane18>	Latest poem https://wskyx.github.io/2024/03/10/grave.html
+T 1710259231 19*	Now talking on 22#MacOSX
+T 1710259231 22*	Topic for 22#MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+T 1710259231 22*	Topic for 22#MacOSX set by 26Cpuroast!~Cpuroast@user/cpuroast (24Thu Mar  7 20:09:19 2024)
+T 1710259231 -18ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+T 1710259231 22*	Channel 22#MacOSX url: 24https://osxwiki.net/
+T 1710261065 22*	26ChanServ gives channel operator status to 18cirrusbonsai
+T 1710263681 18<22NDPTAL8518>	What is the only organ that has named itself?
+T 1710263766 18<22NDPTAL8518>	The brain.
+T 1710268145 18<28Ferris18>	How exactly is the Screen Sharing list populated? I only ever screen share with 192.168.1.222 and certainly not whatever bluffboxing.co is http://do.midspin.net/screenshots/screensharingrandoms.png Have I been had?
+T 1710268328 18<28Ferris18>	I guess the 3rd and 4th entries in that list are legit, they at least seem to be local and somewhat related to screen sharing
+T 1710272472 18<25Brains18>	G'day.
+T 1710272480 18<24uxfi18>	brian-, hi sir
+T 1710273183 18<24xcrorx18>	Hm, I always thought those suggestions were from what Bonjour detected, but it might be a combination of that and history
+T 1710275329 18<25Brains18>	Oh, I love the MacAdmins community: https://pbs.twimg.com/media/GIfyyJZakAA3mZm.jpg
+T 1710275944 18<26circuitbone18>	https://usercontent.irccloud-cdn.com/file/GApj6TmB/IMG_2389.png
+T 1710276568 18<26circuitbone18>	https://usercontent.irccloud-cdn.com/file/KPq1xQOk/IMG_2380.jpg
+T 1710277233 18<22brian-18>	uxfi hallo
+T 1710280831 18<28Capricious18>	Hmm I need to get a longer thunderbolt cable. Dell's too short. Do you think this will do the trick? https://www.amazon.com.au/AHGEIIY-Thunderbolt-40Gbps-Charging-MacBook/dp/B0BNQGGQVQ/ref=sr_1_5?crid=2QKFQAXWOE99R&dib=eyJ2IjoiMSJ9.ayaYkCyoEJ6APE2UMor_FVCxVdTSPOiDYRGGQ_BBb95wgxHmGHd64_-epP8ZAXEGkeokY9AuX1HdjfAx5L-k-XcSmpKvo6A2SxpXfUXc4UPBLxZkbjWcCX
+T 1710280831 18<28Capricious18>	VghaEMZvGVRechlhULhb7Q_e8zk2ASYAfW-AnUtHiYEFTkS_swcV7vDFh8nG6DxhzMmNDDx7t0UY6opeeJxzXeyJCw3jHCYW8aR6u9wwQeebSPuRhwYtie1_AUPjhP2croY00jvvkUfwDK8yM8Z2clHh2LRQfYsQmTo3IGsq5m_v8sNe6jElc.zf-35oTfhRsHKutVMFFbZFHqo_mRu5BDD8k9nN0qOf8&dib_tag=se&keywords=thunderbolt%2Bcable&qid=1710280569&sprefix=thunderbolt%2Bcab%2Caps%2C371&sr=8-5&th=1
+T 1710281311 18<26utterer18>	is there a longer URL available?
+T 1710281335 18<28Capricious18>	shrug, Amazon.
+T 1710281556 18<26circuitbone18>	you can strip everything including and after the question mark for most urls in case that is not apparent.
+T 1710281597 18<28Capricious18>	Ok it's clear the URL length seems to be more important than the actual question. Noted for future reference.
+T 1710281718 18<26circuitbone18>	As for the brand reputation, I doubt anyone knows if its just a reseller. I prefer `ugreen` in that category for those peripherals.
+T 1710282171 18<26circuitbone18>	Prolly skipped his weetbix
+T 1710288165 18<27stenno18>	good day, on my 2020 macbook pro, macos 14.2.1 (23C71),  which does not have a lan port, i have a seemingly random _active_ network connection listed via ifconfig
+T 1710288195 18<27stenno18>	i cannot select it via tcpdump, and it does not list in the 'network' settings
+T 1710288228 18<27stenno18>	media: autoselect (100baseTX <full-duplex>)
+T 1710288259 18<27stenno18>	it has an inet6 address
+T 1710288279 18<27stenno18>	what is up with that? i tried to google it but couldn't find anything conclusive
+T 1710288357 18<25Brains18>	Are you using, or have ever used, a multiport adaptor which has ethernet?
+T 1710288491 18<25Brains18>	Once macOS has 'seen' such a network device, it never forgets even if the physical part is no longer connected; Bonjour (Apple's zeroconf) will occasionally 'tickle' these phantom PHYs.
+T 1710288603 18<27stenno18>	Brains: i would not be confused about it if the connection wasn't active
+T 1710288613 18<29Fishman18>	stenno: if that line you pasted is from "ifconfig," that means the interface exists currently on the computer.  above it will likely be a line starting with "en" and a number; that'll be the name of the interface (wifi should be "en0")
+T 1710288615 18<27stenno18>	maybe i am just misunderstanding the ifconfig output
+T 1710288640 18<27stenno18>	i have my normal wifi connection on en0, and this interface is called en7
+T 1710288665 18<29Fishman18>	then something is connected that has a network adapter in it
+T 1710288687 18<25Brains18>	Do you have a VM product installed? Could be that.
+T 1710288701 18<27stenno18>	how can i figure out what that can be? lsof throws an error
+T 1710288716 18<27stenno18>	i was wondering if it was related to a vm
+T 1710288718 18<29Fishman18>	it's also entirely conceivable that something has gone wrong and you need to restart the computer.
+T 1710288730 18<27stenno18>	i just restarted it :)
+T 1710288752 18<29Fishman18>	heh.  cold boot, then?
+T 1710288764 18<26utterer18>	or it can just be some of that usual non-standard apple stuff they do that doesn't affect anythjing
+T 1710288806 18<27stenno18>	utterer: i would just like to know what it is
+T 1710288868 18<25Brains18>	See what I said above. If you've plugged in anything which has a 100bT interface or bridgiing chip in it, it remembers it existed, and you can't get rid of it.
+T 1710288890 18<29Fishman18>	stenno: do you have anything connected to the mac?  if so, unplug everything and see if it goes away
+T 1710288894 18<27stenno18>	Brains: so it being listed as 'active' does not actually mean there is a cable in it?
+T 1710288898 18<25Brains18>	Yes.
+T 1710288913 18<25Brains18>	Hence why I call it a 'phantom NIC'.
+T 1710288984 18<25Brains18>	A high (greater than 3) en number usually means something in a USB-C multiport adaptor, dock, or VM software product.
+T 1710289047 18<27stenno18>	i definetely have plugged a multiport adapter into my mac at some point and also have run vm related stuff
+T 1710289118 18<27stenno18>	i wonder what happens if i just set it to inactive
+T 1710289188 18<27stenno18>	sudo ifconfig en7 down gives me permission denied
+T 1710289193 18<29Fishman18>	if you have istat menus, i *think* its network monitor can show what's using each interface...
+T 1710289230 18<27stenno18>	Fishman: i will check it out, if i don't see anything i will concede to Brains :)
+T 1710289286 18<29Fishman18>	i also stay on older versions of macos, partially because i don't like the way apple's been taking it and partially because i refuse to be their beta tester
+T 1710289303 18<27stenno18>	i am almost certain it is completely harmless, it just wonders me
+T 1710289350 18<27stenno18>	never before have i seen permission denied after using sudo 
+T 1710289429 18<29Fishman18>	System Information might also show other info on the interface
+T 1710289555 18<27stenno18>	errr, wow, could it be related to the touchbar
+T 1710289796 18<27stenno18>	i will investigate this more a bit tomorrow a little bit lol, thanks for your help Brains and Fishman !
+T 1710289820 18<29Fishman18>	you're welcome, i hope you figure it out
+T 1710289829 18<25Brains18>	T-chip magic.
+T 1710290342 18<26circuitbone18>	just when you've seen it all https://usercontent.irccloud-cdn.com/file/8eGe6VnG/IMG_2528.png
+T 1710290915 18<27stenno18>	Fishman: Brains i found it in  /Library/Preferences/SystemConfiguration/NetworkInterfaces.plist - listing ...AppleUSBVHCIPort@80100000/Apple T2 Controller@80100000...
+T 1710290967 18<27stenno18>	now i can sleep in peace, thanks again!
+T 1710290980 18<25Brains18>	\o/
+T 1710290993 18<29Fishman18>	stenno: sleep well?  :-p
+T 1710296504 18<20jaybe18>	"AirPods Pro to Gain 'Hearing Aid Mode' in iOS 18"
+T 1710296608 18<22NDPTAL8518>	What's that?!?! SPEAK UP!!!
+T 1710302106 18<20jaybe18>	heh ~ https://github.com/reidjs/schedule-texts-from-txt
+T 1710302480 18<28gothkat18>	That looks useful
+T 1710305640 18<24swift110-mobile18>	Sup
+T 1710308285 19*	Now talking on 22#MacOSX
+T 1710308285 22*	Topic for 22#MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+T 1710308285 22*	Topic for 22#MacOSX set by 26Cpuroast!~Cpuroast@user/cpuroast (24Thu Mar  7 20:09:19 2024)
+T 1710308285 -18ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+T 1710308285 22*	Channel 22#MacOSX url: 24https://osxwiki.net/
+T 1710340572 19*	Now talking on 22#MacOSX
+T 1710340572 22*	Topic for 22#MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+T 1710340572 22*	Topic for 22#MacOSX set by 26Cpuroast!~Cpuroast@user/cpuroast (24Thu Mar  7 20:09:19 2024)
+T 1710340573 -18ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+T 1710340573 22*	Channel 22#MacOSX url: 24https://osxwiki.net/
+T 1710343036 19*	Now talking on 22#MacOSX
+T 1710343036 22*	Topic for 22#MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+T 1710343036 22*	Topic for 22#MacOSX set by 26Cpuroast!~Cpuroast@user/cpuroast (24Thu Mar  7 20:09:19 2024)
+T 1710343036 -18ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+T 1710343036 22*	Channel 22#MacOSX url: 24https://osxwiki.net/
+T 1710343192 18<28MacinMan18>	Can I go into the apple store in the mall here and buy a new charger for my late 2013, 13" MBP?  The stock one has really frayed at the end by the connector with age. The MagSafe connector that is. It still works, but it should be replaced
+T 1710343259 18<28MacinMan18>	I think it's MagSafe generation 2?  I think?
+T 1710343375 18<28MacinMan18>	I watched a video from Snazzy labs the other day and he suggested apple still sells legacy products in store, so that's why I was curious if this was one
+T 1710343396 18<28gothkat18>	I doubt anybody here will stop you, MacinMan. 
+T 1710343458 18<28MacinMan18>	That's not why I was asking. I was asking to find out if the apple store would still have one I could buy or if it's been discontinued
+T 1710343806 18<28gothkat18>	I doubt anybody here is an expert in your particular Apple Store's stock levels, but didn't the video you're talking about very specifically discuss older chargers?
+T 1710343870 18<28MacinMan18>	Yeah he mentioned finding old stuff at his store. I just wondered if it was just his particular store, or if apple continues to stock their retail stores as a whole with older parts
+T 1710343948 18<28gothkat18>	Sounds like you'll be able to report back on what you find. 
+T 1710344174 18<25cirrusbonsai18>	MacinMan just call the Apple Store, or look online.  no one here is going to know what the Baton Rouge Apple Store has in stock.
+T 1710344209 18<25cirrusbonsai18>	can almost guarantee that they won't have a 10 year old charger, but you never know.
+T 1710344239 18<28MacinMan18>	cirrusbonsai: I found this, I think this will work: https://www.amazon.com/SiliconV-Charger-Replacement-Magnetic-Connector/dp/B08JPHHV61/ref=sr_1_3?crid=2ARDN8OL3MYQW&dib=eyJ2IjoiMSJ9.7-NSH0A2HfNTk0yCldjh3UuUKTQisU9pjRCO8lxNXFq7PDL9exUFmhg6MnkvpmaqlWgZ5xRmE2rqah-BLIMvV91XhgxfczRh2Pe0Pf2mbYkvAdvlar8gXz796a0ZJQ-0ovbWLJBOXk4U-qkND8EgNkeWPFh4HHqFJIBQtNxCtEr8jM1041jbpC-8IFF9eYJ75VIu_oWhl5F7MTJ96iij6dAvcgU8NHZKHT0ntnyzVf4.F7cBuIFXeu9QVdtx-92FbY2s
+T 1710344239 18<28MacinMan18>	cwQBZQU8OrINjw5NVM0&dib_tag=se&keywords=macbook+pro+11%2C1+charger&qid=1710344096&sprefix=macbook+pro+11%2C1+charger%2Caps%2C104&sr=8-3
+T 1710344259 18<25cirrusbonsai18>	you need to learn how to trim down links
+T 1710344284 18<25cirrusbonsai18>	the ref= and everything after that can be pulled before you post an amazon link
+T 1710344308 18<28gothkat18>	In the video he mentioned some guy went into their local Apple Store and bought a bunch of outdated crap including ancient magsafe adapters. And pre-lightning cables. It seems like this question was answered before it was asked in general, although each specific store might be different. 
+T 1710344397 18<25cirrusbonsai18>	yeah
+T 1710344414 18<25cirrusbonsai18>	MacinMan if the Apple Store doesn't have one, just get the one from Amazon and try it.
+T 1710344451 18<28MacinMan18>	cirrusbonsai: I did amazon because I'd have to pay more to get the apple store and back than the charger costs
+T 1710344485 18<25cirrusbonsai18>	I would always go with Apple certified over third-party.  but if Apple doesn't have one, third-party is the only option.
+T 1710344550 18<28gothkat18>	MacinMan Then order it from Apple rather than physically going? This is not a challenging problem to solve. 
+T 1710344553 18<28MacinMan18>	Well the reviews overall look good as it's over 4 stars so that's typically a good sign 
+T 1710344589 18<28gothkat18>	I'd pay a few extra dollars for an Apple one too, if you can get one from Apple. Their online store will probably tell you whether or not they'll ship you one. 
+T 1710344719 18<25cirrusbonsai18>	here's a good example of why Apple cables rule all others.
+T 1710344722 18<25cirrusbonsai18>	https://youtu.be/AD5aAd8Oy84?si=QDTXNqpc3EaR5XPj
+T 1710344974 18<28MacinMan18>	I did find the charger online at apple's online store so they still have it. So I tried to cancel the order from amazon but they said it was being prepared for shipping and couldn't guarantee cancelation 
+T 1710344996 18<28MacinMan18>	Amazon also sells genuine apple stuff it just din't show up there from thlem
+T 1710345060 18<28MacinMan18>	Ok it was cancelled 
+T 1710345063 18<28gothkat18>	MacinMan Great. Wait until it moves to the next delivery stage and try to cancel again. Or see if there is a reschedule button once it goes to the delivery carrier, reschedule it a few days out and then try to cancel, that often works. Or just return it afterward. "Incompatible or quality not acceptable" gets a free return here although that might depend on the product and your area.
+T 1710345129 18<28gothkat18>	Apple usually ships pretty quickly too. Here you can get priority stuff in your hand in under 24 hours sometimes, or under 4 hours if you pay for same-day courier delivery. Even regular shipping is usually faster than they claim.
+T 1710345144 18<28gothkat18>	Under-promise over-deliver is very much Apple's approach to shipping in my experience.
+T 1710345277 18<28MacinMan18>	Well the charger was mainly a security consideration with the damaged wires. The MacBook Pro itself really isn't worth putting much into anymore. It works, but it needs a new battery and it's latest supported OS is Big Sur unless I want to use Open Core. I've acutely considered selling it to see how much I could get for it  as it just needs a new battery and a new charger 
+T 1710345493 18<28MacinMan18>	gothkat: if I were to go to the apple store here, I might consider just getting a new MacBook to have something current and having the in person experience would be nice and I could do the vision pro demo in store too
+T 1710345673 18<28MacinMan18>	The new Airs look nice I don't know if I'd need to get a new pro model. Seems like the air in the apple silicon version is good for most. The ports would be nice on the pro though. I'm just thinking out loud because I need to get something at som point to have a current supported device
+T 1710345690 18<28MacinMan18>	The iMac will be out of support once Monterey ends this year
+T 1710345722 18<28MacinMan18>	I was actually waiting for Apple to do their larger iMac in Apple silicon and get that
+T 1710345748 18<24uxfi18>	MacinMan, hi sir
+T 1710345759 18<28MacinMan18>	Hi uxfiboy
+T 1710346529 19*	Now talking on 22#MacOSX
+T 1710346529 22*	Topic for 22#MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+T 1710346529 22*	Topic for 22#MacOSX set by 26Cpuroast!~Cpuroast@user/cpuroast (24Thu Mar  7 20:09:19 2024)
+T 1710346530 -18ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+T 1710346530 22*	Channel 22#MacOSX url: 24https://osxwiki.net/
+T 1710347504 19*	Now talking on 22#MacOSX
+T 1710347504 22*	Topic for 22#MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+T 1710347504 22*	Topic for 22#MacOSX set by 26Cpuroast!~Cpuroast@user/cpuroast (24Thu Mar  7 20:09:19 2024)
+T 1710347504 -18ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+T 1710347504 22*	Channel 22#MacOSX url: 24https://osxwiki.net/
+T 1710351789 19*	Now talking on 22#MacOSX
+T 1710351789 22*	Topic for 22#MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+T 1710351789 22*	Topic for 22#MacOSX set by 26Cpuroast!~Cpuroast@user/cpuroast (24Thu Mar  7 20:09:19 2024)
+T 1710351789 -18ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+T 1710351789 22*	Channel 22#MacOSX url: 24https://osxwiki.net/
+T 1710352418 18<28MacinMan18>	utterer: since you use steam, what's the create application shortcut do vs the create desktop shortcut ? The application shortcut is checked by default while desktop isn't
+T 1710352438 18<24mane18>	Latest poem https://wskyx.github.io/2024/03/13/brother.html
+T 1710352484 18<26utterer18>	I think one makes the short cut on the desktop and the other in the Applications folder?  I am not sure I always have them unchecked
+T 1710352498 18<26utterer18>	they may also be UI things from WIndows since it shares the same codebase
+T 1710352515 18<26utterer18>	I think it makes it in the ~/Application folder
+T 1710352541 18<28MacinMan18>	Well I redownloaded transistor and it's not in there so not sure what it did
+T 1710352553 18<28MacinMan18>	It didn't put it in the dock either
+T 1710352575 18<26utterer18>	it only makes a shortcut the application lives in steam's file system in Application Support
+T 1710352587 18<26utterer18>	unless you designate another location for installs
+T 1710352613 18<28MacinMan18>	utterer: oh I found what it did it put it in ~/Applications where Chrome apps go as well
+T 1710352852 18<26utterer18>	👍
+T 1710353114 18<28MacinMan18>	utterer: even after giving steam full disk access as it was listed there it still put it in ~/Applications so I guess it does that by default since it's chrome based and that's where chrome also puts it's apps
+T 1710353168 18<26utterer18>	I think it is less because of chromium base for the interface and more because Steam is tied to the user and not shared applications
+T 1710353194 18<26utterer18>	if another user signs in on your machine they don't see your games because it is in ~/Library/Application support by default
+T 1710353215 18<26utterer18>	so no point in putting it in /Applications because it isn't a universally accessible shortcut
+T 1710353249 18<28MacinMan18>	Since I'm the only user there isn't a way to tell steam to put things on system level?
+T 1710353257 18<26utterer18>	no
+T 1710353266 18<28MacinMan18>	Ok, no biggie then 
+T 1710353273 18<28MacinMan18>	I was just curious
+T 1710353276 18<26utterer18>	nothing is stopping you from moving that shortcut to /Applications though
+T 1710353340 18<28MacinMan18>	utterer: I was actually going to consider getting Dragonsphere through Steam but the version there is windows only and not Mac compatible
+T 1710353359 18<28MacinMan18>	I thought maybe they had a better package than GOG that might be updated
+T 1710353406 18<26utterer18>	nope your best bet still is repackaging dragonsphere that you have with either DosBox or Boxer
+T 1710353448 18<28MacinMan18>	At least the king's quest games 1-7 can be loaded into ScummVM
+T 1710353453 18<28MacinMan18>	I've done that already
+T 1710353577 18<28MacinMan18>	utterer: the nice thing about ScummVM is, it also seems to be able to play the windows versions of the games, and isn't limited to DOS even though it loads both versions during the scan
+T 1710353645 18<28MacinMan18>	I thought Dragonsphere was going to be a ScummVM compatible game, but they never officially did it
+T 1710353993 18<26utterer18>	Yep although for the earlier * Quest games, DOS was the only way to play and I think Windows support came with the later games and then when they were released as a collection
+T 1710354006 18<26utterer18>	I think once the CDROM talkie sierra games came out they started having windows versions
+T 1710354061 18<28MacinMan18>	Do you know if ScummVM exists in OpemEmu? I also have that. Maybe if it's there I could consolidate without having the separate ScummVM app
+T 1710354073 18<26utterer18>	No it exists in RetroArch
+T 1710354234 18<28MacinMan18>	Yeah I had looked at that a whileback
+T 1710354291 18<26utterer18>	i think openemu is mostly on life support at this point which is a shame
+T 1710354390 18<28MacinMan18>	I have Nintendo and Atari games in OpenEmu. They recently did a big update
+T 1710354395 18<28MacinMan18>	But yeah it's been a while
+T 1710354532 18<26utterer18>	it was just a maintenance update the last one and there has been no conversation of moving the cores over to native
+T 1710354555 18<26utterer18>	But also it is a completely free project and I have no expectations or demands that they do either and happy it exists for people
+T 1710354686 18<28MacinMan18>	So how do you like retroArch I haven't officially tried anything with it
+T 1710354693 18<28MacinMan18>	I just had downloaded it to look at it
+T 1710354730 18<26utterer18>	It requires a lot of configuration but it is very versatile.  
+T 1710354730 18<29evon18>	This might be a dumb question but is there any way to install a newer macos version on an old mac?  Like installing BiG Sur on a 2007 iMac
+T 1710354769 18<28MacinMan18>	evon: yes with the open core legacy patcher projject
+T 1710354823 18<28MacinMan18>	evon: read here and see if it's something you want to do: https://dortania.github.io/OpenCore-Legacy-Patcher/
+T 1710354936 18<29evon18>	Thanks MacinMan
+T 1710355035 18<22Jaelae18>	hmm so i have a newer M2 Macbook Pro with usb-c and two monitors with display port out. is the easiest thing to just buy display port to usb-c connectivity for both?
+T 1710355048 18<29evon18>	At a glance, it doesn't look like a plug and play thing. I assume that I may have to do a quite bit of troubleshooting to get this working
+T 1710355052 18<22Jaelae18>	i have a dell usb-c display hub that i can connect but it only does 1 screen at a time
+T 1710355064 18<22Jaelae18>	i think because you need to connect to ports on both sides of the macbook pro
+T 1710355084 18<28MacinMan18>	evon: they've actually made it pretty straight forward also check with Cpuroast he uses it
+T 1710355113 18<24Cpuroast18>	2007 is a bit of a lost cause
+T 1710355124 18<24Cpuroast18>	anything pre-metal is a losing battle
+T 1710355131 18<24Cpuroast18>	2012 and up
+T 1710355174 18<28MacinMan18>	evon: linux or FreeBSD might be an option if you want a real challenge 
+T 1710355198 18<28MacinMan18>	Cpuroast: would linux do ok on a Mac that old?
+T 1710355201 18<29evon18>	Cpuroast The one I got is metal A1224 Imac
+T 1710355202 18<24Cpuroast18>	sure
+T 1710355216 18<24Cpuroast18>	evon: by metal, I mean the graphics API
+T 1710355220 18<24Cpuroast18>	not what it's made of
+T 1710355231 18<29evon18>	Linux runs on anything :-)
+T 1710355235 18<24Cpuroast18>	metal was introduced in 2012
+T 1710355248 18<24Cpuroast18>	2011 and older macs do not support metal
+T 1710355257 18<29evon18>	Thanks for the clarity
+T 1710355289 18<28MacinMan18>	Isn't metal apple's response to Vulcan ?
+T 1710355294 18<24Cpuroast18>	so support in newer versions of versions is extremely best effort
+T 1710355298 18<28MacinMan18>	Or whatever that api was called
+T 1710355300 18<24Cpuroast18>	newer versions of macOS
+T 1710355835 18<26utterer18>	it wasn't a response it was apples library which I think was out before vulkan
+T 1710355848 18<26utterer18>	to replace OpenGL
+T 1710356027 18<28MacinMan18>	ok
+T 1710356049 18<28MacinMan18>	I think openGL still exists, or did they kill it off completely ?
+T 1710356082 18<26utterer18>	it is deprecated
+T 1710356255 18<26utterer18>	won't see another update on Mac
+T 1710356294 18<26utterer18>	i think I still have my "Apple Supports OpenGL" shirt they gave away to some people when they first announced it
+T 1710356309 18<26utterer18>	i forgot what Macworld, I think the one where they demoed Quake 3 for the first itme
+T 1710356530 18<28MacinMan18>	I don't remember that shirt I may not have paid attention back then
+T 1710359072 18<28MacinMan18>	I reinstalled Serviio Media Server as an alternative to Plex. It's strictly a DLNA server
+T 1710360984 18<24swift110-mobile18>	Sup evon
+T 1710360996 18<24swift110-mobile18>	Sup utterer
+T 1710361832 18<26utterer18>	it was a limited edition shirt for some people associated with Mac gaming at the time
+T 1710362397 18<26utterer18>	hello
+T 1710362400 18<26utterer18>	swift
+T 1710362440 18<28MacinMan18>	utterer: I'm installing my GOG games to the Monterey drive as most work  at this point
+T 1710363048 18<24swift110-mobile18>	How r u utterer
+T 1710363066 18<24swift110-mobile18>	I have steam and several games I play on Mac
+T 1710363075 18<24swift110-mobile18>	In fact, I played those games on the 2010 MacBook
+T 1710363605 18<25Brains18>	G'day.
+T 1710363623 18<22NDPTAL8518>	https://www.reddit.com/r/Damnthatsinteresting/comments/1bdxgyt/chimpanzees_are_shocked_by_a_mans_prostetic_leg/
+T 1710364323 18<22NDPTAL8518>	Absolutely Fascinating: https://www.reddit.com/r/interestingasfuck/comments/1bdsfkm/zelenskys_phone_call_to_macron_to_inform_him_that/
+T 1710365032 18<25Brains18>	ICYMI: macOS Sonoma 14.4 is causing some USB hubs to stop working, including hubs built into displays & USB-C multiport adaptors that worked perfectly up to 14.3.1. Gather logs, file feedback. https://appleinsider.com/articles/24/03/12/latest-macos-sonoma-update-is-breaking-some-usb-hubs-in-monitors
+T 1710370368 19*	Now talking on 22#MacOSX
+T 1710370368 22*	Topic for 22#MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+T 1710370368 22*	Topic for 22#MacOSX set by 26Cpuroast!~Cpuroast@user/cpuroast (24Thu Mar  7 20:09:19 2024)
+T 1710370368 -18ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+T 1710370368 22*	Channel 22#MacOSX url: 24https://osxwiki.net/
+T 1710379561 19*	Now talking on 22#MacOSX
+T 1710379561 22*	Topic for 22#MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+T 1710379561 22*	Topic for 22#MacOSX set by 26Cpuroast!~Cpuroast@user/cpuroast (24Thu Mar  7 20:09:19 2024)
+T 1710379561 -18ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+T 1710379561 22*	Channel 22#MacOSX url: 24https://osxwiki.net/
+T 1710381544 18<25Brains18>	This is so sweet: Nintendo64 doing the ST:TNG opener. https://twitter.com/FanartBirb/status/1577110769803546624
+T 1710382169 18<29evon18>	Swift110-mobile hello there
+T 1710388266 18<24swift110-mobile18>	Evon
+T 1710388475 18<29evon18>	Swift110-mobile what?
+T 1710388657 18<26tearsfornations18>	Hi, I'm trying to add text (overlay) on top of my video? but when I drag it, it goes between and not on top https://usercontent.irccloud-cdn.com/file/C5BtIPpz/image.png
+T 1710389621 18<29Fishman18>	tearsfornations: you might want to mention what application you're trying this in...
+T 1710389887 18<24swift110-mobile18>	How r u evon
+T 1710390066 18<29evon18>	Swift110-mobile good u?
+T 1710390120 18<24swift110-mobile18>	I’m great evon which Mac do u have
+T 1710390328 18<29evon18>	Swift110-mobile iMac A1224
+T 1710390381 18<29evon18>	It's not mine though. It's a friends who wanted to know what could be done with it
+T 1710391560 18<29Fishman18>	evon: that model covers 4 different products, but given that they have at best a core 2 duo P7550 @ 2.26 GHz, max out at 6 or 8 GB RAM and Mac OS X 10.11.6 (and the display is only 1680x1050...)  i personally would just ewaste it and save my time
+T 1710391726 18<29Fishman18>	(or, an E8135 @ 2.66 GHz, or E8335, at the same, or a T7700 Merom @ 2.4 GHz)
+T 1710391961 18<29evon18>	Exactly my thoughts 
+T 1710392233 18<29Fishman18>	heh, i'm not even sure it's worth using as a picture frame, given its low resolution :-p
+T 1710392340 18<29evon18>	Lol. I could stick Linux on it to breathe some life but I can't be bothered
+T 1710392422 18<29Fishman18>	i wouldn't expect a ton of long-term success even there.  apple tweaks pretty much ALL their hardware away from standard...
+T 1710395960 18<25Brains18>	evon: That old thing is old enough that linux wouldn't kill it. ChromeOS Flex or even Windows (with Apple's Boot Camp drivers) would better.
+T 1710402340 18<24swift110-mobile18>	Evon, Likely there are YouTube videos with Linux installed on that machine. I suggest you check those out and see how it is. As far as the other operating systems personally I’m less familiar with them so I’m less likely to recommend as a result.
+T 1710407198 19*	Now talking on 22#MacOSX
+T 1710407198 22*	Topic for 22#MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+T 1710407198 22*	Topic for 22#MacOSX set by 26Cpuroast!~Cpuroast@user/cpuroast (24Thu Mar  7 20:09:19 2024)
+T 1710407198 -18ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+T 1710407198 22*	Channel 22#MacOSX url: 24https://osxwiki.net/
+T 1710407468 19*	Now talking on 22#MacOSX
+T 1710407468 22*	Topic for 22#MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+T 1710407468 22*	Topic for 22#MacOSX set by 26Cpuroast!~Cpuroast@user/cpuroast (24Thu Mar  7 20:09:19 2024)
+T 1710407468 -18ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+T 1710407468 22*	Channel 22#MacOSX url: 24https://osxwiki.net/
+T 1710407754 19*	Now talking on 22#MacOSX
+T 1710407754 22*	Topic for 22#MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+T 1710407754 22*	Topic for 22#MacOSX set by 26Cpuroast!~Cpuroast@user/cpuroast (24Thu Mar  7 20:09:19 2024)
+T 1710407754 -18ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+T 1710407754 22*	Channel 22#MacOSX url: 24https://osxwiki.net/
+T 1710408444 18<20setnan18>	(pour te donner une idée, avec vscodium + un plugin et qques réglages, je debug du php sur un serv externe (en docker sur ma rasp), sur le papier c assez improbable, 
+T 1710408456 18<20setnan18>	oops wrong tab
+T 1710408857 19*	Now talking on 22#MacOSX
+T 1710408857 22*	Topic for 22#MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+T 1710408857 22*	Topic for 22#MacOSX set by 26Cpuroast!~Cpuroast@user/cpuroast (24Thu Mar  7 20:09:19 2024)
+T 1710408857 -18ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+T 1710408857 22*	Channel 22#MacOSX url: 24https://osxwiki.net/
+T 1710409845 18<26Guest354118>	hi
+T 1710409901 18<26Guest354118>	what does it mean when I type history and I see asterisks next to the numbers (idk what they are called)?
+T 1710413762 18<28MacinMan18>	How's it going ?
+T 1710417108 18<29evon18>	Swift110-mobile makes sense. Thanks
+T 1710417145 18<28MacinMan18>	evon: did you decide what to do with your old Mac?
+T 1710420177 18<29evon18>	MacinMan gonna give it away for free. I don't want to waste my time with it
+T 1710420220 18<28MacinMan18>	ok
+T 1710420309 18<29evon18>	Unless you have any other suggestions
+T 1710420798 22*	26ChanServ gives channel operator status to 18cirrusbonsai
+T 1710424935 18<28MacinMan18>	I hate when the battery just randomly dies in my mouse. It makes it look like the system has frozen when the pointer stops
+T 1710424945 18<28MacinMan18>	Oh well put a new on in and it's good to go
+T 1710424964 18<28MacinMan18>	They last almost a year, or at least a good 6 months
+T 1710425153 18<25cirrusbonsai18>	all my rechargeable batteries are so old I get about a month out of them!
+T 1710425174 18<25cirrusbonsai18>	probably time to buy some new ones.  but I got my $$ worth out of them.
+T 1710425198 18<28MacinMan18>	I use regular alkaline AAs either Duracell or Energizer 
+T 1710425239 18<25cirrusbonsai18>	yeah, I moved away from disposables.  much cheaper long term to use the rechargeable batteries.
+T 1710425270 18<28MacinMan18>	They last quite a while before it's time for a new one
+T 1710425287 18<28MacinMan18>	Sorry that was supposed to be above your post. It didn't send for whatever reason
+T 1710425310 18<25cirrusbonsai18>	also less recycling, unless you trash them.
+T 1710425343 18<28MacinMan18>	I just throw them away. No one has said not to put regular batteries in the trash
+T 1710425355 18<28MacinMan18>	Only the rechargeable kind not to throw in the trash
+T 1710425363 18<28MacinMan18>	Like the lead acid Lithium etc
+T 1710425397 18<25cirrusbonsai18>	"EPA recommendation: send used alkaline and zinc carbon batteries to battery recyclers or check with your local or state solid waste authority."
+T 1710425421 18<25cirrusbonsai18>	I know we live in a state that likes to put everything in the trash, but I try to be more environmentally aware.
+T 1710425426 18<28MacinMan18>	I have a Logitech Triathlon mouse and it's served me well the last several years
+T 1710425495 18<28MacinMan18>	I do as well. but regardless of where I've lived, no one has told me never to put regular batteries in the trash. Just the specialty ones as mentioned
+T 1710425517 18<24NDPMacBook18>	The crowd is going wild.
+T 1710425520 18<25cirrusbonsai18>	I just posted a quote from the EPA website.
+T 1710425520 18<24NDPMacBook18>	Spaceship is about to land.
+T 1710425531 18<25cirrusbonsai18>	NDPMacBook yeah, this is good!  almost there!
+T 1710425570 18<28MacinMan18>	cirrusbonsai: yes you did and thanks. Since I wasn't aware of that before
+T 1710425709 18<25cirrusbonsai18>	👍🏻 
+T 1710425730 18<28MacinMan18>	cirrusbonsai: when I get my new charger, should I cut the wire off the old one since it's damaged so if anyone ever finds it they can't use it?
+T 1710425776 18<25cirrusbonsai18>	MacinMan if anyone ever finds it?  do you plan to leave it on the sidewalk?
+T 1710425794 18<28MacinMan18>	No but people do go through the dump I'm sure
+T 1710425813 18<25cirrusbonsai18>	personally, I'd drop it off at an Apple Store or electronic recycler.
+T 1710425834 18<25cirrusbonsai18>	I wouldn't put any more thought into it.
+T 1710425886 18<28MacinMan18>	I can do that but cirrusbonsai you forget I can't drive and to go to the apple store and back with uber would cost as much as a new charger that's why I get irritated with people here because they don't remember that
+T 1710425924 18<24NDPMacBook18>	Just cut the cord and throw it away. This isn't rocket science.
+T 1710425930 18<24swift110-mobile18>	lol
+T 1710425965 18<28MacinMan18>	NDPMacBook: I was going to do that that initially and be done with it
+T 1710426277 18<28MacinMan18>	Can regular google chrome do the vertical tabs vs horizontal? That's one thing I like about Edge is the vertical tabs vs horizontal. I'm used to the horizontal layout of course, but the vertical layout is a nice change
+T 1710427392 18<28MacinMan18>	Recently I've gotten ads from Verizon for adding a second number to one line, at least that what it looks like. Is there any reason I'd want to do this for one person?
+T 1710427572 18<28MacinMan18>	I looked at the email again and think I might pass on it for now. It's $10 a month, and right now I don't need a second number bad enough to pay that
+T 1710430874 18<26utterer18>	i barely use 1 phone number
+T 1710431078 18<25cirrusbonsai18>	same.  I use mine once a week to call my dad.
+T 1710431167 18<25cirrusbonsai18>	I think mine is more a honeypot for spam calls!
+T 1710431232 18<26tearsfornations18>	does anyone want to read my testimony (Christian)
+T 1710431262 18<25cirrusbonsai18>	is it related to Apple products/services?
+T 1710431477 18<26tearsfornations18>	no, not at all
+T 1710437374 18<26utterer18>	i am so close to being able to do a makeshift VHS capture from limited equipment one last issue remains
+T 1710437811 18<26utterer18>	either this hdmi to sdi adapter is dead or not getting a valid signal
+T 1710438506 18<22Thuryn18>	utterer, this is relevant to my interests
+T 1710438534 18<26utterer18>	mash that like button and bash that subscribe button and hang on to your seats
+T 1710438589 18<26utterer18>	i've managed to scrounge together a VHS deck doing out to a svideo / composite to HDMI converter going to an HDMI to SDI converter going to an SDI only capture interface
+T 1710438611 18<26utterer18>	but now I am looking to see if there is an HDMI capture box lying around here I can use instead
+T 1710438676 18<22Thuryn18>	what software?  something that came with the capture device?
+T 1710438680 18<22Thuryn18>	(what device?)
+T 1710438755 18<26utterer18>	right now it is an older AJA U-TAP SDI
+T 1710438791 18<22Thuryn18>	SDI = standard def coax?
+T 1710438792 18<26utterer18>	using the built in Control Room software but no SDI signal is coming in so I think my Svid to HDMI converter isn't putting out a standard broadcast signal which make sense since it looks like it was 30$
+T 1710438866 18<26utterer18>	it is an HD/SD capture box
+T 1710438884 18<22Thuryn18>	oh Serial Digital Interface.
+T 1710438895 18<22Thuryn18>	i haven't seen that before
+T 1710438901 18<26utterer18>	oh sorry yeah SDI cable which is essentially coax with the bnc connector
+T 1710438935 18<22Thuryn18>	the video capturing that i've done is using the left/right/video RCA analog straight into a USB capture deviec
+T 1710438947 18<22Thuryn18>	(it had s-video, too, but the RCA was simple enough)
+T 1710438965 18<26utterer18>	Yeah that would be the most logical way to do it.  I am just at the office with the deck and whatever legacy ingest equipment I have around here
+T 1710439006 18<22Thuryn18>	i need to get a new capture device, though, because the old one is a Dazzle, which pretty much only works with Pinnacle Studio, which is $$
+T 1710439008 18<26utterer18>	I found some old VHS tapes at home and while I can browse the footage fine with the analog to HDMI converter, its getting it to ingest.
+T 1710439054 18<26utterer18>	I have this at home which I may just wind up bringing in - https://www.beharbros.com/product-page/prodigy-video-capture
+T 1710439099 18<26utterer18>	it does HDMI capture up to 1080p 60 and shows up as a USB Video device so you can use OBS to capture
+T 1710439102 18<22Thuryn18>	lol you can FINANCE that $50 purchase!  X-D 
+T 1710439118 18<22Thuryn18>	yeah i might want one of those myself
+T 1710439132 18<26utterer18>	it is like 20$ for shipping to the states since I think it comes from turkey
+T 1710439183 18<26utterer18>	but also I am impressed that it has very low latency too when going through OBS around 5 frames or so which won't work for high reaction video games but is better than some other USB capture devices that cost even more
+T 1710439295 18<22Thuryn18>	what software do you use for the capture?  just vlc?
+T 1710439318 18<26utterer18>	I use OBS and made a scene with just the device
+T 1710439352 18<26utterer18>	and then have it record a local h264
+T 1710439371 18<22Thuryn18>	https://obsproject.com/   this?
+T 1710439404 18<26utterer18>	Yes thats the one.  It is a powerful free platform designed for streamers but has a lot of local functionality too
+T 1710439412 18<26utterer18>	almost like a digital video switcher and recorder
+T 1710439455 18<26utterer18>	and since that box above shows up as USBHost it doesn't require any other drivers, you can just add it into a scene.  
+T 1710439461 18<22Thuryn18>	i sent those to myself for lster.  good food for thought.
+T 1710439523 18<24NDPMacBook18>	https://appleinsider.com/inside/mac/vs/thunderbolt-5-vs-thunderbolt-4----compared
+T 1710439536 18<26utterer18>	OBS is really a great app.  You can in turn use it as a virtual input into another app so for example have a video feed coming in along with your camera and then you can route that to Zoom or Google meet for example
+T 1710439565 18<26utterer18>	we used to use it during Stay-At-Home for the pandemic to play trivia games over video chat
+T 1710439761 18<26utterer18>	Thuryn, if you are looking for a higher end capture card, El Gato makes some great stuff
+T 1710439905 22*	26ChanServ gives channel operator status to 18XrD
+T 1710439979 18<26utterer18>	Ride The Split 🏄‍♂️
+T 1710440285 18<22Thuryn18>	w00t
+T 1710440295 18<22Thuryn18>	is elgato's software any good?
+T 1710440313 18<22Thuryn18>	Pinnacle's isn't terrible... for 2013...
+T 1710440451 18<26utterer18>	It's decent for straight capture.  But the way to go nowadays is routing it through to another app like OBS.  A lot more control with what is being displayed.
+T 1710440484 18<25Syliss_18>	hmmm,  work has a late 2015 27" imac i may grab
+T 1710440486 18<26utterer18>	With El Gato though I have an older device so I am only speaking on that capture app that was included being decent for the task.  I haven't tried the new one.  
+T 1710440500 18<25Syliss_18>	i will need to replace the drive tho, ugh
+T 1710440602 18<26utterer18>	with a 27" imac you'll need to get a 2.5 to 3.5 brace if you are going the SSD route
+T 1710440621 18<26utterer18>	i only learned that when I took one apart to do an HD swap and had to run to best buy to get the brace
+T 1710440668 18<25Syliss_18>	it has a fusion drive in it too
+T 1710440682 18<25Syliss_18>	sucks cause its 1tb
+T 1710440874 18<26utterer18>	if you swap out the drive you'll have a 128 GB extra SSD you can use for cache ro whatever from the fusion drive part at least
+T 1710440928 18<25Syliss_18>	ah good to know,  i havent opened one yet so was like hmm
+T 1710440941 18<25Syliss_18>	mac minis and macbooks, easy,  imacs, not so much
+T 1710441027 18<26utterer18>	I would suggest getting the kit from iFixIt if you do want to upgrade.  It includes some tools that makes it a lot easier along with the stickers to re-seal the display
+T 1710441060 18<26utterer18>	basically its a little plastic pizza cutter that you roll around the edges of the mac to break the adhesive 
+T 1710441071 18<25Syliss_18>	yeah, i was thinking that. my coworker is an ex genius bar peep and had it but didnt want to deal with it
+T 1710441119 18<25Syliss_18>	cool
+T 1710441121 18<26utterer18>	i've done it twice so far and it was maybe an hour and a half process each time not counting distractions.  For the 27" it pays to have an extra set of hands for the detaching the monitor part
+T 1710441153 18<25Syliss_18>	ok,  ill have to figure that out, maybe my wife will help
+T 1710441164 18<25Syliss_18>	its old but would be useful for something
+T 1710441168 18<25Syliss_18>	maybe wall mount it
+T 1710441181 18<25Syliss_18>	or donate it to a fam member 
+T 1710441225 18<26utterer18>	would make a great media viewer.  I would say you can run OCLP to have a newer mac os but that probably isn't the best for a family member who may not be a computer power user
+T 1710441255 18<25Syliss_18>	lol yeah
+T 1710441277 18<25Syliss_18>	i get a lot of free mac/pc stuff from work now and then so i was like hmm
+T 1710441298 18<25Syliss_18>	i have 2 27" tb displays too but they are heavy af and power hungry 
+T 1710441398 18<26utterer18>	oooh those are great displays though if not burned in
+T 1710441541 18<25fris18>	When is oled iPad coming
+T 1710441557 18<24Cpuroast18>	Eventually
+T 1710444096 18<22NDPTAL8518>	ROFL https://www.theverge.com/2024/3/14/24100685/craig-wright-is-not-satoshi-nakamoto-and-did-not-invent-bitcoin-british-judge-says
+T 1710445341 22*	26ChanServ gives channel operator status to 18cirrusbonsai
+T 1710470451 19*	Now talking on 22#MacOSX
+T 1710470451 22*	Topic for 22#MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+T 1710470451 22*	Topic for 22#MacOSX set by 26Cpuroast!~Cpuroast@user/cpuroast (24Thu Mar  7 20:09:19 2024)
+T 1710470451 -18ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+T 1710470451 22*	Channel 22#MacOSX url: 24https://osxwiki.net/
+T 1710470700 19*	Now talking on 22#MacOSX
+T 1710470700 22*	Topic for 22#MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+T 1710470700 22*	Topic for 22#MacOSX set by 26Cpuroast!~Cpuroast@user/cpuroast (24Thu Mar  7 20:09:19 2024)
+T 1710470700 -18ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+T 1710470700 22*	Channel 22#MacOSX url: 24https://osxwiki.net/
+T 1710473206 18<26Buzzlewoo18>	yo
+T 1710474584 18<20jaybe18>	“TIL that McDonalds redesigned their McFlurry cups because hedgehogs used to get stuck in them, and die.”
+T 1710474889 18<26Buzzlewoo18>	that's fucked up
+T 1710479006 19*	Now talking on 22#MacOSX
+T 1710479006 22*	Topic for 22#MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+T 1710479006 22*	Topic for 22#MacOSX set by 26Cpuroast!~Cpuroast@user/cpuroast (24Thu Mar  7 20:09:19 2024)
+T 1710479006 -18ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+T 1710479006 22*	Channel 22#MacOSX url: 24https://osxwiki.net/
+T 1710501318 20*	Disconnected (20)
+T 1710501475 19*	Now talking on 22#MacOSX
+T 1710501475 22*	Topic for 22#MacOSX is:  Sonoma 14.4 (23E214) - Ventura 13.6.5 (22G621) - Monterey 12.7.4 (21H1123) | Rules: http://osxwiki.net/mr | ~ops for op attention | Can't chat? /MSG CoreInfo cant_chat | Security Updates: http://support.apple.com/kb/HT1222
+T 1710501475 22*	Topic for 22#MacOSX set by 26Cpuroast!~Cpuroast@user/cpuroast (24Thu Mar  7 20:09:19 2024)
+T 1710501475 -18ChanServ-	[#MacOSX] Can't chat? /MSG CoreInfo cant_chat
+T 1710501475 22*	Channel 22#MacOSX url: 24https://osxwiki.net/
+T 1710503106 18<28MacinMan18>	How's it going ?
+T 1710503640 18<28MacinMan18>	I don't remember who brought up the topic of MacPorts the other day but, can the two package managers co-exist on one system? MacPorts and Home-brew?
+T 1710504140 18<20setnan18>	some things have changed with Silicon, depends on your conf (mac kind/os version), but i would say yes, homebrew could be -installed- in a custom dest before, not sure it's actually possible (supported)
+T 1710504175 18<20setnan18>	(i've switched from hombrew to macport some years ago)
+T 1710504180 18<28MacinMan18>	setnan: I'm on a late 2015, 27" iMac
+T 1710504187 18<28MacinMan18>	So using intel here
+T 1710504248 18<28MacinMan18>	I actually don't have a reason to switch as brew does what I need, I was just curious about the co-existence.
+T 1710504553 22*	26ChanServ gives channel operator status to 18cirrusbonsai
+T 1710504564 18<28MacinMan18>	setnan: I also have a couple Linux VMs since what I would use in brew / ports is already natively included there
+T 1710504831 18<20setnan18>	ok, im on intel too, obvious to say (for people interested in) but if you want to test macport safely the main thing is to check that there are no conflicts for both install destinations. When i switched, i had both for several months, but… homebrew was installed in a custom path :)
+T 1710504858 18<20setnan18>	i switched coz brew was toooooooo slow, and macport officially supported by apple
+T 1710504928 18<20setnan18>	but there's a really bad thing with macport, when upgrading macos to a major version, it needs a migration process, boring
+T 1710504964 18<28MacinMan18>	setnan: I switched to brew because of it going into /usr/local by default.  I occasionally still play with the occasional Eggdrop bot so having tcl in /usr/local made it much easier for the couple because sometimes I couldn't get it to find tcl in a custom location 
+T 1710505013 18<28MacinMan18>	And it's a pain to get the bot to work with the system installed TCL
+T 1710505042 18<20setnan18>	oh ok, i understand
+T 1710505050 18<28MacinMan18>	I thought brew was also supported by Apple. I've heard that statement for both projects
+T 1710505301 18<28MacinMan18>	setnan: through the years I've tried all the major package managers for the Mac. Fink, MacPorts, and Homebrew.  In that order.
+T 1710505369 18<28MacinMan18>	In my experience with each, Homebrew has been, the least broken packages for me.
+T 1710505608 18<28MacinMan18>	setnan: from my VM: tron@mint21:~/Desktop$ uname -a
+T 1710505608 18<28MacinMan18>	Linux mint21 6.5.0-25-generic #25~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Tue Feb 20 16:09:15 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+T 1710505608 18<28MacinMan18>	tron@mint21:~/Desktop$ 
+T 1710505842 18<20setnan18>	yep, maybe brew is more popular … and maintained, i've had a lot of problems with it, i was more interested in reliability and performances, there's probably fewer macport pkg available (not sure about this) or up to date, the ones i need are robust and work perfectly
+T 1710505881 18<20setnan18>	actually i use port mainly for hardware (bluetooth ae) cli, but for the fun fact,
+T 1710505928 18<20setnan18>	the most tricky pkg i installed with port is pigdin (with x11 and so on), and in 1 port command, all was installed and working, very surprised
+T 1710505942 18<28MacinMan18>	I might download a copy of KDE Neon, it sounds like Plasma 6 has some nice changes
+T 1710505978 18<28MacinMan18>	Pidgin in brew doesn't require X11 it runs in windowserver
+T 1710506096 18<28MacinMan18>	Again, years back I used Adium instead of Pidgin but I think that project is dead now
+T 1710506234 18<20setnan18>	dead or nde yep (written in Obj-C and depending on lib purple, witch is very hard to compile for macos actually), but im still currently using Adium, customized version by… myself ;)
+T 1710506276 18<20setnan18>	for x11, i liked the idea to had x11 working again, since it has been removed from macos some years ago
+T 1710506315 18<20setnan18>	(hmm precision, i use Adium only for irc actually)
+T 1710506453 18<28MacinMan18>	XQuartz still works
+T 1710506533 18<28MacinMan18>	If you're still using Adium do any current services still work with it ?
+T 1710506714 18<20setnan18>	apart from irc, i dunno, maybe xmpp and icq if its protocol hasn't changed since some year, for other services i guess not
+T 1710506762 18<28MacinMan18>	For messaging these days I either use Facebook Messenger, or Telegram, or Messages for SMS, or iMessage
+T 1710506788 18<28MacinMan18>	I still have a copy of Skype around too as well as others
+T 1710506893 18<20setnan18>	nowaday, messaging services are often linked to a phone numbers… :I
+T 1710507157 18<28MacinMan18>	true
+T 1710507189 18<28MacinMan18>	Well skype, and zoom aren't I don't think
+T 1710507198 18<28MacinMan18>	They can still be linked to an email
+T 1710507278 18<20setnan18>	…actually, the service that I would like to see emerge more is bluesky, but it is really to much marginal/confidential in my country
+T 1710507443 18<28MacinMan18>	setnan: I think the very first messenger I used after discovering IRC in the 90's was AIM
+T 1710507477 18<28MacinMan18>	I graduated HS in 96 and a lot of the internet chat was just starting to get big then
+T 1710507547 18<20setnan18>	heh :) i think its AIM for me too, because of my internet provider at this epoch
+T 1710507569 18<20setnan18>	(33K modem, etc…)
+T 1710507752 18<28MacinMan18>	Before I moved to Florida and got broadband while I was in Virginia, I was on dialup my last modem I had was a I think it was called Supraexpress, but it was there  teal colored translucent USB modem for the Mac. It was a 56k. It matched the blue iMac or G3
+T 1710507774 18<28MacinMan18>	Now I'm in Louisiana and still have broadband (of course )
+T 1710507807 18<28MacinMan18>	I don't even have a landline anymore since I have a cell phone. Have had a cell phone for a while now at least a decade or two
+T 1710507938 18<28MacinMan18>	setnan: here is a picture of the modem I had way back. I found it on eBay: https://i.ebayimg.com/images/g/VAwAAOSwspFkrjZ6/s-l1600.jpg
+T 1710508160 18<20setnan18>	hehe i must have these strange items from the past in a dusty crate in an attic :)
+T 1710508191 18<20setnan18>	i must go, have nice afternooon cet and nice morning in Louisiana, bbl
+T 1710508193 18<28MacinMan18>	It was a solid modem 
+T 1710508200 18<28MacinMan18>	thanks
+T 1710508207 18<28MacinMan18>	You have a good day as well
+T 1710510383 18<28MacinMan18>	I just got a nice surprise. I just learned my health insurance lets me save my ID card to apple wallet
+T 1710510388 18<28MacinMan18>	This must be new
+T 1710510406 18<28MacinMan18>	Has apple been doing the medical ID cards for a while now?
+T 1710510460 18<28MacinMan18>	I had a myhumana update from the App Store opened it and it had the option to save my card to photos, or apple wallet
+T 1710510481 18<28MacinMan18>	So I saved it to wallet. Not sure what that's going to do for me going forward though
+T 1710510528 18<26utterer18>	when you are at a health provider and they ask for the card you can show it on the phone now instead of taking the card out of the wallet or to confirm your number
+T 1710510532 18<26utterer18>	thats about it
+T 1710510583 18<28MacinMan18>	Well still a good idea to cut down on physical wallet space
+T 1710510614 18<28MacinMan18>	I was hoping more states would be supported for the photo ID now too
+T 1710510618 18<28MacinMan18>	I'd like to add mine
+T 1710510672 18<28MacinMan18>	I haven't heard any updates on that, actually in the tech news
+T 1710510736 18<29zippo^18>	Microsoft Edge and Vivaldi have an option: force black background color and white foreground color for iOS.
+T 1710510738 18<29zippo^18>	>> Dark Mode
+T 1710510804 18<28MacinMan18>	utterer: I'm surprised New York isn't in the list of states. Right now it's only about 4
+T 1710511016 18<26utterer18>	I think a lot of states are probably more concerned with being compliant with the upcoming Real ID requirements before digital licenses.
+T 1710511153 18<28MacinMan18>	utterer: do you know if wallet supports other personal ids like social security card, or say medicare card, etc. I haven't seen any mention of those. But I didn't know Humana supported it either until opening the app today
+T 1710511205 18<26utterer18>	I don't know but I don't follow it either.  Not a fan of digitizing government documents on my phone
+T 1710511286 18<28MacinMan18>	utterer: I think it's a plus as anyone who might steal the physical wallet could also use those cards, where as with the phone it has at least two forms of security so it would be harder for someone to steal info if they took the phone
+T 1710511338 18<26utterer18>	Difference of opinion I guess
+T 1710511375 18<28MacinMan18>	Also different needs and circumstances
+T 1710511544 18<28MacinMan18>	To be honest I've actually started to get used to the progress of the smart phone being the main device I need with me, even over a physical wallet. It can't replace everything but the less a person has to carry is also nice
+T 1710511607 18<28MacinMan18>	If I didn't rent I'd also investigate smart locks so I wouldn't risk losing keys anymore. The phone can be the key 
+T 1710511683 18<28MacinMan18>	Btw on average I don't lose keys it's just the idea of not having to worry about it at all
+T 1710511720 18<26Buzzlewoo18>	misplaced keys are their own category of stress
+T 1710511751 18<25cirrusbonsai18>	the digitized ID in Louisiana is kinda crap
+T 1710511781 18<28MacinMan18>	Buzzlewoo: well if the smart lock functioned like a car + fob the door won't look if you left the phone inside so you could go in and get it without being locked out
+T 1710511834 18<28MacinMan18>	cirrusbonsai: even Florida doesn't have it yet and while I was still there it was rumored they'd be one of the next states to support it
+T 1710511839 18<26utterer18>	fob batteries last a lot longer than phone batteries
+T 1710511881 18<26Buzzlewoo18>	fobs have their own quirks, like the one for my car
+T 1710511893 18<26Buzzlewoo18>	plus you can misplace them, too
+T 1710511907 18<26utterer18>	anything can be misplaced or stolen
+T 1710511918 18<28MacinMan18>	Yep that's true on both counts
+T 1710512014 18<26utterer18>	for me the thought of concentrating all my physical identity tokens into a device with a 12-18 hour battery life and a high value for just the parts alone I personally am not interested in it
+T 1710512017 18<26Buzzlewoo18>	except bad breath and farts
+T 1710512067 18<28MacinMan18>	When I see something in tech change toward something I can personally benefit from though is encouraging and I look at the advantages going forward but I know there are always downsides too
+T 1710512109 18<26utterer18>	I've just been in tech for awhile so I like to see the worst before the benefits of it.
+T 1710512240 18<26utterer18>	wow walmart selling Apple's discontinued M1 air now may be a good sign for support for it going past 5 years maybe
+T 1710512270 18<28MacinMan18>	Speaking of tech I may call the bank again today I closed my account on.  What I don't understand is, the account seems to be closed. I'm no longer receiving text updates on it, and it's no longer a payment option for the credit cards I have through the same bank, but it still shows up on my dashboard when logging in.
+T 1710512287 18<25cirrusbonsai18>	MacinMan the LA Wallet is weird, cause you can put all your stuff in there, but most places won't accept it as a legit form of information.  but yet, you have to have it to have some services.
+T 1710512354 18<25cirrusbonsai18>	the real kicker was the pron thing that happened last year.  to go to an x-rated website without a VPN, you have to register an account using your LA Wallet... so basically, the state wants to know who us pervs are.
+T 1710512373 18<28MacinMan18>	cirrusbonsai: I think the state as a whole needs help   as a disabled individual they don't seem to have very good state wide services to help me be more independent  e.g. public transportation, etc.
+T 1710512377 18<26Buzzlewoo18>	lots of them a pervs
+T 1710512380 18<26Buzzlewoo18>	are
+T 1710512428 18<25cirrusbonsai18>	MacinMan this state is number 49 in most metrics.  it doesn't surprise me.
+T 1710512442 18<28MacinMan18>	They don't even have the talking crosswalks Florida does 
+T 1710512478 18<25cirrusbonsai18>	also doesn't help that we get slammed with hurricanes, so most of the money goes into constructions and maintenance.  in my city, there is a ton of money going into roads and water retention ponds.
+T 1710512514 18<28MacinMan18>	cirrusbonsai: yeah bur the hurricane situation would also apply to Florida they get a lot of them there too
+T 1710512588 18<26utterer18>	flordia also has one of the biggest economies in the US though
+T 1710512670 18<28MacinMan18>	I guess it being 2024 and how people are pushing for equal opportunities for everyone, I just assumed modern tech would be just in about any state. So I was surprised it isn't here and hadn't counted on having to deal with. that
+T 1710512742 18<26Buzzlewoo18>	l8r
+T 1710512878 18<28MacinMan18>	I'm actually a very simple person without a lot of extra needs or demands as a whole but because of my vision loss and the other stuff I've been through out of my control. It has put some extra needs on me  that can be challenging to deal with at times
+T 1710512926 18<28MacinMan18>	I just thought I had lived so long on my own in Daytona and had learned a lot there how to deal with things it was enough to be ok anywhere I went
+T 1710512972 18<28MacinMan18>	And in many respects that's true but I've had some unexpected challenges here when it comes to being able to get out and be active daily without someone being there to help (transportation wise)
+T 1710513004 18<26utterer18>	And its a shame that the services and needs aren't there to support you and others.  The sad truth is there are a lot of states out there though with leadership that doesn't believe in equal opportunities for everyone regardless of ability and background.
+T 1710513006 18<28MacinMan18>	It's also hard to go anywhere here without a car too because there aren't any safe walking areas in this area 
+T 1710513061 18<25cirrusbonsai18>	yeah, if you don't live in one of the four proper cities, getting around can be extra tough.
+T 1710513089 18<28MacinMan18>	cirrusbonsai: well Denham isn't that far from Baton Rouge 
+T 1710513099 18<25cirrusbonsai18>	but it's not Baton Rouge
+T 1710513224 18<27wyclif18>	My company flew me to Dallas for a conference 
+T 1710513226 18<28MacinMan18>	cirrusbonsai: when I was explaining to you the cost of going to the apple store etc one way  on uber for me would cost between $30 to $40 and it's probably no more than 30 minutes away fi that so a round trip just to pay for a ride would have cost about the same $80 to buy the charger. I think that's wrong
+T 1710513257 18<27wyclif18>	There was literally nowhere to walk. We didn't have a car because we were staying in a hotel; we were using taxis 
+T 1710513272 18<25cirrusbonsai18>	as far as I know, Uber isn't subsidized by the gov't
+T 1710513294 18<27wyclif18>	There was this restaurant we wanted to go to that was 1 block away, so we said, "We'll just walk"
+T 1710513308 18<28MacinMan18>	They aren't but my benefit card from Humana does cover uber as non medical transportation
+T 1710513313 18<27wyclif18>	The lobby staff at the hotel looked at us like we were crazy; we soon found out why 
+T 1710513326 18<27wyclif18>	There was no sidewalk
+T 1710513350 18<27wyclif18>	To walk onto the next block you had to walk on the landscaping, which it felt like you were *not* supposed to do
+T 1710513367 18<26utterer18>	that happened one time when i was doing a job in houston.  the funny look asking about walking to the convenience store
+T 1710513386 18<26utterer18>	and I am walking along the road and there are all like shed snakeskins along the way like wtf did I get myself into
+T 1710513388 18<28MacinMan18>	wyclif: my apartment complex is on a rod with no sidewalks and it then it goes directly into a major highway   there are two deep ditches on each side so not safe for walking
+T 1710513391 18<27wyclif18>	Yes, like, I didn't realise this coming from the east coast, but NOBODY walks in Texas
+T 1710513405 18<26utterer18>	not even their governor LOL
+T 1710513438 18<28MacinMan18>	cirrusbonsai: also my mom said she doesn't want me walking a lot when I don't have to as Louisiana has the worst drivers  and it's dangerous
+T 1710513479 18<27wyclif18>	Anyway, just upgraded to Sonoma 14.4 and my screensaver stopped moving, LOL
+T 1710513479 18<25cirrusbonsai18>	this state has horrible drivers, no great cell phone / driving laws, and some of the highest insurance in the country
+T 1710513499 18<25cirrusbonsai18>	again, number 49 in almost every metric.
+T 1710513510 18<25cirrusbonsai18>	"but at least we're not Mississippi!"
+T 1710513511 18<26utterer18>	whats the pothole situation like down there?
+T 1710513535 18<25cirrusbonsai18>	varies city by city, but in general, pretty bad.
+T 1710513580 18<25cirrusbonsai18>	I drive 3 miles to work and there are several places where I need to watch out
+T 1710513583 18<27wyclif18>	MacinMan: Are you in TX?
+T 1710513604 18<28MacinMan18>	no
+T 1710513608 18<28MacinMan18>	LA
+T 1710513625 18<26utterer18>	they just started a whole statewide repair program here in NJ for the potholes but I think they can do it for the next 3 years and still not fix them all
+T 1710513630 18<27wyclif18>	Yeah, I've never lived there but I've heard that LA is not walkable 
+T 1710513815 18<28MacinMan18>	cirrusbonsai: you're about 2 hours from me right?
+T 1710513823 18<28MacinMan18>	I forget how far away lafiette is
+T 1710513864 18<25cirrusbonsai18>	without traffic, 90 mins.  during the day, prolly 2 hours.
+T 1710513901 18<22Thuryn18>	you mean lafayette?
+T 1710513901 18<28MacinMan18>	And I killed the spelling of that I know. Lafayette 
+T 1710513909 18<22Thuryn18>	hahaha
+T 1710514556 18<25cirrusbonsai18>	yeah, I'm in Lafayette.  MacinMan is just east of Baton Rouge.

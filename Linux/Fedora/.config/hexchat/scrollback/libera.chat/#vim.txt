@@ -1828,3 +1828,293 @@ T 1710207152 18<29nickspoon18>	I believe new email addresses get approve
 T 1710207286 18<24trevdev18>	Thanks.  I did send a message a couple of days ago, I'll just check in later
 T 1710208325 18<22habamax18>	I don't think Christian has access to the fund and any donations, but he might know details on who is in charge
 T 1710208401 18<22habamax18>	And actually, whatever you will ask in Discussions on github will also be sent to vim_dev https://github.com/vim/vim/discussions
+T 1710225221 19*	Now talking on 22#vim
+T 1710225221 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710225221 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710227017 18<27King_julian18>	Hi good people , me again ... anyone running vim with YouCompleteme plugin on Debian Bullseye ? since I upgraded the plug recently, it stopped working requiring Vim 8.2.3995+ , but bullseye only have 8.2. I also dont see a higher vim package in backports for Debian and a bit scared I mess up something on my Vim. Seems i have 2 options , upgrade vim at your my own risk of messing up something or add the previous version of the 
+T 1710227018 18<27King_julian18>	YouCompleteMe plug... I am thinking the later is best, but just wanna check what the experts say. 
+T 1710227072 18<22habamax18>	I would just build vim from source
+T 1710227100 18*	22habamax re-builds vim everyday
+T 1710227210 18<27King_julian18>	Thanks Haba,I have never done so, so do you think it's a simple and not problematic  ? I am using this machine as my main desktop, so don't really want to mess up anything 
+T 1710227216 18<22habamax18>	https://github.com/habamax/.vim/blob/90d835ba2a805aade11d14ecc5fa8146a7d21c05/doc/habamax.txt#L15
+T 1710227239 18<22habamax18>	never had problems building/using it
+T 1710227248 18<22habamax18>	but ymmv
+T 1710227287 18<22habamax18>	you need to build and install it locally
+T 1710227326 18<22habamax18>	--prefix in configure is for that
+T 1710227429 18<27King_julian18>	Tx Haba, looks simple enough . and will my normal vimrc still remain there and apply  ? 
+T 1710227623 18<22habamax18>	should be ok
+T 1710228370 18<27King_julian18>	TX Haba, Haba do I leave my sources as bullseye in apt/sources.list
+T 1710228601 18<22habamax18>	maybe, depends on you, I have deleted stock vim and just use the one I built
+T 1710242877 18<24hackinghorn18>	hi
+T 1710242893 18<24hackinghorn18>	how do I go to file (gf) but in a split
+T 1710242908 18<24hackinghorn18>	I can :sp then 'gf' tho
+T 1710242977 18<29ttkap18>	didnt you find your answer yesterday already ? :D
+T 1710243004 18<24hackinghorn18>	hey you remember me!
+T 1710243022 18<24hackinghorn18>	that was in a new window, and is ctrl+w f
+T 1710243060 18<24hackinghorn18>	my way of learning vim feels really inefficient
+T 1710243249 18<24hackinghorn18>	I keep asking questions for smallest keybinds
+T 1710243282 18<24hackinghorn18>	I guess :sp gf is good enough
+T 1710243302 18<24hackinghorn18>	thats okay I think
+T 1710243312 18<24hackinghorn18>	if I need 1 quick look then gf
+T 1710246155 18<29ttkap18>	for me ctrl-w f and :sp gf do the same thing
+T 1710254761 18<28waterkip18>	question: is there a way for vim to know it is in a git directory and to get the path of that directory? Something like this: https://paste.debian.net/1310442/
+T 1710255297 18<26lopid18>	vim should be in a directory in your path, preferably one for the system 
+T 1710255325 18<28waterkip18>	yeah....
+T 1710256642 18<28waterkip18>	fixed it: https://paste.debian.net/1310450/
+T 1710258301 18<27cabalcrow18>	does vim's regex supports conditionals?
+T 1710258409 18<22tirnanog18>	no.
+T 1710258466 18<22tirnanog18>	:help perl-patterns
+T 1710258466 18<25digmbot18>	:help perl-patterns -> http://vimhelp.appspot.com/pattern.txt.html#perl-patterns
+T 1710258511 18<28waterkip18>	what does that mean, regex support conditionals?
+T 1710258538 18<27cabalcrow18>	some do like perl/pcre
+T 1710258692 18<27cabalcrow18>	tirnanog: thanks!
+T 1710259231 19*	Now talking on 22#vim
+T 1710259231 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710259231 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710264419 18<25OMGOMG18>	why does :cd .. print the new current directory, but following it up with @: does not?
+T 1710265747 18<26PhilAlbano18>	hey
+T 1710265758 18<26PhilAlbano18>	I had gvim 7.4 on windows
+T 1710265770 18<26PhilAlbano18>	installed by installer
+T 1710265836 18<26lopid18>	dang
+T 1710265842 18<26PhilAlbano18>	I noticed today several running processes named Au_.exe, Bu_.exe, Cu_.exe ... till Iu_.exe and all of them had ViM icon uninstaller
+T 1710265866 18<26japh18>	lol
+T 1710265888 18<29ttkap18>	welcome to 2013 I guess
+T 1710265948 18<26PhilAlbano18>	in C:\windows\temp\ found several .tmp files ns<some letters and digits>.tmp, most of them 6kB of size and inside of each was text from gvim installer
+T 1710266021 18<26japh18>	is this a case of https://daniel.haxx.se/blog/tag/email/
+T 1710266165 18<26PhilAlbano18>	text like: CAREFUL: If you have created something there that you want to keep, click No Would you like to remove ý€€? It contains your Vim configuration files!
+T 1710266190 18<26PhilAlbano18>	then looks like for some reason something fire up gvim uninstaller??
+T 1710266203 18<26PhilAlbano18>	but how it could be run by itself?
+T 1710266203 18<26lopid18>	are you insured?
+T 1710266274 18<26japh18>	there is no such string in the vim source code
+T 1710266316 18<26PhilAlbano18>	insured? why?
+T 1710266373 18<26lopid18>	maybe a plugin?
+T 1710266390 18<26PhilAlbano18>	no plugins installed, it was clean gvim
+T 1710266588 18<26PhilAlbano18>	what I found so far is that gvim uses NSIS installer and it creates such things during uninstallation process
+T 1710266600 18<26PhilAlbano18>	but I did not launch such
+T 1710266643 18<26lopid18>	maybe your son. he is at that mischievous age
+T 1710272964 18<22FakuVe18>	cheers m_ben
+T 1710272978 18<22FakuVe18>	I have a broad question
+T 1710273053 18<22FakuVe18>	Is there any way I can set vim in a mode such as a readonly mode
+T 1710273063 18<22FakuVe18>	I express my idea
+T 1710273088 18<22FakuVe18>	I dont want insert mode to be allowed to modify the buffer
+T 1710273105 18<22FakuVe18>	but just modify the file with a single keymap
+T 1710273118 18<22FakuVe18>	(only allow one kind of modification
+T 1710273156 18<22FakuVe18>	I know is not exactly like readonly mode , cause that mode lets you edit the buffer
+T 1710273161 18<22FakuVe18>	But not save it
+T 1710273213 18<22FakuVe18>	Well I can remap i to no to have any effect? innit? haha
+T 1710273970 18<29nickspoon18>	I don't really understand the actual goal so it's hard to answer, but I'd probably just  :set nomodifiable  and then have my "edit the buffer" mapping make it modifiable again for that action
+T 1710274502 18<29kenzu18>	hello guys
+T 1710274550 18<29kenzu18>	pretty noob question... I don't quite know /substitute
+T 1710274585 18<29kenzu18>	what would be the syntax to remove in file all '10 px'
+T 1710274597 18<26lopid18>	:%s/10 px//g
+T 1710274680 18<29kenzu18>	that simple
+T 1710274689 18<29kenzu18>	I was searching the wrong way
+T 1710274701 18<29kenzu18>	thanks for your quick answer lopid 
+T 1710283689 18<27King_julian18>	msg habamax Hi Haba , I tried the vim upgrade you recommended earlier https://github.com/habamax/.vim/blob/90d835ba2a805aade11d14ecc5fa8146a7d21c05/doc/habamax.txt#L15 , now when I start vim it shows nvim and my vimrc is not taking effect. I am confused what happened here ?  
+T 1710284169 18<29nickspoon18>	?? That recommandation is for building vim, where are you getting nvim from?
+T 1710294927 18<24quesker18>	with vim in a terminal what is a good way to mouse select multiple pages at once?  no mouse mode or anything just regular terminal select
+T 1710295508 18<24quesker18>	hmm looks like not possible
+T 1710295514 18<25hleneto18>	quesker, V for visual line mode, then PgUp and PgDn.
+T 1710296026 18<24quesker18>	oh sorry I mean for system clipboard.  but I figured out just use cat instead
+T 1710296223 18<24quesker18>	my question was poorly worded oops
+T 1710308285 19*	Now talking on 22#vim
+T 1710308285 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710308285 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710340572 19*	Now talking on 22#vim
+T 1710340572 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710340572 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710343036 19*	Now talking on 22#vim
+T 1710343036 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710343036 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710344089 18<26Dan3918>	Hello all, I'm using a fresh, unconfigured vim, besides the RHEL 8 default system-wide vimrc. Unfortunately my senior coworker uses 2 space indentation for python coding. I've found out that I can't just set ts=2 sw=2 in vimrc because the filetype plugin overrides that. I found a StackExchange page saying I can create a file ~/.vim/after/ftplugin/python.vim and setlocal ts=2 sw=2 in there. It seems to
+T 1710344091 18<26Dan3918>	work, but only if a user vimrc doesn't exist. As soon as I create even an empty ~/.vim/vimrc my autoindent (filetype plugin?) seems to break. Any ideas why? Or is there a better way to change my python indentation to 2 spaces instead of 4? Maybe I can copy/overwrrite the entire filetype plugin for vim? I guess I could edit the system-wide file, but that seems like a bad idea since it is part of a
+T 1710344093 18<26Dan3918>	distro package.
+T 1710344374 18<20tanath18>	the ftplugin will set that for all python files. i'd use editorconfig for that project https://github.com/editorconfig/editorconfig-vim
+T 1710344642 18<26Dan3918>	setting it for all files is fine, at this point i've just given in to coding everything at work with 2 space indentation
+T 1710344746 18<26Dan3918>	but i'm still curious why having both the /after/ftplugin/python.vim and vimrc files existing at same time seems to break auto indent
+T 1710344800 18<20tanath18>	iirc there are some things things that change just by having a vimrc. might be one of them
+T 1710344840 18<20tanath18>	but editorconfig is a good way to have project settings apply
+T 1710344871 18<26Dan3918>	wait... i wonder if the system-wide vimrc has a conditional to not load itself if a user vimrc exists...
+T 1710344933 18<26Dan3918>	nevermind, doesn't look like it. unless vim itself is doing htat
+T 1710344961 18<20tanath18>	should be vim. i read something like that in the help somewhere
+T 1710344963 18<27igemnace18>	Dan39: what exactly breaks when you create a vimrc file?
+T 1710344977 18<27igemnace18>	there is :h defaults.vim that might be tripping you up
+T 1710344978 18<25digmbot18>	:help defaults.vim -> http://vimhelp.appspot.com/starting.txt.html#defaults%2Evim
+T 1710344998 18<26Dan3918>	auto indent breaks
+T 1710345019 18<27igemnace18>	do you perhaps not have :filetype plugin indent on in any runtime files of your own? maybe your defaults.vim is doing that. it isn't loaded if there is a user vimrc
+T 1710345073 18<27igemnace18>	can remedy that by adding the above into your vimrc, or sourcing defaults.vim in your own vimrc like in the above help (eventually the former should pay off more)
+T 1710345083 18<26Dan3918>	that must be it
+T 1710345248 18<26Dan3918>	that fixed it, thanks igemnace 
+T 1710345254 18<27igemnace18>	\o/
+T 1710345258 18<26Dan3918>	how new is vim 8.0?
+T 1710345269 18<27igemnace18>	uhh
+T 1710345273 18<27igemnace18>	8 years?
+T 1710345274 18<20tanath18>	there's security issues fixed in 9.1
+T 1710345275 18<27igemnace18>	old
+T 1710345294 18<26Dan3918>	what i mean is, the doc says this behavior was added in 8.0
+T 1710345322 18<26Dan3918>	so maybe thats why on old distros i could create a user vimrc and only add a couple settings and still have my defaults.vim stuff working
+T 1710345358 18<26Dan3918>	*shrug*
+T 1710345373 18<27igemnace18>	ah, defaults.vim itself was only introduced around that time (patches after 7.4, formally in 8.0)
+T 1710345389 18<27igemnace18>	there wasn't a defaults.vim to load before that
+T 1710345408 18<27igemnace18>	might've been a system vimrc that did that for you automatically, that then changed when defaults.vim rolled out?
+T 1710345431 18<27igemnace18>	did that for you -> turned on autoindent and filetype plugin indent on, i mean
+T 1710345447 18<26Dan3918>	right
+T 1710345656 18<26Dan3918>	my system-wide has "filetype plugin on" and defaults.vim has "filetype plugin indent on"
+T 1710346529 19*	Now talking on 22#vim
+T 1710346529 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710346529 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710347504 19*	Now talking on 22#vim
+T 1710347504 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710347504 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710351789 19*	Now talking on 22#vim
+T 1710351789 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710351789 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710370368 19*	Now talking on 22#vim
+T 1710370368 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710370368 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710379561 19*	Now talking on 22#vim
+T 1710379561 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710379561 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710380001 18<24tully18>	% command doesn't jump to matching quote? Is there a way to do that?
+T 1710380313 18<22habamax18>	it doesn't
+T 1710380389 18<22habamax18>	where to jump here? "hello " world "
+T 1710380424 18<22habamax18>	it should syntax aware, but then what to do when syntax is off
+T 1710380466 18<22habamax18>	I would just use f"
+T 1710380504 18<24tully18>	 Makes sense
+T 1710380551 18<24tully18>	I wonder if it works for euro style quotes « » 😆 
+T 1710380575 18<24tully18>	Nope...
+T 1710384237 18<28waterkip18>	for themese, what is the group name for diacritics?
+T 1710384581 18<22habamax18>	:h group-name - default group names
+T 1710384582 18<25digmbot18>	:help group-name -> http://vimhelp.appspot.com/syntax.txt.html#group-name
+T 1710384597 18<22habamax18>	there is no diacritics group
+T 1710384623 18<28waterkip18>	is is special or special char?
+T 1710384681 18<22habamax18>	might be anything, depends on what you mean by diacritics group
+T 1710384694 18<28waterkip18>	so, you do :dig
+T 1710384731 18<22habamax18>	do you mean how digraph symbols are highlighted?
+T 1710384750 18<28waterkip18>	you see something like I" �, what is the I" and what is the � for the colorscheme?
+T 1710384862 18<22habamax18>	SpecialKey for digraph symbols
+T 1710384930 18<22habamax18>	I" is Normal
+T 1710385051 18<28waterkip18>	doesn't seem to work
+T 1710385282 18<22habamax18>	https://asciinema.org/a/MM2nyQNE9FmerHBgsMeefB21s
+T 1710385575 18<28waterkip18>	i have something odd
+T 1710385595 18<28waterkip18>	when do :hi it states: links to Whitespace
+T 1710385630 18<28waterkip18>	when I then do :hi specialkey guifg=red it doesn't and the :dig shows red
+T 1710385696 18<22habamax18>	if your colorscheme links it to Whitespace :hi SpecialKey will show it links to Whitespace
+T 1710385702 18<28waterkip18>	the color scheme has a if not nvim link specialkey to whitespace
+T 1710385837 18<26ceux18>	i want to map a command to toggle multiple ettings on and off
+T 1710385873 18<26ceux18>	 map <C-k> set nu! boo!?
+T 1710386097 18<22habamax18>	nnoremap <C-k> :set nu! cul!<CR>
+T 1710386133 18<26ceux18>	yeah that worked.  perf
+T 1710387914 18<28waterkip18>	habamax: thnx, I forked the colorscheme to remove nvim support and now it works like a charm
+T 1710389378 18<22habamax18>	waterkip, great
+T 1710394994 18<24trevdev18>	How's everybody?
+T 1710400417 18<27King_julian18>	@nickspoon and @habamax just an update re 2 days ago discussion), I finally got my vim install to work , I think it was failing because in my config I added  some of these interpreter steps like --enable-rubyinterp=yes , after I removed those the make completed. And oh I didn't realize I had to reload bash (exec bash -l). Anyways. I eventually used this approach : https://github.com/ycm-core/YouCompleteMe/wiki/Building-Vim-from-s
+T 1710400418 18<27King_julian18>	ource , hopefully my Youcompleteme will now work again, will try reinstall today again. Tx guys for all the patience and help
+T 1710401326 18<22habamax18>	np
+T 1710407198 19*	Now talking on 22#vim
+T 1710407198 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710407198 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710407468 19*	Now talking on 22#vim
+T 1710407468 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710407468 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710407754 19*	Now talking on 22#vim
+T 1710407754 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710407754 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710408857 19*	Now talking on 22#vim
+T 1710408857 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710408857 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710413332 18<20nerdypepper18>	a little thought experiment: would it be possible to implement "anonymous enum returns" with just macros? i am thinking something like `-> Result<T, Err1 | Err2 | Err3>`
+T 1710413373 18<20nerdypepper18>	internally, it could create an enum type, it would just be impossible to name this type in code 
+T 1710413392 18<20nerdypepper18>	oops, meant to post that in #rust, apologies
+T 1710424997 18<28jclsn18>	Is there a way to make Vim show the eol at the end of the file?
+T 1710425377 18<26lopid18>	other than ':set list'?
+T 1710425394 18<20nedbat18>	jclsn: I thought listchars might have a way, but it doesn't.
+T 1710431199 18<29skered18>	When plug or coc run update they open a split.  I might be able configure each to us somethign isn't a split (existing buffer, tab, new buffer) however is it possible to set vim to open splits as something else (pervious list).
+T 1710431228 18<28romainl18>	"to open splits as something else"?
+T 1710431259 18<29skered18>	If something trys to :split it's a new buffer, or exsiting buffer, or tab
+T 1710431286 18<29skered18>	If not then I'll try to check for setting for each.
+T 1710431347 18<28romainl18>	not clearer but :h 'switchbuf' might be of interest
+T 1710431347 18<25digmbot18>	:help 'switchbuf' -> http://vimhelp.appspot.com/options.txt.html#%27switchbuf%27
+T 1710431494 18<29skered18>	Thanks I'll take a look
+T 1710433013 18<26ceux18>	jesus looking at my vim config and it was last updated in like 2011
+T 1710433019 18<26ceux18>	apparently vundle is no longer in vogue??
+T 1710433056 18<28romainl18>	why do you show your vimrc to jesus? don't you think he has better things to do?
+T 1710433066 18<26ceux18>	probably has a sick vimrc
+T 1710433083 18<26ceux18>	nnoremap <C-p> :!smite %
+T 1710433140 18<28romainl18>	vundle is indeed no longer in vogue
+T 1710433161 18<26ceux18>	ok, so i was looking at the native vim8 package stuff, it seems, well not obtuse, but definitely.. engineered
+T 1710433172 18<28romainl18>	vim-plug has taken the crown
+T 1710433173 18<26ceux18>	is there a frontend someone has written to manage my packages utilizing that storage system
+T 1710433190 18<26ceux18>	romainl: and i am still good to just stick plugin files in .vim/plugin/myplugin.vim?
+T 1710433205 18<28romainl18>	still works, still messy
+T 1710433222 18<26ceux18>	yeah, i just meant for 'my' plugins
+T 1710433229 18<26ceux18>	just ones i have written that are single files.
+T 1710433229 18<28romainl18>	the package stuff is the bee's knees
+T 1710433246 18<26ceux18>	sure, so basically, install vplug, it'll use the new package system?
+T 1710433282 18<28romainl18>	not sure, I don't use a plugin manager and thus not plug
+T 1710433292 18<26ceux18>	I see, so you manage them manually?
+T 1710433313 18<28romainl18>	"manage" is a big word
+T 1710433342 18<28romainl18>	but yes
+T 1710433345 18<26ceux18>	lol, i mean pull down updates and create new ones
+T 1710433375 18<26ceux18>	sorry, i have been such a long time user of vim but i woefully under use it...
+T 1710433385 18<26ceux18>	what is in my vimrc : vmap <leader>Y "*y
+T 1710433397 18<26ceux18>	is that, in visual "Y" takes my selection and yanks it to the x11 buffer?
+T 1710433436 18<28romainl18>	<leader>Y, not Y
+T 1710433454 18<26ceux18>	what's leader in this case?
+T 1710433480 18<28romainl18>	simple question, complicated subject
+T 1710433506 18<28romainl18>	if you let mapleader to something in your vimrc then it is that something
+T 1710433519 18<28romainl18>	if not, it's \ by default
+T 1710433596 18<26ceux18>	i dont have map leader defined anywhere...
+T 1710470451 19*	Now talking on 22#vim
+T 1710470451 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710470451 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710470700 19*	Now talking on 22#vim
+T 1710470700 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710470700 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710479006 19*	Now talking on 22#vim
+T 1710479006 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710479006 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710480187 18<24quesker18>	this is weird, z<enter> is not putting this line at the top
+T 1710480862 18<22habamax18>	set scrolloff?
+T 1710481221 18<24quesker18>	ah.  scrolloff=5.  lame
+T 1710481225 18<24quesker18>	thanks
+T 1710481260 18<24quesker18>	more distro arrogance
+T 1710482041 18<20pid140018>	i want to add the keybinding CTRL+SHIFT+C inside vim, such that, if im editing a file at /home/user/doc.txt , and i hit CTRL+SHIFT+C, /home/user/doc.txt is copied
+T 1710482049 18<20pid140018>	how do i achieve that?
+T 1710483198 18<20pid140018>	lopid ping
+T 1710492458 18<20pid140018>	i want to add the keybinding CTRL+SHIFT+C inside vim, such that, if im editing a file at /home/user/doc.txt , and i hit CTRL+SHIFT+C, /home/user/doc.txt is copied how do i achieve that?
+T 1710492699 18<27igemnace18>	pid1400: nnoremap <C-S-c> :let @+ = @%<CR>
+T 1710492723 18<27igemnace18>	though, <C-S-c> will likely only work on gvim (haven't kept up with whether that's possible now on terminal)
+T 1710499978 18<20gyrow18>	I'm trying to figure out how to use "coc", I've been used to ^n to select autocompletions but if I set suggest.noselect to true, it still selects the first item in the list of autocompletions? I don't see what I'm doing wrong
+T 1710501318 20*	Disconnected (20)
+T 1710501475 19*	Now talking on 22#vim
+T 1710501475 22*	Topic for 22#vim is: RIP Bram | Can't talk? Register https://libera.chat/guides/registration | Vim 9.1 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | https://www.vi-improved.org
+T 1710501475 22*	Topic for 22#vim set by 26jamessan (24Tue Jan  2 18:53:57 2024)
+T 1710502414 18<20m0norail18>	Hi. I have created my first Vim plugin and I am looking for feedback: https://github.com/qadzek/vim-md-link It converts inline links [foo](http://foo.com) to reference links [foo][5] in Markdown documents.
+T 1710502433 18<20m0norail18>	It would be awesome if someone would be willing to review the code or just try the plugin. I have written some Vimscript before, but never a plugin.  It was my first time adding autoloading, writing a :help page, creating tests etc., so I am sure there is a lot that can be improved.
+T 1710505751 18<22FakuVe18>	Hi there , can anyone help me doing a simple toggle on a ../autoload/file.vim ?
+T 1710505796 18<22FakuVe18>	I have got the following in a file in ../autoload/dan.vim https://termbin.com/azkl
+T 1710505852 18<22FakuVe18>	I am trying to call the function by :cal dan#ToggleXConceal E107: Missing parentheses: dan#ToggleXConceal
+T 1710505905 18<26lopid18>	have you tried adding parens?
+T 1710505981 18<22FakuVe18>	Where
+T 1710506129 18<26lopid18>	to the function call
+T 1710506166 18<26lopid18>	:help E107
+T 1710506166 18<25digmbot18>	:help E107 -> http://vimhelp.appspot.com/userfunc.txt.html#E107
+T 1710506210 18<22FakuVe18>	oh yeah. Thanks
+T 1710506270 18<22FakuVe18>	How can you do a toggle? I need to store a global variable isnt it?
+T 1710506401 18<26lopid18>	on an option? :help set-!
+T 1710506402 18<25digmbot18>	:help set-! -> http://vimhelp.appspot.com/options.txt.html#%3Aset-%21
+T 1710506463 18<26lopid18>	if it's a 0/1 variable, you can just 1 - var
+T 1710506538 18<22FakuVe18>	Alright cheers
+T 1710508562 18<22FakuVe18>	lopid: not an option , a custom toggle...
+T 1710508763 18<22FakuVe18>	its ok I got it
+T 1710511306 18<25dbungert18>	m0norail: love seeing the no built-in keybindings, giving suggestions on keybindings instead
+T 1710511405 18<24tsenko18>	in the help pages .. how to follow a marked word like ... Filter {motion} text lines
+T 1710511411 18<24tsenko18>	how to go to motion 
+T 1710511456 18<27igemnace18>	tsenko: <C-]>
+T 1710511624 18<20m0norail18>	dbungert: Yeah, I have experienced issues too many times because of predefined key bindings, so I've decided to just give some suggestions.
+T 1710511977 18<24tsenko18>	igemnace: thanks 
+T 1710512106 18<24tsenko18>	how do i pass a visual sellection through an external command and then replace the selection with the result ... like  echo <visual select> | uconv -x latn-cyrl
+T 1710512173 18<20osse18>	tsenko: Linewise it's easy:  :'<,'>!uconv -x latn-cyrl  
+T 1710512177 18<20osse18>	Not linewise is tricky
+T 1710512613 18<24tsenko18>	osse: thanks alot .. tha's what i wantet .. buddha bless you

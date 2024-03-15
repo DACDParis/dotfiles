@@ -1019,3 +1019,274 @@ Mar 12 00:38:02 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (T
 Mar 12 00:55:45 *	Now talking on #tmux
 Mar 12 00:55:45 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
 Mar 12 00:55:45 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Tue Mar 12 07:33:43 2024
+
+Mar 12 07:33:41 *	Now talking on #tmux
+Mar 12 07:33:41 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 12 07:33:41 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+Mar 12 07:38:59 <aog>	when I run tmux and open another tmux within I'm unable to copy by selection w/ mouse
+Mar 12 07:40:01 <aog>	e.g. I'm in tmux (local) and ssh to remote which also runs tmux
+Mar 12 09:09:09 <slim>	aog: probably conflicting mouse bind-keys, disable mouse on remote session temporarily or unbind the mousedrag binds
+Mar 12 09:09:53 <slim>	assuming you want to copy to the local tmux buffers
+Mar 12 09:27:28 <aog>	you were right slim: disabling the mouse on the secondary session allows the primary to select and copy correctly
+Mar 12 16:14:47 <lavaball>	portage give me nice 5 out of 10 or whatever in tmux in the status bar. i do have a script that also does the 1 out of 3 thing. how can i tell tmux to show it like portage does?
+**** BEGIN LOGGING AT Tue Mar 12 17:00:35 2024
+
+Mar 12 17:00:31 *	Now talking on #tmux
+Mar 12 17:00:31 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 12 17:00:31 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+Mar 12 18:08:34 <depesz>	lavaball: it would probably help if you showed what you have in mind. what is portage, what is its output. what you have configured in tmux, and how does it show.
+Mar 12 18:09:41 <lavaball>	portage is the packet manager. when it installs stuff, it shows the 2 out 16 ... in the tmux status bar.
+Mar 12 18:10:03 <lavaball>	i only changed the colors and set mode-keys to vi.
+Mar 12 18:11:00 <depesz>	lavaball: please show: "tmux show-options -g | grep status" - via paste site
+Mar 12 18:17:33 <depesz>	lavaball: check if this does what you'd like: for i in {1..10}; do printf '\x1b]0;%d of 10\x07' $i; sleep .5; done
+Mar 12 18:17:48 <depesz>	this is command to run in shell (bash for sure, other shells - i'm not certain it will work)
+Mar 12 18:18:35 <lavaball>	yes!
+Mar 12 18:18:36 <lavaball>	that's it!
+Mar 12 18:20:01 <depesz>	looks like you have 'set-titles' set to on
+Mar 12 18:20:02 <lavaball>	oh, doesn't work with ksh though. gives me: printf: {1..10}: expected numeric value      i'll figure itoutthough.
+Mar 12 18:20:28 <lavaball>	seems to be the default setting, since it works on all my machines.
+Mar 12 18:22:06 <depesz>	perl -e '$|++;for (1..10) { printf "\x1b]0;%s of 10\x07", $_; sleep 1}'
+Mar 12 18:22:12 <depesz>	without bash :)
+Mar 12 18:22:41 <lavaball>	i bet it works in ksh as well, somehow.
+Mar 12 18:22:59 <lavaball>	i mean tmux is part of the base system as well, so i think those two are fully compatible.
+Mar 12 18:23:05 <lavaball>	anyway, thanks so much!
+Mar 12 18:23:20 <lavaball>	though is there a place where i can look up all the hyroglyphys?
+Mar 12 18:24:50 <depesz>	"hyroglyphs"?
+Mar 12 18:24:53 <lavaball>	ad in the \x1b]0 and \x07
+Mar 12 18:24:59 <lavaball>	as in
+Mar 12 18:25:06 <ikke>	ansi escape codes
+Mar 12 18:25:36 <depesz>	lavaball: you're on linux?
+Mar 12 18:25:58 <lavaball>	openbsd here, but i have linux boxes available as well.
+Mar 12 18:26:04 <lavaball>	the ssh magic, you understand.
+Mar 12 18:26:08 <depesz>	no idea about bsd, on linux: man console_codes
+Mar 12 18:27:26 <lavaball>	yeah, doesn't exist on openbsd. got it on linux. 
+Mar 12 18:27:35 <lavaball>	probably just a different name though.
+Mar 12 18:27:46 <lavaball>	if openbsd has anything then it's man pages.
+Mar 12 19:07:16 <depesz>	lavaball: can you show me your status-* settings ?
+Mar 12 19:20:32 <lavaball>	why? we solved the whole thing.
+Mar 12 19:21:25 <depesz>	curious about a thing
+Mar 12 19:21:31 <lavaball>	gay.
+Mar 12 19:21:32 <lavaball>	but sure.
+Mar 12 19:22:26 <lavaball>	https://bpa.st/R4RA
+Mar 12 19:23:40 <depesz>	thx
+Mar 12 19:23:45 <lavaball>	so?
+Mar 12 19:23:47 <lavaball>	did i win?
+Mar 12 19:43:57 <lavaball>	.. guess not.
+Mar 12 19:44:01 <lavaball>	either waay, thanks again.
+Mar 12 19:58:09 <trev>	does a tmux plugin .tmux script run every time a session starts?
+Mar 12 20:00:39 <trev>	wait that's a dumb question nevermind
+Mar 12 20:07:16 <mingdao>	trev: What are you trying to figure out?
+Mar 12 20:10:10 <trev>	mingdao: trying to get my plugin to set-enviroment every time tmux starts
+Mar 12 20:10:33 <trev>	so i can add another script to $PATH and then can use the script in a tmux session on cli
+**** ENDING LOGGING AT Wed Mar 13 06:35:42 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 06:38:07 2024
+
+Mar 13 06:38:05 *	Now talking on #tmux
+Mar 13 06:38:05 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 13 06:38:05 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** ENDING LOGGING AT Wed Mar 13 06:38:17 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 15:36:13 2024
+
+Mar 13 15:36:12 *	Now talking on #tmux
+Mar 13 15:36:12 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 13 15:36:12 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Wed Mar 13 16:17:17 2024
+
+Mar 13 16:17:16 *	Now talking on #tmux
+Mar 13 16:17:16 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 13 16:17:16 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** ENDING LOGGING AT Wed Mar 13 17:02:39 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 17:15:30 2024
+
+Mar 13 17:15:29 *	Now talking on #tmux
+Mar 13 17:15:29 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 13 17:15:29 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Wed Mar 13 17:31:45 2024
+
+Mar 13 17:31:44 *	Now talking on #tmux
+Mar 13 17:31:44 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 13 17:31:44 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Wed Mar 13 18:43:10 2024
+
+Mar 13 18:43:09 *	Now talking on #tmux
+Mar 13 18:43:09 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 13 18:43:09 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+Mar 13 18:57:04 <angle>	hmmm, so is there something going wrong I need to debug?
+Mar 13 18:57:27 <angle>	or is it safer to source .zprofile for each new server?
+Mar 13 18:57:50 <angle>	that feels like the wrong solution though.
+**** BEGIN LOGGING AT Wed Mar 13 23:52:51 2024
+
+Mar 13 23:52:48 *	Now talking on #tmux
+Mar 13 23:52:48 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 13 23:52:48 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Thu Mar 14 02:26:03 2024
+
+Mar 14 02:26:01 *	Now talking on #tmux
+Mar 14 02:26:01 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 14 02:26:01 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** ENDING LOGGING AT Thu Mar 14 09:59:27 2024
+
+**** BEGIN LOGGING AT Thu Mar 14 10:06:39 2024
+
+Mar 14 10:06:38 *	Now talking on #tmux
+Mar 14 10:06:38 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 14 10:06:38 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Thu Mar 14 10:11:09 2024
+
+Mar 14 10:11:08 *	Now talking on #tmux
+Mar 14 10:11:08 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 14 10:11:08 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Thu Mar 14 10:15:56 2024
+
+Mar 14 10:15:54 *	Now talking on #tmux
+Mar 14 10:15:54 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 14 10:15:54 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Thu Mar 14 10:34:18 2024
+
+Mar 14 10:34:17 *	Now talking on #tmux
+Mar 14 10:34:17 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 14 10:34:17 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** ENDING LOGGING AT Thu Mar 14 10:35:41 2024
+
+Mar 14 14:10:16 <kroovy_>	Hi fellows! Is there a maximum amount of Panes? Via a script call `tmux split-window` nine times. But tmux only opens 7 Panes :(
+Mar 14 14:11:15 <kroovy_>	sorry tmux only opens 8 panes
+Mar 14 14:12:09 <kroovy_>	hmm, I manually can split the 9th time .
+Mar 14 14:12:54 <ikke>	I just created a window with 16 panes
+Mar 14 14:14:06 <kroovy_>	i think it has something todo with the virtual terminal columns
+Mar 14 14:14:10 <osse>	I created one with 21 !!!1
+Mar 14 14:14:18 <kroovy_>	my virtual terminal was to small, i think
+Mar 14 14:14:29 <osse>	for i in {1..20}; do tmux split-window -h; tmux select-layout -E; done
+Mar 14 14:14:30 <kroovy_>	i switched to a horizontal split for my last call, now it works
+Mar 14 14:15:22 <kroovy_>	I'm happy, thanks :)
+Mar 14 14:28:50 <mingdao>	Can someone show a screenshot of the usefulness of so many panes?  I can not wrap my head around it.
+Mar 14 14:29:19 <osse>	I see none. I usually have 2 or 3
+Mar 14 14:29:26 <mingdao>	The most panes I have used is 4 while working on 4 servers at a time.
+Mar 14 14:29:29 <osse>	It just sounded strange to have a hard limit
+Mar 14 14:29:41 <mingdao>	I understand you were just testing the limits.
+Mar 14 14:30:04 <ikke>	I have configured 8 servers at the same time
+Mar 14 14:30:09 <ikke>	or ran commands at least
+Mar 14 14:30:19 <ikke>	8 or 9
+Mar 14 14:30:46 <mingdao>	I mostly use tmux with a script to start 10 windows after I launch my VT.  If I had 10 monitors and could see them all at once, I wouldn't need those 10 windows on one screen.
+Mar 14 14:33:22 <mingdao>	kroovy_: Screenshot?
+Mar 14 14:43:01 <Zed>	my every day carry has 4 and one is a weather web site :)
+Mar 14 14:44:36 <kroovy_>	@mingdao, thanks for your interest. it's usefull to manage loadbalancer setups. in this case: 1 loadbalancer + 1 adminserver + 5 webserver + 2 db server (can't provide a screenshot right now)
+Mar 14 14:44:58 <Zed>	I mostly work in one with a binding to bring me directly into a pain with vim and another with bash for quick and dirty stuff and junk
+Mar 14 14:45:07 <Zed>	pane*
+Mar 14 14:45:36 <ikke>	I have a setup with tmuxinator that creates a default layout with a terminal, git status -sb autorefreshed and tig
+Mar 14 14:46:03 <Zed>	function keys binded to switching around 
+Mar 14 14:46:17 <ikke>	I have vim keybindings with ctrl
+Mar 14 14:46:29 <ikke>	hjkl
+Mar 14 14:47:06 <ikke>	ctrl+f opens a pane with fzf to switch between sessions
+Mar 14 14:48:39 <Zed>	that's cool
+Mar 14 14:49:31 <Zed>	that's prolly more intitive than ctrl-a something something
+Mar 14 14:49:48 <Zed>	jeez I can't type today
+Mar 14 14:49:55 <Zed>	intuitive*
+Mar 14 14:53:08 <ikke>	I'm not the only one who remaps ^B to ^A :(
+Mar 14 14:53:10 <ikke>	:)
+Mar 14 14:59:28 <mingdao>	Zed: Check out this weather.sh script:  https://techfix.me/files/weather.sh
+Mar 14 14:59:50 <ikke>	404
+Mar 14 14:59:50 <Zed>	only us old screen users do ctrl-a hahah
+Mar 14 15:00:02 <Zed>	yeah 404
+Mar 14 15:00:10 <mingdao>	Use view-source:https://techfix.me/files/weather.sh to see the bash script without downloading it.
+Mar 14 15:00:19 <mingdao>	Oh, let me go check that out.
+Mar 14 15:02:54 <mingdao>	Fixed.  I was on the wrong server  mingdao@backupserver /var/www/localhost/htdocs/files $
+Mar 14 15:02:58 <mingdao>	The backupserver
+Mar 14 15:03:21 <mingdao>	Change the location to yours.
+Mar 14 15:04:12 <Zed>	I use https://wttr.in/nyc
+Mar 14 15:05:03 <mingdao>	SCreenshot of it https://0x0.st/HFTA.png
+Mar 14 15:05:34 <mingdao>	Zed: I have a good friend who lives in Manhattan.
+Mar 14 15:05:57 <Zed>	oh hahhah it is the same thing - I just read the scipt
+Mar 14 15:06:18 <ikke>	lol: We were unable to find your location
+Mar 14 15:06:20 <ikke>	so we have brought you to Oymyakon,
+Mar 14 15:06:22 <ikke>	one of the coldest permanently inhabited locales on the planet.
+Mar 14 15:09:16 <Zed>	it's odd when I open the site with lynx I don't see the color
+Mar 14 15:09:24 <mingdao>	Eewwww...
+Mar 14 15:10:41 <mingdao>	Zed: IMNSHO this is appropriate for a VT, so use      curl wttr.in/nyc
+Mar 14 15:15:06 <Zed>	mingdao: I have a pane always open with it 
+Mar 14 15:15:35 <Zed>	so I just refresh
+Mar 14 15:18:25 <ikke>	You could problably use watch -n 900 ..
+Mar 14 15:18:29 <ikke>	then it would auto refresh every 15m
+Mar 14 15:19:34 <ikke>	hmm, you get a reduced color output (if you use watch -c)
+Mar 14 15:19:42 <mingdao>	I don't think that's going to work with  watch
+Mar 14 15:22:24 <ikke>	There is no reason it couldn't
+Mar 14 15:22:29 <Zed>	yeah all good... I am going to take your scritp though and make it take arguments so I can just be like w <location>  in bash
+Mar 14 15:24:20 <mingdao>	ikke: IDK where you're located, so you might need to find this for your country:  https://www.weather.gov/media/wrh/mesowest/metar_decode_key.pdf
+Mar 14 15:24:53 <ikke>	mingdao: I managed to get the correct location already, just found it funny
+Mar 14 15:24:55 <mingdao>	Zed: vim weather.sh     FTW!
+Mar 14 15:25:30 <mingdao>	ikke: Yeah, I would not like being in "one of the coldest permanently inhabited locales on the planet"!
+Mar 14 15:26:08 <ikke>	'may you inhabited the coldest permantly locale on the planet'
+Mar 14 15:26:15 <ikke>	s/inhabited/inhabit/
+Mar 14 15:27:11 <mingdao>	And that link wasn't what you need, per se, but this is moar betterer https://en.wikipedia.org/wiki/Lists_of_airports_by_IATA_and_ICAO_code
+Mar 14 15:30:49 <Zed>	heh yeah wttr.in takes most city names without too much trouble 
+Mar 14 15:31:27 <Zed>	you could be like Seattle and it would work but if you say Greenwich without the country it will choke
+Mar 14 15:31:58 <Zed>	I would hardcode the country anyway because I only care about NY and CT hehe
+Mar 14 15:32:32 <Zed>	I keep getting workstracted tho.. These people! They expect me to work the whole time I am here!!!
+Mar 14 15:33:19 <mingdao>	April 1st will start my new job; last one ended July 10;  I welcome someone expecting me to work.  :^)
+Mar 14 15:34:05 <mingdao>	Now, if I can just get "a picture (jpeg) for your building badge.  I recommend a white or blank background."
+Mar 14 15:34:28 <mingdao>	I have one I want, but the background needs to be removed, whitened, or whatever.
+Mar 14 15:34:43 <Zed>	ask chat gpt to do it'
+Mar 14 15:35:00 <mingdao>	https://support.apple.com/en-in/102624  scratch disk is too full to use Photoshop in Creative Cloud
+Mar 14 15:36:16 <mingdao>	How would you do that with Chat GPT?  I'm logged in...
+Mar 14 15:44:30 <mingdao>	https://0x0.st/HFTf.png
+Mar 14 16:11:16 <Zed>	use dali
+Mar 14 16:11:20 <Zed>	its a gpt tool
+Mar 14 16:14:15 <mingdao>	We used to live in Dali.
+Mar 14 16:14:41 <mingdao>	You mean dall-e ?
+Mar 14 16:15:38 <mingdao>	Too much reading to use that.
+Mar 14 16:26:35 <Zed>	yes :))
+Mar 14 16:30:16 <mingdao>	I didn't see how to remove a background with dall-e in a short time.
+Mar 14 16:30:25 <mingdao>	I have Photoshop available, so there's that.
+Mar 14 17:24:33 <mitigate>	i thought reverting 43e5e8034 would unbreak search but no, search in long lines is still broken
+Mar 14 17:25:24 <mitigate>	search should show (n/N results) (p/P pages)
+Mar 14 17:25:32 <mitigate>	instead of just N results
+Mar 14 17:48:03 <mitigate>	nevermind, it does. i was running a version without it
+Mar 14 18:16:44 <Zed>	mingdao: https://termbin.com/bbovh
+Mar 14 18:42:00 <Zed>	Any idea /p
+Mar 14 18:42:06 <Zed>	whoops
+Mar 14 18:43:01 <Zed>	mingdao: a better version of weather.sh with comprehensive help  https://termbin.com/rkpt (sorry folks) back on topic tmux r0XorZ
+Mar 14 19:05:11 <mingdao>	Zed: Yeah, RL has overtaken me here.  curl https://termbin.com/rkpt > Zed-weather.sh
+Mar 14 19:16:27 <bagatur>	is there a way to achieve `attach -c` on window level?
+Mar 14 19:16:42 <bagatur>	so each new pane will begin at window specific working directory
+Mar 14 20:02:27 <slim>	bagatur: -c flag works with new-window and split-window - if you want it to be something persistent, you could add something like -c "#{pane_current_path}" to you split-window binds
+Mar 14 20:04:46 <bagatur>	slim: yes it does but shortcuts default to session working directory (e.g C-b-")
+Mar 14 20:06:11 <bagatur>	I usually keep the working directory same within a window so that'd be very useful for me
+Mar 14 20:07:14 <bagatur>	another workaround I can do is to use terminal tabs along with different tmux sessions, but I lose the consistent C-b switches there
+Mar 14 20:07:33 <slim>	right, so adding the split-window -c "#{pane_current_path}" to your C-b-" bind would achieve that, no?
+Mar 14 20:09:06 <slim>	once the window is in the working directory, splitting it with that command would keep the working directory the same for that window
+Mar 14 20:09:33 <bagatur>	yes that sounds good thanks!
+Mar 14 20:09:57 <bagatur>	still a newbie with tmux here
+Mar 14 20:10:24 <slim>	all good, cheers
+Mar 14 20:47:42 <Zed>	we all were and once you get good with it bagatur you will set it and forget it and then three years from now you will be all wtf did I do here and start all over ;)
+Mar 14 20:50:36 <bagatur>	:D
+Mar 15 00:53:52 <artix_live_1>	hello guys! I wanted to ask if you know of any plugin/script that can directly copy the output of commands (being listed by dmenu or through whatever means). Ty in advance
+**** BEGIN LOGGING AT Fri Mar 15 03:40:52 2024
+
+Mar 15 03:40:51 *	Now talking on #tmux
+Mar 15 03:40:51 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 15 03:40:51 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** BEGIN LOGGING AT Fri Mar 15 03:45:00 2024
+
+Mar 15 03:45:00 *	Now talking on #tmux
+Mar 15 03:45:00 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 15 03:45:00 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+**** ENDING LOGGING AT Fri Mar 15 03:45:01 2024
+
+**** ENDING LOGGING AT Fri Mar 15 05:52:58 2024
+
+**** BEGIN LOGGING AT Fri Mar 15 06:03:29 2024
+
+Mar 15 06:03:26 *	Now talking on #tmux
+Mar 15 06:03:26 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 15 06:03:26 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)
+Mar 15 12:15:18 *	Disconnected ()
+**** ENDING LOGGING AT Fri Mar 15 12:15:18 2024
+
+**** BEGIN LOGGING AT Fri Mar 15 12:17:55 2024
+
+Mar 15 12:17:55 *	Now talking on #tmux
+Mar 15 12:17:55 *	Topic for #tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+Mar 15 12:17:55 *	Topic for #tmux set by thomas_adam!sid508215@fvwm/developer (Thu Aug 11 09:50:24 2022)

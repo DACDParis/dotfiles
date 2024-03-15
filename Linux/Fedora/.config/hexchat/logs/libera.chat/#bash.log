@@ -9109,3 +9109,1314 @@ Mar 12 02:41:04 <cedd>	:)
 Mar 12 02:45:53 <cappy>	kurahaupo: Get your point now. Don't need touch. Thanks.
 Mar 12 02:49:25 <ormooj>	i'm not logged in :|
 Mar 12 02:54:10 <ormooj>	heh i've seen ! used for heredoc markers
+**** BEGIN LOGGING AT Tue Mar 12 07:33:43 2024
+
+Mar 12 07:33:41 *	Now talking on #bash
+Mar 12 07:33:41 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 12 07:33:41 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+Mar 12 07:45:09 <sphertext_>	# touch "-"; rm *
+Mar 12 07:45:12 <shbot>	sphertext_: rm: cannot remove '*': No such file or directory
+Mar 12 07:45:28 <sphertext_>	i think if there's a dash in the filename, rm fails?
+Mar 12 07:46:56 <JAA>	# touch -; printf '%q ' *
+Mar 12 07:46:58 <shbot>	JAA: \*
+Mar 12 07:50:25 <JAA>	`touch -` is a special case. It doesn't create a file with that name.
+Mar 12 07:50:31 <JAA>	# touch ./-; printf '%q ' *
+Mar 12 07:50:33 <shbot>	JAA: -
+Mar 12 07:50:48 <sphertext_>	:D
+Mar 12 07:51:04 <sphertext_>	i actually somehow ended up with a filename "-filename" and idk how to delete it
+Mar 12 07:51:16 <JAA>	rm ./-filename
+Mar 12 07:51:34 <sphertext_>	oh ok
+Mar 12 07:51:58 <JAA>	Or `rm -- -filename` probably maybe. I don't recall whether that's guaranteed to work.
+Mar 12 07:52:19 <sphertext_>	so it's problematic if filename starts with -
+Mar 12 07:52:27 <JAA>	It is in the POSIX guidelines, but...
+Mar 12 07:52:38 <sphertext_>	the * expansion isn't safe
+Mar 12 07:53:00 <JAA>	You should always know what you're doing when using globs, yes.
+Mar 12 07:53:00 <sphertext_>	well i suppose it's safe but the program doesn't know it's a filename
+Mar 12 07:53:17 <sphertext_>	since all it sees is an argument
+Mar 12 07:53:19 <JAA>	You can use ./* of course.
+Mar 12 07:53:33 <sphertext_>	hmm that seems better yeah
+Mar 12 07:53:40 <JAA>	Or --
+Mar 12 09:57:47 <sunyibo>	many commands I type don't end up in my history. How can I fix this?
+Mar 12 10:00:24 <osse>	sunyibo: what is the value of $HISTIGNORE ?D
+Mar 12 10:08:45 <sunyibo>	this command returns no value
+Mar 12 10:10:57 <djph>	sunyibo: what command?
+Mar 12 10:25:38 <sunyibo>	$HISTIGNORE
+Mar 12 10:26:22 <djph>	that's a variable, not a command.
+Mar 12 10:26:34 <sunyibo>	so where can I find the variable?
+Mar 12 10:26:48 <geirha>	declare -p "${!HIST@}"
+Mar 12 10:27:00 <ano>	sunyibo: HISTIGNORE isn't a cmd, it's a var, chk its value e.g. via (printf %s\\n "$HISTIGNORE") cmd, see (info -n 'bash history facilities' bash) to figure out how bash history works
+Mar 12 10:28:02 <sunyibo>	even those commands return no value
+Mar 12 10:31:57 <ano>	hmm geirha approach much
+Mar 12 10:32:23 <ano>	better since will show spaces etc
+Mar 12 10:33:06 <ano>	sunyibo: what do u mean by "commands I type don't end up in my history" ?
+Mar 12 10:33:13 <geirha>	sounds like HISTIGNORE is unset though, so it should default to ignoring lines that start with space
+Mar 12 10:41:04 <ano>	geirha: default? no HISTIGNORE in case of (be careful with that command if HISTFILE not set to non-default path it will trim history to default values) (bash --noprofile --norc -il <<<'declare -p "${!HIST@}"'), only HISTCMD/HISTFILE/HISTFILESIZE/HISTFILE, no value (at all) for (declare -p "${!HIST@}") very strange
+Mar 12 10:44:18 <ano>	sunyibo: are u sure that don't see *anything* at all after (declare -p "${!HIST@}") execution?
+Mar 12 10:46:08 <ano>	# bash --noprofile --norc -il <<<'declare -p "${!HIST@}"' 2>/dev/null | tr \\n \|
+Mar 12 10:46:11 <shbot>	ano: no output
+Mar 12 10:46:30 <geirha>	I mean, if HISTIGNORE is not set, the default behavior is to ignore lines that start with space
+Mar 12 10:48:18 <geirha>	ah no, nevermind, that's having ignorespace or ignoreboth in HISTCONTROL, so not actually a default behavior
+Mar 12 10:51:28 <sunyibo>	I've had the issue for a while and I was told it was due to bash and I should switch to zsh or something
+Mar 12 10:52:05 <Soliton>	!faq history lines
+Mar 12 10:52:05 <greybot>	https://mywiki.wooledge.org/BashFAQ/088 -- How can I avoid losing any history lines?
+Mar 12 10:56:43 <sunyibo>	thanks! I'll read this when my headache is gone, I've slept enough and had two cups of coffee ;-)
+Mar 12 10:57:42 <ano>	# bash --noprofile --norc -o history -il <<<'declare -p "${!HIST@}"' | tr \\n :
+Mar 12 10:57:44 <shbot>	ano: declare -p "${!HIST@}"
+Mar 12 10:58:15 <ano>	is shbot broken or something else?
+Mar 12 10:58:37 <ano>	# bash --noprofile --norc -o history -il <<<'declare -p "${!HIST@}"'
+Mar 12 10:58:40 <shbot>	ano: declare -p "${!HIST@}"
+Mar 12 10:58:40 <shbot>	ano: declare -i HISTCMD="1"
+Mar 12 10:58:40 <shbot>	ano: etc... ( http://paste.wooledge.org/29490 )
+Mar 12 10:59:00 <ano>	# bash --noprofile --norc -o history -il <<<'declare -p "${!HIST@}"' | sed s/HIST//
+Mar 12 10:59:02 <shbot>	ano: declare -p "${!HIST@}"
+Mar 12 10:59:02 <shbot>	ano: declare -i CMD="1"
+Mar 12 10:59:16 <ano>	that's strange
+Mar 12 11:03:29 <sunyibo>	(disretely chuckling)
+Mar 12 11:08:28 <ano>	# bash -c "bash --noprofile --norc -o history -il <<<'declare -p \"\${!HIST@}\"'" 2>/dev/null | tr \\n \|
+Mar 12 11:08:30 <geirha>	# PS1= bash --noprofile --norc -o history -il <<<'declare -p "${!HIST@}"' | sed s/HIST//
+Mar 12 11:08:31 <shbot>	ano: declare -i HISTCMD="1"|declare -- HISTFILE="/root/.bash_history"|declare -- HISTFILESIZE="500"|declare -- HISTSIZE="500"|
+Mar 12 11:08:31 <shbot>	geirha: no output
+Mar 12 11:09:52 <geirha>	# unset -v PROMPT_COMMAND ; PS1= bash --noprofile --norc -o history -il <<<'declare -p "${!HIST@}"' | sed s/HIST//
+Mar 12 11:09:55 <shbot>	geirha: declare -p "${!HIST@}"
+Mar 12 11:09:55 <shbot>	geirha: logout
+Mar 12 11:09:55 <shbot>	geirha: etc... ( http://paste.wooledge.org/29496 )
+Mar 12 11:12:15 <geirha>	A bit of a timing issue with PS1 set to immediately kill the VM second time it's evaled
+Mar 12 11:56:22 <ano>	# coproc { cat; }; eval exec "${COPROC[0]}>&2"; echo 2 >&"${COPROC[1]}"; sleep 0.1
+Mar 12 11:56:24 <shbot>	ano: [1] 51
+Mar 12 11:57:27 <ano>	why there is no(?) 2 in output/stderr?
+Mar 12 11:59:12 <ano>	(eval exec "${COPROC[0]}>&2") isn't mean that everything from ${COPROC[0]} (coproc stdout) should be redirected to terminal stderr?
+Mar 12 12:13:04 <ano>	# coproc { echo foo; } 1>&2; sleep 1
+Mar 12 12:13:07 <shbot>	ano: [1] 51
+Mar 12 12:13:07 <shbot>	ano: foo
+Mar 12 12:13:07 <shbot>	ano: [1]+  Done                    coproc COPROC { echo foo; } 1>&2
+Mar 12 12:13:26 <ano>	# coproc { echo foo; } 1>&1; sleep 1
+Mar 12 12:13:28 <shbot>	ano: [1] 51
+Mar 12 12:13:28 <shbot>	ano: [1]+  Done                    coproc COPROC { echo foo; } 1>&1
+Mar 12 12:15:01 <ano>	# exec {fd}>&1; coproc { echo foo; } 1>&${fd}; sleep 1
+Mar 12 12:15:04 <shbot>	ano: [1] 51
+Mar 12 12:15:05 <shbot>	ano: foo
+Mar 12 12:15:05 <shbot>	ano: [1]+  Done                    coproc COPROC { echo foo; } >&${fd}
+Mar 12 12:25:44 <tirnanog>	ano: by dup'ing 2 to COPROC[0], you replace - and thereby destroy - the writing end of one of the pipes. cat will still try to write that which it initially reads but will then have to contend with SIGPIPE or EPIPE.
+Mar 12 12:33:35 <tirnanog>	er, the reading end, I mean.
+Mar 12 12:35:43 <tirnanog>	put another way, the act of duplicating fd 2 does not amount to a demand upon bash to somehow syphon up the input from the (already existing) pipe in question then convey it to fd 2 for you.
+Mar 12 14:41:13 <DmanT>	hi all
+Mar 12 15:48:26 <Andy_Kw>	Hi, in ksh, what does it mean to do `alias -x TOTO="/rep1/rep2"`
+Mar 12 16:20:17 <emanuele6>	the manual says "The obsolete -x option has no effect."
+Mar 12 16:20:41 <emanuele6>	i don't know what it used to do
+Mar 12 16:22:52 <phy1729>	If it was like OpenBSD's ksh's -x   "The -x option sets (+x clears) the export attribute of an alias or, if no names are given, lists the aliases with the export attribute (exporting an alias has no effect)."
+**** BEGIN LOGGING AT Tue Mar 12 17:00:35 2024
+
+Mar 12 17:00:31 *	Now talking on #bash
+Mar 12 17:00:31 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 12 17:00:31 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+Mar 12 20:33:42 <CrtxReavr>	OpenBSD's ksh?
+Mar 12 20:34:08 <CrtxReavr>	OpenBSD probably has a ksh port, but. . . it wouldn't be OpenBSDs.
+Mar 12 20:36:01 <llua>	yes, openbsd ksh
+Mar 12 20:37:56 <twkm>	a pdksh evolution.
+Mar 12 20:38:27 <tirnanog>	it most definitely is openbsd's. there are at least two ports of it too (oksh and loksh).
+Mar 12 20:40:48 <tirnanog>	it's also their /bin/sh. it's pretty good.
+Mar 12 20:56:23 <Earnestly>	Which BSD uses mksh then?
+Mar 12 20:56:41 <Earnestly>	Oh, mirbsd, a bit obvious
+Mar 12 20:56:44 <tirnanog>	yep.
+Mar 12 21:26:27 <ormooj>	mooh
+Mar 12 21:27:45 <ormooj>	wow mksh have that too?
+Mar 12 21:28:55 <twkm>	mksh is also a pdksh evolution.
+Mar 12 21:29:32 <ormooj>	yes they don't have that many feature differences
+Mar 12 21:29:56 <ormooj>	well, ${|
+Mar 12 22:31:19 <lmat>	How do I use a here document and use "||"
+Mar 12 22:31:55 <lmat>	gnuplot << "EOF"\n...\nEOF || exit;  obviously doesn't work because that's the wrong end-of-here-document marker.
+Mar 12 22:32:49 <emanuele6>	lmat: gnuplot << "EOF" || exit    ....   EOF
+Mar 12 22:34:53 <emanuele6>	the lines after the line that has <<EOF (or following lines if it is continuated by \) are part of the heredoc up the the line that contains EOF
+Mar 12 22:35:16 <emanuele6>	so the correct place to put || exit  is after <<EOF
+Mar 12 22:36:19 <emanuele6>	however, if you prefer, you could wrap the gnuplot command in { } and then put the ||exit after e.g.   {\n  gnuplog <<'EOF'\n...\nEOF\n} || exit
+Mar 12 22:36:57 <phy1729>	cat <<EOF; cat <<ASDF  is valid even
+Mar 12 22:37:15 <greycat>	<<EOF is a redirection just like </dev/null, so if you would write  foo </dev/null || exit  then you can write  foo <<EOF || exit
+Mar 12 22:38:07 <lmat>	emanuele6: Nice, thank you!
+Mar 12 22:38:17 <lmat>	phy1729: :'(
+Mar 12 22:38:47 <emanuele6>	in that case, lines up to EOF are part of the first heredoc, and then lines after EOF up to ASDF are part of the second heredoc
+Mar 12 22:38:53 <greycat>	if I needed two heredocs in the same pipeline, I would put at least one of them into a function, and then call the function in the pipeline
+Mar 12 22:40:40 <emanuele6>	or use a there doc
+Mar 12 22:41:05 <phy1729>	the real question is what does   cat - <<EOF "$(cat <<ASDF)"   do?
+Mar 12 22:41:09 <emanuele6>	exec 3<<'EOF'\n...EOF     cmd <&3-; cmd <<EOF
+Mar 12 22:41:12 <emanuele6>	:^)
+Mar 12 22:41:41 <ormooj>	phy1729 nothing interesting :(
+Mar 12 22:41:59 <emanuele6>	$(cat <<EOF)   can't work because bash only stores $(cat <<EOF)  in the word
+Mar 12 22:42:05 <emanuele6>	so it cannot find the heredoc
+Mar 12 22:43:07 <ormooj>	I wish I could auto-number them since I use multiple heredocs so often
+Mar 12 22:43:23 <phy1729>	wait, WHY
+Mar 12 22:43:30 <ormooj>	<<EOF$((n++))
+Mar 12 22:43:33 <ormooj>	:D
+Mar 12 22:43:35 <emanuele6>	i think you can just use the same terminator
+Mar 12 22:44:36 <emanuele6>	you don't have to use a different one, they are read left to right
+Mar 12 22:44:38 <ormooj>	I can do that with the heredoc command ^^
+Mar 12 22:45:12 <emanuele6>	or i guess i should say from start to end
+Mar 12 22:45:13 <phy1729>	I'm trying to think of how to break thr LTR bit. <( and $( don't work really
+Mar 12 22:45:21 <emanuele6>	because they could be read right to left
+Mar 12 22:45:26 <emanuele6>	if you have something like
+Mar 12 22:45:42 <emanuele6>	cat foobar <<EOF;\
+Mar 12 22:45:46 <emanuele6>	cat<<EOF
+Mar 12 22:45:53 <emanuele6>	that is right to left :^)
+Mar 12 22:46:02 <phy1729>	not meaninfully
+Mar 12 22:47:56 <emanuele6>	you could use an alias i think
+Mar 12 22:48:43 <emanuele6>	# alias x=$'cat <<EOF\nhi'; eval $'y="$(x\nEOF)"'; declare -p y
+Mar 12 22:48:45 <shbot>	emanuele6: bash: hi: command not found
+Mar 12 22:48:45 <shbot>	emanuele6: declare -- y=""
+Mar 12 22:48:51 <emanuele6>	hmm
+Mar 12 22:50:23 <emanuele6>	# alias x=$'cat <<EOF\nhi'; eval $'y="$(x\nEOF\n)"'; declare -p y
+Mar 12 22:50:25 <shbot>	emanuele6: bash: hi: command not found
+Mar 12 22:50:25 <shbot>	emanuele6: declare -- y=""
+Mar 12 22:51:11 <emanuele6>	it does not work; not sure why
+Mar 12 22:51:20 <emanuele6>	cat is running, probably with an empty heredoc
+Mar 12 22:51:46 <emanuele6>	weird that  EOF: command not found  is not printed
+Mar 12 22:54:39 <emanuele6>	i thought that maybe it did not work because newlines are understood as ;s in $(), but that can't be all of it because it would say   EOF: command not found   if that was the case
+Mar 12 22:59:12 <emanuele6>	hmm, with strace i can see that bash is running    cat </dev/null   : openat(AT_FDCWD, "/dev/null", O_RDONLY); dup2(3, 0); close(3); execve("/usr/bin/cat",    which is odd
+Mar 12 23:00:46 <emanuele6>	it just checked and it seems it does that for any empty heredoc, so it is not as weird; it just means that somehow it thinks that the heredoc is empty
+Mar 12 23:03:17 <emanuele6>	ah, the issue is that heredoc text cannot come from an alias
+Mar 12 23:03:34 <emanuele6>	# alias x=$'cat <<EOF'; eval $'y="$(x\nhi\nhello\nEOF)"'; declare -p y
+Mar 12 23:03:36 <shbot>	emanuele6: declare -- y=$'hi\nhello'
+Mar 12 23:03:45 <emanuele6>	it works :D
+Mar 12 23:06:04 <emanuele6>	# eval $'f () { y="$(x\nhi\nEOF);}"'; alias x=$'cat <<EOF'; f; printf 'y=%s\t' "$y"; alias x='echo x'; f; printf 'y=%s\t' "$y"
+Mar 12 23:06:06 <shbot>	emanuele6: bash: syntax error: unexpected end of file
+Mar 12 23:06:06 <shbot>	emanuele6: bash: f: command not found
+Mar 12 23:06:06 <shbot>	emanuele6: etc... ( http://paste.wooledge.org/29513 )
+Mar 12 23:06:28 <emanuele6>	huh?
+Mar 12 23:06:38 <emanuele6>	oh, i was thinking of the POSIX mode alias behaviour
+Mar 12 23:09:24 <emanuele6>	no, i just put the quotes wrong in eval; this does not work with POSIX mode aliases
+Mar 12 23:09:27 <emanuele6>	# eval $'f () { y=$(x\nhi\nEOF\n);}'; alias x=$'cat <<EOF'; f; printf 'y=%s\t' "$y"; alias x='echo x'; f; printf 'y=%s\t' "$y"
+Mar 12 23:09:29 <shbot>	emanuele6: y=hi    bash: hi: command not found
+Mar 12 23:09:29 <shbot>	emanuele6: bash: EOF: command not found
+Mar 12 23:09:29 <shbot>	emanuele6: y=x
+Mar 12 23:09:31 <emanuele6>	:D
+Mar 12 23:13:50 <ormaaj>	https://bpa.st/raw/S5QA
+Mar 12 23:13:58 <ormaaj>	but ! is a variable!
+Mar 12 23:15:27 <ormaaj>	and I have no clue how to escape that \0. It should be \\0 -> \0 for execline but don't know what env wants.
+Mar 12 23:21:12 <ormaaj>	this is not so nice because I don't think there's a way to rename / move an environment variable without an importas so I was hoping env -S would work.
+Mar 12 23:21:27 <emanuele6>	!aside
+Mar 12 23:21:27 <greybot>	"As an aside, don't use all upper-case variable names for purely internal purposes." ~twkm
+Mar 12 23:22:02 <ormaaj>	^^
+Mar 12 23:22:04 <emanuele6>	in this case use all upper-case for environment variables :D
+Mar 12 23:22:43 <emanuele6>	!learn asidealt As an aside, use all upper-case variable names for environment variables.
+Mar 12 23:22:43 <greybot>	OK, emanuele6
+Mar 12 23:23:30 <ormaaj>	meh you can remove that to not highlight twkm. That's his famous quote tho
+Mar 12 23:33:29 <bent_fingers>	i knew that
+Mar 12 23:34:08 <emanuele6>	that is why its famous
+Mar 13 00:03:55 <uuuuu>	how come when I echo '\'asd' bash thinks the command isn't finished
+Mar 13 00:04:10 <arraybolt3>	Escaping doesn't work in single quotes.
+Mar 13 00:04:20 <arraybolt3>	# echo "\'asd"
+Mar 13 00:04:22 <shbot>	arraybolt3: \'asd
+Mar 13 00:04:30 <arraybolt3>	# echo -e "\'asd"
+Mar 13 00:04:32 <shbot>	arraybolt3: \'asd
+Mar 13 00:04:47 <arraybolt3>	wow
+Mar 13 00:04:52 <arraybolt3>	# echo "'asd"
+Mar 13 00:04:54 <shbot>	arraybolt3: 'asd
+Mar 13 00:05:20 <uuuuu>	I know, but I still want to know why I can't have '\'asd'
+Mar 13 00:05:24 <arraybolt3>	ahem. So, use `echo -e` with double quotes when you need escaping. Also, you don't have to escape a ' when using double-quotes, as I just unintentionally demonstrated by fumbling all over myself.
+Mar 13 00:06:15 <arraybolt3>	uuuuu: Breaking it down character by character, ' = start a string, \ = literal, ' = end a string, asd = something outside the string, Bash will parse this in a way you don't intend, ' = start a string.
+Mar 13 00:06:24 <arraybolt3>	By the end of it, you start a string that you don't finish.
+Mar 13 00:06:43 <emanuele6>	uuuuu: \' does not mean anything, there '\' is just a single quoted \, then you have asd, and then you start a ' that you never close
+Mar 13 00:07:30 <emanuele6>	it is the same that would happen if you used  'a'asd'  \ does not do anything special
+Mar 13 00:27:35 <kurahaupo>	arraybolt3: "echo -e" shouldn't be recommended for anything; printf is more portable and $'…' is more efficient, and both are less problematic with interpolation.
+Mar 13 00:43:40 <bent_fingers>	whenever i see 'echo -e' i grab my marker and smudge the `-e` on my screen
+Mar 13 00:56:28 <emanuele6>	bent_fingers:  i=0; while (( i < COLUMNS * LINES )); do clear; printf '%*s%s' "$((i++))" '' 'echo -e Hello, World!'; sleep .2; done; printf \\n
+Mar 13 01:07:19 <kurahaupo>	emanuele6: s/while/for/
+Mar 13 01:10:41 <kurahaupo>	emanuele6: Why include "*LINES"? I'd have thought i<=COLUMNS-21 (where 21 is the length of 'echo -e Hello, World!')
+Mar 13 01:15:03 <bent_fingers>	emanuele6: hahaha
+Mar 13 01:18:51 <kurahaupo>	s='echo -e Hello, World!' t=${s//-e/$'\e[2m-e\e[22m'} ; for (( i=0 ; i <= COLUMNS*LINES - ${#s} ; ++i )) do printf '\e[H%*s%s\e[J' "$i" '' "$t"; sleep .1; done; printf \\n
+Mar 13 01:20:54 <bent_fingers>	Per man page: "A pipeline is a sequence of one or more commands separated by ..."
+Mar 13 01:20:56 <kurahaupo>	We used to worry about supporting multiple terminal types with different escape codes, but everything other than IEC codes died 20+ years ago.
+Mar 13 01:21:05 <bent_fingers>	so a single command is a pipeline?
+Mar 13 01:21:19 <kurahaupo>	bent_fingers: grammatically speaking, yes
+Mar 13 01:21:50 <phy1729>	I'm glad the international electrical codes are still around
+Mar 13 01:21:53 <kurahaupo>	However a singleton pipeline doesn't get an implicit subshell
+Mar 13 01:22:04 <bent_fingers>	the definition for "list" is analogous
+Mar 13 01:22:11 <bent_fingers>	so a single command is also a list?
+Mar 13 01:22:20 <kurahaupo>	Correct
+Mar 13 01:22:36 <phy1729>	# help while
+Mar 13 01:22:38 <shbot>	phy1729: while: while COMMANDS; do COMMANDS-2; done
+Mar 13 01:22:38 <shbot>	phy1729:     Execute commands as long as a test succeeds.
+Mar 13 01:22:38 <shbot>	phy1729: etc... ( http://paste.wooledge.org/29584 )
+Mar 13 01:22:46 <phy1729>	bah it says COMMANDS not list
+Mar 13 01:22:51 <kurahaupo>	bent_fingers: it's about specifying what's acceptable in a given context
+Mar 13 01:23:08 <bent_fingers>	it's been awhile since i've heard the word "singleton"
+Mar 13 01:23:37 <kurahaupo>	Actually LIST is used in the definition of "for"
+Mar 13 01:24:00 <kurahaupo>	# help for | grep LIST
+Mar 13 01:24:01 <shbot>	kurahaupo: no output
+Mar 13 01:24:09 <kurahaupo>	# help for
+Mar 13 01:24:12 <shbot>	kurahaupo: for: for NAME [in WORDS ... ] ; do COMMANDS; done
+Mar 13 01:24:12 <shbot>	kurahaupo:     Execute commands for each member in a list.
+Mar 13 01:24:12 <shbot>	kurahaupo: etc... ( http://paste.wooledge.org/29585 )
+Mar 13 01:24:17 <kurahaupo>	Gah
+Mar 13 01:24:23 <kurahaupo>	It was used there
+Mar 13 01:24:55 <kurahaupo>	That help line is wrong; the semicolon should be inside the []
+Mar 13 01:26:10 <kurahaupo>	(a spurious semicolon is allowed between NAME and do, but it has no purpose there)
+Mar 13 01:35:01 <emanuele6>	# a () for ((;;)) do :;done; declare -f a | grep for
+Mar 13 01:35:03 <shbot>	emanuele6:     for ((1; 1; 1))
+Mar 13 01:35:12 <ormaaj>	# for((;;)){(())||print -n 'moo ';}
+Mar 13 01:35:20 <shbot>	ormaaj: bash: print: command not found
+Mar 13 01:35:20 <shbot>	ormaaj: bash: print: command not found
+Mar 13 01:35:20 <shbot>	ormaaj: etc... ( http://paste.wooledge.org/29587 )
+Mar 13 01:35:24 <emanuele6>	111!
+Mar 13 01:35:34 <ormaaj>	111
+Mar 13 01:36:27 <emanuele6>	# a () for ((    1;    1;    1)) do :;done; declare -f a | grep for
+Mar 13 01:36:29 <shbot>	emanuele6:     for ((1; 1; 1))
+Mar 13 01:36:40 <emanuele6>	# a () for ((1    ;1    ;1    )) do :;done; declare -f a | grep for
+Mar 13 01:36:42 <shbot>	emanuele6:     for ((1    ; 1    ; 1    ))
+Mar 13 01:37:12 <ormaaj>	(()) = dead code
+Mar 13 01:38:07 <ormaaj>	wow `for((;;)){(print -n 'moo ')}` is very slow.
+Mar 13 01:38:24 <emanuele6>	# a () (()); declare -f a | grep ((
+Mar 13 01:38:25 <shbot>	emanuele6: bash: syntax error near unexpected token `('
+Mar 13 01:38:26 <emanuele6>	oops
+Mar 13 01:38:28 <emanuele6>	# a () (()); declare -f a | grep '(('
+Mar 13 01:38:30 <shbot>	emanuele6:     (())
+Mar 13 01:39:02 <emanuele6>	(()) is not equivalent to ((1)), only ((;;)) is equivalent to ((1;1;1))
+Mar 13 01:39:11 <emanuele6>	also i guess (()) is equivalent to ((0))
+Mar 13 01:39:19 <emanuele6>	# (()); echo "$?"
+Mar 13 01:39:21 <shbot>	emanuele6: 1
+Mar 13 01:42:07 <emanuele6>	i wonder if i can hack that 1 used for ((1;1;1))
+Mar 13 01:43:09 <ormaaj>	 $ bash -c 'function f { typeset n=0; for((;++n<1000;)){(print -n "moo ")}; echo; }; time f' >/dev/null
+Mar 13 01:43:09 <ormaaj>	real    0m0.835s
+Mar 13 01:43:32 <ormaaj>	 $ ksh -c 'function f { typeset n=0; for((;++n<1000;)){(print -n "moo ")}; echo; }; time f' >/dev/null
+Mar 13 01:43:32 <ormaaj>	real    0m00.001s
+Mar 13 01:44:17 <ormaaj>	faster with proper integer
+Mar 13 01:45:16 <emanuele6>	also faster because ksh does not fork, while bash does
+Mar 13 01:45:43 <ormaaj>	yeah it's real slow even for that though
+Mar 13 01:46:12 <emanuele6>	how do you have print pre-enabled in bash?
+Mar 13 01:46:58 <ormaaj>	$ bash -c 'type print'
+Mar 13 01:46:58 <ormaaj>	print is /usr/local/post/bin/print
+Mar 13 01:47:23 <ormaaj>	 $ cat /usr/local/post/bin/print
+Mar 13 01:47:23 <ormaaj>	#!/usr/bin/ksh
+Mar 13 01:47:23 <ormaaj>	\command -- print "$@"
+Mar 13 01:47:29 <ormaaj>	:P
+Mar 13 01:48:06 <emanuele6>	well, that would make it even slower xD
+Mar 13 01:49:16 <ormaaj>	 $ bash -c 'enable print; function f { typeset n=0; for((;++n<1000;)){(print -n "moo ")}; echo; }; time f' >/dev/null
+Mar 13 01:49:16 <ormaaj>	real    0m0.194s
+Mar 13 01:50:17 <emanuele6>	and with  { print -n "moo ";}   ?
+Mar 13 01:50:38 <ormaaj>	that should be quick
+Mar 13 01:50:56 <ormaaj>	.002
+Mar 13 02:07:29 <emanuele6>	k# bash -c 'for ((;;)) { echo hi;}'
+Mar 13 02:07:36 <shbot>	emanuele6: hi
+Mar 13 02:07:36 <shbot>	emanuele6: hi
+Mar 13 02:07:36 <shbot>	emanuele6: etc... ( http://paste.wooledge.org/29606 )
+Mar 13 02:07:39 <emanuele6>	k# dd bs=1 seek=1008250 status=none count=1 <<<0 of=/bin/bash conv=notrunc; bash -c 'for ((;;)) { echo hi;}'
+Mar 13 02:07:40 <shbot>	emanuele6: no output
+Mar 13 02:07:45 <emanuele6>	:D
+Mar 13 02:08:06 <emanuele6>	so   for((1;1;1)) is more reliable
+Mar 13 02:09:07 <emanuele6>	unless if you also hack the bit that makes (()) fail if the result is 0, instead of succeed
+Mar 13 02:10:34 <emanuele6>	k# dd bs=1 seek=1008250 status=none count=1 <<<0 of=/bin/bash conv=notrunc; bash -c 'a()for ((;;)) { echo hi;};declare -f a'|grep for
+Mar 13 02:10:36 <shbot>	emanuele6:     for ((0; 0; 0))
+Mar 13 02:10:52 <emanuele6>	k# dd bs=1 seek=1008250 status=none count=1 <<<x of=/bin/bash conv=notrunc; bash -c 'a()for ((;;)) { echo hi;};declare -f a'|grep for
+Mar 13 02:10:53 <shbot>	emanuele6:     for ((x; x; x))
+Mar 13 02:24:50 <emanuele6>	k# printf \\0 | dd bs=1 seek=1008250 status=none count=1 of=/bin/bash conv=notrunc; bash -c 'for ((;;)) { echo hi;}'
+Mar 13 02:24:51 <shbot>	emanuele6: Memory fault
+Mar 13 02:25:00 <emanuele6>	huh?
+Mar 13 02:25:11 <emanuele6>	k# printf ' ' | dd bs=1 seek=1008250 status=none count=1 of=/bin/bash conv=notrunc; bash -c 'for ((;;)) { echo hi;}'
+Mar 13 02:25:12 <shbot>	emanuele6: no output
+Mar 13 02:25:47 <emanuele6>	not sure why that error happens when i write nul
+Mar 13 02:27:01 <emanuele6>	anyway, i guess that is the reason why bash replaces blank with 1, if it left  for((;;))  blank would evaluate to false
+Mar 13 03:31:03 <emanuele6>	still, it could have done that for only the second expression instead of all three
+Mar 13 03:48:42 <ormaaj>	that last ksh bug I ran into was a loop optimizer problem
+Mar 13 04:15:20 <arraybolt3>	So if parsing the output of ls is the easiest way to go to jail without passing go or collecting $200, what's the recommended way of sorting a list of filenames?
+Mar 13 04:15:39 <arraybolt3>	er, I mean, the recommended way to get a sorted directory listing for future use in a script?
+Mar 13 04:16:05 <arraybolt3>	(we'll assume the filenames won't contain newlines for `sort`s sake
+Mar 13 04:23:19 <ormaaj>	# a=(/*); typeset -p a
+Mar 13 04:23:22 <shbot>	ormaaj: declare -a a=([0]="/bin" [1]="/dev" [2]="/etc" [3]="/init" [4]="/lib" [5]="/lib64" [6]="/proc" [7]="/root" [8]="/tmp" [9]="/usr" [10]="/var")
+Mar 13 04:25:08 <arraybolt3>	awesome, thanks
+Mar 13 04:26:10 <arraybolt3>	hmm, though if you'll indulge my "right but I want a cherry on top" for a bit, is there a way to make it not include the entire relative path to the items in the specified directory? Or do I have to trim all those off myself?
+Mar 13 04:27:30 <ormaaj>	globs always sort (by locale) so you're just getting ordinary glob results there.
+Mar 13 04:27:53 <ormaaj>	# cd / && { a=(/*); typeset -p a; }
+Mar 13 04:27:55 <shbot>	ormaaj: declare -a a=([0]="/bin" [1]="/dev" [2]="/etc" [3]="/init" [4]="/lib" [5]="/lib64" [6]="/proc" [7]="/root" [8]="/tmp" [9]="/usr" [10]="/var")
+Mar 13 04:27:57 <ormaaj>	# cd / && { a=(*); typeset -p a; }
+Mar 13 04:27:59 <shbot>	ormaaj: declare -a a=([0]="bin" [1]="dev" [2]="etc" [3]="init" [4]="lib" [5]="lib64" [6]="proc" [7]="root" [8]="tmp" [9]="usr" [10]="var")
+Mar 13 04:28:06 <arraybolt3>	Right, but observe:
+Mar 13 04:28:47 <arraybolt3>	# cd /; a=(/bin/*); IFS=$'\n'; echo "${a[*]}" | sed "s/\/bin\///"
+Mar 13 04:28:50 <shbot>	arraybolt3: [
+Mar 13 04:28:50 <shbot>	arraybolt3: adu
+Mar 13 04:28:50 <shbot>	arraybolt3: etc... ( http://paste.wooledge.org/29607 )
+Mar 13 04:29:08 <arraybolt3>	I'd like to avoid the `sed` hack at the end, especially since it turns my lovely array into a string
+Mar 13 04:29:16 <arraybolt3>	and that string has many of the problems of parsing ls :P
+Mar 13 04:30:18 <arraybolt3>	I guess I could do something like...
+Mar 13 04:30:33 <ormaaj>	# cd /bin && { a=(*); typeset -p a; }
+Mar 13 04:30:35 <shbot>	ormaaj: declare -a a=([0]="[" [1]="adu" [2]="awk" [3]="basename" [4]="bash" [5]="bash+" [6]="bash1" [7]="bash2" [8]="bash3" [9]="bash32" [10]="bash4" [11]="bash42" [12]="bash43" [13]="bash44" [14]="bash5" [15]="bash50" [16]="bash51" [17]="bash52" [18]="bc" [19]="bsh" [20]="bunzip2" [21]="bzcat" [22]="bzip2" [23]="cal" [24]="cat" [25]="chgrp" [26]="chmod" [27]="chown" [28]="cksum" [29]="cmp" [30]="comm" [3\
+Mar 13 04:30:35 <shbot>	ormaaj: 1]="compress" [32]="cp" [33]="csplit" [34]="cut" [35]="dash" [36]="date" [37]="dd" [38]="df" [39]="diff" [40]="dirname" [41]="du" [42]="echo" [43]="ed" [44]="env" [45]="ex" [46]="expand" [47]="expr" [48]="false" [49]="file" [50]="find" [51]="fold" [52]="fuser" [53]="gawk" [54]="gawk5" [55]="gencat" [56]="getconf" [57]="getent" [58]="grep" [59]="gunzip" [60]="gzip" [61]="head" [62]="hostname" [63]=\
+Mar 13 04:30:35 <shbot>	ormaaj: etc... ( http://paste.wooledge.org/29612 )
+Mar 13 04:30:57 <arraybolt3>	:face_palm: how did I not think of that
+Mar 13 04:31:16 <ormaaj>	I don't like to use CWD side-effects if possible. I would just trim it.
+Mar 13 04:31:54 <arraybolt3>	I guess for ultimate "don't parse ls" awesomeness, this might do:
+Mar 13 04:32:53 <larryv>	# a=(/bin/*); echo "${a[*]#/bin/}"
+Mar 13 04:32:53 <ormaaj>	# a=(/bin/*) a=("${a[@]##*/}"); printf '%s ' "${a[@]:0:10}"; echo
+Mar 13 04:32:55 <shbot>	ormaaj: no output
+Mar 13 04:32:56 <shbot>	larryv: [ adu awk basename bash bash+ bash1 bash2 bash3 bash32 bash4 bash42 bash43 bash44 bash5 bash50 bash51 bash52 bc bsh bunzip2 bzcat bzip2 cal cat chgrp chmod chown cksum cmp comm compress cp csplit cut dash date dd df diff dirname du echo ed env ex expand expr false file find fold fuser gawk gawk5 gencat getconf getent grep gunzip gzip head hostname iconv id join jq jsh kill ksh ldconfig link ln loc\
+Mar 13 04:32:56 <shbot>	larryv: ale localedef logger logname ls m4 mawk mawk133 mawk134 mkdir mkfifo mknod mksh mktemp mount mv nawk newgrp nice nl nohup oawk od paste patch pathchk pax pr printf ps pwd recode renice rev rm rmdir sed seq setsid sh sleep sort split strace strings stty tabs tac tail tee test time touch tput tr true tsort tty umount uname uncompress unexpand uniq unlink uudecode uuencode wc which who xargs yes zcat
+Mar 13 04:33:14 <arraybolt3>	# cd /; a=(/bin/*); b="$(IFS=$'\0'; echo "${a[*]}" | sed -z "s/\/bin\///")"; mapfile -t$'\0' c <<< "${b}"; typeset -p c
+Mar 13 04:33:17 <shbot>	arraybolt3: declare -a c=([0]="[/bin/adu/bin/awk/bin/basename/bin/bash/bin/bash+/bin/bash1/bin/bash2/bin/bash3/bin/bash32/bin/bash4/bin/bash42/bin/bash43/bin/bash44/bin/bash5/bin/bash50/bin/bash51/bin/bash52/bin/bc/bin/bsh/bin/bunzip2/bin/bzcat/bin/bzip2/bin/cal/bin/cat/bin/chgrp/bin/chmod/bin/chown/bin/cksum/bin/cmp/bin/comm/bin/compress/bin/cp/bin/csplit/bin/cut/bin/dash/bin/date/bin/dd/bin/df/bin/diff/bin/\
+Mar 13 04:33:17 <shbot>	arraybolt3: dirname/bin/du/bin/echo/bin/ed/bin/env/bin/ex/bin/expand/bin/expr/bin/false/bin/file/bin/find/bin/fold/bin/fuser/bin/gawk/bin/gawk5/bin/gencat/bin/getconf/bin/getent/bin/grep/bin/gunzip/bin/gzip/bin/head/bin/hostname/bin/iconv/bin/id/bin/join/bin/jq/bin/jsh/bin/kill/bin/ksh/bin/ldconfig/bin/link/bin/ln/bin/locale/bin/localedef/bin/logger/bin/logname/bin/ls/bin/m4/bin/mawk/bin/mawk133/bin/mawk134/b\
+Mar 13 04:33:17 <shbot>	arraybolt3: etc... ( http://paste.wooledge.org/29614 )
+Mar 13 04:33:24 <arraybolt3>	well that didn't work
+Mar 13 04:33:49 <arraybolt3>	trying to leverage NUL delimiting
+Mar 13 04:34:26 <arraybolt3>	anyway, this is overkill, CWD side-effects are perfectly acceptable in the code I'm writing.
+Mar 13 04:34:31 <ormaaj>	# a=(/bin/*) a=("${a[@]##*/}"); printf '%s ' "${a[@]:0:20}"; echo
+Mar 13 04:34:32 <shbot>	ormaaj: [ adu awk basename bash bash+ bash1 bash2 bash3 bash32 bash4 bash42 bash43 bash44 bash5 bash50 bash51 bash52 bc bsh
+Mar 13 04:34:36 <ormaaj>	:o
+Mar 13 04:34:45 <ormaaj>	it said no output before
+Mar 13 04:34:56 <larryv>	because i cut in X(
+Mar 13 04:35:13 <larryv>	i could have sworn shbot didn't have this problem before
+Mar 13 04:49:04 <ormaaj>	arraybolt3: for future reference, `x=$'\0'` is the same as `x=''` is the same as `x=`. You can nether store nor expand a nul anyway so that code is broken in 10 different ways.
+Mar 13 04:49:27 <arraybolt3>	aha, good to know
+Mar 13 04:49:47 <ormaaj>	can't read a nul with a comsub either for same reason. bash even warns if you try
+Mar 13 04:52:51 <arraybolt3>	That sort of makes a fine how-do-you-do if you're trying to deal with all possible esoteric filenames. The only right way to separate filenames that contain all 255 other bytes is to use NUL, but you can't split a NUL-separated string into an array so you have to deal with it as a string, unless you fancy replacing NULs with newlines which breaks things, and even that might not be possible if you
+Mar 13 04:52:53 <arraybolt3>	can't even specify a NUL :-/
+Mar 13 04:53:07 <arraybolt3>	I get why it would be this way - you can't sore a nul in a string in C, but... hmm.
+Mar 13 04:53:23 <arraybolt3>	Perhaps UNIX should have added one more character to the list of "illegal in filenames" characters.
+Mar 13 04:53:52 <ormaaj>	Ideally you at most only read in file names once and do the rest with array manipulations.
+Mar 13 04:54:27 <arraybolt3>	hmm, yeah
+Mar 13 04:55:46 <ormaaj>	you can split a nul-separated string into an array
+Mar 13 04:59:05 <ormaaj>	# shopt -s lastpipe; set +m; mkdir -- $'/x\ny'; find / -maxdepth 1 -type d -print0 | LC_CTYPE=C mapfile -td '' a; typeset -p a
+Mar 13 04:59:07 <shbot>	ormaaj: declare -a a=([0]="/" [1]=$'/x\ny' [2]="/proc" [3]="/var" [4]="/tmp" [5]="/usr" [6]="/bin" [7]="/lib" [8]="/etc" [9]="/root" [10]="/dev")
+Mar 13 05:37:53 <pj>	The key is that NUL can't be used in a variable or passed as an arg or part of a command name because all of those use NUL-terminated strings internally.  NULs can, however, be part of a file's content or a stream, so it's perfectly fine to pass it as STDIN, for example.
+Mar 13 05:44:02 <ormaaj>	mhhh
+Mar 13 05:47:12 <ormaaj>	bash has A FEW commands that can work with nuls in data, only when reading and/or writing.
+Mar 13 05:47:51 <pj>	right, commands that work on streams, such as readarray work fine with NULs
+Mar 13 05:49:04 <pj>	or you can output NULs with printf, for example.
+Mar 13 05:49:09 <bent_fingers>	# echo -e '\0' | tr '\0' '+'
+Mar 13 05:49:10 <shbot>	bent_fingers: +
+Mar 13 05:49:39 <bent_fingers>	something out of nothing
+Mar 13 05:49:47 <bent_fingers>	ex nihilo
+Mar 13 05:50:08 <ormaaj>	use %b for that though.
+Mar 13 05:50:21 <pj>	# readarray -d '' ar < <(printf '%s\0' a b c d e f g); declare -p ar
+Mar 13 05:50:22 <shbot>	pj: declare -a ar=([0]="a" [1]="b" [2]="c" [3]="d" [4]="e" [5]="f" [6]="g")
+Mar 13 05:51:59 <pj>	That's sort of a dumb example, but you could use it in conjunction with something like GNU sort...
+Mar 13 05:52:38 <pj>	# readarray -d '' ar < <(printf '%s\0' d a e b g f|sort -z); declare -p ar
+Mar 13 05:52:40 <shbot>	pj: declare -a ar=([0]="a" [1]="b" [2]="d" [3]="e" [4]="f" [5]="g")
+Mar 13 05:53:53 <pj>	This is a safe way of sorting an array and putting the results back in an array, so long as you have GNU sort ^^^^
+Mar 13 05:54:52 <pj>	well as safe as you can get, there are still issues with trailing newlines.
+Mar 13 05:55:12 <ormaaj>	nope
+Mar 13 05:56:28 <pj>	# readarray -d '' ar < <(printf '%s\0' d $'a\n' e b g f|sort -z); declare -p ar
+Mar 13 05:56:30 <shbot>	pj: declare -a ar=([0]=$'a\n' [1]="b" [2]="d" [3]="e" [4]="f" [5]="g")
+Mar 13 05:56:41 <pj>	hrmmmmm, interesting
+Mar 13 05:56:50 <pj>	I thought those would all be the same.
+Mar 13 05:56:52 <ormaaj>	`readarray < <(printf) < <(sort)` bit nicer. Bash can directly exec those commands.
+Mar 13 05:57:05 <ormaaj>	no double-forking
+Mar 13 05:57:27 <pj>	oh, I didn't know you could do that.
+Mar 13 05:58:18 <pj>	# readarray -d '' ar < <(printf '%s\0' d a e b g f) < <(sort -z); declare -p ar
+Mar 13 05:58:20 <shbot>	pj: declare -a ar=([0]="a" [1]="b" [2]="d" [3]="e" [4]="f" [5]="g")
+Mar 13 05:58:26 <pj>	oh, interesting
+Mar 13 05:59:00 <pj>	how does bash know with that syntax to send the output of the printf to sort?
+Mar 13 06:00:03 <ormaaj>	there's nothing special there
+Mar 13 06:00:32 <pj>	Then I just can't wrap my head around it.
+Mar 13 06:00:34 <ormaaj>	 < <() opens the pipe for reading. redirects are evaluated left-to-right
+Mar 13 06:00:53 <ormaaj>	so the next redirect has the pipe open for reading on stdin
+Mar 13 06:01:17 <pj>	hrmmmmm ...
+Mar 13 06:01:42 <pj>	# < <(printf '%s\0' d a e b g f) < <(sort -z) readarray -d '' ar; declare -p ar
+Mar 13 06:01:43 <shbot>	pj: declare -a ar=([0]="a" [1]="b" [2]="d" [3]="e" [4]="f" [5]="g")
+Mar 13 06:02:34 <ormaaj>	here's a pipe reader I just made :D https://bpa.st/raw/CB6A
+Mar 13 06:02:52 <pj>	hahaha, that's right redirects don't have to be at the end, they tend to just out of convention.  But by putting the redirect at the beginning you can read it as going from right to left where the output of each command redirects into the one to its left.
+Mar 13 06:03:43 <pj>	oh wait, that doesn't read the way I thought
+Mar 13 06:03:44 <pj>	bleh
+Mar 13 06:03:56 <pj>	it does read that way with the redirects at the end.
+Mar 13 06:04:17 <pj>	oh nm, I'm confused, I just need dinner
+Mar 13 06:24:51 <ormaaj>	https://bpa.st/raw/QOCA
+**** ENDING LOGGING AT Wed Mar 13 06:35:42 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 06:38:06 2024
+
+Mar 13 06:38:05 *	Now talking on #bash
+Mar 13 06:38:05 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 13 06:38:05 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+**** ENDING LOGGING AT Wed Mar 13 06:38:17 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 15:36:13 2024
+
+Mar 13 15:36:12 *	Now talking on #bash
+Mar 13 15:36:12 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 13 15:36:12 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+Mar 13 15:36:16 <xiaomiao>	tirnanog: small world ;)
+Mar 13 15:36:36 <tirnanog>	anyway, I think I'm mistaken. grsecurity had a logging mechanism but wouldn't police the rate of forks. my memory is very fuzzy at this point.
+**** BEGIN LOGGING AT Wed Mar 13 16:17:17 2024
+
+Mar 13 16:17:16 *	Now talking on #bash
+Mar 13 16:17:16 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 13 16:17:16 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+Mar 13 16:18:12 <Soliton>	$! contains the PID of the last background process. calling ssh normally does not make it a background process. -f does not change that.
+Mar 13 16:18:54 <Soliton>	if ssh gets stopped when you background it it probably tries to read from the terminal which a background process is not allowed to do.
+Mar 13 16:19:59 <Soliton>	perhaps you want to use the control socket feature of openssh.
+Mar 13 16:22:45 <jclsn>	Soliton: Thanks, got it
+Mar 13 16:22:56 <jclsn>	Had to use ssh -NL
+Mar 13 16:23:07 <jclsn>	-f will give it another pid
+Mar 13 16:30:10 <ormaaj>	syd would make short work of it. I didn't bother testing. highmon                 │08:57:05              --> │ jpn [jpn] (José Neta) (~jpn@user/jpn) has joined #bash                                                                                                                                                                                                                        blo]
+Mar 13 16:30:10 <ormaaj>	             
+Mar 13 16:30:10 <ormaaj>	syd would make short work of it. I didn't bother testing. highmon                 │08:57:05              --> │ jpn [jpn] (José Neta) (~jpn@user/jpn) has joined #bne        ash
+Mar 13 16:30:10 <ormaaj>	           
+Mar 13 16:34:24 <llua>	the cat is getting better at typing
+Mar 13 16:47:22 <ormaaj>	er that, minus the garbage :o
+Mar 13 16:53:43 <ormaaj>	I am using a fork of kmscon that attempts to implement mouse support but it's very crude. Doesn't really implement any of the terminal interaction things. It's just like gpm but spams whatever you've selected if you middle click.
+Mar 13 16:54:00 <Earnestly>	chiselfuse: Not the kernel per-se, but as a structured interchange format for arbitrary byte streams. It would also mean that json could store unix filenames correctly, amoung other things, which would be important for many such config files
+Mar 13 16:54:56 <tirnanog>	has it been implemented yet?
+Mar 13 16:55:26 <ormaaj>	like in a way that I don't always notice. I should just disable that :(
+Mar 13 16:56:13 <Earnestly>	ormaaj: Was that mouse impl responsible for the ++++ spam the other day?
+Mar 13 16:56:28 <ormaaj>	maybe
+Mar 13 16:56:33 <ormaaj>	probably not
+Mar 13 16:56:44 <ormaaj>	maybe :O
+Mar 13 16:56:52 <Earnestly>	Was curious as to what mad scientist thing you were doing to produce that
+Mar 13 16:58:31 <emanuele6>	mad sadie thing
+Mar 13 17:00:48 <ormaaj>	(that's my cat. she types sometimes.)
+Mar 13 17:00:59 <alip>	ormaaj: syd prevents subnamespaces so your trick won't work there
+Mar 13 17:01:28 <ormaaj>	blast
+Mar 13 17:02:33 <ormaaj>	!ormaajbomb
+Mar 13 17:02:33 <greybot>	shopt -s lastpipe; set -o pipefail; ((())|[()(]|[)||(())|]()([|])||])
+Mar 13 17:02:38 <ormaaj>	:S
+**** ENDING LOGGING AT Wed Mar 13 17:02:39 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 17:15:30 2024
+
+Mar 13 17:15:29 *	Now talking on #bash
+Mar 13 17:15:29 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 13 17:15:29 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+Mar 13 17:17:13 <tirnanog>	when you run bash like that, it has no idea what the positional parameters were. it's just a new born process. bash -c is one way of assigning to the positional parameters (you still have to pass them).
+Mar 13 17:19:10 <raccct>	noteify(){bash -c 'notify-send "$1" "$2"' _ "$@"}; noteify "A" "B B" -> was the quotes my syntax error? I tried to use the _ $@ you mentioned above. I had never seen it before (the _) what does it do?
+Mar 13 17:19:30 <Soliton>	# noteify(){bash -c 'notify-send "$1" "$2"' _ "$@"}
+Mar 13 17:19:32 <shbot>	Soliton: bash: syntax error near unexpected token `{bash'
+Mar 13 17:19:42 <tirnanog>	!$@ > raccct
+Mar 13 17:19:42 <greybot>	raccct: The difference between $@ and $*: "$@" (quoted) expands to each positional parameter as its own argument: "$1" "$2" ... while "$*" expands to the single argument "$1c$2c..." where c is the first character of IFS. You almost always want "$@". The same goes for arrays: "${array[@]}" or "${array[*]}". Unquoted $* and $@ are nonsense; DO NOT use
+Mar 13 17:20:20 <tirnanog>	but no, unquoted $@ was not the error of syntax.
+Mar 13 17:20:45 <Soliton>	_ does nothing. it's just a string. you can use whatever else you want. the argument in that position is $0.
+Mar 13 17:21:43 <tirnanog>	raccct: to understand why it's a syntax error, try LESS='+/Compound Commands' man bash, then study the definition of the second compound command form shown in that section.
+Mar 13 17:22:25 <tirnanog>	it is shown as { list; }, and it is explicitly stated the command list must be separated from the braces by whitespace.
+Mar 13 17:23:01 <tirnanog>	the semicolon must also be there, unless you have a line break prior to the closing "}".
+Mar 13 17:24:00 <Soliton>	btw, you don't need bash -c to invoke other things. you may have to use bash -c if something forces that on you. like you want to run something inside chroot or docker or so.
+Mar 13 17:25:45 <Soliton>	i.e. you don't call bash -c directly.
+Mar 13 17:26:25 <emanuele6>	"$BASH" -c   is better
+Mar 13 17:27:34 <ormaaj>	why
+Mar 13 17:27:46 <emanuele6>	because
+Mar 13 17:28:11 <tirnanog>	so you get the bash you began with, I suppose. probably still no less silly for whatever they are ultimately doing.
+Mar 13 17:28:12 <emanuele6>	it works even if PATH is unset
+Mar 13 17:28:36 <raccct>	tirnanog, Soliton thanks! yes, the _ i meant. It fails without. but I realized I can replace it with any string. I think I need to learn more.
+Mar 13 17:29:01 <ormaaj>	 what if PATH changed and bash should be called from the updated PATH?
+Mar 13 17:29:11 <raccct>	noteify(){sh -c 'notify-send "$1" "$2"' _ "$@"}; noteify "A" "B B" -> works.
+Mar 13 17:29:13 <emanuele6>	if you take a bash expression as argument it is better to    if "$BASH" -c -- "$expr"; then ...; fi  then use   if eval -- "$expr"
+Mar 13 17:29:16 <ormaaj>	I have had that happen.
+Mar 13 17:29:22 <raccct>	noteify(){sh -c 'notify-send "$1" "$2"' "$@"}; noteify "A" "B B" -> only renders "B B"
+**** BEGIN LOGGING AT Wed Mar 13 17:31:45 2024
+
+Mar 13 17:31:44 *	Now talking on #bash
+Mar 13 17:31:44 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 13 17:31:44 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+Mar 13 17:32:34 <ormaaj>	I think it's transcended fad maybe
+**** BEGIN LOGGING AT Wed Mar 13 18:43:10 2024
+
+Mar 13 18:43:09 *	Now talking on #bash
+Mar 13 18:43:09 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 13 18:43:09 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+Mar 13 19:04:48 <ppw>	any ideas about this? I have no idea why that timestamp gets cut off. https://bpa.st/PYSQ
+Mar 13 19:05:08 <tirnanog>	!faq ffmpeg
+Mar 13 19:05:08 <greybot>	https://mywiki.wooledge.org/BashFAQ/089 -- I'm reading a file line by line and running ssh or ffmpeg, only the first line gets processed!
+Mar 13 19:07:35 <ppw>	thank you so much, this has been driving me up the wall
+Mar 13 19:22:11 <tirnanog>	np
+Mar 13 19:22:27 <tirnanog>	that one comes up fairly routinely.
+Mar 13 19:45:01 <Artfaith>	ormaaj, you say you randomize pid but the pid counter increases since it's fork bomb, or what was the attack purpose if not to consume resources?
+Mar 13 19:45:30 <Artfaith>	I mean, considering you have set a limit to max pid number for a user.
+Mar 13 20:12:58 <ormaaj>	Artfaith: Yeah if you're not actually root it's easy to nab the user namespace
+Mar 13 20:14:54 <ormaaj>	but you could make it tricky to isolate your new process spam from other users
+Mar 13 20:15:31 <ormaaj>	not THAAT tricky but might take manual intervention to stop it
+Mar 13 21:04:52 <Psi-Jack>	Hmm. I know this is not ble.sh, but if anyone uses it, I'm curious if there's a way to get it to work with ESC+Backspace to delete words like bash normal does.
+Mar 13 21:06:11 <llua>	!otbut
+Mar 13 21:06:11 <greybot>	Just because you preface a question with `I know this is offtopic but...' or `#ontopicchannel isn't responding' doesn't automatically make it on topic in #bash
+Mar 13 21:06:56 <Psi-Jack>	ble.sh is a bash script for bash. At least it's within the realm of topic.
+Mar 13 21:16:24 <twkm>	make sure it uses read's -e option.
+Mar 13 21:20:43 <Artfaith>	ormaaj, I'll check more about it. Thank you.
+Mar 13 21:21:53 <tirnanog>	Psi-Jack: esc+backspace is nothing that I recognise as a default binding. are you mixing bash up with zsh there?
+Mar 13 21:22:10 <Psi-Jack>	No, I'm not. Been using ESC+backspace in bash for years.
+Mar 13 21:22:47 <tirnanog>	oh, I see. I had vi mode on and forgot that I'd done it.
+Mar 13 21:23:13 <Psi-Jack>	Heh, Yeah, emacs mode ESC+backspace (in quick succession), deletes a word backwards.
+Mar 13 21:24:54 <larryv>	Psi-Jack: https://github.com/akinomyoga/ble.sh/issues/355
+Mar 13 21:25:32 <Psi-Jack>	Huh, good find! Thanks larryv!
+Mar 13 21:27:18 <Psi-Jack>	Yeah, this works great! I've gone back to using bash as my normal shell versus zsh and fish, because of ble.sh and it's pretty nice. :)
+Mar 13 22:31:48 <jclsn>	j
+Mar 13 22:34:39 <emanuele6>	clsn
+Mar 13 22:35:02 <emanuele6>	!sandwich
+Mar 13 22:36:51 <JAA>	No sandwich? Can't have shit in Detro^H^H^H^H^H#bash...
+Mar 13 22:45:45 <Lynx->	Anyone see way to speed up this loop for monitoring network interface transfer rates? https://github.com/lynxthecat/cake-autorate/blob/384da1a34eaa0df9a1abed1b8e3f3b7fcc27adc9/cake-autorate.sh#L478
+Mar 13 22:46:58 <Lynx->	typical path for read is e.g.: rx_bytes_path="/sys/class/net/${dl_if}/statistics/tx_bytes"; tx_bytes_path="/sys/class/net/${ul_if}/statistics/tx_bytes"
+Mar 13 22:47:26 <emanuele6>	well, since you are not even using if-then-else, but instead are using &&||  you could drop the [[ -f ... ]] and it would have the exact same behaviour
+Mar 13 22:48:13 <emanuele6>	hmm, not exact, it would read from pipes while with [[ -f ... ]] it does not read from pipes if that is an issue
+Mar 13 22:49:55 <emanuele6>	${EPOCHREALTIME/./} only works if the user of the script uses a locale in which the decimal point symbol is .
+Mar 13 22:51:03 <emanuele6>	# LANG=de_DE.utf-8; echo "${EPOCHREALTIME}"; echo "${EPOCHREALTIME/./}"
+Mar 13 22:51:05 <shbot>	emanuele6: 1710366664,257032
+Mar 13 22:51:05 <shbot>	emanuele6: 1710366664,260289
+Mar 13 22:51:29 <emanuele6>	in germany locale it does not work for example, because it uses "," also in many other european locales
+Mar 13 22:52:04 <emanuele6>	!epochrealtimeint
+Mar 13 22:52:05 <greybot>	the format of EPOCHREALTIME is %u%c%06u where %c is the decimal delimiter of the current locale (".", ",", ...). It can be converted to an integer using: $(( 10#${EPOCHREALTIME//[!0123456789]} ))
+Mar 13 22:53:28 <Lynx->	hmm hasn't come up yet
+Mar 13 22:53:32 <emanuele6>	"$((10#" is only there for paranoia that the user may use faketime or similar to run the script within one second of 1970-01-01; just  t=${EPOCHREALTIME//[!0123456789]}  would also work
+Mar 13 22:53:37 <Lynx->	does export LC_ALL=C affect that?
+Mar 13 22:54:01 <emanuele6>	yes, because that changes LC_NUMERIC to C, and in C locale, the delimiter is .
+Mar 13 22:54:28 <Lynx->	Ah, so that should save it
+Mar 13 22:54:47 <Lynx->	[[ -f "${rx_bytes_path}" ]] && { read -r rx_bytes < "${rx_bytes_path}"; } 2> /dev/null || rx_bytes="${prev_rx_bytes}" <-- this works for me - path set then rx_bytes set to 0
+Mar 13 22:55:06 <Lynx->	sorry path not set, then set to prev, path set, then set to the read
+Mar 13 22:55:10 <emanuele6>	but why not just   { read -r rx_bytes < "${rx_bytes_path}"; } 2> /dev/null || rx_bytes="${prev_rx_bytes}"   ?
+Mar 13 22:55:21 <Lynx->	ahh
+Mar 13 22:55:33 <emanuele6>	especially since you are already hiding stderr; for what other reason would you do that?
+Mar 13 22:55:51 <Lynx->	Yes, seems good
+Mar 13 22:55:59 <Lynx->	is there any way at all to speed up the reads?
+Mar 13 22:56:11 <Lynx->	ano said file descriptor doesn't work for sysfs
+Mar 13 22:56:28 <emanuele6>	what does that mean?
+Mar 13 22:56:43 <Lynx->	I mean there is no way to avoid file open, close in each iteration
+Mar 13 22:56:44 <emanuele6>	i don't think ano would say something like that
+Mar 13 22:57:02 <emanuele6>	well, than you mean something else
+Mar 13 22:57:24 <emanuele6>	some sysfs files are regenerated on open, so you need to reopen them
+Mar 13 22:57:50 <tirnanog>	"done 2>/dev/null" would make a slight difference, at the obvious cost of trashing stderr throughout.
+Mar 13 22:59:20 <emanuele6>	$ cat /sys/class/net/enp0s25/mtu
+Mar 13 22:59:22 <emanuele6>	1500
+Mar 13 22:59:28 <Lynx->	I'll revert to: { read -r rx_bytes < "${rx_bytes_path}"; } 2> /dev/null || rx_bytes="${prev_rx_bytes}" - I see the logic since this avoids pointless test every iteration
+Mar 13 22:59:51 <emanuele6>	it's one line, you can just use   var=$(< /sys/class/net/enp0s25/mtu) || var=$something   which is way faster than read
+Mar 13 23:00:02 <Lynx->	oh crap no way?
+Mar 13 23:00:25 <tirnanog>	same for main_fd, for that matter: done >&"${main_fd}" 2>/dev/null
+Mar 13 23:02:47 <Lynx->	# root@OpenWrt-1:~# x=(< /sys/class/net/wan/statistics/tx_bytes)
+Mar 13 23:02:47 <Lynx->	bash: syntax error near unexpected token `<'
+Mar 13 23:02:50 <shbot>	Lynx-: bash: syntax error near unexpected token `('
+Mar 13 23:03:04 <tirnanog>	$(<
+Mar 13 23:03:24 <Lynx->	ok got it
+Mar 13 23:03:45 <Lynx->	Doesn't that involve subshell?
+Mar 13 23:03:53 <tirnanog>	no.
+Mar 13 23:04:29 <Lynx->	Oh, I thought stuff that involved $( ... ) involved subshell?
+Mar 13 23:04:53 <Lynx->	is there a name for x= $( < .... ) ? I've not seen that much
+Mar 13 23:05:33 <geirha>	command substitution
+Mar 13 23:07:03 <geirha>	but I don't see how it could be faster than read
+Mar 13 23:07:25 <emanuele6>	because read reads with a buffer size of 1, one syscall per byte
+Mar 13 23:07:28 <Lynx->	# cat /sys/class/net/wan/statistics/tx_bytes
+Mar 13 23:07:30 <shbot>	Lynx-: cat: /sys/class/net/wan/statistics/tx_bytes: No such file or directory
+Mar 13 23:07:43 <tirnanog>	also, shorter variable names have been known to permit bash to run measurably faster (that's not a joke).
+Mar 13 23:07:50 <geirha>	only if stdin is not seekable
+Mar 13 23:08:01 <emanuele6>	oh, i always forget that
+Mar 13 23:08:18 <emanuele6>	so it would not be that much faster, still saves some work, but not as much
+Mar 13 23:08:25 <emanuele6>	as i thought
+Mar 13 23:11:14 <Lynx->	the read seems faster on my router, if I'm doing it right: https://pastebin.com/raw/sstEA32c
+Mar 13 23:11:58 <Lynx->	I suppose reading from /proc/net/dev would be no faster?
+Mar 13 23:12:09 <Lynx->	since same information is there I think
+Mar 13 23:12:53 <emanuele6>	yes, it seems slower for me too
+Mar 13 23:13:21 <tirnanog>	I wouldn't think so. not only is there more to read, you'd have to match the appropriate rows and extract the appropriate fields. that sounds like more work to me.
+Mar 13 23:15:59 <emanuele6>	with stace you can see that read does more than double the system calls per iteration; openat+fcntl+fcntl+fcntl+fcntl+dup2+close+rt_sigprocmask+ioctl+lseek+read+dup2+fcntl+close  vs just    openat+read+read+close+rt_sigprocmask+rt_sigprocmask
+Mar 13 23:16:23 <emanuele6>	i guess read saves one read and having to seek because it finds the newline immediately
+Mar 13 23:17:01 <emanuele6>	but it is overall a lot more system calls, i think  rt_sigprocmask   is what takes up most of the time
+Mar 13 23:17:19 <emanuele6>	i am not sure why it even calls it twice, strace shows that it calls it with the same arguments
+Mar 13 23:17:30 <Lynx->	could it be that in the context of my while loop / background process the ( < .. ) is faster?
+Mar 13 23:18:00 <Lynx->	this is called circa every 400ms
+**** BEGIN LOGGING AT Wed Mar 13 23:52:50 2024
+
+Mar 13 23:52:48 *	Now talking on #bash
+Mar 13 23:52:48 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 13 23:52:48 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+Mar 13 23:54:11 <Earnestly>	JAA: (Tbh, the notion that performance shouldn't be a goal, or isn't important or cannot be achieved against some other criteria are all basically copes)
+**** BEGIN LOGGING AT Thu Mar 14 02:26:03 2024
+
+Mar 14 02:26:01 *	Now talking on #bash
+Mar 14 02:26:01 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 14 02:26:01 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+Mar 14 07:51:12 <cheater>	hi
+Mar 14 07:53:32 <cheater>	so is there a good library yet for accepting command line arguments that supports all of the following? long args with = (--foo=x) and without (--foo x), short arguments (-f), collapsed and multiple short arguments (-xvvv, -x -v -v -x), taking stuff from env, taking stuff from config files (hierarchically) ?
+Mar 14 07:54:28 <cheater>	possibly also accept argument changes after startup via a socket file or something
+Mar 14 09:03:11 <geirha>	I'd just use a manual loop to parse options. Not too hard to also handle collapsed options
+**** ENDING LOGGING AT Thu Mar 14 09:59:27 2024
+
+**** BEGIN LOGGING AT Thu Mar 14 10:06:38 2024
+
+Mar 14 10:06:38 *	Now talking on #bash
+Mar 14 10:06:38 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 14 10:06:38 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+**** BEGIN LOGGING AT Thu Mar 14 10:11:09 2024
+
+Mar 14 10:11:08 *	Now talking on #bash
+Mar 14 10:11:08 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 14 10:11:08 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+**** BEGIN LOGGING AT Thu Mar 14 10:15:56 2024
+
+Mar 14 10:15:54 *	Now talking on #bash
+Mar 14 10:15:54 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 14 10:15:54 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+Mar 14 10:28:36 <sphertext>	# mapfile -d '' f < <(awk 'BEGIN {exit} END {a[1]; a[2]; for (i in a) printf("%s\0", i)}'); declare -p f
+Mar 14 10:28:39 <shbot>	sphertext: declare -a f=([0]="21")
+Mar 14 10:29:02 <sphertext>	why isn't this splitting correctly on \0?
+Mar 14 10:31:49 <mosasaur>	sphertext: it does here: declare -a f=([0]="1" [1]="2")
+Mar 14 10:31:50 <Soliton>	# awk 'BEGIN {exit} END {a[1]; a[2]; for (i in a) printf("%s\0", i)}' | sed -n l
+Mar 14 10:31:52 <shbot>	Soliton: 21$
+Mar 14 10:32:06 <geirha>	awk doesn't handle \0 very well. Only GNU awk handles it somewhat
+Mar 14 10:32:33 <geirha>	# mapfile -d '' f < <(gawk 'BEGIN {exit} END {a[1]; a[2]; for (i in a) printf("%s\0", i)}'); declare -p f
+Mar 14 10:32:35 <shbot>	geirha: declare -a f=([0]="1" [1]="2")
+Mar 14 10:32:41 <sphertext>	...
+Mar 14 10:33:24 <geirha>	awk is designed to handle text, not binary data
+Mar 14 10:33:38 <Soliton>	"If all of the digits are 0 (that is, representation of the NUL character), the behavior is undefined."
+**** BEGIN LOGGING AT Thu Mar 14 10:34:17 2024
+
+Mar 14 10:34:17 *	Now talking on #bash
+Mar 14 10:34:17 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 14 10:34:17 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+**** ENDING LOGGING AT Thu Mar 14 10:35:41 2024
+
+Mar 14 10:38:52 <Gurkenglas>	`apt show foo | less & wait_pid=$!; apt install foo; kill $wait_pid` feels like I'm manually freeing memory. Is there an approach that makes foo act more like a scoped variable, so it'll automatically exit when the install completes?
+Mar 14 10:39:47 <Gurkenglas>	s/makes foo act/makes the `apt show foo | less` act/
+Mar 14 10:42:43 <Earnestly>	Soliton: Doesn't that only apply to printf? I don't recall anything really being said about \0 for NR
+Mar 14 10:43:06 <Earnestly>	(Oh also for regex)
+Mar 14 10:43:21 <Earnestly>	But since RS * isn't regex, does it apply?
+Mar 14 10:43:27 <Gurkenglas>	uh, I just noticed the line I said is completely bogus. Of course I meant "`sudo apt install foo -y`, displaying `apt show foo | less` as a 'loading screen' until the install completes"
+Mar 14 10:44:35 <Soliton>	Earnestly: it applies to octal backslash escapes.
+Mar 14 10:46:46 <Earnestly>	Maybe, but I only read that it applies to regular expressions (and specifically ~ / !~ / FS / g|sub / match / split as documented)
+Mar 14 10:48:00 <Earnestly>	(mawk handles nul separated records for what its worth)
+Mar 14 10:48:40 <Earnestly>	Soliton: I suppose you do have a point though as RS accepts \n which would otherwise be considered undefined as it's more than one character
+Mar 14 10:51:25 <Soliton>	under Lexical Conventions it's explained how string constants work.
+Mar 14 10:52:34 <Earnestly>	Fair
+Mar 14 10:52:42 <Earnestly>	How annoying though
+Mar 14 10:53:21 <Earnestly>	I was looking again for updates and just wanted to note that xargs -P is under consideration again where at least it has been accepted to include text that states -P might be added in a future version
+Mar 14 10:55:46 <Earnestly>	Same treatment for %q
+Mar 14 11:30:19 <geirha>	Gurkenglas: you could use a whipttail gauge perhaps.   apt-get install -y hello | whiptail --gauge "$(apt show hello)" "$((LINES - 4))" "$((COLUMNS - 4))" 0
+Mar 14 11:30:55 <geirha>	if you can figure out how to parse apt-get install output to figure out a percentage, you can output that to the pipe to make the gauge move
+Mar 14 11:36:29 <Gurkenglas>	geirha: Thanks! whiptail seems overly specific, but 1. that's fair enough since it's specific for *the usecase I posed* 2. whiptail can surely be "abused" to be as general as what I was hoping for
+Mar 14 11:39:33 <selckin>	maybe you want to script a tmux pane/window instead, if my guess of what it does is even close to right
+Mar 14 11:42:30 <Gurkenglas>	(what I was hoping for was e.g. an application of general syntax for managing pipes and general syntax for managing which jobs will keep which scripts from ending)
+Mar 14 12:07:40 <Gurkenglas>	hmm, whiptail --gauge eats the installation errors too. I suppose selckin was right! I *could* just run apt show foo in a new tmux pane/window and close it afterwards, though that brings us back to square one on the "feels like manually freeing memory"
+Mar 14 12:08:09 <selckin>	it can auto close when the process exits
+Mar 14 12:08:50 <Gurkenglas>	ohhh, by running the install in that pane/window too! makes sense, thanks
+Mar 14 12:09:28 <ormaaj>	add random sleeps to simulate gc.
+Mar 14 12:09:32 <Gurkenglas>	and for errors I can do 2>$(tty)
+Mar 14 12:09:47 <Gurkenglas>	ormaaj: ??
+Mar 14 12:11:26 <ormaaj>	you wanted it to feel like not manual memory management!
+Mar 14 12:14:51 <Gurkenglas>	where is my trout.
+Mar 14 12:16:04 <Gurkenglas>	(though i'll admit i don't know why GC is even a thing, instead of automatically freeing variables when they go out of scope.)
+Mar 14 12:17:20 <selckin>	some memory need to survive in multiple scopes
+Mar 14 12:18:11 <Gurkenglas>	can i have an example where the variable's scope should then not be the latest common ancestor of the two?
+Mar 14 12:20:02 <selckin>	cache
+Mar 14 12:21:04 <Gurkenglas>	i don't quite follow yet, but feel free to pass me off to some keyword-to-google or link when i sufficiently negatively-surprise you with my followingness
+Mar 14 12:22:50 <Gurkenglas>	my guess is you are pointing at the general class of "what if we store it in an array, won't the array come to hold null pointers?", to which my response would be "when the variable goes out of its scope, the same logic that frees its memory should inform the array of the death"
+Mar 14 12:23:41 <Gurkenglas>	s/the general class/a special case/
+Mar 14 12:24:26 <selckin>	multiple scopes can use the same item, and then one dedices to delete/replace it
+Mar 14 12:25:05 <Gurkenglas>	then there should be exactly one of the scopes who you talk to if you need that
+Mar 14 12:25:40 <selckin>	who waits for all the scopes to finish with it before deleting right?
+Mar 14 12:26:28 <Gurkenglas>	let me rephrase: then there should be exactly one of the scopes who you cause to die if you need that
+Mar 14 12:26:56 <selckin>	you're thinking immutable or copy on use or something
+Mar 14 12:27:03 <selckin>	anyway offtopic
+Mar 14 12:27:25 <Gurkenglas>	(and if other scopes are not finished when the variable's scope dies, you picked the wrong scope)
+Mar 14 12:28:06 <selckin>	or descriping ref counting a form of gc
+Mar 14 12:28:12 <Gurkenglas>	sure, the reasons you brought forward, while they don't quite sway me, make me not baffled that they sway others.
+Mar 14 12:39:04 <Gurkenglas>	ahahaha, even more offtopic than i thought, somehow i thought this was #linux. (((upon due consideration, i have updated my "won't arrays come to hold null pointers?" response to "yes")))
+Mar 14 13:41:09 *	ChanServ gives channel operator status to ormaaj
+Mar 14 13:41:43 *	ormaaj removes ban on *!*Angels@user
+Mar 14 13:41:43 *	ormaaj removes channel operator status from ormaaj
+Mar 14 13:42:40 *	ChanServ gives channel operator status to ormaaj
+Mar 14 13:43:09 *	ormaaj removes ban on *!~Angels@user/Angels
+Mar 14 13:43:31 *	ormaaj removes channel operator status from ormaaj
+Mar 14 14:09:00 <lovetruth>	Hey :)
+Mar 14 14:10:26 <ormaaj>	neigh
+Mar 14 14:15:53 <iconoclast_hero>	is there someway to both compare two directories and make sure that the directory of interest exists?
+Mar 14 14:16:05 <iconoclast_hero>	it seems to me that there should be some way to combine e.g.,
+Mar 14 14:16:06 <iconoclast_hero>	[[ ! -d "$cachedir" ]] && rsync -avz "$backdir$cachedir" "$cacheroot"
+Mar 14 14:16:06 <iconoclast_hero>	[[ $(diff "$cachedir" "$backdir$cachedir" -rq) ]] && rsync -avz "$backdir$cachedri" "$cacheroot"
+Mar 14 14:16:34 <iconoclast_hero>	and that typo was fixed after copying.
+Mar 14 14:18:50 <ormaaj>	do i have to know what those commands do?
+Mar 14 14:20:21 <selckin>	iconoclast_hero: why compare? just let rsync do it ?
+Mar 14 14:20:52 <ormaaj>	I would guess if directory of insterest doesn't exist then it doesn't match thing you're comparing it to
+Mar 14 14:21:14 <iconoclast_hero>	that is a fair point.
+Mar 14 14:21:58 <iconoclast_hero>	rationale: trying to habituate myself to testing if things are there, etc., before doing things in scripts.
+Mar 14 14:22:04 <iconoclast_hero>	it is unnecessary.
+Mar 14 14:22:16 <iconoclast_hero>	still, is it possible?
+Mar 14 14:22:37 <Soliton>	use the exit status of diff not its output.
+Mar 14 14:23:54 <iconoclast_hero>	how?
+Mar 14 14:24:07 <iconoclast_hero>	i tried diff x y ; echo "$?" and nothing.
+Mar 14 14:24:29 <Soliton>	# diff x y; echo "$?"
+Mar 14 14:24:31 <shbot>	Soliton: diff: x: No such file or directory
+Mar 14 14:24:31 <shbot>	Soliton: diff: y: No such file or directory
+Mar 14 14:24:31 <shbot>	Soliton: 2
+Mar 14 14:25:00 <iconoclast_hero>	touch x y; diff x y; echo "$?"
+Mar 14 14:25:04 <iconoclast_hero>	# touch x y; diff x y; echo "$?"
+Mar 14 14:25:06 <shbot>	iconoclast_hero: 0
+Mar 14 14:25:56 <iconoclast_hero>	oh right
+Mar 14 14:26:05 <iconoclast_hero>	# touch x y; diff x z; echo "$?"
+Mar 14 14:26:07 <shbot>	iconoclast_hero: diff: z: No such file or directory
+Mar 14 14:26:07 <shbot>	iconoclast_hero: 2
+Mar 14 14:26:32 <iconoclast_hero>	i see now, thank you.
+Mar 14 14:29:00 <iconoclast_hero>	will chown "$cacheuser:$cachegroup" do the same as chown "$cacheuser":"$cachegroup" ?
+Mar 14 14:29:16 <iconoclast_hero>	or is the latter safer regardlesS?
+Mar 14 14:29:27 <Soliton>	those do the same thing.
+Mar 14 14:29:47 <Soliton>	: and ":" mean the same thing.
+Mar 14 14:32:23 <iconoclast_hero>	can you even have a whitespace in either a username or groupname?
+Mar 14 14:33:03 <Soliton>	depends on the OS. probably not.
+Mar 14 14:33:22 <Soliton>	whitespace is not the only thing quotes protect from anyway.
+Mar 14 14:46:24 <ano>	[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789._][ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789._-]{0,7} afaik it's rule for posix login/usr name, most of modern *nix don't respect it
+Mar 14 14:47:00 <geirha>	debian allows * in usernames iirc
+Mar 14 14:48:10 <kurahaupo>	ano: I used to have a dot in my username on my home PC, but eventually I got tired of chown getting confused
+Mar 14 14:50:40 <ano>	does it say >invalid user or something else?
+Mar 14 14:54:14 <geirha>	At least GNU chown accepts both  user:group  and  user.group  with the latter being undocumented, but still valid because history, probably.
+Mar 14 14:56:14 <geirha>	"The BSD syntax user[. group] was changed to user[: group] in this volume of POSIX.1-2017 because the <period> is a valid character in login names (as specified by the Base Definitions volume of POSIX.1-2017, login names consist of characters in the portable filename character set). " -- POSIX
+Mar 14 15:03:22 <geirha>	sudo useradd 'My User'  # useradd: invalid user name 'My User': use --badname to ignore
+Mar 14 15:03:32 <geirha>	sudo useradd 'My*User'  # no complaints
+Mar 14 15:03:34 <geirha>	sudo useradd 'My/User'  # no complaints
+Mar 14 15:04:08 <geirha>	My*User:x:1001:1001::/home/My*User:/bin/sh
+Mar 14 15:04:10 <geirha>	My/User:x:1002:1002::/home/My/User:/bin/sh
+Mar 14 15:04:20 <geirha>	(wcgw)
+Mar 14 15:06:56 <kurahaupo>	geirha: how about 'my:user' ? 🤪
+Mar 14 15:07:08 <kurahaupo>	"what could possibly go wrong"
+Mar 14 15:07:28 <geirha>	useradd: invalid user name 'my:user': use --badname to ignore
+Mar 14 15:07:55 <kurahaupo>	"my:user:0:0:me:/:/bin/sh"
+Mar 14 15:08:38 <geirha>	useradd: failure while writing changes to /etc/passwd    when I added --badname
+Mar 14 15:08:40 <kurahaupo>	useradd --badname "my:user:0:0:me:/:/bin/sh"
+Mar 14 15:08:49 <kurahaupo>	Awww, dang
+Mar 14 15:09:28 <geirha>	My User:x:1003:1003::/home/My User:/bin/sh
+Mar 14 15:09:35 <geirha>	that one went through with --badname
+Mar 14 15:10:31 <geirha>	mhhh just think of the number of scripts that will fail because they stupidly assume $HOME will never contain whitespace
+Mar 14 15:12:29 <ormaaj>	( LC_CTYPE=C; { y=$(readlink -sn -- "/proc/self/fd/${x}") && [[ -d /proc/self/fd/${x} && ! -L $y && /proc/self/fd/${x} -ef $y ]]; find "/proc/self/fd/${x}/" ! -type d -printf '%p\0%P\0' | while IFS= read -rd '' 'a[0]' && IFS= read -rd '' 'a[1]'; do cmp -s -- "${a[0]}" "/proc/self/fd/${z}/${a[1]}" || (( $? - 1 )) || ! break; done } {x}<~ {z}</mnt/ormaaj2/vol/home/ormaaj; echo "$?" )
+Mar 14 15:13:48 <ormaaj>	made a directory comparer. for "fun". including weird !homework rule.
+Mar 14 15:14:09 <ormaaj>	now back to actual work
+Mar 14 15:16:44 <ormaaj>	not sure how to filter file types by "contains stuff that can be compared"
+Mar 14 15:19:38 <ormaaj>	:o also wonder whether it reads named pipes.
+Mar 14 15:20:20 <ormaaj>	# cmp <(cat /dev/zero) /dev/zero
+Mar 14 15:20:27 <shbot>	ormaaj: no output within the time limit
+Mar 14 15:20:33 <ormaaj>	ah.
+Mar 14 15:20:55 <ormaaj>	( LC_CTYPE=C; { y=$(readlink -sn -- "/proc/self/fd/${x}") && [[ -d /proc/self/fd/${x} && ! -L $y && /proc/self/fd/${x} -ef $y ]]; find "/proc/self/fd/${x}/" -type f -printf '%p\0%P\0' | while IFS= read -rd '' 'a[0]' && IFS= read -rd '' 'a[1]'; do cmp -s -- "${a[0]}" "/proc/self/fd/${z}/${a[1]}" || (( $? - 1 )) || ! break; done } {x}<~ {z}</mnt/ormaaj2/vol/home/ormaaj; echo "$?" )
+Mar 14 15:24:08 <ormaaj>	# cmp <(cat /dev/zero){,}
+Mar 14 15:24:15 <shbot>	ormaaj: no output within the time limit
+Mar 14 15:35:43 <fris>	trying to pass a url and get the last pathname, can this be done via xargs? http://pastie.org/p/2KEicYuCplhfZOqExhJw9f
+Mar 14 15:38:02 <Soliton>	that's shell injection.
+Mar 14 15:38:02 <OMGOMG>	!check
+Mar 14 15:38:02 <checkbot>	OMGOMG: Unable to read that :/
+Mar 14 15:39:27 <Soliton>	!faq 1
+Mar 14 15:39:27 <greybot>	https://mywiki.wooledge.org/BashFAQ/001 -- How can I read a file (data stream, variable) line-by-line (and/or field-by-field)?
+Mar 14 15:42:27 <Soliton>	!check http://pastie.org/p/2KEicYuCplhfZOqExhJw9f/raw
+Mar 14 15:42:28 <checkbot>	Soliton: Looks good to me
+Mar 14 15:42:49 <OMGOMG>	checkbot: it does?
+Mar 14 15:42:49 <checkbot>	OMGOMG: I'm a bot. Use !checkbot for info/triggers, /msg checkbot quiet for stfu, or https://shellcheck.net to check your scripts.
+Mar 14 15:43:16 <fris>	first part works, im trying to do the filename in the xargs
+Mar 14 15:43:21 <fris>	{}.zip part
+Mar 14 15:44:06 <Soliton>	the whole thing is bad.
+Mar 14 15:44:24 <OMGOMG>	fris: why not ask wp, whatever that is, for the file name instead of the url?
+Mar 14 15:44:50 <Soliton>	do not use for to iterate lines, do not use echo|cut instead of parameter expansion. do not use xargs pretty much ever.
+Mar 14 15:45:06 <fris>	it doesnt provide filename, im just using the path as the filename, you need to pass url
+Mar 14 15:45:25 <OMGOMG>	and why are you deleting the first two urls?
+Mar 14 15:45:35 <Soliton>	probably some header.
+Mar 14 15:45:47 <fris>	1st line is the header, 2nd line is the main site, rhe rest are sub sites
+Mar 14 15:46:14 <fris>	domain.com/subsite would be passed as url and subsite.zip would be filename
+Mar 14 15:46:14 <OMGOMG>	Soliton: i was not asking you
+Mar 14 15:48:03 <Soliton>	is the xargs thing just trying to do the same thing as the for loop?
+Mar 14 15:48:44 <fris>	ya
+Mar 14 15:49:02 <Soliton>	so fix the loop instead and forget about xargs.
+Mar 14 15:49:31 <Soliton>	wp site list --fields=url | sed '1,2d' | while IFS= read -r url; do filename=${url##*/}; wp mu-migration export all "$filename".zip --plugins --themes --uploads --url="$url"; done
+Mar 14 15:50:18 <Soliton>	assuming wp outputs lines.
+Mar 14 15:52:25 <fris>	tested just echoing filename from that parameter expansion it just prints .zip for each line
+Mar 14 15:52:46 <OMGOMG>	fris: did you try wp site list --field=blog_id
+Mar 14 15:53:15 <fris>	ya that just does the blogid, im lookimg to export to the name
+Mar 14 15:53:32 <Soliton>	# while IFS= read -r url; do filename=${url##*/}; declare -p filename; done <<< domain.com/subsite
+Mar 14 15:53:34 <shbot>	Soliton: declare -- filename="subsite"
+Mar 14 15:53:34 <OMGOMG>	right
+Mar 14 15:55:14 <Soliton>	if your url ends in / then you have to remove that first.
+Mar 14 15:55:27 <OMGOMG>	fris: why not then wp site list --field=blog_id,name
+Mar 14 15:56:05 <OMGOMG>	--fields, rather
+Mar 14 16:34:48 <fris>	any reason why that parmeter expansion prints nothing
+Mar 14 16:35:13 <Soliton>	the url ends in /.
+Mar 14 16:36:04 <Soliton>	if the url is not as you said and you need to cut out the 4th field or something you'd do it differently.
+Mar 14 16:39:15 <fris>	the echo with cut works
+Mar 14 16:39:38 <fris>	filename=$(echo "$url" | cut -d/ -f4) better way than that?
+Mar 14 16:41:05 <ano>	!echo
+Mar 14 16:41:05 <greybot>	echo outputs a string. echo has many portability problems, and should never be used with option flags. Consider printf instead: printf 'name: %s\n' "$name". https://wiki.bash-hackers.org/commands/builtin/echo | https://cfajohnson.com/shell/cus-faq.html#Q0b | http://www.in-ulm.de/~mascheck/various/echo+printf | https://pubs.opengroup.org/onlinepubs/9699919799/utilities/echo.html
+Mar 14 16:43:18 <fris>	printf '%s\n' "$url" | cut -d/ -f4
+Mar 14 16:43:30 <Soliton>	if you have no idea how your urls look: IFS=/ read -ra fields <<< "$url"; filename=${fields[3]}
+Mar 14 16:43:34 <Earnestly>	fris: urls are fairly well defined, you may not need to use external tools to access the fields
+Mar 14 16:44:21 <fris>	all urls are domain.com/subsite/ domain.com/anothername/ etc no extra paths
+Mar 14 16:44:44 <fris>	so just need subsite anothername etc
+Mar 14 16:44:51 <Soliton>	"if your url ends in / then you have to remove that first."
+Mar 14 16:46:00 <Soliton>	# while IFS= read -r url; do filename=${url%/} filename=${filename##*/}; declare -p filename; done <<< domain.com/subsite/
+Mar 14 16:46:02 <shbot>	Soliton: declare -- filename="subsite"
+Mar 14 16:47:01 <Earnestly>	E.g. with sh: url=domain.com/anothername/; filename=$(set -f; IFS=/; set -- $url; printf %s "$2") # This shouldn't have the trailing separator issue afaiui
+Mar 14 16:47:21 <fris>	i could also use basename $url ?
+Mar 14 16:47:26 <Earnestly>	However because you wrote 4 I assume your example is wrong and you meant to include https://
+Mar 14 16:47:41 <Soliton>	if you must use an external tool, sure.
+Mar 14 16:47:57 <fris>	Earnestly: no i dont need https, im using the subfolder at the end for the filename.zip
+Mar 14 16:48:16 <fris>	domain.com/subsite/ becomes subsite.zip
+Mar 14 16:48:29 <Soliton>	the point is that your cut example does not work with that.
+Mar 14 16:48:32 <Earnestly>	fris: Then how does field 4 of domain.com/subsite/ work? As there is no field 4 there
+Mar 14 16:48:50 <fris>	Soliton: yes it does https://domain.com/subsite/ is the value
+Mar 14 16:49:00 <Soliton>	hence what Earnestly said...
+Mar 14 16:49:24 <fris>	Earnestly: has https in it
+Mar 14 16:49:26 <Earnestly>	# url=https://domain.com/anothername/; filename=$(set -f; IFS=/; set -- $url; printf %s "$4"); declare -p filename
+Mar 14 16:49:27 <shbot>	Earnestly: declare -- filename="anothername"
+Mar 14 16:50:19 <Soliton>	not much point in using wordsplitting anyway.
+Mar 14 16:50:37 <Earnestly>	(Ideal shell would be one with a split builtin, no IFS, and read has both -f and -d where -f is field separator and -d is terminator)
+Mar 14 16:51:03 <Earnestly>	And possibly join to replace $*
+Mar 14 16:52:36 <fris>	Earnestly: http://pastie.org/p/6L734xn8oEXdflMamMNJGs like this/
+Mar 14 16:53:33 <Earnestly>	fris: No I would not write it like this as I would lift the split up before it sees the loop and avoid the cost of forking so much
+Mar 14 16:54:01 <Earnestly>	fris: What is wp site list --fields=url producing that you need sed?
+Mar 14 16:54:09 <Earnestly>	I assume a header
+Mar 14 16:54:26 <fris>	delete first 2 lines, 1 headeer, 2nd is the main domain.com which is not needed
+Mar 14 16:55:23 <Earnestly>	Yeah, the problem is sed 1,2d doesn't really explain that intention. It's just "remove the first two lines". Hm
+Mar 14 16:56:00 <fris>	yes first 2 are to be excluded
+Mar 14 16:57:30 <Earnestly>	fris: Can you do --fields=url,path?
+Mar 14 16:57:44 <fris>	ya
+Mar 14 16:58:03 <Earnestly>	fris: Hm, this also has --format as well
+Mar 14 16:58:46 <Earnestly>	But it doesn't appear to print a header so I'm not sure why yours does unless the documentation I'm looking at is different from yours
+Mar 14 16:59:39 <fris>	ahh should be just the first line then
+Mar 14 16:59:56 <fris>	as i dont want the main domain, just sub sites
+Mar 14 17:01:49 <Earnestly>	fris: What does --fields=url --path=/ do?
+Mar 14 17:02:51 <fris>	path is for the path to the wordpress install --path=/ prints not a valid wp install
+Mar 14 17:03:08 <Earnestly>	fris: Well, I don't know this command and the docs are weak. The point being is that you should produce both values you need before the read loop. E.g. read -r path url; do if ...; wp mu-migration "$path".zip ... --url="$url"
+Mar 14 17:03:34 <Earnestly>	fris: Ah I hoped it might filter urls with / in their name, thus excluding the pathless domain
+Mar 14 17:03:35 <fris>	ya thats why the cut cmd which gets the .zip file name
+Mar 14 17:03:51 <Earnestly>	fris: Yes but do it once outside of the loop instead of forking cut multiple times
+Mar 14 17:03:51 <kurahaupo>	Earnestly: ideally IFS (and shopt and set -o) would be recorded when the script is parsed, and stick. Then we wouldn't have to fluff about saving & restoring settings inside functions
+Mar 14 17:04:27 <Earnestly>	kurahaupo: To be fair I don't recall using IFS incidently anywhere so it doesn't even matter what IFS ends up being in my scripts, but I know that only really applies to me
+Mar 14 17:05:46 <Soliton>	the url is only available in the loop...
+Mar 14 17:23:07 <Earnestly>	fris: So iow, generate urls | cut into url and path | read both url and path at the same time. The pipeline executes once and just filters data, then you can arrange it for your migration which has to fork
+Mar 14 17:23:44 <ormaaj>	hm i'm using getent to test the string from the user login field. Hope it's reliable for that probably unintented purpose.
+Mar 14 17:23:54 <Earnestly>	fris: wp site list appears to have a --format=json which can help structure this and even filter out the pathless domain all in one go
+Mar 14 17:24:36 <ormaaj>	i could add that pattern match as a preliminary filter.
+Mar 14 17:24:45 <Earnestly>	fris: You can then provide the url first, which is well defined to contain no whitespace and a potentially url-decoded path afterwards, which is slurped up into read's last parameter unharmed
+Mar 14 17:25:16 <Earnestly>	wp mu-migration would be nice if it accepts url encoded paths though
+Mar 14 17:27:22 <Earnestly>	fris: So iow: https://0x0.st/HFSS.txt
+Mar 14 17:27:36 <Soliton>	an arbitrary path will not be "unharmed".
+Mar 14 17:27:37 <Earnestly>	With a ; do sorry
+Mar 14 17:27:42 <Earnestly>	Soliton: How so?
+Mar 14 17:27:55 <Soliton>	you split into fields...
+Mar 14 17:28:29 <Earnestly>	Soliton: 'url path\0' | IFS=' ' read -rd '' url path
+Mar 14 17:28:36 <Earnestly>	I can't see where path would be damaged here
+Mar 14 17:29:12 <Earnestly>	I define the fields as url space path nul, if I don't get two fields then it's undefined anyway
+Mar 14 17:29:45 <Soliton>	in your example any trailing spaces will be gone.
+Mar 14 17:30:09 <Earnestly>	Hm, even with -d ''?
+Mar 14 17:30:18 <Earnestly>	That's a bit annoying
+Mar 14 17:30:19 <Soliton>	how does that matter?
+Mar 14 17:31:17 <Earnestly>	And that only applies to "IFS whitespace" iirc
+Mar 14 17:32:30 <Earnestly>	So instead 'url/path\0' | IFS=/ read -rd '' url path should work, alternatively: url\0path\0 | { read -rd '' url; read -rd '' path; } if such pairing can be guaranteed. I really dislike IFS
+Mar 14 17:32:33 <Soliton>	# printf 'url_path_\0' | { IFS=_ read -rd '' url path; declare -p path; }
+Mar 14 17:32:35 <shbot>	Soliton: declare -- path="path"
+Mar 14 17:33:06 <Earnestly>	So bash isn't POSIX either and trims non-whitespace chars?
+Mar 14 17:33:34 <Earnestly>	# # printf 'url_path__\0' | { IFS=_ read -rd '' url path; declare -p path; }
+Mar 14 17:33:35 <shbot>	Earnestly: no output
+Mar 14 17:33:44 <Earnestly>	# printf 'url_path__\0' | { IFS=_ read -rd '' url path; declare -p path; }
+Mar 14 17:33:46 <shbot>	Earnestly: declare -- path="path__"
+Mar 14 17:34:37 <Soliton>	it's the IFS is not a separator but terminator thing.
+Mar 14 17:36:00 <Earnestly>	# printf 'url path \0' | { IFS=' ' read -rd '' url path; declare -p path; }
+Mar 14 17:36:02 <shbot>	Earnestly: declare -- path="path"
+Mar 14 17:36:12 <ormaaj>	 $ ( LC_CTYPE=C; enable kv; printf '%s %s\0' boo moo | kv -A a -d '' -s ' '; printf '%s ' "${a[@]@k}"; echo )
+Mar 14 17:36:12 <ormaaj>	boo moo
+Mar 14 17:36:27 <Earnestly>	And the trouble is, you can't even suffix it with a separator for it to eat
+Mar 14 17:36:30 <Earnestly>	# printf 'url path  \0' | { IFS=' ' read -rd '' url path; declare -p path; }
+Mar 14 17:36:31 <shbot>	Earnestly: declare -- path="path"
+Mar 14 17:37:16 <Soliton>	anyway, two trivial parameter expansions do what they want. if there is a need to urldecode then they can do that in shell as well.
+Mar 14 17:37:26 <Earnestly>	Yeah, seems reasonable in light
+Mar 14 17:38:18 <Earnestly>	Soliton: And the domain is known so the entire thing can be accurately stripped off the head, which if the result is checked for non-empty string means the nonsubdomain domain will be excluded 'for free'
+Mar 14 17:38:53 <Led_Zeppelin2>	i have 3 variables. a,b,c. How can I have them in a another variable? all="aval_$abval_$bcval_$c" is that the right way? forsome reason its not showing it
+Mar 14 17:39:22 <Soliton>	${a}
+Mar 14 17:39:23 <Earnestly>	Led_Zeppelin2: all=$a$b$c
+Mar 14 17:39:42 <Led_Zeppelin2>	what if I want to describe the variable? like a_val.
+Mar 14 17:39:55 <Earnestly>	Then what Soliton wrote, use {} to guard them
+Mar 14 17:40:00 <Soliton>	!${
+Mar 14 17:40:00 <greybot>	Without curly braces parameter expansions refer to the longest valid variable name or shortest positional parameter. "${var}bar" expands the parameter named "var" while "$varbar" expands "varbar". "$123" references argv[1] and "${123}" references argv[123]. Braces are requried for parameters > 9, special PEs, and array expansions: ${10}, ${var##pat}, ${arr[5]}. BRACES AREN'T A SUBSTITUTE FOR QUOTES!
+Mar 14 17:40:59 <Earnestly>	all=a_val_${a}b_val_${b}...
+Mar 14 17:44:45 <ormaaj>	"thx it worked! IFS=_; for val in $all; do mv $val ~; done"
+Mar 14 17:52:32 <twkm>	though you better unset IFS if that shell will be doing anything else.
+Mar 14 17:56:11 <ormaaj>	# typeset -p LANG
+Mar 14 17:56:13 <shbot>	ormaaj: declare -x LANG="en_US.UTF-8"
+Mar 14 17:58:49 <ormaaj>	added a default to catch try catching encoding issues and generally be more "realistic"
+Mar 14 17:59:17 <ormaaj>	s/catch//
+Mar 14 18:00:55 <emanuele6>	# : > $(есhο -nе '\ufdfd'); lѕ -а
+Mar 14 18:00:56 <shbot>	emanuele6: bash: есhο: command not found
+Mar 14 18:00:56 <shbot>	emanuele6: bash: $(есhο -nе '\ufdfd'): ambiguous redirect
+Mar 14 18:00:56 <shbot>	emanuele6: bash: lѕ: command not found
+Mar 14 18:01:11 <emanuele6>	now we can trick ano better
+Mar 14 18:01:21 <ormaaj>	:D
+Mar 14 18:48:41 <Kingsy>	https://bpa.st/KKQA <- can someone tell me what is wrong with this script. it outputs thats the branch does noit match the pattern.. it does though....
+Mar 14 18:50:13 <Soliton>	!check
+Mar 14 18:50:16 <checkbot>	Soliton: Looks good to me
+Mar 14 18:50:41 <Soliton>	maybe in some other regex dialect that matches.
+Mar 14 18:50:49 <Soliton>	!=~
+Mar 14 18:50:50 <greybot>	The =~ operator of [[ evaluates the left hand string against the right hand ERE (see <ere>, <regex>). After a successful match, the BASH_REMATCH array contains the matched string and subexpressions (if any). Any quoted characters in the ERE become literal. Best to put the whole ERE in a variable: [[ $string =~ $regex ]]
+Mar 14 18:50:58 <Soliton>	!ere
+Mar 14 18:50:58 <greybot>	Extended Regular Expressions. See http://mywiki.wooledge.org/RegularExpression or (POSIX) https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.html#tag_09_04 or https://man7.org/linux/man-pages/man7/regex.7.html
+Mar 14 18:51:38 <Kingsy>	hmm I don't understand.
+Mar 14 18:52:34 <Kingsy>	so the regex is correect but its the comparison thats wrong?
+Mar 14 18:52:44 <Soliton>	bash supports ERE so you need to write such a regex.
+Mar 14 18:54:39 <Kingsy>	Soliton: well I did have something like this -> REGEX="^(ticket\/PH-[[:digit:]]+_[[:alnum:]-]+|release\/[[:digit:]]{2}\.[[:digit:]]{2}\.[[:digit:]]{2}|main|develop)$" <- but it still had the same issue.
+Mar 14 18:55:33 <Kingsy>	oh I got it
+Mar 14 18:55:46 <Soliton>	i mean PH != A
+Mar 14 18:55:55 <Kingsy>	haha yeah typo to hell
+Mar 14 18:56:01 <Soliton>	also you have weird \/ in there.
+Mar 14 18:56:23 <Kingsy>	its so I can support hte / char in the branch new
+Mar 14 18:56:24 <Kingsy>	name *
+Mar 14 18:56:34 <Kingsy>	it needs to be escaped no?
+Mar 14 18:56:41 <Soliton>	no
+Mar 14 18:58:12 <Soliton>	i don't think / is special in any regex dialect i know. sometimes regex are delimited by / though and then you may need to escape the delimiter.
+Mar 14 18:58:19 <Kingsy>	so anyway, the first regex was not valid because bash doesnt support it? and only ERE? or you need ERE for the comparison?
+Mar 14 18:59:11 <Soliton>	it was valid but \d is unspecified.
+Mar 14 18:59:30 <Soliton>	it might match d or a digit or whatever.
+Mar 14 18:59:53 <tearsfornations>	does anyone want to read my testimony (Christian)? It is 1 page.
+Mar 14 19:00:19 <Soliton>	this channel is about shell scripting.
+Mar 14 19:01:42 <Kingsy>	Soliton: thanks so much for the info
+Mar 14 19:26:46 <xx>	this isn't born again spiritual healing?
+Mar 14 20:02:36 <houseparty>	Is it accurate that it is OK to use grep with globs when searching for file names - but when searching within files, you should use regexes? I found this: https://www.linuxjournal.com/content/globbing-and-regex-so-similar-so-different. I sort of felt like shellcheck was misleading me as my regex wasn't doing what I wanted - only the glob. But that
+Mar 14 20:02:36 <houseparty>	Linux Journal article makes it sooo much easier if a person can just remember files vs file titles.
+Mar 14 20:02:58 <geirha>	grep doesn't do globs at all
+Mar 14 20:03:16 <Soliton>	the shell expands the globs.
+Mar 14 20:05:38 <Soliton>	general syntax is  grep 'regex' files...  and files... can be provided by the shell expanding a glob to multiple matching files.
+Mar 14 20:05:57 <houseparty>	Yeah, it did some scary things at some point ... started somehow executing my files. I think it was echo that did that. Echo can execute or it can run a command by expanding it in command substitution. I should have saved the code ... I hit ctrl+c before anything bad happened.
+Mar 14 20:06:24 <Soliton>	echo does no such thing.
+Mar 14 20:06:28 <tirnanog>	it's not accurate because it makes no sense as an axiom. grep is not a tool for matching against file names.
+Mar 14 20:06:48 <tirnanog>	find is one example of a tool that might be suitable then.
+Mar 14 20:07:15 <Soliton>	command substitution is another shell feature independent of echo (which might be a shell builtin).
+Mar 14 20:09:02 <houseparty>	So, this is my code ... and it's fixed now. I did use the globstars here because I got tired of fooling with regexes ... and shellcheck only complained when I grepped outside of the context of executing the find command. This isn't anything fancy or interesting but it worked for my case. Took too long when this should have been written in like one
+Mar 14 20:09:03 <houseparty>	minute:
+Mar 14 20:09:03 <houseparty>	I can't find my paste bin link... there is a popular one everyone uses here.
+Mar 14 20:10:13 <houseparty>	This worked for what I wanted. then I will lose it and spend another vast period of time finally remembering what I did: https://bpa.st/WSRA
+Mar 14 20:11:32 <houseparty>	You can see there that I combined it with find. And when I did it, I realized it was redundant. I just wanted something that worked so I quit editing it.
+Mar 14 20:12:19 <Soliton>	the glob is handled by find there which also supports globs.
+Mar 14 20:13:02 <houseparty>	that is actually what ChatGPT said. You should get hired by OpenAI
+Mar 14 20:13:27 <tirnanog>	incidentally, no -f test is required because find is only being permitted to print the pathnames of regular files to begin with. using sudo is also suspect, given you're searching your own home directory to begin with.
+Mar 14 20:13:32 <Soliton>	who knows why you use sudo to run find on your home dir.
+Mar 14 20:13:36 <houseparty>	I asked ChatGPT why shellcheck didn't flag it in the context of the find command and it said almost exactly what you just typed, Soliton. Impressive.
+Mar 14 20:13:46 <tirnanog>	also, it won't handle all pathnames correctly.
+Mar 14 20:13:54 <tirnanog>	(bet your 'AI' doesn't tell you that)
+Mar 14 20:13:55 <houseparty>	Because if I don't use sudo, I get complaints from the find command
+Mar 14 20:14:11 <houseparty>	I can show you them... They relate to configs for programs that run under root. I'm sure that's the reason
+Mar 14 20:14:28 <houseparty>	The programs automatically store the files in ~/.config ... also, swap files are owned by root.
+Mar 14 20:14:33 <Soliton>	might want to fix the premissions in your home then.
+Mar 14 20:14:36 <tirnanog>	yes. if you have paths that cannot otherwise be traversed, that would explain it.
+Mar 14 20:15:05 <houseparty>	*They should be. It's dangerous to have swap files owned by a regular user... they give a person access to memory space. Memory space is critical and obviously a huge part of exploits.
+Mar 14 20:15:20 <tirnanog>	directories that cannot be traversed and/or entries that cannot be stat'ed.
+Mar 14 20:15:24 <houseparty>	Well, I'm moving to another OS but it's good to consider so thanks
+Mar 14 20:15:59 <houseparty>	For a second, tirnanog, I thought you were arguing with the last commenter ... you countered yourself ... Ha, I misread clearly
+Mar 14 20:17:25 <Soliton>	also using find with -maxdepth 1 is fairly useless. you usually use find when you want to traverse a dir hierarchy.
+Mar 14 20:18:49 <Soliton>	getting permission errors directly in $HOME sounds quite odd.
+Mar 14 20:19:00 <houseparty>	No, so that I flat out disagree with. Searching beyond one directory for files that I knew were no further than one depth would have stalled the search ... find leaves no stone unturned but if I want EVERYTHING you would be right. You are operating under the assumption that I don't want to miss anything or that I don't know which location the swaps
+Mar 14 20:19:01 <houseparty>	are. I did
+Mar 14 20:19:35 <houseparty>	I actually knew what they were all called to... but I want to copy them which is the next step and I didn't want to keep monitoring the copy progress ... run copy over and over. That's why I wrote the script
+Mar 14 20:20:22 <Soliton>	a simple for loop if you even need it does the same.
+Mar 14 20:21:50 <houseparty>	I keep getting confused about those. They are needed for a finite list ... if we know exactly where it begins and stops... or if it's an array. I know if I have an array and there are no spaces in the names, it works ... outside of that,  just use a while loop so that shellcheck doesn't complain.
+Mar 14 20:24:28 <houseparty>	Soliton: You are referring to a for loop to copy the files or instead of what I just did ... and I am glad I finished the first task.
+Mar 14 20:44:08 <nowarning>	I want to check if value is one from the list, how can i do it in bash?
+Mar 14 20:45:19 <bent_fingers>	what list?
+Mar 14 20:45:57 <nowarning>	something like: mylist=("value1" "value2"); if $var in $mylist[@]... ?
+Mar 14 20:46:09 <larryv>	use an associative array instead
+Mar 14 20:47:06 <bent_fingers>	A "list" in bash is:
+Mar 14 20:47:08 <bent_fingers>	"A list is a sequence of one or more pipelines separated by one of the operators ;, &, &&, or ||, and optionally terminated by one of ;, &, or <newline>."
+Mar 14 20:48:19 <nowarning>	larryv: i'd prefer using array than associative array, i think. there is no need for key/value mapping
+Mar 14 20:48:56 <Soliton>	then you have to look through the whole array each time instead of a single access to check.
+Mar 14 20:49:10 <nowarning>	Soliton: you mean in a loop?
+Mar 14 20:49:11 <larryv>	whereas if you use an associate array then you can look up the keys directly. use dummy values, they don't matter
+Mar 14 20:49:20 <larryv>	*associative
+Mar 14 20:49:58 <larryv>	nowarning: yes, you'd have to iterate over the whole thing (or until you find something)
+Mar 14 20:52:56 <nowarning>	hmm I guess [[ "${mylist[*]}" =~ "$var" ]] is not the best approach?
+Mar 14 20:53:06 <ano>	# declare -A assoc=([foo]= [bar]= [baz]=); value=bar; if [[ -v 'assoc[$value]' ]] then echo bar found; fi
+Mar 14 20:53:07 <shbot>	ano: bar found
+Mar 14 20:53:15 <Soliton>	it's not correct so no.
+Mar 14 20:54:03 <nowarning>	it's working well for mylist=("foor" "bar"); [[ "${mylist[*]}" =~ foo ]] && echo OK
+Mar 14 20:54:22 <nowarning>	i expected that it will evaluate to true, but it doesn't
+Mar 14 20:54:30 <nowarning>	Soliton: so what's wrong with this?
+Mar 14 20:54:58 <larryv>	lol that example is already broken
+Mar 14 20:54:59 <Soliton>	you mash everything together and then look for a match somewhere. can't possibly work right.
+Mar 14 20:55:14 <userdocss>	nowarning: why don't you want to use an Associative array? what's the reasoning, since it's the right answer.
+Mar 14 20:55:16 <larryv>	you're searching for foo. there is no element "foo". there's an element "foor". yet it still works
+Mar 14 20:55:24 <larryv>	"works"
+Mar 14 20:55:38 <nowarning>	Soliton: yeah, indeed, that's why I expected to find the "foo" in "foor", but it didn't happen
+Mar 14 20:55:46 <larryv>	# mylist=("foor" "bar"); [[ "${mylist[*]}" =~ foo ]] && echo OK
+Mar 14 20:55:47 <shbot>	larryv: OK
+Mar 14 20:55:54 <larryv>	# mylist=("fooradsfdsfdsafdsaasd" "bar"); [[ "${mylist[*]}" =~ foo ]] && echo OK
+Mar 14 20:55:55 <shbot>	larryv: OK
+Mar 14 20:56:25 <nowarning>	oh, ok, i had a typo, yeah, that's what i was expecting
+Mar 14 20:57:19 <Soliton>	# mylist=("foo" "bar"); [[ "${mylist[*]}" =~ foo\ bar ]] && echo OK
+Mar 14 20:57:20 <shbot>	Soliton: no output
+Mar 14 20:57:56 <nowarning>	what about: mylist="foo:bar:zoo"; [[ ":$myist:" == *":foo:"* ]] && echo OK ? :)
+Mar 14 20:58:24 <Soliton>	if no element can contain a semicolon, sure.
+Mar 14 20:58:24 <tirnanog>	then it's no longer an array.
+Mar 14 20:58:46 <Soliton>	still have to go through the whole string all the time.
+Mar 14 20:59:39 <Soliton>	# mylist=("foo" "bar"); [[ "${mylist[*]}" =~ foo\ bar ]] && echo OK
+Mar 14 20:59:41 <shbot>	Soliton: OK
+Mar 14 21:00:00 <Soliton>	shbot is a little erratic lately.
+Mar 14 21:00:02 <nowarning>	yeah, it doesn't have to be an array, and the ":" is invalid, so it should be fine
+Mar 14 21:01:43 <nowarning>	wouldn't checking keys in associative array need to go throug the list of keys ?
+Mar 14 21:01:52 <tirnanog>	no.
+Mar 14 21:02:03 <larryv>	weird how people come in here asking for help and then go to extreme lengths to avoid using the best solution, fishing for excuses to use inappropriate data structures so they can stick to some idiom they like
+Mar 14 21:02:19 <tirnanog>	nowarning: have you heard of a hash table, or map?
+Mar 14 21:02:32 <tirnanog>	that's conceptually what it is.
+Mar 14 21:02:55 <tirnanog>	the existence of a key can be determined quickly.
+Mar 14 21:02:55 <nowarning>	larryv: nah, it's just that using map for keys only, looks a little weird and provide less readability
+Mar 14 21:03:12 <tirnanog>	anyway, if your array is reasonably short there is also:
+Mar 14 21:03:14 <tirnanog>	!inarray
+Mar 14 21:03:14 <greybot>	Check whether a value is in an array: inarray() { local n=$1 h; shift; for h; do [[ $n = "$h" ]] && return; done; return 1; } # Usage: inarray "$value" "${array[@]}" Or just use an associative array if possible
+Mar 14 21:03:14 <nowarning>	tirnanog: yeah, i know what is it, but i don't know how it's implemented in bash
+Mar 14 21:04:39 <tirnanog>	in bash, associative arrays aren't that much different from conventional arrays. the important difference is that the keys can be strings, not merely valid integers.
+Mar 14 21:05:55 <Soliton>	fairly common to implement a set using the keys of a map.
+Mar 14 21:07:04 <nowarning>	tirnanog: yeah, i guess indexed array can be associative arrays under the hood too, no? it's just that index is a key, but maybe they are C arrays and size allocation is fixed, never seen the bash code
+Mar 14 21:07:55 <tirnanog>	nowarning: yes, indeed. normal arrays are sparse in bash already.
+Mar 14 21:08:21 <tirnanog>	# foo=(); foo[100]=1; declare -p foo
+Mar 14 21:08:22 <shbot>	tirnanog: declare -a foo=([100]="1")
+Mar 14 21:09:11 <tirnanog>	# foo=(a b c); unset -v 'foo[1]'; declare -p foo
+Mar 14 21:09:13 <shbot>	tirnanog: declare -a foo=([0]="a" [2]="c")
+Mar 14 21:09:16 <nowarning>	what's the proper way to check if key exists?
+Mar 14 21:09:31 <larryv>	bash indexed arrays are implemented as linked lists iirc (unless you pick the alternate implementation at build time)
+Mar 14 21:09:33 <nowarning>	"${map[key]+true}" ? :)
+Mar 14 21:09:42 <tirnanog>	I would suggest going by value if you can. if you can't, [[ -v
+Mar 14 21:11:14 <nowarning>	tirnanog: what's a difference?
+Mar 14 21:11:16 <larryv>	# declare -A foo=([a]=1 [b]=1); [[ -n ${foo[a]} ]]; echo "$?"; [[ -n ${foo[z]} ]]; echo "$?"
+Mar 14 21:11:17 <shbot>	larryv: 0
+Mar 14 21:11:17 <shbot>	larryv: 1
+Mar 14 21:11:25 <larryv>	(if you use nonempty dummy values)
+Mar 14 21:11:37 <nowarning>	i'd use empty values i guess
+Mar 14 21:11:52 <faceface>	hi
+Mar 14 21:12:02 <tirnanog>	right. if you have empty values you don't need to think of it in terms of key existence. because of a number of bash deficiencies, I generally recommend it. that being said, here's how to use -v.
+Mar 14 21:12:10 <faceface>	I want to add `... | tr -d '^M' | ...` to my script (Ctrl-V Ctrl-M outputs ^M on the terminal). How do I write ^M correctly inside vscode to get written to my bash script?
+Mar 14 21:12:48 <tirnanog>	# foo=(a b c); key=1; unset -v 'foo[$key]'; [[ -v 'foo[$key]' ]] || echo "key $key no longer exists"
+Mar 14 21:12:50 <shbot>	tirnanog: key 1 no longer exists
+Mar 14 21:13:01 <tirnanog>	(yes, the quoting is weird)
+Mar 14 21:13:40 <nowarning>	huh, but this is for indexed array, no?
+Mar 14 21:13:49 <tirnanog>	works the same way for associative arrays.
+Mar 14 21:13:51 <Soliton>	faceface: why not write \r?
+Mar 14 21:14:03 <faceface>	hi Soliton
+Mar 14 21:14:11 <nowarning>	tirnanog: I'm not sure I understood this: if you have empty values you don't need to think of it in terms of key existence. because of a number of bash
+Mar 14 21:14:27 <tirnanog>	because you can take an empty value has meaning non-existence ...
+Mar 14 21:14:40 <tirnanog>	and use dummy value like 1 otherwise.
+Mar 14 21:14:59 <nowarning>	how does it matter here?
+Mar 14 21:15:17 <tirnanog>	# declare -A map; map[foo]=1; map[bar]=1; [[ ${map[baz]} ]] || echo "couldn't find baz"
+Mar 14 21:15:18 <shbot>	tirnanog: couldn't find baz
+Mar 14 21:15:34 <tirnanog>	I'm not _actually_ testing for the existence of baz as a key there but it's ok within those constraints.
+Mar 14 21:15:43 <nowarning>	The only difference I see is that I can't use one line to declare an associative array with empty values
+Mar 14 21:15:52 <tirnanog>	I'm just saying, -v can be weird.
+Mar 14 21:16:01 <tirnanog>	if you can not use it, I suggest not using it.
+Mar 14 21:16:48 <nowarning>	interesting
+Mar 14 21:16:54 <tirnanog>	nowarning: I'm not sure what isn't clear. the distinction is between a) testing for existence of a key b) testing for existence by instead taking into consideration the value looked up _by_ the key
+Mar 14 21:17:04 <Led_Zeppelin2>	coming from psotgresql 11 to 13. I know recovery.conf is gone now. Is there a doc I can see to prepare myself?
+Mar 14 21:17:04 <tirnanog>	I'm simplying suggesting "b" over "a" in bash where possible.
+Mar 14 21:17:11 <tirnanog>	because bash has a lot of pitfalls.
+Mar 14 21:17:12 <nowarning>	tirnanog: yeah, i got you now
+Mar 14 21:17:14 <Soliton>	i'd just use ${map[key]+true} as you said.
+Mar 14 21:17:27 <tirnanog>	and yeah, that does also work.
+Mar 14 21:17:50 <larryv>	!nabq > Led_Zeppelin2
+Mar 14 21:17:50 <greybot>	Led_Zeppelin2: Not a #bash question. You might want to ask in a channel where it's actually on-topic. You can use "/msg alis list KEYWORDS" to search for suitable channels
+Mar 14 21:18:03 <Led_Zeppelin2>	ph soory
+Mar 14 21:18:08 <tirnanog>	nowarning: as for declaring on "one line", you may. declare -A map([foo]=1 [bar]=1).
+Mar 14 21:18:22 <nowarning>	tirnanog: yeah, but not with empty values
+Mar 14 21:18:34 <tirnanog>	''
+Mar 14 21:18:39 <tirnanog>	or ""
+Mar 14 21:18:42 <nowarning>	ok :)
+Mar 14 21:18:48 <larryv>	or nothing
+Mar 14 21:18:51 <larryv>	# declare -A foo=([a]= [b]=); declare -p foo
+Mar 14 21:18:52 <tirnanog>	that too!
+Mar 14 21:18:53 <shbot>	larryv: declare -A foo=([b]="" [a]="" )
+Mar 14 21:19:02 <nowarning>	larryv: that returns me error
+Mar 14 21:19:16 <larryv>	uh
+Mar 14 21:19:18 <tirnanog>	are you on macOS?
+Mar 14 21:19:33 <nowarning>	yes
+Mar 14 21:19:37 <faceface>	thank you Soliton
+Mar 14 21:19:47 <nowarning>	bash: syntax error near unexpected token `(
+Mar 14 21:20:03 <tirnanog>	you'll need a different build of bash.
+Mar 14 21:20:14 <tirnanog>	in macOS, /bin/bash is ancient.
+Mar 14 21:20:19 <tirnanog>	no associative array support.
+Mar 14 21:20:24 <nowarning>	I don't use macOS bash
+Mar 14 21:20:38 <tirnanog>	hmm. what is it then?
+Mar 14 21:20:42 <faceface>	Final dumb question (heh)... I'm running `bash script.bash | tee -a ...` but I don't get output right away... is there a simple fix? e.g. it nees to 'cache' up some output before I see it
+Mar 14 21:20:48 <nowarning>	GNU bash, version 5.2.26(1)-release (aarch64-apple-darwin23.2.0)
+Mar 14 21:21:00 <tirnanog>	is that also borne out by: declare -p BASH_VERSION
+Mar 14 21:21:28 <nowarning>	declare -- BASH_VERSION="5.2.26(1)-release"
+Mar 14 21:21:42 <tirnanog>	can confirm.
+Mar 14 21:21:54 <tirnanog>	oh wait.
+Mar 14 21:22:00 <tirnanog>	no, I can't. was just a typo.
+Mar 14 21:22:06 <tirnanog>	works fine. what is your command precisely?
+Mar 14 21:22:44 <nowarning>	tirnanog: declare -A mapx([foo]= [bar]=)
+Mar 14 21:22:50 <tirnanog>	you missed an =
+Mar 14 21:22:59 <nowarning>	ohhhh
+Mar 14 21:23:09 <nowarning>	tirnanog: thx :D
+Mar 14 21:24:03 <tirnanog>	faceface: you'll have to consider whatever script.bash is doing.
+Mar 14 21:24:07 <tirnanog>	!faq buffering
+Mar 14 21:24:07 <greybot>	https://mywiki.wooledge.org/BashFAQ/009 -- What is buffering?  Or, why does my command line produce no output: tail -f logfile | grep 'foo bar' | awk ...
+Mar 14 21:24:14 <tirnanog>	that's a general article concerning the matter.
+Mar 14 21:25:00 <tirnanog>	something in your script is refraining from employing line-buffering, basically.
+Mar 14 21:25:20 <nowarning>	ok, so what's really wrong with test -v? :) I'm really curious :)
+Mar 14 21:25:37 <tirnanog>	nowarning: having to use that bizarre quoting style, for one thing.
+Mar 14 21:26:46 <tirnanog>	or, rather, having to quote at all for it to function in the expected way.
+Mar 14 21:26:47 <nowarning>	:P
+Mar 14 21:26:50 <tirnanog>	it's very counter-intuitive.
+Mar 14 21:27:21 <nowarning>	then what about the "${map[key]+ok}" style? does it look better? :D
+Mar 14 21:27:27 <tirnanog>	the other problem with it is that the concept of setness, so to speak, can be confusing.
+Mar 14 21:27:54 <tirnanog>	I won't comment on aeshtetics but it's correct.
+Mar 14 21:28:00 <tirnanog>	aesthetics, even
+Mar 14 21:28:38 <tirnanog>	[[ ${map[key]+ok} ]] will consider either the empty string or "ok" for non-emptiness, and it will only expand as "ok" if the key exists.
+Mar 14 21:29:25 <tirnanog>	I'd probably write "set", not "ok" there but it doesn't matter what the string is, so long as it's non-empty.
+Mar 14 21:29:34 <larryv>	!pf61 > nowarning
+Mar 14 21:29:34 <greybot>	nowarning: https://mywiki.wooledge.org/BashPitfalls#pf61 -- Don't do this! -- [[ -v hash[$key] ]]
+Mar 14 21:30:04 <tirnanog>	right.
+Mar 14 21:30:38 <larryv>	maybe also breeze through #62 if you hate yourself
+Mar 14 21:30:44 <tirnanog>	I was about to say the same.
+Mar 14 21:30:47 <tirnanog>	truly lamentable.
+Mar 14 21:31:04 <nowarning>	ohm
+Mar 14 21:32:50 <nowarning>	tirnanog: [[ ${map[key]+ok} ]] will consider either the empty string or "ok" for non-emptiness -- what's happening with the empty string here?
+Mar 14 21:33:22 <tirnanog>	[[ word ]] is the same as [[ -n word ]]. see "help test".
+Mar 14 21:33:35 <nowarning>	ok
+Mar 14 21:33:51 <tirnanog>	it's a check for non-emptiness. nothing more.
+Mar 14 21:34:20 <nowarning>	so adding +ok would work as expected, the map values can be empty
+Mar 14 21:35:12 <tirnanog>	it's not testing the value. if you're ok doing it that way, [[ ${map[key]} ]] is enough.
+Mar 14 21:37:00 <nightstrike>	what's a good data file type to use with bash?  I was thinking json, and found quite a few ways to trivially read json in bash, but not update it
+Mar 14 21:37:12 <phy1729>	!graduated
+Mar 14 21:37:12 <greybot>	Congratulations! You've graduated to needing to use a real language!
+Mar 14 21:37:13 <tirnanog>	# declare -a map; map[a]=""; [[ ${map[a]+ok} ]] || [[ ${map[b]} ]]; declare -p PIPESTATUS
+Mar 14 21:37:15 <shbot>	tirnanog: declare -a PIPESTATUS=([0]="0")
+Mar 14 21:37:19 <tirnanog>	whoops
+Mar 14 21:37:22 <tirnanog>	# declare -a map; map[a]=""; [[ ${map[a]+ok} ]] | [[ ${map[b]} ]]; declare -p PIPESTATUS
+Mar 14 21:37:23 <shbot>	tirnanog: declare -a PIPESTATUS=([0]="0" [1]="1")
+Mar 14 21:37:38 <nightstrike>	lol
+Mar 14 21:37:44 <arraybolt3>	nightstrike: key-value pairs work well for me, you can read them and split them up with `cut` pretty easily.
+Mar 14 21:38:29 <tirnanog>	nowarning: note the difference there. ${map[a]+ok} expands as "ok" because the key exists (that its value is empty is immaterial). the other test fails not simply because "b" doesn't exist as key but because the expansion is ultimately the empty string.
+Mar 14 21:38:49 <arraybolt3>	there's a tool called `jo` in the Ubuntu archives that allows outputting JSON.
+Mar 14 21:38:57 <tirnanog>	tl;dr: if empty values are enough to constitute non-existence to you, the latter style of test is acceptable.
+Mar 14 21:38:57 <arraybolt3>	haven't used it, have no idea if it's any good
+Mar 14 21:39:33 <arraybolt3>	https://github.com/jpmens/jo
+Mar 14 21:39:33 <larryv>	nightstrike: hard to discussion "good data file type" without knowing what you're actually, like, doing with it.
+Mar 14 21:39:36 <larryv>	*to discuss
+Mar 14 21:39:47 <nightstrike>	fair point
+Mar 14 21:40:57 <nightstrike>	arraybolt3: I was looking at jq, I didn't see jo
+Mar 14 22:02:13 <faceface>	thanks tirnanog
+Mar 14 22:05:28 <faceface>	tirnanog: right, I added | tr |, which I assume is buffering
+Mar 14 22:07:20 <geirha>	more likely it's the command to the left of tr in that pipeline that buffers
+Mar 14 22:08:49 <geirha>	ah no, looks like tr also buffers
+Mar 14 22:09:56 <geirha>	... | stdbuf -o0 tr -d '\r' | ...   if you have (GNU) stdbuf installed
+Mar 15 01:39:23 <ibanja>	how can I read a line from a file with a variable in it and have bash process the variable? Example: $HOME/.bashrc would become /home/someuser/.bashrc
+Mar 15 01:40:37 <larryv>	!template > ibanja
+Mar 15 01:40:37 <greybot>	ibanja: http://mywiki.wooledge.org/TemplateFiles
+Mar 15 01:41:22 <ibanja>	OK... I thought it would involve the exec command. I'll have a look at templates.
+Mar 15 01:43:32 <ibanja>	so basically I just use a place holder and replace that using sed.
+Mar 15 01:45:34 <larryv>	consider reading the rest of the page.
+Mar 15 01:45:46 <larryv>	the sed suggestion is the most basic approach and almost the worst one
+Mar 15 01:49:15 <ibanja>	OK... this is new to me, so I'll have to wrap my head around it. Thanks for the help.
+Mar 15 01:52:07 <larryv>	the easiest approach is probably the envsubst one, if you have that utility
+Mar 15 01:55:46 <larryv>	ibanja: also, what do you want to do with the text you process? this wiki page assumes you're just going to write the processed text back out to a different file
+Mar 15 01:59:11 <ibanja>	I want to copy a list of files to the user directory of the user who is running the script. Example: I Will copy .bashrc to $HOME/.bashrc.
+Mar 15 02:36:27 <emanuele6>	i just learned/figured-out that   env -S  can be used as an hack to make shebang work in CRLF files, because env -S will discard CR as whitespace
+Mar 15 02:50:40 <emanuele6>	1000th wordle :o
+Mar 15 02:51:22 <larryv>	:O
+Mar 15 03:26:38 <wyclif>	emanuele6: off-topic I know, but what is your fave Wordle app?
+**** BEGIN LOGGING AT Fri Mar 15 03:40:52 2024
+
+Mar 15 03:40:51 *	Now talking on #bash
+Mar 15 03:40:51 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 15 03:40:51 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+**** BEGIN LOGGING AT Fri Mar 15 03:45:00 2024
+
+Mar 15 03:45:00 *	Now talking on #bash
+Mar 15 03:45:00 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 15 03:45:00 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+**** ENDING LOGGING AT Fri Mar 15 03:45:01 2024
+
+Mar 15 03:45:26 <ormaaj>	of top I.C. on to PIC
+Mar 15 03:45:47 <ormaaj>	off to pee I see
+Mar 15 05:32:02 <bent_fingers>	where are the job listings for bash programmers?
+Mar 15 05:33:24 <bent_fingers>	where are the opportunities for those bash programmers who can confidently report on their resume five stars out of five stars for that skill level
+Mar 15 05:34:27 <bent_fingers>	there must be somebody whose willing to pay for an echo
+**** ENDING LOGGING AT Fri Mar 15 05:52:58 2024
+
+**** BEGIN LOGGING AT Fri Mar 15 06:03:28 2024
+
+Mar 15 06:03:26 *	Now talking on #bash
+Mar 15 06:03:26 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 15 06:03:26 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+Mar 15 06:24:42 <ormaaj>	3 star bash programmer
+Mar 15 08:44:01 <PlasmaHH>	Hi, how can I on bash in mingw canonicalize a path? using realpath C:/ and /c/ at the start at input will be left as-is even though they refer to the same actual path...
+Mar 15 09:09:51 <ormaaj>	PlasmaHH: Convert to a unix path first then use readlink or realpath. Alternatively, use a tool designed for that such as cygpath or winepath.
+Mar 15 09:10:49 <PlasmaHH>	ormaaj: I can't depend on external tools that don't come with the git bash mingw installation... so that conversion needs to be done manually?
+Mar 15 09:13:56 <ormaaj>	I would guess probably, unless there is a similar native windows tool or maybe powershell applet (if they don't count as external tool)
+Mar 15 09:14:02 <ormaaj>	I am not familiar with that environment
+Mar 15 09:14:39 <PlasmaHH>	powershell would also count as an external tool here as it is disabled per default in the company
+Mar 15 09:15:24 <ormaaj>	there is a realpath bash loadable.
+Mar 15 09:15:34 <ormaaj>	# enable realpath; type realpath
+Mar 15 09:15:37 <shbot>	ormaaj: realpath is a shell builtin
+Mar 15 09:16:01 <ormaaj>	I would bet it is not included.
+Mar 15 09:17:03 <ormaaj>	highly unlikely
+Mar 15 09:17:15 <PlasmaHH>	indeed its not included
+Mar 15 09:19:34 <ormaaj>	how does mingw handle /proc magic symlinks? Depending on what you're doing you can sometimes get away with using /proc/self/fd/* directly.
+Mar 15 09:20:45 <ormaaj>	bash evidently has some limited built-in abstraction for /proc/self/fd on various platforms, in some contexts.
+Mar 15 09:23:52 <ormaaj>	e.g. instead of cannonicalizing a true path and opening it multiple times, you might open a dir fd once and use it as a substitute.
+Mar 15 10:06:14 <ormaaj>	hm
+Mar 15 10:06:26 <ormaaj>	 $ ls -- ~/!(+([[:graph:]]))
+Mar 15 10:06:26 <ormaaj>	'/home/ormaaj/%y'$'\001\004\177'  '/home/ormaaj/&2)]; printf '  '/home/ormaaj/A'$'\177'  '/home/ormaaj/W'$'\f'']{'$'\177'  '/home/ormaaj/'$'\315\002\001\004\177'
+Mar 15 11:58:11 <hsv>	Hi, any pointers how to grep for both 'x' and 'X' (different case) and have these go separately to stdout and stderr?
+Mar 15 11:59:57 <hsv>	The overall objective is to 'tail -f' a logfile, and have 'beep -s' sound a beep only for say 'x' whereas both are output to the terminal.
+Mar 15 12:11:32 <Artfaith>	o/
+Mar 15 12:11:39 <Artfaith>	hsv, something like `multitail` or https://lnav.org/ ?
+Mar 15 12:13:12 <Artfaith>	Related: https://stackoverflow.com/questions/13858912/piping-tail-output-though-grep-twice
+Mar 15 12:13:57 <hsv>	yes i'm already using --line-buffered
+Mar 15 12:15:18 *	Disconnected ()
+**** ENDING LOGGING AT Fri Mar 15 12:15:18 2024
+
+**** BEGIN LOGGING AT Fri Mar 15 12:17:55 2024
+
+Mar 15 12:17:55 *	Now talking on #bash
+Mar 15 12:17:55 *	Topic for #bash is: https://mywiki.wooledge.org/BashFAQ | https://mywiki.wooledge.org/BashGuide | https://gnu.org/s/bash/manual | https://mywiki.wooledge.org/Quotes | https://www.shellcheck.net/ | https://lists.gnu.org/mailman/listinfo/help-bash | https://git.savannah.gnu.org/cgit/bash.git?h=devel | bash-hackers.org is down
+Mar 15 12:17:55 *	Topic for #bash set by ormaaj!~ormaaj@user/ormaaj (Fri Feb 16 23:57:24 2024)
+Mar 15 12:21:20 <hsv>	it does the job :)
+Mar 15 12:27:39 <rendar>	beep?
+Mar 15 12:28:06 <hsv>	https://linux.die.net/man/1/beep
+Mar 15 12:34:23 <dumbledoor>	Is there an equivalent of emacs' C-w binding for the search gutter in the less pager?
+Mar 15 12:36:34 <dumbledoor>	The way I search options in man pages is that I enter / and ESC+k to go to the last searched item which is always like /^s+-o or /^s+--option form. So, it's easy to change the -o by just a single backspace but I want somthing to remove the entire `option` word with a binding.
+Mar 15 13:24:11 <ormaaj>	hsv: https://bpa.st/raw/LM3A
+Mar 15 13:28:25 <emanuele6>	!coffee
+Mar 15 13:28:25 <greybot>	c[_]
+Mar 15 14:11:49 <nowarning>	I get SC2145 for [[ "${#map[@]}" -gt 0 ]], not sure how to refactor it..
+Mar 15 14:12:45 <nowarning>	I can do [[ -n "${map[0]}" ]] but..
+Mar 15 14:13:18 <Soliton>	((${#map[@]} > 0))
+Mar 15 14:13:32 <tirnanog>	eh.
+Mar 15 14:14:11 <Soliton>	(no clue what SC2145 is.)
+Mar 15 14:15:23 <tirnanog>	there's nothing wrong with [[ "${#map[@]}" -gt 0 ]], in isolation. considering it in isolation is almost certainly a mistake.
+Mar 15 14:15:29 <nowarning>	Soliton: https://www.shellcheck.net/wiki/SC2145
+Mar 15 14:15:59 <Soliton>	no clue what SC2145 has to do with this.
+Mar 15 14:16:41 <tirnanog>	nothing.
+Mar 15 14:18:09 <llua>	!check map=(.); [[ "${#map[@]}" -gt 0 ]]
+Mar 15 14:18:09 <checkbot>	llua: Looks good to me
+Mar 15 14:21:48 <nowarning>	heh, using (( )) also shellcheck complains :)
+Mar 15 14:21:55 <tirnanog>	read what you see, not what you think you see.
+Mar 15 14:22:19 <tirnanog>	(as an old teacher was so very fond of saying)
+Mar 15 14:23:50 <nowarning>	tirnanog: i wonder you meant with the isolation, because what you are saying is that this code is mostly a mistake, no? :)
+Mar 15 14:24:06 <Soliton>	!tests
+Mar 15 14:24:07 <greybot>	Use [[ .. ]] for testing strings or files, (( .. )) for testing numbers, and ''if ..'' for testing commands. Do *NOT* use [ .. ] in bash (only in sh). See <http://mywiki.wooledge.org/tests> and <http://wiki.bash-hackers.org/commands/classictest>. Difference between [ and [[: <http://mywiki.wooledge.org/BashFAQ/031>
+Mar 15 14:24:07 <geirha>	!check map=(.); [[ "${map[@]}" -gt 0 ]]
+Mar 15 14:24:07 <checkbot>	geirha: Line 1: Arrays implicitly concatenate in [[ ]]. Use a loop (or explicit * instead of @). See https://shellcheck.net/?id=cb9047
+Mar 15 14:24:58 <Soliton>	still no SC2145
+Mar 15 14:25:06 <geirha>	yeah, different error for that one
+Mar 15 14:25:07 <tirnanog>	yes. not buying it.
+Mar 15 14:26:00 <tirnanog>	nowarning: no. I'm suggesting that you don't understand the output that shellcheck is giving you, nor how it pertains to your code.
+Mar 15 14:26:13 <tirnanog>	at the same time, I'd rather not guess how it is happening.
+Mar 15 14:26:42 <tirnanog>	that [[ "${#map[@]}" -gt 0 ]] raises SC2145 is falsifiable.
+Mar 15 14:27:14 <geirha>	sure it's not SC2154 (var referenced but not assigned) ?
+Mar 15 14:29:50 <nowarning>	nope
+Mar 15 14:30:03 <nowarning>	 SC2145:error:26:88: Argument mixes string and array. Use * or separate argument
+Mar 15 14:30:31 <tirnanog>	and "26:88" is what?
+Mar 15 14:30:39 <nowarning>	index in the file
+Mar 15 14:30:52 <nowarning>	or maybe not
+Mar 15 14:30:53 <tirnanog>	I give up.
+Mar 15 14:30:53 <nowarning>	:)
+Mar 15 14:31:12 <nowarning>	i don't what is it :)
+Mar 15 14:31:24 <tirnanog>	line and col numbers, probably.
+Mar 15 14:32:28 <nowarning>	ah, ok ok. yeah. i have one more line:col because it's bundled, yeah
+Mar 15 14:33:40 <nowarning>	ok, i unbundled this script, now i get SC2145 and SC2154
+Mar 15 14:34:23 <squirrel>	hello. on windows, in a .gitconfig alias, i'm trying to read one line from stdin into a variable using `read -r commit_message`, however for some reason it is not accepting an empty or blank line, instead it acts like `cat` reading multiple lines until ^Z (windows version of ^D), any idea what might be the issue here?
+Mar 15 14:35:21 <tirnanog>	reading from your tty, probably.
+Mar 15 14:35:44 <nowarning>	oh wow, ok, i know what is happening
+Mar 15 14:36:29 <tirnanog>	i.e. if you open a terminal and issue "read -r commit_message", that's what will happen as STDIN is your terminal.
+Mar 15 14:36:58 <tirnanog>	although, it should still end after having encountered a newline.
+Mar 15 14:40:54 <Soliton>	sounds like no newline is input.
+Mar 15 14:41:11 <Soliton>	maybe whatever terminal is used is in a weird mode.
+Mar 15 14:41:14 <tirnanog>	or perhaps something else entirely is trying to read stdin at the point that the symptom is observed. who knows.
+Mar 15 14:42:02 <tirnanog>	(I doubt the alias is simply "read -r commit_message")
+Mar 15 14:42:49 <nowarning>	yeah, the problem was not with the [[ ]], but another line where I had something like echo "Foo: ${map[@]}", I replaced @ with * :)
+Mar 15 14:43:05 <tirnanog>	we know.
+Mar 15 14:43:28 <nowarning>	:D
+Mar 15 14:43:42 <squirrel>	tirnanog: in the terminal, `read -r commit_message` behaves normally, it only tries to read multiple lines when running “inside” git. the process explorer also shows that it launches `sh.exe`, i wonder if this might be something other than bash
+Mar 15 14:44:28 <tirnanog>	as long as it's a proper sh implementation, it shouldn't matter. git for windows uses msys2. it's likely either bash or dash.
+Mar 15 14:45:03 <Soliton>	what happens if you press enter? do you see ^M or so?
+Mar 15 14:46:54 <tirnanog>	on the matter of sh, you might want to run "type sh" and check that it's not something that is outside the purview of the msys2 environment.
+Mar 15 14:47:24 <squirrel>	no ^Ms or anything like that, it reads from stdin until i do ^Z on a new lne
+Mar 15 14:47:55 <Soliton>	and then commit_message contains the input?
+Mar 15 14:48:12 <squirrel>	yeah, multiline input
+Mar 15 15:49:51 <depesz>	hi. in my script I need to do sometthing 30 times. so I did: for i in {1..30}; do ...; done - but shellcheck complains about unused variable.
+Mar 15 15:50:03 <depesz>	is there any way do to the loop without variable?
+Mar 15 15:50:21 <phy1729>	_ is the idiomatic "I don't care about this" variable
+Mar 15 15:50:37 <depesz>	oh. of course. thanks.
+Mar 15 15:53:52 <twkm>	appeasing a linter seems silly.
+Mar 15 15:54:41 <phy1729>	In this case it's helpful for humans too because the reader knows they don't need to keep track of _. i might be used later so has to be kept in your head.
+Mar 15 15:55:31 <lopid>	if you're in a team of people using the same linter and everyone sees the same noise
+Mar 15 16:06:33 <faceface>	hi
+Mar 15 16:07:52 <faceface>	several places in my script I have code like this... echo "STEP 1" |& unbuffer -p tr -d '/r' | tee -a "$log"
+Mar 15 16:08:17 <faceface>	Could you a) slap me about the face, and b) help me work out how to put it into a python function?
+Mar 15 16:08:49 <faceface>	Obvously, other stuff than echo feeds into it (hence the |& bit)
+Mar 15 16:09:18 <phy1729>	You just want to translate windows line endings to unix line endings without buffering?
+Mar 15 16:09:50 <faceface>	phy1729: and tee both stderr / stdout to file
+Mar 15 16:10:39 <faceface>	and avoid wriing the same bug-prone code several times in my script...
+Mar 15 16:11:31 <faceface>	crap... I wrote python function.. .obvs I mean bash function!

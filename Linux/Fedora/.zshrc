@@ -43,6 +43,8 @@ PERL_MB_OPT="--install_base \"/$HOME/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/$HOME/perl5"; export PERL_MM_OPT;
 
 
+export PATH="/$HOME/Applications:$PATH"
+export PATH="/$HOME/Applications/Sioyek:$PATH"
 export PATH="/$HOME/scripts:$PATH"
 export PATH="/$HOME/.config/emacs/bin:$PATH"
 export EDITOR="/$HOME/.local/bin/lvim"
@@ -58,9 +60,9 @@ alias zik="ncmpcpp -c PATH=~/.config/ncmpcpp/config"
 alias l="ls -lah"
 alias ll="ls -lah"
 alias g="z"
-alias fm="yazi"
 alias cat="bat"
-alias pdf="nohup $HOME/Applications/Sioyek/sioyek > /dev/null 2>&1 &"
+alias pdf="nohup $HOME/Applications/Sioyek/sioyek {} > /dev/null 2>&1 &"
+alias notes="lv ~/Git/Notes/Obsidian/Cheet-Sheets/"
 alias -s {txt,conf,md}=/$HOME/.local/bin/lvim
 
 # Extracts any archive(s) (if unp isn't installed)

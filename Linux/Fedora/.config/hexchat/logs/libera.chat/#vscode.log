@@ -769,3 +769,147 @@ Mar 12 00:38:02 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
 Mar 12 00:55:45 *	Now talking on #vscode
 Mar 12 00:55:45 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
 Mar 12 00:55:45 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+**** BEGIN LOGGING AT Tue Mar 12 07:33:43 2024
+
+Mar 12 07:33:41 *	Now talking on #vscode
+Mar 12 07:33:41 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 12 07:33:41 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+**** BEGIN LOGGING AT Tue Mar 12 17:00:35 2024
+
+Mar 12 17:00:31 *	Now talking on #vscode
+Mar 12 17:00:31 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 12 17:00:31 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+Mar 12 18:40:20 <jmcgee>	hello
+Mar 12 18:40:48 <jmcgee>	when using devcontainers and i plan to edit a repo across different workstations, should i put the devcontainer settings in the repo?
+Mar 12 18:41:05 <jmcgee>	it doesnt seem to carry across different workstations in the user configuration directory, unless i am doing something incorrect?
+Mar 12 22:24:56 <rawtaz>	jmcgee: it sure wont, since the user settings are just stored in your user and not somewhere else, unless you sync them of course.
+Mar 12 22:25:15 <rawtaz>	you can store the settings in the git repo if thats easier for you. i dont know what vs code has in terms of settings sync.
+Mar 13 01:28:58 <jmcgee>	rawtaz: ya thats what i found.  thank you for the response. :)
+**** ENDING LOGGING AT Wed Mar 13 06:35:42 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 06:38:07 2024
+
+Mar 13 06:38:05 *	Now talking on #vscode
+Mar 13 06:38:05 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 13 06:38:05 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+**** ENDING LOGGING AT Wed Mar 13 06:38:17 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 15:36:13 2024
+
+Mar 13 15:36:12 *	Now talking on #vscode
+Mar 13 15:36:12 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 13 15:36:12 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+**** BEGIN LOGGING AT Wed Mar 13 16:17:18 2024
+
+Mar 13 16:17:16 *	Now talking on #vscode
+Mar 13 16:17:16 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 13 16:17:16 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+**** ENDING LOGGING AT Wed Mar 13 17:02:39 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 17:15:30 2024
+
+Mar 13 17:15:29 *	Now talking on #vscode
+Mar 13 17:15:29 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 13 17:15:29 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+**** BEGIN LOGGING AT Wed Mar 13 17:31:45 2024
+
+Mar 13 17:31:44 *	Now talking on #vscode
+Mar 13 17:31:44 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 13 17:31:44 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+**** BEGIN LOGGING AT Wed Mar 13 18:43:10 2024
+
+Mar 13 18:43:09 *	Now talking on #vscode
+Mar 13 18:43:09 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 13 18:43:09 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+**** BEGIN LOGGING AT Wed Mar 13 23:52:51 2024
+
+Mar 13 23:52:48 *	Now talking on #vscode
+Mar 13 23:52:48 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 13 23:52:48 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+**** BEGIN LOGGING AT Thu Mar 14 02:26:03 2024
+
+Mar 14 02:26:01 *	Now talking on #vscode
+Mar 14 02:26:01 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 14 02:26:01 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+**** ENDING LOGGING AT Thu Mar 14 09:59:27 2024
+
+**** BEGIN LOGGING AT Thu Mar 14 10:06:39 2024
+
+Mar 14 10:06:38 *	Now talking on #vscode
+Mar 14 10:06:38 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 14 10:06:38 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+**** BEGIN LOGGING AT Thu Mar 14 10:11:09 2024
+
+Mar 14 10:11:08 *	Now talking on #vscode
+Mar 14 10:11:08 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 14 10:11:08 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+**** BEGIN LOGGING AT Thu Mar 14 10:15:57 2024
+
+Mar 14 10:15:54 *	Now talking on #vscode
+Mar 14 10:15:54 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 14 10:15:54 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+**** BEGIN LOGGING AT Thu Mar 14 10:34:18 2024
+
+Mar 14 10:34:17 *	Now talking on #vscode
+Mar 14 10:34:17 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 14 10:34:17 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+**** ENDING LOGGING AT Thu Mar 14 10:35:41 2024
+
+Mar 14 17:55:10 <pgloor>	In some editors I have collapsable ranges. Now I have the situation that when I scoll down, the line at the point where the collapsable range begins, stays fix there and only the rest scrolls. In some situation this can be very annoying.
+Mar 14 17:55:19 <pgloor>	Is there an option that let me disable this behavior?
+Mar 14 18:27:30 <pgloor>	I tried to change the Editor Folding options, but none of them helped to solve the issue. Well, looks like I have to live with it :(
+Mar 14 21:10:16 <faceface>	hi
+Mar 14 21:10:29 <faceface>	odd request... I'm dumping a bash script from a script in vscode... 
+Mar 14 21:11:11 <faceface>	I want to add `... | tr -d '^M' | ...` to the script (Ctrl-V Ctrl-M outputs ^M on the terminal).
+Mar 14 21:11:24 <faceface>	How do I write ^M correctly inside vscode to get written to my bash script?
+Mar 14 22:15:16 <rawtaz>	are you trying to turn the line endings into unix style?
+Mar 14 22:48:55 <arkanoid>	hello! I have a frustrating problem while developing in python. Even by starting with a vanilla profile, with just python extension installed, I get all wrong color syntax highlight and all false positive errors while working in jupyter notebok
+Mar 14 22:49:28 <arkanoid>	seems like if parsing is completely broken but vscode keeps in trying working with it
+Mar 14 22:50:32 <arkanoid>	could you please help me understand what is going on with my setup? I tried to reduce the context to bare minumum, but still 
+Mar 14 22:53:03 <arkanoid>	just an example https://imgur.com/a/rXyJ7dc
+Mar 14 23:09:32 <rawtaz>	the "itor" coloring?
+Mar 14 23:10:17 <rawtaz>	what file type/suffix is this file?
+Mar 14 23:10:31 <arkanoid>	rawtaz: there are also other wrong colors on the right, but this is just a line, my whole notebook is like this
+Mar 14 23:10:35 <arkanoid>	ipynb
+Mar 14 23:11:18 <arkanoid>	the execution of the cell is correct, the code behaves correctly, but I would rather disable all extensions than writing python code with all wrong colors and false positive errors
+Mar 14 23:38:27 <rawtaz>	are you going to answer all of my questions?
+Mar 14 23:38:36 <rawtaz>	oh, you did. im stupid
+Mar 14 23:38:52 <rawtaz>	i never used jupyter, but i presume that ipynb is a suffix
+Mar 14 23:39:26 <rawtaz>	if you change the filename to end with .py does the colors behave correctly (and perhaps need to comment out non-python stuff)?
+Mar 14 23:39:36 <rawtaz>	just curious if it's a problem with just those file types
+Mar 15 00:38:56 <arkanoid>	rawtaz: I'd guess you never used a python noteboko
+Mar 15 00:43:57 <rawtaz>	absolutely not.
+Mar 15 00:50:32 <rawtaz>	i stopped using python many years ago due to how bad the ecosystem was. i still love the language but have better things to spend my time on than ten flavors of package managers, for example :)
+Mar 15 00:50:39 <rawtaz>	sorry i couldnt help ya. bye
+Mar 15 00:50:40 *	rawtaz &
+Mar 15 02:45:50 <arkanoid>	rawtaz: gratitude for your attempt. I also dislike python explosion of ways to build devenv, but with modern tools it got lot easier
+**** BEGIN LOGGING AT Fri Mar 15 03:40:53 2024
+
+Mar 15 03:40:51 *	Now talking on #vscode
+Mar 15 03:40:51 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 15 03:40:51 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+**** BEGIN LOGGING AT Fri Mar 15 03:45:00 2024
+
+Mar 15 03:45:00 *	Now talking on #vscode
+Mar 15 03:45:00 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 15 03:45:00 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+**** ENDING LOGGING AT Fri Mar 15 03:45:01 2024
+
+**** ENDING LOGGING AT Fri Mar 15 05:52:58 2024
+
+**** BEGIN LOGGING AT Fri Mar 15 06:03:29 2024
+
+Mar 15 06:03:26 *	Now talking on #vscode
+Mar 15 06:03:26 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 15 06:03:26 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)
+Mar 15 10:07:01 <[twisti]>	in vscode, i can set breakpoints to only trigger after other break points. is there a way to make those other breakpoints 'not trigger' ? my problem is like 7 breakpoints deep, and i only want it to STOP at the lowest one, but if i disable the ones the lowest one depends on it doesnt get triggered
+Mar 15 10:31:21 <rawtaz>	arkanoid: back at work :) yeah.. i've found that nowadays virtualenv seems to be "the thing", is that right? i have often thought i should start using it again :D
+Mar 15 10:44:59 <arkanoid>	virtualenv is the bare minimum to get a development environment. From there, you evolve into more complex systems. Most people use virtualenv as general starting point for anything python
+Mar 15 12:15:18 *	Disconnected ()
+**** ENDING LOGGING AT Fri Mar 15 12:15:18 2024
+
+**** BEGIN LOGGING AT Fri Mar 15 12:17:55 2024
+
+Mar 15 12:17:55 *	Now talking on #vscode
+Mar 15 12:17:55 *	Topic for #vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+Mar 15 12:17:55 *	Topic for #vscode set by purplex (Wed Jun 16 20:28:24 2021)

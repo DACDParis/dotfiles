@@ -417,3 +417,95 @@ T 1710200282 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28
 T 1710201345 19*	Now talking on 22#vscode
 T 1710201345 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
 T 1710201345 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710225221 19*	Now talking on 22#vscode
+T 1710225221 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710225221 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710259231 19*	Now talking on 22#vscode
+T 1710259231 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710259231 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710265220 18<28jmcgee18>	hello
+T 1710265248 18<28jmcgee18>	when using devcontainers and i plan to edit a repo across different workstations, should i put the devcontainer settings in the repo?
+T 1710265265 18<28jmcgee18>	it doesnt seem to carry across different workstations in the user configuration directory, unless i am doing something incorrect?
+T 1710278696 18<29rawtaz18>	jmcgee: it sure wont, since the user settings are just stored in your user and not somewhere else, unless you sync them of course.
+T 1710278715 18<29rawtaz18>	you can store the settings in the git repo if thats easier for you. i dont know what vs code has in terms of settings sync.
+T 1710289738 18<28jmcgee18>	rawtaz: ya thats what i found.  thank you for the response. :)
+T 1710308285 19*	Now talking on 22#vscode
+T 1710308285 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710308285 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710340572 19*	Now talking on 22#vscode
+T 1710340572 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710340572 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710343036 19*	Now talking on 22#vscode
+T 1710343036 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710343036 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710346529 19*	Now talking on 22#vscode
+T 1710346529 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710346529 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710347504 19*	Now talking on 22#vscode
+T 1710347504 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710347504 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710351789 19*	Now talking on 22#vscode
+T 1710351789 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710351789 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710370368 19*	Now talking on 22#vscode
+T 1710370368 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710370368 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710379561 19*	Now talking on 22#vscode
+T 1710379561 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710379561 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710407198 19*	Now talking on 22#vscode
+T 1710407198 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710407198 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710407468 19*	Now talking on 22#vscode
+T 1710407468 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710407468 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710407754 19*	Now talking on 22#vscode
+T 1710407754 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710407754 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710408857 19*	Now talking on 22#vscode
+T 1710408857 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710408857 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710435310 18<22pgloor18>	In some editors I have collapsable ranges. Now I have the situation that when I scoll down, the line at the point where the collapsable range begins, stays fix there and only the rest scrolls. In some situation this can be very annoying.
+T 1710435319 18<22pgloor18>	Is there an option that let me disable this behavior?
+T 1710437250 18<22pgloor18>	I tried to change the Editor Folding options, but none of them helped to solve the issue. Well, looks like I have to live with it :(
+T 1710447016 18<27faceface18>	hi
+T 1710447029 18<27faceface18>	odd request... I'm dumping a bash script from a script in vscode... 
+T 1710447071 18<27faceface18>	I want to add `... | tr -d '^M' | ...` to the script (Ctrl-V Ctrl-M outputs ^M on the terminal).
+T 1710447084 18<27faceface18>	How do I write ^M correctly inside vscode to get written to my bash script?
+T 1710450916 18<29rawtaz18>	are you trying to turn the line endings into unix style?
+T 1710452935 18<25arkanoid18>	hello! I have a frustrating problem while developing in python. Even by starting with a vanilla profile, with just python extension installed, I get all wrong color syntax highlight and all false positive errors while working in jupyter notebok
+T 1710452968 18<25arkanoid18>	seems like if parsing is completely broken but vscode keeps in trying working with it
+T 1710453032 18<25arkanoid18>	could you please help me understand what is going on with my setup? I tried to reduce the context to bare minumum, but still 
+T 1710453183 18<25arkanoid18>	just an example https://imgur.com/a/rXyJ7dc
+T 1710454172 18<29rawtaz18>	the "itor" coloring?
+T 1710454217 18<29rawtaz18>	what file type/suffix is this file?
+T 1710454231 18<25arkanoid18>	rawtaz: there are also other wrong colors on the right, but this is just a line, my whole notebook is like this
+T 1710454235 18<25arkanoid18>	ipynb
+T 1710454278 18<25arkanoid18>	the execution of the cell is correct, the code behaves correctly, but I would rather disable all extensions than writing python code with all wrong colors and false positive errors
+T 1710455907 18<29rawtaz18>	are you going to answer all of my questions?
+T 1710455916 18<29rawtaz18>	oh, you did. im stupid
+T 1710455932 18<29rawtaz18>	i never used jupyter, but i presume that ipynb is a suffix
+T 1710455966 18<29rawtaz18>	if you change the filename to end with .py does the colors behave correctly (and perhaps need to comment out non-python stuff)?
+T 1710455976 18<29rawtaz18>	just curious if it's a problem with just those file types
+T 1710459536 18<25arkanoid18>	rawtaz: I'd guess you never used a python noteboko
+T 1710459837 18<29rawtaz18>	absolutely not.
+T 1710460232 18<29rawtaz18>	i stopped using python many years ago due to how bad the ecosystem was. i still love the language but have better things to spend my time on than ten flavors of package managers, for example :)
+T 1710460239 18<29rawtaz18>	sorry i couldnt help ya. bye
+T 1710460240 18*	29rawtaz &
+T 1710467150 18<25arkanoid18>	rawtaz: gratitude for your attempt. I also dislike python explosion of ways to build devenv, but with modern tools it got lot easier
+T 1710470451 19*	Now talking on 22#vscode
+T 1710470451 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710470451 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710470700 19*	Now talking on 22#vscode
+T 1710470700 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710470700 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710479006 19*	Now talking on 22#vscode
+T 1710479006 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710479006 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)
+T 1710493621 18<26[twisti]18>	in vscode, i can set breakpoints to only trigger after other break points. is there a way to make those other breakpoints 'not trigger' ? my problem is like 7 breakpoints deep, and i only want it to STOP at the lowest one, but if i disable the ones the lowest one depends on it doesnt get triggered
+T 1710495081 18<29rawtaz18>	arkanoid: back at work :) yeah.. i've found that nowadays virtualenv seems to be "the thing", is that right? i have often thought i should start using it again :D
+T 1710495899 18<25arkanoid18>	virtualenv is the bare minimum to get a development environment. From there, you evolve into more complex systems. Most people use virtualenv as general starting point for anything python
+T 1710501318 20*	Disconnected (20)
+T 1710501475 19*	Now talking on 22#vscode
+T 1710501475 22*	Topic for 22#vscode is: Welcome to #vscode. Visual Studio Code is a free cross-platform source-code editor. Please feel free to ask questions and help others!
+T 1710501475 22*	Topic for 22#vscode set by 26purplex (24Wed Jun 16 20:28:24 2021)

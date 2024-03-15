@@ -1270,7 +1270,7 @@
             "load_geometry": true,
             "save_on_exit": true,
             "width": 987,
-            "x": 3840,
+            "x": 6400,
             "y": 0
         },
         "greyscale_tray_icon": false,

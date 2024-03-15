@@ -10169,3 +10169,1926 @@ Mar 12 03:49:41 <BigEatie>	Is WeeChat an emacs thing, or is that a totally separ
 Mar 12 03:50:01 <naokotani>	its a terminal client
 Mar 12 03:50:18 <BigEatie>	Gotcha.
 Mar 12 03:50:19 <naokotani>	it works well, but its a real paint to beautify
+Mar 12 03:55:03 <benoitj>	BigEatie: I do something similar with the "sunlight" theme
+**** BEGIN LOGGING AT Tue Mar 12 07:33:44 2024
+
+Mar 12 07:33:41 *	Now talking on #systemcrafters
+Mar 12 07:33:41 *	Topic for #systemcrafters is: Topic for #systemcrafters: System Crafters General Chat - Elevating computer enthusiasts to experts of code and craft - https://systemcrafters.net - https://forum.systemcrafters.net
+Mar 12 07:33:41 *	Topic for #systemcrafters set by benoitj!a1f51ac63d@user/benoitj (Fri Mar  8 20:34:38 2024)
+Mar 12 07:49:53 <cow_2001>	glenneth the manual you've linked was for the guile 1.8 version - http://gnu.ist.utl.pt/software/guile/docs/docs-1.8/guile-ref/Included-Guile-Modules.html
+Mar 12 07:49:54 <Marvin2>	[ http://outrider.deepsky.com:5808/zzoDN ]::[ Included Guile Modules - Guile Reference Manual ]
+Mar 12 07:55:47 <cow_2001>	glenneth there is a procedure in (ice-9 getopt-long) used for getting options called option-ref
+Mar 12 07:56:08 <cow_2001>	it has some extra stuff you could use
+Mar 12 07:58:38 <cow_2001>	it's in Guile Modules > getopt-long > option-ref Reference https://www.gnu.org/software/guile/manual/html_node/option_002dref-Reference.html
+Mar 12 07:58:41 <Marvin2>	[ http://outrider.deepsky.com:5808/jKmUh ]::[ option-ref Reference (Guile Reference Manual) ]
+Mar 12 07:59:56 <cow_2001>	by the way, if there are no non-flaggy options in `some-options` here `(option-ref some-options '() #f)`, the result is not #f, but '(), which is annoying
+Mar 12 08:00:23 <cow_2001>	for any other key, if it wasn't part of the command line arguments, it would have returned #f
+Mar 12 08:25:19 <glenneth>	so it HAS to be an option with a flag? 
+Mar 12 08:49:40 <alternateved>	Good morning
+Mar 12 08:49:55 <glenneth>	hey alternateved o/
+Mar 12 08:52:54 <glenneth>	daviwil: is it ok to create a guile scheme sub-category under Programming on the forum?
+Mar 12 08:53:56 <daviwil>	glenneth: I'm going to switch to using tags for languages, tools, etc, so you can start now by tagging your post as #guile
+Mar 12 08:55:05 <glenneth>	ok.  I do recall a previous conversation about that.  Just wanted to double check.  Thanks :)
+Mar 12 08:56:57 <glenneth>	and why am i so anxious all of a sudden about posting about guile-stash? :D
+Mar 12 08:57:57 <daviwil>	it's always weird posting about a new project, but you'll be fine :)
+Mar 12 08:59:18 <glenneth>	it does feel weird.  Was just about to post and.... self-doubt lol
+Mar 12 09:41:19 <daviwil>	Finished the style refresh, I think it looks a lot better: https://systemcrafters.net/
+Mar 12 09:41:21 <Marvin2>	[ http://outrider.deepsky.com:5808/AWjWg ]::[ Welcome! - System Crafters ]
+Mar 12 09:44:13 <glenneth>	Nice
+Mar 12 09:45:30 <alternateved>	Looks great, though I wonder if font isn't a bit on the small side
+Mar 12 09:46:19 <daviwil>	Desktop or mobile? 
+Mar 12 09:47:55 <alternateved>	Desktop
+Mar 12 09:48:19 <glenneth>	daviwil how to add a tag on a forum post please? search box only shows #news
+Mar 12 09:53:08 <alternateved>	daviwil: but maybe those are just my settings, would be great to get input of others
+Mar 12 09:53:47 <daviwil>	alternateved: appreciate the input!  I don't want it to feel too small.  i'll tweak it a bit more
+Mar 12 09:53:54 <glenneth>	alternateved: you need a bigger monitor :D
+Mar 12 09:54:04 <daviwil>	glenneth: Interesting, I guess it doesn't let people arbitrarily create tags
+Mar 12 09:54:07 <daviwil>	let me add one
+Mar 12 09:54:17 <glenneth>	thanks
+Mar 12 09:54:28 <alternateved>	glenneth: I have 27-inch one
+Mar 12 09:56:17 <glenneth>	lol.  same.
+Mar 12 09:56:24 <daviwil>	glenneth: try it now, I added #guile and #scheme
+Mar 12 10:02:10 <glenneth>	thanks daviwil just got a call from my boss.  post it when i get finished
+Mar 12 10:02:12 <Marvin2>	thanks daviwil just got super hungry looking at a pizza shop owned by albanians in Japan and I fall asleep about 80% of the bigger problem.
+Mar 12 10:02:58 <daviwil>	Marvin's off the rails
+Mar 12 10:03:05 <glenneth>	haha Marvin2 on form
+Mar 12 10:03:28 <alternateved>	Oh wow, that sounds like a hell of a delirium 
+Mar 12 10:03:30 <Marvin2>	Oh wow, maybe don't join the greek tourism development department
+Mar 12 10:03:51 <alternateved>	Ahaha, on point
+Mar 12 10:04:02 <glenneth>	just gets better
+Mar 12 10:36:29 <glenneth>	posted
+Mar 12 10:40:55 <daviwil>	congrats glenneth!  i'll mention this in the newsletter and stream this week :)
+Mar 12 10:44:43 <glenneth>	that was unexpected, but thanks daviwil going to update the readme and thank the systemcrafters community.  Everyone i got advice from was soo helpful and supportive.  Made it a great experience, and a good base to add to I think 
+Mar 12 10:48:13 <glenneth>	struggled with it for a couple of weeks and then it just started coming together :)
+Mar 12 10:50:28 <daviwil>	you were persistent!  it was only a matter of time
+Mar 12 11:16:57 <thanosapollo>	Morning crafters! 
+Mar 12 11:21:42 <trev>	hey thanosapollo
+Mar 12 11:22:40 <trev>	about your forum post, it's nice to remember that once upon a time emacs and vim were split 50/50 in popularity
+Mar 12 11:22:43 <Marvin2>	about your interview
+Mar 12 11:25:00 <thanosapollo>	I was baby when that was the case :) 
+Mar 12 11:34:43 <glenneth>	hey thanosapollo o/ trev \o 
+Mar 12 11:35:11 <trev>	hey glenneth 
+Mar 12 11:35:13 <trev>	a
+Mar 12 11:44:49 <trev>	daviwil: before you left you should've leaked the source code for the vscode remote ssh extension
+Mar 12 11:45:16 <trev>	it would've solved a lot of issues with remote development in other editors
+Mar 12 11:45:42 <trev>	they were doing some real magic with that and no one could seem to replicate it well
+Mar 12 12:17:01 <daviwil>	trev: looks like an obfuscated version of the JS can be extracted from the .vsix file (just rename it to .zip)
+Mar 12 12:17:04 <Marvin2>	trev: looks like cons cells
+Mar 12 12:17:12 <daviwil>	not the same, obviously, but maybe answers can be found
+Mar 12 12:18:10 <naokotan1>	interesting. I tried to isntall jitsi-meet on my server. not only did it not work, but it broke the server
+Mar 12 12:18:17 <trev>	i though they had some code baked into vscode for it too
+Mar 12 12:18:34 <daviwil>	that part I'm not sure about
+Mar 12 12:19:00 <trev>	looks like cons cells
+Mar 12 12:19:02 <naokotan1>	also, good morning
+Mar 12 12:19:15 <naokotan1>	also, its my birthday! im 39 years young today
+Mar 12 12:19:21 <daviwil>	happy birthday sir
+Mar 12 12:19:25 <trev>	wow happy birthday
+Mar 12 12:19:43 <naokotan1>	whatcha tryin' to fix trev?
+Mar 12 12:20:03 <trev>	nothin, just day dreaming
+Mar 12 12:20:23 <alternateved>	happy birthday naokotan1 
+Mar 12 12:20:39 <trev>	my new printer just came and i think the guy that delivered it was a vampire cause he was dressed in a suit and had long straight hair
+Mar 12 12:21:08 <naokotan1>	trev: They are getting bad. Thick with vampires around here
+Mar 12 12:21:15 <alternateved>	Or Nick Cave trev 
+Mar 12 12:21:18 <naokotan1>	thanks alternateved 
+Mar 12 12:21:28 <daviwil>	they hire vampires so that they don't have to worry about their employees staring in the mirror all dya
+Mar 12 12:21:43 <naokotan1>	can vampires take selfies?
+Mar 12 12:22:07 <daviwil>	let's kick off a seance to ask the restless spirit of Steve Jobs
+Mar 12 12:22:49 <trev>	alternateved: similar!!
+Mar 12 12:24:21 <alternateved>	ha, see?!
+Mar 12 12:24:26 <alternateved>	Do you live in Brighton?
+Mar 12 12:24:28 <trev>	let's give steve job's ghost some tougher questions like how to install guix on a macbook air
+Mar 12 12:28:27 <thanosapollon>	How can you make toasters more like Emacs? 
+Mar 12 12:28:30 <Marvin2>	How can you turn your head it sounds like adventure. I always thought it was a russian orchestra also
+Mar 12 12:30:03 <trev>	thanosapollon: is this a riddle?
+Mar 12 12:30:52 <BigEatie>	Happy birthday naokotan1!
+Mar 12 12:39:34 <glenneth>	Happy Birthday naokotan1 
+Mar 12 12:39:47 <naokotan1>	thanks BigEatie glenneth 
+Mar 12 12:43:08 <trev>	what will you do for your birthday, naokotan1 ?
+Mar 12 12:43:40 <naokotan1>	going to go for a walk
+Mar 12 12:43:46 <naokotan1>	and my wife is making a pie
+Mar 12 12:54:20 <glenneth>	🎉
+Mar 12 12:54:31 <naokotan1>	trev: you saved my life
+Mar 12 13:01:24 <naokotan1>	oh that's cool
+Mar 12 13:01:43 <naokotan1>	when you delete something with tramp it will scp it to your local trash?
+Mar 12 13:01:46 <Marvin2>	when you greet everyone back on doing it after i obsess over the html and react stuff
+Mar 12 13:10:45 <trev>	naokotan1: how did i save it?
+Mar 12 13:11:20 <naokotan1>	oh you told me to put build instructions in my readme. I lost some stuff and since I had the build instructions I knew what to do
+Mar 12 13:11:22 <Marvin2>	oh you use Marvin2?
+Mar 12 13:11:59 <trev>	oh awesome
+Mar 12 13:12:21 <trev>	triple "oh"s!
+Mar 12 13:17:16 <naokotan1>	I think I am finally reaching, if not exceeding, my productivity levels I had on windows
+Mar 12 13:19:27 <naokotan1>	https://imgur.com/a/x3INHgM
+Mar 12 13:19:29 <Marvin2>	[ http://outrider.deepsky.com:5808/hIukk ]::[ Set up! - Album on Imgur ]
+Mar 12 13:19:31 <naokotan1>	im enjoying this setup
+Mar 12 13:20:10 <naokotan1>	I have emacs take up most of the screen and then I have a bunch of tabbed terminals to the left (my monitor is lsightly off set ot the left)
+Mar 12 13:22:02 <naokotan1>	then I have super hjkl to move windows and super u to cycle tabs. I need to change the tab colors. its currently not really readable
+Mar 12 13:25:35 <glenneth>	naokotan1: nice :)
+Mar 12 13:26:17 <trev>	naokotan1: you should try a little padding in the terminal and in emacs
+Mar 12 13:26:20 <trev>	around the edges
+Mar 12 13:26:50 <naokotan1>	um. im happy with the emacs padding
+Mar 12 13:26:59 <naokotan1>	the terminal yeah
+Mar 12 13:27:13 <naokotan1>	id probably do about 10px
+Mar 12 13:27:36 <naokotan1>	10-20
+Mar 12 13:28:11 <naokotan1>	what would be nice is if I could change it based on whether its full screen or not
+Mar 12 13:28:28 <naokotan1>	id go way higher on the terminal padding in feel screen
+Mar 12 13:28:34 <naokotan1>	full*
+Mar 12 13:29:25 <trev>	i mean the internal padding, not the window manager. like set in kitty and in emacs
+Mar 12 13:29:27 <Marvin2>	i mean I can't believe the added nothing to d2r seasons 6
+Mar 12 13:29:45 <alternateved>	Ah, d2r season 6 was pretty dope
+Mar 12 13:29:55 <naokotan1>	what? they literally did nothing
+Mar 12 13:30:05 <naokotan1>	its the same as season 4...
+Mar 12 13:30:25 <naokotan1>	anyway, yeah I would change it in kitty
+Mar 12 13:30:39 <alternateved>	What terminal is that btw?
+Mar 12 13:30:48 <naokotan1>	its kitty
+Mar 12 13:30:53 <naokotan1>	with starship prompt
+Mar 12 13:31:43 <naokotan1>	https://imgur.com/a/x3INHgM
+Mar 12 13:31:45 <alternateved>	My setup is currently just sway and wall of light
+Mar 12 13:31:45 <Marvin2>	[ http://outrider.deepsky.com:5808/hIukk ]::[ Set up! - Album on Imgur ]
+Mar 12 13:31:47 <Marvin2>	My setup is currently AFK but he gave some long winded explanation about something like that
+Mar 12 13:31:49 <naokotan1>	trev: thats my org padding
+Mar 12 13:32:05 <alternateved>	Yeah, it is AFK but it will be back Marvin2 
+Mar 12 13:32:27 <alternateved>	Though I debate Gnome/KDE from time to time
+Mar 12 13:32:38 <naokotan1>	for some reason I am getting weird line height in my org setup stuff
+Mar 12 13:40:37 <naokotan1>	the padding looks a bit funny with neovim. I should just use the terminal background instead of whatever astrovim sets
+Mar 12 13:40:47 <naokotan1>	anyway going to get a coffee at the store
+Mar 12 14:01:00 <glenneth>	updated the README for my project to give credit where it is due https://0x0.st/Hh6l.png
+Mar 12 14:01:03 <Marvin2>	[ http://outrider.deepsky.com:5808/hzDmQ ]::[ Binary data ]
+Mar 12 14:02:08 <alternateved>	glenneth: do you have a link by chance?
+Mar 12 14:02:29 <glenneth>	to the repo? 
+Mar 12 14:02:41 <alternateved>	Yes
+Mar 12 14:02:44 <glenneth>	https://git.sr.ht/~glenneth/guile-stash
+Mar 12 14:02:46 <Marvin2>	[ http://outrider.deepsky.com:5808/YPSja ]::[ ~glenneth/guile-stash - sourcehut git ]
+Mar 12 14:03:46 <daviwil>	glenneth: nice! 
+Mar 12 14:04:15 <alternateved>	Ah, looks really god
+Mar 12 14:04:21 <alternateved>	and also good :D
+Mar 12 14:04:26 <glenneth>	lol
+Mar 12 14:04:38 <glenneth>	thanks :)
+Mar 12 14:06:25 <glenneth>	the readme is longer than the actual code :D
+Mar 12 14:07:03 <alternateved>	At least currently :D
+Mar 12 14:07:13 <glenneth>	true
+Mar 12 14:07:16 <naokotan1>	very cool
+Mar 12 14:12:03 <trev>	the gnu way
+Mar 12 14:12:39 <glenneth>	off on the right track then? lol
+Mar 12 14:13:01 <trev>	prepare to get roasted by them for the MIT license 
+Mar 12 14:14:00 <glenneth>	it seemed the better fit tbh.  wasn't sure which way to go 
+Mar 12 14:14:12 <trev>	i'll have to give it a try when i get a chance. one thing that i use for Stow is a "sync" script that i can run to remove all or add/update all
+Mar 12 14:14:15 <Marvin2>	i'll have to change my config because the guix channels are joined, but not ddg :D
+Mar 12 14:14:31 <daviwil>	Marvin2: Dance Dance Guixolution?
+Mar 12 14:14:48 <naokotan1>	if I had an ounce of self respect id use gnu stow
+Mar 12 14:15:09 <glenneth>	it's open source and it's free, right? :)
+Mar 12 14:15:11 <Marvin2>	it's open source or just pay for it
+Mar 12 14:15:17 <trev>	lol
+Mar 12 14:15:19 <glenneth>	haha
+Mar 12 14:16:07 <glenneth>	I'll use the GPL for the next one 
+Mar 12 14:17:59 <naokotan1>	all my homies use GPL
+Mar 12 14:18:04 <glenneth>	discourse.el - An emacs front end for discourse
+Mar 12 14:18:30 <glenneth>	naokotan1: I aint no sheep :D
+Mar 12 14:19:01 <naokotan1>	I am. Big sheep energy over here
+Mar 12 14:19:15 <glenneth>	lol
+Mar 12 14:19:15 <naokotan1>	"Naokotani use arch." "Yes, Right away"
+Mar 12 14:19:37 <naokotan1>	Arch is the true sheeple distro
+Mar 12 14:20:29 <naokotan1>	now I appanrely have to figure out why systemctl --user is broken
+Mar 12 14:20:31 <naokotan1>	le sigh
+Mar 12 14:20:48 *	glenneth retracts his earlier statement.  I use Arch, BTW!
+Mar 12 14:20:55 <Fade>	Good Morning
+Mar 12 14:21:04 <glenneth>	Fade: o/
+Mar 12 14:21:12 <naokotan1>	Fade: \o
+Mar 12 14:21:20 <daviwil>	\o/
+Mar 12 14:21:40 <naokotan1>	id if you are excited or frantically trying to get his attention
+Mar 12 14:21:45 <naokotan1>	idk*
+Mar 12 14:21:49 <daviwil>	helping him land his plane
+Mar 12 14:21:50 <Fade>	fellas
+Mar 12 14:22:12 <glenneth>	we are the crazy inflatable arm wavy people
+Mar 12 14:22:51 <Fade>	life finds a way
+Mar 12 14:22:56 <trev>	~o~
+Mar 12 14:23:40 <Fade>	trev is break dancing
+Mar 12 14:24:00 <trev>	that's right
+Mar 12 14:26:30 <naokotan1>	I watched asmongold watch this video by this 64 year old bit coin trader talking about how you are never too old to start break dancing the other day
+Mar 12 14:26:49 <naokotan1>	big if true
+Mar 12 14:27:51 <naokotan1>	Press ^] three times within 1s to exit session.
+Mar 12 14:28:00 <naokotan1>	what an odd instruction
+Mar 12 14:28:03 <Marvin2>	what an odd piece of art
+Mar 12 14:29:31 <trev>	code is art. nice Marvin2 
+Mar 12 14:41:02 <Fade>	code can aspire to being art, but I'm usually just happy if it compiles and _then_ runs in such a way as it doesn't completely eat itself in an act of vigorous self-canibalism.
+Mar 12 14:41:29 <naokotan1>	Fade: that sounds suspiciously like my ubuntu server
+Mar 12 14:41:32 <Marvin2>	Fade: that sounds like a zoomer
+Mar 12 14:41:36 <naokotan1>	lol
+Mar 12 14:41:49 <daviwil>	Marvin2: ok boomer
+Mar 12 14:41:49 <Fade>	but I am very old and practicalities extend with the cube root of the time remaining
+Mar 12 14:41:51 <Marvin2>	but I can get the web browser.
+Mar 12 14:42:10 <Fade>	lies. you do very bad things to the browser fairly regularly.
+Mar 12 14:42:20 <Fade>	!trigger
+Mar 12 14:42:21 <Marvin2>	trigger:: time, Marvin, find, apply, Fade, confuse, them, mayhem, test, that
+Mar 12 14:42:24 <Fade>	!status
+Mar 12 14:42:27 <Marvin2>	status:: I know 97,470 phrases.
+Mar 12 14:42:53 <naokotan1>	Marvin's long term memory is sqlite?
+Mar 12 14:43:03 <Fade>	postgresql
+Mar 12 14:43:29 <naokotan1>	I have a bad habit of using sqlite for bots so they are more portable
+Mar 12 14:43:58 <glenneth>	on the way to 100,000 phrases.
+Mar 12 14:44:03 <Fade>	this specific bot has been running for a very long time in several extremely long lived channels.
+Mar 12 14:44:04 <glenneth>	cool
+Mar 12 14:44:06 <Marvin2>	cool to update but only have PDFs of. I think 2fa without an editor or producer y ou want to ask sandrine she's the expert
+Mar 12 14:44:07 <Marvin2>	this specific quirk is endemic to any use of them on cpu only.
+Mar 12 14:44:17 <Fade>	the systemcrafters context is the first new one in ~10 years
+Mar 12 14:44:37 <naokotan1>	oh. I have no idea what upper limits are on sqlite
+Mar 12 14:44:39 <trev>	can we get to 1 million??
+Mar 12 14:45:05 <Fade>	09:44 < semaphor> status:: I know 5,605,023 phrases.
+Mar 12 14:45:16 <Fade>	'Yes'.
+Mar 12 14:45:49 <naokotan1>	max size of sqlite is 140 TB, but I assume things get janky before that
+Mar 12 14:45:52 <Marvin2>	max size of sqlite is 140 TB, but I am leaning towards this being worse than the actual training code for handling links, I wonder if it doesn't matter, all based on its way out grocery shopping. I'll check that I know you've meant good luck)
+Mar 12 14:46:17 <glenneth>	haha
+Mar 12 14:46:21 *	Fade laughs
+Mar 12 14:46:43 <Fade>	!haiku
+Mar 12 14:46:43 <naokotan1>	Marvin was being unsuually coherent for a bit and then he just went way off topic
+Mar 12 14:46:46 <Marvin2>	Marvin was a power tool free for open source. Bitwarden is what deafeated Marvin1?
+Mar 12 14:46:50 <Marvin2>	haiku:: some nice features to / browsing directly to the / level of interest
+Mar 12 14:47:31 <naokotan1>	oh I didn't see your command I thought he did the haiku himself was becoming an emergent conciousness
+Mar 12 14:47:32 <Fade>	the Beneficient Celestial Electron appears to be with his stochastic probability this morning.
+Mar 12 14:47:32 <trev>	he's getting very vocal right now
+Mar 12 14:48:09 <Fade>	frequency rises and falls with the trigger list and the frequency count of the words it contains.
+Mar 12 14:48:55 <naokotan1>	according to this the max rows in a sqlite table is 264
+Mar 12 14:49:16 <Fade>	sqlite is fine for small requirements
+Mar 12 14:49:37 <naokotan1>	do I have rows and columns mixed up in my head or does 264 seem small
+Mar 12 14:49:43 <Fade>	this bot has pretty large word tables supporting the markov chaining logic.
+Mar 12 14:50:16 <Fade>	264 columns is quite a few, but I've seen database tables that weren't insane with more.
+Mar 12 14:50:18 <Marvin2>	264 columns is quite confusing; it's almost like you can use goguma on my way out
+Mar 12 14:50:25 <Fade>	medical databases in particular have a great many columns.
+Mar 12 14:50:42 <naokotan1>	rows
+Mar 12 14:51:05 <naokotan1>	264 columns seems fine to me
+Mar 12 14:51:19 <Fade>	264 rows would not be enough rows for any real use; I suspect your report to be errant.
+Mar 12 14:51:22 <Marvin2>	264 rows would not be strictly necessary
+Mar 12 14:51:28 <naokotan1>	yeah
+Mar 12 14:51:55 <naokotan1>	It hink its a typo because the next thing is saying max columns is 32767
+Mar 12 14:52:34 <Fade>	I have this system wallpaper downloader that strip-mines the wallhaven.cc website, which tends to collect a great many image files
+Mar 12 14:52:41 <naokotan1>	postgres max rows per table is  4.2 billion, tough bigger
+Mar 12 14:53:01 <Fade>	at the moment, the code indexes everything when it starts up, but I've been planning to put that index in sqlite.
+Mar 12 14:53:43 <naokotan1>	if you are already connected to a postgresql db why not use that?
+Mar 12 14:54:31 <naokotan1>	wow a postgres field can be up to a 1GB
+Mar 12 14:55:22 <Fade>	because it makes giving the code to other people a big job for them, as opposed to just assuming that I can open a file in their XDG_HOME and save the index to that file with sequent logic.
+Mar 12 14:55:26 <Marvin2>	because it had no eyebrows,b ut otherwise seemed very healthy for 78
+Mar 12 14:55:39 <Fade>	which is the real super power of sqlite.
+Mar 12 14:55:46 <Fade>	it's already everywhere.
+Mar 12 14:56:15 <naokotan1>	oh. yeah thats why Iw as saying I used it for bots, but if it had that kind of demands id probably go to the effort to set up a postgresql db
+Mar 12 14:56:45 <naokotan1>	which, if you give detailed instructions isn't rocket science really
+Mar 12 14:58:10 <Fade>	https://0x0.st/HhI_.txt
+Mar 12 14:58:15 <Marvin2>	[ http://outrider.deepsky.com:5808/czDjX ]::[ No title found ]
+Mar 12 14:58:36 <Fade>	the lisp image Marvin is running in is connected to a shared table which serves every context in the image
+Mar 12 14:58:53 <Fade>	so that's the number of phrases every instance has seen over a decade plus.
+Mar 12 14:59:02 <Fade>	in this case, something like postgres is warranted.
+Mar 12 15:00:28 <Fade>	it also runs on an actual live to the internet server, so depending on an actual relational database system isn't out of spec for the software type.
+Mar 12 15:01:39 <naokotan1>	yes I support the decision
+Mar 12 15:03:50 <naokotan1>	https://www.nscc.ca/study-at-nscc/student-supports/graduate-employment-services/details.aspx?dataid=93198
+Mar 12 15:03:54 <Marvin2>	[ http://outrider.deepsky.com:5808/DMZHG ]::[ Database Coordinator | Student and Grad Jobs | NSCC ]
+Mar 12 15:03:56 <naokotan1>	that looks like a fun job at my college
+Mar 12 15:03:59 <Marvin2>	that looks like a claw machine thing
+Mar 12 15:04:23 <Fade>	being a DBA is a difficult job on the spectrum of IT jobs.
+Mar 12 15:04:26 <Marvin2>	being a bit
+Mar 12 15:05:00 <naokotan1>	For sure, but they are looking for a student/graduate
+Mar 12 15:05:11 <naokotan1>	notice compensation: 18$
+Mar 12 15:05:26 <Fade>	it goes from months and maybe years of basically nothing but incremental work, to stark raving terror on christmas eve at 4am.
+Mar 12 15:05:43 <naokotan1>	so basically being a ship captain
+Mar 12 15:05:47 <Fade>	kind of
+Mar 12 15:06:20 <Fade>	where the ship is ephemeral and incredibly valuable and depends on you being a total ninja as soon as you lurch out of sleep on christmas eve at 4am. ;D
+Mar 12 15:06:45 <naokotan1>	like when the mate I had told me they switched the fuel tanks but didn't and then informeted they didn't when teh engine started sputtering as I was coming into dock in a busy quay
+Mar 12 15:06:48 <Marvin2>	like when i'm running hugo then hugo server
+Mar 12 15:06:54 <Fade>	I'm not even sure if this is minimum wage in ontario
+Mar 12 15:07:05 <naokotan1>	this is Nova Scotia
+Mar 12 15:07:15 <naokotan1>	The pay is clearly abysmal
+Mar 12 15:07:17 <naokotan1>	but the job looks fun
+Mar 12 15:07:45 <Fade>	I think if it's in competition with other jobs for similar money that wouldn't likewise spiff your resume, it's probably the one to apply to.
+Mar 12 15:07:47 <Marvin2>	I think
+Mar 12 15:08:13 <naokotan1>	judging by my classmates im definitely in the upper echelon of database know how
+Mar 12 15:08:42 <Fade>	after talking to you for about a month, I'd say so.
+Mar 12 15:08:49 <Fade>	particularly after you have described your classes.
+Mar 12 15:11:38 <Fade>	they aren't delivering an education to anybody inside the institution that could take that job successfully with only what they taught in the school. :)
+Mar 12 15:11:52 <naokotan1>	um
+Mar 12 15:11:54 <naokotan1>	no lol
+Mar 12 15:12:05 <Fade>	so you look like an actual jedi
+Mar 12 15:12:19 <naokotan1>	realtively speaking, yes
+Mar 12 15:13:55 <Fade>	if you want a letter of recommendation, I'll write it.
+Mar 12 15:14:42 <naokotan1>	oh wow, thanks
+Mar 12 15:14:42 <trev>	plot twist: naokotan1 is in prison and all the classmates are serial killers and gang members
+Mar 12 15:14:54 *	Fade laughs
+Mar 12 15:15:15 <naokotan1>	trev: more like runescape addicts
+Mar 12 15:15:33 <trev>	oh no, they're time travelers from 2005???
+Mar 12 15:16:04 <naokotan1>	I guess. they are constantly posting in the discord with Runescape flexes
+Mar 12 15:16:15 <Fade>	you've spent over a month talking about fairly abstruse technical subjects with me and others around here, and in that time generated at least one piece of custom software that I found personally interesting. that's better info than I'd get in a three hour hiring gauntlet in a pretty thorough job interview.
+Mar 12 15:16:18 <Marvin2>	you've spent over a month I think. I need to take a call. You use Hugo trev ?
+Mar 12 15:16:27 <trev>	hahah
+Mar 12 15:16:34 <trev>	yeah, i do, marv
+Mar 12 15:16:46 <naokotan1>	I do love abutruse technical subjects
+Mar 12 15:16:50 <Fade>	careful. he might start humping your leg, trev.
+Mar 12 15:17:11 <trev>	down, bot, down!!
+Mar 12 15:17:57 *	glenneth hands trev a rolled up newspaper
+Mar 12 15:20:22 <naokotan1>	one thing I haven't really done is work on database frontends for normies
+Mar 12 15:20:25 <Marvin2>	one thing that python and a half hours stuck in linux class
+Mar 12 15:20:56 <naokotan1>	well, I guess that's exactly what encounter builder is...
+Mar 12 15:20:58 <Fade>	if you can come to terms with the rust type system, a little CRUD app is going to be cake.
+Mar 12 15:21:01 <trev>	database frontends = web apps
+Mar 12 15:21:01 <Marvin2>	if you don't know it wewll.
+Mar 12 15:21:29 <naokotan1>	I also have created several discord bot db frontends. ok I lied
+Mar 12 15:22:54 <Fade>	the difficult work of database engineering happens where the schema meets the relational engine.
+Mar 12 15:23:06 <naokotan1>	very much so
+Mar 12 15:23:22 <Fade>	everything else is 'open a cursor, and create read update or delete'.
+Mar 12 15:23:58 <naokotan1>	yeah, building a sane schema and then designing sane joins and so on
+Mar 12 15:24:01 <Marvin2>	yeah, building a sane schema and then spam it 20 times and then if you were right, not working on a saturday afternoon 🤣
+Mar 12 15:24:17 <Fade>	database stuff *really* benefits from KISS.
+Mar 12 15:24:24 <naokotan1>	and then finding a systematic way to migrate
+Mar 12 15:25:08 <Fade>	I suspect that your college already has a database
+Mar 12 15:25:16 <Fade>	I'd be money it's MS-SQL
+Mar 12 15:25:20 <Fade>	s/be/bet
+Mar 12 15:25:24 <naokotan1>	would be a bit odd if they didn't
+Mar 12 15:25:41 <Fade>	so it'll be a job of introspection and measurement.
+Mar 12 15:26:06 <naokotan1>	ok I can put my yoga experince in my cover letter. im an introspection master
+Mar 12 15:26:38 <Fade>	think of it like looking for the chaffing points on an old rig.
+Mar 12 15:27:15 <naokotan1>	yeah I tyhink tht's what its going ot be yeah. I doubt im going ot be starting from scratch to build a college databse that has like 10 campuses
+Mar 12 15:27:17 <Marvin2>	yeah I just assumed you were only just trying to keep that scratchpad window on top
+Mar 12 15:27:20 <naokotan1>	for 18 an hour lol
+Mar 12 15:27:58 <Fade>	frankly, at that hourly, I can't imagine they have more expectations than "candidate must actually be alive."
+Mar 12 15:28:35 <naokotan1>	must know that a database isn't a HQ for Data from Star Trek
+Mar 12 15:28:37 <Fade>	it probably drives the active directory setup across every campus.
+Mar 12 15:28:56 <Fade>	it's running on a PentiumII loaded with Windows NT 3.51
+Mar 12 15:29:06 <naokotan1>	lol
+Mar 12 15:29:18 <naokotan1>	well I know for a fact all their infrastructure is microsoft
+Mar 12 15:29:23 <naokotan1>	ebcause I interact with it daily
+Mar 12 15:29:34 <Fade>	some wit will have tied the access keypad to the machineroom to this active directory server.
+Mar 12 15:30:08 <Fade>	go forth and walk on water!
+Mar 12 15:31:21 <Fade>	this is ezzackly what happened to amazon in their last big outage.
+Mar 12 15:31:24 <Marvin2>	this is why I'm looking forward to the stream today ~_~
+Mar 12 15:31:51 <naokotan1>	remember the github ddos or whatever?
+Mar 12 15:31:53 <Fade>	global authentication went down, and they couldn't get into any of their datacenters to fix the problem because the keypads couldn't authenticate at the doors.
+Mar 12 15:32:24 <naokotan1>	and I said it could be a geopolitcal foe. Idk if you say but there is a bunch of stuff int ehnews that came out after that MS got hacked by some Russian hackers
+Mar 12 15:32:27 <Marvin2>	and I said triggered it? thnx benoitj
+Mar 12 15:32:58 <naokotan1>	I think we are entering an era where security is going to be REALLY important
+Mar 12 15:33:07 <Fade>	*entering*??
+Mar 12 15:33:09 <naokotan1>	not that it wasn't already, but nex tlevel
+Mar 12 15:33:18 <Fade>	I've been running red teams for like twenty years.
+Mar 12 15:33:20 <Fade>	lol
+Mar 12 15:33:21 <Marvin2>	I've been treating it as some kind of errors put rockets down
+Mar 12 15:33:21 <naokotan1>	well from REALLY to REALL REALLY
+Mar 12 15:33:49 <Fade>	I'm a little surprised, given everything you've talked about, that your college hasn't been hit by a massive ransom ware attack.
+Mar 12 15:33:52 <Marvin2>	I'm a bad idea of having an nntp mirror?..
+Mar 12 15:34:03 <naokotan1>	my brother does R & D for the government and he is constantly complaining about h ow bad it is
+Mar 12 15:34:05 <Marvin2>	my brother is an anti typing extremist
+Mar 12 15:34:35 <naokotan1>	obiouslly thats going ot be a high priority target though
+Mar 12 15:34:36 <Fade>	your brothers are all shards of yourself.
+Mar 12 15:34:38 <Marvin2>	your brothers are all correct.
+Mar 12 15:34:47 <Fade>	also, usually, true.
+Mar 12 15:34:55 <naokotan1>	my brother is an anti typing extremist lol
+Mar 12 15:35:32 <naokotan1>	my wife is. She writes word documents on her phone
+Mar 12 15:35:39 <naokotan1>	with swipe keyboard
+Mar 12 15:36:06 <talos>	GOOD morning all
+Mar 12 15:36:13 <Fade>	good lord
+Mar 12 15:36:17 <Fade>	heya, talos
+Mar 12 15:36:21 <naokotan1>	Meanwhile I go into cold sweats when I have ot touch my mouse
+Mar 12 15:36:26 <naokotan1>	oposites attract I guess
+Mar 12 15:36:29 <naokotan1>	talos: morning
+Mar 12 15:36:36 <Fade>	I can't watch my wife use her computer.
+Mar 12 15:36:39 <talos>	Heyo Fade and naokotan1
+Mar 12 15:36:41 <Fade>	it actually causes anxiety.
+Mar 12 15:36:47 <glenneth>	hey talos 
+Mar 12 15:36:53 <talos>	Yo glenneth
+Mar 12 15:39:30 <naokotan1>	for what it's worth I should ask my prof for a letter too
+Mar 12 15:40:32 <cowboy8625>	hey hey!
+Mar 12 15:41:17 <Fade>	good meeting!
+Mar 12 15:43:06 <cowboy8625>	how is your day?
+Mar 12 15:43:30 <Fade>	I'm feeling daunted by my todo list, so everything is on track.
+Mar 12 15:43:37 <Fade>	how are you, cowboy8625 
+Mar 12 15:43:38 <Fade>	?
+Mar 12 15:44:27 <naokotan1>	Fade: can you write my report on how to debug netowrk problems in linux? its due on the 15th and I really don't want to do it
+Mar 12 15:44:47 <Fade>	of course I could, but really why would I?
+Mar 12 15:44:58 <Fade>	the process of debugging all complex systems is the same. :)
+Mar 12 15:45:01 <naokotan1>	You would. I send over the specs
+Mar 12 15:45:14 <visl>	naokotan1: turn if off and on again. if that doesn't it's a great excuse to try a new distro 
+Mar 12 15:45:17 <naokotan1>	You would and you could and you most certainly should
+Mar 12 15:45:20 <Marvin2>	You would and you were planning on March daviwil?
+Mar 12 15:45:54 <Fade>	I feel like you don't need my help buffing your grade in a school run by those dumb guys on that one episode of star trek tng.
+Mar 12 15:46:12 <naokotan1>	turn off and on > kick > start making random chaging config files
+Mar 12 15:46:34 <Fade>	1) form a theory of the machine
+Mar 12 15:46:52 <naokotan1>	its less about buffing my grade adn more about trying to offload my busy work
+Mar 12 15:47:01 <Fade>	2) compare what the machine is doing to what the theory says it should
+Mar 12 15:47:19 <visl>	isn't that what ai is for?
+Mar 12 15:47:26 <Fade>	3) goto 2, make sure you stick to the theory of the machine 
+Mar 12 15:47:35 <naokotan1>	visl: I've been known to dabble
+Mar 12 15:47:54 <Fade>	I think on the scale of thermodynamic entropy my hours are more valuable than yours
+Mar 12 15:48:02 <Fade>	certainly they are to me. :)
+Mar 12 15:48:16 <naokotan1>	yeah, that's a very subjective valuation
+Mar 12 15:48:46 <Fade>	there's the objective valuation that I get more for my labour than you do...
+Mar 12 15:48:48 <Marvin2>	there's the scanning machine, I has the line cliches from the perspective of using emacs for 7 years now
+Mar 12 15:49:07 <cowboy8625>	sorry had to leave
+Mar 12 15:49:09 <Marvin2>	sorry had to reset my phone
+Mar 12 15:49:23 *	naokotan1 zips his mouth. NO I won't talk about LTV in this server
+Mar 12 15:49:27 <cowboy8625>	still getting used to ussing emacs
+Mar 12 15:49:29 *	Fade imagines a situation where the bot phones people up to say random things to them.
+Mar 12 15:51:35 <cowboy8625>	there seems to be a lot of bots in here
+Mar 12 15:52:27 <Fade>	LTV is interesting in the context of IT work
+Mar 12 15:52:38 <Fade>	because people who can spend less time at a job are paid more for their work.
+Mar 12 15:52:45 <naokotan1>	Its very interesting and also haram in SC channel
+Mar 12 15:53:44 <Fade>	well, a big discussion about soviet post revolutionary politics is probably not conducive to our mission.
+Mar 12 15:53:50 <cowboy8625>	its been a long time since ive been in irc so im haveing to remember the ol tips and tricks
+Mar 12 15:54:30 <Fade>	welcome
+Mar 12 15:55:07 <naokotan1>	I just don't want ot get all fired up. I tend to get all fired up and I don't even like getting all fired up
+Mar 12 15:55:24 <naokotan1>	chill making databases chris is much better than fired up chris
+Mar 12 15:56:22 <naokotan1>	:%s/chris/naokotani/g
+Mar 12 15:56:51 <Fade>	I'm currently trying to remember the discussion yesterday about the bot
+Mar 12 15:56:56 <Fade>	there were some feature requests
+Mar 12 15:57:46 <cowboy8625>	i used weechat for a long time but i am trying to switch to use emacs for everything.
+Mar 12 15:57:48 <Marvin2>	i used to ussing emacs
+Mar 12 15:58:07 <talos>	Why use Emacs when you could use VSCode /s
+Mar 12 15:58:38 <cowboy8625>	I like to be different
+Mar 12 15:58:40 <Marvin2>	I like how the pdfs look when I was trying to programming efficiently, you will be a lot of experimentation and refinement and it's amazing
+Mar 12 15:58:46 <naokotan1>	why use VS code when you can use gutenberg press
+Mar 12 15:58:55 <cowboy8625>	I used Vim for the last 6 years
+Mar 12 15:59:05 <naokotan1>	Vim OP
+Mar 12 15:59:32 <talos>	But seriously I do love Emacs
+Mar 12 15:59:42 <cowboy8625>	I love vim but i just want all my keybindings all the time and I think emacs can give me that.
+Mar 12 16:00:23 <naokotan1>	only one way to find out! give it a spin
+Mar 12 16:00:34 <cowboy8625>	I am starting to love emacs.  I need to setup the programming part a bit better but everything else is nice so far.
+Mar 12 16:00:44 <talos>	I think one text editor that has recently tried to and failed at outpacing Emacs was Atom?
+Mar 12 16:00:49 <cowboy8625>	I have hit it hard over the last few days.
+Mar 12 16:00:50 <naokotan1>	what's you issue with the programming part?
+Mar 12 16:00:52 <Marvin2>	I have it any other sequence (which is both minimal and nice bells and whistles and still couldn't get it for that!
+Mar 12 16:01:23 <talos>	Marvin2 process some infinite recursion
+Mar 12 16:01:40 <naokotan1>	Marvin2 eats infinite recusions for breakfast
+Mar 12 16:01:48 <talos>	Heh
+Mar 12 16:01:59 <cowboy8625>	well i need to get the dap debugger working for the languages i use and that is hit or miss so far but that was a pain in vim as well.
+Mar 12 16:02:28 <cowboy8625>	the auto completion for the lsp is a bit laggy so i need to use lsp-booster
+Mar 12 16:02:34 <cowboy8625>	I have not set that up
+Mar 12 16:02:47 <naokotan1>	Are you using lsp mode or eglot?
+Mar 12 16:02:59 <cowboy8625>	I got the debugger working for javescript but working for typescript i have not 
+Mar 12 16:03:00 <naokotan1>	what emacs version are you using?
+Mar 12 16:03:16 <cowboy8625>	I started with eglot but switched to lsp mosde
+Mar 12 16:03:27 <cowboy8625>	I am on 29
+Mar 12 16:03:41 <naokotan1>	you should be able to use the same langauge server for js and ts
+Mar 12 16:04:03 <cowboy8625>	https://github.com/cowboy8625/emacs-config
+Mar 12 16:04:06 <Marvin2>	[ http://outrider.deepsky.com:5808/cVMGn ]::[ GitHub - cowboy8625/emacs-config: a emacs config setup ]
+Mar 12 16:04:51 <cowboy8625>	I seen that you can use .vscode dap setup automaticly 
+Mar 12 16:05:05 <cowboy8625>	it does show but something else is keeping it from working
+Mar 12 16:05:33 <cowboy8625>	its a skill issue and i am not giving up. Just need time.
+Mar 12 16:06:40 <trev>	eglot is less laggy, confirmed by the head system crafter
+Mar 12 16:06:43 <trev>	and me
+Mar 12 16:06:55 <naokotan1>	eyah I dont have any issues with lag
+Mar 12 16:06:56 <cowboy8625>	using ERC but it doesnt auto log me in to the systemcrafters room so that is something else to look into
+Mar 12 16:07:30 <cowboy8625>	trev: I found eglot way laggy with javascript. I couldnt even use it laggy.
+Mar 12 16:07:30 <naokotan1>	https://github.com/Naokotani/dotfiles/blob/laptop/.config/emacs/modules/programming.el
+Mar 12 16:07:33 <Marvin2>	[ http://outrider.deepsky.com:5808/NUMnK ]::[ No title found ]
+Mar 12 16:07:35 <naokotan1>	that's my js setup
+Mar 12 16:07:42 <naokotan1>	and some other programming stuff
+Mar 12 16:07:46 <naokotan1>	it works totally fine
+Mar 12 16:08:08 <cowboy8625>	does dap work with elgot?
+Mar 12 16:08:13 <naokotan1>	https://github.com/typescript-language-server/typescript-language-server
+Mar 12 16:08:15 <Marvin2>	[ http://outrider.deepsky.com:5808/ARLwu ]::[ GitHub - typescript-language-server/typescript-language-server: TypeScript & JavaScript Language Server ]
+Mar 12 16:08:22 <naokotan1>	uses that server
+Mar 12 16:08:32 <cowboy8625>	the hole reason i swapped was i was reading that lsp-mode only worked with dap-mode
+Mar 12 16:08:44 <cowboy8625>	naokotan1: i was
+Mar 12 16:09:42 <morganw>	I don't think eglot includes DAP support, but someone is making it as a separate component which integrates with eglot: https://github.com/svaante/dape
+Mar 12 16:09:45 <Marvin2>	[ http://outrider.deepsky.com:5808/mxfVN ]::[ GitHub - svaante/dape: Debug Adapter Protocol for Emacs ]
+Mar 12 16:09:48 <morganw>	(I've never tried it)
+Mar 12 16:10:22 <cowboy8625>	yeah i need dap support for me to even use emacs as a programming tool
+Mar 12 16:11:01 <cowboy8625>	I want to use it at work but till i have at lest a debugger i can not do that.  In do time.
+Mar 12 16:11:13 <cowboy8625>	thanks for sharing your config
+Mar 12 16:11:54 <naokotan1>	yeah no problem. If you look around there are other modules. the master branch is out of date
+Mar 12 16:12:07 <naokotan1>	although probably mostly working stuff
+Mar 12 16:14:39 <cowboy8625>	I am having a blast configing it reguardless. That is my favorit thing about neovim/vim
+Mar 12 16:15:37 <cowboy8625>	I want to swap to EXWM at some point just dont think that is possible on mac which is what i use for work.  Linux for home.
+Mar 12 16:16:16 <cowboy8625>	is there a way to check your current mode?
+Mar 12 16:16:19 <Marvin2>	is there a correct answer?
+Mar 12 16:16:29 <naokotan1>	usually its in the modeline
+Mar 12 16:16:43 <morganw>	Just eval the variable major-mode
+Mar 12 16:17:07 <morganw>	M-: major-mode (if you use the default key-bindings)
+Mar 12 16:17:59 <cowboy8625>	ah perfect
+Mar 12 16:21:54 <cowboy8625>	what are yall working on?
+Mar 12 16:22:10 <naokotan1>	Cover leter for a database admin job my school posted
+Mar 12 16:22:21 <cowboy8625>	oh nice!
+Mar 12 16:36:27 <naokotan1>	I need to create an M-x Doom comman that autamtically plays MF doom through mpd or something
+Mar 12 16:36:30 <Marvin2>	I need to use it locally too, since it only parses individual files rn. so will continue for some things
+Mar 12 16:36:42 <cowboy8625>	lol
+Mar 12 16:36:44 <cowboy8625>	do it
+Mar 12 16:36:50 <naokotan1>	oh, I will
+Mar 12 16:37:39 <cowboy8625>	do you use erc?
+Mar 12 16:37:52 <naokotan1>	I use whatsapp(weechat)
+Mar 12 16:38:00 <cowboy8625>	ah
+Mar 12 16:38:25 <naokotan1>	I have used ERC. it works great
+Mar 12 16:39:58 <cowboy8625>	i am using it now.
+Mar 12 16:40:19 <cowboy8625>	i was just having a hard time getting it to auto join the channels i listed
+Mar 12 16:40:22 <Marvin2>	i was just taking a look at LSP servers, but first do you remember date by chance?
+Mar 12 16:40:34 <naokotan1>	I think there is a SC post about it
+Mar 12 16:40:42 <cowboy8625>	there is
+Mar 12 16:41:05 <cowboy8625>	https://arc.net/l/quote/jzozhuwo
+Mar 12 16:41:07 <Marvin2>	[ http://outrider.deepsky.com:5808/hrUzQ ]::[ No title found ]
+Mar 12 16:41:17 <cowboy8625>	https://systemcrafters.net/chatting-with-emacs/irc-basics-with-erc/
+Mar 12 16:41:19 <morganw>	I just set erc-autojoin-channels-alist but I don't think it works if you use a bouncer.
+Mar 12 16:41:19 <Marvin2>	[ http://outrider.deepsky.com:5808/GCxJZ ]::[ Chat Like the 90’s in Emacs with ERC - System Crafters ]
+Mar 12 16:41:57 <cowboy8625>	bouncer?
+Mar 12 16:41:59 <cowboy8625>	sorry
+Mar 12 16:42:52 <morganw>	An IRC bouncer, so your account can stay in the channel when you disconnect.  Something like ZNC or Soju.
+Mar 12 16:42:54 <Marvin2>	An IRC bouncer, so your account can stay irrational longer than you do...
+Mar 12 16:43:22 <alternateved>	That was actually pretty on point Marvin2 
+Mar 12 16:44:22 <morganw>	Something like this: (setq erc-autojoin-channels-alist '(("libera\\.chat" "#systemcrafters")))
+Mar 12 16:44:32 <cowboy8625>	I guess i missed what Marvin2 said
+Mar 12 16:44:37 <naokotan1>	Ok, My dog and I are going for my birthday walk in the woods. ttyl
+Mar 12 16:44:58 <alternateved>	happy birthday walk :D
+Mar 12 16:46:02 <cowboy8625>	happy bday
+**** BEGIN LOGGING AT Tue Mar 12 17:00:35 2024
+
+Mar 12 17:00:31 *	Now talking on #systemcrafters
+Mar 12 17:00:31 *	Topic for #systemcrafters is: Topic for #systemcrafters: System Crafters General Chat - Elevating computer enthusiasts to experts of code and craft - https://systemcrafters.net - https://forum.systemcrafters.net
+Mar 12 17:00:31 *	Topic for #systemcrafters set by benoitj!a1f51ac63d@user/benoitj (Fri Mar  8 20:34:38 2024)
+Mar 12 18:17:17 <BigEatie>	Phew...interview over. Felt like it went well
+Mar 12 18:21:53 <mretka>	Hope things go well BigEatie 🎉
+Mar 12 18:21:56 *	mretka checks in
+Mar 12 18:29:23 <glenneth>	hey mretka :)
+Mar 12 18:30:14 *	glenneth sending BigEatie good vibes
+Mar 12 18:32:39 <mretka>	Hey glenneth :)
+Mar 12 18:32:47 <mretka>	I just stopped by during my lunch break
+Mar 12 18:34:48 <glenneth_>	excellent. you doing OK? 
+Mar 12 18:36:30 <mretka>	Yup, doing great :D
+Mar 12 18:36:32 <mretka>	How about you?
+Mar 12 18:36:56 <mretka>	I saw that you released a Guile project, congrats! 🎉
+Mar 12 18:37:45 <glenneth_>	haha. I did, thank you. I'm doing OK 
+Mar 12 18:42:03 <mretka>	That's great
+Mar 12 18:42:14 <mretka>	Still travelling around?
+Mar 12 18:42:50 <mretka>	BTW, I got an urge do get back into electronics as a hobby this morning
+Mar 12 18:43:06 <glenneth_>	not much lately, no. thankfully 😁
+Mar 12 18:43:26 <glenneth_>	mretka: Nice. First project? 
+Mar 12 18:43:44 <mretka>	glenneth_: Yeah, it will be the first project in a long while
+Mar 12 18:43:58 <mretka>	Now I'm looking for new hobbies, pretty much
+Mar 12 18:44:17 <mretka>	And then there's electronics, that's calling me again, and practicing my handwriting
+Mar 12 18:44:31 <glenneth_>	that's awesome. build your own amplifier. 
+Mar 12 18:44:41 <glenneth_>	😁
+Mar 12 18:44:57 <mretka>	Thanks hehehe
+Mar 12 18:45:24 <mretka>	I live near the electronics hub here in the city, it's a 10 min walk from my place, so it's easy to get supplies
+Mar 12 18:46:05 <mretka>	We have #electronics in Libera as well
+Mar 12 18:46:07 <Marvin2>	We have some change in the minibuffer.
+Mar 12 18:46:20 <mretka>	Oh, we always have that Marvin2 lol
+Mar 12 18:46:41 *	mretka is feeling a lot of crafting urges lately
+Mar 12 18:46:51 <mretka>	And these crafting urges are outside of coding lol
+Mar 12 18:48:44 <talos>	Like.. Minecraft?
+Mar 12 18:49:45 <mretka>	Nah talos, I'm staying away from computers outside of work lol
+Mar 12 18:49:47 <Marvin2>	Nah talos, I'm staying away from qutebrowser.\
+Mar 12 18:49:53 <mretka>	That too lol
+Mar 12 18:49:56 <talos>	lmao
+Mar 12 18:50:01 <talos>	Gotcha
+Mar 12 18:50:28 <BigEatie>	Thanks mretka and glenneth 
+Mar 12 18:51:09 <BigEatie>	Stayinf away from Qutwebrowser... but why Marvin2?
+Mar 12 18:51:25 <mretka>	I guess they don't like Qt
+Mar 12 18:51:55 <glenneth_>	haha
+Mar 12 18:52:05 <cowboy8625>	hey hey!
+Mar 12 18:52:59 <mretka>	Howdy cowboy8625 
+Mar 12 18:53:18 <cowboy8625>	hows your day?
+Mar 12 18:53:34 <mretka>	It's being OK so far :D
+Mar 12 18:53:38 <mretka>	Pretty chill
+Mar 12 18:53:40 <cowboy8625>	i feel ya
+Mar 12 18:53:42 <Marvin2>	i feel about that. Just wanted to double check. Thanks :)
+Mar 12 18:53:55 <mretka>	rofl
+Mar 12 18:54:01 <cowboy8625>	lol
+Mar 12 18:54:59 <mretka>	glenneth_: I already blew up a couple capacitors in the past, that was on purpose actually
+Mar 12 18:55:11 <mretka>	And I had a colleague that fried a 555 chip once
+Mar 12 19:01:10 <cowboy8625>	any of yall using erc?
+Mar 12 19:01:58 <purplg>	cowboy8625: i am
+Mar 12 19:02:06 <purplg>	hello from ERC
+Mar 12 19:02:45 <cowboy8625>	purplg: is there a way to erc log you in with your password?
+Mar 12 19:03:04 <mretka>	cowboy8625: I'm using it right now
+Mar 12 19:03:14 <cowboy8625>	maybe using a ENV?
+Mar 12 19:03:39 <cowboy8625>	I dont want to have to put my password in there every time.  Weechat has it like that.
+Mar 12 19:04:49 <cowboy8625>	think i found something
+Mar 12 19:11:48 <morganw>	cowboy8625: You can put your credentials in a .authinfo file and it can use those.  You can also gpg encrypt it (as .authinfo.gpg).
+Mar 12 19:18:56 *	mretka is working with Java today and is grateful that asdf exists 😌
+Mar 12 19:26:20 <Fade>	so you're working with common lisp?
+Mar 12 19:26:28 <Fade>	<-- confused
+Mar 12 19:35:56 <mretka>	hehe I'm not working with common lisp, neither Clojure
+Mar 12 19:35:59 <mretka>	Hi Fade
+Mar 12 19:36:13 <Fade>	asdf is the common lisp build system
+Mar 12 19:36:18 <Fade>	hi :)
+Mar 12 19:36:44 <mretka>	Ohhh, no
+Mar 12 19:36:51 <mretka>	It's another ASDF, it's the plugin manager
+Mar 12 19:37:03 <Fade>	that's... unfortunate.
+Mar 12 19:37:04 <mretka>	https://github.com/asdf-community/asdf-plugin-manager
+Mar 12 19:37:06 <Marvin2>	[ http://outrider.deepsky.com:5808/BfPvS ]::[ GitHub - asdf-community/asdf-plugin-manager: A plugin manager for the asdf version manager ]
+Mar 12 19:37:36 <mretka>	Actually https://github.com/asdf-vm/asdf
+Mar 12 19:37:38 <Marvin2>	[ http://outrider.deepsky.com:5808/GKAcX ]::[ GitHub - asdf-vm/asdf: Extendable version manager with support for Ruby, Node.js, Elixir, Erlang & more ]
+Mar 12 19:40:52 <mretka>	You can even version git with it
+Mar 12 19:41:09 <mretka>	Here's the full list of programs it supports https://github.com/asdf-vm/asdf-plugins
+Mar 12 19:41:12 <Marvin2>	[ http://outrider.deepsky.com:5808/gIskX ]::[ GitHub - asdf-vm/asdf-plugins: Convenience shortname repository for asdf community plugins ]
+Mar 12 19:44:08 <mretka>	asdf-vm can version SBCL at least Fade https://github.com/smashedtoatoms/asdf-sbcl
+Mar 12 19:44:10 <Marvin2>	[ http://outrider.deepsky.com:5808/yUhdc ]::[ GitHub - smashedtoatoms/asdf-sbcl: asdf plugin for Steel Bank Common Lisp ]
+Mar 12 19:45:18 <mretka>	And it can version Guile as well https://github.com/indiebrain/asdf-guile
+Mar 12 19:45:21 <Marvin2>	[ http://outrider.deepsky.com:5808/JdrLn ]::[ GitHub - indiebrain/asdf-guile: An asdf-vm plugin to manage installtions of GNU Guile ]
+Mar 12 19:49:34 <glenneth_>	nite Folx o7
+Mar 12 19:53:17 <mretka>	See you glenneth_, nini
+Mar 12 19:53:39 <mretka>	This is the first time I ever see you say goodnight glenneth_ lol
+Mar 12 19:53:46 <mretka>	I usually catch your good mornings
+Mar 12 21:10:16 <purplg>	cowboy8625: sorry i forgot to check back. Got busy. As morganw said, you can use auth info. I use `pass` and `auth-source-pass-get` for logging in
+Mar 12 21:17:20 <cowboy8625>	no a problem
+Mar 12 21:17:35 <cowboy8625>	i will do th too. So much to setup
+Mar 12 21:17:38 <Marvin2>	i will find something eventually. The issue with similar error,
+Mar 12 21:17:44 <cowboy8625>	th ** then
+Mar 12 22:04:40 <cowboy8625>	so what do yall use for code competion?  I am very confused about some packages.   Seems like Ivy and Counsel do competion, but there is also completion with the lsp as well but that makes the most sense to me.
+Mar 12 22:11:40 <alternateved>	cowboy8625: most likely you are looking for company
+Mar 12 22:11:53 <alternateved>	or its alternative corfu and cape
+Mar 12 22:27:26 <cowboy8625>	welp im back
+Mar 12 22:35:00 <visl>	cowboy8625: you missed it but alternateved suggested company or corfu and cape for completion.
+Mar 12 22:35:25 <alternateved>	thanks visl 
+Mar 12 22:35:35 <cowboy8625>	thanks!
+Mar 12 22:35:51 <alternateved>	there are other alternatives
+Mar 12 22:36:19 <morganw>	cowboy8625: There is the entry point for requesting completion, the actual things which generate completions, completion styles used to choose a completion, and the completion interface which everything is presented in.  Packages give you some or all of these.  But everything is also built into plain Emacs too.
+Mar 12 22:36:27 <alternateved>	but company and corfu both offer popup completion 
+Mar 12 22:36:39 <cowboy8625>	i am using some one elses config right how and i am going threw it and making it my own.   They have ivy and company in use right how.
+Mar 12 22:37:36 <cowboy8625>	alternateved: thank you for the info!
+Mar 12 22:40:32 <alternateved>	Have a good night everyone. :)
+Mar 12 22:42:03 <visl>	i switched from company to corfu/consult/vertico/marginalia when all the hip kids did as well. granted i was using company before i was using lsp.. there were extra backends to install with it.  with corfu/consult it just plugs into eglot
+Mar 12 22:42:07 <Marvin2>	i switched over from RSA a few minutes to convince us all the pages are so much time for your musings about prana.
+Mar 12 22:43:21 <visl>	i don't tinker with this very much (which is the feature i want) so my view of how it all works might be wrong.
+Mar 12 22:43:23 <Marvin2>	i don't see a lot with me actually seeing the value in the orchestra i think. I need for the record Marvin2 is a bad idea.
+Mar 12 22:43:36 <cowboy8625>	alternateved: you too
+Mar 12 22:44:11 <cow_2001>	yee haw
+Mar 12 22:44:13 <cow_2001>	so tired
+Mar 12 22:44:26 *	cow_2001 leers at cowboy8625
+Mar 12 22:45:00 <cow_2001>	no lassoing please
+Mar 12 22:45:07 <cowboy8625>	lol
+Mar 12 22:45:12 <cowboy8625>	hey hey
+Mar 12 22:45:16 <cow_2001>	hoy hoy
+Mar 12 22:47:29 <cow_2001>	https://guix.gnu.org/en/blog/2024/fixed-output-derivation-sandbox-bypass-cve-2024-27297/
+Mar 12 22:47:31 <visl>	cowboy8625: with regard to cape and lsp -- i don't use cape and have this saved as a reference in my config: https://github.com/joaotavora/eglot/discussions/1127   glancing at the bottom of the thread it looks like joao fixed it in nov last year so i might try cape again.
+Mar 12 22:47:32 <Marvin2>	[ http://outrider.deepsky.com:5808/UyYFd ]::[ Fixed-Output Derivation Sandbox Bypass (CVE-2024-27297) — 2024 — Blog — GNU Guix ]
+Mar 12 22:47:33 <Marvin2>	[ http://outrider.deepsky.com:5808/GEQlG ]::[ Corfu + Eglot: LSP server gets out of sync · joaotavora/eglot · Discussion #1127 · GitHub ]
+Mar 12 22:56:20 <Fade>	mretka: it looks like a useful system; I wish it didn't land on the namespace of a system that already existed. :)
+Mar 13 00:42:24 <cow_2001>	i have a gripe.  cut's -d and -f are differently named from sort's -t and -k
+Mar 13 00:42:59 <cow_2001>	they're sorta the same flags with a different name
+Mar 13 00:43:46 <cow_2001>	sorta doesn't cut it!
+Mar 13 00:43:55 <cow_2001>	(see what i did there?)
+Mar 13 00:50:01 <tdback>	hey crafters!
+Mar 13 00:51:14 <cow_2001>	:|
+Mar 13 00:51:17 <cow_2001>	tdback: 
+Mar 13 00:52:00 <tdback>	heyo cow_2001 
+Mar 13 00:52:07 <tdback>	why the ':|'
+Mar 13 00:52:30 <tdback>	also, nice pun 
+Mar 13 00:52:35 <cow_2001>	my mood
+Mar 13 00:53:14 <tdback>	ever pursue writing those DE bindings in guile? KDE or gnome was it?
+Mar 13 00:55:13 <cow_2001>	DE?
+Mar 13 00:57:50 <cow_2001>	Desktop Environment
+Mar 13 00:58:10 <cow_2001>	nono, i'm busy with something else
+Mar 13 00:58:56 <cow_2001>	and there are already two projects (one on hiatus)
+Mar 13 00:59:01 <cow_2001>	g-golf and guile-gi
+Mar 13 01:19:47 <mretka>	Fade: yeah, that's unfortunate hehe
+Mar 13 01:19:51 <mretka>	Hi cow_2001 tdback 
+Mar 13 01:19:53 <mretka>	Long time no see
+Mar 13 01:23:22 <tdback>	heyo mretka o/
+Mar 13 01:24:04 <tdback>	it definitely has been some time 
+Mar 13 01:25:04 <mretka>	I'm about to start reading that networking book you recommended tdback 
+Mar 13 01:25:07 <Marvin2>	I'm about to come up github
+Mar 13 01:25:40 <mretka>	Actually github is having an instability Marvin2 :(
+Mar 13 01:25:42 <mretka>	https://www.githubstatus.com/
+Mar 13 01:25:45 <Marvin2>	[ http://outrider.deepsky.com:5808/VSsgO ]::[ GitHub Status ]
+Mar 13 01:26:26 <tdback>	mretka: the one on dns?
+Mar 13 01:27:16 <mretka>	Yep, that one
+Mar 13 01:27:21 <mretka>	Lemme get the link again
+Mar 13 01:28:34 <tdback>	Was it Pro DNS and Bind 10?
+Mar 13 01:31:49 <mretka>	Yup https://www.oreilly.com/library/view/pro-dns-and/9781430230489/
+Mar 13 01:31:52 <Marvin2>	[ http://outrider.deepsky.com:5808/cQETt ]::[ Pro DNS and BIND 10 [Book] ]
+Mar 13 01:32:42 <mretka>	I'll need to brush up my networking skills
+Mar 13 01:35:18 <mretka>	I'm also studying machine learning now
+Mar 13 01:35:29 <mretka>	And dabbled a bit with Jupyter Notebooks and MLOps
+Mar 13 01:35:37 <tdback>	I've skimmed over it a few times. Ended up doing a ton with DNS at work when setting up a sendmail relay server
+Mar 13 01:36:53 <mretka>	Cool
+Mar 13 01:37:37 <tdback>	how's the ML stuff? Using it at work with AWS at all?
+Mar 13 01:44:04 <mretka>	Not yet, I'm studying it on the side, doing some small stuff with Kaggle datasets or toy datasets
+Mar 13 01:46:05 <tdback>	sounds fun
+Mar 13 01:47:31 <mretka>	Yeah, I'm enjoying it, and I picked up Python again, I'm getting familiar with the syntax again and learning some more libs
+Mar 13 01:55:22 <mretka>	Gotta go now, nini
+Mar 13 02:31:53 <tdback>	cya!
+Mar 13 03:02:48 <cowboy8625>	hey!
+Mar 13 03:04:41 <benoitj>	morning
+Mar 13 03:04:53 <benoitj>	hi cowboy8625 
+Mar 13 03:06:03 <cowboy8625>	working on anything?
+Mar 13 03:06:50 <benoitj>	not tonight
+Mar 13 03:07:09 <benoitj>	about you?
+Mar 13 03:07:16 <cowboy8625>	just working on my config
+Mar 13 03:07:27 <benoitj>	I updated my nix, but still have an issue with setxkbdmap
+Mar 13 03:07:30 <benoitj>	ok
+Mar 13 03:07:41 <cowboy8625>	oh how is nix?
+Mar 13 03:09:12 <benoitj>	quite good
+Mar 13 03:09:22 <benoitj>	been on it for couple of years now
+Mar 13 03:10:05 <benoitj>	it's kind of like guix, with some differences
+Mar 13 03:11:50 <cowboy8625>	i think i would like it
+Mar 13 03:16:32 <benoitj>	what would you like about it? curious to hear from a new perspective
+Mar 13 03:17:31 <cowboy8625>	the hole reloading or rebuilding when instaling things and you can just go back it something breaks is what ive been told.
+Mar 13 03:24:11 <cowboy8625>	i am trying to make the line my cursor is on a little darker then the back ground. any ideas on how to make this happen?
+Mar 13 03:24:12 <benoitj>	 yeah, it has "generations"
+Mar 13 03:24:50 <benoitj>	look at the "faces" I think describe-faces is what you are looking for
+Mar 13 03:25:08 <cowboy8625>	ok thanks!
+Mar 13 03:55:14 <cowboy8625>	yeah in vim its just `set cursorrow` 
+Mar 13 03:56:52 <benoitj>	in emacs, everything visible / color, fonts, etc is a "face"
+Mar 13 03:57:47 <benoitj>	the face name to change is hl-line
+Mar 13 03:59:43 <benoitj>	then just M-x customize-face hl-line
+Mar 13 04:17:12 <cowboy8625>	well thanks for the help! im off for the night.
+Mar 13 04:19:40 <glenneth>	Morning Folx o/
+Mar 13 04:20:08 <benoitj>	hey
+Mar 13 04:23:38 <glenneth>	hey benoitj 
+Mar 13 04:23:40 <Marvin2>	hey benoitj trev
+Mar 13 04:26:25 <benoitj>	how's your morning?
+Mar 13 04:27:13 <glenneth>	All good, so far lol.  How was your day? 
+Mar 13 04:47:19 <benoitj>	 was good and busy
+Mar 13 04:52:12 <glenneth>	cool.  busy makes the day go quicker
+Mar 13 04:52:46 <glenneth>	whether that is a good thing or not... lol
+Mar 13 04:52:49 <Marvin2>	whether that is based of, but while channels is the best description of the other
+Mar 13 04:53:07 <benoitj>	hehe
+Mar 13 04:53:17 <glenneth>	!ststus
+Mar 13 04:53:19 <Marvin2>	ststus: unknown command.
+Mar 13 04:53:28 <glenneth>	!status
+Mar 13 04:53:30 <Marvin2>	status:: I know 101,419 phrases.
+**** ENDING LOGGING AT Wed Mar 13 06:35:42 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 06:38:08 2024
+
+Mar 13 06:38:05 *	Now talking on #systemcrafters
+Mar 13 06:38:05 *	Topic for #systemcrafters is: Topic for #systemcrafters: System Crafters General Chat - Elevating computer enthusiasts to experts of code and craft - https://systemcrafters.net - https://forum.systemcrafters.net
+Mar 13 06:38:05 *	Topic for #systemcrafters set by benoitj!a1f51ac63d@user/benoitj (Fri Mar  8 20:34:38 2024)
+**** ENDING LOGGING AT Wed Mar 13 06:38:16 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 15:36:13 2024
+
+Mar 13 15:36:12 *	Now talking on #systemcrafters
+Mar 13 15:36:12 *	Topic for #systemcrafters is: Topic for #systemcrafters: System Crafters General Chat - Elevating computer enthusiasts to experts of code and craft - https://systemcrafters.net - https://forum.systemcrafters.net
+Mar 13 15:36:12 *	Topic for #systemcrafters set by benoitj!a1f51ac63d@user/benoitj (Fri Mar  8 20:34:38 2024)
+Mar 13 15:43:59 <talos>	Good day all
+Mar 13 15:44:42 <glenneth>	talos: o/
+Mar 13 15:45:04 <talos>	Yo glenneth
+**** BEGIN LOGGING AT Wed Mar 13 16:17:18 2024
+
+Mar 13 16:17:16 *	Now talking on #systemcrafters
+Mar 13 16:17:16 *	Topic for #systemcrafters is: Topic for #systemcrafters: System Crafters General Chat - Elevating computer enthusiasts to experts of code and craft - https://systemcrafters.net - https://forum.systemcrafters.net
+Mar 13 16:17:16 *	Topic for #systemcrafters set by benoitj!a1f51ac63d@user/benoitj (Fri Mar  8 20:34:38 2024)
+Mar 13 16:21:55 <glenneth>	I'm doing OK, thanks.  You?
+Mar 13 16:27:21 <talos>	Doing good here, be back in a bit~
+Mar 13 16:31:03 <cowboy8625>	o/
+Mar 13 16:31:17 <glenneth>	ok 
+Mar 13 16:31:34 <glenneth>	hey cowboy8625 
+Mar 13 16:43:15 <cowboy8625>	so what do yall use emacs for?
+Mar 13 16:48:45 <glenneth>	I use emacs mostly for project management task, writing documentation and tecnical manuals.  Otg and LaTeX are a large part of my workflow.  And very recently a little Guile Scheme devfelopment.  As well as erc, ement and mu34e :)
+Mar 13 16:49:14 <glenneth>	s/mu3e/mu4e
+Mar 13 16:50:41 <cowboy8625>	oh that is interesting!
+Mar 13 16:52:17 <glenneth>	only slightly lol.  WBU?
+Mar 13 16:54:15 <cowboy8625>	i am very new to emacs.  Started using it not even a week ago and I am not fully using it.  I am working towards using it for Programming.  I currently use vim but I think emacs will let me extend the use of vim keybindings in more programs within it.
+Mar 13 16:54:44 <cowboy8625>	its been a slow go though getting all the languages set up.
+**** ENDING LOGGING AT Wed Mar 13 17:02:39 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 17:15:30 2024
+
+Mar 13 17:15:29 *	Now talking on #systemcrafters
+Mar 13 17:15:29 *	Topic for #systemcrafters is: Topic for #systemcrafters: System Crafters General Chat - Elevating computer enthusiasts to experts of code and craft - https://systemcrafters.net - https://forum.systemcrafters.net
+Mar 13 17:15:29 *	Topic for #systemcrafters set by benoitj!a1f51ac63d@user/benoitj (Fri Mar  8 20:34:38 2024)
+Mar 13 17:24:20 <Fade>	slow day.
+**** BEGIN LOGGING AT Wed Mar 13 17:31:45 2024
+
+Mar 13 17:31:44 *	Now talking on #systemcrafters
+Mar 13 17:31:44 *	Topic for #systemcrafters is: Topic for #systemcrafters: System Crafters General Chat - Elevating computer enthusiasts to experts of code and craft - https://systemcrafters.net - https://forum.systemcrafters.net
+Mar 13 17:31:44 *	Topic for #systemcrafters set by benoitj!a1f51ac63d@user/benoitj (Fri Mar  8 20:34:38 2024)
+**** BEGIN LOGGING AT Wed Mar 13 18:43:10 2024
+
+Mar 13 18:43:09 *	Now talking on #systemcrafters
+Mar 13 18:43:09 *	Topic for #systemcrafters is: Topic for #systemcrafters: System Crafters General Chat - Elevating computer enthusiasts to experts of code and craft - https://systemcrafters.net - https://forum.systemcrafters.net
+Mar 13 18:43:09 *	Topic for #systemcrafters set by benoitj!a1f51ac63d@user/benoitj (Fri Mar  8 20:34:38 2024)
+Mar 13 19:01:43 <trev>	i like being the token vim user in the group
+Mar 13 19:01:50 <trev>	so that is why i advocate for emacs
+Mar 13 19:06:23 <alternateved>	:D
+Mar 13 19:06:30 <alternateved>	trev is playing dirty
+Mar 13 19:09:34 <trev>	chaotic neutral 
+Mar 13 19:21:03 <cowboy8625>	visl: thanks
+Mar 13 19:22:15 <cowboy8625>	any recommendations on database tools?
+Mar 13 19:37:49 <benoitj>	more precision?
+Mar 13 19:38:36 <cowboy8625>	?
+Mar 13 19:39:18 <benoitj>	what tool are you looking at? mongo, redis, a RDBMS, a client to connect to these, a emacs based client, a tool to automatically version your tables, etc...
+Mar 13 19:39:33 <benoitj>	that simple questions is just the trunk of a large tree
+Mar 13 19:39:34 <benoitj>	:D
+Mar 13 19:39:36 <Marvin2>	that simple questions is just plain text
+Mar 13 19:39:40 <benoitj>	haha
+Mar 13 19:39:48 <benoitj>	Marvin2: you're right as usualy
+Mar 13 19:41:12 <cowboy8625>	something like tablePlus or pgcli
+Mar 13 19:42:09 <benoitj>	I used to use squirrel sql
+Mar 13 19:42:27 <benoitj>	but emacs also has similar clients with various degree of features
+Mar 13 19:42:44 <benoitj>	I think I also used turtle in the past
+Mar 13 19:43:23 <benoitj>	now I use either a web ui, or just what is in my ide
+Mar 13 19:43:32 <benoitj>	no need for much more
+Mar 13 19:45:21 <benoitj>	cowboy8625: this is the research I made with sql clients within emacs: https://0x0.st/HF-P.txt
+Mar 13 19:45:25 <Marvin2>	[ http://outrider.deepsky.com:5808/TPUMn ]::[ No title found ]
+Mar 13 19:47:39 <cowboy8625>	benoitj: thanks!
+Mar 13 20:14:31 <ozzloy>	i'm using mu4e.  i have an email with a link.  i'd like to copy the link without opening it.  i did mu4e-view-save-url, but the minibuffer says "[mu4e] No links for this message".  i opened the file in ~/Maildir and found the url, but it was quoted printable encoded.  what's ... how do i just copy the url?
+Mar 13 20:15:19 <ozzloy>	should mu4e-view-save-url be showing me the url?  is there some other rabbit hole i should go down?
+Mar 13 20:15:23 <Marvin2>	should mu4e-view-save-url be showing me the php code in it, to analyze it.
+Mar 13 20:16:02 <benoitj>	ozzloy: not sure if you're new here, in all cases, Marvin2 is a bot, so dont be mad at what he's saying, he's a drunk bot
+Mar 13 20:17:07 <benoitj>	I dont use mu, so cant help, I know some do
+Mar 13 20:17:20 <ozzloy>	i figured Marvin2 was a bot.  i was trying to figure out how that text was generated.  is it just randomly taking some of the words and hallucinating a sentence out of it?
+Mar 13 20:18:48 <benoitj>	it uses markov chains, using known phrases 
+Mar 13 20:18:54 <benoitj>	!status
+Mar 13 20:18:55 <Marvin2>	status:: I know 103,438 phrases.
+Mar 13 20:19:07 <ozzloy>	that's a lot of points
+Mar 13 20:19:07 <benoitj>	he combine stuff based on triggers
+Mar 13 20:19:11 <benoitj>	!trigger
+Mar 13 20:19:14 <Marvin2>	trigger:: focus, hello, arrested, path, lunch, also, langauge, Think, mretka, same
+Mar 13 20:19:19 <benoitj>	the trigger list changes all the time
+Mar 13 20:19:29 <ozzloy>	"langauge"?
+Mar 13 20:19:29 <benoitj>	err, changes when a trigger was triggered :P
+Mar 13 20:19:34 <benoitj>	cl
+Mar 13 20:19:38 <benoitj>	common lisp
+Mar 13 20:19:40 <benoitj>	!source
+Mar 13 20:19:42 <Marvin2>	source: unknown command.
+Mar 13 20:19:44 <benoitj>	!help
+Mar 13 20:19:46 <Marvin2>	help:: http://outrider.deepsky.com:5808/help
+Mar 13 20:19:47 <Marvin2>	help::   or !help <command>
+Mar 13 20:19:56 <ozzloy>	cool cool
+Mar 13 20:20:43 <benoitj>	!status full
+Mar 13 20:20:45 <Marvin2>	status:: outrider running SBCL 2.4.2 on Linux 5.10.0-25-amd64, X86-64 QEMU Virtual CPU version 2.5+.
+Mar 13 20:20:47 <Marvin2>	status:: I know 103,468 phrases.
+Mar 13 20:20:51 <maff___>	i dont get warm with mu4e and other clients in emacs .. still use alpine ... guess its old dogs not changin
+Mar 13 20:21:09 <benoitj>	yeah, hard to change when you have a working system
+Mar 13 20:21:15 <benoitj>	i'm on notmuch forever
+Mar 13 20:21:18 <ozzloy>	for now, my workaround is to open the raw text file, copy the text, then quoted-printable decode
+Mar 13 20:21:36 <benoitj>	used mutt in the past. and must use outlook at work
+Mar 13 20:21:59 <ozzloy>	fortunately there's a quoted-printable-decode-region
+Mar 13 20:22:14 <ozzloy>	benoitj, i'm sorry for your loss
+Mar 13 20:22:23 <maff___>	some years ago they wanted to force me too .. but brought a usb stick with alpine and config for "external" use 
+Mar 13 20:22:25 <morganw>	ozzloy: If you mu4e now uses the Gnus message viewer, you might be able to use the command shr-maybe-probe-and-copy-url.  In Gnus you just put the cursor on the link and press u.
+Mar 13 20:22:26 <benoitj>	could be worst
+Mar 13 20:23:01 <ozzloy>	morganw, omfg "u" worked
+Mar 13 20:23:42 <ozzloy>	is ... can i give you $1 somehow?
+Mar 13 20:24:17 <ozzloy>	want $1 of bitcoin?
+Mar 13 20:24:27 <morganw>	Just pet a dog in your local area.
+Mar 13 20:24:35 <benoitj>	haha
+Mar 13 20:24:40 <ozzloy>	there's a dog park right by here!  brb
+Mar 13 20:24:47 <benoitj>	or pet Marvin2 the bot
+Mar 13 20:25:28 <ozzloy>	new question, how do i C-h C-k in mu4e?
+Mar 13 20:25:36 <ozzloy>	mu4e stole C-h
+Mar 13 20:25:45 <ozzloy>	(wtf, mu4e?!)
+Mar 13 20:25:49 <morganw>	Use F1 instead of C-h
+Mar 13 20:26:10 <morganw>	(I think technically modes are allowed to steal C-h, but they are not meant to touch F1)
+Mar 13 20:26:30 <benoitj>	or M-x describe-key
+Mar 13 20:27:08 <ozzloy>	morganw, u is bound to shr-maybe-probe-and-copy-url
+Mar 13 20:27:21 <ozzloy>	so ... well done
+Mar 13 20:27:40 <ozzloy>	and shr-maybe... is also bound to w
+Mar 13 20:28:04 <benoitj>	quite possible that the rendering of html is delegated to shr in mu
+Mar 13 20:28:09 <ozzloy>	whoah, bitcoin is way up
+Mar 13 20:28:14 <ozzloy>	70k
+Mar 13 20:28:29 <ozzloy>	1btc = 70k usd
+Mar 13 20:28:51 <ozzloy>	last time i looked it was at 27k
+Mar 13 20:29:40 <ozzloy>	thanks morganw and benoitj and maff___ and even Marvin2 
+Mar 13 21:16:35 <naokotani>	can anyone recall the name of the funciton that returns t if you launched emacsclient
+Mar 13 21:16:37 <Marvin2>	can anyone recall the name of the hall was all hyper-emacs-focused.
+Mar 13 21:21:30 <morganw>	naokotani: I think it is something that is a bit confusing to check, because the state can vary depending on how the server part was started, but you might want daemonp or server-running-p.
+Mar 13 21:25:12 <morganw>	https://emacshorrors.com/posts/determining-if-the-server-is-started-or-the-wonders-of-server-running-p.html
+Mar 13 21:25:14 <Marvin2>	[ http://outrider.deepsky.com:5808/oLbAF ]::[ Emacs Horrors - Determining if the server is started, or the wonders of server-running-p ]
+Mar 13 21:25:59 <morganw>	(The third place to look is the value of server-mode)
+Mar 13 21:54:07 <Fade>	!sources
+Mar 13 21:54:09 <Marvin2>	sources:: https://github.com/fade/harlie.git
+Mar 13 21:58:25 <Fade>	!trigger
+Mar 13 21:58:27 <Marvin2>	trigger:: config, when, sitting, when, properly, rock, better, instance, mean, there
+Mar 13 21:58:45 <Fade>	probably I should normalize plurals in the command tokens.
+Mar 13 21:58:58 <benoitj>	that is mean
+Mar 13 21:59:00 <Marvin2>	that is just a bot
+Mar 13 21:59:19 <Fade>	well, it's definitely inconsistent.
+Mar 13 21:59:49 <benoitj>	hah
+Mar 13 22:00:02 <Fade>	!status
+Mar 13 22:00:05 <Marvin2>	status:: I know 103,838 phrases.
+Mar 13 22:00:21 <naokotani>	morganw: yeah daemonp is the one I think I was after thanks
+Mar 13 22:00:24 <Fade>	I wasn't expecting to hit over 100k until friday.
+Mar 13 22:01:10 <Fade>	especially with summer being a responsible professional and neglecting her crazy internet friends.
+Mar 13 22:03:01 <benoitj>	yeah, maybe we all stepped in to replace her
+Mar 13 22:03:31 <benoitj>	at this rate, we'll be >110k this friday
+Mar 13 22:03:40 <Fade>	me and naokotani have been blazing away this week, well, except for today.
+Mar 13 22:03:52 <cowboy8625>	benoitj: 100k of????
+Mar 13 22:03:57 <Fade>	!status
+Mar 13 22:03:59 <Marvin2>	status:: I know 103,912 phrases.
+Mar 13 22:04:00 <benoitj>	phrases
+Mar 13 22:04:17 <cowboy8625>	so marvin2 is a bot?
+Mar 13 22:04:24 <benoitj>	yes
+Mar 13 22:04:27 <Fade>	an artificial idiot
+Mar 13 22:04:27 <cowboy8625>	not just any bot
+Mar 13 22:04:43 <Fade>	well, it aspires to such lofty goals.
+Mar 13 22:04:47 <benoitj>	and he's getting better at being idiot
+Mar 13 22:04:53 <cowboy8625>	one that knows 103,912 things to say
+Mar 13 22:04:54 <Fade>	mostly it's just a statistical trick. :)
+Mar 13 22:05:31 <benoitj>	:)
+Mar 13 22:05:38 <naokotani>	Fade: I took my son to the playground to play baseball
+Mar 13 22:05:45 <naokotani>	so I've been quite afk
+Mar 13 22:05:48 <Fade>	an excellent use of time
+Mar 13 22:05:50 <Marvin2>	an excellent quetison. I can post it to do it. Though what I meant become a proscription about me.
+Mar 13 22:05:53 <benoitj>	time for the daily walk. ttyl
+Mar 13 22:06:03 <Fade>	I commend you, and exhile you back into the big room.
+Mar 13 22:06:04 <naokotani>	benoitj: l8r sk8r
+Mar 13 22:06:09 <cowboy8625>	later
+Mar 13 22:06:11 <Fade>	later, benoitj 
+Mar 13 22:06:24 <benoitj>	Marvin2: go play rock paper cisors with yourself
+Mar 13 22:06:31 <benoitj>	!trigger
+Mar 13 22:06:32 <cowboy8625>	llol
+Mar 13 22:06:33 <Marvin2>	trigger:: Emacs, allowed, used, amazing, guess, your, most, process, lame, guix
+Mar 13 22:06:40 <benoitj>	oh, you reset the triggers :P
+Mar 13 22:06:49 <cowboy8625>	!trigger
+Mar 13 22:06:51 <Marvin2>	trigger:: Emacs, allowed, used, amazing, guess, your, most, process, lame, guix
+Mar 13 22:06:56 <cowboy8625>	lol
+Mar 13 22:07:05 <Fade>	I did, for a time have a plugin that played rock paper scisors lizard spock
+Mar 13 22:07:06 <benoitj>	there is nothing better than Emacs
+Mar 13 22:07:09 <Marvin2>	there is a way to get off the remainder,b ut used an example they call it terrible... Though it is a lot of time here and there is a statistical trick. :)
+Mar 13 22:07:25 <benoitj>	haha
+Mar 13 22:07:27 <Fade>	the trigger list isnt' reset unless the bot is restarted.
+Mar 13 22:07:34 <Fade>	the words are replaced as they're used.
+Mar 13 22:07:41 <benoitj>	ok, so you restarted it
+Mar 13 22:07:49 <Fade>	yesterday or the day before?
+Mar 13 22:07:55 <Fade>	something like that
+Mar 13 22:08:01 <Fade>	what were you expecting to see?
+Mar 13 22:08:07 <benoitj>	ok, because the last !trigger 2-3 minutes ago is totally different
+Mar 13 22:08:18 <benoitj>	and the bot did not get triggered as much
+Mar 13 22:08:44 <Fade>	interesting
+Mar 13 22:08:45 <benoitj>	16:59, the list is totally different
+Mar 13 22:08:54 <Fade>	I see that
+Mar 13 22:09:11 <benoitj>	and was only triggered once
+Mar 13 22:09:17 <Fade>	the code that manages the trigger list is ~10 years old, and I haven't really visited since it was written.
+Mar 13 22:09:20 <Fade>	lol
+Mar 13 22:09:25 <cowboy8625>	be back on later
+Mar 13 22:09:27 <benoitj>	then I tried to trigger it with rock, and it did not work
+Mar 13 22:09:51 <benoitj>	anyway, bbl
+Mar 13 22:09:54 <Fade>	Emacs probably holds the key
+Mar 13 22:10:02 <Fade>	!trigger
+Mar 13 22:10:04 <Marvin2>	trigger:: allowed, used, amazing, guess, your, most, process, lame, guix, level
+Mar 13 22:10:52 <Fade>	this is actually probably a bug, which is in a pretty surprising / amazing place.
+Mar 13 22:10:55 <Marvin2>	this is why I restart the process. probably later today.
+Mar 13 22:11:03 <Fade>	you shutup
+Mar 13 22:11:13 <Fade>	!trigger
+Mar 13 22:11:14 <Marvin2>	trigger:: allowed, used, guess, your, most, process, lame, guix, level, pretty
+Mar 13 22:26:03 <mretka>	Hmmm, let's see what happens:
+Mar 13 22:26:11 <mretka>	allowed used guess your most process lame guix level pretty
+Mar 13 22:26:32 <mretka>	Oh, Marvin2 needs one of these maybe?
+Mar 13 22:26:42 <mretka>	Used to think a lot of things
+Mar 13 22:26:44 <Marvin2>	Used to sit on the left margin.
+Mar 13 22:26:51 <mretka>	Yup
+Mar 13 22:26:58 <mretka>	Guess that's how it's working now
+Mar 13 22:27:02 <Marvin2>	Guess that's just a extra class from the premise that any data published on the scale of thermodynamic entropy my hours are more polite to him
+Mar 13 22:27:19 <ozzloy>	what if you used two of them, is that allowed?
+Mar 13 22:28:11 <ozzloy>	i guess not, that's kinda lame and i think you should level up to maybe even 3 of them
+Mar 13 22:28:14 <Marvin2>	i guess she bought it later this year simply by being south of Jackson
+Mar 13 22:29:53 <ozzloy>	huh
+Mar 13 22:30:48 <mretka>	Guess the lame phrase needs to involve guix and be a process?
+Mar 13 22:31:10 *	mretka is thinking of permutations of the trigger words
+Mar 13 22:31:31 <mretka>	Or maybe 2 at most?
+Mar 13 22:31:35 <mretka>	Guess lame things
+Mar 13 22:38:54 <ozzloy>	lol, i just got a spam email with a soviet union tld https://www.85offwatch.su
+Mar 13 22:38:56 <Marvin2>	[ http://outrider.deepsky.com:5808/NVViQ ]::[ go...... ]
+Mar 13 22:42:23 <ozzloy>	dang, someone already has sudo.su
+Mar 13 22:46:23 <ozzloy>	oh, when i type "fd" really fast, i get "fd" then it erases.  i'm not sure how to C-h k this.  when i do, i get self-insert for f
+Mar 13 22:48:25 <ozzloy>	so like, say i have "as|" and the cursor is where the '|' is.  then i very quickly hit "fd".  i see "asf|" then "as|"
+Mar 13 22:50:37 <Fade>	I don't understand what you're talking about. is this in an evil config?
+Mar 13 22:53:39 <naokotani>	https://imgur.com/a/2iLngxZ
+Mar 13 22:53:41 <Marvin2>	[ http://outrider.deepsky.com:5808/mGGgU ]::[ Imgur: The magic of the Internet ]
+Mar 13 22:54:13 <naokotani>	trying to start an emacs daemon and i THINK thats causing my problem. I don't see any errors other than cl is depracted right at the end
+Mar 13 23:01:11 <shom>	Hi crafter o/
+Mar 13 23:01:31 <shom>	Just one crafter, I guess 😂 
+Mar 13 23:01:34 <Marvin2>	Just one crafter, I guess im a big fan of Matlab/Simulink for embedded targets (if someone has been some time for it, it has everything
+Mar 13 23:01:40 <Fade>	that's a known problem and as the message says, it has survived for a long time.
+Mar 13 23:01:46 <Fade>	hey shom
+Mar 13 23:02:00 <shom>	Hi Fade 
+Mar 13 23:02:08 <shom>	You're THE crafter 
+Mar 13 23:02:15 <Fade>	naokotani: you need to require for some unknown reason 'cl-lib instead of 'cl since emacs 28
+Mar 13 23:02:26 <shom>	I love that Marvin quoted me back to me, I feel famous 
+Mar 13 23:02:26 *	Fade is _a_ crafter
+Mar 13 23:02:28 <Marvin2>	I love that one episode of star trek tng.
+Mar 13 23:02:59 <Fade>	other people are much much more crafty than I am. :)
+Mar 13 23:11:31 <Fade>	(or, I just won the lottery)
+Mar 13 23:11:37 <Fade>	I never know what's going on.
+Mar 13 23:14:03 <naokotani>	the cl thing can't be what's causing the emacs service to not launch though
+Mar 13 23:14:05 <Marvin2>	the cl vs clojure debate?
+Mar 13 23:14:23 <Fade>	the cl thing is just a deprecation warning.
+Mar 13 23:14:50 <Fade>	the pgtk thing in conjunction with wayland is a trouble vector I don't have any experience with.
+Mar 13 23:15:11 <Fade>	it's a setup that daviwil has been running for a long while, though.
+Mar 13 23:15:56 <Fade>	the emacs people and the wayland people are fighting about a thing that the wayland people think is either a feature or at worst a non-issue, and the emacs people think it's a show stopper.
+Mar 13 23:16:23 <Fade>	I read about it a bit the first time I saw the message on a machine, but I haven't actually run into any problem.
+Mar 13 23:17:19 <Fade>	I can only conclude that not many wayland developers use emacs. :)
+Mar 13 23:17:21 <Marvin2>	I can only allocate an hour ago 😀
+Mar 13 23:17:37 <Fade>	eight megs and constantly swapping
+**** BEGIN LOGGING AT Wed Mar 13 23:52:51 2024
+
+Mar 13 23:52:48 *	Now talking on #systemcrafters
+Mar 13 23:52:48 *	Topic for #systemcrafters is: Topic for #systemcrafters: System Crafters General Chat - Elevating computer enthusiasts to experts of code and craft - https://systemcrafters.net - https://forum.systemcrafters.net
+Mar 13 23:52:48 *	Topic for #systemcrafters set by benoitj!a1f51ac63d@user/benoitj (Fri Mar  8 20:34:38 2024)
+Mar 13 23:53:51 <shom>	I just started reading Lost in Time by A. G. Riddle and it's getting pretty good. I hope it will stay good, lots of potential! 
+**** BEGIN LOGGING AT Thu Mar 14 02:26:04 2024
+
+Mar 14 02:26:01 *	Now talking on #systemcrafters
+Mar 14 02:26:01 *	Topic for #systemcrafters is: Topic for #systemcrafters: System Crafters General Chat - Elevating computer enthusiasts to experts of code and craft - https://systemcrafters.net - https://forum.systemcrafters.net
+Mar 14 02:26:01 *	Topic for #systemcrafters set by benoitj!a1f51ac63d@user/benoitj (Fri Mar  8 20:34:38 2024)
+Mar 14 02:28:04 <naokotani>	lol I tried to downlaod hunspell canadian and then it asks me if I also want valencian
+Mar 14 02:28:08 <naokotani>	.... oh catalan
+Mar 14 02:33:09 <naokotani>	benoitj: do you use wayland?
+Mar 14 02:33:29 <benoitj>	not yet
+Mar 14 02:33:55 <benoitj>	I did use it when I was on RDE
+Mar 14 02:34:19 <naokotani>	ah. thought you might know about this bug
+Mar 14 02:34:21 <Marvin2>	ah. thought you said you are defeated by Guix
+Mar 14 02:53:03 <benoitj>	hi folks, what do you all think of that? https://codeberg.org/benoitj/awesome-systemcrafters
+Mar 14 02:53:05 <Marvin2>	[ http://outrider.deepsky.com:5808/skwMV ]::[ benoitj/awesome-systemcrafters: Proposal for a awesome page for the system crafters community Crafting of all sorts, code, config, things, art, and more. - Codeberg.org ]
+Mar 14 02:53:56 <naokotani>	oh yeah thats a good idea
+Mar 14 02:53:58 <Marvin2>	oh yeah that is weird
+Mar 14 02:54:13 <benoitj>	Marvin2: exactly
+Mar 14 02:54:20 <benoitj>	weird and good idea are good fit
+Mar 14 03:01:15 <naokotani>	doesn't seem that weird lol
+Mar 14 03:01:32 <benoitj>	yeah, I know, i'm feeding the troll
+Mar 14 03:02:08 <benoitj>	I just imagine Marvin2 saying just that out of context
+Mar 14 03:02:29 <tdback>	nice idea benoitj!
+Mar 14 03:02:50 <benoitj>	ok, no one complained. going to post on the forum. lets see :)
+Mar 14 03:03:21 <tdback>	ill make sure to star it now so i can make a pull request later to add myself up there
+Mar 14 03:03:23 <Marvin2>	ill make sure your videos have a script, try to get it even occurred to them
+Mar 14 03:03:58 <tdback>	benoitj: if you bestow the honor upon me, of course
+Mar 14 03:05:56 <benoitj>	https://forum.systemcrafters.net/t/rfc-an-awesome-list-for-system-crafters/445
+Mar 14 03:06:01 <Marvin2>	[ http://outrider.deepsky.com:5808/uvkCX ]::[ No title found ]
+Mar 14 03:07:43 <benoitj>	tdback: it's open to this awesome community
+Mar 14 03:07:56 <benoitj>	it would be our honor :)
+Mar 14 03:07:59 <tdback>	B)
+Mar 14 03:09:00 <tdback>	on a side note, hows the weather been in canada?
+Mar 14 03:09:21 <tdback>	michigan keeps going from below freezing to sunny and in the 70s
+Mar 14 03:09:23 <Marvin2>	michigan keeps going from below freezing to sunny and in emacs out of the matching the cond, but this third movmeent yea
+Mar 14 03:09:51 <benoitj>	tdback: yeah, it's a bit colder than michigan, but warm
+Mar 14 03:10:08 <benoitj>	I still have a decent amount of snow, but it's melting
+Mar 14 03:10:34 <tdback>	pretty much zero snow here
+Mar 14 03:10:36 <Marvin2>	pretty much
+Mar 14 03:11:11 <benoitj>	the streets are clean of snow, I still have 1 foot of snow bank in the front yard in next to my hedge
+Mar 14 03:11:55 <benoitj>	but the rest is gone. not that we cant get more snow. sometimes we have snow late march, or early april 
+Mar 14 03:12:21 <tdback>	oh yeah, that's the best :/
+Mar 14 03:12:40 <tdback>	we had a lot of rainy weather that sped up the melting process
+Mar 14 03:16:38 <benoitj>	same
+Mar 14 04:26:25 <benoitj>	tdback: it's now just a pinned post wiki in the general category of the forum
+Mar 14 04:54:42 <glenneth>	morning
+Mar 14 04:54:58 <glenneth>	Folx o/
+Mar 14 04:55:56 <visl>	hey
+Mar 14 04:57:03 <glenneth>	hey visl 
+Mar 14 04:57:11 <benoitj>	hi glenneth 
+Mar 14 04:57:27 <glenneth>	benoitj: o/
+Mar 14 05:13:23 <benoitj>	ok, now we have a working setup for the "awesome crafting links from the community" 
+Mar 14 05:16:39 <glenneth>	Just reading that now benoitj - great idea :)
+Mar 14 05:19:50 <benoitj>	yeah, the result is quite nice and convenient. I think you should post your dotfiles ;)
+Mar 14 05:21:04 <benoitj>	everyone here should too, trev, shom, tdback, naokotani, cow_2001 and others
+Mar 14 05:21:22 <benoitj>	Fade, SummerEmacs, mretka 
+Mar 14 05:21:30 <benoitj>	https://forum.systemcrafters.net/t/awesome-crafting-links-from-the-community/446
+Mar 14 05:21:34 <cow_2001>	who what where?
+Mar 14 05:21:35 <Marvin2>	[ http://outrider.deepsky.com:5808/FnjtF ]::[ No title found ]
+Mar 14 05:21:39 <benoitj>	haha
+Mar 14 05:22:00 <cow_2001>	are you trying to compile an... oh.. it's in the title
+Mar 14 05:22:12 <benoitj>	an "awesome crafting links" to share our dotfiles, poem, or coding :)
+Mar 14 05:23:47 <benoitj>	oh, cool
+Mar 14 05:23:58 <benoitj>	more links
+Mar 14 05:24:19 <glenneth>	added a couple of blogs
+Mar 14 05:24:23 <cow_2001>	i have a bit of a dislike for the misuse of the word "awesome" but i like these lists anyway
+Mar 14 05:24:25 <Marvin2>	i have a family of three, so I feel like those things that are not my first step would be neat
+Mar 14 05:24:48 <benoitj>	glenneth: just dont add other people stuff, you must have at least a dotfiles link :P
+Mar 14 05:25:01 <glenneth>	biab - I have a call to be on 
+Mar 14 05:25:43 <glenneth>	I do benoitj not sure that's of any worth :)
+Mar 14 05:25:49 <cow_2001>	**AWESOME** cup of coffee, **AWESOME** bit of cheese, how do you feel?  "**AWESOME**"
+Mar 14 05:26:01 <benoitj>	hehe
+Mar 14 05:26:18 <benoitj>	cow_2001: you've got a blog and a dotfiles repo to link :P
+Mar 14 05:26:30 <cow_2001>	well
+Mar 14 05:26:47 <cow_2001>	my dotfiles are more like an archaeological site
+Mar 14 05:26:49 <benoitj>	https://git.sr.ht/~kakafarm/dotfiles/
+Mar 14 05:26:51 <Marvin2>	[ http://outrider.deepsky.com:5808/HWlYj ]::[ ~kakafarm/dotfiles - sourcehut git ]
+Mar 14 05:26:56 <benoitj>	no issues with that. mine is too
+Mar 14 05:26:57 <cow_2001>	add it if you'd like
+Mar 14 05:27:09 <benoitj>	and your blog is cool :P
+Mar 14 05:27:12 <cow_2001>	also https://kaka.farm/haunt/posts/
+Mar 14 05:27:14 <Marvin2>	[ http://outrider.deepsky.com:5808/WgtRl ]::[ 💩 Kaka Farm! 💩 -- Recent Posts ]
+Mar 14 05:28:12 <cow_2001>	oh, i had a list of fellow weirdos somewhere there that is not updated
+Mar 14 05:28:15 <Marvin2>	oh, i though they had to go between the mainland and newfoundland
+Mar 14 05:29:02 <glenneth>	Not sure my dotfiles qualify as "awesome" lol
+Mar 14 05:29:25 <benoitj>	awesome people
+Mar 14 05:30:21 <benoitj>	cow_2001: you asked: https://0x0.st/HFKP.png
+Mar 14 05:30:23 <benoitj>	:D
+Mar 14 05:30:24 <Marvin2>	[ http://outrider.deepsky.com:5808/byrTh ]::[ Binary data ]
+Mar 14 05:32:10 <benoitj>	glenneth: you've got guile-stash
+Mar 14 05:32:18 <benoitj>	at least put that one
+Mar 14 05:32:20 <cow_2001>	embarrassing ~_~
+Mar 14 05:32:25 <cow_2001>	but still
+Mar 14 05:32:30 <cow_2001>	it's alright
+Mar 14 05:32:55 <benoitj>	embarrassing? I can remove it if you want. meant to share, not to embarras
+Mar 14 05:33:51 <benoitj>	done
+Mar 14 05:34:03 <benoitj>	put it there if you like
+Mar 14 05:39:06 <cow_2001>	all is fine, thank you
+Mar 14 05:45:12 <benoitj>	ok, it's back
+Mar 14 06:05:18 <trevdev>	I have returned!
+Mar 14 06:05:19 <Marvin2>	I have played
+Mar 14 06:05:42 <glenneth>	trevdev: o/ Hi!!
+Mar 14 06:06:03 <trevdev>	glenneth: :D
+Mar 14 06:06:34 <trevdev>	It's been a while since I IRC'd.  I hath fallen from Emacs grace and have found a CLI client that doesn't sucketh
+Mar 14 06:06:54 <trevdev>	...well, so far as I can tell.  We shall see
+Mar 14 06:07:17 <glenneth>	haha   What are you using?
+Mar 14 06:07:19 <Marvin2>	haha What are they doing?
+Mar 14 06:07:43 <trevdev>	glenneth: A little haskell guy called `glirc`
+Mar 14 06:08:41 <trev>	my nemesis has returned
+Mar 14 06:09:25 <trevdev>	trev: We're Nemesi? :O
+Mar 14 06:09:43 <trevdev>	Nemesises? 
+Mar 14 06:10:09 <trev>	nematodes
+Mar 14 06:11:09 <trevdev>	Curses, all this time I never new I hath such a villian pulling on mine strings!
+Mar 14 06:11:11 <Marvin2>	Curses, all this time to take next ?
+Mar 14 06:11:39 <trevdev>	Buy a lottery ticket Marvin2
+Mar 14 06:11:42 <trev>	it is i, the ncurses villain 
+Mar 14 06:12:36 <trevdev>	For he is fast, and compiled in the seven Cs
+Mar 14 06:13:10 <glenneth>	lol  hey trev 
+Mar 14 06:16:40 <glenneth>	benoitj: added my own :)
+Mar 14 06:24:45 <trev>	hi glenneth 
+Mar 14 06:24:59 <trev>	i need to add something per benoitj 's request?
+Mar 14 06:51:58 <benoitj>	trev: it's more a wish than a request :P
+Mar 14 06:52:21 <benoitj>	glenneth: great!
+Mar 14 06:54:43 <trev>	your wish is my command
+Mar 14 06:54:52 <trev>	i will reserve my rightful spot under glenneth 
+Mar 14 06:55:44 <trevdev>	Blech! How he grovels!
+Mar 14 06:58:25 <benoitj>	haha
+Mar 14 07:01:47 <shom>	I was summoned and I've added my links alphabetically but apparently I should have grobeled for a spot! Great idea benoitj... I was surprised I could edit the post, how does it handle simultaneous edits
+Mar 14 07:02:30 <shom>	Ahhh it's a wiki, not a post. Just realized when I got the wiki editor badge. 
+Mar 14 07:02:40 <benoitj>	shom: version control and its a wiki post
+Mar 14 07:02:47 <shom>	Discourse is all about giving out pieces of flair. 
+Mar 14 07:03:46 <shom>	Yikes something went wrong with my edit. Fixing 
+Mar 14 07:04:18 <benoitj>	alphapapa suggested to use a wiki,  bot of us not knowing it was supported, but somehow I discovered the convert to wiki in the options
+Mar 14 07:05:15 <glenneth>	nice
+Mar 14 07:06:57 <benoitj>	shom: nice addition
+Mar 14 07:07:48 <glenneth>	+1
+Mar 14 07:08:53 <trev>	i did it. the editing is weird when multiple people are editing the post
+Mar 14 07:09:17 <shom>	Nice, yeah I like the wiki approach. I'll have to check out everyone's stuff tomorrow (I guess later today). 
+Mar 14 07:09:29 <benoitj>	 yeah, should not happen too often after today or tomorrow 
+Mar 14 07:10:10 <shom>	TIL trev and trevdev are not the same person. Is BigEatie and BiggerEatier same human? 
+Mar 14 07:10:10 <benoitj>	optimistic locking at its best
+Mar 14 07:10:53 <trev>	shom: i think so
+Mar 14 07:11:06 <trev>	some people use different names on different clients i think
+Mar 14 07:11:08 <Marvin2>	some people use it.
+Mar 14 07:12:13 <trevdev>	shom: Tis my curse, e'er since David thought he was I, or I was him(?)
+Mar 14 07:12:34 <shom>	Thanks trev! Yeah I assumed so, it's easier to tell when it's ` is _ but I totally would have thought that you and youdev would be the same person. 
+Mar 14 07:12:50 <shom>	Hahaha I like it
+Mar 14 07:12:50 <trev>	lol
+Mar 14 07:13:19 <trevdev>	*Schoffs* He is not hedev, I am Idev!
+Mar 14 07:13:40 <shom>	It makes this place more like a local pub with 6 Daves but you know which one based on context but misunderstandings lead to funny stories 
+Mar 14 07:14:40 <shom>	It's like old Java (?) variable name examples iTrev and myTrev
+Mar 14 07:15:24 <trev>	i laid claim to this name on day one of libera!!
+Mar 14 07:16:21 <benoitj>	 shom that I prefix is c#, not java
+Mar 14 07:17:07 <benoitj>	Polish notation. comes from c if I recall
+Mar 14 07:17:42 <benoitj>	but you're right about the pub
+Mar 14 07:17:48 <benoitj>	😃
+Mar 14 07:18:18 <shom>	Thanks benoitj yeah I couldn't remember but it was always i and my and I found them both very annoying. What about usVar and weVar, comrades? 😂 
+Mar 14 07:18:38 <benoitj>	hehe
+Mar 14 07:18:48 <trevdev>	I laid claim to *this* name on day one of libera!
+Mar 14 07:19:15 <shom>	trev: i generally get shom most places but sadly not on github and not where they require minimum of 5 char user names. 
+Mar 14 07:19:15 <trevdev>	And my mother doth pick it from a phone book at random before I was born in the nineteen-eighties. Were you *boooorn* first, trev?
+Mar 14 07:19:29 <benoitj>	trevdev: you cant have * in names
+Mar 14 07:20:28 <shom>	No no we're not settling this by birth years, we need a cage match 
+Mar 14 07:20:30 <Marvin2>	No no it has survived for a penguin!? /s
+Mar 14 07:21:16 <trevdev>	benoitj: Blach what do you mea-No! I mean I had trevdev first! Aerrrrgh!
+Mar 14 07:21:28 <shom>	Oh @trev your link to neovim config reminded me, I saw a video someone posted about https://github.com/nvim-lua/kickstart.nvim and it was a great video and cool project 
+Mar 14 07:21:32 <Marvin2>	[ http://outrider.deepsky.com:5808/abHon ]::[ GitHub - nvim-lua/kickstart.nvim: A launch point for your personal nvim configuration ]
+Mar 14 07:21:55 <benoitj>	 trevdev yeah I know, trolling you 😃
+Mar 14 07:22:21 <trevdev>	Whaaat, this other trev also has a known Neovim config???
+Mar 14 07:22:41 <trevdev>	Tis like a fracture in space and time!
+Mar 14 07:22:43 <Marvin2>	Tis like a playoff game.
+Mar 14 07:23:20 <shom>	Here's the video trev https://youtu.be/m8C0Cq9Uv9o?si=BPEFuGPMbBCGRvow I really like how Kickstart and the video explains what's happening instead of obfuscated framework 
+Mar 14 07:23:23 <Marvin2>	[ http://outrider.deepsky.com:5808/CXbkR ]::[ The Only Video You Need to Get Started with Neovim - YouTube ]
+Mar 14 07:23:40 <benoitj>	this is the best presentation at a vim conference https://www.youtube.com/watch?v=JWD1Fpdd4Pc
+Mar 14 07:23:42 <Marvin2>	[ http://outrider.deepsky.com:5808/MBzyp ]::[ Evil Mode: Or, How I Learned to Stop Worrying and Love Emacs - YouTube ]
+Mar 14 07:24:15 <shom>	trevdev: maybe you're both the same person just living different parts of the same timeline 
+Mar 14 07:25:15 <shom>	Hahaha benoitj I've seen it and it's great. One of the earliest videos I've seen on emacs and got me hooked. 
+Mar 14 07:25:28 <trevdev>	shom: If trev wrote his Neovim as a nix flake, I'll be boggled.
+Mar 14 07:26:10 <trev>	trevdev: i'm not that psychotic 
+Mar 14 07:27:00 <trev>	i'm on the side of making many one character changes to my config throughout the day
+Mar 14 07:27:01 <trevdev>	When I have my eventual Emacs relapse, trev, it will also be flakified, as I am sick of things randomly breaking from 3 incoherent package managers not lining up nicely
+Mar 14 07:27:20 <trevdev>	I. am. PsYcHoTiC
+Mar 14 07:27:34 <trev>	all you need is lazy.nvim. only break stuff when you update :P
+Mar 14 07:27:36 <Marvin2>	all you diagrams. no duplication
+Mar 14 07:28:14 <trevdev>	Until lazy.nvim deprecates 2 years from now
+Mar 14 07:28:28 <trevdev>	(Impetus for using Nix was Packer going poof)
+Mar 14 07:29:29 <trev>	very fair point
+Mar 14 07:29:47 <trev>	feel the same way about neovim as a whole sometimes
+Mar 14 07:29:56 <trevdev>	All I have to do is run `nix run sourcehut:~trevdev/nvim-nix` and that shit builds on any system I can get nix on, it's beautiful
+Mar 14 07:30:14 <trevdev>	And it "just works"
+Mar 14 07:30:35 <trev>	it bundles all the plugins?
+Mar 14 07:30:48 <trev>	so it doesn't pull from their respective repos?
+Mar 14 07:30:59 <trevdev>	Plugins, tree-sitters, runtime dependencies (LSPs), everything. 
+Mar 14 07:31:06 <trevdev>	All pinned.
+Mar 14 07:31:18 <trev>	that does sound pretty great
+Mar 14 07:31:41 <shom>	Goodnight all, keep adding your stuff I look forward to checking out your cool 💩 
+Mar 14 07:31:43 <trevdev>	https://git.sr.ht/~trevdev/nvim-nix if you want to humor an old trevdev...I am tired, you handle all of our namesake matters from here.  Good night
+Mar 14 07:31:45 <Marvin2>	[ http://outrider.deepsky.com:5808/FQMth ]::[ ~trevdev/nvim-nix - A simple Nix flake for running Neovim - sourcehut git ]
+Mar 14 07:31:47 <trev>	is my arch-nemesis about to nix-pill me?
+Mar 14 07:31:49 <trev>	shom: gnite!
+Mar 14 07:32:54 <shom>	benoitj: and trevdev nix pilling everyone, l hope to wake up in the flake world 
+Mar 14 07:33:15 <glenneth>	nite shom o7
+Mar 14 07:34:11 <benoitj>	shom: no turning poor az
+Mar 14 07:34:19 <benoitj>	haha
+Mar 14 07:34:28 <benoitj>	no turning back
+Mar 14 07:34:53 <benoitj>	nite, need to sleep too
+Mar 14 07:35:07 <glenneth>	nite benoitj o7
+Mar 14 07:35:10 <trev>	why do they call them flakes? is it cause the nix logo is a snowflake? or did the logo come after?
+Mar 14 07:35:43 <benoitj>	flakes came after I think. its still stable beta
+Mar 14 08:44:08 <glenneth>	If I was going to install gnu guix on my laptop is there a wayland ditribution or would I install guix and then start installing wayland and hyprland or sway?
+Mar 14 08:45:15 <glenneth>	or stick with arch and use guix as my package manager?
+Mar 14 09:05:09 <alternateved>	Morning everyone
+Mar 14 09:05:39 <alternateved>	perpetual beta
+Mar 14 09:07:41 <thanosapollo>	morning alternateved 
+Mar 14 09:10:08 <glenneth>	hey alternateved thanosapollo o/
+Mar 14 09:25:37 <thanosapollo>	how you doing?
+Mar 14 09:36:15 <trev>	glenneth is good, probably on a work call
+Mar 14 09:42:54 <thanosapollo>	or just scheming something :) 
+Mar 14 09:42:58 <thanosapollo>	wbu trev 
+Mar 14 09:46:18 <trev>	just workin 
+Mar 14 09:46:27 <trev>	handling some merges
+Mar 14 09:50:32 <thanosapollo>	you use magit for it? 
+Mar 14 09:58:51 <trev>	thanosapollo: no just command line
+**** ENDING LOGGING AT Thu Mar 14 09:59:27 2024
+
+**** BEGIN LOGGING AT Thu Mar 14 10:06:40 2024
+
+Mar 14 10:06:38 *	Now talking on #systemcrafters
+Mar 14 10:06:38 *	Topic for #systemcrafters is: Topic for #systemcrafters: System Crafters General Chat - Elevating computer enthusiasts to experts of code and craft - https://systemcrafters.net - https://forum.systemcrafters.net
+Mar 14 10:06:38 *	Topic for #systemcrafters set by benoitj!a1f51ac63d@user/benoitj (Fri Mar  8 20:34:38 2024)
+**** BEGIN LOGGING AT Thu Mar 14 10:11:09 2024
+
+Mar 14 10:11:08 *	Now talking on #systemcrafters
+Mar 14 10:11:08 *	Topic for #systemcrafters is: Topic for #systemcrafters: System Crafters General Chat - Elevating computer enthusiasts to experts of code and craft - https://systemcrafters.net - https://forum.systemcrafters.net
+Mar 14 10:11:08 *	Topic for #systemcrafters set by benoitj!a1f51ac63d@user/benoitj (Fri Mar  8 20:34:38 2024)
+**** BEGIN LOGGING AT Thu Mar 14 10:15:57 2024
+
+Mar 14 10:15:54 *	Now talking on #systemcrafters
+Mar 14 10:15:54 *	Topic for #systemcrafters is: Topic for #systemcrafters: System Crafters General Chat - Elevating computer enthusiasts to experts of code and craft - https://systemcrafters.net - https://forum.systemcrafters.net
+Mar 14 10:15:54 *	Topic for #systemcrafters set by benoitj!a1f51ac63d@user/benoitj (Fri Mar  8 20:34:38 2024)
+Mar 14 10:32:24 <thanosapollo>	haven't use git via the command line in ages lol 
+**** BEGIN LOGGING AT Thu Mar 14 10:34:18 2024
+
+Mar 14 10:34:17 *	Now talking on #systemcrafters
+Mar 14 10:34:17 *	Topic for #systemcrafters is: Topic for #systemcrafters: System Crafters General Chat - Elevating computer enthusiasts to experts of code and craft - https://systemcrafters.net - https://forum.systemcrafters.net
+Mar 14 10:34:17 *	Topic for #systemcrafters set by benoitj!a1f51ac63d@user/benoitj (Fri Mar  8 20:34:38 2024)
+**** ENDING LOGGING AT Thu Mar 14 10:35:41 2024
+
+Mar 14 10:36:55 <trev>	i find that i don't really need many git commands for usual work
+Mar 14 10:55:03 <naokotani>	I just what is it... squash? rebase in magit a lot
+Mar 14 10:55:32 <naokotani>	becuase I will always forget to add precisely one tiny thing to a commit
+Mar 14 11:05:55 <thanosapollo>	running rebase to master is something everyone you work with will love you for! 
+Mar 14 11:07:04 <alternateved>	Yeaah
+Mar 14 11:29:00 <cow_2001>	fireworks show again today
+Mar 14 11:29:12 <cow_2001>	explosion in the sky
+Mar 14 11:29:19 <trev>	naokotani: git commit --amend
+Mar 14 11:30:16 <naokotani>	oh I never did on command line. always did magit
+Mar 14 11:30:35 <naokotani>	so git commit --amend will just add a commit to the last commit?
+Mar 14 11:31:46 <cow_2001>	i always just do git rebase -i HEAD~3 or something like that
+Mar 14 11:32:13 <cow_2001>	then you can choose what to do with each of the few last commits
+Mar 14 11:32:15 <Marvin2>	then you would choose a completion, and the fetus got up and rampaged around eastern europe.
+Mar 14 11:32:31 <cow_2001>	how gigerian
+Mar 14 11:47:54 <trev>	naokotani: it rewrites the last commit with whatever you forgot to add 
+Mar 14 11:48:11 <naokotani>	thats OP
+Mar 14 11:51:18 <alternateved>	TIL grimshot has 'anything' option that allows to choose what you want to copy 
+Mar 14 11:52:40 <naokotani>	TIL grimshot exists
+Mar 14 11:56:16 <alternateved>	grimshot save anything - | curl --form 'file=@-' http://0x0.st | wl-copy
+Mar 14 11:56:21 <Marvin2>	[ http://outrider.deepsky.com:5808/YISeH ]::[ No title found ]
+Mar 14 11:56:28 <alternateved>	also this is pretty handy, dunno why I did not use it before
+Mar 14 11:56:30 <Marvin2>	also this is the Candyman. Speak his name and he was learning about Satanism
+Mar 14 11:56:36 <alternateved>	oh boy
+Mar 14 11:57:11 <naokotani>	oh so it will put an image from a url on your clipboard?
+Mar 14 11:57:13 <Marvin2>	oh so it will list all of the same employer, change customers.
+Mar 14 11:59:03 <alternateved>	Yup
+Mar 14 11:59:09 <alternateved>	No, stop
+Mar 14 11:59:22 <alternateved>	It will copy a picture and upload it to 0x0.st
+Mar 14 11:59:30 <naokotani>	ah
+Mar 14 12:01:39 <alternateved>	curl -s http://some-url/image.png | wl-copy
+Mar 14 12:01:42 <Marvin2>	[ http://some-url/image.png ]::[ Couldn't fetch this page. ]
+Mar 14 12:01:50 <alternateved>	That would copy image from to clipboard
+Mar 14 12:01:59 <alternateved>	s/from/from url
+Mar 14 12:02:27 <naokotani>	oh. I didn't know about curl --form
+Mar 14 12:03:39 <ifiin>	I'm really confused 🤨. Who is Marvin2 😑??
+Mar 14 12:04:07 <alternateved>	ifiin: a bot
+Mar 14 12:04:23 <alternateved>	!status full
+Mar 14 12:04:25 <Marvin2>	status:: outrider running SBCL 2.4.2 on Linux 5.10.0-25-amd64, X86-64 QEMU Virtual CPU version 2.5+.
+Mar 14 12:04:27 <Marvin2>	status:: I know 106,836 phrases.
+Mar 14 12:04:54 <ifiin>	Ah. Is it like an AI or something?
+Mar 14 12:05:04 <alternateved>	!help
+Mar 14 12:05:05 <Marvin2>	help:: http://outrider.deepsky.com:5808/help
+Mar 14 12:05:07 <Marvin2>	help::   or !help <command>
+Mar 14 12:05:26 <alternateved>	I wouldn't call him AI
+Mar 14 12:05:38 <naokotani>	He is microsofts most adanced AI chatbot
+Mar 14 12:05:41 <alternateved>	it's a bit less
+Mar 14 12:06:17 <ifiin>	He has a "DOOMSDAY" command lol 😂
+Mar 14 12:06:39 <ifiin>	!doomsday
+Mar 14 12:06:41 <Marvin2>	doomsday:: A moment of historic danger:
+Mar 14 12:06:47 <alternateved>	!pope
+Mar 14 12:13:16 <ifiin>	You guys still play xonotic?
+Mar 14 12:40:23 <daviwil>	hey folks
+Mar 14 12:42:22 <trev>	hi daviwil
+Mar 14 12:52:46 <alternateved>	hi daviwil 
+Mar 14 13:26:48 <glenneth>	Hi Folx o/
+Mar 14 14:46:43 <talos>	Good day Crafters~
+Mar 14 14:56:51 <glenneth>	talos: o/
+Mar 14 15:08:33 <talos>	Yo glenneth
+Mar 14 15:10:10 <Fade>	Good Morning
+Mar 14 15:10:13 <Marvin2>	Good Morning Folx :) o/
+Mar 14 15:11:46 <daviwil>	Marvin2's stealing glenneth's personality
+Mar 14 15:12:42 <talos>	He assimilates all, like the Borg!
+Mar 14 15:14:32 <Fade>	a reflection from a *very* shallow pool. :]
+Mar 14 15:15:56 <Fade>	!status full
+Mar 14 15:15:57 <Marvin2>	status:: outrider running SBCL 2.4.2 on Linux 5.10.0-25-amd64, X86-64 QEMU Virtual CPU version 2.5+.
+Mar 14 15:15:59 <Marvin2>	status:: I know 106,907 phrases.
+Mar 14 15:16:13 <Fade>	dumber every day
+Mar 14 15:50:03 <trev>	like me
+Mar 14 15:50:05 <Marvin2>	like me who don't bother because they will do it
+Mar 14 15:55:46 *	Fade tries to untangle the web of the atomic scientists, again
+Mar 14 16:15:55 <glenneth>	Fade: o/
+Mar 14 16:28:43 <Fade>	heya, glenneth 
+Mar 14 16:31:37 <glenneth>	reading about dark matter?
+Mar 14 16:31:53 <Fade>	no, I'm repairing the bot's doomsday plugin
+Mar 14 16:33:58 <glenneth>	ahhh.  ok. what is it based on? 
+Mar 14 16:34:01 <Marvin2>	ahhh. ok. what is this even legal?
+Mar 14 16:35:14 <Fade>	https://thebulletin.org/doomsday-clock/current-time/
+Mar 14 16:35:16 <Marvin2>	[ http://outrider.deepsky.com:5808/cnxgt ]::[ Current Time - Bulletin of the Atomic Scientists ]
+Mar 14 16:36:16 <Fade>	in this case, the scraping code was foiled by the fact that the scientitsts inserted '<em>still</em>' into the middle of the string value I was interested in.
+Mar 14 16:37:00 <Fade>	scraping the web is a fraught activity.
+Mar 14 16:38:28 <glenneth>	emphasis? I'm guessing
+Mar 14 16:38:43 <Fade>	they wanted the word italicised. :)
+Mar 14 16:38:51 <glenneth>	ok 
+Mar 14 16:40:02 <Fade>	anyhow, It does a parsing pass over the web page, so that the data can be addressed by lisp, but where it used to get a flat string, it  now gets three structures each containing pieces of the string.
+Mar 14 16:40:06 <Marvin2>	anyhow, It does that stuff
+Mar 14 16:40:16 <Fade>	you fucking don't.
+Mar 14 16:41:09 *	Fade takes out his annoyance on the code
+Mar 14 16:42:01 <glenneth>	feels like kicking a kitten :)
+Mar 14 16:42:06 <glenneth>	lol
+Mar 14 16:42:26 <Fade>	more like a chromosomally challenged cephalopod
+Mar 14 16:43:31 <glenneth>	even more cruel
+Mar 14 17:21:23 <naokotani>	Today on the menu: getting latex working on arch
+Mar 14 17:21:53 <naokotani>	for whatever reason, it was increidbly simple on ubuntu
+Mar 14 17:23:36 <naokotani>	holy guacamole
+Mar 14 17:23:41 <naokotani>	its 7gb
+Mar 14 17:28:10 <glenneth>	miktex?
+Mar 14 17:28:25 <glenneth>	hey naokotani 
+Mar 14 17:28:43 <naokotani>	im look at texlive
+Mar 14 17:28:55 <naokotani>	miktext is a downlaod as you go
+Mar 14 17:29:00 <naokotani>	which is kind of nice tbh
+Mar 14 17:29:18 <naokotani>	but it's convinient to publish in emacs
+Mar 14 17:29:44 <glenneth>	yeah.  that's what i have installed,  Everything lol
+Mar 14 17:29:47 <Marvin2>	yeah. that's what i care about htat
+Mar 14 17:30:04 <glenneth>	of course you do Marvin2 
+Mar 14 17:30:16 <naokotani>	7gb isn't really a problem
+Mar 14 17:30:23 <naokotani>	I am just surprised. that's a lot
+Mar 14 17:30:50 <glenneth>	it isn't.  until you start the install lol
+Mar 14 17:31:15 <naokotani>	I have to make dough anyway
+Mar 14 17:31:40 <glenneth>	multiple tex engines and a couple of different macro packages
+Mar 14 17:32:20 <naokotani>	yeah no wonder is so god damn op
+Mar 14 17:32:31 <naokotani>	microsoft word ain't no 7gb
+Mar 14 17:32:45 <glenneth>	yup.  massively so 
+Mar 14 17:33:10 <naokotani>	I mean I could probably do a arch package
+Mar 14 17:35:48 <glenneth>	texlive-latex contains essential LaTeX packages
+Mar 14 17:36:15 <glenneth>	texlive-latexrecommended and texlive-latexextra
+Mar 14 17:36:40 <glenneth>	they have a lot of useful packages
+Mar 14 17:37:02 <naokotani>	yeah. I was trying to auctex and I was missing something
+Mar 14 17:37:08 <naokotani>	but I was having a hard time figuring out what
+Mar 14 17:37:42 <glenneth>	https://wiki.archlinux.org/title/TeX_Live that might help
+Mar 14 17:37:44 <Marvin2>	[ http://outrider.deepsky.com:5808/aXPtC ]::[ TeX Live - ArchWiki ]
+Mar 14 17:38:12 <naokotani>	yeah im using that
+Mar 14 17:38:15 <Marvin2>	yeah im using kitty/zsh/starship
+Mar 14 17:38:49 <naokotani>	yeah, its true marvin
+Mar 14 17:39:20 <glenneth>	you can install individual .sty files from the arch repos too if you find you are missing something when you are rendering your output
+Mar 14 17:39:56 <naokotani>	oh thats good to know
+Mar 14 17:40:06 <naokotani>	im STARTING to get familiar with latex, but im still a bit of a beginner
+Mar 14 17:40:21 <glenneth>	I'm telling you things you already know aren't I?  apologies
+Mar 14 17:40:32 <naokotani>	no I had no idea about the .sty thing
+Mar 14 17:41:55 <naokotani>	hey glenneth 
+Mar 14 17:42:02 <glenneth>	I've hit that a few times.  Very handy
+Mar 14 17:42:06 <naokotani>	you are on wayland right? do you use emacs daemon mode?
+Mar 14 17:43:29 <glenneth>	no.  I just run emacs but I've been thinking about it and just running emacsclient
+Mar 14 17:43:43 <naokotani>	ah. ive been having trouble running the server on wayland
+Mar 14 17:43:53 <naokotani>	which is really weird because it worked fine before I corrupted my drive
+Mar 14 17:44:39 <glenneth>	ok.  I'll give it a spin tomorrow and report back 
+Mar 14 17:45:00 <naokotani>	I must have installed a package that made it work,b ut I have no idea what it was lol
+Mar 14 17:45:14 <glenneth>	lol. 
+Mar 14 17:46:43 <naokotani>	so many weird interactions. I realzied yesterday I didn't ahve audio and I think when installed bluez it installed pipewire-pulse or osmething. or I forgot to put something int he arch-install script
+Mar 14 17:46:46 <Marvin2>	so many people/companies have committed secrets in repos without realizing sometimes for years so it doesn't work about why Firefox might not use it
+Mar 14 17:47:24 <glenneth>	now Marvin2 is paraoid
+Mar 14 17:47:29 <glenneth>	:D
+Mar 14 17:47:53 <glenneth>	just going to eat naokotani back in a bit
+Mar 14 17:48:01 <naokotani>	later
+Mar 14 17:53:43 <naokotani>	ah
+Mar 14 17:53:50 <naokotani>	god is great. it worked
+Mar 14 18:02:09 <naokotani>	oh, nope lol
+Mar 14 18:29:14 <Fade>	i'm not a big (la)tex user, but a few things I build needs it for fonts and info pages
+Mar 14 18:29:26 <Fade>	I find just installing texlive is a pill you have to swallow.
+Mar 14 18:29:48 <naokotani>	Yeah I am trying texlive full form AUR
+Mar 14 18:54:01 <naokotani>	Do I look like a hacker? > Do I feel like a hacker? > Am I a hacker?
+Mar 14 18:54:03 <Marvin2>	Do I send is creating errors
+Mar 14 18:54:37 <naokotani>	hyprland has taught me my priority list
+Mar 14 19:21:41 <shom>	Happy Pi Day friends! 
+Mar 14 19:21:46 <shom>	Sitting outside with a coffee with a pen and paper writing down some thoughts... Analog crafting? 
+Mar 14 19:36:11 <shom>	Just learned that today is also the 30th anniversary of Linux turning 1.0 \o/
+Mar 14 19:36:50 <shom>	Alright, off to afternoon meetings 👋🏽 
+Mar 14 20:26:48 <talos>	30 years of penguin dominance, Windows and Mac recognize a natural predator!
+Mar 14 21:46:12 <trevdev>	trev: How's the flake coming? >:)
+Mar 14 21:47:47 <trev>	hah
+Mar 14 21:47:54 <trev>	took a look at yours
+Mar 14 21:47:58 <trev>	nix aint for me
+Mar 14 22:01:37 <trevdev>	trev: Enjoy the steak dinners
+Mar 14 22:06:10 <trevdev>	FWIW I won't be flaking Emacs.  Lisp is supposed to be a mutant.  I will find a way to pin the version and package checkouts though so that stuff stops breaking every time I fart in its general direction
+Mar 14 22:07:09 <trevdev>	"Why is this LSP broken, why did that feature stop working, why an I getting treesit errors from *eldoc* aaaaaah!"
+Mar 14 22:07:12 <Marvin2>	"Why is this thing with github and other similar providers called actions that will return the station data for the idea.
+Mar 14 22:07:33 <trevdev>	Go home Marvin2 you're not real
+Mar 14 22:45:11 <naokotani>	is there a terminal theme web app where you can put in colors and see the changes immediately?
+Mar 14 22:45:16 <naokotani>	trying to recall what it was
+Mar 14 22:46:30 <naokotani>	oh right. terminal.sexy
+Mar 14 23:01:46 <mretka>	shom: I call that just doodling hehe
+Mar 14 23:01:49 *	mretka checks in
+Mar 14 23:04:38 <mretka>	Happy Pi Day indeed
+Mar 14 23:06:37 <mretka>	shom: I'm practicing my handwriting lately and just copying some book passages
+Mar 14 23:23:36 <talos>	https://www.lexaloffle.com/picotron.php
+Mar 14 23:23:38 <Marvin2>	[ http://outrider.deepsky.com:5808/zDiQk ]::[ Picotron by Lexaloffle ]
+Mar 15 01:05:24 <shom>	mretka: practicing hand writing would be a good idea for me, it keeps getting worse. 
+Mar 15 01:05:41 <shom>	Do you use any special pens or paper? 
+Mar 15 01:14:18 <mretka>	shom: Not really, I use the most common pen ever, the blue Bic Crystal pen
+Mar 15 01:15:00 <mretka>	I got 2 boxes full of Bic Crystal pens here, and used over half of one already
+Mar 15 01:15:10 <mretka>	For paper I have a couple legal pads and cheap notebooks
+Mar 15 01:15:35 <mretka>	Like, real cheap stuff, so that way I don't keep worrying about the paper or the pen, I just use them without thinking too much
+Mar 15 01:15:37 <Marvin2>	Like, real cheap stuff, so that the trigger list is ~10 years old, and I love that song
+Mar 15 02:05:06 <naokotani>	shom: I was practicing chinese characters for a while. STill have my set somewhere. was kind of enjoyable
+Mar 15 02:18:53 <shom>	mretka: nice, just doing without thinking is the best because then you'll actually do it. 
+Mar 15 02:20:03 <shom>	naokotani: i went to high school in Japan (international English speaking) and took Japanese as a second language. I was NOT good at writing Kanji 
+Mar 15 02:20:23 <naokotani>	I wouldn't say im good. But I enjoy it
+Mar 15 02:20:31 <naokotani>	I lived in Japan for a while
+Mar 15 02:20:37 <naokotani>	Kansai area
+Mar 15 02:26:46 <cow_2001>	sigh
+Mar 15 03:30:01 <talos>	DO you know Kansai-ben?
+Mar 15 03:32:49 <trevdev>	...no?
+Mar 15 03:35:05 <talos>	Oh sorry, that was directed towards naokotani, but it seems they left lol
+**** BEGIN LOGGING AT Fri Mar 15 03:40:53 2024
+
+Mar 15 03:40:51 *	Now talking on #systemcrafters
+Mar 15 03:40:51 *	Topic for #systemcrafters is: Topic for #systemcrafters: System Crafters General Chat - Elevating computer enthusiasts to experts of code and craft - https://systemcrafters.net - https://forum.systemcrafters.net
+Mar 15 03:40:51 *	Topic for #systemcrafters set by benoitj!a1f51ac63d@user/benoitj (Fri Mar  8 20:34:38 2024)
+Mar 15 03:44:08 <naokotani>	weird. After a few days of trying to figure out emacs I jsut random decided to try emacsclient -c after a reboot and it just.... worked 
+**** BEGIN LOGGING AT Fri Mar 15 03:45:00 2024
+
+Mar 15 03:45:00 *	Now talking on #systemcrafters
+Mar 15 03:45:00 *	Topic for #systemcrafters is: Topic for #systemcrafters: System Crafters General Chat - Elevating computer enthusiasts to experts of code and craft - https://systemcrafters.net - https://forum.systemcrafters.net
+Mar 15 03:45:00 *	Topic for #systemcrafters set by benoitj!a1f51ac63d@user/benoitj (Fri Mar  8 20:34:38 2024)
+**** ENDING LOGGING AT Fri Mar 15 03:45:01 2024
+
+Mar 15 03:51:44 <visl>	trevdev: cult? ;) 
+Mar 15 03:52:53 <naokotani>	oh, false alarm. its random crashing when I go to a different workspace
+Mar 15 04:02:26 <cow_2001>	https://www.youtube.com/watch?v=6uqgiFhW0Fs
+Mar 15 04:02:28 <Marvin2>	[ http://outrider.deepsky.com:5808/FrYPF ]::[ Free Complete Course: You need to learn this programming language to be a senior developer! - YouTube ]
+Mar 15 04:03:30 <cow_2001>	so tired
+Mar 15 04:13:07 <naokotani>	same
+Mar 15 04:13:10 <naokotani>	coincidence?
+Mar 15 04:13:34 <visl>	well then. have a nap and then fire zee missles
+Mar 15 04:13:36 <Marvin2>	well then. have a group discuss atm abt what to do that. So that's why they had some pretty out there that could be a captain of the boundaries of the json itself
+Mar 15 04:19:33 <benoitj>	morning folks
+Mar 15 04:21:11 <visl>	hey benoitj 
+Mar 15 04:25:04 <naokotani>	benoitj: sup
+Mar 15 04:25:32 <trevdev>	Moanin' benoitj 
+Mar 15 04:26:36 <benoitj>	hey visl naokotani trevdev 
+Mar 15 04:26:46 <benoitj>	back from work
+Mar 15 04:26:59 <benoitj>	well, back from my remote office :P
+Mar 15 04:28:35 <benoitj>	what about you?
+Mar 15 04:31:31 <naokotani>	Messing with my fonts in org mode
+Mar 15 04:31:44 <naokotani>	aka, trying to procrastinate doing my linux assignment
+Mar 15 04:32:12 <naokotani>	I wonder if I can just hand in configuring arch linux twice this week for my linux assignment and be done with it
+Mar 15 04:32:29 <benoitj>	:)
+Mar 15 04:32:33 <benoitj>	sounds cool
+Mar 15 04:33:13 <naokotani>	its been good. I learned a lot. I think last time I messed with arch I was really not so knowledable
+Mar 15 04:33:21 <naokotani>	it was really a lot of just copying and pasting code
+Mar 15 04:34:52 <naokotani>	I went with Libre Baskerville headers and source sans pro body
+Mar 15 04:35:28 <benoitj>	always easier when doing more as your learn
+Mar 15 04:36:30 <benoitj>	this is how I installed linux the first time: https://i.stack.imgur.com/xG1Po.jpg
+Mar 15 04:36:31 <Marvin2>	[ http://outrider.deepsky.com:5808/HKPMS ]::[ Binary data ]
+Mar 15 04:36:38 <benoitj>	but a lot more floppies
+Mar 15 04:37:22 <benoitj>	was 3 years after this
+Mar 15 04:38:00 <benoitj>	my first unix was actually solaris
+Mar 15 04:38:03 <visl>	i still have a slackware case badge from when those were a thing
+Mar 15 04:38:06 <Marvin2>	i still don't know what "Full Stack" means
+Mar 15 04:38:20 <benoitj>	:)
+Mar 15 04:38:49 <visl>	i do prefer a package manager these days
+Mar 15 04:40:51 <benoitj>	I do too, but it was quite interesting
+Mar 15 04:41:22 <benoitj>	the time when you had to learn which frequency your CRT supported, or else fry the thing
+Mar 15 04:41:25 <Marvin2>	the time i looked at changing his name, but the film section is basically the Yellow stuff that gives super power?
+Mar 15 04:41:43 <benoitj>	yellow stuff that gives supor power?
+Mar 15 04:43:29 <visl>	and trying to configure your soundcard...
+Mar 15 04:43:34 <cow_2001>	naokotani: if it's chronic, and it's not just because you keep yourself up and about, and you get normal hours of sleep but without feeling rested, call a doctor
+Mar 15 04:43:39 <benoitj>	isa card :D
+Mar 15 04:43:44 <benoitj>	need to know the irq 
+Mar 15 04:43:55 <benoitj>	hi cow_2001 
+Mar 15 04:44:03 <naokotani>	cow_2001: I work nights
+Mar 15 04:44:52 <naokotani>	I think the first time I installed linux was around 2009
+Mar 15 04:44:53 <cow_2001>	because having a certain amount of good sleep is the most important thing you could ever do, like eating and drinking and breathing
+Mar 15 04:45:03 <cow_2001>	benoitj: moo
+Mar 15 04:45:11 <naokotani>	yeah for sure. I am quitting nights
+Mar 15 04:45:21 <visl>	i noticed distros ship with pipewire these days. i think this is the 4th or 5th or attempt at getting sound to work?
+Mar 15 04:45:22 <naokotani>	Been doing it for almost 4 years and im done with it
+Mar 15 04:45:35 <cow_2001>	do you have earplugs and blinds?
+Mar 15 04:45:52 <benoitj>	visl: pipewire is a breeze
+Mar 15 04:45:57 <naokotani>	I have been pretty happy with pipewire/wirepluber/pipewire-pulse
+Mar 15 04:46:12 <benoitj>	I use pipewire-pulse
+Mar 15 04:46:17 <visl>	yeah. i like pipewire.. oss and alsa were bad. pulse was less bad.
+Mar 15 04:46:58 <naokotani>	pipewire is not at all bad. the cli is done so well too
+Mar 15 04:47:00 <cow_2001>	i must have earplugs and i shut my window when i go to sleep.  anything that blinks and bangs will be bad in bed
+Mar 15 04:47:14 <visl>	i haven't installed pipewire-pulse yet. wpctl has been working well enough
+Mar 15 04:47:37 <naokotani>	for whatever reason I had to install pipewire-pulse
+Mar 15 04:48:01 <naokotani>	don't ask me why, but wpctl wasn't pickup up my card
+Mar 15 04:48:11 <naokotani>	I isntalled pipwire-pulse and it did
+Mar 15 04:48:15 *	naokotani shrugs
+Mar 15 04:48:18 <benoitj>	https://0x0.st/HFeg.png
+Mar 15 04:48:20 <Marvin2>	[ http://outrider.deepsky.com:5808/OvoEg ]::[ Binary data ]
+Mar 15 04:48:27 <benoitj>	this is my pipewire config
+Mar 15 04:48:28 <visl>	i did a few years ago and if i remember correctly it was because whatever video support in firefox didn't support native pipewire or something. 
+Mar 15 04:49:18 <naokotani>	oddly enough wpctl picked up my webcam
+Mar 15 04:49:38 <naokotani>	but neither my usb DAC amp thing nor my integratd card
+Mar 15 04:49:59 <naokotani>	helvum is cool too
+Mar 15 04:52:05 <benoitj>	any special as a usb DAC?
+Mar 15 04:52:26 <visl>	i haven't tried my dac.. probably should before i sing pw's praises
+Mar 15 04:52:42 <visl>	helvum looks neat
+Mar 15 04:54:27 <benoitj>	me I just have a usb sound card, the onboard card was too crappy
+Mar 15 04:54:53 <benoitj>	part of it is due to some ground issues
+Mar 15 04:55:53 <benoitj>	but did not spent time troubleshooting it, in practice, it could be any of the docking station, or the desktop
+Mar 15 04:56:52 <visl>	i had a laptop that did that. was something weird when it was plugged into power. i ended buying a cheap ground loop filter on amazon
+Mar 15 04:57:11 <benoitj>	yeah, I have a cheap ground loop on one of the dock station
+Mar 15 04:57:25 <naokotani>	the usb dac I got beause my desktop case was causing huge background noise
+Mar 15 04:57:35 <naokotani>	when I plugged straight into it
+Mar 15 04:57:48 <benoitj>	my issue is is that I "line mix" 4 computers
+Mar 15 04:58:16 <benoitj>	I usually have to kind of balance the volumes, otherwise I get noise
+Mar 15 04:58:44 <naokotani>	one day id like to get an actual sound system
+Mar 15 04:58:56 <naokotani>	so I can really crank out the hip hop at high volume
+Mar 15 04:58:58 <Marvin2>	so I gottga play
+Mar 15 04:59:03 <benoitj>	I may need a nicer line mixer
+Mar 15 04:59:31 <benoitj>	naokotani: I use headphones most of the time. I do have some klipsch upstairs
+Mar 15 05:00:19 <naokotani>	same actually
+Mar 15 05:00:23 <benoitj>	but my headphones are "moded" with zip ties. they are old as hell
+Mar 15 05:00:29 <naokotani>	lol
+Mar 15 05:00:42 <benoitj>	I still need to repair my k701
+Mar 15 05:00:42 <naokotani>	mine are about 8 years old and hav ebeen through a lot
+Mar 15 05:01:07 <benoitj>	the ones I use daily are the k240
+Mar 15 05:01:17 <visl>	load bearing zip ties
+Mar 15 05:02:16 <benoitj>	visl: kind of, they are old, so the adjustable headband's elastic broke on one side
+Mar 15 05:02:33 <glenneth>	morning Folx o/
+Mar 15 05:02:40 <visl>	ah
+Mar 15 05:02:41 <benoitj>	I have these headphones for more than 15 years I think
+Mar 15 05:03:22 <glenneth>	ooohhh  headphones.  One of my favourite subjects :)
+Mar 15 05:04:39 <shom>	Top of the morning glenneth 
+Mar 15 05:05:15 <shom>	Headphones? I don't want to hear (ha!) about it benoitj before you make me fall into another rabbit hole. 
+Mar 15 05:05:18 <glenneth>	hey shom naokotani benoitj visl 
+Mar 15 05:05:18 <Marvin2>	Headphones? I don't need to accomplish something to a unix machine?
+Mar 15 05:05:47 <shom>	Marvin2: i know this, it's a Unix system. 
+Mar 15 05:05:47 <naokotani>	glenneth: sup glen
+Mar 15 05:05:49 <benoitj>	shom: https://www.akg.com/Headphones/Professional%20Headphones/K701.html
+Mar 15 05:05:52 <Marvin2>	[ http://outrider.deepsky.com:5808/lKkTc ]::[ K701 | Reference class premium headphones ]
+Mar 15 05:05:53 <naokotani>	main man glen
+Mar 15 05:05:53 <benoitj>	these are great
+Mar 15 05:06:34 <glenneth>	over ears i use Focal Stellia and for IEM's moondrop 
+Mar 15 05:07:41 <shom>	You guys are using off the shelf headphones? Gotta get them bespoke cans! 
+Mar 15 05:07:45 <Marvin2>	You guys are making me want to think about world politics. I'm listening / watching byrd talking about glenneth
+Mar 15 05:09:03 <benoitj>	shom: the hd650 or hd6xx are great too. I had couple of nice audio technica too, and my daughter has nice dt770 pro
+Mar 15 05:09:29 <glenneth>	I would lika a pair of Abyss Diana
+Mar 15 05:09:33 <benoitj>	shom: off the shelf, I guess, but not best buy off the shelf
+Mar 15 05:10:05 <shom>	I use Wyze noise canceling ear buds for everyday and domestic flights. I have a Bode QC35 that I use on long flights. I'm like the Starbucks drinking basic biatch of headphones. 
+Mar 15 05:10:12 <benoitj>	I like the dt770 pro, but they are too warm to wear all day long
+Mar 15 05:10:39 <glenneth>	https://eu.abyss-headphones.com/collections/abyss-headphones/products/abyss-diana-tc?variant=21216634568768
+Mar 15 05:10:42 <Marvin2>	[ http://outrider.deepsky.com:5808/bICxh ]::[ NEW! Diana® TC Premium Audiophile Headphone by ABYSS - ABYSS Europe ]
+Mar 15 05:10:46 <shom>	Hahaha benoitj the shelf matters, I see *hear* you 
+Mar 15 05:11:07 <benoitj>	yeah, earbuds for flights is best. you know the funny part? my akgs were tripping the AV systems on old KLM MD11 planes :D 
+Mar 15 05:11:30 <benoitj>	monitors going dark, system rebooting
+Mar 15 05:11:35 <shom>	glenneth: do you actually have those headphones? That's more than my first car. 
+Mar 15 05:11:37 <Marvin2>	glenneth: do you mean only by mensa card holders?
+Mar 15 05:12:05 <glenneth>	not yet shom 
+Mar 15 05:12:19 <benoitj>	I try to stick with ~500k headphones, I need money elsewhere :D
+Mar 15 05:12:33 <benoitj>	err 500$, not 500k
+Mar 15 05:12:36 <benoitj>	:D
+Mar 15 05:12:37 <visl>	i had some dt880 pros that i liked but ended up settling with a pair of Audeze LCD-2
+Mar 15 05:12:54 <shom>	benoitj: thats pretty funny, they do a lot of voltage drop tests even on entertainment portions of avionics. Interesting that you were browning out. 
+Mar 15 05:13:11 <benoitj>	visl: dt's are warm I think if they are like the 770
+Mar 15 05:13:39 <naokotani>	I was like bro
+Mar 15 05:13:42 <shom>	glenneth: one day mate, can't wait to hear the good news 
+Mar 15 05:13:44 <naokotani>	those must be some nice headphones
+Mar 15 05:13:45 <Marvin2>	glenneth: one day id like to call the java interop was good, but not that, Marvin
+Mar 15 05:13:47 <benoitj>	shom: yeah, was on their old 3 reactor planes
+Mar 15 05:14:01 <benoitj>	from montreal to amsterdam
+Mar 15 05:14:04 <shom>	Hi visl and naokotani 
+Mar 15 05:14:04 <naokotani>	my headphones are kind of cheapo
+Mar 15 05:14:11 <naokotani>	basic seinheisser
+Mar 15 05:14:18 <benoitj>	seiheisser are nice
+Mar 15 05:14:32 <naokotani>	they are excellent for the price
+Mar 15 05:14:54 <benoitj>	yeah, my young one has these after I got tired with soldered on cables :P
+Mar 15 05:15:07 <benoitj>	and their customer support is really nice
+Mar 15 05:15:17 <glenneth>	ultimately aiming for the sennheiser HE1.  I heard them at an audio show a few years ago.  I actually cried
+Mar 15 05:15:18 <naokotani>	my young one has ones that look like pandas
+Mar 15 05:15:22 <benoitj>	they broke once, and got them replaced free of charge, free shipping
+Mar 15 05:15:35 <glenneth>	https://www.sennheiser-hearing.com/en-UK/p/sennheiser-he-1/
+Mar 15 05:15:37 <Marvin2>	[ http://outrider.deepsky.com:5808/tEKcl ]::[ HE 1 | Sennheiser UK ]
+Mar 15 05:15:44 <shom>	Yeah I used a wired Sennheiser for years until the mic cable became too unreliable. I mostly just use my Jabra headset the rare times I game. It annoys my friends that I won't buy a good gaming headset. My ear holes aren't good enough to appreciate the difference. 
+Mar 15 05:15:55 <benoitj>	glenneth: you should invest into a good headphone amp too
+Mar 15 05:16:06 <naokotani>	I'm on my third cable for my seiheisser headphones
+Mar 15 05:16:09 <glenneth>	around 50k USD I think
+Mar 15 05:16:25 <benoitj>	good headphones makes sound flat without one
+Mar 15 05:16:38 <visl>	naokotani: headphones are a gradual step up game for most. in the end i justified upgrades because in an open office environment i needed something comfortable, nice, and obvious to signal "don't walk over and start talking to me" 
+Mar 15 05:16:44 <benoitj>	naokotani: yeah, the ones she has has a replacable cable
+Mar 15 05:16:54 <benoitj>	but it's good, so far did not need to replace it
+Mar 15 05:17:05 <benoitj>	shom: which ones are you getting?
+Mar 15 05:17:07 <benoitj>	;D
+Mar 15 05:17:12 <naokotani>	for mien the cable plugs in at both ends so it's easy to replace
+Mar 15 05:17:54 <shom>	Hahaha I'll get whichever ones shows up in a gift box ;) 
+Mar 15 05:18:00 <benoitj>	need something like these. light so I can use them 12 hours a day: https://www.sennheiser-hearing.com/fr-CA/p/hd-600/
+Mar 15 05:18:10 <Marvin2>	[ http://outrider.deepsky.com:5808/ACeXb ]::[ HD 600 | Sennheiser Canada ]
+Mar 15 05:18:11 <glenneth>	benoitj: I built my own for the desk but i have the chord mojo2 for portable along with the chord poly 
+Mar 15 05:18:33 <benoitj>	glenneth: nice! got a whammy in progress
+Mar 15 05:18:37 <naokotani>	they are acousticment transparent
+Mar 15 05:18:39 <benoitj>	another rabbit hole
+Mar 15 05:18:45 <shom>	glenneth: $10K deposit on the HE1... That's like getting eaten in the revolution rich!
+Mar 15 05:18:51 <benoitj>	whammy from the guy at passlab
+Mar 15 05:18:59 <benoitj>	it's almost done
+Mar 15 05:19:09 <visl>	glenneth: nice. i have a mojo and always considered getting the poly. do you like the poly?
+Mar 15 05:19:12 <Marvin2>	glenneth: nice. i have to learn partita no. 2 on the third hehe
+Mar 15 05:19:19 <glenneth>	shom: yeah.  it's a bit much lol
+Mar 15 05:19:58 <naokotani>	oh lol. it translated finally to acoustically
+Mar 15 05:20:27 <benoitj>	https://0x0.st/HFe5.jpg
+Mar 15 05:20:30 <Marvin2>	[ http://outrider.deepsky.com:5808/hPvGp ]::[ Binary data ]
+Mar 15 05:20:31 <naokotani>	I was like how can it not translate acousticment, just repalce the ment ly for god sake
+Mar 15 05:20:47 <benoitj>	need to drill the aluminum front panel
+Mar 15 05:20:56 <benoitj>	and the back panel
+Mar 15 05:20:59 <glenneth>	visl: the poly is great.  i can stream to it indoors and use bluetooth outdoors.  I usually usb in from my phone into the mojo2.  limited bitrate over bluetooth
+Mar 15 05:20:59 <Marvin2>	and the emacs instance rather than configuring emacs (as it seems
+Mar 15 05:21:47 <shom>	benoitj: nice amp box. I love big capacitors! 
+Mar 15 05:22:18 <benoitj>	yeah, I did test it electrically, no magic smoke :D
+Mar 15 05:22:49 <naokotani>	ok. I actually need to do this school assignment. i was due an hour and 20 minutes ago
+Mar 15 05:22:58 <naokotani>	nice chatting with you guys as usual
+Mar 15 05:23:51 <benoitj>	https://www.youtube.com/watch?v=Mn9jZQwsHmU
+Mar 15 05:23:54 <Marvin2>	[ http://outrider.deepsky.com:5808/ClZsb ]::[ Burning Amp 2017 - Wayne Colburn - YouTube ]
+Mar 15 05:24:07 <benoitj>	this is the amp designer, who presented that at burning amp
+Mar 15 05:24:30 <shom>	Bye naokotani, good luck! 
+Mar 15 05:24:32 <visl>	glenneth: ah cool. the "stream to" is bluetooth also?
+Mar 15 05:25:55 <benoitj>	i'm also building this amp: https://www.firstwatt.com/product/f6/
+Mar 15 05:25:57 <Marvin2>	[ http://outrider.deepsky.com:5808/GTIUi ]::[ F6 – www.firstwatt.com ]
+Mar 15 05:26:23 <benoitj>	jfet amp
+Mar 15 05:28:02 <glenneth>	visl: you set the receiving on the poly with the chord app so you can switch 
+Mar 15 05:28:26 <benoitj>	glenneth: you had plans or you designed the amp yourself?
+Mar 15 05:28:52 <glenneth>	i had to wait months for my op amps to arrive in Jordan
+Mar 15 05:29:00 <benoitj>	ok
+Mar 15 05:29:08 <visl>	glenneth: ah cool
+Mar 15 05:29:10 <glenneth>	I designed it myself benoitj 
+Mar 15 05:29:41 <benoitj>	nice!
+Mar 15 05:29:45 <shom>	Nice! 
+Mar 15 05:30:02 <benoitj>	me it's been too long, I just did it lazy, got plans and PCBs from pass labs
+Mar 15 05:30:26 <shom>	What's the source of the music you guys listen to on your cool headphones? I imagine something like FLAC? 
+Mar 15 05:30:34 <benoitj>	yeah
+Mar 15 05:30:58 <benoitj>	want to build dac, we'll see
+Mar 15 05:31:12 <glenneth>	they got held up at customs lol.  Mot sure what they thought i was building :)
+Mar 15 05:31:28 <benoitj>	hah
+Mar 15 05:31:52 <benoitj>	you have a dac too? I wonder what a lader dac would sound like
+Mar 15 05:32:21 <benoitj>	https://www.electronics-tutorials.ws/combination/r-2r-dac.html
+Mar 15 05:32:24 <Marvin2>	[ http://outrider.deepsky.com:5808/rEkyA ]::[ R-2R DAC (R-2R Digital-to-Analogue Converter) ]
+Mar 15 05:32:30 <glenneth>	6 watts of output so it will drive almost all headphones
+Mar 15 05:32:53 <visl>	flac mostly. i have a few dsd from nativedsd.com
+Mar 15 05:33:00 <benoitj>	yeah, even 1 watt tube amp can drive anything
+Mar 15 05:33:08 <benoitj>	well, not some speakers, but many
+Mar 15 05:34:12 <glenneth>	I have the sabaj A20d as my dac 
+Mar 15 05:34:21 <shom>	visl: didn't even know about dsd, thanks. 
+Mar 15 05:35:18 <benoitj>	shom: a whole new world was waiting for you :D
+Mar 15 05:35:43 <glenneth>	was looking at the chord hugo which is fpga
+Mar 15 05:35:45 <visl>	np.. i think they end up being controversial among audiophiles. frequencies the human ear can't hear and such. i'm on the do what's fun side of things. 
+Mar 15 05:35:59 <glenneth>	i have a few dsd
+Mar 15 05:36:21 <shom>	I'd like to take my music offline again but I've been ruined by the convenience of streaming. I really like the new tangara player that's been fully funded now, a k
+Mar 15 05:36:29 <shom>	*still on the fence 
+Mar 15 05:37:15 <shom>	Definitely not for audio connoisseurs but might be interesting to others https://www.crowdsupply.com/cool-tech-zone/tangara
+Mar 15 05:37:18 <glenneth>	I was a roon user.  benoit put me on to navidrome it's been awesome
+Mar 15 05:37:18 <Marvin2>	[ http://outrider.deepsky.com:5808/qemyg ]::[ Tangara ]
+Mar 15 05:37:33 <benoitj>	in us, schitt dacs seems nice and affortable
+Mar 15 05:37:45 <visl>	i _am_ a roon user. i'll have to check out navidrome
+Mar 15 05:37:47 <shom>	benoitj: this is one rabbit hole I can confidently avoid. I have bad ears so it's a waste on me. 
+Mar 15 05:37:50 <Marvin2>	benoitj: this is the best desktop.
+Mar 15 05:38:07 <glenneth>	hiby r3 pro as a dap
+Mar 15 05:39:32 <visl>	benoitj: i had a schiit lyr but the capacitors kept leaking. after the 3rd time sending it in for repair, gave it to a friend with that warning. support was good but it was a hassle.
+Mar 15 05:39:34 <Marvin2>	benoitj: i had a couple of org and a browser called Conqueror
+Mar 15 05:40:12 <benoitj>	visl: ok, should be easy to repair with a soldering iron. they just install schiit caps
+Mar 15 05:40:20 <visl>	*rimshot*
+Mar 15 05:40:42 <benoitj>	glenneth: i'm usually staying at home, not sure how much I would benefit from a dap
+Mar 15 05:40:54 <benoitj>	it does look nice. did not know that one
+Mar 15 05:41:11 <benoitj>	and it's pretty affortable
+Mar 15 05:42:56 <shom>	Wow checking out the navidrome demo, it's pretty cool! 
+Mar 15 05:43:28 <benoitj>	it's pretty nice
+Mar 15 05:44:00 <benoitj>	glenneth: oh true, I forgot I helped searching that one :D
+Mar 15 05:44:02 <visl>	navidrome looks interesting but my speakers support roon's RAAT but i don't really like roon....
+Mar 15 05:44:13 <glenneth>	I ditched roon for it  using the substreamer app on my mobile
+Mar 15 05:44:15 <benoitj>	glenneth: how do you like it?
+Mar 15 05:44:36 <glenneth>	it's working great.
+Mar 15 05:46:04 <glenneth>	and feishen on my desktop
+Mar 15 05:46:42 <benoitj>	so feishen -> your dac -> your amp? 
+Mar 15 05:47:38 <glenneth>	yeah, exactly.
+Mar 15 05:47:47 <benoitj>	beautiful
+Mar 15 05:48:31 <glenneth>	and remotely - substreamer on my phone.  log in to navidrome and done
+Mar 15 05:48:42 <benoitj>	cool
+Mar 15 05:48:50 <benoitj>	I should install navidrome
+Mar 15 05:48:52 <benoitj>	:D
+Mar 15 05:49:08 <benoitj>	my setup is not great right now
+Mar 15 05:49:41 <glenneth>	i have a huge music collection lol.  It's working better than Roon ever did
+Mar 15 05:49:49 <visl>	huh. ya navidrome is a no-go.. doesn't support any wireless streaming. :( 
+Mar 15 05:50:01 <benoitj>	what do you mean?
+Mar 15 05:50:06 <benoitj>	over bluetooth?
+Mar 15 05:50:20 <benoitj>	or with "wifi" speakers?
+Mar 15 05:50:22 <visl>	wifi like airplay
+Mar 15 05:50:24 <visl>	ya
+Mar 15 05:50:25 <benoitj>	ok
+Mar 15 05:50:30 <visl>	roon has their own "airplay" called raat
+Mar 15 05:50:57 <visl>	so i use roon to stream to devialet phantoms via raat
+Mar 15 05:51:04 <benoitj>	I think is should support airplay
+Mar 15 05:51:06 <visl>	they support bluetooth, but it's bluetooth
+Mar 15 05:51:12 <glenneth>	ahhh ok.  I don't have any wireless speakers
+Mar 15 05:51:43 <benoitj>	hmm, subsonic supports it though
+Mar 15 05:52:03 <visl>	i used subsonic until they did their close source pay us thing.
+Mar 15 05:52:33 <benoitj>	visl: you can use dsub on your phone connecting to navidrome and playing to your airplay device
+Mar 15 05:52:46 <benoitj>	that seems to be the way to do it
+Mar 15 05:52:48 <benoitj>	not ideal
+Mar 15 05:52:58 FiSHLiM plugin unloaded
+**** ENDING LOGGING AT Fri Mar 15 05:52:58 2024
+
+**** BEGIN LOGGING AT Fri Mar 15 06:03:29 2024
+
+Mar 15 06:03:26 *	Now talking on #systemcrafters
+Mar 15 06:03:26 *	Topic for #systemcrafters is: Topic for #systemcrafters: System Crafters General Chat - Elevating computer enthusiasts to experts of code and craft - https://systemcrafters.net - https://forum.systemcrafters.net
+Mar 15 06:03:26 *	Topic for #systemcrafters set by benoitj!a1f51ac63d@user/benoitj (Fri Mar  8 20:34:38 2024)
+Mar 15 06:03:33 <trev>	very upset that a set of keycaps came and the 2u spacebar doesn't fit. they promised it would 😭
+Mar 15 06:03:51 <benoitj>	dremel
+Mar 15 06:04:13 <benoitj>	make it fit :)
+Mar 15 06:04:38 <glenneth>	hey trev 
+Mar 15 06:04:53 <trev>	looking into moving the pegs or whatever and gluing them with resin in the correct place
+Mar 15 06:04:57 <Marvin2>	looking into moving the pegs or whatever you want your project build to use libraries to deal with teams is to play maggot brain so i can't get too obsessed...but i feel like I said you used two of them, but they were in the footer of the bot self hosts its code.
+Mar 15 06:05:41 <trev>	Marvin2: relax, maggot brain
+Mar 15 06:06:03 <benoitj>	at the beginning of the video, you can see what this headphones junky has: https://www.youtube.com/watch?v=OppGU7SJnuY&t=0s
+Mar 15 06:06:06 <Marvin2>	[ http://outrider.deepsky.com:5808/ioguq ]::[ Comparison review: First Watt F8, J2, F7, and SIT3 power amplifiers - YouTube ]
+Mar 15 06:07:12 <glenneth>	lol.  I like Steve Guttenberg
+Mar 15 06:07:39 <benoitj>	yeah, he sound genuine, no bs
+Mar 15 06:08:34 <shom>	trev: which key caps? I missed that part. 
+Mar 15 06:09:41 <trev>	shom: just a set of keycaps i ordered for my ortholinear board (full grid). to have a spacebar that spans 2 keys you need something called a "2u POS" keycap
+Mar 15 06:12:12 <shom>	Ortholinear, my man!! I use a split ortholinear Corne board with Kailh 25g purpz switches. 
+Mar 15 06:12:15 <Marvin2>	Ortholinear, my man!! I use emacs at work, so I have played
+Mar 15 06:12:31 <benoitj>	haha
+Mar 15 06:12:45 <trev>	:D 
+Mar 15 06:12:58 <trev>	i really hope Marvin2 adds "
+Mar 15 06:13:02 <trev>	my man!!
+Mar 15 06:24:17 <benoitj>	nite folks. tired
+Mar 15 06:27:57 <trev>	nite
+Mar 15 06:30:19 <shom>	Goodnight y'all
+Mar 15 06:34:05 <trevdev>	trev: Moonlander, zip kit (42 keys), platform.  All premium \m/
+Mar 15 06:34:13 <trevdev>	Did you build your corne?
+Mar 15 06:34:49 <trevdev>	shom: ^ oops
+Mar 15 06:36:58 <trev>	moonlander is pretty neat. i like the voyager too
+Mar 15 06:37:36 <trev>	there is an open source one that is basically the voyager that i'm considering building 
+Mar 15 06:37:38 <Marvin2>	there is also supported
+Mar 15 06:37:59 <shom>	trevdev: I assembled it but didn't solder the hot swaps, I don't have the patience for that. 
+Mar 15 06:38:03 <Marvin2>	trevdev: I assembled it but never got comfortable using terminal and see what's undercover. Have at least 15 years I think he has a "DOOMSDAY" command lol 😂
+Mar 15 06:38:38 <trevdev>	I really want to build one myself but I also really don't need a new hobby
+Mar 15 06:39:48 <shom>	Yeah, I split the difference in being able to fully customize but not make it a hobby. I ordered a board with hot swaps soldered and installed all the components. 
+Mar 15 06:40:10 <shom>	That moonlander looks really really nice but I would like to try it before shelling out for it. 
+Mar 15 06:41:11 <shom>	I got the board from boardsource.xyz, good experience. 
+Mar 15 06:43:14 <jakef>	i have the glove80 :) 
+Mar 15 06:43:59 <jakef>	it's so good that in a moment of weakness i considered using emacs keybindings
+Mar 15 06:44:05 <glenneth>	jakef: I just got the glove80
+Mar 15 06:44:33 <jakef>	are you used to it now?
+Mar 15 06:45:01 <glenneth>	getting there with it yeah
+Mar 15 06:45:10 <trev>	daviwil wears fingerless gloves while programming scheme until 2AM
+Mar 15 06:45:31 <shom>	Hahaha jakef, even with home row mods I'm still an evil user
+Mar 15 06:46:39 <glenneth>	haha.  I typed up the operations manual for a power plant in Afghanistan in fingerless gloves :D
+Mar 15 06:46:44 <trev>	i made all the thumb keys [space] 😳
+Mar 15 06:47:51 <shom>	glenneth: and jakef do you feel like you need to "hover" your fingers and then extend to hit keys? Or does it feel pretty natural? 
+Mar 15 06:47:58 <trev>	glenneth: pre-taliban government? 
+Mar 15 06:48:27 <glenneth>	shom it feels pretty relaxed
+Mar 15 06:48:35 <glenneth>	trev: yes
+Mar 15 06:50:03 <shom>	Yeah, I'd love to try out the moonlander and glove80. I wish there was a keyboard meetup by me. 
+Mar 15 06:50:20 <jakef>	shom: it's my first split keyboard, so I don't have much to compare with... a lot feels different
+Mar 15 06:50:30 <shom>	Actually what I'd really like is more of a glove 40 😂 gotten used to the fewer keys 
+Mar 15 06:52:00 <jakef>	i learned to touch type when i got it, so going from using 60% of digits to 100% has been the challenge 
+Mar 15 06:52:02 <Marvin2>	i learned a lot, still learning
+Mar 15 06:52:08 <shom>	jakef I started on the deep end of the pool with a borrowed gergoplex (12g linear) and moved up to the Corne (25g linear) 
+Mar 15 06:53:31 <shom>	I also learned to touch type 100% due to the split ergo. It was a steep curve but so worth it. I still type janky on a row stagger qwerty. I can't angle my wrists in far enough to proper touch type on a laptop keyboard. 
+Mar 15 06:54:37 <jakef>	oh yeah, when i go back to a normal keyboard i go back to dumb typing
+Mar 15 06:56:19 <trev>	i don't touch type very well, i just like when the keyboard thocks 
+Mar 15 06:56:44 <trev>	i actually want to type slower, cause that means i will do less work
+Mar 15 06:58:31 <glenneth>	trev: you'll do the same amount of work.  Will just take longer :D
+Mar 15 06:59:39 <shom>	Hahaha think more type less!
+Mar 15 07:00:02 <shom>	https://0x0.st/HF2P.jpeg here's my setup, excuse the ragged mat
+Mar 15 07:00:05 <Marvin2>	[ http://outrider.deepsky.com:5808/UXngc ]::[ Binary data ]
+Mar 15 07:00:43 <glenneth>	exactly shom 
+Mar 15 07:01:07 <trev>	lol yeah, my logic does not check out
+Mar 15 07:01:45 <trev>	shom: grip strength trainer for choking out enemies?
+Mar 15 07:02:11 <glenneth>	i never thought about placing my mouse in the centre
+Mar 15 07:02:28 <shom>	@trev no, it's for someone being able to use emacs native key binds 😝 
+Mar 15 07:03:00 <trev>	HA!
+Mar 15 07:03:09 <trev>	that is true.
+Mar 15 07:03:15 <shom>	glenneth: mouse in the center is less shoulder strain for me. 
+Mar 15 07:03:37 <shom>	Mostly split keyboard is for mouse, coffee, and snacks in center reasons. 
+Mar 15 07:05:26 <shom>	Oh yeah I was going to bed before I got sucked in by split ergo keyboard talk! Post your setups mates, I'd love to see them in the morning! Out for real. 
+Mar 15 07:07:22 <glenneth>	nite shom o7
+Mar 15 07:11:53 <trev>	glenneth: ever find a factory to create custom keycaps?
+Mar 15 07:12:34 <glenneth>	I didn't trev.  Not for a single run anyway
+Mar 15 07:31:24 <trev>	glenneth: i might need to cast my own resin
+Mar 15 07:33:32 <glenneth>	that's a deep rebbit hole lol
+Mar 15 07:34:48 <trev>	https://www.reddit.com/r/MechanicalKeyboards/comments/bl06lr/i_couldnt_find_any_sa_2u_pos_keycaps_so_i_cast_a/
+Mar 15 07:34:50 <Marvin2>	[ http://outrider.deepsky.com:5808/BLbSu ]::[ Reddit - Dive into anything ]
+Mar 15 07:34:54 <trev>	this guy did the exact key i need
+Mar 15 07:38:19 <glenneth>	they look cool
+Mar 15 08:10:55 <naokotani>	He has a code button
+Mar 15 08:11:05 <naokotani>	What does that do? Activate Devin?
+Mar 15 08:11:27 <trev>	lol
+Mar 15 08:11:43 <trev>	opens vscode
+Mar 15 08:21:16 <naokotani>	ah makes sense
+Mar 15 08:30:28 <trev>	i'm joking
+Mar 15 08:30:34 <trev>	i have one button that opens a terminal
+Mar 15 08:30:39 <trev>	kinda useless but i have extra keys
+Mar 15 08:31:16 <trev>	naokotani: have you used neogit on neovim? i think it may transform you into a vimmer 
+Mar 15 08:31:37 <trev>	emacs users can no longer say "i need magit"
+Mar 15 08:32:21 <naokotani>	I haven't tried it
+Mar 15 08:32:46 <naokotani>	I actually was trying to configure astrovim and its frankly confusing as hell
+Mar 15 08:32:52 <naokotani>	same problem I had with doom 
+Mar 15 08:33:24 <naokotani>	so I think I really need to just start fresh
+Mar 15 08:33:37 <naokotani>	what's so good about neogit compared to magit?
+Mar 15 08:33:39 <Marvin2>	what's so good that in a bit~
+Mar 15 08:35:35 <trev>	naokotani: lazyvim is better with the configuration. it allows you to even just take the configs and move them to your own eventually
+Mar 15 08:35:56 <trev>	naokotani: it's the same thing, that's why it's good
+Mar 15 08:36:35 <naokotani>	I can't really see myself leaving emacs. its so ingrained
+Mar 15 08:37:09 <naokotani>	I do use neovim daily though
+Mar 15 08:37:25 <naokotani>	but for just quick edits if im in the console
+Mar 15 08:44:41 <naokotani>	woops. I accidentally just submitted a .tex filed with a .pdf extension for as assignment. That' should confused the heck out of windows
+Mar 15 08:52:12 <naokotani>	well that was alarming. I accidentally set my volume in wpctl to 4000%
+Mar 15 09:04:21 <trev>	naokotani: what's wrong with your whatsapp?
+Mar 15 09:11:38 <naokotani>	oh
+Mar 15 09:11:46 <naokotani>	im restarting rebooting
+Mar 15 09:11:53 <naokotani>	whatsapp works flawlessly
+Mar 15 09:12:49 <naokotani>	my audio wasn't working. It hink installing bluez messed with the pipewire servive so I restarted and it wasfine
+Mar 15 12:15:18 *	Disconnected ()
+**** ENDING LOGGING AT Fri Mar 15 12:15:18 2024
+
+**** BEGIN LOGGING AT Fri Mar 15 12:17:55 2024
+
+Mar 15 12:17:55 *	Now talking on #systemcrafters
+Mar 15 12:17:55 *	Topic for #systemcrafters is: Topic for #systemcrafters: System Crafters General Chat - Elevating computer enthusiasts to experts of code and craft - https://systemcrafters.net - https://forum.systemcrafters.net
+Mar 15 12:17:55 *	Topic for #systemcrafters set by benoitj!a1f51ac63d@user/benoitj (Fri Mar  8 20:34:38 2024)
+Mar 15 14:10:04 <talos>	G'day all
+Mar 15 14:31:56 <daviwil>	hey folks!  I think I'll have to skip the stream this evening, I'm editing a bunch of videos right now and I won't have time :/
+Mar 15 14:31:58 <Marvin2>	hey folks! I think thats causing my problem. I don't believe it
+Mar 15 14:39:17 <naokotani>	sadness
+Mar 15 14:40:01 <naokotani>	daviwil: hey I've been hoping to bump into you. do you have any insight into this PGTK/emacsclient crashing under wayland issue?
+Mar 15 14:41:32 <daviwil>	I haven't seen the discussion about it, but I also haven't had any particular issues with it on my box
+Mar 15 14:41:34 <Marvin2>	I haven't tried, but I cannot get the me problem.
+Mar 15 14:42:30 <naokotani>	Darn. must be something specific about my setup. its proving hard to debug. IT might be something to do with my particular nvidia card
+Mar 15 14:42:45 <daviwil>	nvidia is flaky with Wayland from what I understan
+Mar 15 14:42:46 <daviwil>	d
+Mar 15 14:43:30 <naokotani>	Yeah so far so good other than this, which isn't really a big deal
+Mar 15 14:43:33 <Marvin2>	Yeah so far I only drink black tea at?
+Mar 15 14:43:39 <naokotani>	emacsclient is more of a nice to have for me than a need to have
+Mar 15 14:43:42 <Marvin2>	emacsclient is more of an afterthought in tech right now
+Mar 15 14:43:48 <Fade>	Good Morning
+Mar 15 14:43:51 <naokotani>	youve got that right marvin lol
+Mar 15 14:43:58 <naokotani>	Morning Fade 
+Mar 15 14:45:00 <naokotani>	so, I thought maybe I could figure out how to read the xml or osmething for this word documetn so I don't need libre office
+Mar 15 14:45:22 <naokotani>	so I open the docx and they are all dated january 1st 1980
+Mar 15 14:45:57 <naokotani>	let's create a new and improved "docx" but for some reason everythign still has an irrelavent time stamp to 1980?
+Mar 15 15:25:11 <naokotani>	looks like im going to habe to try out winterjs to continue my js runtime journy 
+Mar 15 15:26:09 <piethesailor>	Hola a todos!
+Mar 15 15:26:35 <piethesailor>	I am only able to come on seldomly these days
+Mar 15 15:27:02 <piethesailor>	Are we skipping live video today?
+Mar 15 15:27:10 <naokotani>	hola. como estas?
+Mar 15 15:27:14 <daviwil>	yep, no stream, I don't have time for it unfortunately
+Mar 15 15:27:31 <naokotani>	si, no hay tiempo para el streamollo
+Mar 15 15:28:02 <piethesailor>	estoy bien naokotani@
+Mar 15 15:28:03 <piethesailor>	!
+Mar 15 15:28:15 <piethesailor>	un poco consado este manana
+Mar 15 15:28:42 <piethesailor>	cansado*
+Mar 15 15:28:57 <naokotani>	yo tambien. no me... duermo muco el noche pasada?
+Mar 15 15:29:01 <naokotani>	idk how to say tha tlol
+Mar 15 15:29:06 <naokotani>	mucho
+Mar 15 15:30:20 <piethesailor>	Pienso que esta correcto, pero no necesita 'me'.
+Mar 15 15:30:42 <naokotani>	Creo que si porque es un verbo reflexivo
+Mar 15 15:30:51 <naokotani>	sea un*
+Mar 15 15:30:57 <piethesailor>	no se
+Mar 15 15:31:11 <naokotani>	lol
+Mar 15 15:31:14 <naokotani>	I th ink its like french
+Mar 15 15:31:38 <naokotani>	with some verbs being reflexive and I thought sleep was one of them, though I havne't spoken spanish is probably 10 years
+Mar 15 15:32:01 <piethesailor>	I am not fluent enough to have a say in the matter
+Mar 15 15:32:03 <Marvin2>	I am interested to dig more inside of it yeah
+Mar 15 15:32:05 <piethesailor>	either
+Mar 15 15:32:33 <piethesailor>	I think one could also make a verb reflexive in some cases
+Mar 15 15:32:39 <piethesailor>	maybe..
+Mar 15 15:32:56 <piethesailor>	depending on the dialect. where you are in the mundo hipanhiblantes
+Mar 15 15:33:02 <naokotani>	I'd imagine, but I think some of them sort of default to it
+Mar 15 15:33:21 <piethesailor>	hispanhiblantes? how do I say this 
+Mar 15 15:33:33 <naokotani>	spanish speakers?
+Mar 15 15:33:36 <piethesailor>	hispanohablante
+Mar 15 15:33:40 <piethesailor>	there we go
+Mar 15 15:33:48 <piethesailor>	yes
+Mar 15 15:33:49 <benoitj>	hi piethesailor `
+Mar 15 15:34:00 <piethesailor>	bonjour benoitj
+Mar 15 15:34:11 <piethesailor>	thats all the french you will get out of me lol
+Mar 15 15:34:32 <naokotani>	If its on a cereal box, I know how to say it in french otherwise im hopeless
+Mar 15 15:35:16 <naokotani>	I did take French for 2 years in university though, but again this was 15 years ago
+Mar 15 15:35:51 <naokotani>	also, french is too hard. spanish much easier
+Mar 15 15:41:04 <benoitj>	piethesailor: bonjour! :)
+Mar 15 16:07:58 <saboto>	Hey daviwil, everything ready for this months scheme course?
+Mar 15 16:10:45 <daviwil>	saboto: Rendering the videos for the first session now!
+Mar 15 16:12:07 <naokotani>	I have a vision of you stiring a giant cast iron pot full of boiling VHS tapes right now
+Mar 15 16:12:21 <daviwil>	more like running 3 different instances of Blender at the same time
+Mar 15 16:12:25 <naokotani>	but you probably mean a different kind of rendering
+Mar 15 16:12:59 <naokotani>	Now I have a mental image of the mainframe at hte daviwil complex
+Mar 15 16:13:40 <Fade>	it runs on retsina and olives
+Mar 15 16:13:50 <daviwil>	it runs on sleep deprivation
+Mar 15 16:16:22 <benoitj>	it runs on parens
+Mar 15 16:16:26 <Fade>	and the inordinate power of screaming infants!
+Mar 15 16:16:34 <daviwil>	speaking of which...
+Mar 15 16:16:42 <benoitj>	haha
+Mar 15 16:16:55 <Fade>	my computronium has been underpowered since my sprog aged out of very early childhood.
+Mar 15 16:17:38 <Fade>	so... modern humans originated in the african savannah...
+Mar 15 16:18:11 <Fade>	*how* did we survive the night with the chilren wailing away and the hyaenas and lions in the dark?
+Mar 15 16:19:43 <Fade>	that's the question having an infant left me with at 4am with bloodshot eyes and a fraying sense of relaxation.

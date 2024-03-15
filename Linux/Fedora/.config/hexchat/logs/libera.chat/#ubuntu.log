@@ -3968,3 +3968,733 @@ Mar 12 03:36:17 <Tingo>	Hi..
 Mar 12 03:36:55 <Tingo>	Hi, # openssl s_client IP:Port -tls1_2 -trace
 Mar 12 03:37:09 <Tingo>	How can i check which SecLevel is used from above command ?
 Mar 12 03:44:38 <pragmaticenigma>	Tingo, Unless you explicately set the SecLevel, it is either set by a configuration file, or going to be negotiated at time of connection
+Mar 12 03:56:03 <sem>	I intend to install ubuntu on a partition of an SSD, and install grub to that disk, and select it from BIOS when I want to boot ubuntu. Does that sound reasonable?
+Mar 12 03:56:21 <rbox>	sure
+Mar 12 03:56:26 <sem>	The other dual-boot problem that I know to head off is to tell Ubuntu to leave the RTC in local time, not UTC
+Mar 12 03:56:37 <sem>	because that will confuse windows
+Mar 12 03:56:45 <sem>	if i don't do that
+Mar 12 03:57:19 <sem>	do you all know of any good trustworthy references for dual boot best practices in this day and age?
+Mar 12 03:57:38 <rbox>	best practice is to just get rid of windows
+Mar 12 03:57:40 <rbox>	:P
+Mar 12 03:58:52 <sem>	thanks that's very helpful
+Mar 12 04:00:38 <Bashing-om>	!dualboot
+Mar 12 04:00:38 <ubottu>	Dual boot instructions: x86/AMD64: https://help.ubuntu.com/community/DualBoot/Windows - Macs: https://help.ubuntu.com/community/MacBookPro https://help.ubuntu.com/community/YabootConfigurationForMacintoshPowerPCsDualBoot
+Mar 12 04:00:51 <KernelPanicXD>	yo
+Mar 12 04:02:38 <sem>	I appreciate it! Thanks Bashing-om
+Mar 12 04:03:50 <Bashing-om>	sem: No problem - welcome :D
+**** BEGIN LOGGING AT Tue Mar 12 07:33:42 2024
+
+Mar 12 07:33:41 *	Now talking on #ubuntu
+Mar 12 07:33:41 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 12 07:33:41 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 12 07:33:41 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+Mar 12 09:32:00 <silv3r_m00n>	hi there, i put a 256gb sata ssd in an enclosure and installed ubuntu on it using full drive encryption. now i am able to use ubuntu portably across multiple machine and it feels quite productive. are there any other things that can be done to improve this kind of a setup
+Mar 12 09:36:02 <ikonia>	improve in what way
+Mar 12 09:36:24 <ikonia>	personally I don't think booting one install on multiple machines is a good model
+Mar 12 09:37:08 <akik>	if it works, it works
+Mar 12 09:42:19 <akik>	silv3r_m00n: ?
+Mar 12 09:52:10 <tjon>	ελληνικα μονο παιδια .ειμαι νεος
+Mar 12 09:57:16 <swift110-mobile>	Hey all
+Mar 12 14:07:33 <BluesKaj>	Hi all
+Mar 12 14:27:52 <johnfg>	hi folks
+Mar 12 14:31:49 <johnfg>	I'm getting an error from the snap-store, about it not being able to update.  Unable to update "Snap Store":  (null): cannot refresh "snap-store": snap "snap-store" has running apps (ubuntu-software), pids: 2014.
+Mar 12 14:32:23 <ravage>	try "kill 2014" in a terminal
+Mar 12 14:37:51 <johnfg>	Got it done.  Some weirdness there, but I guess it's resolved.
+**** BEGIN LOGGING AT Tue Mar 12 17:00:34 2024
+
+Mar 12 17:00:31 *	Now talking on #ubuntu
+Mar 12 17:00:31 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 12 17:00:31 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 12 17:00:31 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+Mar 12 18:03:35 <sem>	Hey all, my graphics are all glitched out, but I still have a mouse that moves around
+Mar 12 18:03:53 <sem>	Going to virtual terminals doesn't unglitch the screen or remove the mouse
+Mar 12 18:04:33 <sem>	It kind of acts like it's on the lock screen with a slideshow, but all glitched out
+Mar 12 18:05:47 <sem>	https://cdn.discordapp.com/attachments/969760851101880366/1217156507238404186/d2ccf0dc-0a98-430f-9557-dbc02570cd3c.jpg?ex=66030055&is=65f08b55&hm=90ee696496bf52a0cd2155194eda9e9c8c3d73858acca2b6e6a931b8fbc803a1&
+Mar 12 18:05:57 <sem>	Uuh hold on
+Mar 12 18:06:42 <sem>	Without tracking: https://cdn.discordapp.com/attachments/969760851101880366/1217156507238404186/d2ccf0dc-0a98-430f-9557-dbc02570cd3c.jpg
+Mar 12 18:07:07 <sem>	I guess you need those parts of the url after all
+Mar 12 18:07:43 <sem>	My question is: will any of the sysreg shortcuts get me back to a virtual console
+Mar 12 18:11:48 <sem>	I'm un glitched! Alt-Sysreg-f worked to invoke the OOM killer it just took a long time
+Mar 12 18:55:28 <Sora>	i'm trying to run some proprietary gpu software in a vnc but get errors cuda_error_not_initialized and it's only able to detect mesa, not the nvidia graphics card
+Mar 12 18:55:38 <Sora>	how do i run this software under the gpu
+Mar 12 18:55:54 <Sora>	nvidia-smi shows correct driver and cuda version and my gpu
+Mar 12 19:14:42 <akik>	p
+Mar 12 19:59:33 <Guest9947>	Bitcoin .. Captialsim .. ich glaube Powershell ist C++ oder C# .. wie Linux Konsole .. terminal ..
+Mar 12 19:59:37 <Guest9947>	eigentlich Neo
+Mar 12 20:00:07 <stenno>	diggi hier wird englisch gesprochen
+Mar 12 20:00:30 <leftyfb>	Guest9947: this is a support channel
+Mar 12 20:00:42 <mkou_>	yes gespoken uch bin der maumeister und ... Neo is pu$$ y
+Mar 12 20:01:31 <bprompt>	!de | Guest9947
+Mar 12 20:01:31 <ubottu>	Guest9947: In den meisten Ubuntu-Kanälen wird nur Englisch gesprochen. Für deutschsprachige Hilfe besuche bitte #ubuntu-de. Einfach "/join #ubuntu-de" eingeben. Danke für Dein Verständnis!
+Mar 12 20:01:48 <stenno>	didn't know this trigger, nice
+Mar 12 20:02:29 <bprompt>	!fr | stenno  // =)
+Mar 12 20:02:29 <ubottu>	stenno  // =): Nous sommes desoles mais ce canal est en anglais uniquement. Si vous avez besoin d'aide ou voulez discuter en français, veuillez taper «/join #ubuntu-fr» ou «/join #ubuntu-qc». Merci.
+Mar 12 20:02:43 <stenno>	tres bien
+Mar 12 20:02:45 <mkou>	can you please help me find the name of that terminal that is loading from the either side of the screen and pops out on a shortcut key
+Mar 12 20:03:40 <bprompt>	hmmmmm, is a kde app IIRC, I used it, didn't like it too much
+Mar 12 20:04:04 <mkou>	its not that one
+Mar 12 20:04:15 <bprompt>	eh?
+Mar 12 20:04:34 <bprompt>	mkou: are you referring to Yakuake?
+Mar 12 20:05:10 <mkou>	the name was close to termux
+Mar 12 20:05:24 <mkou>	but its not the one termux
+Mar 12 20:05:38 <bprompt>	well, yakuake does that =P
+Mar 12 20:06:16 <mkou>	its not yakuake
+Mar 12 20:06:25 <mkou>	but I will check it, might be good
+Mar 12 20:07:05 <bprompt>	yakuake slides IN/OUT of the edges
+Mar 12 20:07:55 <mkou>	left and right side possible?
+Mar 12 20:08:11 <bprompt>	mkou:  yeap, is configurable from what I recall
+Mar 12 20:09:28 <mkou>	ill give it a chance, but I really wish to find the one I used, the name was very close to termux
+Mar 12 20:10:11 <mkou>	checked all "top 10 terminals" guides, no luck yet  :D
+Mar 12 20:10:42 <bprompt>	hehe, and google's search AI help blows, heheh, doesn't show much
+Mar 12 20:11:20 <mkou>	naturally shifted to duck 6-7 years ago
+Mar 12 20:12:00 <mkou>	occasionally do a search on google, when on a fresh install and cant believe my eyes :D
+Mar 12 20:12:04 <leftyfb>	mkou: tilda
+Mar 12 20:12:09 <mkou>	leftyfb,
+Mar 12 20:12:10 <mkou>	yes
+Mar 12 20:12:15 <mkou>	i think it was tilda
+Mar 12 20:12:15 <mkou>	man
+Mar 12 20:13:40 <bprompt>	ahemm, tilda is not even close to termux :P
+Mar 12 20:13:49 <bprompt>	I mean, name wise
+Mar 12 20:14:27 <mkou>	no its not tilda, saw it in the top 10 suggestions
+Mar 12 20:15:23 <mkou>	leave it, I will find it eventually and will share it here, you will love it
+Mar 12 20:18:11 <bprompt>	mkou: were you running it before? was it installed?
+Mar 12 20:18:22 <bprompt>	I mean, you can check logs
+Mar 12 20:19:38 <mkou>	was long time ago
+Mar 12 20:19:45 <mkou>	maybe an year
+Mar 12 20:19:57 <mkou>	did few fresh installs since then
+Mar 12 20:20:42 <bprompt>	mkou: then check your local hypnotist then =)
+Mar 12 20:20:50 <mkou>	but do you know what Im thinking
+Mar 12 20:21:21 <bprompt>	mkou:  yes, yakuake does that, slide from the edges in and out
+Mar 12 20:21:34 <mkou>	ill try it
+Mar 12 20:22:42 <mkou>	but listen, if cat is printing a file's content, while grep is searching for a string through files
+Mar 12 20:23:01 <mkou>	right, so cat file | grep string
+Mar 12 20:23:15 <mkou>	should be much better than just grep string
+Mar 12 20:23:29 <leftyfb>	why?
+Mar 12 20:23:38 <leftyfb>	grep string file
+Mar 12 20:23:38 <mkou>	in terms of loading too much in the server
+Mar 12 20:23:55 <leftyfb>	cat | grep spawns 2 processes
+Mar 12 20:24:01 <leftyfb>	grep is only 1
+Mar 12 20:24:07 <leftyfb>	cat | grep is pointless
+Mar 12 20:24:25 <mkou>	I know, grep file string does what cat | grep string does,
+Mar 12 20:24:39 <leftyfb>	except with twice the number of processes running
+Mar 12 20:24:48 <mkou>	but m
+Mar 12 20:25:55 <mkou>	but if you cat the file and grep from it, you are grepping one file
+Mar 12 20:26:17 <leftyfb>	if you grep a file you are grepping one file
+Mar 12 20:26:18 <mkou>	if you grep a directory, you are searching thought files and directories
+Mar 12 20:26:24 <mkou>	so grep is heavier than cat + grep
+Mar 12 20:26:32 <leftyfb>	huh?
+Mar 12 20:26:50 <mkou>	I am not arguing , just trying to understand it
+Mar 12 20:27:37 <leftyfb>	why would you compare cat | grep a file to grepping an entire directory structure recursively?
+Mar 12 20:27:50 <leftyfb>	obviously cat file is only 1 file and grep -R will search all files
+Mar 12 20:28:05 <leftyfb>	but if you already know the file name, then just use grep on the file name
+Mar 12 20:28:16 <leftyfb>	if you don't know the file name, then cat isn't going to work regardless
+Mar 12 20:28:51 <leftyfb>	unless you find | xargs | cat every file and then grep, which would be more resource intensive than just recursive grep
+Mar 12 20:29:14 <mkou>	grep <string> from while in any directory vs cat file | grep <string>  from the print
+Mar 12 20:29:49 <leftyfb>	grep <string> file
+Mar 12 20:30:52 <leftyfb>	you seem to want to compare apples and oranges here
+Mar 12 20:31:04 <mkou>	mhm ok
+Mar 12 20:31:45 <leftyfb>	obviously if you grep every file in a directory structure it's going to take more resources/time than cat file | grep <string>. But you seem to keep ignoring the fact that you know the filename and can just use grep <string> file
+Mar 12 20:32:40 <mkou>	yep make sens now
+Mar 12 21:01:21 <fox>	hello
+Mar 12 21:03:20 <bprompt>	jello
+Mar 12 21:03:37 <bprompt>	!ask | fox
+Mar 12 21:03:37 <ubottu>	fox: Please don't ask to ask a question, simply ask the question (all on ONE line and in the channel, so that others can read and follow it easily). If anyone knows the answer they will most likely reply. :-) See also !patience
+Mar 12 21:59:35 <Tingo>	Hi
+Mar 12 22:00:37 <Tingo>	$ openssl s_client -connect IP:Port -tls1_2 -trace
+Mar 12 22:01:12 <Tingo>	how can i know that which Level of Communcation was it ? or By Default which Level used?
+Mar 12 22:02:21 <Tingo>	or it depends on RSA Key Size e.g 4096 ?
+Mar 12 22:02:31 <Tingo>	of Server*
+Mar 12 22:05:05 <Tingo>	AnyOne ?
+Mar 12 22:15:39 <akik>	Tingo: try with curl: curl --tlsv1.2 --tls-max 1.2 -v https://www.google.com/ 2>&1 |less
+Mar 12 22:17:11 <Tingo>	Thanks for reply, Curl will show that which SecLevel was used in between communications ?
+Mar 12 22:17:49 <Tingo>	actually i am testing few things locally in between my own OpenSSL Server and Client..
+Mar 12 22:18:11 <Tingo>	# openssl s_server -key www.key_no_pass -cert www.cert -accept 4433 -tls1_2
+Mar 12 22:18:34 <Tingo>	$ openssl s_client -connect IP:4433 -tls1_2
+Mar 12 22:21:45 <Tingo>	i want to traceout that which SecLevel (0-6) was used by default or normally in between Communcation..
+Mar 12 22:29:43 <Tingo>	# openssl ciphers -s -v DEFAULT:@SECLEVEL=2
+Mar 12 22:29:49 <Tingo>	# openssl ciphers -s -v DEFAULT:@SECLEVEL=1
+Mar 12 22:31:38 <bprompt>	Tingo: tried ##openssl yet?
+Mar 12 22:31:58 <Tingo>	No one was replying their..
+Mar 12 22:32:26 <bprompt>	Tingo: there's also #openssl, yes they're different
+Mar 12 22:33:29 <bprompt>	Tingo: there's also a #libressl channel
+Mar 12 22:33:43 <Tingo>	i try to find out myself : $ openssl s_client -connect IP:4433 -tls1_2 -trace
+Mar 12 22:33:57 <Tingo>	$ openssl s_client -connect 10.0.0.20:4433 -tls1_2 -debug
+Mar 12 22:46:15 <Tingo>	hmm its in between 1 -2 (3-6) are too strict Ciphers..
+Mar 12 22:51:40 <ZaY>	hi
+Mar 12 22:51:55 <ZaY>	I install applications on ubun and I want to uninstall them
+Mar 12 22:51:57 <ZaY>	please
+Mar 12 22:54:07 <Tingo>	$ sudo apt purge Application_Name
+Mar 12 22:54:20 <Tingo>	which kind of application is it ?
+Mar 12 22:56:07 <ZaY>	i need to uninstall server and anop
+Mar 12 22:56:11 <ZaY>	please
+Mar 12 22:56:49 <Tingo>	Which Type of Applications are those ?
+Mar 12 22:58:38 <ZaY>	urealircd and anope
+Mar 12 23:00:00 <ZaY>	E: Unable to locate package anope-2.0.15
+Mar 12 23:00:09 <ZaY>	E: Couldn't find any package by glob 'anope-2.0.15'
+Mar 12 23:02:07 <Tingo>	hope so you have been compiled urealircd App ?
+Mar 12 23:04:02 <Tingo>	hmm.. its compiled/build based apps, so find out its Source code folder which was used for compiling it..
+Mar 12 23:05:01 <Tingo>	$ cd /Path/to/Source/urealircd/
+Mar 12 23:05:20 <Tingo>	$ sudo make uninstall all
+Mar 12 23:05:27 <stenno>	uhm
+Mar 12 23:05:50 <ZaY>	ok
+Mar 12 23:05:56 <Tingo>	$ cd /Path/to/Source/anope/
+Mar 12 23:06:00 <Tingo>	$ make uninstall all
+Mar 12 23:06:01 <stenno>	Tingo: stop
+Mar 12 23:06:16 <Tingo>	$ sudo make uninstall all
+Mar 12 23:06:40 <Tingo>	opss .. did i said wronge ?
+Mar 12 23:07:52 <ZaY>	make: *** No rule to make target 'uninstall'. Stop.
+Mar 12 23:11:06 <Tingo>	do you know where did you installed unrealircd App ? i meant in which folder is it..?
+Mar 12 23:14:15 <stenno>	Tingo: for help with ircd, probably ask in #libera directly
+Mar 12 23:14:55 <ZaY>	I want to uninstall all applications on ~/home/ubuntu
+Mar 12 23:25:07 <oerheks>	If one build it right, there is an Uninstall
+Mar 13 00:03:33 <derek-shnosh>	Ubuntu 23.10, Gnome 45.2, Kernel 6.5.0-25-generic... all of the sudden my USB-C connected display is not working. This is what I gleaned from journalctl: https://dpaste.com/BYM48EM4J
+Mar 13 00:04:39 <oerheks>	derek-shnosh, does it get solved with pull and plug in again?
+Mar 13 00:04:49 <derek-shnosh>	oerheks: no, it does not.
+Mar 13 00:04:58 <oerheks>	happens sometimes with my system too, dvi and hdmi.
+Mar 13 00:05:31 <derek-shnosh>	Also, my two other displays and NIC on my Dell dock are not working, but all USB devices connected to the dock are.
+Mar 13 00:05:44 <oerheks>	oke, then i have no clue. found nothing usefull here in logs
+Mar 13 00:05:57 <oerheks>	ah, dock, important info.
+Mar 13 00:06:19 <derek-shnosh>	Hold on though.
+Mar 13 00:06:41 <derek-shnosh>	One display is direct connected to my USB-C, cable just goes from USB-C to HDMI (no dongle, full cable).
+Mar 13 00:06:50 <derek-shnosh>	The other two displays are on the dock (diff USB-C port).
+Mar 13 00:09:24 <pragmaticenigma>	derek-shnosh: Have you tried powering down everything, including the dock... then turning things back on again?
+Mar 13 00:09:56 <derek-shnosh>	pragmaticenigma: Yes I have. Even left everything disconnected and unplugged for an hour while running errands.
+Mar 13 00:10:36 <oerheks>	pragmaticenigma, for me it happens with cold boot too
+Mar 13 00:11:04 <pragmaticenigma>	just making sure the tried and true wasn't so tried and true
+Mar 13 00:11:05 <pragmaticenigma>	:)
+Mar 13 00:11:06 <derek-shnosh>	Typically I have to reseat the direct connected USB-C cable on boot, or power cycle the dock, to get the displays working... now they just won't.
+Mar 13 00:12:11 <pragmaticenigma>	derek-shnosh: what about process of elimination? or removing everything and then re-adding one at a time?
+Mar 13 00:12:50 <derek-shnosh>	I have, yes. Disconnected Dell dock, disconnected USB-C <> HDMI cable.
+Mar 13 00:13:01 <derek-shnosh>	Then reconnect just the single display USB-C <> HDMI.
+Mar 13 00:13:08 <derek-shnosh>	Sorry, its USB-C <> DP
+Mar 13 00:16:05 <pragmaticenigma>	I'm stumped... hopefully the machine standalone works okay
+Mar 13 00:20:04 <derek-shnosh>	pragmaticenigma: it does... but, my productivity pixel real estate is severely diminished.
+Mar 13 00:20:16 <derek-shnosh>	missing out on 2x 2K displays and 1x 4K.
+Mar 13 00:22:49 <derek-shnosh>	Going to boot off live USB and see if it persists.
+Mar 13 00:43:56 <derek-shnosh>	Well this is very frustrating.
+Mar 13 00:56:49 <derek-shnosh>	pragmaticenigma & oerheks : Culprit was hardware somehow (Lenovo Slim 7 ProX)... With the laptop on, I held the power button down for like 30s to perform a "power drain". Then powered it backup and loaded BIOS defaults and let it boot. Displays are working again.
+Mar 13 00:57:59 <derek-shnosh>	Was prompted by this thread: https://forums.lenovo.com/t5/Lenovo-Yoga-Series-Laptops/Lenovo-Slim-7-ProX-14ARH7-not-detecting-my-external-monitor/m-p/5233873
+Mar 13 01:00:10 <pragmaticenigma>	derek-shnosh: Lenovo machine with a Dell docking station?
+Mar 13 01:13:51 <derek-shnosh>	pragmaticenigma: yeah, already had it readily avail from my work laptop.
+Mar 13 01:14:25 <derek-shnosh>	The issue wasn't the dock though because one of the displays (with the USB-C <> DP cable) is directly connected to the laptop on another USB-C port... it wasn't working either.
+Mar 13 01:15:33 <tv_>	hi
+Mar 13 01:15:59 <derek-shnosh>	Didn't want to undo all my cable mgmt, dock is snap-velcro'ed to the bottom of the desk corner. https://i.imgur.com/NnDRm6m.jpeg
+Mar 13 01:16:55 <pragmaticenigma>	derek-shnosh: well there's your problem... the dock is upside down, all the electrons fell out
+Mar 13 01:17:04 <derek-shnosh>	>.<
+Mar 13 01:17:15 <derek-shnosh>	Actually still right side up ;)
+Mar 13 01:17:20 <tv_>	opa blz
+Mar 13 01:17:54 <pragmaticenigma>	derek-shnosh: my former employers dell dock had powered fan, does yours as well?
+Mar 13 01:18:22 <derek-shnosh>	pragmaticenigma: I think so... it's a WD22TB4 dock, I hear it spin up when I first power it on.
+Mar 13 01:20:15 <pragmaticenigma>	I miss mine... new employer just got a cheapo Lenovo dock with DisplayLink... so no display until the machine is fully booted :(
+Mar 13 01:40:10 <oerheks>	Derailed, good spot!
+Mar 13 01:40:26 <oerheks>	err derek-shnosh
+**** ENDING LOGGING AT Wed Mar 13 06:35:42 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 06:38:05 2024
+
+Mar 13 06:38:05 *	Now talking on #ubuntu
+Mar 13 06:38:05 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 13 06:38:05 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 13 06:38:05 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** ENDING LOGGING AT Wed Mar 13 06:38:17 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 15:36:13 2024
+
+Mar 13 15:36:12 *	Now talking on #ubuntu
+Mar 13 15:36:12 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 13 15:36:12 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 13 15:36:12 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** BEGIN LOGGING AT Wed Mar 13 16:17:17 2024
+
+Mar 13 16:17:16 *	Now talking on #ubuntu
+Mar 13 16:17:16 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 13 16:17:16 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 13 16:17:16 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+Mar 13 16:27:55 <Zed>	Since I am unable to buy the service directly from Microsoft I called Canonical directly. I was told by sales that I would get a quote in a day or so. I have been going back and fourth with them since February 20th but I still don't have a quote much less a contract.
+Mar 13 16:28:26 <leftyfb>	Zed: you'll still need to work with Canonical
+Mar 13 16:28:28 <lotuspsychje>	Zed: this channel holds only volunteers from the ubuntu community
+Mar 13 16:28:30 <Menzador>	Zed: We're the community support channel. You're going to have to wait for Canonical themselves to get back to you
+Mar 13 16:28:49 <leftyfb>	Zed: nobody else provides Ubuntu Pro services
+Mar 13 16:28:59 <plastikman>	I have experience with the sales cycle at Canonical, its slow.
+Mar 13 16:29:37 <plastikman>	but as stated here, you have no choice but to get the ESM packages from canonical.  you can set up an airgapped package repo (with the help of canonical) for these systems
+Mar 13 16:30:03 <plastikman>	or, if you are feeling spicy, just set up a "personal" ubuntu pro sub and do a "pro attach xxxxx" on that system
+Mar 13 16:30:37 <lotuspsychje>	plastikman: this is not really the place to discuss that
+Mar 13 16:30:58 <akik>	huh
+Mar 13 16:31:04 <Zed>	I understand all this. My question was phrased improperly. Is there any other way to get /all/ the available security patches...
+Mar 13 16:31:18 <plastikman>	no
+Mar 13 16:31:18 <akik>	you can't talk about ubuntu on #ubuntu. crazy
+Mar 13 16:31:19 <leftyfb>	none that are supported here
+Mar 13 16:32:08 <lotuspsychje>	akik: we try to divide ubuntu support issues, with user experiences/discussions into the right channels
+**** ENDING LOGGING AT Wed Mar 13 17:02:39 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 17:15:30 2024
+
+Mar 13 17:15:29 *	Now talking on #ubuntu
+Mar 13 17:15:29 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 13 17:15:29 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 13 17:15:29 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+Mar 13 17:16:40 <librton>	ubuntu installation stucked at help & support, how about an hour now. Is there any way to figure out what was/is wrong?
+Mar 13 17:22:02 <stenno>	is it trying to install updates?
+Mar 13 17:28:54 <ioria>	librton, switch to tty
+**** BEGIN LOGGING AT Wed Mar 13 17:31:44 2024
+
+Mar 13 17:31:44 *	Now talking on #ubuntu
+Mar 13 17:31:44 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 13 17:31:44 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 13 17:31:44 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+Mar 13 17:32:07 <librton>	It shows my installation hdd there /dev/sda which I don't wanna overwrite
+Mar 13 17:32:25 <ioria>	librton, what is that ? windows
+Mar 13 17:32:28 <Menzador>	Destination, but that's more for legacy installations. Usually it'll detect whether it's in EFI mode and find the EFI system partition (ESP)
+Mar 13 17:32:43 <Menzador>	So it's still best to select whichever disk holds the ESP
+Mar 13 17:32:52 <Menzador>	It won't overwrite your disk
+Mar 13 17:33:14 <Menzador>	It's telling what legacy argument to pass to the [ grub-install ] command
+Mar 13 17:33:48 <ioria>	librton, but you said 'stuck at help & support'
+Mar 13 17:34:16 <librton>	Thanks Menzador , I'm not sure if this old hp 600B G1 supports efi but I've created 800Mb partition just in case
+Mar 13 17:34:33 <librton>	ioria: yes, I've restarted the system already
+**** BEGIN LOGGING AT Wed Mar 13 18:43:10 2024
+
+Mar 13 18:43:09 *	Now talking on #ubuntu
+Mar 13 18:43:09 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 13 18:43:09 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 13 18:43:09 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+Mar 13 19:23:04 <librton>	ioria: bank ... with failure to grub installation to /dev/sdc
+Mar 13 19:23:29 <librton>	maybe I'll give it a try with another distro to see how it works
+Mar 13 19:27:03 <ioria>	librton, how did you do the usb-installer ?
+Mar 13 19:27:23 <ioria>	librton, with what program ?
+Mar 13 19:36:33 <lbracher>	Hello! Out of nowhere my bluetooth adapter disappears and I'm not able to recover it restarting the service. How could I diagnose what is happening? TIA!
+Mar 13 19:45:24 <librton>	ioria: I've 500GB SATA hdd with bunch of linux & windows iso under Ventoy
+Mar 13 19:46:46 <librton>	now I'm trying lmde and stuck again after the partitioning point saying "The EFI partition is too small. it must be at least 35MB" where in fact I didn't bother making efi partition knowing this is dos hdd and windows 7 on the other side of it
+Mar 13 19:47:32 <ioria>	librton, you can't install on the same disk in bios and efi mode
+Mar 13 19:48:43 <librton>	the windows partition is no longer booting after the second attempt of ubuntu, beside I didn't ask any of the linux distro to install/use EFI mode
+Mar 13 19:49:37 <librton>	I'm not sure which isn't compatible with which because I didn't find any EFI related options with the CMOS BIOS Step of this pC
+Mar 13 19:49:37 <ioria>	librton, i would do again the the installer with rufus (or etcher)
+Mar 13 19:49:51 <librton>	not sure if it supports it
+Mar 13 19:50:51 <ioria>	what ?
+Mar 13 20:08:28 <librton>	what is the difference between partition flags boot and bls_boot in GParted?
+Mar 13 20:08:44 <librton>	which should be given to efi partition?
+Mar 13 20:12:51 <librton>	I think the because the installation distro sees an EFI partition on the source of installation media then it's automatically assuming that this is going to be EFI installation which later ends up meeting an old DOS filesystem on the destination hdd
+Mar 13 20:13:04 <JanC>	https://www.gnu.org/software/parted/manual/html_node/set.html
+Mar 13 20:14:18 <librton>	so yes, there is no issue with both distro iso(s) and using an imaged usb with dd may solve the issue
+Mar 13 20:41:23 <librton>	tried couple of other failing distros but slackware seems to getting it
+Mar 13 20:42:07 <librton>	viva la alto penguino
+**** BEGIN LOGGING AT Wed Mar 13 23:52:50 2024
+
+Mar 13 23:52:48 *	Now talking on #ubuntu
+Mar 13 23:52:48 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 13 23:52:48 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 13 23:52:48 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** BEGIN LOGGING AT Thu Mar 14 02:26:03 2024
+
+Mar 14 02:26:01 *	Now talking on #ubuntu
+Mar 14 02:26:01 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 14 02:26:01 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 14 02:26:01 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+Mar 14 02:53:57 <chance>	hi'
+Mar 14 02:54:04 <chance>	hello
+Mar 14 02:54:07 <oerheks>	hi
+Mar 14 02:54:16 <chance>	lmao
+Mar 14 02:54:20 <chance>	lol
+Mar 14 02:54:33 <chance>	skill issue
+Mar 14 02:54:38 <oerheks>	!topic
+Mar 14 02:54:38 <ubottu>	Please read the channel topic whenever you enter, as it contains important information. To view it at any time after joining, simply type /topic
+Mar 14 02:54:42 <chance>	200 pump
+Mar 14 02:55:11 <chance>	full boxed
+Mar 14 02:55:17 <chance>	shit on
+Mar 14 02:55:23 <chance>	shit on
+Mar 14 02:55:36 <oerheks>	...
+Mar 14 02:55:49 <chance>	lol
+Mar 14 02:56:32 <chance>	 200 pump
+Mar 14 02:56:33 <chance>	full boxed
+Mar 14 02:56:33 <chance>	shit on
+Mar 14 02:56:34 <chance>	shit on
+Mar 14 02:57:04 <chance>	it soo bigg step dad
+Mar 14 02:57:20 <chance>	ewe
+Mar 14 02:57:42 <chance>	shit onnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+Mar 14 02:57:43 <chance>	nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+Mar 14 02:57:43 <chance>	nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+Mar 14 02:57:44 <chance>	nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+Mar 14 02:57:44 <chance>	nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+Mar 14 02:57:45 <chance>	nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+Mar 14 02:57:45 *	Drone sets quiet on *!*@131.242.30.44
+Mar 14 03:01:51 <preach>	saying "skill issue" is so incredibly rude and condescending
+Mar 14 03:01:51 *	Drone removes quiet on *!*@131.242.30.44
+Mar 14 03:25:09 <mybalzitch>	y
+Mar 14 03:25:22 <mybalzitch>	preach: agreed
+Mar 14 03:25:54 <oerheks>	🤪
+Mar 14 05:53:28 <C4mbone>	#sp
+Mar 14 05:58:40 <mosfet>	I'm having some trouble getting oracle virtual box to render on my second display. host system is ubuntu 22.04 Jammy, Anyone else run into this issue that found a fix? I've exhaused the 1st few linuxsuperuser guides I could find thus far
+Mar 14 06:15:08 <militantorc>	is sbcl have readline support
+Mar 14 07:26:04 <klaasvakie>	Hi, I need some help trying to figure who to report this bug to. I have a USB barcode scanner that presents itself as a USB keyboard. On a Ubuntu 22.04 Gnome Xorg session it works prefectly, on a Wayland session I sometimes see bitflips in the data I get. I can reproduce this reliably and it is not arch specific, I can reproduce it on arm and x86.
+**** ENDING LOGGING AT Thu Mar 14 09:59:27 2024
+
+**** BEGIN LOGGING AT Thu Mar 14 10:06:38 2024
+
+Mar 14 10:06:38 *	Now talking on #ubuntu
+Mar 14 10:06:38 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 14 10:06:38 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 14 10:06:38 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** BEGIN LOGGING AT Thu Mar 14 10:11:09 2024
+
+Mar 14 10:11:08 *	Now talking on #ubuntu
+Mar 14 10:11:08 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 14 10:11:08 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 14 10:11:08 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** BEGIN LOGGING AT Thu Mar 14 10:15:55 2024
+
+Mar 14 10:15:54 *	Now talking on #ubuntu
+Mar 14 10:15:54 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 14 10:15:54 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 14 10:15:54 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** BEGIN LOGGING AT Thu Mar 14 10:34:17 2024
+
+Mar 14 10:34:17 *	Now talking on #ubuntu
+Mar 14 10:34:17 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 14 10:34:17 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 14 10:34:17 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** ENDING LOGGING AT Thu Mar 14 10:35:41 2024
+
+Mar 14 10:57:23 <makara2>	hi. I've left it a bit late and now I can't seem to update from lobster to minotaur. What do I need to do?
+Mar 14 10:58:33 <ravage>	!eolupgrade | makara2
+Mar 14 10:58:33 <ubottu>	makara2: End-Of-Life is when security updates and support for an Ubuntu release stop. Make sure to update Ubuntu before it goes EOL so you get updates promptly for newly-discovered security vulnerabilities. See https://help.ubuntu.com/community/EOL and https://wiki.ubuntu.com/Releases for more info. Looking to upgrade from an EOL release? See https://help.ubuntu.com/community/EOLUpgrades
+Mar 14 10:59:49 <yziquel>	makara1 I did manage to upgrade cleanly from lunar to minotaur recently.
+Mar 14 11:00:05 <yziquel>	makara1 like max two weeks ago.
+Mar 14 11:00:08 <ravage>	you could also give 24.04 an early try with a fresh installation. but keep in mind that is not released yet and must expect bugs
+Mar 14 11:00:31 <yziquel>	makara2
+Mar 14 11:00:51 <makara2>	great. Thank you. Bookmarked
+Mar 14 11:11:05 <makara2>	i get `E: The repository 'https://old-releases.ubuntu.com/ubuntu lunar Release' does not have a Release file.`
+Mar 14 11:11:18 <makara2>	or `E: The repository 'http://old-releases.ubuntu.com/ubuntu lunar Release' does not have a Release file.`
+Mar 14 11:12:07 <ravage>	https://archive.ubuntu.com/ubuntu/dists/ still exists
+Mar 14 11:12:14 <ravage>	you dont need to change the sources yet
+Mar 14 11:12:46 <ravage>	i mean http://archive.ubuntu.com/ubuntu/dists/ without the s 🙂
+Mar 14 11:13:20 <ravage>	you should be able to use the main server to get updates for lunar
+Mar 14 11:14:25 <makara2>	ok I'll try that. But its clear from https://wiki.ubuntu.com/Releases that lobster is EOL and yet there are no entries for it in http://old-releases.ubuntu.com/ubuntu/dists/
+Mar 14 12:05:18 <aiena>	In some screen shots (maybe older) I see the gnome option to add "WIndows printer via SAMBA" but I cannot find that option I am using ubuntu 22.04
+Mar 14 12:06:03 <aiena>	how do I get this option in gnome I can see it in the cups web UI and can almost get it to work that way but dont know how to specify authentication. Was hoping configuring it via gnome might make it easier
+Mar 14 12:06:34 <aiena>	I am refering to as seen here https://askubuntu.com/questions/1075251/how-to-connect-to-a-network-samba-printer-in-ubuntu
+Mar 14 12:06:41 <aiena>	any ideas how to do this in 22.04?
+Mar 14 12:07:31 <ravage>	did you try "Add printer" in the system settings?
+Mar 14 12:07:44 <aiena>	yes it does not give me the multiple options specified there
+Mar 14 12:07:54 <ravage>	you can just enter any network address thats supported there. it usually also just detects all LAN printers
+Mar 14 12:08:06 <aiena>	I don't know how to get that dialog with multiple printer options
+Mar 14 12:08:59 <aiena>	it does n ot list my printer but using smblient I can see it
+Mar 14 12:09:38 <aiena>	I am ok with using the cups webUI but don't know how to make cups at least ask for auth or specify auth directly
+Mar 14 12:10:53 <aiena>	hmm
+Mar 14 12:13:30 <ravage>	i dont have any printer connected and im on 24.04 already. but maybe the part about authentication here is useful: https://wiki.itrss.mst.edu/dokuwiki/pub/install_samba_printers
+Mar 14 12:17:33 <aiena>	ravage, thanks I am trying that. The gnome wizard managed to list my printer but cups fails with the auth required message
+Mar 14 12:17:38 <aiena>	so trying your suggestion
+Mar 14 13:22:42 <RickyRat5005>	Hello all. I have been asked to "enabling debug messages with these kernel parameters:
+Mar 14 13:22:42 <RickyRat5005>	  drm.debug=0xff loglevel=8" I'm not sure how do do this.
+Mar 14 13:27:18 <tomreyn>	!bootparm | RickyRat5005
+Mar 14 13:27:43 <tomreyn>	!kernelparm | RickyRat5005
+Mar 14 13:27:43 <ubottu>	RickyRat5005: To add a one-time or permanent kernel boot parameter see https://wiki.ubuntu.com/Kernel/KernelBootParameters
+Mar 14 13:29:17 <RickyRat5005>	Do I just put that line in anywhere in /etc/default/grub ?
+Mar 14 13:30:17 <RickyRat5005>	!pastebin
+Mar 14 13:30:18 <ubottu>	For posting multi-line texts into the channel, please use https://dpaste.com | To post !screenshots use https://imgur.com | !pastebinit to paste directly from command line | Make sure you give us the URL for your paste - see also the channel topic.
+Mar 14 13:30:55 <tomreyn>	RickyRat5005: you add it to the end of the GRUB_CMDLINE_LINUX_DEFAULT line, separated by a blank space from what's already there, before the trailing double quote '"'
+Mar 14 13:31:09 <tomreyn>	and run    sudo update-grub
+Mar 14 13:33:04 <tomreyn>	so if you currently have    GRUB_CMDLINE_LINUX_DEFAULT="somethingelse quiet splash"    then you make it    GRUB_CMDLINE_LINUX_DEFAULT="somethingelse drm.debug=0xff loglevel=8"
+Mar 14 13:33:19 <RickyRat5005>	GRUB_CMDLINE_LINUX_DEFAULT="drm.debug=0xff loglevel=8"
+Mar 14 13:33:28 <RickyRat5005>	It's empty now.
+Mar 14 13:33:35 <tomreyn>	(you'd remove "quiet" and "splash" for debugging)
+Mar 14 13:34:17 <tomreyn>	the line you just posted should be fine
+Mar 14 13:35:49 <RickyRat5005>	ok, thank you.
+Mar 14 13:36:17 <RickyRat5005>	I think I did it right!
+Mar 14 13:41:37 <tomreyn>	RickyRat5005: cat /proc/cmdline    would show
+Mar 14 13:42:02 <RickyRat5005>	BOOT_IMAGE=/boot/vmlinuz-6.5.0-25-generic root=UUID=3ea98830-6da6-49cf-b34a-00412e832e62 ro drm.debug=0xff loglevel=8
+Mar 14 13:42:08 <RickyRat5005>	Cool. TY
+Mar 14 13:44:11 <tomreyn>	you're welcome
+Mar 14 13:58:59 <BluesKaj>	Hi all
+Mar 14 14:49:41 <Elliria>	I could be wrong, but I'm under the impression that the Firefox Snap is a direct connection between Mozilla and us and is a way to bypass the operating system's way of updating. My friend's Snap and my Snap update automatically. My friend uses Ubuntu 22.04 LTS and his Firefox Snap is at revision 3936. I use Kubuntu 22.04 LTS and my Firefox Snap is at revision 3836. When I asked about that, he said that Ubuntu updates better than Kubuntu.
+Mar 14 14:49:42 <Elliria>	Is that true or is there some other reason why our Firefox Snaps are at different revisions?
+Mar 14 14:52:26 <ogra_>	Elliria, as you noted, snaps are completely distinct from the host OS ... so they should be on the same revision ... that said, the firefox snap uses phased updates so the rollout goes in chunks and not to everyone at the same time ... also note that revisions differ between architectures
+Mar 14 14:57:03 <Elliria>	Ah, okay. He's using ARM64 and I'm using x86. He also looked at the Firefox version rather than the revision and it looks like I've got version 123.0 and he has 123.0.1. Interesting.
+Mar 14 14:58:48 <ogra_>	i see rev 3936 on arm64 in the latest/stable channel ...
+Mar 14 14:59:21 <ogra_>	and 3941 on amd64 ... both using the 123.0.1-1 version string
+Mar 14 15:00:31 <ogra_>	(note that channels can also have different revisions, so it matters which channel you are tracking for a snap)
+Mar 14 15:01:30 <Elliria>	How do you know which channel you're tracking and is that controllable?
+Mar 14 15:01:51 <ogra_>	snap info firefox ... looks at the "tracking:" line
+Mar 14 15:02:42 <ogra_>	you can always use snap refresh to switch to a different channel (see "snap refresh --help" ... and in general you should take a look at "snap help", snaps have many useful builtin features)
+Mar 14 15:03:20 <Elliria>	Interesting. Mine is: latest/stable/ubuntu-22.04
+Mar 14 15:03:50 <Elliria>	I'll have to ask what his is just out of curiosity at this point. We kind of like to geek out and examine our operating systems for the heck of it.
+Mar 14 15:04:04 <ogra_>	😄
+Mar 14 15:05:04 <Elliria>	These 'buntus are fascinating creatures and can do so very much that they're endlessly entertaining when it comes to figuring them out.
+Mar 14 15:26:17 <iconoclast_hero>	https://support.google.com/chrome/thread/8654678/initial-lag-when-starting-to-scroll-with-hardware-acceleration-enabled?hl=en
+Mar 14 15:26:29 <iconoclast_hero>	is there a way to disable GPU switching as described here?
+Mar 14 15:28:09 <iconoclast_hero>	i.e., i'm trying to get at a solution similar to this one: "To stop the initial scroll lag caused by the graphics switching between GPUs try the following (in Windows 10). You can still leave hardware acceleration on in Chrome but just fix the system to one graphics card. To do this, type or search "display settings" from the start menu (or right click the desktop and select it). Then at the bottom select "Graphics settings".
+Mar 14 15:28:09 <iconoclast_hero>	 I used  the "Classic app" setting and browsed for Chrome in program files. Then I changed the options from "System default" to "Power saving" though you can try "High performance" if you like but my Intel 630 integrated GPU was able to drive video in 4K at 60 fps no problem so did not need to use the high performance nvidia GPU. This should give smooth video with hardware acceleration but stop the initial scroll lag. However
+Mar 14 15:28:09 <iconoclast_hero>	, It may not stop other forms of scroll lag. You may also be able to assign a specific GPU to an app using other Intel or nvidia apps under Control Panel."
+Mar 14 15:28:39 <iconoclast_hero>	it seems that disabling HW switching in chrome as helped with the problem, but i'd like to take a crack at it from this direction as well
+Mar 14 15:28:59 <iconoclast_hero>	$ uname -a Linux < > 6.7.6-060706-generic #202402230933 SMP PREEMPT_DYNAMIC Fri Feb 23 09:43:37 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+Mar 14 15:29:32 <ogra_>	well, first of all you should switch to a proper kernel ... this one is not supported
+Mar 14 15:29:49 <ogra_>	(i'm surprised your nvidia driver would even work with this)
+Mar 14 15:30:32 <Daniel>	I have a live cd cd-rom added to a server with ubuntu 22.04, I am using apt-cdrom ident, it sees it, I can manually mount it but apt-cdrom add failes with no cd-rom could be autodetected
+Mar 14 15:32:09 <Daniel>	fails
+Mar 14 15:38:01 <iconoclast_hero>	wrong machine
+Mar 14 15:38:20 <iconoclast_hero>	$ uname -a Linux < > 6.5.0-21-generic #21~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Feb  9 13:32:52 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+Mar 14 15:39:41 <iconoclast_hero>	should it matter, screenfetch reports GPU: Intel Corporation UHD Graphics 620 (rev 07) Intel Corporation Sunrise Point-LP Integrated Sensor Hub (rev 21)
+Mar 14 15:40:47 <iconoclast_hero>	also what i pasted inre an nvidia card is someone else's example trying to resolve the issue with chrome on Windows...doesn't apply to me as I have neither nvidia nor microsoft.
+Mar 14 15:41:08 <iconoclast_hero>	i do have chrome on linux though and the scroll lag is hella annoying.
+Mar 14 15:42:11 <iconoclast_hero>	so what I'm trying to do is apparently adjust the switching between graphics modes in Ubuntu similar to what was done in that quotation in windows.
+Mar 14 15:56:48 <plastikman>	So youo dont have 2 graphics chips?
+Mar 14 16:00:05 <ogra_>	iconoclast_hero, what they describe is the driver switch between intel and nvidia on a hybrid card ... if you dont have such a card you can obviously not swithc between the two hybrid cores in it ...
+Mar 14 16:00:43 <iconoclast_hero>	i have a problem with chrome lagging.
+Mar 14 16:00:50 <plastikman>	Please dont post another massive wall of text, but it woudl be helpful to post some details about your machine
+Mar 14 16:00:57 <iconoclast_hero>	this is a solution that has worked for someone.
+Mar 14 16:01:11 <plastikman>	with a totally different setup than you
+Mar 14 16:01:29 <iconoclast_hero>	plastikman how to I solve the scrolling issue with my setup?
+Mar 14 16:01:46 <plastikman>	well, since i have no idea what your setup is, i cant help.
+Mar 14 16:01:48 <leftyfb>	iconoclast_hero: does the problem happen with firefox?
+Mar 14 16:01:49 <iconoclast_hero>	telling me things i already know doesn't help much.
+Mar 14 16:01:56 <iconoclast_hero>	i don't use firefox
+Mar 14 16:02:03 <plastikman>	that is not what was asked
+Mar 14 16:02:05 <iconoclast_hero>	i've uninstalled it where possible
+Mar 14 16:02:13 <leftyfb>	sudo snap install firefox
+Mar 14 16:02:16 <leftyfb>	use it to test
+Mar 14 16:02:22 <leftyfb>	remove it when we are done testing
+Mar 14 16:03:14 <iconoclast_hero>	ok, while i take care of that, what is a fair test?
+Mar 14 16:03:36 <leftyfb>	iconoclast_hero: replicate the issue on firefox
+Mar 14 16:03:36 <iconoclast_hero>	i have quite a few tabs in chrome open, but they should be put to sleep
+Mar 14 16:03:59 <leftyfb>	define "quite a few"
+Mar 14 16:04:07 <iconoclast_hero>	i had an extension that did that before chrome implemented it and i turned that feature on
+Mar 14 16:04:11 <iconoclast_hero>	dozens
+Mar 14 16:04:38 <iconoclast_hero>	probably less than 100
+Mar 14 16:05:16 <leftyfb>	I also have somewhere between 50 and 100 tabs
+Mar 14 16:05:33 <iconoclast_hero>	also firefox isn't lagging with one tab open
+Mar 14 16:05:35 <iconoclast_hero>	and i opened...
+Mar 14 16:05:38 <leftyfb>	I don't think the number of tabs, especially if they're sleeping, it going to affect the scrolling
+Mar 14 16:05:42 <iconoclast_hero>	https://getpocket.com/collections/can-you-really-improve-your-breathing-yes-you-can?utm_source=pocket-newtab-en-us
+Mar 14 16:05:56 <leftyfb>	ok, now try chromium
+Mar 14 16:06:06 <iconoclast_hero>	i don't think quantity of open tabs will cause an issue either but i thought i'd menton it.
+Mar 14 16:06:12 <iconoclast_hero>	apt install chromium?
+Mar 14 16:06:19 <ogra_>	snap ...
+Mar 14 16:11:27 <iconoclast_hero>	with a single tab open, the lagging is not happening in chromium either.
+Mar 14 16:11:52 <leftyfb>	iconoclast_hero: try opening a private window in google chrome
+Mar 14 16:12:05 <leftyfb>	incognito mode
+Mar 14 16:12:31 <iconoclast_hero>	yeah
+Mar 14 16:13:09 <leftyfb>	can you replicate the issue in a new incognito mode window?
+Mar 14 16:13:10 <iconoclast_hero>	don't observe an issue, but chrome has the HW acceleration turned off
+Mar 14 16:13:46 <leftyfb>	ok, then the issue is more than likely with an extension you have installed or something wrong with your profile
+Mar 14 16:13:46 <jars99>	I've been having a problem with Ubuntu 22.04: The Sharing: Remote Desktop Password isn't getting remembered.  Every time I go in there to see if it's set correctly, it's set to some new, random string.  Has anyone else seen this issue?  I don't seem to have it on my 23.10 system
+Mar 14 16:15:03 <iconoclast_hero>	leftyfb, there's two variables there.
+Mar 14 16:15:16 <leftyfb>	2 potential causes
+Mar 14 16:15:50 <iconoclast_hero>	until i turn the HW Acceeration back on, restart chrome, replicate the scrolling issue, then open the incognito window, i haven't ruled anything out.
+Mar 14 16:16:03 <iconoclast_hero>	but i have another place to look when it happens again.
+Mar 14 16:16:46 <leftyfb>	iconoclast_hero: wait, are you saying everything is fine when you disable HW acceleration regardless of being in incognito mode?
+Mar 14 16:17:06 <iconoclast_hero>	this has been going on for a long time.
+Mar 14 16:17:19 <iconoclast_hero>	months, maybe 12 of them?
+Mar 14 16:17:37 <leftyfb>	iconoclast_hero: please answer the question
+Mar 14 16:17:48 <iconoclast_hero>	i looked into it today and saw that there are a couple of ways to address it.
+Mar 14 16:17:48 <iconoclast_hero>	one of them is to turn off the acceleration in chrome.
+Mar 14 16:17:55 <iconoclast_hero>	i did that and it seemed to solve the problem.
+Mar 14 16:18:01 <leftyfb>	yay!
+Mar 14 16:18:10 <iconoclast_hero>	as I said, I want to try this other method mentioned in the post
+Mar 14 16:18:25 <leftyfb>	why? You already solved the problem
+Mar 14 16:18:28 <iconoclast_hero>	see if there's a difference, you know the ol' A B testing
+Mar 14 16:18:43 <iconoclast_hero>	thoroughness?
+Mar 14 16:18:53 <iconoclast_hero>	see if the other solution is preferable?
+Mar 14 16:19:04 <ashafq>	Firefox on snap doesn't open any file dialog. Is xdg-portal broken on Ubuntu 22.04?
+Mar 14 16:19:22 <ashafq>	Is there some permissions missing from snap on firefox?
+Mar 14 16:19:40 <iconoclast_hero>	if you go back to what i said at the beginning, i pretty clearly stated that, "it seems that disabling HW switching in chrome as helped with the problem, but i'd like to take a crack at it from this direction as well"
+Mar 14 16:19:47 <ashafq>	or install xdg-desktop-portal-gnome?
+Mar 14 16:20:32 <leftyfb>	ashafq: are you running Firefox over SSH?
+Mar 14 16:20:58 <ashafq>	leftyfb: no
+Mar 14 16:22:16 <ashafq>	leftyfb: firefox on gnome session (wayland)
+Mar 14 16:23:58 <ogra_>	the default gnome desktop should have the right portals installed
+Mar 14 16:24:46 <jars99>	Has anyone else had issues with the built-in Remote Desktop password on 22.04?
+Mar 14 16:26:18 <tomreyn>	the answer to this question should be available on launchpad.net
+Mar 14 16:27:51 <tomreyn>	somewhere over here https://bugs.launchpad.net/ubuntu/+source/gnome-remote-desktop
+Mar 14 16:29:24 <tomreyn>	jars99: if your issue is not yet reported there, you could run    ubuntu-bug gnome-remote-desktop   to file a bug yourself.
+Mar 14 16:29:40 <jars99>	ok, thanks
+Mar 14 16:29:42 <iconoclast_hero>	on a different front: i have a ram drive/cache and initially i wanted that to exist when the machine started but that evolved to saving the contents on shutdown/reboot and restoring the contents upon restart.
+Mar 14 16:29:42 <iconoclast_hero>	i wrote two scripts (though i can probably combine them), the restore/dir create script is here: https://pastebin.com/raw/Bsnh4WBr
+Mar 14 16:30:02 <tomreyn>	jars99: please make sure your system is fully updated before you do.
+Mar 14 16:30:10 <jars99>	will do
+Mar 14 16:30:33 <iconoclast_hero>	if i just symlink that script to /etc/rc3.d/S01restorecache without the info block at the beginning, will it just run at startup as is?
+Mar 14 16:30:39 <iconoclast_hero>	(assuming +x)
+Mar 14 16:31:16 <iconoclast_hero>	and is there no rc.local in ubuntu or does that created from scratch in every install?
+Mar 14 16:32:49 <tomreyn>	ubuntu uses systemd, you should learn how to use it rather than trying to do things the old way.
+Mar 14 16:33:53 <iconoclast_hero>	thank you tomreyn, buy my questions are still unanswered.
+Mar 14 16:35:00 <failer0>	wh
+Mar 14 16:35:10 <failer0>	anyone here?
+Mar 14 16:37:11 <leftyfb>	iconoclast_hero: use a systemd unit
+Mar 14 16:37:50 <iconoclast_hero>	maybe i'm asking the wrong questions.
+Mar 14 16:37:57 <iconoclast_hero>	how do I not use systemd to do this?
+Mar 14 16:38:14 <iconoclast_hero>	i just want to run a script and not figure out a whole system process.
+Mar 14 16:39:04 <iconoclast_hero>	the problem isn't even system d.
+Mar 14 16:39:27 <leftyfb>	iconoclast_hero: it's really not that difficult. https://medium.com/@benmorel/creating-a-linux-service-with-systemd-611b5c8b91d6
+Mar 14 16:39:47 <leftyfb>	iconoclast_hero: Sysv is considered deprecated
+Mar 14 16:40:00 <iconoclast_hero>	it's difficult when i have to re-learn how to do it every time.
+Mar 14 16:40:10 <iconoclast_hero>	i just want to run a f'n script.
+Mar 14 16:40:20 <iconoclast_hero>	i don't want to know what all the system details are.
+Mar 14 16:40:24 <iconoclast_hero>	autoexec.bat
+Mar 14 16:40:44 <leftyfb>	and I gave you a tutorial on how to do it
+Mar 14 16:42:29 <plastikman>	iconoclast_hero: systemd is here to stay, learn it.  if you dont want systemd then check out one of the others taht dont use it
+Mar 14 16:42:32 <iconoclast_hero>	i just want to run a script.
+Mar 14 16:42:47 <tanath>	i think this is easier/simpler to follow https://wiki.archlinux.org/title/Systemd/User#Writing_user_units
+Mar 14 16:42:52 <preach>	tomreyn: leftyfb: iconoclast_hero: ubuntu already comes with a rc-local.service unit that enables running /etc/rc.local on startup as long as it's chmod +x
+Mar 14 16:43:05 <preach>	no need to learn anything
+Mar 14 16:43:14 <iconoclast_hero>	BINGO.
+Mar 14 16:43:28 <akik>	systemd will remove sysv init script support soon
+Mar 14 16:43:39 <preach>	oh hi akik
+Mar 14 16:43:47 <preach>	long time no see
+Mar 14 16:43:49 <leftyfb>	you better hope your script doesn't lock up, because if it does, your system will fail to finish booting
+Mar 14 16:44:05 <leftyfb>	rc.local is not a good idea for such things
+Mar 14 16:44:06 <akik>	i tried talking to lennart to keep rc.local but he wasn't in the mood
+Mar 14 16:44:23 <preach>	not surprised
+Mar 14 16:44:27 <tomreyn>	preach: that's a less than ideal compatibility layer, i'd say, and thus don't recommend.
+Mar 14 16:44:56 <preach>	leftyfb: Type=forking ftw
+Mar 14 16:45:22 <preach>	tomreyn: it's no different than making one yourself, I see no problem with it. people can always copy the old unit if it does get removed
+Mar 14 16:45:40 <leftyfb>	preach: you don't even need that in a normal service file if nothing is dependent on your custom script
+Mar 14 16:45:44 <preach>	"using systemd" is still the same as making your own identical rc-local.service anyway.
+Mar 14 16:45:58 <preach>	so complaining about having an rc-local.service is silly IMO
+Mar 14 16:46:24 <iconoclast_hero>	hey preach...  if i leave off that info block in that script in rc3.d will it still run at startup?
+Mar 14 16:46:32 <tanath>	iconoclast_hero: if you're going to continue using linux, some systemd familiarity is worth learning. systemd is basically everywhere, and the non-systemd options are not as user-friendly
+Mar 14 16:46:33 <iconoclast_hero>	i just really want to know the answer to that question.
+Mar 14 16:46:45 <iconoclast_hero>	right, i have written systemd stuff
+Mar 14 16:46:47 <iconoclast_hero>	i'll show you
+Mar 14 16:46:49 <akik>	and rc.local in systemd isn't even being ran last
+Mar 14 16:47:16 <leftyfb>	iconoclast_hero: in the time you originally asked the question, you could have easily tested it and come to a conclusion
+Mar 14 16:47:23 <iconoclast_hero>	https://github.com/iconoclasthero/mpdignore
+Mar 14 16:47:28 <preach>	iconoclast_hero: sorry I missed that part of the conversation, not sure what you're referring to
+Mar 14 16:47:33 <leftyfb>	or written and enabled your own systemd unit file
+Mar 14 16:47:37 <iconoclast_hero>	there's a systemd process i've made, it's not the point.
+Mar 14 16:47:39 <preach>	leftyfb: no need to be rude
+Mar 14 16:47:56 <iconoclast_hero>	i asked a question so that i could learn something about a subject i was interested in and the answer was your question is wrong
+Mar 14 16:48:13 <preach>	iconoclast_hero: that's typical IRC unfortunately
+Mar 14 16:48:20 <iconoclast_hero>	@preach https://pastebin.com/raw/Bsnh4WBr
+Mar 14 16:48:22 <preach>	everyone always asks the wrong question, whether that's true or not
+Mar 14 16:49:03 <preach>	and if you want to do something in a way others don't agree with, you're still asking the wrong question
+Mar 14 16:49:17 <iconoclast_hero>	and @leftyfb, i'm really trying hard not to reboot that system right now.
+Mar 14 16:49:31 <iconoclast_hero>	otherwise i wouldn't've asked.
+Mar 14 16:49:34 <leftyfb>	iconoclast_hero: how do you expect to test your script on boot?
+Mar 14 16:49:36 <preach>	iconoclast_hero: if you're using systemd then yea that block does nothing
+Mar 14 16:49:41 <preach>	that's for an older init system
+Mar 14 16:51:37 <preach>	if they don't want to reboot then they aren't interested in "testing it at boot" right now, simple as
+Mar 14 16:52:03 <iconoclast_hero>	wow, preach, have you ever watched key and peale?
+Mar 14 16:52:08 <iconoclast_hero>	i need you to be my luther.
+Mar 14 16:52:20 <preach>	I refuse to watch
+Mar 14 16:52:44 <preach>	they basically took chappelle's show and made it worse
+Mar 14 16:52:57 <iconoclast_hero>	well, if you wish to understand the reference: https://www.youtube.com/watch?v=HkAK9QRe4ds
+Mar 14 16:53:26 <preach>	and I just don't like them I don't think they're funny :/ but to each their own
+Mar 14 16:54:46 <iconoclast_hero>	well, thanks for answering the questions i asked.  i appreciate that people are trying to help, but there's a point at which you're not doing anyone any good arguing about which solution to use
+Mar 14 16:55:01 <iconoclast_hero>	all this systemd discussion was a waste of everyone's time.  just answer the question asked.
+Mar 14 16:55:30 <preach>	iconoclast_hero: 1000% agree
+Mar 14 16:56:00 <preach>	terminally online linux nerds are often jaded and elitist
+Mar 14 16:57:07 <iconoclast_hero>	this happened to me when I was trying to stop a gravity loop in a domestic hot water recirculation loop
+Mar 14 16:57:27 <iconoclast_hero>	the discussion became about whether it was cromulent to return the water to the base of the HW tank or not.
+Mar 14 16:58:46 <tomreyn>	we would not be doing you or us any good if we were to invest time into telling you how you can make something work with outdated, soon-to-be-unsupported (and already likely to break things) approaches which don't fit current mechanisms used in ubuntu.
+Mar 14 17:00:19 <tomreyn>	(and considering *this* elitist is a misinterpretation, i would say.)
+Mar 14 17:00:49 <leftyfb>	and against CoC
+Mar 14 17:01:11 <iconoclast_hero>	if it is a system that is currently functional in ubuntu then it is still a supported system regardless of plans that have not yet come to fruition to eliminate it.
+Mar 14 17:01:39 <plastikman>	Im not sure any of this is even helpful.
+Mar 14 17:01:59 <iconoclast_hero>	it isn't.  i really tried hard not to respond.
+Mar 14 17:02:53 <akik>	it's schrödinger's startup script
+Mar 14 17:04:41 <preach>	23:58 < tomreyn> we would not be doing you or us any good <- I disagree, if someone doesn't want to learn a different method _right now_, it's not your place to try to convince them when they obviously don't want to be. I think you do more harm than good by arguing about it.
+Mar 14 17:06:14 <leftyfb>	preach: except when they come back here in a couple years after sysV has been completely deprecated asking why their script stopped working. It happens all the time. It's really fun having the same conversation and troubleshooting the same problem with the same person multiple times
+Mar 14 17:06:43 <plastikman>	I mean, systemd _just_ came out.
+Mar 14 17:06:49 <leftyfb>	preach: also, I consider it my place to provide support the way I feel the most beneficial to everyone
+Mar 14 17:07:14 <leftyfb>	plastikman: Ubuntu moved to systemd in 2015
+Mar 14 17:07:21 <plastikman>	leftyfb: it was a joke.
+Mar 14 17:07:32 <plastikman>	that means its been 9 year.
+Mar 14 17:08:01 <leftyfb>	it's been almost 10 years. Yes, I believe telling people to learn systemd over sysV to solve a problem is the right method of support
+Mar 14 17:08:11 <preach>	leftyfb: arguing fundamental things like this when they tell you they're not interested though, gets nobody anywhere, now OR later
+Mar 14 17:08:29 <preach>	you don't have to respond if you aren't interested in helping them with the way they want to do it
+Mar 14 17:08:37 <preach>	that's no reason to tell them they're wrong
+Mar 14 17:09:25 <preach>	yes you can say you should learn systemd, but if they say they're not interested, I think you should leave it at that if you don't want to help them with the way they want to do it
+Mar 14 17:09:38 <preach>	all this arguing is pointless
+Mar 14 17:09:40 <leftyfb>	you provide support the way you choose
+Mar 14 17:09:43 <preach>	and just turns people off to even asking for help
+Mar 14 17:09:51 <tomreyn>	preach: iconoclast has previously been very reluctant to adopt current mechanisms, and has been seeking support about outdated mechanisms here. that's not something we forbid, but something we should discourage and instead tell about the current mechanisms to enable them to have a good ubuntu experience IMO. we can continue this conversation in #ubuntu-offtopic, if you would like to.
+Mar 14 17:10:03 <preach>	I think way more people are turned away from irc support channels than those who inconvenience you by not wanting to learn systemd
+Mar 14 17:10:26 <preach>	simply due to people's attitudes
+Mar 14 17:11:00 <preach>	anyway I've said my 2c
+Mar 14 17:45:48 <ashafq>	leftyfb: have I misconfigured firefox snap somehow?
+Mar 14 17:48:08 <leftyfb>	ashafq: I'm not sure. I have a semi-similar problem but in my case, I run google-chrome over X forwarding (with xorg of course) and when it opens a dialog, the dialog opens on the target machine, not over X forwarding
+Mar 14 17:49:32 <ashafq>	leftyfb: :(
+Mar 14 19:13:07 <oerheks>	:-)
+Mar 14 19:20:33 <harish>	hi
+Mar 14 20:18:57 <escola>	oi
+Mar 14 21:02:56 <shr>	h
+Mar 14 22:30:55 <xFCFFDFFFFEFFFAF>	welcome to official windows support channel
+Mar 14 22:32:30 <jeremy31>	!offtopic| xFCFFDFFFFEFFFAF
+Mar 14 22:32:30 <ubottu>	xFCFFDFFFFEFFFAF: #ubuntu is the Ubuntu support channel, for all Ubuntu-related support questions. Please use #ubuntu-offtopic for other topics (though our !guidelines apply there too). Thanks!
+Mar 14 22:32:47 <xFCFFDFFFFEFFFAF>	sry, wrong HWND
+Mar 14 23:56:30 <eelstrebor>	is there something wrong with the repositories? apt update shows updates available but apt upgrade can't seem to get them
+Mar 14 23:57:12 <oerheks>	nope https://status.canonical.com/
+Mar 14 23:57:29 <jeremy31>	Some must be working as I am updating now
+Mar 14 23:57:50 <oerheks>	change to main, and try again?
+Mar 14 23:58:06 <eelstrebor>	i tried with and without my vpn running - no go
+Mar 14 23:58:15 <oerheks>	if you get a message snap-store update, killall snap-store && snap refresh
+Mar 14 23:58:56 <eelstrebor>	Failed to fetch http://security.ubuntu.com/ubuntu/pool/universe/t/texlive-bin/texlive-binaries_2021.20210626.59705-1ubuntu0.2_amd64.deb  Connection failed [IP: 91.189.91.39 80]
+Mar 15 00:00:14 <toddc>	!phasedupdated | eel
+Mar 15 00:01:02 <krytarik>	!phasedupdates
+Mar 15 00:01:02 <eelstrebor>	snap-store update - Authorization required, but no authorization protocol specified
+Mar 15 00:01:02 <ubottu>	Since Ubuntu 21.04, APT may hold back some updates on some systems while they are being phased in. This is called "phased updates". See https://ubottu.com/y/phased and https://help.ubuntu.com/community/PhasedUpdates for more info.
+Mar 15 00:01:39 <eelstrebor>	krytarik, that's not my issue
+Mar 15 00:02:00 <krytarik>	Just typo correcting here. :P
+Mar 15 00:02:23 <tomreyn>	"Connection failed [IP: 91.189.91.39 80]" suggests that your system (the one looking for updates) resolved security.ubuntu.com as 91.189.91.39 but was unable to setup a TCP connection to the HTTP port (80) on 91.189.91.39
+Mar 15 00:02:46 <oerheks>	maybe the server was just in sync, try again?
+Mar 15 00:03:54 <eelstrebor>	i've been trying for 2 days
+Mar 15 00:04:00 <tomreyn>	security.ubuntu.com resolves (slightly) differently for me, but this is likely just due to it being a CDN
+Mar 15 00:04:16 <tomreyn>	try using httpS rather than httP
+Mar 15 00:05:19 <tomreyn>	ah no, it does not seem to support HTTPS
+Mar 15 00:06:28 <eelstrebor>	https has been working for me for several months
+Mar 15 00:06:40 <oerheks>	change to main, and try again?
+Mar 15 00:06:50 <tomreyn>	eelstrebor: for security.ubuntu.com?
+Mar 15 00:07:43 <oerheks>	does this file exist? cat /var/run/reboot-required
+Mar 15 00:09:31 <krytarik>	You know, it is mildly curious that "apt update" does seem connect to security.u.c successfully, but "apt upgrade" does not.
+Mar 15 00:15:01 <tomreyn>	do we know that "apt update" connected to security.u.c successfully, though? i haven't seen output suggesting so.
+Mar 15 00:15:40 <tomreyn>	oh they're gone
+Mar 15 00:15:46 <krytarik>	Well, the package URL is current at least.
+Mar 15 00:16:28 <tomreyn>	this one has probably been current since 2021 ;)
+Mar 15 00:16:59 <krytarik>	lol
+Mar 15 00:19:53 <tomreyn>	no, you're right, this one was just packaged two days ago
+**** BEGIN LOGGING AT Fri Mar 15 03:40:51 2024
+
+Mar 15 03:40:51 *	Now talking on #ubuntu
+Mar 15 03:40:51 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 15 03:40:51 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 15 03:40:51 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** BEGIN LOGGING AT Fri Mar 15 03:45:00 2024
+
+Mar 15 03:45:00 *	Now talking on #ubuntu
+Mar 15 03:45:00 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 15 03:45:00 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 15 03:45:00 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+**** ENDING LOGGING AT Fri Mar 15 03:45:01 2024
+
+Mar 15 04:19:31 <Valmet>	damn
+**** ENDING LOGGING AT Fri Mar 15 05:52:58 2024
+
+**** BEGIN LOGGING AT Fri Mar 15 06:03:28 2024
+
+Mar 15 06:03:26 *	Now talking on #ubuntu
+Mar 15 06:03:26 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 15 06:03:26 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 15 06:03:26 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+Mar 15 08:20:49 <Guest11>	Hi how do i get a list of chatrooms to join?
+Mar 15 08:26:37 <toddc>	!alias | Guest453
+Mar 15 08:27:12 <toddc>	wrong looking
+Mar 15 08:28:06 <ravage>	i think its !alis 🙂
+Mar 15 08:28:44 <Unit193>	Or, you could actually just talk to the user.  But he's gone.
+Mar 15 08:43:27 <Guest453>	hi
+Mar 15 08:43:58 <Guest453>	with the 'mktemp' program are the temporary dirrects semi permanent or on reboot they are lost?
+Mar 15 10:03:11 <jakubby>	Hey amd calls for `linux-modules-extra-$(uname -r)` to use RoCM. Is there anyway to always install the extra-modules for the most current kernel? Like is the case with kernel headers?
+Mar 15 10:03:33 <jakubby>	I don't want things to break just because of some lacking module interdependency
+Mar 15 10:04:07 <jakubby>	linux-modules-extra-generic doesn't exist and quick inspection with tabulator shows that only linux-modules-extra-<version>-generic exists
+Mar 15 10:04:24 <jakubby>	ubuntu 22.04
+Mar 15 10:05:03 <ravage>	if you use the generic kernel which is the default then thats the package you need
+Mar 15 10:07:16 <ogra_>	just make sure to install linux-generic ... thats the metapackage that pulls in everything (i.e. the linux-image-generic package ... which in turn depends on linux-modules-extra-$VERSION-generic)
+Mar 15 10:07:44 <jakubby>	I see had no idea it works like that, thanks
+Mar 15 12:15:18 *	Disconnected ()
+**** ENDING LOGGING AT Fri Mar 15 12:15:18 2024
+
+**** BEGIN LOGGING AT Fri Mar 15 12:17:55 2024
+
+Mar 15 12:17:55 *	Now talking on #ubuntu
+Mar 15 12:17:55 *	Topic for #ubuntu is: Official Ubuntu Support Channel | IRC Guidelines: https://ubottu.com/y/gl | #ubuntu supports Ubuntu and official flavors; versions 20.04, 22.04, 23.10. #ubuntu-next for 24.04 | Unofficial derivatives: Use your distro's support channel, not here | IRC info: https://ubottu.com/y/irc | Pastes to https://dpaste.com | Download: https://ubottu.com/y/dl
+Mar 15 12:17:55 *	Topic for #ubuntu set by krytarik (Sun Jan 28 15:23:05 2024)
+Mar 15 12:17:56 -ChanServ-	[#ubuntu] Welcome to #ubuntu. This channel is logged. Use of this channel implies acceptance of terms at https://wiki.ubuntu.com/IRC/TermsOfService
+Mar 15 13:01:36 <BluesKaj>	Hi all
+Mar 15 13:03:50 <hwpplayer1>	hi BluesKaj
+Mar 15 13:04:04 <hwpplayer1>	whats up ? BluesKaj

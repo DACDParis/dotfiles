@@ -1115,3 +1115,202 @@ Mar 12 00:55:45 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old 
 Mar 12 00:55:45 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
 Mar 12 00:55:45 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
 Mar 12 00:55:45 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Tue Mar 12 07:33:43 2024
+
+Mar 12 07:33:41 *	Now talking on #neomutt
+Mar 12 07:33:41 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 12 07:33:41 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 12 07:33:41 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 12 07:33:41 *	Channel #neomutt url: https://neomutt.org
+Mar 12 07:43:45 <roccoblues>	good morning
+Mar 12 07:44:20 <roccoblues>	gahr: do we require a rebuild with every version? Or only with "breaking" header cache changes?
+Mar 12 09:14:42 <gahr>	no, only when we touch the structures that we cache
+Mar 12 09:15:02 <gahr>	https://github.com/neomutt/neomutt/blob/main/hcache/hcachever.sh#L3-L4
+Mar 12 09:15:25 <gahr>	so whenever we touch one of those structures, you need a rebuild
+Mar 12 09:15:46 <gahr>	in some occasions, we might change how we dump the cache w/o changing those structures, in which case we bump that version
+Mar 12 09:48:22 <roccoblues>	ah ok, yeah then I'm all for closing it
+Mar 12 09:48:44 <roccoblues>	otherwise I'd have said we keep this as a feature request
+**** BEGIN LOGGING AT Tue Mar 12 17:00:35 2024
+
+Mar 12 17:00:31 *	Now talking on #neomutt
+Mar 12 17:00:31 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 12 17:00:31 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 12 17:00:31 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 12 17:00:31 *	Channel #neomutt url: https://neomutt.org
+**** ENDING LOGGING AT Wed Mar 13 06:35:42 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 06:38:07 2024
+
+Mar 13 06:38:05 *	Now talking on #neomutt
+Mar 13 06:38:05 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 13 06:38:05 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 13 06:38:05 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 13 06:38:05 *	Channel #neomutt url: https://neomutt.org
+**** ENDING LOGGING AT Wed Mar 13 06:38:17 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 15:36:13 2024
+
+Mar 13 15:36:12 *	Now talking on #neomutt
+Mar 13 15:36:12 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 13 15:36:12 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 13 15:36:13 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 13 15:36:13 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Wed Mar 13 16:17:18 2024
+
+Mar 13 16:17:16 *	Now talking on #neomutt
+Mar 13 16:17:16 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 13 16:17:16 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 13 16:17:16 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 13 16:17:16 *	Channel #neomutt url: https://neomutt.org
+**** ENDING LOGGING AT Wed Mar 13 17:02:39 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 17:15:30 2024
+
+Mar 13 17:15:29 *	Now talking on #neomutt
+Mar 13 17:15:29 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 13 17:15:29 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 13 17:15:30 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 13 17:15:30 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Wed Mar 13 17:31:45 2024
+
+Mar 13 17:31:44 *	Now talking on #neomutt
+Mar 13 17:31:44 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 13 17:31:44 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 13 17:31:44 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 13 17:31:44 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Wed Mar 13 18:43:10 2024
+
+Mar 13 18:43:09 *	Now talking on #neomutt
+Mar 13 18:43:09 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 13 18:43:09 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 13 18:43:09 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 13 18:43:09 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Wed Mar 13 23:52:51 2024
+
+Mar 13 23:52:48 *	Now talking on #neomutt
+Mar 13 23:52:48 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 13 23:52:48 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 13 23:52:48 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 13 23:52:48 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Thu Mar 14 02:26:03 2024
+
+Mar 14 02:26:01 *	Now talking on #neomutt
+Mar 14 02:26:01 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 14 02:26:01 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 14 02:26:02 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 14 02:26:02 *	Channel #neomutt url: https://neomutt.org
+Mar 14 06:17:53 <virtualsid>	you don't have to sudo if you don't want, I imagine. I haven't used it.
+Mar 14 08:24:51 <jindraj>	lv8pv: I appreciate the vigilance. There's nothing to worry about in this case. You can see for yourself what the install target is about to do https://github.com/LukeSmithxyz/mutt-wizard/blob/master/Makefile#L11-L40
+Mar 14 08:28:44 <jindraj>	lv8pv: if the mutt-wizzard is worth using? If you're just about to start with neomutt and all the things around it will ease the setup. 
+Mar 14 08:33:00 <lv8pv>	jindraj: Thanks =) I did skim through the script after I posted and as you point out could not see anything dangerous. Perhaps I will try it. --- A side question, I tried some neomuttrc files that do colour , but my Alacritty term complains about unsupported colours. Sugestion
+Mar 14 08:33:26 <lv8pv>	.. Any suggestion on a terminal ?
+Mar 14 08:35:30 <jindraj>	Alacritty complains about unsupported colors? huh? can you share a screenshot of the error?
+Mar 14 08:35:38 <lv8pv>	yes
+Mar 14 08:36:42 <lv8pv>	https://dpaste.com/FSAXQ54R5
+Mar 14 08:38:35 <lv8pv>	And this is the color.conf https://dpaste.com/GU89CRVC3
+Mar 14 08:39:10 <lv8pv>	fetched from a github user with quite a few stars
+Mar 14 08:40:40 <lv8pv>	alacritty 0.13.1
+Mar 14 08:57:34 <roccoblues>	good morning
+Mar 14 08:58:02 <roccoblues>	lv8pv: what did you set $TERM too?
+Mar 14 08:58:15 <roccoblues>	alacritty works just fine for me
+Mar 14 08:58:37 <roccoblues>	and btw, I also used mutt-wizard for my initial setup back in the day
+Mar 14 08:58:50 <lv8pv>	that might be the problem eh .. xterm-color
+Mar 14 08:59:18 <roccoblues>	can you try with xterm-256color?
+Mar 14 09:00:53 <lv8pv>	did not help (after sourcing bashrc)
+Mar 14 09:01:53 <lv8pv>	starting a new term helped.. strange that sourcing it did not do same trick
+Mar 14 09:02:59 <lv8pv>	... so no error but no color LOL.. that was air out of the balloon
+Mar 14 09:05:12 <roccoblues>	weird, but you have colors in the terminal?
+Mar 14 09:12:45 <lv8pv>	roccoblues: yes colour everywhere
+Mar 14 09:17:01 <roccoblues>	sorry, I'm running out of ideas. Might be worth to start with an empty muttrc and just add a handful of color statements. Seeing if that works.
+Mar 14 09:18:50 <lv8pv>	I will try that mutt-wizard, color is any way not the first thing I'm struggling with and is not priority one =)
+Mar 14 09:19:21 <lv8pv>	Than's both of you for the help roccoblues  jindraj 
+Mar 14 09:19:30 <lv8pv>	s/Than's/Thank's
+Mar 14 09:21:18 <roccoblues>	yw
+**** ENDING LOGGING AT Thu Mar 14 09:59:27 2024
+
+**** BEGIN LOGGING AT Thu Mar 14 10:06:39 2024
+
+Mar 14 10:06:38 *	Now talking on #neomutt
+Mar 14 10:06:38 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 14 10:06:38 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 14 10:06:38 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 14 10:06:38 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Thu Mar 14 10:11:09 2024
+
+Mar 14 10:11:08 *	Now talking on #neomutt
+Mar 14 10:11:08 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 14 10:11:08 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 14 10:11:08 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 14 10:11:08 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Thu Mar 14 10:15:56 2024
+
+Mar 14 10:15:54 *	Now talking on #neomutt
+Mar 14 10:15:54 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 14 10:15:54 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 14 10:15:54 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 14 10:15:54 *	Channel #neomutt url: https://neomutt.org
+Mar 14 10:22:04 <lv8pv>	Can neomutt filter and sort mails, kinda like procmail do ?
+Mar 14 10:28:00 <roccoblues>	not really, you need to use an external tool for that
+Mar 14 10:30:33 <lv8pv>	Can that be done from with in neomutt or do I need to use like fetchmail to fetch my mail accounts and pass it to procmail to filter it ?
+Mar 14 10:31:05 <lv8pv>	can I call procmail from neomutt on incoming mail ?
+**** BEGIN LOGGING AT Thu Mar 14 10:34:18 2024
+
+Mar 14 10:34:17 *	Now talking on #neomutt
+Mar 14 10:34:17 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 14 10:34:17 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 14 10:34:17 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 14 10:34:17 *	Channel #neomutt url: https://neomutt.org
+**** ENDING LOGGING AT Thu Mar 14 10:35:41 2024
+
+Mar 14 10:50:02 <roccoblues>	depends, are you using imap or a local maildir?
+Mar 14 10:50:56 <roccoblues>	I use mbsync and have the sync and notmuch index bound to a key
+Mar 14 10:50:57 <roccoblues>	https://git.sr.ht/~dennis/dotfiles/tree/main/item/mutt/.config/mutt/muttrc#L104
+Mar 14 10:51:13 <roccoblues>	should be possible to add procmail or similar to the mix
+Mar 14 10:51:42 <roccoblues>	I only have 2 or 3 filters and just configured them at my mail provider already
+Mar 14 11:39:42 <lv8pv>	roccoblues: mutt-wizard uses imap but im changing it to local mapdirs
+Mar 14 11:40:00 <lv8pv>	roccoblues: thanks
+Mar 14 14:03:31 <mingdao>	26
+Mar 14 21:01:20 <paniash>	hello
+Mar 14 22:45:35 <lv8pv>	Can I change the textwidth when I'm reading mail ? Even if the term is big, I'd like reading my emails in around 80 characters width
+**** BEGIN LOGGING AT Fri Mar 15 03:40:52 2024
+
+Mar 15 03:40:51 *	Now talking on #neomutt
+Mar 15 03:40:51 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 15 03:40:51 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 15 03:40:51 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 15 03:40:51 *	Channel #neomutt url: https://neomutt.org
+**** BEGIN LOGGING AT Fri Mar 15 03:45:00 2024
+
+Mar 15 03:45:00 *	Now talking on #neomutt
+Mar 15 03:45:00 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 15 03:45:00 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 15 03:45:00 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 15 03:45:00 *	Channel #neomutt url: https://neomutt.org
+**** ENDING LOGGING AT Fri Mar 15 03:45:01 2024
+
+**** ENDING LOGGING AT Fri Mar 15 05:52:58 2024
+
+**** BEGIN LOGGING AT Fri Mar 15 06:03:29 2024
+
+Mar 15 06:03:26 *	Now talking on #neomutt
+Mar 15 06:03:26 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 15 06:03:26 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 15 06:03:26 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 15 06:03:26 *	Channel #neomutt url: https://neomutt.org
+Mar 15 06:09:21 <virtualsid>	how can I do a keybinding so that when I press ',,' (comma, twice) it runs something like save-message? I tried ', ,' and ',,' and they didn't work here: bind index,pager ,, "<save-message>+INBOX.Archive" "move message to Archive folder"
+Mar 15 06:10:11 <virtualsid>	came with an error of "config/mutt/muttrc:51: bind: too many arguments" - I was using this as a basic guide: https://neomutt.org/guide/configuration.html#6-4-%C2%A0warnings-about-duplicated-bindings
+Mar 15 06:12:21 <virtualsid>	oh, I clearly misread. I need it without the brackets for a binding. I think I need a macro instead?
+Mar 15 06:20:04 <virtualsid>	yup, works now, as a macro :)
+Mar 15 07:36:44 <jindraj>	lv8pv: `set wrap=80` ?
+Mar 15 10:39:55 <lv8pv>	jindraj: thanks I was so set on the neovim and vim setting set textwidth=80 in my searches ..
+Mar 15 11:24:24 <jindraj>	oh, I'm using internal pager. 
+Mar 15 12:15:18 *	Disconnected ()
+**** ENDING LOGGING AT Fri Mar 15 12:15:18 2024
+
+**** BEGIN LOGGING AT Fri Mar 15 12:17:55 2024
+
+Mar 15 12:17:55 *	Now talking on #neomutt
+Mar 15 12:17:55 *	Topic for #neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+Mar 15 12:17:55 *	Topic for #neomutt set by flatcap!~flatcap@neomutt/flatcap (Thu Feb  1 15:12:37 2024)
+Mar 15 12:17:55 -ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+Mar 15 12:17:55 *	Channel #neomutt url: https://neomutt.org

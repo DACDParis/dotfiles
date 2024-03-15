@@ -5,12 +5,12 @@
 # Read `man 5 sway` for a complete reference.
 
 exec /usr/libexec/kf5/polkit-kde-authentication-agent-1
-exec wl-paste -t text --watch clipman store --no-persist
-exec opensnitch_ui
+#exec wl-paste -t text --watch clipman store --no-persist
+#exec opensnitch_ui
 exec nm-applet
 exec swaync -style ~/.config/sway/swaync/style.css --config ~/.config/sway/swaync/config.json
 exec waybar -c ~/.config/waybar/sway_config.jsonc
-exec easyeffects
+#exec easyeffects
 
 #assign [app-id="com.github.wwmm.easyeffects"] 3
 #assign [app-id="com.spotify.Client"]3
@@ -28,17 +28,17 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
+set $term alacritty
 
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 bindsym $mod+Shift+p exec grim -g "$(slurp)" - | swappy -f -
-bindsym $mod+Shift+z exec firefox
-bindsym $mod+z exec google-chrome
+bindsym $mod+Shift+z exec google-chrome
+bindsym $mod+z exec firefox
 bindsym $mod+x exec kitty --detach ranger
-bindsym $mod+Shift+x exec dolphin
+bindsym $mod+Shift+x exec thunar
 bindsym $mod+c exec kitty --detach /home/david/.local/bin/lvim
 
 bindsym $mod+Space exec wofi 
@@ -48,8 +48,18 @@ bindsym $mod+Space exec wofi
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /home/david/Pictures/city.jpg fill
 
-output DP-2 resolution 2560x1080 position 2560,0
+#output DP-2 resolution 2560x1080 position 2560,0
+output HDMI-A-1 {
+  mode 3840x2160@60Hz
+  position 0x0 }
 
+output DP-3 {
+  mode 2560x1080@60Hz
+  position 3840x0 }
+
+output DP-2 {
+  mode 1920x1080@180Hz
+  position 6400x0 }
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 ### Idle configuration
@@ -166,13 +176,13 @@ output DP-2 resolution 2560x1080 position 2560,0
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+v floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+v focus mode_toggle
+    #bindsym $mod+v focus mode_toggle
 
     # Move focus to the parent container
-    bindsym $mod+a focus parent
+    # bindsym $mod+a focus parent
 
 # Scratchpad:
 

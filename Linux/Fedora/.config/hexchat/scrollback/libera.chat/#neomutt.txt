@@ -763,3 +763,150 @@ T 1710201345 22*	Topic for 22#neomutt is: Version: 2024-02-01 | "Teaching an
 T 1710201345 22*	Topic for 22#neomutt set by 26flatcap!~flatcap@neomutt/flatcap (24Thu Feb  1 15:12:37 2024)
 T 1710201345 -18ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
 T 1710201345 22*	Channel 22#neomutt url: 24https://neomutt.org
+T 1710225221 19*	Now talking on 22#neomutt
+T 1710225221 22*	Topic for 22#neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+T 1710225221 22*	Topic for 22#neomutt set by 26flatcap!~flatcap@neomutt/flatcap (24Thu Feb  1 15:12:37 2024)
+T 1710225221 -18ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+T 1710225221 22*	Channel 22#neomutt url: 24https://neomutt.org
+T 1710225825 18<22roccoblues18>	good morning
+T 1710225860 18<22roccoblues18>	gahr: do we require a rebuild with every version? Or only with "breaking" header cache changes?
+T 1710231282 18<25gahr18>	no, only when we touch the structures that we cache
+T 1710231302 18<25gahr18>	https://github.com/neomutt/neomutt/blob/main/hcache/hcachever.sh#L3-L4
+T 1710231325 18<25gahr18>	so whenever we touch one of those structures, you need a rebuild
+T 1710231346 18<25gahr18>	in some occasions, we might change how we dump the cache w/o changing those structures, in which case we bump that version
+T 1710233302 18<22roccoblues18>	ah ok, yeah then I'm all for closing it
+T 1710233324 18<22roccoblues18>	otherwise I'd have said we keep this as a feature request
+T 1710259231 19*	Now talking on 22#neomutt
+T 1710259231 22*	Topic for 22#neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+T 1710259231 22*	Topic for 22#neomutt set by 26flatcap!~flatcap@neomutt/flatcap (24Thu Feb  1 15:12:37 2024)
+T 1710259231 -18ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+T 1710259231 22*	Channel 22#neomutt url: 24https://neomutt.org
+T 1710308285 19*	Now talking on 22#neomutt
+T 1710308285 22*	Topic for 22#neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+T 1710308285 22*	Topic for 22#neomutt set by 26flatcap!~flatcap@neomutt/flatcap (24Thu Feb  1 15:12:37 2024)
+T 1710308285 -18ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+T 1710308285 22*	Channel 22#neomutt url: 24https://neomutt.org
+T 1710340572 19*	Now talking on 22#neomutt
+T 1710340572 22*	Topic for 22#neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+T 1710340572 22*	Topic for 22#neomutt set by 26flatcap!~flatcap@neomutt/flatcap (24Thu Feb  1 15:12:37 2024)
+T 1710340573 -18ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+T 1710340573 22*	Channel 22#neomutt url: 24https://neomutt.org
+T 1710343036 19*	Now talking on 22#neomutt
+T 1710343036 22*	Topic for 22#neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+T 1710343036 22*	Topic for 22#neomutt set by 26flatcap!~flatcap@neomutt/flatcap (24Thu Feb  1 15:12:37 2024)
+T 1710343036 -18ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+T 1710343036 22*	Channel 22#neomutt url: 24https://neomutt.org
+T 1710346529 19*	Now talking on 22#neomutt
+T 1710346529 22*	Topic for 22#neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+T 1710346529 22*	Topic for 22#neomutt set by 26flatcap!~flatcap@neomutt/flatcap (24Thu Feb  1 15:12:37 2024)
+T 1710346530 -18ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+T 1710346530 22*	Channel 22#neomutt url: 24https://neomutt.org
+T 1710347504 19*	Now talking on 22#neomutt
+T 1710347504 22*	Topic for 22#neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+T 1710347504 22*	Topic for 22#neomutt set by 26flatcap!~flatcap@neomutt/flatcap (24Thu Feb  1 15:12:37 2024)
+T 1710347504 -18ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+T 1710347504 22*	Channel 22#neomutt url: 24https://neomutt.org
+T 1710351789 19*	Now talking on 22#neomutt
+T 1710351789 22*	Topic for 22#neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+T 1710351789 22*	Topic for 22#neomutt set by 26flatcap!~flatcap@neomutt/flatcap (24Thu Feb  1 15:12:37 2024)
+T 1710351789 -18ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+T 1710351789 22*	Channel 22#neomutt url: 24https://neomutt.org
+T 1710370368 19*	Now talking on 22#neomutt
+T 1710370368 22*	Topic for 22#neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+T 1710370368 22*	Topic for 22#neomutt set by 26flatcap!~flatcap@neomutt/flatcap (24Thu Feb  1 15:12:37 2024)
+T 1710370368 -18ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+T 1710370368 22*	Channel 22#neomutt url: 24https://neomutt.org
+T 1710379561 19*	Now talking on 22#neomutt
+T 1710379561 22*	Topic for 22#neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+T 1710379561 22*	Topic for 22#neomutt set by 26flatcap!~flatcap@neomutt/flatcap (24Thu Feb  1 15:12:37 2024)
+T 1710379562 -18ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+T 1710379562 22*	Channel 22#neomutt url: 24https://neomutt.org
+T 1710393473 18<27virtualsid18>	you don't have to sudo if you don't want, I imagine. I haven't used it.
+T 1710401091 18<19jindraj18>	lv8pv: I appreciate the vigilance. There's nothing to worry about in this case. You can see for yourself what the install target is about to do https://github.com/LukeSmithxyz/mutt-wizard/blob/master/Makefile#L11-L40
+T 1710401324 18<19jindraj18>	lv8pv: if the mutt-wizzard is worth using? If you're just about to start with neomutt and all the things around it will ease the setup. 
+T 1710401580 18<29lv8pv18>	jindraj: Thanks =) I did skim through the script after I posted and as you point out could not see anything dangerous. Perhaps I will try it. --- A side question, I tried some neomuttrc files that do colour , but my Alacritty term complains about unsupported colours. Sugestion
+T 1710401606 18<29lv8pv18>	.. Any suggestion on a terminal ?
+T 1710401730 18<19jindraj18>	Alacritty complains about unsupported colors? huh? can you share a screenshot of the error?
+T 1710401738 18<29lv8pv18>	yes
+T 1710401802 18<29lv8pv18>	https://dpaste.com/FSAXQ54R5
+T 1710401915 18<29lv8pv18>	And this is the color.conf https://dpaste.com/GU89CRVC3
+T 1710401950 18<29lv8pv18>	fetched from a github user with quite a few stars
+T 1710402040 18<29lv8pv18>	alacritty 0.13.1
+T 1710403054 18<22roccoblues18>	good morning
+T 1710403082 18<22roccoblues18>	lv8pv: what did you set $TERM too?
+T 1710403095 18<22roccoblues18>	alacritty works just fine for me
+T 1710403117 18<22roccoblues18>	and btw, I also used mutt-wizard for my initial setup back in the day
+T 1710403130 18<29lv8pv18>	that might be the problem eh .. xterm-color
+T 1710403158 18<22roccoblues18>	can you try with xterm-256color?
+T 1710403253 18<29lv8pv18>	did not help (after sourcing bashrc)
+T 1710403313 18<29lv8pv18>	starting a new term helped.. strange that sourcing it did not do same trick
+T 1710403379 18<29lv8pv18>	... so no error but no color LOL.. that was air out of the balloon
+T 1710403512 18<22roccoblues18>	weird, but you have colors in the terminal?
+T 1710403965 18<29lv8pv18>	roccoblues: yes colour everywhere
+T 1710404221 18<22roccoblues18>	sorry, I'm running out of ideas. Might be worth to start with an empty muttrc and just add a handful of color statements. Seeing if that works.
+T 1710404330 18<29lv8pv18>	I will try that mutt-wizard, color is any way not the first thing I'm struggling with and is not priority one =)
+T 1710404361 18<29lv8pv18>	Than's both of you for the help roccoblues  jindraj 
+T 1710404370 18<29lv8pv18>	s/Than's/Thank's
+T 1710404478 18<22roccoblues18>	yw
+T 1710407198 19*	Now talking on 22#neomutt
+T 1710407198 22*	Topic for 22#neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+T 1710407198 22*	Topic for 22#neomutt set by 26flatcap!~flatcap@neomutt/flatcap (24Thu Feb  1 15:12:37 2024)
+T 1710407198 -18ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+T 1710407198 22*	Channel 22#neomutt url: 24https://neomutt.org
+T 1710407468 19*	Now talking on 22#neomutt
+T 1710407468 22*	Topic for 22#neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+T 1710407468 22*	Topic for 22#neomutt set by 26flatcap!~flatcap@neomutt/flatcap (24Thu Feb  1 15:12:37 2024)
+T 1710407468 -18ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+T 1710407468 22*	Channel 22#neomutt url: 24https://neomutt.org
+T 1710407754 19*	Now talking on 22#neomutt
+T 1710407754 22*	Topic for 22#neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+T 1710407754 22*	Topic for 22#neomutt set by 26flatcap!~flatcap@neomutt/flatcap (24Thu Feb  1 15:12:37 2024)
+T 1710407754 -18ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+T 1710407754 22*	Channel 22#neomutt url: 24https://neomutt.org
+T 1710408124 18<29lv8pv18>	Can neomutt filter and sort mails, kinda like procmail do ?
+T 1710408480 18<22roccoblues18>	not really, you need to use an external tool for that
+T 1710408633 18<29lv8pv18>	Can that be done from with in neomutt or do I need to use like fetchmail to fetch my mail accounts and pass it to procmail to filter it ?
+T 1710408665 18<29lv8pv18>	can I call procmail from neomutt on incoming mail ?
+T 1710408857 19*	Now talking on 22#neomutt
+T 1710408857 22*	Topic for 22#neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+T 1710408857 22*	Topic for 22#neomutt set by 26flatcap!~flatcap@neomutt/flatcap (24Thu Feb  1 15:12:37 2024)
+T 1710408857 -18ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+T 1710408857 22*	Channel 22#neomutt url: 24https://neomutt.org
+T 1710409802 18<22roccoblues18>	depends, are you using imap or a local maildir?
+T 1710409856 18<22roccoblues18>	I use mbsync and have the sync and notmuch index bound to a key
+T 1710409857 18<22roccoblues18>	https://git.sr.ht/~dennis/dotfiles/tree/main/item/mutt/.config/mutt/muttrc#L104
+T 1710409873 18<22roccoblues18>	should be possible to add procmail or similar to the mix
+T 1710409902 18<22roccoblues18>	I only have 2 or 3 filters and just configured them at my mail provider already
+T 1710412782 18<29lv8pv18>	roccoblues: mutt-wizard uses imap but im changing it to local mapdirs
+T 1710412800 18<29lv8pv18>	roccoblues: thanks
+T 1710421411 18<27mingdao18>	26
+T 1710446480 18<22paniash18>	hello
+T 1710452735 18<29lv8pv18>	Can I change the textwidth when I'm reading mail ? Even if the term is big, I'd like reading my emails in around 80 characters width
+T 1710470451 19*	Now talking on 22#neomutt
+T 1710470451 22*	Topic for 22#neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+T 1710470451 22*	Topic for 22#neomutt set by 26flatcap!~flatcap@neomutt/flatcap (24Thu Feb  1 15:12:37 2024)
+T 1710470451 -18ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+T 1710470451 22*	Channel 22#neomutt url: 24https://neomutt.org
+T 1710470700 19*	Now talking on 22#neomutt
+T 1710470700 22*	Topic for 22#neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+T 1710470700 22*	Topic for 22#neomutt set by 26flatcap!~flatcap@neomutt/flatcap (24Thu Feb  1 15:12:37 2024)
+T 1710470700 -18ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+T 1710470700 22*	Channel 22#neomutt url: 24https://neomutt.org
+T 1710479006 19*	Now talking on 22#neomutt
+T 1710479006 22*	Topic for 22#neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+T 1710479006 22*	Topic for 22#neomutt set by 26flatcap!~flatcap@neomutt/flatcap (24Thu Feb  1 15:12:37 2024)
+T 1710479006 -18ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+T 1710479006 22*	Channel 22#neomutt url: 24https://neomutt.org
+T 1710479361 18<27virtualsid18>	how can I do a keybinding so that when I press ',,' (comma, twice) it runs something like save-message? I tried ', ,' and ',,' and they didn't work here: bind index,pager ,, "<save-message>+INBOX.Archive" "move message to Archive folder"
+T 1710479411 18<27virtualsid18>	came with an error of "config/mutt/muttrc:51: bind: too many arguments" - I was using this as a basic guide: https://neomutt.org/guide/configuration.html#6-4-%C2%A0warnings-about-duplicated-bindings
+T 1710479541 18<27virtualsid18>	oh, I clearly misread. I need it without the brackets for a binding. I think I need a macro instead?
+T 1710480004 18<27virtualsid18>	yup, works now, as a macro :)
+T 1710484604 18<19jindraj18>	lv8pv: `set wrap=80` ?
+T 1710495595 18<29lv8pv18>	jindraj: thanks I was so set on the neovim and vim setting set textwidth=80 in my searches ..
+T 1710498264 18<19jindraj18>	oh, I'm using internal pager. 
+T 1710501318 20*	Disconnected (20)
+T 1710501475 19*	Now talking on 22#neomutt
+T 1710501475 22*	Topic for 22#neomutt is: Version: 2024-02-01 | "Teaching an Old Dog New Tricks" - https://neomutt.org | Sponsorship: https://neomutt.org/sponsor | Twitter: https://twitter.com/NeoMutt_Org | Mailing lists: http://mailman.neomutt.org/mailman/listinfo | Code of Conduct: https://neomutt.org/conduct
+T 1710501475 22*	Topic for 22#neomutt set by 26flatcap!~flatcap@neomutt/flatcap (24Thu Feb  1 15:12:37 2024)
+T 1710501475 -18ChanServ-	[#neomutt] Welcome to #NeoMutt | We're happy to help, but please be patient | GitHub user?  Give us a star :-) https://github.com/neomutt/neomutt | https://neomutt.org/
+T 1710501475 22*	Channel 22#neomutt url: 24https://neomutt.org

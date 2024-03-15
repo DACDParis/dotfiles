@@ -81,6 +81,7 @@
 },
   "temperature": {
     "thermal-zone": 1,
+    "on-click": "kitty btop "
     "hwmon-path": [
       "/sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input",
       "/sys/class/thermal/thermal_zone0/temp"

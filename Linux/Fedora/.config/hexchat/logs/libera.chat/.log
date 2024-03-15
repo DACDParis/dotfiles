@@ -105,3 +105,12 @@ Feb 29 14:15:45 -SaslServ-	Last login from: ~dacd@newoobs.freeboxos.fr on Feb 29
 Feb 29 14:15:45 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY david_ <password>
 **** ENDING LOGGING AT Thu Feb 29 14:15:51 2024
 
+**** BEGIN LOGGING AT Fri Mar 15 12:17:49 2024
+
+Mar 15 12:17:49 *	dacd is already in use. Retrying with david_...
+Mar 15 12:17:49 *	david_ sets mode +Z on david_
+Mar 15 12:17:49 *	david_ sets mode +i on david_
+Mar 15 12:17:49 *	david_ sets mode +w on david_
+Mar 15 12:17:49 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY david_ <password>
+**** ENDING LOGGING AT Fri Mar 15 12:17:55 2024
+

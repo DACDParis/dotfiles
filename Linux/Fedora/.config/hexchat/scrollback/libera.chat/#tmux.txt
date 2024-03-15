@@ -667,3 +667,222 @@ T 1710200282 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/deve
 T 1710201345 19*	Now talking on 22#tmux
 T 1710201345 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
 T 1710201345 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710225221 19*	Now talking on 22#tmux
+T 1710225221 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710225221 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710225539 18<26aog18>	when I run tmux and open another tmux within I'm unable to copy by selection w/ mouse
+T 1710225601 18<26aog18>	e.g. I'm in tmux (local) and ssh to remote which also runs tmux
+T 1710230949 18<26slim18>	aog: probably conflicting mouse bind-keys, disable mouse on remote session temporarily or unbind the mousedrag binds
+T 1710230993 18<26slim18>	assuming you want to copy to the local tmux buffers
+T 1710232048 18<26aog18>	you were right slim: disabling the mouse on the secondary session allows the primary to select and copy correctly
+T 1710256487 18<24lavaball18>	portage give me nice 5 out of 10 or whatever in tmux in the status bar. i do have a script that also does the 1 out of 3 thing. how can i tell tmux to show it like portage does?
+T 1710259231 19*	Now talking on 22#tmux
+T 1710259231 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710259231 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710263314 18<24depesz18>	lavaball: it would probably help if you showed what you have in mind. what is portage, what is its output. what you have configured in tmux, and how does it show.
+T 1710263381 18<24lavaball18>	portage is the packet manager. when it installs stuff, it shows the 2 out 16 ... in the tmux status bar.
+T 1710263403 18<24lavaball18>	i only changed the colors and set mode-keys to vi.
+T 1710263460 18<24depesz18>	lavaball: please show: "tmux show-options -g | grep status" - via paste site
+T 1710263853 18<24depesz18>	lavaball: check if this does what you'd like: for i in {1..10}; do printf '\x1b]0;%d of 10\x07' $i; sleep .5; done
+T 1710263868 18<24depesz18>	this is command to run in shell (bash for sure, other shells - i'm not certain it will work)
+T 1710263915 18<24lavaball18>	yes!
+T 1710263916 18<24lavaball18>	that's it!
+T 1710264001 18<24depesz18>	looks like you have 'set-titles' set to on
+T 1710264002 18<24lavaball18>	oh, doesn't work with ksh though. gives me: printf: {1..10}: expected numeric value      i'll figure itoutthough.
+T 1710264028 18<24lavaball18>	seems to be the default setting, since it works on all my machines.
+T 1710264126 18<24depesz18>	perl -e '$|++;for (1..10) { printf "\x1b]0;%s of 10\x07", $_; sleep 1}'
+T 1710264132 18<24depesz18>	without bash :)
+T 1710264161 18<24lavaball18>	i bet it works in ksh as well, somehow.
+T 1710264179 18<24lavaball18>	i mean tmux is part of the base system as well, so i think those two are fully compatible.
+T 1710264185 18<24lavaball18>	anyway, thanks so much!
+T 1710264200 18<24lavaball18>	though is there a place where i can look up all the hyroglyphys?
+T 1710264290 18<24depesz18>	"hyroglyphs"?
+T 1710264293 18<24lavaball18>	ad in the \x1b]0 and \x07
+T 1710264299 18<24lavaball18>	as in
+T 1710264306 18<27ikke18>	ansi escape codes
+T 1710264336 18<24depesz18>	lavaball: you're on linux?
+T 1710264358 18<24lavaball18>	openbsd here, but i have linux boxes available as well.
+T 1710264364 18<24lavaball18>	the ssh magic, you understand.
+T 1710264368 18<24depesz18>	no idea about bsd, on linux: man console_codes
+T 1710264446 18<24lavaball18>	yeah, doesn't exist on openbsd. got it on linux. 
+T 1710264455 18<24lavaball18>	probably just a different name though.
+T 1710264466 18<24lavaball18>	if openbsd has anything then it's man pages.
+T 1710266836 18<24depesz18>	lavaball: can you show me your status-* settings ?
+T 1710267632 18<24lavaball18>	why? we solved the whole thing.
+T 1710267685 18<24depesz18>	curious about a thing
+T 1710267691 18<24lavaball18>	gay.
+T 1710267692 18<24lavaball18>	but sure.
+T 1710267746 18<24lavaball18>	https://bpa.st/R4RA
+T 1710267820 18<24depesz18>	thx
+T 1710267825 18<24lavaball18>	so?
+T 1710267827 18<24lavaball18>	did i win?
+T 1710269037 18<24lavaball18>	.. guess not.
+T 1710269041 18<24lavaball18>	either waay, thanks again.
+T 1710269889 18<29trev18>	does a tmux plugin .tmux script run every time a session starts?
+T 1710270039 18<29trev18>	wait that's a dumb question nevermind
+T 1710270436 18<27mingdao18>	trev: What are you trying to figure out?
+T 1710270610 18<29trev18>	mingdao: trying to get my plugin to set-enviroment every time tmux starts
+T 1710270633 18<29trev18>	so i can add another script to $PATH and then can use the script in a tmux session on cli
+T 1710308285 19*	Now talking on 22#tmux
+T 1710308285 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710308285 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710340572 19*	Now talking on 22#tmux
+T 1710340572 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710340572 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710343036 19*	Now talking on 22#tmux
+T 1710343036 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710343036 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710346529 19*	Now talking on 22#tmux
+T 1710346529 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710346529 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710347504 19*	Now talking on 22#tmux
+T 1710347504 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710347504 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710351789 19*	Now talking on 22#tmux
+T 1710351789 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710351789 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710352624 18<27angle18>	hmmm, so is there something going wrong I need to debug?
+T 1710352647 18<27angle18>	or is it safer to source .zprofile for each new server?
+T 1710352670 18<27angle18>	that feels like the wrong solution though.
+T 1710370368 19*	Now talking on 22#tmux
+T 1710370368 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710370368 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710379561 19*	Now talking on 22#tmux
+T 1710379561 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710379561 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710407198 19*	Now talking on 22#tmux
+T 1710407198 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710407198 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710407468 19*	Now talking on 22#tmux
+T 1710407468 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710407468 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710407754 19*	Now talking on 22#tmux
+T 1710407754 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710407754 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710408857 19*	Now talking on 22#tmux
+T 1710408857 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710408857 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710421816 18<24kroovy_18>	Hi fellows! Is there a maximum amount of Panes? Via a script call `tmux split-window` nine times. But tmux only opens 7 Panes :(
+T 1710421875 18<24kroovy_18>	sorry tmux only opens 8 panes
+T 1710421929 18<24kroovy_18>	hmm, I manually can split the 9th time .
+T 1710421974 18<27ikke18>	I just created a window with 16 panes
+T 1710422046 18<24kroovy_18>	i think it has something todo with the virtual terminal columns
+T 1710422050 18<20osse18>	I created one with 21 !!!1
+T 1710422058 18<24kroovy_18>	my virtual terminal was to small, i think
+T 1710422069 18<20osse18>	for i in {1..20}; do tmux split-window -h; tmux select-layout -E; done
+T 1710422070 18<24kroovy_18>	i switched to a horizontal split for my last call, now it works
+T 1710422122 18<24kroovy_18>	I'm happy, thanks :)
+T 1710422930 18<27mingdao18>	Can someone show a screenshot of the usefulness of so many panes?  I can not wrap my head around it.
+T 1710422959 18<20osse18>	I see none. I usually have 2 or 3
+T 1710422966 18<27mingdao18>	The most panes I have used is 4 while working on 4 servers at a time.
+T 1710422969 18<20osse18>	It just sounded strange to have a hard limit
+T 1710422981 18<27mingdao18>	I understand you were just testing the limits.
+T 1710423004 18<27ikke18>	I have configured 8 servers at the same time
+T 1710423009 18<27ikke18>	or ran commands at least
+T 1710423019 18<27ikke18>	8 or 9
+T 1710423046 18<27mingdao18>	I mostly use tmux with a script to start 10 windows after I launch my VT.  If I had 10 monitors and could see them all at once, I wouldn't need those 10 windows on one screen.
+T 1710423202 18<27mingdao18>	kroovy_: Screenshot?
+T 1710423781 18<24Zed18>	my every day carry has 4 and one is a weather web site :)
+T 1710423876 18<24kroovy_18>	@mingdao, thanks for your interest. it's usefull to manage loadbalancer setups. in this case: 1 loadbalancer + 1 adminserver + 5 webserver + 2 db server (can't provide a screenshot right now)
+T 1710423898 18<24Zed18>	I mostly work in one with a binding to bring me directly into a pain with vim and another with bash for quick and dirty stuff and junk
+T 1710423907 18<24Zed18>	pane*
+T 1710423936 18<27ikke18>	I have a setup with tmuxinator that creates a default layout with a terminal, git status -sb autorefreshed and tig
+T 1710423963 18<24Zed18>	function keys binded to switching around 
+T 1710423977 18<27ikke18>	I have vim keybindings with ctrl
+T 1710423989 18<27ikke18>	hjkl
+T 1710424026 18<27ikke18>	ctrl+f opens a pane with fzf to switch between sessions
+T 1710424119 18<24Zed18>	that's cool
+T 1710424171 18<24Zed18>	that's prolly more intitive than ctrl-a something something
+T 1710424188 18<24Zed18>	jeez I can't type today
+T 1710424195 18<24Zed18>	intuitive*
+T 1710424388 18<27ikke18>	I'm not the only one who remaps ^B to ^A :(
+T 1710424390 18<27ikke18>	:)
+T 1710424768 18<27mingdao18>	Zed: Check out this weather.sh script:  https://techfix.me/files/weather.sh
+T 1710424790 18<27ikke18>	404
+T 1710424790 18<24Zed18>	only us old screen users do ctrl-a hahah
+T 1710424802 18<24Zed18>	yeah 404
+T 1710424810 18<27mingdao18>	Use view-source:https://techfix.me/files/weather.sh to see the bash script without downloading it.
+T 1710424819 18<27mingdao18>	Oh, let me go check that out.
+T 1710424974 18<27mingdao18>	Fixed.  I was on the wrong server  mingdao@backupserver /var/www/localhost/htdocs/files $
+T 1710424978 18<27mingdao18>	The backupserver
+T 1710425001 18<27mingdao18>	Change the location to yours.
+T 1710425052 18<24Zed18>	I use https://wttr.in/nyc
+T 1710425103 18<27mingdao18>	SCreenshot of it https://0x0.st/HFTA.png
+T 1710425134 18<27mingdao18>	Zed: I have a good friend who lives in Manhattan.
+T 1710425157 18<24Zed18>	oh hahhah it is the same thing - I just read the scipt
+T 1710425178 18<27ikke18>	lol: We were unable to find your location
+T 1710425180 18<27ikke18>	so we have brought you to Oymyakon,
+T 1710425182 18<27ikke18>	one of the coldest permanently inhabited locales on the planet.
+T 1710425356 18<24Zed18>	it's odd when I open the site with lynx I don't see the color
+T 1710425364 18<27mingdao18>	Eewwww...
+T 1710425441 18<27mingdao18>	Zed: IMNSHO this is appropriate for a VT, so use      curl wttr.in/nyc
+T 1710425706 18<24Zed18>	mingdao: I have a pane always open with it 
+T 1710425735 18<24Zed18>	so I just refresh
+T 1710425905 18<27ikke18>	You could problably use watch -n 900 ..
+T 1710425909 18<27ikke18>	then it would auto refresh every 15m
+T 1710425974 18<27ikke18>	hmm, you get a reduced color output (if you use watch -c)
+T 1710425982 18<27mingdao18>	I don't think that's going to work with  watch
+T 1710426144 18<27ikke18>	There is no reason it couldn't
+T 1710426149 18<24Zed18>	yeah all good... I am going to take your scritp though and make it take arguments so I can just be like w <location>  in bash
+T 1710426260 18<27mingdao18>	ikke: IDK where you're located, so you might need to find this for your country:  https://www.weather.gov/media/wrh/mesowest/metar_decode_key.pdf
+T 1710426293 18<27ikke18>	mingdao: I managed to get the correct location already, just found it funny
+T 1710426295 18<27mingdao18>	Zed: vim weather.sh     FTW!
+T 1710426330 18<27mingdao18>	ikke: Yeah, I would not like being in "one of the coldest permanently inhabited locales on the planet"!
+T 1710426368 18<27ikke18>	'may you inhabited the coldest permantly locale on the planet'
+T 1710426375 18<27ikke18>	s/inhabited/inhabit/
+T 1710426431 18<27mingdao18>	And that link wasn't what you need, per se, but this is moar betterer https://en.wikipedia.org/wiki/Lists_of_airports_by_IATA_and_ICAO_code
+T 1710426649 18<24Zed18>	heh yeah wttr.in takes most city names without too much trouble 
+T 1710426687 18<24Zed18>	you could be like Seattle and it would work but if you say Greenwich without the country it will choke
+T 1710426718 18<24Zed18>	I would hardcode the country anyway because I only care about NY and CT hehe
+T 1710426752 18<24Zed18>	I keep getting workstracted tho.. These people! They expect me to work the whole time I am here!!!
+T 1710426799 18<27mingdao18>	April 1st will start my new job; last one ended July 10;  I welcome someone expecting me to work.  :^)
+T 1710426845 18<27mingdao18>	Now, if I can just get "a picture (jpeg) for your building badge.  I recommend a white or blank background."
+T 1710426868 18<27mingdao18>	I have one I want, but the background needs to be removed, whitened, or whatever.
+T 1710426883 18<24Zed18>	ask chat gpt to do it'
+T 1710426900 18<27mingdao18>	https://support.apple.com/en-in/102624  scratch disk is too full to use Photoshop in Creative Cloud
+T 1710426976 18<27mingdao18>	How would you do that with Chat GPT?  I'm logged in...
+T 1710427470 18<27mingdao18>	https://0x0.st/HFTf.png
+T 1710429076 18<24Zed18>	use dali
+T 1710429080 18<24Zed18>	its a gpt tool
+T 1710429255 18<27mingdao18>	We used to live in Dali.
+T 1710429281 18<27mingdao18>	You mean dall-e ?
+T 1710429338 18<27mingdao18>	Too much reading to use that.
+T 1710429995 18<24Zed18>	yes :))
+T 1710430216 18<27mingdao18>	I didn't see how to remove a background with dall-e in a short time.
+T 1710430225 18<27mingdao18>	I have Photoshop available, so there's that.
+T 1710433473 18<27mitigate18>	i thought reverting 43e5e8034 would unbreak search but no, search in long lines is still broken
+T 1710433524 18<27mitigate18>	search should show (n/N results) (p/P pages)
+T 1710433532 18<27mitigate18>	instead of just N results
+T 1710434883 18<27mitigate18>	nevermind, it does. i was running a version without it
+T 1710436604 18<24Zed18>	mingdao: https://termbin.com/bbovh
+T 1710438120 18<24Zed18>	Any idea /p
+T 1710438126 18<24Zed18>	whoops
+T 1710438181 18<24Zed18>	mingdao: a better version of weather.sh with comprehensive help  https://termbin.com/rkpt (sorry folks) back on topic tmux r0XorZ
+T 1710439511 18<27mingdao18>	Zed: Yeah, RL has overtaken me here.  curl https://termbin.com/rkpt > Zed-weather.sh
+T 1710440187 18<25bagatur18>	is there a way to achieve `attach -c` on window level?
+T 1710440202 18<25bagatur18>	so each new pane will begin at window specific working directory
+T 1710442947 18<26slim18>	bagatur: -c flag works with new-window and split-window - if you want it to be something persistent, you could add something like -c "#{pane_current_path}" to you split-window binds
+T 1710443086 18<25bagatur18>	slim: yes it does but shortcuts default to session working directory (e.g C-b-")
+T 1710443171 18<25bagatur18>	I usually keep the working directory same within a window so that'd be very useful for me
+T 1710443234 18<25bagatur18>	another workaround I can do is to use terminal tabs along with different tmux sessions, but I lose the consistent C-b switches there
+T 1710443253 18<26slim18>	right, so adding the split-window -c "#{pane_current_path}" to your C-b-" bind would achieve that, no?
+T 1710443346 18<26slim18>	once the window is in the working directory, splitting it with that command would keep the working directory the same for that window
+T 1710443373 18<25bagatur18>	yes that sounds good thanks!
+T 1710443397 18<25bagatur18>	still a newbie with tmux here
+T 1710443424 18<26slim18>	all good, cheers
+T 1710445662 18<24Zed18>	we all were and once you get good with it bagatur you will set it and forget it and then three years from now you will be all wtf did I do here and start all over ;)
+T 1710445836 18<25bagatur18>	:D
+T 1710460432 18<29artix_live_118>	hello guys! I wanted to ask if you know of any plugin/script that can directly copy the output of commands (being listed by dmenu or through whatever means). Ty in advance
+T 1710470451 19*	Now talking on 22#tmux
+T 1710470451 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710470451 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710470700 19*	Now talking on 22#tmux
+T 1710470700 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710470700 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710479006 19*	Now talking on 22#tmux
+T 1710479006 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710479006 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)
+T 1710501318 20*	Disconnected (20)
+T 1710501475 19*	Now talking on 22#tmux
+T 1710501475 22*	Topic for 22#tmux is: tmux is a terminal multiplexer | http://tmux.github.io/ | FAQ: https://github.com/tmux/tmux/wiki/FAQ | man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+T 1710501475 22*	Topic for 22#tmux set by 26thomas_adam!sid508215@fvwm/developer (24Thu Aug 11 09:50:24 2022)

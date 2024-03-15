@@ -165,3 +165,25 @@ T 1710152285 19*	Now talking on 22#weechat-offtopic
 T 1710158308 22*	26ChanServ gives channel operator status to 18nils_2
 T 1710200282 19*	Now talking on 22#weechat-offtopic
 T 1710201345 19*	Now talking on 22#weechat-offtopic
+T 1710225221 19*	Now talking on 22#weechat-offtopic
+T 1710259231 19*	Now talking on 22#weechat-offtopic
+T 1710275564 22*	26ChanServ gives channel operator status to 18nils_2
+T 1710308285 19*	Now talking on 22#weechat-offtopic
+T 1710340572 19*	Now talking on 22#weechat-offtopic
+T 1710343036 19*	Now talking on 22#weechat-offtopic
+T 1710346529 19*	Now talking on 22#weechat-offtopic
+T 1710347504 19*	Now talking on 22#weechat-offtopic
+T 1710351789 19*	Now talking on 22#weechat-offtopic
+T 1710370368 19*	Now talking on 22#weechat-offtopic
+T 1710379561 19*	Now talking on 22#weechat-offtopic
+T 1710407198 19*	Now talking on 22#weechat-offtopic
+T 1710407468 19*	Now talking on 22#weechat-offtopic
+T 1710407754 19*	Now talking on 22#weechat-offtopic
+T 1710408857 19*	Now talking on 22#weechat-offtopic
+T 1710431128 18*	27Infrared_ looks around on netsplit.de! Recently I've followed a guide to create an IRC server of my own, I was hoping to list it on there as there's not many other public databases, but they have strict requirements about user counts :( I'm still looking for people to test it out, I will have to bookmark them anyway though!
+T 1710455640 18<27Infrared_18>	My apologies if this is not appropriate for the channel...or lame ;) I started an IRC server of my own some time ago as a learning project for Linux server admin, I'd like to list it somewhere publically for others to connect to... Unfortunately I don't have much of any visitors yet, so I don't have the user count for netsplit.de ;) Are there any other good sites that do similar?
+T 1710470451 19*	Now talking on 22#weechat-offtopic
+T 1710470700 19*	Now talking on 22#weechat-offtopic
+T 1710479006 19*	Now talking on 22#weechat-offtopic
+T 1710501318 20*	Disconnected (20)
+T 1710501475 19*	Now talking on 22#weechat-offtopic

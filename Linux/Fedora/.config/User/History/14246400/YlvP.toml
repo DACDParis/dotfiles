@@ -1,0 +1,29 @@
+# Colors (Zenburn)
+# Orginally designed by jnurmine for vim.
+
+# Default colors
+[colors.primary]
+background = '#202020'
+foreground = '#DCDCCC'
+
+# Normal colors
+[colors.normal]
+black   = '#1E2320'
+red     = '#f3554e'
+green   = '#608b4e'
+yellow  = '#F0DFAF'
+blue    = '#94BFF3'
+magenta = '#ce9178'
+cyan    = '#8CD0D3'
+white   = '#DCDCCC'
+
+# Bright colors
+[colors.bright]
+black   = '#709080'
+red     = '#f3554e'
+green   = '#058f43'
+yellow  = '#e5b114'
+blue    = '#5993ff'
+magenta = '#ce9178'
+cyan    = '#4ec9b0'
+white   = '#FFFFFF'

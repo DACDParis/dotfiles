@@ -1116,3 +1116,552 @@ T 1710201344 19*	Now talking on 22#ansible
 T 1710201344 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
 T 1710201344 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
 T 1710201345 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710225221 19*	Now talking on 22#ansible
+T 1710225221 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710225221 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710225221 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710236465 18<27stenno18>	good day, i am using ad-hoc commands to check certain things on my hosts. I want to use host variables in my adhoc command`. So i am calling `ansible myhosts -m 'shell' -a 'ls {{ hostvars[inventory_hostname].some_path }}'`. This command works, but _only_ if i am in my actual ansible directory.
+T 1710236487 18<27stenno18>	Is there a way to execute this shell command with setting thet working directory beforehand?
+T 1710236513 18<27stenno18>	i tried ... -a 'chdir=my/ansible/dir ls ...' but the error is the same
+T 1710236530 18<27stenno18>	however when i 'manually' cd to my/ansible/dir, the command works
+T 1710236551 18<27stenno18>	otherwise, the error message is 'ansible.vars.hostvars.HostVarsVars object' has no attribute 'some_path'
+T 1710236677 18<27stenno18>	hmm while i rubber-duck this, i realize that chdir will be done on the host, not on the control server
+T 1710236757 18*	19double-p underlines `inventory`
+T 1710236789 18<27stenno18>	oh i pass the host file too with -i
+T 1710236950 18<27stenno18>	if i simply do, in an arbitrary directory, `ansible myhosts -m 'shell' -a 'ls {{ some_path }}
+T 1710236967 18<27stenno18>	' -i path/to/my/inventory/file.yml
+T 1710236996 18<27stenno18>	'the task includes an option with an undefined variable. The error was: 'some_path' is undefined. 'some_path' is undefined
+T 1710237137 18<27stenno18>	double-p: what do you mean with that?
+T 1710238004 18<19oblikoamorale18>	uhm. why the complicated "{{ hostvars[inventory_hostname].some_path }}" at all? "{{ some_path }}" is just enough.   besides, host_vars/group_vars (where you're apparently storing some_path var) must be adjacent to inventory file to be loaded
+T 1710238447 18<27stenno18>	oblikoamorale: if i am in the folder my/thing/ansible, and do '{{ some_path }}', it works
+T 1710238466 18<27stenno18>	when i go into the directory above it, so my/thing, and prepend ansible to -i, it does not work
+T 1710238473 18<27stenno18>	i get undefined variable error
+T 1710238711 18<19oblikoamorale18>	worksforme. where exactly some_path is defined? as I said, host/group_vars must be adjacent to inventory file location
+T 1710238729 18<27stenno18>	it is. i am not changing the directory structure. i am just going one directory above
+T 1710238782 18<19oblikoamorale18>	as I said what you describe works in my test case.  provide a minimal reproducer illustrating the issue, including dir/filetree and relevant files
+T 1710238851 18<27stenno18>	my host vars live in ansible/host_vars/... and my inventory lives in ansible/inventories/hosts.yml. i will make a testcase
+T 1710238940 18<19oblikoamorale18>	https://dpaste.org/ViyFz
+T 1710238981 18<19oblikoamorale18>	I don't really want to repeat it the 3rd time, but I will. host/group_vars must be adjacent to inventory dir location. do you understand what it means?
+T 1710238996 18<27stenno18>	my host vars live in ansible/host_vars/... and my inventory lives in ansible/inventories/hosts.yml. i will make a testcase
+T 1710239004 18<19oblikoamorale18>	your inventory must bet located in the same dir where host/group_vars dirs are
+T 1710239033 18<27stenno18>	ansible/host_vars/my_host/vars ... and ansible/inventories/hosts.yml
+T 1710239040 18<27stenno18>	this is the relationship between the two
+T 1710239045 18<19oblikoamorale18>	this is wrong
+T 1710239049 18<19oblikoamorale18>	with
+T 1710239063 18<19oblikoamorale18>	with "ansible/host_vars/my_host/vars" your inventory must be in "ansible/hosts.yml"
+T 1710239065 18<27stenno18>	wait so my whole folder structure is wrong?
+T 1710239071 18<19oblikoamorale18>	loader does not do recursive lookups
+T 1710239105 18<19oblikoamorale18>	alternatively you may symlink it to the place vars loader will pick it up
+T 1710239114 18<27stenno18>	ok, thanks for the patience, this must be it then
+T 1710239361 18<19oblikoamorale18>	https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html#organizing-host-and-group-variables
+T 1710239369 18<19oblikoamorale18>	see the 3rd paragraph
+T 1710239507 18<27stenno18>	i followed the directory structure here https://docs.ansible.com/ansible/2.8/user_guide/playbooks_best_practices.html more or less
+T 1710239585 18<27stenno18>	well blimey, that explains it
+T 1710239590 18<19oblikoamorale18>	the link you are reading refers to ansible 2.8
+T 1710239649 18<27stenno18>	oh wow, the best practises section just doesn't exist for the latest docs
+T 1710239679 18<27stenno18>	thanks for the clarifications
+T 1710239684 18<27stenno18>	and the patience
+T 1710239696 18<27stenno18>	i am still confused but for different reasons now :P
+T 1710239762 18<19oblikoamorale18>	best practices are snake oil, you make your own best practices with tools in your disposal
+T 1710239895 18<27stenno18>	it helped me in the beginning but now it bites me in the behind
+T 1710240017 18<27stenno18>	i guess the change you suggested to the folder structure is easy enough, thanks! that will do it, i think
+T 1710240156 18<19oblikoamorale18>	sure, the page I linked you to is a current version of that "best practices" doc.
+T 1710240169 18<27stenno18>	yeah fair
+T 1710241268 18<26SDes9118>	Hi all, I have a playbook (For testing purposes in my test infrastructure) which begins with `import_playbook` and then does some assertion tests via a play and then ends with a cleanup playbook which is also through `import_playbook`. I wish to make the cleanup play be triggered irrespective if the the play fails or not. I tried adding `tags:
+T 1710241268 18<26SDes9118>	[always]` to the `import_playbook` but that part does not seem to be triggered.
+T 1710241287 18<26SDes9118>	does `import_playbook` not allowed to have tags?
+T 1710241721 18<19oblikoamorale18>	import_playbook is essentially a preprocessor directive. it is only applicable in playbook, not in tasks. however it's possible to apply arbitrary tags to subsequent imported tasks with tags keyword: ansible-doc import_playbook
+T 1710241987 18<26SDes9118>	oblikoamorale I mean I am executing a playbook and the tags are not in tasks. The playbook functionality is summarized as `1. Import generation_playbook.yml 2. play to test what was generated 3. import teardown.yml` I wish to run `teardown.yml` irrespective the result of 1 and 2.
+T 1710242230 18<19oblikoamorale18>	I suppose you can try meta's clear_host_errors  to make errored hosts available for subsequent plays. https://docs.ansible.com/ansible/latest/collections/ansible/builtin/meta_module.html#parameters
+T 1710243628 18<26SDes9118>	oblikoamorale hmmm. doesn't seem to do what I want. thanks for the tip
+T 1710244722 18<29vbotka18>	SDes91, see https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_blocks.html#handling-errors-with-blocks
+T 1710244742 18<29vbotka18>	Use *block/rescue*
+T 1710244762 18<19oblikoamorale18>	I guess any_errors_fatal play keyword might've been useful for them, but they are already gone
+T 1710244861 18<25fdan18>	what is wrong with this host var
+T 1710244862 18<25fdan18>	https://dpaste.org/mtKzK
+T 1710244887 18<27stenno18>	auth is missing "
+T 1710244898 18<27stenno18>	posting the actual error message helps in such cases
+T 1710244936 18<19oblikoamorale18>	which var exactly? it doesn't help when you post two vars asking about one
+T 1710244958 18<27stenno18>	auth is missing "
+T 1710244963 18<27stenno18>	  auth = "YmUzZjQ0ODctNjRhOC00Yj
+T 1710244963 18<25fdan18>	line 19, column 1, but may
+T 1710244964 18<25fdan18>	be elsewhere in the file depending on the exact syntax problem.
+T 1710244964 18<25fdan18>	The offending line appears to be:
+T 1710244965 18<25fdan18>	[bxflags]
+T 1710244965 18<25fdan18>	allowinsecure = true
+T 1710244966 18<25fdan18>	^ here
+T 1710244967 22*	26sivel sets ban on 18fdan!*@*
+T 1710244998 18<19double-p18>	sigh
+T 1710245001 18<27stenno18>	:|
+T 1710245005 18<27satmd18>	sigh
+T 1710245077 18<19double-p18>	maybe dpaste could add more blink in syntax highlights
+T 1710245237 18<19oblikoamorale18>	line 19 doesn't match the paste you showed us
+T 1710245265 22*	26sivel removes ban on 18fdan!*@*
+T 1710245273 18<22plundra18>	Clippy style, "It looks like you are about to paste yaml with syntax error - Maybe you want help with it?"
+T 1710245320 18<19oblikoamorale18>	stenno: closing quote may be an error but it won't fail yaml parser since bor_bxflags is a multiline text block (note the | scalar)
+T 1710245331 18<27stenno18>	oh good point
+T 1710245342 18<19double-p18>	plundra: muha
+T 1710245373 18<25fdan18>	oblikoamorale L19 is here https://dpaste.org/mtKzK#L4
+T 1710245414 18<25fdan18>	does this need quote?
+T 1710245414 18<25fdan18>	  allowinsecure = true
+T 1710245542 18<19double-p18>	close the quote in L8 (or 23..) before that runs off, too
+T 1710245544 18<19oblikoamorale18>	maybe, but it isn't the reason of your error.
+T 1710245570 18<19oblikoamorale18>	I took your literal paste and it is perfectly valid yaml
+T 1710245574 18<25fdan18>	thats a typo when i pasted
+T 1710245609 18<19oblikoamorale18>	uh. showing us non-exact replica of the original failing file is not helpful
+T 1710245632 18<25fdan18>	can you try this full yaml
+T 1710245632 18<25fdan18>	https://dpaste.org/WUVTZ
+T 1710245757 18<19oblikoamorale18>	fdan: run yamllint against that file yourself
+T 1710245780 18<25fdan18>	brew install yamllint?
+T 1710245795 18<19oblikoamorale18>	pip install yamllint
+T 1710245895 18<25fdan18>	  21:81     error    line too long (103 > 80 characters)
+T 1710245910 18<25fdan18>	what do i do about that error
+T 1710245981 18<19oblikoamorale18>	it's a style thing and can be ignored
+T 1710246789 18<27satmd18>	if you want to make console users happy, then break up the line into two - this might be easy or hard depending on what it contains
+T 1710246813 18<27satmd18>	(mail etiquette is 78 chars, actually - because of newline/carriage return)
+T 1710250578 18<27colo18>	(note that those 78 chars already _include_ two chars for the line-terminating crlf)
+T 1710250935 18<19oblikoamorale18>	it's a personal preference which we don't care about :p
+T 1710253272 18<25sandinak18>	when running the same tasks on multiple hosts.. is there a way to print something per host on the task output? Eg anyhting in the 'name:' is relative to the first host IIRC?
+T 1710253557 18<19double-p18>	could "block" it with a debug-msg?
+T 1710255328 18<19oblikoamorale18>	I don't understand the question. what do yo want to print, and where exactly?
+T 1710255994 18<25sandinak18>	when I run a task on multiple hosts.. the data I get from the host itself is ```ok: [qa42iad-bat-001] ```
+T 1710256007 18<25sandinak18>	it would be nice to be able to amend that output with something from the task
+T 1710256064 18<19oblikoamorale18>	register task result and print it in consequent debug module call. that's how ansible works
+T 1710256192 18<25sandinak18>	I know it's how ansible works .. more i was thinking it would be a nice feature.  Not sure how i'd implement it.. there's no easy way to extend via the plugins.  Perhaps a task option: 'task_msg' that would be returned on the call with the task status and then expanded on the output line with the hostname
+T 1710256838 18<19oblikoamorale18>	sounds like a lot of work for questionable gains. while developing you can see task execution results in realtime with enough -v's. in production you should have better way of spending your time than looking at plays output
+T 1710256969 18<29nomicon18>	https://docs.ansible.com/ansible/latest/collections/ansible/builtin/git_module.html#parameter-key_file
+T 1710256972 18<29nomicon18>	Would it possible somehow to have this keyfile stored in vault instead of on-disk?
+T 1710257191 18<19oblikoamorale18>	keyfile has to exist on target host, so I don't know how this would work. you can of course manually unvault the key and clean it up after git operation. ssh-agent sounds like a better option to me, but ymmv
+T 1710257504 18<19oblikoamorale18>	sandinak: https://github.com/ansible/proposals/issues/145
+T 1710257573 18<25sandinak18>	yup .. I like that!
+T 1710258437 18<26alien_lappy18>	So, what's a good way to handle hosts behind another ssh host?
+T 1710258482 18<26alien_lappy18>	is there like a delegate thing i can do to refer to a host as in it's behind that host and all is taken care of? or do i need to have ssh proxy comands and stuff?
+T 1710258509 18<26alien_lappy18>	and what about docker hosts that are reached through an ssh host ?
+T 1710258989 18<28jtanner18>	alien_lappy: simplest way is via "jump hosts" https://www.jeffgeerling.com/blog/2022/using-ansible-playbook-ssh-bastion-jump-host
+T 1710259057 18<28jtanner18>	i believe your question about docker hosts implies "connection stacking", and i don't think there's a good way to do that besides command/shell module calls to the docker command. I could be wrong though
+T 1710259231 19*	Now talking on 22#ansible
+T 1710259231 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710259231 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710259231 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710259389 18<22nils_18>	one could also pipe the docker socket through ssh I believe?
+T 1710259832 18<28jtanner18>	yeah, if you can manage that
+T 1710259861 18<28jtanner18>	volume mount semantics would be tricky
+T 1710260078 18<25fdan18>	Hi guys, i keep getting this error https://dpaste.org/S4bA6
+T 1710260097 18<25fdan18>	this is the template file: https://dpaste.org/MAB7G
+T 1710260106 18<25fdan18>	this is the task: https://dpaste.org/E48uS
+T 1710260380 18<24jrglynn218>	sandinak: perhaps this forum post can help woth what you want. I haven't attempted it, just remembered the post ==> https://forum.ansible.com/t/ansible-output-label/3786
+T 1710262482 18<26tkonto18>	hi all
+T 1710262507 18<26tkonto18>	any idea why the code in the paste, gives the output at the bottom of the paste?
+T 1710262509 18<26tkonto18>	https://paste.debian.net/1310462/
+T 1710262531 18<26tkonto18>	Would expect "Disaster Recovery" not "Disaster Recovery              "
+T 1710262731 18<19oblikoamorale18>	remove line 6 trailing spaces
+T 1710262760 18<26tkonto18>	I can not.. they are part of identation
+T 1710262764 18<26tkonto18>	yaml identation
+T 1710262809 18<26tkonto18>	thought that this might be the problem, and can see two solutions. Find a way to sort off retain identation, or stript down the extra spaces
+T 1710262816 18<26tkonto18>	not sure how to do either
+T 1710262817 18<19oblikoamorale18>	wat? I'm talking about trailing spaces after }}, not keading
+T 1710262823 18<19oblikoamorale18>	*leading
+T 1710262827 18<26tkonto18>	:/
+T 1710262875 18<26tkonto18>	oups... you are right, never show them...
+T 1710262879 18<26tkonto18>	:)
+T 1710262887 18<26tkonto18>	sorry and thank you
+T 1710262928 18<26tykling18>	always use an editor which shows whitespace with a visible marker :)
+T 1710262951 18<26tkonto18>	learned something new today :)
+T 1710262986 18<19oblikoamorale18>	by the way it would've been caught by yamlling if you had it in your pre-commit chain
+T 1710262994 18<19oblikoamorale18>	*yamllint, I can't type
+T 1710263027 18<26tkonto18>	Had it, but kept using all my CPUs
+T 1710263035 18<26tkonto18>	never had the time to find out why
+T 1710263045 18<26tkonto18>	the same with ansible lint
+T 1710263051 18<26tkonto18>	but high time I find out
+T 1710263139 18<19oblikoamorale18>	yamllint != ansible-lint. I fail to see how yamllint can be slow, unless you feed it gigabytes of yaml
+T 1710264014 18<27satmd18>	I partied when I found out about ansible-lint's --offline toggle
+T 1710267336 18<26alien_lappy18>	jtanner: sigh
+T 1710267405 18<26alien_lappy18>	so, there's the thing about the hosts knowing their docker ip, and so the ssh jump host config is difficult
+T 1710272253 18<26FreeBDSM18>	I freaking hate ansible-vault and its confusing docs
+T 1710272278 18<26FreeBDSM18>	gimme a simple example of how to encrypt a string and then how to decrypt it back, ffs!
+T 1710272307 18<26FreeBDSM18>	without files, without password files, without 'vault ids' (da hell is that??)
+T 1710272394 18<26FreeBDSM18>	`cat encryptme.txt | ansible-vault encrypt_string --stdin-name encrypted_string` output the encrypted string that I can't decrypt!
+T 1710272590 18<22FooBar18>	I really dislike vault as well... so use 'passwordstore' for secrets ;)
+T 1710272624 18<22FooBar18>	but then you need gpg ... but there are more alternatives
+T 1710272754 18<26FreeBDSM18>	I am soooo mad right now that the most basic stuff is made so god damn complex
+T 1710272786 18<26FreeBDSM18>	even if I redirect the output from the above command into a file - `ansible-vault decrypt that_file` WON'T DECRYPT IT!
+T 1710272814 18<26FreeBDSM18>	because encrypted string stored for a key in a file is not an encrypted file
+T 1710272831 18<26FreeBDSM18>	but NEVER EVER the docs mention how to decrypt the goddamn string
+T 1710272911 18<27colo18>	FreeBDSM: you want to echo it back to stdout? but THAT'S DANGEROUS!!11!1! ;)
+T 1710273007 18<26FreeBDSM18>	colo, NO WORRIES, I KNOW HOW TO REDIRECT STDOUT INTO FILES!
+T 1710273110 18<22nils_18>	FreeBDSM, it can be a bit counter-intuitive to decrypt the individual strings that are returned by encrypt_string - the idea is that you can put that particular string into your inventory somewhere
+T 1710273145 18<22nils_18>	so when the playbook runs the value of encrypted_string is decrypted
+T 1710273174 18<29jborean9318>	If you dislike `ansible-vault` but love PowerShell I have a pretty ancient module for you! https://www.irccloud.com/pastebin/gGHwdhw1/
+T 1710273174 18<26FreeBDSM18>	that should be the next step
+T 1710273201 18<26FreeBDSM18>	but the first step should be just encrypt/decrypt stdinput and spit stdoutput
+T 1710273237 18<29jborean9318>	But this also works just fine for me https://www.irccloud.com/pastebin/bZV4srDw/
+T 1710273243 18<26FreeBDSM18>	jborean93, powershell smells. Of windows and necrosoft.
+T 1710273261 18<26FreeBDSM18>	jborean93, not for me
+T 1710273271 18<29jborean9318>	¯\_(ツ)_/¯ - Works on my machine
+T 1710273281 18<26FreeBDSM18>	lucky you!
+T 1710273286 18<29jborean9318>	https://usercontent.irccloud-cdn.com/file/EH5nfM9t/image.png
+T 1710273419 18<29jborean9318>	maybe share how you are running it and what the error is
+T 1710273483 18<26FreeBDSM18>	oh, your variant works
+T 1710273504 18<26FreeBDSM18>	I google `echo ... | ansible-vault decrypt /dev/stdin`
+T 1710273510 18<26FreeBDSM18>	and that way it throws an error
+T 1710273513 18<29jborean9318>	yea just drop the `/dev/stdin`
+T 1710273521 18<29jborean9318>	it'll read from stdin by default if you don't specify a file
+T 1710273626 18<29jborean9318>	You can also use `<<` to pipe in directly without echo. https://www.irccloud.com/pastebin/sMMqpIsj/
+T 1710273635 18<29jborean9318>	If that's preferred for yourself
+T 1710273711 18<29jborean9318>	or do it interactively; `ansible-vault decrypt` -> enter password -> paste in vault -> enter, ctrl+d
+T 1710274106 18<26FreeBDSM18>	jborean93, the last variant is confusing: I execute `ansible-vault descrypt` it prompts password - I enter it, it then says 'reading ciphertext input from stdin' and hangs in that position
+T 1710274123 18<29jborean9318>	you need to press `ctrl+d` to send the EOF to close stdin
+T 1710274140 18<29jborean9318>	I'm unsure if you need a newline after the last vault line or not though, I only tried it with it
+T 1710274174 18<26FreeBDSM18>	oh
+T 1710274185 18<26FreeBDSM18>	weirdly it needed enter before ctrl+d
+T 1710274243 18<29jborean9318>	yea the UX there could definitely be improved
+T 1710274395 18<26newpy18>	does anyone know the proper syntax for passing multiple args to ansible_ssh_common_args in inventory?
+T 1710274422 18<26FreeBDSM18>	now I'm stuck on the next step. I have 2 netbox inventory files. They differ only in 2 places: api_endpoint and `token: !vault | ...`
+T 1710274437 18<26FreeBDSM18>	one of them works fine, the other - fails
+T 1710274446 18<26FreeBDSM18>	the network connection to both endpoints is okay
+T 1710274502 18<29jborean9318>	newpy: looks like the type is a string so you just need to pass it as a space delimited arg like you would in the shell
+T 1710274547 18<26FreeBDSM18>	I used the same password, saved in a file and specified in `[defaults] vault_password_file` to generate ciphertext for token in one of the files using my token that I've just issued.
+T 1710274569 18<26FreeBDSM18>	so the same file successfully decrypts both ciphertexts
+T 1710274620 18<26FreeBDSM18>	but with 1 instance it works and with the other it fails (saying 'unable to parse b_netbox_inventory.yaml as an inventory source')
+T 1710274629 18<26FreeBDSM18>	how the eff is that even possible
+T 1710274646 18<29jborean9318>	so is the vault var being used in your inventory plugin config?
+T 1710274658 18<26FreeBDSM18>	yeah
+T 1710274666 18<29jborean9318>	I didn't know that was possible
+T 1710274707 18<26newpy18>	vars: ansible_ssh_common_args: "-o HostbasedAuthentication=no -o HostKeyAlgorithms=ssh-rsa,ssh-dss"
+T 1710274718 18<26newpy18>	would this work for passing two args to ssh?
+T 1710274724 18<29jborean9318>	it should
+T 1710274731 18<29jborean9318>	run with `-vvv` and you can see what args was used
+T 1710274742 18<26FreeBDSM18>	if I replace ciphertext with plaintext secret - `ansible-inventory --list` works fine
+T 1710274785 18<26FreeBDSM18>	I copy the same ciphertext into terminal and decrypt it into that plaintext just fine
+T 1710274787 18<29jborean9318>	So you have it working in one example with a vault string, I wasn't aware it was possible to use it at all in an inventory plugin config
+T 1710274812 18<26FreeBDSM18>	yeah, and the other fails if its ciphertext, but works if its plaintext
+T 1710274845 18<29jborean9318>	I think that's your problem, you can't use a vault string in an inventory plugin config
+T 1710274866 18<26FreeBDSM18>	jborean93, it works in another file with another netbox and another token
+T 1710274891 18<29jborean9318>	you said it failed if its ciphertext though, unless I misunderstood?
+T 1710274909 18<26FreeBDSM18>	2 files. 2 ciphertext tokens: 1 works, 1 fails.
+T 1710274925 18<26FreeBDSM18>	I then change the failing ciphertext into plaintext - both work now.
+T 1710275094 18<29jborean9318>	ok I can see it working here when I do an example one, have you tried running `ansible-inventory ... --ask-vault-pass` and just manually providing the password for now
+T 1710275127 18<29jborean9318>	For example with and without `--ask-vault-pass` for me https://www.irccloud.com/pastebin/fEdMAu9n/
+T 1710275173 18<29jborean9318>	This is what my inventory plugin config looks like https://www.irccloud.com/pastebin/bmQMnumY/
+T 1710275178 18<26FreeBDSM18>	jborean93, same problem
+T 1710275194 18<29jborean9318>	can you run with `-vvv` and share the full error?
+T 1710275243 18*	29jborean93 wow I didn't realise I was the one to fix vault file support in inventory plugins https://github.com/ansible/ansible/commit/7092c196ed0f0e1ee9a53d4040d5ff8c509c05b6
+T 1710275311 18<26FreeBDSM18>	jborean93, toml declined parsing ~/ansible/inventories/my_inventory.yaml as it did not pass its verify_file() method
+T 1710275329 18<26FreeBDSM18>	and then a stack trace
+T 1710275338 18<29jborean9318>	yea that would be expected with the latter plugins, there should be an entry under `auto` which is the one you care about here
+T 1710275350 18<29jborean9318>	the stacktrace might show the underlying exception though
+T 1710275440 18<26FreeBDSM18>	https://paste.sh/n5M-Q8JH#Hw6dtYObIU7uRwwtx-gneLia
+T 1710275500 18<26FreeBDSM18>	Failed to parse netbox_inventory.yaml with auto plugin: expected string or bytes-like object, got 'int'
+T 1710275548 18<29jborean9318>	that looks to be unrelated to your vault value?
+T 1710275565 18<26newpy18>	jborean93: I tried -vvv but the most it says is that it's using network_cli
+T 1710275573 18<26newpy18>	(maybe I should have mentioned that)
+T 1710275587 18<26FreeBDSM18>	jborean93, why unrelated?
+T 1710275610 18<26FreeBDSM18>	it looks like it sees ciphertext as some int instead of a string or bytes-like obj or smth
+T 1710275643 18<26FreeBDSM18>	but there is a letter 'a' in the ciphertext, it's not just digits
+T 1710275650 18<22tsundoku18>	Hi all, I'm relatively new to ansible and I'm running into an issue with some code I inherited that I feel like I'm missing something on...
+T 1710275653 18<29jborean9318>	the stacktrace indicates the problem is at `if version.parse(netbox_api_version) >= version.parse("3.5.0"):` and `netbox_api_version` seems to be coming from a remote source
+T 1710275658 18<29jborean9318>	just trying to track down the code to confirm now
+T 1710275682 18<29jborean9318>	newpy: network_cli doesn't use the ssh binary AFAIK, it either uses paramiko or ansible_libssh
+T 1710275694 18<22tsundoku18>	the tasks for a playbook I'm trying to run have conditionals like "when: (ansible_default_ipv4.address | ansible.netcommon.ipaddr('private'))"
+T 1710275700 18<26FreeBDSM18>	jborean93, both netbox instances of the same version (v3.6.4)
+T 1710275713 18<26newpy18>	jborean93: yea I have pylibssh
+T 1710275722 18<26newpy18>	assumed that would use ssh under the hood?
+T 1710275728 18<26newpy18>	or does ssh_common_args not work in that case?
+T 1710275730 18<22tsundoku18>	I got the error that netcommon is deprecated and changed it to use ansible.utils.ipaddr('private') instead, but now I'm getting an error "'IPNetwork' object has no attribute 'is_private'"
+T 1710275730 18<29jborean9318>	it uses ssh but not the binary
+T 1710275753 18<29jborean9318>	See https://docs.ansible.com/ansible/latest/collections/ansible/netcommon/libssh_connection.html for more options that relate to the actual connection plugin https://docs.ansible.com/ansible/latest/collections/ansible/netcommon/libssh_connection.html
+T 1710275762 18<22tsundoku18>	my understanding is that ansible_default_ipv4.address should return an object of type IPAddress, not IPNetwork, but is that incorrect?
+T 1710275778 18<29jborean9318>	FreeBDSM: the stacktrace indicates this is the code that's failing https://github.com/netbox-community/ansible_modules/blob/9bddc607c3756bb8e84d38da23538234158cb2ec/plugins/inventory/nb_inventory.py#L1511-L1541
+T 1710275797 18<29jborean9318>	`netbox_api_version` at that point is an integer which `Version(1)` does not like
+T 1710275955 18<26FreeBDSM18>	jborean93, I change the token from ciphertext to plaintext and the error/stacktrace is gone, how'd you explain that?
+T 1710275980 18<29jborean9318>	could be that the value is causing an auth error so the response changes when it gets to retrieving the remote contents
+T 1710276060 18<29jborean9318>	also what exact version of the collection are you using, 3.6.4 doesn't exist on galaxy
+T 1710276074 18<29jborean9318>	`ansible-galaxy collection list` should show you the version
+T 1710276118 18<29jborean9318>	looks like there is also caching involved so potentially that might be causing a problem
+T 1710276123 18<26FreeBDSM18>	3.14.0
+T 1710276137 18<26FreeBDSM18>	yeah, caching is involved but works fine
+T 1710276151 18<26FreeBDSM18>	I clean it up before running a test
+T 1710276210 18<26FreeBDSM18>	in success scenario the next line after 'Fetching: ... /api/status' it fetches more endpoints
+T 1710276227 18<29jborean9318>	if it was me I would add a `print(status)`before line 1513 in `/Users/user/.ansible/collections/ansible_collections/netbox/netbox/plugins/inventory/nb_inventory.py`
+T 1710276255 18<29jborean9318>	that way you can see the raw response and find out why it might be breaking the subsequent code
+T 1710276342 18<29jborean9318>	https://github.com/netbox-community/ansible_modules/blob/b77a6bee2bb7e23f855b437b969a747eabfa83b7/plugins/inventory/nb_inventory.py#L1493-L1516 yea that will do it
+T 1710276350 18<26FreeBDSM18>	jborean93, why status?
+T 1710276383 18<26FreeBDSM18>	shouldn't it be netbox_api_version?
+T 1710276389 18<29jborean9318>	`self._fetch_information` in your version has a blank Exception catch and sets `netbox_api_version = 0` on a failure causing the problem with the line below
+T 1710276409 18<26FreeBDSM18>	oh, you are at the different content
+T 1710276413 18<29jborean9318>	so most likely there is an authentication problem causing `_fetch_information` to fail
+T 1710276421 18<29jborean9318>	yea sorry I only just downloaded your specific version
+T 1710276439 18<26FreeBDSM18>	https://github.com/netbox-community/ansible_modules/blob/v3.14.0/plugins/inventory/nb_inventory.py
+T 1710276446 18<26FreeBDSM18>	why blob?
+T 1710276447 18<29jborean9318>	yep got that up now
+T 1710276498 18<26FreeBDSM18>	so after that line I add print(status) https://github.com/netbox-community/ansible_modules/blob/v3.14.0/plugins/inventory/nb_inventory.py#L1494 right?
+T 1710276511 18<29jborean9318>	nah that won't help status won't be set because of the exception
+T 1710276548 18<26FreeBDSM18>	but it'd execute try first, no?
+T 1710276566 18<26FreeBDSM18>	or does it stop immediately upon exception and goes to 'except' block?
+T 1710276594 18<29jborean9318>	add a line after `1496` with `import traceback; traceback.print_exc()`
+T 1710276616 18<29jborean9318>	if `self._fetch_information` failed (which I'm assuming it did here) then `status` won't be set and it will go directly to the `except` clause
+T 1710276683 18<26FreeBDSM18>	maybe I should just update the collection to the latest release?
+T 1710276696 18<26FreeBDSM18>	I can't find the list of supported netbox versions tho
+T 1710276724 18<29jborean9318>	you could also look at updating the collection version as they got rid of that except block around `_fetch_information`
+T 1710276738 18<26FreeBDSM18>	my thinking exactly
+T 1710276763 18<29jborean9318>	https://github.com/netbox-community/ansible_modules/commit/159f30927d184d1850518c04bf659cae3758d8d1
+T 1710276844 18<26FreeBDSM18>	:D
+T 1710276856 18<26FreeBDSM18>	that's my case exactly!
+T 1710277177 18<26FreeBDSM18>	what the... I did `ansible-galaxy collection install --upgrade netbox.netbox` it seemingly fetched and installed 3.17.0, re-executing that command says netbox.netbox:3.17.0 is already installed, skipping, but `ansible-galaxy collection list` says it is 3.14.0 still
+T 1710277194 18<26FreeBDSM18>	did they forget to update metadata in their module?
+T 1710277258 18<19flowerysong18>	tsundoku: The type is a red herring, `is_private()` was removed in netaddr 1.0.0 (released 2024-02-10) and you probably updated your install.
+T 1710277322 18<19flowerysong18>	Ah, there's an open report: https://github.com/ansible-collections/ansible.utils/issues/331
+T 1710277785 18<26FreeBDSM18>	nice, the stack trace has changed, it still fails and now it even spits out my token in the warning, saying `failed to parse netbox_inventory.yaml with auto plugin: Invalid header b'Token heregoesmytoken2131231\n'
+T 1710277803 18<22tsundoku18>	flowerysong: thanks
+T 1710277804 18<29jborean9318>	I'm assuming the `\n` is the culprit here
+T 1710277820 18<29jborean9318>	which tells you the encrypted string contains the end newline whereas your working example does not
+T 1710277829 18<26FreeBDSM18>	damn! exactly!
+T 1710277856 18<26FreeBDSM18>	I did `cat file_with_token | ansible-vault encrypt`
+T 1710277880 18<29jborean9318>	if you are doing it with the command line interactively you need to press ctrl+d twice for it to work
+T 1710277887 18<29jborean9318>	otherwise your file must have no newline at the end
+T 1710277898 18<26FreeBDSM18>	it has no newline at the end
+T 1710277904 18<26FreeBDSM18>	which is weird then
+T 1710277916 18<26FreeBDSM18>	but still, cat adds \n at the end
+T 1710277923 18<29jborean9318>	could be how cat
+T 1710277925 18<29jborean9318>	works yea
+T 1710277961 18<27colo18>	FreeBDSM: GNU cat does not
+T 1710277963 18<29jborean9318>	hmm no it doesn't do that for me
+T 1710277975 18<27colo18>	and I'd be surprised if other impls did
+T 1710277978 18<29jborean9318>	https://www.irccloud.com/pastebin/OhcdnnYK/
+T 1710277990 18<27colo18>	tias:  head -n1 /etc/passwd | tr -d \\n | cat
+T 1710277993 18<29jborean9318>	I don't have a macOS host to test so I have no idea what BSD ones do
+T 1710278004 18<26FreeBDSM18>	I'm on the macos(
+T 1710278016 18<29jborean9318>	you sure it doesn't have a newline at the end
+T 1710278060 18<26FreeBDSM18>	yeah. cat adds it. Just used printf directly (will wipe the token from shell history) - and it works now
+T 1710278088 18<26FreeBDSM18>	thank you a lot, jborean93 for bearing with me with all this adventure
+T 1710278121 18<29jborean9318>	weird I spun up a macOS VM and cat definitely doesn't append a newline for me
+T 1710278140 18<29jborean9318>	https://www.irccloud.com/pastebin/qVAG6BDL/
+T 1710278145 18<26newpy18>	is there an env variable for ssh KexAlgorithms and HostKeyAlgorithms?
+T 1710278167 18<26newpy18>	note: if you edit the file in vim it adds a new line
+T 1710278260 18<26FreeBDSM18>	jborean93, weirdly, I can confirm that `hexdump -C myfile` and `cat myfile | hexdump -C` output the same here
+T 1710278286 18<26FreeBDSM18>	but even `wc -l myfile` returns 1
+T 1710278294 18<26FreeBDSM18>	(I am sane, yet)
+T 1710278296 18<27colo18>	newpy: afaik, only ssh options (-oKey=Value) for that
+T 1710278298 18<27colo18>	for the client
+T 1710278317 18<29jborean9318>	and the libssh plugin only supports the proxy commands according to its docs
+T 1710278357 18<26newpy18>	jborean93: hmm I just tried [libssh] host_key_checking = true
+T 1710278379 18<26newpy18>	so it at least uses ansible.cfg
+T 1710278384 18<29jborean9318>	it does
+T 1710278390 18<29jborean9318>	if you look at https://docs.ansible.com/ansible/latest/collections/ansible/netcommon/libssh_connection.html
+T 1710278393 18<26FreeBDSM18>	jborean93, could you explain why `ansible-galaxy collection list` still lists older version of netbox.netbox for me after I upgraded it?
+T 1710278403 18<29jborean9318>	for `ssh_extra_args` it says
+T 1710278404 18<29jborean9318>	> ProxyCommand is the only supported argument.
+T 1710278413 18<29jborean9318>	FreeBDSM: I'm not sure sorry
+T 1710278534 18<26newpy18>	jborean93: hmm so I can just use the ansible_libssh_proxy_command env var with "ssh -o ..." ?
+T 1710278545 18<26newpy18>	need to see how to pass user/pw/host in
+T 1710278557 18<29jborean9318>	the docs I linked you tell you all the options you can set with it
+T 1710278572 18<29jborean9318>	the free form ssh args says it only uses the ProxyCommand free form args
+T 1710278670 18<26FreeBDSM18>	ah, `a-g collection verify netbox.netbox` says file plugins/inventory/__pycache__/nb_inventory.cpython-311.pyc is modified
+T 1710286238 18<26newpy18>	how do I set key exchange algorithms for routers in inventory if I'm using ansiblell-pylibssh?
+T 1710286270 18<26newpy18>	docs say it's not supported? tried uninstalling pylibssh and using paramiko instead but still no dice
+T 1710287966 18<29jborean9318>	newpy: either ansible-pylibssh needs to support it somehow or you select the paramiko connection plugin (if netcommon still allows that)
+T 1710287983 18<29jborean9318>	unfortunately I don't really know the workings of ansible-pylibssh so I can't really say for sure if they expose it in any way
+T 1710288038 18<26newpy18>	jborean93: hmm, I tried uninstalling ansible-pylibssh but I'm not sure if it used paramiko, sec
+T 1710288105 18<26newpy18>	oh n/m it definitely did "[WARNING]: ansible-pylibssh not installed, falling back to paramiko"
+T 1710288116 18<26newpy18>	but it didn't take the ssh_common_args from inventory :/
+T 1710288119 18<29jborean9318>	you'll then have to see if paramiko offers a way to set it
+T 1710288126 18<26newpy18>	ah k, I'll check the docs
+T 1710288138 18<29jborean9318>	https://docs.ansible.com/ansible/2.10/collections/ansible/builtin/paramiko_ssh_connection.html are the options for paramiko
+T 1710288199 18<26newpy18>	it says it'll scan ssh_common_args if I use proxycommand?
+T 1710288225 18<26newpy18>	can I use proxycommand without a jump server?
+T 1710288227 18<29jborean9318>	`ssh_common_args` is just an option name there could be another option around
+T 1710288250 18<29jborean9318>	https://docs.ansible.com/ansible/latest/collections/ansible/builtin/paramiko_ssh_connection.html is a newer doc, I linked the 2.10 ones
+T 1710288264 18<29jborean9318>	I also don't fully know how network_cli really uses paramiko and if you can even set options that way
+T 1710288304 18<29jborean9318>	at a glance it doesn't look like you can do this sorry
+T 1710288405 18<26newpy18>	hmm, need to figure out how to get macos to let docker containers ssh then haha
+T 1710288418 18<26newpy18>	got a "works on my machine" issue, team mate can't run locally on mac os
+T 1710288438 18<26newpy18>	*let docker containers use ssh_config
+T 1710308285 19*	Now talking on 22#ansible
+T 1710308285 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710308285 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710308285 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710340572 19*	Now talking on 22#ansible
+T 1710340572 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710340572 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710340573 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710340593 18<29OutOfService18>	I got this from this repo:
+T 1710340595 18<29OutOfService18>	https://github.com/TechDufus/dotfiles/blob/main/group_vars/all.yml
+T 1710341020 18<29OutOfService18>	this is the -vvv failure: https://pastebin.com/e2SFAaBm
+T 1710341029 18<29OutOfService18>	this is the -vvvv failure: https://pastebin.com/e2SFAaBm
+T 1710341121 18<19oblikoamorale18>	https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.html#parameter-password  # module expects a hashed password. read the link, check the mentioned FAQ, get back if you still have questions
+T 1710343036 19*	Now talking on 22#ansible
+T 1710343036 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710343036 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710343036 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710343070 18<29OutOfService18>	oblikoamorale as fas as I know, these folders are for storing variables related to the invenmtory, not the users. Maybe I understood it wrong. I mean.. this password is not dependent os the inventory or remote servers I will work with
+T 1710343082 18<19oblikoamorale18>	keeping sensitive data in public repos, even in vaulted form, is not very good practice
+T 1710343128 18<19oblikoamorale18>	by user data I meant any data that can be supplied by roles or tasks users, not necessary data related to users management
+T 1710343160 18<29OutOfService18>	what I'd like to do is to save a txt file with all my plain text passwords, and make ansioble read from there so that it can decrypt the crypted content in tasks. It'0s not the best aproach, but I think i'd be very difficult for anyone to decrypt that kind of content
+T 1710343207 18<29OutOfService18>	So.. could I get an idea of how you think I would do this approach?
+T 1710343245 18<29OutOfService18>	trying to keep the confort of not having to remember all my passwords, not to have to write all of them any time I run the playbook
+T 1710343280 18<29OutOfService18>	As you said, I prefer to lear this kind of security things from my learning beggining
+T 1710343293 18<29OutOfService18>	and try to not get iused to use in a bad way
+T 1710343298 18<29OutOfService18>	*used
+T 1710343320 18<19oblikoamorale18>	yeah, don't do that. I already told you ansivle vars plugin handles loading variable data, sparing you the necessity to muck with txt files
+T 1710343459 18<19oblikoamorale18>	https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html#splitting-out-vars
+T 1710344133 18<29OutOfService18>	thanks a lot for all your help oblikoamorale. I've learned good things from you
+T 1710345253 18<26alien_lappy18>	is there a way for ansible to auto-install collections in the playbook?
+T 1710345754 18<19oblikoamorale18>	no, there is no auto anything, unless you manually call ansible-galaxy. https://docs.ansible.com/ansible/latest/collections_guide/collections_installing.html#installing-collections
+T 1710346529 19*	Now talking on 22#ansible
+T 1710346529 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710346529 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710346530 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710347504 19*	Now talking on 22#ansible
+T 1710347504 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710347504 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710347504 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710351789 19*	Now talking on 22#ansible
+T 1710351789 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710351789 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710351789 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710352972 18<25trilogy18>	I have an inventory config that defines dynamic groups. The groups all have a magic string that needs to be frequently changed depending on the playbook, and that string is also used within the playbook in various spots, so I have it set in a vars file as well. What are my options regarding how to template it into the dynamic groups? I don't think the template can read from a vars file. Can I read from
+T 1710352978 18<25trilogy18>	the environment...? And force the user to always update environment variables? Or...?
+T 1710358873 18<27PSz18>	Hi. I want to use community.general.proxmox_kvm. But I need to add some delay after task and between each hosts in task. Is it possible?
+T 1710358919 18<27PSz18>	Without it I have proxmox problem: trying to acquire lock...
+T 1710359083 18<28cla18>	Pastebin your tasks and tell us where the delay should be.
+T 1710359358 18<27PSz18>	cla: This module is not ready to run in parallel. My question is of a general nature. I want nothing to be parallelized. https://pastebin.com/PYq6YCdx
+T 1710359723 18<28cla18>	PSz: I guess you dould do name: "{{ item }}" and loop over "{{ ansible_play_hosts }}"
+T 1710359735 18<25RBecker18>	you can also set serial: 1 in the playbook which will force it to run one host at a time
+T 1710359744 18<25RBecker18>	https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_strategies.html#setting-the-batch-size-with-serial
+T 1710359752 18<28cla18>	This is the second solution
+T 1710359940 18<27PSz18>	cla: And add run_once...
+T 1710359995 18<27PSz18>	RBecker: What is default value for serial?
+T 1710360009 18<25RBecker18>	the entire hosts target at once
+T 1710360108 18<27PSz18>	RBecker: Then theoretically: serial = size of ansible_play_hosts. Am I right ?
+T 1710360113 18<25RBecker18>	right
+T 1710360199 18<27PSz18>	But can I set serial in main.yml for role?
+T 1710360259 18<25RBecker18>	unfortunately it's only available for a play, not roles
+T 1710360298 18<25RBecker18>	you can have multiple plays in the playbook that have different serial values, however: https://stackoverflow.com/questions/64473484/serial-execution-of-a-role-in-ansible
+T 1710360350 18<27PSz18>	Is it be helpful: throttle: 1
+T 1710360757 18<27PSz18>	With throttle: 1 and extra wait_for after task my problem is gone.
+T 1710370368 19*	Now talking on 22#ansible
+T 1710370368 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710370368 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710370368 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710379561 19*	Now talking on 22#ansible
+T 1710379561 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710379561 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710379561 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710392144 18<27alepzi18>	hey all. the synchronize module has a "delete" option. what does that translate to in the actual rsync call?
+T 1710392182 18<27alepzi18>	--delete-after right?
+T 1710407198 19*	Now talking on 22#ansible
+T 1710407198 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710407198 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710407198 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710407298 18<19double-p18>	is httpapi a bit limited for concurrent/serial access? it works nicely with `serial: 1`, but if i run multiple hosts in parallel (with ansible_host all the same for them), i get connection refused on some socket (connect(self.socket_path)\nConnectionRefusedError)) .. q: is this expected because i dont see connection issues at the api-endpoint
+T 1710407468 19*	Now talking on 22#ansible
+T 1710407468 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710407468 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710407468 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710407488 18<28cla18>	What httpapi?
+T 1710407522 18<25endre18>	wth
+T 1710407665 18<19double-p18>	zabbix
+T 1710407754 19*	Now talking on 22#ansible
+T 1710407754 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710407754 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710407754 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710407779 18<25endre18>	i don't see how it is an ansible problem
+T 1710408034 18<19double-p18>	mhmm, ok. so further digging on the endpoint side of it
+T 1710408857 19*	Now talking on 22#ansible
+T 1710408857 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710408857 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710408857 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710414114 18<27stenno18>	oh man i only learned about DEFAULT_STDOUT_CALLBACK just now
+T 1710414123 18<27stenno18>	i can throw away quite some code i wrote now :P
+T 1710414155 18<27stenno18>	for json output
+T 1710414205 18<25endre18>	:D
+T 1710414217 18<25endre18>	while at it, don't miss other kind of plugins too
+T 1710414229 18<27stenno18>	i guess it is the fate of programmers to sometimes implement some stuff, only to figure out it already exists
+T 1710414229 18<25endre18>	miss out
+T 1710414231 18<27stenno18>	yeah will do
+T 1710414249 18<27stenno18>	super useful feature
+T 1710414250 18<25endre18>	i wrote an inventory plugin
+T 1710414258 18<25endre18>	and am still proud of that
+T 1710414282 18<27stenno18>	neat
+T 1710414490 18<27stenno18>	thank god i can throw away this horribly wonky code tbf
+T 1710414496 18<27stenno18>	it never felt good
+T 1710419095 18<25fireba1118>	endre: inventory plugin? to do what?
+T 1710419900 18<29JEEB18>	ah, I noticed last week that jinja templating in ansible usage has made me write weird python code: `None if not check_var else touch_that_var`
+T 1710419924 18<29JEEB18>	because in jinja templating the variable will be interpreted so you can't put the truth case first :D
+T 1710420051 18<25endre18>	fireba11: huhh i have an ssh session manager
+T 1710420054 18<25endre18>	that manages ssh configs
+T 1710420064 18<25endre18>	it also can act as an ansible inventory plugin
+T 1710420072 18<25endre18>	without the need of any intermediate files
+T 1710420946 18<25fireba1118>	ah okay
+T 1710425677 18<19flowerysong18>	JEEB: ...that's not true. https://gist.github.com/flowerysong/a6b37a0f26fec729b840fd222dbb6db0
+T 1710425724 18<19flowerysong18>	Jinja has the same short-circuit evaluation behaviour as Python.
+T 1710425905 18<29JEEB18>	flowerysong: that is good. I'll have to check tomorrow some real examples
+T 1710427718 18<19oblikoamorale18>	you are probably mixing it with ternary filter which does indeed require its arguments to be defined
+T 1710429247 18<29OutOfService18>	Hi
+T 1710429259 18<29OutOfService18>	hi oblikoamorale :)
+T 1710429362 18<29OutOfService18>	I have a doubf regarding the use of variables in a list (I'm not sure if this is a list or a dict.. I still need to learn that kind of things...).
+T 1710429366 18<29OutOfService18>	https://pastebin.com/m0Tb1aps
+T 1710429403 18<29OutOfService18>	It this paste, if I use the name with no variables, it works like a charm. But, if I try to use the second opction, using an already defined variable, it gets lost
+T 1710429420 18<29OutOfService18>	If somebody could help me to find why, I will be very happy
+T 1710429808 18<29OutOfService18>	In this ocasion, I use a prompt_vars at the playbook level which ask me for the username. No matter what I do, it's like if the task isn't able to get the content of the user_name variable. This is the error I get:
+T 1710429809 18<29OutOfService18>	https://pastebin.com/JE34bkiV
+T 1710429923 18<19oblikoamorale18>	https://github.com/ansible/ansible/issues/17324#issuecomment-685102595
+T 1710430243 18<29OutOfService18>	Oh. I didn't know. Thanks for bringing me this information oblikoamorale
+T 1710430280 18<29OutOfService18>	Now I also know it's an dictionary key :)
+T 1710430622 18<19oblikoamorale18>	wouldn't hurt to get acquainted with yaml basics: https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html
+T 1710430761 18<29OutOfService18>	I know. I thought it would a good idea to learn ansible on the fly.. but I realize that some things should be learned before starting to play
+T 1710430794 18<29OutOfService18>	Thankls for all your advices oblikoamorale
+T 1710456684 18<26newpy18>	I'm looking into testing my collections/roles/playbooks and I'd like to provide an inventory instead of spinning something up via molecule, is there a tutorial for something like that?
+T 1710470451 19*	Now talking on 22#ansible
+T 1710470451 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710470451 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710470451 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710470700 19*	Now talking on 22#ansible
+T 1710470700 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710470700 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710470700 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710472290 18<26newpy18>	I have a strange yaml-lint error: "plain value cannot start with directive indicator character %"
+T 1710472358 18<26newpy18>	mind taking a look? https://paste.ee/p/1m1jp
+T 1710472385 18<26newpy18>	oh maybe my for loop needs to be indented?
+T 1710472471 18<26newpy18>	oh I think vscode is processing it as yaml
+T 1710479006 19*	Now talking on 22#ansible
+T 1710479006 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710479006 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710479006 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710480267 18<24zespri18>	imaging I have `bla: "{{ value }}"` somewhere in a task in yaml. What is the syntax to make `bla` itself (not the value) come out a variable too. In this example: https://gist.github.com/AndrewSav/d5090a592da5ee309b55412ccf5d3436 I want key1 and key2 key names to come from vars, to make the question more concrete
+T 1710480493 18<19double-p18>	zespri: like this? https://stackoverflow.com/a/25375815
+T 1710480558 18<24zespri18>	sorry struggling to connect the dots
+T 1710480631 18<19double-p18>	that splits the variable dict and there you get {{ key }}
+T 1710480638 18<19double-p18>	which is the 'name'
+T 1710480898 18<24zespri18>	I do not have a dict, I want to create a dict with a key given in a variable
+T 1710481196 18<19flowerysong18>	zespri: https://witchychant.com/ansible-templated-dictionary-keys/
+T 1710481258 18<24zespri18>	flowerysong: thank you
+T 1710501318 20*	Disconnected (20)
+T 1710501475 19*	Now talking on 22#ansible
+T 1710501475 22*	Topic for 22#ansible is: https://docs.ansible.com * latest releases: ansible-core 2.16.4, 2.15.9, 2.14.14; ansible 9.3.0; ansible 2.9 is EOL 💀 https://groups.google.com/g/ansible-announce/c/kegIH5_okmg/
+T 1710501475 22*	Topic for 22#ansible set by 26sivel!~sivel@ansible/staff/sivel (24Tue Feb 27 19:30:00 2024)
+T 1710501476 -18ChanServ-	[#ansible] Welcome to the Ansible Community. This channel's history is visible on Matrix and can be viewed at https://chat.ansible.im/#/room/#ansible:libera.chat
+T 1710512476 18<26alien_lappy18>	one host has a file which i want the contents to be in a var, so i can use it for the other hosts? is that possible?
+T 1710512515 18<28cla18>	slurp module
+T 1710512521 18<26alien_lappy18>	i looked at lookup, but how would this work for for a specific host?
+T 1710512590 18<26alien_lappy18>	oic, put that in an earlier task and then limit for that host only
+T 1710512595 18<26alien_lappy18>	then register and use it
+T 1710512598 18<26alien_lappy18>	ok, i get it
+T 1710512608 18<26alien_lappy18>	but it is just text not binary, so maybe i can use fetch
+T 1710512642 18<28cla18>	fetch is used to get file from remote to local.
+T 1710512663 18<26alien_lappy18>	ic, yeah, fetch is not quite the same
+T 1710512665 18<26alien_lappy18>	thx
+T 1710512671 18<28cla18>	slurp otherwise is to get file content and store it in variable as base64 encoded format.
+T 1710512683 18<28cla18>	alien_lappy: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/slurp_module.html
+T 1710512717 18<26alien_lappy18>	can i use encoding none, or is that bad?
+T 1710512731 18<26alien_lappy18>	cla: yeah, i was looking on that page
+T 1710512761 18<26alien_lappy18>	maybe encoding is safer, i should leave that in
+T 1710512986 18<26alien_lappy18>	cla: can i also set it to a specific host var?
+T 1710513194 18<26Oerlt18>	Is it posible for the file module to delete files based on attributes? Can a file named icecream.txt on a remote host only be deleted if it has certain attributes?
+T 1710513516 18<26alien_lappy18>	can i just use a variable set by set_fact in another host later on? or do i need to do something like hosts[hostname].facts.some_fact or something,
+T 1710513609 18<26alien_lappy18>	wait, i can't use set_fact for this, i need to set it for another host
+T 1710513651 18<26alien_lappy18>	can i just use "hostvars[somehost].newvar" in register ?
+T 1710515108 18<26alien_lappy18>	ok, i guess i can't
+T 1710515292 18<26alien_lappy18>	so, in this host A, i loop a certain group G of hosts, i get from host A contents of a file which has hostname of group G in the path, but then i can't use set_fact because it'll overwrite it from last loop
+T 1710515325 18<26alien_lappy18>	can i use set_fact to set a var like foo[bar]: value ? so it doesn't overwrite the other foo[baz] stuff?
+T 1710515352 18<26alien_lappy18>	maybe i need to use set_fact and a filter to combine the old var and the new info?

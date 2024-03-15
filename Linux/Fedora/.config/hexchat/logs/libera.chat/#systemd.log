@@ -1096,3 +1096,219 @@ Mar 12 00:38:02 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
 Mar 12 00:55:45 *	Now talking on #systemd
 Mar 12 00:55:45 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
 Mar 12 00:55:45 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Tue Mar 12 07:33:43 2024
+
+Mar 12 07:33:41 *	Now talking on #systemd
+Mar 12 07:33:41 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 12 07:33:41 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Tue Mar 12 17:00:35 2024
+
+Mar 12 17:00:31 *	Now talking on #systemd
+Mar 12 17:00:31 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 12 17:00:31 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+Mar 12 17:43:23 <desolate030>	hey guys, is it possible to create a routing table via systemd-networkd?
+Mar 12 17:45:16 <gdamjan>	desolate030: https://www.freedesktop.org/software/systemd/man/latest/systemd.network.html#Table=
+Mar 12 17:45:48 <gdamjan>	actually https://www.freedesktop.org/software/systemd/man/latest/systemd.network.html#Table=1
+**** ENDING LOGGING AT Wed Mar 13 06:35:42 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 06:38:06 2024
+
+Mar 13 06:38:05 *	Now talking on #systemd
+Mar 13 06:38:05 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 13 06:38:05 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** ENDING LOGGING AT Wed Mar 13 06:38:17 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 15:36:13 2024
+
+Mar 13 15:36:12 *	Now talking on #systemd
+Mar 13 15:36:12 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 13 15:36:12 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Wed Mar 13 16:17:17 2024
+
+Mar 13 16:17:16 *	Now talking on #systemd
+Mar 13 16:17:16 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 13 16:17:16 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** ENDING LOGGING AT Wed Mar 13 17:02:39 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 17:15:30 2024
+
+Mar 13 17:15:29 *	Now talking on #systemd
+Mar 13 17:15:29 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 13 17:15:29 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Wed Mar 13 17:31:45 2024
+
+Mar 13 17:31:44 *	Now talking on #systemd
+Mar 13 17:31:44 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 13 17:31:44 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Wed Mar 13 18:43:10 2024
+
+Mar 13 18:43:09 *	Now talking on #systemd
+Mar 13 18:43:09 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 13 18:43:09 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Wed Mar 13 23:52:50 2024
+
+Mar 13 23:52:48 *	Now talking on #systemd
+Mar 13 23:52:48 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 13 23:52:48 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Thu Mar 14 02:26:03 2024
+
+Mar 14 02:26:01 *	Now talking on #systemd
+Mar 14 02:26:01 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 14 02:26:01 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+Mar 14 05:33:31 <hays>	i have placed a .netdev and .network file(s) in /etc/systemd/network, and restarting systemd-networkd the interface is not being created
+Mar 14 05:34:25 <hays>	the service is running with error. logs show other interfaces, but not the ones in /etc/systemd/network
+Mar 14 05:34:59 <hays>	Failed to open configuration file '/etc/systemd/network/80-wg0.netdev': Permission denied
+Mar 14 05:43:41 <ZLima12>	hays: you need to make sure your configs are readable by the systemd-network group
+Mar 14 05:44:31 <hays>	ahh thanks.
+Mar 14 06:27:05 <grawity>	peelz: the WM binary might have been setuid or had file capabilities set on it (for 'realtime' access or something like that), which would cause any coredump mechanism to treat the process as privileged
+Mar 14 06:30:05 <grawity>	peelz: take a look at `journalctl -n 1 -o verbose MESSAGE_ID=fc2e22bc6ee647b6b90729ab34a250b1` -> COREDUMP_PROC_STATUS -> CapEff, if it's non-zero then the process was setuid-like
+Mar 14 07:17:49 <peelz>	grawity: ah yes, that's it. /usr/bin/sway is has capabilities
+Mar 14 07:17:54 <peelz>	*has
+Mar 14 07:17:58 <peelz>	where did you get that MESSAGE_ID btw?
+Mar 14 07:18:31 <grawity>	I did `journalctl -o verbose` and made something dump core and copied it out of the message that showed up
+Mar 14 07:19:12 <grawity>	this is how coredumpctl gathers its data out of the journal
+Mar 14 07:20:50 <peelz>	ah gotcha, thanks :D
+Mar 14 07:21:24 <grawity>	ie. it searches for that MESSAGE_ID and then uses the hidden fields to produce the nice coredump table
+Mar 14 07:21:44 <peelz>	got it, I was just wondering if you got it from the 0x0.st links I sent earlier
+**** ENDING LOGGING AT Thu Mar 14 09:59:27 2024
+
+**** BEGIN LOGGING AT Thu Mar 14 10:06:39 2024
+
+Mar 14 10:06:38 *	Now talking on #systemd
+Mar 14 10:06:38 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 14 10:06:38 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Thu Mar 14 10:11:09 2024
+
+Mar 14 10:11:08 *	Now talking on #systemd
+Mar 14 10:11:08 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 14 10:11:08 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Thu Mar 14 10:15:56 2024
+
+Mar 14 10:15:54 *	Now talking on #systemd
+Mar 14 10:15:54 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 14 10:15:54 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Thu Mar 14 10:34:17 2024
+
+Mar 14 10:34:17 *	Now talking on #systemd
+Mar 14 10:34:17 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 14 10:34:17 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** ENDING LOGGING AT Thu Mar 14 10:35:41 2024
+
+Mar 14 12:09:01 <dupondje>	If you start a service with 'PrivateNetwork=yes', a network namespace is created. But can we find out the name of that namespace? Is it stable or can it be set somewhere?
+Mar 14 12:10:15 <MacGyver>	I don't have time to answer extensively, have to leave, but look in the manpage for the "NetworkNamespacePath" or somesuch directive.
+Mar 14 12:11:43 <dupondje>	MacGyver: yea there is NetworkNamespacePath indeed, but there you specify the path of the existing namespace
+Mar 14 12:11:52 <dupondje>	While PrivateNetwork=yes makes systemd create the namespace
+Mar 14 12:11:55 <dupondje>	:)
+Mar 14 15:02:56 <iconoclast_hero>	if i link an executable bash script that does the things I want it to do in /etc/rc0.d and /etc/rc6.d without any special formatting (e.g., info block), will it run at shutdown and reboot, respectively?
+Mar 14 15:22:38 <gdamjan>	wasn't the rc-script generator removed from systemd altogether?
+Mar 14 17:55:06 <hays>	hey can anyone help me understand what this set of systemd unit files is doing? specifically the routing https://paste.debian.net/1310708/
+Mar 14 17:55:45 <hays>	e.g. what is Table 242
+Mar 14 18:02:05 <ZLima12>	hays: Looks like it's trying to only route traffic from 10.17.0.0/24 over the wireguard interface
+Mar 14 18:04:52 <ZLima12>	Looks a bit cumbersome though
+Mar 14 18:05:11 <gdamjan>	seems to me, that it disallows packets from 10.17.0.0/24 to be routed towards the internet
+Mar 14 18:06:22 <ZLima12>	Yeah actually, it looks like traffic from that range will only be allowed to talk to 10.250.0.0/24
+Mar 14 18:07:58 <ZLima12>	systemd.network(5) says that when Destination is omitted from a route (e.g. the first route in the config), "a full-length host route is assumed"
+Mar 14 18:08:00 <gdamjan>	or if you ask in general hays, it's called policy routing. you match certain packets, and define a routing policy for them (including their own route table if needed)
+Mar 14 18:08:03 <hays>	so it does seem to do what its intending which is to route traffic from 10.17/24 to wg0 (and then the internet after that)
+Mar 14 18:08:30 <hays>	what's the difefrence between routingpolicy and route
+Mar 14 18:09:37 <gdamjan>	the most common policy is to use a whole another routing table
+Mar 14 18:09:54 <hays>	table 242
+Mar 14 18:09:58 <ZLima12>	right
+Mar 14 18:09:58 <gdamjan>	(see also `ip rule`, and probably a lot more has been said on the internet)
+Mar 14 18:10:15 <hays>	which is arbitrary
+Mar 14 18:10:20 <gdamjan>	hays: for ex. `ip route show table 242`
+Mar 14 18:10:26 <ZLima12>	Yeah, 242 is just a number they made up
+Mar 14 18:10:29 <gdamjan>	yeah, 242 is just a number
+Mar 14 18:10:30 <gdamjan>	:D
+Mar 14 18:10:32 <gdamjan>	lol
+Mar 14 18:10:38 <ZLima12>	identical first part wow
+Mar 14 18:11:57 <hays>	looks like [route] also has "table" let me read up im just trying to at a system level see how this hangs together
+Mar 14 18:12:53 <gdamjan>	not sure where to point you to read about policy routing these days. 
+Mar 14 18:13:17 <gdamjan>	is https://lartc.org/howto/ still relevant?
+Mar 14 18:14:16 <ZLima12>	There's some overlap of what you can do between policy routing and netfilter (iptables/nftables)
+Mar 14 18:14:17 <cc0_delthas>	hi, if i have a simple systemd unit with a program that immediatey exits 1 after it starts, how does systemctl know that "the service failed to start"? i'd suppose it'd consider the service started as soon as fork/exec is run, so if the process fails right after that, systemd wouldnt detect it synchronously (although you could check that later on with systemctl status)
+Mar 14 18:14:43 <ZLima12>	I think there was a Type= value for this
+Mar 14 18:14:53 <cc0_delthas>	is there some default check like  wait 100ms  after fork/exec  to make sure that the process did not yet exit, before "returning" from systemctl start?
+Mar 14 18:15:31 <ZLima12>	Actually maybe not, I think I was thinking of Type=exec which would detect failure if the executable didn't exist or something like that
+Mar 14 18:15:34 <gdamjan>	cc0_delthas: there isn't
+Mar 14 18:15:36 <hays>	ohh.. ok so the policy rule is basically saying "hey stuff from this IP range should use table 242"
+Mar 14 18:15:41 <ZLima12>	right
+Mar 14 18:15:59 <gdamjan>	cc0_delthas: it's different for the different `Type=`s
+Mar 14 18:16:15 <gdamjan>	for ex. Type=notify has to explicitly notify pid1 that is started
+Mar 14 18:16:40 <hays>	ok that actually clears things up a lot
+Mar 14 18:16:45 <gdamjan>	then there's Type=simple which is "yolo" after the fork, it's "Started"
+Mar 14 18:16:46 <cc0_delthas>	so if my program is just bash -c 'exit 1'   systemd wouldnt detect it synchronously during systemctl start (if it's configured as a Type=exec)
+Mar 14 18:16:55 <gdamjan>	Type=exec waits at least for the exec to succeed
+Mar 14 18:17:28 <gdamjan>	cc0_delthas: yes
+Mar 14 18:17:30 <cc0_delthas>	it would detect a missing executable but not an immediate applicative failure right after start, is that right?
+Mar 14 18:17:31 <cc0_delthas>	ok
+Mar 14 18:18:13 <cc0_delthas>	i guess i got confused by this old system i have, running sysv init, which somehow manages to tell me that the service failed to start  when the service exits 1 right on start due to a configuration issue
+Mar 14 18:20:21 <gdamjan>	it's possible that it had some wrappers that would wait for 100ms, but then, what if the initialization lasted more than 100ms and it failed at 200ms. or why wait  100ms for every service when most wont need it
+Mar 14 18:20:32 <cc0_delthas>	yeah exactly
+Mar 14 18:20:35 <gdamjan>	reason why Type=notify is much better
+Mar 14 18:22:20 <cc0_delthas>	oh actually, i just realized on that system the init script has a --pidfile  and the started service also has a pid file path it has to write to
+Mar 14 18:22:59 <cc0_delthas>	i wonder if that system works not by waiting but by waiting until theres a PID written by the service in that pid file
+Mar 14 18:23:29 <cc0_delthas>	just like Type=forking PIDFile= actually
+Mar 14 18:25:53 <gdamjan>	note that Type=forking PIDFile=  is only waiting for the first process of the service to exit, then reads the PIDFile to know which would be the MainPID
+Mar 14 18:26:22 <gdamjan>	and some programs don't implement this right, for ex. writing the pid file in the child process, and potentionly after the parent exited
+Mar 14 18:26:59 <gdamjan>	PIDFile= for the most common programs can be avoided, since pid1 will assume the first remaining process to be the MainPID
+Mar 14 18:27:53 <cc0_delthas>	ok i see. and then if i do Type=forking but exit without spawning additional children, systemd would detect that and synchronously fail, right?
+Mar 14 18:28:36 <cc0_delthas>	so basically  Type=forking  and  bash -c 'sleep 10; exit 1'  would wait 10s then fail synchronously
+Mar 14 18:29:11 <gdamjan>	IMHO yes, since there will not be any processes in the cgroup
+Mar 14 18:29:30 <cc0_delthas>	interesting
+Mar 14 18:30:50 <cc0_delthas>	i directly jumped to a specific question, but the general context is i'm trying to have a trivial process manager (handling only 1 process) for sidecar containers in kubernetes, and i'm wondering whether to reinvent the wheel or use systemd/something else. hmm.
+Mar 14 18:30:52 <cc0_delthas>	anyways thanks :-)
+Mar 14 18:31:39 <gdamjan>	systemd will not work inside a kubernetes pod though. or I misunderstood?
+Mar 14 19:58:05 <jkt>	hi there, I wonder if there's some metadata field that systemd-journal-remote adds to these log messages as they are received
+Mar 14 19:58:48 <jkt>	I see that there are two modes, either it's logging to a single file, or it's including the hostname or the ip address of the sender into the file name
+Mar 14 19:59:33 <jkt>	we're using that second mode, but when I do a simple `journalctl -o json FOO=BAR`, the hostane/ip info from the on-disk file name is missing
+Mar 14 20:01:47 <gdamjan>	isn't the machine_id different?
+Mar 14 20:05:25 <jkt>	gdamjan: I cannot easily go from that to the hostname, though
+Mar 14 20:07:40 <gdamjan>	right, the filename is not part of the journal items metadata 
+Mar 14 21:07:18 <oldfashionedcow>	I have a service foo.service and another service bar.service. To sum it up, bar.service is triggered by a timer (not sure if this is relevant but ig the more context the better) bar.timer, and when bar.service runs, I want foo.service to restart if it is already started, or start if it is stopped. What sort of things am I looking for here? I've looked at OnSuccess and PartOf, but I'm not having
+Mar 14 21:07:19 <oldfashionedcow>	much luck. Is there a way to do this without being hacky and embedding systemctl restart foo.service in bar.service?
+Mar 14 21:09:14 <edu4rdshl>	oldfashionedcow, which problem are you having with PartOf ?
+Mar 14 21:09:47 <oldfashionedcow>	edu4rdshl: Well it just simply does not reload the other service - I tried making foo.service part of bar.service (assuming that a start of bar.service would trigger a reload), but it just didn't reload
+Mar 14 21:20:22 <glance>	If it's when bar.service is done, OnSuccess=foo-starter.service which is just a oneshot which ExecStart=systemctl reload-or-restart foo.service
+Mar 14 21:21:21 <glance>	If it's before bar.service start, just add a ExecStartPre=systemctl reload-or-restart foo.service to bar.service
+Mar 14 21:21:49 <oldfashionedcow>	ahh okay
+Mar 14 21:21:54 <oldfashionedcow>	Thanks glance!
+Mar 14 21:22:42 <edu4rdshl>	Well, I thought you were wanting to avoid using systemctl on the unit lol
+Mar 14 21:26:19 <oldfashionedcow>	edu4rdshl: It appears that I don't have a way out ig
+Mar 14 21:26:38 <oldfashionedcow>	I've been in man pages for 3 hours, I guess i'll just have to throw in the towel with this one :P
+**** BEGIN LOGGING AT Fri Mar 15 03:40:52 2024
+
+Mar 15 03:40:51 *	Now talking on #systemd
+Mar 15 03:40:51 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 15 03:40:51 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** BEGIN LOGGING AT Fri Mar 15 03:45:00 2024
+
+Mar 15 03:45:00 *	Now talking on #systemd
+Mar 15 03:45:00 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 15 03:45:00 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+**** ENDING LOGGING AT Fri Mar 15 03:45:01 2024
+
+**** ENDING LOGGING AT Fri Mar 15 05:52:58 2024
+
+**** BEGIN LOGGING AT Fri Mar 15 06:03:29 2024
+
+Mar 15 06:03:26 *	Now talking on #systemd
+Mar 15 06:03:26 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 15 06:03:26 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+Mar 15 12:15:18 *	Disconnected ()
+**** ENDING LOGGING AT Fri Mar 15 12:15:18 2024
+
+**** BEGIN LOGGING AT Fri Mar 15 12:17:55 2024
+
+Mar 15 12:17:55 *	Now talking on #systemd
+Mar 15 12:17:55 *	Topic for #systemd is: Version v255 released | Online resources https://systemd.io/
+Mar 15 12:17:55 *	Topic for #systemd set by bluca (Wed Dec  6 21:59:46 2023)
+Mar 15 13:10:12 <FergusL>	Hey there. I'm working on an embedded system running systemd 253 and I have an issue to enable a debug shell over serial, here are the relevant commandline settings I use: console=ttyS2,115200n8 rw &consoleblank=0 systemd.show_status=1 systemd.debug_shell=ttyS2 console=tty0
+Mar 15 13:11:30 <FergusL>	first issue is the show_status=1 used to output to ttyS2, and this doesn't show anymore for some reason. Second issue is I do get a prompt RK3326:~ # after the kernel log but it's unresponsive
+Mar 15 13:13:00 <FergusL>	over ssh systemd reports the debug-shell service working correctly, I can restart it, it sends another prompt to serial but it's also unresponsive, eg. typing anything doesn't work
+Mar 15 13:15:41 <FergusL>	I know it's a long shot as many parts are unrelated to systemd... just though I might ask as it worked previously
+Mar 15 13:19:35 <gdamjan>	make sure nothing else is using ttyS2, and make sure it's wired correctly
+Mar 15 13:23:01 <FergusL>	hu apparently the order is also important, I added console=ttyS2,115200n8 at then end and at least now I get the bootlog over serial up until a shell. That was after reading this answer https://superuser.com/a/1335802
+Mar 15 13:25:38 <FergusL>	process 155, first child of  systemd, running /bin/sh is the only program using this serial. But now I realise I was mixing up debug-shell for ttys from the start
+Mar 15 13:39:57 <FergusL>	alright, a cmdline as basic as "rw consoleblank=0 systemd.show_status=1 console=tty0 console=ttyS2,1500000" will show status, shows services like sys-devices-platform-ff160000.serial-tty-ttyS2.device are active for each serials on the board but the prompt disappeared so no serial, which contradicts the answer above
+Mar 15 15:42:56 <FergusL>	my god, i guess it was the adapter causing the issue for TX from adapter to device's RX...

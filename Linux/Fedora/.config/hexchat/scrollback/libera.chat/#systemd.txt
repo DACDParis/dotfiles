@@ -744,3 +744,167 @@ T 1710200282 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:
 T 1710201345 19*	Now talking on 22#systemd
 T 1710201345 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
 T 1710201345 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710225221 19*	Now talking on 22#systemd
+T 1710225221 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710225221 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710259231 19*	Now talking on 22#systemd
+T 1710259231 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710259231 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710261803 18<27desolate03018>	hey guys, is it possible to create a routing table via systemd-networkd?
+T 1710261916 18<22gdamjan18>	desolate030: https://www.freedesktop.org/software/systemd/man/latest/systemd.network.html#Table=
+T 1710261948 18<22gdamjan18>	actually https://www.freedesktop.org/software/systemd/man/latest/systemd.network.html#Table=1
+T 1710308285 19*	Now talking on 22#systemd
+T 1710308285 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710308285 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710340572 19*	Now talking on 22#systemd
+T 1710340572 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710340572 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710343036 19*	Now talking on 22#systemd
+T 1710343036 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710343036 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710346529 19*	Now talking on 22#systemd
+T 1710346529 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710346529 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710347504 19*	Now talking on 22#systemd
+T 1710347504 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710347504 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710351789 19*	Now talking on 22#systemd
+T 1710351789 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710351789 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710370368 19*	Now talking on 22#systemd
+T 1710370368 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710370368 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710379561 19*	Now talking on 22#systemd
+T 1710379561 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710379561 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710390811 18<26hays18>	i have placed a .netdev and .network file(s) in /etc/systemd/network, and restarting systemd-networkd the interface is not being created
+T 1710390865 18<26hays18>	the service is running with error. logs show other interfaces, but not the ones in /etc/systemd/network
+T 1710390899 18<26hays18>	Failed to open configuration file '/etc/systemd/network/80-wg0.netdev': Permission denied
+T 1710391421 18<19ZLima1218>	hays: you need to make sure your configs are readable by the systemd-network group
+T 1710391471 18<26hays18>	ahh thanks.
+T 1710394025 18<20grawity18>	peelz: the WM binary might have been setuid or had file capabilities set on it (for 'realtime' access or something like that), which would cause any coredump mechanism to treat the process as privileged
+T 1710394205 18<20grawity18>	peelz: take a look at `journalctl -n 1 -o verbose MESSAGE_ID=fc2e22bc6ee647b6b90729ab34a250b1` -> COREDUMP_PROC_STATUS -> CapEff, if it's non-zero then the process was setuid-like
+T 1710397069 18<25peelz18>	grawity: ah yes, that's it. /usr/bin/sway is has capabilities
+T 1710397074 18<25peelz18>	*has
+T 1710397078 18<25peelz18>	where did you get that MESSAGE_ID btw?
+T 1710397111 18<20grawity18>	I did `journalctl -o verbose` and made something dump core and copied it out of the message that showed up
+T 1710397152 18<20grawity18>	this is how coredumpctl gathers its data out of the journal
+T 1710397250 18<25peelz18>	ah gotcha, thanks :D
+T 1710397284 18<20grawity18>	ie. it searches for that MESSAGE_ID and then uses the hidden fields to produce the nice coredump table
+T 1710397304 18<25peelz18>	got it, I was just wondering if you got it from the 0x0.st links I sent earlier
+T 1710407198 19*	Now talking on 22#systemd
+T 1710407198 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710407198 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710407468 19*	Now talking on 22#systemd
+T 1710407468 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710407468 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710407754 19*	Now talking on 22#systemd
+T 1710407754 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710407754 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710408857 19*	Now talking on 22#systemd
+T 1710408857 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710408857 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710414541 18<22dupondje18>	If you start a service with 'PrivateNetwork=yes', a network namespace is created. But can we find out the name of that namespace? Is it stable or can it be set somewhere?
+T 1710414615 18<27MacGyver18>	I don't have time to answer extensively, have to leave, but look in the manpage for the "NetworkNamespacePath" or somesuch directive.
+T 1710414703 18<22dupondje18>	MacGyver: yea there is NetworkNamespacePath indeed, but there you specify the path of the existing namespace
+T 1710414712 18<22dupondje18>	While PrivateNetwork=yes makes systemd create the namespace
+T 1710414715 18<22dupondje18>	:)
+T 1710424976 18<24iconoclast_hero18>	if i link an executable bash script that does the things I want it to do in /etc/rc0.d and /etc/rc6.d without any special formatting (e.g., info block), will it run at shutdown and reboot, respectively?
+T 1710426158 18<22gdamjan18>	wasn't the rc-script generator removed from systemd altogether?
+T 1710435306 18<26hays18>	hey can anyone help me understand what this set of systemd unit files is doing? specifically the routing https://paste.debian.net/1310708/
+T 1710435345 18<26hays18>	e.g. what is Table 242
+T 1710435725 18<19ZLima1218>	hays: Looks like it's trying to only route traffic from 10.17.0.0/24 over the wireguard interface
+T 1710435892 18<19ZLima1218>	Looks a bit cumbersome though
+T 1710435911 18<22gdamjan18>	seems to me, that it disallows packets from 10.17.0.0/24 to be routed towards the internet
+T 1710435982 18<19ZLima1218>	Yeah actually, it looks like traffic from that range will only be allowed to talk to 10.250.0.0/24
+T 1710436078 18<19ZLima1218>	systemd.network(5) says that when Destination is omitted from a route (e.g. the first route in the config), "a full-length host route is assumed"
+T 1710436080 18<22gdamjan18>	or if you ask in general hays, it's called policy routing. you match certain packets, and define a routing policy for them (including their own route table if needed)
+T 1710436083 18<26hays18>	so it does seem to do what its intending which is to route traffic from 10.17/24 to wg0 (and then the internet after that)
+T 1710436110 18<26hays18>	what's the difefrence between routingpolicy and route
+T 1710436177 18<22gdamjan18>	the most common policy is to use a whole another routing table
+T 1710436194 18<26hays18>	table 242
+T 1710436198 18<19ZLima1218>	right
+T 1710436198 18<22gdamjan18>	(see also `ip rule`, and probably a lot more has been said on the internet)
+T 1710436215 18<26hays18>	which is arbitrary
+T 1710436220 18<22gdamjan18>	hays: for ex. `ip route show table 242`
+T 1710436226 18<19ZLima1218>	Yeah, 242 is just a number they made up
+T 1710436229 18<22gdamjan18>	yeah, 242 is just a number
+T 1710436230 18<22gdamjan18>	:D
+T 1710436232 18<22gdamjan18>	lol
+T 1710436238 18<19ZLima1218>	identical first part wow
+T 1710436317 18<26hays18>	looks like [route] also has "table" let me read up im just trying to at a system level see how this hangs together
+T 1710436373 18<22gdamjan18>	not sure where to point you to read about policy routing these days. 
+T 1710436397 18<22gdamjan18>	is https://lartc.org/howto/ still relevant?
+T 1710436456 18<19ZLima1218>	There's some overlap of what you can do between policy routing and netfilter (iptables/nftables)
+T 1710436457 18<22cc0_delthas18>	hi, if i have a simple systemd unit with a program that immediatey exits 1 after it starts, how does systemctl know that "the service failed to start"? i'd suppose it'd consider the service started as soon as fork/exec is run, so if the process fails right after that, systemd wouldnt detect it synchronously (although you could check that later on with systemctl status)
+T 1710436483 18<19ZLima1218>	I think there was a Type= value for this
+T 1710436493 18<22cc0_delthas18>	is there some default check like  wait 100ms  after fork/exec  to make sure that the process did not yet exit, before "returning" from systemctl start?
+T 1710436531 18<19ZLima1218>	Actually maybe not, I think I was thinking of Type=exec which would detect failure if the executable didn't exist or something like that
+T 1710436534 18<22gdamjan18>	cc0_delthas: there isn't
+T 1710436536 18<26hays18>	ohh.. ok so the policy rule is basically saying "hey stuff from this IP range should use table 242"
+T 1710436541 18<19ZLima1218>	right
+T 1710436559 18<22gdamjan18>	cc0_delthas: it's different for the different `Type=`s
+T 1710436575 18<22gdamjan18>	for ex. Type=notify has to explicitly notify pid1 that is started
+T 1710436600 18<26hays18>	ok that actually clears things up a lot
+T 1710436605 18<22gdamjan18>	then there's Type=simple which is "yolo" after the fork, it's "Started"
+T 1710436606 18<22cc0_delthas18>	so if my program is just bash -c 'exit 1'   systemd wouldnt detect it synchronously during systemctl start (if it's configured as a Type=exec)
+T 1710436615 18<22gdamjan18>	Type=exec waits at least for the exec to succeed
+T 1710436648 18<22gdamjan18>	cc0_delthas: yes
+T 1710436650 18<22cc0_delthas18>	it would detect a missing executable but not an immediate applicative failure right after start, is that right?
+T 1710436651 18<22cc0_delthas18>	ok
+T 1710436693 18<22cc0_delthas18>	i guess i got confused by this old system i have, running sysv init, which somehow manages to tell me that the service failed to start  when the service exits 1 right on start due to a configuration issue
+T 1710436821 18<22gdamjan18>	it's possible that it had some wrappers that would wait for 100ms, but then, what if the initialization lasted more than 100ms and it failed at 200ms. or why wait  100ms for every service when most wont need it
+T 1710436832 18<22cc0_delthas18>	yeah exactly
+T 1710436835 18<22gdamjan18>	reason why Type=notify is much better
+T 1710436940 18<22cc0_delthas18>	oh actually, i just realized on that system the init script has a --pidfile  and the started service also has a pid file path it has to write to
+T 1710436979 18<22cc0_delthas18>	i wonder if that system works not by waiting but by waiting until theres a PID written by the service in that pid file
+T 1710437009 18<22cc0_delthas18>	just like Type=forking PIDFile= actually
+T 1710437153 18<22gdamjan18>	note that Type=forking PIDFile=  is only waiting for the first process of the service to exit, then reads the PIDFile to know which would be the MainPID
+T 1710437182 18<22gdamjan18>	and some programs don't implement this right, for ex. writing the pid file in the child process, and potentionly after the parent exited
+T 1710437219 18<22gdamjan18>	PIDFile= for the most common programs can be avoided, since pid1 will assume the first remaining process to be the MainPID
+T 1710437273 18<22cc0_delthas18>	ok i see. and then if i do Type=forking but exit without spawning additional children, systemd would detect that and synchronously fail, right?
+T 1710437316 18<22cc0_delthas18>	so basically  Type=forking  and  bash -c 'sleep 10; exit 1'  would wait 10s then fail synchronously
+T 1710437351 18<22gdamjan18>	IMHO yes, since there will not be any processes in the cgroup
+T 1710437370 18<22cc0_delthas18>	interesting
+T 1710437450 18<22cc0_delthas18>	i directly jumped to a specific question, but the general context is i'm trying to have a trivial process manager (handling only 1 process) for sidecar containers in kubernetes, and i'm wondering whether to reinvent the wheel or use systemd/something else. hmm.
+T 1710437452 18<22cc0_delthas18>	anyways thanks :-)
+T 1710437499 18<22gdamjan18>	systemd will not work inside a kubernetes pod though. or I misunderstood?
+T 1710442685 18<26jkt18>	hi there, I wonder if there's some metadata field that systemd-journal-remote adds to these log messages as they are received
+T 1710442728 18<26jkt18>	I see that there are two modes, either it's logging to a single file, or it's including the hostname or the ip address of the sender into the file name
+T 1710442773 18<26jkt18>	we're using that second mode, but when I do a simple `journalctl -o json FOO=BAR`, the hostane/ip info from the on-disk file name is missing
+T 1710442907 18<22gdamjan18>	isn't the machine_id different?
+T 1710443125 18<26jkt18>	gdamjan: I cannot easily go from that to the hostname, though
+T 1710443260 18<22gdamjan18>	right, the filename is not part of the journal items metadata 
+T 1710446838 18<19oldfashionedcow18>	I have a service foo.service and another service bar.service. To sum it up, bar.service is triggered by a timer (not sure if this is relevant but ig the more context the better) bar.timer, and when bar.service runs, I want foo.service to restart if it is already started, or start if it is stopped. What sort of things am I looking for here? I've looked at OnSuccess and PartOf, but I'm not having
+T 1710446839 18<19oldfashionedcow18>	much luck. Is there a way to do this without being hacky and embedding systemctl restart foo.service in bar.service?
+T 1710446954 18<22edu4rdshl18>	oldfashionedcow, which problem are you having with PartOf ?
+T 1710446987 18<19oldfashionedcow18>	edu4rdshl: Well it just simply does not reload the other service - I tried making foo.service part of bar.service (assuming that a start of bar.service would trigger a reload), but it just didn't reload
+T 1710447622 18<27glance18>	If it's when bar.service is done, OnSuccess=foo-starter.service which is just a oneshot which ExecStart=systemctl reload-or-restart foo.service
+T 1710447681 18<27glance18>	If it's before bar.service start, just add a ExecStartPre=systemctl reload-or-restart foo.service to bar.service
+T 1710447709 18<19oldfashionedcow18>	ahh okay
+T 1710447714 18<19oldfashionedcow18>	Thanks glance!
+T 1710447762 18<22edu4rdshl18>	Well, I thought you were wanting to avoid using systemctl on the unit lol
+T 1710447979 18<19oldfashionedcow18>	edu4rdshl: It appears that I don't have a way out ig
+T 1710447998 18<19oldfashionedcow18>	I've been in man pages for 3 hours, I guess i'll just have to throw in the towel with this one :P
+T 1710470451 19*	Now talking on 22#systemd
+T 1710470451 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710470451 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710470700 19*	Now talking on 22#systemd
+T 1710470700 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710470700 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710479006 19*	Now talking on 22#systemd
+T 1710479006 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710479006 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710501318 20*	Disconnected (20)
+T 1710501475 19*	Now talking on 22#systemd
+T 1710501475 22*	Topic for 22#systemd is: Version v255 released | Online resources https://systemd.io/
+T 1710501475 22*	Topic for 22#systemd set by 26bluca (24Wed Dec  6 21:59:46 2023)
+T 1710504612 18<24FergusL18>	Hey there. I'm working on an embedded system running systemd 253 and I have an issue to enable a debug shell over serial, here are the relevant commandline settings I use: console=ttyS2,115200n8 rw &consoleblank=0 systemd.show_status=1 systemd.debug_shell=ttyS2 console=tty0
+T 1710504690 18<24FergusL18>	first issue is the show_status=1 used to output to ttyS2, and this doesn't show anymore for some reason. Second issue is I do get a prompt RK3326:~ # after the kernel log but it's unresponsive
+T 1710504780 18<24FergusL18>	over ssh systemd reports the debug-shell service working correctly, I can restart it, it sends another prompt to serial but it's also unresponsive, eg. typing anything doesn't work
+T 1710504941 18<24FergusL18>	I know it's a long shot as many parts are unrelated to systemd... just though I might ask as it worked previously
+T 1710505175 18<22gdamjan18>	make sure nothing else is using ttyS2, and make sure it's wired correctly
+T 1710505381 18<24FergusL18>	hu apparently the order is also important, I added console=ttyS2,115200n8 at then end and at least now I get the bootlog over serial up until a shell. That was after reading this answer https://superuser.com/a/1335802
+T 1710505538 18<24FergusL18>	process 155, first child of  systemd, running /bin/sh is the only program using this serial. But now I realise I was mixing up debug-shell for ttys from the start
+T 1710506397 18<24FergusL18>	alright, a cmdline as basic as "rw consoleblank=0 systemd.show_status=1 console=tty0 console=ttyS2,1500000" will show status, shows services like sys-devices-platform-ff160000.serial-tty-ttyS2.device are active for each serials on the board but the prompt disappeared so no serial, which contradicts the answer above
+T 1710513776 18<24FergusL18>	my god, i guess it was the adapter causing the issue for TX from adapter to device's RX...

@@ -4149,3 +4149,668 @@ T 1710210049 18<25Widdershins18>	so the coercion only works if it always
 T 1710210402 18<29cowboy86118>	hey hey
 T 1710210885 18<25Widdershins18>	haha
 T 1710210894 18<25Widdershins18>	pro tip: don't actually derive Debug for a self-referential type
+T 1710212525 18<19int-e18>	Widdershins: why not why not why not why not why not why not why not why not why not why not why not why not why not why not stack overflow?
+T 1710212549 18<25Widdershins18>	bilbo.jpg
+T 1710212640 18<27TimMc18>	haha RIP
+T 1710212673 18<25Widdershins18>	printing to the terminal was actually slow enough, since it tries to pretty print it with indentation and becomes quadratic, that i could just ctrl+C
+T 1710212705 18<25Widdershins18>	no segfaults today just a normal program don't worry about it
+T 1710212718 18<27TimMc18>	It's a good thing your computer was slow, otherwise it might have been slower.
+T 1710212720 18<19int-e18>	boring!
+T 1710212752 18<27TimMc18>	(or OK yeah, probably a segfault and not a memory gobbler)
+T 1710225221 19*	Now talking on 22##rust
+T 1710225221 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710225221 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710234722 18<26dav1d18>	Widdershins, I was gonna order one with `-Wall -Werror -pedantic` or something like that, but I never did :(
+T 1710235819 18<27mkoncek18>	package maintainers compiling your project with a different version of the compiler love -Werror
+T 1710238972 18<25Widdershins18>	IN THIS HOUSE WE BELIEVE -Wall -Werror -pedandic #[allow(unsafe_code)] -flto=true -Cpanic=abort
+T 1710239461 18<20polychromata{J}18>	<Widdershins> idea: live laugh love kitsch that says "read eval print line"
+T 1710239477 18<20polychromata{J}18>	shouldn't that be `print eval read line`
+T 1710239488 18<20polychromata{J}18>	or just `print eval read`
+T 1710239503 18<25Widdershins18>	right. also it's supposed to be "loop" isn't it
+T 1710239510 18<25Widdershins18>	that's better
+T 1710239524 18<20polychromata{J}18>	(loop (print (eval (read))))
+T 1710239557 18<25Widdershins18>	READ through the ditches and EVAL through the witches and PRINT in the back of my dragula
+T 1710240587 18<27mkoncek18>	print eval read line - perl
+T 1710240784 18<25narodnik218>	for a trait's associated type like: trait T { type X }, how when specifying the trait, i can specify trait bounds for the associated type? for example:
+T 1710240813 18<25narodnik218>	impl<T> for MyClass<T> where T::X : From<u32> { ... }
+T 1710240827 18<25narodnik218>	when i try that, the compiler says: "error[E0223]: ambiguous associated type
+T 1710240830 18<20jbg18>	your impl is supposed to specify the associated type
+T 1710240865 18<25narodnik218>	i don't want the impl to specify the associated type, i just want to add an additional trait bound
+T 1710240893 18<20jbg18>	that's not how associated types work
+T 1710240900 18<20jbg18>	what type would you expect X to have inside the impl block?
+T 1710240900 18<25narodnik218>	yes they are, impl<T> for MyClass<T> { ... } compiles fine for me
+T 1710240909 18<20jbg18>	that's because that is not an associated type
+T 1710240933 18<25narodnik218>	MyClass is not a specialization of T, it contains an object of type T
+T 1710240944 18<20jbg18>	again, that is not an associated type
+T 1710240947 18<25narodnik218>	struct MyClass { t: T }
+T 1710240952 18<20jbg18>	just because you have decided that these things are the same does not make them the same
+T 1710240957 18<20jbg18>	T is a type parameter
+T 1710240972 18<20jbg18>	trait T { type X } X is an associated type
+T 1710240973 18<25narodnik218>	yes but i want MyClass to specify that the associated type for T has the trait bound From<u32>
+T 1710240988 18<25narodnik218>	impl<T> for MyClass<T> where T::X : From<u32> { ... }
+T 1710240990 18<25narodnik218>	like this
+T 1710241003 18<20jbg18>	first of all, this is not valid syntax; what trait are you implementing?
+T 1710241024 18<20jbg18>	maybe you just want to remove the 'for'?
+T 1710241048 18<25narodnik218>	https://agorism.dev/uploads/foo.rs.txt
+T 1710241083 18<20jbg18>	okay, this bears very little resemblence to the code soup you were writing above
+T 1710241086 18<25narodnik218>	this line works: impl<F: FieldElement, H: FieldHasher<F, 2>, const N: usize, S: StorageAdapter<Value=F>> SparseMerkleTree<F, H, N, S> {
+T 1710241096 18<20jbg18>	yes. this is not a trait impl, you will notice
+T 1710241113 18<20jbg18>	it's implementing methods on the type SparseMerkleTree, which has some type parameters
+T 1710241150 18<20jbg18>	and it's putting bounds on those type parameters, and one of the traits mentioned in those bounds has an associated type
+T 1710241214 18<25narodnik218>	trait T { type X; }
+T 1710241216 18<25narodnik218>	struct MyClass { t: T }
+T 1710241218 18<25narodnik218>	impl<T> MyClass<T> where T::X : From<u32> { }
+T 1710241234 18<20jbg18>	okay, now you have got rid of the 'for' it's more clear what you are trying to do
+T 1710241235 18<25narodnik218>	in this example T = StorageAdapter, MyClass = SparseMerkleTree, and X = Key
+T 1710241253 18<25narodnik218>	ah my apologies
+T 1710241255 18<20jbg18>	the problem with the line you just wrote is that there is no bound on T
+T 1710241287 18<20jbg18>	assuming StorageAdapter is a trait, maybe you want `where T: StorageAdapter, T::X: From<u32>`
+T 1710241335 18<25narodnik218>	ohhh ofc
+T 1710241341 18<25narodnik218>	thanks a lot, that was the issue
+T 1710241344 18*	25narodnik2 bows
+T 1710243191 18<20jbg18>	why is this a compiler warning? pub enum MyEnum { Field(InnerType) } struct InnerType(i32);
+T 1710243204 18<20jbg18>	warning: type InnerType is more private than the item MyEnum::Field::0
+T 1710243229 18<20jbg18>	i did this deliberately because all enum fields are public
+T 1710243350 18<20j`ey18>	InnerType can be pub witbout that u32 being pub though?
+T 1710243363 18<20jbg18>	sure, but why is it a warning for it not to be?
+T 1710243587 18<20spb18>	the warning is there because on anything except an enum field it's almost always an error - if a pub fn takes an argument of a private type then nothing outside the module can ever call it and the fn should probably be private too
+T 1710243613 18<20spb18>	the lint just doesn't account for the fact that enum fields are the one place you might deliberately want to do it
+T 1710243716 18<20jbg18>	mm ok
+T 1710246338 18<27TimMc18>	Am I missing something, or is this error from the compiler weird and misleading? https://gist.github.com/timmc/1346e695afbe2ba179543a6249d337aa (just the error on line 1 -- the errors for lines 2 and 3 make sense to me)
+T 1710246432 18<27TimMc18>	It's like it has the error and note highlighting reversed, and the message is confusing. And it only happens if I have the *same* error on lines 2 and 3 -- if only one of them is present, the first error highlight disappears.
+T 1710246434 18<19Lumpio-18>	You're asking about the fact that in the second case the "^^^^ not mutable" is gone or?
+T 1710246481 18<19Lumpio-18>	I wouldn't say it's misleading, just the hint about where the immutable variable was declared is missing
+T 1710246610 18<27trenka18>	TimMc: do you mix immutable `data` as reference to mutable Vec with mutable reference to `data`?
+T 1710246831 18<20spb18>	TimMc: when you type `&mut data` you're creating an `&mut &mut Vec<u32>`, i.e. you're trying to mutably borrow the reference, and the reference itself isn't mutable
+T 1710246969 18<27TimMc18>	I understand the error now, but I'm still confused about why the compiler said line 1 has an error.
+T 1710246979 18<27TimMc18>	It's only lines 2 and 3 that have the error!
+T 1710247055 18<20j`ey18>	yes I think that's wrong
+T 1710247106 18<27TimMc18>	Maybe I should check a newer version of the compiler, though.
+T 1710247133 18<20spb18>	https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=195352ba4352214a2bfaa3a67d908d7e
+T 1710247148 18<20spb18>	shows the same behaviour, with two different errors both related to 'not mutable'
+T 1710247164 18<20jbg18>	line 1 does have the error though
+T 1710247176 18<20jbg18>	the binding isn't declared as mut
+T 1710247197 18<20spb18>	i suspect there's a heuristic there that says if you try to mut borrow a mut borrow once then it's probably that you need to just use the borrow, but if you do it twice then maybe you do need to declare it mut
+T 1710247198 18<28xkr4718>	heh I searched for kmerge up and down in crates.io only to find it in std :D
+T 1710247257 18<28xkr4718>	no wait, it's from itertools, and I already had that imported
+T 1710248622 18<27TimMc18>	(OK yeah, nightly still gives the same errors.)
+T 1710248685 18<27TimMc18>	Or very similar. spb, I think you're right about that heuristic.
+T 1710252998 18<27xx18>	how do I write this simple program in rust, to demonstrate how rust works compared to C? https://0x0.st/HhIy.c
+T 1710253083 18<29mefistofeles18>	xx: well, you just write it in Rust :P you can get familair with Rust syntax with the rust book
+T 1710253170 18<20osse18>	Like so? https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=b46ca4597963c981ee056a8215b37bb4
+T 1710253176 18<27xx18>	which one is the "rust book"?
+T 1710253426 18<20osse18>	https://doc.rust-lang.org/book/
+T 1710253541 18<20j`ey18>	osse: it looks identical!
+T 1710253785 18<25narodnik218>	lets say i have a struct which takes several trait params like <X, Y>. when calling new(), we can infer Y from passed in values, but X needs to be specified explicitly
+T 1710253792 18<25narodnik218>	how can i make a new method like that?
+T 1710253808 18<25narodnik218>	something like:
+T 1710253810 18<25narodnik218>	    fn new<const N: usize>(x: X) -> Self { Self { y: [0; N], x } }
+T 1710253819 18<25narodnik218>	which you call with:     let s = S::new::<2>(7u32);
+T 1710253848 18<20j`ey18>	try with Type<X, _>
+T 1710253904 18<25narodnik218>	yeah that works, but isn't it possible to get rid of the _?
+T 1710253907 18<25narodnik218>	    let s = S::<2, _>::new(7u32);
+T 1710253932 18<25narodnik218>	(my code has more like X, Y, Z, W and only X must be specified explicitly)
+T 1710254033 18<25narodnik218>	https://agorism.dev/uploads/main.rs
+T 1710256499 18<19LDericher18>	is there a way in (unsafe) rust to say "give me a new immutable/readonly reference to this variable - I'll make sure it exists and is in a sane state"?
+T 1710256542 18<20j`ey18>	&variable ?
+T 1710256554 18<19LDericher18>	… regardless if other references to that variable exist, even mutables?
+T 1710256570 18<20j`ey18>	that's not possible in rust, even unsafe
+T 1710256580 18<19LDericher18>	so basically, "exclude this one from borrow checking"?
+T 1710258287 18<20spb18>	LDericher: you can take a reference to it before any mutable borrows happen, store that reference as a pointer, do your mut borrowing, then unsafely turn the pointer back into a reference
+T 1710258308 18<20spb18>	you shouldn't, but you can
+T 1710259231 19*	Now talking on 22##rust
+T 1710259231 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710259231 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710261267 18<20cdhowie18>	spb: that's undefined behavior
+T 1710261398 18<20cdhowie18>	note this is UB even with UnsafeCell<T>
+T 1710262229 18<20spb18>	it's UB if the value is mutated while the reconstituted reference exists
+T 1710262659 18<20cdhowie18>	which basically means "it's UB" because it allows unsound stuff to happen in safe code
+T 1710262719 18<20cdhowie18>	"it's only UB if safe code doesn't do something" is IMO a distinction without a difference.  regardless of whether it's technically immediately UB, it allows safe code to cause UB, so it's definitely not sound.
+T 1710262782 18<27lambda18>	cdhowie: you mean "unsound", not UB
+T 1710262798 18<20cdhowie18>	ok.  fine.  yes, either way it's bad.
+T 1710263677 18<27alepzi18>	how can i add "/" to a PathBuf? join and push replace if it's absolute which is shit
+T 1710263813 18<27lambda18>	alepzi: you want to convert `foo/bar` to `foo/bar/`?
+T 1710263817 18<27alepzi18>	yep
+T 1710263844 18<27lambda18>	I don't think PathBuf is really set up for that
+T 1710263875 18<27lambda18>	what do you need it for?
+T 1710263878 18<27alepzi18>	sorry but that's a shit API. makes total sense to wanna do it
+T 1710263879 18<20capitol18>	that replace if absolute is a really annoying behaviour that makes it easy to generate vulnerabilies
+T 1710263905 18<27alepzi18>	to take a /foo var and then build off of it to make a bunch of others, sometimes adding /
+T 1710263913 18<27alepzi18>	ya it's not good design
+T 1710263943 18<20capitol18>	maybe: convert to an osstring, do alterations, convert back
+T 1710263945 18<27lambda18>	alepzi: but you can just .push() to that to add more components?
+T 1710263980 18<27alepzi18>	no
+T 1710264519 18<27alepzi18>	realize /foo/bar and /foo/bar/ are different, but there's no way to make the latter if i start with /foo/bar
+T 1710264539 18<27alepzi18>	so i have to make unterminated and terminated versions of the path it's just stupid
+T 1710264561 18<27alepzi18>	it matters when using the paths with external stuff, like unix commands like tar, rsync, etc
+T 1710264577 18<20nullie18>	are they different for the os or only for some external tools?
+T 1710264584 18<20nullie18>	yeah
+T 1710264611 18<29phy172918>	Only some tools and I hate that UI because I never can remember with or without means what
+T 1710264628 18<27alepzi18>	no idea. i'll bet if i use the rust api to delete files from /foo/bar and /foo/bar/ it probably does the same thing because internally it knows it's a dir
+T 1710264649 18<27alepzi18>	"only some" yea like most unix tools
+T 1710264662 18<27alepzi18>	dir vs dircontents/, simple
+T 1710264776 18<20spb18>	cdhowie: i mean that's the entire point of the unsafe keyword though. it lets you do stuff that could cause UB, and it's on you to satisfy yourself that it won't because the compiler can't
+T 1710264786 18<20nullie18>	Does PathBuf maintains it as /foo/bar/ sometimes?
+T 1710264811 18<27alepzi18>	ya if i make and print out 2 pathbufs, /foo/bar and /foo/bar/, they print like that (different)
+T 1710265628 18<26dav1d18>	evalr, std::path::PathBuf::from("/foo/bar").join("baz")
+T 1710265631 -18evalr/22##rust-	dav1d: "/foo/bar/baz"
+T 1710265656 18<27alepzi18>	ya now try to make a version trailing with the path separator, /
+T 1710265777 18<20j`ey18>	evalr, std::path::PathBuf::from("/foo/bar").join("baz/")
+T 1710265779 -18evalr/22##rust-	j`ey: "/foo/bar/baz/"
+T 1710265785 18<20j`ey18>	evalr, std::path::PathBuf::from("/foo/bar").join("/")
+T 1710265787 -18evalr/22##rust-	j`ey: "/"
+T 1710265811 18<27alepzi18>	and if you have /foo/bar, how do you make /foo/bar/ from it?
+T 1710265862 18<29HeTo18>	evalr: std::path::PathBuf::from("/foo/bar").join("")
+T 1710265864 -18evalr/22##rust-	HeTo: "/foo/bar/"
+T 1710265908 18<27alepzi18>	omfg king
+T 1710265948 18<27alepzi18>	WINNER
+T 1710266709 18<22Arnavion18>	The fact that they "print different" is just because they retain the original string they were created from. It makes no difference to how they behave. They both have the same components
+T 1710266729 18<22Arnavion18>	If you're relying on how they print you may be doing something wrong
+T 1710266754 18<27alepzi18>	it matters when passing as an arg to Command when that's going to unix commands
+T 1710266784 18<27alepzi18>	like cp
+T 1710266870 18<22Arnavion18>	What cp command are you running that it makes a difference
+T 1710266951 18<27lambda18>	Arnavion: `cp foo bar/` fails if `bar` isn't a directory, that's the only difference I know
+T 1710266983 18<22Arnavion18>	Right, and if bar does exist as a directory then `cp foo bar` would still succeed
+T 1710266993 18<22Arnavion18>	so that's why I'm asking
+T 1710266994 18<19nCrazed18>	yeah, I'd imagine there are a number of cases where the behaviour changes between file vs. directory, if for no other reason than the original authors didn't know any better
+T 1710267107 18<26dav1d18>	dont symlinks behave differentely?
+T 1710267233 18<22Arnavion18>	`touch a; mkdir d; ln -s d d2; cp a d2` copies a into d/ instead of replacing d2
+T 1710267514 18<20spb18>	`ls -l foo` and `ls -l foo/` behave differently if foo is a symlink to a directory
+T 1710267554 18<20spb18>	similarly for `stat`
+T 1710267566 18<22Arnavion18>	ls is not cp
+T 1710267600 18<20spb18>	right, but the underlying point that sometimes it matters when you're passing the path to an external command is valid, even if cp isn't a good example
+T 1710267718 18<22Arnavion18>	I never said that general commands wouldn't behave differently
+T 1710267735 18<20spb18>	cp will also behave differently if the source argument is a symlink to a directory
+T 1710267741 18<27alepzi18>	"It makes no difference to how they behave"
+T 1710267758 18<22Arnavion18>	"They" == PathBuf in a Rust context, yes
+T 1710267776 18<27alepzi18>	ya and i disagree
+T 1710267841 18<22Arnavion18>	<spb> cp will also behave differently if the source argument is a symlink to a directory   < Example? `mkdir d; mkdir d2; ln -s d d3; cp d2 d3` fails asking for `-r`, just like it would with a source directory
+T 1710267865 18<22Arnavion18>	Err, that's `cp d3 d2` of course
+T 1710267912 18<22Arnavion18>	<alepzi> ya and i disagree   < I didn't ask if you agree. I asked if you have a cp command where the / makes a difference
+T 1710267977 18<27alepzi18>	i'll make 1 later and it'll either be cp or tar or another unix util that shows it because i've run into it before
+T 1710267999 18<22Arnavion18>	So "No", okay. Thanks
+T 1710268023 18<20capitol18>	wow, snarky
+T 1710268024 18<27alepzi18>	ah the arrogant asshole stage of rust
+T 1710268030 18<27alepzi18>	i remember that from java
+T 1710268032 18<22Arnavion18>	To your original point, rather than rely on .join(""), it would be better to make a wrapper that appends `/` when printified
+T 1710268045 18<22Arnavion18>	I'm not being arrogant or snarky...
+T 1710268060 18<27alepzi18>	"cool"
+T 1710268078 18<22Arnavion18>	Who are you quoting?
+T 1710268108 18<27alepzi18>	you're dismissive about obviously counterintuitive api behavior. if you want drama go beat your gf
+T 1710268117 18<27alepzi18>	sorry, sex worker*
+T 1710268140 18<20j`ey18>	I mean, being an arrogant asshole is not as bad was what you just said soo..
+T 1710268170 18<20capitol18>	alepzi: that wasn't very cool either
+T 1710268173 18<20polychromata{J}18>	alepzi: Wow
+T 1710268189 18<20polychromata{J}18>	I can't even figure out what's wrong with that sentence
+T 1710268228 18<20polychromata{J}18>	(. Implying inferiority for being customer of sex work is still disparaging sex work?)
+T 1710268241 18<20polychromata{J}18>	yeah something like that probably
+T 1710268301 18<20spb18>	Arnavion: https://bpa.st/45SQ
+T 1710268391 18<22Arnavion18>	Indeed, thanks
+T 1710268423 18<22Arnavion18>	Also, "when printified" won't work because we want OsStr's ...
+T 1710268550 18<27alepzi18>	ya need os str
+T 1710269178 18<22Arnavion18>	https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=bed379637c4e3a98b257e97e44fbde8d   Ugh
+T 1710269393 18<27alepzi18>	C vibes
+T 1710269653 18<22Arnavion18>	(Less allocy and unsafe:   https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=1f99ad96eb662eb13c7058995521a841   )
+T 1710269782 18<27alepzi18>	we'd wanna use path::MAIN_SEPARATOR too ya?
+T 1710269833 18<22Arnavion18>	Forgot about OsString::push, derp   https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=bdbd1236ced99df6296583cc7458b7f8
+T 1710270014 18<27alepzi18>	and https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=6bafdc7ffb89614b1caa7270a8810f61 ?
+T 1710270091 18<27alepzi18>	still have 1 on line 10 tho
+T 1710270930 18<27alepzi18>	dunno how to fix that 1
+T 1710270986 18<20j`ey18>	that doesnt allocate, if thats what you meant
+T 1710271302 18<27alepzi18>	replacing the b'/' on line 10 with MAIN_SEPARATOR(_STR) so it's windows compatible is right ya?
+T 1710271437 18<25chairs18>	Arnavion: rsync cares about trailing /, if it's missing it'll copy the dir *and* contents, if it's there it'll only copy contents (IIRC, possible I have it reversed)
+T 1710271482 18<22Arnavion18>	Again, I was asking about cp
+T 1710271723 18<25chairs18>	`cp -d foo bar/` gets different behavior from `cp -d foo bar` if `bar` is a symlink. But `-d` is kind of asking for it.
+T 1710271825 18<22Arnavion18>	Yeah
+T 1710273743 18<22valve18>	ls
+T 1710275543 18<27alepzi18>	ok https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=f2206463ad6ecd4b6599060f5be6ff07 is that all good? if so Arnavion make a crate from it so i can use it?
+T 1710275751 18<19Lumpio-18>	Is there a reason this is not a function
+T 1710275866 18<25bertptrs18>	having a newtype with the specific invariant is kinda nice, but yeah, this might as well be a single function, and is hardly worth being a crate
+T 1710275916 18<25bertptrs18>	code reuse is great but we don't need to emulate https://www.npmjs.com/package/is-odd
+T 1710275961 18<25bertptrs18>	or rather https://www.npmjs.com/package/is-even, which of course depends on the previous one
+T 1710276039 18<19tokie18>	version 3.0.1, lol
+T 1710276112 18<29phy172918>	I appreciate the usage example could be replace with checking for an int instead of a string
+T 1710276517 18<27alepzi18>	phy1729: what example?
+T 1710276543 18<29phy172918>	For is-even
+T 1710276606 18<25bertptrs18>	phy1729: that's why this package depends on is-odd, which in turn depends on is-number
+T 1710276612 18<25bertptrs18>	I stopped checking there
+T 1710276671 18<27TimMc18>	tokie: I can't tell if that's funnier than 0.3.1 would be.
+T 1710276685 18<19tokie18>	TimMc: 0.3.1 could just be a few bugs ...
+T 1710276695 18<27TimMc18>	Speaking of which, what is *with* Rust crates being 0.x?
+T 1710276696 18<19tokie18>	i guess that's equally funny
+T 1710276842 18<25bertptrs18>	TimMc: people being hesitant to commit to a 1.0, then the whole universe starts depending on it, and depending on the specific crate, bumping might've become impossible
+T 1710276843 18<27alepzi18>	situation.is_equally(funny)
+T 1710276970 18<27TimMc18>	Oh I see, so it's not "why are these fundamental packages at 0.x", it's "they're at 0.x because they're now fundamental". Amazing.
+T 1710277020 18<27TimMc18>	because there's probably a bunch of crates out there constraining to <1
+T 1710277127 18<29phy172918>	You don't want to commit to an API before you have some users to find the sharp points, but also once you have a good API you might have enough users that bumping just to mark as 1.0 would be a non-trivial impact.
+T 1710277134 18<19tokie18>	it's also because of how semver works. if you bump the first digit then people won't pickup your fixes until they change their Cargo.toml probably
+T 1710277151 18<19tokie18>	so there's really no reason to do it unless you actually intend on a new major version
+T 1710277281 18<25bertptrs18>	TimMc: there are probably hyper-corporate environments that will indeed restrict to >= 1.0 but most environments will be more sensible. And it's not all bad, quite a few of the big ones have gone 1.0. regex, hyper, serde
+T 1710277336 18<29phy172918>	serde is mildly amazing in that it's pushing 1.0.200
+T 1710277471 18<29phy172918>	Does dtolnay have any crates that aren't either 0.x or 1.0.x?
+T 1710277611 18<25bertptrs18>	had to search for it but his indoc crate is at 2.0.4
+T 1710277627 18<29phy172918>	and syn is also 2.0 but that's fair considering rust's changes
+T 1710277893 18<28BtbN18>	So, I'm cross compiling for the same target, which seems to massively confuse cargo. i.e. it's using the wrong linker for the build script. How do I change the linker used for that script specifically?
+T 1710279436 18<28BtbN18>	Or is there a simple way to add a mock-target, something akin to x86_64-my_custom-linux-gnu? So that I can then "cross" compile to that, with its own set of tools, while having other stuff properly use the host tools?
+T 1710280918 18<25bluss18>	phy1729: yes, it's amazing how he's managed to add features to serde 1.0 for so long
+T 1710280988 18<28BtbN18>	https://github.com/rust-lang/cargo/issues/8147 this seems to describe the same/a similar issue, with no solution...
+T 1710281728 18<20jbg18>	BtbN: it's not cross compiling if the host and target are the same target spec
+T 1710281757 18<28BtbN18>	It is though, they're very different flavours of Linux that can't run binaries of one another
+T 1710281770 18<28BtbN18>	But both are x86_64-unknown-linux-gnu
+T 1710281772 18<20jbg18>	i understand that you want to cross compile
+T 1710281779 18<20jbg18>	but it is not cross compiling if the targets are the same
+T 1710281800 18<20jbg18>	what you are saying is that one of your Linuxes is not actually targeted by x86_64-unknown-linux-gnu
+T 1710281805 18<28BtbN18>	Well, what should I do then? I need cargo/rust to build tools to run on the "host" with a different linker than the ones for the target.
+T 1710281819 18<28BtbN18>	Both are normal linux with glibc
+T 1710281824 18<28BtbN18>	One is just really dang old
+T 1710281848 18<20jbg18>	the target is older than the host or vice versa?
+T 1710281857 18<28BtbN18>	The target is really really old glibc
+T 1710281865 18<20spb18>	so what you want is not to cross compile but to compile using a different libc than the system one
+T 1710281865 18<20jbg18>	and the host can't run binaries intended for the target?
+T 1710281867 18<28BtbN18>	to produce binaries that run on ancient CentOS on a modern host
+T 1710281901 18<28BtbN18>	The host can run them fine. But would need special linker options. It's complicated, and boils down to: I'm cross compiling to the same arch tripple
+T 1710281945 18<28BtbN18>	The issue is that cargo tries to link the build-script with the target compiler, but fails horribly, cause the env is super old and is lacking libraries the build script expects.
+T 1710281955 18<20jbg18>	it's not cross compiling, and you will get much better help if you stop pretending it is
+T 1710281958 18<28BtbN18>	There would be no issue if it's simply call normal gcc to build the build-script
+T 1710281964 18<20jbg18>	if i understand correctly you need to link an old libc
+T 1710281977 18<28BtbN18>	I successfully do, that part works fine
+T 1710281986 18<28BtbN18>	But I need the build-script to NOT link that old libc
+T 1710281991 18<20jbg18>	yes
+T 1710281993 18<20jbg18>	i understand
+T 1710282002 18<20spb18>	https://kobzol.github.io/rust/ci/2021/05/07/building-rust-binaries-in-ci-that-work-with-older-glibc.html might be relevant to you
+T 1710282024 18<20jbg18>	by far the easiest paths to doing this are either a) build in a container (can be automated with tools like `cross`) or b) forget about it and statically link musl instead
+T 1710282041 18<28BtbN18>	I already am building in a container. That is the whole point of this endeavour
+T 1710282041 18<20j`ey18>	the build script should be built for the host though?
+T 1710282051 18<20spb18>	(a) is the solution that author settled on
+T 1710282059 18<28BtbN18>	For rust, host and target are the same though, j`ey
+T 1710282063 18<28BtbN18>	For gcc they aren't.
+T 1710282071 18<20jbg18>	if you're building in a container, why isn't your container running your ancient environment too?
+T 1710282073 18<20spb18>	BtbN: so make a container using the ancient libc and build in that
+T 1710282078 18<20jbg18>	that's the whole point of building in a container
+T 1710282085 18<20jbg18>	(for this purpose)
+T 1710282088 18<28BtbN18>	jbg: Because it's too old and can't run or build other stuff I need.
+T 1710282095 18<20jbg18>	so use another container for the other stuff
+T 1710282109 18<28BtbN18>	Yeah, not that easy
+T 1710282138 18<28BtbN18>	This setup is building over two dozen libraries for the old-glibc target, but with a modern compiler.
+T 1710282140 18<20j`ey18>	BtbN: ok then maybe a custom target is the way to go
+T 1710282165 18<28BtbN18>	Actually just dug out this, which seems to address exactly my issue: https://doc.rust-lang.org/cargo/reference/unstable.html#host-config
+T 1710282183 18<28BtbN18>	Annoying that it needs nightly though
+T 1710282199 18<20jbg18>	needing nightly is not that big a deal
+T 1710282205 18<20jbg18>	if you are doing something unusual it's common to end up on nightly
+T 1710282221 18<28BtbN18>	Odd that it's marked unstable though, the PR that's listed there is quite old
+T 1710282235 18<20jbg18>	why would the age of the PR have anything to do with it not being in stable?
+T 1710282250 18<28BtbN18>	I'd imagine stuff eventually is not nightly anymore, but makes it into a normal release
+T 1710282271 18<20jbg18>	stuff doesn't just end up in stable because it's been around long enough
+T 1710282285 18<28BtbN18>	It can still be marked unstable, but be in there
+T 1710282297 18<20jbg18>	that's not how these things work; unstable features are only available on nightly
+T 1710282306 18<28BtbN18>	odd choice, but okay
+T 1710282307 18<20jbg18>	otherwise they become de-facto-stable
+T 1710282329 18<20jbg18>	imagine you let them through the gate into stable without any process just because they were around a few years
+T 1710282334 18<20jbg18>	then 40% of your user base uses them
+T 1710282336 18<28BtbN18>	At least on ffmpeg we have a bunch of features in stable releases you need to opt into experimental-mode for, but they are in normal releases.
+T 1710282348 18<20jbg18>	you are now responsible for taking care of those 40% even though you never followed the process to stabilise the feature
+T 1710282369 18<28BtbN18>	Nah, if you opt into "unstable mode", you got only yourself to blame if stuff breaks
+T 1710282380 18<20jbg18>	that argument breaks down as soon as enough of your users use the feature
+T 1710282389 18<20jbg18>	anyway, using nightly is not that big a deal
+T 1710282395 18<20j`ey18>	BtbN: you can always just pin  a nightly version
+T 1710282395 18<20jbg18>	it's a compiler, not something you're running in production
+T 1710282401 18<20jbg18>	if it fails to produce your code, roll back to yesterday's
+T 1710282412 18<28BtbN18>	The compiler _is_ the production in this case :D
+T 1710282427 18<28BtbN18>	So I do tend to like stuff to not randomly break
+T 1710282439 18<20jbg18>	i don't suggest blindly updating nightly every night
+T 1710282442 18<20j`ey18>	thats why you pin it!
+T 1710282454 18<20jbg18>	even if the name makes you tempted
+T 1710282481 18<20jbg18>	you can also make a custom target, but you'll have to build core, and that itself requires nightly
+T 1710282529 18<28BtbN18>	I've looked into that, but found no good documentation on how to do it. Given that option exists, it also seems unneccesary.
+T 1710282626 18<20jbg18>	it would avoid you needing to use nightly for your builds (only once per each time you update rust, to produce your custom rust toolchain)
+T 1710282656 18<20jbg18>	some documentation here (focused on embedded but should still be relevant) https://docs.rust-embedded.org/embedonomicon/custom-target.html
+T 1710282661 18<28BtbN18>	I thought it needs nightly anyway?
+T 1710282671 18<20jbg18>	you need nightly to build core, you don't need nightly to use your custom target
+T 1710282704 18<20jbg18>	you would build a stable rust toolchain with your custom target added, using nightly
+T 1710282711 18<20jbg18>	and then use that stable toolchain to build your code
+T 1710282742 18<20jbg18>	but if it was me i'd just use a pinned nightly version to build my code
+T 1710282821 18<27jonored18>	at $previous-employer, we tended to build "nightly" builds from the commit of stable versions for what we pinned as the compiler.
+T 1710282857 18<20jbg18>	yeah, we did the same at $previous-employer for several years when async was new. it's a good approach
+T 1710284533 18<28BtbN18>	How would I tell cargo to install the standard lib it built globally? All the docs just refer to permanently using the nightly toolchain, with -Zbuild-std
+T 1710285005 18<28BtbN18>	Yeah, for all I can tell, that's not possible? So I'd be stuck with nightly nevertheless
+T 1710285571 18<25Widdershins18>	are those std libs not tied to the toolchain they come with?
+T 1710285603 18<28BtbN18>	They don't come with the toolchain
+T 1710285635 18<28BtbN18>	It's build-std stuff
+T 1710292263 18<19nlaerema18>	hello
+T 1710292280 18<19nlaerema18>	q
+T 1710297122 18<22rbox18>	what happens if you take a rust program and decompiel it with like ghidra or smethign and tell it its C?
+T 1710297123 18<22rbox18>	lol
+T 1710297750 18<27Affliction18>	iirc it tries, and produces weird code
+T 1710297755 18<27Affliction18>	But then, that's just decompilation in general
+T 1710297772 18<27Affliction18>	I have an old install of ghidra, let's give it a go
+T 1710297961 18<22rbox18>	it has C++ style mangeld symbols
+T 1710297966 18<22rbox18>	i wonder if it'd do better as saying its C++
+T 1710298336 18<27Affliction18>	Looking at a binary, LTO, with symbols, it's not awful
+T 1710298627 18<27Affliction18>	I found https://research.checkpoint.com/2023/rust-binary-analysis-feature-by-feature/ interesting, too.
+T 1710298667 18<27Affliction18>	Even for those who don't plan to reverse engineer, but are interested in how rust's higher level concepts work.
+T 1710298701 18<22rbox18>	wtf, thats like a novel
+T 1710298768 18<22rbox18>	"Twenty minutes later you wish you had never been born."
+T 1710298769 18<22rbox18>	lol
+T 1710303072 18<20polychromata{J}18>	evalr: dbg!(f64::MAX.log10())
+T 1710303074 -18evalr/22##rust-	polychromata{J}: 308.25471555991675
+T 1710306414 18<25Widdershins18>	rbox: i think the mangling actually works slightly differently than c++? not sure though. i know `rustfilt` is its own thing separate from c++filt
+T 1710308285 19*	Now talking on 22##rust
+T 1710308285 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710308285 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710308296 FiSHLiM plugin unloaded
+T 1710340572 19*	Now talking on 22##rust
+T 1710340572 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710340572 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710343036 19*	Now talking on 22##rust
+T 1710343036 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710343036 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710346529 19*	Now talking on 22##rust
+T 1710346529 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710346529 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710347504 19*	Now talking on 22##rust
+T 1710347504 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710347504 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710351789 19*	Now talking on 22##rust
+T 1710351789 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710351789 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710352269 18<25bertptrs18>	is there a nice way to ensure a path does not contain shenanigans like ".."?
+T 1710352294 18<26danieldg18>	iterate its components
+T 1710352402 18<25bertptrs18>	yeah figured
+T 1710352409 18<24DeeEff18>	bertptrs: you can usually canonicalize the path https://doc.rust-lang.org/std/fs/fn.canonicalize.html
+T 1710352419 18<25bertptrs18>	it's a relative path, so no canonicalization
+T 1710352431 18<26danieldg18>	canonicalization solves a different set of problems
+T 1710352458 18<26danieldg18>	that can even make it worse if you just do it blindly
+T 1710352481 18<25bertptrs18>	you can check if path.canonicalize()? == path but that's tedious
+T 1710352533 18<26danieldg18>	just path.components.any(|c| c == ParentDir)
+T 1710352563 18<26danieldg18>	it's way faster than canonicalize and also doesn't break if you use symlinks
+T 1710352643 18<25bertptrs18>	I want to be slightly stricter than that, also exclude hidden files, so that doesn't quite work
+T 1710352648 18<26danieldg18>	or even any(|c| !matches!(c, Normal(_))
+T 1710352660 18<25bertptrs18>	need to actually inspect the string
+T 1710352677 18<26danieldg18>	hidden as in unix '/.*'?
+T 1710352698 18<26danieldg18>	because DOS hidden requires pulling up metadata :)
+T 1710352726 18<25bertptrs18>	I don't support DOS in my free time ;)
+T 1710352787 18<26danieldg18>	if unix only, just convert Path to [u8] and search for b"/."
+T 1710352798 18<26danieldg18>	that'll catch all but an initial "../"
+T 1710354134 18<26dav1d18>	that would be nice in Rust https://docs.python.org/3/library/os.path.html#os.path.normpath
+T 1710354257 18<26danieldg18>	there's likely a crate for it
+T 1710354617 18<25bertptrs18>	https://crates.io/crates/normpath there is
+T 1710354624 18<25bertptrs18>	things are easy to find once you know what to look for
+T 1710354901 18<26dav1d18>	*in the rust std lib
+T 1710355345 18<26danieldg18>	dav1d: getting things in std mostly needs a lot of people to be using the out-of-std implementation
+T 1710355437 18<26danieldg18>	but I guess you could propose it for std anyway
+T 1710355514 18<26dav1d18>	Without reading the issue contents: https://github.com/rust-lang/rust/issues/59117
+T 1710355537 18<26dav1d18>	And https://github.com/rust-lang/rfcs/issues/2208
+T 1710358614 18<20polychromata{J}18>	hmm, lots of creatures misunderstand what std is for
+T 1710358800 18*	26dav1d prefers having footguns with platform dependent behaviour like canonicalize instead
+T 1710358809 18<25bertptrs18>	people have expectations from other languages, and if you're coming from python which includes the kitchen sink, rust is pretty lacking. not saying rust should emulate python in that regard, but it could do more
+T 1710359011 18<26danieldg18>	basically I don't think canonicalize should have been in std, it's not very commonly the right thing to use
+T 1710359034 18<26dav1d18>	^
+T 1710359084 18<26danieldg18>	but given we can't take it out, I agree we should probably put in the more useful variations
+T 1710359111 18<25bertptrs18>	and preferably variations not filled to the brim with footguns
+T 1710359247 18<26danieldg18>	having actual support for O_NOFOLLOW would fix a lot of the bugs that canonicalize tries to fix, but without the TOCTOU bug that it encourages
+T 1710359268 18<26danieldg18>	right now you can use it, but you have to use custom_flags of OpenOptionsExt
+T 1710360596 18<27TimMc18>	bertptrs: DOS also delights like not being allowed to name files things like "COM1".
+T 1710360600 18<27TimMc18>	*also has
+T 1710360647 18<25bertptrs18>	I can't say I've ever had the need to
+T 1710360710 18<20capitol18>	i should have registered a com1 crate while I had the chance
+T 1710360807 18<25bertptrs18>	then make it a dep of all projects you touch so they won't build on Windows?
+T 1710360917 18<20capitol18>	:P
+T 1710361330 18<24enoq18>	what is Pin? is it a thing that you can lock and unlock manually?
+T 1710361355 18<29ct18>	no
+T 1710361369 18<29ct18>	pinning something to a fixed memory address
+T 1710361377 18<24enoq18>	what does that mean
+T 1710361387 18<26danieldg18>	it's a marker that says a thing can depend on not changing its address
+T 1710361402 18<24enoq18>	when would it change it's address?
+T 1710361408 18<24enoq18>	its*
+T 1710361416 18<26danieldg18>	Box::new(thing) changes the address of thing
+T 1710361432 18<26danieldg18>	along with many other operations, like std::mem::swap
+T 1710361448 18<24enoq18>	ah I see, what about copy
+T 1710361456 18<26danieldg18>	yes, that's one
+T 1710361478 18<24enoq18>	so that type prevents all of those uses?
+T 1710361511 18<26danieldg18>	it prevents them on objects that are pinned, unless that object implements Unpin
+T 1710361555 18<26danieldg18>	most things implement Unpin (just like most things are Send)
+T 1710361644 18<24enoq18>	how would unpinning make sense in the case of async? don't you want to hold onto a thing until you complete?
+T 1710361674 18<26danieldg18>	it makes sense
+T 1710361688 18<26danieldg18>	more concrete examples are useful
+T 1710361711 18<24enoq18>	maybe I need to really read up rather than waste everyone's time, any recommendations?
+T 1710361748 18<24enoq18>	I've taken a look at https://fasterthanli.me/articles/pin-and-suffering but it was more of a rant than an explanation
+T 1710361749 18<26danieldg18>	the std docs, or some of the async how-to-build-an-executor things
+T 1710361775 18<24enoq18>	thank you!
+T 1710362054 18<25bertptrs18>	I watched a great talk at RustNL 2023 that explained this, let me see if I can find the recording
+T 1710362081 18<25bertptrs18>	enoq: https://www.youtube.com/watch?v=cVvZ0mJTkZ0
+T 1710362133 18<25bertptrs18>	the short version: self referential types need a stable address or things go very wrong, and futures are often self-referential because of reasons
+T 1710362249 18<24enoq18>	thank you
+T 1710362601 18<22olk18>	hello, I'm a newbie and I need an advice on how to use a function in a different file without passing around the same argument 20 times. here's the definition: https://git.sr.ht/~olk/eds/tree/dev/item/src/gui.rs#L69
+T 1710362642 18<22olk18>	use crate::gui::show_popup worked for pub fn, but if defined with let inside another function, this doesn't work
+T 1710362670 18<26danieldg18>	if you want to use it as a function, defined it as a function and not a closure
+T 1710362674 18<20spb18>	because the let inside the function is scoped to inside that function
+T 1710362686 18<20spb18>	the name only has meaning in that scope
+T 1710362706 18<19tokie18>	olk: are you coming from javascript as a primary language?
+T 1710362778 18<22olk18>	danieldg, spb: got it, thanks
+T 1710362785 18<22olk18>	tokie: no, why?
+T 1710362789 18<19tokie18>	just curious!
+T 1710362851 18<20spb18>	javascript is the only popular language i can think of that regularly defines publicly exported functions using closure-type syntax
+T 1710362899 18<26danieldg18>	I think you can get away with it in python
+T 1710362911 18<26danieldg18>	it makes for good code golf at least
+T 1710362913 18<20spb18>	probably, but it's not common
+T 1710363011 18<19tokie18>	spb: yeah, that's where i was going
+T 1710363018 18<22olk18>	I'm sorry, this is a stupid question: can I pass an argument from a function to a global scope so I don't have to pass the same ApplicationWindow 20 times?
+T 1710363048 18<20spb18>	you *can*, but that doesn't mean you should
+T 1710363055 18<26danieldg18>	only if you use a global variable, but that's discouraged
+T 1710363066 18<26danieldg18>	though GUI is perhaps a good use for it
+T 1710363109 18<22olk18>	thanks for replying. how should I deal with this problem, in your opinion?
+T 1710363114 18<20spb18>	you can define a global OnceCell or OnceLock, then initialise it from whichever function gets the appropriate object constructed
+T 1710363128 18<26danieldg18>	^^ that's a pretty good way to do it
+T 1710363154 18<26danieldg18>	or a global Mutex if you need to write to the value
+T 1710363172 18<26danieldg18>	OnceLock is a lot more flexible, but you can't write to it
+T 1710363191 18<26dav1d18>	enoq, https://www.youtube.com/watch?v=DkMwYxfSYNQ
+T 1710363194 18<22olk18>	thanks again, I'll try that
+T 1710363242 18<19tokie18>	i love OnceLock <3
+T 1710363338 18<26dav1d18>	tokie, btw passed on your positive messages about Sentry/the Rust SDK to some of our SDK people and they were very delighted
+T 1710363369 18<19tokie18>	aww <3
+T 1710363410 18<26dav1d18>	especially after there were some discussions last week on why the Rust SDK sucks :D
+T 1710363425 18<25bertptrs18>	dav1d: you work at Sentry?
+T 1710363431 18<26dav1d18>	bertptrs, yeh
+T 1710363435 18<19tokie18>	dav1d: yeah, i bet the people working on the glue we use for sentry have opinions
+T 1710363447 18<25bertptrs18>	good software. most reliable thing in our stack tbh
+T 1710363461 18<19tokie18>	oh wait, i think we just integrate directly with sentry
+T 1710363488 18<26dav1d18>	tokie, it's unfortunately a low(er) priority SDK not many people use it and our Rust devs currently are busy with other stuff, so while JS/Python/PHP get a bunch of stuff Rust is a bit left behind
+T 1710363500 18<26dav1d18>	bertptrs, <3
+T 1710363533 18<26dav1d18>	but there is beginning to be an effort to have rust catch up
+T 1710363701 18<24enoq18>	what sdk are we talking about?
+T 1710363703 18<19tokie18>	yeah, i can imagine there's way more js/python/php customers ...
+T 1710363706 18<25bertptrs18>	we don't use it for rust yet, but it works pretty well for Python (the things that don't are mostly our fault) and we rolled our own stuff for Haskell
+T 1710363706 18<24enoq18>	the aws one?
+T 1710363738 18<26dav1d18>	enoq, https://github.com/getsentry/sentry-rust
+T 1710363746 18<25bertptrs18>	the pricing for performance tracing is ridiculous, but that's not an engineering fault
+T 1710363757 18<26dav1d18>	bertptrs, I really hate that
+T 1710363770 18<24enoq18>	thanks
+T 1710363791 18<19tokie18>	bertptrs: yeah, i'm just using it for panic alerts
+T 1710363811 18<26dav1d18>	We're gonna have metrics go public beta next week and I really hope they come up with a good pricing and a generous free budget
+T 1710363841 18<24enoq18>	wow, n+1 query detection
+T 1710363846 18<19tokie18>	dav1d: are you doing a metrics frontend too?
+T 1710363854 18<24enoq18>	last time I've seen that in Hibernate, it was very error prone
+T 1710363862 18<26dav1d18>	tokie, yes!
+T 1710363867 18<19tokie18>	oh, that's cool
+T 1710363891 18<26dav1d18>	I can get you into the alpha 👀 - but gonna be open beta on monday anyways
+T 1710363917 18<25bertptrs18>	I will remember this when I have more pricing complaints ;)
+T 1710363925 18<25bertptrs18>	also very offtopic, please join ##rust-offtopic
+T 1710363985 18<26dav1d18>	:D
+T 1710364197 18<22olk18>	when I try to use static WINDOW: OnceLock<ApplicationWindow> = OnceLock::new(); I get this: https://paste.rs/eYTrE.txt. what should I do?
+T 1710364255 18<25bertptrs18>	You're finding all the corners of Rust today
+T 1710364256 18<26danieldg18>	if the ApplicationWindow is not Send (that's what that error complains about) you need to instead use a thread_local
+T 1710364269 18<26danieldg18>	thread_local and OnceCell
+T 1710364301 18<25bertptrs18>	which of course will break when it's no longer a single-threaded application
+T 1710364305 18<26dav1d18>	Seems like a good thing, windowing and threads is usually a delicate thing
+T 1710364330 18<26danieldg18>	it'll actually work just fine: only on the gui thread can you get the object
+T 1710364354 18<26danieldg18>	you just have to structure your app to handle that limitation
+T 1710364372 18<24DeeEff18>	usually the "gui" thread is just the main thread anyways
+T 1710364384 18<24DeeEff18>	I think on some platforms that's actually necessary (i.e. Apple)
+T 1710364400 18<26danieldg18>	yeah, that's normal: one gui thread, and then maybe some worker threads
+T 1710364840 18<22olk18>	this got complicated quickly :) I just wanted not to pass the same window a lot of times, but I've just introduced so much complexity for that
+T 1710364954 18<19tokie18>	olk: yes
+T 1710364977 18<19tokie18>	dav1d: yeah, i'm not in any decision making areas around that as you can imagine ....
+T 1710365245 18<26kpcyrd18>	today I learned about 1114112 and how it relates to Option<char>, it was quite a journey :3
+T 1710365248 18*	29ct remmebers a application where every gui thing has its own thread, hey even blinking the cursor is done in a thread :D 
+T 1710365252 18<29ct18>	of course its C++
+T 1710365508 18<19int-e18>	bonus points if the cursor blinking thread uses 99% CPU
+T 1710365579 18<26dav1d18>	tokie, that's the better area to be in
+T 1710367872 18<29demize18>	Well how would you make the blinking frame-perfect without busy-waiting.  ;)
+T 1710367948 18<20dsmith18>	A hardware timer?
+T 1710367965 18<29demize18>	Bah, fancy nonsense.
+T 1710370368 19*	Now talking on 22##rust
+T 1710370368 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710370368 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710379561 19*	Now talking on 22##rust
+T 1710379561 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710379561 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710381885 18<25Widdershins18>	don't forget to enable the serde_json feature that lets numbers round trip (:
+T 1710398043 18<26dav1d18>	Widdershins, what does it actually do, I expected some nan/inf stuff but it seems it messes with precision too?
+T 1710407198 19*	Now talking on 22##rust
+T 1710407198 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710407198 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710407468 19*	Now talking on 22##rust
+T 1710407468 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710407468 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710407754 19*	Now talking on 22##rust
+T 1710407754 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710407754 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710408857 19*	Now talking on 22##rust
+T 1710408857 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710408857 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710412436 18<22archtanger18>	Hey folks, I have on my hands an app that converts some kind of DSL written in python and runs it in Rust for some (ideally) real time gains performance wise. I've run some baic benchmarking and I'v put a fire graph together to see where most of the processing goes to. Because I'm doing some complex matching (like matching a vec of particular enum structures), most of the processing seems to be being done by tbe match statements.
+T 1710412474 18<22archtanger18>	Has anyone got any general tips for optimizing matches? I'm gonna delve into code and docs, but a starting point is better than none, haha
+T 1710412691 18<27alepzi18>	getting a weird behavior running a command: https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=1484d1e5804c40a425bbf6e212c0b6e0
+T 1710413284 18<29saati18>	something something login vs non-login shells
+T 1710413311 18<27alepzi18>	is the problem happening on local or remote machine?
+T 1710413315 18<29saati18>	on the remote
+T 1710413337 18<27alepzi18>	but that means the problem is in rust then no? because it works from command line on local machine
+T 1710413386 18<27alepzi18>	i mean when i run that command on local machine, either on command line or using rust, it makes same connection to remote system
+T 1710413402 18<29saati18>	my theory is that the ssh from the command line invokes a login shell which runs .profile or .bash_profile that sets the right PATH
+T 1710413407 18<20nerdypepper18>	a little thought experiment: would it be possible to implement "anonymous enum returns" with just macros? i am thinking something like `-> Result<T, Err1 | Err2 | Err3>`
+T 1710413419 18<20nerdypepper18>	internally, it could create an enum type, it would just be impossible to name this type in code
+T 1710413419 18<29saati18>	vs a non login shell for the one launched from rust
+T 1710413431 18<29saati18>	that does not
+T 1710413441 18<20jbg18>	alepzi: when you run it from the shell, are you escaping the quotes in --rsync-path="sudo rsync" ?
+T 1710413443 18<27alepzi18>	doesn't that mean the problem is happening on the local machine?
+T 1710413451 18<27alepzi18>	no
+T 1710413455 18<20jbg18>	because otherwise the shell is going to interpret those
+T 1710413468 18<29saati18>	rsync-path is the path for the remote machine's rsync
+T 1710413469 18<20jbg18>	and rsync won't see them
+T 1710413470 18<27alepzi18>	i had to escape them when putting it in the arg " "
+T 1710413488 18<20jbg18>	right but rsync is not being passed any double quotes if you run it like that on the shell
+T 1710413499 18<20jbg18>	it's getting one argv with the string "--rsync-path=sudo rsync"
+T 1710413517 18<29saati18>	oh yeah that makes much more sense
+T 1710413519 18<20jbg18>	whereas the way you're invoking it in rust, it is getting double quotes inside the argv
+T 1710413643 18<27alepzi18>	hmm kinda getting it but not totally
+T 1710413660 18<20jbg18>	the shell interprets quotes and doesn't pass them through, unless you escape them
+T 1710413668 18<20jbg18>	if you run this on the shell: somecommand "some arg"
+T 1710413677 18<20jbg18>	there is only one argument passed to somecommand, and it doesn't include the quotes
+T 1710413708 18<20jbg18>	i would do it like this to make it more clear: .arg("--rsync-path").arg("sudo rsync")
+T 1710413758 18<27alepzi18>	THAT FIXED IT
+T 1710413773 18<20jbg18>	.arg("--rsync-path=sudo rsync") should also work but it's a bit ugly
+T 1710413791 18<27alepzi18>	ugly because of the space?
+T 1710413813 18<27rendar18>	https://godbolt.org/z/n4zqKr7dT -- why it doens't show me assembly?
+T 1710413848 18<20jbg18>	just ugly to look at yeah. it's your choice
+T 1710413863 18<20jbg18>	two separate args is also much nicer if you want to make the rsync path come from a variable
+T 1710413863 18<27alepzi18>	tyvm
+T 1710413874 18<27alepzi18>	ya
+T 1710413894 18<20j`ey18>	rendar: pub
+T 1710413936 18<27rendar18>	pub?
+T 1710413959 18<20j`ey18>	pub main
+T 1710414142 18<27rendar18>	oh!
+T 1710414255 18<26kpcyrd18>	does somebody know why `let Some('A') = x else { return };` explicitly checks for None instead of just testing for 65 (ascii for 'A')? they are stored in the same number, so if that number is 65 the 1114112 case would also be known to be false
+T 1710414452 18<20j`ey18>	kpcyrd: huh
+T 1710414478 18<20j`ey18>	the codegen Im seeing just checks 65
+T 1710414587 18<26kpcyrd18>	ah, meant to paste this: https://rust.godbolt.org/z/WxWh3xE9h
+T 1710414619 18<20jbg18>	seems that would be optimisation and might vary based on "stuff" though. since PartialEq (or is it StructuralPartialEq here?) on char doesn't come into play if x is None and thus contains no char
+T 1710414785 18<20j`ey18>	kpcyrd: that's without optimisations though
+T 1710414786 18<20j`ey18>	try -O
+T 1710414840 18<26kpcyrd18>	oh well, thanks
+T 1710414891 18<20j`ey18>	but .. where does it return 200
+T 1710414927 18<20j`ey18>	o_O
+T 1710414946 18<20j`ey18>	oh
+T 1710414951 18<26kpcyrd18>	at the bottom. I've accidentally made two code branches with 200 even
+T 1710414998 18<20j`ey18>	well no, if it's not A it returns 100
+T 1710415017 18<20j`ey18>	but then the next says if it's not B.. return 101, which will always be true once we know it's A
+T 1710415170 18<26kpcyrd18>	I just noticed this too after I was very confused by the release output. In my original code it's `let Some('j') = chars.next()` and I over-simplified the code.
+T 1710421095 18<25Widdershins18>	dav1d: it forbids nan and inf as the format does, but has at least three precision levels: lossless (keep all digits), 64 bit (will round trip whatever fits in a f64 or i think i64), and lossy (slightly faster, parses f64 inaccurately. would you believe, the default)
+T 1710421124 18<26dav1d18>	Widdershins, forbids = serialization error?
+T 1710421152 18<25Widdershins18>	yes it refuses to represent it in the number type
+T 1710421199 18<25Widdershins18>	would you believe the inaccurate parsing is also a default feature of rapidjson
+T 1710421217 18<25Widdershins18>	and exhibited by mysql
+T 1710421233 18<25Widdershins18>	because they didn't bother not to
+T 1710421425 18<25Widdershins18>	it's dismaying to me that lossy parsing is so widely considered worthwhile
+T 1710421887 18<29ct18>	just train a AI to parse anything :D
+T 1710422792 18<27TimMc18>	I'd like to parse some msgpack and map it to structs, ignoring unexpected keys. What should I be reaching for? I see a bunch of options.
+T 1710423109 18<25bertptrs18>	TimMc: rmp appears to be the most common one
+T 1710423131 18<25bertptrs18>	rmp-serde if you want a more convenient API
+T 1710424018 18<25Widdershins18>	ct: now that's synthesis... slow AND wrong
+T 1710424041 18<29ct18>	:)
+T 1710424576 18<27TimMc18>	Oh good, a serde integration!
+T 1710425704 18<25bertptrs18>	anyone can recommend a connection pool thingy that works with tokio-postgres?
+T 1710426254 18<25Widdershins18>	bertptrs: pgbouncer?
+T 1710426288 18<25bertptrs18>	Widdershins: I meant in-process
+T 1710426294 18<25bertptrs18>	deadpool-postgres looks pormising
+T 1710433613 18<20eddybilley18>	jk/quit
+T 1710437670 18<26palindrome18>	actix-web question, how do I register a handler that besides the Request I want to receive a custom type on my signature?
+T 1710445639 18<27Ademan18>	sadly I can't get into the dioxus discord (blech) without giving discord my phone number (no chance) so I'm forced to ask here. Does dioxus have anything like a "virtual list" like react has? (something like https://github.com/developerdizzle/react-virtual-list ) which is important for displaying lists with large numbers of items
+T 1710445781 18<27Ademan18>	I don't know if there's another term for the pattern, but "virtual list" tends to end up with search results about the virtual dom
+T 1710447397 18<25Widdershins18>	Ademan: ohhh...discord-only support regime huh. that's icky
+T 1710447429 18<26dav1d18>	so you're saying we're just your 2nd choice? D:
+T 1710447840 18<27Ademan18>	Widdershins: front-end people smh
+T 1710447858 18<27Ademan18>	dav1d: well, I feel weird asking library-specific things in a general channel
+T 1710447901 18<27Ademan18>	also hopefully my /s on the front-end dev joke was implied
+T 1710448408 18<19int-e18>	 somebody has to work the reception desk
+T 1710449268 18<27Ademan18>	oh ho, it seems they relaxed their server entry requirements, I'm in!
+T 1710449525 18<27Ademan18>	still don't like being forced to use discord but this is like the 5th or 6th technical server I've joined, seems unavoidable these days...
+T 1710452493 18<25Widdershins18>	Ademan: discord delenda est
+T 1710452511 18<25Widdershins18>	Discord Search Is Not A Wiki
+T 1710470451 19*	Now talking on 22##rust
+T 1710470451 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710470451 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710470700 19*	Now talking on 22##rust
+T 1710470700 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710470700 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710470701 FiSHLiM plugin unloaded
+T 1710473940 18<26bwidawsk18>	Can someone help me understand why these both print false?
+T 1710473947 18<26bwidawsk18>	```
+T 1710473947 18<26bwidawsk18>	println!("is sorted?: {}", line.chars().collect::<Vec<_>>().is_sorted());
+T 1710473947 18<26bwidawsk18>	line.chars().into_iter().collect::<Vec<_>>().sort_unstable();
+T 1710473947 18<26bwidawsk18>	println!("is sorted?: {}", line.chars().collect::<Vec<_>>().is_sorted());
+T 1710473947 18<26bwidawsk18>	```
+T 1710474352 18<26bwidawsk18>	(`sort` is the same`
+T 1710475181 18<27Affliction18>	bwidawsk: 2nd line won't alter "line", so you're effectively doing the same thing twice.
+T 1710475224 18<27Affliction18>	You're pretty much collecting it into a temporary vec and throwing it away.
+T 1710475234 18<26bwidawsk18>	how do I do this properly?
+T 1710475362 18<27Affliction18>	I'd assign line.chars().collect() a variable, do the is_sorted() test, call sort_unstable() on that vec, then do is_sorted() again.
+T 1710475395 18<26bwidawsk18>	hmm I thought I tried, hang on
+T 1710475398 18<27Affliction18>	I believe there's an iterator combinator that can test if sorted too...
+T 1710475428 18<26bwidawsk18>	the is_sorted was just to demonstrate the issue
+T 1710475443 18<27Affliction18>	Yeah, don't need the collect then.
+T 1710475457 18<27Affliction18>	evalr: "dabc".chars().is_sorted();
+T 1710475459 -18evalr/22##rust-	Affliction: error[E0658]: use of unstable library feature 'is_sorted': new A ...
+T 1710475459 -18evalr/22##rust-	Affliction: https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=8302d371758f4c428733032120f68839
+T 1710475572 18<27Affliction18>	SO yeah, that'd work for the first case. For the second, yeah, collecting into a vec, sorting, and doing that same test should work, too.
+T 1710476785 18<26bwidawsk18>	Affliction: thank you
+T 1710479006 19*	Now talking on 22##rust
+T 1710479006 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710479006 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710501318 20*	Disconnected (20)
+T 1710501469 23*	28dacd is already in use. Retrying with 18david_...
+T 1710501469 22*	26david_ sets mode 24+Z on 22david_
+T 1710501469 22*	26david_ sets mode 24+i on 22david_
+T 1710501469 22*	26david_ sets mode 24+w on 22david_
+T 1710501469 -18NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ IDENTIFY david_ <password>
+T 1710501475 19*	Now talking on 22##rust
+T 1710501475 22*	Topic for 22##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+T 1710501475 22*	Topic for 22##rust set by 26bertptrs!~quassel@user/bertptrs (24Mon May 22 14:11:18 2023)
+T 1710505748 18<26dav1d18>	Is there anything that makes cargo package the crate source files into a zip file and put them next to the binary in the target directory?
+T 1710507227 18<26dav1d18>	nvm found what I was looking for, wasn't related to cargo
+T 1710507694 18<29tazjin18>	dav1d: there is a cargo-native way though (`cargo package`, it's what it does before publishing to e.g. crates.io)
+T 1710507959 18<26dav1d18>	problem was I had a binary.src.zip in my target dir and wasnt sure where it's coming from
+T 1710508499 18<27TimMc18>	oh hah
+T 1710510947 18<26jemius18>	I can't enter the Matrix rust room, getting a 403: you're not invited :O
+T 1710510967 18<26jemius18>	3 years ago there was just a public room. No idea why that has been closed
+T 1710513756 18<26dav1d18>	I hate cross compiling
+T 1710513797 18<26dav1d18>	have it work with cross 0.2.5, but I need a feature from master for something else, now the binary doesnt build anymore because cmake can't find zlib even if I install it

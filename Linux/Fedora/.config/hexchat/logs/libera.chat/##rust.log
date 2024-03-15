@@ -4368,3 +4368,715 @@ Mar 12 03:20:49 <Widdershins>	so the coercion only works if it always knows prec
 Mar 12 03:26:42 <cowboy861>	hey hey
 Mar 12 03:34:45 <Widdershins>	haha
 Mar 12 03:34:54 <Widdershins>	pro tip: don't actually derive Debug for a self-referential type
+Mar 12 04:02:05 <int-e>	Widdershins: why not why not why not why not why not why not why not why not why not why not why not why not why not why not stack overflow?
+Mar 12 04:02:29 <Widdershins>	bilbo.jpg
+Mar 12 04:04:00 <TimMc>	haha RIP
+Mar 12 04:04:33 <Widdershins>	printing to the terminal was actually slow enough, since it tries to pretty print it with indentation and becomes quadratic, that i could just ctrl+C
+Mar 12 04:05:05 <Widdershins>	no segfaults today just a normal program don't worry about it
+Mar 12 04:05:18 <TimMc>	It's a good thing your computer was slow, otherwise it might have been slower.
+Mar 12 04:05:20 <int-e>	boring!
+Mar 12 04:05:52 <TimMc>	(or OK yeah, probably a segfault and not a memory gobbler)
+**** BEGIN LOGGING AT Tue Mar 12 07:33:44 2024
+
+Mar 12 07:33:41 *	Now talking on ##rust
+Mar 12 07:33:41 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 12 07:33:41 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 12 10:12:02 <dav1d>	Widdershins, I was gonna order one with `-Wall -Werror -pedantic` or something like that, but I never did :(
+Mar 12 10:30:19 <mkoncek>	package maintainers compiling your project with a different version of the compiler love -Werror
+Mar 12 11:22:52 <Widdershins>	IN THIS HOUSE WE BELIEVE -Wall -Werror -pedandic #[allow(unsafe_code)] -flto=true -Cpanic=abort
+Mar 12 11:31:01 <polychromata{J}>	<Widdershins> idea: live laugh love kitsch that says "read eval print line"
+Mar 12 11:31:17 <polychromata{J}>	shouldn't that be `print eval read line`
+Mar 12 11:31:28 <polychromata{J}>	or just `print eval read`
+Mar 12 11:31:43 <Widdershins>	right. also it's supposed to be "loop" isn't it
+Mar 12 11:31:50 <Widdershins>	that's better
+Mar 12 11:32:04 <polychromata{J}>	(loop (print (eval (read))))
+Mar 12 11:32:37 <Widdershins>	READ through the ditches and EVAL through the witches and PRINT in the back of my dragula
+Mar 12 11:49:47 <mkoncek>	print eval read line - perl
+Mar 12 11:53:04 <narodnik2>	for a trait's associated type like: trait T { type X }, how when specifying the trait, i can specify trait bounds for the associated type? for example:
+Mar 12 11:53:33 <narodnik2>	impl<T> for MyClass<T> where T::X : From<u32> { ... }
+Mar 12 11:53:47 <narodnik2>	when i try that, the compiler says: "error[E0223]: ambiguous associated type
+Mar 12 11:53:50 <jbg>	your impl is supposed to specify the associated type
+Mar 12 11:54:25 <narodnik2>	i don't want the impl to specify the associated type, i just want to add an additional trait bound
+Mar 12 11:54:53 <jbg>	that's not how associated types work
+Mar 12 11:55:00 <jbg>	what type would you expect X to have inside the impl block?
+Mar 12 11:55:00 <narodnik2>	yes they are, impl<T> for MyClass<T> { ... } compiles fine for me
+Mar 12 11:55:09 <jbg>	that's because that is not an associated type
+Mar 12 11:55:33 <narodnik2>	MyClass is not a specialization of T, it contains an object of type T
+Mar 12 11:55:44 <jbg>	again, that is not an associated type
+Mar 12 11:55:47 <narodnik2>	struct MyClass { t: T }
+Mar 12 11:55:52 <jbg>	just because you have decided that these things are the same does not make them the same
+Mar 12 11:55:57 <jbg>	T is a type parameter
+Mar 12 11:56:12 <jbg>	trait T { type X } X is an associated type
+Mar 12 11:56:13 <narodnik2>	yes but i want MyClass to specify that the associated type for T has the trait bound From<u32>
+Mar 12 11:56:28 <narodnik2>	impl<T> for MyClass<T> where T::X : From<u32> { ... }
+Mar 12 11:56:30 <narodnik2>	like this
+Mar 12 11:56:43 <jbg>	first of all, this is not valid syntax; what trait are you implementing?
+Mar 12 11:57:04 <jbg>	maybe you just want to remove the 'for'?
+Mar 12 11:57:28 <narodnik2>	https://agorism.dev/uploads/foo.rs.txt
+Mar 12 11:58:03 <jbg>	okay, this bears very little resemblence to the code soup you were writing above
+Mar 12 11:58:06 <narodnik2>	this line works: impl<F: FieldElement, H: FieldHasher<F, 2>, const N: usize, S: StorageAdapter<Value=F>> SparseMerkleTree<F, H, N, S> {
+Mar 12 11:58:16 <jbg>	yes. this is not a trait impl, you will notice
+Mar 12 11:58:33 <jbg>	it's implementing methods on the type SparseMerkleTree, which has some type parameters
+Mar 12 11:59:10 <jbg>	and it's putting bounds on those type parameters, and one of the traits mentioned in those bounds has an associated type
+Mar 12 12:00:14 <narodnik2>	trait T { type X; }
+Mar 12 12:00:16 <narodnik2>	struct MyClass { t: T }
+Mar 12 12:00:18 <narodnik2>	impl<T> MyClass<T> where T::X : From<u32> { }
+Mar 12 12:00:34 <jbg>	okay, now you have got rid of the 'for' it's more clear what you are trying to do
+Mar 12 12:00:35 <narodnik2>	in this example T = StorageAdapter, MyClass = SparseMerkleTree, and X = Key
+Mar 12 12:00:53 <narodnik2>	ah my apologies
+Mar 12 12:00:55 <jbg>	the problem with the line you just wrote is that there is no bound on T
+Mar 12 12:01:27 <jbg>	assuming StorageAdapter is a trait, maybe you want `where T: StorageAdapter, T::X: From<u32>`
+Mar 12 12:02:15 <narodnik2>	ohhh ofc
+Mar 12 12:02:21 <narodnik2>	thanks a lot, that was the issue
+Mar 12 12:02:24 *	narodnik2 bows
+Mar 12 12:33:11 <jbg>	why is this a compiler warning? pub enum MyEnum { Field(InnerType) } struct InnerType(i32);
+Mar 12 12:33:24 <jbg>	warning: type InnerType is more private than the item MyEnum::Field::0
+Mar 12 12:33:49 <jbg>	i did this deliberately because all enum fields are public
+Mar 12 12:35:50 <j`ey>	InnerType can be pub witbout that u32 being pub though?
+Mar 12 12:36:03 <jbg>	sure, but why is it a warning for it not to be?
+Mar 12 12:39:47 <spb>	the warning is there because on anything except an enum field it's almost always an error - if a pub fn takes an argument of a private type then nothing outside the module can ever call it and the fn should probably be private too
+Mar 12 12:40:13 <spb>	the lint just doesn't account for the fact that enum fields are the one place you might deliberately want to do it
+Mar 12 12:41:56 <jbg>	mm ok
+Mar 12 13:25:38 <TimMc>	Am I missing something, or is this error from the compiler weird and misleading? https://gist.github.com/timmc/1346e695afbe2ba179543a6249d337aa (just the error on line 1 -- the errors for lines 2 and 3 make sense to me)
+Mar 12 13:27:12 <TimMc>	It's like it has the error and note highlighting reversed, and the message is confusing. And it only happens if I have the *same* error on lines 2 and 3 -- if only one of them is present, the first error highlight disappears.
+Mar 12 13:27:14 <Lumpio->	You're asking about the fact that in the second case the "^^^^ not mutable" is gone or?
+Mar 12 13:28:01 <Lumpio->	I wouldn't say it's misleading, just the hint about where the immutable variable was declared is missing
+Mar 12 13:30:10 <trenka>	TimMc: do you mix immutable `data` as reference to mutable Vec with mutable reference to `data`?
+Mar 12 13:33:51 <spb>	TimMc: when you type `&mut data` you're creating an `&mut &mut Vec<u32>`, i.e. you're trying to mutably borrow the reference, and the reference itself isn't mutable
+Mar 12 13:36:09 <TimMc>	I understand the error now, but I'm still confused about why the compiler said line 1 has an error.
+Mar 12 13:36:19 <TimMc>	It's only lines 2 and 3 that have the error!
+Mar 12 13:37:35 <j`ey>	yes I think that's wrong
+Mar 12 13:38:26 <TimMc>	Maybe I should check a newer version of the compiler, though.
+Mar 12 13:38:53 <spb>	https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=195352ba4352214a2bfaa3a67d908d7e
+Mar 12 13:39:08 <spb>	shows the same behaviour, with two different errors both related to 'not mutable'
+Mar 12 13:39:24 <jbg>	line 1 does have the error though
+Mar 12 13:39:36 <jbg>	the binding isn't declared as mut
+Mar 12 13:39:57 <spb>	i suspect there's a heuristic there that says if you try to mut borrow a mut borrow once then it's probably that you need to just use the borrow, but if you do it twice then maybe you do need to declare it mut
+Mar 12 13:39:58 <xkr47>	heh I searched for kmerge up and down in crates.io only to find it in std :D
+Mar 12 13:40:57 <xkr47>	no wait, it's from itertools, and I already had that imported
+Mar 12 14:03:42 <TimMc>	(OK yeah, nightly still gives the same errors.)
+Mar 12 14:04:45 <TimMc>	Or very similar. spb, I think you're right about that heuristic.
+Mar 12 15:16:38 <xx>	how do I write this simple program in rust, to demonstrate how rust works compared to C? https://0x0.st/HhIy.c
+Mar 12 15:18:03 <mefistofeles>	xx: well, you just write it in Rust :P you can get familair with Rust syntax with the rust book
+Mar 12 15:19:30 <osse>	Like so? https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=b46ca4597963c981ee056a8215b37bb4
+Mar 12 15:19:36 <xx>	which one is the "rust book"?
+Mar 12 15:23:46 <osse>	https://doc.rust-lang.org/book/
+Mar 12 15:25:41 <j`ey>	osse: it looks identical!
+Mar 12 15:29:45 <narodnik2>	lets say i have a struct which takes several trait params like <X, Y>. when calling new(), we can infer Y from passed in values, but X needs to be specified explicitly
+Mar 12 15:29:52 <narodnik2>	how can i make a new method like that?
+Mar 12 15:30:08 <narodnik2>	something like:
+Mar 12 15:30:10 <narodnik2>	    fn new<const N: usize>(x: X) -> Self { Self { y: [0; N], x } }
+Mar 12 15:30:19 <narodnik2>	which you call with:     let s = S::new::<2>(7u32);
+Mar 12 15:30:48 <j`ey>	try with Type<X, _>
+Mar 12 15:31:44 <narodnik2>	yeah that works, but isn't it possible to get rid of the _?
+Mar 12 15:31:47 <narodnik2>	    let s = S::<2, _>::new(7u32);
+Mar 12 15:32:12 <narodnik2>	(my code has more like X, Y, Z, W and only X must be specified explicitly)
+Mar 12 15:33:53 <narodnik2>	https://agorism.dev/uploads/main.rs
+Mar 12 16:14:59 <LDericher>	is there a way in (unsafe) rust to say "give me a new immutable/readonly reference to this variable - I'll make sure it exists and is in a sane state"?
+Mar 12 16:15:42 <j`ey>	&variable ?
+Mar 12 16:15:54 <LDericher>	… regardless if other references to that variable exist, even mutables?
+Mar 12 16:16:10 <j`ey>	that's not possible in rust, even unsafe
+Mar 12 16:16:20 <LDericher>	so basically, "exclude this one from borrow checking"?
+Mar 12 16:44:47 <spb>	LDericher: you can take a reference to it before any mutable borrows happen, store that reference as a pointer, do your mut borrowing, then unsafely turn the pointer back into a reference
+Mar 12 16:45:08 <spb>	you shouldn't, but you can
+**** BEGIN LOGGING AT Tue Mar 12 17:00:35 2024
+
+Mar 12 17:00:31 *	Now talking on ##rust
+Mar 12 17:00:31 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 12 17:00:31 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 12 17:34:27 <cdhowie>	spb: that's undefined behavior
+Mar 12 17:36:38 <cdhowie>	note this is UB even with UnsafeCell<T>
+Mar 12 17:50:29 <spb>	it's UB if the value is mutated while the reconstituted reference exists
+Mar 12 17:57:39 <cdhowie>	which basically means "it's UB" because it allows unsound stuff to happen in safe code
+Mar 12 17:58:39 <cdhowie>	"it's only UB if safe code doesn't do something" is IMO a distinction without a difference.  regardless of whether it's technically immediately UB, it allows safe code to cause UB, so it's definitely not sound.
+Mar 12 17:59:42 <lambda>	cdhowie: you mean "unsound", not UB
+Mar 12 17:59:58 <cdhowie>	ok.  fine.  yes, either way it's bad.
+Mar 12 18:14:37 <alepzi>	how can i add "/" to a PathBuf? join and push replace if it's absolute which is shit
+Mar 12 18:16:53 <lambda>	alepzi: you want to convert `foo/bar` to `foo/bar/`?
+Mar 12 18:16:57 <alepzi>	yep
+Mar 12 18:17:24 <lambda>	I don't think PathBuf is really set up for that
+Mar 12 18:17:55 <lambda>	what do you need it for?
+Mar 12 18:17:58 <alepzi>	sorry but that's a shit API. makes total sense to wanna do it
+Mar 12 18:17:59 <capitol>	that replace if absolute is a really annoying behaviour that makes it easy to generate vulnerabilies
+Mar 12 18:18:25 <alepzi>	to take a /foo var and then build off of it to make a bunch of others, sometimes adding /
+Mar 12 18:18:33 <alepzi>	ya it's not good design
+Mar 12 18:19:03 <capitol>	maybe: convert to an osstring, do alterations, convert back
+Mar 12 18:19:05 <lambda>	alepzi: but you can just .push() to that to add more components?
+Mar 12 18:19:40 <alepzi>	no
+Mar 12 18:28:39 <alepzi>	realize /foo/bar and /foo/bar/ are different, but there's no way to make the latter if i start with /foo/bar
+Mar 12 18:28:59 <alepzi>	so i have to make unterminated and terminated versions of the path it's just stupid
+Mar 12 18:29:21 <alepzi>	it matters when using the paths with external stuff, like unix commands like tar, rsync, etc
+Mar 12 18:29:37 <nullie>	are they different for the os or only for some external tools?
+Mar 12 18:29:44 <nullie>	yeah
+Mar 12 18:30:11 <phy1729>	Only some tools and I hate that UI because I never can remember with or without means what
+Mar 12 18:30:28 <alepzi>	no idea. i'll bet if i use the rust api to delete files from /foo/bar and /foo/bar/ it probably does the same thing because internally it knows it's a dir
+Mar 12 18:30:49 <alepzi>	"only some" yea like most unix tools
+Mar 12 18:31:02 <alepzi>	dir vs dircontents/, simple
+Mar 12 18:32:56 <spb>	cdhowie: i mean that's the entire point of the unsafe keyword though. it lets you do stuff that could cause UB, and it's on you to satisfy yourself that it won't because the compiler can't
+Mar 12 18:33:06 <nullie>	Does PathBuf maintains it as /foo/bar/ sometimes?
+Mar 12 18:33:31 <alepzi>	ya if i make and print out 2 pathbufs, /foo/bar and /foo/bar/, they print like that (different)
+Mar 12 18:47:08 <dav1d>	evalr, std::path::PathBuf::from("/foo/bar").join("baz")
+Mar 12 18:47:11 -evalr/##rust-	dav1d: "/foo/bar/baz"
+Mar 12 18:47:36 <alepzi>	ya now try to make a version trailing with the path separator, /
+Mar 12 18:49:37 <j`ey>	evalr, std::path::PathBuf::from("/foo/bar").join("baz/")
+Mar 12 18:49:39 -evalr/##rust-	j`ey: "/foo/bar/baz/"
+Mar 12 18:49:45 <j`ey>	evalr, std::path::PathBuf::from("/foo/bar").join("/")
+Mar 12 18:49:47 -evalr/##rust-	j`ey: "/"
+Mar 12 18:50:11 <alepzi>	and if you have /foo/bar, how do you make /foo/bar/ from it?
+Mar 12 18:51:02 <HeTo>	evalr: std::path::PathBuf::from("/foo/bar").join("")
+Mar 12 18:51:04 -evalr/##rust-	HeTo: "/foo/bar/"
+Mar 12 18:51:48 <alepzi>	omfg king
+Mar 12 18:52:28 <alepzi>	WINNER
+Mar 12 19:05:09 <Arnavion>	The fact that they "print different" is just because they retain the original string they were created from. It makes no difference to how they behave. They both have the same components
+Mar 12 19:05:29 <Arnavion>	If you're relying on how they print you may be doing something wrong
+Mar 12 19:05:54 <alepzi>	it matters when passing as an arg to Command when that's going to unix commands
+Mar 12 19:06:24 <alepzi>	like cp
+Mar 12 19:07:50 <Arnavion>	What cp command are you running that it makes a difference
+Mar 12 19:09:11 <lambda>	Arnavion: `cp foo bar/` fails if `bar` isn't a directory, that's the only difference I know
+Mar 12 19:09:43 <Arnavion>	Right, and if bar does exist as a directory then `cp foo bar` would still succeed
+Mar 12 19:09:53 <Arnavion>	so that's why I'm asking
+Mar 12 19:09:54 <nCrazed>	yeah, I'd imagine there are a number of cases where the behaviour changes between file vs. directory, if for no other reason than the original authors didn't know any better
+Mar 12 19:11:47 <dav1d>	dont symlinks behave differentely?
+Mar 12 19:13:53 <Arnavion>	`touch a; mkdir d; ln -s d d2; cp a d2` copies a into d/ instead of replacing d2
+Mar 12 19:18:34 <spb>	`ls -l foo` and `ls -l foo/` behave differently if foo is a symlink to a directory
+Mar 12 19:19:14 <spb>	similarly for `stat`
+Mar 12 19:19:26 <Arnavion>	ls is not cp
+Mar 12 19:20:00 <spb>	right, but the underlying point that sometimes it matters when you're passing the path to an external command is valid, even if cp isn't a good example
+Mar 12 19:21:58 <Arnavion>	I never said that general commands wouldn't behave differently
+Mar 12 19:22:15 <spb>	cp will also behave differently if the source argument is a symlink to a directory
+Mar 12 19:22:21 <alepzi>	"It makes no difference to how they behave"
+Mar 12 19:22:38 <Arnavion>	"They" == PathBuf in a Rust context, yes
+Mar 12 19:22:56 <alepzi>	ya and i disagree
+Mar 12 19:24:01 <Arnavion>	<spb> cp will also behave differently if the source argument is a symlink to a directory   < Example? `mkdir d; mkdir d2; ln -s d d3; cp d2 d3` fails asking for `-r`, just like it would with a source directory
+Mar 12 19:24:25 <Arnavion>	Err, that's `cp d3 d2` of course
+Mar 12 19:25:12 <Arnavion>	<alepzi> ya and i disagree   < I didn't ask if you agree. I asked if you have a cp command where the / makes a difference
+Mar 12 19:26:17 <alepzi>	i'll make 1 later and it'll either be cp or tar or another unix util that shows it because i've run into it before
+Mar 12 19:26:39 <Arnavion>	So "No", okay. Thanks
+Mar 12 19:27:03 <capitol>	wow, snarky
+Mar 12 19:27:04 <alepzi>	ah the arrogant asshole stage of rust
+Mar 12 19:27:10 <alepzi>	i remember that from java
+Mar 12 19:27:12 <Arnavion>	To your original point, rather than rely on .join(""), it would be better to make a wrapper that appends `/` when printified
+Mar 12 19:27:25 <Arnavion>	I'm not being arrogant or snarky...
+Mar 12 19:27:40 <alepzi>	"cool"
+Mar 12 19:27:58 <Arnavion>	Who are you quoting?
+Mar 12 19:28:28 <alepzi>	you're dismissive about obviously counterintuitive api behavior. if you want drama go beat your gf
+Mar 12 19:28:37 <alepzi>	sorry, sex worker*
+Mar 12 19:29:00 <j`ey>	I mean, being an arrogant asshole is not as bad was what you just said soo..
+Mar 12 19:29:30 <capitol>	alepzi: that wasn't very cool either
+Mar 12 19:29:33 <polychromata{J}>	alepzi: Wow
+Mar 12 19:29:49 <polychromata{J}>	I can't even figure out what's wrong with that sentence
+Mar 12 19:30:28 <polychromata{J}>	(. Implying inferiority for being customer of sex work is still disparaging sex work?)
+Mar 12 19:30:41 <polychromata{J}>	yeah something like that probably
+Mar 12 19:31:41 <spb>	Arnavion: https://bpa.st/45SQ
+Mar 12 19:33:11 <Arnavion>	Indeed, thanks
+Mar 12 19:33:43 <Arnavion>	Also, "when printified" won't work because we want OsStr's ...
+Mar 12 19:35:50 <alepzi>	ya need os str
+Mar 12 19:46:18 <Arnavion>	https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=bed379637c4e3a98b257e97e44fbde8d   Ugh
+Mar 12 19:49:53 <alepzi>	C vibes
+Mar 12 19:54:13 <Arnavion>	(Less allocy and unsafe:   https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=1f99ad96eb662eb13c7058995521a841   )
+Mar 12 19:56:22 <alepzi>	we'd wanna use path::MAIN_SEPARATOR too ya?
+Mar 12 19:57:13 <Arnavion>	Forgot about OsString::push, derp   https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=bdbd1236ced99df6296583cc7458b7f8
+Mar 12 20:00:14 <alepzi>	and https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=6bafdc7ffb89614b1caa7270a8810f61 ?
+Mar 12 20:01:31 <alepzi>	still have 1 on line 10 tho
+Mar 12 20:15:30 <alepzi>	dunno how to fix that 1
+Mar 12 20:16:26 <j`ey>	that doesnt allocate, if thats what you meant
+Mar 12 20:21:42 <alepzi>	replacing the b'/' on line 10 with MAIN_SEPARATOR(_STR) so it's windows compatible is right ya?
+Mar 12 20:23:57 <chairs>	Arnavion: rsync cares about trailing /, if it's missing it'll copy the dir *and* contents, if it's there it'll only copy contents (IIRC, possible I have it reversed)
+Mar 12 20:24:42 <Arnavion>	Again, I was asking about cp
+Mar 12 20:28:43 <chairs>	`cp -d foo bar/` gets different behavior from `cp -d foo bar` if `bar` is a symlink. But `-d` is kind of asking for it.
+Mar 12 20:30:25 <Arnavion>	Yeah
+Mar 12 21:02:23 <valve>	ls
+Mar 12 21:32:23 <alepzi>	ok https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=f2206463ad6ecd4b6599060f5be6ff07 is that all good? if so Arnavion make a crate from it so i can use it?
+Mar 12 21:35:51 <Lumpio->	Is there a reason this is not a function
+Mar 12 21:37:46 <bertptrs>	having a newtype with the specific invariant is kinda nice, but yeah, this might as well be a single function, and is hardly worth being a crate
+Mar 12 21:38:36 <bertptrs>	code reuse is great but we don't need to emulate https://www.npmjs.com/package/is-odd
+Mar 12 21:39:21 <bertptrs>	or rather https://www.npmjs.com/package/is-even, which of course depends on the previous one
+Mar 12 21:40:39 <tokie>	version 3.0.1, lol
+Mar 12 21:41:52 <phy1729>	I appreciate the usage example could be replace with checking for an int instead of a string
+Mar 12 21:48:37 <alepzi>	phy1729: what example?
+Mar 12 21:49:03 <phy1729>	For is-even
+Mar 12 21:50:06 <bertptrs>	phy1729: that's why this package depends on is-odd, which in turn depends on is-number
+Mar 12 21:50:12 <bertptrs>	I stopped checking there
+Mar 12 21:51:11 <TimMc>	tokie: I can't tell if that's funnier than 0.3.1 would be.
+Mar 12 21:51:25 <tokie>	TimMc: 0.3.1 could just be a few bugs ...
+Mar 12 21:51:35 <TimMc>	Speaking of which, what is *with* Rust crates being 0.x?
+Mar 12 21:51:36 <tokie>	i guess that's equally funny
+Mar 12 21:54:02 <bertptrs>	TimMc: people being hesitant to commit to a 1.0, then the whole universe starts depending on it, and depending on the specific crate, bumping might've become impossible
+Mar 12 21:54:03 <alepzi>	situation.is_equally(funny)
+Mar 12 21:56:10 <TimMc>	Oh I see, so it's not "why are these fundamental packages at 0.x", it's "they're at 0.x because they're now fundamental". Amazing.
+Mar 12 21:57:00 <TimMc>	because there's probably a bunch of crates out there constraining to <1
+Mar 12 21:58:47 <phy1729>	You don't want to commit to an API before you have some users to find the sharp points, but also once you have a good API you might have enough users that bumping just to mark as 1.0 would be a non-trivial impact.
+Mar 12 21:58:54 <tokie>	it's also because of how semver works. if you bump the first digit then people won't pickup your fixes until they change their Cargo.toml probably
+Mar 12 21:59:11 <tokie>	so there's really no reason to do it unless you actually intend on a new major version
+Mar 12 22:01:21 <bertptrs>	TimMc: there are probably hyper-corporate environments that will indeed restrict to >= 1.0 but most environments will be more sensible. And it's not all bad, quite a few of the big ones have gone 1.0. regex, hyper, serde
+Mar 12 22:02:16 <phy1729>	serde is mildly amazing in that it's pushing 1.0.200
+Mar 12 22:04:31 <phy1729>	Does dtolnay have any crates that aren't either 0.x or 1.0.x?
+Mar 12 22:06:51 <bertptrs>	had to search for it but his indoc crate is at 2.0.4
+Mar 12 22:07:07 <phy1729>	and syn is also 2.0 but that's fair considering rust's changes
+Mar 12 22:11:33 <BtbN>	So, I'm cross compiling for the same target, which seems to massively confuse cargo. i.e. it's using the wrong linker for the build script. How do I change the linker used for that script specifically?
+Mar 12 22:37:16 <BtbN>	Or is there a simple way to add a mock-target, something akin to x86_64-my_custom-linux-gnu? So that I can then "cross" compile to that, with its own set of tools, while having other stuff properly use the host tools?
+Mar 12 23:01:58 <bluss>	phy1729: yes, it's amazing how he's managed to add features to serde 1.0 for so long
+Mar 12 23:03:08 <BtbN>	https://github.com/rust-lang/cargo/issues/8147 this seems to describe the same/a similar issue, with no solution...
+Mar 12 23:15:28 <jbg>	BtbN: it's not cross compiling if the host and target are the same target spec
+Mar 12 23:15:57 <BtbN>	It is though, they're very different flavours of Linux that can't run binaries of one another
+Mar 12 23:16:10 <BtbN>	But both are x86_64-unknown-linux-gnu
+Mar 12 23:16:12 <jbg>	i understand that you want to cross compile
+Mar 12 23:16:19 <jbg>	but it is not cross compiling if the targets are the same
+Mar 12 23:16:40 <jbg>	what you are saying is that one of your Linuxes is not actually targeted by x86_64-unknown-linux-gnu
+Mar 12 23:16:45 <BtbN>	Well, what should I do then? I need cargo/rust to build tools to run on the "host" with a different linker than the ones for the target.
+Mar 12 23:16:59 <BtbN>	Both are normal linux with glibc
+Mar 12 23:17:04 <BtbN>	One is just really dang old
+Mar 12 23:17:28 <jbg>	the target is older than the host or vice versa?
+Mar 12 23:17:37 <BtbN>	The target is really really old glibc
+Mar 12 23:17:45 <spb>	so what you want is not to cross compile but to compile using a different libc than the system one
+Mar 12 23:17:45 <jbg>	and the host can't run binaries intended for the target?
+Mar 12 23:17:47 <BtbN>	to produce binaries that run on ancient CentOS on a modern host
+Mar 12 23:18:21 <BtbN>	The host can run them fine. But would need special linker options. It's complicated, and boils down to: I'm cross compiling to the same arch tripple
+Mar 12 23:19:05 <BtbN>	The issue is that cargo tries to link the build-script with the target compiler, but fails horribly, cause the env is super old and is lacking libraries the build script expects.
+Mar 12 23:19:15 <jbg>	it's not cross compiling, and you will get much better help if you stop pretending it is
+Mar 12 23:19:18 <BtbN>	There would be no issue if it's simply call normal gcc to build the build-script
+Mar 12 23:19:24 <jbg>	if i understand correctly you need to link an old libc
+Mar 12 23:19:37 <BtbN>	I successfully do, that part works fine
+Mar 12 23:19:46 <BtbN>	But I need the build-script to NOT link that old libc
+Mar 12 23:19:51 <jbg>	yes
+Mar 12 23:19:53 <jbg>	i understand
+Mar 12 23:20:02 <spb>	https://kobzol.github.io/rust/ci/2021/05/07/building-rust-binaries-in-ci-that-work-with-older-glibc.html might be relevant to you
+Mar 12 23:20:24 <jbg>	by far the easiest paths to doing this are either a) build in a container (can be automated with tools like `cross`) or b) forget about it and statically link musl instead
+Mar 12 23:20:41 <BtbN>	I already am building in a container. That is the whole point of this endeavour
+Mar 12 23:20:41 <j`ey>	the build script should be built for the host though?
+Mar 12 23:20:51 <spb>	(a) is the solution that author settled on
+Mar 12 23:20:59 <BtbN>	For rust, host and target are the same though, j`ey
+Mar 12 23:21:03 <BtbN>	For gcc they aren't.
+Mar 12 23:21:11 <jbg>	if you're building in a container, why isn't your container running your ancient environment too?
+Mar 12 23:21:13 <spb>	BtbN: so make a container using the ancient libc and build in that
+Mar 12 23:21:18 <jbg>	that's the whole point of building in a container
+Mar 12 23:21:25 <jbg>	(for this purpose)
+Mar 12 23:21:28 <BtbN>	jbg: Because it's too old and can't run or build other stuff I need.
+Mar 12 23:21:35 <jbg>	so use another container for the other stuff
+Mar 12 23:21:49 <BtbN>	Yeah, not that easy
+Mar 12 23:22:18 <BtbN>	This setup is building over two dozen libraries for the old-glibc target, but with a modern compiler.
+Mar 12 23:22:20 <j`ey>	BtbN: ok then maybe a custom target is the way to go
+Mar 12 23:22:45 <BtbN>	Actually just dug out this, which seems to address exactly my issue: https://doc.rust-lang.org/cargo/reference/unstable.html#host-config
+Mar 12 23:23:03 <BtbN>	Annoying that it needs nightly though
+Mar 12 23:23:19 <jbg>	needing nightly is not that big a deal
+Mar 12 23:23:25 <jbg>	if you are doing something unusual it's common to end up on nightly
+Mar 12 23:23:41 <BtbN>	Odd that it's marked unstable though, the PR that's listed there is quite old
+Mar 12 23:23:55 <jbg>	why would the age of the PR have anything to do with it not being in stable?
+Mar 12 23:24:10 <BtbN>	I'd imagine stuff eventually is not nightly anymore, but makes it into a normal release
+Mar 12 23:24:31 <jbg>	stuff doesn't just end up in stable because it's been around long enough
+Mar 12 23:24:45 <BtbN>	It can still be marked unstable, but be in there
+Mar 12 23:24:57 <jbg>	that's not how these things work; unstable features are only available on nightly
+Mar 12 23:25:06 <BtbN>	odd choice, but okay
+Mar 12 23:25:07 <jbg>	otherwise they become de-facto-stable
+Mar 12 23:25:29 <jbg>	imagine you let them through the gate into stable without any process just because they were around a few years
+Mar 12 23:25:34 <jbg>	then 40% of your user base uses them
+Mar 12 23:25:36 <BtbN>	At least on ffmpeg we have a bunch of features in stable releases you need to opt into experimental-mode for, but they are in normal releases.
+Mar 12 23:25:48 <jbg>	you are now responsible for taking care of those 40% even though you never followed the process to stabilise the feature
+Mar 12 23:26:09 <BtbN>	Nah, if you opt into "unstable mode", you got only yourself to blame if stuff breaks
+Mar 12 23:26:20 <jbg>	that argument breaks down as soon as enough of your users use the feature
+Mar 12 23:26:29 <jbg>	anyway, using nightly is not that big a deal
+Mar 12 23:26:35 <j`ey>	BtbN: you can always just pin  a nightly version
+Mar 12 23:26:35 <jbg>	it's a compiler, not something you're running in production
+Mar 12 23:26:41 <jbg>	if it fails to produce your code, roll back to yesterday's
+Mar 12 23:26:52 <BtbN>	The compiler _is_ the production in this case :D
+Mar 12 23:27:07 <BtbN>	So I do tend to like stuff to not randomly break
+Mar 12 23:27:19 <jbg>	i don't suggest blindly updating nightly every night
+Mar 12 23:27:22 <j`ey>	thats why you pin it!
+Mar 12 23:27:34 <jbg>	even if the name makes you tempted
+Mar 12 23:28:01 <jbg>	you can also make a custom target, but you'll have to build core, and that itself requires nightly
+Mar 12 23:28:49 <BtbN>	I've looked into that, but found no good documentation on how to do it. Given that option exists, it also seems unneccesary.
+Mar 12 23:30:26 <jbg>	it would avoid you needing to use nightly for your builds (only once per each time you update rust, to produce your custom rust toolchain)
+Mar 12 23:30:56 <jbg>	some documentation here (focused on embedded but should still be relevant) https://docs.rust-embedded.org/embedonomicon/custom-target.html
+Mar 12 23:31:01 <BtbN>	I thought it needs nightly anyway?
+Mar 12 23:31:11 <jbg>	you need nightly to build core, you don't need nightly to use your custom target
+Mar 12 23:31:44 <jbg>	you would build a stable rust toolchain with your custom target added, using nightly
+Mar 12 23:31:51 <jbg>	and then use that stable toolchain to build your code
+Mar 12 23:32:22 <jbg>	but if it was me i'd just use a pinned nightly version to build my code
+Mar 12 23:33:41 <jonored>	at $previous-employer, we tended to build "nightly" builds from the commit of stable versions for what we pinned as the compiler.
+Mar 12 23:34:17 <jbg>	yeah, we did the same at $previous-employer for several years when async was new. it's a good approach
+Mar 13 00:02:13 <BtbN>	How would I tell cargo to install the standard lib it built globally? All the docs just refer to permanently using the nightly toolchain, with -Zbuild-std
+Mar 13 00:10:05 <BtbN>	Yeah, for all I can tell, that's not possible? So I'd be stuck with nightly nevertheless
+Mar 13 00:19:31 <Widdershins>	are those std libs not tied to the toolchain they come with?
+Mar 13 00:20:03 <BtbN>	They don't come with the toolchain
+Mar 13 00:20:35 <BtbN>	It's build-std stuff
+Mar 13 02:11:03 <nlaerema>	hello
+Mar 13 02:11:20 <nlaerema>	q
+Mar 13 03:32:02 <rbox>	what happens if you take a rust program and decompiel it with like ghidra or smethign and tell it its C?
+Mar 13 03:32:03 <rbox>	lol
+Mar 13 03:42:30 <Affliction>	iirc it tries, and produces weird code
+Mar 13 03:42:35 <Affliction>	But then, that's just decompilation in general
+Mar 13 03:42:52 <Affliction>	I have an old install of ghidra, let's give it a go
+Mar 13 03:46:01 <rbox>	it has C++ style mangeld symbols
+Mar 13 03:46:06 <rbox>	i wonder if it'd do better as saying its C++
+Mar 13 03:52:16 <Affliction>	Looking at a binary, LTO, with symbols, it's not awful
+Mar 13 03:57:07 <Affliction>	I found https://research.checkpoint.com/2023/rust-binary-analysis-feature-by-feature/ interesting, too.
+Mar 13 03:57:47 <Affliction>	Even for those who don't plan to reverse engineer, but are interested in how rust's higher level concepts work.
+Mar 13 03:58:21 <rbox>	wtf, thats like a novel
+Mar 13 03:59:28 <rbox>	"Twenty minutes later you wish you had never been born."
+Mar 13 03:59:29 <rbox>	lol
+Mar 13 05:11:12 <polychromata{J}>	evalr: dbg!(f64::MAX.log10())
+Mar 13 05:11:14 -evalr/##rust-	polychromata{J}: 308.25471555991675
+Mar 13 06:06:54 <Widdershins>	rbox: i think the mangling actually works slightly differently than c++? not sure though. i know `rustfilt` is its own thing separate from c++filt
+**** ENDING LOGGING AT Wed Mar 13 06:35:42 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 06:38:08 2024
+
+Mar 13 06:38:05 *	Now talking on ##rust
+Mar 13 06:38:05 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 13 06:38:05 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 13 06:38:16 FiSHLiM plugin unloaded
+**** ENDING LOGGING AT Wed Mar 13 06:38:16 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 15:36:13 2024
+
+Mar 13 15:36:12 *	Now talking on ##rust
+Mar 13 15:36:12 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 13 15:36:12 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+**** BEGIN LOGGING AT Wed Mar 13 16:17:18 2024
+
+Mar 13 16:17:16 *	Now talking on ##rust
+Mar 13 16:17:16 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 13 16:17:16 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+**** ENDING LOGGING AT Wed Mar 13 17:02:39 2024
+
+**** BEGIN LOGGING AT Wed Mar 13 17:15:30 2024
+
+Mar 13 17:15:29 *	Now talking on ##rust
+Mar 13 17:15:29 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 13 17:15:29 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+**** BEGIN LOGGING AT Wed Mar 13 17:31:45 2024
+
+Mar 13 17:31:44 *	Now talking on ##rust
+Mar 13 17:31:44 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 13 17:31:44 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+**** BEGIN LOGGING AT Wed Mar 13 18:43:10 2024
+
+Mar 13 18:43:09 *	Now talking on ##rust
+Mar 13 18:43:09 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 13 18:43:09 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 13 18:51:09 <bertptrs>	is there a nice way to ensure a path does not contain shenanigans like ".."?
+Mar 13 18:51:34 <danieldg>	iterate its components
+Mar 13 18:53:22 <bertptrs>	yeah figured
+Mar 13 18:53:29 <DeeEff>	bertptrs: you can usually canonicalize the path https://doc.rust-lang.org/std/fs/fn.canonicalize.html
+Mar 13 18:53:39 <bertptrs>	it's a relative path, so no canonicalization
+Mar 13 18:53:51 <danieldg>	canonicalization solves a different set of problems
+Mar 13 18:54:18 <danieldg>	that can even make it worse if you just do it blindly
+Mar 13 18:54:41 <bertptrs>	you can check if path.canonicalize()? == path but that's tedious
+Mar 13 18:55:33 <danieldg>	just path.components.any(|c| c == ParentDir)
+Mar 13 18:56:03 <danieldg>	it's way faster than canonicalize and also doesn't break if you use symlinks
+Mar 13 18:57:23 <bertptrs>	I want to be slightly stricter than that, also exclude hidden files, so that doesn't quite work
+Mar 13 18:57:28 <danieldg>	or even any(|c| !matches!(c, Normal(_))
+Mar 13 18:57:40 <bertptrs>	need to actually inspect the string
+Mar 13 18:57:57 <danieldg>	hidden as in unix '/.*'?
+Mar 13 18:58:18 <danieldg>	because DOS hidden requires pulling up metadata :)
+Mar 13 18:58:46 <bertptrs>	I don't support DOS in my free time ;)
+Mar 13 18:59:47 <danieldg>	if unix only, just convert Path to [u8] and search for b"/."
+Mar 13 18:59:58 <danieldg>	that'll catch all but an initial "../"
+Mar 13 19:22:14 <dav1d>	that would be nice in Rust https://docs.python.org/3/library/os.path.html#os.path.normpath
+Mar 13 19:24:17 <danieldg>	there's likely a crate for it
+Mar 13 19:30:17 <bertptrs>	https://crates.io/crates/normpath there is
+Mar 13 19:30:24 <bertptrs>	things are easy to find once you know what to look for
+Mar 13 19:35:01 <dav1d>	*in the rust std lib
+Mar 13 19:42:25 <danieldg>	dav1d: getting things in std mostly needs a lot of people to be using the out-of-std implementation
+Mar 13 19:43:57 <danieldg>	but I guess you could propose it for std anyway
+Mar 13 19:45:14 <dav1d>	Without reading the issue contents: https://github.com/rust-lang/rust/issues/59117
+Mar 13 19:45:37 <dav1d>	And https://github.com/rust-lang/rfcs/issues/2208
+Mar 13 20:36:54 <polychromata{J}>	hmm, lots of creatures misunderstand what std is for
+Mar 13 20:40:00 *	dav1d prefers having footguns with platform dependent behaviour like canonicalize instead
+Mar 13 20:40:09 <bertptrs>	people have expectations from other languages, and if you're coming from python which includes the kitchen sink, rust is pretty lacking. not saying rust should emulate python in that regard, but it could do more
+Mar 13 20:43:31 <danieldg>	basically I don't think canonicalize should have been in std, it's not very commonly the right thing to use
+Mar 13 20:43:54 <dav1d>	^
+Mar 13 20:44:44 <danieldg>	but given we can't take it out, I agree we should probably put in the more useful variations
+Mar 13 20:45:11 <bertptrs>	and preferably variations not filled to the brim with footguns
+Mar 13 20:47:27 <danieldg>	having actual support for O_NOFOLLOW would fix a lot of the bugs that canonicalize tries to fix, but without the TOCTOU bug that it encourages
+Mar 13 20:47:48 <danieldg>	right now you can use it, but you have to use custom_flags of OpenOptionsExt
+Mar 13 21:09:56 <TimMc>	bertptrs: DOS also delights like not being allowed to name files things like "COM1".
+Mar 13 21:10:00 <TimMc>	*also has
+Mar 13 21:10:47 <bertptrs>	I can't say I've ever had the need to
+Mar 13 21:11:50 <capitol>	i should have registered a com1 crate while I had the chance
+Mar 13 21:13:27 <bertptrs>	then make it a dep of all projects you touch so they won't build on Windows?
+Mar 13 21:15:17 <capitol>	:P
+Mar 13 21:22:10 <enoq>	what is Pin? is it a thing that you can lock and unlock manually?
+Mar 13 21:22:35 <ct>	no
+Mar 13 21:22:49 <ct>	pinning something to a fixed memory address
+Mar 13 21:22:57 <enoq>	what does that mean
+Mar 13 21:23:07 <danieldg>	it's a marker that says a thing can depend on not changing its address
+Mar 13 21:23:22 <enoq>	when would it change it's address?
+Mar 13 21:23:28 <enoq>	its*
+Mar 13 21:23:36 <danieldg>	Box::new(thing) changes the address of thing
+Mar 13 21:23:52 <danieldg>	along with many other operations, like std::mem::swap
+Mar 13 21:24:08 <enoq>	ah I see, what about copy
+Mar 13 21:24:16 <danieldg>	yes, that's one
+Mar 13 21:24:38 <enoq>	so that type prevents all of those uses?
+Mar 13 21:25:11 <danieldg>	it prevents them on objects that are pinned, unless that object implements Unpin
+Mar 13 21:25:55 <danieldg>	most things implement Unpin (just like most things are Send)
+Mar 13 21:27:24 <enoq>	how would unpinning make sense in the case of async? don't you want to hold onto a thing until you complete?
+Mar 13 21:27:54 <danieldg>	it makes sense
+Mar 13 21:28:08 <danieldg>	more concrete examples are useful
+Mar 13 21:28:31 <enoq>	maybe I need to really read up rather than waste everyone's time, any recommendations?
+Mar 13 21:29:08 <enoq>	I've taken a look at https://fasterthanli.me/articles/pin-and-suffering but it was more of a rant than an explanation
+Mar 13 21:29:09 <danieldg>	the std docs, or some of the async how-to-build-an-executor things
+Mar 13 21:29:35 <enoq>	thank you!
+Mar 13 21:34:14 <bertptrs>	I watched a great talk at RustNL 2023 that explained this, let me see if I can find the recording
+Mar 13 21:34:41 <bertptrs>	enoq: https://www.youtube.com/watch?v=cVvZ0mJTkZ0
+Mar 13 21:35:33 <bertptrs>	the short version: self referential types need a stable address or things go very wrong, and futures are often self-referential because of reasons
+Mar 13 21:37:29 <enoq>	thank you
+Mar 13 21:43:21 <olk>	hello, I'm a newbie and I need an advice on how to use a function in a different file without passing around the same argument 20 times. here's the definition: https://git.sr.ht/~olk/eds/tree/dev/item/src/gui.rs#L69
+Mar 13 21:44:02 <olk>	use crate::gui::show_popup worked for pub fn, but if defined with let inside another function, this doesn't work
+Mar 13 21:44:30 <danieldg>	if you want to use it as a function, defined it as a function and not a closure
+Mar 13 21:44:34 <spb>	because the let inside the function is scoped to inside that function
+Mar 13 21:44:46 <spb>	the name only has meaning in that scope
+Mar 13 21:45:06 <tokie>	olk: are you coming from javascript as a primary language?
+Mar 13 21:46:18 <olk>	danieldg, spb: got it, thanks
+Mar 13 21:46:25 <olk>	tokie: no, why?
+Mar 13 21:46:29 <tokie>	just curious!
+Mar 13 21:47:31 <spb>	javascript is the only popular language i can think of that regularly defines publicly exported functions using closure-type syntax
+Mar 13 21:48:19 <danieldg>	I think you can get away with it in python
+Mar 13 21:48:31 <danieldg>	it makes for good code golf at least
+Mar 13 21:48:33 <spb>	probably, but it's not common
+Mar 13 21:50:11 <tokie>	spb: yeah, that's where i was going
+Mar 13 21:50:18 <olk>	I'm sorry, this is a stupid question: can I pass an argument from a function to a global scope so I don't have to pass the same ApplicationWindow 20 times?
+Mar 13 21:50:48 <spb>	you *can*, but that doesn't mean you should
+Mar 13 21:50:55 <danieldg>	only if you use a global variable, but that's discouraged
+Mar 13 21:51:06 <danieldg>	though GUI is perhaps a good use for it
+Mar 13 21:51:49 <olk>	thanks for replying. how should I deal with this problem, in your opinion?
+Mar 13 21:51:54 <spb>	you can define a global OnceCell or OnceLock, then initialise it from whichever function gets the appropriate object constructed
+Mar 13 21:52:08 <danieldg>	^^ that's a pretty good way to do it
+Mar 13 21:52:34 <danieldg>	or a global Mutex if you need to write to the value
+Mar 13 21:52:52 <danieldg>	OnceLock is a lot more flexible, but you can't write to it
+Mar 13 21:53:11 <dav1d>	enoq, https://www.youtube.com/watch?v=DkMwYxfSYNQ
+Mar 13 21:53:14 <olk>	thanks again, I'll try that
+Mar 13 21:54:02 <tokie>	i love OnceLock <3
+Mar 13 21:55:38 <dav1d>	tokie, btw passed on your positive messages about Sentry/the Rust SDK to some of our SDK people and they were very delighted
+Mar 13 21:56:09 <tokie>	aww <3
+Mar 13 21:56:50 <dav1d>	especially after there were some discussions last week on why the Rust SDK sucks :D
+Mar 13 21:57:05 <bertptrs>	dav1d: you work at Sentry?
+Mar 13 21:57:11 <dav1d>	bertptrs, yeh
+Mar 13 21:57:15 <tokie>	dav1d: yeah, i bet the people working on the glue we use for sentry have opinions
+Mar 13 21:57:27 <bertptrs>	good software. most reliable thing in our stack tbh
+Mar 13 21:57:41 <tokie>	oh wait, i think we just integrate directly with sentry
+Mar 13 21:58:08 <dav1d>	tokie, it's unfortunately a low(er) priority SDK not many people use it and our Rust devs currently are busy with other stuff, so while JS/Python/PHP get a bunch of stuff Rust is a bit left behind
+Mar 13 21:58:20 <dav1d>	bertptrs, <3
+Mar 13 21:58:53 <dav1d>	but there is beginning to be an effort to have rust catch up
+Mar 13 22:01:41 <enoq>	what sdk are we talking about?
+Mar 13 22:01:43 <tokie>	yeah, i can imagine there's way more js/python/php customers ...
+Mar 13 22:01:46 <bertptrs>	we don't use it for rust yet, but it works pretty well for Python (the things that don't are mostly our fault) and we rolled our own stuff for Haskell
+Mar 13 22:01:46 <enoq>	the aws one?
+Mar 13 22:02:18 <dav1d>	enoq, https://github.com/getsentry/sentry-rust
+Mar 13 22:02:26 <bertptrs>	the pricing for performance tracing is ridiculous, but that's not an engineering fault
+Mar 13 22:02:37 <dav1d>	bertptrs, I really hate that
+Mar 13 22:02:50 <enoq>	thanks
+Mar 13 22:03:11 <tokie>	bertptrs: yeah, i'm just using it for panic alerts
+Mar 13 22:03:31 <dav1d>	We're gonna have metrics go public beta next week and I really hope they come up with a good pricing and a generous free budget
+Mar 13 22:04:01 <enoq>	wow, n+1 query detection
+Mar 13 22:04:06 <tokie>	dav1d: are you doing a metrics frontend too?
+Mar 13 22:04:14 <enoq>	last time I've seen that in Hibernate, it was very error prone
+Mar 13 22:04:22 <dav1d>	tokie, yes!
+Mar 13 22:04:27 <tokie>	oh, that's cool
+Mar 13 22:04:51 <dav1d>	I can get you into the alpha 👀 - but gonna be open beta on monday anyways
+Mar 13 22:05:17 <bertptrs>	I will remember this when I have more pricing complaints ;)
+Mar 13 22:05:25 <bertptrs>	also very offtopic, please join ##rust-offtopic
+Mar 13 22:06:25 <dav1d>	:D
+Mar 13 22:09:57 <olk>	when I try to use static WINDOW: OnceLock<ApplicationWindow> = OnceLock::new(); I get this: https://paste.rs/eYTrE.txt. what should I do?
+Mar 13 22:10:55 <bertptrs>	You're finding all the corners of Rust today
+Mar 13 22:10:56 <danieldg>	if the ApplicationWindow is not Send (that's what that error complains about) you need to instead use a thread_local
+Mar 13 22:11:09 <danieldg>	thread_local and OnceCell
+Mar 13 22:11:41 <bertptrs>	which of course will break when it's no longer a single-threaded application
+Mar 13 22:11:45 <dav1d>	Seems like a good thing, windowing and threads is usually a delicate thing
+Mar 13 22:12:10 <danieldg>	it'll actually work just fine: only on the gui thread can you get the object
+Mar 13 22:12:34 <danieldg>	you just have to structure your app to handle that limitation
+Mar 13 22:12:52 <DeeEff>	usually the "gui" thread is just the main thread anyways
+Mar 13 22:13:04 <DeeEff>	I think on some platforms that's actually necessary (i.e. Apple)
+Mar 13 22:13:20 <danieldg>	yeah, that's normal: one gui thread, and then maybe some worker threads
+Mar 13 22:20:40 <olk>	this got complicated quickly :) I just wanted not to pass the same window a lot of times, but I've just introduced so much complexity for that
+Mar 13 22:22:34 <tokie>	olk: yes
+Mar 13 22:22:57 <tokie>	dav1d: yeah, i'm not in any decision making areas around that as you can imagine ....
+Mar 13 22:27:25 <kpcyrd>	today I learned about 1114112 and how it relates to Option<char>, it was quite a journey :3
+Mar 13 22:27:28 *	ct remmebers a application where every gui thing has its own thread, hey even blinking the cursor is done in a thread :D 
+Mar 13 22:27:32 <ct>	of course its C++
+Mar 13 22:31:48 <int-e>	bonus points if the cursor blinking thread uses 99% CPU
+Mar 13 22:32:59 <dav1d>	tokie, that's the better area to be in
+Mar 13 23:11:12 <demize>	Well how would you make the blinking frame-perfect without busy-waiting.  ;)
+Mar 13 23:12:28 <dsmith>	A hardware timer?
+Mar 13 23:12:45 <demize>	Bah, fancy nonsense.
+**** BEGIN LOGGING AT Wed Mar 13 23:52:51 2024
+
+Mar 13 23:52:48 *	Now talking on ##rust
+Mar 13 23:52:48 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 13 23:52:48 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+**** BEGIN LOGGING AT Thu Mar 14 02:26:04 2024
+
+Mar 14 02:26:01 *	Now talking on ##rust
+Mar 14 02:26:01 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 14 02:26:01 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 14 03:04:45 <Widdershins>	don't forget to enable the serde_json feature that lets numbers round trip (:
+Mar 14 07:34:03 <dav1d>	Widdershins, what does it actually do, I expected some nan/inf stuff but it seems it messes with precision too?
+**** ENDING LOGGING AT Thu Mar 14 09:59:27 2024
+
+**** BEGIN LOGGING AT Thu Mar 14 10:06:40 2024
+
+Mar 14 10:06:38 *	Now talking on ##rust
+Mar 14 10:06:38 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 14 10:06:38 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+**** BEGIN LOGGING AT Thu Mar 14 10:11:09 2024
+
+Mar 14 10:11:08 *	Now talking on ##rust
+Mar 14 10:11:08 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 14 10:11:08 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+**** BEGIN LOGGING AT Thu Mar 14 10:15:57 2024
+
+Mar 14 10:15:54 *	Now talking on ##rust
+Mar 14 10:15:54 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 14 10:15:54 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+**** BEGIN LOGGING AT Thu Mar 14 10:34:18 2024
+
+Mar 14 10:34:17 *	Now talking on ##rust
+Mar 14 10:34:17 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 14 10:34:17 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+**** ENDING LOGGING AT Thu Mar 14 10:35:41 2024
+
+Mar 14 11:33:56 <archtanger>	Hey folks, I have on my hands an app that converts some kind of DSL written in python and runs it in Rust for some (ideally) real time gains performance wise. I've run some baic benchmarking and I'v put a fire graph together to see where most of the processing goes to. Because I'm doing some complex matching (like matching a vec of particular enum structures), most of the processing seems to be being done by tbe match statements.
+Mar 14 11:34:34 <archtanger>	Has anyone got any general tips for optimizing matches? I'm gonna delve into code and docs, but a starting point is better than none, haha
+Mar 14 11:38:11 <alepzi>	getting a weird behavior running a command: https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=1484d1e5804c40a425bbf6e212c0b6e0
+Mar 14 11:48:04 <saati>	something something login vs non-login shells
+Mar 14 11:48:31 <alepzi>	is the problem happening on local or remote machine?
+Mar 14 11:48:35 <saati>	on the remote
+Mar 14 11:48:57 <alepzi>	but that means the problem is in rust then no? because it works from command line on local machine
+Mar 14 11:49:46 <alepzi>	i mean when i run that command on local machine, either on command line or using rust, it makes same connection to remote system
+Mar 14 11:50:02 <saati>	my theory is that the ssh from the command line invokes a login shell which runs .profile or .bash_profile that sets the right PATH
+Mar 14 11:50:07 <nerdypepper>	a little thought experiment: would it be possible to implement "anonymous enum returns" with just macros? i am thinking something like `-> Result<T, Err1 | Err2 | Err3>`
+Mar 14 11:50:19 <nerdypepper>	internally, it could create an enum type, it would just be impossible to name this type in code
+Mar 14 11:50:19 <saati>	vs a non login shell for the one launched from rust
+Mar 14 11:50:31 <saati>	that does not
+Mar 14 11:50:41 <jbg>	alepzi: when you run it from the shell, are you escaping the quotes in --rsync-path="sudo rsync" ?
+Mar 14 11:50:43 <alepzi>	doesn't that mean the problem is happening on the local machine?
+Mar 14 11:50:51 <alepzi>	no
+Mar 14 11:50:55 <jbg>	because otherwise the shell is going to interpret those
+Mar 14 11:51:08 <saati>	rsync-path is the path for the remote machine's rsync
+Mar 14 11:51:09 <jbg>	and rsync won't see them
+Mar 14 11:51:10 <alepzi>	i had to escape them when putting it in the arg " "
+Mar 14 11:51:28 <jbg>	right but rsync is not being passed any double quotes if you run it like that on the shell
+Mar 14 11:51:39 <jbg>	it's getting one argv with the string "--rsync-path=sudo rsync"
+Mar 14 11:51:57 <saati>	oh yeah that makes much more sense
+Mar 14 11:51:59 <jbg>	whereas the way you're invoking it in rust, it is getting double quotes inside the argv
+Mar 14 11:54:03 <alepzi>	hmm kinda getting it but not totally
+Mar 14 11:54:20 <jbg>	the shell interprets quotes and doesn't pass them through, unless you escape them
+Mar 14 11:54:28 <jbg>	if you run this on the shell: somecommand "some arg"
+Mar 14 11:54:37 <jbg>	there is only one argument passed to somecommand, and it doesn't include the quotes
+Mar 14 11:55:08 <jbg>	i would do it like this to make it more clear: .arg("--rsync-path").arg("sudo rsync")
+Mar 14 11:55:58 <alepzi>	THAT FIXED IT
+Mar 14 11:56:13 <jbg>	.arg("--rsync-path=sudo rsync") should also work but it's a bit ugly
+Mar 14 11:56:31 <alepzi>	ugly because of the space?
+Mar 14 11:56:53 <rendar>	https://godbolt.org/z/n4zqKr7dT -- why it doens't show me assembly?
+Mar 14 11:57:28 <jbg>	just ugly to look at yeah. it's your choice
+Mar 14 11:57:43 <jbg>	two separate args is also much nicer if you want to make the rsync path come from a variable
+Mar 14 11:57:43 <alepzi>	tyvm
+Mar 14 11:57:54 <alepzi>	ya
+Mar 14 11:58:14 <j`ey>	rendar: pub
+Mar 14 11:58:56 <rendar>	pub?
+Mar 14 11:59:19 <j`ey>	pub main
+Mar 14 12:02:22 <rendar>	oh!
+Mar 14 12:04:15 <kpcyrd>	does somebody know why `let Some('A') = x else { return };` explicitly checks for None instead of just testing for 65 (ascii for 'A')? they are stored in the same number, so if that number is 65 the 1114112 case would also be known to be false
+Mar 14 12:07:32 <j`ey>	kpcyrd: huh
+Mar 14 12:07:58 <j`ey>	the codegen Im seeing just checks 65
+Mar 14 12:09:47 <kpcyrd>	ah, meant to paste this: https://rust.godbolt.org/z/WxWh3xE9h
+Mar 14 12:10:19 <jbg>	seems that would be optimisation and might vary based on "stuff" though. since PartialEq (or is it StructuralPartialEq here?) on char doesn't come into play if x is None and thus contains no char
+Mar 14 12:13:05 <j`ey>	kpcyrd: that's without optimisations though
+Mar 14 12:13:06 <j`ey>	try -O
+Mar 14 12:14:00 <kpcyrd>	oh well, thanks
+Mar 14 12:14:51 <j`ey>	but .. where does it return 200
+Mar 14 12:15:27 <j`ey>	o_O
+Mar 14 12:15:46 <j`ey>	oh
+Mar 14 12:15:51 <kpcyrd>	at the bottom. I've accidentally made two code branches with 200 even
+Mar 14 12:16:38 <j`ey>	well no, if it's not A it returns 100
+Mar 14 12:16:57 <j`ey>	but then the next says if it's not B.. return 101, which will always be true once we know it's A
+Mar 14 12:19:30 <kpcyrd>	I just noticed this too after I was very confused by the release output. In my original code it's `let Some('j') = chars.next()` and I over-simplified the code.
+Mar 14 13:58:15 <Widdershins>	dav1d: it forbids nan and inf as the format does, but has at least three precision levels: lossless (keep all digits), 64 bit (will round trip whatever fits in a f64 or i think i64), and lossy (slightly faster, parses f64 inaccurately. would you believe, the default)
+Mar 14 13:58:44 <dav1d>	Widdershins, forbids = serialization error?
+Mar 14 13:59:12 <Widdershins>	yes it refuses to represent it in the number type
+Mar 14 13:59:59 <Widdershins>	would you believe the inaccurate parsing is also a default feature of rapidjson
+Mar 14 14:00:17 <Widdershins>	and exhibited by mysql
+Mar 14 14:00:33 <Widdershins>	because they didn't bother not to
+Mar 14 14:03:45 <Widdershins>	it's dismaying to me that lossy parsing is so widely considered worthwhile
+Mar 14 14:11:27 <ct>	just train a AI to parse anything :D
+Mar 14 14:26:32 <TimMc>	I'd like to parse some msgpack and map it to structs, ignoring unexpected keys. What should I be reaching for? I see a bunch of options.
+Mar 14 14:31:49 <bertptrs>	TimMc: rmp appears to be the most common one
+Mar 14 14:32:11 <bertptrs>	rmp-serde if you want a more convenient API
+Mar 14 14:46:58 <Widdershins>	ct: now that's synthesis... slow AND wrong
+Mar 14 14:47:21 <ct>	:)
+Mar 14 14:56:16 <TimMc>	Oh good, a serde integration!
+Mar 14 15:15:04 <bertptrs>	anyone can recommend a connection pool thingy that works with tokio-postgres?
+Mar 14 15:24:14 <Widdershins>	bertptrs: pgbouncer?
+Mar 14 15:24:48 <bertptrs>	Widdershins: I meant in-process
+Mar 14 15:24:54 <bertptrs>	deadpool-postgres looks pormising
+Mar 14 17:26:53 <eddybilley>	jk/quit
+Mar 14 18:34:30 <palindrome>	actix-web question, how do I register a handler that besides the Request I want to receive a custom type on my signature?
+Mar 14 20:47:19 <Ademan>	sadly I can't get into the dioxus discord (blech) without giving discord my phone number (no chance) so I'm forced to ask here. Does dioxus have anything like a "virtual list" like react has? (something like https://github.com/developerdizzle/react-virtual-list ) which is important for displaying lists with large numbers of items
+Mar 14 20:49:41 <Ademan>	I don't know if there's another term for the pattern, but "virtual list" tends to end up with search results about the virtual dom
+Mar 14 21:16:37 <Widdershins>	Ademan: ohhh...discord-only support regime huh. that's icky
+Mar 14 21:17:09 <dav1d>	so you're saying we're just your 2nd choice? D:
+Mar 14 21:24:00 <Ademan>	Widdershins: front-end people smh
+Mar 14 21:24:18 <Ademan>	dav1d: well, I feel weird asking library-specific things in a general channel
+Mar 14 21:25:01 <Ademan>	also hopefully my /s on the front-end dev joke was implied
+Mar 14 21:33:28 <int-e>	 somebody has to work the reception desk
+Mar 14 21:47:48 <Ademan>	oh ho, it seems they relaxed their server entry requirements, I'm in!
+Mar 14 21:52:05 <Ademan>	still don't like being forced to use discord but this is like the 5th or 6th technical server I've joined, seems unavoidable these days...
+Mar 14 22:41:33 <Widdershins>	Ademan: discord delenda est
+Mar 14 22:41:51 <Widdershins>	Discord Search Is Not A Wiki
+**** BEGIN LOGGING AT Fri Mar 15 03:40:53 2024
+
+Mar 15 03:40:51 *	Now talking on ##rust
+Mar 15 03:40:51 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 15 03:40:51 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+**** BEGIN LOGGING AT Fri Mar 15 03:45:00 2024
+
+Mar 15 03:45:00 *	Now talking on ##rust
+Mar 15 03:45:00 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 15 03:45:00 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 15 03:45:01 FiSHLiM plugin unloaded
+**** ENDING LOGGING AT Fri Mar 15 03:45:01 2024
+
+Mar 15 04:39:00 <bwidawsk>	Can someone help me understand why these both print false?
+Mar 15 04:39:07 <bwidawsk>	```
+Mar 15 04:39:07 <bwidawsk>	println!("is sorted?: {}", line.chars().collect::<Vec<_>>().is_sorted());
+Mar 15 04:39:07 <bwidawsk>	line.chars().into_iter().collect::<Vec<_>>().sort_unstable();
+Mar 15 04:39:07 <bwidawsk>	println!("is sorted?: {}", line.chars().collect::<Vec<_>>().is_sorted());
+Mar 15 04:39:07 <bwidawsk>	```
+Mar 15 04:45:52 <bwidawsk>	(`sort` is the same`
+Mar 15 04:59:41 <Affliction>	bwidawsk: 2nd line won't alter "line", so you're effectively doing the same thing twice.
+Mar 15 05:00:24 <Affliction>	You're pretty much collecting it into a temporary vec and throwing it away.
+Mar 15 05:00:34 <bwidawsk>	how do I do this properly?
+Mar 15 05:02:42 <Affliction>	I'd assign line.chars().collect() a variable, do the is_sorted() test, call sort_unstable() on that vec, then do is_sorted() again.
+Mar 15 05:03:15 <bwidawsk>	hmm I thought I tried, hang on
+Mar 15 05:03:18 <Affliction>	I believe there's an iterator combinator that can test if sorted too...
+Mar 15 05:03:48 <bwidawsk>	the is_sorted was just to demonstrate the issue
+Mar 15 05:04:03 <Affliction>	Yeah, don't need the collect then.
+Mar 15 05:04:17 <Affliction>	evalr: "dabc".chars().is_sorted();
+Mar 15 05:04:19 -evalr/##rust-	Affliction: error[E0658]: use of unstable library feature 'is_sorted': new A ...
+Mar 15 05:04:19 -evalr/##rust-	Affliction: https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=8302d371758f4c428733032120f68839
+Mar 15 05:06:12 <Affliction>	SO yeah, that'd work for the first case. For the second, yeah, collecting into a vec, sorting, and doing that same test should work, too.
+Mar 15 05:26:25 <bwidawsk>	Affliction: thank you
+**** ENDING LOGGING AT Fri Mar 15 05:52:58 2024
+
+**** BEGIN LOGGING AT Fri Mar 15 06:03:30 2024
+
+Mar 15 06:03:26 *	Now talking on ##rust
+Mar 15 06:03:26 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 15 06:03:26 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 15 12:15:18 *	Disconnected ()
+**** ENDING LOGGING AT Fri Mar 15 12:15:18 2024
+
+**** BEGIN LOGGING AT Fri Mar 15 12:17:55 2024
+
+Mar 15 12:17:55 *	Now talking on ##rust
+Mar 15 12:17:55 *	Topic for ##rust is: Unofficial channel for the Rust programming language | Don't ask to ask, just ask! | Code of conduct: https://rust-lang.org/policies/code-of-conduct | Playground: https://play.rust-lang.org | evalr: «code» to run Rust code | Other chat/help venues: https://rust-lang.org/community | Moderation concerns: ##rust-ops | Offtopic chatter: ##rust-offtopic
+Mar 15 12:17:55 *	Topic for ##rust set by bertptrs!~quassel@user/bertptrs (Mon May 22 14:11:18 2023)
+Mar 15 13:29:08 <dav1d>	Is there anything that makes cargo package the crate source files into a zip file and put them next to the binary in the target directory?
+Mar 15 13:53:47 <dav1d>	nvm found what I was looking for, wasn't related to cargo
+Mar 15 14:01:34 <tazjin>	dav1d: there is a cargo-native way though (`cargo package`, it's what it does before publishing to e.g. crates.io)
+Mar 15 14:05:59 <dav1d>	problem was I had a binary.src.zip in my target dir and wasnt sure where it's coming from
+Mar 15 14:14:59 <TimMc>	oh hah
+Mar 15 14:55:47 <jemius>	I can't enter the Matrix rust room, getting a 403: you're not invited :O
+Mar 15 14:56:07 <jemius>	3 years ago there was just a public room. No idea why that has been closed
+Mar 15 15:42:36 <dav1d>	I hate cross compiling
+Mar 15 15:43:17 <dav1d>	have it work with cross 0.2.5, but I need a feature from master for something else, now the binary doesnt build anymore because cmake can't find zlib even if I install it

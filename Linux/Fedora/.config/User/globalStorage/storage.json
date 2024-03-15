@@ -10,7 +10,7 @@
             "file:///home/david/Learn/Rust/rust-course-data/exercises/activities/src/bin": "__default__profile__"
         },
         "emptyWindows": {
-            "1710206342989": "__default__profile__"
+            "1710405103665": "__default__profile__"
         }
     },
     "profileAssociationsMigration": true,
@@ -21,7 +21,7 @@
         "folders": [],
         "emptyWindows": [
             {
-                "backupFolder": "1710206342989"
+                "backupFolder": "1710405103665"
             }
         ]
     },
@@ -130,6 +130,61 @@
                                     "id": "openRecentFile",
                                     "uri": {
                                         "$mid": 1,
+                                        "external": "file:///home/david/.config/kitty/Kitty_Theme_vscode-dark.conf",
+                                        "path": "/home/david/.config/kitty/Kitty_Theme_vscode-dark.conf",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/.config/kitty/Kitty_Theme_vscode-dark.conf"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/david/.config/alacritty/themes/themes/zenburn.toml",
+                                        "path": "/home/david/.config/alacritty/themes/themes/zenburn.toml",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/.config/alacritty/themes/themes/zenburn.toml"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/david/External/HD1T/Scripts_Notes/security-key.txt",
+                                        "path": "/home/david/External/HD1T/Scripts_Notes/security-key.txt",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/External/HD1T/Scripts_Notes/security-key.txt"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/david/External/HD1T/Scripts_Notes/Fedora-install-scripts/fedora-workstation.sh",
+                                        "path": "/home/david/External/HD1T/Scripts_Notes/Fedora-install-scripts/fedora-workstation.sh",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/External/HD1T/Scripts_Notes/Fedora-install-scripts/fedora-workstation.sh"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/david/External/HD1T/Cheat_Sheets/security-key.txt",
+                                        "path": "/home/david/External/HD1T/Cheat_Sheets/security-key.txt",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/External/HD1T/Cheat_Sheets/security-key.txt"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
                                         "external": "file:///home/david/.vscode/argv.json",
                                         "path": "/home/david/.vscode/argv.json",
                                         "scheme": "file"
@@ -182,61 +237,6 @@
                                     "label": "~/.config/emailidentities"
                                 },
                                 {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///home/david/.config/emaildefaults",
-                                        "path": "/home/david/.config/emaildefaults",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "~/.config/emaildefaults"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///home/david/.config/filetypesrc",
-                                        "path": "/home/david/.config/filetypesrc",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "~/.config/filetypesrc"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///home/david/.config/gtkrc",
-                                        "path": "/home/david/.config/gtkrc",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "~/.config/gtkrc"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///home/david/.config/gtkrc-2.0",
-                                        "path": "/home/david/.config/gtkrc-2.0",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "~/.config/gtkrc-2.0"
-                                },
-                                {
-                                    "id": "openRecentFile",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "external": "file:///home/david/.config/kconf_updaterc",
-                                        "path": "/home/david/.config/kconf_updaterc",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "~/.config/kconf_updaterc"
-                                },
-                                {
                                     "id": "vscode.menubar.separator"
                                 },
                                 {
@@ -273,13 +273,11 @@
                     },
                     {
                         "id": "workbench.action.files.save",
-                        "label": "&&Save",
-                        "enabled": false
+                        "label": "&&Save"
                     },
                     {
                         "id": "workbench.action.files.saveAs",
-                        "label": "Save &&As...",
-                        "enabled": false
+                        "label": "Save &&As..."
                     },
                     {
                         "id": "saveAll",
@@ -423,13 +421,11 @@
                     },
                     {
                         "id": "workbench.action.files.revert",
-                        "label": "Re&&vert File",
-                        "enabled": false
+                        "label": "Re&&vert File"
                     },
                     {
                         "id": "workbench.action.closeActiveEditor",
-                        "label": "&&Close Editor",
-                        "enabled": false
+                        "label": "&&Close Editor"
                     },
                     {
                         "id": "workbench.action.closeWindow",
@@ -474,13 +470,11 @@
                     },
                     {
                         "id": "actions.find",
-                        "label": "&&Find",
-                        "enabled": false
+                        "label": "&&Find"
                     },
                     {
                         "id": "editor.action.startFindReplaceAction",
-                        "label": "&&Replace",
-                        "enabled": false
+                        "label": "&&Replace"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -938,8 +932,7 @@
                     },
                     {
                         "id": "editor.action.toggleWordWrap",
-                        "label": "&&Word Wrap",
-                        "enabled": false
+                        "label": "&&Word Wrap"
                     }
                 ]
             },
@@ -1876,12 +1869,12 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "backupPath": "/home/david/.config/Code/Backups/1710206342989",
+            "backupPath": "/home/david/.config/Code/Backups/1710405103665",
             "uiState": {
                 "mode": 1,
-                "x": 1060,
+                "x": 8,
                 "y": 34,
-                "width": 852,
+                "width": 1140,
                 "height": 1038
             }
         },

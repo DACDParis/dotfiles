@@ -13,6 +13,7 @@ video/x-matroska=vlc.desktop;
 audio/x-mpegurl=vlc.desktop;
 application/xspf+xml=code.desktop;
 text/markdown=lvim.desktop;
+application/x-shellscript=code.desktop;
 
 [Default Applications]
 application/pdf=Sioyek.desktop;
