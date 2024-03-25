@@ -18,17 +18,42 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   zramSwap.enable = true;
+  
+  boot.kernelPatches = [
+  {
+    name = "Rust Support";
+    patch = null;
+    features = {
+     rust = true;
+      };
+    }
+  ];
+
+  hardware.xone.enable = true;
+  hardware.xpadneo.enable = true;
 
   hardware.opengl.extraPackages = with pkgs; [
   rocmPackages.clr.icd
   amdvlk
+  libva-utils
+  intel-compute-runtime
+  vulkan-loader
+  vulkan-validation-layers
+  vulkan-extension-layer
+  vulkan-tools
+  ];
+  
+  hardware.opengl.extraPackages32 = with pkgs; [
   driversi686Linux.amdvlk
   ];
+  
+  environment.variables.AMD_VULKAN_ICD = "RADV";
   
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
 
   services.hardware.openrgb.enable = true;
+   
   services.gvfs.enable = true;
 
   fileSystems."/" =

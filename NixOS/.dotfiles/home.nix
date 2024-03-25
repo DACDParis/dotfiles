@@ -10,13 +10,9 @@
 #   ./modules/cli/ranger.nix
    ./modules/cli/kitty.nix
    ./modules/cli/zsh.nix
-   ./modules/wm/waybar.nix
 #   ./modules/cli/fonts.nix
    ./modules/wm/hyprland.nix
 #   ./modules/misc/wofi.nix
-#   ./modules/cli/starship.nix
-#   ./modules/editors/lvim_overlay.nix
-#   ./modules/hardware/openrgb.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
@@ -36,9 +32,10 @@
   home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
-    # pkgs.hello
-#    cargo
-#    rustup
+    rustup-toolchain-install-master 
+    rust-analyzer
+    clippy 
+
     llvm
     unzip
     nodejs_21
@@ -50,29 +47,26 @@
     nerdfonts
     killall
     lua
-    starship
     sioyek
     warp-terminal
     lldb
+    alacritty
+    eza
 
     qbittorrent
     thunderbird
 
     gnome.gnome-disk-utility
 
-    libsForQt5.kdenlive
-    audacity
-    gimp-with-plugins
+    # gimp-with-plugins
     btop
-    duf # disk usage
+    duf 
     hexchat
     zoxide
     nextcloud-client
     libreoffice
-    ncdu # disc usage
+    ncdu 
     ranger
-    borgbackup
-    vorta # borgbackup gui 
 
     pamixer
     pulseaudio
@@ -85,6 +79,7 @@
     ncmpcpp
     asciinema
     mpv
+    audacity
 
     obs-studio
     obs-cli
@@ -100,6 +95,8 @@
     obs-studio-plugins.obs-pipewire-audio-capture
 
     lunarvim
+    vimPlugins.vim-wayland-clipboard
+
     lazygit
     ripgrep
     tree-sitter
@@ -108,9 +105,16 @@
     tmuxPlugins.continuum
     tmuxPlugins.resurrect
     tmuxPlugins.tmux-fzf
-    fzf
-
-
+    zellij
+    
+    idevicerestore
+    ideviceinstaller
+    usbmuxd
+    libusbmuxd
+    ifuse
+    apfs-fuse
+    gitkraken
+    
      # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -158,12 +162,13 @@
   #  /etc/profiles/per-user/david/etc/profile.d/hm-session-vars.sh
   #
 
-  programs.neovim.withNodeJs = true;
-  programs.neovim.withPython3 = true;
-  programs.neovim.withRuby = true;
+  # programs.neovim.withNodeJs = true;
+  # programs.neovim.withPython3 = true;
+  # programs.neovim.withRuby = true;
 
   home.sessionVariables = {
      EDITOR = "lvim";
+     VISUAL = "lvim";
   };
 
   programs.git = {
@@ -183,11 +188,9 @@
 
   xdg.enable = true;
 
-  services.emacs.enable = true;
-
   services.mpd = {
     enable = true;
-    musicDirectory = "~/Music";
+    musicDirectory = "~/External/HD700/Music";
     network = { startWhenNeeded = true;
     };
     extraConfig = ''
@@ -220,7 +223,7 @@
   '';
 };
 
-  
+   
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

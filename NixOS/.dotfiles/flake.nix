@@ -28,6 +28,14 @@
           {programs.hyprland.enable = true;}
 
         ./configuration.nix
+#
+#	    home-manager.nixosModules.home-manager
+#            {
+#            home-manager.useGlobalPkgs = true;
+#            home-manager.useUserPackages = true;
+#
+#            home-manager.users.david= import ./home.nix;
+#          }
 
         ({ pkgs, ... }: {
             nixpkgs.overlays = [ rust-overlay.overlays.default ];

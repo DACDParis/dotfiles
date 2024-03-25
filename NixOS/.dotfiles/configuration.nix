@@ -4,10 +4,11 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./modules/hardware/boot.nix
+      ./modules/hardware/openrgb.nix
       ./modules/hardware/network.nix
       ./modules/hardware/keyboard.nix
       ./modules/hardware/sound.nix
+      ./modules/hardware/vm.nix
       ./modules/wm/kde.nix
 #      ./modules/editors/emacs.nix
       ./modules/cli/tmux.nix
@@ -17,21 +18,28 @@
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
-  
-  programs.xwayland.enable = true;
-    services.xserver.enable = true;
-    services.xserver.displayManager.sddm.enable = true;
-    services.xserver.displayManager.sddm.wayland.enable = true;
+ 
   programs.hyprland.enable = true; 
+  programs.xwayland.enable = true;
+  services.xserver.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.videoDrivers = [ "amdgpu" ];
+  services.xserver.libinput.enable = true;
 
+  xdg.portal.xdgOpenUsePortal = true; 
+  
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
-  programs.direnv.enable = true;
+  programs.dconf.enable = true;
+
+  # programs.direnv.enable = true;
   services.flatpak.enable = true;
   
   nix.gc.automatic = true;
   security.polkit.enable = true;
 
+  security.pam.services.swaylock = { }; 
+  
   # Set your time zone.
   time.timeZone = "Europe/Paris";
 
@@ -54,7 +62,7 @@
   users.users.david = {
     isNormalUser = true;
     description = "david";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "audio" "i2c" "libvirtd" "kvm"];
     packages = with pkgs; [
       spotify
       discord
@@ -62,14 +70,10 @@
       vivaldi
       electron
       clang
-      emacs
       vscode
+      vscode-extensions.rust-lang.rust-analyzer
     ];
-    
   };
-#  services.emacs.enable = true;
-#  services.emacs.package = pkgs.emacs-unstable;
-
 
  # nixpkgs.overlays = [
  #   (import (builtins.fetchTarball {
@@ -115,14 +119,13 @@
 	  enable = true;
   };
 
-#  programs.nix-ld.enable = true;
-#  programs.nix-ld.libraries = with pkgs; [
+ # programs.nix-ld.enable = true;
+ # programs.nix-ld.libraries = [
 #  
 #  # Add any missing dynamic libraries for unpackaged programs
-#
 #  # here, NOT in environment.systemPackages
 #
-#  ];
+ # ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -149,7 +152,6 @@
     libtool
     appimage-run
     liquidctl
-    glaxnimate
     libsForQt5.mlt
     ffmpeg
     lsof
@@ -160,6 +162,9 @@
     hwinfo
     kitty
     bat
+    libGLU
+    mesa
+    networkmanagerapplet
 
   ];
 

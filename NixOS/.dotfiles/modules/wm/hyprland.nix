@@ -8,18 +8,21 @@
     grimblast
     cairo
     meson
-    swaybg
     waybar
     swaynotificationcenter
     swappy
     sway
+    swaybg
+    swayidle
+    swaylock
     swaytools
     nwg-look
-    libsForQt5.qt5ct
-    opensnitch 
+    # kdePackages.qt6ct
+    kdePackages.kdenlive
     opensnitch-ui
+    opensnitch
     openrgb-with-all-plugins
-    adwaita-qt
+    adwaita-qt6
     libadwaita
     wl-clipboard
     cliphist
@@ -27,10 +30,13 @@
     swww
     waybar-mpris
     mpdris2
-    vimPlugins.vim-wayland-clipboard
-    xdg-desktop-portal-hyprland
+    # xdg-desktop-portal-hyprland
     pamixer
     playerctl
+    usbimager
+    hyprdim
+
+
 
   ];
 
@@ -41,66 +47,77 @@
     };
     package = pkgs.hyprland;
     extraConfig = ''
-    exec-once = sleep 1
-    exec-once = killall xdg-desktop-portal-hyprland
-    exec-once = killall xdg-desktop-portal-wlr
-    exec-once = killall xdg-desktop-portal
-    exec-once = killall xdg-desktop-portal-kde
-    exec-once = killall xdg-desktop-portal-gtk
-    exec-once = killall xdg-desktop-portal-gnome
-    exec-once = xdg-desktop-portal-hyprland &
-    exec-once = sleep 2
-    exec-once = xdg-desktop-portal &
+    # exec-once = sleep 1
+    # exec-once = killall xdg-desktop-portal-hyprland
+    # exec-once = killall xdg-desktop-portal-wlr
+    # exec-once = killall xdg-desktop-portal
+    # exec-once = killall xdg-desktop-portal-kde
+    # exec-once = killall xdg-desktop-portal-gtk
+    # exec-once = killall xdg-desktop-portal-gnome
+    # exec-once = xdg-desktop-portal-hyprland &
+    # exec-once = sleep 2
+    # exec-once = xdg-desktop-portal 
 
     # exec-once = /$HOME/.config/hypr/xdg-portal-hyprland.sh
     
     # use the command `hyprctl monitors` to get the info.
     
-    # Single Monitor iGPU
-    # monitor=HDMI-A-1,disable
-    # monitor=DP-3,2560x1080@60,0x0,1
-    
     # LG on the left
-    #monitor=DP-4,1920x1080@180,2560x0,1, bitdepth, 10 
-    #monitor=DP-5,2560x1080@60,0x0,1 
-  
+    # monitor=DP-4,1920x1080@180,2560x0,1, bitdepth, 10 
+    # monitor=DP-5,2560x1080@60,0x0,1 
+    # monitor=HDMI-A-4,disable
+    # workspace=DP-5,1
+    # workspace=DP-2,2
+    # workspace=DP-5,3
+    # workspace=DP-5,4
+    # workspace=DP-5,5
+    # workspace=DP-5,6
+    # workspace=DP-5,8
+
     # Multi Monitor 
-    monitor=HDMI-A-4,3840x2160@60,0x0,1, bitdepth, 10
-    #monitor=HDMI-A-4,disable
-    monitor=DP-5,2560x1080@60,3840x0,1 
-    monitor=DP-4,1920x1080@180,6400x0,1, bitdepth, 10 
-    
-    workspace=DP-5,1
+    monitor=HDMI-A-1,3840x2160@60,0x0,1, bitdepth, 10
+    monitor=DP-3,2560x1080@60,3840x0,1 
+    monitor=DP-2,1920x1080@180,6400x0,1, bitdepth, 10 
+    workspace=DP-3,1
     workspace=DP-2,2
-    workspace=DP-5,3
-    workspace=DP-5,4
-    workspace=DP-5,5
-    workspace=DP-5,6
-    workspace=DP-5,8
-    workspace=HDMI-A-4,9
+    workspace=DP-3,3
+    workspace=DP-3,4
+    workspace=DP-3,5
+    workspace=DP-3,6
+    workspace=DP-3,8
+    workspace=HDMI-1-4,9
     workspace=special:scratchpad, on-created-empy:discord
     
     # Some default env vars
-    env=XCURSOR_SIZE,10
-    env=QT_QPA_PLATFORMTHEME,qt5ct
-    env=XDG_SESSION_TYPE,wayland
-    env=QT_QPA_PLATFORM,wayland;xcb
-    # env=GDK_BACKEND,wayland,x11
-    env=WLR_NO_HARDWARE_CURSORS,1
-    env=GLFW_IM_MODULE=ibus
+    env = XCURSOR_SIZE,10
+    # env = GLFW_IM_MODULE=ibus
+    # env = GDK_BACKEND,wayland,x11
+
+    # env = XDG_SESSION_DESKTOP=Hyprland
+    env = XDG_SESSION_TYPE,wayland
+    env = XDG_SESSION_DESKTOP,KDE
+    env = XDG_CURRENT_DESKTOP,KDE
+    # env = XDG_CURRENT_DESKTOP=Hyprland
+
+    # env = QT_QPA_PLATFORMTHEME,qt6ct
+    env = QT_QPA_PLATFORM,wayland
+    env = QT_STYLE_OVERRIDE,Breeze 
+
     # env=LIBVA_DRIVER_NAME,iHD
     
+    env = WLR_NO_HARDWARE_CURSORS,1
     env = WLR_DRM_NO_ATOMIC,1
-    env=XDG_CURRENT_DESKTOP=Hyprland
-    env=XDG_SESSION_DESKTOP=Hyprland
     
+    env = SSH_AUTH_SOCK,$XDG_RUNTIME_DIR/ssh-agent.socket
+
     $mainMod = SUPER
     
     # Startup
     exec-once = waybar 
+    exec-once = ~/.dotfiles/modules/misc/idle.sh
     exec-once = mpd 
-    exec-once = ~/.dotfiles/modules/misc/gnome_polkit.sh 
     exec-once = ~/.dotfiles/modules/misc/fans.sh
+    exec-once = ~/.dotfiles/modules/misc/gnome_polkit.sh 
     exec-once = swaync -style ~/.config/hypr/swaync/style.css --config ~/.config/sway/swaync/config.json 
 #    exec-once = polkit-kde-authentication-agent-1 &
     exec-once = dbus-update-activation-environment --systemd --all  &  ##WAYLAND_DISPLAY XDG_CURRENT_DESKTOP QT_QPA_PLATFORMTHEME GTK_THEME
@@ -110,7 +127,6 @@
     # exec-once = dunst
     # exec-once = blueman &
     exec-once = nm-applet 
-#    exec-once = kitty --detach discordo 
 #    exec-once = hexchat 
     exec-once = QT_QPA_PLATFORM=xcb opensnitch-ui 
     exec-once = wl-paste --watch cliphist store
@@ -121,9 +137,10 @@
     # exec-once = [workspace 4 ] flatpak run com.spotify.Client 
     # exec-once = [workspace 4 ] flatpak run im.riot.Riot
     # exec-once = [workspace 1 ] google-chrome  
-    exec-once = [workspace 1 ] vivaldi 
+    # exec-once = [workspace 1 ] vivaldi --enable-features=UseOzonePlatform --ozone-platform=wayland
     # exec-once = [workspace 1 ] floorp
-    exec-once = [workspace 1 ] kitty  
+    exec-once = [workspace 1 ] firefox
+    exec-once = [workspace 1 ] kitty 
     
     input {
       kb_layout = us,fr
@@ -151,7 +168,7 @@
       border_size = 2
       col.active_border = rgb(2f88FC)
       col.inactive_border = rgba(595959aa)
-    
+      cursor_inactive_timeout = 5 
       layout = master
     }
     
@@ -227,14 +244,16 @@
     
     bind = $mainMod, Q, killactive
     bind = $mainMod, A, exec, kitty lvim 
-    bind = $mainMod ALT1, w, exec, google-chrome
-    bind = $mainMod, z, exec, vivaldi
-    bind = $mainMod, agrave, exec, /$HOME/.dotfiles/modules/misc/exit_hyprland.sh
+    # bind = $mainMod ALT1, w, exec, google-chrome
+    # bind = $mainMod, z, exec, vivaldi --enable-features=UseOzonePlatform --ozone-platform=wayland
+    bind = $mainMod ALT1, z, exec, vivaldi --enable-features=UseOzonePlatform --ozone-platform=wayland
+    bind = $mainMod, z, exec, firefox 
+    bind = $mainMod, 0, exec, /$HOME/.dotfiles/modules/misc/exit_hyprland.sh
     bind = $mainMod, F, fullscreen
     bind = $mainMod, Return, exec, kitty
     bind = $mainMod  SHIFT, Return, exec, kitty tmux
-    bind = $mainMod, x, exec, dolphin 
-    bind = $mainMod ALT1, x, exec, kitty fm 
+    bind = $mainMod, x, exec, dolphin
+    bind = $mainMod ALT1, x, exec, warp-terminal
     bind = $mainMod, d, exec, kitty --detach discordo 
     bind = $mainMod, Space, exec, wofi -show
     bind = $mainMod SHIFT, R, exec, hyprctl reload

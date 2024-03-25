@@ -13,7 +13,7 @@
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  # programs.mtr.enable = true;
+  programs.mtr.enable = true;
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
@@ -23,11 +23,8 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  # programs.ssh.startAgent = true;
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
   networking.firewall = {
   enable = true;
   extraCommands = ''iptables -t raw -A OUTPUT -p udp -m udp --dport 137 -j CT --helper netbios-ns'';
@@ -39,9 +36,7 @@
   ];
 };
 
-
-
   networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
-  
 
-}
+
+ }

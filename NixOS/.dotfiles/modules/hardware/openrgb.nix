@@ -1,52 +1,26 @@
-{ pkgs, config, lib, ... }:
-
-with lib;
-
+{ pkgs, lib, ... }:
 let
-  cfg = config.services.openrgb;
-in  {
-	options.services.openrgb = {
-		enable = mkEnableOption "OpenRGB server";
+  no-rgb = pkgs.writeScriptBin "no-rgb" ''
+    #!/bin/sh
+    NUM_DEVICES=$(${pkgs.openrgb}/bin/openrgb --noautoconnect --list-devices | grep -E '^[0-9]+: ' | wc -l)
 
-		package = mkOption {
-			type = types.package;
-			default = pkgs.openrgb;
-			defaultText = "pkgs.openrgb";
-			description = "Set version of openrgb package to use.";
-		};
-        
-	        server.port = mkOption {
-			type = types.port;
-			default = 6742;
-			defaultText = "6742";
-			description = "Set server port to openrgb.";
-		};
+    for i in $(seq 0 $(($NUM_DEVICES - 1))); do
+      ${pkgs.openrgb}/bin/openrgb --noautoconnect --device $i --mode static --color 000000
+    done
+  '';
+in {
+  config = {
+    services.udev.packages = [ pkgs.openrgb ];
+    boot.kernelModules = [ "i2c-dev" ];
+    hardware.i2c.enable = true;
 
-	};
-  
-  config = mkIf cfg.enable {
-	  environment.systemPackages = [ cfg.package ];
-	  services.dbus.packages = [ cfg.package ];
-
-	  systemd.services.openrgb = {
-		  desciption = "opergb server deamon.";
-
-		  wantedBy = [ "multi-user.target" ];
-		  after = [ "network.target" ];
-
-		  restartIfChanged = true;
-
-		  serviceConfig = {
-			  DynamicUser = true;
-			  ExecStart = "${cfg.package}/bin/openrgb --server --server-port ${cfg.server.port}";
-			  Restart = "always";
-	  };
-	};
-     };
-
-  meta.maintainers = with lib.maintainers; [ david ];
- 
- }
-
-
-   
+    systemd.services.no-rgb = {
+      description = "no-rgb";
+      serviceConfig = {
+        ExecStart = "${no-rgb}/bin/no-rgb";
+        Type = "oneshot";
+      };
+      wantedBy = [ "multi-user.target" ];
+    };
+  };
+}   
