@@ -19,6 +19,18 @@
     enableSSHSupport = true;
    };
 
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    publish = {
+      enable = true;
+      addresses = true;
+      domain = true;
+      hinfo = true;
+      userServices = true;
+      workstation = true;
+    };
+  };
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
@@ -28,7 +40,7 @@
   networking.firewall = {
   enable = true;
   extraCommands = ''iptables -t raw -A OUTPUT -p udp -m udp --dport 137 -j CT --helper netbios-ns'';
-  allowedTCPPorts = [ 22 80 443 65055 8080];
+  allowedTCPPorts = [ 22 80 443 445 65055 8080];
   allowedUDPPorts = [ 65055 ];
   allowedUDPPortRanges = [
     { from = 4000; to = 4007; }

@@ -30,13 +30,12 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
     rustup-toolchain-install-master 
     rust-analyzer
     clippy 
 
     llvm
+    easyeffects
     unzip
     nodejs_21
     perl
@@ -106,6 +105,7 @@
     tmuxPlugins.resurrect
     tmuxPlugins.tmux-fzf
     zellij
+    tealdeer
     
     idevicerestore
     ideviceinstaller

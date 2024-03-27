@@ -13,7 +13,7 @@
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "amdgpu" ];
+  boot.kernelModules = [ "amdgpu" "kvm-intel" ];
   boot.extraModulePackages = [ ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -31,6 +31,9 @@
 
   hardware.xone.enable = true;
   hardware.xpadneo.enable = true;
+  
+  # services.samba.enable = true;
+  # services.samba.openFirewall = true;
 
   hardware.opengl.extraPackages = with pkgs; [
   rocmPackages.clr.icd

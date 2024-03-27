@@ -27,6 +27,11 @@
   services.xserver.libinput.enable = true;
 
   xdg.portal.xdgOpenUsePortal = true; 
+
+  system.autoUpgrade = {
+    enable = true;
+    channel = "https://nixos.org/channel/nixos-unstable";
+  };
   
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
@@ -35,7 +40,15 @@
   # programs.direnv.enable = true;
   services.flatpak.enable = true;
   
-  nix.gc.automatic = true;
+  nix = {
+    settings.auto-optimise-store = true;
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 3d";
+    };
+  };
+
   security.polkit.enable = true;
 
   security.pam.services.swaylock = { }; 
@@ -81,13 +94,7 @@
  #   }))
  # ];
 
-  # Enable automatic login for the user.
-#  services.getty.autologinUser = "david";
-
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   nixpkgs.config.permittedInsecurePackages = [
@@ -99,33 +106,24 @@
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
     "corefonts"
-
     ];
 
   fonts.packages = with pkgs; [
     corefonts
   ];
 
-  services.opensnitch.enable = true;
-
-  nix.settings = {
-  #   substituters = ["https://hyprland.cachix.org"];
-  #   trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-      auto-optimise-store = true;
-
-  };
+  # services.opensnitch.enable = true;
 
   programs.steam = {
 	  enable = true;
   };
 
- # programs.nix-ld.enable = true;
- # programs.nix-ld.libraries = [
-#  
-#  # Add any missing dynamic libraries for unpackaged programs
-#  # here, NOT in environment.systemPackages
-#
- # ];
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [
+ 
+ # Add any missing dynamic libraries for unpackaged programs
+ # here, NOT in environment.systemPackages
+  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -156,6 +154,8 @@
     ffmpeg
     lsof
     cifs-utils
+    kdePackages.sddm-kcm
+    # kdePackages.qt6ct
     sshfs
     wayland-protocols
     neofetch
@@ -165,7 +165,7 @@
     libGLU
     mesa
     networkmanagerapplet
-
+    home-manager
   ];
 
   # This value determines the NixOS release from which the default

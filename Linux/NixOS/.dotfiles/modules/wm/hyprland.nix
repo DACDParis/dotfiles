@@ -17,10 +17,9 @@
     swaylock
     swaytools
     nwg-look
-    # kdePackages.qt6ct
     kdePackages.kdenlive
-    opensnitch-ui
-    opensnitch
+    # opensnitch-ui
+    # opensnitch
     openrgb-with-all-plugins
     adwaita-qt6
     libadwaita
@@ -28,6 +27,7 @@
     cliphist
     polkit_gnome
     swww
+    eww
     waybar-mpris
     mpdris2
     # xdg-desktop-portal-hyprland
@@ -67,7 +67,7 @@
     # monitor=DP-5,2560x1080@60,0x0,1 
     # monitor=HDMI-A-4,disable
     # workspace=DP-5,1
-    # workspace=DP-2,2
+    # workspace=DP-4,2
     # workspace=DP-5,3
     # workspace=DP-5,4
     # workspace=DP-5,5
@@ -75,16 +75,16 @@
     # workspace=DP-5,8
 
     # Multi Monitor 
-    monitor=HDMI-A-1,3840x2160@60,0x0,1, bitdepth, 10
-    monitor=DP-3,2560x1080@60,3840x0,1 
-    monitor=DP-2,1920x1080@180,6400x0,1, bitdepth, 10 
-    workspace=DP-3,1
-    workspace=DP-2,2
-    workspace=DP-3,3
-    workspace=DP-3,4
-    workspace=DP-3,5
-    workspace=DP-3,6
-    workspace=DP-3,8
+    monitor=HDMI-A-4,3840x2160@60,0x0,1, bitdepth, 10
+    monitor=DP-5,2560x1080@60,3840x0,1 
+    monitor=DP-4,1920x1080@180,6400x0,1, bitdepth, 10 
+    workspace=DP-5,1
+    workspace=DP-4,2
+    workspace=DP-5,3
+    workspace=DP-5,4
+    workspace=DP-5,5
+    workspace=DP-5,6
+    workspace=DP-5,8
     workspace=HDMI-1-4,9
     workspace=special:scratchpad, on-created-empy:discord
     
@@ -115,6 +115,7 @@
     # Startup
     exec-once = waybar 
     exec-once = ~/.dotfiles/modules/misc/idle.sh
+    # exec-once = copyq --start-server
     exec-once = mpd 
     exec-once = ~/.dotfiles/modules/misc/fans.sh
     exec-once = ~/.dotfiles/modules/misc/gnome_polkit.sh 
@@ -128,8 +129,8 @@
     # exec-once = blueman &
     exec-once = nm-applet 
 #    exec-once = hexchat 
-    exec-once = QT_QPA_PLATFORM=xcb opensnitch-ui 
-    exec-once = wl-paste --watch cliphist store
+    # exec-once = QT_QPA_PLATFORM=xcb opensnitch-ui 
+    # exec-once = wl-paste --watch cliphist store
     
     exec-once = [workspace 8 ] qbittorrent 
     exec-once = [workspace 6 ] thunderbird
@@ -229,6 +230,7 @@
     windowrulev2 = workspace 4, class:^(HexChat)$
     
     windowrulev2 = float,class:^(NoiseTorch)$,title:^(NoiseTorch)$
+    windowrulev2 = float,class:^(com.github.hluk.copyq)$,title:^(CopyQ)$
     windowrulev2 = float,class:^(org.qbittorrent.qBittorrent), title:(*qBittorrent*)$
     windowrulev2 = float,class:^(openrgb)$,title:^(OpenRGB)$
     windowrulev2 = float,class:^(org.kde.dolphin)$,title:^(Extract — Dolphin)$

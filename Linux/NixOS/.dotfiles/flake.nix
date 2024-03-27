@@ -6,36 +6,28 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    hyprland.url = "github:hyprwm/Hyprland";
-    nix-colors.url = "github:misterio77/nix-colors";
     rust-overlay.url = "github:oxalica/rust-overlay";
     
  };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, rust-overlay, ...}: 
+  outputs = inputs@{ nixpkgs, home-manager, rust-overlay, ...}: 
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
  
     in { 
     nixosConfigurations = {
       nixos = lib.nixosSystem {
         inherit system;
         modules = [ 
-
-          hyprland.nixosModules.default
-          {programs.hyprland.enable = true;}
-
         ./configuration.nix
-#
-#	    home-manager.nixosModules.home-manager
-#            {
-#            home-manager.useGlobalPkgs = true;
-#            home-manager.useUserPackages = true;
-#
-#            home-manager.users.david= import ./home.nix;
-#          }
+
+         home-manager.nixosModules.home-manager
+         {
+           home-manager.useGlobalPkgs = true;
+           home-manager.useUserPackages = true;
+           home-manager.users.david= import ./home.nix;
+         }
 
         ({ pkgs, ... }: {
             nixpkgs.overlays = [ rust-overlay.overlays.default ];
@@ -43,16 +35,9 @@
           })
 
         ];
-    };
-  };
-   homeConfigurations = {
-      david = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [./home.nix];
-       
       };
     };
-  };
+    };
 
 
 }

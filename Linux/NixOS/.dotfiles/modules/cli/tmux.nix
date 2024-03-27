@@ -13,6 +13,12 @@
 
     plugins = with pkgs; [
       tmuxPlugins.better-mouse-mode
+      tmuxPlugins.yank
+      tmuxPlugins.tmux-fzf
+      tmuxPlugins.resurrect
+      tmuxPlugins.continuum
+      tmuxPlugins.mode-indicator
+
     ];
 
     extraConfig = ''
