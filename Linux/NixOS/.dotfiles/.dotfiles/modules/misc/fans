@@ -1,0 +1,6 @@
+#! /usr/bin/env nix-shell
+#! nix-shell -i bash -p liquidctl
+
+sudo liquidctl initialize --pump-mode=performance
+# sudo liquidctl --match hydro set pump speed 100
+sudo liquidctl --match hydro set fan speed 30 20 36 40 37 70 38 100
