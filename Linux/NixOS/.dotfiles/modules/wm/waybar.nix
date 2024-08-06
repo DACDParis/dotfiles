@@ -84,7 +84,6 @@
       modules-left = [ "hyprland/workspaces" ];
       modules-center = [ "hyprland/window" ];
       modules-right = [
-        "bluetooth"
         "pulseaudio"
         "pulseaudio#microphone"
         "temperature"
@@ -167,16 +166,7 @@
         scroll-step = 5;
       };
 
-      "bluetooth" = {
-        format = " {status}";
-        format-disabled = "";
-        format-connected = " {num_connections}";
-        tooltip-format = "{device_alias}";
-        tooltip-format-connected = " {device_enumerate}";
-        tooltip-format-enumerate-connected = "{device_alias}";
-      };
-
-      clock = {
+         clock = {
         format-alt = "{:%Y-%m-%d}";
         tooltip-format = "{:%Y-%m-%d | %H:%M}";
         };
