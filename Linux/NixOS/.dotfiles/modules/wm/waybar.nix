@@ -75,7 +75,7 @@
 
     settings = [{
       layer = "top";
-      position = "top";
+      position = "bottom";
       mod = "dock";
       exclusive = true;
       passthrough = false;
@@ -175,6 +175,11 @@
         tooltip-format-connected = " {device_enumerate}";
         tooltip-format-enumerate-connected = "{device_alias}";
       };
+
+      clock = {
+        format-alt = "{:%Y-%m-%d}";
+        tooltip-format = "{:%Y-%m-%d | %H:%M}";
+        };
 
     }];
 
