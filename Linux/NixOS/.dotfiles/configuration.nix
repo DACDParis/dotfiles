@@ -1,64 +1,114 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, lib, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./modules/hardware/openrgb.nix
-      ./modules/hardware/network.nix
-      ./modules/hardware/keyboard.nix
-      ./modules/hardware/sound.nix
-      ./modules/hardware/vm.nix
-      ./modules/wm/kde.nix
-#      ./modules/editors/emacs.nix
-      ./modules/cli/tmux.nix
-#      ./modules/cli/shells.nix
+  imports = [
+    ./hardware-configuration.nix
+    ./modules/hardware/openrgb.nix
+    ./modules/hardware/network.nix
+    ./modules/hardware/keyboard.nix
+    ./modules/hardware/sound.nix
+    ./modules/hardware/vm.nix
+    ./modules/cli/tmux.nix
+    ./nvidia.nix
+    #./modules/wm/kde.nix
+    # ./prometheus.nix
+    #./gnome.nix
+
+  ];
+
+  # Bootloader.
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+
+    binfmt.registrations.appimage = {
+      wrapInterpreterInShell = false;
+      interpreter = "${pkgs.appimage-run}/bin/appimage-run";
+      recognitionType = "magic";
+      offset = 0;
+      mask = "\\xff\\xff\\xff\\xff\\x00\\x00\\x00\\x00\\xff\\xff\\xff";
+      magicOrExtension = "\\x7fELF....AI\\x02";
+    };
+  };
+
+  programs = {
+    hyprland = {
+      enable = true;
+      #   portalPackage = pkgs.xdg-desktop-portal-hyprland;
+    };
+
+    xwayland.enable = true;
+
+    zsh.enable = true;
+
+    dconf.enable = true;
+
+    nix-ld.enable = true;
+    nix-ld.libraries = [
+      # Add any missing dynamic libraries for unpackaged programs
+      # here, NOT in environment.systemPackages
     ];
 
-  environment.shells = with pkgs; [ zsh ];
-  users.defaultUserShell = pkgs.zsh;
-  programs.zsh.enable = true;
- 
-  programs.hyprland.enable = true; 
-  programs.xwayland.enable = true;
-  services.xserver.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.videoDrivers = [ "amdgpu" ];
-  services.xserver.libinput.enable = true;
+    steam = {
+      enable = true;
+      remotePlay.openFirewall =
+        true; # Open ports in the firewall for Steam Remote Play
+      dedicatedServer.openFirewall =
+        true; # Open ports in the firewall for Source Dedicated Server
+      localNetworkGameTransfers.openFirewall =
+        true; # Open ports in the firewall for Steam Local Network Game Transfers
+      protontricks.enable = true;
+      gamescopeSession.enable = true;
+    };
 
-  xdg.portal.xdgOpenUsePortal = true; 
-
-  system.autoUpgrade = {
-    enable = true;
-    channel = "https://nixos.org/channel/nixos-unstable";
   };
-  
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
-  programs.dconf.enable = true;
 
-  # programs.direnv.enable = true;
-  services.flatpak.enable = true;
-  
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+      xdgOpenUsePortal = true;
+    };
+
+    mime = {
+      enable = true;
+      defaultApplications = {
+        "application/pdf" = "sioyek.desktop";
+        "application/epub" = "sioyek.desktop";
+        "image/png" = [ "gwenview.desktop" ];
+        "x-directory/normal" = [ "kde-dolphin.desktop" ];
+      };
+      addedAssociations = {
+
+      };
+    };
+  };
+
+  #  system.autoUpgrade = {
+  #    enable = true;
+  #    channel = "https://nixos.org/channel/nixos-unstable";
+  #    allowReboot = true;
+  #``  };
+
   nix = {
-    settings.auto-optimise-store = true;
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+      auto-optimise-store = true;
+    };
+
     gc = {
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than 3d";
     };
   };
 
   security.polkit.enable = true;
+  security.pam.services.swaylock = { };
 
-  security.pam.services.swaylock = { }; 
-  
-  # Set your time zone.
   time.timeZone = "Europe/Paris";
-
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "fr_FR.UTF-8";
     LC_IDENTIFICATION = "fr_FR.UTF-8";
@@ -71,109 +121,166 @@
     LC_TIME = "fr_FR.UTF-8";
   };
 
-# Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.david = {
-    isNormalUser = true;
-    description = "david";
-    extraGroups = [ "networkmanager" "wheel" "video" "audio" "i2c" "libvirtd" "kvm"];
-    packages = with pkgs; [
-      spotify
-      discord
-      obsidian
-      vivaldi
-      electron
-      clang
-      vscode
-      vscode-extensions.rust-lang.rust-analyzer
-    ];
+  services = {
+    xserver.enable = true;
+    displayManager.sddm.enable = true;
+    desktopManager.plasma6.enable = true;
+    displayManager.sddm.wayland.enable = true;
+    libinput.enable = true;
+
+    emacs.enable = true;
+    emacs.defaultEditor = true;
+
+    flatpak.enable = true;
+
+    gvfs.enable = true;
+
+    # opensnitch.enable = true;
+
   };
 
- # nixpkgs.overlays = [
- #   (import (builtins.fetchTarball {
- #     url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
- #   }))
- # ];
+  users = {
+    defaultUserShell = pkgs.zsh;
 
-  nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    users.david = {
+      isNormalUser = true;
+      description = "david";
+      extraGroups =
+        [ "networkmanager" "wheel" "video" "audio" "i2c" "libvirtd" "kvm" ];
+      packages = with pkgs; [
+        spotify
+        discord
+        obsidian
+        # vivaldi
+        # electron
+        clang
+      ];
+    };
+  };
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0"
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      # nixpkgs.config.permittedInsecurePackages = [
+      # "electron-25.9.0"
+      # ];
 
-  ];
+      # nixpkgs.overlays = [
+      #   (import (builtins.fetchTarball {
+      #     url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
+      #   }))
+      # ];
 
-  # Allow installation of unfree corefonts package
-  nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [
-    "corefonts"
-    ];
+      allowUnfreePredicate = pkg:
+        builtins.elem (lib.getName pkg) [
+          #      "corefonts"
+          #      "steam"
+          #      "steam-original"
+          #      "steam-run"
+        ];
+    };
+  };
 
   fonts.packages = with pkgs; [
     corefonts
+    source-code-pro
+    nerdfonts
+    nanum-gothic-coding
+    ubuntu_font_family
   ];
 
-  # services.opensnitch.enable = true;
+  environment = {
+    shells = with pkgs; [ zsh ];
 
-  programs.steam = {
-	  enable = true;
+    sessionVariables = {
+      XDG_CACHE_HOME = "$HOME/.cache";
+      XDG_CONFIG_HOME = "$HOME/.config";
+      XDG_DATA_HOME = "$HOME/.local/share";
+      XDG_STATE_HOME = "$HOME/.local/state";
+      "QT_STYLE_OVERRIDE" = "kvantum";
+
+      #    # Not officially in the specification
+      #    XDG_BIN_HOME = "$HOME/.local/bin";
+      FLAKE = "$HOME/.dotfiles";
+      PATH = [ ". $HOME/.cargo/env" ];
+    };
+
+    systemPackages = with pkgs; [
+      meson
+      python311Full
+      jq
+      poppler
+      gcc-unwrapped
+      python311Packages.pillow
+      ninja
+      cmake
+      gnumake
+      libtool
+
+      home-manager
+
+      git
+      wget
+      vim
+      emacs29-pgtk
+      curl
+      fd
+      yazi
+      tmux
+      kitty
+      ueberzugpp
+      bat
+      clinfo
+      liquidctl
+      openrgb
+      lsof
+      hwinfo
+
+      google-chrome
+      w3m
+
+      fuse
+      fuse3
+      ifuse
+      apfs-fuse
+      appimage-run
+      cifs-utils
+      networkmanagerapplet
+      libGLU
+
+      ffmpeg-full
+      nv-codec-headers
+      kdePackages.kcodecs
+      mesa
+
+      silver-searcher
+      usbutils
+      libstdcxx5
+      glaxnimate
+      adwaita-icon-theme
+
+      nh
+      #nix-output-monitor
+      nvd
+      nil
+
+      # prometheus
+
+      lutris
+
+      nvidia-vaapi-driver
+      nvidia-texture-tools
+
+      beekeeper-studio
+
+    ];
   };
 
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = [
- 
- # Add any missing dynamic libraries for unpackaged programs
- # here, NOT in environment.systemPackages
-  ];
+  #qt = {
+  #  enable = true;
+  #  platformTheme = "qt5ct";
+  #};
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    curl
-    fd
-    jq
-    yazi
-    ueberzugpp
-    poppler
-    gcc
-    cmake
-    git
-    tmux
-    google-chrome
-    w3m
-    clinfo
-    python311Packages.pillow
-    fuse
-    fuse3
-    gnumake
-    libtool
-    appimage-run
-    liquidctl
-    libsForQt5.mlt
-    ffmpeg
-    lsof
-    cifs-utils
-    kdePackages.sddm-kcm
-    # kdePackages.qt6ct
-    sshfs
-    wayland-protocols
-    neofetch
-    hwinfo
-    kitty
-    bat
-    libGLU
-    mesa
-    networkmanagerapplet
-    home-manager
-  ];
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
 
 }

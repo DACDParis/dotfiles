@@ -8,82 +8,33 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "amdgpu" "kvm-intel" ];
+  boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  zramSwap.enable = true;
-  
-  boot.kernelPatches = [
-  {
-    name = "Rust Support";
-    patch = null;
-    features = {
-     rust = true;
-      };
-    }
-  ];
-
-  hardware.xone.enable = true;
-  hardware.xpadneo.enable = true;
-  
-  # services.samba.enable = true;
-  # services.samba.openFirewall = true;
-
-  hardware.opengl.extraPackages = with pkgs; [
-  rocmPackages.clr.icd
-  amdvlk
-  libva-utils
-  intel-compute-runtime
-  vulkan-loader
-  vulkan-validation-layers
-  vulkan-extension-layer
-  vulkan-tools
-  ];
-  
-  hardware.opengl.extraPackages32 = with pkgs; [
-  driversi686Linux.amdvlk
-  ];
-  
-  environment.variables.AMD_VULKAN_ICD = "RADV";
-  
-  hardware.opengl.driSupport = true;
-  hardware.opengl.driSupport32Bit = true;
-
-  services.hardware.openrgb.enable = true;
-   
-  services.gvfs.enable = true;
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/9b5e1b05-8f68-42c2-9e86-98d7eaa756b2";
+    { device = "/dev/disk/by-uuid/c3474d2f-13f2-4378-9218-052b6d12002a";
       fsType = "ext4";
     };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/58F1-23C6";
-      fsType = "vfat";
-    };
-
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/4e4c5203-e677-4f12-a6ad-9e670f783311"; }
-    ];
-  
   fileSystems."/home/david/External/HD700" =
     { device = "/dev/disk/by-uuid/2206B43568FCC2CE";
       fsType = "ntfs";
     };
 
-  fileSystems."/home/david/External/HD1T" =
+ fileSystems."/home/david/External/HD1T" =
     { device = "/dev/disk/by-uuid/4644CE0A19132C2A";
       fsType = "ntfs";
     };
 
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/B679-CC56";
+      fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
+    };
 
+  swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -91,9 +42,9 @@
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.eno1.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp11s0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp6s0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp5s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp12s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp7s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp6s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

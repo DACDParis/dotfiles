@@ -17,7 +17,7 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-   };
+  };
 
   services.avahi = {
     enable = true;
@@ -34,21 +34,26 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services.openssh.enable = false;
   # programs.ssh.startAgent = true;
 
   networking.firewall = {
-  enable = true;
-  extraCommands = ''iptables -t raw -A OUTPUT -p udp -m udp --dport 137 -j CT --helper netbios-ns'';
-  allowedTCPPorts = [ 22 80 443 445 65055 8080];
-  allowedUDPPorts = [ 65055 ];
-  allowedUDPPortRanges = [
-    { from = 4000; to = 4007; }
-    { from = 8000; to = 8080; }
-  ];
-};
+    enable = true;
+    ##  extraCommands = ''iptables -t raw -A OUTPUT -p udp -m udp --dport 137 -j CT --helper netbios-ns'';
+    allowedTCPPorts = [ 80 443 445 65055 8080 ];
+    allowedUDPPorts = [ 65055 ];
+    allowedUDPPortRanges = [
+      {
+        from = 4000;
+        to = 4007;
+      }
+      {
+        from = 8000;
+        to = 8080;
+      }
+    ];
+  };
 
-  networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
+  networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
 
-
- }
+}

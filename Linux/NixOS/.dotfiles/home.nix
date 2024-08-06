@@ -1,84 +1,90 @@
-{ pkgs, ... }:
+{ pkgs, osConfig, lib, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
   home.username = "david";
   home.homeDirectory = "/home/david";
 
-  imports = [ 
-#   ./modules/cli/ranger.nix
-   ./modules/cli/kitty.nix
-   ./modules/cli/zsh.nix
-#   ./modules/cli/fonts.nix
-   ./modules/wm/hyprland.nix
-#   ./modules/misc/wofi.nix
-  ];
+  imports =
+    [ ./modules/cli/kitty.nix ./modules/cli/zsh.nix ./modules/wm/hyprland.nix ];
 
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
-  home.stateVersion = "24.05"; # Please read the comment before changing.
-
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
-
+  home.stateVersion = "24.05";
   nixpkgs.config.allowUnfree = true;
-
   home.packages = with pkgs; [
-    rustup-toolchain-install-master 
-    rust-analyzer
-    clippy 
+    emacsPackages.dap-mode
+    emacsPackages.rustic
+    emacsPackages.rust-mode
+    emacsPackages.flycheck
+    emacsPackages.flycheck-rust
+    emacsPackages.flycheck-inline
+    emacsPackages.flycheck-indent
+    emacsPackages.flycheck-aspell
+    emacsPackages.flycheck-grammarly
+    emacsPackages.eshell-syntax-highlighting
+    emacsPackages.eshell-up
+    emacsPackages.magit
+    emacsPackages.fzf
+    emacsPackages.pdf-tools
+    emacsPackages.mu4e
+    emacsPackages.mu4e-column-faces
+    emacsPackages.mu4e-marker-icons
+    emacsPackages.mu4e-overview
+    emacsPackages.cliphist
+    mutt
+    imagemagick
+    offlineimap
 
     llvm
-    easyeffects
     unzip
-    nodejs_21
+    nodejs
     perl
     ruby_3_3
     go
     gh
-    firefox
-    nerdfonts
-    killall
-    lua
-    sioyek
-    warp-terminal
+    lua5_4_compat
     lldb
-    alacritty
-    eza
+    gdb
+    nixfmt-classic
+    shfmt
+    shellcheck
+    pandoc
+    aspell
+    aspellDicts.fr
+    aspellDicts.en
+    aspellDicts.pt_PT
+    aspellDicts.en-computers
+    fastfetch
+    onlyoffice-bin_latest
 
     qbittorrent
+    firefox
     thunderbird
-
-    gnome.gnome-disk-utility
-
-    # gimp-with-plugins
-    btop
-    duf 
+    telegram-desktop
+    element-desktop
     hexchat
-    zoxide
+    slack
+    isync
+
+    mu
+    isync
+
+    gimp
     nextcloud-client
     libreoffice
-    ncdu 
-    ranger
+    sioyek
+    lunarvim
 
     pamixer
     pulseaudio
     pavucontrol
     mpd
     mpc-cli
-    losslesscut-bin
-    easyeffects
     vlc
+    losslesscut-bin
     ncmpcpp
     asciinema
     mpv
     audacity
+    nvtopPackages.nvidia
 
     obs-studio
     obs-cli
@@ -90,140 +96,111 @@
     obs-studio-plugins.obs-vkcapture
     obs-studio-plugins.obs-multi-rtmp
     obs-studio-plugins.obs-source-record
-#    obs-studio-plugins.obs-backgroundremoval
     obs-studio-plugins.obs-pipewire-audio-capture
 
-    lunarvim
-    vimPlugins.vim-wayland-clipboard
-
     lazygit
+    gitkraken
     ripgrep
-    tree-sitter
-    neovim
-    nodePackages.neovim
     tmuxPlugins.continuum
     tmuxPlugins.resurrect
     tmuxPlugins.tmux-fzf
     zellij
     tealdeer
-    
+    ranger
+    zoxide
+    duf
+    ncdu
+    killall
+    eza
+    btop
+    krusader
     idevicerestore
     ideviceinstaller
     usbmuxd
     libusbmuxd
-    ifuse
-    apfs-fuse
-    gitkraken
-    
-     # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    gnome-disk-utility
+    kdePackages.ark
+    kdePackages.gwenview
+    cliphist
+    wl-clip-persist
 
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
+    winetricks
+    cartridges
+    heroic
+    vulkan-tools
+    wdisplays
+    cpu-x
+
+    gruvbox-gtk-theme
+    gruvbox-plus-icons
+    sassc
+    gtk-engine-murrine
+    gnome-themes-extra
+
   ];
+
+  # home.file = { };
+
+  programs = {
+    fzf = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
+    git = {
+      enable = true;
+      userName = "dacdparis";
+      userEmail = "dacdparis@gmail.com";
+    };
+
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+    };
+
+    neovim = {
+      enable = true;
+      plugins = [ pkgs.vimPlugins.nvim-treesitter.withAllGrammars ];
+    };
+
+    vscode = {
+      enable = true;
+      extensions = with pkgs.vscode-extensions; [
+        rust-lang.rust-analyzer
+        vadimcn.vscode-lldb
+      ];
+    };
+  };
 
   dconf.settings = {
     "org/virt-manager/virt-manager/connections" = {
-      autoconnect = ["qemu:///system"];
-      uris = ["qemu:///system"];
+      autoconnect = [ "qemu:///system" ];
+      uris = [ "qemu:///system" ];
     };
   };
-
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
-  home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-  };
-
-  # Home Manager can also manage your environment variables through
-  # 'home.sessionVariables'. If you don't want to manage your shell through Home
-  # Manager then you have to manually source 'hm-session-vars.sh' located at
-  # either
-  #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  /etc/profiles/per-user/david/etc/profile.d/hm-session-vars.sh
-  #
-
-  # programs.neovim.withNodeJs = true;
-  # programs.neovim.withPython3 = true;
-  # programs.neovim.withRuby = true;
-
-  home.sessionVariables = {
-     EDITOR = "lvim";
-     VISUAL = "lvim";
-  };
-
-  programs.git = {
-    enable = true;
-    userName  = "dacdparis";
-    userEmail = "dacdparis@gmail.com";
-
-    };
-
-  programs.vscode = {
-  enable = true;
-  extensions = with pkgs.vscode-extensions; [
-    rust-lang.rust-analyzer
-    vadimcn.vscode-lldb
-    ];
-  };
-
-  xdg.enable = true;
 
   services.mpd = {
     enable = true;
     musicDirectory = "~/External/HD700/Music";
-    network = { startWhenNeeded = true;
-    };
+    network = { startWhenNeeded = true; };
     extraConfig = ''
       audio_output {
       type "pipewire"
       name "My PipeWire Output"
       }
-      '';
-    };
-  
-    home.file.".zshenv" = {
-      text = "export MPD_HOST=\"/run/user/1000/mpd/socket\"";
+    '';
   };
 
-    programs = {
-      direnv = {
-        enable = true;
-        enableZshIntegration = true; # see note on other shells below
-        nix-direnv.enable = true;
-    };
+  xdg.enable = true;
 
-  };
+  #  home.pointerCursor = {
+  #    gtk.enable = true;
+  #    package = pkgs.gnome.adwaita-icon-theme;
+  #    name = "Adwaita";
+  #    size = 16;
+  #  };
 
-  # Testing following ChatGPT instructions*
-  home.file.".zshrc" = {
-  text = ''
-    export PATH=$PATH:$(dirname $(which node))
-    export PATH=$PATH:$(dirname $(which npm))
-    export PATH=$PATH:$(dirname $(which ruby))
-  '';
-};
-
-   
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

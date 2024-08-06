@@ -8,6 +8,8 @@
   # Add user to libvirtd group
   users.users.david.extraGroups = [ "libvirtd" ];
 
+  programs.virt-manager.enable = true;
+
   # Install necessary packages
   environment.systemPackages = with pkgs; [
     virt-manager
@@ -16,7 +18,6 @@
     spice-protocol
     win-virtio
     win-spice
-    gnome.adwaita-icon-theme
   ];
 
   # Manage the virtualisation services
