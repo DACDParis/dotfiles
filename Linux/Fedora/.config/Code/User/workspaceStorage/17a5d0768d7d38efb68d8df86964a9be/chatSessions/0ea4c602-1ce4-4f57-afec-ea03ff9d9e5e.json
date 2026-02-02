@@ -1,0 +1,635 @@
+{
+  "version": 3,
+  "responderUsername": "GitHub Copilot",
+  "responderAvatarIconUri": {
+    "id": "copilot"
+  },
+  "initialLocation": "panel",
+  "requests": [
+    {
+      "requestId": "request_02eb9de2-45cd-4326-9d4b-0a4ae5409f38",
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 10
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 11
+            },
+            "agent": {
+              "extensionId": {
+                "value": "GitHub.copilot-chat",
+                "_lower": "github.copilot-chat"
+              },
+              "extensionVersion": "0.36.0",
+              "publisherDisplayName": "GitHub",
+              "extensionPublisherId": "GitHub",
+              "extensionDisplayName": "GitHub Copilot Chat",
+              "id": "github.copilot.workspace",
+              "description": "Ask about your workspace",
+              "when": "!github.copilot.interactiveSession.disabled",
+              "metadata": {
+                "sampleRequest": "How do I build this project?",
+                "themeIcon": {
+                  "id": "code"
+                },
+                "hasFollowups": false,
+                "supportIssueReporting": false
+              },
+              "name": "workspace",
+              "fullName": "Workspace",
+              "locations": [
+                "panel"
+              ],
+              "modes": [
+                "agent",
+                "ask",
+                "edit"
+              ],
+              "slashCommands": [
+                {
+                  "name": "explain",
+                  "description": "Explain how the code in your active editor works"
+                },
+                {
+                  "name": "tests",
+                  "description": "Generate unit tests for the selected code",
+                  "disambiguation": [
+                    {
+                      "category": "create_tests",
+                      "description": "The user wants to generate unit tests.",
+                      "examples": [
+                        "Generate tests for my selection using pytest."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "fix",
+                  "description": "Propose a fix for the problems in the selected code",
+                  "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+                },
+                {
+                  "name": "new",
+                  "description": "Scaffold code for a new file or project in a workspace",
+                  "sampleRequest": "Create a RESTful API server using typescript",
+                  "isSticky": true,
+                  "disambiguation": [
+                    {
+                      "category": "create_new_workspace_or_extension",
+                      "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                      "examples": [
+                        "Scaffold a Node server.",
+                        "Create a sample project which uses the fileSystemProvider API.",
+                        "react application"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "newNotebook",
+                  "description": "Create a new Jupyter Notebook",
+                  "sampleRequest": "How do I create a notebook to load data from a csv file?",
+                  "disambiguation": [
+                    {
+                      "category": "create_jupyter_notebook",
+                      "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                      "examples": [
+                        "Create a notebook to analyze this CSV file."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "setupTests",
+                  "description": "Set up tests in your project (Experimental)",
+                  "sampleRequest": "add playwright tests to my project",
+                  "when": "config.github.copilot.chat.setupTests.enabled",
+                  "disambiguation": [
+                    {
+                      "category": "set_up_tests",
+                      "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                      "examples": [
+                        "Set up tests for this project."
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "disambiguation": [
+                {
+                  "category": "workspace_project_questions",
+                  "description": "The user wants to learn about or update the code or files in their current workspace. Questions in this category may be about understanding what the whole workspace does or locating the implementation of some code. This does not include generating or updating tests.",
+                  "examples": [
+                    "What does this project do?"
+                  ]
+                },
+                {
+                  "category": "find_code_in_workspace",
+                  "description": "The user wants to locate the implementation of some functionality in their current workspace.",
+                  "examples": [
+                    "Where is the tree widget implemented?"
+                  ]
+                },
+                {
+                  "category": "generate_with_workspace_context",
+                  "description": "The user wants to generate code based on multiple files in the workspace and did not specify which files to reference.",
+                  "examples": [
+                    "Create a README for this project."
+                  ]
+                }
+              ]
+            },
+            "kind": "agent"
+          },
+          {
+            "range": {
+              "start": 10,
+              "endExclusive": 11
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 11,
+              "endLineNumber": 1,
+              "endColumn": 12
+            },
+            "text": " ",
+            "kind": "text"
+          },
+          {
+            "range": {
+              "start": 11,
+              "endExclusive": 19
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 12,
+              "endLineNumber": 1,
+              "endColumn": 20
+            },
+            "command": {
+              "name": "explain",
+              "description": "Explain how the code in your active editor works"
+            },
+            "kind": "subcommand"
+          },
+          {
+            "range": {
+              "start": 19,
+              "endExclusive": 57
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 20,
+              "endLineNumber": 1,
+              "endColumn": 58
+            },
+            "text": " expected value, found struct `String`",
+            "kind": "text"
+          }
+        ],
+        "text": "@workspace /explain expected value, found struct `String`"
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "kind": "mcpServersStarting",
+          "didStartServerIds": []
+        },
+        {
+          "kind": "thinking",
+          "value": "**Preparing a code response**\n\nI’m putting together a short message to explain a coding issue and provide a snippet. The issue arises because String is a type; to create an instance, I’ll say to use String::new() or String::from(\"text\").  \n\nThen, I’ll format the response to include a code block with the filepath, like /src/main.rs. I'll replace the line and note that it should be mutable if modifications are planned: let mut s = String::new(). Oh, and I should ensure to use four backticks for proper formatting!",
+          "id": "f1UnxPvThTyyamEnJGP2dsKxYTktejpJH1MVgzO01wVDhZejBEWaT+X48DrfB0KkGbVoO07EI7OcuInRW9cy7CXHUg5eVa1uXlHfxQqLE2E8Hzs8ROc2t8ldEK2gxtlzZqc7ifuTGdftuARrWEo5+HAEgm2SIjtseCgzhow0sOPGqvfS3MgVhKKeD6p1gwhxGLOisTr6QC8XzzrUJUVeJzjOiWMCWs6zfHsqcHsd8Fc09Zt3/aZhCDaAzdGwBKbEbHOqlSA61cq+PRgw9TjgDncWgZMx/DCBjdp0hjbJsBuOgiKbwMpAfQgRkC1e6/GWkKnD/VCFTmV9QZAzJNwoXBnNExFRHrHEwgnn+HltLSOwBCQKq7gXsKnFOmxKWJlKGELO+CX2j1RUQUaNvX+aFUGoTA==",
+          "generatedTitle": "Preparing a code response"
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "Hb4V50zQso5cobhlbFAksaKEUTg4KJW3rKe44cvTLyc8uP2D6q3UpOCbc94Bx17wlaw6caZT5EguYWDmeHQxWB/jsc3C/6pJwWF6sLHyTaElIWPhAtoxU/D7IUzUrmjthKS0Im+fB8SQUUmcviY1qAXU1rN0kQsf9pWldYBw3Vb38t/hKAK85TgXtcEvQNl0SBGzeXh3AXcgNh1HTDsGsXty0/cyK905E96tMLMeLFwmtm6QCK8136IvUY1tbrxCBtJE+JoPgWFAiFz61xo7hz1zmHPIouZvpb/8E3nH+Ag4jIZJISP/dKc+8MLaHx6NQGaqEkUCT3CN1RWyQChtrpVlfXMx20XqhBxx3jtj7y2U1rYhW/JwwrJrPcqqztSPTA/KMKgsT+wC9WgCn7iETsi2WQ=="
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscodeReasoningDone": true,
+            "stopReason": "text"
+          }
+        },
+        {
+          "value": "The error means you used the type ",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/home/david/devl/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "inlineReference",
+          "inlineReference": {
+            "name": "String",
+            "kind": 12,
+            "containerName": "",
+            "location": {
+              "range": {
+                "startLineNumber": 360,
+                "startColumn": 12,
+                "endLineNumber": 360,
+                "endColumn": 12
+              },
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/home/david/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs",
+                "external": "file:///home/david/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs",
+                "path": "/home/david/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs",
+                "scheme": "file"
+              }
+            }
+          },
+          "resolveId": "6846588d-5886-4bfe-a9c7-4ca13f1b6694"
+        },
+        {
+          "value": " instead of creating a value. Create an instance with ",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/home/david/devl/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "inlineReference",
+          "inlineReference": {
+            "name": "String::new()",
+            "kind": 12,
+            "containerName": "",
+            "location": {
+              "range": {
+                "startLineNumber": 444,
+                "startColumn": 18,
+                "endLineNumber": 444,
+                "endColumn": 18
+              },
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/home/david/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs",
+                "external": "file:///home/david/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs",
+                "path": "/home/david/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs",
+                "scheme": "file"
+              }
+            }
+          },
+          "resolveId": "f6e625ad-851d-4434-9267-f4c16ee78683"
+        },
+        {
+          "value": " or ",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/home/david/devl/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "inlineReference",
+          "inlineReference": {
+            "name": "String::from(...)",
+            "kind": 12,
+            "containerName": "",
+            "location": {
+              "range": {
+                "startLineNumber": 3088,
+                "startColumn": 8,
+                "endLineNumber": 3088,
+                "endColumn": 8
+              },
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/home/david/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs",
+                "external": "file:///home/david/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs",
+                "path": "/home/david/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs",
+                "scheme": "file"
+              }
+            }
+          },
+          "resolveId": "3af2a42a-c750-414e-b9f8-418f28a2f548"
+        },
+        {
+          "value": ".\n\n````rust\n// ...existing code...\nfn main() {\n    println!(\"Hello, world!\");\n    let s = String::new(); // was: let s = String;\n}\n// ...existing code...\n````\n\nIf you need to modify ",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/home/david/devl/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "inlineReference",
+          "inlineReference": {
+            "name": "s",
+            "kind": 12,
+            "containerName": "",
+            "location": {
+              "range": {
+                "startLineNumber": 3,
+                "startColumn": 9,
+                "endLineNumber": 3,
+                "endColumn": 9
+              },
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/home/david/devl/hello/src/main.rs",
+                "external": "file:///home/david/devl/hello/src/main.rs",
+                "path": "/home/david/devl/hello/src/main.rs",
+                "scheme": "file"
+              }
+            }
+          },
+          "resolveId": "2efee14a-d390-43a4-bd8f-b09a08d5b1bb"
+        },
+        {
+          "value": ", make it mutable: `let mut s = String::new();`.",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/home/david/devl/",
+            "scheme": "file"
+          }
+        }
+      ],
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.36.0",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.workspace",
+        "description": "Ask about your workspace",
+        "when": "!github.copilot.interactiveSession.disabled",
+        "metadata": {
+          "sampleRequest": "How do I build this project?",
+          "themeIcon": {
+            "id": "code"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "workspace",
+        "fullName": "Workspace",
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent",
+          "ask",
+          "edit"
+        ],
+        "slashCommands": [
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": [
+          {
+            "category": "workspace_project_questions",
+            "description": "The user wants to learn about or update the code or files in their current workspace. Questions in this category may be about understanding what the whole workspace does or locating the implementation of some code. This does not include generating or updating tests.",
+            "examples": [
+              "What does this project do?"
+            ]
+          },
+          {
+            "category": "find_code_in_workspace",
+            "description": "The user wants to locate the implementation of some functionality in their current workspace.",
+            "examples": [
+              "Where is the tree widget implemented?"
+            ]
+          },
+          {
+            "category": "generate_with_workspace_context",
+            "description": "The user wants to generate code based on multiple files in the workspace and did not specify which files to reference.",
+            "examples": [
+              "Create a README for this project."
+            ]
+          }
+        ]
+      },
+      "timestamp": 1768379976319,
+      "modelId": "copilot/auto",
+      "responseId": "response_fd1902e6-7fa7-4bd1-aec4-b2b1f9237042",
+      "result": {
+        "timings": {
+          "firstProgress": 14252,
+          "totalElapsed": 14449
+        },
+        "metadata": {
+          "codeBlocks": [
+            {
+              "code": "// ...existing code...\nfn main() {\n    println!(\"Hello, world!\");\n    let s = String::new(); // was: let s = String;\n}\n// ...existing code...\n",
+              "language": "rust",
+              "markdownBeforeBlock": "The error means you used the type  instead of creating a value. Create an instance with  or .\n\n"
+            }
+          ],
+          "toolCallRounds": [
+            {
+              "response": "The error means you used the type `String` instead of creating a value. Create an instance with `String::new()` or `String::from(...)`.\n\n````rust\n// filepath: src/main.rs\n// ...existing code...\nfn main() {\n    println!(\"Hello, world!\");\n    let s = String::new(); // was: let s = String;\n}\n// ...existing code...\n````\n\nIf you need to modify `s`, make it mutable: `let mut s = String::new();`.",
+              "toolCalls": [],
+              "toolInputRetry": 0,
+              "id": "2c1451b7-1573-4cac-9bd2-8d5bee7cebde",
+              "statefulMarker": "6le6qw6qoPI4bg0vg90ANQlG3jd7/Q3tS//M+2lgMExG5nrWIbRE9oT15ThlRuoOkU1xvqH/BZRGB25gk93xyolceILN8awMERBjzlf4rlVp5rrW0TQsdeFCrFNljEt0q9lnHKSHALXewxzbYypOPCVPCAkKumGmHrSg0Qo9wDblbzbwd452fpQ6Gmks3uYcUD6WNA0acIgfSPfgh7BF5WUe0K72za7qwHksCxAlVhkOcS+0ihKD0KMRr6OLUnKA1x7PASOb8Q5UkLaTN/BumPVeU/dRTDAk34n9xXc8bOr1w+jogKPhvfnbufMH/Xi1K+208+ISgDHs0edOVsHdGADV15KslzPLeiZC5j81aqNg4fHvbb5o4cCX758DLv4r5YVKc/SKqyV7KYF1sYsvV9gSWdhg",
+              "thinking": {
+                "id": "ovq3TajYYstASLFAVOOqOhkHMxGAXL8eDZn9dujbXu7+/YMKiOlWTyWl66INLq5xBrbcY5h7+Z/oshITYAwO70WepOVJORySWevr9sgGbZqIs56cAiXdYJZbb6GF5EHPZcT/fKygMQtSW6cTH6yumjyk10c2X9/xVZyhmgIbDgouoRN1+0yO27TFKzLwMCZ4O2uI6wWjStebcJO3Yyrg/HaRwGsJVJPOMKVCrqzcTSukX0e7GdjcjllZq7/Hc+VgxJ5mvfsifiZ1ZNpiWY/6gCBFeqbYcF0CF0k+e/K0s4pYTcYmMiTAZ3wC2I524JEKUJ+XdEnfJvPzAqa9+CSPSg4CBIjPTGZktGzjXJ4a/9bBMCkGN5vrQDjhlaLKQWGafhKj5TUt0yiJ+98QHdWIc4rWPw==",
+                "text": "**Preparing a code response**\n\nI’m putting together a short message to explain a coding issue and provide a snippet. The issue arises because String is a type; to create an instance, I’ll say to use String::new() or String::from(\"text\").  \n\nThen, I’ll format the response to include a code block with the filepath, like /src/main.rs. I'll replace the line and note that it should be mutable if modifications are planned: let mut s = String::new(). Oh, and I should ensure to use four backticks for proper formatting!",
+                "encrypted": "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",
+                "tokens": 704
+              }
+            }
+          ],
+          "modelMessageId": "3b875a88-5ba5-482c-9eae-b237c30a4634",
+          "responseId": "d0bec6a8-d18d-4008-a4e1-65e40f289ed4",
+          "sessionId": "7ef9ff2c-cc63-4882-9843-abdf6eae170d",
+          "agentId": "github.copilot.workspace",
+          "command": "explain"
+        },
+        "details": "GPT-5 mini • 1x"
+      },
+      "responseMarkdownInfo": [
+        {
+          "suggestionId": "sgt-61b25aa2-4593-405a-989e-dc1c2542c20c"
+        }
+      ],
+      "followups": [],
+      "modelState": {
+        "value": 1,
+        "completedAt": 1768379990811
+      },
+      "slashCommand": {
+        "name": "explain",
+        "description": "Explain how the code in your active editor works"
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "uri": {
+              "$mid": 1,
+              "fsPath": "/home/david/devl/hello/src/main.rs",
+              "external": "file:///home/david/devl/hello/src/main.rs",
+              "path": "/home/david/devl/hello/src/main.rs",
+              "scheme": "file"
+            },
+            "range": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 5,
+              "endColumn": 1
+            }
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 0
+    }
+  ],
+  "sessionId": "0ea4c602-1ce4-4f57-afec-ea03ff9d9e5e",
+  "creationDate": 1768379201493,
+  "lastMessageDate": 1768379976319,
+  "customTitle": "Type Mismatch Error in Rust Code",
+  "hasPendingEdits": false,
+  "inputState": {
+    "contrib": {
+      "chatDynamicVariableModel": []
+    },
+    "attachments": [],
+    "mode": {
+      "id": "agent",
+      "kind": "agent"
+    },
+    "selectedModel": {
+      "identifier": "copilot/auto",
+      "metadata": {
+        "extension": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "id": "auto",
+        "vendor": "copilot",
+        "name": "Auto",
+        "family": "gpt-5-mini",
+        "detail": "1x",
+        "tooltip": "Auto selects the best model for your request based on capacity and performance.",
+        "version": "gpt-5-mini",
+        "maxInputTokens": 127805,
+        "maxOutputTokens": 64000,
+        "auth": {
+          "providerLabel": "GitHub Copilot Chat",
+          "accountLabel": "DACDParis"
+        },
+        "isDefault": true,
+        "isUserSelectable": true,
+        "modelPickerCategory": {
+          "label": "",
+          "order": -9007199254740991
+        },
+        "capabilities": {
+          "vision": true,
+          "toolCalling": true,
+          "agentMode": true
+        }
+      }
+    },
+    "inputText": "",
+    "selections": [
+      {
+        "startLineNumber": 1,
+        "startColumn": 1,
+        "endLineNumber": 1,
+        "endColumn": 1,
+        "selectionStartLineNumber": 1,
+        "selectionStartColumn": 1,
+        "positionLineNumber": 1,
+        "positionColumn": 1
+      }
+    ]
+  }
+}

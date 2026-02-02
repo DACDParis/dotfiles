@@ -1,0 +1,11 @@
+{
+    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "security.workspace.trust.untrustedFiles": "open",
+    "rust-analyzer.linkedProjects": [],
+    "rust-analyzer.numThreads": null,
+    "rust-analyzer.runnables.command": null,
+    "rust-analyzer.check.command": "clippy",
+    "chat.viewSessions.orientation": "stacked",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
+}

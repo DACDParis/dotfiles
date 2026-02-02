@@ -1,0 +1,104 @@
+2026-02-03 00:12:44.386 [warning] Running on the desktop; workspaceId=a4c1b0650f9941215db75eefa4ec0198; storageUri=vscode-userdata:/home/david/.config/Code/User/globalStorage/github.remotehub
+2026-02-03 00:12:44.386 [info] [    2] ChangeStore.getWorkspacesWithChanges()
+2026-02-03 00:12:44.386 [info] [    2] ChangeStore.getWorkspacesWithChanges() took 0 ms
+2026-02-03 00:12:51.283 [info] [    6] GitHub.ensureAuthenticated
+2026-02-03 00:13:02.079 [warning] [    6] GitHub.ensureAuthenticated took 10796 ms
+2026-02-03 00:13:54.856 [error] Failed to save workspace repositories
+Canceled: Canceled
+2026-02-03 00:13:54.857 [error] Failed to save workspace repositories
+Canceled: Canceled
+2026-02-03 00:13:56.523 [warning] Running on the desktop; workspaceId=621e069c2f8c2fef901ab98cfb7864aa; storageUri=vscode-userdata:/home/david/.config/Code/User/globalStorage/github.remotehub
+2026-02-03 00:13:56.523 [info] [    2] ChangeStore.getWorkspacesWithChanges()
+2026-02-03 00:13:56.523 [info] [    6] ChangeStore.readFile(vscode-vfs://github/DACDParis/dotfiles/.vscode/settings.json)
+2026-02-03 00:13:56.523 [info] [    8] ChangeStore.readFile(vscode-vfs://github/DACDParis/dotfiles/.vscode/tasks.json)
+2026-02-03 00:13:56.523 [info] [   10] ChangeStore.readFile(vscode-vfs://github/DACDParis/dotfiles/.vscode/launch.json)
+2026-02-03 00:13:56.523 [info] [   12] ChangeStore.readFile(vscode-vfs://github/DACDParis/dotfiles/.vscode/mcp.json)
+2026-02-03 00:13:56.523 [info] [   22] ChangeStore.readFile(vscode-vfs://github/DACDParis/dotfiles/.git/config)
+2026-02-03 00:13:56.523 [info] [   25] ChangeStore.readFile(vscode-vfs://github/DACDParis/dotfiles/.vscode/extensions.json)
+2026-02-03 00:13:56.523 [info] [    6] ChangeStore.readFile(vscode-vfs://github/DACDParis/dotfiles/.vscode/settings.json): Not found; no operations
+2026-02-03 00:13:56.523 [info] [    8] ChangeStore.readFile(vscode-vfs://github/DACDParis/dotfiles/.vscode/tasks.json): Not found; no operations
+2026-02-03 00:13:56.523 [info] [    6] ChangeStore.readFile(vscode-vfs://github/DACDParis/dotfiles/.vscode/settings.json) took 9 ms
+2026-02-03 00:13:56.523 [info] [   10] ChangeStore.readFile(vscode-vfs://github/DACDParis/dotfiles/.vscode/launch.json): Not found; no operations
+2026-02-03 00:13:56.523 [info] [    8] ChangeStore.readFile(vscode-vfs://github/DACDParis/dotfiles/.vscode/tasks.json) took 9 ms
+2026-02-03 00:13:56.523 [info] [   12] ChangeStore.readFile(vscode-vfs://github/DACDParis/dotfiles/.vscode/mcp.json): Not found; no operations
+2026-02-03 00:13:56.523 [info] [    2] ChangeStore.getWorkspacesWithChanges() took 24 ms
+2026-02-03 00:13:56.523 [info] [   10] ChangeStore.readFile(vscode-vfs://github/DACDParis/dotfiles/.vscode/launch.json) took 10 ms
+2026-02-03 00:13:56.523 [info] [   12] ChangeStore.readFile(vscode-vfs://github/DACDParis/dotfiles/.vscode/mcp.json) took 9 ms
+2026-02-03 00:13:56.523 [info] [   22] ChangeStore.readFile(vscode-vfs://github/DACDParis/dotfiles/.git/config): Not found; no operations
+2026-02-03 00:13:56.523 [info] [   22] ChangeStore.readFile(vscode-vfs://github/DACDParis/dotfiles/.git/config) took 10 ms
+2026-02-03 00:13:56.523 [info] [   25] ChangeStore.readFile(vscode-vfs://github/DACDParis/dotfiles/.vscode/extensions.json): Not found; no operations
+2026-02-03 00:13:56.523 [info] [   25] ChangeStore.readFile(vscode-vfs://github/DACDParis/dotfiles/.vscode/extensions.json) took 10 ms
+2026-02-03 00:13:56.523 [info] [   34] GitHub.createMetadata(vscode-vfs://github/DACDParis/dotfiles, undefined)
+2026-02-03 00:13:56.523 [info] Parsed metadata for vscode-vfs://github/DACDParis/dotfiles: name DACDParis/dotfiles, owner DACDParis, name dotfiles, ref undefined
+2026-02-03 00:13:56.523 [info] [   35] GitHub.ensureAuthenticated
+2026-02-03 00:13:56.523 [info] [   36] GitHub.sync(vscode-vfs://github/DACDParis/dotfiles, resolution=0, to=undefined)
+2026-02-03 00:13:56.523 [info] [   37] GitHub.fetch(vscode-vfs://github/DACDParis/dotfiles, force=true, to=undefined)
+2026-02-03 00:13:56.523 [info] [   38] GitHub.sync(vscode-vfs://github/DACDParis/dotfiles, resolution=0, to=undefined)
+2026-02-03 00:13:56.523 [info] [   39] GitHub.fetch(vscode-vfs://github/DACDParis/dotfiles, force=true, to=undefined)
+2026-02-03 00:13:56.584 [info] [   35] GitHub.ensureAuthenticated took 95 ms
+2026-02-03 00:13:57.514 [info] [   34] GitHub.createMetadata(vscode-vfs://github/DACDParis/dotfiles, undefined) • Prefetching tree for fa63c2144b71da8e8f06cc2108ca0055e8560cdc...
+2026-02-03 00:13:57.514 [info] [   41] GitHub.createFileTree(github://github/DACDParis/dotfiles:fa63c2144b71da8e8f06cc2108ca0055e8560cdc)
+2026-02-03 00:13:57.514 [info] [   42] FileTree.load(fa63c2144b71da8e8f06cc2108ca0055e8560cdc:undefined)
+2026-02-03 00:13:57.515 [info] [   43] FileTree.load(fa63c2144b71da8e8f06cc2108ca0055e8560cdc:)
+2026-02-03 00:13:57.516 [info] [   44] FileTree.load(fa63c2144b71da8e8f06cc2108ca0055e8560cdc:.vscode)
+2026-02-03 00:13:57.517 [info] [   41] GitHub.createFileTree(github://github/DACDParis/dotfiles:fa63c2144b71da8e8f06cc2108ca0055e8560cdc) took 0 ms
+2026-02-03 00:13:57.517 [warning] [   34] GitHub.createMetadata(vscode-vfs://github/DACDParis/dotfiles, undefined) took 1025 ms • HEAD=fa63c2144b71da8e8f06cc2108ca0055e8560cdc
+2026-02-03 00:13:57.992 [info] [   43] FileTree.load(fa63c2144b71da8e8f06cc2108ca0055e8560cdc:): Tree=fa63c2144b71da8e8f06cc2108ca0055e8560cdc; Tree query took 477 ms • Waiting for permissions...
+2026-02-03 00:13:57.992 [info] [   43] FileTree.load(fa63c2144b71da8e8f06cc2108ca0055e8560cdc:) Permissions query took 0 ms • Filling trie...
+2026-02-03 00:13:57.992 [info] [   43] FileTree.load(fa63c2144b71da8e8f06cc2108ca0055e8560cdc:) took 478 ms (Filling trie took 0 ms) • Tree=fa63c2144b71da8e8f06cc2108ca0055e8560cdc
+2026-02-03 00:13:57.993 [warning] [    1] Time to root directory took 1531 ms
+2026-02-03 00:13:57.995 [warning] [   37] GitHub.fetch(vscode-vfs://github/DACDParis/dotfiles, force=true, to=undefined) took 1505 ms • Up to date
+2026-02-03 00:13:57.995 [warning] [   36] GitHub.sync(vscode-vfs://github/DACDParis/dotfiles, resolution=0, to=undefined) took 1505 ms • to=fa63c2144b71da8e8f06cc2108ca0055e8560cdc
+2026-02-03 00:13:58.006 [warning] [   39] GitHub.fetch(vscode-vfs://github/DACDParis/dotfiles, force=true, to=undefined) took 1515 ms • Up to date
+2026-02-03 00:13:58.006 [warning] [   38] GitHub.sync(vscode-vfs://github/DACDParis/dotfiles, resolution=0, to=undefined) took 1515 ms • to=fa63c2144b71da8e8f06cc2108ca0055e8560cdc
+2026-02-03 00:13:58.020 [info] [   78] getFileContents
+2026-02-03 00:13:58.021 [info] [   79] TarPit.getTar(github/DACDParis/dotfiles/fa63c2144b71da8e8f06cc2108ca0055e8560cdc)
+2026-02-03 00:13:58.021 [info] [   79] TarPit.getTar(github/DACDParis/dotfiles/fa63c2144b71da8e8f06cc2108ca0055e8560cdc) • Getting .tar from memory...
+2026-02-03 00:13:58.021 [info] [   79] TarPit.getTar(github/DACDParis/dotfiles/fa63c2144b71da8e8f06cc2108ca0055e8560cdc): Not found • Getting .tar from memory took 0 ms • Getting .tar from disk...
+2026-02-03 00:13:58.038 [error] /home/david/.vscode/extensions/github.remotehub-0.64.0/dist/extension.js:160:26289
+HttpError: Not Found
+2026-02-03 00:13:58.038 [warning] [   44] FileTree.load(fa63c2144b71da8e8f06cc2108ca0055e8560cdc:.vscode) took 524 ms (Tree query took 524 ms)• Loading for path=.vscode failed; HttpError: Not Found
+2026-02-03 00:13:58.041 [info] [   79] TarPit.getTar(github/DACDParis/dotfiles/fa63c2144b71da8e8f06cc2108ca0055e8560cdc) took 20 ms (Getting .tar from disk took 19 ms) • Skipped download
+2026-02-03 00:13:58.131 [info] [   42] FileTree.load(fa63c2144b71da8e8f06cc2108ca0055e8560cdc:undefined): Tree=fa63c2144b71da8e8f06cc2108ca0055e8560cdc; Tree query took 616 ms • Waiting for permissions...
+2026-02-03 00:13:58.135 [info] [   42] FileTree.load(fa63c2144b71da8e8f06cc2108ca0055e8560cdc:undefined) Permissions query took 0 ms • Filling trie...
+2026-02-03 00:13:58.135 [warning] [   42] FileTree.load(fa63c2144b71da8e8f06cc2108ca0055e8560cdc:undefined) took 620 ms (Filling trie took 4 ms) • Tree=fa63c2144b71da8e8f06cc2108ca0055e8560cdc
+2026-02-03 00:13:58.137 [info] [  140] FileTree.loadAllContent(fa63c2144b71da8e8f06cc2108ca0055e8560cdc)
+2026-02-03 00:13:58.137 [info] [  141] TarPit.getTar(github/DACDParis/dotfiles/fa63c2144b71da8e8f06cc2108ca0055e8560cdc)
+2026-02-03 00:13:58.137 [info] [  141] TarPit.getTar(github/DACDParis/dotfiles/fa63c2144b71da8e8f06cc2108ca0055e8560cdc) • Getting .tar from memory...
+2026-02-03 00:13:58.137 [info] [  141] TarPit.getTar(github/DACDParis/dotfiles/fa63c2144b71da8e8f06cc2108ca0055e8560cdc): Not found • Getting .tar from memory took 0 ms • Getting .tar from disk...
+2026-02-03 00:13:58.147 [info] [  141] TarPit.getTar(github/DACDParis/dotfiles/fa63c2144b71da8e8f06cc2108ca0055e8560cdc) took 10 ms (Getting .tar from disk took 10 ms) • Skipped download
+2026-02-03 00:13:58.147 [info] [  140] FileTree.loadAllContent(fa63c2144b71da8e8f06cc2108ca0055e8560cdc) took 10 ms (Tar cache query took 10 ms) • No cached Tar
+2026-02-03 00:13:58.371 [info] [   78] getFileContentsRetrieved .gitignore from web took 351 ms
+2026-02-03 00:14:02.491 [info] [  239] TarPit.getTar(github/DACDParis/dotfiles/fa63c2144b71da8e8f06cc2108ca0055e8560cdc)
+2026-02-03 00:14:02.491 [info] [  239] TarPit.getTar(github/DACDParis/dotfiles/fa63c2144b71da8e8f06cc2108ca0055e8560cdc) • Getting .tar from memory...
+2026-02-03 00:14:02.491 [info] [  239] TarPit.getTar(github/DACDParis/dotfiles/fa63c2144b71da8e8f06cc2108ca0055e8560cdc): Not found • Getting .tar from memory took 0 ms • Getting .tar from disk...
+2026-02-03 00:14:02.510 [info] [  239] TarPit.getTar(github/DACDParis/dotfiles/fa63c2144b71da8e8f06cc2108ca0055e8560cdc): Not found • Getting .tar from disk took 18 ms • Getting .tar from network...
+2026-02-03 00:14:02.512 [info] [  240] GitHub.ensureAuthenticated
+2026-02-03 00:14:02.512 [info] [  240] GitHub.ensureAuthenticated took 0 ms
+2026-02-03 00:14:13.000 [error] fetchUInt8ArrayWithMaxSizeAndCancellation
+Error: LIMIT_HIT
+2026-02-03 00:14:13.017 [warning] [  239] TarPit.getTar(github/DACDParis/dotfiles/fa63c2144b71da8e8f06cc2108ca0055e8560cdc) took 10525 ms (Getting .tar from network took 10507 ms) • Failed; Canceled: Canceled
+2026-02-03 00:14:13.017 [error] TarPit.getTarFromNetwork
+Canceled: Canceled
+2026-02-03 00:14:13.019 [info] [  259] FileTree.loadAllContent(fa63c2144b71da8e8f06cc2108ca0055e8560cdc)
+2026-02-03 00:14:13.019 [info] [  260] TarPit.getTar(github/DACDParis/dotfiles/fa63c2144b71da8e8f06cc2108ca0055e8560cdc)
+2026-02-03 00:14:13.019 [info] [  260] TarPit.getTar(github/DACDParis/dotfiles/fa63c2144b71da8e8f06cc2108ca0055e8560cdc) • Getting .tar from memory...
+2026-02-03 00:14:13.019 [info] [  260] TarPit.getTar(github/DACDParis/dotfiles/fa63c2144b71da8e8f06cc2108ca0055e8560cdc): Not found • Getting .tar from memory took 0 ms • Getting .tar from disk...
+2026-02-03 00:14:13.059 [info] [  260] TarPit.getTar(github/DACDParis/dotfiles/fa63c2144b71da8e8f06cc2108ca0055e8560cdc) took 39 ms (Getting .tar from disk took 39 ms) • Skipped download
+2026-02-03 00:14:13.059 [info] [  259] FileTree.loadAllContent(fa63c2144b71da8e8f06cc2108ca0055e8560cdc) took 39 ms (Tar cache query took 39 ms) • No cached Tar
+2026-02-03 00:14:32.575 [info] [  270] getFileContents
+2026-02-03 00:14:32.576 [info] [  271] TarPit.getTar(github/DACDParis/dotfiles/fa63c2144b71da8e8f06cc2108ca0055e8560cdc)
+2026-02-03 00:14:32.576 [info] [  271] TarPit.getTar(github/DACDParis/dotfiles/fa63c2144b71da8e8f06cc2108ca0055e8560cdc) • Getting .tar from memory...
+2026-02-03 00:14:32.576 [info] [  271] TarPit.getTar(github/DACDParis/dotfiles/fa63c2144b71da8e8f06cc2108ca0055e8560cdc): Not found • Getting .tar from memory took 0 ms • Getting .tar from disk...
+2026-02-03 00:14:32.585 [info] [  271] TarPit.getTar(github/DACDParis/dotfiles/fa63c2144b71da8e8f06cc2108ca0055e8560cdc) took 9 ms (Getting .tar from disk took 8 ms) • Skipped download
+2026-02-03 00:14:33.005 [info] [  270] getFileContentsRetrieved .gitignore from web took 430 ms
+2026-02-03 00:14:56.469 [info] [  275] GitHub.fetch(vscode-vfs://github/DACDParis/dotfiles, force=undefined, to=undefined)
+2026-02-03 00:14:56.480 [info] [  276] GitHub.fetch(vscode-vfs://github/DACDParis/dotfiles, force=undefined, to=undefined)
+2026-02-03 00:14:56.481 [info] [  276] GitHub.fetch(vscode-vfs://github/DACDParis/dotfiles, force=undefined, to=undefined) took 0 ms • Unable to fetch branch tips
+2026-02-03 00:14:56.481 [error] VirtualProviderError.SyncOrFetchError
+Error: Unable to fetch the repository
+2026-02-03 00:14:57.173 [warning] [  275] GitHub.fetch(vscode-vfs://github/DACDParis/dotfiles, force=undefined, to=undefined) took 703 ms • No changes detected
+2026-02-03 00:14:58.055 [error] Failed to save workspace repositories
+Canceled: Canceled
+2026-02-03 00:14:58.056 [error] Failed to save workspace repositories
+Canceled: Canceled

@@ -1,0 +1,7 @@
+2026-02-03 00:12:44.386 [warning] Running on the desktop; workspaceId=a4c1b0650f9941215db75eefa4ec0198; storageUri=vscode-userdata:/home/david/.config/Code/User/globalStorage/ms-vscode.azure-repos
+2026-02-03 00:12:44.386 [info] [    2] ChangeStore.getWorkspacesWithChanges()
+2026-02-03 00:12:44.386 [info] [    2] ChangeStore.getWorkspacesWithChanges() took 0 ms
+2026-02-03 00:13:54.857 [error] Failed to save workspace repositories
+Canceled: Canceled
+2026-02-03 00:13:54.857 [error] Failed to save workspace repositories
+Canceled: Canceled

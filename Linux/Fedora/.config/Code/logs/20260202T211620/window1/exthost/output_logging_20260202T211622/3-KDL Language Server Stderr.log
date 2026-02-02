@@ -1,0 +1,3 @@
+[Info  - 9:16:24 PM] server initialized!
+2026-02-02T20:20:16.101677Z  INFO tower_lsp::service::layers: shutdown request received, shutting down
+[Info  - 9:20:16 PM] server shutting down

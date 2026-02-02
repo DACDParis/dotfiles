@@ -1,0 +1,10 @@
+2026-02-02 21:10:13.625 [info] Started local extension host with pid 9307.
+2026-02-02 21:10:14.585 [info] MCP Registry configured: https://api.mcp.github.com
+2026-02-02 21:10:14.677 [info] Settings Sync: Account status changed from uninitialized to unavailable
+2026-02-02 21:10:15.212 [error] [Extension Host] (node:9307) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `exe --trace-deprecation ...` to show where the warning was created)
+2026-02-02 21:10:15.212 [error] [Extension Host] (node:9307) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+2026-02-02 21:10:15.950 [error] chatParticipant must be declared in package.json: claude-code
+2026-02-02 21:10:16.394 [info] [perf] Render performance baseline is 25ms
+2026-02-02 21:10:16.949 [error] An unknown error occurred. Please consult the log for more details.
+2026-02-02 21:11:19.582 [error] An unknown error occurred. Please consult the log for more details.

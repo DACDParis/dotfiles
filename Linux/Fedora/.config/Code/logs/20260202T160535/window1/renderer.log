@@ -1,0 +1,13 @@
+2026-02-02 16:05:36.863 [info] Started local extension host with pid 14809.
+2026-02-02 16:05:37.760 [info] MCP Registry configured: https://api.mcp.github.com
+2026-02-02 16:05:37.985 [info] Settings Sync: Account status changed from uninitialized to unavailable
+2026-02-02 16:05:38.337 [error] [Extension Host] (node:14809) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `exe --trace-deprecation ...` to show where the warning was created)
+2026-02-02 16:05:38.337 [error] [Extension Host] (node:14809) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+2026-02-02 16:05:39.096 [error] chatParticipant must be declared in package.json: claude-code
+2026-02-02 16:05:39.585 [info] [perf] Render performance baseline is 29ms
+2026-02-02 16:05:39.907 [info] Auto updating outdated extensions. rust-lang.rust-analyzer
+2026-02-02 16:05:40.109 [error] An unknown error occurred. Please consult the log for more details.
+2026-02-02 16:59:05.282 [warning] Failed to update in-progress status for chat session type 'copilotcli': Canceled
+2026-02-02 16:59:05.282 [warning] Failed to update in-progress status for chat session type 'copilotcli': Canceled
+2026-02-02 16:59:05.283 [warning] Failed to update in-progress status for chat session type 'copilot-cloud-agent': Canceled

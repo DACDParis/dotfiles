@@ -1,0 +1,12 @@
+{
+    "security.workspace.trust.untrustedFiles": "open",
+    "rust-analyzer.linkedProjects": [],
+    "rust-analyzer.numThreads": null,
+    "rust-analyzer.runnables.command": null,
+    "rust-analyzer.check.command": "clippy",
+    "editor.formatOnSave": true,
+    "terminal.external.linuxExec": "warp-terminal",
+    "chat.viewSessions.orientation": "stacked",
+    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "workbench.sideBar.location": "right"
+}

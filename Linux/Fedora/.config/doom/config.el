@@ -32,11 +32,11 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-gruvbox)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type 'relative)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -74,3 +74,26 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+;;
+(setq confirm-kill-emacs nil)
+
+;; Rust setup
+(after! lsp-rust
+  (setq! lsp-rust-analyzer-display-chaining-hints t)
+  (setq! lsp-rust-analyzer-max-inlay-hint-length 25)
+  (setq! lsp-rust-analyzer-proc-macro-enable t)
+  (setq! lsp-inlay-hint-enable t)
+  (setq! lsp-rust-analyzer-cargo-watch-command "clippy"))
+
+(map! :leader
+      (:prefix-map ("r" . "Rust")
+       :desc "Cargo Run"          "r" #'lsp-rust-analyzer-run
+       :desc "Cargo Test"         "t" #'lsp-rust-analyzer-test
+       :desc "Debug (LSP)"        "d" #'lsp-rust-analyzer-debug
+       :desc "Open Cargo.toml"    "c" (cmd! (find-file (expand-file-name "Cargo.toml" (doom-project-root))))
+       :desc "View Documentation" "D" #'lsp-rust-analyzer-open-external-docs))
+
+;;Exit insert mode by pressing j and then j quickly
+(setq key-chord-two-keys-delay 0.5)
+(key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+(key-chord-mode 1)

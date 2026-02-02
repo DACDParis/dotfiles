@@ -1,0 +1,3194 @@
+{
+  "version": 3,
+  "responderUsername": "GitHub Copilot",
+  "responderAvatarIconUri": {
+    "id": "copilot"
+  },
+  "initialLocation": "panel",
+  "requests": [
+    {
+      "requestId": "request_89c61185-fc20-4d3f-bcf8-24023021cb8b",
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 10
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 11
+            },
+            "agent": {
+              "extensionId": {
+                "value": "GitHub.copilot-chat",
+                "_lower": "github.copilot-chat"
+              },
+              "extensionVersion": "0.36.2",
+              "publisherDisplayName": "GitHub",
+              "extensionPublisherId": "GitHub",
+              "extensionDisplayName": "GitHub Copilot Chat",
+              "id": "github.copilot.workspace",
+              "description": "Ask about your workspace",
+              "when": "!github.copilot.interactiveSession.disabled",
+              "metadata": {
+                "sampleRequest": "How do I build this project?",
+                "themeIcon": {
+                  "id": "code"
+                },
+                "hasFollowups": false,
+                "supportIssueReporting": false
+              },
+              "name": "workspace",
+              "fullName": "Workspace",
+              "locations": [
+                "panel"
+              ],
+              "modes": [
+                "agent",
+                "ask",
+                "edit"
+              ],
+              "slashCommands": [
+                {
+                  "name": "explain",
+                  "description": "Explain how the code in your active editor works"
+                },
+                {
+                  "name": "tests",
+                  "description": "Generate unit tests for the selected code",
+                  "disambiguation": [
+                    {
+                      "category": "create_tests",
+                      "description": "The user wants to generate unit tests.",
+                      "examples": [
+                        "Generate tests for my selection using pytest."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "fix",
+                  "description": "Propose a fix for the problems in the selected code",
+                  "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+                },
+                {
+                  "name": "new",
+                  "description": "Scaffold code for a new file or project in a workspace",
+                  "sampleRequest": "Create a RESTful API server using typescript",
+                  "isSticky": true,
+                  "disambiguation": [
+                    {
+                      "category": "create_new_workspace_or_extension",
+                      "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                      "examples": [
+                        "Scaffold a Node server.",
+                        "Create a sample project which uses the fileSystemProvider API.",
+                        "react application"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "newNotebook",
+                  "description": "Create a new Jupyter Notebook",
+                  "sampleRequest": "How do I create a notebook to load data from a csv file?",
+                  "disambiguation": [
+                    {
+                      "category": "create_jupyter_notebook",
+                      "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                      "examples": [
+                        "Create a notebook to analyze this CSV file."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "setupTests",
+                  "description": "Set up tests in your project (Experimental)",
+                  "sampleRequest": "add playwright tests to my project",
+                  "when": "config.github.copilot.chat.setupTests.enabled",
+                  "disambiguation": [
+                    {
+                      "category": "set_up_tests",
+                      "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                      "examples": [
+                        "Set up tests for this project."
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "disambiguation": [
+                {
+                  "category": "workspace_project_questions",
+                  "description": "The user wants to learn about or update the code or files in their current workspace. Questions in this category may be about understanding what the whole workspace does or locating the implementation of some code. This does not include generating or updating tests.",
+                  "examples": [
+                    "What does this project do?"
+                  ]
+                },
+                {
+                  "category": "find_code_in_workspace",
+                  "description": "The user wants to locate the implementation of some functionality in their current workspace.",
+                  "examples": [
+                    "Where is the tree widget implemented?"
+                  ]
+                },
+                {
+                  "category": "generate_with_workspace_context",
+                  "description": "The user wants to generate code based on multiple files in the workspace and did not specify which files to reference.",
+                  "examples": [
+                    "Create a README for this project."
+                  ]
+                }
+              ]
+            },
+            "kind": "agent"
+          },
+          {
+            "range": {
+              "start": 10,
+              "endExclusive": 11
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 11,
+              "endLineNumber": 1,
+              "endColumn": 12
+            },
+            "text": " ",
+            "kind": "text"
+          },
+          {
+            "range": {
+              "start": 11,
+              "endExclusive": 19
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 12,
+              "endLineNumber": 1,
+              "endColumn": 20
+            },
+            "command": {
+              "name": "explain",
+              "description": "Explain how the code in your active editor works"
+            },
+            "kind": "subcommand"
+          },
+          {
+            "range": {
+              "start": 19,
+              "endExclusive": 46
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 20,
+              "endLineNumber": 1,
+              "endColumn": 47
+            },
+            "text": " Expected identifier string",
+            "kind": "text"
+          }
+        ],
+        "text": "@workspace /explain Expected identifier string"
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "kind": "mcpServersStarting",
+          "didStartServerIds": []
+        },
+        {
+          "value": "The error \"Expected identifier string\" is occurring because of **inconsistent indentation and spacing** in your commented-out `window-rule` blocks.\n\nLook at lines 330-331:\n\n```kdl\n/-window-rule {\n//    match app-id=r#\"^org\\.keepassxc\\.KeePassXC$\"#\n //   match app-id=r#\"^org\\.gnome\\.World\\.Secrets$\"#\n```\n\nThe issue is on line 332: there's a **space before the `//`** comment marker. This breaks the KDL parser because it sees what looks like an incomplete statement.\n\n**Fix:** Remove the leading space from line 332:\n\n````kdl\n/-window-rule {\n//    match app-id=r#\"^org\\.keepassxc\\.KeePassXC$\"#\n//    match app-id=r#\"^org\\.gnome\\.World\\.Secrets$\"#\n\n    block-out-from \"screen-capture\"\n````\n\nThe same issue appears on line 342 in the second commented block:\n\n````kdl\n/-window-rule {\n    geometry-corner-radius 12\n//   clip-to-geometry true\n}\n````\n\nChange it to:\n\n````kdl\n/-window-rule {\n    geometry-corner-radius 12\n//    clip-to-geometry true\n}\n````\n\n**Why this matters:** Even though the entire `window-rule` block is disabled with `/-`, KDL still parses the content syntactically. Stray spaces before comment markers confuse the parser because they look like incomplete identifiers.",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/home/david/remote_vm/",
+            "scheme": "file"
+          }
+        }
+      ],
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.36.2",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.workspace",
+        "description": "Ask about your workspace",
+        "when": "!github.copilot.interactiveSession.disabled",
+        "metadata": {
+          "sampleRequest": "How do I build this project?",
+          "themeIcon": {
+            "id": "code"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "workspace",
+        "fullName": "Workspace",
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent",
+          "ask",
+          "edit"
+        ],
+        "slashCommands": [
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": [
+          {
+            "category": "workspace_project_questions",
+            "description": "The user wants to learn about or update the code or files in their current workspace. Questions in this category may be about understanding what the whole workspace does or locating the implementation of some code. This does not include generating or updating tests.",
+            "examples": [
+              "What does this project do?"
+            ]
+          },
+          {
+            "category": "find_code_in_workspace",
+            "description": "The user wants to locate the implementation of some functionality in their current workspace.",
+            "examples": [
+              "Where is the tree widget implemented?"
+            ]
+          },
+          {
+            "category": "generate_with_workspace_context",
+            "description": "The user wants to generate code based on multiple files in the workspace and did not specify which files to reference.",
+            "examples": [
+              "Create a README for this project."
+            ]
+          }
+        ]
+      },
+      "timestamp": 1769205264976,
+      "modelId": "copilot/auto",
+      "responseId": "response_53d654a3-2cee-4af6-90f9-74d38ef28ea7",
+      "result": {
+        "timings": {
+          "firstProgress": 1300,
+          "totalElapsed": 4047
+        },
+        "metadata": {
+          "codeBlocks": [
+            {
+              "code": "/-window-rule {\n//    match app-id=r#\"^org\\.keepassxc\\.KeePassXC$\"#\n //   match app-id=r#\"^org\\.gnome\\.World\\.Secrets$\"#\n",
+              "language": "kdl",
+              "markdownBeforeBlock": "The error \"Expected identifier string\" is occurring because of **inconsistent indentation and spacing** in your commented-out `window-rule` blocks.\n\nLook at lines 330-331:\n\n"
+            },
+            {
+              "code": "/-window-rule {\n//    match app-id=r#\"^org\\.keepassxc\\.KeePassXC$\"#\n//    match app-id=r#\"^org\\.gnome\\.World\\.Secrets$\"#\n\n    block-out-from \"screen-capture\"\n",
+              "language": "kdl",
+              "markdownBeforeBlock": "\nThe issue is on line 332: there's a **space before the `//`** comment marker. This breaks the KDL parser because it sees what looks like an incomplete statement.\n\n**Fix:** Remove the leading space from line 332:\n\n"
+            },
+            {
+              "code": "/-window-rule {\n    geometry-corner-radius 12\n//   clip-to-geometry true\n}\n",
+              "language": "kdl",
+              "markdownBeforeBlock": "\nThe same issue appears on line 342 in the second commented block:\n\n"
+            },
+            {
+              "code": "/-window-rule {\n    geometry-corner-radius 12\n//    clip-to-geometry true\n}\n",
+              "language": "kdl",
+              "markdownBeforeBlock": "\nChange it to:\n\n"
+            }
+          ],
+          "toolCallRounds": [
+            {
+              "response": "The error \"Expected identifier string\" is occurring because of **inconsistent indentation and spacing** in your commented-out `window-rule` blocks.\n\nLook at lines 330-331:\n\n```kdl\n/-window-rule {\n//    match app-id=r#\"^org\\.keepassxc\\.KeePassXC$\"#\n //   match app-id=r#\"^org\\.gnome\\.World\\.Secrets$\"#\n```\n\nThe issue is on line 332: there's a **space before the `//`** comment marker. This breaks the KDL parser because it sees what looks like an incomplete statement.\n\n**Fix:** Remove the leading space from line 332:\n\n````kdl\n// filepath: config.kdl\n/-window-rule {\n//    match app-id=r#\"^org\\.keepassxc\\.KeePassXC$\"#\n//    match app-id=r#\"^org\\.gnome\\.World\\.Secrets$\"#\n\n    block-out-from \"screen-capture\"\n````\n\nThe same issue appears on line 342 in the second commented block:\n\n````kdl\n/-window-rule {\n    geometry-corner-radius 12\n//   clip-to-geometry true\n}\n````\n\nChange it to:\n\n````kdl\n/-window-rule {\n    geometry-corner-radius 12\n//    clip-to-geometry true\n}\n````\n\n**Why this matters:** Even though the entire `window-rule` block is disabled with `/-`, KDL still parses the content syntactically. Stray spaces before comment markers confuse the parser because they look like incomplete identifiers.",
+              "toolCalls": [],
+              "toolInputRetry": 0,
+              "id": "9764e08f-b591-4287-8238-80b9308a9e0d"
+            }
+          ],
+          "modelMessageId": "250328ae-711e-4c1b-8c99-343d0935e14d",
+          "responseId": "a20fcfba-6af1-4e73-9235-fef75793a87a",
+          "sessionId": "97286139-c089-4b06-ab79-5b5d02348764",
+          "agentId": "github.copilot.workspace",
+          "command": "explain"
+        },
+        "details": "Claude Haiku 4.5 • 1x"
+      },
+      "responseMarkdownInfo": [
+        {
+          "suggestionId": "sgt-b792796c-adcd-43c0-b95c-77796c241215"
+        },
+        {
+          "suggestionId": "sgt-5502ff0a-2883-48df-a531-74a80dfab2cf"
+        },
+        {
+          "suggestionId": "sgt-4b3ba99b-591f-4966-980a-d5ef744eccf4"
+        },
+        {
+          "suggestionId": "sgt-37b4bd0f-c2df-4f9a-9c79-65638a1b0fbf"
+        }
+      ],
+      "followups": [],
+      "modelState": {
+        "value": 1,
+        "completedAt": 1769205269148
+      },
+      "slashCommand": {
+        "name": "explain",
+        "description": "Explain how the code in your active editor works"
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "uri": {
+              "$mid": 1,
+              "fsPath": "/home/david/remote_vm/.config/niri/config.kdl",
+              "external": "file:///home/david/remote_vm/.config/niri/config.kdl",
+              "path": "/home/david/remote_vm/.config/niri/config.kdl",
+              "scheme": "file"
+            },
+            "range": {
+              "startLineNumber": 311,
+              "startColumn": 1,
+              "endLineNumber": 358,
+              "endColumn": 42
+            }
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 0
+    },
+    {
+      "requestId": "request_7dc27b2b-c6a1-496b-ba63-78c0143b0145",
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 10
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 11
+            },
+            "agent": {
+              "extensionId": {
+                "value": "GitHub.copilot-chat",
+                "_lower": "github.copilot-chat"
+              },
+              "extensionVersion": "0.36.2",
+              "publisherDisplayName": "GitHub",
+              "extensionPublisherId": "GitHub",
+              "extensionDisplayName": "GitHub Copilot Chat",
+              "id": "github.copilot.workspace",
+              "description": "Ask about your workspace",
+              "when": "!github.copilot.interactiveSession.disabled",
+              "metadata": {
+                "sampleRequest": "How do I build this project?",
+                "themeIcon": {
+                  "id": "code"
+                },
+                "hasFollowups": false,
+                "supportIssueReporting": false
+              },
+              "name": "workspace",
+              "fullName": "Workspace",
+              "locations": [
+                "panel"
+              ],
+              "modes": [
+                "agent",
+                "ask",
+                "edit"
+              ],
+              "slashCommands": [
+                {
+                  "name": "explain",
+                  "description": "Explain how the code in your active editor works"
+                },
+                {
+                  "name": "tests",
+                  "description": "Generate unit tests for the selected code",
+                  "disambiguation": [
+                    {
+                      "category": "create_tests",
+                      "description": "The user wants to generate unit tests.",
+                      "examples": [
+                        "Generate tests for my selection using pytest."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "fix",
+                  "description": "Propose a fix for the problems in the selected code",
+                  "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+                },
+                {
+                  "name": "new",
+                  "description": "Scaffold code for a new file or project in a workspace",
+                  "sampleRequest": "Create a RESTful API server using typescript",
+                  "isSticky": true,
+                  "disambiguation": [
+                    {
+                      "category": "create_new_workspace_or_extension",
+                      "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                      "examples": [
+                        "Scaffold a Node server.",
+                        "Create a sample project which uses the fileSystemProvider API.",
+                        "react application"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "newNotebook",
+                  "description": "Create a new Jupyter Notebook",
+                  "sampleRequest": "How do I create a notebook to load data from a csv file?",
+                  "disambiguation": [
+                    {
+                      "category": "create_jupyter_notebook",
+                      "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                      "examples": [
+                        "Create a notebook to analyze this CSV file."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "setupTests",
+                  "description": "Set up tests in your project (Experimental)",
+                  "sampleRequest": "add playwright tests to my project",
+                  "when": "config.github.copilot.chat.setupTests.enabled",
+                  "disambiguation": [
+                    {
+                      "category": "set_up_tests",
+                      "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                      "examples": [
+                        "Set up tests for this project."
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "disambiguation": [
+                {
+                  "category": "workspace_project_questions",
+                  "description": "The user wants to learn about or update the code or files in their current workspace. Questions in this category may be about understanding what the whole workspace does or locating the implementation of some code. This does not include generating or updating tests.",
+                  "examples": [
+                    "What does this project do?"
+                  ]
+                },
+                {
+                  "category": "find_code_in_workspace",
+                  "description": "The user wants to locate the implementation of some functionality in their current workspace.",
+                  "examples": [
+                    "Where is the tree widget implemented?"
+                  ]
+                },
+                {
+                  "category": "generate_with_workspace_context",
+                  "description": "The user wants to generate code based on multiple files in the workspace and did not specify which files to reference.",
+                  "examples": [
+                    "Create a README for this project."
+                  ]
+                }
+              ]
+            },
+            "kind": "agent"
+          },
+          {
+            "range": {
+              "start": 10,
+              "endExclusive": 11
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 11,
+              "endLineNumber": 1,
+              "endColumn": 12
+            },
+            "text": " ",
+            "kind": "text"
+          },
+          {
+            "range": {
+              "start": 11,
+              "endExclusive": 19
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 12,
+              "endLineNumber": 1,
+              "endColumn": 20
+            },
+            "command": {
+              "name": "explain",
+              "description": "Explain how the code in your active editor works"
+            },
+            "kind": "subcommand"
+          },
+          {
+            "range": {
+              "start": 19,
+              "endExclusive": 74
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 20,
+              "endLineNumber": 1,
+              "endColumn": 75
+            },
+            "text": " Expected identifier string, Expected identifier string",
+            "kind": "text"
+          }
+        ],
+        "text": "@workspace /explain Expected identifier string, Expected identifier string"
+      },
+      "variableData": {
+        "variables": [
+          {
+            "kind": "file",
+            "id": "vscode.implicit.selection",
+            "name": "file:config.kdl",
+            "value": {
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/home/david/remote_vm/.config/niri/config.kdl",
+                "external": "file:///home/david/remote_vm/.config/niri/config.kdl",
+                "path": "/home/david/remote_vm/.config/niri/config.kdl",
+                "scheme": "file"
+              },
+              "range": {
+                "startLineNumber": 396,
+                "startColumn": 3,
+                "endLineNumber": 398,
+                "endColumn": 41,
+                "selectionStartLineNumber": 396,
+                "selectionStartColumn": 3,
+                "positionLineNumber": 398,
+                "positionColumn": 41
+              }
+            },
+            "modelDescription": "User's active selection"
+          }
+        ]
+      },
+      "response": [
+        {
+          "kind": "mcpServersStarting",
+          "didStartServerIds": []
+        },
+        {
+          "value": "The error is occurring because **the indentation before `Mod+Q` is inconsistent** with the line above it.\n\nLook at your selection:\n- Line 1: `Mod+O repeat=false { toggle-overview; }` — starts at column 0\n- Line 2: `    Mod+Q repeat=false { close-window; }` — starts with 4 spaces\n\nIn KDL, when you're defining sequential keybind rules at the root level, they should have **consistent indentation**. The parser expects `Mod+Q` to start at the same column as `Mod+O`.\n\n**Fix:** Remove the leading spaces before `Mod+Q`:\n\n````kdl\nMod+O repeat=false { toggle-overview; }\nMod+Q repeat=false { close-window; }\n````\n\n**Why this matters:** KDL uses indentation to denote nesting and scope. When you have inconsistent indentation at the same logical level, the parser thinks you're starting a nested block or statement without proper context, hence \"Expected identifier string.\"",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/home/david/remote_vm/",
+            "scheme": "file"
+          }
+        }
+      ],
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.36.2",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.workspace",
+        "description": "Ask about your workspace",
+        "when": "!github.copilot.interactiveSession.disabled",
+        "metadata": {
+          "sampleRequest": "How do I build this project?",
+          "themeIcon": {
+            "id": "code"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "workspace",
+        "fullName": "Workspace",
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent",
+          "ask",
+          "edit"
+        ],
+        "slashCommands": [
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": [
+          {
+            "category": "workspace_project_questions",
+            "description": "The user wants to learn about or update the code or files in their current workspace. Questions in this category may be about understanding what the whole workspace does or locating the implementation of some code. This does not include generating or updating tests.",
+            "examples": [
+              "What does this project do?"
+            ]
+          },
+          {
+            "category": "find_code_in_workspace",
+            "description": "The user wants to locate the implementation of some functionality in their current workspace.",
+            "examples": [
+              "Where is the tree widget implemented?"
+            ]
+          },
+          {
+            "category": "generate_with_workspace_context",
+            "description": "The user wants to generate code based on multiple files in the workspace and did not specify which files to reference.",
+            "examples": [
+              "Create a README for this project."
+            ]
+          }
+        ]
+      },
+      "timestamp": 1769205483579,
+      "modelId": "copilot/auto",
+      "responseId": "response_8941f2f3-d416-4858-9f62-7e9057246fd9",
+      "result": {
+        "timings": {
+          "firstProgress": 2142,
+          "totalElapsed": 3576
+        },
+        "metadata": {
+          "codeBlocks": [
+            {
+              "code": "Mod+O repeat=false { toggle-overview; }\nMod+Q repeat=false { close-window; }\n",
+              "language": "kdl",
+              "markdownBeforeBlock": "The error is occurring because **the indentation before `Mod+Q` is inconsistent** with the line above it.\n\nLook at your selection:\n- Line 1: `Mod+O repeat=false { toggle-overview; }` — starts at column 0\n- Line 2: `    Mod+Q repeat=false { close-window; }` — starts with 4 spaces\n\nIn KDL, when you're defining sequential keybind rules at the root level, they should have **consistent indentation**. The parser expects `Mod+Q` to start at the same column as `Mod+O`.\n\n**Fix:** Remove the leading spaces before `Mod+Q`:\n\n"
+            }
+          ],
+          "toolCallRounds": [
+            {
+              "response": "The error is occurring because **the indentation before `Mod+Q` is inconsistent** with the line above it.\n\nLook at your selection:\n- Line 1: `Mod+O repeat=false { toggle-overview; }` — starts at column 0\n- Line 2: `    Mod+Q repeat=false { close-window; }` — starts with 4 spaces\n\nIn KDL, when you're defining sequential keybind rules at the root level, they should have **consistent indentation**. The parser expects `Mod+Q` to start at the same column as `Mod+O`.\n\n**Fix:** Remove the leading spaces before `Mod+Q`:\n\n````kdl\nMod+O repeat=false { toggle-overview; }\nMod+Q repeat=false { close-window; }\n````\n\n**Why this matters:** KDL uses indentation to denote nesting and scope. When you have inconsistent indentation at the same logical level, the parser thinks you're starting a nested block or statement without proper context, hence \"Expected identifier string.\"",
+              "toolCalls": [],
+              "toolInputRetry": 0,
+              "id": "d349cf93-1f1f-402b-9e02-ea78232724f2"
+            }
+          ],
+          "modelMessageId": "594dff8d-4338-4798-844a-5f80de0f8f70",
+          "responseId": "eb16a5ff-6402-40ef-a13e-256d0e102d20",
+          "sessionId": "97286139-c089-4b06-ab79-5b5d02348764",
+          "agentId": "github.copilot.workspace",
+          "command": "explain"
+        },
+        "details": "Claude Haiku 4.5 • 1x"
+      },
+      "responseMarkdownInfo": [
+        {
+          "suggestionId": "sgt-18ed863d-dd63-4884-898f-0e4fcd125c6b"
+        }
+      ],
+      "followups": [],
+      "modelState": {
+        "value": 1,
+        "completedAt": 1769205487186
+      },
+      "slashCommand": {
+        "name": "explain",
+        "description": "Explain how the code in your active editor works"
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "uri": {
+              "$mid": 1,
+              "fsPath": "/home/david/remote_vm/.config/niri/config.kdl",
+              "external": "file:///home/david/remote_vm/.config/niri/config.kdl",
+              "path": "/home/david/remote_vm/.config/niri/config.kdl",
+              "scheme": "file"
+            },
+            "range": {
+              "startLineNumber": 396,
+              "startColumn": 3,
+              "endLineNumber": 398,
+              "endColumn": 41
+            }
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 0
+    },
+    {
+      "requestId": "request_5e69ff59-c176-4ccb-bc7c-06c792991d2e",
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 10
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 11
+            },
+            "agent": {
+              "extensionId": {
+                "value": "GitHub.copilot-chat",
+                "_lower": "github.copilot-chat"
+              },
+              "extensionVersion": "0.36.2",
+              "publisherDisplayName": "GitHub",
+              "extensionPublisherId": "GitHub",
+              "extensionDisplayName": "GitHub Copilot Chat",
+              "id": "github.copilot.workspace",
+              "description": "Ask about your workspace",
+              "when": "!github.copilot.interactiveSession.disabled",
+              "metadata": {
+                "sampleRequest": "How do I build this project?",
+                "themeIcon": {
+                  "id": "code"
+                },
+                "hasFollowups": false,
+                "supportIssueReporting": false
+              },
+              "name": "workspace",
+              "fullName": "Workspace",
+              "locations": [
+                "panel"
+              ],
+              "modes": [
+                "agent",
+                "ask",
+                "edit"
+              ],
+              "slashCommands": [
+                {
+                  "name": "explain",
+                  "description": "Explain how the code in your active editor works"
+                },
+                {
+                  "name": "tests",
+                  "description": "Generate unit tests for the selected code",
+                  "disambiguation": [
+                    {
+                      "category": "create_tests",
+                      "description": "The user wants to generate unit tests.",
+                      "examples": [
+                        "Generate tests for my selection using pytest."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "fix",
+                  "description": "Propose a fix for the problems in the selected code",
+                  "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+                },
+                {
+                  "name": "new",
+                  "description": "Scaffold code for a new file or project in a workspace",
+                  "sampleRequest": "Create a RESTful API server using typescript",
+                  "isSticky": true,
+                  "disambiguation": [
+                    {
+                      "category": "create_new_workspace_or_extension",
+                      "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                      "examples": [
+                        "Scaffold a Node server.",
+                        "Create a sample project which uses the fileSystemProvider API.",
+                        "react application"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "newNotebook",
+                  "description": "Create a new Jupyter Notebook",
+                  "sampleRequest": "How do I create a notebook to load data from a csv file?",
+                  "disambiguation": [
+                    {
+                      "category": "create_jupyter_notebook",
+                      "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                      "examples": [
+                        "Create a notebook to analyze this CSV file."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "setupTests",
+                  "description": "Set up tests in your project (Experimental)",
+                  "sampleRequest": "add playwright tests to my project",
+                  "when": "config.github.copilot.chat.setupTests.enabled",
+                  "disambiguation": [
+                    {
+                      "category": "set_up_tests",
+                      "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                      "examples": [
+                        "Set up tests for this project."
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "disambiguation": [
+                {
+                  "category": "workspace_project_questions",
+                  "description": "The user wants to learn about or update the code or files in their current workspace. Questions in this category may be about understanding what the whole workspace does or locating the implementation of some code. This does not include generating or updating tests.",
+                  "examples": [
+                    "What does this project do?"
+                  ]
+                },
+                {
+                  "category": "find_code_in_workspace",
+                  "description": "The user wants to locate the implementation of some functionality in their current workspace.",
+                  "examples": [
+                    "Where is the tree widget implemented?"
+                  ]
+                },
+                {
+                  "category": "generate_with_workspace_context",
+                  "description": "The user wants to generate code based on multiple files in the workspace and did not specify which files to reference.",
+                  "examples": [
+                    "Create a README for this project."
+                  ]
+                }
+              ]
+            },
+            "kind": "agent"
+          },
+          {
+            "range": {
+              "start": 10,
+              "endExclusive": 11
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 11,
+              "endLineNumber": 1,
+              "endColumn": 12
+            },
+            "text": " ",
+            "kind": "text"
+          },
+          {
+            "range": {
+              "start": 11,
+              "endExclusive": 19
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 12,
+              "endLineNumber": 1,
+              "endColumn": 20
+            },
+            "command": {
+              "name": "explain",
+              "description": "Explain how the code in your active editor works"
+            },
+            "kind": "subcommand"
+          },
+          {
+            "range": {
+              "start": 19,
+              "endExclusive": 46
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 20,
+              "endLineNumber": 1,
+              "endColumn": 47
+            },
+            "text": " Expected identifier string",
+            "kind": "text"
+          }
+        ],
+        "text": "@workspace /explain Expected identifier string"
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "kind": "mcpServersStarting",
+          "didStartServerIds": []
+        },
+        {
+          "value": "I see the problem now. There are **multiple spacing issues** in your window rules that are breaking the parser:\n\n1. **Line 329** has a leading space before `window-rule`\n2. **Line 331** has a space before the `//` comment\n3. **Line 342** has a space before the `//` comment\n\nHere's the corrected version:\n\n````kdl\n",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/home/david/remote_vm/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "codeblockUri",
+          "uri": {
+            "$mid": 1,
+            "fsPath": "/home/david/remote_vm/.config/niri/config.kdl",
+            "external": "file:///home/david/remote_vm/.config/niri/config.kdl",
+            "path": "/home/david/remote_vm/.config/niri/config.kdl",
+            "scheme": "file"
+          }
+        },
+        {
+          "value": "// Example: block out two password managers from screen capture.\n// (This example rule is commented out with a \"/-\" in front.)\nwindow-rule {\n//    match app-id=r#\"^org\\.keepassxc\\.KeePassXC$\"#\n//    match app-id=r#\"^org\\.gnome\\.World\\.Secrets$\"#\n\n    block-out-from \"screen-capture\"\n\n    // Use this instead if you want them visible on third-party screenshot tools.\n    // block-out-from \"screencast\"\n}\n\n// Example: enable rounded corners for all windows.\n// (This example rule is commented out with a \"/-\" in front.)\nwindow-rule {\n    geometry-corner-radius 12\n//    clip-to-geometry true\n}\n````\n\n**The key changes:**\n- Removed the leading space before `window-rule` on line 329\n- Aligned all `//` comment markers to start at the same column (no stray spaces before them)\n\nEven though these are configuration blocks in comments, KDL still validates the syntax of commented lines, so consistency matters.",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/home/david/remote_vm/",
+            "scheme": "file"
+          }
+        }
+      ],
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.36.2",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.workspace",
+        "description": "Ask about your workspace",
+        "when": "!github.copilot.interactiveSession.disabled",
+        "metadata": {
+          "sampleRequest": "How do I build this project?",
+          "themeIcon": {
+            "id": "code"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "workspace",
+        "fullName": "Workspace",
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent",
+          "ask",
+          "edit"
+        ],
+        "slashCommands": [
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": [
+          {
+            "category": "workspace_project_questions",
+            "description": "The user wants to learn about or update the code or files in their current workspace. Questions in this category may be about understanding what the whole workspace does or locating the implementation of some code. This does not include generating or updating tests.",
+            "examples": [
+              "What does this project do?"
+            ]
+          },
+          {
+            "category": "find_code_in_workspace",
+            "description": "The user wants to locate the implementation of some functionality in their current workspace.",
+            "examples": [
+              "Where is the tree widget implemented?"
+            ]
+          },
+          {
+            "category": "generate_with_workspace_context",
+            "description": "The user wants to generate code based on multiple files in the workspace and did not specify which files to reference.",
+            "examples": [
+              "Create a README for this project."
+            ]
+          }
+        ]
+      },
+      "timestamp": 1769205569595,
+      "modelId": "copilot/auto",
+      "responseId": "response_53cbc4cc-866f-494f-b9b3-59ab9badafd6",
+      "result": {
+        "timings": {
+          "firstProgress": 1501,
+          "totalElapsed": 3460
+        },
+        "metadata": {
+          "codeBlocks": [
+            {
+              "code": "// Example: block out two password managers from screen capture.\n// (This example rule is commented out with a \"/-\" in front.)\nwindow-rule {\n//    match app-id=r#\"^org\\.keepassxc\\.KeePassXC$\"#\n//    match app-id=r#\"^org\\.gnome\\.World\\.Secrets$\"#\n\n    block-out-from \"screen-capture\"\n\n    // Use this instead if you want them visible on third-party screenshot tools.\n    // block-out-from \"screencast\"\n}\n\n// Example: enable rounded corners for all windows.\n// (This example rule is commented out with a \"/-\" in front.)\nwindow-rule {\n    geometry-corner-radius 12\n//    clip-to-geometry true\n}\n",
+              "resource": {
+                "$mid": 1,
+                "path": "/home/david/remote_vm/.config/niri/config.kdl",
+                "scheme": "file"
+              },
+              "language": "kdl",
+              "markdownBeforeBlock": "I see the problem now. There are **multiple spacing issues** in your window rules that are breaking the parser:\n\n1. **Line 329** has a leading space before `window-rule`\n2. **Line 331** has a space before the `//` comment\n3. **Line 342** has a space before the `//` comment\n\nHere's the corrected version:\n\n"
+            }
+          ],
+          "toolCallRounds": [
+            {
+              "response": "I see the problem now. There are **multiple spacing issues** in your window rules that are breaking the parser:\n\n1. **Line 329** has a leading space before `window-rule`\n2. **Line 331** has a space before the `//` comment\n3. **Line 342** has a space before the `//` comment\n\nHere's the corrected version:\n\n````kdl\n// filepath: /home/david/remote_vm/.config/niri/config.kdl\n// Example: block out two password managers from screen capture.\n// (This example rule is commented out with a \"/-\" in front.)\nwindow-rule {\n//    match app-id=r#\"^org\\.keepassxc\\.KeePassXC$\"#\n//    match app-id=r#\"^org\\.gnome\\.World\\.Secrets$\"#\n\n    block-out-from \"screen-capture\"\n\n    // Use this instead if you want them visible on third-party screenshot tools.\n    // block-out-from \"screencast\"\n}\n\n// Example: enable rounded corners for all windows.\n// (This example rule is commented out with a \"/-\" in front.)\nwindow-rule {\n    geometry-corner-radius 12\n//    clip-to-geometry true\n}\n````\n\n**The key changes:**\n- Removed the leading space before `window-rule` on line 329\n- Aligned all `//` comment markers to start at the same column (no stray spaces before them)\n\nEven though these are configuration blocks in comments, KDL still validates the syntax of commented lines, so consistency matters.",
+              "toolCalls": [],
+              "toolInputRetry": 0,
+              "id": "24ecaee1-38a9-4cf8-9c84-b49c7d608828"
+            }
+          ],
+          "modelMessageId": "6b39e2da-b392-426d-b525-195c62ac689c",
+          "responseId": "1b7b34c1-a179-42fc-ad3e-e59da0be7f89",
+          "sessionId": "97286139-c089-4b06-ab79-5b5d02348764",
+          "agentId": "github.copilot.workspace",
+          "command": "explain"
+        },
+        "details": "Claude Haiku 4.5 • 1x"
+      },
+      "responseMarkdownInfo": [
+        {
+          "suggestionId": "sgt-dfdbdd75-fd29-47c4-bbe7-7ba5c647819e"
+        }
+      ],
+      "followups": [],
+      "modelState": {
+        "value": 1,
+        "completedAt": 1769205573077
+      },
+      "slashCommand": {
+        "name": "explain",
+        "description": "Explain how the code in your active editor works"
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "uri": {
+              "$mid": 1,
+              "fsPath": "/home/david/remote_vm/.config/niri/config.kdl",
+              "external": "file:///home/david/remote_vm/.config/niri/config.kdl",
+              "path": "/home/david/remote_vm/.config/niri/config.kdl",
+              "scheme": "file"
+            },
+            "range": {
+              "startLineNumber": 298,
+              "startColumn": 1,
+              "endLineNumber": 345,
+              "endColumn": 1
+            }
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 0
+    },
+    {
+      "requestId": "request_7f6a505c-076f-43b8-81f7-c6d954234957",
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 10
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 11
+            },
+            "agent": {
+              "extensionId": {
+                "value": "GitHub.copilot-chat",
+                "_lower": "github.copilot-chat"
+              },
+              "extensionVersion": "0.36.2",
+              "publisherDisplayName": "GitHub",
+              "extensionPublisherId": "GitHub",
+              "extensionDisplayName": "GitHub Copilot Chat",
+              "id": "github.copilot.workspace",
+              "description": "Ask about your workspace",
+              "when": "!github.copilot.interactiveSession.disabled",
+              "metadata": {
+                "sampleRequest": "How do I build this project?",
+                "themeIcon": {
+                  "id": "code"
+                },
+                "hasFollowups": false,
+                "supportIssueReporting": false
+              },
+              "name": "workspace",
+              "fullName": "Workspace",
+              "locations": [
+                "panel"
+              ],
+              "modes": [
+                "agent",
+                "ask",
+                "edit"
+              ],
+              "slashCommands": [
+                {
+                  "name": "explain",
+                  "description": "Explain how the code in your active editor works"
+                },
+                {
+                  "name": "tests",
+                  "description": "Generate unit tests for the selected code",
+                  "disambiguation": [
+                    {
+                      "category": "create_tests",
+                      "description": "The user wants to generate unit tests.",
+                      "examples": [
+                        "Generate tests for my selection using pytest."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "fix",
+                  "description": "Propose a fix for the problems in the selected code",
+                  "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+                },
+                {
+                  "name": "new",
+                  "description": "Scaffold code for a new file or project in a workspace",
+                  "sampleRequest": "Create a RESTful API server using typescript",
+                  "isSticky": true,
+                  "disambiguation": [
+                    {
+                      "category": "create_new_workspace_or_extension",
+                      "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                      "examples": [
+                        "Scaffold a Node server.",
+                        "Create a sample project which uses the fileSystemProvider API.",
+                        "react application"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "newNotebook",
+                  "description": "Create a new Jupyter Notebook",
+                  "sampleRequest": "How do I create a notebook to load data from a csv file?",
+                  "disambiguation": [
+                    {
+                      "category": "create_jupyter_notebook",
+                      "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                      "examples": [
+                        "Create a notebook to analyze this CSV file."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "setupTests",
+                  "description": "Set up tests in your project (Experimental)",
+                  "sampleRequest": "add playwright tests to my project",
+                  "when": "config.github.copilot.chat.setupTests.enabled",
+                  "disambiguation": [
+                    {
+                      "category": "set_up_tests",
+                      "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                      "examples": [
+                        "Set up tests for this project."
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "disambiguation": [
+                {
+                  "category": "workspace_project_questions",
+                  "description": "The user wants to learn about or update the code or files in their current workspace. Questions in this category may be about understanding what the whole workspace does or locating the implementation of some code. This does not include generating or updating tests.",
+                  "examples": [
+                    "What does this project do?"
+                  ]
+                },
+                {
+                  "category": "find_code_in_workspace",
+                  "description": "The user wants to locate the implementation of some functionality in their current workspace.",
+                  "examples": [
+                    "Where is the tree widget implemented?"
+                  ]
+                },
+                {
+                  "category": "generate_with_workspace_context",
+                  "description": "The user wants to generate code based on multiple files in the workspace and did not specify which files to reference.",
+                  "examples": [
+                    "Create a README for this project."
+                  ]
+                }
+              ]
+            },
+            "kind": "agent"
+          },
+          {
+            "range": {
+              "start": 10,
+              "endExclusive": 11
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 11,
+              "endLineNumber": 1,
+              "endColumn": 12
+            },
+            "text": " ",
+            "kind": "text"
+          },
+          {
+            "range": {
+              "start": 11,
+              "endExclusive": 19
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 12,
+              "endLineNumber": 1,
+              "endColumn": 20
+            },
+            "command": {
+              "name": "explain",
+              "description": "Explain how the code in your active editor works"
+            },
+            "kind": "subcommand"
+          },
+          {
+            "range": {
+              "start": 19,
+              "endExclusive": 46
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 20,
+              "endLineNumber": 1,
+              "endColumn": 47
+            },
+            "text": " Expected identifier string",
+            "kind": "text"
+          }
+        ],
+        "text": "@workspace /explain Expected identifier string"
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "kind": "mcpServersStarting",
+          "didStartServerIds": []
+        },
+        {
+          "value": "I found the issue! Look at **line 330** and **line 342** — they have **inconsistent comment indentation**:\n\n- Line 330: `//    match` (2 slashes, then 4 spaces)\n- Line 331: `//   match` (2 slashes, then 3 spaces) ← **Wrong!**\n- Line 342: `//   clip-to-geometry` (2 slashes, then 3 spaces) ← **Wrong!**\n\nThe parser expects consistent spacing after the `//`. Fix them to align:\n\n````kdl\n",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/home/david/remote_vm/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "codeblockUri",
+          "uri": {
+            "$mid": 1,
+            "fsPath": "/home/david/remote_vm/.config/niri/config.kdl",
+            "external": "file:///home/david/remote_vm/.config/niri/config.kdl",
+            "path": "/home/david/remote_vm/.config/niri/config.kdl",
+            "scheme": "file"
+          }
+        },
+        {
+          "value": "// Example: block out two password managers from screen capture.\n// (This example rule is commented out with a \"/-\" in front.)\nwindow-rule {\n//    match app-id=r#\"^org\\.keepassxc\\.KeePassXC$\"#\n//    match app-id=r#\"^org\\.gnome\\.World\\.Secrets$\"#\n\n    block-out-from \"screen-capture\"\n\n    // Use this instead if you want them visible on third-party screenshot tools.\n    // block-out-from \"screencast\"\n}\n\n// Example: enable rounded corners for all windows.\n// (This example rule is commented out with a \"/-\" in front.)\nwindow-rule {\n    geometry-corner-radius 12\n//    clip-to-geometry true\n}\n````\n\n**The fix:** Change line 331 from `//   match` to `//    match` (add one space), and line 342 from `//   clip` to `//    clip` (add one space). All commented lines should have 4 spaces after `//`.",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/home/david/remote_vm/",
+            "scheme": "file"
+          }
+        }
+      ],
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.36.2",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.workspace",
+        "description": "Ask about your workspace",
+        "when": "!github.copilot.interactiveSession.disabled",
+        "metadata": {
+          "sampleRequest": "How do I build this project?",
+          "themeIcon": {
+            "id": "code"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "workspace",
+        "fullName": "Workspace",
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent",
+          "ask",
+          "edit"
+        ],
+        "slashCommands": [
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": [
+          {
+            "category": "workspace_project_questions",
+            "description": "The user wants to learn about or update the code or files in their current workspace. Questions in this category may be about understanding what the whole workspace does or locating the implementation of some code. This does not include generating or updating tests.",
+            "examples": [
+              "What does this project do?"
+            ]
+          },
+          {
+            "category": "find_code_in_workspace",
+            "description": "The user wants to locate the implementation of some functionality in their current workspace.",
+            "examples": [
+              "Where is the tree widget implemented?"
+            ]
+          },
+          {
+            "category": "generate_with_workspace_context",
+            "description": "The user wants to generate code based on multiple files in the workspace and did not specify which files to reference.",
+            "examples": [
+              "Create a README for this project."
+            ]
+          }
+        ]
+      },
+      "timestamp": 1769205656062,
+      "modelId": "copilot/auto",
+      "responseId": "response_453ac349-fc6b-4851-91b0-06cc14dbb6c2",
+      "result": {
+        "timings": {
+          "firstProgress": 1862,
+          "totalElapsed": 4028
+        },
+        "metadata": {
+          "codeBlocks": [
+            {
+              "code": "// Example: block out two password managers from screen capture.\n// (This example rule is commented out with a \"/-\" in front.)\nwindow-rule {\n//    match app-id=r#\"^org\\.keepassxc\\.KeePassXC$\"#\n//    match app-id=r#\"^org\\.gnome\\.World\\.Secrets$\"#\n\n    block-out-from \"screen-capture\"\n\n    // Use this instead if you want them visible on third-party screenshot tools.\n    // block-out-from \"screencast\"\n}\n\n// Example: enable rounded corners for all windows.\n// (This example rule is commented out with a \"/-\" in front.)\nwindow-rule {\n    geometry-corner-radius 12\n//    clip-to-geometry true\n}\n",
+              "resource": {
+                "$mid": 1,
+                "path": "/home/david/remote_vm/.config/niri/config.kdl",
+                "scheme": "file"
+              },
+              "language": "kdl",
+              "markdownBeforeBlock": "I found the issue! Look at **line 330** and **line 342** — they have **inconsistent comment indentation**:\n\n- Line 330: `//    match` (2 slashes, then 4 spaces)\n- Line 331: `//   match` (2 slashes, then 3 spaces) ← **Wrong!**\n- Line 342: `//   clip-to-geometry` (2 slashes, then 3 spaces) ← **Wrong!**\n\nThe parser expects consistent spacing after the `//`. Fix them to align:\n\n"
+            }
+          ],
+          "toolCallRounds": [
+            {
+              "response": "I found the issue! Look at **line 330** and **line 342** — they have **inconsistent comment indentation**:\n\n- Line 330: `//    match` (2 slashes, then 4 spaces)\n- Line 331: `//   match` (2 slashes, then 3 spaces) ← **Wrong!**\n- Line 342: `//   clip-to-geometry` (2 slashes, then 3 spaces) ← **Wrong!**\n\nThe parser expects consistent spacing after the `//`. Fix them to align:\n\n````kdl\n// filepath: /home/david/remote_vm/.config/niri/config.kdl\n// Example: block out two password managers from screen capture.\n// (This example rule is commented out with a \"/-\" in front.)\nwindow-rule {\n//    match app-id=r#\"^org\\.keepassxc\\.KeePassXC$\"#\n//    match app-id=r#\"^org\\.gnome\\.World\\.Secrets$\"#\n\n    block-out-from \"screen-capture\"\n\n    // Use this instead if you want them visible on third-party screenshot tools.\n    // block-out-from \"screencast\"\n}\n\n// Example: enable rounded corners for all windows.\n// (This example rule is commented out with a \"/-\" in front.)\nwindow-rule {\n    geometry-corner-radius 12\n//    clip-to-geometry true\n}\n````\n\n**The fix:** Change line 331 from `//   match` to `//    match` (add one space), and line 342 from `//   clip` to `//    clip` (add one space). All commented lines should have 4 spaces after `//`.",
+              "toolCalls": [],
+              "toolInputRetry": 0,
+              "id": "1969f636-5f58-4809-909b-1368a77bafab"
+            }
+          ],
+          "modelMessageId": "8880039c-8656-4ad9-9412-31425dd37442",
+          "responseId": "7de7d9ad-0399-4005-8d81-737ce477d932",
+          "sessionId": "97286139-c089-4b06-ab79-5b5d02348764",
+          "agentId": "github.copilot.workspace",
+          "command": "explain"
+        },
+        "details": "Claude Haiku 4.5 • 1x"
+      },
+      "responseMarkdownInfo": [
+        {
+          "suggestionId": "sgt-7a9e5028-96e1-436a-a996-49fb6cdec72e"
+        }
+      ],
+      "followups": [],
+      "modelState": {
+        "value": 1,
+        "completedAt": 1769205660122
+      },
+      "slashCommand": {
+        "name": "explain",
+        "description": "Explain how the code in your active editor works"
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "uri": {
+              "$mid": 1,
+              "fsPath": "/home/david/remote_vm/.config/niri/config.kdl",
+              "external": "file:///home/david/remote_vm/.config/niri/config.kdl",
+              "path": "/home/david/remote_vm/.config/niri/config.kdl",
+              "scheme": "file"
+            },
+            "range": {
+              "startLineNumber": 300,
+              "startColumn": 1,
+              "endLineNumber": 348,
+              "endColumn": 83
+            }
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 0
+    },
+    {
+      "requestId": "request_087259ab-bc5b-4ea1-8533-80531d4c99bf",
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 10
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 11
+            },
+            "agent": {
+              "extensionId": {
+                "value": "GitHub.copilot-chat",
+                "_lower": "github.copilot-chat"
+              },
+              "extensionVersion": "0.36.2",
+              "publisherDisplayName": "GitHub",
+              "extensionPublisherId": "GitHub",
+              "extensionDisplayName": "GitHub Copilot Chat",
+              "id": "github.copilot.workspace",
+              "description": "Ask about your workspace",
+              "when": "!github.copilot.interactiveSession.disabled",
+              "metadata": {
+                "sampleRequest": "How do I build this project?",
+                "themeIcon": {
+                  "id": "code"
+                },
+                "hasFollowups": false,
+                "supportIssueReporting": false
+              },
+              "name": "workspace",
+              "fullName": "Workspace",
+              "locations": [
+                "panel"
+              ],
+              "modes": [
+                "agent",
+                "ask",
+                "edit"
+              ],
+              "slashCommands": [
+                {
+                  "name": "explain",
+                  "description": "Explain how the code in your active editor works"
+                },
+                {
+                  "name": "tests",
+                  "description": "Generate unit tests for the selected code",
+                  "disambiguation": [
+                    {
+                      "category": "create_tests",
+                      "description": "The user wants to generate unit tests.",
+                      "examples": [
+                        "Generate tests for my selection using pytest."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "fix",
+                  "description": "Propose a fix for the problems in the selected code",
+                  "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+                },
+                {
+                  "name": "new",
+                  "description": "Scaffold code for a new file or project in a workspace",
+                  "sampleRequest": "Create a RESTful API server using typescript",
+                  "isSticky": true,
+                  "disambiguation": [
+                    {
+                      "category": "create_new_workspace_or_extension",
+                      "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                      "examples": [
+                        "Scaffold a Node server.",
+                        "Create a sample project which uses the fileSystemProvider API.",
+                        "react application"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "newNotebook",
+                  "description": "Create a new Jupyter Notebook",
+                  "sampleRequest": "How do I create a notebook to load data from a csv file?",
+                  "disambiguation": [
+                    {
+                      "category": "create_jupyter_notebook",
+                      "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                      "examples": [
+                        "Create a notebook to analyze this CSV file."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "setupTests",
+                  "description": "Set up tests in your project (Experimental)",
+                  "sampleRequest": "add playwright tests to my project",
+                  "when": "config.github.copilot.chat.setupTests.enabled",
+                  "disambiguation": [
+                    {
+                      "category": "set_up_tests",
+                      "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                      "examples": [
+                        "Set up tests for this project."
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "disambiguation": [
+                {
+                  "category": "workspace_project_questions",
+                  "description": "The user wants to learn about or update the code or files in their current workspace. Questions in this category may be about understanding what the whole workspace does or locating the implementation of some code. This does not include generating or updating tests.",
+                  "examples": [
+                    "What does this project do?"
+                  ]
+                },
+                {
+                  "category": "find_code_in_workspace",
+                  "description": "The user wants to locate the implementation of some functionality in their current workspace.",
+                  "examples": [
+                    "Where is the tree widget implemented?"
+                  ]
+                },
+                {
+                  "category": "generate_with_workspace_context",
+                  "description": "The user wants to generate code based on multiple files in the workspace and did not specify which files to reference.",
+                  "examples": [
+                    "Create a README for this project."
+                  ]
+                }
+              ]
+            },
+            "kind": "agent"
+          },
+          {
+            "range": {
+              "start": 10,
+              "endExclusive": 11
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 11,
+              "endLineNumber": 1,
+              "endColumn": 12
+            },
+            "text": " ",
+            "kind": "text"
+          },
+          {
+            "range": {
+              "start": 11,
+              "endExclusive": 19
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 12,
+              "endLineNumber": 1,
+              "endColumn": 20
+            },
+            "command": {
+              "name": "explain",
+              "description": "Explain how the code in your active editor works"
+            },
+            "kind": "subcommand"
+          },
+          {
+            "range": {
+              "start": 19,
+              "endExclusive": 522
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 20,
+              "endLineNumber": 1,
+              "endColumn": 523
+            },
+            "text": " Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string",
+            "kind": "text"
+          }
+        ],
+        "text": "@workspace /explain Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string, Expected identifier string"
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "kind": "mcpServersStarting",
+          "didStartServerIds": []
+        },
+        {
+          "value": "Now I see the real problem! Your commented-out lines have **mismatched indentation**:\n\n- Line 330: `//    match` (4 spaces after `//`)\n- Line 331: `//   match` (3 spaces after `//`) ← **Wrong!**\n- Line 342: `//   clip-to-geometry` (3 spaces after `//`) ← **Wrong!**\n\nThe parser is strict about consistent spacing. Fix both lines to have 4 spaces after `//`:\n\n````kdl\n",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/home/david/remote_vm/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "codeblockUri",
+          "uri": {
+            "$mid": 1,
+            "fsPath": "/home/david/remote_vm/.config/niri/config.kdl",
+            "external": "file:///home/david/remote_vm/.config/niri/config.kdl",
+            "path": "/home/david/remote_vm/.config/niri/config.kdl",
+            "scheme": "file"
+          }
+        },
+        {
+          "value": "// Example: block out two password managers from screen capture.\n// (This example rule is commented out with a \"/-\" in front.)\nwindow-rule {\n//    match app-id=r#\"^org\\.keepassxc\\.KeePassXC$\"#\n//    match app-id=r#\"^org\\.gnome\\.World\\.Secrets$\"#\n\n    block-out-from \"screen-capture\"\n\n    // Use this instead if you want them visible on third-party screenshot tools.\n    // block-out-from \"screencast\"\n}\n\n// Example: enable rounded corners for all windows.\n// (This example rule is commented out with a \"/-\" in front.)\nwindow-rule {\n    geometry-corner-radius 12\n//    clip-to-geometry true\n}\n````\n\n**Changes:**\n- Line 331: `//   match` → `//    match` (add 1 space)\n- Line 342: `//   clip-to-geometry` → `//    clip-to-geometry` (add 1 space)\n\nMake sure all three commented `match`/`clip` lines have exactly **4 spaces** after the `//`.",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/home/david/remote_vm/",
+            "scheme": "file"
+          }
+        }
+      ],
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.36.2",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.workspace",
+        "description": "Ask about your workspace",
+        "when": "!github.copilot.interactiveSession.disabled",
+        "metadata": {
+          "sampleRequest": "How do I build this project?",
+          "themeIcon": {
+            "id": "code"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "workspace",
+        "fullName": "Workspace",
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent",
+          "ask",
+          "edit"
+        ],
+        "slashCommands": [
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": [
+          {
+            "category": "workspace_project_questions",
+            "description": "The user wants to learn about or update the code or files in their current workspace. Questions in this category may be about understanding what the whole workspace does or locating the implementation of some code. This does not include generating or updating tests.",
+            "examples": [
+              "What does this project do?"
+            ]
+          },
+          {
+            "category": "find_code_in_workspace",
+            "description": "The user wants to locate the implementation of some functionality in their current workspace.",
+            "examples": [
+              "Where is the tree widget implemented?"
+            ]
+          },
+          {
+            "category": "generate_with_workspace_context",
+            "description": "The user wants to generate code based on multiple files in the workspace and did not specify which files to reference.",
+            "examples": [
+              "Create a README for this project."
+            ]
+          }
+        ]
+      },
+      "timestamp": 1769205697232,
+      "modelId": "copilot/auto",
+      "responseId": "response_e38efc9d-3557-4371-83d8-31b69fd22fcc",
+      "result": {
+        "timings": {
+          "firstProgress": 1289,
+          "totalElapsed": 2964
+        },
+        "metadata": {
+          "codeBlocks": [
+            {
+              "code": "// Example: block out two password managers from screen capture.\n// (This example rule is commented out with a \"/-\" in front.)\nwindow-rule {\n//    match app-id=r#\"^org\\.keepassxc\\.KeePassXC$\"#\n//    match app-id=r#\"^org\\.gnome\\.World\\.Secrets$\"#\n\n    block-out-from \"screen-capture\"\n\n    // Use this instead if you want them visible on third-party screenshot tools.\n    // block-out-from \"screencast\"\n}\n\n// Example: enable rounded corners for all windows.\n// (This example rule is commented out with a \"/-\" in front.)\nwindow-rule {\n    geometry-corner-radius 12\n//    clip-to-geometry true\n}\n",
+              "resource": {
+                "$mid": 1,
+                "path": "/home/david/remote_vm/.config/niri/config.kdl",
+                "scheme": "file"
+              },
+              "language": "kdl",
+              "markdownBeforeBlock": "Now I see the real problem! Your commented-out lines have **mismatched indentation**:\n\n- Line 330: `//    match` (4 spaces after `//`)\n- Line 331: `//   match` (3 spaces after `//`) ← **Wrong!**\n- Line 342: `//   clip-to-geometry` (3 spaces after `//`) ← **Wrong!**\n\nThe parser is strict about consistent spacing. Fix both lines to have 4 spaces after `//`:\n\n"
+            }
+          ],
+          "toolCallRounds": [
+            {
+              "response": "Now I see the real problem! Your commented-out lines have **mismatched indentation**:\n\n- Line 330: `//    match` (4 spaces after `//`)\n- Line 331: `//   match` (3 spaces after `//`) ← **Wrong!**\n- Line 342: `//   clip-to-geometry` (3 spaces after `//`) ← **Wrong!**\n\nThe parser is strict about consistent spacing. Fix both lines to have 4 spaces after `//`:\n\n````kdl\n// filepath: /home/david/remote_vm/.config/niri/config.kdl\n// Example: block out two password managers from screen capture.\n// (This example rule is commented out with a \"/-\" in front.)\nwindow-rule {\n//    match app-id=r#\"^org\\.keepassxc\\.KeePassXC$\"#\n//    match app-id=r#\"^org\\.gnome\\.World\\.Secrets$\"#\n\n    block-out-from \"screen-capture\"\n\n    // Use this instead if you want them visible on third-party screenshot tools.\n    // block-out-from \"screencast\"\n}\n\n// Example: enable rounded corners for all windows.\n// (This example rule is commented out with a \"/-\" in front.)\nwindow-rule {\n    geometry-corner-radius 12\n//    clip-to-geometry true\n}\n````\n\n**Changes:**\n- Line 331: `//   match` → `//    match` (add 1 space)\n- Line 342: `//   clip-to-geometry` → `//    clip-to-geometry` (add 1 space)\n\nMake sure all three commented `match`/`clip` lines have exactly **4 spaces** after the `//`.",
+              "toolCalls": [],
+              "toolInputRetry": 0,
+              "id": "b04d6f01-4d51-4402-bcaf-994ee324806a"
+            }
+          ],
+          "modelMessageId": "165fe9b9-13cf-4019-8156-40d6dd850d0c",
+          "responseId": "8c49cf4f-cd06-413e-b852-34b25b3389a7",
+          "sessionId": "97286139-c089-4b06-ab79-5b5d02348764",
+          "agentId": "github.copilot.workspace",
+          "command": "explain"
+        },
+        "details": "Claude Haiku 4.5 • 1x"
+      },
+      "responseMarkdownInfo": [
+        {
+          "suggestionId": "sgt-dbdb34b8-4e49-40ae-88a2-bb3a5069a921"
+        }
+      ],
+      "followups": [],
+      "modelState": {
+        "value": 1,
+        "completedAt": 1769205700219
+      },
+      "slashCommand": {
+        "name": "explain",
+        "description": "Explain how the code in your active editor works"
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "uri": {
+              "$mid": 1,
+              "fsPath": "/home/david/remote_vm/.config/niri/config.kdl",
+              "external": "file:///home/david/remote_vm/.config/niri/config.kdl",
+              "path": "/home/david/remote_vm/.config/niri/config.kdl",
+              "scheme": "file"
+            },
+            "range": {
+              "startLineNumber": 300,
+              "startColumn": 1,
+              "endLineNumber": 348,
+              "endColumn": 83
+            }
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 0
+    },
+    {
+      "requestId": "request_4af3a0ea-94e0-45b7-b58c-f506d30c6832",
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 50
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 51
+            },
+            "text": "explain line 314 saying expected identifier string",
+            "kind": "text"
+          }
+        ],
+        "text": "explain line 314 saying expected identifier string"
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "kind": "mcpServersStarting",
+          "didStartServerIds": []
+        },
+        {
+          "kind": "thinking",
+          "value": "The user is asking me to explain line 314 which is causing the \"Expected identifier string\" error. Let me read the file to see what's on line 314.",
+          "id": "1769205756033",
+          "generatedTitle": "Read lines 310 to 320 from file"
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscodeReasoningDone": true,
+            "stopReason": "other"
+          }
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "copilot_readFile"
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "metadata": {
+            "toolId": "toolu_01AuuWcpokYLKTPUgvaxW8D4"
+          }
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Reading [](file:///home/david/remote_vm/.config/niri/config.kdl#310-310), lines 310 to 320",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///home/david/remote_vm/.config/niri/config.kdl#310-310": {
+                "$mid": 1,
+                "path": "/home/david/remote_vm/.config/niri/config.kdl",
+                "scheme": "file",
+                "fragment": "310-310"
+              }
+            }
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///home/david/remote_vm/.config/niri/config.kdl#310-310), lines 310 to 320",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "file:///home/david/remote_vm/.config/niri/config.kdl#310-310": {
+                "$mid": 1,
+                "path": "/home/david/remote_vm/.config/niri/config.kdl",
+                "scheme": "file",
+                "fragment": "310-310"
+              }
+            }
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolCallId": "4787eee8-21e3-45fd-87aa-9602e8fbd3a5",
+          "toolId": "copilot_readFile",
+          "generatedTitle": "Read lines 310 to 320 from file"
+        },
+        {
+          "value": "**Line 314** is fine—it's `match app-id=r#\"^org\\.wezfurlong\\.wezterm$\"#`. \n\nThe actual error is coming from **later in the file**. Since you're getting 18 \"Expected identifier string\" errors, the parser is likely failing at a specific point and cascading errors through the rest of the file.\n\nCan you scroll to where the errors are highlighted in red in the editor? Or run this command to see which line has the actual syntax error:\n\n```bash\nkdl-fmt /home/david/remote_vm/.config/niri/config.kdl 2>&1 | head -20\n```\n\nThis will show you the exact line number where the parser first fails. Once we find that line, we can fix it and clear all the cascading errors.",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/home/david/remote_vm/",
+            "scheme": "file"
+          }
+        }
+      ],
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.36.2",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [],
+        "disambiguation": []
+      },
+      "timestamp": 1769205754313,
+      "modelId": "copilot/auto",
+      "responseId": "response_f3d9bba0-a248-446c-89b4-56978ea1a585",
+      "result": {
+        "timings": {
+          "firstProgress": 1897,
+          "totalElapsed": 4682
+        },
+        "metadata": {
+          "codeBlocks": [
+            {
+              "code": "kdl-fmt /home/david/remote_vm/.config/niri/config.kdl 2>&1 | head -20\n",
+              "language": "bash",
+              "markdownBeforeBlock": "**Line 314** is fine—it's `match app-id=r#\"^org\\.wezfurlong\\.wezterm$\"#`. \n\nThe actual error is coming from **later in the file**. Since you're getting 18 \"Expected identifier string\" errors, the parser is likely failing at a specific point and cascading errors through the rest of the file.\n\nCan you scroll to where the errors are highlighted in red in the editor? Or run this command to see which line has the actual syntax error:\n\n"
+            }
+          ],
+          "renderedUserMessage": [
+            {
+              "type": 1,
+              "text": "<context>\nThe current date is January 23, 2026.\n</context>\n<editorContext>\nThe user's current file is /home/david/remote_vm/.config/niri/config.kdl. \n</editorContext>\n<reminderInstructions>\nWhen using the replace_string_in_file tool, include 3-5 lines of unchanged code before and after the string you want to replace, to make it unambiguous which part of the file should be edited.\nFor maximum efficiency, whenever you plan to perform multiple independent edit operations, invoke them simultaneously using multi_replace_string_in_file tool rather than sequentially. This will greatly improve user's cost and time efficiency leading to a better user experience. Do not announce which tool you're using (for example, avoid saying \"I'll implement all the changes using multi_replace_string_in_file\").\nDo NOT create a new markdown file to document each change or summarize your work unless specifically requested by the user.\n\n</reminderInstructions>\n<userRequest>\nexplain line 314 saying expected identifier string\n</userRequest>\n"
+            },
+            {
+              "type": 3,
+              "cacheType": "ephemeral"
+            }
+          ],
+          "toolCallRounds": [
+            {
+              "response": "",
+              "toolCalls": [
+                {
+                  "name": "read_file",
+                  "arguments": "{\"filePath\": \"/home/david/remote_vm/.config/niri/config.kdl\", \"startLine\": 310, \"endLine\": 320}",
+                  "id": "toolu_01AuuWcpokYLKTPUgvaxW8D4__vscode-1769205104841"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "01f058b6-3358-4fb7-aa4f-2f18d6d0c7af",
+              "thinking": {
+                "id": "TZWRa4MLnBSDIHcd6Gbzr5NIwsa6ZzAGXYlPmK9fEmkmDWhsC0ID8Y1EOTPkXvS2JYE0fSMQK/77Xqe0kDmcPvpU59bg6/MyG7n8AVvH3mG+1PE6Vjg9J6S12g00FcdJ4EqGTr82GT6R73mxisMP/+fTaye0KYd281Xwu4ptS1XbntOy7F1jBctyKljcoVM0mhjvw9Q2NBuJ/nlyTFOX8WonrxQBn2m0B9/2H+IIYIHpE8XZqDgAdOT+VGe86vrevgjHAEXgGCqp6z1GOaplaxjUuSHZXUMd9IdIW4HpDEmZY/4q30VXp/c7agZLhTHP0+ZLM+PnNpDY5XgIyhpkNSHie2dUEU1w4ecCyaQ6HDWWYq6jOHHM0U670IN0oyw8o9FrzDOve+LhIS1+fsI1vKxduXZHQBzRVS4zvhe7t4pTbfU+ez2sYZotkzWqwZgNdGzKPs5hQ/f1h6Dwloz5dx1Kr428fSV2fOt2Za63o0p0+Xf8r9nEclNPVpsGYO5FE5Z+Xr12GXzmGo+hHnIOjcx0pGTxR6cEGxBA6lDxSTxQUUJgNsyMJABSHKL+6hKZi4r8WI/lekjZEPJXlHq8SJjkpLDH8pmnKVXyEoNB8g4Nj3jAwU6XIfbfN/jQ4OmZDz2lZZL7Sa9h0SBjnpQSsmRQMP7pdgZUamctUwuwAeEXHk/45wPjhhec/qjl/2vm77RtBgpEINV3EbrxkA2aNzSwIRJsMxx1jGD7rCyfPAEwnzT5C0AiBnfzwNtJoOxbBW0djJ5WdjFKw9BPm4cz+Uz9xMjlaxspTp6OK5MG3Q1jkCrlBaZu6C64uX6Cs7fd7Sc53Bi4HLyXEJpVn0HXPcFwNDmC7VXjrtbmn79UdWfDsFmzJxauliKk0DwQLxZR4+WuEz8iH/bDKaqZx+jKrlt9ZGEpY4a3X9qj8HO+luP5",
+                "text": "The user is asking me to explain line 314 which is causing the \"Expected identifier string\" error. Let me read the file to see what's on line 314.",
+                "encrypted": "TZWRa4MLnBSDIHcd6Gbzr5NIwsa6ZzAGXYlPmK9fEmkmDWhsC0ID8Y1EOTPkXvS2JYE0fSMQK/77Xqe0kDmcPvpU59bg6/MyG7n8AVvH3mG+1PE6Vjg9J6S12g00FcdJ4EqGTr82GT6R73mxisMP/+fTaye0KYd281Xwu4ptS1XbntOy7F1jBctyKljcoVM0mhjvw9Q2NBuJ/nlyTFOX8WonrxQBn2m0B9/2H+IIYIHpE8XZqDgAdOT+VGe86vrevgjHAEXgGCqp6z1GOaplaxjUuSHZXUMd9IdIW4HpDEmZY/4q30VXp/c7agZLhTHP0+ZLM+PnNpDY5XgIyhpkNSHie2dUEU1w4ecCyaQ6HDWWYq6jOHHM0U670IN0oyw8o9FrzDOve+LhIS1+fsI1vKxduXZHQBzRVS4zvhe7t4pTbfU+ez2sYZotkzWqwZgNdGzKPs5hQ/f1h6Dwloz5dx1Kr428fSV2fOt2Za63o0p0+Xf8r9nEclNPVpsGYO5FE5Z+Xr12GXzmGo+hHnIOjcx0pGTxR6cEGxBA6lDxSTxQUUJgNsyMJABSHKL+6hKZi4r8WI/lekjZEPJXlHq8SJjkpLDH8pmnKVXyEoNB8g4Nj3jAwU6XIfbfN/jQ4OmZDz2lZZL7Sa9h0SBjnpQSsmRQMP7pdgZUamctUwuwAeEXHk/45wPjhhec/qjl/2vm77RtBgpEINV3EbrxkA2aNzSwIRJsMxx1jGD7rCyfPAEwnzT5C0AiBnfzwNtJoOxbBW0djJ5WdjFKw9BPm4cz+Uz9xMjlaxspTp6OK5MG3Q1jkCrlBaZu6C64uX6Cs7fd7Sc53Bi4HLyXEJpVn0HXPcFwNDmC7VXjrtbmn79UdWfDsFmzJxauliKk0DwQLxZR4+WuEz8iH/bDKaqZx+jKrlt9ZGEpY4a3X9qj8HO+luP5",
+                "metadata": {
+                  "toolId": "toolu_01AuuWcpokYLKTPUgvaxW8D4"
+                }
+              }
+            },
+            {
+              "response": "**Line 314** is fine—it's `match app-id=r#\"^org\\.wezfurlong\\.wezterm$\"#`. \n\nThe actual error is coming from **later in the file**. Since you're getting 18 \"Expected identifier string\" errors, the parser is likely failing at a specific point and cascading errors through the rest of the file.\n\nCan you scroll to where the errors are highlighted in red in the editor? Or run this command to see which line has the actual syntax error:\n\n```bash\nkdl-fmt /home/david/remote_vm/.config/niri/config.kdl 2>&1 | head -20\n```\n\nThis will show you the exact line number where the parser first fails. Once we find that line, we can fix it and clear all the cascading errors.",
+              "toolCalls": [],
+              "toolInputRetry": 0,
+              "id": "46a6fb52-2538-4a19-b4c6-0e5d007e7050"
+            }
+          ],
+          "toolCallResults": {
+            "toolu_01AuuWcpokYLKTPUgvaxW8D4__vscode-1769205104841": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 23,
+                  "value": {
+                    "node": {
+                      "type": 1,
+                      "ctor": 2,
+                      "ctorName": "Wfe",
+                      "children": [
+                        {
+                          "type": 2,
+                          "priority": 9007199254740991,
+                          "text": "File: `",
+                          "lineBreakBefore": false
+                        },
+                        {
+                          "type": 2,
+                          "priority": 9007199254740991,
+                          "text": "/home/david/remote_vm/.config/niri/config.kdl",
+                          "lineBreakBefore": false
+                        },
+                        {
+                          "type": 2,
+                          "priority": 9007199254740991,
+                          "text": "`. Lines ",
+                          "lineBreakBefore": false
+                        },
+                        {
+                          "type": 2,
+                          "priority": 9007199254740991,
+                          "text": "310",
+                          "lineBreakBefore": false
+                        },
+                        {
+                          "type": 2,
+                          "priority": 9007199254740991,
+                          "text": " to ",
+                          "lineBreakBefore": false
+                        },
+                        {
+                          "type": 2,
+                          "priority": 9007199254740991,
+                          "text": "320",
+                          "lineBreakBefore": false
+                        },
+                        {
+                          "type": 2,
+                          "priority": 9007199254740991,
+                          "text": " (",
+                          "lineBreakBefore": false
+                        },
+                        {
+                          "type": 2,
+                          "priority": 9007199254740991,
+                          "text": "623",
+                          "lineBreakBefore": false
+                        },
+                        {
+                          "type": 2,
+                          "priority": 9007199254740991,
+                          "text": " lines total): ",
+                          "lineBreakBefore": false
+                        },
+                        {
+                          "type": 2,
+                          "priority": 9007199254740991,
+                          "text": "\n",
+                          "lineBreakBefore": false
+                        },
+                        {
+                          "type": 1,
+                          "ctor": 2,
+                          "ctorName": "Kt",
+                          "children": [
+                            {
+                              "type": 1,
+                              "ctor": 2,
+                              "ctorName": "dCe",
+                              "children": [
+                                {
+                                  "type": 2,
+                                  "priority": 13,
+                                  "text": "```kdl\n",
+                                  "references": [
+                                    {
+                                      "anchor": {
+                                        "$mid": 1,
+                                        "fsPath": "/home/david/remote_vm/.config/niri/config.kdl",
+                                        "external": "file:///home/david/remote_vm/.config/niri/config.kdl",
+                                        "path": "/home/david/remote_vm/.config/niri/config.kdl",
+                                        "scheme": "file"
+                                      },
+                                      "options": {
+                                        "isFromTool": true
+                                      }
+                                    }
+                                  ],
+                                  "lineBreakBefore": true
+                                }
+                              ],
+                              "props": {
+                                "priority": 13
+                              },
+                              "references": []
+                            },
+                            {
+                              "type": 1,
+                              "ctor": 2,
+                              "ctorName": "dCe",
+                              "children": [
+                                {
+                                  "type": 2,
+                                  "priority": 12,
+                                  "text": "window-rule {\n",
+                                  "references": [],
+                                  "lineBreakBefore": true
+                                }
+                              ],
+                              "props": {
+                                "priority": 12
+                              },
+                              "references": []
+                            },
+                            {
+                              "type": 1,
+                              "ctor": 2,
+                              "ctorName": "dCe",
+                              "children": [
+                                {
+                                  "type": 2,
+                                  "priority": 11,
+                                  "text": "    // This regular expression is intentionally made as specific as possible,\n",
+                                  "references": [],
+                                  "lineBreakBefore": true
+                                }
+                              ],
+                              "props": {
+                                "priority": 11
+                              },
+                              "references": []
+                            },
+                            {
+                              "type": 1,
+                              "ctor": 2,
+                              "ctorName": "dCe",
+                              "children": [
+                                {
+                                  "type": 2,
+                                  "priority": 10,
+                                  "text": "    // since this is the default config, and we want no false positives.\n",
+                                  "references": [],
+                                  "lineBreakBefore": true
+                                }
+                              ],
+                              "props": {
+                                "priority": 10
+                              },
+                              "references": []
+                            },
+                            {
+                              "type": 1,
+                              "ctor": 2,
+                              "ctorName": "dCe",
+                              "children": [
+                                {
+                                  "type": 2,
+                                  "priority": 9,
+                                  "text": "    // You can get away with just app-id=\"wezterm\" if you want.\n",
+                                  "references": [],
+                                  "lineBreakBefore": true
+                                }
+                              ],
+                              "props": {
+                                "priority": 9
+                              },
+                              "references": []
+                            },
+                            {
+                              "type": 1,
+                              "ctor": 2,
+                              "ctorName": "dCe",
+                              "children": [
+                                {
+                                  "type": 2,
+                                  "priority": 8,
+                                  "text": "    match app-id=r#\"^org\\.wezfurlong\\.wezterm$\"#\n",
+                                  "references": [],
+                                  "lineBreakBefore": true
+                                }
+                              ],
+                              "props": {
+                                "priority": 8
+                              },
+                              "references": []
+                            },
+                            {
+                              "type": 1,
+                              "ctor": 2,
+                              "ctorName": "dCe",
+                              "children": [
+                                {
+                                  "type": 2,
+                                  "priority": 7,
+                                  "text": "    default-column-width {}\n",
+                                  "references": [],
+                                  "lineBreakBefore": true
+                                }
+                              ],
+                              "props": {
+                                "priority": 7
+                              },
+                              "references": []
+                            },
+                            {
+                              "type": 1,
+                              "ctor": 2,
+                              "ctorName": "dCe",
+                              "children": [
+                                {
+                                  "type": 2,
+                                  "priority": 6,
+                                  "text": "}\n",
+                                  "references": [],
+                                  "lineBreakBefore": true
+                                }
+                              ],
+                              "props": {
+                                "priority": 6
+                              },
+                              "references": []
+                            },
+                            {
+                              "type": 1,
+                              "ctor": 2,
+                              "ctorName": "dCe",
+                              "children": [
+                                {
+                                  "type": 2,
+                                  "priority": 5,
+                                  "text": "\n",
+                                  "references": [],
+                                  "lineBreakBefore": true
+                                }
+                              ],
+                              "props": {
+                                "priority": 5
+                              },
+                              "references": []
+                            },
+                            {
+                              "type": 1,
+                              "ctor": 2,
+                              "ctorName": "dCe",
+                              "children": [
+                                {
+                                  "type": 2,
+                                  "priority": 4,
+                                  "text": "// Open the Firefox picture-in-picture player as floating by default.\n",
+                                  "references": [],
+                                  "lineBreakBefore": true
+                                }
+                              ],
+                              "props": {
+                                "priority": 4
+                              },
+                              "references": []
+                            },
+                            {
+                              "type": 1,
+                              "ctor": 2,
+                              "ctorName": "dCe",
+                              "children": [
+                                {
+                                  "type": 2,
+                                  "priority": 3,
+                                  "text": "window-rule {\n",
+                                  "references": [],
+                                  "lineBreakBefore": true
+                                }
+                              ],
+                              "props": {
+                                "priority": 3
+                              },
+                              "references": []
+                            },
+                            {
+                              "type": 1,
+                              "ctor": 2,
+                              "ctorName": "dCe",
+                              "children": [
+                                {
+                                  "type": 2,
+                                  "priority": 2,
+                                  "text": "    // This app-id regular expression will work for both:\n",
+                                  "references": [],
+                                  "lineBreakBefore": true
+                                }
+                              ],
+                              "props": {
+                                "priority": 2
+                              },
+                              "references": []
+                            },
+                            {
+                              "type": 1,
+                              "ctor": 2,
+                              "ctorName": "dCe",
+                              "children": [
+                                {
+                                  "type": 2,
+                                  "priority": 13,
+                                  "text": "```",
+                                  "references": [],
+                                  "lineBreakBefore": true
+                                }
+                              ],
+                              "props": {
+                                "priority": 13
+                              },
+                              "references": []
+                            }
+                          ],
+                          "props": {},
+                          "references": []
+                        }
+                      ],
+                      "props": {},
+                      "references": []
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "modelMessageId": "897b4771-4531-4a8d-b277-e197ca739d09",
+          "responseId": "4fe4e26c-7c01-4c85-844e-d8b3fce07812",
+          "sessionId": "97286139-c089-4b06-ab79-5b5d02348764",
+          "agentId": "github.copilot.editsAgent"
+        },
+        "details": "Claude Haiku 4.5 • 1x"
+      },
+      "responseMarkdownInfo": [
+        {
+          "suggestionId": "sgt-0ddf8d8c-0220-48ba-8526-ad54c6c8e46e"
+        }
+      ],
+      "followups": [],
+      "modelState": {
+        "value": 1,
+        "completedAt": 1769205759009
+      },
+      "contentReferences": [],
+      "codeCitations": [],
+      "timeSpentWaiting": 0
+    },
+    {
+      "requestId": "request_223a7a94-79cc-4f9a-b418-f3edb146aa8b",
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 10
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 11
+            },
+            "agent": {
+              "extensionId": {
+                "value": "GitHub.copilot-chat",
+                "_lower": "github.copilot-chat"
+              },
+              "extensionVersion": "0.36.2",
+              "publisherDisplayName": "GitHub",
+              "extensionPublisherId": "GitHub",
+              "extensionDisplayName": "GitHub Copilot Chat",
+              "id": "github.copilot.workspace",
+              "description": "Ask about your workspace",
+              "when": "!github.copilot.interactiveSession.disabled",
+              "metadata": {
+                "sampleRequest": "How do I build this project?",
+                "themeIcon": {
+                  "id": "code"
+                },
+                "hasFollowups": false,
+                "supportIssueReporting": false
+              },
+              "name": "workspace",
+              "fullName": "Workspace",
+              "locations": [
+                "panel"
+              ],
+              "modes": [
+                "agent",
+                "ask",
+                "edit"
+              ],
+              "slashCommands": [
+                {
+                  "name": "explain",
+                  "description": "Explain how the code in your active editor works"
+                },
+                {
+                  "name": "tests",
+                  "description": "Generate unit tests for the selected code",
+                  "disambiguation": [
+                    {
+                      "category": "create_tests",
+                      "description": "The user wants to generate unit tests.",
+                      "examples": [
+                        "Generate tests for my selection using pytest."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "fix",
+                  "description": "Propose a fix for the problems in the selected code",
+                  "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+                },
+                {
+                  "name": "new",
+                  "description": "Scaffold code for a new file or project in a workspace",
+                  "sampleRequest": "Create a RESTful API server using typescript",
+                  "isSticky": true,
+                  "disambiguation": [
+                    {
+                      "category": "create_new_workspace_or_extension",
+                      "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                      "examples": [
+                        "Scaffold a Node server.",
+                        "Create a sample project which uses the fileSystemProvider API.",
+                        "react application"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "newNotebook",
+                  "description": "Create a new Jupyter Notebook",
+                  "sampleRequest": "How do I create a notebook to load data from a csv file?",
+                  "disambiguation": [
+                    {
+                      "category": "create_jupyter_notebook",
+                      "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                      "examples": [
+                        "Create a notebook to analyze this CSV file."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "setupTests",
+                  "description": "Set up tests in your project (Experimental)",
+                  "sampleRequest": "add playwright tests to my project",
+                  "when": "config.github.copilot.chat.setupTests.enabled",
+                  "disambiguation": [
+                    {
+                      "category": "set_up_tests",
+                      "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                      "examples": [
+                        "Set up tests for this project."
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "disambiguation": [
+                {
+                  "category": "workspace_project_questions",
+                  "description": "The user wants to learn about or update the code or files in their current workspace. Questions in this category may be about understanding what the whole workspace does or locating the implementation of some code. This does not include generating or updating tests.",
+                  "examples": [
+                    "What does this project do?"
+                  ]
+                },
+                {
+                  "category": "find_code_in_workspace",
+                  "description": "The user wants to locate the implementation of some functionality in their current workspace.",
+                  "examples": [
+                    "Where is the tree widget implemented?"
+                  ]
+                },
+                {
+                  "category": "generate_with_workspace_context",
+                  "description": "The user wants to generate code based on multiple files in the workspace and did not specify which files to reference.",
+                  "examples": [
+                    "Create a README for this project."
+                  ]
+                }
+              ]
+            },
+            "kind": "agent"
+          },
+          {
+            "range": {
+              "start": 10,
+              "endExclusive": 11
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 11,
+              "endLineNumber": 1,
+              "endColumn": 12
+            },
+            "text": " ",
+            "kind": "text"
+          },
+          {
+            "range": {
+              "start": 11,
+              "endExclusive": 19
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 12,
+              "endLineNumber": 1,
+              "endColumn": 20
+            },
+            "command": {
+              "name": "explain",
+              "description": "Explain how the code in your active editor works"
+            },
+            "kind": "subcommand"
+          },
+          {
+            "range": {
+              "start": 19,
+              "endExclusive": 46
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 20,
+              "endLineNumber": 1,
+              "endColumn": 47
+            },
+            "text": " Expected identifier string",
+            "kind": "text"
+          }
+        ],
+        "text": "@workspace /explain Expected identifier string"
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "kind": "mcpServersStarting",
+          "didStartServerIds": []
+        },
+        {
+          "value": "Now I see it! Line 331 has **3 spaces** after `//` while line 330 has **4 spaces**. They need to match:\n\n````kdl\n",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/home/david/remote_vm/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "codeblockUri",
+          "uri": {
+            "$mid": 1,
+            "fsPath": "/home/david/remote_vm/.config/niri/config.kdl",
+            "external": "file:///home/david/remote_vm/.config/niri/config.kdl",
+            "path": "/home/david/remote_vm/.config/niri/config.kdl",
+            "scheme": "file"
+          }
+        },
+        {
+          "value": "// Example: block out two password managers from screen capture.\n// (This example rule is commented out with a \"/-\" in front.)\nwindow-rule {\n//    match app-id=r#\"^org\\.keepassxc\\.KeePassXC$\"#\n//    match app-id=r#\"^org\\.gnome\\.World\\.Secrets$\"#\n\n    block-out-from \"screen-capture\"\n\n    // Use this instead if you want them visible on third-party screenshot tools.\n    // block-out-from \"screencast\"\n}\n````\n\n**Change line 331** from:\n```\n//   match app-id=r#\"^org\\.gnome\\.World\\.Secrets$\"#\n```\n\nTo:\n```\n//    match app-id=r#\"^org\\.gnome\\.World\\.Secrets$\"#\n```\n\nAdd one space after `//` so it has 4 spaces total, matching line 330.",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/home/david/remote_vm/",
+            "scheme": "file"
+          }
+        }
+      ],
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.36.2",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.workspace",
+        "description": "Ask about your workspace",
+        "when": "!github.copilot.interactiveSession.disabled",
+        "metadata": {
+          "sampleRequest": "How do I build this project?",
+          "themeIcon": {
+            "id": "code"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "workspace",
+        "fullName": "Workspace",
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent",
+          "ask",
+          "edit"
+        ],
+        "slashCommands": [
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": [
+          {
+            "category": "workspace_project_questions",
+            "description": "The user wants to learn about or update the code or files in their current workspace. Questions in this category may be about understanding what the whole workspace does or locating the implementation of some code. This does not include generating or updating tests.",
+            "examples": [
+              "What does this project do?"
+            ]
+          },
+          {
+            "category": "find_code_in_workspace",
+            "description": "The user wants to locate the implementation of some functionality in their current workspace.",
+            "examples": [
+              "Where is the tree widget implemented?"
+            ]
+          },
+          {
+            "category": "generate_with_workspace_context",
+            "description": "The user wants to generate code based on multiple files in the workspace and did not specify which files to reference.",
+            "examples": [
+              "Create a README for this project."
+            ]
+          }
+        ]
+      },
+      "timestamp": 1769205802262,
+      "modelId": "copilot/auto",
+      "responseId": "response_d8ab383a-12cd-4f28-b130-f5d3038fdc62",
+      "result": {
+        "timings": {
+          "firstProgress": 1568,
+          "totalElapsed": 2502
+        },
+        "metadata": {
+          "codeBlocks": [
+            {
+              "code": "// Example: block out two password managers from screen capture.\n// (This example rule is commented out with a \"/-\" in front.)\nwindow-rule {\n//    match app-id=r#\"^org\\.keepassxc\\.KeePassXC$\"#\n//    match app-id=r#\"^org\\.gnome\\.World\\.Secrets$\"#\n\n    block-out-from \"screen-capture\"\n\n    // Use this instead if you want them visible on third-party screenshot tools.\n    // block-out-from \"screencast\"\n}\n",
+              "resource": {
+                "$mid": 1,
+                "path": "/home/david/remote_vm/.config/niri/config.kdl",
+                "scheme": "file"
+              },
+              "language": "kdl",
+              "markdownBeforeBlock": "Now I see it! Line 331 has **3 spaces** after `//` while line 330 has **4 spaces**. They need to match:\n\n"
+            },
+            {
+              "code": "//   match app-id=r#\"^org\\.gnome\\.World\\.Secrets$\"#\n",
+              "language": "",
+              "markdownBeforeBlock": "\n**Change line 331** from:\n"
+            },
+            {
+              "code": "//    match app-id=r#\"^org\\.gnome\\.World\\.Secrets$\"#\n",
+              "language": "",
+              "markdownBeforeBlock": "\nTo:\n"
+            }
+          ],
+          "toolCallRounds": [
+            {
+              "response": "Now I see it! Line 331 has **3 spaces** after `//` while line 330 has **4 spaces**. They need to match:\n\n````kdl\n// filepath: /home/david/remote_vm/.config/niri/config.kdl\n// Example: block out two password managers from screen capture.\n// (This example rule is commented out with a \"/-\" in front.)\nwindow-rule {\n//    match app-id=r#\"^org\\.keepassxc\\.KeePassXC$\"#\n//    match app-id=r#\"^org\\.gnome\\.World\\.Secrets$\"#\n\n    block-out-from \"screen-capture\"\n\n    // Use this instead if you want them visible on third-party screenshot tools.\n    // block-out-from \"screencast\"\n}\n````\n\n**Change line 331** from:\n```\n//   match app-id=r#\"^org\\.gnome\\.World\\.Secrets$\"#\n```\n\nTo:\n```\n//    match app-id=r#\"^org\\.gnome\\.World\\.Secrets$\"#\n```\n\nAdd one space after `//` so it has 4 spaces total, matching line 330.",
+              "toolCalls": [],
+              "toolInputRetry": 0,
+              "id": "256e6f17-d28f-45c8-b101-5128d335929b"
+            }
+          ],
+          "modelMessageId": "c5d30de6-70a1-48c2-b10c-1cd2014456fa",
+          "responseId": "2744eae5-9074-4f16-a78b-5c73a1ef0d6b",
+          "sessionId": "97286139-c089-4b06-ab79-5b5d02348764",
+          "agentId": "github.copilot.workspace",
+          "command": "explain"
+        },
+        "details": "Claude Haiku 4.5 • 1x"
+      },
+      "responseMarkdownInfo": [
+        {
+          "suggestionId": "sgt-0d55826f-125b-4aa7-9c8a-43a7070ecaf8"
+        },
+        {
+          "suggestionId": "sgt-30eac917-9104-4d6c-ab4b-2a1aa0fd36bd"
+        },
+        {
+          "suggestionId": "sgt-73a43de5-e025-4166-93e7-2a5bdf72f5ae"
+        }
+      ],
+      "followups": [],
+      "modelState": {
+        "value": 1,
+        "completedAt": 1769205804805
+      },
+      "slashCommand": {
+        "name": "explain",
+        "description": "Explain how the code in your active editor works"
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "uri": {
+              "$mid": 1,
+              "fsPath": "/home/david/remote_vm/.config/niri/config.kdl",
+              "external": "file:///home/david/remote_vm/.config/niri/config.kdl",
+              "path": "/home/david/remote_vm/.config/niri/config.kdl",
+              "scheme": "file"
+            },
+            "range": {
+              "startLineNumber": 295,
+              "startColumn": 1,
+              "endLineNumber": 342,
+              "endColumn": 30
+            }
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timeSpentWaiting": 0
+    }
+  ],
+  "sessionId": "38703d91-a7e1-41a7-a19a-8f1a040ab1eb",
+  "creationDate": 1769205103472,
+  "lastMessageDate": 1769205802262,
+  "customTitle": "Identifier String Error Explanation",
+  "hasPendingEdits": false,
+  "inputState": {
+    "contrib": {
+      "chatDynamicVariableModel": []
+    },
+    "attachments": [],
+    "mode": {
+      "id": "agent",
+      "kind": "agent"
+    },
+    "selectedModel": {
+      "identifier": "copilot/auto",
+      "metadata": {
+        "extension": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "id": "auto",
+        "vendor": "copilot",
+        "name": "Auto",
+        "family": "claude-haiku-4.5",
+        "detail": "1x",
+        "tooltip": "Auto selects the best model for your request based on capacity and performance.",
+        "version": "claude-haiku-4.5",
+        "maxInputTokens": 127805,
+        "maxOutputTokens": 16000,
+        "auth": {
+          "providerLabel": "GitHub Copilot Chat",
+          "accountLabel": "DACDParis"
+        },
+        "isDefault": true,
+        "isUserSelectable": true,
+        "modelPickerCategory": {
+          "label": "",
+          "order": -9007199254740991
+        },
+        "capabilities": {
+          "vision": true,
+          "toolCalling": true,
+          "agentMode": true
+        }
+      }
+    },
+    "inputText": "",
+    "selections": [
+      {
+        "startLineNumber": 1,
+        "startColumn": 1,
+        "endLineNumber": 1,
+        "endColumn": 1,
+        "selectionStartLineNumber": 1,
+        "selectionStartColumn": 1,
+        "positionLineNumber": 1,
+        "positionColumn": 1
+      }
+    ]
+  }
+}
