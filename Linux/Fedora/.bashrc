@@ -50,6 +50,7 @@ alias update="sudo dnf update"
 alias remove="sudo dnf remove"
 alias zik="ncmpcpp -c PATH=~/.config/ncmpcpp/config"
 alias l="eza -lah --icons"
+alias ls="eza -lah --icons"
 alias ll="eza -lah --icons"
 alias la="eza -lah --icons"
 alias g="z"
@@ -58,6 +59,10 @@ alias ytd="yt-dlp"
 alias ed="EDITOR"
 alias zel="zellij"
 alias fzf="fzf --preview 'bat --color=always {}'"
+alias net="vnstati -s -i wlp6s0 -o ~/Downloads/summary.png"
+
+## Removes spaces from all file names
+alias remscpace="for f in *\ *; do mv "$f" "${f// /_}"; done"
 
 # Extracts any archive(s) (if unp isn't installed)
 ex () {
