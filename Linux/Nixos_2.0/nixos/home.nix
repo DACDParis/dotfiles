@@ -24,12 +24,11 @@
 
   programs = {
     git = {
-      settings = {
         enable = true;
         userName = "David Dias";
         userEmail = "dacdparis@gmail.com";
-      };
     };
+    
     sioyek = {
       enable = true;
       config = {
