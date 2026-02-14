@@ -26,7 +26,7 @@
       lv = "lvim";
       g = "z";
       cd = "z";
-      clean = "$HOME/nixos/clean.sh";
+      clean = "$HOME/nixos/modules/clean.sh";
 
       update = "sudo nixos-rebuild switch --flake ~/nixos/.";
     };
